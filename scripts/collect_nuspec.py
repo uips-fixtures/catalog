@@ -1,21 +1,44 @@
 """
 collect_nuspec.py — Download .nupkg for every (id, version) pair found in
-data/sources/nuget/feed-*.json, extract the nuspec + manifest in one ZIP
-pass, then rebuild data/sources/nuget/nuspec_catalog.json.
+data/sources/nuget/feed-*.json, extract artifacts in one ZIP pass, then
+delete the temp file.
+
+Does ONE thing: fetch and cache raw artifacts.
+Parsing / catalog building is handled by build_nuspec_catalog.py.
 
 Usage (from repo root):
     uv run scripts/collect_nuspec.py
 
 Environment variables:
-    FORCE=true        Re-download even if cache files already exist (default: false)
-    NUPKG_HOOK=<abs-path>  Optional local script called while each .nupkg is on disk
-                           Receives: $1 = nupkg path; env: NUPKG_ID, NUPKG_VERSION,
-                           NUPKG_PATH, NUPKG_FLAT2_BASE.  Exit code is ignored.
+    FORCE=true         Re-download even if cache files already exist (default: false)
+    NUPKG_HOOK=<path>  Absolute path to a local script called while each .nupkg is
+                       on disk. The hook is NOT committed to the repo.
+
+                       Supported extensions:
+                         .ps1  — called via:  pwsh -File <hook>
+                                              -NupkgPath  <nupkg_path>
+                                              -PackageSearchRoot <work_dir>
+                                              -OutputPath <data/nuspec/{id}/{ver}.catalog.json>
+                         .py   — called via:  python3 <hook> <nupkg_path>
+                         other — called directly: <hook> <nupkg_path>
+
+                       All hooks also receive these environment variables:
+                         NUPKG_ID           package id
+                         NUPKG_VERSION      version string
+                         NUPKG_PATH         absolute path to the .nupkg in NUPKG_WORK_DIR
+                         NUPKG_WORK_DIR     temp dir containing the .nupkg (and any resolved
+                                            runtime packages) — use as PackageSearchRoot
+                         NUPKG_OUTPUT_PATH  suggested output path for catalog files
+                         NUPKG_FLAT2_BASE   feed base URL
+
+Stop: Ctrl-C / SIGTERM finishes the current download then exits cleanly.
 """
 
 import glob
 import json
 import os
+import shutil
+import signal
 import subprocess
 import sys
 import tempfile
@@ -23,32 +46,50 @@ import time
 import urllib.error
 import urllib.request
 import zipfile
-import xml.etree.ElementTree as ET
-from datetime import datetime, timezone
 from pathlib import Path
 
 # ── Configuration ────────────────────────────────────────────────────────────
 
-REPO_ROOT   = Path(__file__).resolve().parent.parent
-FEEDS_DIR   = REPO_ROOT / "data" / "sources" / "nuget"
-NUSPEC_DIR  = REPO_ROOT / "data" / "nuspec"
-CATALOG_OUT = FEEDS_DIR / "nuspec_catalog.json"
+REPO_ROOT  = Path(__file__).resolve().parent.parent
+FEEDS_DIR  = REPO_ROOT / "data" / "sources" / "nuget"
+NUSPEC_DIR = REPO_ROOT / "data" / "nuspec"
 
 FORCE = os.environ.get("FORCE", "false").lower() == "true"
 HOOK  = os.environ.get("NUPKG_HOOK", "")
 
-CHUNK       = 65_536   # 64 KB download chunks — no RAM spike
-SLEEP_SECS  = 0.05
-LOG_EVERY   = 100
+# Never call the hook on CI (GitHub Actions sets CI=true)
+if os.environ.get("CI", "").lower() in ("true", "1", "yes") and HOOK:
+    print(f"[info] NUPKG_HOOK ignored on CI: {HOOK}")
+    HOOK = ""
 
-# ── Feed discovery ───────────────────────────────────────────────────────────
+CHUNK      = 65_536   # 64 KB chunks — no RAM spike
+SLEEP_SECS = 0.05
+LOG_EVERY  = 100
+
+# ── Graceful stop ─────────────────────────────────────────────────────────────
+
+_stop = False
+
+
+def _handle_stop(signum, frame):
+    global _stop
+    if not _stop:
+        print("\n[signal] Stop requested — finishing current download then exiting …",
+              flush=True)
+        _stop = True
+
+
+signal.signal(signal.SIGINT,  _handle_stop)
+signal.signal(signal.SIGTERM, _handle_stop)
+
+# ── Feed discovery ────────────────────────────────────────────────────────────
 
 def discover_pairs() -> dict[tuple[str, str], str]:
     """Return {(id, version): flat2_base} from all feed-*.json files."""
     pairs: dict[tuple[str, str], str] = {}
     feed_files = sorted(glob.glob(str(FEEDS_DIR / "feed-*.json")))
     if not feed_files:
-        print("[error] No feed-*.json files found in", FEEDS_DIR)
+        print("[error] No feed-*.json files found in", FEEDS_DIR, file=sys.stderr)
         sys.exit(1)
 
     for path in feed_files:
@@ -64,81 +105,111 @@ def discover_pairs() -> dict[tuple[str, str], str]:
             versions = item.get("versions", [])
             for v in versions:
                 pairs[(pkg_id, v)] = flat2_base
-        print(f"  {os.path.basename(path)}: {len(items)} packages")
+        print(f"  {os.path.basename(path)}: {len(items)} packages, "
+              f"{sum(len(i.get('versions', [])) for i in items)} pairs")
 
     print(f"\nTotal unique (id, version) pairs: {len(pairs)}")
     return pairs
 
-# ── HTTP helpers ─────────────────────────────────────────────────────────────
+# ── HTTP download ─────────────────────────────────────────────────────────────
 
-def stream_to_tempfile(url: str) -> str | None:
-    """Stream url to a temp file. Returns path, or None on error."""
+def _download(url: str, dest: Path) -> bool:
+    """Stream url to dest. Returns True on success."""
     req = urllib.request.Request(url, headers={"User-Agent": "uips-fixtures-catalog/1.0"})
     try:
         with urllib.request.urlopen(req, timeout=60) as resp:
-            with tempfile.NamedTemporaryFile(delete=False, suffix=".nupkg") as tmp:
+            with open(dest, "wb") as f:
                 while chunk := resp.read(CHUNK):
-                    tmp.write(chunk)
-                return tmp.name
+                    f.write(chunk)
+        return True
     except urllib.error.HTTPError as e:
         if e.code == 404:
-            return None
+            return False
         print(f"  [http {e.code}] {url}")
-        return None
+        return False
     except Exception as e:
         print(f"  [error] {url}: {e}")
-        return None
+        return False
+
+# ── Runtime resolution ────────────────────────────────────────────────────────
+
+def resolve_runtimes(
+    pkg_id: str,
+    version: str,
+    pairs: dict[tuple[str, str], str],
+    work_dir: Path,
+) -> None:
+    """
+    Download runtime-companion packages to work_dir alongside the design package.
+
+    Heuristic: packages whose id starts with the same prefix as pkg_id AND whose
+    id contains 'runtime' (case-insensitive) AND whose version matches exactly.
+
+    These are placed in work_dir so the hook can use it as -PackageSearchRoot.
+    """
+    prefix = pkg_id.lower()
+    for (rid, rver), rbase in pairs.items():
+        if rver != version:
+            continue
+        rid_lo = rid.lower()
+        if rid_lo == prefix:
+            continue  # that's the design package itself
+        if not rid_lo.startswith(prefix):
+            continue
+        if "runtime" not in rid_lo:
+            continue
+        dest = work_dir / f"{rid.lower()}.{rver}.nupkg"
+        if dest.exists():
+            continue
+        url = f"{rbase}/{rid.lower()}/{rver}/{rid.lower()}.{rver}.nupkg"
+        ok  = _download(url, dest)
+        if ok:
+            print(f"    runtime: {rid} {rver}")
 
 # ── ZIP extraction ────────────────────────────────────────────────────────────
 
-def _classify_entry(name: str) -> str:
-    """Return the top-level folder key for a ZIP entry."""
-    parts = name.split("/")
-    if parts[0].lower() in ("lib", "ref", "analyzers", "build", "tools",
-                             "contentfiles", "runtimes"):
-        return parts[0].lower()
-    return "other"
+def _classify(name: str) -> str:
+    top = name.split("/")[0].lower()
+    return top if top in ("lib", "ref", "analyzers", "build", "tools") else "other"
 
 
-def extract_from_nupkg(
-    tmppath: str,
+def extract_artifacts(
+    nupkg_path: Path,
     pkg_id: str,
     version: str,
-    nuspec_path: Path,
-    manifest_path: Path,
-    props_path: Path,
-    targets_path: Path,
+    out_dir: Path,
 ) -> bool:
-    """Open the nupkg once, extract everything, return True on success."""
+    """Single ZIP pass: extract nuspec, manifest, build props/targets."""
     try:
-        with zipfile.ZipFile(tmppath, "r") as zf:
+        with zipfile.ZipFile(nupkg_path, "r") as zf:
             entries = zf.infolist()
 
-            # ── nuspec ────────────────────────────────────────────────────
+            # nuspec
             nuspec_entry = next(
                 (e for e in entries if e.filename.lower().endswith(".nuspec")), None
             )
             if nuspec_entry:
-                nuspec_path.parent.mkdir(parents=True, exist_ok=True)
-                nuspec_path.write_bytes(zf.read(nuspec_entry.filename))
+                (out_dir / f"{version}.nuspec").write_bytes(
+                    zf.read(nuspec_entry.filename)
+                )
 
-            # ── props / targets ───────────────────────────────────────────
-            for entry in entries:
-                lo = entry.filename.lower()
+            # build props / targets
+            for e in entries:
+                lo = e.filename.lower()
                 if lo.startswith("build/") and lo.endswith(".props"):
-                    props_path.write_bytes(zf.read(entry.filename))
+                    (out_dir / f"{version}.props").write_bytes(zf.read(e.filename))
                 elif lo.startswith("build/") and lo.endswith(".targets"):
-                    targets_path.write_bytes(zf.read(entry.filename))
+                    (out_dir / f"{version}.targets").write_bytes(zf.read(e.filename))
 
-            # ── manifest ──────────────────────────────────────────────────
-            manifest: dict[str, dict | list] = {
+            # manifest
+            manifest: dict = {
                 "lib": {}, "ref": {}, "analyzers": {},
                 "build": [], "tools": [], "other": [],
             }
-            for entry in entries:
-                name  = entry.filename
+            for e in entries:
+                name  = e.filename
                 parts = name.rstrip("/").split("/")
-                key   = _classify_entry(name)
+                key   = _classify(name)
 
                 if key in ("lib", "ref"):
                     tfm  = parts[1] if len(parts) > 1 else ""
@@ -147,7 +218,6 @@ def extract_from_nupkg(
                         manifest[key].setdefault(tfm, []).append(file)
 
                 elif key == "analyzers":
-                    # analyzers/{dotnet/cs}/{lang}/*.dll
                     subkey = "/".join(parts[1:-1]) if len(parts) > 2 else ""
                     file   = parts[-1]
                     if file.lower().endswith(".dll"):
@@ -161,10 +231,10 @@ def extract_from_nupkg(
                 elif key == "tools":
                     manifest["tools"].append(name)
 
-                elif key == "other":
+                else:
                     manifest["other"].append(name)
 
-            manifest_path.write_text(
+            (out_dir / f"{version}.manifest.json").write_text(
                 json.dumps(manifest, indent=2) + "\n", encoding="utf-8"
             )
 
@@ -173,208 +243,104 @@ def extract_from_nupkg(
         print(f"  [zip error] {pkg_id} {version}: {e}")
         return False
 
-# ── Hook ─────────────────────────────────────────────────────────────────────
+# ── Hook ──────────────────────────────────────────────────────────────────────
 
-def run_hook(tmppath: str, pkg_id: str, version: str, flat2_base: str) -> None:
+def run_hook(
+    nupkg_path: Path,
+    work_dir: Path,
+    pkg_id: str,
+    version: str,
+    flat2_base: str,
+    out_dir: Path,
+) -> None:
     if not HOOK or not os.path.isfile(HOOK):
         return
+
+    output_path = str(out_dir / f"{version}.catalog.json")
+
     env = {
         **os.environ,
-        "NUPKG_ID":        pkg_id,
-        "NUPKG_VERSION":   version,
-        "NUPKG_PATH":      tmppath,
-        "NUPKG_FLAT2_BASE": flat2_base,
-    }
-    subprocess.run(["python3", HOOK, tmppath], env=env, check=False)
-
-# ── nuspec XML parsing ────────────────────────────────────────────────────────
-
-def _ns(tag: str, elem_ns: str) -> str:
-    return f"{{{elem_ns}}}{tag}" if elem_ns else tag
-
-
-def _strip_ns(tag: str) -> str:
-    return tag.split("}", 1)[-1] if "}" in tag else tag
-
-
-def _find_ns(parent: ET.Element, tag: str) -> ET.Element | None:
-    """Find child by local tag name, ignoring namespace."""
-    for child in parent:
-        if _strip_ns(child.tag) == tag:
-            return child
-    return None
-
-
-def _findtext_ns(parent: ET.Element, tag: str) -> str | None:
-    el = _find_ns(parent, tag)
-    return (el.text or "").strip() or None if el is not None else None
-
-
-def _extract_license(meta: ET.Element) -> str | None:
-    lic = _find_ns(meta, "license")
-    if lic is not None:
-        return (lic.text or "").strip() or lic.get("type")
-    return _findtext_ns(meta, "licenseUrl")
-
-
-def _extract_dependencies(meta: ET.Element) -> list[dict]:
-    deps_el = _find_ns(meta, "dependencies")
-    if deps_el is None:
-        return []
-    groups = []
-    for group in deps_el:
-        if _strip_ns(group.tag) != "group":
-            continue
-        tfm  = group.get("targetFramework", "")
-        deps = []
-        for dep in group:
-            if _strip_ns(dep.tag) == "dependency":
-                deps.append({"id": dep.get("id", ""), "version": dep.get("version", "")})
-        groups.append({"targetFramework": tfm, "dependencies": deps})
-    return groups
-
-
-def parse_nuspec(path: Path) -> dict | None:
-    try:
-        tree = ET.parse(path)
-        root = tree.getroot()
-        meta = _find_ns(root, "metadata")
-        if meta is None:
-            return None
-
-        return {
-            "id":               _findtext_ns(meta, "id"),
-            "version":          _findtext_ns(meta, "version"),
-            "authors":          _findtext_ns(meta, "authors"),
-            "description":      _findtext_ns(meta, "description"),
-            "tags":             _findtext_ns(meta, "tags"),
-            "projectUrl":       _findtext_ns(meta, "projectUrl"),
-            "license":          _extract_license(meta),
-            "dependencyGroups": _extract_dependencies(meta),
-        }
-    except Exception as e:
-        print(f"  [parse error] {path}: {e}")
-        return None
-
-# ── Catalog rebuild ───────────────────────────────────────────────────────────
-
-def rebuild_catalog(now: datetime) -> None:
-    print("\nRebuilding nuspec_catalog.json …")
-    items   = []
-    pkg_ids = set()
-
-    for nuspec_path in sorted(NUSPEC_DIR.rglob("*.nuspec")):
-        record = parse_nuspec(nuspec_path)
-        if not record:
-            continue
-
-        manifest_path = nuspec_path.with_suffix(".manifest.json")
-        if manifest_path.exists():
-            with open(manifest_path, encoding="utf-8") as f:
-                manifest = json.load(f)
-            record["targetFrameworks"] = sorted(set(
-                list(manifest.get("lib", {}).keys()) +
-                list(manifest.get("ref", {}).keys())
-            ))
-            record["assemblies"] = {
-                "lib": manifest.get("lib", {}),
-                "ref": manifest.get("ref", {}),
-            }
-            record["hasAnalyzers"]    = bool(manifest.get("analyzers"))
-            record["hasBuildProps"]   = nuspec_path.with_suffix(".props").exists()
-            record["hasBuildTargets"] = nuspec_path.with_suffix(".targets").exists()
-        else:
-            record["targetFrameworks"] = []
-            record["assemblies"]       = {"lib": {}, "ref": {}}
-            record["hasAnalyzers"]     = False
-            record["hasBuildProps"]    = False
-            record["hasBuildTargets"]  = False
-
-        if record.get("id"):
-            pkg_ids.add(record["id"])
-        items.append(record)
-
-    catalog = {
-        "schema": {"version": "1.0", "domain": "nuget", "type": "nuspec-catalog"},
-        "meta": {
-            "collectedAtUtc": now.strftime("%Y-%m-%dT%H:%M:%SZ"),
-            "source":         "data/nuspec/",
-            "description":    "Parsed nuspec descriptors and manifests for all cached packages",
-        },
-        "stats": {
-            "nuspecCount":    len(items),
-            "packageCount":   len(pkg_ids),
-        },
-        "items": items,
+        "NUPKG_ID":          pkg_id,
+        "NUPKG_VERSION":     version,
+        "NUPKG_PATH":        str(nupkg_path),
+        "NUPKG_WORK_DIR":    str(work_dir),
+        "NUPKG_OUTPUT_PATH": output_path,
+        "NUPKG_FLAT2_BASE":  flat2_base,
     }
 
-    CATALOG_OUT.parent.mkdir(parents=True, exist_ok=True)
-    with open(CATALOG_OUT, "w", encoding="utf-8") as f:
-        json.dump(catalog, f, indent=2)
-        f.write("\n")
+    hook_lo = HOOK.lower()
+    if hook_lo.endswith(".ps1"):
+        cmd = [
+            "pwsh", "-File", HOOK,
+            "-NupkgPath",        str(nupkg_path),
+            "-PackageSearchRoot", str(work_dir),
+            "-OutputPath",        output_path,
+        ]
+    elif hook_lo.endswith(".py"):
+        cmd = ["python3", HOOK, str(nupkg_path)]
+    else:
+        cmd = [HOOK, str(nupkg_path)]
 
-    print(f"  written: {CATALOG_OUT.relative_to(REPO_ROOT)} "
-          f"({len(items)} nuspec entries, {len(pkg_ids)} packages)")
+    subprocess.run(cmd, env=env, check=False)
 
 # ── Main ──────────────────────────────────────────────────────────────────────
 
 def main() -> None:
-    now = datetime.now(timezone.utc)
     print(f"collect_nuspec.py  FORCE={FORCE}  HOOK={HOOK or '(none)'}\n")
 
-    pairs = discover_pairs()
-
-    total     = len(pairs)
-    skipped   = 0
-    downloaded = 0
-    failed    = 0
+    pairs  = discover_pairs()
+    total  = len(pairs)
+    skipped = downloaded = failed = 0
 
     for i, ((pkg_id, version), flat2_base) in enumerate(sorted(pairs.items())):
-        nuspec_path   = NUSPEC_DIR / pkg_id / f"{version}.nuspec"
-        manifest_path = NUSPEC_DIR / pkg_id / f"{version}.manifest.json"
-        props_path    = NUSPEC_DIR / pkg_id / f"{version}.props"
-        targets_path  = NUSPEC_DIR / pkg_id / f"{version}.targets"
+        if _stop:
+            break
+
+        out_dir       = NUSPEC_DIR / pkg_id
+        nuspec_path   = out_dir / f"{version}.nuspec"
+        manifest_path = out_dir / f"{version}.manifest.json"
 
         if not FORCE and nuspec_path.exists() and manifest_path.exists():
             skipped += 1
             if (i + 1) % LOG_EVERY == 0:
-                print(f"  {i+1}/{total}  skipped={skipped}  downloaded={downloaded}  failed={failed}")
+                print(f"  {i+1}/{total}  skip={skipped}  dl={downloaded}  err={failed}")
             continue
 
-        url = (f"{flat2_base}/{pkg_id.lower()}/{version}"
-               f"/{pkg_id.lower()}.{version}.nupkg")
+        # Download to a named file in a temp work dir (proper name for -PackageSearchRoot)
+        work_dir   = Path(tempfile.mkdtemp(prefix="nuspec-"))
+        nupkg_name = f"{pkg_id.lower()}.{version}.nupkg"
+        nupkg_path_temp = work_dir / nupkg_name
 
-        tmppath = stream_to_tempfile(url)
-        if tmppath is None:
+        url = f"{flat2_base}/{pkg_id.lower()}/{version}/{nupkg_name}"
+        ok  = _download(url, nupkg_path_temp)
+
+        if not ok:
             print(f"  [warn] {pkg_id} {version}: not found or download error")
+            shutil.rmtree(work_dir, ignore_errors=True)
             failed += 1
             continue
 
         try:
-            ok = extract_from_nupkg(
-                tmppath, pkg_id, version,
-                nuspec_path, manifest_path, props_path, targets_path,
-            )
+            out_dir.mkdir(parents=True, exist_ok=True)
+            ok = extract_artifacts(nupkg_path_temp, pkg_id, version, out_dir)
             if ok:
-                run_hook(tmppath, pkg_id, version, flat2_base)
+                if HOOK:
+                    resolve_runtimes(pkg_id, version, pairs, work_dir)
+                run_hook(nupkg_path_temp, work_dir, pkg_id, version, flat2_base, out_dir)
                 downloaded += 1
             else:
                 failed += 1
         finally:
-            try:
-                os.unlink(tmppath)
-            except OSError:
-                pass
+            shutil.rmtree(work_dir, ignore_errors=True)
 
         if (i + 1) % LOG_EVERY == 0:
-            print(f"  {i+1}/{total}  skipped={skipped}  downloaded={downloaded}  failed={failed}")
+            print(f"  {i+1}/{total}  skip={skipped}  dl={downloaded}  err={failed}")
 
         time.sleep(SLEEP_SECS)
 
-    print(f"\nDone: {total} pairs — "
-          f"downloaded={downloaded}  skipped={skipped}  failed={failed}")
-
-    rebuild_catalog(now)
+    print(f"\nDone: {total} pairs — dl={downloaded}  skip={skipped}  err={failed}")
+    if _stop:
+        print("Stopped early. Re-run to continue (cached files won't be re-downloaded).")
 
 
 if __name__ == "__main__":
