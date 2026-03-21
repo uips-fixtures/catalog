@@ -4,14 +4,14 @@
 
 ## Responsibility
 
-- Receives sanitised data pushed by the `catalog-private` sanitise-and-publish workflow
+- Receives sanitised data from source pipelines
+- Sanitisation (stripping local paths and internal identifiers) happens upstream, before data reaches this repo
 - Aggregation and derivative-build workflows run here against clean data
-- Do not push raw or unsanitised data directly to this repo
 
 ## Data flow
 
 ```
-catalog-private (sanitise-and-publish)
+source pipelines (sanitise before push)
       │
       ▼
 data/sources/{domain}/    ← sanitised source files
