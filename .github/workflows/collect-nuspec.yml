@@ -1,0 +1,39 @@
+name: Collect NuGet nuspec descriptors
+
+on:
+  schedule:
+    - cron: '0 1 * * *'   # daily at 01:00 UTC — after nightly collect-nuget at */6
+  workflow_dispatch:
+    inputs:
+      force:
+        description: 'Re-download all nuspec files even if cached'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180    # first run expected ~2h; 3h hard cap
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Download and extract nuspec files
+        env:
+          FORCE: ${{ inputs.force || 'false' }}
+        run: python3 scripts/collect_nuspec.py
+
+      - name: Commit if changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/nuspec/ data/sources/nuget/nuspec_catalog.json
+          if git diff --cached --quiet; then
+            echo "No changes."
+          else
+            git commit -m "chore: collect nuspec descriptors [skip ci]"
+            git push
+          fi
