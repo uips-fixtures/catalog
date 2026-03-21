@@ -1,0 +1,35 @@
+{
+  "schemaVersion": "1.0",
+  "updatedAt": "2026-03-21",
+  "feeds": [
+    {
+      "id": "uipath-official",
+      "description": "UiPath Official NuGet feed — three mirror URLs for the same feed, tried in order",
+      "type": "nuget-flat2",
+      "collect": "all",
+      "baseUrls": [
+        "https://uipath.pkgs.visualstudio.com/Public.Feeds/_packaging/UiPath-Official/nuget/v3/flat2",
+        "https://pkgs.dev.azure.com/uipath/Public.Feeds/_packaging/UiPath-Official/nuget/v3/flat2",
+        "https://api.nuget.org/v3-flatcontainer"
+      ]
+    },
+    {
+      "id": "nuget-org",
+      "description": "nuget.org v3 flat container — filtered to selected packages",
+      "type": "nuget-flat2",
+      "collect": "selected",
+      "baseUrls": [
+        "https://api.nuget.org/v3-flatcontainer"
+      ],
+      "packages": [
+        { "id": "System.Activities",      "description": "CoreWF — .NET 6+ WF runtime; version tracks Studio CoreWF target" },
+        { "id": "Microsoft.CSharp",       "description": "C# expression support in WF" },
+        { "id": "Microsoft.VisualBasic",  "description": "VB expression support in WF" },
+        { "id": "System.CodeDom",         "description": "Runtime code compilation for WF expression evaluators" },
+        { "id": "Newtonsoft.Json",        "description": "Ubiquitous serialisation — used by most UiPath packages" },
+        { "id": "NLog",                   "description": "Logging — newer UiPath packages" },
+        { "id": "log4net",                "description": "Logging — older UiPath packages" }
+      ]
+    }
+  ]
+}
