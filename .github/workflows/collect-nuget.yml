@@ -115,9 +115,9 @@ jobs:
                           "tags":           p.get("tags"),
                       })
                   total = int(data.get("totalHits", 0))
-                  print(f"  {feed['id']}: {len(packages)}/{total}")
                   skip += take
-                  if skip >= total:
+                  print(f"  {feed['id']}: fetched {len(packages)} (totalHits={total})")
+                  if len(batch) < take:  # last page — don't trust totalHits
                       break
                   time.sleep(0.3)
 
