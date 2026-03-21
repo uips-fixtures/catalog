@@ -1,0 +1,194 @@
+name: Collect NuGet feed metadata
+
+on:
+  schedule:
+    - cron: '30 */6 * * *'
+  workflow_dispatch:
+    inputs:
+      force:
+        description: 'Force write and commit even if package data unchanged'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Collect feeds
+        env:
+          FORCE: ${{ inputs.force || 'false' }}
+        run: |
+          python3 - << 'PYEOF'
+          import json, os, time, urllib.request, urllib.error
+          from datetime import datetime, timezone
+
+          now   = datetime.now(timezone.utc)
+          FORCE = os.environ.get("FORCE", "false").lower() == "true"
+
+          FEED_INDEX = "data/feeds/feed_index.json"
+          OUT_DIR    = "data/sources/nuget"
+          os.makedirs(OUT_DIR, exist_ok=True)
+
+          with open(FEED_INDEX, encoding="utf-8") as f:
+              feed_index = json.load(f)
+
+          # ── HTTP helpers ────────────────────────────────────────────────
+
+          def fetch_json(url, timeout=20):
+              req = urllib.request.Request(url, headers={
+                  "Accept": "application/json",
+                  "User-Agent": "uips-fixtures-catalog/1.0",
+              })
+              try:
+                  with urllib.request.urlopen(req, timeout=timeout) as r:
+                      return json.load(r)
+              except urllib.error.HTTPError as e:
+                  if e.code == 404:
+                      return None
+                  raise
+              except Exception:
+                  return None
+
+          def flat2_to_index(url):
+              if "/flat2" in url:
+                  return url.replace("/flat2", "/index.json")
+              if "v3-flatcontainer" in url:
+                  return "https://api.nuget.org/v3/index.json"
+              return url + "/index.json"
+
+          def resolve_service_index(base_urls):
+              for base in base_urls:
+                  idx = fetch_json(flat2_to_index(base))
+                  if idx and "resources" in idx:
+                      print(f"  resolved: {flat2_to_index(base)}")
+                      return idx, base
+              return None, None
+
+          def find_resource(service_index, type_prefix):
+              for r in service_index.get("resources", []):
+                  if r.get("@type", "").startswith(type_prefix):
+                      return r["@id"]
+              return None
+
+          # ── Idempotency check ───────────────────────────────────────────
+
+          def packages_changed(fname, new_packages):
+              """Return True if package data differs from existing file."""
+              if not os.path.exists(fname):
+                  return True
+              try:
+                  with open(fname, encoding="utf-8") as f:
+                      existing = json.load(f)
+                  return existing.get("packages") != new_packages
+              except Exception:
+                  return True
+
+          # ── Collect: all packages via search ────────────────────────────
+
+          def collect_all(feed, service_index):
+              search_url = find_resource(service_index, "SearchQueryService")
+              if not search_url:
+                  print(f"  [warn] no SearchQueryService for {feed['id']}")
+                  return []
+
+              packages, skip, take = [], 0, 100
+              while True:
+                  url = f"{search_url}?q=&take={take}&skip={skip}&prerelease=false&semVerLevel=2.0.0"
+                  data = fetch_json(url)
+                  if not data:
+                      break
+                  batch = data.get("data", [])
+                  if not batch:
+                      break
+                  for p in batch:
+                      packages.append({
+                          "id":             p.get("id"),
+                          "latestVersion":  p.get("version"),
+                          "description":    p.get("description"),
+                          "authors":        p.get("authors"),
+                          "totalDownloads": p.get("totalDownloads"),
+                          "tags":           p.get("tags"),
+                      })
+                  total = data.get("totalHits", 0)
+                  print(f"  {feed['id']}: {len(packages)}/{total}")
+                  skip += take
+                  if skip >= total:
+                      break
+                  time.sleep(0.3)
+
+              return sorted(packages, key=lambda p: (p["id"] or "").lower())
+
+          # ── Collect: selected packages via flat-container ───────────────
+
+          def collect_selected(feed, flat2_base):
+              packages = []
+              for pkg in feed.get("packages", []):
+                  pid  = pkg["id"].lower()
+                  data = fetch_json(f"{flat2_base}/{pid}/index.json")
+                  if not data:
+                      print(f"  [warn] {pkg['id']}: not found")
+                      continue
+                  versions = data.get("versions", [])
+                  packages.append({
+                      "id":            pkg["id"],
+                      "latestVersion": versions[-1] if versions else None,
+                      "versions":      versions,
+                      "description":   pkg.get("description"),
+                  })
+                  print(f"  {pkg['id']}: {len(versions)} versions, latest {versions[-1] if versions else '?'}")
+                  time.sleep(0.1)
+
+              return sorted(packages, key=lambda p: p["id"].lower())
+
+          # ── Main ────────────────────────────────────────────────────────
+
+          for feed in feed_index["feeds"]:
+              print(f"\n=== {feed['id']} ({feed['collect']}) ===")
+              service_index, flat2_base = resolve_service_index(feed["baseUrls"])
+              if not service_index:
+                  print(f"  [error] no reachable URL for {feed['id']}")
+                  continue
+
+              if feed["collect"] == "all":
+                  packages = collect_all(feed, service_index)
+              else:
+                  packages = collect_selected(feed, flat2_base)
+
+              fname = f"{OUT_DIR}/feed-{feed['id']}.json"
+
+              if not FORCE and not packages_changed(fname, packages):
+                  print(f"  unchanged — skipping write")
+                  continue
+
+              out = {
+                  "feedId":         feed["id"],
+                  "description":    feed["description"],
+                  "resolvedUrl":    flat2_base,
+                  "collectedAtUtc": now.strftime("%Y-%m-%dT%H:%M:%SZ"),
+                  "packageCount":   len(packages),
+                  "packages":       packages,
+              }
+
+              with open(fname, "w", encoding="utf-8") as f:
+                  json.dump(out, f, indent=2)
+                  f.write("\n")
+              print(f"  written: {fname} ({len(packages)} packages)")
+
+          PYEOF
+
+      - name: Commit if changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/sources/nuget/
+          if git diff --cached --quiet; then
+            echo "No changes."
+          else
+            git commit -m "chore: collect nuget feed metadata [skip ci]"
+            git push
+          fi
