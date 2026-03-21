@@ -22,7 +22,10 @@ data/aggregated/          ← single source of truth
       │
       │  publish workflow
       ▼
-dist/                     ← derivative outputs (Pages, LLM index, feeds)
+dist/                     ← derivative outputs staged here
+      │
+      ▼
+→ uips-fixtures.github.io ← pushed by publish workflow, served as GitHub Pages
 ```
 
 ## Structure
@@ -35,7 +38,7 @@ data/
     mcve/           ← MCVE repo metadata
     interactions/   ← stars, forks, PR activity
   aggregated/       ← built by aggregate workflow, do not edit manually
-dist/               ← built by publish workflow, do not edit manually
+dist/               ← built by publish workflow, then pushed to uips-fixtures.github.io
 schemas/            ← JSON Schema for each domain and aggregated output
 ```
 
