@@ -88,14 +88,21 @@ jobs:
               except Exception:
                   return True
 
-          # ── Collect: all packages via search ────────────────────────────
+          # ── Collect: all packages via search + all versions via flat2 ───
 
-          def collect_all(feed, service_index):
+          def get_all_versions(flat2_base, package_id):
+              data = fetch_json(f"{flat2_base}/{package_id.lower()}/index.json")
+              if data:
+                  return data.get("versions", [])
+              return []
+
+          def collect_all(feed, service_index, flat2_base):
               search_url = find_resource(service_index, "SearchQueryService")
               if not search_url:
                   print(f"  [warn] no SearchQueryService for {feed['id']}")
                   return []
 
+              # Phase 1: enumerate all packages via search
               packages, skip, take = [], 0, 100
               while True:
                   url = f"{search_url}?q=&take={take}&skip={skip}&prerelease=false&semVerLevel=2.0.0"
@@ -113,14 +120,29 @@ jobs:
                           "authors":        p.get("authors"),
                           "totalDownloads": p.get("totalDownloads"),
                           "tags":           p.get("tags"),
+                          "versions":       [],
                       })
                   total = int(data.get("totalHits", 0))
                   skip += take
-                  print(f"  {feed['id']}: fetched {len(packages)} (totalHits={total})")
-                  if len(batch) < take:  # last page — don't trust totalHits
+                  print(f"  {feed['id']}: enumerated {len(packages)} packages (totalHits={total})")
+                  if len(batch) < take:
                       break
                   time.sleep(0.3)
 
+              # Phase 2: fetch all versions per package via flat2
+              print(f"  fetching versions for {len(packages)} packages...")
+              total_pairs = 0
+              for i, p in enumerate(packages):
+                  versions = get_all_versions(flat2_base, p["id"])
+                  p["versions"]      = versions
+                  p["latestVersion"] = versions[-1] if versions else p["latestVersion"]
+                  p["versionCount"]  = len(versions)
+                  total_pairs += len(versions)
+                  if (i + 1) % 50 == 0:
+                      print(f"  {i+1}/{len(packages)} packages, {total_pairs} (pkg,version) pairs so far")
+                  time.sleep(0.1)
+
+              print(f"  done: {len(packages)} packages, {total_pairs} (pkg,version) pairs total")
               return sorted(packages, key=lambda p: (p["id"] or "").lower())
 
           # ── Collect: selected packages via flat-container ───────────────
@@ -137,6 +159,7 @@ jobs:
                   packages.append({
                       "id":            pkg["id"],
                       "latestVersion": versions[-1] if versions else None,
+                      "versionCount":  len(versions),
                       "versions":      versions,
                       "description":   pkg.get("description"),
                   })
@@ -155,7 +178,7 @@ jobs:
                   continue
 
               if feed["collect"] == "all":
-                  packages = collect_all(feed, service_index)
+                  packages = collect_all(feed, service_index, flat2_base)
               else:
                   packages = collect_selected(feed, flat2_base)
 
