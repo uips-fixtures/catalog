@@ -85,10 +85,20 @@ jobs:
           out.sort(key=lambda x: x["name"])
 
           payload = {
-              "collectedAtUtc": now.strftime("%Y-%m-%dT%H:%M:%SZ"),
-              "org":            org,
-              "repoCount":      len(out),
-              "repos":          out,
+              "schema": {
+                  "version": "1.0",
+                  "domain":  "org",
+                  "type":    "repos",
+              },
+              "meta": {
+                  "collectedAtUtc": now.strftime("%Y-%m-%dT%H:%M:%SZ"),
+                  "source":         f"https://api.github.com/orgs/{org}/repos",
+                  "description":    f"Public repositories in the {org} GitHub organisation",
+              },
+              "stats": {
+                  "repoCount": len(out),
+              },
+              "items": out,
           }
 
           path = "data/sources/org/repos.json"

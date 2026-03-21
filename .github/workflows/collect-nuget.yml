@@ -185,16 +185,27 @@ jobs:
               fname = f"{OUT_DIR}/feed-{feed['id']}.json"
 
               if not FORCE and not packages_changed(fname, packages):
-                  print(f"  unchanged — skipping write")
+                  print(f"  unchanged — skipping write")  # collectedAtUtc not updated
                   continue
 
+              version_pairs = sum(p.get("versionCount", len(p.get("versions", []))) for p in packages)
+
               out = {
-                  "feedId":         feed["id"],
-                  "description":    feed["description"],
-                  "resolvedUrl":    flat2_base,
-                  "collectedAtUtc": now.strftime("%Y-%m-%dT%H:%M:%SZ"),
-                  "packageCount":   len(packages),
-                  "packages":       packages,
+                  "schema": {
+                      "version": "1.0",
+                      "domain":  "nuget",
+                      "type":    "feed-index",
+                  },
+                  "meta": {
+                      "collectedAtUtc": now.strftime("%Y-%m-%dT%H:%M:%SZ"),
+                      "source":         flat2_base,
+                      "description":    feed["description"],
+                  },
+                  "stats": {
+                      "packageCount":    len(packages),
+                      "versionPairCount": version_pairs,
+                  },
+                  "items": packages,
               }
 
               with open(fname, "w", encoding="utf-8") as f:
