@@ -15,14 +15,34 @@
     },
     {
       "id": "nuget-org",
-      "description": "nuget.org v3 flat container — filtered to selected packages",
+      "description": "nuget.org v3 flat container — UiPath dependency chain packages not exclusively in the UiPath feed",
       "type": "nuget-flat2",
       "collect": "selected",
       "baseUrls": [
         "https://api.nuget.org/v3-flatcontainer"
       ],
       "packages": [
-        { "id": "CoreWF", "description": "CoreWF — .NET 6+ WF runtime; version tracks Studio CoreWF target. Not proxied in UiPath feed — nuget.org only." }
+        { "id": "CoreWF",                                        "description": "Workflow runtime — CoreWF, .NET 6+ port of WF (System.Activities); version tracks Studio CoreWF target" },
+        { "id": "Microsoft.CSharp",                             "description": "Workflow runtime — C# expression support in WF" },
+        { "id": "Microsoft.VisualBasic",                        "description": "Workflow runtime — VB expression support in WF" },
+        { "id": "System.CodeDom",                               "description": "Workflow runtime — runtime code compilation used by WF expression evaluators" },
+        { "id": "Selenium.WebDriver",                           "description": "UI automation — browser automation base library" },
+        { "id": "Microsoft.Web.WebView2",                       "description": "UI automation — Edge/Chromium embedded browser control" },
+        { "id": "Microsoft.Office.Interop.Excel",               "description": "Office interop — Excel COM interop (net461 only)" },
+        { "id": "Microsoft.Office.Interop.Word",                "description": "Office interop — Word COM interop (net461 only)" },
+        { "id": "Microsoft.Office.Interop.Outlook",             "description": "Office interop — Outlook COM interop (net461 only)" },
+        { "id": "Newtonsoft.Json",                              "description": "Infrastructure — ubiquitous JSON serialization" },
+        { "id": "log4net",                                      "description": "Infrastructure — logging used by older UiPath packages" },
+        { "id": "NLog",                                         "description": "Infrastructure — logging used by newer UiPath packages" },
+        { "id": "Microsoft.Extensions.DependencyInjection",     "description": "Infrastructure — DI container" },
+        { "id": "Microsoft.Extensions.DependencyInjection.Abstractions", "description": "Infrastructure — DI abstractions" },
+        { "id": "Microsoft.Extensions.Configuration",           "description": "Infrastructure — configuration system" },
+        { "id": "Microsoft.Extensions.Configuration.Abstractions", "description": "Infrastructure — configuration abstractions" },
+        { "id": "Microsoft.Extensions.Hosting",                 "description": "Infrastructure — generic host" },
+        { "id": "Microsoft.Extensions.Hosting.Abstractions",    "description": "Infrastructure — hosting abstractions" },
+        { "id": "Microsoft.Extensions.Logging",                 "description": "Infrastructure — logging integration" },
+        { "id": "Microsoft.Extensions.Logging.Abstractions",    "description": "Infrastructure — logging abstractions" },
+        { "id": "Microsoft.Extensions.Options",                 "description": "Infrastructure — options pattern" }
       ]
     }
   ]
