@@ -327,24 +327,24 @@ def main() -> None:
                 print(f"  {i+1}/{total}  skip={skipped}  dl={downloaded}  err={failed}")
             continue
 
-        nupkg_name = f"{pkg_id.lower()}.{version}.nupkg"
-        url        = f"{flat2_base}/{pkg_id.lower()}/{version}/{nupkg_name}"
+        nupkg_name      = f"{pkg_id.lower()}.{version}.nupkg"
+        url             = f"{flat2_base}/{pkg_id.lower()}/{version}/{nupkg_name}"
+        work_dir:  Path | None = None
+        nupkg_disk:Path | None = None
 
         if HOOK:
             # Hook needs file on disk — use named temp work dir
-            work_dir        = Path(tempfile.mkdtemp(prefix="nuspec-"))
-            nupkg_path_disk = work_dir / nupkg_name
-            ok = _download_to_file(url, nupkg_path_disk)
-            if not ok:
+            work_dir   = Path(tempfile.mkdtemp(prefix="nuspec-"))
+            nupkg_disk = work_dir / nupkg_name
+            if not _download_to_file(url, nupkg_disk):
                 print(f"  [warn] {pkg_id} {version}: not found or download error")
                 shutil.rmtree(work_dir, ignore_errors=True)
                 failed += 1
                 continue
-            nupkg_src: bytes | Path = nupkg_path_disk
+            nupkg_src: bytes | Path = nupkg_disk
         else:
             # No hook — load into memory, no temp file
-            work_dir = None
-            data     = _fetch(url)
+            data = _fetch(url)
             if data is None:
                 print(f"  [warn] {pkg_id} {version}: not found or download error")
                 failed += 1
@@ -355,9 +355,9 @@ def main() -> None:
             out_dir.mkdir(parents=True, exist_ok=True)
             ok = extract_artifacts(nupkg_src, pkg_id, version, out_dir)
             if ok:
-                if HOOK and work_dir:
+                if work_dir and nupkg_disk:
                     resolve_runtimes(pkg_id, version, all_pairs, work_dir)
-                    run_hook(nupkg_path_disk, work_dir, pkg_id, version, flat2_base, out_dir)
+                    run_hook(nupkg_disk, work_dir, pkg_id, version, flat2_base, out_dir)
                 downloaded += 1
             else:
                 failed += 1
