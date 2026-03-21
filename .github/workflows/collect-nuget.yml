@@ -114,7 +114,7 @@ jobs:
                           "totalDownloads": p.get("totalDownloads"),
                           "tags":           p.get("tags"),
                       })
-                  total = data.get("totalHits", 0)
+                  total = int(data.get("totalHits", 0))
                   print(f"  {feed['id']}: {len(packages)}/{total}")
                   skip += take
                   if skip >= total:
