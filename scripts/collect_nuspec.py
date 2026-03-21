@@ -35,6 +35,7 @@ Stop: Ctrl-C / SIGTERM finishes the current download then exits cleanly.
 """
 
 import glob
+import io
 import json
 import os
 import shutil
@@ -54,15 +55,16 @@ REPO_ROOT  = Path(__file__).resolve().parent.parent
 FEEDS_DIR  = REPO_ROOT / "data" / "sources" / "nuget"
 NUSPEC_DIR = REPO_ROOT / "data" / "nuspec"
 
-FORCE = os.environ.get("FORCE", "false").lower() == "true"
-HOOK  = os.environ.get("NUPKG_HOOK", "")
+FORCE    = os.environ.get("FORCE", "false").lower() == "true"
+HOOK     = os.environ.get("NUPKG_HOOK", "")
+# Comma-separated package id filter, e.g. PACKAGES=UiPath.UIAutomation.Activities,CoreWF
+PACKAGES = [p.strip() for p in os.environ.get("PACKAGES", "").split(",") if p.strip()]
 
 # Never call the hook on CI (GitHub Actions sets CI=true)
 if os.environ.get("CI", "").lower() in ("true", "1", "yes") and HOOK:
     print(f"[info] NUPKG_HOOK ignored on CI: {HOOK}")
     HOOK = ""
 
-CHUNK      = 65_536   # 64 KB chunks — no RAM spike
 SLEEP_SECS = 0.05
 LOG_EVERY  = 100
 
@@ -113,23 +115,32 @@ def discover_pairs() -> dict[tuple[str, str], str]:
 
 # ── HTTP download ─────────────────────────────────────────────────────────────
 
-def _download(url: str, dest: Path) -> bool:
-    """Stream url to dest. Returns True on success."""
-    req = urllib.request.Request(url, headers={"User-Agent": "uips-fixtures-catalog/1.0"})
+_HEADERS = {"User-Agent": "uips-fixtures-catalog/1.0"}
+
+
+def _fetch(url: str) -> bytes | None:
+    """Download url into memory. Returns bytes or None on 404/error."""
+    req = urllib.request.Request(url, headers=_HEADERS)
     try:
         with urllib.request.urlopen(req, timeout=60) as resp:
-            with open(dest, "wb") as f:
-                while chunk := resp.read(CHUNK):
-                    f.write(chunk)
-        return True
+            return resp.read()
     except urllib.error.HTTPError as e:
         if e.code == 404:
-            return False
+            return None
         print(f"  [http {e.code}] {url}")
-        return False
+        return None
     except Exception as e:
         print(f"  [error] {url}: {e}")
+        return None
+
+
+def _download_to_file(url: str, dest: Path) -> bool:
+    """Download url to dest file on disk. Returns True on success."""
+    data = _fetch(url)
+    if data is None:
         return False
+    dest.write_bytes(data)
+    return True
 
 # ── Runtime resolution ────────────────────────────────────────────────────────
 
@@ -162,7 +173,7 @@ def resolve_runtimes(
         if dest.exists():
             continue
         url = f"{rbase}/{rid.lower()}/{rver}/{rid.lower()}.{rver}.nupkg"
-        ok  = _download(url, dest)
+        ok  = _download_to_file(url, dest)
         if ok:
             print(f"    runtime: {rid} {rver}")
 
@@ -174,14 +185,16 @@ def _classify(name: str) -> str:
 
 
 def extract_artifacts(
-    nupkg_path: Path,
+    nupkg: bytes | Path,
     pkg_id: str,
     version: str,
     out_dir: Path,
 ) -> bool:
-    """Single ZIP pass: extract nuspec, manifest, build props/targets."""
+    """Single ZIP pass: extract nuspec, manifest, build props/targets.
+    nupkg may be raw bytes (in-memory) or a Path to a file on disk."""
     try:
-        with zipfile.ZipFile(nupkg_path, "r") as zf:
+        source = io.BytesIO(nupkg) if isinstance(nupkg, bytes) else nupkg
+        with zipfile.ZipFile(source, "r") as zf:
             entries = zf.infolist()
 
             # nuspec
@@ -286,10 +299,18 @@ def run_hook(
 # ── Main ──────────────────────────────────────────────────────────────────────
 
 def main() -> None:
-    print(f"collect_nuspec.py  FORCE={FORCE}  HOOK={HOOK or '(none)'}\n")
+    pkg_filter = {p.lower() for p in PACKAGES}
+    print(f"collect_nuspec.py  FORCE={FORCE}  HOOK={HOOK or '(none)'}"
+          + (f"  PACKAGES={','.join(PACKAGES)}" if PACKAGES else "") + "\n")
 
-    pairs  = discover_pairs()
-    total  = len(pairs)
+    all_pairs = discover_pairs()
+
+    # Apply package filter if set
+    pairs = {k: v for k, v in all_pairs.items() if not pkg_filter or k[0].lower() in pkg_filter}
+    if pkg_filter:
+        print(f"Filtered to {len(pairs)} pairs for: {', '.join(PACKAGES)}\n")
+
+    total   = len(pairs)
     skipped = downloaded = failed = 0
 
     for i, ((pkg_id, version), flat2_base) in enumerate(sorted(pairs.items())):
@@ -306,32 +327,43 @@ def main() -> None:
                 print(f"  {i+1}/{total}  skip={skipped}  dl={downloaded}  err={failed}")
             continue
 
-        # Download to a named file in a temp work dir (proper name for -PackageSearchRoot)
-        work_dir   = Path(tempfile.mkdtemp(prefix="nuspec-"))
         nupkg_name = f"{pkg_id.lower()}.{version}.nupkg"
-        nupkg_path_temp = work_dir / nupkg_name
+        url        = f"{flat2_base}/{pkg_id.lower()}/{version}/{nupkg_name}"
 
-        url = f"{flat2_base}/{pkg_id.lower()}/{version}/{nupkg_name}"
-        ok  = _download(url, nupkg_path_temp)
-
-        if not ok:
-            print(f"  [warn] {pkg_id} {version}: not found or download error")
-            shutil.rmtree(work_dir, ignore_errors=True)
-            failed += 1
-            continue
+        if HOOK:
+            # Hook needs file on disk — use named temp work dir
+            work_dir        = Path(tempfile.mkdtemp(prefix="nuspec-"))
+            nupkg_path_disk = work_dir / nupkg_name
+            ok = _download_to_file(url, nupkg_path_disk)
+            if not ok:
+                print(f"  [warn] {pkg_id} {version}: not found or download error")
+                shutil.rmtree(work_dir, ignore_errors=True)
+                failed += 1
+                continue
+            nupkg_src: bytes | Path = nupkg_path_disk
+        else:
+            # No hook — load into memory, no temp file
+            work_dir = None
+            data     = _fetch(url)
+            if data is None:
+                print(f"  [warn] {pkg_id} {version}: not found or download error")
+                failed += 1
+                continue
+            nupkg_src = data
 
         try:
             out_dir.mkdir(parents=True, exist_ok=True)
-            ok = extract_artifacts(nupkg_path_temp, pkg_id, version, out_dir)
+            ok = extract_artifacts(nupkg_src, pkg_id, version, out_dir)
             if ok:
-                if HOOK:
-                    resolve_runtimes(pkg_id, version, pairs, work_dir)
-                run_hook(nupkg_path_temp, work_dir, pkg_id, version, flat2_base, out_dir)
+                if HOOK and work_dir:
+                    resolve_runtimes(pkg_id, version, all_pairs, work_dir)
+                    run_hook(nupkg_path_disk, work_dir, pkg_id, version, flat2_base, out_dir)
                 downloaded += 1
             else:
                 failed += 1
         finally:
-            shutil.rmtree(work_dir, ignore_errors=True)
+            if work_dir:
+                shutil.rmtree(work_dir, ignore_errors=True)
 
         if (i + 1) % LOG_EVERY == 0:
             print(f"  {i+1}/{total}  skip={skipped}  dl={downloaded}  err={failed}")
