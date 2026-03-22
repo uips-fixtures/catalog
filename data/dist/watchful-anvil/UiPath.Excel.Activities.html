@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>UiPath.Excel.Activities 3.4.1 — Activity Reference</title>
-  <!-- uips-fixtures catalog v0.1 | generated 2026-03-22T09:37:07Z -->
+  <!-- uips-fixtures catalog v0.1 | generated 2026-03-22T15:21:21Z -->
   <style>
     :root {
       --base3:  #fdf6e3; --base2: #eee8d5; --base1: #93a1a1;
@@ -78,7 +78,7 @@
   <div class="content">
     <p class="gen-meta">
       16 activities &middot;
-      uips-fixtures catalog v0.1 &middot; generated 2026-03-22T09:37:07Z
+      uips-fixtures catalog v0.1 &middot; generated 2026-03-22T15:21:21Z
     </p>
     <div class="activity" id="UiPath.CSV.Activities.ReadCsvFile@UiPath.Excel.Activities/3.4.1">
       <div class="activity-name">Read CSV</div>
@@ -88,30 +88,23 @@
       <table>
         <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Description</th></tr>
         <tr>
-          <td>DataTable</td>
-          <td><span class="dir-out">Out</span></td>
-          <td><code>OutArgument&lt;Data.DataTable&gt;</code></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>IgnoreQuotes</td>
-          <td><span class="dir-in">In</span></td>
-          <td><code>InArgument&lt;Boolean&gt;</code></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
           <td>FilePath</td>
           <td><span class="dir-in">In</span></td>
           <td><code>InArgument&lt;String&gt;</code></td>
-          <td></td>
+          <td><span class="req">&#10003;</span></td>
           <td></td>
         </tr>
         <tr>
           <td>PathResource</td>
           <td><span class="dir-in">In</span></td>
           <td><code>InArgument&lt;UiPath.Platform.ResourceHandling.IResource&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>DataTable</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;Data.DataTable&gt;</code></td>
           <td></td>
           <td></td>
         </tr>
@@ -122,10 +115,23 @@
           <td></td>
           <td></td>
         </tr>
+        <tr>
+          <td>IgnoreQuotes</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Boolean&gt;</code></td>
+          <td></td>
+          <td></td>
+        </tr>
       </table>
       <p class="members-heading">Properties / child slots</p>
       <table>
         <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Delimitator</td>
+          <td>property</td>
+          <td><code>UiPath.CSV.DelimitatorOptions</code></td>
+          <td></td>
+        </tr>
         <tr>
           <td>IncludeColumnNames</td>
           <td>property</td>
@@ -133,9 +139,15 @@
           <td></td>
         </tr>
         <tr>
-          <td>DelimitatorForViewModel</td>
+          <td>DisplayName</td>
           <td>property</td>
-          <td><code>UiPath.CSV.Activities.DelimiterOptions</code></td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Id</td>
+          <td>property</td>
+          <td><code>String</code></td>
           <td></td>
         </tr>
       </table>
@@ -148,24 +160,24 @@
       <table>
         <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Description</th></tr>
         <tr>
-          <td>DataTable</td>
-          <td><span class="dir-in">In</span></td>
-          <td><code>InArgument&lt;Data.DataTable&gt;</code></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
           <td>FilePath</td>
           <td><span class="dir-in">In</span></td>
           <td><code>InArgument&lt;String&gt;</code></td>
-          <td></td>
+          <td><span class="req">&#10003;</span></td>
           <td></td>
         </tr>
         <tr>
           <td>PathResource</td>
           <td><span class="dir-in">In</span></td>
           <td><code>InArgument&lt;UiPath.Platform.ResourceHandling.IResource&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
           <td></td>
+        </tr>
+        <tr>
+          <td>DataTable</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Data.DataTable&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
           <td></td>
         </tr>
         <tr>
@@ -186,6 +198,12 @@
           <td></td>
         </tr>
         <tr>
+          <td>Delimitator</td>
+          <td>property</td>
+          <td><code>UiPath.CSV.DelimitatorOptions</code></td>
+          <td></td>
+        </tr>
+        <tr>
           <td>AddHeaders</td>
           <td>property</td>
           <td><code>Boolean</code></td>
@@ -198,18 +216,24 @@
           <td></td>
         </tr>
         <tr>
-          <td>DelimitatorForViewModel</td>
+          <td>DisplayName</td>
           <td>property</td>
-          <td><code>UiPath.CSV.Activities.DelimiterOptions</code></td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Id</td>
+          <td>property</td>
+          <td><code>String</code></td>
           <td></td>
         </tr>
       </table>
     </div>
     <div class="activity" id="UiPath.Excel.Activities.ReadRange@UiPath.Excel.Activities/3.4.1">
-      <div class="activity-name">ReadRange</div>
+      <div class="activity-name">Read Range Workbook</div>
       <div class="activity-full">UiPath.Excel.Activities.ReadRange</div>
       <span class="badge badge-src">UiPath.Excel.Activities 3.4.1</span>
-<span class="badge badge-cat">Excel</span><p class="activity-desc">Reads the value of a range in Range Excel Format from a spreadsheet as a DataTable. If Range isn&#39;t specified, the whole spreadsheet is read. If range is specified as a cell, the whole spreadsheet starting from that cell is read.</p>      <p class="members-heading">Arguments</p>
+<span class="badge badge-cat">Excel</span><p class="activity-desc">Reads the value of a range in Range Excel Format from a spreadsheet as a DataTable. If Range isn&amp;apos;t specified, the whole spreadsheet is read. If range is specified as a cell, the whole spreadsheet starting from that cell is read</p>      <p class="members-heading">Arguments</p>
       <table>
         <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Description</th></tr>
         <tr>
@@ -227,6 +251,13 @@
           <td></td>
         </tr>
         <tr>
+          <td>SheetName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+        </tr>
+        <tr>
           <td>Workbook</td>
           <td><span class="dir-in">In</span></td>
           <td><code>InArgument&lt;UiPath.Excel.Workbook&gt;</code></td>
@@ -237,25 +268,18 @@
           <td>WorkbookPath</td>
           <td><span class="dir-in">In</span></td>
           <td><code>InArgument&lt;String&gt;</code></td>
-          <td></td>
+          <td><span class="req">&#10003;</span></td>
           <td></td>
         </tr>
         <tr>
           <td>WorkbookPathResource</td>
           <td><span class="dir-in">In</span></td>
           <td><code>InArgument&lt;UiPath.Platform.ResourceHandling.IResource&gt;</code></td>
-          <td></td>
+          <td><span class="req">&#10003;</span></td>
           <td></td>
         </tr>
         <tr>
           <td>Password</td>
-          <td><span class="dir-in">In</span></td>
-          <td><code>InArgument&lt;String&gt;</code></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>SheetName</td>
           <td><span class="dir-in">In</span></td>
           <td><code>InArgument&lt;String&gt;</code></td>
           <td></td>
@@ -277,13 +301,25 @@
           <td><code>Boolean</code></td>
           <td></td>
         </tr>
+        <tr>
+          <td>DisplayName</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Id</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
       </table>
     </div>
     <div class="activity" id="UiPath.Excel.Activities.WriteRange@UiPath.Excel.Activities/3.4.1">
-      <div class="activity-name">WriteRange</div>
+      <div class="activity-name">Write Range Workbook</div>
       <div class="activity-full">UiPath.Excel.Activities.WriteRange</div>
       <span class="badge badge-src">UiPath.Excel.Activities 3.4.1</span>
-<span class="badge badge-cat">Excel</span><p class="activity-desc">Writes the data from a DataTable in a spreadsheet starting from StartingCell. If StartingCell isn&#39;t specified, the writing begins at A1 cell. If the sheet does not exist, a new one is created with the SheetName value. All cells within the DataTable range are overwritten. Changes are immediately saved.</p>      <p class="members-heading">Arguments</p>
+<span class="badge badge-cat">Excel</span><p class="activity-desc">Writes the data from a DataTable in a spreadsheet starting from StartingCell. If StartingCell isn&amp;apos;t specified, the writing begins at A1 cell. If the sheet does not exist, a new one is created with the SheetName value. All cells within the DataTable range are overwritten. Changes are immediately saved</p>      <p class="members-heading">Arguments</p>
       <table>
         <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Description</th></tr>
         <tr>
@@ -297,7 +333,14 @@
           <td>DataTable</td>
           <td><span class="dir-in">In</span></td>
           <td><code>InArgument&lt;Data.DataTable&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
           <td></td>
+        </tr>
+        <tr>
+          <td>SheetName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
           <td></td>
         </tr>
         <tr>
@@ -311,25 +354,18 @@
           <td>WorkbookPath</td>
           <td><span class="dir-in">In</span></td>
           <td><code>InArgument&lt;String&gt;</code></td>
-          <td></td>
+          <td><span class="req">&#10003;</span></td>
           <td></td>
         </tr>
         <tr>
           <td>WorkbookPathResource</td>
           <td><span class="dir-in">In</span></td>
           <td><code>InArgument&lt;UiPath.Platform.ResourceHandling.IResource&gt;</code></td>
-          <td></td>
+          <td><span class="req">&#10003;</span></td>
           <td></td>
         </tr>
         <tr>
           <td>Password</td>
-          <td><span class="dir-in">In</span></td>
-          <td><code>InArgument&lt;String&gt;</code></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>SheetName</td>
           <td><span class="dir-in">In</span></td>
           <td><code>InArgument&lt;String&gt;</code></td>
           <td></td>
@@ -345,27 +381,46 @@
           <td><code>Boolean</code></td>
           <td></td>
         </tr>
+        <tr>
+          <td>DisplayName</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Id</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
       </table>
     </div>
     <div class="activity" id="UiPath.Excel.Activities.ReadCell@UiPath.Excel.Activities/3.4.1">
-      <div class="activity-name">ReadCell</div>
+      <div class="activity-name">Read Cell Workbook</div>
       <div class="activity-full">UiPath.Excel.Activities.ReadCell</div>
       <span class="badge badge-src">UiPath.Excel.Activities 3.4.1</span>
-<span class="badge badge-cat">Excel</span><p class="activity-desc">Reads the value of a cell from a spreadsheet as a string.</p>      <p class="members-heading">Arguments</p>
+<span class="badge badge-cat">Excel</span><p class="activity-desc">Reads the value of a cell from a spreadsheet as a string</p>      <p class="members-heading">Arguments</p>
       <table>
         <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Description</th></tr>
         <tr>
           <td>Cell</td>
           <td><span class="dir-in">In</span></td>
           <td><code>InArgument&lt;String&gt;</code></td>
-          <td></td>
+          <td><span class="req">&#10003;</span></td>
           <td></td>
         </tr>
         <tr>
           <td>Result</td>
           <td><span class="dir-out">Out</span></td>
-          <td><code>DesignViewModels.DesignOutArgument</code></td>
+          <td><code>OutArgument</code></td>
           <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>SheetName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
           <td></td>
         </tr>
         <tr>
@@ -379,25 +434,18 @@
           <td>WorkbookPath</td>
           <td><span class="dir-in">In</span></td>
           <td><code>InArgument&lt;String&gt;</code></td>
-          <td></td>
+          <td><span class="req">&#10003;</span></td>
           <td></td>
         </tr>
         <tr>
           <td>WorkbookPathResource</td>
           <td><span class="dir-in">In</span></td>
           <td><code>InArgument&lt;UiPath.Platform.ResourceHandling.IResource&gt;</code></td>
-          <td></td>
+          <td><span class="req">&#10003;</span></td>
           <td></td>
         </tr>
         <tr>
           <td>Password</td>
-          <td><span class="dir-in">In</span></td>
-          <td><code>InArgument&lt;String&gt;</code></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>SheetName</td>
           <td><span class="dir-in">In</span></td>
           <td><code>InArgument&lt;String&gt;</code></td>
           <td></td>
@@ -413,20 +461,32 @@
           <td><code>Boolean</code></td>
           <td></td>
         </tr>
+        <tr>
+          <td>DisplayName</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Id</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
       </table>
     </div>
     <div class="activity" id="UiPath.Excel.Activities.ReadCellFormula@UiPath.Excel.Activities/3.4.1">
-      <div class="activity-name">ReadCellFormula</div>
+      <div class="activity-name">Read Cell Formula Workbook</div>
       <div class="activity-full">UiPath.Excel.Activities.ReadCellFormula</div>
       <span class="badge badge-src">UiPath.Excel.Activities 3.4.1</span>
-<span class="badge badge-cat">Excel</span><p class="activity-desc">Reads the formula of a cell from a spreadsheet as a string.</p>      <p class="members-heading">Arguments</p>
+<span class="badge badge-cat">Excel</span><p class="activity-desc">Reads the formula of a cell from a spreadsheet as a string</p>      <p class="members-heading">Arguments</p>
       <table>
         <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Description</th></tr>
         <tr>
           <td>Cell</td>
           <td><span class="dir-in">In</span></td>
           <td><code>InArgument&lt;String&gt;</code></td>
-          <td></td>
+          <td><span class="req">&#10003;</span></td>
           <td></td>
         </tr>
         <tr>
@@ -437,6 +497,13 @@
           <td></td>
         </tr>
         <tr>
+          <td>SheetName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+        </tr>
+        <tr>
           <td>Workbook</td>
           <td><span class="dir-in">In</span></td>
           <td><code>InArgument&lt;UiPath.Excel.Workbook&gt;</code></td>
@@ -447,14 +514,14 @@
           <td>WorkbookPath</td>
           <td><span class="dir-in">In</span></td>
           <td><code>InArgument&lt;String&gt;</code></td>
-          <td></td>
+          <td><span class="req">&#10003;</span></td>
           <td></td>
         </tr>
         <tr>
           <td>WorkbookPathResource</td>
           <td><span class="dir-in">In</span></td>
           <td><code>InArgument&lt;UiPath.Platform.ResourceHandling.IResource&gt;</code></td>
-          <td></td>
+          <td><span class="req">&#10003;</span></td>
           <td></td>
         </tr>
         <tr>
@@ -464,34 +531,50 @@
           <td></td>
           <td></td>
         </tr>
+      </table>
+      <p class="members-heading">Properties / child slots</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
         <tr>
-          <td>SheetName</td>
-          <td><span class="dir-in">In</span></td>
-          <td><code>InArgument&lt;String&gt;</code></td>
+          <td>DisplayName</td>
+          <td>property</td>
+          <td><code>String</code></td>
           <td></td>
+        </tr>
+        <tr>
+          <td>Id</td>
+          <td>property</td>
+          <td><code>String</code></td>
           <td></td>
         </tr>
       </table>
     </div>
     <div class="activity" id="UiPath.Excel.Activities.WriteCell@UiPath.Excel.Activities/3.4.1">
-      <div class="activity-name">WriteCell</div>
+      <div class="activity-name">Write Cell Workbook</div>
       <div class="activity-full">UiPath.Excel.Activities.WriteCell</div>
       <span class="badge badge-src">UiPath.Excel.Activities 3.4.1</span>
-<span class="badge badge-cat">Excel</span><p class="activity-desc">Writes the Text value into a cell from a spreadsheet. If the sheet does not exist, a new one is created with the SheetName value. If a value exists, it is overwritten. Changes are immediately saved.</p>      <p class="members-heading">Arguments</p>
+<span class="badge badge-cat">Excel</span><p class="activity-desc">Writes the Text value into a cell from a spreadsheet. If the sheet does not exist, a new one is created with the SheetName value. If a value exists, it is overwritten. Changes are immediately saved</p>      <p class="members-heading">Arguments</p>
       <table>
         <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Description</th></tr>
         <tr>
           <td>Cell</td>
           <td><span class="dir-in">In</span></td>
           <td><code>InArgument&lt;String&gt;</code></td>
-          <td></td>
+          <td><span class="req">&#10003;</span></td>
           <td></td>
         </tr>
         <tr>
           <td>Text</td>
           <td><span class="dir-in">In</span></td>
           <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
           <td></td>
+        </tr>
+        <tr>
+          <td>SheetName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
           <td></td>
         </tr>
         <tr>
@@ -505,14 +588,14 @@
           <td>WorkbookPath</td>
           <td><span class="dir-in">In</span></td>
           <td><code>InArgument&lt;String&gt;</code></td>
-          <td></td>
+          <td><span class="req">&#10003;</span></td>
           <td></td>
         </tr>
         <tr>
           <td>WorkbookPathResource</td>
           <td><span class="dir-in">In</span></td>
           <td><code>InArgument&lt;UiPath.Platform.ResourceHandling.IResource&gt;</code></td>
-          <td></td>
+          <td><span class="req">&#10003;</span></td>
           <td></td>
         </tr>
         <tr>
@@ -522,27 +605,43 @@
           <td></td>
           <td></td>
         </tr>
+      </table>
+      <p class="members-heading">Properties / child slots</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
         <tr>
-          <td>SheetName</td>
-          <td><span class="dir-in">In</span></td>
-          <td><code>InArgument&lt;String&gt;</code></td>
+          <td>DisplayName</td>
+          <td>property</td>
+          <td><code>String</code></td>
           <td></td>
+        </tr>
+        <tr>
+          <td>Id</td>
+          <td>property</td>
+          <td><code>String</code></td>
           <td></td>
         </tr>
       </table>
     </div>
     <div class="activity" id="UiPath.Excel.Activities.AppendRange@UiPath.Excel.Activities/3.4.1">
-      <div class="activity-name">AppendRange</div>
+      <div class="activity-name">Append Range Workbook</div>
       <div class="activity-full">UiPath.Excel.Activities.AppendRange</div>
       <span class="badge badge-src">UiPath.Excel.Activities 3.4.1</span>
-<span class="badge badge-cat">Excel</span><p class="activity-desc">Appends the data from a DataTable to a spreadsheet. If the sheet does not exist, a new one is created with the SheetName value. Changes are immediately saved.</p>      <p class="members-heading">Arguments</p>
+<span class="badge badge-cat">Excel</span><p class="activity-desc">Appends the data from a DataTable to a spreadsheet. If the sheet does not exist, a new one is created with the SheetName value. Changes are immediately saved</p>      <p class="members-heading">Arguments</p>
       <table>
         <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Description</th></tr>
         <tr>
           <td>DataTable</td>
           <td><span class="dir-in">In</span></td>
           <td><code>InArgument&lt;Data.DataTable&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
           <td></td>
+        </tr>
+        <tr>
+          <td>SheetName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
           <td></td>
         </tr>
         <tr>
@@ -556,14 +655,14 @@
           <td>WorkbookPath</td>
           <td><span class="dir-in">In</span></td>
           <td><code>InArgument&lt;String&gt;</code></td>
-          <td></td>
+          <td><span class="req">&#10003;</span></td>
           <td></td>
         </tr>
         <tr>
           <td>WorkbookPathResource</td>
           <td><span class="dir-in">In</span></td>
           <td><code>InArgument&lt;UiPath.Platform.ResourceHandling.IResource&gt;</code></td>
-          <td></td>
+          <td><span class="req">&#10003;</span></td>
           <td></td>
         </tr>
         <tr>
@@ -573,27 +672,36 @@
           <td></td>
           <td></td>
         </tr>
+      </table>
+      <p class="members-heading">Properties / child slots</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
         <tr>
-          <td>SheetName</td>
-          <td><span class="dir-in">In</span></td>
-          <td><code>InArgument&lt;String&gt;</code></td>
+          <td>DisplayName</td>
+          <td>property</td>
+          <td><code>String</code></td>
           <td></td>
+        </tr>
+        <tr>
+          <td>Id</td>
+          <td>property</td>
+          <td><code>String</code></td>
           <td></td>
         </tr>
       </table>
     </div>
     <div class="activity" id="UiPath.Excel.Activities.GetTableRange@UiPath.Excel.Activities/3.4.1">
-      <div class="activity-name">GetTableRange</div>
+      <div class="activity-name">Get Table Range Workbook</div>
       <div class="activity-full">UiPath.Excel.Activities.GetTableRange</div>
       <span class="badge badge-src">UiPath.Excel.Activities 3.4.1</span>
-<span class="badge badge-cat">Excel</span><p class="activity-desc">Extracts the range of an Excel table from a specified spreadsheet.</p>      <p class="members-heading">Arguments</p>
+<span class="badge badge-cat">Excel</span><p class="activity-desc">Extracts the range of an Excel table from a specified spreadsheet</p>      <p class="members-heading">Arguments</p>
       <table>
         <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Description</th></tr>
         <tr>
           <td>TableName</td>
           <td><span class="dir-in">In</span></td>
           <td><code>InArgument&lt;String&gt;</code></td>
-          <td></td>
+          <td><span class="req">&#10003;</span></td>
           <td></td>
         </tr>
         <tr>
@@ -604,6 +712,13 @@
           <td></td>
         </tr>
         <tr>
+          <td>SheetName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+        </tr>
+        <tr>
           <td>Workbook</td>
           <td><span class="dir-in">In</span></td>
           <td><code>InArgument&lt;UiPath.Excel.Workbook&gt;</code></td>
@@ -614,25 +729,18 @@
           <td>WorkbookPath</td>
           <td><span class="dir-in">In</span></td>
           <td><code>InArgument&lt;String&gt;</code></td>
-          <td></td>
+          <td><span class="req">&#10003;</span></td>
           <td></td>
         </tr>
         <tr>
           <td>WorkbookPathResource</td>
           <td><span class="dir-in">In</span></td>
           <td><code>InArgument&lt;UiPath.Platform.ResourceHandling.IResource&gt;</code></td>
-          <td></td>
+          <td><span class="req">&#10003;</span></td>
           <td></td>
         </tr>
         <tr>
           <td>Password</td>
-          <td><span class="dir-in">In</span></td>
-          <td><code>InArgument&lt;String&gt;</code></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>SheetName</td>
           <td><span class="dir-in">In</span></td>
           <td><code>InArgument&lt;String&gt;</code></td>
           <td></td>
@@ -648,20 +756,32 @@
           <td><code>Boolean</code></td>
           <td></td>
         </tr>
+        <tr>
+          <td>DisplayName</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Id</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
       </table>
     </div>
     <div class="activity" id="UiPath.Excel.Activities.ReadRow@UiPath.Excel.Activities/3.4.1">
-      <div class="activity-name">ReadRow</div>
+      <div class="activity-name">Read Row Workbook</div>
       <div class="activity-full">UiPath.Excel.Activities.ReadRow</div>
       <span class="badge badge-src">UiPath.Excel.Activities 3.4.1</span>
-<span class="badge badge-cat">Excel</span>      <p class="members-heading">Arguments</p>
+<span class="badge badge-cat">Excel</span><p class="activity-desc">Reads the values of an Excel row beginning from the cell specified in the StartingCell field, and stores it in an IEnumerable&amp;lt;object&amp;gt; variable</p>      <p class="members-heading">Arguments</p>
       <table>
         <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Description</th></tr>
         <tr>
           <td>StartingCell</td>
           <td><span class="dir-in">In</span></td>
           <td><code>InArgument&lt;String&gt;</code></td>
-          <td></td>
+          <td><span class="req">&#10003;</span></td>
           <td></td>
         </tr>
         <tr>
@@ -669,6 +789,13 @@
           <td><span class="dir-out">Out</span></td>
           <td><code>OutArgument&lt;IEnumerable&lt;Object&gt;&gt;</code></td>
           <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>SheetName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
           <td></td>
         </tr>
         <tr>
@@ -682,25 +809,18 @@
           <td>WorkbookPath</td>
           <td><span class="dir-in">In</span></td>
           <td><code>InArgument&lt;String&gt;</code></td>
-          <td></td>
+          <td><span class="req">&#10003;</span></td>
           <td></td>
         </tr>
         <tr>
           <td>WorkbookPathResource</td>
           <td><span class="dir-in">In</span></td>
           <td><code>InArgument&lt;UiPath.Platform.ResourceHandling.IResource&gt;</code></td>
-          <td></td>
+          <td><span class="req">&#10003;</span></td>
           <td></td>
         </tr>
         <tr>
           <td>Password</td>
-          <td><span class="dir-in">In</span></td>
-          <td><code>InArgument&lt;String&gt;</code></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>SheetName</td>
           <td><span class="dir-in">In</span></td>
           <td><code>InArgument&lt;String&gt;</code></td>
           <td></td>
@@ -714,22 +834,34 @@
           <td>PreserveFormat</td>
           <td>property</td>
           <td><code>Boolean</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>DisplayName</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Id</td>
+          <td>property</td>
+          <td><code>String</code></td>
           <td></td>
         </tr>
       </table>
     </div>
     <div class="activity" id="UiPath.Excel.Activities.ReadColumn@UiPath.Excel.Activities/3.4.1">
-      <div class="activity-name">ReadColumn</div>
+      <div class="activity-name">Read Column Workbook</div>
       <div class="activity-full">UiPath.Excel.Activities.ReadColumn</div>
       <span class="badge badge-src">UiPath.Excel.Activities 3.4.1</span>
-<span class="badge badge-cat">Excel</span>      <p class="members-heading">Arguments</p>
+<span class="badge badge-cat">Excel</span><p class="activity-desc">Reads the values from a column beginning from the cell specified in the StartingCell field, and stores them in an IEnumerable &amp;lt;object&amp;gt;variable</p>      <p class="members-heading">Arguments</p>
       <table>
         <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Description</th></tr>
         <tr>
           <td>StartingCell</td>
           <td><span class="dir-in">In</span></td>
           <td><code>InArgument&lt;String&gt;</code></td>
-          <td></td>
+          <td><span class="req">&#10003;</span></td>
           <td></td>
         </tr>
         <tr>
@@ -737,6 +869,13 @@
           <td><span class="dir-out">Out</span></td>
           <td><code>OutArgument&lt;IEnumerable&lt;Object&gt;&gt;</code></td>
           <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>SheetName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
           <td></td>
         </tr>
         <tr>
@@ -750,25 +889,18 @@
           <td>WorkbookPath</td>
           <td><span class="dir-in">In</span></td>
           <td><code>InArgument&lt;String&gt;</code></td>
-          <td></td>
+          <td><span class="req">&#10003;</span></td>
           <td></td>
         </tr>
         <tr>
           <td>WorkbookPathResource</td>
           <td><span class="dir-in">In</span></td>
           <td><code>InArgument&lt;UiPath.Platform.ResourceHandling.IResource&gt;</code></td>
-          <td></td>
+          <td><span class="req">&#10003;</span></td>
           <td></td>
         </tr>
         <tr>
           <td>Password</td>
-          <td><span class="dir-in">In</span></td>
-          <td><code>InArgument&lt;String&gt;</code></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>SheetName</td>
           <td><span class="dir-in">In</span></td>
           <td><code>InArgument&lt;String&gt;</code></td>
           <td></td>
@@ -782,6 +914,18 @@
           <td>PreserveFormat</td>
           <td>property</td>
           <td><code>Boolean</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>DisplayName</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Id</td>
+          <td>property</td>
+          <td><code>String</code></td>
           <td></td>
         </tr>
       </table>
@@ -818,7 +962,7 @@
           <td>PivotTableName</td>
           <td><span class="dir-in">In</span></td>
           <td><code>InArgument&lt;String&gt;</code></td>
-          <td></td>
+          <td><span class="req">&#10003;</span></td>
           <td></td>
         </tr>
         <tr>
@@ -850,6 +994,13 @@
           <td></td>
         </tr>
         <tr>
+          <td>SheetName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+        </tr>
+        <tr>
           <td>Workbook</td>
           <td><span class="dir-in">In</span></td>
           <td><code>InArgument&lt;UiPath.Excel.Workbook&gt;</code></td>
@@ -860,25 +1011,18 @@
           <td>WorkbookPath</td>
           <td><span class="dir-in">In</span></td>
           <td><code>InArgument&lt;String&gt;</code></td>
-          <td></td>
+          <td><span class="req">&#10003;</span></td>
           <td></td>
         </tr>
         <tr>
           <td>WorkbookPathResource</td>
           <td><span class="dir-in">In</span></td>
           <td><code>InArgument&lt;UiPath.Platform.ResourceHandling.IResource&gt;</code></td>
-          <td></td>
+          <td><span class="req">&#10003;</span></td>
           <td></td>
         </tr>
         <tr>
           <td>Password</td>
-          <td><span class="dir-in">In</span></td>
-          <td><code>InArgument&lt;String&gt;</code></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>SheetName</td>
           <td><span class="dir-in">In</span></td>
           <td><code>InArgument&lt;String&gt;</code></td>
           <td></td>
@@ -900,6 +1044,18 @@
           <td><code>List&lt;InArgument&lt;UiPath.Excel.PivotTableField&gt;&gt;</code></td>
           <td></td>
         </tr>
+        <tr>
+          <td>DisplayName</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Id</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
       </table>
     </div>
     <div class="activity" id="UiPath.Excel.Activities.GetCellColor@UiPath.Excel.Activities/3.4.1">
@@ -913,7 +1069,7 @@
           <td>Cell</td>
           <td><span class="dir-in">In</span></td>
           <td><code>InArgument&lt;String&gt;</code></td>
-          <td></td>
+          <td><span class="req">&#10003;</span></td>
           <td></td>
         </tr>
         <tr>
@@ -921,6 +1077,13 @@
           <td><span class="dir-out">Out</span></td>
           <td><code>OutArgument&lt;Drawing.Color&gt;</code></td>
           <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>SheetName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
           <td></td>
         </tr>
         <tr>
@@ -934,14 +1097,14 @@
           <td>WorkbookPath</td>
           <td><span class="dir-in">In</span></td>
           <td><code>InArgument&lt;String&gt;</code></td>
-          <td></td>
+          <td><span class="req">&#10003;</span></td>
           <td></td>
         </tr>
         <tr>
           <td>WorkbookPathResource</td>
           <td><span class="dir-in">In</span></td>
           <td><code>InArgument&lt;UiPath.Platform.ResourceHandling.IResource&gt;</code></td>
-          <td></td>
+          <td><span class="req">&#10003;</span></td>
           <td></td>
         </tr>
         <tr>
@@ -951,11 +1114,20 @@
           <td></td>
           <td></td>
         </tr>
+      </table>
+      <p class="members-heading">Properties / child slots</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
         <tr>
-          <td>SheetName</td>
-          <td><span class="dir-in">In</span></td>
-          <td><code>InArgument&lt;String&gt;</code></td>
+          <td>DisplayName</td>
+          <td>property</td>
+          <td><code>String</code></td>
           <td></td>
+        </tr>
+        <tr>
+          <td>Id</td>
+          <td>property</td>
+          <td><code>String</code></td>
           <td></td>
         </tr>
       </table>
@@ -971,14 +1143,21 @@
           <td>Range</td>
           <td><span class="dir-in">In</span></td>
           <td><code>InArgument&lt;String&gt;</code></td>
-          <td></td>
+          <td><span class="req">&#10003;</span></td>
           <td></td>
         </tr>
         <tr>
           <td>Color</td>
           <td><span class="dir-in">In</span></td>
           <td><code>InArgument&lt;Drawing.Color&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
           <td></td>
+        </tr>
+        <tr>
+          <td>SheetName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
           <td></td>
         </tr>
         <tr>
@@ -992,14 +1171,14 @@
           <td>WorkbookPath</td>
           <td><span class="dir-in">In</span></td>
           <td><code>InArgument&lt;String&gt;</code></td>
-          <td></td>
+          <td><span class="req">&#10003;</span></td>
           <td></td>
         </tr>
         <tr>
           <td>WorkbookPathResource</td>
           <td><span class="dir-in">In</span></td>
           <td><code>InArgument&lt;UiPath.Platform.ResourceHandling.IResource&gt;</code></td>
-          <td></td>
+          <td><span class="req">&#10003;</span></td>
           <td></td>
         </tr>
         <tr>
@@ -1009,20 +1188,29 @@
           <td></td>
           <td></td>
         </tr>
+      </table>
+      <p class="members-heading">Properties / child slots</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
         <tr>
-          <td>SheetName</td>
-          <td><span class="dir-in">In</span></td>
-          <td><code>InArgument&lt;String&gt;</code></td>
+          <td>DisplayName</td>
+          <td>property</td>
+          <td><code>String</code></td>
           <td></td>
+        </tr>
+        <tr>
+          <td>Id</td>
+          <td>property</td>
+          <td><code>String</code></td>
           <td></td>
         </tr>
       </table>
     </div>
     <div class="activity" id="UiPath.Excel.Activities.CreateNewWorkbook@UiPath.Excel.Activities/3.4.1">
-      <div class="activity-name">CreateNewWorkbook</div>
+      <div class="activity-name">Create New Workbook</div>
       <div class="activity-full">UiPath.Excel.Activities.CreateNewWorkbook</div>
       <span class="badge badge-src">UiPath.Excel.Activities 3.4.1</span>
-<span class="badge badge-cat">Excel</span>      <p class="members-heading">Arguments</p>
+<span class="badge badge-cat">Excel</span><p class="activity-desc">Creates a new workbook with a new empty sheet.</p>      <p class="members-heading">Arguments</p>
       <table>
         <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Description</th></tr>
         <tr>
@@ -1040,6 +1228,13 @@
           <td></td>
         </tr>
         <tr>
+          <td>SheetName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+        </tr>
+        <tr>
           <td>Workbook</td>
           <td><span class="dir-in">In</span></td>
           <td><code>InArgument&lt;UiPath.Excel.Workbook&gt;</code></td>
@@ -1050,14 +1245,14 @@
           <td>WorkbookPath</td>
           <td><span class="dir-in">In</span></td>
           <td><code>InArgument&lt;String&gt;</code></td>
-          <td></td>
+          <td><span class="req">&#10003;</span></td>
           <td></td>
         </tr>
         <tr>
           <td>WorkbookPathResource</td>
           <td><span class="dir-in">In</span></td>
           <td><code>InArgument&lt;UiPath.Platform.ResourceHandling.IResource&gt;</code></td>
-          <td></td>
+          <td><span class="req">&#10003;</span></td>
           <td></td>
         </tr>
         <tr>
@@ -1067,29 +1262,31 @@
           <td></td>
           <td></td>
         </tr>
+      </table>
+      <p class="members-heading">Properties / child slots</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
         <tr>
-          <td>SheetName</td>
-          <td><span class="dir-in">In</span></td>
-          <td><code>InArgument&lt;String&gt;</code></td>
+          <td>DisplayName</td>
+          <td>property</td>
+          <td><code>String</code></td>
           <td></td>
+        </tr>
+        <tr>
+          <td>Id</td>
+          <td>property</td>
+          <td><code>String</code></td>
           <td></td>
         </tr>
       </table>
     </div>
     <div class="activity" id="UiPath.Excel.Activities.GetSheets@UiPath.Excel.Activities/3.4.1">
-      <div class="activity-name">GetSheets</div>
+      <div class="activity-name">Get Sheets Workbook</div>
       <div class="activity-full">UiPath.Excel.Activities.GetSheets</div>
       <span class="badge badge-src">UiPath.Excel.Activities 3.4.1</span>
-<span class="badge badge-cat">Excel</span>      <p class="members-heading">Arguments</p>
+<span class="badge badge-cat">Excel</span><p class="activity-desc">Returns the sheets from the workbook</p>      <p class="members-heading">Arguments</p>
       <table>
         <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Description</th></tr>
-        <tr>
-          <td>SheetName</td>
-          <td><span class="dir-in">In</span></td>
-          <td><code>InArgument&lt;String&gt;</code></td>
-          <td></td>
-          <td></td>
-        </tr>
         <tr>
           <td>Result</td>
           <td><span class="dir-out">Out</span></td>
@@ -1108,14 +1305,14 @@
           <td>WorkbookPath</td>
           <td><span class="dir-in">In</span></td>
           <td><code>InArgument&lt;String&gt;</code></td>
-          <td></td>
+          <td><span class="req">&#10003;</span></td>
           <td></td>
         </tr>
         <tr>
           <td>WorkbookPathResource</td>
           <td><span class="dir-in">In</span></td>
           <td><code>InArgument&lt;UiPath.Platform.ResourceHandling.IResource&gt;</code></td>
-          <td></td>
+          <td><span class="req">&#10003;</span></td>
           <td></td>
         </tr>
         <tr>
@@ -1133,6 +1330,18 @@
           <td>OnlyVisibleSheets</td>
           <td>property</td>
           <td><code>Boolean</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>DisplayName</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Id</td>
+          <td>property</td>
+          <td><code>String</code></td>
           <td></td>
         </tr>
       </table>

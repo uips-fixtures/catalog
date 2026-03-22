@@ -48,11 +48,17 @@ def main() -> None:
         if catalog is None:
             print(f"  [error] missing dist: {DIST_DIR / set_id / 'activities.json'}", file=sys.stderr)
             continue
+        parts = []
         for pkg_id, src, activities in iter_packages(catalog):
             txt = build_refllm(set_id, pkg_id, src, activities, generated_at)
             out = DIST_DIR / set_id / f"{pkg_id}.txt"
             out.write_text(txt, encoding="utf-8", newline="\n")
             print(f"  {set_id}/{pkg_id}: {len(activities)} activities -> {out}")
+            parts.append(txt)
+        combined = "\n\n---\n\n".join(parts)
+        llms_path = DIST_DIR / set_id / "llms.txt"
+        llms_path.write_text(combined, encoding="utf-8", newline="\n")
+        print(f"  {set_id}: llms.txt ({len(parts)} packages) -> {llms_path}")
 
 
 if __name__ == "__main__":
