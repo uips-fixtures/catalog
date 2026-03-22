@@ -1,0 +1,99 @@
+# UiPath.FTP.Activities 2.3.0
+
+> generator: uips-fixtures catalog v0.1
+> generated: 2026-03-22T09:37:08Z
+> set: watchful-anvil
+> activities: 8
+> authors: UiPath
+**ID format**: `{fullName}@{packageId}/{packageVersion}`
+**Argument directions**: In (input), Out (output), InOut (bidirectional)
+
+---
+### Delete
+
+**ID**: `UiPath.FTP.Activities.Delete@UiPath.FTP.Activities/2.3.0`
+**Type**: `UiPath.FTP.Activities.Delete`
+**Arguments**:
+- `RemotePath` (In [required]): `InArgument<String>`
+- `ContinueOnError` (In): `InArgument<Boolean>`
+### DirectoryExists
+
+**ID**: `UiPath.FTP.Activities.DirectoryExists@UiPath.FTP.Activities/2.3.0`
+**Type**: `UiPath.FTP.Activities.DirectoryExists`
+**Arguments**:
+- `RemotePath` (In [required]): `InArgument<String>`
+- `Exists` (Out): `OutArgument<Boolean>`
+- `ContinueOnError` (In): `InArgument<Boolean>`
+### DownloadFiles
+
+**ID**: `UiPath.FTP.Activities.DownloadFiles@UiPath.FTP.Activities/2.3.0`
+**Type**: `UiPath.FTP.Activities.DownloadFiles`
+**Arguments**:
+- `RemotePath` (In [required]): `InArgument<String>`
+- `LocalPath` (In [required]): `InArgument<String>`
+- `ContinueOnError` (In): `InArgument<Boolean>`
+**Other members**:
+- `Recursive` [property]: `Boolean`
+- `Create` [property]: `Boolean`
+- `Overwrite` [property]: `Boolean`
+### EnumerateObjects
+
+**ID**: `UiPath.FTP.Activities.EnumerateObjects@UiPath.FTP.Activities/2.3.0`
+**Type**: `UiPath.FTP.Activities.EnumerateObjects`
+**Arguments**:
+- `RemotePath` (In [required]): `InArgument<String>`
+- `Files` (Out): `OutArgument<IEnumerable<UiPath.FTP.FtpObjectInfo>>`
+- `ContinueOnError` (In): `InArgument<Boolean>`
+**Other members**:
+- `Recursive` [property]: `Boolean`
+### FileExists
+
+**ID**: `UiPath.FTP.Activities.FileExists@UiPath.FTP.Activities/2.3.0`
+**Type**: `UiPath.FTP.Activities.FileExists`
+**Arguments**:
+- `RemotePath` (In [required]): `InArgument<String>`
+- `Exists` (Out): `OutArgument<Boolean>`
+- `ContinueOnError` (In): `InArgument<Boolean>`
+### MoveItem
+
+**ID**: `UiPath.FTP.Activities.MoveItem@UiPath.FTP.Activities/2.3.0`
+**Type**: `UiPath.FTP.Activities.MoveItem`
+**Arguments**:
+- `RemotePath` (In [required]): `InArgument<String>`
+- `NewPath` (In [required]): `InArgument<String>`
+- `ContinueOnError` (In): `InArgument<Boolean>`
+**Other members**:
+- `Overwrite` [property]: `Boolean`
+### UploadFiles
+
+**ID**: `UiPath.FTP.Activities.UploadFiles@UiPath.FTP.Activities/2.3.0`
+**Type**: `UiPath.FTP.Activities.UploadFiles`
+**Arguments**:
+- `LocalPath` (In [required]): `InArgument<String>`
+- `RemotePath` (In [required]): `InArgument<String>`
+- `ContinueOnError` (In): `InArgument<Boolean>`
+**Other members**:
+- `Recursive` [property]: `Boolean`
+- `Create` [property]: `Boolean`
+- `Overwrite` [property]: `Boolean`
+### WithFtpSession
+
+**ID**: `UiPath.FTP.Activities.WithFtpSession@UiPath.FTP.Activities/2.3.0`
+**Type**: `UiPath.FTP.Activities.WithFtpSession`
+**Arguments**:
+- `Host` (In [required]): `InArgument<String>`
+- `Port` (In): `InArgument<Int32>`
+- `Username` (In): `InArgument<String>`
+- `Password` (In): `InArgument<String>`
+- `SecurePassword` (In): `InArgument<Security.SecureString>`
+- `ClientCertificatePath` (In): `InArgument<String>`
+- `ClientCertificatePassword` (In): `InArgument<String>`
+- `ClientCertificateSecurePassword` (In): `InArgument<Security.SecureString>`
+- `ContinueOnError` (In): `InArgument<Boolean>`
+**Other members**:
+- `UseAnonymousLogin` [property]: `Boolean`
+- `FtpsMode` [property]: `UiPath.FTP.FtpsMode`
+- `SslProtocols` [property]: `UiPath.FTP.FtpSslProtocols`
+- `UseSftp` [property]: `Boolean`
+- `AcceptAllCertificates` [property]: `Boolean`
+---

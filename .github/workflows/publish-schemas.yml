@@ -1,0 +1,70 @@
+name: Publish schemas to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'schemas/**/*.schema.json'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          path: catalog
+
+      - uses: actions/checkout@v5
+        with:
+          repository: uips-fixtures/uips-fixtures.github.io
+          token: ${{ secrets.PAGES_PAT }}
+          path: pages
+
+      - name: Copy schemas to pages repo (path from $id)
+        run: |
+          python3 - << 'PYEOF'
+          import glob, json, os, shutil
+
+          PAGES_BASE = "https://uips-fixtures.github.io/"
+          PAGES_SRC  = "pages/src"
+
+          copied = []
+          skipped = []
+
+          for src in sorted(glob.glob("catalog/schemas/**/*.schema.json", recursive=True)):
+              with open(src, encoding="utf-8") as f:
+                  schema_id = json.load(f).get("$id", "")
+
+              if not schema_id.startswith(PAGES_BASE):
+                  skipped.append(f"  skip {src}: $id does not point to {PAGES_BASE!r}")
+                  continue
+
+              rel  = schema_id.removeprefix(PAGES_BASE)   # catalog/schemas/v0.1/activity-catalog.schema.json
+              dest = os.path.join(PAGES_SRC, rel)
+              os.makedirs(os.path.dirname(dest), exist_ok=True)
+              shutil.copy2(src, dest)
+              copied.append(f"  {src} -> {dest}")
+
+          for msg in copied:
+              print(msg)
+          for msg in skipped:
+              print(msg)
+          print(f"\n{len(copied)} copied, {len(skipped)} skipped")
+          PYEOF
+
+      - name: Commit and push
+        working-directory: pages
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add src/
+          if git diff --cached --quiet; then
+            echo "No changes."
+          else
+            git commit -m "chore: publish schemas from catalog"
+            git push
+          fi

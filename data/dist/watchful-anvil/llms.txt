@@ -1,0 +1,1853 @@
+# watchful-anvil Activity Catalog
+
+> generator: uips-fixtures catalog v0.1
+> generated: 2026-03-22T09:34:26Z
+> activities: 186
+> packages: 5
+
+This file lists all workflow activities in the watchful-anvil curated catalog set.
+Each activity is a node that can be placed in a workflow and configured
+through its arguments and properties.
+
+**ID format**: `{fullName}@{packageId}/{packageVersion}`
+**Argument directions**: In (input), Out (output), InOut (bidirectional)
+
+---
+## Package: UiPath.Excel.Activities 3.4.1
+*UiPath*
+### Read CSV
+
+**ID**: `UiPath.CSV.Activities.ReadCsvFile@UiPath.Excel.Activities/3.4.1`
+**Type**: `UiPath.CSV.Activities.ReadCsvFile`
+**Category**: Excel.CSV
+**Description**: Copies all entries from a specified CSV file to an Excel range, table, or sheet, or saves the data for later use in the automation.
+**Arguments**:
+- `DataTable` (Out): `OutArgument<Data.DataTable>`
+- `IgnoreQuotes` (In): `InArgument<Boolean>`
+- `FilePath` (In): `InArgument<String>`
+- `PathResource` (In): `InArgument<UiPath.Platform.ResourceHandling.IResource>`
+- `Encoding` (In): `InArgument<String>`
+**Other members**:
+- `IncludeColumnNames` [property]: `Boolean`
+- `DelimitatorForViewModel` [property]: `UiPath.CSV.Activities.DelimiterOptions`
+### Write CSV
+
+**ID**: `UiPath.CSV.Activities.AppendWriteCsvFile@UiPath.Excel.Activities/3.4.1`
+**Type**: `UiPath.CSV.Activities.AppendWriteCsvFile`
+**Category**: Excel.CSV
+**Description**: Copies an Excel range, table, or sheet, or table data saved for later, and pastes it in a specified CSV file either pasting it after existing data or replacing any existing data in the file.
+**Arguments**:
+- `DataTable` (In): `InArgument<Data.DataTable>`
+- `FilePath` (In): `InArgument<String>`
+- `PathResource` (In): `InArgument<UiPath.Platform.ResourceHandling.IResource>`
+- `Encoding` (In): `InArgument<String>`
+**Other members**:
+- `CsvAction` [property]: `UiPath.CSV.Activities.CsvWriteAction`
+- `AddHeaders` [property]: `Boolean`
+- `ShouldQuote` [property]: `Boolean`
+- `DelimitatorForViewModel` [property]: `UiPath.CSV.Activities.DelimiterOptions`
+### ReadRange
+
+**ID**: `UiPath.Excel.Activities.ReadRange@UiPath.Excel.Activities/3.4.1`
+**Type**: `UiPath.Excel.Activities.ReadRange`
+**Category**: Excel
+**Description**: Reads the value of a range in Range Excel Format from a spreadsheet as a DataTable. If Range isn't specified, the whole spreadsheet is read. If range is specified as a cell, the whole spreadsheet starting from that cell is read.
+**Arguments**:
+- `Range` (In): `InArgument<String>`
+- `DataTable` (Out): `OutArgument<Data.DataTable>`
+- `Workbook` (In): `InArgument<UiPath.Excel.Workbook>`
+- `WorkbookPath` (In): `InArgument<String>`
+- `WorkbookPathResource` (In): `InArgument<UiPath.Platform.ResourceHandling.IResource>`
+- `Password` (In): `InArgument<String>`
+- `SheetName` (In): `InArgument<String>`
+**Other members**:
+- `AddHeaders` [property]: `Boolean`
+- `PreserveFormat` [property]: `Boolean`
+### WriteRange
+
+**ID**: `UiPath.Excel.Activities.WriteRange@UiPath.Excel.Activities/3.4.1`
+**Type**: `UiPath.Excel.Activities.WriteRange`
+**Category**: Excel
+**Description**: Writes the data from a DataTable in a spreadsheet starting from StartingCell. If StartingCell isn't specified, the writing begins at A1 cell. If the sheet does not exist, a new one is created with the SheetName value. All cells within the DataTable range are overwritten. Changes are immediately saved.
+**Arguments**:
+- `StartingCell` (In): `InArgument<String>`
+- `DataTable` (In): `InArgument<Data.DataTable>`
+- `Workbook` (In): `InArgument<UiPath.Excel.Workbook>`
+- `WorkbookPath` (In): `InArgument<String>`
+- `WorkbookPathResource` (In): `InArgument<UiPath.Platform.ResourceHandling.IResource>`
+- `Password` (In): `InArgument<String>`
+- `SheetName` (In): `InArgument<String>`
+**Other members**:
+- `AddHeaders` [property]: `Boolean`
+### ReadCell
+
+**ID**: `UiPath.Excel.Activities.ReadCell@UiPath.Excel.Activities/3.4.1`
+**Type**: `UiPath.Excel.Activities.ReadCell`
+**Category**: Excel
+**Description**: Reads the value of a cell from a spreadsheet as a string.
+**Arguments**:
+- `Cell` (In): `InArgument<String>`
+- `Result` (Out): `DesignViewModels.DesignOutArgument`
+- `Workbook` (In): `InArgument<UiPath.Excel.Workbook>`
+- `WorkbookPath` (In): `InArgument<String>`
+- `WorkbookPathResource` (In): `InArgument<UiPath.Platform.ResourceHandling.IResource>`
+- `Password` (In): `InArgument<String>`
+- `SheetName` (In): `InArgument<String>`
+**Other members**:
+- `PreserveFormat` [property]: `Boolean`
+### ReadCellFormula
+
+**ID**: `UiPath.Excel.Activities.ReadCellFormula@UiPath.Excel.Activities/3.4.1`
+**Type**: `UiPath.Excel.Activities.ReadCellFormula`
+**Category**: Excel
+**Description**: Reads the formula of a cell from a spreadsheet as a string.
+**Arguments**:
+- `Cell` (In): `InArgument<String>`
+- `Result` (Out): `OutArgument<String>`
+- `Workbook` (In): `InArgument<UiPath.Excel.Workbook>`
+- `WorkbookPath` (In): `InArgument<String>`
+- `WorkbookPathResource` (In): `InArgument<UiPath.Platform.ResourceHandling.IResource>`
+- `Password` (In): `InArgument<String>`
+- `SheetName` (In): `InArgument<String>`
+### WriteCell
+
+**ID**: `UiPath.Excel.Activities.WriteCell@UiPath.Excel.Activities/3.4.1`
+**Type**: `UiPath.Excel.Activities.WriteCell`
+**Category**: Excel
+**Description**: Writes the Text value into a cell from a spreadsheet. If the sheet does not exist, a new one is created with the SheetName value. If a value exists, it is overwritten. Changes are immediately saved.
+**Arguments**:
+- `Cell` (In): `InArgument<String>`
+- `Text` (In): `InArgument<String>`
+- `Workbook` (In): `InArgument<UiPath.Excel.Workbook>`
+- `WorkbookPath` (In): `InArgument<String>`
+- `WorkbookPathResource` (In): `InArgument<UiPath.Platform.ResourceHandling.IResource>`
+- `Password` (In): `InArgument<String>`
+- `SheetName` (In): `InArgument<String>`
+### AppendRange
+
+**ID**: `UiPath.Excel.Activities.AppendRange@UiPath.Excel.Activities/3.4.1`
+**Type**: `UiPath.Excel.Activities.AppendRange`
+**Category**: Excel
+**Description**: Appends the data from a DataTable to a spreadsheet. If the sheet does not exist, a new one is created with the SheetName value. Changes are immediately saved.
+**Arguments**:
+- `DataTable` (In): `InArgument<Data.DataTable>`
+- `Workbook` (In): `InArgument<UiPath.Excel.Workbook>`
+- `WorkbookPath` (In): `InArgument<String>`
+- `WorkbookPathResource` (In): `InArgument<UiPath.Platform.ResourceHandling.IResource>`
+- `Password` (In): `InArgument<String>`
+- `SheetName` (In): `InArgument<String>`
+### GetTableRange
+
+**ID**: `UiPath.Excel.Activities.GetTableRange@UiPath.Excel.Activities/3.4.1`
+**Type**: `UiPath.Excel.Activities.GetTableRange`
+**Category**: Excel
+**Description**: Extracts the range of an Excel table from a specified spreadsheet.
+**Arguments**:
+- `TableName` (In): `InArgument<String>`
+- `Range` (Out): `OutArgument<String>`
+- `Workbook` (In): `InArgument<UiPath.Excel.Workbook>`
+- `WorkbookPath` (In): `InArgument<String>`
+- `WorkbookPathResource` (In): `InArgument<UiPath.Platform.ResourceHandling.IResource>`
+- `Password` (In): `InArgument<String>`
+- `SheetName` (In): `InArgument<String>`
+**Other members**:
+- `IsPivot` [property]: `Boolean`
+### ReadRow
+
+**ID**: `UiPath.Excel.Activities.ReadRow@UiPath.Excel.Activities/3.4.1`
+**Type**: `UiPath.Excel.Activities.ReadRow`
+**Category**: Excel
+**Arguments**:
+- `StartingCell` (In): `InArgument<String>`
+- `Result` (Out): `OutArgument<IEnumerable<Object>>`
+- `Workbook` (In): `InArgument<UiPath.Excel.Workbook>`
+- `WorkbookPath` (In): `InArgument<String>`
+- `WorkbookPathResource` (In): `InArgument<UiPath.Platform.ResourceHandling.IResource>`
+- `Password` (In): `InArgument<String>`
+- `SheetName` (In): `InArgument<String>`
+**Other members**:
+- `PreserveFormat` [property]: `Boolean`
+### ReadColumn
+
+**ID**: `UiPath.Excel.Activities.ReadColumn@UiPath.Excel.Activities/3.4.1`
+**Type**: `UiPath.Excel.Activities.ReadColumn`
+**Category**: Excel
+**Arguments**:
+- `StartingCell` (In): `InArgument<String>`
+- `Result` (Out): `OutArgument<IEnumerable<Object>>`
+- `Workbook` (In): `InArgument<UiPath.Excel.Workbook>`
+- `WorkbookPath` (In): `InArgument<String>`
+- `WorkbookPathResource` (In): `InArgument<UiPath.Platform.ResourceHandling.IResource>`
+- `Password` (In): `InArgument<String>`
+- `SheetName` (In): `InArgument<String>`
+**Other members**:
+- `PreserveFormat` [property]: `Boolean`
+### Create Pivot Table Workbook
+
+**ID**: `UiPath.Excel.Activities.CreatePivotTable@UiPath.Excel.Activities/3.4.1`
+**Type**: `UiPath.Excel.Activities.CreatePivotTable`
+**Category**: Excel
+**Description**: Creates a pivot table from a specified range or table to help you calculate, summarize, and analyze data.
+**Arguments**:
+- `SourceSheet` (In): `InArgument<String>`
+- `SourceRange` (In): `InArgument<String>`
+- `SourceTable` (In): `InArgument<String>`
+- `PivotTableName` (In): `InArgument<String>`
+- `PlacementCell` (In): `InArgument<String>`
+- `LayoutRowType` (In): `InArgument<UiPath.Excel.PivotTableLayoutRowType>`
+- `ValuesMode` (In): `InArgument<UiPath.Excel.PivotTableValuesMode>`
+- `PivotTableFieldsVariable` (In): `InArgument<IEnumerable<UiPath.Excel.PivotTableField>>`
+- `Workbook` (In): `InArgument<UiPath.Excel.Workbook>`
+- `WorkbookPath` (In): `InArgument<String>`
+- `WorkbookPathResource` (In): `InArgument<UiPath.Platform.ResourceHandling.IResource>`
+- `Password` (In): `InArgument<String>`
+- `SheetName` (In): `InArgument<String>`
+**Other members**:
+- `UseTableSource` [property]: `Boolean`
+- `PivotTableFields` [property]: `List<InArgument<UiPath.Excel.PivotTableField>>`
+### Get Cell Color Workbook
+
+**ID**: `UiPath.Excel.Activities.GetCellColor@UiPath.Excel.Activities/3.4.1`
+**Type**: `UiPath.Excel.Activities.GetCellColor`
+**Category**: Excel
+**Description**: Gets the color of a cell
+**Arguments**:
+- `Cell` (In): `InArgument<String>`
+- `Color` (Out): `OutArgument<Drawing.Color>`
+- `Workbook` (In): `InArgument<UiPath.Excel.Workbook>`
+- `WorkbookPath` (In): `InArgument<String>`
+- `WorkbookPathResource` (In): `InArgument<UiPath.Platform.ResourceHandling.IResource>`
+- `Password` (In): `InArgument<String>`
+- `SheetName` (In): `InArgument<String>`
+### Set Range Color Workbook
+
+**ID**: `UiPath.Excel.Activities.SetRangeColor@UiPath.Excel.Activities/3.4.1`
+**Type**: `UiPath.Excel.Activities.SetRangeColor`
+**Category**: Excel
+**Description**: Sets the color of a range
+**Arguments**:
+- `Range` (In): `InArgument<String>`
+- `Color` (In): `InArgument<Drawing.Color>`
+- `Workbook` (In): `InArgument<UiPath.Excel.Workbook>`
+- `WorkbookPath` (In): `InArgument<String>`
+- `WorkbookPathResource` (In): `InArgument<UiPath.Platform.ResourceHandling.IResource>`
+- `Password` (In): `InArgument<String>`
+- `SheetName` (In): `InArgument<String>`
+### CreateNewWorkbook
+
+**ID**: `UiPath.Excel.Activities.CreateNewWorkbook@UiPath.Excel.Activities/3.4.1`
+**Type**: `UiPath.Excel.Activities.CreateNewWorkbook`
+**Category**: Excel
+**Arguments**:
+- `ConflictResolution` (In): `InArgument<UiPath.Excel.ConflictBehavior>`
+- `WorkbookFile` (Out): `OutArgument<UiPath.Excel.Workbook>`
+- `Workbook` (In): `InArgument<UiPath.Excel.Workbook>`
+- `WorkbookPath` (In): `InArgument<String>`
+- `WorkbookPathResource` (In): `InArgument<UiPath.Platform.ResourceHandling.IResource>`
+- `Password` (In): `InArgument<String>`
+- `SheetName` (In): `InArgument<String>`
+### GetSheets
+
+**ID**: `UiPath.Excel.Activities.GetSheets@UiPath.Excel.Activities/3.4.1`
+**Type**: `UiPath.Excel.Activities.GetSheets`
+**Category**: Excel
+**Arguments**:
+- `SheetName` (In): `InArgument<String>`
+- `Result` (Out): `OutArgument<IEnumerable<String>>`
+- `Workbook` (In): `InArgument<UiPath.Excel.Workbook>`
+- `WorkbookPath` (In): `InArgument<String>`
+- `WorkbookPathResource` (In): `InArgument<UiPath.Platform.ResourceHandling.IResource>`
+- `Password` (In): `InArgument<String>`
+**Other members**:
+- `OnlyVisibleSheets` [property]: `Boolean`
+## Package: UiPath.FTP.Activities 2.3.0
+*UiPath*
+### Delete
+
+**ID**: `UiPath.FTP.Activities.Delete@UiPath.FTP.Activities/2.3.0`
+**Type**: `UiPath.FTP.Activities.Delete`
+**Arguments**:
+- `RemotePath` (In [required]): `InArgument<String>`
+- `ContinueOnError` (In): `InArgument<Boolean>`
+### DirectoryExists
+
+**ID**: `UiPath.FTP.Activities.DirectoryExists@UiPath.FTP.Activities/2.3.0`
+**Type**: `UiPath.FTP.Activities.DirectoryExists`
+**Arguments**:
+- `RemotePath` (In [required]): `InArgument<String>`
+- `Exists` (Out): `OutArgument<Boolean>`
+- `ContinueOnError` (In): `InArgument<Boolean>`
+### DownloadFiles
+
+**ID**: `UiPath.FTP.Activities.DownloadFiles@UiPath.FTP.Activities/2.3.0`
+**Type**: `UiPath.FTP.Activities.DownloadFiles`
+**Arguments**:
+- `RemotePath` (In [required]): `InArgument<String>`
+- `LocalPath` (In [required]): `InArgument<String>`
+- `ContinueOnError` (In): `InArgument<Boolean>`
+**Other members**:
+- `Recursive` [property]: `Boolean`
+- `Create` [property]: `Boolean`
+- `Overwrite` [property]: `Boolean`
+### EnumerateObjects
+
+**ID**: `UiPath.FTP.Activities.EnumerateObjects@UiPath.FTP.Activities/2.3.0`
+**Type**: `UiPath.FTP.Activities.EnumerateObjects`
+**Arguments**:
+- `RemotePath` (In [required]): `InArgument<String>`
+- `Files` (Out): `OutArgument<IEnumerable<UiPath.FTP.FtpObjectInfo>>`
+- `ContinueOnError` (In): `InArgument<Boolean>`
+**Other members**:
+- `Recursive` [property]: `Boolean`
+### FileExists
+
+**ID**: `UiPath.FTP.Activities.FileExists@UiPath.FTP.Activities/2.3.0`
+**Type**: `UiPath.FTP.Activities.FileExists`
+**Arguments**:
+- `RemotePath` (In [required]): `InArgument<String>`
+- `Exists` (Out): `OutArgument<Boolean>`
+- `ContinueOnError` (In): `InArgument<Boolean>`
+### MoveItem
+
+**ID**: `UiPath.FTP.Activities.MoveItem@UiPath.FTP.Activities/2.3.0`
+**Type**: `UiPath.FTP.Activities.MoveItem`
+**Arguments**:
+- `RemotePath` (In [required]): `InArgument<String>`
+- `NewPath` (In [required]): `InArgument<String>`
+- `ContinueOnError` (In): `InArgument<Boolean>`
+**Other members**:
+- `Overwrite` [property]: `Boolean`
+### UploadFiles
+
+**ID**: `UiPath.FTP.Activities.UploadFiles@UiPath.FTP.Activities/2.3.0`
+**Type**: `UiPath.FTP.Activities.UploadFiles`
+**Arguments**:
+- `LocalPath` (In [required]): `InArgument<String>`
+- `RemotePath` (In [required]): `InArgument<String>`
+- `ContinueOnError` (In): `InArgument<Boolean>`
+**Other members**:
+- `Recursive` [property]: `Boolean`
+- `Create` [property]: `Boolean`
+- `Overwrite` [property]: `Boolean`
+### WithFtpSession
+
+**ID**: `UiPath.FTP.Activities.WithFtpSession@UiPath.FTP.Activities/2.3.0`
+**Type**: `UiPath.FTP.Activities.WithFtpSession`
+**Arguments**:
+- `Host` (In [required]): `InArgument<String>`
+- `Port` (In): `InArgument<Int32>`
+- `Username` (In): `InArgument<String>`
+- `Password` (In): `InArgument<String>`
+- `SecurePassword` (In): `InArgument<Security.SecureString>`
+- `ClientCertificatePath` (In): `InArgument<String>`
+- `ClientCertificatePassword` (In): `InArgument<String>`
+- `ClientCertificateSecurePassword` (In): `InArgument<Security.SecureString>`
+- `ContinueOnError` (In): `InArgument<Boolean>`
+**Other members**:
+- `UseAnonymousLogin` [property]: `Boolean`
+- `FtpsMode` [property]: `UiPath.FTP.FtpsMode`
+- `SslProtocols` [property]: `UiPath.FTP.FtpSslProtocols`
+- `UseSftp` [property]: `Boolean`
+- `AcceptAllCertificates` [property]: `Boolean`
+## Package: UiPath.PDF.Activities 3.25.2
+*UiPath*
+### Read XPS Text
+
+**ID**: `UiPath.XPS.Activities.ReadXPSText@UiPath.PDF.Activities/3.25.2`
+**Type**: `UiPath.XPS.Activities.ReadXPSText`
+**Arguments**:
+- `FileName` (In [required]): `InArgument<String>`
+- `Password` (In): `InArgument<String>`
+- `Range` (In): `InArgument<String>`
+- `Text` (Out): `OutArgument<String>`
+**Other members**:
+- `Filter` [property]: `String`
+- `OpenTitle` [property]: `String`
+### Read XPS With OCR
+
+**ID**: `UiPath.XPS.Activities.ReadXPSWithOCR@UiPath.PDF.Activities/3.25.2`
+**Type**: `UiPath.XPS.Activities.ReadXPSWithOCR`
+**Arguments**:
+- `FileName` (In [required]): `InArgument<String>`
+- `Range` (In): `InArgument<String>`
+- `DegreeOfParallelism` (In [required]): `InArgument<Int32>`
+- `Text` (Out): `OutArgument<String>`
+- `Password` (In): `InArgument<String>`
+**Other members**:
+- `Filter` [property]: `String`
+- `OpenTitle` [property]: `String`
+### Read PDF Text
+
+**ID**: `UiPath.PDF.Activities.ReadPDFText@UiPath.PDF.Activities/3.25.2`
+**Type**: `UiPath.PDF.Activities.ReadPDFText`
+**Arguments**:
+- `PreserveFormatting` (In): `InArgument<Boolean>`
+- `FileName` (In [required]): `InArgument<String>`
+- `Password` (In): `InArgument<String>`
+- `Range` (In): `InArgument<String>`
+- `Text` (Out): `OutArgument<String>`
+**Other members**:
+- `Filter` [property]: `String`
+- `OpenTitle` [property]: `String`
+### Read PDF With OCR
+
+**ID**: `UiPath.PDF.Activities.ReadPDFWithOCR@UiPath.PDF.Activities/3.25.2`
+**Type**: `UiPath.PDF.Activities.ReadPDFWithOCR`
+**Arguments**:
+- `FileName` (In [required]): `InArgument<String>`
+- `Range` (In): `InArgument<String>`
+- `DegreeOfParallelism` (In [required]): `InArgument<Int32>`
+- `Text` (Out): `OutArgument<String>`
+- `Password` (In): `InArgument<String>`
+**Other members**:
+- `ImageDpi` [property]: `UiPath.PDF.ImageDpi`
+- `Filter` [property]: `String`
+- `OpenTitle` [property]: `String`
+### Export PDF Page As Image
+
+**ID**: `UiPath.PDF.Activities.PDF.ExportPDFPageAsImage@UiPath.PDF.Activities/3.25.2`
+**Type**: `UiPath.PDF.Activities.PDF.ExportPDFPageAsImage`
+**Arguments**:
+- `FileName` (In [required]): `InArgument<String>`
+- `Password` (In): `InArgument<String>`
+- `PageNumber` (In [required]): `InArgument<Int32>`
+- `OutputFileName` (In [required]): `InArgument<String>`
+**Other members**:
+- `ImageDpi` [property]: `UiPath.PDF.ImageDpi`
+### Extract Images From PDF
+
+**ID**: `UiPath.PDF.Activities.PDF.ExtractImagesFromPDF@UiPath.PDF.Activities/3.25.2`
+**Type**: `UiPath.PDF.Activities.PDF.ExtractImagesFromPDF`
+**Arguments**:
+- `FileName` (In [required]): `InArgument<String>`
+- `Password` (In): `InArgument<String>`
+- `OutputFolderName` (In [required]): `InArgument<String>`
+**Other members**:
+- `ImageExtension` [property]: `UiPath.PDF.ImageExtension`
+### Extract PDF Page Range
+
+**ID**: `UiPath.PDF.Activities.PDF.ExtractPDFPageRange@UiPath.PDF.Activities/3.25.2`
+**Type**: `UiPath.PDF.Activities.PDF.ExtractPDFPageRange`
+**Arguments**:
+- `FileName` (In [required]): `InArgument<String>`
+- `Password` (In): `InArgument<String>`
+- `Range` (In [required]): `InArgument<String>`
+- `OutputFileName` (In [required]): `InArgument<String>`
+### Get PDF Page Count
+
+**ID**: `UiPath.PDF.Activities.PDF.GetPDFPageCount@UiPath.PDF.Activities/3.25.2`
+**Type**: `UiPath.PDF.Activities.PDF.GetPDFPageCount`
+**Arguments**:
+- `FileName` (In [required]): `InArgument<String>`
+- `Password` (In): `InArgument<String>`
+- `PageCount` (Out): `OutArgument<Int32>`
+### Join PDF Files
+
+**ID**: `UiPath.PDF.Activities.PDF.JoinPDF@UiPath.PDF.Activities/3.25.2`
+**Type**: `UiPath.PDF.Activities.PDF.JoinPDF`
+**Arguments**:
+- `FileList` (In [required]): `InArgument<String[]>`
+- `OutputFileName` (In [required]): `InArgument<String>`
+### Manage PDF Password
+
+**ID**: `UiPath.PDF.Activities.PDF.ManagePDFPassword@UiPath.PDF.Activities/3.25.2`
+**Type**: `UiPath.PDF.Activities.PDF.ManagePDFPassword`
+**Arguments**:
+- `FileName` (In [required]): `InArgument<String>`
+- `OldUserPassword` (In): `InArgument<String>`
+- `NewUserPassword` (In): `InArgument<String>`
+- `OldOwnerPassword` (In): `InArgument<String>`
+- `NewOwnerPassword` (In): `InArgument<String>`
+- `OutputFileName` (In [required]): `InArgument<String>`
+## Package: UiPath.System.Activities 23.4.5
+*UiPath*
+### Add
+
+**ID**: `System.Activities.Expressions.Add@UiPath.System.Activities/23.4.5`
+**Type**: `System.Activities.Expressions.Add`
+**Arguments**:
+- `Left` (In): `InArgument<TLeft>`
+- `Right` (In): `InArgument<TRight>`
+### And
+
+**ID**: `System.Activities.Expressions.And@UiPath.System.Activities/23.4.5`
+**Type**: `System.Activities.Expressions.And`
+**Arguments**:
+- `Left` (In): `InArgument<TLeft>`
+- `Right` (In): `InArgument<TRight>`
+### AndAlso
+
+**ID**: `System.Activities.Expressions.AndAlso@UiPath.System.Activities/23.4.5`
+**Type**: `System.Activities.Expressions.AndAlso`
+_No members extracted._
+### ArgumentReference
+
+**ID**: `System.Activities.Expressions.ArgumentReference@UiPath.System.Activities/23.4.5`
+**Type**: `System.Activities.Expressions.ArgumentReference`
+_No members extracted._
+### ArgumentValue
+
+**ID**: `System.Activities.Expressions.ArgumentValue@UiPath.System.Activities/23.4.5`
+**Type**: `System.Activities.Expressions.ArgumentValue`
+_No members extracted._
+### ArrayItemReference
+
+**ID**: `System.Activities.Expressions.ArrayItemReference@UiPath.System.Activities/23.4.5`
+**Type**: `System.Activities.Expressions.ArrayItemReference`
+**Arguments**:
+- `Array` (In): `InArgument<TItem[]>`
+- `Index` (In): `InArgument<int>`
+### ArrayItemValue
+
+**ID**: `System.Activities.Expressions.ArrayItemValue@UiPath.System.Activities/23.4.5`
+**Type**: `System.Activities.Expressions.ArrayItemValue`
+**Arguments**:
+- `Array` (In): `InArgument<TItem[]>`
+- `Index` (In): `InArgument<int>`
+### As
+
+**ID**: `System.Activities.Expressions.As@UiPath.System.Activities/23.4.5`
+**Type**: `System.Activities.Expressions.As`
+**Arguments**:
+- `Operand` (In): `InArgument<TOperand>`
+### Cast
+
+**ID**: `System.Activities.Expressions.Cast@UiPath.System.Activities/23.4.5`
+**Type**: `System.Activities.Expressions.Cast`
+**Arguments**:
+- `Operand` (In): `InArgument<TOperand>`
+### Divide
+
+**ID**: `System.Activities.Expressions.Divide@UiPath.System.Activities/23.4.5`
+**Type**: `System.Activities.Expressions.Divide`
+**Arguments**:
+- `Left` (In): `InArgument<TLeft>`
+- `Right` (In): `InArgument<TRight>`
+### Equal
+
+**ID**: `System.Activities.Expressions.Equal@UiPath.System.Activities/23.4.5`
+**Type**: `System.Activities.Expressions.Equal`
+**Arguments**:
+- `Left` (In): `InArgument<TLeft>`
+- `Right` (In): `InArgument<TRight>`
+### FieldReference
+
+**ID**: `System.Activities.Expressions.FieldReference@UiPath.System.Activities/23.4.5`
+**Type**: `System.Activities.Expressions.FieldReference`
+**Arguments**:
+- `Operand` (In): `InArgument<TOperand>`
+### FieldValue
+
+**ID**: `System.Activities.Expressions.FieldValue@UiPath.System.Activities/23.4.5`
+**Type**: `System.Activities.Expressions.FieldValue`
+**Arguments**:
+- `Operand` (In): `InArgument<TOperand>`
+### GreaterThan
+
+**ID**: `System.Activities.Expressions.GreaterThan@UiPath.System.Activities/23.4.5`
+**Type**: `System.Activities.Expressions.GreaterThan`
+**Arguments**:
+- `Left` (In): `InArgument<TLeft>`
+- `Right` (In): `InArgument<TRight>`
+### GreaterThanOrEqual
+
+**ID**: `System.Activities.Expressions.GreaterThanOrEqual@UiPath.System.Activities/23.4.5`
+**Type**: `System.Activities.Expressions.GreaterThanOrEqual`
+**Arguments**:
+- `Left` (In): `InArgument<TLeft>`
+- `Right` (In): `InArgument<TRight>`
+### IndexerReference
+
+**ID**: `System.Activities.Expressions.IndexerReference@UiPath.System.Activities/23.4.5`
+**Type**: `System.Activities.Expressions.IndexerReference`
+**Arguments**:
+- `Operand` (In): `InArgument<TOperand>`
+### InvokeFunc
+
+**ID**: `System.Activities.Expressions.InvokeFunc@UiPath.System.Activities/23.4.5`
+**Type**: `System.Activities.Expressions.InvokeFunc`
+**Arguments**:
+- `Argument` (In): `InArgument<T>`
+- `Argument1` (In): `InArgument<T1>`
+- `Argument2` (In): `InArgument<T2>`
+- `Argument3` (In): `InArgument<T3>`
+- `Argument4` (In): `InArgument<T4>`
+- `Argument5` (In): `InArgument<T5>`
+- `Argument6` (In): `InArgument<T6>`
+- `Argument7` (In): `InArgument<T7>`
+- `Argument8` (In): `InArgument<T8>`
+- `Argument9` (In): `InArgument<T9>`
+- `Argument10` (In): `InArgument<T10>`
+- `Argument11` (In): `InArgument<T11>`
+- `Argument12` (In): `InArgument<T12>`
+- `Argument13` (In): `InArgument<T13>`
+- `Argument14` (In): `InArgument<T14>`
+- `Argument15` (In): `InArgument<T15>`
+- `Argument16` (In): `InArgument<T16>`
+### InvokeMethod
+
+**ID**: `System.Activities.Expressions.InvokeMethod@UiPath.System.Activities/23.4.5`
+**Type**: `System.Activities.Expressions.InvokeMethod`
+**Arguments**:
+- `TargetObject` (In): `InArgument<object>`
+### LessThan
+
+**ID**: `System.Activities.Expressions.LessThan@UiPath.System.Activities/23.4.5`
+**Type**: `System.Activities.Expressions.LessThan`
+**Arguments**:
+- `Left` (In): `InArgument<TLeft>`
+- `Right` (In): `InArgument<TRight>`
+### LessThanOrEqual
+
+**ID**: `System.Activities.Expressions.LessThanOrEqual@UiPath.System.Activities/23.4.5`
+**Type**: `System.Activities.Expressions.LessThanOrEqual`
+**Arguments**:
+- `Left` (In): `InArgument<TLeft>`
+- `Right` (In): `InArgument<TRight>`
+### Literal
+
+**ID**: `System.Activities.Expressions.Literal@UiPath.System.Activities/23.4.5`
+**Type**: `System.Activities.Expressions.Literal`
+_No members extracted._
+### MultidimensionalArrayItemReference
+
+**ID**: `System.Activities.Expressions.MultidimensionalArrayItemReference@UiPath.System.Activities/23.4.5`
+**Type**: `System.Activities.Expressions.MultidimensionalArrayItemReference`
+**Arguments**:
+- `Array` (In): `InArgument<Array>`
+### Multiply
+
+**ID**: `System.Activities.Expressions.Multiply@UiPath.System.Activities/23.4.5`
+**Type**: `System.Activities.Expressions.Multiply`
+**Arguments**:
+- `Left` (In): `InArgument<TLeft>`
+- `Right` (In): `InArgument<TRight>`
+### New
+
+**ID**: `System.Activities.Expressions.New@UiPath.System.Activities/23.4.5`
+**Type**: `System.Activities.Expressions.New`
+_No members extracted._
+### NewArray
+
+**ID**: `System.Activities.Expressions.NewArray@UiPath.System.Activities/23.4.5`
+**Type**: `System.Activities.Expressions.NewArray`
+_No members extracted._
+### Not
+
+**ID**: `System.Activities.Expressions.Not@UiPath.System.Activities/23.4.5`
+**Type**: `System.Activities.Expressions.Not`
+**Arguments**:
+- `Operand` (In): `InArgument<TOperand>`
+### NotEqual
+
+**ID**: `System.Activities.Expressions.NotEqual@UiPath.System.Activities/23.4.5`
+**Type**: `System.Activities.Expressions.NotEqual`
+**Arguments**:
+- `Left` (In): `InArgument<TLeft>`
+- `Right` (In): `InArgument<TRight>`
+### Or
+
+**ID**: `System.Activities.Expressions.Or@UiPath.System.Activities/23.4.5`
+**Type**: `System.Activities.Expressions.Or`
+**Arguments**:
+- `Left` (In): `InArgument<TLeft>`
+- `Right` (In): `InArgument<TRight>`
+### OrElse
+
+**ID**: `System.Activities.Expressions.OrElse@UiPath.System.Activities/23.4.5`
+**Type**: `System.Activities.Expressions.OrElse`
+_No members extracted._
+### PropertyReference
+
+**ID**: `System.Activities.Expressions.PropertyReference@UiPath.System.Activities/23.4.5`
+**Type**: `System.Activities.Expressions.PropertyReference`
+**Arguments**:
+- `Operand` (In): `InArgument<TOperand>`
+### PropertyValue
+
+**ID**: `System.Activities.Expressions.PropertyValue@UiPath.System.Activities/23.4.5`
+**Type**: `System.Activities.Expressions.PropertyValue`
+**Arguments**:
+- `Operand` (In): `InArgument<TOperand>`
+### Subtract
+
+**ID**: `System.Activities.Expressions.Subtract@UiPath.System.Activities/23.4.5`
+**Type**: `System.Activities.Expressions.Subtract`
+**Arguments**:
+- `Left` (In): `InArgument<TLeft>`
+- `Right` (In): `InArgument<TRight>`
+### ValueTypeFieldReference
+
+**ID**: `System.Activities.Expressions.ValueTypeFieldReference@UiPath.System.Activities/23.4.5`
+**Type**: `System.Activities.Expressions.ValueTypeFieldReference`
+**Arguments**:
+- `OperandLocation` (InOut): `InOutArgument<TOperand>`
+### ValueTypeIndexerReference
+
+**ID**: `System.Activities.Expressions.ValueTypeIndexerReference@UiPath.System.Activities/23.4.5`
+**Type**: `System.Activities.Expressions.ValueTypeIndexerReference`
+**Arguments**:
+- `OperandLocation` (InOut): `InOutArgument<TOperand>`
+### ValueTypePropertyReference
+
+**ID**: `System.Activities.Expressions.ValueTypePropertyReference@UiPath.System.Activities/23.4.5`
+**Type**: `System.Activities.Expressions.ValueTypePropertyReference`
+**Arguments**:
+- `OperandLocation` (InOut): `InOutArgument<TOperand>`
+### VariableReference
+
+**ID**: `System.Activities.Expressions.VariableReference@UiPath.System.Activities/23.4.5`
+**Type**: `System.Activities.Expressions.VariableReference`
+_No members extracted._
+### VariableValue
+
+**ID**: `System.Activities.Expressions.VariableValue@UiPath.System.Activities/23.4.5`
+**Type**: `System.Activities.Expressions.VariableValue`
+_No members extracted._
+### AddToCollection
+
+**ID**: `System.Activities.Statements.AddToCollection@UiPath.System.Activities/23.4.5`
+**Type**: `System.Activities.Statements.AddToCollection`
+**Arguments**:
+- `Item` (In): `InArgument<T>`
+### Assign
+
+**ID**: `System.Activities.Statements.Assign@UiPath.System.Activities/23.4.5`
+**Type**: `System.Activities.Statements.Assign`
+**Arguments**:
+- `To` (Out): `OutArgument<object>`
+- `Value` (In): `InArgument<object>`
+### CancellationScope
+
+**ID**: `System.Activities.Statements.CancellationScope@UiPath.System.Activities/23.4.5`
+**Type**: `System.Activities.Statements.CancellationScope`
+_No members extracted._
+### ClearCollection
+
+**ID**: `System.Activities.Statements.ClearCollection@UiPath.System.Activities/23.4.5`
+**Type**: `System.Activities.Statements.ClearCollection`
+_No members extracted._
+### CompensableActivity
+
+**ID**: `System.Activities.Statements.CompensableActivity@UiPath.System.Activities/23.4.5`
+**Type**: `System.Activities.Statements.CompensableActivity`
+**Arguments**:
+- `AssertFlag` (In): `InArgument<bool>`
+- `Index` (In): `InArgument<int>`
+### Compensate
+
+**ID**: `System.Activities.Statements.Compensate@UiPath.System.Activities/23.4.5`
+**Type**: `System.Activities.Statements.Compensate`
+**Arguments**:
+- `Target` (In): `InArgument<CompensationToken>`
+### Confirm
+
+**ID**: `System.Activities.Statements.Confirm@UiPath.System.Activities/23.4.5`
+**Type**: `System.Activities.Statements.Confirm`
+**Arguments**:
+- `Target` (In): `InArgument<CompensationToken>`
+### CreateBookmarkScope
+
+**ID**: `System.Activities.Statements.CreateBookmarkScope@UiPath.System.Activities/23.4.5`
+**Type**: `System.Activities.Statements.CreateBookmarkScope`
+_No members extracted._
+### Delay
+
+**ID**: `System.Activities.Statements.Delay@UiPath.System.Activities/23.4.5`
+**Type**: `System.Activities.Statements.Delay`
+**Arguments**:
+- `Duration` (In): `InArgument<TimeSpan>`
+### DeleteBookmarkScope
+
+**ID**: `System.Activities.Statements.DeleteBookmarkScope@UiPath.System.Activities/23.4.5`
+**Type**: `System.Activities.Statements.DeleteBookmarkScope`
+**Arguments**:
+- `Scope` (In): `InArgument<BookmarkScope>`
+### DoWhile
+
+**ID**: `System.Activities.Statements.DoWhile@UiPath.System.Activities/23.4.5`
+**Type**: `System.Activities.Statements.DoWhile`
+_No members extracted._
+### ExistsInCollection
+
+**ID**: `System.Activities.Statements.ExistsInCollection@UiPath.System.Activities/23.4.5`
+**Type**: `System.Activities.Statements.ExistsInCollection`
+**Arguments**:
+- `Item` (In): `InArgument<T>`
+### FlowDecision
+
+**ID**: `System.Activities.Statements.FlowDecision@UiPath.System.Activities/23.4.5`
+**Type**: `System.Activities.Statements.FlowDecision`
+_No members extracted._
+### FlowSwitch
+
+**ID**: `System.Activities.Statements.FlowSwitch@UiPath.System.Activities/23.4.5`
+**Type**: `System.Activities.Statements.FlowSwitch`
+_No members extracted._
+### Flowchart
+
+**ID**: `System.Activities.Statements.Flowchart@UiPath.System.Activities/23.4.5`
+**Type**: `System.Activities.Statements.Flowchart`
+_No members extracted._
+### ForEach
+
+**ID**: `System.Activities.Statements.ForEach@UiPath.System.Activities/23.4.5`
+**Type**: `System.Activities.Statements.ForEach`
+_No members extracted._
+### HandleScope
+
+**ID**: `System.Activities.Statements.HandleScope@UiPath.System.Activities/23.4.5`
+**Type**: `System.Activities.Statements.HandleScope`
+**Arguments**:
+- `Handle` (In): `InArgument<THandle>`
+### If
+
+**ID**: `System.Activities.Statements.If@UiPath.System.Activities/23.4.5`
+**Type**: `System.Activities.Statements.If`
+**Arguments**:
+- `Condition` (In): `InArgument<bool>`
+### InvokeAction
+
+**ID**: `System.Activities.Statements.InvokeAction@UiPath.System.Activities/23.4.5`
+**Type**: `System.Activities.Statements.InvokeAction`
+**Arguments**:
+- `Argument` (In): `InArgument<T>`
+- `Argument1` (In): `InArgument<T1>`
+- `Argument2` (In): `InArgument<T2>`
+- `Argument3` (In): `InArgument<T3>`
+- `Argument4` (In): `InArgument<T4>`
+- `Argument5` (In): `InArgument<T5>`
+- `Argument6` (In): `InArgument<T6>`
+- `Argument7` (In): `InArgument<T7>`
+- `Argument8` (In): `InArgument<T8>`
+- `Argument9` (In): `InArgument<T9>`
+- `Argument10` (In): `InArgument<T10>`
+- `Argument11` (In): `InArgument<T11>`
+- `Argument12` (In): `InArgument<T12>`
+- `Argument13` (In): `InArgument<T13>`
+- `Argument14` (In): `InArgument<T14>`
+- `Argument15` (In): `InArgument<T15>`
+- `Argument16` (In): `InArgument<T16>`
+### InvokeDelegate
+
+**ID**: `System.Activities.Statements.InvokeDelegate@UiPath.System.Activities/23.4.5`
+**Type**: `System.Activities.Statements.InvokeDelegate`
+_No members extracted._
+### InvokeMethod
+
+**ID**: `System.Activities.Statements.InvokeMethod@UiPath.System.Activities/23.4.5`
+**Type**: `System.Activities.Statements.InvokeMethod`
+**Arguments**:
+- `Result` (Out): `OutArgument<object>`
+- `TargetObject` (In): `InArgument<object>`
+### NoPersistScope
+
+**ID**: `System.Activities.Statements.NoPersistScope@UiPath.System.Activities/23.4.5`
+**Type**: `System.Activities.Statements.NoPersistScope`
+**Arguments**:
+- `NoPersistScope` (In): `InArgument<NoPersistScope>`
+- `ConstraintViolationMessage` (Out): `OutArgument<string>`
+### Parallel
+
+**ID**: `System.Activities.Statements.Parallel@UiPath.System.Activities/23.4.5`
+**Type**: `System.Activities.Statements.Parallel`
+_No members extracted._
+### ParallelForEach
+
+**ID**: `System.Activities.Statements.ParallelForEach@UiPath.System.Activities/23.4.5`
+**Type**: `System.Activities.Statements.ParallelForEach`
+_No members extracted._
+### Persist
+
+**ID**: `System.Activities.Statements.Persist@UiPath.System.Activities/23.4.5`
+**Type**: `System.Activities.Statements.Persist`
+_No members extracted._
+### Pick
+
+**ID**: `System.Activities.Statements.Pick@UiPath.System.Activities/23.4.5`
+**Type**: `System.Activities.Statements.Pick`
+_No members extracted._
+### PickBranch
+
+**ID**: `System.Activities.Statements.PickBranch@UiPath.System.Activities/23.4.5`
+**Type**: `System.Activities.Statements.PickBranch`
+_No members extracted._
+### RemoveFromCollection
+
+**ID**: `System.Activities.Statements.RemoveFromCollection@UiPath.System.Activities/23.4.5`
+**Type**: `System.Activities.Statements.RemoveFromCollection`
+**Arguments**:
+- `Item` (In): `InArgument<T>`
+### Rethrow
+
+**ID**: `System.Activities.Statements.Rethrow@UiPath.System.Activities/23.4.5`
+**Type**: `System.Activities.Statements.Rethrow`
+**Arguments**:
+- `RethrowActivity` (In): `InArgument<Rethrow>`
+### Sequence
+
+**ID**: `System.Activities.Statements.Sequence@UiPath.System.Activities/23.4.5`
+**Type**: `System.Activities.Statements.Sequence`
+_No members extracted._
+### State
+
+**ID**: `System.Activities.Statements.State@UiPath.System.Activities/23.4.5`
+**Type**: `System.Activities.Statements.State`
+_No members extracted._
+### StateMachine
+
+**ID**: `System.Activities.Statements.StateMachine@UiPath.System.Activities/23.4.5`
+**Type**: `System.Activities.Statements.StateMachine`
+_No members extracted._
+### Switch
+
+**ID**: `System.Activities.Statements.Switch@UiPath.System.Activities/23.4.5`
+**Type**: `System.Activities.Statements.Switch`
+**Arguments**:
+- `Expression` (In): `InArgument<T>`
+### TerminateWorkflow
+
+**ID**: `System.Activities.Statements.TerminateWorkflow@UiPath.System.Activities/23.4.5`
+**Type**: `System.Activities.Statements.TerminateWorkflow`
+**Arguments**:
+- `Reason` (In): `InArgument<string>`
+- `Exception` (In): `InArgument<Exception>`
+### Throw
+
+**ID**: `System.Activities.Statements.Throw@UiPath.System.Activities/23.4.5`
+**Type**: `System.Activities.Statements.Throw`
+**Arguments**:
+- `Exception` (In): `InArgument<Exception>`
+### TransactionScope
+
+**ID**: `System.Activities.Statements.TransactionScope@UiPath.System.Activities/23.4.5`
+**Type**: `System.Activities.Statements.TransactionScope`
+**Arguments**:
+- `Timeout` (In): `InArgument<TimeSpan>`
+- `Input` (In): `InArgument<Activity>`
+- `Scope` (In): `InArgument<TransactionScope>`
+- `ParentActivity` (In): `InArgument<Activity>`
+- `CurrentIsolationLevel` (In): `InArgument<IsolationLevel>`
+- `TransactionScope` (In): `InArgument<TransactionScope>`
+### Transition
+
+**ID**: `System.Activities.Statements.Transition@UiPath.System.Activities/23.4.5`
+**Type**: `System.Activities.Statements.Transition`
+_No members extracted._
+### TryCatch
+
+**ID**: `System.Activities.Statements.TryCatch@UiPath.System.Activities/23.4.5`
+**Type**: `System.Activities.Statements.TryCatch`
+_No members extracted._
+### While
+
+**ID**: `System.Activities.Statements.While@UiPath.System.Activities/23.4.5`
+**Type**: `System.Activities.Statements.While`
+_No members extracted._
+### WriteLine
+
+**ID**: `System.Activities.Statements.WriteLine@UiPath.System.Activities/23.4.5`
+**Type**: `System.Activities.Statements.WriteLine`
+**Arguments**:
+- `TextWriter` (In): `InArgument<TextWriter>`
+- `Text` (In): `InArgument<string>`
+## Package: UiPath.UIAutomation.Activities 23.10.20
+*UiPath*
+### Use Application/Browser
+
+**ID**: `UiPath.UIAutomationNext.Activities.NApplicationCard@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.UIAutomationNext.Activities.NApplicationCard`
+**Category**: UI Automation
+**Description**: Opens a desktop application or web browser page to use in your automation.
+**Arguments**:
+- `ContinueOnError` (In): `InArgument<Boolean>`
+- `Timeout` (In): `InArgument<Double>`
+- `OutUiElement` (Out): `OutArgument<UiPath.Core.UiElement>`
+- `OpenMode` (In): `InArgument<UiPath.UIAutomationNext.Enums.NAppOpenMode>`
+- `CloseMode` (In): `InArgument<UiPath.UIAutomationNext.Enums.NAppCloseMode>`
+- `UserDataFolderMode` (In): `InArgument<UiPath.UIAutomationNext.Enums.BrowserUserDataFolderMode>`
+- `UserDataFolderPath` (In): `InArgument<String>`
+- `IsIncognito` (In): `InArgument<Boolean>`
+- `WebDriverMode` (In): `InArgument<UiPath.UIAutomationNext.Enums.NWebDriverMode>`
+- `HealingAgentBehavior` (In): `InArgument<UiPath.UIAutomationNext.Enums.NHealingAgentBehavior>`
+- `InUiElement` (In): `InArgument<UiPath.Core.UiElement>`
+**Other members**:
+- `TargetApp` [property]: `UiPath.UIAutomationNext.TargetApp`
+- `InteractionMode` [property]: `UiPath.UIAutomationNext.Enums.NInteractionMode`
+- `AttachMode` [property]: `UiPath.UIAutomationNext.Enums.NAppAttachMode`
+- `WindowResize` [property]: `UiPath.UIAutomationNext.Enums.NWindowResize`
+- `DialogHandling` [property]: `UiPath.UIAutomationNext.DialogHandling`
+### Click
+
+**ID**: `UiPath.UIAutomationNext.Activities.NClick@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.UIAutomationNext.Activities.NClick`
+**Category**: UI Automation
+**Description**: Clicks a specified UI element.
+**Arguments**:
+- `KeyModifiers` (In): `InArgument<UiPath.UIAutomationNext.Enums.NKeyModifiers>`
+- `ClickType` (In): `InArgument<UiPath.UIAutomationNext.Enums.NClickType>`
+- `MouseButton` (In): `InArgument<UiPath.UIAutomationNext.Enums.NMouseButton>`
+- `CursorMotionType` (In): `InArgument<UiPath.UIAutomationNext.Enums.CursorMotionType>`
+- `AlterIfDisabled` (In): `InArgument<Boolean>`
+- `ActivateBefore` (In): `InArgument<Boolean>`
+- `UnblockInput` (In): `InArgument<Boolean>`
+- `InteractionMode` (In): `InArgument<UiPath.UIAutomationNext.Enums.NChildInteractionMode>`
+- `Timeout` (In): `InArgument<Double>`
+- `DelayAfter` (In): `InArgument<Double>`
+- `DelayBefore` (In): `InArgument<Double>`
+- `ContinueOnError` (In): `InArgument<Boolean>`
+- `OutUiElement` (Out): `OutArgument<UiPath.Core.UiElement>`
+- `HealingAgentBehavior` (In): `InArgument<UiPath.UIAutomationNext.Enums.NChildHealingAgentBehavior>`
+- `InUiElement` (In): `InArgument<UiPath.Core.UiElement>`
+**Other members**:
+- `VerifyOptions` [property]: `UiPath.UIAutomationNext.Activities.VerifyExecutionOptions`
+- `Target` [property]: `UiPath.UIAutomationNext.TargetAnchorable`
+### Type Into
+
+**ID**: `UiPath.UIAutomationNext.Activities.NTypeInto@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.UIAutomationNext.Activities.NTypeInto`
+**Category**: UI Automation
+**Description**: Enters text in a specified UI element, for example a text box.
+**Arguments**:
+- `Text` (In): `InArgument<String>`
+- `SecureText` (In): `InArgument<Security.SecureString>`
+- `DelayBetweenKeys` (In): `InArgument<Double>`
+- `ActivateBefore` (In): `InArgument<Boolean>`
+- `ClickBeforeMode` (In): `InArgument<UiPath.UIAutomationNext.Enums.NClickMode>`
+- `EmptyFieldMode` (In): `InArgument<UiPath.UIAutomationNext.Enums.NEmptyFieldMode>`
+- `ClipboardMode` (In): `InArgument<UiPath.UIAutomationNext.Enums.NTypeByClipboardMode>`
+- `DeselectAfter` (In): `InArgument<Boolean>`
+- `AlterIfDisabled` (In): `InArgument<Boolean>`
+- `InteractionMode` (In): `InArgument<UiPath.UIAutomationNext.Enums.NChildInteractionMode>`
+- `Timeout` (In): `InArgument<Double>`
+- `DelayAfter` (In): `InArgument<Double>`
+- `DelayBefore` (In): `InArgument<Double>`
+- `ContinueOnError` (In): `InArgument<Boolean>`
+- `OutUiElement` (Out): `OutArgument<UiPath.Core.UiElement>`
+- `HealingAgentBehavior` (In): `InArgument<UiPath.UIAutomationNext.Enums.NChildHealingAgentBehavior>`
+- `InUiElement` (In): `InArgument<UiPath.Core.UiElement>`
+**Other members**:
+- `VerifyOptions` [property]: `UiPath.UIAutomationNext.Activities.VerifyExecutionTypeIntoOptions`
+- `Target` [property]: `UiPath.UIAutomationNext.TargetAnchorable`
+### Get Text
+
+**ID**: `UiPath.UIAutomationNext.Activities.NGetText@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.UIAutomationNext.Activities.NGetText`
+**Category**: UI Automation
+**Description**: Extracts the text from a specified UI element.
+**Arguments**:
+- `Text` (Out): `OutArgument`
+- `TextString` (Out): `OutArgument<String>`
+- `WordsInfo` (Out): `OutArgument<IEnumerable<UiPath.UIAutomationNext.Activities.Models.NWordInfo>>`
+- `Timeout` (In): `InArgument<Double>`
+- `DelayAfter` (In): `InArgument<Double>`
+- `DelayBefore` (In): `InArgument<Double>`
+- `ContinueOnError` (In): `InArgument<Boolean>`
+- `OutUiElement` (Out): `OutArgument<UiPath.Core.UiElement>`
+- `HealingAgentBehavior` (In): `InArgument<UiPath.UIAutomationNext.Enums.NChildHealingAgentBehavior>`
+- `InUiElement` (In): `InArgument<UiPath.Core.UiElement>`
+**Other members**:
+- `ScrapingMethod` [property]: `UiPath.UIAutomationNext.Enums.NScrapingMethod`
+- `Target` [property]: `UiPath.UIAutomationNext.TargetAnchorable`
+### Select Item
+
+**ID**: `UiPath.UIAutomationNext.Activities.NSelectItem@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.UIAutomationNext.Activities.NSelectItem`
+**Category**: UI Automation
+**Description**: Selects an item from a drop-down list.
+**Arguments**:
+- `Item` (In): `InArgument<String>`
+- `AlterIfDisabled` (In): `InArgument<Boolean>`
+- `Timeout` (In): `InArgument<Double>`
+- `DelayAfter` (In): `InArgument<Double>`
+- `DelayBefore` (In): `InArgument<Double>`
+- `ContinueOnError` (In): `InArgument<Boolean>`
+- `OutUiElement` (Out): `OutArgument<UiPath.Core.UiElement>`
+- `HealingAgentBehavior` (In): `InArgument<UiPath.UIAutomationNext.Enums.NChildHealingAgentBehavior>`
+- `InUiElement` (In): `InArgument<UiPath.Core.UiElement>`
+**Other members**:
+- `Target` [property]: `UiPath.UIAutomationNext.TargetAnchorable`
+### Go To URL
+
+**ID**: `UiPath.UIAutomationNext.Activities.NGoToUrl@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.UIAutomationNext.Activities.NGoToUrl`
+**Category**: UI Automation
+**Description**: Navigates to the specified URL in the indicated web browser.
+**Arguments**:
+- `Url` (In): `InArgument<String>`
+- `Timeout` (In): `InArgument<Double>`
+- `DelayAfter` (In): `InArgument<Double>`
+- `DelayBefore` (In): `InArgument<Double>`
+- `ContinueOnError` (In): `InArgument<Boolean>`
+### Check/Uncheck
+
+**ID**: `UiPath.UIAutomationNext.Activities.NCheck@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.UIAutomationNext.Activities.NCheck`
+**Category**: UI Automation
+**Description**: Used to check, uncheck, or toggle a checkbox.
+**Arguments**:
+- `Action` (In): `InArgument<UiPath.UIAutomationNext.Enums.NCheckType>`
+- `AlterIfDisabled` (In): `InArgument<Boolean>`
+- `Timeout` (In): `InArgument<Double>`
+- `DelayAfter` (In): `InArgument<Double>`
+- `DelayBefore` (In): `InArgument<Double>`
+- `ContinueOnError` (In): `InArgument<Boolean>`
+- `OutUiElement` (Out): `OutArgument<UiPath.Core.UiElement>`
+- `HealingAgentBehavior` (In): `InArgument<UiPath.UIAutomationNext.Enums.NChildHealingAgentBehavior>`
+- `InUiElement` (In): `InArgument<UiPath.Core.UiElement>`
+**Other members**:
+- `Target` [property]: `UiPath.UIAutomationNext.TargetAnchorable`
+### Navigate Browser
+
+**ID**: `UiPath.UIAutomationNext.Activities.NNavigateBrowser@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.UIAutomationNext.Activities.NNavigateBrowser`
+**Category**: UI Automation
+**Description**: Allows basic navigation of the browser, like Go back, Go forward, Close, Refresh, Home.
+**Arguments**:
+- `Timeout` (In): `InArgument<Double>`
+- `DelayAfter` (In): `InArgument<Double>`
+- `DelayBefore` (In): `InArgument<Double>`
+- `ContinueOnError` (In): `InArgument<Boolean>`
+**Other members**:
+- `Action` [property]: `UiPath.UIAutomationNext.Enums.NNavigateBrowserAction`
+### Get URL
+
+**ID**: `UiPath.UIAutomationNext.Activities.NGetUrl@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.UIAutomationNext.Activities.NGetUrl`
+**Category**: UI Automation
+**Description**: Returns the URL from the current browser.
+**Arguments**:
+- `WaitForReady` (In): `InArgument<UiPath.UIAutomationNext.Enums.NWaitForReady>`
+- `CurrentUrl` (Out): `OutArgument<String>`
+- `Timeout` (In): `InArgument<Double>`
+- `DelayAfter` (In): `InArgument<Double>`
+- `DelayBefore` (In): `InArgument<Double>`
+- `ContinueOnError` (In): `InArgument<Boolean>`
+### Get Attribute
+
+**ID**: `UiPath.UIAutomationNext.Activities.NGetAttributeGeneric`1@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.UIAutomationNext.Activities.NGetAttributeGeneric`1`
+**Category**: UI Automation
+**Description**: Retrieves the value of a specified attribute of the indicated UI element.
+**Arguments**:
+- `Result` (Out): `OutArgument<T>`
+- `Attribute` (In): `InArgument<String>`
+- `Timeout` (In): `InArgument<Double>`
+- `DelayAfter` (In): `InArgument<Double>`
+- `DelayBefore` (In): `InArgument<Double>`
+- `ContinueOnError` (In): `InArgument<Boolean>`
+- `OutUiElement` (Out): `OutArgument<UiPath.Core.UiElement>`
+- `HealingAgentBehavior` (In): `InArgument<UiPath.UIAutomationNext.Enums.NChildHealingAgentBehavior>`
+- `InUiElement` (In): `InArgument<UiPath.Core.UiElement>`
+**Other members**:
+- `Target` [property]: `UiPath.UIAutomationNext.TargetAnchorable`
+### Check Element
+
+**ID**: `UiPath.UIAutomationNext.Activities.NCheckElement@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.UIAutomationNext.Activities.NCheckElement`
+**Category**: UI Automation
+**Description**: Checks if an element is enabled or disabled.
+**Arguments**:
+- `Result` (Out): `OutArgument<Boolean>`
+- `Timeout` (In): `InArgument<Double>`
+- `ContinueOnError` (In): `InArgument<Boolean>`
+- `OutUiElement` (Out): `OutArgument<UiPath.Core.UiElement>`
+- `HealingAgentBehavior` (In): `InArgument<UiPath.UIAutomationNext.Enums.NChildHealingAgentBehavior>`
+- `InUiElement` (In): `InArgument<UiPath.Core.UiElement>`
+**Other members**:
+- `Target` [property]: `UiPath.UIAutomationNext.TargetAnchorable`
+### Hover
+
+**ID**: `UiPath.UIAutomationNext.Activities.NHover@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.UIAutomationNext.Activities.NHover`
+**Category**: UI Automation
+**Description**: Hovers the mouse over a specified UI element.
+**Arguments**:
+- `HoverTime` (In): `InArgument<Double>`
+- `CursorMotionType` (In): `InArgument<UiPath.UIAutomationNext.Enums.CursorMotionType>`
+- `InteractionMode` (In): `InArgument<UiPath.UIAutomationNext.Enums.NChildInteractionMode>`
+- `Timeout` (In): `InArgument<Double>`
+- `DelayAfter` (In): `InArgument<Double>`
+- `DelayBefore` (In): `InArgument<Double>`
+- `ContinueOnError` (In): `InArgument<Boolean>`
+- `OutUiElement` (Out): `OutArgument<UiPath.Core.UiElement>`
+- `HealingAgentBehavior` (In): `InArgument<UiPath.UIAutomationNext.Enums.NChildHealingAgentBehavior>`
+- `InUiElement` (In): `InArgument<UiPath.Core.UiElement>`
+**Other members**:
+- `VerifyOptions` [property]: `UiPath.UIAutomationNext.Activities.VerifyExecutionOptions`
+- `Target` [property]: `UiPath.UIAutomationNext.TargetAnchorable`
+### Highlight
+
+**ID**: `UiPath.UIAutomationNext.Activities.NHighlight@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.UIAutomationNext.Activities.NHighlight`
+**Category**: UI Automation
+**Description**: Visually highlights a specified UI element by surrounding it in a box.
+**Arguments**:
+- `HighlightTime` (In): `InArgument<Double>`
+- `Timeout` (In): `InArgument<Double>`
+- `DelayAfter` (In): `InArgument<Double>`
+- `DelayBefore` (In): `InArgument<Double>`
+- `ContinueOnError` (In): `InArgument<Boolean>`
+- `OutUiElement` (Out): `OutArgument<UiPath.Core.UiElement>`
+- `HealingAgentBehavior` (In): `InArgument<UiPath.UIAutomationNext.Enums.NChildHealingAgentBehavior>`
+- `InUiElement` (In): `InArgument<UiPath.Core.UiElement>`
+**Other members**:
+- `Color` [property]: `Drawing.Color`
+- `Target` [property]: `UiPath.UIAutomationNext.TargetAnchorable`
+### Keyboard Shortcuts
+
+**ID**: `UiPath.UIAutomationNext.Activities.NKeyboardShortcuts@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.UIAutomationNext.Activities.NKeyboardShortcuts`
+**Category**: UI Automation
+**Description**: Sends one or more keyboard shortcuts to a UI element.
+**Arguments**:
+- `ActivateBefore` (In): `InArgument<Boolean>`
+- `DelayBetweenShortcuts` (In): `InArgument<Double>`
+- `DelayBetweenKeys` (In): `InArgument<Double>`
+- `ClickBeforeMode` (In): `InArgument<UiPath.UIAutomationNext.Enums.NClickMode>`
+- `ShortcutsArgument` (In): `InArgument<String>`
+- `InteractionMode` (In): `InArgument<UiPath.UIAutomationNext.Enums.NChildInteractionMode>`
+- `Timeout` (In): `InArgument<Double>`
+- `DelayAfter` (In): `InArgument<Double>`
+- `DelayBefore` (In): `InArgument<Double>`
+- `ContinueOnError` (In): `InArgument<Boolean>`
+- `OutUiElement` (Out): `OutArgument<UiPath.Core.UiElement>`
+- `HealingAgentBehavior` (In): `InArgument<UiPath.UIAutomationNext.Enums.NChildHealingAgentBehavior>`
+- `InUiElement` (In): `InArgument<UiPath.Core.UiElement>`
+**Other members**:
+- `Shortcuts` [property]: `String`
+- `VerifyOptions` [property]: `UiPath.UIAutomationNext.Activities.VerifyExecutionOptions`
+- `Target` [property]: `UiPath.UIAutomationNext.TargetAnchorable`
+### Check App State
+
+**ID**: `UiPath.UIAutomationNext.Activities.NCheckState@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.UIAutomationNext.Activities.NCheckState`
+**Category**: UI Automation
+**Description**: Ensures the automated app is in a specific state, by verifying if a UI element exists or not. A set of user-defined actions are executed based on the detected state.
+**Arguments**:
+- `Exists` (Out): `OutArgument<Boolean>`
+- `Timeout` (In): `InArgument<Double>`
+- `DelayBefore` (In): `InArgument<Double>`
+- `InUiElement` (In): `InArgument<UiPath.Core.UiElement>`
+- `OutUiElement` (Out): `OutArgument<UiPath.Core.UiElement>`
+- `HealingAgentBehavior` (In): `InArgument<UiPath.UIAutomationNext.Enums.NChildHealingAgentBehavior>`
+**Other members**:
+- `Mode` [property]: `UiPath.UIAutomationNext.Enums.NCheckStateMode`
+- `CheckVisibility` [property]: `Boolean`
+- `Target` [property]: `UiPath.UIAutomationNext.TargetAnchorable`
+### Take Screenshot
+
+**ID**: `UiPath.UIAutomationNext.Activities.NTakeScreenshot@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.UIAutomationNext.Activities.NTakeScreenshot`
+**Category**: UI Automation
+**Description**: Takes a screenshot of an application or UI element.
+**Arguments**:
+- `DelayBeforeScreenshot` (In): `InArgument<Double>`
+- `FileName` (In): `InArgument<String>`
+- `FileNameMode` (In): `InArgument<UiPath.UIAutomationNext.Enums.NFileNameMode>`
+- `SavedTo` (Out): `OutArgument`
+- `OutImage` (Out): `OutArgument<UiPath.Core.Image>`
+- `OutFile` (Out): `OutArgument<UiPath.Platform.ResourceHandling.ILocalResource>`
+- `Timeout` (In): `InArgument<Double>`
+- `DelayBefore` (In): `InArgument<Double>`
+- `ContinueOnError` (In): `InArgument<Boolean>`
+- `OutUiElement` (Out): `OutArgument<UiPath.Core.UiElement>`
+- `HealingAgentBehavior` (In): `InArgument<UiPath.UIAutomationNext.Enums.NChildHealingAgentBehavior>`
+- `InUiElement` (In): `InArgument<UiPath.Core.UiElement>`
+**Other members**:
+- `Target` [property]: `UiPath.UIAutomationNext.TargetAnchorable`
+### Mouse Scroll
+
+**ID**: `UiPath.UIAutomationNext.Activities.NMouseScroll@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.UIAutomationNext.Activities.NMouseScroll`
+**Category**: UI Automation
+**Description**: Sends mouse scroll events to the specified UI element.
+**Arguments**:
+- `Direction` (In): `InArgument<UiPath.UIAutomationNext.Enums.NScrollDirection>`
+- `MovementUnits` (In): `InArgument<Int32>`
+- `CursorMotionType` (In): `InArgument<UiPath.UIAutomationNext.Enums.CursorMotionType>`
+- `KeyModifiers` (In): `InArgument<UiPath.UIAutomationNext.Enums.NKeyModifiers>`
+- `InteractionMode` (In): `InArgument<UiPath.UIAutomationNext.Enums.NChildInteractionMode>`
+- `Timeout` (In): `InArgument<Double>`
+- `DelayAfter` (In): `InArgument<Double>`
+- `DelayBefore` (In): `InArgument<Double>`
+- `ContinueOnError` (In): `InArgument<Boolean>`
+- `OutUiElement` (Out): `OutArgument<UiPath.Core.UiElement>`
+- `HealingAgentBehavior` (In): `InArgument<UiPath.UIAutomationNext.Enums.NChildHealingAgentBehavior>`
+- `InUiElement` (In): `InArgument<UiPath.Core.UiElement>`
+**Other members**:
+- `SearchedElement` [property]: `UiPath.UIAutomationNext.Activities.SearchedElement`
+- `Target` [property]: `UiPath.UIAutomationNext.TargetAnchorable`
+### Extract Table Data
+
+**ID**: `UiPath.UIAutomationNext.Activities.NExtractDataGeneric`1@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.UIAutomationNext.Activities.NExtractDataGeneric`1`
+**Category**: UI Automation
+**Description**: Extracts tabular data from a specified web page or application.
+**Arguments**:
+- `InputDataTable` (In): `InArgument<Data.DataTable>`
+- `ExtractedData` (Out): `OutArgument<T>`
+- `ExtractMetadata` (In [required]): `InArgument<String>`
+- `MaximumResults` (In): `InArgument<Int32>`
+- `InteractionMode` (In): `InArgument<UiPath.UIAutomationNext.Enums.NChildInteractionMode>`
+- `DelayBetweenPages` (In): `InArgument<Double>`
+- `ExtractDataSettings` (In): `InArgument<String>`
+- `Timeout` (In): `InArgument<Double>`
+- `DelayAfter` (In): `InArgument<Double>`
+- `DelayBefore` (In): `InArgument<Double>`
+- `ContinueOnError` (In): `InArgument<Boolean>`
+- `HealingAgentBehavior` (In): `InArgument<UiPath.UIAutomationNext.Enums.NChildHealingAgentBehavior>`
+**Other members**:
+- `LimitExtractionTo` [property]: `UiPath.UIAutomationNext.Models.ExtractData.LimitType`
+- `NextLink` [property]: `UiPath.UIAutomationNext.TargetAnchorable`
+- `Target` [property]: `UiPath.UIAutomationNext.TargetAnchorable`
+### Drag and Drop
+
+**ID**: `UiPath.UIAutomationNext.Activities.NDragAndDrop@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.UIAutomationNext.Activities.NDragAndDrop`
+**Category**: UI Automation
+**Description**: Executes a drag and drop operation from the source UI element to the destination UI element.
+**Arguments**:
+- `KeyModifiers` (In): `InArgument<UiPath.UIAutomationNext.Enums.NKeyModifiers>`
+- `MouseButton` (In): `InArgument<UiPath.UIAutomationNext.Enums.NMouseButton>`
+- `DelayBetweenActions` (In): `InArgument<Double>`
+- `Timeout` (In): `InArgument<Double>`
+- `DelayAfter` (In): `InArgument<Double>`
+- `DelayBefore` (In): `InArgument<Double>`
+- `ContinueOnError` (In): `InArgument<Boolean>`
+- `OutUiElement` (Out): `OutArgument<UiPath.Core.UiElement>`
+- `HealingAgentBehavior` (In): `InArgument<UiPath.UIAutomationNext.Enums.NChildHealingAgentBehavior>`
+- `InUiElement` (In): `InArgument<UiPath.Core.UiElement>`
+**Other members**:
+- `DestinationTarget` [property]: `UiPath.UIAutomationNext.TargetAnchorable`
+- `Target` [property]: `UiPath.UIAutomationNext.TargetAnchorable`
+### For Each UI Element
+
+**ID**: `UiPath.UIAutomationNext.Activities.NForEachUiElement@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.UIAutomationNext.Activities.NForEachUiElement`
+**Category**: UI Automation
+**Description**: Iterates over a structured set of UiElements.
+**Arguments**:
+- `ContinueOnError` (In): `InArgument<Boolean>`
+- `MaximumResults` (In): `InArgument<Int32>`
+- `InteractionMode` (In): `InArgument<UiPath.UIAutomationNext.Enums.NChildInteractionMode>`
+- `DelayBetweenPages` (In): `InArgument<Double>`
+- `Timeout` (In): `InArgument<Double>`
+- `DelayAfter` (In): `InArgument<Double>`
+- `DelayBefore` (In): `InArgument<Double>`
+**Other members**:
+- `NextLink` [property]: `UiPath.UIAutomationNext.TargetAnchorable`
+- `LimitExtractionTo` [property]: `UiPath.UIAutomationNext.Models.ExtractData.LimitType`
+- `Target` [property]: `UiPath.UIAutomationNext.TargetAnchorable`
+### Set Text
+
+**ID**: `UiPath.UIAutomationNext.Activities.NSetText@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.UIAutomationNext.Activities.NSetText`
+**Category**: UI Automation
+**Description**: Enters text in a specified UI element, for example a text box.
+**Arguments**:
+- `Text` (In): `InArgument<String>`
+- `AlterIfDisabled` (In): `InArgument<Boolean>`
+- `Timeout` (In): `InArgument<Double>`
+- `DelayAfter` (In): `InArgument<Double>`
+- `DelayBefore` (In): `InArgument<Double>`
+- `ContinueOnError` (In): `InArgument<Boolean>`
+- `OutUiElement` (Out): `OutArgument<UiPath.Core.UiElement>`
+- `HealingAgentBehavior` (In): `InArgument<UiPath.UIAutomationNext.Enums.NChildHealingAgentBehavior>`
+- `InUiElement` (In): `InArgument<UiPath.Core.UiElement>`
+**Other members**:
+- `CacheTargetElement` [property]: `Boolean`
+- `Target` [property]: `UiPath.UIAutomationNext.TargetAnchorable`
+### Get Browser Data
+
+**ID**: `UiPath.UIAutomationNext.Activities.NGetBrowserData@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.UIAutomationNext.Activities.NGetBrowserData`
+**Category**: UI Automation
+**Description**: Exports the session data from the specified browser instance.
+**Arguments**:
+- `Browser` (In): `InArgument<UiPath.Core.Browser>`
+- `BrowserType` (In): `InArgument<UiPath.UIAutomationNext.Enums.NBrowserType>`
+- `SourceUserDataFolder` (In): `InArgument<String>`
+- `UserProfile` (In): `InArgument<String>`
+- `SessionData` (Out): `OutArgument<String>`
+- `DelayAfter` (In): `InArgument<Double>`
+- `DelayBefore` (In): `InArgument<Double>`
+- `ContinueOnError` (In): `InArgument<Boolean>`
+### Set Browser Data
+
+**ID**: `UiPath.UIAutomationNext.Activities.NSetBrowserData@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.UIAutomationNext.Activities.NSetBrowserData`
+**Category**: UI Automation
+**Description**: Imports the session data into a specified browser instance.
+**Arguments**:
+- `Browser` (In): `InArgument<UiPath.Core.Browser>`
+- `SessionData` (In): `InArgument<String>`
+- `DelayAfter` (In): `InArgument<Double>`
+- `DelayBefore` (In): `InArgument<Double>`
+- `ContinueOnError` (In): `InArgument<Boolean>`
+### Inject Js Script
+
+**ID**: `UiPath.UIAutomationNext.Activities.NInjectJsScript@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.UIAutomationNext.Activities.NInjectJsScript`
+**Category**: UI Automation
+**Description**: Executes JavaScript code in the context of the web page corresponding to a UiElement.
+**Arguments**:
+- `InputParameter` (In): `InArgument<String>`
+- `ScriptCode` (In): `InArgument<String>`
+- `ScriptOutput` (Out): `OutArgument`
+- `ExecutionWorld` (In): `InArgument<UiPath.UIAutomationNext.Enums.NExecutionWorld>`
+- `Timeout` (In): `InArgument<Double>`
+- `DelayAfter` (In): `InArgument<Double>`
+- `DelayBefore` (In): `InArgument<Double>`
+- `ContinueOnError` (In): `InArgument<Boolean>`
+- `OutUiElement` (Out): `OutArgument<UiPath.Core.UiElement>`
+- `InUiElement` (In): `InArgument<UiPath.Core.UiElement>`
+**Other members**:
+- `Target` [property]: `UiPath.UIAutomationNext.TargetAnchorable`
+### InvokeActiveX
+
+**ID**: `UiPath.Core.Activities.InvokeActiveX@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.InvokeActiveX`
+**Category**: UI Automation
+_No members extracted._
+### SetWebAttribute
+
+**ID**: `UiPath.Core.Activities.SetWebAttribute@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.SetWebAttribute`
+**Category**: UI Automation
+_No members extracted._
+### InjectDotNetCode
+
+**ID**: `UiPath.Core.Activities.InjectDotNetCode@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.InjectDotNetCode`
+**Category**: UI Automation
+_No members extracted._
+### GetPosition
+
+**ID**: `UiPath.Core.Activities.GetPosition@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.GetPosition`
+**Category**: UI Automation
+_No members extracted._
+### SetClippingRegion
+
+**ID**: `UiPath.Core.Activities.SetClippingRegion@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.SetClippingRegion`
+**Category**: UI Automation
+_No members extracted._
+### WaitAttribute
+
+**ID**: `UiPath.Core.Activities.WaitAttribute@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.WaitAttribute`
+**Category**: UI Automation
+_No members extracted._
+### Activate
+
+**ID**: `UiPath.Core.Activities.Activate@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.Activate`
+**Category**: UI Automation
+_No members extracted._
+### SelectMultipleItems
+
+**ID**: `UiPath.Core.Activities.SelectMultipleItems@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.SelectMultipleItems`
+**Category**: UI Automation
+_No members extracted._
+### SetFocus
+
+**ID**: `UiPath.Core.Activities.SetFocus@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.SetFocus`
+**Category**: UI Automation
+_No members extracted._
+### SetValue
+
+**ID**: `UiPath.Core.Activities.SetValue@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.SetValue`
+**Category**: UI Automation
+_No members extracted._
+### ExportUiTree
+
+**ID**: `UiPath.Core.Activities.ExportUiTree@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.ExportUiTree`
+**Category**: UI Automation
+_No members extracted._
+### FindChildren
+
+**ID**: `UiPath.Core.Activities.FindChildren@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.FindChildren`
+**Category**: UI Automation
+_No members extracted._
+### WaitUiElementAppear
+
+**ID**: `UiPath.Core.Activities.WaitUiElementAppear@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.WaitUiElementAppear`
+**Category**: UI Automation
+_No members extracted._
+### FindRelative
+
+**ID**: `UiPath.Core.Activities.FindRelative@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.FindRelative`
+**Category**: UI Automation
+_No members extracted._
+### GetAncestor
+
+**ID**: `UiPath.Core.Activities.GetAncestor@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.GetAncestor`
+**Category**: UI Automation
+_No members extracted._
+### IndicateOnScreen
+
+**ID**: `UiPath.Core.Activities.IndicateOnScreen@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.IndicateOnScreen`
+**Category**: UI Automation
+_No members extracted._
+### LoadImage
+
+**ID**: `UiPath.Core.Activities.LoadImage@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.LoadImage`
+**Category**: UI Automation
+_No members extracted._
+### SaveImage
+
+**ID**: `UiPath.Core.Activities.SaveImage@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.SaveImage`
+**Category**: UI Automation
+_No members extracted._
+### FindImageMatches
+
+**ID**: `UiPath.Core.Activities.FindImageMatches@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.FindImageMatches`
+**Category**: UI Automation
+_No members extracted._
+### Google Cloud Vision OCR
+
+**ID**: `UiPath.Core.Activities.GoogleCloudOCR@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.GoogleCloudOCR`
+**Category**: UI Automation
+_No members extracted._
+### Microsoft Azure Computer Vision OCR
+
+**ID**: `UiPath.Core.Activities.MicrosoftAzureComputerVisionOCR@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.MicrosoftAzureComputerVisionOCR`
+**Category**: UI Automation
+_No members extracted._
+### Tesseract OCR
+
+**ID**: `UiPath.Core.Activities.GoogleOCR@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.GoogleOCR`
+**Category**: UI Automation
+_No members extracted._
+### GetOCRText
+
+**ID**: `UiPath.Core.Activities.GetOCRText@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.GetOCRText`
+**Category**: UI Automation
+_No members extracted._
+### GetActiveWindow
+
+**ID**: `UiPath.Core.Activities.GetActiveWindow@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.GetActiveWindow`
+**Category**: UI Automation
+_No members extracted._
+### HideWindow
+
+**ID**: `UiPath.Core.Activities.HideWindow@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.HideWindow`
+**Category**: UI Automation
+_No members extracted._
+### MaximizeWindow
+
+**ID**: `UiPath.Core.Activities.MaximizeWindow@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.MaximizeWindow`
+**Category**: UI Automation
+_No members extracted._
+### MinimizeWindow
+
+**ID**: `UiPath.Core.Activities.MinimizeWindow@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.MinimizeWindow`
+**Category**: UI Automation
+_No members extracted._
+### MoveWindow
+
+**ID**: `UiPath.Core.Activities.MoveWindow@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.MoveWindow`
+**Category**: UI Automation
+_No members extracted._
+### RestoreWindow
+
+**ID**: `UiPath.Core.Activities.RestoreWindow@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.RestoreWindow`
+**Category**: UI Automation
+_No members extracted._
+### ShowWindow
+
+**ID**: `UiPath.Core.Activities.ShowWindow@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.ShowWindow`
+**Category**: UI Automation
+_No members extracted._
+### CallTransaction
+
+**ID**: `UiPath.Core.Activities.SAP.CallTransaction@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.SAP.CallTransaction`
+**Category**: UI Automation
+_No members extracted._
+### ClickPictureOnScreen
+
+**ID**: `UiPath.Core.Activities.SAP.ClickPictureOnScreen@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.SAP.ClickPictureOnScreen`
+**Category**: UI Automation
+_No members extracted._
+### ClickToolbarButton
+
+**ID**: `UiPath.Core.Activities.SAP.ClickToolbarButton@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.SAP.ClickToolbarButton`
+**Category**: UI Automation
+_No members extracted._
+### ExpandALVTree
+
+**ID**: `UiPath.Core.Activities.SAP.ExpandALVTree@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.SAP.ExpandALVTree`
+**Category**: UI Automation
+_No members extracted._
+### ExpandALVHierarchicalTable
+
+**ID**: `UiPath.Core.Activities.SAP.ExpandALVHierarchicalTable@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.SAP.ExpandALVHierarchicalTable`
+**Category**: UI Automation
+_No members extracted._
+### ExpandTree
+
+**ID**: `UiPath.Core.Activities.SAP.ExpandTree@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.SAP.ExpandTree`
+**Category**: UI Automation
+_No members extracted._
+### ReadStatusbar
+
+**ID**: `UiPath.Core.Activities.SAP.ReadStatusbar@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.SAP.ReadStatusbar`
+**Category**: UI Automation
+_No members extracted._
+### Login
+
+**ID**: `UiPath.Core.Activities.SAP.Login@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.SAP.Login`
+**Category**: UI Automation
+_No members extracted._
+### Logon
+
+**ID**: `UiPath.Core.Activities.SAP.Logon@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.SAP.Logon`
+**Category**: UI Automation
+_No members extracted._
+### SelectDatesInCalendar
+
+**ID**: `UiPath.Core.Activities.SAP.SelectDatesInCalendar@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.SAP.SelectDatesInCalendar`
+**Category**: UI Automation
+_No members extracted._
+### CellScope
+
+**ID**: `UiPath.Core.Activities.CellScope@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.CellScope`
+**Category**: UI Automation
+_No members extracted._
+### Check
+
+**ID**: `UiPath.CV.Activities.CvCheckWithDescriptor@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.CV.Activities.CvCheckWithDescriptor`
+**Category**: UI Automation
+**Description**: Selects, clears or toggles check boxes. Only CheckBox type elements are supported.
+**Arguments**:
+- `TimeoutMS` (In): `InArgument<Int32>`
+- `Descriptor` (In): `InArgument<UiPath.CV.CvDescriptor>`
+- `ScrollDirection` (In): `InArgument<UiPath.CV.Scroll>`
+- `NumberOfScrolls` (In): `InArgument<Int32>`
+- `DelayScreenshotAfterScroll` (In): `InArgument<Int32>`
+- `ContinueOnError` (In): `InArgument<Boolean>`
+- `OutRegion` (Out): `OutArgument<Drawing.Rectangle>`
+- `DelayBefore` (In): `InArgument<Int32>`
+- `DelayMS` (In): `InArgument<Int32>`
+- `Action` (In): `InArgument<UiPath.Core.Activities.CheckType>`
+- `CursorMotionType` (In): `InArgument<UiPath.UIAutomationNext.Enums.CursorMotionType>`
+### CV Click
+
+**ID**: `UiPath.CV.Activities.CvClickWithDescriptor@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.CV.Activities.CvClickWithDescriptor`
+**Category**: UI Automation
+**Description**: Clicks a specified UI element which is targeted using UiPath Computer Vision.
+**Arguments**:
+- `TimeoutMS` (In): `InArgument<Int32>`
+- `DelayMS` (In): `InArgument<Int32>`
+- `DelayBefore` (In): `InArgument<Int32>`
+- `Descriptor` (In): `InArgument<UiPath.CV.CvDescriptor>`
+- `ScrollDirection` (In): `InArgument<UiPath.CV.Scroll>`
+- `NumberOfScrolls` (In): `InArgument<Int32>`
+- `DelayScreenshotAfterScroll` (In): `InArgument<Int32>`
+- `InRegion` (In): `InArgument<Drawing.Rectangle>`
+- `OutRegion` (Out): `OutArgument<Drawing.Rectangle>`
+- `KeyModifiers` (In): `InArgument<UiPath.Core.Activities.KeyModifiers>`
+- `CursorMotionType` (In): `InArgument<UiPath.UIAutomationNext.Enums.CursorMotionType>`
+- `ClickType` (In): `InArgument<UiPath.Core.ClickType>`
+- `MouseButton` (In): `InArgument<UiPath.Core.MouseButton>`
+- `ContinueOnError` (In): `InArgument<Boolean>`
+### CV Dropdown Select
+
+**ID**: `UiPath.CV.Activities.CvSelectItemWithDescriptor@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.CV.Activities.CvSelectItemWithDescriptor`
+**Category**: UI Automation
+**Description**: Specifies the item to be selected from a dropdown list.
+**Arguments**:
+- `TimeoutMS` (In): `InArgument<Int32>`
+- `DelayMS` (In): `InArgument<Int32>`
+- `DelayBetweenKeys` (In): `InArgument<Int32>`
+- `DelayBefore` (In): `InArgument<Int32>`
+- `Text` (In [required]): `InArgument<UiPath.CV.CvString>`
+- `Descriptor` (In): `InArgument<UiPath.CV.CvDescriptor>`
+- `ScrollDirection` (In): `InArgument<UiPath.CV.Scroll>`
+- `NumberOfScrolls` (In): `InArgument<Int32>`
+- `DelayScreenshotAfterScroll` (In): `InArgument<Int32>`
+- `OutRegion` (Out): `OutArgument<Drawing.Rectangle>`
+- `ClickBeforeTyping` (In): `InArgument<Boolean>`
+- `EmptyField` (In): `InArgument<Boolean>`
+- `Activate` (In): `InArgument<Boolean>`
+- `ContinueOnError` (In): `InArgument<Boolean>`
+### CV Element Exists
+
+**ID**: `UiPath.CV.Activities.CvElementExistsWithDescriptor@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.CV.Activities.CvElementExistsWithDescriptor`
+**Category**: UI Automation
+**Description**: Searches for a specified UI element on the screen in the foreground using UiPath Computer Vision, and returns a Boolean variable that states whether it was found or not.
+**Arguments**:
+- `TimeoutMS` (In): `InArgument<Int32>`
+- `Descriptor` (In): `InArgument<UiPath.CV.CvDescriptor>`
+- `ScrollDirection` (In): `InArgument<UiPath.CV.Scroll>`
+- `NumberOfScrolls` (In): `InArgument<Int32>`
+- `DelayScreenshotAfterScroll` (In): `InArgument<Int32>`
+- `ContinueOnError` (In): `InArgument<Boolean>`
+- `DelayBefore` (In): `InArgument<Int32>`
+- `DelayMS` (In): `InArgument<Int32>`
+- `Result` (Out): `OutArgument<Boolean>`
+- `InRegion` (In): `InArgument<Drawing.Rectangle>`
+- `OutRegion` (Out): `OutArgument<Drawing.Rectangle>`
+### CV Extract Table
+
+**ID**: `UiPath.CV.Activities.CvExtractDataTableWithDescriptor@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.CV.Activities.CvExtractDataTableWithDescriptor`
+**Category**: UI Automation
+**Description**: Extracts a table visible on the screen.
+**Arguments**:
+- `TimeoutMS` (In): `InArgument<Int32>`
+- `Descriptor` (In): `InArgument<UiPath.CV.CvDescriptor>`
+- `ContinueOnError` (In): `InArgument<Boolean>`
+- `ScrollDirection` (In): `InArgument<UiPath.CV.Scroll>`
+- `NumberOfScrolls` (In): `InArgument<Int32>`
+- `OutRegion` (Out): `OutArgument<Drawing.Rectangle>`
+- `Result` (Out): `OutArgument<Data.DataTable>`
+- `DelayBefore` (In): `InArgument<Int32>`
+- `DelayMS` (In): `InArgument<Int32>`
+- `DelayScreenshotAfterScroll` (In): `InArgument<Int32>`
+- `AddHeaders` (In): `InArgument<Boolean>`
+- `RefreshBefore` (In): `InArgument<Boolean>`
+- `IgnoreEmptyRows` (In): `InArgument<Boolean>`
+- `Scroll` (In): `InArgument<Boolean>`
+- `ScrollOffset` (In): `InArgument<Drawing.Point>`
+### CV Get Text
+
+**ID**: `UiPath.CV.Activities.CvGetTextWithDescriptor@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.CV.Activities.CvGetTextWithDescriptor`
+**Category**: UI Automation
+**Description**: Extracts text from a specified position based on an anchor.
+**Arguments**:
+- `TimeoutMS` (In): `InArgument<Int32>`
+- `Descriptor` (In): `InArgument<UiPath.CV.CvDescriptor>`
+- `ScrollDirection` (In): `InArgument<UiPath.CV.Scroll>`
+- `NumberOfScrolls` (In): `InArgument<Int32>`
+- `DelayScreenshotAfterScroll` (In): `InArgument<Int32>`
+- `Scroll` (In): `InArgument<Boolean>`
+- `ScrollOffset` (In): `InArgument<Drawing.Point>`
+- `ContinueOnError` (In): `InArgument<Boolean>`
+- `InRegion` (In): `InArgument<Drawing.Rectangle>`
+- `OutRegion` (Out): `OutArgument<Drawing.Rectangle>`
+- `RefreshBefore` (In): `InArgument<Boolean>`
+- `Result` (Out): `OutArgument<String>`
+- `DelayBefore` (In): `InArgument<Int32>`
+- `DelayMS` (In): `InArgument<Int32>`
+**Other members**:
+- `MethodType` [property]: `UiPath.CV.GetTextMethodType`
+### CV Highlight
+
+**ID**: `UiPath.CV.Activities.CvHighlightWithDescriptor@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.CV.Activities.CvHighlightWithDescriptor`
+**Category**: UI Automation
+**Description**: Visually highlights a specified UI element identified using UiPath Computer Vision.
+**Arguments**:
+- `TimeoutMS` (In): `InArgument<Int32>`
+- `Descriptor` (In): `InArgument<UiPath.CV.CvDescriptor>`
+- `ScrollDirection` (In): `InArgument<UiPath.CV.Scroll>`
+- `NumberOfScrolls` (In): `InArgument<Int32>`
+- `DelayScreenshotAfterScroll` (In): `InArgument<Int32>`
+- `DelayBefore` (In): `InArgument<Int32>`
+- `DelayMS` (In): `InArgument<Int32>`
+- `InRegion` (In): `InArgument<Drawing.Rectangle>`
+- `OutRegion` (Out): `OutArgument<Drawing.Rectangle>`
+- `HighlightTime` (In): `InArgument<Int32>`
+- `ContinueOnError` (In): `InArgument<Boolean>`
+**Other members**:
+- `Color` [property]: `Drawing.Color`
+### CV Hover
+
+**ID**: `UiPath.CV.Activities.CvHoverWithDescriptor@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.CV.Activities.CvHoverWithDescriptor`
+**Category**: UI Automation
+**Description**: Hovers over a specified UI element which is targeted by using UiPath Computer Vision.
+**Arguments**:
+- `HoverTime` (In): `InArgument<Double>`
+- `TimeoutMS` (In): `InArgument<Int32>`
+- `Descriptor` (In): `InArgument<UiPath.CV.CvDescriptor>`
+- `ScrollDirection` (In): `InArgument<UiPath.CV.Scroll>`
+- `NumberOfScrolls` (In): `InArgument<Int32>`
+- `DelayScreenshotAfterScroll` (In): `InArgument<Int32>`
+- `ContinueOnError` (In): `InArgument<Boolean>`
+- `DelayBefore` (In): `InArgument<Int32>`
+- `DelayMS` (In): `InArgument<Int32>`
+- `InRegion` (In): `InArgument<Drawing.Rectangle>`
+- `OutRegion` (Out): `OutArgument<Drawing.Rectangle>`
+- `CursorMotionType` (In): `InArgument<UiPath.UIAutomationNext.Enums.CursorMotionType>`
+### CV Screen Scope
+
+**ID**: `UiPath.CV.Activities.CVScope@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.CV.Activities.CVScope`
+**Category**: UI Automation
+**Description**: A container that enables Computer Vision on a window or element. Also acts as a refresh mechanism.
+**Arguments**:
+- `ContinueOnError` (In): `InArgument<Boolean>`
+- `CvMethod` (In): `InArgument<UiPath.CV.CVMethods>`
+- `Server` (In): `InArgument<String>`
+- `ApiKey` (In): `InArgument<String>`
+- `UseLocalServer` (In): `InArgument<Boolean>`
+- `ScrollOffset` (In): `InArgument<Drawing.Point>`
+- `DelayBefore` (In): `InArgument<Int32>`
+**Other members**:
+- `Target` [property]: `UiPath.Core.Activities.Target`
+### CV Type Into
+
+**ID**: `UiPath.CV.Activities.CvTypeIntoWithDescriptor@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.CV.Activities.CvTypeIntoWithDescriptor`
+**Category**: UI Automation
+**Description**: Sends keystrokes to a UI element. Special keys are supported and can be selected from the drop-down list. The UI element is identified using UiPath Computer Vision.
+**Arguments**:
+- `TimeoutMS` (In): `InArgument<Int32>`
+- `DelayMS` (In): `InArgument<Int32>`
+- `DelayBetweenKeys` (In): `InArgument<Int32>`
+- `DelayBefore` (In): `InArgument<Int32>`
+- `Text` (In [required]): `InArgument<UiPath.CV.CvString>`
+- `Descriptor` (In): `InArgument<UiPath.CV.CvDescriptor>`
+- `ScrollDirection` (In): `InArgument<UiPath.CV.Scroll>`
+- `NumberOfScrolls` (In): `InArgument<Int32>`
+- `DelayScreenshotAfterScroll` (In): `InArgument<Int32>`
+- `InRegion` (In): `InArgument<Drawing.Rectangle>`
+- `OutRegion` (Out): `OutArgument<Drawing.Rectangle>`
+- `ClickBeforeTyping` (In): `InArgument<Boolean>`
+- `EmptyField` (In): `InArgument<Boolean>`
+- `Activate` (In): `InArgument<Boolean>`
+- `ContinueOnError` (In): `InArgument<Boolean>`
+---

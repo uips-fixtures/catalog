@@ -1,0 +1,49 @@
+# Curated package sets for dist publishing
+# See docs/adr/adr-004.md for rationale.
+#
+# Package version fields (mutually exclusive):
+#   omitted           — latest-stable (highest non-prerelease version in data/sources/nuget/pkg/)
+#   version: "x.y.z" — single explicit pin; transform fails if that version is not collected
+#   versions:         — list of explicit pins; each version is included as a separate source entry
+#     - "x.y.z"         in the output; transform fails if any version is not collected
+#     - "a.b.c"
+#
+# defaults.targetFrameworks.include:
+#   Allowlist of TFMs. Activities extracted from any other TFM are excluded.
+#   Enforcement requires nuspec TFM data (collect-nuspec.yml); Shape B files alone
+#   do not carry TFM information.
+#
+# Overlaps between sets are permitted.
+
+defaults:
+  targetFrameworks:
+    include:
+      - net6.0-windows
+      - net8.0-windows
+
+sets:
+
+  - id: reframework-stable
+    description: >
+      Packages used by the UiPath REFramework template, always at latest stable.
+      Derived from rpapub/DriftingGears data/reframework_catalog.json (317 entries, 4 packages).
+    packages:
+      - id: UiPath.Excel.Activities
+      - id: UiPath.System.Activities
+      - id: UiPath.Testing.Activities
+      - id: UiPath.UIAutomation.Activities
+
+  - id: watchful-anvil
+    description: >
+      Watchful Anvil — starter set. Pinned versions; target net6/net8 only.
+    packages:
+      - id: UiPath.Excel.Activities
+        version: "3.4.1"
+      - id: UiPath.FTP.Activities
+        version: "2.3.0"
+      - id: UiPath.PDF.Activities
+        version: "3.25.2"
+      - id: UiPath.System.Activities
+        version: "23.4.5"
+      - id: UiPath.UIAutomation.Activities
+        version: "23.10.20"

@@ -1,0 +1,257 @@
+# UiPath.Excel.Activities 3.4.1
+
+> generator: uips-fixtures catalog v0.1
+> generated: 2026-03-22T09:37:08Z
+> set: watchful-anvil
+> activities: 16
+> authors: UiPath
+**ID format**: `{fullName}@{packageId}/{packageVersion}`
+**Argument directions**: In (input), Out (output), InOut (bidirectional)
+
+---
+### Read CSV
+
+**ID**: `UiPath.CSV.Activities.ReadCsvFile@UiPath.Excel.Activities/3.4.1`
+**Type**: `UiPath.CSV.Activities.ReadCsvFile`
+**Category**: Excel.CSV
+**Description**: Copies all entries from a specified CSV file to an Excel range, table, or sheet, or saves the data for later use in the automation.
+**Arguments**:
+- `DataTable` (Out): `OutArgument<Data.DataTable>`
+- `IgnoreQuotes` (In): `InArgument<Boolean>`
+- `FilePath` (In): `InArgument<String>`
+- `PathResource` (In): `InArgument<UiPath.Platform.ResourceHandling.IResource>`
+- `Encoding` (In): `InArgument<String>`
+**Other members**:
+- `IncludeColumnNames` [property]: `Boolean`
+- `DelimitatorForViewModel` [property]: `UiPath.CSV.Activities.DelimiterOptions`
+### Write CSV
+
+**ID**: `UiPath.CSV.Activities.AppendWriteCsvFile@UiPath.Excel.Activities/3.4.1`
+**Type**: `UiPath.CSV.Activities.AppendWriteCsvFile`
+**Category**: Excel.CSV
+**Description**: Copies an Excel range, table, or sheet, or table data saved for later, and pastes it in a specified CSV file either pasting it after existing data or replacing any existing data in the file.
+**Arguments**:
+- `DataTable` (In): `InArgument<Data.DataTable>`
+- `FilePath` (In): `InArgument<String>`
+- `PathResource` (In): `InArgument<UiPath.Platform.ResourceHandling.IResource>`
+- `Encoding` (In): `InArgument<String>`
+**Other members**:
+- `CsvAction` [property]: `UiPath.CSV.Activities.CsvWriteAction`
+- `AddHeaders` [property]: `Boolean`
+- `ShouldQuote` [property]: `Boolean`
+- `DelimitatorForViewModel` [property]: `UiPath.CSV.Activities.DelimiterOptions`
+### ReadRange
+
+**ID**: `UiPath.Excel.Activities.ReadRange@UiPath.Excel.Activities/3.4.1`
+**Type**: `UiPath.Excel.Activities.ReadRange`
+**Category**: Excel
+**Description**: Reads the value of a range in Range Excel Format from a spreadsheet as a DataTable. If Range isn't specified, the whole spreadsheet is read. If range is specified as a cell, the whole spreadsheet starting from that cell is read.
+**Arguments**:
+- `Range` (In): `InArgument<String>`
+- `DataTable` (Out): `OutArgument<Data.DataTable>`
+- `Workbook` (In): `InArgument<UiPath.Excel.Workbook>`
+- `WorkbookPath` (In): `InArgument<String>`
+- `WorkbookPathResource` (In): `InArgument<UiPath.Platform.ResourceHandling.IResource>`
+- `Password` (In): `InArgument<String>`
+- `SheetName` (In): `InArgument<String>`
+**Other members**:
+- `AddHeaders` [property]: `Boolean`
+- `PreserveFormat` [property]: `Boolean`
+### WriteRange
+
+**ID**: `UiPath.Excel.Activities.WriteRange@UiPath.Excel.Activities/3.4.1`
+**Type**: `UiPath.Excel.Activities.WriteRange`
+**Category**: Excel
+**Description**: Writes the data from a DataTable in a spreadsheet starting from StartingCell. If StartingCell isn't specified, the writing begins at A1 cell. If the sheet does not exist, a new one is created with the SheetName value. All cells within the DataTable range are overwritten. Changes are immediately saved.
+**Arguments**:
+- `StartingCell` (In): `InArgument<String>`
+- `DataTable` (In): `InArgument<Data.DataTable>`
+- `Workbook` (In): `InArgument<UiPath.Excel.Workbook>`
+- `WorkbookPath` (In): `InArgument<String>`
+- `WorkbookPathResource` (In): `InArgument<UiPath.Platform.ResourceHandling.IResource>`
+- `Password` (In): `InArgument<String>`
+- `SheetName` (In): `InArgument<String>`
+**Other members**:
+- `AddHeaders` [property]: `Boolean`
+### ReadCell
+
+**ID**: `UiPath.Excel.Activities.ReadCell@UiPath.Excel.Activities/3.4.1`
+**Type**: `UiPath.Excel.Activities.ReadCell`
+**Category**: Excel
+**Description**: Reads the value of a cell from a spreadsheet as a string.
+**Arguments**:
+- `Cell` (In): `InArgument<String>`
+- `Result` (Out): `DesignViewModels.DesignOutArgument`
+- `Workbook` (In): `InArgument<UiPath.Excel.Workbook>`
+- `WorkbookPath` (In): `InArgument<String>`
+- `WorkbookPathResource` (In): `InArgument<UiPath.Platform.ResourceHandling.IResource>`
+- `Password` (In): `InArgument<String>`
+- `SheetName` (In): `InArgument<String>`
+**Other members**:
+- `PreserveFormat` [property]: `Boolean`
+### ReadCellFormula
+
+**ID**: `UiPath.Excel.Activities.ReadCellFormula@UiPath.Excel.Activities/3.4.1`
+**Type**: `UiPath.Excel.Activities.ReadCellFormula`
+**Category**: Excel
+**Description**: Reads the formula of a cell from a spreadsheet as a string.
+**Arguments**:
+- `Cell` (In): `InArgument<String>`
+- `Result` (Out): `OutArgument<String>`
+- `Workbook` (In): `InArgument<UiPath.Excel.Workbook>`
+- `WorkbookPath` (In): `InArgument<String>`
+- `WorkbookPathResource` (In): `InArgument<UiPath.Platform.ResourceHandling.IResource>`
+- `Password` (In): `InArgument<String>`
+- `SheetName` (In): `InArgument<String>`
+### WriteCell
+
+**ID**: `UiPath.Excel.Activities.WriteCell@UiPath.Excel.Activities/3.4.1`
+**Type**: `UiPath.Excel.Activities.WriteCell`
+**Category**: Excel
+**Description**: Writes the Text value into a cell from a spreadsheet. If the sheet does not exist, a new one is created with the SheetName value. If a value exists, it is overwritten. Changes are immediately saved.
+**Arguments**:
+- `Cell` (In): `InArgument<String>`
+- `Text` (In): `InArgument<String>`
+- `Workbook` (In): `InArgument<UiPath.Excel.Workbook>`
+- `WorkbookPath` (In): `InArgument<String>`
+- `WorkbookPathResource` (In): `InArgument<UiPath.Platform.ResourceHandling.IResource>`
+- `Password` (In): `InArgument<String>`
+- `SheetName` (In): `InArgument<String>`
+### AppendRange
+
+**ID**: `UiPath.Excel.Activities.AppendRange@UiPath.Excel.Activities/3.4.1`
+**Type**: `UiPath.Excel.Activities.AppendRange`
+**Category**: Excel
+**Description**: Appends the data from a DataTable to a spreadsheet. If the sheet does not exist, a new one is created with the SheetName value. Changes are immediately saved.
+**Arguments**:
+- `DataTable` (In): `InArgument<Data.DataTable>`
+- `Workbook` (In): `InArgument<UiPath.Excel.Workbook>`
+- `WorkbookPath` (In): `InArgument<String>`
+- `WorkbookPathResource` (In): `InArgument<UiPath.Platform.ResourceHandling.IResource>`
+- `Password` (In): `InArgument<String>`
+- `SheetName` (In): `InArgument<String>`
+### GetTableRange
+
+**ID**: `UiPath.Excel.Activities.GetTableRange@UiPath.Excel.Activities/3.4.1`
+**Type**: `UiPath.Excel.Activities.GetTableRange`
+**Category**: Excel
+**Description**: Extracts the range of an Excel table from a specified spreadsheet.
+**Arguments**:
+- `TableName` (In): `InArgument<String>`
+- `Range` (Out): `OutArgument<String>`
+- `Workbook` (In): `InArgument<UiPath.Excel.Workbook>`
+- `WorkbookPath` (In): `InArgument<String>`
+- `WorkbookPathResource` (In): `InArgument<UiPath.Platform.ResourceHandling.IResource>`
+- `Password` (In): `InArgument<String>`
+- `SheetName` (In): `InArgument<String>`
+**Other members**:
+- `IsPivot` [property]: `Boolean`
+### ReadRow
+
+**ID**: `UiPath.Excel.Activities.ReadRow@UiPath.Excel.Activities/3.4.1`
+**Type**: `UiPath.Excel.Activities.ReadRow`
+**Category**: Excel
+**Arguments**:
+- `StartingCell` (In): `InArgument<String>`
+- `Result` (Out): `OutArgument<IEnumerable<Object>>`
+- `Workbook` (In): `InArgument<UiPath.Excel.Workbook>`
+- `WorkbookPath` (In): `InArgument<String>`
+- `WorkbookPathResource` (In): `InArgument<UiPath.Platform.ResourceHandling.IResource>`
+- `Password` (In): `InArgument<String>`
+- `SheetName` (In): `InArgument<String>`
+**Other members**:
+- `PreserveFormat` [property]: `Boolean`
+### ReadColumn
+
+**ID**: `UiPath.Excel.Activities.ReadColumn@UiPath.Excel.Activities/3.4.1`
+**Type**: `UiPath.Excel.Activities.ReadColumn`
+**Category**: Excel
+**Arguments**:
+- `StartingCell` (In): `InArgument<String>`
+- `Result` (Out): `OutArgument<IEnumerable<Object>>`
+- `Workbook` (In): `InArgument<UiPath.Excel.Workbook>`
+- `WorkbookPath` (In): `InArgument<String>`
+- `WorkbookPathResource` (In): `InArgument<UiPath.Platform.ResourceHandling.IResource>`
+- `Password` (In): `InArgument<String>`
+- `SheetName` (In): `InArgument<String>`
+**Other members**:
+- `PreserveFormat` [property]: `Boolean`
+### Create Pivot Table Workbook
+
+**ID**: `UiPath.Excel.Activities.CreatePivotTable@UiPath.Excel.Activities/3.4.1`
+**Type**: `UiPath.Excel.Activities.CreatePivotTable`
+**Category**: Excel
+**Description**: Creates a pivot table from a specified range or table to help you calculate, summarize, and analyze data.
+**Arguments**:
+- `SourceSheet` (In): `InArgument<String>`
+- `SourceRange` (In): `InArgument<String>`
+- `SourceTable` (In): `InArgument<String>`
+- `PivotTableName` (In): `InArgument<String>`
+- `PlacementCell` (In): `InArgument<String>`
+- `LayoutRowType` (In): `InArgument<UiPath.Excel.PivotTableLayoutRowType>`
+- `ValuesMode` (In): `InArgument<UiPath.Excel.PivotTableValuesMode>`
+- `PivotTableFieldsVariable` (In): `InArgument<IEnumerable<UiPath.Excel.PivotTableField>>`
+- `Workbook` (In): `InArgument<UiPath.Excel.Workbook>`
+- `WorkbookPath` (In): `InArgument<String>`
+- `WorkbookPathResource` (In): `InArgument<UiPath.Platform.ResourceHandling.IResource>`
+- `Password` (In): `InArgument<String>`
+- `SheetName` (In): `InArgument<String>`
+**Other members**:
+- `UseTableSource` [property]: `Boolean`
+- `PivotTableFields` [property]: `List<InArgument<UiPath.Excel.PivotTableField>>`
+### Get Cell Color Workbook
+
+**ID**: `UiPath.Excel.Activities.GetCellColor@UiPath.Excel.Activities/3.4.1`
+**Type**: `UiPath.Excel.Activities.GetCellColor`
+**Category**: Excel
+**Description**: Gets the color of a cell
+**Arguments**:
+- `Cell` (In): `InArgument<String>`
+- `Color` (Out): `OutArgument<Drawing.Color>`
+- `Workbook` (In): `InArgument<UiPath.Excel.Workbook>`
+- `WorkbookPath` (In): `InArgument<String>`
+- `WorkbookPathResource` (In): `InArgument<UiPath.Platform.ResourceHandling.IResource>`
+- `Password` (In): `InArgument<String>`
+- `SheetName` (In): `InArgument<String>`
+### Set Range Color Workbook
+
+**ID**: `UiPath.Excel.Activities.SetRangeColor@UiPath.Excel.Activities/3.4.1`
+**Type**: `UiPath.Excel.Activities.SetRangeColor`
+**Category**: Excel
+**Description**: Sets the color of a range
+**Arguments**:
+- `Range` (In): `InArgument<String>`
+- `Color` (In): `InArgument<Drawing.Color>`
+- `Workbook` (In): `InArgument<UiPath.Excel.Workbook>`
+- `WorkbookPath` (In): `InArgument<String>`
+- `WorkbookPathResource` (In): `InArgument<UiPath.Platform.ResourceHandling.IResource>`
+- `Password` (In): `InArgument<String>`
+- `SheetName` (In): `InArgument<String>`
+### CreateNewWorkbook
+
+**ID**: `UiPath.Excel.Activities.CreateNewWorkbook@UiPath.Excel.Activities/3.4.1`
+**Type**: `UiPath.Excel.Activities.CreateNewWorkbook`
+**Category**: Excel
+**Arguments**:
+- `ConflictResolution` (In): `InArgument<UiPath.Excel.ConflictBehavior>`
+- `WorkbookFile` (Out): `OutArgument<UiPath.Excel.Workbook>`
+- `Workbook` (In): `InArgument<UiPath.Excel.Workbook>`
+- `WorkbookPath` (In): `InArgument<String>`
+- `WorkbookPathResource` (In): `InArgument<UiPath.Platform.ResourceHandling.IResource>`
+- `Password` (In): `InArgument<String>`
+- `SheetName` (In): `InArgument<String>`
+### GetSheets
+
+**ID**: `UiPath.Excel.Activities.GetSheets@UiPath.Excel.Activities/3.4.1`
+**Type**: `UiPath.Excel.Activities.GetSheets`
+**Category**: Excel
+**Arguments**:
+- `SheetName` (In): `InArgument<String>`
+- `Result` (Out): `OutArgument<IEnumerable<String>>`
+- `Workbook` (In): `InArgument<UiPath.Excel.Workbook>`
+- `WorkbookPath` (In): `InArgument<String>`
+- `WorkbookPathResource` (In): `InArgument<UiPath.Platform.ResourceHandling.IResource>`
+- `Password` (In): `InArgument<String>`
+**Other members**:
+- `OnlyVisibleSheets` [property]: `Boolean`
+---
