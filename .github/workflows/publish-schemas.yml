@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - 'schemas/**/*.schema.json'
+      - 'data/dist/**'
   workflow_dispatch:
 
 permissions:
@@ -43,7 +44,7 @@ jobs:
                   skipped.append(f"  skip {src}: $id does not point to {PAGES_BASE!r}")
                   continue
 
-              rel  = schema_id.removeprefix(PAGES_BASE)   # catalog/schemas/v0.1/activity-catalog.schema.json
+              rel  = schema_id.removeprefix(PAGES_BASE)
               dest = os.path.join(PAGES_SRC, rel)
               os.makedirs(os.path.dirname(dest), exist_ok=True)
               shutil.copy2(src, dest)
@@ -54,6 +55,36 @@ jobs:
           for msg in skipped:
               print(msg)
           print(f"\n{len(copied)} copied, {len(skipped)} skipped")
+          PYEOF
+
+      - name: Copy refdoc and llms dist files to pages repo
+        run: |
+          python3 - << 'PYEOF'
+          import glob, os, shutil
+
+          DIST   = "catalog/data/dist"
+          PAGES  = "pages/src"
+
+          html_copied = txt_copied = 0
+
+          for src in sorted(glob.glob(f"{DIST}/**/*.html", recursive=True)):
+              # data/dist/{set}/{pkg}.html -> pages/src/refdoc/{set}/{pkg}.html
+              rel  = os.path.relpath(src, DIST)
+              dest = os.path.join(PAGES, "refdoc", rel)
+              os.makedirs(os.path.dirname(dest), exist_ok=True)
+              shutil.copy2(src, dest)
+              html_copied += 1
+
+          for src in sorted(glob.glob(f"{DIST}/**/*.txt", recursive=True)):
+              # data/dist/{set}/{pkg}.txt -> pages/src/llms/{set}/{pkg}.txt
+              rel  = os.path.relpath(src, DIST)
+              dest = os.path.join(PAGES, "llms", rel)
+              os.makedirs(os.path.dirname(dest), exist_ok=True)
+              shutil.copy2(src, dest)
+              txt_copied += 1
+
+          print(f"refdoc: {html_copied} html files copied")
+          print(f"llms:   {txt_copied} txt files copied")
           PYEOF
 
       - name: Commit and push

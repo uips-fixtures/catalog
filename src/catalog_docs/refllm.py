@@ -1,4 +1,4 @@
-"""LLM reference context generator — llms.txt (Jinja2)."""
+"""LLM reference file generator — llms.txt (Jinja2)."""
 
 from __future__ import annotations
 
@@ -75,7 +75,7 @@ _tmpl = _env.from_string(_MD_TEMPLATE)
 
 # ── Public API ────────────────────────────────────────────────────────────────
 
-def build_refctx(set_id: str, pkg_id: str, src: dict, activities: list[dict], generated_at: str) -> str:
+def build_refllm(set_id: str, pkg_id: str, src: dict, activities: list[dict], generated_at: str) -> str:
     return _tmpl.render(
         set_id=set_id,
         pkg_id=pkg_id,
