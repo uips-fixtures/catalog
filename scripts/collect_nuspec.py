@@ -11,6 +11,10 @@ Usage (from repo root):
 
 Environment variables:
     FORCE=true         Re-download even if cache files already exist (default: false)
+    PACKAGES_RE=<re>   Case-insensitive regex filter on package id, e.g. [.]activities$
+    VERSIONS=<list>    Comma-separated exact version(s) to process, e.g. 3.4.1,3.3.1
+    VERSIONS_RE=<re>   Regex filter on version string, e.g. ^3\. or ^23\.(4|10)\.
+                       VERSIONS and VERSIONS_RE are ANDed when both are set.
     NUPKG_HOOK=<path>  Absolute path to a local script called while each .nupkg is
                        on disk. The hook is NOT committed to the repo.
 
@@ -38,6 +42,7 @@ import glob
 import io
 import json
 import os
+import re
 import shutil
 import signal
 import subprocess
@@ -51,14 +56,21 @@ from pathlib import Path
 
 # ── Configuration ────────────────────────────────────────────────────────────
 
-REPO_ROOT  = Path(__file__).resolve().parent.parent
-FEEDS_DIR  = REPO_ROOT / "data" / "sources" / "nuget"
-NUSPEC_DIR = REPO_ROOT / "data" / "nuspec"
+REPO_ROOT   = Path(__file__).resolve().parent.parent
+FEEDS_DIR   = REPO_ROOT / "data" / "sources" / "nuget"
+NUSPEC_DIR  = REPO_ROOT / "data" / "pkg"
+CATALOG_DIR = REPO_ROOT / "data" / "sources" / "nuget" / "pkg"
 
 FORCE    = os.environ.get("FORCE", "false").lower() == "true"
 HOOK     = os.environ.get("NUPKG_HOOK", "")
 # Comma-separated package id filter, e.g. PACKAGES=UiPath.UIAutomation.Activities,CoreWF
 PACKAGES = [p.strip() for p in os.environ.get("PACKAGES", "").split(",") if p.strip()]
+# Regex filter applied to package id (case-insensitive), e.g. PACKAGES_RE=\.activities$
+PACKAGES_RE = os.environ.get("PACKAGES_RE", "")
+# Comma-separated exact version filter, e.g. VERSIONS=3.4.1,3.3.1
+VERSIONS = [v.strip() for v in os.environ.get("VERSIONS", "").split(",") if v.strip()]
+# Regex filter applied to version string, e.g. VERSIONS_RE=^3\.
+VERSIONS_RE = os.environ.get("VERSIONS_RE", "")
 
 # Never call the hook on CI (GitHub Actions sets CI=true)
 if os.environ.get("CI", "").lower() in ("true", "1", "yes") and HOOK:
@@ -149,15 +161,55 @@ def resolve_runtimes(
     version: str,
     pairs: dict[tuple[str, str], str],
     work_dir: Path,
+    out_dir: Path | None = None,
 ) -> None:
     """
     Download runtime-companion packages to work_dir alongside the design package.
 
-    Heuristic: packages whose id starts with the same prefix as pkg_id AND whose
-    id contains 'runtime' (case-insensitive) AND whose version matches exactly.
+    Two strategies, tried in order:
+    1. Runtime.Mapping.json (explicit): if the package extracted a runtime-mapping
+       file to out_dir, use the RuntimePackages ids listed there.
+    2. Prefix heuristic (fallback): packages whose id starts with the same prefix
+       as pkg_id AND whose id contains 'runtime' AND whose version matches exactly.
 
     These are placed in work_dir so the hook can use it as -PackageSearchRoot.
     """
+    def _download_companion(rid: str, rver: str, rbase: str) -> None:
+        dest = work_dir / f"{rid.lower()}.{rver}.nupkg"
+        if dest.exists():
+            return
+        url = f"{rbase}/{rid.lower()}/{rver}/{rid.lower()}.{rver}.nupkg"
+        ok  = _download_to_file(url, dest)
+        if ok:
+            print(f"    runtime: {rid} {rver}")
+
+    # Build a lookup: lower(id) -> [(id, ver, base), ...]
+    by_id: dict[str, list[tuple[str, str, str]]] = {}
+    for (rid, rver), rbase in pairs.items():
+        by_id.setdefault(rid.lower(), []).append((rid, rver, rbase))
+
+    # Strategy 1: Runtime.Mapping.json (explicit companion ids)
+    explicit_ids: set[str] = set()
+    if out_dir:
+        mapping_path = out_dir / f"{version}.runtime-mapping.json"
+        if mapping_path.exists():
+            try:
+                mapping = json.loads(mapping_path.read_text(encoding="utf-8"))
+                for entry in mapping.get("Mappings", []):
+                    if entry.get("DesignPackage", {}).get("id", "").lower() == pkg_id.lower():
+                        for rp in entry.get("RuntimePackages", []):
+                            rid_explicit = rp.get("id", "")
+                            if rid_explicit:
+                                explicit_ids.add(rid_explicit.lower())
+            except Exception:
+                pass
+
+    for rid_lo in explicit_ids:
+        for rid, rver, rbase in by_id.get(rid_lo, []):
+            if rver == version:
+                _download_companion(rid, rver, rbase)
+
+    # Strategy 2: prefix heuristic (fallback for packages without a mapping file)
     prefix = pkg_id.lower()
     for (rid, rver), rbase in pairs.items():
         if rver != version:
@@ -165,17 +217,13 @@ def resolve_runtimes(
         rid_lo = rid.lower()
         if rid_lo == prefix:
             continue  # that's the design package itself
+        if rid_lo in explicit_ids:
+            continue  # already handled above
         if not rid_lo.startswith(prefix):
             continue
         if "runtime" not in rid_lo:
             continue
-        dest = work_dir / f"{rid.lower()}.{rver}.nupkg"
-        if dest.exists():
-            continue
-        url = f"{rbase}/{rid.lower()}/{rver}/{rid.lower()}.{rver}.nupkg"
-        ok  = _download_to_file(url, dest)
-        if ok:
-            print(f"    runtime: {rid} {rver}")
+        _download_companion(rid, rver, rbase)
 
 # ── ZIP extraction ────────────────────────────────────────────────────────────
 
@@ -190,7 +238,7 @@ def extract_artifacts(
     version: str,
     out_dir: Path,
 ) -> bool:
-    """Single ZIP pass: extract nuspec, manifest, build props/targets.
+    """Single ZIP pass: extract nuspec, manifest, build props/targets, runtime mapping.
     nupkg may be raw bytes (in-memory) or a Path to a file on disk."""
     try:
         source = io.BytesIO(nupkg) if isinstance(nupkg, bytes) else nupkg
@@ -206,6 +254,18 @@ def extract_artifacts(
                     zf.read(nuspec_entry.filename)
                 )
 
+            # runtime mapping (newer packages only — content/Runtime.Mapping.json)
+            mapping_entry = next(
+                (e for e in entries
+                 if e.filename.lower() == "content/runtime.mapping.json"), None
+            )
+            if mapping_entry:
+                raw = zf.read(mapping_entry.filename)
+                # strip UTF-8 BOM if present
+                (out_dir / f"{version}.runtime-mapping.json").write_bytes(
+                    raw.lstrip(b"\xef\xbb\xbf")
+                )
+
             # build props / targets
             for e in entries:
                 lo = e.filename.lower()
@@ -218,6 +278,7 @@ def extract_artifacts(
             manifest: dict = {
                 "lib": {}, "ref": {}, "analyzers": {},
                 "build": [], "tools": [], "other": [],
+                "hasRuntimeMapping": mapping_entry is not None,
             }
             for e in entries:
                 name  = e.filename
@@ -264,12 +325,13 @@ def run_hook(
     pkg_id: str,
     version: str,
     flat2_base: str,
-    out_dir: Path,
 ) -> None:
     if not HOOK or not os.path.isfile(HOOK):
         return
 
-    output_path = str(out_dir / f"{version}.catalog.json")
+    catalog_out = CATALOG_DIR / pkg_id
+    catalog_out.mkdir(parents=True, exist_ok=True)
+    output_path = str(catalog_out / f"{version}.json")
 
     env = {
         **os.environ,
@@ -283,12 +345,23 @@ def run_hook(
 
     hook_lo = HOOK.lower()
     if hook_lo.endswith(".ps1"):
-        cmd = [
-            "pwsh", "-File", HOOK,
-            "-NupkgPath",        str(nupkg_path),
-            "-PackageSearchRoot", str(work_dir),
-            "-OutputPath",        output_path,
-        ]
+        # Pass companion .nupkg files individually so NupkgExtractor can extract them.
+        # work_dir contains the main nupkg + any runtime companions downloaded by resolve_runtimes().
+        companions = sorted(
+            str(p) for p in work_dir.glob("*.nupkg")
+            if p.name.lower() != nupkg_path.name.lower()
+        )
+        # Use `pwsh -Command "& 'script.ps1' ..."` rather than `pwsh -File` so that
+        # [string[]] parameters accept any number of companions.  With `-File`, PowerShell
+        # limits space-separated array values to ≤2 before the remainder spills into
+        # positional arguments; comma-joined strings are not split automatically either.
+        def _ps_quote(s: str) -> str:
+            return "'" + s.replace("'", "''") + "'"
+        ps_args = f"-NupkgPath {_ps_quote(str(nupkg_path))} -OutputPath {_ps_quote(output_path)}"
+        if companions:
+            arr = ",".join(_ps_quote(c) for c in companions)
+            ps_args += f" -PackageSearchRoot @({arr})"
+        cmd = ["pwsh", "-Command", f"& {_ps_quote(HOOK)} {ps_args}"]
     elif hook_lo.endswith(".py"):
         cmd = ["python3", HOOK, str(nupkg_path)]
     else:
@@ -300,15 +373,37 @@ def run_hook(
 
 def main() -> None:
     pkg_filter = {p.lower() for p in PACKAGES}
+    pkg_re     = re.compile(PACKAGES_RE, re.IGNORECASE) if PACKAGES_RE else None
+    ver_filter = set(VERSIONS)
+    ver_re     = re.compile(VERSIONS_RE) if VERSIONS_RE else None
     print(f"collect_nuspec.py  FORCE={FORCE}  HOOK={HOOK or '(none)'}"
-          + (f"  PACKAGES={','.join(PACKAGES)}" if PACKAGES else "") + "\n")
+          + (f"  PACKAGES={','.join(PACKAGES)}" if PACKAGES else "")
+          + (f"  PACKAGES_RE={PACKAGES_RE}" if PACKAGES_RE else "")
+          + (f"  VERSIONS={','.join(VERSIONS)}" if VERSIONS else "")
+          + (f"  VERSIONS_RE={VERSIONS_RE}" if VERSIONS_RE else "") + "\n")
 
     all_pairs = discover_pairs()
 
-    # Apply package filter if set
-    pairs = {k: v for k, v in all_pairs.items() if not pkg_filter or k[0].lower() in pkg_filter}
-    if pkg_filter:
-        print(f"Filtered to {len(pairs)} pairs for: {', '.join(PACKAGES)}\n")
+    # Apply package and version filters
+    def _keep(pkg_id: str, version: str) -> bool:
+        if pkg_filter and pkg_id.lower() not in pkg_filter:
+            return False
+        if pkg_re and not pkg_re.search(pkg_id):
+            return False
+        if ver_filter and version not in ver_filter:
+            return False
+        if ver_re and not ver_re.search(version):
+            return False
+        return True
+
+    pairs = {k: v for k, v in all_pairs.items() if _keep(*k)}
+    if pkg_filter or pkg_re or ver_filter or ver_re:
+        parts = []
+        if PACKAGES:    parts.append(f"pkg={','.join(PACKAGES)}")
+        if PACKAGES_RE: parts.append(f"pkg_re={PACKAGES_RE}")
+        if VERSIONS:    parts.append(f"ver={','.join(VERSIONS)}")
+        if VERSIONS_RE: parts.append(f"ver_re={VERSIONS_RE}")
+        print(f"Filtered to {len(pairs)} pairs matching: {' '.join(parts)}\n")
 
     total   = len(pairs)
     skipped = downloaded = failed = 0
@@ -321,7 +416,10 @@ def main() -> None:
         nuspec_path   = out_dir / f"{version}.nuspec"
         manifest_path = out_dir / f"{version}.manifest.json"
 
-        if not FORCE and nuspec_path.exists() and manifest_path.exists():
+        catalog_path = (CATALOG_DIR / pkg_id / f"{version}.json") if HOOK else None
+        artifacts_cached = nuspec_path.exists() and manifest_path.exists()
+        catalog_cached   = catalog_path is None or catalog_path.exists()
+        if not FORCE and artifacts_cached and catalog_cached:
             skipped += 1
             if (i + 1) % LOG_EVERY == 0:
                 print(f"  {i+1}/{total}  skip={skipped}  dl={downloaded}  err={failed}")
@@ -356,8 +454,8 @@ def main() -> None:
             ok = extract_artifacts(nupkg_src, pkg_id, version, out_dir)
             if ok:
                 if work_dir and nupkg_disk:
-                    resolve_runtimes(pkg_id, version, all_pairs, work_dir)
-                    run_hook(nupkg_disk, work_dir, pkg_id, version, flat2_base, out_dir)
+                    resolve_runtimes(pkg_id, version, all_pairs, work_dir, out_dir)
+                    run_hook(nupkg_disk, work_dir, pkg_id, version, flat2_base)
                 downloaded += 1
             else:
                 failed += 1

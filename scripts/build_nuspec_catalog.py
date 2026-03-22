@@ -18,7 +18,7 @@ from pathlib import Path
 # ── Configuration ────────────────────────────────────────────────────────────
 
 REPO_ROOT   = Path(__file__).resolve().parent.parent
-NUSPEC_DIR  = REPO_ROOT / "data" / "nuspec"
+NUSPEC_DIR  = REPO_ROOT / "data" / "pkg"
 CATALOG_OUT = REPO_ROOT / "data" / "sources" / "nuget" / "nuspec_catalog.json"
 
 # All known nuspec namespace versions
@@ -197,15 +197,17 @@ def build_catalog() -> None:
                 "lib": manifest.get("lib", {}),
                 "ref": manifest.get("ref", {}),
             }
-            record["hasAnalyzers"]    = bool(manifest.get("analyzers"))
-            record["hasBuildProps"]   = nuspec_path.with_suffix(".props").exists()
-            record["hasBuildTargets"] = nuspec_path.with_suffix(".targets").exists()
+            record["hasAnalyzers"]      = bool(manifest.get("analyzers"))
+            record["hasBuildProps"]     = nuspec_path.with_suffix(".props").exists()
+            record["hasBuildTargets"]   = nuspec_path.with_suffix(".targets").exists()
+            record["hasRuntimeMapping"] = manifest.get("hasRuntimeMapping", False)
         else:
-            record["targetFrameworks"] = []
-            record["assemblies"]       = {"lib": {}, "ref": {}}
-            record["hasAnalyzers"]     = False
-            record["hasBuildProps"]    = False
-            record["hasBuildTargets"]  = False
+            record["targetFrameworks"]  = []
+            record["assemblies"]        = {"lib": {}, "ref": {}}
+            record["hasAnalyzers"]      = False
+            record["hasBuildProps"]     = False
+            record["hasBuildTargets"]   = False
+            record["hasRuntimeMapping"] = False
 
         if record.get("id"):
             pkg_ids.add(record["id"])
@@ -215,7 +217,7 @@ def build_catalog() -> None:
         "schema": {"version": "1.0", "domain": "nuget", "type": "nuspec-catalog"},
         "meta": {
             "collectedAtUtc": now.strftime("%Y-%m-%dT%H:%M:%SZ"),
-            "source":         "data/nuspec/",
+            "source":         "data/pkg/",
             "description":    "Parsed nuspec descriptors and manifests for all cached packages",
         },
         "stats": {
