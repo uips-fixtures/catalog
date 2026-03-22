@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>UiPath.IntelligentOCR.Activities</id>
+    <version>3.0.0</version>
+    <title>UiPath.IntelligentOCR.Activities</title>
+    <authors>UiPath</authors>
+    <owners>UiPath</owners>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <licenseUrl>https://www.uipath.com/hubfs/legalspot/UiPath_EULA.pdf</licenseUrl>
+    <projectUrl>https://activities.uipath.com/docs/about-the-intelligentocr-activities-pack</projectUrl>
+    <iconUrl>https://download.uipath.com/logo.ico</iconUrl>
+    <description>IntelligentOCR Activities Pack</description>
+    <releaseNotes>New Features and Improvements
+
+* Three new languages, German (DE), South Korean (KO), and Portuguese (PT-BR) are available for the **UiPath.IntelligentOCR.Activities** package.
+* A new activity, **RegEx Based Extractor** is now available, allowing you to easily configure your RegEx expression for extracting specific information from documents. 
+
+Breaking Changes
+
+* Major updates related to the internal handling of `.pdf` files occurred for the **Digitize Document** activity. This has led to a breaking change for the **UiPath.IntelligentOCR** activities pack, which caused the version to skip ahead from v2.3.0 to v3.0.0. 
+
+
+Bug Fixes
+
+* Fixed an issue which caused the **Digitize Document** activity to throw an error when trying to process a high-resolution image inside a `.pdf` file. Now, the high-resolution images are processed correctly and digitized.
+* Fixed an issue which caused the **Present Validation Station** activity to fail loading images with very high resolutions. Now all images, no matter of the resolution size, are processed correctly.
+* Improved integration of the **Digitize Document** activity with OCR engines, including support for rotation (where supported by the OCR engine) and improved accuracy of word-building.
+
+For the complete release notes, please visit https://activities.uipath.com/docs/release-notes-intelligentocr.</releaseNotes>
+    <dependencies>
+      <dependency id="UiPath.Vision" version="1.7.0" />
+      <dependency id="UiPath.OCR.Contracts" version="2.1.0" />
+      <dependency id="Microsoft.Xaml.Behaviors.Wpf" version="1.0.1" />
+      <dependency id="System.Collections.Immutable" version="1.5.0" />
+      <dependency id="System.ValueTuple" version="4.5.0" />
+      <dependency id="UiPath.DocumentProcessing.Contracts" version="1.2.0" />
+      <dependency id="BitMiracle.Docotic.Pdf" version="5.9.9640" />
+      <dependency id="Metrics.NET" version="0.5.5" />
+      <dependency id="IvanAkcheurov.NTextCat.Lib" version="0.2.1.1" />
+      <dependency id="AForge.Imaging" version="2.2.5" />
+      <dependency id="AForge.Neuro" version="2.2.5" />
+      <dependency id="CsvHelper" version="2.13.5" />
+      <dependency id="MathNet.Numerics" version="4.5.1" />
+      <dependency id="UiPath.CefSharpBundle" version="1.1.0" />
+      <dependency id="Numsense" version="0.12.0" />
+      <dependency id="System.Runtime.InteropServices.RuntimeInformation" version="4.3.0" />
+    </dependencies>
+  </metadata>
+</package>

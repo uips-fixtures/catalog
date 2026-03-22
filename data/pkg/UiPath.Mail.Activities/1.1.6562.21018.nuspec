@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>UiPath.Mail.Activities</id>
+    <version>1.1.6562.21018</version>
+    <title>UiPath.Mail.Activities</title>
+    <authors>UiPath</authors>
+    <owners>UiPath</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectUrl>https://activities.uipath.com/docs/mail</projectUrl>
+    <iconUrl>http://www.uipath.com/favicon.ico</iconUrl>
+    <description>Retrieve and send mail using POP3, IMAP, SMTP and Exchange protocols</description>
+    <releaseNotes>New Features and Enhancements:
+- The SharedMailbox property has been added to the Get Exchange Mail Messages activity. This property enables mail messages to be retrieved from a shared mailbox linked to an Exchange user account.
+- If an email is retrieved as a System.Net.Mail.MailMessage object, its text content can be accessed by using the item.headers("PlainText") VB.NET expression. Also, the HTML content can be accessed by using the item.headers("HtmlBody") VB.NET expression. This only works with POP3, IMAP and Outlook mail messages.
+
+Bug Fixes:
+- The Delete activity can now be used to delete message attachments right after the Send Exchange Mail Message activity.
+- Enabling the IsDraft property in the Send Outlook Mail Message activity now fills in the E-mail address field of the draft mail that is created. Thus, the mail can be sent without issues after being created.
+- Email attachments are now properly identified by the Get Outlook Mail Messages activity even if they are placed after the signature.
+- The Send SMTP Mail Message activity now correctly displays attachment filenames that contain japanese characters.
+- The Send Outlook Mail Message activity can now forward an email that contains attachments without throwing an error.
+
+For full release notes, visit the Activities Guide: https://activities.uipath.com/v1.0/</releaseNotes>
+    <dependencies>
+      <dependency id="Microsoft.Exchange.WebServices" version="2.2.0" />
+      <dependency id="BouncyCastle" version="1.8.1" />
+    </dependencies>
+  </metadata>
+</package>
