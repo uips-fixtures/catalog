@@ -1,0 +1,909 @@
+# UiPath.UIAutomation.Activities 23.10.20
+
+> generator: uips-fixtures catalog v0.1
+> generated: 2026-03-22T11:44:09Z
+> set: reframework-stable
+> activities: 75
+> authors: UiPath
+**ID format**: `{fullName}@{packageId}/{packageVersion}`
+**Argument directions**: In (input), Out (output), InOut (bidirectional)
+
+---
+### Use Application/Browser
+
+**ID**: `UiPath.UIAutomationNext.Activities.NApplicationCard@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.UIAutomationNext.Activities.NApplicationCard`
+**Category**: UI Automation
+**Description**: Opens a desktop application or web browser page to use in your automation.
+**Arguments**:
+- `ContinueOnError` (In): `InArgument<Boolean>`
+- `Timeout` (In): `InArgument<Double>`
+- `OutUiElement` (Out): `OutArgument<UiPath.Core.UiElement>`
+- `OpenMode` (In): `InArgument<UiPath.UIAutomationNext.Enums.NAppOpenMode>`
+- `CloseMode` (In): `InArgument<UiPath.UIAutomationNext.Enums.NAppCloseMode>`
+- `UserDataFolderMode` (In): `InArgument<UiPath.UIAutomationNext.Enums.BrowserUserDataFolderMode>`
+- `UserDataFolderPath` (In): `InArgument<String>`
+- `IsIncognito` (In): `InArgument<Boolean>`
+- `WebDriverMode` (In): `InArgument<UiPath.UIAutomationNext.Enums.NWebDriverMode>`
+- `HealingAgentBehavior` (In): `InArgument<UiPath.UIAutomationNext.Enums.NHealingAgentBehavior>`
+- `InUiElement` (In): `InArgument<UiPath.Core.UiElement>`
+**Other members**:
+- `TargetApp` [property]: `UiPath.UIAutomationNext.TargetApp`
+- `InteractionMode` [property]: `UiPath.UIAutomationNext.Enums.NInteractionMode`
+- `AttachMode` [property]: `UiPath.UIAutomationNext.Enums.NAppAttachMode`
+- `WindowResize` [property]: `UiPath.UIAutomationNext.Enums.NWindowResize`
+- `DialogHandling` [property]: `UiPath.UIAutomationNext.DialogHandling`
+### Click
+
+**ID**: `UiPath.UIAutomationNext.Activities.NClick@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.UIAutomationNext.Activities.NClick`
+**Category**: UI Automation
+**Description**: Clicks a specified UI element.
+**Arguments**:
+- `KeyModifiers` (In): `InArgument<UiPath.UIAutomationNext.Enums.NKeyModifiers>`
+- `ClickType` (In): `InArgument<UiPath.UIAutomationNext.Enums.NClickType>`
+- `MouseButton` (In): `InArgument<UiPath.UIAutomationNext.Enums.NMouseButton>`
+- `CursorMotionType` (In): `InArgument<UiPath.UIAutomationNext.Enums.CursorMotionType>`
+- `AlterIfDisabled` (In): `InArgument<Boolean>`
+- `ActivateBefore` (In): `InArgument<Boolean>`
+- `UnblockInput` (In): `InArgument<Boolean>`
+- `InteractionMode` (In): `InArgument<UiPath.UIAutomationNext.Enums.NChildInteractionMode>`
+- `Timeout` (In): `InArgument<Double>`
+- `DelayAfter` (In): `InArgument<Double>`
+- `DelayBefore` (In): `InArgument<Double>`
+- `ContinueOnError` (In): `InArgument<Boolean>`
+- `OutUiElement` (Out): `OutArgument<UiPath.Core.UiElement>`
+- `HealingAgentBehavior` (In): `InArgument<UiPath.UIAutomationNext.Enums.NChildHealingAgentBehavior>`
+- `InUiElement` (In): `InArgument<UiPath.Core.UiElement>`
+**Other members**:
+- `VerifyOptions` [property]: `UiPath.UIAutomationNext.Activities.VerifyExecutionOptions`
+- `Target` [property]: `UiPath.UIAutomationNext.TargetAnchorable`
+### Type Into
+
+**ID**: `UiPath.UIAutomationNext.Activities.NTypeInto@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.UIAutomationNext.Activities.NTypeInto`
+**Category**: UI Automation
+**Description**: Enters text in a specified UI element, for example a text box.
+**Arguments**:
+- `Text` (In): `InArgument<String>`
+- `SecureText` (In): `InArgument<Security.SecureString>`
+- `DelayBetweenKeys` (In): `InArgument<Double>`
+- `ActivateBefore` (In): `InArgument<Boolean>`
+- `ClickBeforeMode` (In): `InArgument<UiPath.UIAutomationNext.Enums.NClickMode>`
+- `EmptyFieldMode` (In): `InArgument<UiPath.UIAutomationNext.Enums.NEmptyFieldMode>`
+- `ClipboardMode` (In): `InArgument<UiPath.UIAutomationNext.Enums.NTypeByClipboardMode>`
+- `DeselectAfter` (In): `InArgument<Boolean>`
+- `AlterIfDisabled` (In): `InArgument<Boolean>`
+- `InteractionMode` (In): `InArgument<UiPath.UIAutomationNext.Enums.NChildInteractionMode>`
+- `Timeout` (In): `InArgument<Double>`
+- `DelayAfter` (In): `InArgument<Double>`
+- `DelayBefore` (In): `InArgument<Double>`
+- `ContinueOnError` (In): `InArgument<Boolean>`
+- `OutUiElement` (Out): `OutArgument<UiPath.Core.UiElement>`
+- `HealingAgentBehavior` (In): `InArgument<UiPath.UIAutomationNext.Enums.NChildHealingAgentBehavior>`
+- `InUiElement` (In): `InArgument<UiPath.Core.UiElement>`
+**Other members**:
+- `VerifyOptions` [property]: `UiPath.UIAutomationNext.Activities.VerifyExecutionTypeIntoOptions`
+- `Target` [property]: `UiPath.UIAutomationNext.TargetAnchorable`
+### Get Text
+
+**ID**: `UiPath.UIAutomationNext.Activities.NGetText@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.UIAutomationNext.Activities.NGetText`
+**Category**: UI Automation
+**Description**: Extracts the text from a specified UI element.
+**Arguments**:
+- `Text` (Out): `OutArgument`
+- `TextString` (Out): `OutArgument<String>`
+- `WordsInfo` (Out): `OutArgument<IEnumerable<UiPath.UIAutomationNext.Activities.Models.NWordInfo>>`
+- `Timeout` (In): `InArgument<Double>`
+- `DelayAfter` (In): `InArgument<Double>`
+- `DelayBefore` (In): `InArgument<Double>`
+- `ContinueOnError` (In): `InArgument<Boolean>`
+- `OutUiElement` (Out): `OutArgument<UiPath.Core.UiElement>`
+- `HealingAgentBehavior` (In): `InArgument<UiPath.UIAutomationNext.Enums.NChildHealingAgentBehavior>`
+- `InUiElement` (In): `InArgument<UiPath.Core.UiElement>`
+**Other members**:
+- `ScrapingMethod` [property]: `UiPath.UIAutomationNext.Enums.NScrapingMethod`
+- `Target` [property]: `UiPath.UIAutomationNext.TargetAnchorable`
+### Select Item
+
+**ID**: `UiPath.UIAutomationNext.Activities.NSelectItem@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.UIAutomationNext.Activities.NSelectItem`
+**Category**: UI Automation
+**Description**: Selects an item from a drop-down list.
+**Arguments**:
+- `Item` (In): `InArgument<String>`
+- `AlterIfDisabled` (In): `InArgument<Boolean>`
+- `Timeout` (In): `InArgument<Double>`
+- `DelayAfter` (In): `InArgument<Double>`
+- `DelayBefore` (In): `InArgument<Double>`
+- `ContinueOnError` (In): `InArgument<Boolean>`
+- `OutUiElement` (Out): `OutArgument<UiPath.Core.UiElement>`
+- `HealingAgentBehavior` (In): `InArgument<UiPath.UIAutomationNext.Enums.NChildHealingAgentBehavior>`
+- `InUiElement` (In): `InArgument<UiPath.Core.UiElement>`
+**Other members**:
+- `Target` [property]: `UiPath.UIAutomationNext.TargetAnchorable`
+### Go To URL
+
+**ID**: `UiPath.UIAutomationNext.Activities.NGoToUrl@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.UIAutomationNext.Activities.NGoToUrl`
+**Category**: UI Automation
+**Description**: Navigates to the specified URL in the indicated web browser.
+**Arguments**:
+- `Url` (In): `InArgument<String>`
+- `Timeout` (In): `InArgument<Double>`
+- `DelayAfter` (In): `InArgument<Double>`
+- `DelayBefore` (In): `InArgument<Double>`
+- `ContinueOnError` (In): `InArgument<Boolean>`
+### Check/Uncheck
+
+**ID**: `UiPath.UIAutomationNext.Activities.NCheck@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.UIAutomationNext.Activities.NCheck`
+**Category**: UI Automation
+**Description**: Used to check, uncheck, or toggle a checkbox.
+**Arguments**:
+- `Action` (In): `InArgument<UiPath.UIAutomationNext.Enums.NCheckType>`
+- `AlterIfDisabled` (In): `InArgument<Boolean>`
+- `Timeout` (In): `InArgument<Double>`
+- `DelayAfter` (In): `InArgument<Double>`
+- `DelayBefore` (In): `InArgument<Double>`
+- `ContinueOnError` (In): `InArgument<Boolean>`
+- `OutUiElement` (Out): `OutArgument<UiPath.Core.UiElement>`
+- `HealingAgentBehavior` (In): `InArgument<UiPath.UIAutomationNext.Enums.NChildHealingAgentBehavior>`
+- `InUiElement` (In): `InArgument<UiPath.Core.UiElement>`
+**Other members**:
+- `Target` [property]: `UiPath.UIAutomationNext.TargetAnchorable`
+### Navigate Browser
+
+**ID**: `UiPath.UIAutomationNext.Activities.NNavigateBrowser@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.UIAutomationNext.Activities.NNavigateBrowser`
+**Category**: UI Automation
+**Description**: Allows basic navigation of the browser, like Go back, Go forward, Close, Refresh, Home.
+**Arguments**:
+- `Timeout` (In): `InArgument<Double>`
+- `DelayAfter` (In): `InArgument<Double>`
+- `DelayBefore` (In): `InArgument<Double>`
+- `ContinueOnError` (In): `InArgument<Boolean>`
+**Other members**:
+- `Action` [property]: `UiPath.UIAutomationNext.Enums.NNavigateBrowserAction`
+### Get URL
+
+**ID**: `UiPath.UIAutomationNext.Activities.NGetUrl@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.UIAutomationNext.Activities.NGetUrl`
+**Category**: UI Automation
+**Description**: Returns the URL from the current browser.
+**Arguments**:
+- `WaitForReady` (In): `InArgument<UiPath.UIAutomationNext.Enums.NWaitForReady>`
+- `CurrentUrl` (Out): `OutArgument<String>`
+- `Timeout` (In): `InArgument<Double>`
+- `DelayAfter` (In): `InArgument<Double>`
+- `DelayBefore` (In): `InArgument<Double>`
+- `ContinueOnError` (In): `InArgument<Boolean>`
+### Get Attribute
+
+**ID**: `UiPath.UIAutomationNext.Activities.NGetAttributeGeneric`1@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.UIAutomationNext.Activities.NGetAttributeGeneric`1`
+**Category**: UI Automation
+**Description**: Retrieves the value of a specified attribute of the indicated UI element.
+**Arguments**:
+- `Result` (Out): `OutArgument<T>`
+- `Attribute` (In): `InArgument<String>`
+- `Timeout` (In): `InArgument<Double>`
+- `DelayAfter` (In): `InArgument<Double>`
+- `DelayBefore` (In): `InArgument<Double>`
+- `ContinueOnError` (In): `InArgument<Boolean>`
+- `OutUiElement` (Out): `OutArgument<UiPath.Core.UiElement>`
+- `HealingAgentBehavior` (In): `InArgument<UiPath.UIAutomationNext.Enums.NChildHealingAgentBehavior>`
+- `InUiElement` (In): `InArgument<UiPath.Core.UiElement>`
+**Other members**:
+- `Target` [property]: `UiPath.UIAutomationNext.TargetAnchorable`
+### Check Element
+
+**ID**: `UiPath.UIAutomationNext.Activities.NCheckElement@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.UIAutomationNext.Activities.NCheckElement`
+**Category**: UI Automation
+**Description**: Checks if an element is enabled or disabled.
+**Arguments**:
+- `Result` (Out): `OutArgument<Boolean>`
+- `Timeout` (In): `InArgument<Double>`
+- `ContinueOnError` (In): `InArgument<Boolean>`
+- `OutUiElement` (Out): `OutArgument<UiPath.Core.UiElement>`
+- `HealingAgentBehavior` (In): `InArgument<UiPath.UIAutomationNext.Enums.NChildHealingAgentBehavior>`
+- `InUiElement` (In): `InArgument<UiPath.Core.UiElement>`
+**Other members**:
+- `Target` [property]: `UiPath.UIAutomationNext.TargetAnchorable`
+### Hover
+
+**ID**: `UiPath.UIAutomationNext.Activities.NHover@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.UIAutomationNext.Activities.NHover`
+**Category**: UI Automation
+**Description**: Hovers the mouse over a specified UI element.
+**Arguments**:
+- `HoverTime` (In): `InArgument<Double>`
+- `CursorMotionType` (In): `InArgument<UiPath.UIAutomationNext.Enums.CursorMotionType>`
+- `InteractionMode` (In): `InArgument<UiPath.UIAutomationNext.Enums.NChildInteractionMode>`
+- `Timeout` (In): `InArgument<Double>`
+- `DelayAfter` (In): `InArgument<Double>`
+- `DelayBefore` (In): `InArgument<Double>`
+- `ContinueOnError` (In): `InArgument<Boolean>`
+- `OutUiElement` (Out): `OutArgument<UiPath.Core.UiElement>`
+- `HealingAgentBehavior` (In): `InArgument<UiPath.UIAutomationNext.Enums.NChildHealingAgentBehavior>`
+- `InUiElement` (In): `InArgument<UiPath.Core.UiElement>`
+**Other members**:
+- `VerifyOptions` [property]: `UiPath.UIAutomationNext.Activities.VerifyExecutionOptions`
+- `Target` [property]: `UiPath.UIAutomationNext.TargetAnchorable`
+### Highlight
+
+**ID**: `UiPath.UIAutomationNext.Activities.NHighlight@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.UIAutomationNext.Activities.NHighlight`
+**Category**: UI Automation
+**Description**: Visually highlights a specified UI element by surrounding it in a box.
+**Arguments**:
+- `HighlightTime` (In): `InArgument<Double>`
+- `Timeout` (In): `InArgument<Double>`
+- `DelayAfter` (In): `InArgument<Double>`
+- `DelayBefore` (In): `InArgument<Double>`
+- `ContinueOnError` (In): `InArgument<Boolean>`
+- `OutUiElement` (Out): `OutArgument<UiPath.Core.UiElement>`
+- `HealingAgentBehavior` (In): `InArgument<UiPath.UIAutomationNext.Enums.NChildHealingAgentBehavior>`
+- `InUiElement` (In): `InArgument<UiPath.Core.UiElement>`
+**Other members**:
+- `Color` [property]: `Drawing.Color`
+- `Target` [property]: `UiPath.UIAutomationNext.TargetAnchorable`
+### Keyboard Shortcuts
+
+**ID**: `UiPath.UIAutomationNext.Activities.NKeyboardShortcuts@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.UIAutomationNext.Activities.NKeyboardShortcuts`
+**Category**: UI Automation
+**Description**: Sends one or more keyboard shortcuts to a UI element.
+**Arguments**:
+- `ActivateBefore` (In): `InArgument<Boolean>`
+- `DelayBetweenShortcuts` (In): `InArgument<Double>`
+- `DelayBetweenKeys` (In): `InArgument<Double>`
+- `ClickBeforeMode` (In): `InArgument<UiPath.UIAutomationNext.Enums.NClickMode>`
+- `ShortcutsArgument` (In): `InArgument<String>`
+- `InteractionMode` (In): `InArgument<UiPath.UIAutomationNext.Enums.NChildInteractionMode>`
+- `Timeout` (In): `InArgument<Double>`
+- `DelayAfter` (In): `InArgument<Double>`
+- `DelayBefore` (In): `InArgument<Double>`
+- `ContinueOnError` (In): `InArgument<Boolean>`
+- `OutUiElement` (Out): `OutArgument<UiPath.Core.UiElement>`
+- `HealingAgentBehavior` (In): `InArgument<UiPath.UIAutomationNext.Enums.NChildHealingAgentBehavior>`
+- `InUiElement` (In): `InArgument<UiPath.Core.UiElement>`
+**Other members**:
+- `Shortcuts` [property]: `String`
+- `VerifyOptions` [property]: `UiPath.UIAutomationNext.Activities.VerifyExecutionOptions`
+- `Target` [property]: `UiPath.UIAutomationNext.TargetAnchorable`
+### Check App State
+
+**ID**: `UiPath.UIAutomationNext.Activities.NCheckState@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.UIAutomationNext.Activities.NCheckState`
+**Category**: UI Automation
+**Description**: Ensures the automated app is in a specific state, by verifying if a UI element exists or not. A set of user-defined actions are executed based on the detected state.
+**Arguments**:
+- `Exists` (Out): `OutArgument<Boolean>`
+- `Timeout` (In): `InArgument<Double>`
+- `DelayBefore` (In): `InArgument<Double>`
+- `InUiElement` (In): `InArgument<UiPath.Core.UiElement>`
+- `OutUiElement` (Out): `OutArgument<UiPath.Core.UiElement>`
+- `HealingAgentBehavior` (In): `InArgument<UiPath.UIAutomationNext.Enums.NChildHealingAgentBehavior>`
+**Other members**:
+- `Mode` [property]: `UiPath.UIAutomationNext.Enums.NCheckStateMode`
+- `CheckVisibility` [property]: `Boolean`
+- `Target` [property]: `UiPath.UIAutomationNext.TargetAnchorable`
+### Take Screenshot
+
+**ID**: `UiPath.UIAutomationNext.Activities.NTakeScreenshot@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.UIAutomationNext.Activities.NTakeScreenshot`
+**Category**: UI Automation
+**Description**: Takes a screenshot of an application or UI element.
+**Arguments**:
+- `DelayBeforeScreenshot` (In): `InArgument<Double>`
+- `FileName` (In): `InArgument<String>`
+- `FileNameMode` (In): `InArgument<UiPath.UIAutomationNext.Enums.NFileNameMode>`
+- `SavedTo` (Out): `OutArgument`
+- `OutImage` (Out): `OutArgument<UiPath.Core.Image>`
+- `OutFile` (Out): `OutArgument<UiPath.Platform.ResourceHandling.ILocalResource>`
+- `Timeout` (In): `InArgument<Double>`
+- `DelayBefore` (In): `InArgument<Double>`
+- `ContinueOnError` (In): `InArgument<Boolean>`
+- `OutUiElement` (Out): `OutArgument<UiPath.Core.UiElement>`
+- `HealingAgentBehavior` (In): `InArgument<UiPath.UIAutomationNext.Enums.NChildHealingAgentBehavior>`
+- `InUiElement` (In): `InArgument<UiPath.Core.UiElement>`
+**Other members**:
+- `Target` [property]: `UiPath.UIAutomationNext.TargetAnchorable`
+### Mouse Scroll
+
+**ID**: `UiPath.UIAutomationNext.Activities.NMouseScroll@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.UIAutomationNext.Activities.NMouseScroll`
+**Category**: UI Automation
+**Description**: Sends mouse scroll events to the specified UI element.
+**Arguments**:
+- `Direction` (In): `InArgument<UiPath.UIAutomationNext.Enums.NScrollDirection>`
+- `MovementUnits` (In): `InArgument<Int32>`
+- `CursorMotionType` (In): `InArgument<UiPath.UIAutomationNext.Enums.CursorMotionType>`
+- `KeyModifiers` (In): `InArgument<UiPath.UIAutomationNext.Enums.NKeyModifiers>`
+- `InteractionMode` (In): `InArgument<UiPath.UIAutomationNext.Enums.NChildInteractionMode>`
+- `Timeout` (In): `InArgument<Double>`
+- `DelayAfter` (In): `InArgument<Double>`
+- `DelayBefore` (In): `InArgument<Double>`
+- `ContinueOnError` (In): `InArgument<Boolean>`
+- `OutUiElement` (Out): `OutArgument<UiPath.Core.UiElement>`
+- `HealingAgentBehavior` (In): `InArgument<UiPath.UIAutomationNext.Enums.NChildHealingAgentBehavior>`
+- `InUiElement` (In): `InArgument<UiPath.Core.UiElement>`
+**Other members**:
+- `SearchedElement` [property]: `UiPath.UIAutomationNext.Activities.SearchedElement`
+- `Target` [property]: `UiPath.UIAutomationNext.TargetAnchorable`
+### Extract Table Data
+
+**ID**: `UiPath.UIAutomationNext.Activities.NExtractDataGeneric`1@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.UIAutomationNext.Activities.NExtractDataGeneric`1`
+**Category**: UI Automation
+**Description**: Extracts tabular data from a specified web page or application.
+**Arguments**:
+- `InputDataTable` (In): `InArgument<Data.DataTable>`
+- `ExtractedData` (Out): `OutArgument<T>`
+- `ExtractMetadata` (In [required]): `InArgument<String>`
+- `MaximumResults` (In): `InArgument<Int32>`
+- `InteractionMode` (In): `InArgument<UiPath.UIAutomationNext.Enums.NChildInteractionMode>`
+- `DelayBetweenPages` (In): `InArgument<Double>`
+- `ExtractDataSettings` (In): `InArgument<String>`
+- `Timeout` (In): `InArgument<Double>`
+- `DelayAfter` (In): `InArgument<Double>`
+- `DelayBefore` (In): `InArgument<Double>`
+- `ContinueOnError` (In): `InArgument<Boolean>`
+- `HealingAgentBehavior` (In): `InArgument<UiPath.UIAutomationNext.Enums.NChildHealingAgentBehavior>`
+**Other members**:
+- `LimitExtractionTo` [property]: `UiPath.UIAutomationNext.Models.ExtractData.LimitType`
+- `NextLink` [property]: `UiPath.UIAutomationNext.TargetAnchorable`
+- `Target` [property]: `UiPath.UIAutomationNext.TargetAnchorable`
+### Drag and Drop
+
+**ID**: `UiPath.UIAutomationNext.Activities.NDragAndDrop@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.UIAutomationNext.Activities.NDragAndDrop`
+**Category**: UI Automation
+**Description**: Executes a drag and drop operation from the source UI element to the destination UI element.
+**Arguments**:
+- `KeyModifiers` (In): `InArgument<UiPath.UIAutomationNext.Enums.NKeyModifiers>`
+- `MouseButton` (In): `InArgument<UiPath.UIAutomationNext.Enums.NMouseButton>`
+- `DelayBetweenActions` (In): `InArgument<Double>`
+- `Timeout` (In): `InArgument<Double>`
+- `DelayAfter` (In): `InArgument<Double>`
+- `DelayBefore` (In): `InArgument<Double>`
+- `ContinueOnError` (In): `InArgument<Boolean>`
+- `OutUiElement` (Out): `OutArgument<UiPath.Core.UiElement>`
+- `HealingAgentBehavior` (In): `InArgument<UiPath.UIAutomationNext.Enums.NChildHealingAgentBehavior>`
+- `InUiElement` (In): `InArgument<UiPath.Core.UiElement>`
+**Other members**:
+- `DestinationTarget` [property]: `UiPath.UIAutomationNext.TargetAnchorable`
+- `Target` [property]: `UiPath.UIAutomationNext.TargetAnchorable`
+### For Each UI Element
+
+**ID**: `UiPath.UIAutomationNext.Activities.NForEachUiElement@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.UIAutomationNext.Activities.NForEachUiElement`
+**Category**: UI Automation
+**Description**: Iterates over a structured set of UiElements.
+**Arguments**:
+- `ContinueOnError` (In): `InArgument<Boolean>`
+- `MaximumResults` (In): `InArgument<Int32>`
+- `InteractionMode` (In): `InArgument<UiPath.UIAutomationNext.Enums.NChildInteractionMode>`
+- `DelayBetweenPages` (In): `InArgument<Double>`
+- `Timeout` (In): `InArgument<Double>`
+- `DelayAfter` (In): `InArgument<Double>`
+- `DelayBefore` (In): `InArgument<Double>`
+**Other members**:
+- `NextLink` [property]: `UiPath.UIAutomationNext.TargetAnchorable`
+- `LimitExtractionTo` [property]: `UiPath.UIAutomationNext.Models.ExtractData.LimitType`
+- `Target` [property]: `UiPath.UIAutomationNext.TargetAnchorable`
+### Set Text
+
+**ID**: `UiPath.UIAutomationNext.Activities.NSetText@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.UIAutomationNext.Activities.NSetText`
+**Category**: UI Automation
+**Description**: Enters text in a specified UI element, for example a text box.
+**Arguments**:
+- `Text` (In): `InArgument<String>`
+- `AlterIfDisabled` (In): `InArgument<Boolean>`
+- `Timeout` (In): `InArgument<Double>`
+- `DelayAfter` (In): `InArgument<Double>`
+- `DelayBefore` (In): `InArgument<Double>`
+- `ContinueOnError` (In): `InArgument<Boolean>`
+- `OutUiElement` (Out): `OutArgument<UiPath.Core.UiElement>`
+- `HealingAgentBehavior` (In): `InArgument<UiPath.UIAutomationNext.Enums.NChildHealingAgentBehavior>`
+- `InUiElement` (In): `InArgument<UiPath.Core.UiElement>`
+**Other members**:
+- `CacheTargetElement` [property]: `Boolean`
+- `Target` [property]: `UiPath.UIAutomationNext.TargetAnchorable`
+### Get Browser Data
+
+**ID**: `UiPath.UIAutomationNext.Activities.NGetBrowserData@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.UIAutomationNext.Activities.NGetBrowserData`
+**Category**: UI Automation
+**Description**: Exports the session data from the specified browser instance.
+**Arguments**:
+- `Browser` (In): `InArgument<UiPath.Core.Browser>`
+- `BrowserType` (In): `InArgument<UiPath.UIAutomationNext.Enums.NBrowserType>`
+- `SourceUserDataFolder` (In): `InArgument<String>`
+- `UserProfile` (In): `InArgument<String>`
+- `SessionData` (Out): `OutArgument<String>`
+- `DelayAfter` (In): `InArgument<Double>`
+- `DelayBefore` (In): `InArgument<Double>`
+- `ContinueOnError` (In): `InArgument<Boolean>`
+### Set Browser Data
+
+**ID**: `UiPath.UIAutomationNext.Activities.NSetBrowserData@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.UIAutomationNext.Activities.NSetBrowserData`
+**Category**: UI Automation
+**Description**: Imports the session data into a specified browser instance.
+**Arguments**:
+- `Browser` (In): `InArgument<UiPath.Core.Browser>`
+- `SessionData` (In): `InArgument<String>`
+- `DelayAfter` (In): `InArgument<Double>`
+- `DelayBefore` (In): `InArgument<Double>`
+- `ContinueOnError` (In): `InArgument<Boolean>`
+### Inject Js Script
+
+**ID**: `UiPath.UIAutomationNext.Activities.NInjectJsScript@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.UIAutomationNext.Activities.NInjectJsScript`
+**Category**: UI Automation
+**Description**: Executes JavaScript code in the context of the web page corresponding to a UiElement.
+**Arguments**:
+- `InputParameter` (In): `InArgument<String>`
+- `ScriptCode` (In): `InArgument<String>`
+- `ScriptOutput` (Out): `OutArgument`
+- `ExecutionWorld` (In): `InArgument<UiPath.UIAutomationNext.Enums.NExecutionWorld>`
+- `Timeout` (In): `InArgument<Double>`
+- `DelayAfter` (In): `InArgument<Double>`
+- `DelayBefore` (In): `InArgument<Double>`
+- `ContinueOnError` (In): `InArgument<Boolean>`
+- `OutUiElement` (Out): `OutArgument<UiPath.Core.UiElement>`
+- `InUiElement` (In): `InArgument<UiPath.Core.UiElement>`
+**Other members**:
+- `Target` [property]: `UiPath.UIAutomationNext.TargetAnchorable`
+### InvokeActiveX
+
+**ID**: `UiPath.Core.Activities.InvokeActiveX@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.InvokeActiveX`
+**Category**: UI Automation
+_No members extracted._
+### SetWebAttribute
+
+**ID**: `UiPath.Core.Activities.SetWebAttribute@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.SetWebAttribute`
+**Category**: UI Automation
+_No members extracted._
+### InjectDotNetCode
+
+**ID**: `UiPath.Core.Activities.InjectDotNetCode@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.InjectDotNetCode`
+**Category**: UI Automation
+_No members extracted._
+### GetPosition
+
+**ID**: `UiPath.Core.Activities.GetPosition@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.GetPosition`
+**Category**: UI Automation
+_No members extracted._
+### SetClippingRegion
+
+**ID**: `UiPath.Core.Activities.SetClippingRegion@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.SetClippingRegion`
+**Category**: UI Automation
+_No members extracted._
+### WaitAttribute
+
+**ID**: `UiPath.Core.Activities.WaitAttribute@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.WaitAttribute`
+**Category**: UI Automation
+_No members extracted._
+### Activate
+
+**ID**: `UiPath.Core.Activities.Activate@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.Activate`
+**Category**: UI Automation
+_No members extracted._
+### SelectMultipleItems
+
+**ID**: `UiPath.Core.Activities.SelectMultipleItems@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.SelectMultipleItems`
+**Category**: UI Automation
+_No members extracted._
+### SetFocus
+
+**ID**: `UiPath.Core.Activities.SetFocus@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.SetFocus`
+**Category**: UI Automation
+_No members extracted._
+### SetValue
+
+**ID**: `UiPath.Core.Activities.SetValue@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.SetValue`
+**Category**: UI Automation
+_No members extracted._
+### ExportUiTree
+
+**ID**: `UiPath.Core.Activities.ExportUiTree@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.ExportUiTree`
+**Category**: UI Automation
+_No members extracted._
+### FindChildren
+
+**ID**: `UiPath.Core.Activities.FindChildren@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.FindChildren`
+**Category**: UI Automation
+_No members extracted._
+### WaitUiElementAppear
+
+**ID**: `UiPath.Core.Activities.WaitUiElementAppear@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.WaitUiElementAppear`
+**Category**: UI Automation
+_No members extracted._
+### FindRelative
+
+**ID**: `UiPath.Core.Activities.FindRelative@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.FindRelative`
+**Category**: UI Automation
+_No members extracted._
+### GetAncestor
+
+**ID**: `UiPath.Core.Activities.GetAncestor@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.GetAncestor`
+**Category**: UI Automation
+_No members extracted._
+### IndicateOnScreen
+
+**ID**: `UiPath.Core.Activities.IndicateOnScreen@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.IndicateOnScreen`
+**Category**: UI Automation
+_No members extracted._
+### LoadImage
+
+**ID**: `UiPath.Core.Activities.LoadImage@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.LoadImage`
+**Category**: UI Automation
+_No members extracted._
+### SaveImage
+
+**ID**: `UiPath.Core.Activities.SaveImage@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.SaveImage`
+**Category**: UI Automation
+_No members extracted._
+### FindImageMatches
+
+**ID**: `UiPath.Core.Activities.FindImageMatches@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.FindImageMatches`
+**Category**: UI Automation
+_No members extracted._
+### Google Cloud Vision OCR
+
+**ID**: `UiPath.Core.Activities.GoogleCloudOCR@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.GoogleCloudOCR`
+**Category**: UI Automation
+_No members extracted._
+### Microsoft Azure Computer Vision OCR
+
+**ID**: `UiPath.Core.Activities.MicrosoftAzureComputerVisionOCR@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.MicrosoftAzureComputerVisionOCR`
+**Category**: UI Automation
+_No members extracted._
+### Tesseract OCR
+
+**ID**: `UiPath.Core.Activities.GoogleOCR@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.GoogleOCR`
+**Category**: UI Automation
+_No members extracted._
+### GetOCRText
+
+**ID**: `UiPath.Core.Activities.GetOCRText@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.GetOCRText`
+**Category**: UI Automation
+_No members extracted._
+### GetActiveWindow
+
+**ID**: `UiPath.Core.Activities.GetActiveWindow@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.GetActiveWindow`
+**Category**: UI Automation
+_No members extracted._
+### HideWindow
+
+**ID**: `UiPath.Core.Activities.HideWindow@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.HideWindow`
+**Category**: UI Automation
+_No members extracted._
+### MaximizeWindow
+
+**ID**: `UiPath.Core.Activities.MaximizeWindow@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.MaximizeWindow`
+**Category**: UI Automation
+_No members extracted._
+### MinimizeWindow
+
+**ID**: `UiPath.Core.Activities.MinimizeWindow@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.MinimizeWindow`
+**Category**: UI Automation
+_No members extracted._
+### MoveWindow
+
+**ID**: `UiPath.Core.Activities.MoveWindow@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.MoveWindow`
+**Category**: UI Automation
+_No members extracted._
+### RestoreWindow
+
+**ID**: `UiPath.Core.Activities.RestoreWindow@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.RestoreWindow`
+**Category**: UI Automation
+_No members extracted._
+### ShowWindow
+
+**ID**: `UiPath.Core.Activities.ShowWindow@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.ShowWindow`
+**Category**: UI Automation
+_No members extracted._
+### CallTransaction
+
+**ID**: `UiPath.Core.Activities.SAP.CallTransaction@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.SAP.CallTransaction`
+**Category**: UI Automation
+_No members extracted._
+### ClickPictureOnScreen
+
+**ID**: `UiPath.Core.Activities.SAP.ClickPictureOnScreen@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.SAP.ClickPictureOnScreen`
+**Category**: UI Automation
+_No members extracted._
+### ClickToolbarButton
+
+**ID**: `UiPath.Core.Activities.SAP.ClickToolbarButton@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.SAP.ClickToolbarButton`
+**Category**: UI Automation
+_No members extracted._
+### ExpandALVTree
+
+**ID**: `UiPath.Core.Activities.SAP.ExpandALVTree@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.SAP.ExpandALVTree`
+**Category**: UI Automation
+_No members extracted._
+### ExpandALVHierarchicalTable
+
+**ID**: `UiPath.Core.Activities.SAP.ExpandALVHierarchicalTable@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.SAP.ExpandALVHierarchicalTable`
+**Category**: UI Automation
+_No members extracted._
+### ExpandTree
+
+**ID**: `UiPath.Core.Activities.SAP.ExpandTree@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.SAP.ExpandTree`
+**Category**: UI Automation
+_No members extracted._
+### ReadStatusbar
+
+**ID**: `UiPath.Core.Activities.SAP.ReadStatusbar@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.SAP.ReadStatusbar`
+**Category**: UI Automation
+_No members extracted._
+### Login
+
+**ID**: `UiPath.Core.Activities.SAP.Login@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.SAP.Login`
+**Category**: UI Automation
+_No members extracted._
+### Logon
+
+**ID**: `UiPath.Core.Activities.SAP.Logon@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.SAP.Logon`
+**Category**: UI Automation
+_No members extracted._
+### SelectDatesInCalendar
+
+**ID**: `UiPath.Core.Activities.SAP.SelectDatesInCalendar@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.SAP.SelectDatesInCalendar`
+**Category**: UI Automation
+_No members extracted._
+### CellScope
+
+**ID**: `UiPath.Core.Activities.CellScope@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.Core.Activities.CellScope`
+**Category**: UI Automation
+_No members extracted._
+### Check
+
+**ID**: `UiPath.CV.Activities.CvCheckWithDescriptor@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.CV.Activities.CvCheckWithDescriptor`
+**Category**: UI Automation
+**Description**: Selects, clears or toggles check boxes. Only CheckBox type elements are supported.
+**Arguments**:
+- `TimeoutMS` (In): `InArgument<Int32>`
+- `Descriptor` (In): `InArgument<UiPath.CV.CvDescriptor>`
+- `ScrollDirection` (In): `InArgument<UiPath.CV.Scroll>`
+- `NumberOfScrolls` (In): `InArgument<Int32>`
+- `DelayScreenshotAfterScroll` (In): `InArgument<Int32>`
+- `ContinueOnError` (In): `InArgument<Boolean>`
+- `OutRegion` (Out): `OutArgument<Drawing.Rectangle>`
+- `DelayBefore` (In): `InArgument<Int32>`
+- `DelayMS` (In): `InArgument<Int32>`
+- `Action` (In): `InArgument<UiPath.Core.Activities.CheckType>`
+- `CursorMotionType` (In): `InArgument<UiPath.UIAutomationNext.Enums.CursorMotionType>`
+### CV Click
+
+**ID**: `UiPath.CV.Activities.CvClickWithDescriptor@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.CV.Activities.CvClickWithDescriptor`
+**Category**: UI Automation
+**Description**: Clicks a specified UI element which is targeted using UiPath Computer Vision.
+**Arguments**:
+- `TimeoutMS` (In): `InArgument<Int32>`
+- `DelayMS` (In): `InArgument<Int32>`
+- `DelayBefore` (In): `InArgument<Int32>`
+- `Descriptor` (In): `InArgument<UiPath.CV.CvDescriptor>`
+- `ScrollDirection` (In): `InArgument<UiPath.CV.Scroll>`
+- `NumberOfScrolls` (In): `InArgument<Int32>`
+- `DelayScreenshotAfterScroll` (In): `InArgument<Int32>`
+- `InRegion` (In): `InArgument<Drawing.Rectangle>`
+- `OutRegion` (Out): `OutArgument<Drawing.Rectangle>`
+- `KeyModifiers` (In): `InArgument<UiPath.Core.Activities.KeyModifiers>`
+- `CursorMotionType` (In): `InArgument<UiPath.UIAutomationNext.Enums.CursorMotionType>`
+- `ClickType` (In): `InArgument<UiPath.Core.ClickType>`
+- `MouseButton` (In): `InArgument<UiPath.Core.MouseButton>`
+- `ContinueOnError` (In): `InArgument<Boolean>`
+### CV Dropdown Select
+
+**ID**: `UiPath.CV.Activities.CvSelectItemWithDescriptor@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.CV.Activities.CvSelectItemWithDescriptor`
+**Category**: UI Automation
+**Description**: Specifies the item to be selected from a dropdown list.
+**Arguments**:
+- `TimeoutMS` (In): `InArgument<Int32>`
+- `DelayMS` (In): `InArgument<Int32>`
+- `DelayBetweenKeys` (In): `InArgument<Int32>`
+- `DelayBefore` (In): `InArgument<Int32>`
+- `Text` (In [required]): `InArgument<UiPath.CV.CvString>`
+- `Descriptor` (In): `InArgument<UiPath.CV.CvDescriptor>`
+- `ScrollDirection` (In): `InArgument<UiPath.CV.Scroll>`
+- `NumberOfScrolls` (In): `InArgument<Int32>`
+- `DelayScreenshotAfterScroll` (In): `InArgument<Int32>`
+- `OutRegion` (Out): `OutArgument<Drawing.Rectangle>`
+- `ClickBeforeTyping` (In): `InArgument<Boolean>`
+- `EmptyField` (In): `InArgument<Boolean>`
+- `Activate` (In): `InArgument<Boolean>`
+- `ContinueOnError` (In): `InArgument<Boolean>`
+### CV Element Exists
+
+**ID**: `UiPath.CV.Activities.CvElementExistsWithDescriptor@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.CV.Activities.CvElementExistsWithDescriptor`
+**Category**: UI Automation
+**Description**: Searches for a specified UI element on the screen in the foreground using UiPath Computer Vision, and returns a Boolean variable that states whether it was found or not.
+**Arguments**:
+- `TimeoutMS` (In): `InArgument<Int32>`
+- `Descriptor` (In): `InArgument<UiPath.CV.CvDescriptor>`
+- `ScrollDirection` (In): `InArgument<UiPath.CV.Scroll>`
+- `NumberOfScrolls` (In): `InArgument<Int32>`
+- `DelayScreenshotAfterScroll` (In): `InArgument<Int32>`
+- `ContinueOnError` (In): `InArgument<Boolean>`
+- `DelayBefore` (In): `InArgument<Int32>`
+- `DelayMS` (In): `InArgument<Int32>`
+- `Result` (Out): `OutArgument<Boolean>`
+- `InRegion` (In): `InArgument<Drawing.Rectangle>`
+- `OutRegion` (Out): `OutArgument<Drawing.Rectangle>`
+### CV Extract Table
+
+**ID**: `UiPath.CV.Activities.CvExtractDataTableWithDescriptor@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.CV.Activities.CvExtractDataTableWithDescriptor`
+**Category**: UI Automation
+**Description**: Extracts a table visible on the screen.
+**Arguments**:
+- `TimeoutMS` (In): `InArgument<Int32>`
+- `Descriptor` (In): `InArgument<UiPath.CV.CvDescriptor>`
+- `ContinueOnError` (In): `InArgument<Boolean>`
+- `ScrollDirection` (In): `InArgument<UiPath.CV.Scroll>`
+- `NumberOfScrolls` (In): `InArgument<Int32>`
+- `OutRegion` (Out): `OutArgument<Drawing.Rectangle>`
+- `Result` (Out): `OutArgument<Data.DataTable>`
+- `DelayBefore` (In): `InArgument<Int32>`
+- `DelayMS` (In): `InArgument<Int32>`
+- `DelayScreenshotAfterScroll` (In): `InArgument<Int32>`
+- `AddHeaders` (In): `InArgument<Boolean>`
+- `RefreshBefore` (In): `InArgument<Boolean>`
+- `IgnoreEmptyRows` (In): `InArgument<Boolean>`
+- `Scroll` (In): `InArgument<Boolean>`
+- `ScrollOffset` (In): `InArgument<Drawing.Point>`
+### CV Get Text
+
+**ID**: `UiPath.CV.Activities.CvGetTextWithDescriptor@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.CV.Activities.CvGetTextWithDescriptor`
+**Category**: UI Automation
+**Description**: Extracts text from a specified position based on an anchor.
+**Arguments**:
+- `TimeoutMS` (In): `InArgument<Int32>`
+- `Descriptor` (In): `InArgument<UiPath.CV.CvDescriptor>`
+- `ScrollDirection` (In): `InArgument<UiPath.CV.Scroll>`
+- `NumberOfScrolls` (In): `InArgument<Int32>`
+- `DelayScreenshotAfterScroll` (In): `InArgument<Int32>`
+- `Scroll` (In): `InArgument<Boolean>`
+- `ScrollOffset` (In): `InArgument<Drawing.Point>`
+- `ContinueOnError` (In): `InArgument<Boolean>`
+- `InRegion` (In): `InArgument<Drawing.Rectangle>`
+- `OutRegion` (Out): `OutArgument<Drawing.Rectangle>`
+- `RefreshBefore` (In): `InArgument<Boolean>`
+- `Result` (Out): `OutArgument<String>`
+- `DelayBefore` (In): `InArgument<Int32>`
+- `DelayMS` (In): `InArgument<Int32>`
+**Other members**:
+- `MethodType` [property]: `UiPath.CV.GetTextMethodType`
+### CV Highlight
+
+**ID**: `UiPath.CV.Activities.CvHighlightWithDescriptor@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.CV.Activities.CvHighlightWithDescriptor`
+**Category**: UI Automation
+**Description**: Visually highlights a specified UI element identified using UiPath Computer Vision.
+**Arguments**:
+- `TimeoutMS` (In): `InArgument<Int32>`
+- `Descriptor` (In): `InArgument<UiPath.CV.CvDescriptor>`
+- `ScrollDirection` (In): `InArgument<UiPath.CV.Scroll>`
+- `NumberOfScrolls` (In): `InArgument<Int32>`
+- `DelayScreenshotAfterScroll` (In): `InArgument<Int32>`
+- `DelayBefore` (In): `InArgument<Int32>`
+- `DelayMS` (In): `InArgument<Int32>`
+- `InRegion` (In): `InArgument<Drawing.Rectangle>`
+- `OutRegion` (Out): `OutArgument<Drawing.Rectangle>`
+- `HighlightTime` (In): `InArgument<Int32>`
+- `ContinueOnError` (In): `InArgument<Boolean>`
+**Other members**:
+- `Color` [property]: `Drawing.Color`
+### CV Hover
+
+**ID**: `UiPath.CV.Activities.CvHoverWithDescriptor@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.CV.Activities.CvHoverWithDescriptor`
+**Category**: UI Automation
+**Description**: Hovers over a specified UI element which is targeted by using UiPath Computer Vision.
+**Arguments**:
+- `HoverTime` (In): `InArgument<Double>`
+- `TimeoutMS` (In): `InArgument<Int32>`
+- `Descriptor` (In): `InArgument<UiPath.CV.CvDescriptor>`
+- `ScrollDirection` (In): `InArgument<UiPath.CV.Scroll>`
+- `NumberOfScrolls` (In): `InArgument<Int32>`
+- `DelayScreenshotAfterScroll` (In): `InArgument<Int32>`
+- `ContinueOnError` (In): `InArgument<Boolean>`
+- `DelayBefore` (In): `InArgument<Int32>`
+- `DelayMS` (In): `InArgument<Int32>`
+- `InRegion` (In): `InArgument<Drawing.Rectangle>`
+- `OutRegion` (Out): `OutArgument<Drawing.Rectangle>`
+- `CursorMotionType` (In): `InArgument<UiPath.UIAutomationNext.Enums.CursorMotionType>`
+### CV Screen Scope
+
+**ID**: `UiPath.CV.Activities.CVScope@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.CV.Activities.CVScope`
+**Category**: UI Automation
+**Description**: A container that enables Computer Vision on a window or element. Also acts as a refresh mechanism.
+**Arguments**:
+- `ContinueOnError` (In): `InArgument<Boolean>`
+- `CvMethod` (In): `InArgument<UiPath.CV.CVMethods>`
+- `Server` (In): `InArgument<String>`
+- `ApiKey` (In): `InArgument<String>`
+- `UseLocalServer` (In): `InArgument<Boolean>`
+- `ScrollOffset` (In): `InArgument<Drawing.Point>`
+- `DelayBefore` (In): `InArgument<Int32>`
+**Other members**:
+- `Target` [property]: `UiPath.Core.Activities.Target`
+### CV Type Into
+
+**ID**: `UiPath.CV.Activities.CvTypeIntoWithDescriptor@UiPath.UIAutomation.Activities/23.10.20`
+**Type**: `UiPath.CV.Activities.CvTypeIntoWithDescriptor`
+**Category**: UI Automation
+**Description**: Sends keystrokes to a UI element. Special keys are supported and can be selected from the drop-down list. The UI element is identified using UiPath Computer Vision.
+**Arguments**:
+- `TimeoutMS` (In): `InArgument<Int32>`
+- `DelayMS` (In): `InArgument<Int32>`
+- `DelayBetweenKeys` (In): `InArgument<Int32>`
+- `DelayBefore` (In): `InArgument<Int32>`
+- `Text` (In [required]): `InArgument<UiPath.CV.CvString>`
+- `Descriptor` (In): `InArgument<UiPath.CV.CvDescriptor>`
+- `ScrollDirection` (In): `InArgument<UiPath.CV.Scroll>`
+- `NumberOfScrolls` (In): `InArgument<Int32>`
+- `DelayScreenshotAfterScroll` (In): `InArgument<Int32>`
+- `InRegion` (In): `InArgument<Drawing.Rectangle>`
+- `OutRegion` (Out): `OutArgument<Drawing.Rectangle>`
+- `ClickBeforeTyping` (In): `InArgument<Boolean>`
+- `EmptyField` (In): `InArgument<Boolean>`
+- `Activate` (In): `InArgument<Boolean>`
+- `ContinueOnError` (In): `InArgument<Boolean>`
+---
