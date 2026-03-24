@@ -1,4 +1,4 @@
-"""
+r"""
 collect_nuspec.py — Download .nupkg for every (id, version) pair found in
 data/sources/nuget/feed-*.json, extract artifacts in one ZIP pass, then
 delete the temp file.
