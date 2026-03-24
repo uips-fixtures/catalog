@@ -29,89 +29,11 @@ jobs:
       - name: Build nuspec catalog
         run: python3 scripts/build_nuspec_catalog.py
 
-      # ── PackageFurnace extraction ──────────────────────────────────────────────
-
-      - uses: actions/setup-dotnet@v4
-        with:
-          dotnet-version: '10.x'
-
-      - uses: actions/checkout@v4
-        with:
-          repository: uips-fixtures/PackageFurnace
-          ref: main
-          path: _pf
-
-      - name: Publish PackageFurnace CLI
-        run: |
-          dotnet publish _pf/src/PackageFurnace.Cli/PackageFurnace.Cli.csproj \
-            -c Release -o _pf/out --self-contained false
-
-      - uses: actions/cache@v4
-        with:
-          path: _pf/nupkg-cache
-          key: pf-nupkg-v1-${{ hashFiles('config/curated.yaml') }}
-
-      - name: Run PackageFurnace extraction
-        run: |
-          python3 - <<'EOF'
-          import subprocess, pathlib, re, yaml
-
-          with open("config/curated.yaml") as f:
-              curated = yaml.safe_load(f)
-
-          def latest_stable(pkg_id):
-              pkg_dir = pathlib.Path(f"data/sources/nuget/pkg/{pkg_id}")
-              if not pkg_dir.exists():
-                  return None
-              stable = sorted(
-                  v.stem for v in pkg_dir.iterdir()
-                  if not re.search(r"[-]", v.stem)
-              )
-              return stable[-1] if stable else None
-
-          pairs = {}
-          for set_def in curated.get("sets", []):
-              for pkg in set_def.get("packages", []):
-                  pid = pkg["id"]
-                  if pid in pairs:
-                      continue
-                  if "versions" in pkg:
-                      for ver in pkg["versions"]:
-                          pairs.setdefault(pid, ver)
-                  elif "version" in pkg:
-                      pairs[pid] = pkg["version"]
-                  else:
-                      ver = latest_stable(pid)
-                      if ver:
-                          pairs[pid] = ver
-
-          cli = "_pf/out/PackageFurnace"
-          cache = "_pf/nupkg-cache"
-          feeds = "data/feeds/feed_index.json"
-
-          for pid, ver in pairs.items():
-              out_dir = pathlib.Path(f"data/sources/packagefurnace/pkg/{pid}")
-              out_dir.mkdir(parents=True, exist_ok=True)
-              out_file = out_dir / f"{ver}.json"
-              result = subprocess.run(
-                  [cli, "--id", pid, "--pkg-version", ver,
-                   "--cache", cache, "--feeds", feeds, "--out", str(out_file)],
-                  capture_output=True, text=True
-              )
-              if result.returncode == 0:
-                  print(f"OK  {pid} {ver}")
-              else:
-                  print(f"WARN {pid} {ver}: {result.stderr[:300]}")
-          EOF
-
-      # ── Commit ────────────────────────────────────────────────────────────────
-
       - name: Commit if changed
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/pkg/ data/sources/nuget/pkg/ data/sources/nuget/nuspec_catalog.json \
-                  data/sources/packagefurnace/
+          git add data/pkg/ data/sources/nuget/pkg/ data/sources/nuget/nuspec_catalog.json
           if git diff --cached --quiet; then
             echo "No changes."
           else
