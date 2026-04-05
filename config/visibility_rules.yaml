@@ -1,0 +1,37 @@
+# visibility_rules.yaml
+# Controls which activities are suppressed in the dist output even when the engine
+# has tagged them visibility: legacy.
+#
+# Applied by scripts/build_dist.py to all legacy-visibility activities.
+# Each entry under legacy_suppress requires a namespace_prefix that is matched
+# against the activity fullName (prefix match on the CLR namespace segment).
+# Add a reason comment for every entry so future maintainers know why it was added.
+
+legacy_suppress:
+
+  # WF4 expression infrastructure — operator and value activities used internally
+  # by the runtime expression evaluator (VB/C# expressions in XAML). Never shown
+  # in the Studio activity panel; Studio surfaces them only via its expression editors.
+  - namespace_prefix: "System.Activities.Expressions"
+
+  # WF4 constraint authoring framework — activities for writing design-time
+  # validation rules FOR other activities, not for use inside workflows.
+  - namespace_prefix: "System.Activities.Validation"
+
+  # C# expression language internals — companion to System.Activities.Expressions.
+  - namespace_prefix: "Microsoft.CSharp.Activities"
+
+  # VB expression language internals — companion to System.Activities.Expressions.
+  - namespace_prefix: "Microsoft.VisualBasic.Activities"
+
+  # Root-namespace WF4 value/reference proxy activities — expression graph primitives
+  # used internally by the runtime to pass data between expression nodes.
+  # Not directly usable in workflow design; never shown in Studio.
+  - namespace_prefix: "System.Activities.Value"
+  - namespace_prefix: "System.Activities.FuncValue"
+  - namespace_prefix: "System.Activities.Reference"
+  - namespace_prefix: "System.Activities.FuncReference"
+
+  # DynamicActivity — the runtime's generic XAML-loaded activity host. Surfaces as
+  # the container for XAML workflows at runtime; not a designer-visible activity.
+  - namespace_prefix: "System.Activities.DynamicActivity"

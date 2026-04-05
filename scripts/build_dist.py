@@ -31,12 +31,19 @@ REPO_ROOT    = Path(__file__).resolve().parent.parent
 SHAPE_B_DIR  = REPO_ROOT / "data" / "sources" / "packagefurnace" / "pkg"
 PKG_DATA_DIR = REPO_ROOT / "data" / "pkg"
 OUT_DIR      = REPO_ROOT / "data" / "dist"
-CONFIG_PATH  = REPO_ROOT / "config" / "curated.yaml"
+CONFIG_PATH          = REPO_ROOT / "config" / "curated.yaml"
+VISIBILITY_RULES_PATH = REPO_ROOT / "config" / "visibility_rules.yaml"
 
 # ── Config ────────────────────────────────────────────────────────────────────
 
 config    = yaml.safe_load(CONFIG_PATH.read_text(encoding="utf-8"))
 tfm_allow = set(config["defaults"]["targetFrameworks"]["include"])
+
+_vis_rules = yaml.safe_load(VISIBILITY_RULES_PATH.read_text(encoding="utf-8"))
+_legacy_suppress_prefixes: tuple[str, ...] = tuple(
+    entry["namespace_prefix"]
+    for entry in (_vis_rules.get("legacy_suppress") or [])
+)
 
 # ── Version resolution ────────────────────────────────────────────────────────
 
@@ -222,6 +229,20 @@ def write_json(path: Path, obj: object) -> None:
         json.dump(obj, f, indent=2, ensure_ascii=False)
         f.write("\n")
 
+# ── Visibility suppression ────────────────────────────────────────────────────
+
+def _is_legacy_suppressed(item: dict) -> bool:
+    """Return True if this activity should be suppressed per visibility_rules.yaml.
+
+    Only applied to legacy-visibility activities — browsable activities from
+    curated ActivitiesMetadata.json are never suppressed by namespace rules.
+    """
+    if item.get("visibility") != "legacy":
+        return False
+    full_name = item.get("fullName", "")
+    return full_name.startswith(_legacy_suppress_prefixes)
+
+
 # ── Set builder ────────────────────────────────────────────────────────────────
 
 def build_set(set_cfg: dict) -> None:
@@ -248,11 +269,16 @@ def build_set(set_cfg: dict) -> None:
             shape_b    = json.loads(shape_b_path.read_text(encoding="utf-8"))
             source_obj = build_source(shape_b)
 
-            activities = [
-                act for item in shape_b.get("activities", [])
-                if item.get("visibility") != "hidden"   # kebab-case; hidden = not in Studio
-                if (act := build_activity(item, source_obj)) is not None
-            ]
+            _seen_act: dict[str, dict] = {}
+            for item in shape_b.get("activities", []):
+                if item.get("visibility") == "hidden":
+                    continue
+                if _is_legacy_suppressed(item):
+                    continue
+                act = build_activity(item, source_obj)
+                if act is not None and act["fullName"] not in _seen_act:
+                    _seen_act[act["fullName"]] = act
+            activities = list(_seen_act.values())
 
             seen_enums = {}
             for item in shape_b.get("enums", []):
