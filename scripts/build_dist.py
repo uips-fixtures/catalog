@@ -27,7 +27,7 @@ from packaging.version import Version
 # ── Paths ─────────────────────────────────────────────────────────────────────
 
 REPO_ROOT    = Path(__file__).resolve().parent.parent
-SHAPE_B_DIR  = REPO_ROOT / "data" / "sources" / "nuget" / "pkg"
+SHAPE_B_DIR  = REPO_ROOT / "data" / "sources" / "packagefurnace" / "pkg"
 PKG_DATA_DIR = REPO_ROOT / "data" / "pkg"
 OUT_DIR      = REPO_ROOT / "data" / "dist"
 CONFIG_PATH  = REPO_ROOT / "config" / "curated.yaml"
@@ -129,8 +129,14 @@ def infer_member_kind(data_type: str, arg_dir: str | None) -> str:
 # ── Property → member mapping ──────────────────────────────────────────────────
 
 def map_property(prop: dict) -> dict | None:
-    """Return a member dict, or None if the property should be excluded."""
-    if prop.get("browsable") is False:
+    """Return a member dict, or None if the property should be excluded.
+
+    Field mapping from PackageFurnace engine-result schema v1:
+      isBrowsable       (was: browsable)
+      isRequired        (was: isRequiredArgument)
+      members           (was: properties)
+    """
+    if prop.get("isBrowsable") is False:
         return None
 
     raw_dt  = prop.get("dataType") or ""
@@ -144,7 +150,7 @@ def map_property(prop: dict) -> dict | None:
         "dataType":          dt,
         "memberKind":        kind,
         "argumentDirection": arg_dir if kind == "argument" else None,
-        "isRequiredArgument": bool(prop.get("isRequiredArgument")) if kind == "argument" else False,
+        "isRequiredArgument": bool(prop.get("isRequired")) if kind == "argument" else False,
         "description":       prop.get("description"),
         "category":          prop.get("category"),
     }
@@ -152,18 +158,20 @@ def map_property(prop: dict) -> dict | None:
 # ── Source and activity builders ───────────────────────────────────────────────
 
 def build_source(shape_b: dict) -> dict:
-    pkg = shape_b["package"]
+    # engine-result v1: sourceId/sourceVersion at top level; package contains nuspec metadata
+    pkg = shape_b.get("package", {})
     return {
         "kind":       "nuget-package",
-        "id":         pkg["id"],
-        "version":    pkg["version"],
+        "id":         shape_b["sourceId"],
+        "version":    shape_b["sourceVersion"],
         "authors":    pkg.get("authors") or None,
         "projectUrl": pkg.get("projectUrl") or None,
     }
 
 def build_activity(item: dict, source_obj: dict) -> dict:
+    # engine-result v1: members (was: properties); only Browsable/Legacy activities are useful
     members = [
-        m for p in item.get("properties", [])
+        m for p in item.get("members", [])
         if (m := map_property(p)) is not None
     ]
     return {
@@ -208,7 +216,10 @@ def build_set(set_cfg: dict) -> None:
                 seen_src[key] = source_obj
                 sources.append(source_obj)
 
-            for item in shape_b.get("items", []):
+            # engine-result v1: activities (was: items); skip Hidden (not shown in Studio)
+            for item in shape_b.get("activities", []):
+                if item.get("visibility") == "Hidden":
+                    continue
                 activities.append(build_activity(item, source_obj))
 
     catalog = {
