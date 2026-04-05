@@ -167,6 +167,7 @@ def build_source(shape_b: dict) -> dict:
         "kind":         "nuget-package",
         "id":           shape_b["sourceId"],
         "version":      shape_b["sourceVersion"],
+        "feedUrl":      shape_b.get("feedUrl") or None,
         "authors":      pkg.get("authors") or None,
         "projectUrl":   pkg.get("projectUrl") or None,
         "description":  pkg.get("description") or None,
@@ -176,22 +177,22 @@ def build_source(shape_b: dict) -> dict:
     }
 
 def build_activity(item: dict, source_obj: dict) -> dict:
-    # engine-result v1: members (was: properties); only Browsable/Legacy activities are useful
+    # engine-result v1: members (was: properties); only browsable/legacy activities are useful
     members = [
         m for p in item.get("members", [])
         if (m := map_property(p)) is not None
     ]
     return {
-        "id":                   f"{item['fullName']}@{source_obj['id']}/{source_obj['version']}",
-        "fullName":             item["fullName"],
-        "displayName":          item.get("displayName"),
-        "description":          item.get("description"),
-        "category":             item.get("category"),
-        "visibility":           item.get("visibility", "Browsable"),
-        "hasGenericParameters": bool(item.get("hasGenericParameters", False)),
+        "id":                    f"{item['fullName']}@{source_obj['id']}/{source_obj['version']}",
+        "fullName":              item["fullName"],
+        "displayName":           item.get("displayName"),
+        "description":           item.get("description"),
+        "category":              item.get("category"),
+        "visibility":            item.get("visibility", "browsable"),
+        "hasGenericParameters":  bool(item.get("hasGenericParameters", False)),
         "genericParameterNames": item.get("genericParameterNames") or [],
-        "source":               source_obj,
-        "members":              members,
+        "members":               members,
+        "enrichment":            None,
     }
 
 
