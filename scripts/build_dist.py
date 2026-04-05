@@ -3,11 +3,12 @@
 # dependencies = ["pyyaml", "packaging"]
 # ///
 """
-build_dist.py — Transform Shape B package catalogs into publishable activity-catalog v0.1 JSON.
+build_dist.py — Transform PackageFurnace engine-result v1 into activity-catalog v0.2 JSON.
 
-Reads config/curated.yaml, resolves package versions, reads Shape B files from
-data/sources/nuget/pkg/{id}/{version}.json, maps properties[] → members[], and
-writes data/dist/{set-id}/activities.json conforming to schemas/v0.1/activity-catalog.schema.json.
+Reads config/curated.yaml, resolves package versions, reads engine-result files from
+data/sources/packagefurnace/pkg/{id}/{version}.json, maps activities/members/enums/
+namespaceMappings, and writes data/dist/{set-id}/activities.json conforming to
+schemas/v0.2/activity-catalog.schema.json.
 
 Usage:
     uv run scripts/build_dist.py                    # all sets
@@ -117,12 +118,12 @@ _VAR_RE = re.compile(
     r"|System\.Activities\.Variable[<,\[])"
 )
 
-def infer_member_kind(data_type: str, arg_dir: str | None) -> str:
+def infer_member_kind(data_type: str | None, arg_dir: str | None) -> str:
     if arg_dir:
         return "argument"
-    if _CHILD_RE.search(data_type):
+    if data_type and _CHILD_RE.search(data_type):
         return "child"
-    if _VAR_RE.search(data_type):
+    if data_type and _VAR_RE.search(data_type):
         return "variable-scope"
     return "property"
 
@@ -139,20 +140,22 @@ def map_property(prop: dict) -> dict | None:
     if prop.get("isBrowsable") is False:
         return None
 
-    raw_dt  = prop.get("dataType") or ""
-    arg_dir = prop.get("argumentDirection")   # "In" / "Out" / "InOut" / None
-    dt      = normalize_datatype(raw_dt)
+    raw_dt  = prop.get("dataType")             # null when absent in source
+    arg_dir = prop.get("argumentDirection")   # "in" / "out" / "in-out" / None
+    dt      = normalize_datatype(raw_dt) if raw_dt else None
     kind    = infer_member_kind(dt, arg_dir)
 
     return {
-        "name":              prop["name"],
-        "displayName":       prop.get("displayName") or prop["name"],
-        "dataType":          dt,
-        "memberKind":        kind,
-        "argumentDirection": arg_dir if kind == "argument" else None,
+        "name":               prop["name"],
+        "displayName":        prop.get("displayName") or prop["name"],
+        "dataType":           dt,
+        "memberKind":         kind,
+        "argumentDirection":  arg_dir if kind == "argument" else None,
         "isRequiredArgument": bool(prop.get("isRequired")) if kind == "argument" else False,
-        "description":       prop.get("description"),
-        "category":          prop.get("category"),
+        "description":        prop.get("description"),
+        "category":           prop.get("category"),
+        "defaultValue":       prop.get("defaultValue"),
+        "typeConverter":      prop.get("typeConverter"),
     }
 
 # ── Source and activity builders ───────────────────────────────────────────────
@@ -161,11 +164,15 @@ def build_source(shape_b: dict) -> dict:
     # engine-result v1: sourceId/sourceVersion at top level; package contains nuspec metadata
     pkg = shape_b.get("package", {})
     return {
-        "kind":       "nuget-package",
-        "id":         shape_b["sourceId"],
-        "version":    shape_b["sourceVersion"],
-        "authors":    pkg.get("authors") or None,
-        "projectUrl": pkg.get("projectUrl") or None,
+        "kind":         "nuget-package",
+        "id":           shape_b["sourceId"],
+        "version":      shape_b["sourceVersion"],
+        "authors":      pkg.get("authors") or None,
+        "projectUrl":   pkg.get("projectUrl") or None,
+        "description":  pkg.get("description") or None,
+        "license":      pkg.get("license") or None,
+        "tags":         pkg.get("tags") or None,
+        "packageTypes": pkg.get("packageTypes") or [],
     }
 
 def build_activity(item: dict, source_obj: dict) -> dict:
@@ -175,22 +182,47 @@ def build_activity(item: dict, source_obj: dict) -> dict:
         if (m := map_property(p)) is not None
     ]
     return {
-        "id":          f"{item['fullName']}@{source_obj['id']}/{source_obj['version']}",
-        "fullName":    item["fullName"],
-        "displayName": item.get("displayName"),
-        "description": item.get("description"),
-        "category":    item.get("category"),
-        "source":      source_obj,
-        "members":     members,
+        "id":                   f"{item['fullName']}@{source_obj['id']}/{source_obj['version']}",
+        "fullName":             item["fullName"],
+        "displayName":          item.get("displayName"),
+        "description":          item.get("description"),
+        "category":             item.get("category"),
+        "visibility":           item.get("visibility", "Browsable"),
+        "hasGenericParameters": bool(item.get("hasGenericParameters", False)),
+        "genericParameterNames": item.get("genericParameterNames") or [],
+        "source":               source_obj,
+        "members":              members,
+    }
+
+
+def build_enum(item: dict) -> dict:
+    return {
+        "fullName":       item["fullName"],
+        "underlyingType": item["underlyingType"],
+        "members": [
+            {"name": m["name"], "value": m["value"]}
+            for m in item.get("members", [])
+        ],
+    }
+
+
+def build_xmlns_mapping(item: dict) -> dict:
+    return {
+        "xmlNamespace":  item["xmlNamespace"],
+        "prefix":        item.get("prefix", ""),
+        "clrNamespaces": item.get("clrNamespaces") or [],
+        "sourceAssembly": item.get("sourceAssembly", ""),
     }
 
 # ── Set builder ────────────────────────────────────────────────────────────────
 
 def build_set(set_cfg: dict) -> None:
-    set_id      = set_cfg["id"]
-    sources     = []
-    activities  = []
-    seen_src    = {}   # (kind, id) → source_obj
+    set_id           = set_cfg["id"]
+    sources          = []
+    activities       = []
+    seen_src         = {}   # (kind, id) → source_obj
+    seen_enums       = {}   # fullName → enum dict (first-write-wins)
+    seen_xmlns       = {}   # (xmlNamespace, sourceAssembly) → mapping dict (first-write-wins)
 
     for pkg_cfg in set_cfg["packages"]:
         pkg_id   = pkg_cfg["id"]
@@ -222,12 +254,26 @@ def build_set(set_cfg: dict) -> None:
                     continue
                 activities.append(build_activity(item, source_obj))
 
+            # Collect enums — deduplicated by fullName (first-write-wins across sources)
+            for item in shape_b.get("enums", []):
+                fn = item.get("fullName", "")
+                if fn and fn not in seen_enums:
+                    seen_enums[fn] = build_enum(item)
+
+            # Collect namespace mappings — deduplicated by (xmlNamespace, sourceAssembly)
+            for item in shape_b.get("namespaceMappings", []):
+                ns_key = (item.get("xmlNamespace", ""), item.get("sourceAssembly", ""))
+                if ns_key not in seen_xmlns:
+                    seen_xmlns[ns_key] = build_xmlns_mapping(item)
+
     catalog = {
-        "schema":      {"id": "activity-catalog", "version": "v0.1"},
-        "set":         set_id,
-        "generatedAt": datetime.datetime.now(datetime.UTC).strftime("%Y-%m-%dT%H:%M:%SZ"),
-        "sources":     sources,
-        "activities":  activities,
+        "schema":            {"id": "activity-catalog", "version": "v0.2"},
+        "set":               set_id,
+        "generatedAt":       datetime.datetime.now(datetime.UTC).strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "sources":           sources,
+        "activities":        activities,
+        "enums":             list(seen_enums.values()),
+        "namespaceMappings": list(seen_xmlns.values()),
     }
 
     out_path = OUT_DIR / set_id / "activities.json"
@@ -238,13 +284,14 @@ def build_set(set_cfg: dict) -> None:
     utf8_no_bom.close()
 
     member_count = sum(len(a["members"]) for a in activities)
-    print(f"  {set_id}: {len(activities)} activities, {member_count} members -> {out_path}")
+    print(f"  {set_id}: {len(activities)} activities, {member_count} members, "
+          f"{len(seen_enums)} enums, {len(seen_xmlns)} xmlns mappings -> {out_path}")
 
 # ── CLI ────────────────────────────────────────────────────────────────────────
 
 def main() -> None:
     parser = argparse.ArgumentParser(
-        description="Build publishable activity-catalog v0.1 JSON from Shape B sources."
+        description="Build publishable activity-catalog v0.2 JSON from PackageFurnace engine-result v1 sources."
     )
     parser.add_argument("--set", metavar="ID", help="Build only this set id")
     args = parser.parse_args()
