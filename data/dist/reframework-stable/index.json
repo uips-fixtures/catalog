@@ -6,7 +6,7 @@
         "version": "v0.2"
       },
       "set": "reframework-stable",
-      "generatedAt": "2026-04-05T14:28:02Z"
+      "generatedAt": "2026-04-05T17:53:36Z"
     }
   },
   {
@@ -17,7 +17,7 @@
     "source": {
       "kind": "nuget-package",
       "id": "UiPath.Excel.Activities",
-      "version": "3.2.1",
+      "version": "3.4.1",
       "feedUrl": null,
       "authors": "UiPath",
       "projectUrl": "https://activities.uipath.com/v1.0/docs/about-the-excel-activities-pack",
@@ -26,10 +26,71 @@
       "tags": "UiPathActivities Activities UiPathStudioX",
       "packageTypes": []
     },
-    "generatedAt": "2026-04-05T14:28:02Z",
+    "generatedAt": "2026-04-05T17:53:36Z",
     "activities": [
       {
-        "id": "UiPath.CSV.Activities.AppendWriteCsvFile@UiPath.Excel.Activities/3.2.1",
+        "id": "UiPath.CSV.Activities.AppendCsvFile@UiPath.Excel.Activities/3.4.1",
+        "fullName": "UiPath.CSV.Activities.AppendCsvFile",
+        "displayName": "Append to CSV",
+        "description": "Copies an Excel range, table, or sheet, or table data saved for later, and pastes it after existing data in a specified CSV file",
+        "category": "Excel.CSV",
+        "visibility": "browsable",
+        "hasGenericParameters": false,
+        "genericParameterNames": [],
+        "members": [
+          {
+            "name": "FilePath",
+            "displayName": "FilePath",
+            "dataType": "System.Activities.InArgument<System.String>",
+            "memberKind": "argument",
+            "argumentDirection": "in",
+            "isRequiredArgument": true,
+            "description": null,
+            "category": null,
+            "defaultValue": null,
+            "typeConverter": null
+          },
+          {
+            "name": "DataTable",
+            "displayName": "DataTable",
+            "dataType": "System.Activities.InArgument<System.Data.DataTable>",
+            "memberKind": "argument",
+            "argumentDirection": "in",
+            "isRequiredArgument": true,
+            "description": null,
+            "category": null,
+            "defaultValue": null,
+            "typeConverter": null
+          },
+          {
+            "name": "Delimitator",
+            "displayName": "Delimitator",
+            "dataType": "UiPath.CSV.DelimitatorOptions",
+            "memberKind": "property",
+            "argumentDirection": null,
+            "isRequiredArgument": false,
+            "description": null,
+            "category": null,
+            "defaultValue": null,
+            "typeConverter": null
+          },
+          {
+            "name": "Encoding",
+            "displayName": "Encoding",
+            "dataType": "System.Activities.InArgument<System.String>",
+            "memberKind": "argument",
+            "argumentDirection": "in",
+            "isRequiredArgument": false,
+            "description": null,
+            "category": null,
+            "defaultValue": null,
+            "typeConverter": null
+          }
+        ],
+        "enrichment": null
+      },
+      {
+        "id": "UiPath.CSV.Activities.AppendWriteCsvFile@UiPath.Excel.Activities/3.4.1",
         "fullName": "UiPath.CSV.Activities.AppendWriteCsvFile",
         "displayName": "Write CSV",
         "description": "Copies an Excel range, table, or sheet, or table data saved for later, and pastes it in a specified CSV file either pasting it after existing data or replacing any existing data in the file.",
@@ -138,7 +199,7 @@
         "enrichment": null
       },
       {
-        "id": "UiPath.CSV.Activities.ReadCsvFile@UiPath.Excel.Activities/3.2.1",
+        "id": "UiPath.CSV.Activities.ReadCsvFile@UiPath.Excel.Activities/3.4.1",
         "fullName": "UiPath.CSV.Activities.ReadCsvFile",
         "displayName": "Read CSV",
         "description": "Copies all entries from a specified CSV file to an Excel range, table, or sheet, or saves the data for later use in the automation.",
@@ -235,12 +296,97 @@
         "enrichment": null
       },
       {
-        "id": "UiPath.Excel.Activities.AppendRange@UiPath.Excel.Activities/3.2.1",
+        "id": "UiPath.CSV.Activities.WriteCsvFile@UiPath.Excel.Activities/3.4.1",
+        "fullName": "UiPath.CSV.Activities.WriteCsvFile",
+        "displayName": "Write CSV",
+        "description": "Copies an Excel range, table, or sheet, or table data saved for later, and pastes it in a specified CSV file replacing any existing data in the file",
+        "category": "Excel.CSV",
+        "visibility": "browsable",
+        "hasGenericParameters": false,
+        "genericParameterNames": [],
+        "members": [
+          {
+            "name": "AddHeaders",
+            "displayName": "AddHeaders",
+            "dataType": "System.Boolean",
+            "memberKind": "property",
+            "argumentDirection": null,
+            "isRequiredArgument": false,
+            "description": null,
+            "category": null,
+            "defaultValue": null,
+            "typeConverter": null
+          },
+          {
+            "name": "ShouldQuote",
+            "displayName": "ShouldQuote",
+            "dataType": "System.Boolean",
+            "memberKind": "property",
+            "argumentDirection": null,
+            "isRequiredArgument": false,
+            "description": null,
+            "category": null,
+            "defaultValue": null,
+            "typeConverter": null
+          },
+          {
+            "name": "Encoding",
+            "displayName": "Encoding",
+            "dataType": "System.Activities.InArgument<System.String>",
+            "memberKind": "argument",
+            "argumentDirection": "in",
+            "isRequiredArgument": false,
+            "description": null,
+            "category": null,
+            "defaultValue": null,
+            "typeConverter": null
+          },
+          {
+            "name": "FilePath",
+            "displayName": "FilePath",
+            "dataType": "System.Activities.InArgument<System.String>",
+            "memberKind": "argument",
+            "argumentDirection": "in",
+            "isRequiredArgument": true,
+            "description": null,
+            "category": null,
+            "defaultValue": null,
+            "typeConverter": null
+          },
+          {
+            "name": "DataTable",
+            "displayName": "DataTable",
+            "dataType": "System.Activities.InArgument<System.Data.DataTable>",
+            "memberKind": "argument",
+            "argumentDirection": "in",
+            "isRequiredArgument": true,
+            "description": null,
+            "category": null,
+            "defaultValue": null,
+            "typeConverter": null
+          },
+          {
+            "name": "Delimitator",
+            "displayName": "Delimitator",
+            "dataType": "UiPath.CSV.DelimitatorOptions",
+            "memberKind": "property",
+            "argumentDirection": null,
+            "isRequiredArgument": false,
+            "description": null,
+            "category": null,
+            "defaultValue": null,
+            "typeConverter": null
+          }
+        ],
+        "enrichment": null
+      },
+      {
+        "id": "UiPath.Excel.Activities.AppendRange@UiPath.Excel.Activities/3.4.1",
         "fullName": "UiPath.Excel.Activities.AppendRange",
         "displayName": "Append Range Workbook",
         "description": "Appends the data from a DataTable to a spreadsheet. If the sheet does not exist, a new one is created with the SheetName value. Changes are immediately saved",
         "category": "Excel",
-        "visibility": "legacy",
+        "visibility": "browsable",
         "hasGenericParameters": false,
         "genericParameterNames": [],
         "members": [
@@ -254,6 +400,18 @@
             "description": null,
             "category": null,
             "defaultValue": null,
+            "typeConverter": null
+          },
+          {
+            "name": "SheetName",
+            "displayName": "SheetName",
+            "dataType": "System.Activities.InArgument<System.String>",
+            "memberKind": "argument",
+            "argumentDirection": "in",
+            "isRequiredArgument": true,
+            "description": null,
+            "category": null,
+            "defaultValue": "Sheet1",
             "typeConverter": null
           },
           {
@@ -303,6 +461,43 @@
             "category": null,
             "defaultValue": null,
             "typeConverter": null
+          }
+        ],
+        "enrichment": null
+      },
+      {
+        "id": "UiPath.Excel.Activities.CreateNewWorkbook@UiPath.Excel.Activities/3.4.1",
+        "fullName": "UiPath.Excel.Activities.CreateNewWorkbook",
+        "displayName": "Create New Workbook",
+        "description": "Creates a new workbook with a new empty sheet.",
+        "category": "Excel",
+        "visibility": "browsable",
+        "hasGenericParameters": false,
+        "genericParameterNames": [],
+        "members": [
+          {
+            "name": "ConflictResolution",
+            "displayName": "ConflictResolution",
+            "dataType": "System.Activities.InArgument<UiPath.Excel.ConflictBehavior>",
+            "memberKind": "argument",
+            "argumentDirection": "in",
+            "isRequiredArgument": false,
+            "description": null,
+            "category": null,
+            "defaultValue": null,
+            "typeConverter": null
+          },
+          {
+            "name": "WorkbookFile",
+            "displayName": "WorkbookFile",
+            "dataType": "System.Activities.OutArgument<UiPath.Excel.Workbook>",
+            "memberKind": "argument",
+            "argumentDirection": "out",
+            "isRequiredArgument": false,
+            "description": null,
+            "category": null,
+            "defaultValue": null,
+            "typeConverter": null
           },
           {
             "name": "SheetName",
@@ -315,12 +510,60 @@
             "category": null,
             "defaultValue": "Sheet1",
             "typeConverter": null
+          },
+          {
+            "name": "Workbook",
+            "displayName": "Workbook",
+            "dataType": "System.Activities.InArgument<UiPath.Excel.Workbook>",
+            "memberKind": "argument",
+            "argumentDirection": "in",
+            "isRequiredArgument": false,
+            "description": null,
+            "category": "Use Workbook",
+            "defaultValue": null,
+            "typeConverter": null
+          },
+          {
+            "name": "WorkbookPath",
+            "displayName": "WorkbookPath",
+            "dataType": "System.Activities.InArgument<System.String>",
+            "memberKind": "argument",
+            "argumentDirection": "in",
+            "isRequiredArgument": true,
+            "description": null,
+            "category": null,
+            "defaultValue": null,
+            "typeConverter": null
+          },
+          {
+            "name": "WorkbookPathResource",
+            "displayName": "WorkbookPathResource",
+            "dataType": "System.Activities.InArgument<UiPath.Platform.ResourceHandling.IResource>",
+            "memberKind": "argument",
+            "argumentDirection": "in",
+            "isRequiredArgument": true,
+            "description": null,
+            "category": null,
+            "defaultValue": null,
+            "typeConverter": null
+          },
+          {
+            "name": "Password",
+            "displayName": "Password",
+            "dataType": "System.Activities.InArgument<System.String>",
+            "memberKind": "argument",
+            "argumentDirection": "in",
+            "isRequiredArgument": false,
+            "description": null,
+            "category": null,
+            "defaultValue": null,
+            "typeConverter": null
           }
         ],
         "enrichment": null
       },
       {
-        "id": "UiPath.Excel.Activities.CreatePivotTable@UiPath.Excel.Activities/3.2.1",
+        "id": "UiPath.Excel.Activities.CreatePivotTable@UiPath.Excel.Activities/3.4.1",
         "fullName": "UiPath.Excel.Activities.CreatePivotTable",
         "displayName": "Create Pivot Table Workbook",
         "description": "Creates a pivot table from a specified range or table to help you calculate, summarize, and analyze data.",
@@ -450,6 +693,18 @@
             "typeConverter": null
           },
           {
+            "name": "SheetName",
+            "displayName": "SheetName",
+            "dataType": "System.Activities.InArgument<System.String>",
+            "memberKind": "argument",
+            "argumentDirection": "in",
+            "isRequiredArgument": true,
+            "description": null,
+            "category": null,
+            "defaultValue": "Sheet1",
+            "typeConverter": null
+          },
+          {
             "name": "Workbook",
             "displayName": "Workbook",
             "dataType": "System.Activities.InArgument<UiPath.Excel.Workbook>",
@@ -496,24 +751,12 @@
             "category": null,
             "defaultValue": null,
             "typeConverter": null
-          },
-          {
-            "name": "SheetName",
-            "displayName": "SheetName",
-            "dataType": "System.Activities.InArgument<System.String>",
-            "memberKind": "argument",
-            "argumentDirection": "in",
-            "isRequiredArgument": true,
-            "description": null,
-            "category": null,
-            "defaultValue": "Sheet1",
-            "typeConverter": null
           }
         ],
         "enrichment": null
       },
       {
-        "id": "UiPath.Excel.Activities.GetCellColor@UiPath.Excel.Activities/3.2.1",
+        "id": "UiPath.Excel.Activities.GetCellColor@UiPath.Excel.Activities/3.4.1",
         "fullName": "UiPath.Excel.Activities.GetCellColor",
         "displayName": "Get Cell Color Workbook",
         "description": "Gets the color of a cell",
@@ -538,6 +781,103 @@
             "name": "Color",
             "displayName": "Color",
             "dataType": "System.Activities.OutArgument<System.Drawing.Color>",
+            "memberKind": "argument",
+            "argumentDirection": "out",
+            "isRequiredArgument": false,
+            "description": null,
+            "category": null,
+            "defaultValue": null,
+            "typeConverter": null
+          },
+          {
+            "name": "SheetName",
+            "displayName": "SheetName",
+            "dataType": "System.Activities.InArgument<System.String>",
+            "memberKind": "argument",
+            "argumentDirection": "in",
+            "isRequiredArgument": true,
+            "description": null,
+            "category": null,
+            "defaultValue": "Sheet1",
+            "typeConverter": null
+          },
+          {
+            "name": "Workbook",
+            "displayName": "Workbook",
+            "dataType": "System.Activities.InArgument<UiPath.Excel.Workbook>",
+            "memberKind": "argument",
+            "argumentDirection": "in",
+            "isRequiredArgument": false,
+            "description": null,
+            "category": "Use Workbook",
+            "defaultValue": null,
+            "typeConverter": null
+          },
+          {
+            "name": "WorkbookPath",
+            "displayName": "WorkbookPath",
+            "dataType": "System.Activities.InArgument<System.String>",
+            "memberKind": "argument",
+            "argumentDirection": "in",
+            "isRequiredArgument": true,
+            "description": null,
+            "category": null,
+            "defaultValue": null,
+            "typeConverter": null
+          },
+          {
+            "name": "WorkbookPathResource",
+            "displayName": "WorkbookPathResource",
+            "dataType": "System.Activities.InArgument<UiPath.Platform.ResourceHandling.IResource>",
+            "memberKind": "argument",
+            "argumentDirection": "in",
+            "isRequiredArgument": true,
+            "description": null,
+            "category": null,
+            "defaultValue": null,
+            "typeConverter": null
+          },
+          {
+            "name": "Password",
+            "displayName": "Password",
+            "dataType": "System.Activities.InArgument<System.String>",
+            "memberKind": "argument",
+            "argumentDirection": "in",
+            "isRequiredArgument": false,
+            "description": null,
+            "category": null,
+            "defaultValue": null,
+            "typeConverter": null
+          }
+        ],
+        "enrichment": null
+      },
+      {
+        "id": "UiPath.Excel.Activities.GetSheets@UiPath.Excel.Activities/3.4.1",
+        "fullName": "UiPath.Excel.Activities.GetSheets",
+        "displayName": "Get Sheets Workbook",
+        "description": "Returns the sheets from the workbook",
+        "category": "Excel",
+        "visibility": "browsable",
+        "hasGenericParameters": false,
+        "genericParameterNames": [],
+        "members": [
+          {
+            "name": "OnlyVisibleSheets",
+            "displayName": "OnlyVisibleSheets",
+            "dataType": "System.Boolean",
+            "memberKind": "property",
+            "argumentDirection": null,
+            "isRequiredArgument": false,
+            "description": null,
+            "category": null,
+            "defaultValue": "False",
+            "typeConverter": null
+          },
+          {
+            "name": "Result",
+            "displayName": "Result",
+            "dataType": "System.Activities.OutArgument<System.Collections.Generic.IEnumerable<System.String>>",
             "memberKind": "argument",
             "argumentDirection": "out",
             "isRequiredArgument": false,
@@ -593,29 +933,17 @@
             "category": null,
             "defaultValue": null,
             "typeConverter": null
-          },
-          {
-            "name": "SheetName",
-            "displayName": "SheetName",
-            "dataType": "System.Activities.InArgument<System.String>",
-            "memberKind": "argument",
-            "argumentDirection": "in",
-            "isRequiredArgument": true,
-            "description": null,
-            "category": null,
-            "defaultValue": "Sheet1",
-            "typeConverter": null
           }
         ],
         "enrichment": null
       },
       {
-        "id": "UiPath.Excel.Activities.GetTableRange@UiPath.Excel.Activities/3.2.1",
+        "id": "UiPath.Excel.Activities.GetTableRange@UiPath.Excel.Activities/3.4.1",
         "fullName": "UiPath.Excel.Activities.GetTableRange",
         "displayName": "Get Table Range Workbook",
         "description": "Extracts the range of an Excel table from a specified spreadsheet",
         "category": "Excel",
-        "visibility": "legacy",
+        "visibility": "browsable",
         "hasGenericParameters": false,
         "genericParameterNames": [],
         "members": [
@@ -656,6 +984,18 @@
             "typeConverter": null
           },
           {
+            "name": "SheetName",
+            "displayName": "SheetName",
+            "dataType": "System.Activities.InArgument<System.String>",
+            "memberKind": "argument",
+            "argumentDirection": "in",
+            "isRequiredArgument": true,
+            "description": null,
+            "category": null,
+            "defaultValue": "Sheet1",
+            "typeConverter": null
+          },
+          {
             "name": "Workbook",
             "displayName": "Workbook",
             "dataType": "System.Activities.InArgument<UiPath.Excel.Workbook>",
@@ -702,29 +1042,17 @@
             "category": null,
             "defaultValue": null,
             "typeConverter": null
-          },
-          {
-            "name": "SheetName",
-            "displayName": "SheetName",
-            "dataType": "System.Activities.InArgument<System.String>",
-            "memberKind": "argument",
-            "argumentDirection": "in",
-            "isRequiredArgument": true,
-            "description": null,
-            "category": null,
-            "defaultValue": "Sheet1",
-            "typeConverter": null
           }
         ],
         "enrichment": null
       },
       {
-        "id": "UiPath.Excel.Activities.ReadCell@UiPath.Excel.Activities/3.2.1",
+        "id": "UiPath.Excel.Activities.ReadCell@UiPath.Excel.Activities/3.4.1",
         "fullName": "UiPath.Excel.Activities.ReadCell",
         "displayName": "Read Cell Workbook",
         "description": "Reads the value of a cell from a spreadsheet as a string",
         "category": "Excel",
-        "visibility": "legacy",
+        "visibility": "browsable",
         "hasGenericParameters": false,
         "genericParameterNames": [],
         "members": [
@@ -765,6 +1093,18 @@
             "typeConverter": null
           },
           {
+            "name": "SheetName",
+            "displayName": "SheetName",
+            "dataType": "System.Activities.InArgument<System.String>",
+            "memberKind": "argument",
+            "argumentDirection": "in",
+            "isRequiredArgument": true,
+            "description": null,
+            "category": null,
+            "defaultValue": "Sheet1",
+            "typeConverter": null
+          },
+          {
             "name": "Workbook",
             "displayName": "Workbook",
             "dataType": "System.Activities.InArgument<UiPath.Excel.Workbook>",
@@ -811,29 +1151,17 @@
             "category": null,
             "defaultValue": null,
             "typeConverter": null
-          },
-          {
-            "name": "SheetName",
-            "displayName": "SheetName",
-            "dataType": "System.Activities.InArgument<System.String>",
-            "memberKind": "argument",
-            "argumentDirection": "in",
-            "isRequiredArgument": true,
-            "description": null,
-            "category": null,
-            "defaultValue": "Sheet1",
-            "typeConverter": null
           }
         ],
         "enrichment": null
       },
       {
-        "id": "UiPath.Excel.Activities.ReadCellFormula@UiPath.Excel.Activities/3.2.1",
+        "id": "UiPath.Excel.Activities.ReadCellFormula@UiPath.Excel.Activities/3.4.1",
         "fullName": "UiPath.Excel.Activities.ReadCellFormula",
         "displayName": "Read Cell Formula Workbook",
         "description": "Reads the formula of a cell from a spreadsheet as a string",
         "category": "Excel",
-        "visibility": "legacy",
+        "visibility": "browsable",
         "hasGenericParameters": false,
         "genericParameterNames": [],
         "members": [
@@ -862,6 +1190,18 @@
             "typeConverter": null
           },
           {
+            "name": "SheetName",
+            "displayName": "SheetName",
+            "dataType": "System.Activities.InArgument<System.String>",
+            "memberKind": "argument",
+            "argumentDirection": "in",
+            "isRequiredArgument": true,
+            "description": null,
+            "category": null,
+            "defaultValue": "Sheet1",
+            "typeConverter": null
+          },
+          {
             "name": "Workbook",
             "displayName": "Workbook",
             "dataType": "System.Activities.InArgument<UiPath.Excel.Workbook>",
@@ -908,29 +1248,17 @@
             "category": null,
             "defaultValue": null,
             "typeConverter": null
-          },
-          {
-            "name": "SheetName",
-            "displayName": "SheetName",
-            "dataType": "System.Activities.InArgument<System.String>",
-            "memberKind": "argument",
-            "argumentDirection": "in",
-            "isRequiredArgument": true,
-            "description": null,
-            "category": null,
-            "defaultValue": "Sheet1",
-            "typeConverter": null
           }
         ],
         "enrichment": null
       },
       {
-        "id": "UiPath.Excel.Activities.ReadColumn@UiPath.Excel.Activities/3.2.1",
+        "id": "UiPath.Excel.Activities.ReadColumn@UiPath.Excel.Activities/3.4.1",
         "fullName": "UiPath.Excel.Activities.ReadColumn",
         "displayName": "Read Column Workbook",
-        "description": "Reads the values from a column beginning from the cell specified in the StartingCell field, and stores them in an IEnumerable <object>variable.",
+        "description": "Reads the values from a column beginning from the cell specified in the StartingCell field, and stores them in an IEnumerable &lt;object&gt;variable",
         "category": "Excel",
-        "visibility": "legacy",
+        "visibility": "browsable",
         "hasGenericParameters": false,
         "genericParameterNames": [],
         "members": [
@@ -971,6 +1299,18 @@
             "typeConverter": null
           },
           {
+            "name": "SheetName",
+            "displayName": "SheetName",
+            "dataType": "System.Activities.InArgument<System.String>",
+            "memberKind": "argument",
+            "argumentDirection": "in",
+            "isRequiredArgument": true,
+            "description": null,
+            "category": null,
+            "defaultValue": "Sheet1",
+            "typeConverter": null
+          },
+          {
             "name": "Workbook",
             "displayName": "Workbook",
             "dataType": "System.Activities.InArgument<UiPath.Excel.Workbook>",
@@ -1017,29 +1357,17 @@
             "category": null,
             "defaultValue": null,
             "typeConverter": null
-          },
-          {
-            "name": "SheetName",
-            "displayName": "SheetName",
-            "dataType": "System.Activities.InArgument<System.String>",
-            "memberKind": "argument",
-            "argumentDirection": "in",
-            "isRequiredArgument": true,
-            "description": null,
-            "category": null,
-            "defaultValue": "Sheet1",
-            "typeConverter": null
           }
         ],
         "enrichment": null
       },
       {
-        "id": "UiPath.Excel.Activities.ReadRange@UiPath.Excel.Activities/3.2.1",
+        "id": "UiPath.Excel.Activities.ReadRange@UiPath.Excel.Activities/3.4.1",
         "fullName": "UiPath.Excel.Activities.ReadRange",
         "displayName": "Read Range Workbook",
         "description": "Reads the value of a range in Range Excel Format from a spreadsheet as a DataTable. If Range isn&apos;t specified, the whole spreadsheet is read. If range is specified as a cell, the whole spreadsheet starting from that cell is read",
         "category": "Excel",
-        "visibility": "legacy",
+        "visibility": "browsable",
         "hasGenericParameters": false,
         "genericParameterNames": [],
         "members": [
@@ -1092,6 +1420,18 @@
             "typeConverter": null
           },
           {
+            "name": "SheetName",
+            "displayName": "SheetName",
+            "dataType": "System.Activities.InArgument<System.String>",
+            "memberKind": "argument",
+            "argumentDirection": "in",
+            "isRequiredArgument": true,
+            "description": null,
+            "category": null,
+            "defaultValue": "Sheet1",
+            "typeConverter": null
+          },
+          {
             "name": "Workbook",
             "displayName": "Workbook",
             "dataType": "System.Activities.InArgument<UiPath.Excel.Workbook>",
@@ -1138,29 +1478,17 @@
             "category": null,
             "defaultValue": null,
             "typeConverter": null
-          },
-          {
-            "name": "SheetName",
-            "displayName": "SheetName",
-            "dataType": "System.Activities.InArgument<System.String>",
-            "memberKind": "argument",
-            "argumentDirection": "in",
-            "isRequiredArgument": true,
-            "description": null,
-            "category": null,
-            "defaultValue": "Sheet1",
-            "typeConverter": null
           }
         ],
         "enrichment": null
       },
       {
-        "id": "UiPath.Excel.Activities.ReadRow@UiPath.Excel.Activities/3.2.1",
+        "id": "UiPath.Excel.Activities.ReadRow@UiPath.Excel.Activities/3.4.1",
         "fullName": "UiPath.Excel.Activities.ReadRow",
         "displayName": "Read Row Workbook",
-        "description": "Reads the values of an Excel row beginning from the cell specified in the StartingCell field, and stores it in an IEnumerable<object> variable.",
+        "description": "Reads the values of an Excel row beginning from the cell specified in the StartingCell field, and stores it in an IEnumerable&lt;object&gt; variable",
         "category": "Excel",
-        "visibility": "legacy",
+        "visibility": "browsable",
         "hasGenericParameters": false,
         "genericParameterNames": [],
         "members": [
@@ -1201,6 +1529,18 @@
             "typeConverter": null
           },
           {
+            "name": "SheetName",
+            "displayName": "SheetName",
+            "dataType": "System.Activities.InArgument<System.String>",
+            "memberKind": "argument",
+            "argumentDirection": "in",
+            "isRequiredArgument": true,
+            "description": null,
+            "category": null,
+            "defaultValue": "Sheet1",
+            "typeConverter": null
+          },
+          {
             "name": "Workbook",
             "displayName": "Workbook",
             "dataType": "System.Activities.InArgument<UiPath.Excel.Workbook>",
@@ -1247,24 +1587,12 @@
             "category": null,
             "defaultValue": null,
             "typeConverter": null
-          },
-          {
-            "name": "SheetName",
-            "displayName": "SheetName",
-            "dataType": "System.Activities.InArgument<System.String>",
-            "memberKind": "argument",
-            "argumentDirection": "in",
-            "isRequiredArgument": true,
-            "description": null,
-            "category": null,
-            "defaultValue": "Sheet1",
-            "typeConverter": null
           }
         ],
         "enrichment": null
       },
       {
-        "id": "UiPath.Excel.Activities.SetRangeColor@UiPath.Excel.Activities/3.2.1",
+        "id": "UiPath.Excel.Activities.SetRangeColor@UiPath.Excel.Activities/3.4.1",
         "fullName": "UiPath.Excel.Activities.SetRangeColor",
         "displayName": "Set Range Color Workbook",
         "description": "Sets the color of a range",
@@ -1298,6 +1626,18 @@
             "typeConverter": null
           },
           {
+            "name": "SheetName",
+            "displayName": "SheetName",
+            "dataType": "System.Activities.InArgument<System.String>",
+            "memberKind": "argument",
+            "argumentDirection": "in",
+            "isRequiredArgument": true,
+            "description": null,
+            "category": null,
+            "defaultValue": "Sheet1",
+            "typeConverter": null
+          },
+          {
             "name": "Workbook",
             "displayName": "Workbook",
             "dataType": "System.Activities.InArgument<UiPath.Excel.Workbook>",
@@ -1344,29 +1684,17 @@
             "category": null,
             "defaultValue": null,
             "typeConverter": null
-          },
-          {
-            "name": "SheetName",
-            "displayName": "SheetName",
-            "dataType": "System.Activities.InArgument<System.String>",
-            "memberKind": "argument",
-            "argumentDirection": "in",
-            "isRequiredArgument": true,
-            "description": null,
-            "category": null,
-            "defaultValue": "Sheet1",
-            "typeConverter": null
           }
         ],
         "enrichment": null
       },
       {
-        "id": "UiPath.Excel.Activities.WriteCell@UiPath.Excel.Activities/3.2.1",
+        "id": "UiPath.Excel.Activities.WriteCell@UiPath.Excel.Activities/3.4.1",
         "fullName": "UiPath.Excel.Activities.WriteCell",
         "displayName": "Write Cell Workbook",
         "description": "Writes the Text value into a cell from a spreadsheet. If the sheet does not exist, a new one is created with the SheetName value. If a value exists, it is overwritten. Changes are immediately saved",
         "category": "Excel",
-        "visibility": "legacy",
+        "visibility": "browsable",
         "hasGenericParameters": false,
         "genericParameterNames": [],
         "members": [
@@ -1458,12 +1786,121 @@
         "enrichment": null
       },
       {
-        "id": "UiPath.Excel.Activities.GetCellColorX@UiPath.Excel.Activities/3.2.1",
+        "id": "UiPath.Excel.Activities.WriteRange@UiPath.Excel.Activities/3.4.1",
+        "fullName": "UiPath.Excel.Activities.WriteRange",
+        "displayName": "Write Range Workbook",
+        "description": "Writes the data from a DataTable in a spreadsheet starting from StartingCell. If StartingCell isn&apos;t specified, the writing begins at A1 cell. If the sheet does not exist, a new one is created with the SheetName value. All cells within the DataTable range are overwritten. Changes are immediately saved",
+        "category": "Excel",
+        "visibility": "browsable",
+        "hasGenericParameters": false,
+        "genericParameterNames": [],
+        "members": [
+          {
+            "name": "StartingCell",
+            "displayName": "StartingCell",
+            "dataType": "System.Activities.InArgument<System.String>",
+            "memberKind": "argument",
+            "argumentDirection": "in",
+            "isRequiredArgument": false,
+            "description": null,
+            "category": null,
+            "defaultValue": "A1",
+            "typeConverter": null
+          },
+          {
+            "name": "DataTable",
+            "displayName": "DataTable",
+            "dataType": "System.Activities.InArgument<System.Data.DataTable>",
+            "memberKind": "argument",
+            "argumentDirection": "in",
+            "isRequiredArgument": true,
+            "description": null,
+            "category": null,
+            "defaultValue": null,
+            "typeConverter": null
+          },
+          {
+            "name": "AddHeaders",
+            "displayName": "AddHeaders",
+            "dataType": "System.Boolean",
+            "memberKind": "property",
+            "argumentDirection": null,
+            "isRequiredArgument": false,
+            "description": null,
+            "category": null,
+            "defaultValue": "True",
+            "typeConverter": null
+          },
+          {
+            "name": "SheetName",
+            "displayName": "SheetName",
+            "dataType": "System.Activities.InArgument<System.String>",
+            "memberKind": "argument",
+            "argumentDirection": "in",
+            "isRequiredArgument": true,
+            "description": null,
+            "category": null,
+            "defaultValue": "Sheet1",
+            "typeConverter": null
+          },
+          {
+            "name": "Workbook",
+            "displayName": "Workbook",
+            "dataType": "System.Activities.InArgument<UiPath.Excel.Workbook>",
+            "memberKind": "argument",
+            "argumentDirection": "in",
+            "isRequiredArgument": false,
+            "description": null,
+            "category": "Use Workbook",
+            "defaultValue": null,
+            "typeConverter": null
+          },
+          {
+            "name": "WorkbookPath",
+            "displayName": "WorkbookPath",
+            "dataType": "System.Activities.InArgument<System.String>",
+            "memberKind": "argument",
+            "argumentDirection": "in",
+            "isRequiredArgument": true,
+            "description": null,
+            "category": null,
+            "defaultValue": null,
+            "typeConverter": null
+          },
+          {
+            "name": "WorkbookPathResource",
+            "displayName": "WorkbookPathResource",
+            "dataType": "System.Activities.InArgument<UiPath.Platform.ResourceHandling.IResource>",
+            "memberKind": "argument",
+            "argumentDirection": "in",
+            "isRequiredArgument": true,
+            "description": null,
+            "category": null,
+            "defaultValue": null,
+            "typeConverter": null
+          },
+          {
+            "name": "Password",
+            "displayName": "Password",
+            "dataType": "System.Activities.InArgument<System.String>",
+            "memberKind": "argument",
+            "argumentDirection": "in",
+            "isRequiredArgument": false,
+            "description": null,
+            "category": null,
+            "defaultValue": null,
+            "typeConverter": null
+          }
+        ],
+        "enrichment": null
+      },
+      {
+        "id": "UiPath.Excel.Activities.GetCellColorX@UiPath.Excel.Activities/3.4.1",
         "fullName": "UiPath.Excel.Activities.GetCellColorX",
         "displayName": "Get Cell Color",
         "description": "Extracts the background color of a cell and saves it as a Color variable.",
         "category": "Excel.Windows.Cell",
-        "visibility": "legacy",
+        "visibility": "browsable",
         "hasGenericParameters": false,
         "genericParameterNames": [],
         "members": [
@@ -1495,12 +1932,123 @@
         "enrichment": null
       },
       {
-        "id": "UiPath.Excel.Activities.Business.AppendRangeX@UiPath.Excel.Activities/3.2.1",
+        "id": "UiPath.Excel.Activities.Windows.Business.GetSelectedRangeX@UiPath.Excel.Activities/3.4.1",
+        "fullName": "UiPath.Excel.Activities.Windows.Business.GetSelectedRangeX",
+        "displayName": "Get Selected Range",
+        "description": "Get the selected range from the target Excel file.",
+        "category": "Excel.Windows.Range",
+        "visibility": "browsable",
+        "hasGenericParameters": false,
+        "genericParameterNames": [],
+        "members": [
+          {
+            "name": "Workbook",
+            "displayName": "Workbook",
+            "dataType": "System.Activities.InArgument<UiPath.Excel.IWorkbookQuickHandle>",
+            "memberKind": "argument",
+            "argumentDirection": "in",
+            "isRequiredArgument": true,
+            "description": null,
+            "category": null,
+            "defaultValue": null,
+            "typeConverter": null
+          },
+          {
+            "name": "Range",
+            "displayName": "Range",
+            "dataType": "System.Activities.OutArgument<UiPath.Excel.IReadRangeRef>",
+            "memberKind": "argument",
+            "argumentDirection": "out",
+            "isRequiredArgument": false,
+            "description": null,
+            "category": null,
+            "defaultValue": null,
+            "typeConverter": null
+          }
+        ],
+        "enrichment": null
+      },
+      {
+        "id": "UiPath.Excel.Activities.Windows.Business.SelectRangeX@UiPath.Excel.Activities/3.4.1",
+        "fullName": "UiPath.Excel.Activities.Windows.Business.SelectRangeX",
+        "displayName": "Select Range",
+        "description": "Selects a range in the specified Excel file.",
+        "category": "Excel.Windows.Range",
+        "visibility": "browsable",
+        "hasGenericParameters": false,
+        "genericParameterNames": [],
+        "members": [
+          {
+            "name": "Range",
+            "displayName": "Range",
+            "dataType": "System.Activities.InArgument<UiPath.Excel.IReadRangeRef>",
+            "memberKind": "argument",
+            "argumentDirection": "in",
+            "isRequiredArgument": true,
+            "description": null,
+            "category": null,
+            "defaultValue": null,
+            "typeConverter": null
+          }
+        ],
+        "enrichment": null
+      },
+      {
+        "id": "UiPath.Excel.Activities.Business.AddSensitivityLabelX@UiPath.Excel.Activities/3.4.1",
+        "fullName": "UiPath.Excel.Activities.Business.AddSensitivityLabelX",
+        "displayName": "Add or Update Excel Sensitivity Label",
+        "description": "Adds a sensitivity label to an Excel file",
+        "category": "Excel.Windows.Workbook",
+        "visibility": "browsable",
+        "hasGenericParameters": false,
+        "genericParameterNames": [],
+        "members": [
+          {
+            "name": "Workbook",
+            "displayName": "Workbook",
+            "dataType": "System.Activities.InArgument<UiPath.Excel.IWorkbookQuickHandle>",
+            "memberKind": "argument",
+            "argumentDirection": "in",
+            "isRequiredArgument": true,
+            "description": null,
+            "category": null,
+            "defaultValue": null,
+            "typeConverter": null
+          },
+          {
+            "name": "SensitivityLabel",
+            "displayName": "SensitivityLabel",
+            "dataType": "System.Activities.InArgument<System.Object>",
+            "memberKind": "argument",
+            "argumentDirection": "in",
+            "isRequiredArgument": true,
+            "description": null,
+            "category": null,
+            "defaultValue": null,
+            "typeConverter": null
+          },
+          {
+            "name": "Justification",
+            "displayName": "Justification",
+            "dataType": "System.Activities.InArgument<System.String>",
+            "memberKind": "argument",
+            "argumentDirection": "in",
+            "isRequiredArgument": false,
+            "description": null,
+            "category": null,
+            "defaultValue": null,
+            "typeConverter": null
+          }
+        ],
+        "enrichment": null
+      },
+      {
+        "id": "UiPath.Excel.Activities.Business.AppendRangeX@UiPath.Excel.Activities/3.4.1",
         "fullName": "UiPath.Excel.Activities.Business.AppendRangeX",
         "displayName": "Append Range",
         "description": "Copies the data in a table, range, or sheet and pastes it after existing data in another specified table, range, or sheet.",
         "category": "Excel.Windows.Range",
-        "visibility": "legacy",
+        "visibility": "browsable",
         "hasGenericParameters": false,
         "genericParameterNames": [],
         "members": [
@@ -1592,12 +2140,12 @@
         "enrichment": null
       },
       {
-        "id": "UiPath.Excel.Activities.Business.AutoFillX@UiPath.Excel.Activities/3.2.1",
+        "id": "UiPath.Excel.Activities.Business.AutoFillX@UiPath.Excel.Activities/3.4.1",
         "fullName": "UiPath.Excel.Activities.Business.AutoFillX",
         "displayName": "Auto Fill",
         "description": "Fills cells with data based on data in other cells using the AutoFill feature in Excel.",
         "category": "Excel.Windows.Cell",
-        "visibility": "legacy",
+        "visibility": "browsable",
         "hasGenericParameters": false,
         "genericParameterNames": [],
         "members": [
@@ -1617,12 +2165,12 @@
         "enrichment": null
       },
       {
-        "id": "UiPath.Excel.Activities.Business.AutoFitX@UiPath.Excel.Activities/3.2.1",
+        "id": "UiPath.Excel.Activities.Business.AutoFitX@UiPath.Excel.Activities/3.4.1",
         "fullName": "UiPath.Excel.Activities.Business.AutoFitX",
         "displayName": "Autofit Range",
         "description": "Fits data in cells.",
         "category": "Excel.Windows.Range",
-        "visibility": "legacy",
+        "visibility": "browsable",
         "hasGenericParameters": false,
         "genericParameterNames": [],
         "members": [
@@ -1666,12 +2214,12 @@
         "enrichment": null
       },
       {
-        "id": "UiPath.Excel.Activities.Business.ChangePivotTableDataSourceX@UiPath.Excel.Activities/3.2.1",
+        "id": "UiPath.Excel.Activities.Business.ChangePivotTableDataSourceX@UiPath.Excel.Activities/3.4.1",
         "fullName": "UiPath.Excel.Activities.Business.ChangePivotTableDataSourceX",
         "displayName": "Change Pivot Data Source",
         "description": "Change the Source range for a Pivot Table.",
         "category": "Excel.Windows.Pivot Table",
-        "visibility": "legacy",
+        "visibility": "browsable",
         "hasGenericParameters": false,
         "genericParameterNames": [],
         "members": [
@@ -1703,12 +2251,12 @@
         "enrichment": null
       },
       {
-        "id": "UiPath.Excel.Activities.Business.ClearRangeX@UiPath.Excel.Activities/3.2.1",
+        "id": "UiPath.Excel.Activities.Business.ClearRangeX@UiPath.Excel.Activities/3.4.1",
         "fullName": "UiPath.Excel.Activities.Business.ClearRangeX",
         "displayName": "Clear Sheet/Range/Table",
         "description": "Clears the data from a spreadsheet sheet, range, or table.",
         "category": "Excel.Windows.Range",
-        "visibility": "legacy",
+        "visibility": "browsable",
         "hasGenericParameters": false,
         "genericParameterNames": [],
         "members": [
@@ -1740,12 +2288,146 @@
         "enrichment": null
       },
       {
-        "id": "UiPath.Excel.Activities.Business.CopyChartToClipboardX@UiPath.Excel.Activities/3.2.1",
+        "id": "UiPath.Excel.Activities.Business.CreatePivotTableX@UiPath.Excel.Activities/3.4.1",
+        "fullName": "UiPath.Excel.Activities.Business.CreatePivotTableX",
+        "displayName": "Create Pivot Table",
+        "description": "Creates a pivot table from a specified range or table to help you calculate, summarize, and analyze data.",
+        "category": "Excel.Windows.Pivot Table",
+        "visibility": "browsable",
+        "hasGenericParameters": false,
+        "genericParameterNames": [],
+        "members": [
+          {
+            "name": "Range",
+            "displayName": "Range",
+            "dataType": "System.Activities.InArgument<UiPath.Excel.IWellDefinedReadRangeRef>",
+            "memberKind": "argument",
+            "argumentDirection": "in",
+            "isRequiredArgument": true,
+            "description": null,
+            "category": null,
+            "defaultValue": null,
+            "typeConverter": null
+          },
+          {
+            "name": "TableName",
+            "displayName": "TableName",
+            "dataType": "System.Activities.InArgument<System.String>",
+            "memberKind": "argument",
+            "argumentDirection": "in",
+            "isRequiredArgument": true,
+            "description": null,
+            "category": null,
+            "defaultValue": null,
+            "typeConverter": null
+          },
+          {
+            "name": "DestinationRange",
+            "displayName": "DestinationRange",
+            "dataType": "System.Activities.InArgument<UiPath.Excel.IReadWriteRangeRef>",
+            "memberKind": "argument",
+            "argumentDirection": "in",
+            "isRequiredArgument": true,
+            "description": null,
+            "category": null,
+            "defaultValue": null,
+            "typeConverter": null
+          },
+          {
+            "name": "LayoutRowType",
+            "displayName": "LayoutRowType",
+            "dataType": "UiPath.Excel.PivotTableLayoutRowType",
+            "memberKind": "property",
+            "argumentDirection": null,
+            "isRequiredArgument": false,
+            "description": null,
+            "category": null,
+            "defaultValue": null,
+            "typeConverter": null
+          },
+          {
+            "name": "ValuesMode",
+            "displayName": "ValuesMode",
+            "dataType": "UiPath.Excel.PivotTableValuesMode",
+            "memberKind": "property",
+            "argumentDirection": null,
+            "isRequiredArgument": false,
+            "description": null,
+            "category": null,
+            "defaultValue": null,
+            "typeConverter": null
+          }
+        ],
+        "enrichment": null
+      },
+      {
+        "id": "UiPath.Excel.Activities.Business.ExcelForEachRow@UiPath.Excel.Activities/3.4.1",
+        "fullName": "UiPath.Excel.Activities.Business.ExcelForEachRow",
+        "displayName": "For Each Excel Row",
+        "description": "Repeats the contained activities once for each row in the specified sheet, range, or table.",
+        "category": "Excel.Windows.Range",
+        "visibility": "browsable",
+        "hasGenericParameters": false,
+        "genericParameterNames": [],
+        "members": [
+          {
+            "name": "Range",
+            "displayName": "Range",
+            "dataType": "System.Activities.InArgument<UiPath.Excel.IReadRangeRef>",
+            "memberKind": "argument",
+            "argumentDirection": "in",
+            "isRequiredArgument": true,
+            "description": null,
+            "category": null,
+            "defaultValue": null,
+            "typeConverter": null
+          },
+          {
+            "name": "HasHeaders",
+            "displayName": "HasHeaders",
+            "dataType": "System.Boolean",
+            "memberKind": "property",
+            "argumentDirection": null,
+            "isRequiredArgument": false,
+            "description": null,
+            "category": null,
+            "defaultValue": null,
+            "typeConverter": null
+          },
+          {
+            "name": "EmptyRowBehavior",
+            "displayName": "EmptyRowBehavior",
+            "dataType": "UiPath.Excel.EmptyRowBehavior",
+            "memberKind": "property",
+            "argumentDirection": null,
+            "isRequiredArgument": false,
+            "description": null,
+            "category": null,
+            "defaultValue": null,
+            "typeConverter": null
+          },
+          {
+            "name": "SaveAfterEachRow",
+            "displayName": "SaveAfterEachRow",
+            "dataType": "System.Boolean",
+            "memberKind": "property",
+            "argumentDirection": null,
+            "isRequiredArgument": false,
+            "description": null,
+            "category": null,
+            "defaultValue": null,
+            "typeConverter": null
+          }
+        ],
+        "enrichment": null
+      },
+      {
+        "id": "UiPath.Excel.Activities.Business.CopyChartToClipboardX@UiPath.Excel.Activities/3.4.1",
         "fullName": "UiPath.Excel.Activities.Business.CopyChartToClipboardX",
         "displayName": "Get Chart",
         "description": "Saves an Excel chart to an image file or to the clipboard for use in other activities.",
         "category": "Excel.Windows.Chart",
-        "visibility": "legacy",
+        "visibility": "browsable",
         "hasGenericParameters": false,
         "genericParameterNames": [],
         "members": [
@@ -1801,12 +2483,12 @@
         "enrichment": null
       },
       {
-        "id": "UiPath.Excel.Activities.Business.CopyPasteRangeX@UiPath.Excel.Activities/3.2.1",
+        "id": "UiPath.Excel.Activities.Business.CopyPasteRangeX@UiPath.Excel.Activities/3.4.1",
         "fullName": "UiPath.Excel.Activities.Business.CopyPasteRangeX",
         "displayName": "Copy/Paste Range",
         "description": "Copies a range or sheet and optionally pastes it to another location in the current workbook or a different one.",
         "category": "Excel.Windows.Range",
-        "visibility": "legacy",
+        "visibility": "browsable",
         "hasGenericParameters": false,
         "genericParameterNames": [],
         "members": [
@@ -1886,12 +2568,12 @@
         "enrichment": null
       },
       {
-        "id": "UiPath.Excel.Activities.Business.CreatePivotTableXv2@UiPath.Excel.Activities/3.2.1",
+        "id": "UiPath.Excel.Activities.Business.CreatePivotTableXv2@UiPath.Excel.Activities/3.4.1",
         "fullName": "UiPath.Excel.Activities.Business.CreatePivotTableXv2",
         "displayName": "Create Pivot Table",
         "description": "Creates a pivot table from a specified range or table to help you calculate, summarize, and analyze data.",
         "category": "Excel.Windows.Pivot Table",
-        "visibility": "legacy",
+        "visibility": "browsable",
         "hasGenericParameters": false,
         "genericParameterNames": [],
         "members": [
@@ -1959,12 +2641,12 @@
         "enrichment": null
       },
       {
-        "id": "UiPath.Excel.Activities.Business.CreateTableX@UiPath.Excel.Activities/3.2.1",
+        "id": "UiPath.Excel.Activities.Business.CreateTableX@UiPath.Excel.Activities/3.4.1",
         "fullName": "UiPath.Excel.Activities.Business.CreateTableX",
         "displayName": "Format as Table",
         "description": "Formats a range of cells as a table with a specified name.",
         "category": "Excel.Windows.Range",
-        "visibility": "legacy",
+        "visibility": "browsable",
         "hasGenericParameters": false,
         "genericParameterNames": [],
         "members": [
@@ -2032,12 +2714,12 @@
         "enrichment": null
       },
       {
-        "id": "UiPath.Excel.Activities.Business.DeleteColumnX@UiPath.Excel.Activities/3.2.1",
+        "id": "UiPath.Excel.Activities.Business.DeleteColumnX@UiPath.Excel.Activities/3.4.1",
         "fullName": "UiPath.Excel.Activities.Business.DeleteColumnX",
         "displayName": "Delete Column",
         "description": "Deletes a specified column from a sheet, table or range.",
         "category": "Excel.Windows.Range",
-        "visibility": "legacy",
+        "visibility": "browsable",
         "hasGenericParameters": false,
         "genericParameterNames": [],
         "members": [
@@ -2081,12 +2763,12 @@
         "enrichment": null
       },
       {
-        "id": "UiPath.Excel.Activities.Business.DeleteRowsX@UiPath.Excel.Activities/3.2.1",
+        "id": "UiPath.Excel.Activities.Business.DeleteRowsX@UiPath.Excel.Activities/3.4.1",
         "fullName": "UiPath.Excel.Activities.Business.DeleteRowsX",
         "displayName": "Delete Rows",
         "description": "Deletes the specified rows from a sheet, table, or range.",
         "category": "Excel.Windows.Range",
-        "visibility": "legacy",
+        "visibility": "browsable",
         "hasGenericParameters": false,
         "genericParameterNames": [],
         "members": [
@@ -2142,12 +2824,12 @@
         "enrichment": null
       },
       {
-        "id": "UiPath.Excel.Activities.Business.DeleteSheetX@UiPath.Excel.Activities/3.2.1",
+        "id": "UiPath.Excel.Activities.Business.DeleteSheetX@UiPath.Excel.Activities/3.4.1",
         "fullName": "UiPath.Excel.Activities.Business.DeleteSheetX",
         "displayName": "Delete Sheet",
         "description": "Deletes a specified sheet from an Excel file.",
-        "category": "Exce.Windows.Workbook",
-        "visibility": "legacy",
+        "category": "Excel.Windows.Workbook",
+        "visibility": "browsable",
         "hasGenericParameters": false,
         "genericParameterNames": [],
         "members": [
@@ -2167,12 +2849,12 @@
         "enrichment": null
       },
       {
-        "id": "UiPath.Excel.Activities.Business.DuplicateSheetX@UiPath.Excel.Activities/3.2.1",
+        "id": "UiPath.Excel.Activities.Business.DuplicateSheetX@UiPath.Excel.Activities/3.4.1",
         "fullName": "UiPath.Excel.Activities.Business.DuplicateSheetX",
         "displayName": "Duplicate Sheet",
         "description": "Creates a copy of the specified sheet in an Excel file.",
-        "category": "Exce.Windows.Workbook",
-        "visibility": "legacy",
+        "category": "Excel.Windows.Workbook",
+        "visibility": "browsable",
         "hasGenericParameters": false,
         "genericParameterNames": [],
         "members": [
@@ -2204,12 +2886,12 @@
         "enrichment": null
       },
       {
-        "id": "UiPath.Excel.Activities.Business.ExcelApplicationCard@UiPath.Excel.Activities/3.2.1",
+        "id": "UiPath.Excel.Activities.Business.ExcelApplicationCard@UiPath.Excel.Activities/3.4.1",
         "fullName": "UiPath.Excel.Activities.Business.ExcelApplicationCard",
         "displayName": "Use Excel File",
         "description": "Open or create an Excel file to use in your automation.",
-        "category": "Excel",
-        "visibility": "legacy",
+        "category": "Excel.Windows",
+        "visibility": "browsable",
         "hasGenericParameters": false,
         "genericParameterNames": [],
         "members": [
@@ -2238,9 +2920,33 @@
             "typeConverter": null
           },
           {
+            "name": "SecurePassword",
+            "displayName": "SecurePassword",
+            "dataType": "System.Activities.InArgument<System.Security.SecureString>",
+            "memberKind": "argument",
+            "argumentDirection": "in",
+            "isRequiredArgument": false,
+            "description": null,
+            "category": null,
+            "defaultValue": null,
+            "typeConverter": null
+          },
+          {
             "name": "EditPassword",
             "displayName": "EditPassword",
             "dataType": "System.Activities.InArgument<System.String>",
+            "memberKind": "argument",
+            "argumentDirection": "in",
+            "isRequiredArgument": false,
+            "description": null,
+            "category": null,
+            "defaultValue": null,
+            "typeConverter": null
+          },
+          {
+            "name": "SecureEditPassword",
+            "displayName": "SecureEditPassword",
+            "dataType": "System.Activities.InArgument<System.Security.SecureString>",
             "memberKind": "argument",
             "argumentDirection": "in",
             "isRequiredArgument": false,
@@ -2349,12 +3055,12 @@
         "enrichment": null
       },
       {
-        "id": "UiPath.Excel.Activities.Business.ExcelForEachRowX@UiPath.Excel.Activities/3.2.1",
+        "id": "UiPath.Excel.Activities.Business.ExcelForEachRowX@UiPath.Excel.Activities/3.4.1",
         "fullName": "UiPath.Excel.Activities.Business.ExcelForEachRowX",
         "displayName": "For Each Excel Row",
         "description": "Repeats the contained activities once for each row in the specified sheet, range, or table.",
         "category": "Excel.Windows.Range",
-        "visibility": "legacy",
+        "visibility": "browsable",
         "hasGenericParameters": false,
         "genericParameterNames": [],
         "members": [
@@ -2410,12 +3116,12 @@
         "enrichment": null
       },
       {
-        "id": "UiPath.Excel.Activities.Business.ExcelProcessScopeX@UiPath.Excel.Activities/3.2.1",
+        "id": "UiPath.Excel.Activities.Business.ExcelProcessScopeX@UiPath.Excel.Activities/3.4.1",
         "fullName": "UiPath.Excel.Activities.Business.ExcelProcessScopeX",
         "displayName": "Excel Process Scope",
         "description": "Opens or reuses an Excel process. To be used in combination with the \"Use Excel\" activity to open Excel documents.",
         "category": "Excel.Windows",
-        "visibility": "legacy",
+        "visibility": "browsable",
         "hasGenericParameters": false,
         "genericParameterNames": [],
         "members": [
@@ -2519,12 +3225,12 @@
         "enrichment": null
       },
       {
-        "id": "UiPath.Excel.Activities.Business.ExecuteMacroX@UiPath.Excel.Activities/3.2.1",
+        "id": "UiPath.Excel.Activities.Business.ExecuteMacroX@UiPath.Excel.Activities/3.4.1",
         "fullName": "UiPath.Excel.Activities.Business.ExecuteMacroX",
         "displayName": "Run Spreadsheet Macro",
         "description": "Executes a specified macro within a macro-enabled workbook.",
-        "category": "Exce.Windows.Workbook",
-        "visibility": "legacy",
+        "category": "Excel.Windows.Workbook",
+        "visibility": "browsable",
         "hasGenericParameters": false,
         "genericParameterNames": [],
         "members": [
@@ -2568,12 +3274,37 @@
         "enrichment": null
       },
       {
-        "id": "UiPath.Excel.Activities.Business.ExportExcelToCsvX@UiPath.Excel.Activities/3.2.1",
+        "id": "UiPath.Excel.Activities.Business.ExecuteMacroArgumentX@UiPath.Excel.Activities/3.4.1",
+        "fullName": "UiPath.Excel.Activities.Business.ExecuteMacroArgumentX",
+        "displayName": "Macro Argument",
+        "description": "Add an argument to use when executing the macro.",
+        "category": null,
+        "visibility": "browsable",
+        "hasGenericParameters": false,
+        "genericParameterNames": [],
+        "members": [
+          {
+            "name": "ArgumentValue",
+            "displayName": "ArgumentValue",
+            "dataType": "System.Activities.InArgument<System.Object>",
+            "memberKind": "argument",
+            "argumentDirection": "in",
+            "isRequiredArgument": true,
+            "description": null,
+            "category": null,
+            "defaultValue": null,
+            "typeConverter": null
+          }
+        ],
+        "enrichment": null
+      },
+      {
+        "id": "UiPath.Excel.Activities.Business.ExportExcelToCsvX@UiPath.Excel.Activities/3.4.1",
         "fullName": "UiPath.Excel.Activities.Business.ExportExcelToCsvX",
         "displayName": "Export to CSV",
         "description": "Exports the specified range, table, pivotTable or sheet to a CSV file.",
         "category": "Excel.Windows.Range",
-        "visibility": "legacy",
+        "visibility": "browsable",
         "hasGenericParameters": false,
         "genericParameterNames": [],
         "members": [
@@ -2605,12 +3336,12 @@
         "enrichment": null
       },
       {
-        "id": "UiPath.Excel.Activities.Business.FillRangeX@UiPath.Excel.Activities/3.2.1",
+        "id": "UiPath.Excel.Activities.Business.FillRangeX@UiPath.Excel.Activities/3.4.1",
         "fullName": "UiPath.Excel.Activities.Business.FillRangeX",
         "displayName": "Fill Range",
         "description": "Enters a formula or value in all the cells in a range.",
         "category": "Excel.Windows.Range",
-        "visibility": "legacy",
+        "visibility": "browsable",
         "hasGenericParameters": false,
         "genericParameterNames": [],
         "members": [
@@ -2642,12 +3373,12 @@
         "enrichment": null
       },
       {
-        "id": "UiPath.Excel.Activities.Business.FilterPivotTableX@UiPath.Excel.Activities/3.2.1",
+        "id": "UiPath.Excel.Activities.Business.FilterPivotTableX@UiPath.Excel.Activities/3.4.1",
         "fullName": "UiPath.Excel.Activities.Business.FilterPivotTableX",
         "displayName": "Filter Pivot Table",
         "description": "Creates a filter in a pivot table based on the values in a single column. Can also be used to clear existing filters.",
         "category": "Excel.Windows.Pivot Table",
-        "visibility": "legacy",
+        "visibility": "browsable",
         "hasGenericParameters": false,
         "genericParameterNames": [],
         "members": [
@@ -2691,12 +3422,12 @@
         "enrichment": null
       },
       {
-        "id": "UiPath.Excel.Activities.Business.FilterX@UiPath.Excel.Activities/3.2.1",
+        "id": "UiPath.Excel.Activities.Business.FilterX@UiPath.Excel.Activities/3.4.1",
         "fullName": "UiPath.Excel.Activities.Business.FilterX",
         "displayName": "Filter",
         "description": "Creates a filter in a range, table, or sheet based on the values in a single column. Can also be used to clear existing filters.",
         "category": "Excel.Windows.Range",
-        "visibility": "legacy",
+        "visibility": "browsable",
         "hasGenericParameters": false,
         "genericParameterNames": [],
         "members": [
@@ -2740,12 +3471,12 @@
         "enrichment": null
       },
       {
-        "id": "UiPath.Excel.Activities.Business.FindFirstLastDataRowX@UiPath.Excel.Activities/3.2.1",
+        "id": "UiPath.Excel.Activities.Business.FindFirstLastDataRowX@UiPath.Excel.Activities/3.4.1",
         "fullName": "UiPath.Excel.Activities.Business.FindFirstLastDataRowX",
         "displayName": "Find First/Last Data Row",
         "description": "Finds the first and the last rows containing data in a given sheet, range or table.",
         "category": "Excel.Windows.Range",
-        "visibility": "legacy",
+        "visibility": "browsable",
         "hasGenericParameters": false,
         "genericParameterNames": [],
         "members": [
@@ -2863,7 +3594,7 @@
             "dataType": "System.Activities.OutArgument<System.Int32>",
             "memberKind": "argument",
             "argumentDirection": "out",
-            "isRequiredArgument": true,
+            "isRequiredArgument": false,
             "description": null,
             "category": null,
             "defaultValue": null,
@@ -2873,12 +3604,12 @@
         "enrichment": null
       },
       {
-        "id": "UiPath.Excel.Activities.Business.FindReplaceValueX@UiPath.Excel.Activities/3.2.1",
+        "id": "UiPath.Excel.Activities.Business.FindReplaceValueX@UiPath.Excel.Activities/3.4.1",
         "fullName": "UiPath.Excel.Activities.Business.FindReplaceValueX",
         "displayName": "Find/Replace Value",
         "description": "Searches in a specified range for a certain value. Depending on the Operation chosen, it either returns the location of the cell or it replaces the value(s) with another given value.",
         "category": "Excel.Windows.Range",
-        "visibility": "legacy",
+        "visibility": "browsable",
         "hasGenericParameters": false,
         "genericParameterNames": [],
         "members": [
@@ -2982,12 +3713,12 @@
         "enrichment": null
       },
       {
-        "id": "UiPath.Excel.Activities.Business.ForEachSheetX@UiPath.Excel.Activities/3.2.1",
+        "id": "UiPath.Excel.Activities.Business.ForEachSheetX@UiPath.Excel.Activities/3.4.1",
         "fullName": "UiPath.Excel.Activities.Business.ForEachSheetX",
         "displayName": "For Each Excel Sheet",
         "description": "Repeats actions for each sheet in an Excel workbook.",
-        "category": "Exce.Windows.Workbook",
-        "visibility": "legacy",
+        "category": "Excel.Windows.Workbook",
+        "visibility": "browsable",
         "hasGenericParameters": false,
         "genericParameterNames": [],
         "members": [
@@ -3007,12 +3738,12 @@
         "enrichment": null
       },
       {
-        "id": "UiPath.Excel.Activities.Business.FormatRangeX@UiPath.Excel.Activities/3.2.1",
+        "id": "UiPath.Excel.Activities.Business.FormatRangeX@UiPath.Excel.Activities/3.4.1",
         "fullName": "UiPath.Excel.Activities.Business.FormatRangeX",
         "displayName": "Format Cells",
         "description": "Sets the format for all the cells in a specified range.",
         "category": "Excel.Windows.Range",
-        "visibility": "legacy",
+        "visibility": "browsable",
         "hasGenericParameters": false,
         "genericParameterNames": [],
         "members": [
@@ -3032,12 +3763,49 @@
         "enrichment": null
       },
       {
-        "id": "UiPath.Excel.Activities.Business.InsertColumnX@UiPath.Excel.Activities/3.2.1",
+        "id": "UiPath.Excel.Activities.Business.GetSensitivityLabelX@UiPath.Excel.Activities/3.4.1",
+        "fullName": "UiPath.Excel.Activities.Business.GetSensitivityLabelX",
+        "displayName": "Get Excel Sensitivity Label",
+        "description": "Retrieves the sensitivity label from an Excel file",
+        "category": "Excel.Windows.Workbook",
+        "visibility": "browsable",
+        "hasGenericParameters": false,
+        "genericParameterNames": [],
+        "members": [
+          {
+            "name": "Workbook",
+            "displayName": "Workbook",
+            "dataType": "System.Activities.InArgument<UiPath.Excel.IWorkbookQuickHandle>",
+            "memberKind": "argument",
+            "argumentDirection": "in",
+            "isRequiredArgument": true,
+            "description": null,
+            "category": null,
+            "defaultValue": null,
+            "typeConverter": null
+          },
+          {
+            "name": "SensitivityLabel",
+            "displayName": "SensitivityLabel",
+            "dataType": "System.Activities.OutArgument<UiPath.Excel.IExcelLabelObject>",
+            "memberKind": "argument",
+            "argumentDirection": "out",
+            "isRequiredArgument": false,
+            "description": null,
+            "category": null,
+            "defaultValue": null,
+            "typeConverter": null
+          }
+        ],
+        "enrichment": null
+      },
+      {
+        "id": "UiPath.Excel.Activities.Business.InsertColumnX@UiPath.Excel.Activities/3.4.1",
         "fullName": "UiPath.Excel.Activities.Business.InsertColumnX",
         "displayName": "Insert Column",
         "description": "Inserts a column in a sheet, table, or range at the specified location.",
         "category": "Excel.Windows.Range",
-        "visibility": "legacy",
+        "visibility": "browsable",
         "hasGenericParameters": false,
         "genericParameterNames": [],
         "members": [
@@ -3105,12 +3873,12 @@
         "enrichment": null
       },
       {
-        "id": "UiPath.Excel.Activities.Business.InsertExcelChartX@UiPath.Excel.Activities/3.2.1",
+        "id": "UiPath.Excel.Activities.Business.InsertExcelChartX@UiPath.Excel.Activities/3.4.1",
         "fullName": "UiPath.Excel.Activities.Business.InsertExcelChartX",
         "displayName": "Insert Chart",
         "description": "Create a chart in an Excel file.",
         "category": "Excel.Windows.Chart",
-        "visibility": "legacy",
+        "visibility": "browsable",
         "hasGenericParameters": false,
         "genericParameterNames": [],
         "members": [
@@ -3226,12 +3994,12 @@
         "enrichment": null
       },
       {
-        "id": "UiPath.Excel.Activities.Business.InsertRowsX@UiPath.Excel.Activities/3.2.1",
+        "id": "UiPath.Excel.Activities.Business.InsertRowsX@UiPath.Excel.Activities/3.4.1",
         "fullName": "UiPath.Excel.Activities.Business.InsertRowsX",
         "displayName": "Insert Rows",
         "description": "Inserts one or more rows in a table, range, or sheet at the specified location.",
         "category": "Excel.Windows.Range",
-        "visibility": "legacy",
+        "visibility": "browsable",
         "hasGenericParameters": false,
         "genericParameterNames": [],
         "members": [
@@ -3299,12 +4067,12 @@
         "enrichment": null
       },
       {
-        "id": "UiPath.Excel.Activities.Business.InsertSheetX@UiPath.Excel.Activities/3.2.1",
+        "id": "UiPath.Excel.Activities.Business.InsertSheetX@UiPath.Excel.Activities/3.4.1",
         "fullName": "UiPath.Excel.Activities.Business.InsertSheetX",
         "displayName": "Insert Sheet",
         "description": "Inserts a sheet in an Excel file.",
-        "category": "Exce.Windows.Workbook",
-        "visibility": "legacy",
+        "category": "Excel.Windows.Workbook",
+        "visibility": "browsable",
         "hasGenericParameters": false,
         "genericParameterNames": [],
         "members": [
@@ -3348,12 +4116,12 @@
         "enrichment": null
       },
       {
-        "id": "UiPath.Excel.Activities.Business.InvokeVBAX@UiPath.Excel.Activities/3.2.1",
+        "id": "UiPath.Excel.Activities.Business.InvokeVBAX@UiPath.Excel.Activities/3.4.1",
         "fullName": "UiPath.Excel.Activities.Business.InvokeVBAX",
         "displayName": "Invoke VBA",
         "description": "Invokes a macro from an external file containing VBA code and runs it against an Excel file.",
-        "category": "Exce.Windows.Workbook",
-        "visibility": "legacy",
+        "category": "Excel.Windows.Workbook",
+        "visibility": "browsable",
         "hasGenericParameters": false,
         "genericParameterNames": [],
         "members": [
@@ -3409,12 +4177,37 @@
         "enrichment": null
       },
       {
-        "id": "UiPath.Excel.Activities.Business.LookupX@UiPath.Excel.Activities/3.2.1",
+        "id": "UiPath.Excel.Activities.Business.InvokeVBAArgumentX@UiPath.Excel.Activities/3.4.1",
+        "fullName": "UiPath.Excel.Activities.Business.InvokeVBAArgumentX",
+        "displayName": "VBA Argument",
+        "description": "The value to be passed to the Input argument of the VBA Sub/Function..",
+        "category": null,
+        "visibility": "browsable",
+        "hasGenericParameters": false,
+        "genericParameterNames": [],
+        "members": [
+          {
+            "name": "ArgumentValue",
+            "displayName": "ArgumentValue",
+            "dataType": "System.Activities.InArgument<System.Object>",
+            "memberKind": "argument",
+            "argumentDirection": "in",
+            "isRequiredArgument": true,
+            "description": null,
+            "category": null,
+            "defaultValue": null,
+            "typeConverter": null
+          }
+        ],
+        "enrichment": null
+      },
+      {
+        "id": "UiPath.Excel.Activities.Business.LookupX@UiPath.Excel.Activities/3.4.1",
         "fullName": "UiPath.Excel.Activities.Business.LookupX",
         "displayName": "Lookup Range",
         "description": "Finds data in a range or sheet using Excel's LOOKUP function.",
         "category": "Excel.Windows.Range",
-        "visibility": "legacy",
+        "visibility": "browsable",
         "hasGenericParameters": false,
         "genericParameterNames": [],
         "members": [
@@ -3470,12 +4263,12 @@
         "enrichment": null
       },
       {
-        "id": "UiPath.Excel.Activities.Business.MatchFunctionX@UiPath.Excel.Activities/3.2.1",
+        "id": "UiPath.Excel.Activities.Business.MatchFunctionX@UiPath.Excel.Activities/3.4.1",
         "fullName": "UiPath.Excel.Activities.Business.MatchFunctionX",
         "displayName": "Match function",
         "description": "Searches for a specified item in a range of cells, and then returns the relative position of that item in the range.",
         "category": "Excel.Windows.Range",
-        "visibility": "legacy",
+        "visibility": "browsable",
         "hasGenericParameters": false,
         "genericParameterNames": [],
         "members": [
@@ -3531,12 +4324,61 @@
         "enrichment": null
       },
       {
-        "id": "UiPath.Excel.Activities.Business.ProtectSheetX@UiPath.Excel.Activities/3.2.1",
+        "id": "UiPath.Excel.Activities.Business.PivotTableFieldX@UiPath.Excel.Activities/3.4.1",
+        "fullName": "UiPath.Excel.Activities.Business.PivotTableFieldX",
+        "displayName": "Pivot Field",
+        "description": "Formats a range of cells as a table with a specified name.",
+        "category": null,
+        "visibility": "browsable",
+        "hasGenericParameters": false,
+        "genericParameterNames": [],
+        "members": [
+          {
+            "name": "Type",
+            "displayName": "Type",
+            "dataType": "UiPath.Excel.Activities.Business.PivotTableFieldType",
+            "memberKind": "property",
+            "argumentDirection": null,
+            "isRequiredArgument": false,
+            "description": null,
+            "category": null,
+            "defaultValue": null,
+            "typeConverter": null
+          },
+          {
+            "name": "Function",
+            "displayName": "Function",
+            "dataType": "UiPath.Excel.PivotTableFunction",
+            "memberKind": "property",
+            "argumentDirection": null,
+            "isRequiredArgument": false,
+            "description": null,
+            "category": null,
+            "defaultValue": null,
+            "typeConverter": null
+          },
+          {
+            "name": "FieldName",
+            "displayName": "FieldName",
+            "dataType": "System.Activities.InArgument<System.String>",
+            "memberKind": "argument",
+            "argumentDirection": "in",
+            "isRequiredArgument": true,
+            "description": null,
+            "category": null,
+            "defaultValue": null,
+            "typeConverter": null
+          }
+        ],
+        "enrichment": null
+      },
+      {
+        "id": "UiPath.Excel.Activities.Business.ProtectSheetX@UiPath.Excel.Activities/3.4.1",
         "fullName": "UiPath.Excel.Activities.Business.ProtectSheetX",
         "displayName": "Protect Sheet",
         "description": "Protects a sheet in an Excel workbook.",
-        "category": "Exce.Windows.Workbook",
-        "visibility": "legacy",
+        "category": "Excel.Windows.Workbook",
+        "visibility": "browsable",
         "hasGenericParameters": false,
         "genericParameterNames": [],
         "members": [
@@ -3592,12 +4434,12 @@
         "enrichment": null
       },
       {
-        "id": "UiPath.Excel.Activities.Business.ReadCellFormulaX@UiPath.Excel.Activities/3.2.1",
+        "id": "UiPath.Excel.Activities.Business.ReadCellFormulaX@UiPath.Excel.Activities/3.4.1",
         "fullName": "UiPath.Excel.Activities.Business.ReadCellFormulaX",
         "displayName": "Read Cell Formula",
         "description": "Reads the formula from a spreadsheet cell.",
         "category": "Excel.Windows.Cell",
-        "visibility": "legacy",
+        "visibility": "browsable",
         "hasGenericParameters": false,
         "genericParameterNames": [],
         "members": [
@@ -3629,12 +4471,12 @@
         "enrichment": null
       },
       {
-        "id": "UiPath.Excel.Activities.Business.ReadCellValueX@UiPath.Excel.Activities/3.2.1",
+        "id": "UiPath.Excel.Activities.Business.ReadCellValueX@UiPath.Excel.Activities/3.4.1",
         "fullName": "UiPath.Excel.Activities.Business.ReadCellValueX",
         "displayName": "Read Cell Value",
         "description": "Reads the value from a spreadsheet cell.",
         "category": "Excel.Windows.Cell",
-        "visibility": "legacy",
+        "visibility": "browsable",
         "hasGenericParameters": false,
         "genericParameterNames": [],
         "members": [
@@ -3678,12 +4520,12 @@
         "enrichment": null
       },
       {
-        "id": "UiPath.Excel.Activities.Business.ReadRangeX@UiPath.Excel.Activities/3.2.1",
+        "id": "UiPath.Excel.Activities.Business.ReadRangeX@UiPath.Excel.Activities/3.4.1",
         "fullName": "UiPath.Excel.Activities.Business.ReadRangeX",
         "displayName": "Read Range",
         "description": "Reads the value of an Excel range as a DataTable.",
         "category": "Excel.Windows.Range",
-        "visibility": "legacy",
+        "visibility": "browsable",
         "hasGenericParameters": false,
         "genericParameterNames": [],
         "members": [
@@ -3751,12 +4593,12 @@
         "enrichment": null
       },
       {
-        "id": "UiPath.Excel.Activities.Business.RefreshDataConnectionsX@UiPath.Excel.Activities/3.2.1",
+        "id": "UiPath.Excel.Activities.Business.RefreshDataConnectionsX@UiPath.Excel.Activities/3.4.1",
         "fullName": "UiPath.Excel.Activities.Business.RefreshDataConnectionsX",
         "displayName": "Refresh Excel Data Connections",
         "description": "Get the latest data by refreshing all sources in the workbook.",
-        "category": "Exce.Windows.Workbook",
-        "visibility": "legacy",
+        "category": "Excel.Windows.Workbook",
+        "visibility": "browsable",
         "hasGenericParameters": false,
         "genericParameterNames": [],
         "members": [
@@ -3776,12 +4618,12 @@
         "enrichment": null
       },
       {
-        "id": "UiPath.Excel.Activities.Business.RefreshPivotTableX@UiPath.Excel.Activities/3.2.1",
+        "id": "UiPath.Excel.Activities.Business.RefreshPivotTableX@UiPath.Excel.Activities/3.4.1",
         "fullName": "UiPath.Excel.Activities.Business.RefreshPivotTableX",
         "displayName": "Refresh Pivot Table",
         "description": "Updates the data for a pivot table.",
         "category": "Excel.Windows.Pivot Table",
-        "visibility": "legacy",
+        "visibility": "browsable",
         "hasGenericParameters": false,
         "genericParameterNames": [],
         "members": [
@@ -3813,12 +4655,12 @@
         "enrichment": null
       },
       {
-        "id": "UiPath.Excel.Activities.Business.RemoveDuplicatesX@UiPath.Excel.Activities/3.2.1",
+        "id": "UiPath.Excel.Activities.Business.RemoveDuplicatesX@UiPath.Excel.Activities/3.4.1",
         "fullName": "UiPath.Excel.Activities.Business.RemoveDuplicatesX",
         "displayName": "Remove Duplicates",
         "description": "Delete duplicate rows",
         "category": "Excel.Windows.Range",
-        "visibility": "legacy",
+        "visibility": "browsable",
         "hasGenericParameters": false,
         "genericParameterNames": [],
         "members": [
@@ -3862,12 +4704,12 @@
         "enrichment": null
       },
       {
-        "id": "UiPath.Excel.Activities.Business.RenameSheetX@UiPath.Excel.Activities/3.2.1",
+        "id": "UiPath.Excel.Activities.Business.RenameSheetX@UiPath.Excel.Activities/3.4.1",
         "fullName": "UiPath.Excel.Activities.Business.RenameSheetX",
         "displayName": "Rename Sheet",
         "description": "Renames a sheet in an Excel file.",
-        "category": "Exce.Windows.Workbook",
-        "visibility": "legacy",
+        "category": "Excel.Windows.Workbook",
+        "visibility": "browsable",
         "hasGenericParameters": false,
         "genericParameterNames": [],
         "members": [
@@ -3899,12 +4741,12 @@
         "enrichment": null
       },
       {
-        "id": "UiPath.Excel.Activities.Business.SaveAsPdfX@UiPath.Excel.Activities/3.2.1",
+        "id": "UiPath.Excel.Activities.Business.SaveAsPdfX@UiPath.Excel.Activities/3.4.1",
         "fullName": "UiPath.Excel.Activities.Business.SaveAsPdfX",
         "displayName": "Save Excel File As PDF",
         "description": "Saves an Excel file as a PDF file.",
-        "category": "Exce.Windows.Workbook",
-        "visibility": "legacy",
+        "category": "Excel.Windows.Workbook",
+        "visibility": "browsable",
         "hasGenericParameters": false,
         "genericParameterNames": [],
         "members": [
@@ -3984,12 +4826,12 @@
         "enrichment": null
       },
       {
-        "id": "UiPath.Excel.Activities.Business.SaveExcelFileAsX@UiPath.Excel.Activities/3.2.1",
+        "id": "UiPath.Excel.Activities.Business.SaveExcelFileAsX@UiPath.Excel.Activities/3.4.1",
         "fullName": "UiPath.Excel.Activities.Business.SaveExcelFileAsX",
         "displayName": "Save Excel File As",
         "description": "Save an Excel file as a different file.",
-        "category": "Exce.Windows.Workbook",
-        "visibility": "legacy",
+        "category": "Excel.Windows.Workbook",
+        "visibility": "browsable",
         "hasGenericParameters": false,
         "genericParameterNames": [],
         "members": [
@@ -4045,12 +4887,12 @@
         "enrichment": null
       },
       {
-        "id": "UiPath.Excel.Activities.Business.SaveExcelFileX@UiPath.Excel.Activities/3.2.1",
+        "id": "UiPath.Excel.Activities.Business.SaveExcelFileX@UiPath.Excel.Activities/3.4.1",
         "fullName": "UiPath.Excel.Activities.Business.SaveExcelFileX",
         "displayName": "Save Excel File",
         "description": "Saves any pending changes in the selected Excel file.",
-        "category": "Exce.Windows.Workbook",
-        "visibility": "legacy",
+        "category": "Excel.Windows.Workbook",
+        "visibility": "browsable",
         "hasGenericParameters": false,
         "genericParameterNames": [],
         "members": [
@@ -4070,24 +4912,61 @@
         "enrichment": null
       },
       {
-        "id": "UiPath.Excel.Activities.Business.SequenceX@UiPath.Excel.Activities/3.2.1",
+        "id": "UiPath.Excel.Activities.Business.SequenceX@UiPath.Excel.Activities/3.4.1",
         "fullName": "UiPath.Excel.Activities.Business.SequenceX",
         "displayName": "Single Excel Process Scope",
         "description": "Use this activity as root of your Attended Workflow to enforce that at most one Excel process exists at start of execution.  This behavior ensures all the Excel documents are open in the same Excel process and will make your workflow more stable and faster. This activity is used as root for StudioX workflows.",
         "category": "Excel.Windows",
-        "visibility": "legacy",
+        "visibility": "browsable",
         "hasGenericParameters": false,
         "genericParameterNames": [],
         "members": [],
         "enrichment": null
       },
       {
-        "id": "UiPath.Excel.Activities.Business.SortX@UiPath.Excel.Activities/3.2.1",
+        "id": "UiPath.Excel.Activities.Business.SortColumnX@UiPath.Excel.Activities/3.4.1",
+        "fullName": "UiPath.Excel.Activities.Business.SortColumnX",
+        "displayName": "Sort By Column",
+        "description": "Sorts the range by the column in the indicated direction.",
+        "category": "Excel.Windows",
+        "visibility": "browsable",
+        "hasGenericParameters": false,
+        "genericParameterNames": [],
+        "members": [
+          {
+            "name": "ColumnName",
+            "displayName": "ColumnName",
+            "dataType": "System.Activities.InArgument<System.String>",
+            "memberKind": "argument",
+            "argumentDirection": "in",
+            "isRequiredArgument": true,
+            "description": null,
+            "category": null,
+            "defaultValue": null,
+            "typeConverter": null
+          },
+          {
+            "name": "SortDirection",
+            "displayName": "SortDirection",
+            "dataType": "UiPath.Excel.Activities.Business.SortDirectionType",
+            "memberKind": "property",
+            "argumentDirection": null,
+            "isRequiredArgument": false,
+            "description": null,
+            "category": null,
+            "defaultValue": null,
+            "typeConverter": null
+          }
+        ],
+        "enrichment": null
+      },
+      {
+        "id": "UiPath.Excel.Activities.Business.SortX@UiPath.Excel.Activities/3.4.1",
         "fullName": "UiPath.Excel.Activities.Business.SortX",
         "displayName": "Sort Range",
         "description": "Sorts the data in a specified sheet, table, or range by one or more columns.",
         "category": "Excel.Windows.Range",
-        "visibility": "legacy",
+        "visibility": "browsable",
         "hasGenericParameters": false,
         "genericParameterNames": [],
         "members": [
@@ -4107,12 +4986,12 @@
         "enrichment": null
       },
       {
-        "id": "UiPath.Excel.Activities.Business.TextToColumnsX@UiPath.Excel.Activities/3.2.1",
+        "id": "UiPath.Excel.Activities.Business.TextToColumnsX@UiPath.Excel.Activities/3.4.1",
         "fullName": "UiPath.Excel.Activities.Business.TextToColumnsX",
         "displayName": "Text to Columns",
         "description": "Splits the text from a cell, range, or table into different columns.",
         "category": "Excel.Windows.Range",
-        "visibility": "legacy",
+        "visibility": "browsable",
         "hasGenericParameters": false,
         "genericParameterNames": [],
         "members": [
@@ -4276,12 +5155,12 @@
         "enrichment": null
       },
       {
-        "id": "UiPath.Excel.Activities.Business.UnprotectSheetX@UiPath.Excel.Activities/3.2.1",
+        "id": "UiPath.Excel.Activities.Business.UnprotectSheetX@UiPath.Excel.Activities/3.4.1",
         "fullName": "UiPath.Excel.Activities.Business.UnprotectSheetX",
         "displayName": "Unprotect Sheet",
         "description": "Unprotects a sheet in an Excel workbook.",
-        "category": "Exce.Windows.Workbook",
-        "visibility": "legacy",
+        "category": "Excel.Windows.Workbook",
+        "visibility": "browsable",
         "hasGenericParameters": false,
         "genericParameterNames": [],
         "members": [
@@ -4325,12 +5204,12 @@
         "enrichment": null
       },
       {
-        "id": "UiPath.Excel.Activities.Business.UpdateChartX@UiPath.Excel.Activities/3.2.1",
+        "id": "UiPath.Excel.Activities.Business.UpdateChartX@UiPath.Excel.Activities/3.4.1",
         "fullName": "UiPath.Excel.Activities.Business.UpdateChartX",
         "displayName": "Update Chart",
         "description": "Update properties of an existing Excel chart.",
         "category": "Excel.Windows.Chart",
-        "visibility": "legacy",
+        "visibility": "browsable",
         "hasGenericParameters": false,
         "genericParameterNames": [],
         "members": [
@@ -4350,12 +5229,12 @@
         "enrichment": null
       },
       {
-        "id": "UiPath.Excel.Activities.Business.VLookupX@UiPath.Excel.Activities/3.2.1",
+        "id": "UiPath.Excel.Activities.Business.VLookupX@UiPath.Excel.Activities/3.4.1",
         "fullName": "UiPath.Excel.Activities.Business.VLookupX",
         "displayName": "VLookup",
         "description": "Finds data in a range or sheet using Excel's VLOOKUP function.",
         "category": "Excel.Windows.Range",
-        "visibility": "legacy",
+        "visibility": "browsable",
         "hasGenericParameters": false,
         "genericParameterNames": [],
         "members": [
@@ -4423,12 +5302,12 @@
         "enrichment": null
       },
       {
-        "id": "UiPath.Excel.Activities.Business.WriteCellX@UiPath.Excel.Activities/3.2.1",
+        "id": "UiPath.Excel.Activities.Business.WriteCellX@UiPath.Excel.Activities/3.4.1",
         "fullName": "UiPath.Excel.Activities.Business.WriteCellX",
         "displayName": "Write Cell",
         "description": "Enters a text or a formula in a cell.",
         "category": "Excel.Windows.Cell",
-        "visibility": "legacy",
+        "visibility": "browsable",
         "hasGenericParameters": false,
         "genericParameterNames": [],
         "members": [
@@ -4472,12 +5351,12 @@
         "enrichment": null
       },
       {
-        "id": "UiPath.Excel.Activities.Business.WriteRangeX@UiPath.Excel.Activities/3.2.1",
+        "id": "UiPath.Excel.Activities.Business.WriteRangeX@UiPath.Excel.Activities/3.4.1",
         "fullName": "UiPath.Excel.Activities.Business.WriteRangeX",
         "displayName": "Write DataTable to Excel",
         "description": "Write Range is intended for writing data from external Data Table sources into Excel.",
         "category": "Excel.Windows.Range",
-        "visibility": "legacy",
+        "visibility": "browsable",
         "hasGenericParameters": false,
         "genericParameterNames": [],
         "members": [
@@ -4535,6 +5414,216 @@
             "dataType": "System.Boolean",
             "memberKind": "property",
             "argumentDirection": null,
+            "isRequiredArgument": false,
+            "description": null,
+            "category": null,
+            "defaultValue": null,
+            "typeConverter": null
+          }
+        ],
+        "enrichment": null
+      },
+      {
+        "id": "UiPath.Excel.Activities.Business.ChartModifications.ChangeDataRangeModification@UiPath.Excel.Activities/3.4.1",
+        "fullName": "UiPath.Excel.Activities.Business.ChartModifications.ChangeDataRangeModification",
+        "displayName": "Change Data Range",
+        "description": null,
+        "category": null,
+        "visibility": "browsable",
+        "hasGenericParameters": false,
+        "genericParameterNames": [],
+        "members": [
+          {
+            "name": "Range",
+            "displayName": "Range",
+            "dataType": "System.Activities.InArgument<UiPath.Excel.IReadRangeRef>",
+            "memberKind": "argument",
+            "argumentDirection": "in",
+            "isRequiredArgument": true,
+            "description": null,
+            "category": null,
+            "defaultValue": null,
+            "typeConverter": null
+          }
+        ],
+        "enrichment": null
+      },
+      {
+        "id": "UiPath.Excel.Activities.Business.ChartModifications.ModifyChartTitleModification@UiPath.Excel.Activities/3.4.1",
+        "fullName": "UiPath.Excel.Activities.Business.ChartModifications.ModifyChartTitleModification",
+        "displayName": "Modify Chart Title",
+        "description": null,
+        "category": null,
+        "visibility": "browsable",
+        "hasGenericParameters": false,
+        "genericParameterNames": [],
+        "members": [
+          {
+            "name": "Title",
+            "displayName": "Title",
+            "dataType": "System.Activities.InArgument<System.String>",
+            "memberKind": "argument",
+            "argumentDirection": "in",
+            "isRequiredArgument": false,
+            "description": null,
+            "category": null,
+            "defaultValue": null,
+            "typeConverter": null
+          },
+          {
+            "name": "ShowTitle",
+            "displayName": "ShowTitle",
+            "dataType": "System.Boolean",
+            "memberKind": "property",
+            "argumentDirection": null,
+            "isRequiredArgument": false,
+            "description": null,
+            "category": null,
+            "defaultValue": "True",
+            "typeConverter": null
+          }
+        ],
+        "enrichment": null
+      },
+      {
+        "id": "UiPath.Excel.Activities.Business.ChartModifications.ShowHideDataLabelsModification@UiPath.Excel.Activities/3.4.1",
+        "fullName": "UiPath.Excel.Activities.Business.ChartModifications.ShowHideDataLabelsModification",
+        "displayName": "Show/Hide Data Labels",
+        "description": null,
+        "category": null,
+        "visibility": "browsable",
+        "hasGenericParameters": false,
+        "genericParameterNames": [],
+        "members": [
+          {
+            "name": "ShowDataLabels",
+            "displayName": "ShowDataLabels",
+            "dataType": "System.Boolean",
+            "memberKind": "property",
+            "argumentDirection": null,
+            "isRequiredArgument": false,
+            "description": null,
+            "category": null,
+            "defaultValue": "False",
+            "typeConverter": null
+          }
+        ],
+        "enrichment": null
+      },
+      {
+        "id": "UiPath.Excel.Activities.Business.ChartModifications.ShowHideLegendModification@UiPath.Excel.Activities/3.4.1",
+        "fullName": "UiPath.Excel.Activities.Business.ChartModifications.ShowHideLegendModification",
+        "displayName": "Show/Hide Legend",
+        "description": null,
+        "category": null,
+        "visibility": "browsable",
+        "hasGenericParameters": false,
+        "genericParameterNames": [],
+        "members": [
+          {
+            "name": "ShowLegend",
+            "displayName": "ShowLegend",
+            "dataType": "System.Boolean",
+            "memberKind": "property",
+            "argumentDirection": null,
+            "isRequiredArgument": false,
+            "description": null,
+            "category": null,
+            "defaultValue": "True",
+            "typeConverter": null
+          }
+        ],
+        "enrichment": null
+      },
+      {
+        "id": "UiPath.Excel.Activities.Business.ChartModifications.UpdateAxisBoundsModification@UiPath.Excel.Activities/3.4.1",
+        "fullName": "UiPath.Excel.Activities.Business.ChartModifications.UpdateAxisBoundsModification",
+        "displayName": "Update Axis Bounds",
+        "description": null,
+        "category": null,
+        "visibility": "browsable",
+        "hasGenericParameters": false,
+        "genericParameterNames": [],
+        "members": [
+          {
+            "name": "Axis",
+            "displayName": "Axis",
+            "dataType": "UiPath.Excel.Activities.Business.ChartModifications.AxisOrientation",
+            "memberKind": "property",
+            "argumentDirection": null,
+            "isRequiredArgument": false,
+            "description": null,
+            "category": null,
+            "defaultValue": "Mono.Cecil.CustomAttributeArgument",
+            "typeConverter": null
+          },
+          {
+            "name": "MinBound",
+            "displayName": "MinBound",
+            "dataType": "System.Activities.InArgument<System.Double>",
+            "memberKind": "argument",
+            "argumentDirection": "in",
+            "isRequiredArgument": false,
+            "description": null,
+            "category": null,
+            "defaultValue": null,
+            "typeConverter": null
+          },
+          {
+            "name": "MaxBound",
+            "displayName": "MaxBound",
+            "dataType": "System.Activities.InArgument<System.Double>",
+            "memberKind": "argument",
+            "argumentDirection": "in",
+            "isRequiredArgument": false,
+            "description": null,
+            "category": null,
+            "defaultValue": null,
+            "typeConverter": null
+          }
+        ],
+        "enrichment": null
+      },
+      {
+        "id": "UiPath.Excel.Activities.Business.ChartModifications.UpdateAxisTitleModification@UiPath.Excel.Activities/3.4.1",
+        "fullName": "UiPath.Excel.Activities.Business.ChartModifications.UpdateAxisTitleModification",
+        "displayName": "Update Axis Title",
+        "description": null,
+        "category": null,
+        "visibility": "browsable",
+        "hasGenericParameters": false,
+        "genericParameterNames": [],
+        "members": [
+          {
+            "name": "Axis",
+            "displayName": "Axis",
+            "dataType": "UiPath.Excel.Activities.Business.ChartModifications.AxisOrientation",
+            "memberKind": "property",
+            "argumentDirection": null,
+            "isRequiredArgument": false,
+            "description": null,
+            "category": null,
+            "defaultValue": "Mono.Cecil.CustomAttributeArgument",
+            "typeConverter": null
+          },
+          {
+            "name": "ShowTitle",
+            "displayName": "ShowTitle",
+            "dataType": "System.Boolean",
+            "memberKind": "property",
+            "argumentDirection": null,
+            "isRequiredArgument": false,
+            "description": null,
+            "category": null,
+            "defaultValue": null,
+            "typeConverter": null
+          },
+          {
+            "name": "Title",
+            "displayName": "Title",
+            "dataType": "System.Activities.InArgument<System.String>",
+            "memberKind": "argument",
+            "argumentDirection": "in",
             "isRequiredArgument": false,
             "description": null,
             "category": null,
@@ -4939,6 +6028,32 @@
         ]
       },
       {
+        "fullName": "UiPath.Shared.Activities.Performance.ApplicationType",
+        "underlyingType": "System.Int32",
+        "members": [
+          {
+            "name": "Undefined",
+            "value": 0
+          },
+          {
+            "name": "API",
+            "value": 1
+          },
+          {
+            "name": "WindowsApplication",
+            "value": 2
+          },
+          {
+            "name": "Chrome",
+            "value": 3
+          },
+          {
+            "name": "Default",
+            "value": 4
+          }
+        ]
+      },
+      {
         "fullName": "UiPath.Shared.Activities.Performance.PerfCommandType",
         "underlyingType": "System.Int32",
         "members": [
@@ -5085,6 +6200,34 @@
           {
             "name": "Vertical",
             "value": 1
+          }
+        ]
+      },
+      {
+        "fullName": "UiPath.Excel.Activities.ViewModels.ExcelFilterCriteria",
+        "underlyingType": "System.Int32",
+        "members": [
+          {
+            "name": "Value",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "fullName": "UiPath.Excel.Activities.ViewModels.CellFormatType",
+        "underlyingType": "System.Int32",
+        "members": [
+          {
+            "name": "DataType",
+            "value": 0
+          },
+          {
+            "name": "Alignment",
+            "value": 1
+          },
+          {
+            "name": "Font",
+            "value": 2
           }
         ]
       },
@@ -6011,6 +7154,24 @@
           {
             "name": "AllColumns",
             "value": 1
+          }
+        ]
+      },
+      {
+        "fullName": "UiPath.Excel.ConflictBehavior",
+        "underlyingType": "System.Int32",
+        "members": [
+          {
+            "name": "Replace",
+            "value": 0
+          },
+          {
+            "name": "Fail",
+            "value": 1
+          },
+          {
+            "name": "Skip",
+            "value": 2
           }
         ]
       },
@@ -10116,7 +11277,7 @@
       "tags": "UiPathActivities UiPathStudioX",
       "packageTypes": []
     },
-    "generatedAt": "2026-04-05T14:28:02Z",
+    "generatedAt": "2026-04-05T17:53:36Z",
     "activities": [
       {
         "id": "UiPath.Activities.System.GetUsernamePasswordX@UiPath.System.Activities/25.10.0",
@@ -25706,7 +26867,7 @@
       "tags": "UiPathActivities",
       "packageTypes": []
     },
-    "generatedAt": "2026-04-05T14:28:02Z",
+    "generatedAt": "2026-04-05T17:53:36Z",
     "activities": [
       {
         "id": "UiPath.Testing.Activities.AttachDocument@UiPath.Testing.Activities/25.10.0",
@@ -27891,7 +29052,7 @@
       "tags": "UiPathActivities",
       "packageTypes": []
     },
-    "generatedAt": "2026-04-05T14:28:02Z",
+    "generatedAt": "2026-04-05T17:53:36Z",
     "activities": [
       {
         "id": "UiPath.CV.Activities.CvCheckWithDescriptor@UiPath.UIAutomation.Activities/25.10.16",
