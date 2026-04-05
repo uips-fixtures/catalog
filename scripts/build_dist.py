@@ -215,15 +215,19 @@ def build_xmlns_mapping(item: dict) -> dict:
         "sourceAssembly": item.get("sourceAssembly", ""),
     }
 
+# ── Output helper ──────────────────────────────────────────────────────────────
+
+def write_json(path: Path, obj: object) -> None:
+    with open(path, "w", encoding="utf-8", newline="\n") as f:
+        json.dump(obj, f, indent=2, ensure_ascii=False)
+        f.write("\n")
+
 # ── Set builder ────────────────────────────────────────────────────────────────
 
 def build_set(set_cfg: dict) -> None:
     set_id           = set_cfg["id"]
-    sources          = []
-    activities       = []
-    seen_src         = {}   # (kind, id) → source_obj
-    seen_enums       = {}   # fullName → enum dict (first-write-wins)
-    seen_xmlns       = {}   # (xmlNamespace, sourceAssembly) → mapping dict (first-write-wins)
+    generated_at     = datetime.datetime.now(datetime.UTC).strftime("%Y-%m-%dT%H:%M:%SZ")
+    per_pkg_catalogs = []
 
     for pkg_cfg in set_cfg["packages"]:
         pkg_id   = pkg_cfg["id"]
@@ -236,57 +240,63 @@ def build_set(set_cfg: dict) -> None:
         for version in versions:
             shape_b_path = SHAPE_B_DIR / pkg_id / f"{version}.json"
             if not shape_b_path.exists():
-                print(f"  [error] missing Shape B: {shape_b_path}", file=sys.stderr)
+                print(f"  [error] missing engine-result: {shape_b_path}", file=sys.stderr)
                 continue
 
             check_tfm(pkg_id, version)
 
             shape_b    = json.loads(shape_b_path.read_text(encoding="utf-8"))
             source_obj = build_source(shape_b)
-            key        = (source_obj["kind"], source_obj["id"])
 
-            if key not in seen_src:
-                seen_src[key] = source_obj
-                sources.append(source_obj)
+            activities = [
+                act for item in shape_b.get("activities", [])
+                if item.get("visibility") != "hidden"   # kebab-case; hidden = not in Studio
+                if (act := build_activity(item, source_obj)) is not None
+            ]
 
-            # engine-result v1: activities (was: items); skip Hidden (not shown in Studio)
-            for item in shape_b.get("activities", []):
-                if item.get("visibility") == "Hidden":
-                    continue
-                activities.append(build_activity(item, source_obj))
-
-            # Collect enums — deduplicated by fullName (first-write-wins across sources)
+            seen_enums = {}
             for item in shape_b.get("enums", []):
                 fn = item.get("fullName", "")
                 if fn and fn not in seen_enums:
                     seen_enums[fn] = build_enum(item)
 
-            # Collect namespace mappings — deduplicated by (xmlNamespace, sourceAssembly)
+            seen_xmlns = {}
             for item in shape_b.get("namespaceMappings", []):
                 ns_key = (item.get("xmlNamespace", ""), item.get("sourceAssembly", ""))
                 if ns_key not in seen_xmlns:
                     seen_xmlns[ns_key] = build_xmlns_mapping(item)
 
-    catalog = {
-        "schema":            {"id": "activity-catalog", "version": "v0.2"},
-        "set":               set_id,
-        "generatedAt":       datetime.datetime.now(datetime.UTC).strftime("%Y-%m-%dT%H:%M:%SZ"),
-        "sources":           sources,
-        "activities":        activities,
-        "enums":             list(seen_enums.values()),
-        "namespaceMappings": list(seen_xmlns.values()),
-    }
+            catalog = {
+                "schema":            {"id": "activity-catalog", "version": "v0.2"},
+                "source":            source_obj,
+                "generatedAt":       generated_at,
+                "activities":        activities,
+                "enums":             list(seen_enums.values()),
+                "namespaceMappings": list(seen_xmlns.values()),
+            }
 
-    out_path = OUT_DIR / set_id / "activities.json"
-    out_path.parent.mkdir(parents=True, exist_ok=True)
-    utf8_no_bom = open(out_path, "w", encoding="utf-8", newline="\n")
-    json.dump(catalog, utf8_no_bom, indent=2, ensure_ascii=False)
-    utf8_no_bom.write("\n")
-    utf8_no_bom.close()
+            out_path = OUT_DIR / set_id / pkg_id / f"{version}.json"
+            out_path.parent.mkdir(parents=True, exist_ok=True)
+            write_json(out_path, catalog)
+            per_pkg_catalogs.append(catalog)
 
-    member_count = sum(len(a["members"]) for a in activities)
-    print(f"  {set_id}: {len(activities)} activities, {member_count} members, "
-          f"{len(seen_enums)} enums, {len(seen_xmlns)} xmlns mappings -> {out_path}")
+            member_count = sum(len(a["members"]) for a in activities)
+            print(f"  {pkg_id}/{version}: {len(activities)} activities, "
+                  f"{member_count} members, {len(seen_enums)} enums -> {out_path}")
+
+    # ── Set index ──────────────────────────────────────────────────────────────
+    set_index = [
+        {"metadata": {
+            "schema":      {"id": "activity-catalog-set", "version": "v0.2"},
+            "set":         set_id,
+            "generatedAt": generated_at,
+        }},
+        *per_pkg_catalogs,
+    ]
+    index_path = OUT_DIR / set_id / "index.json"
+    index_path.parent.mkdir(parents=True, exist_ok=True)
+    write_json(index_path, set_index)
+    print(f"  {set_id}: index -> {index_path} ({len(per_pkg_catalogs)} packages)")
 
 # ── CLI ────────────────────────────────────────────────────────────────────────
 
