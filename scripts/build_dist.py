@@ -27,10 +27,11 @@ from packaging.version import Version
 
 # ── Paths ─────────────────────────────────────────────────────────────────────
 
-REPO_ROOT    = Path(__file__).resolve().parent.parent
-SHAPE_B_DIR  = REPO_ROOT / "data" / "sources" / "packagefurnace" / "pkg"
-PKG_DATA_DIR = REPO_ROOT / "data" / "pkg"
-OUT_DIR      = REPO_ROOT / "data" / "dist"
+REPO_ROOT      = Path(__file__).resolve().parent.parent
+SHAPE_B_DIR    = REPO_ROOT / "data" / "sources" / "packagefurnace" / "pkg"
+FILESYSTEM_DIR = REPO_ROOT / "data" / "sources" / "filesystem" / "pkg"
+PKG_DATA_DIR   = REPO_ROOT / "data" / "pkg"
+OUT_DIR        = REPO_ROOT / "data" / "dist"
 CONFIG_PATH          = REPO_ROOT / "config" / "curated.yaml"
 VISIBILITY_RULES_PATH = REPO_ROOT / "config" / "visibility_rules.yaml"
 
@@ -53,11 +54,12 @@ def resolve_versions(pkg_id: str, pkg_cfg: dict) -> list[str]:
         return [pkg_cfg["version"]]
     if "versions" in pkg_cfg:
         return list(pkg_cfg["versions"])
-    # latest-stable: highest non-prerelease version present in SHAPE_B_DIR
-    pkg_dir = SHAPE_B_DIR / pkg_id
-    if not pkg_dir.exists():
-        return []
-    available = [p.stem for p in pkg_dir.glob("*.json")]
+    # latest-stable: highest non-prerelease version present in either source dir
+    available: set[str] = set()
+    for src_dir in (SHAPE_B_DIR, FILESYSTEM_DIR):
+        pkg_dir = src_dir / pkg_id
+        if pkg_dir.exists():
+            available.update(p.stem for p in pkg_dir.glob("*.json"))
     stable = [v for v in available if not re.search(r"[a-zA-Z]", v)]
     if not stable:
         return []
