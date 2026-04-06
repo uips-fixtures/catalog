@@ -15,7 +15,7 @@
     "tags": "UiPathActivities",
     "packageTypes": []
   },
-  "generatedAt": "2026-04-05T19:17:17Z",
+  "generatedAt": "2026-04-06T07:50:44Z",
   "activities": [
     {
       "id": "UiPath.CV.Activities.CvCheckWithDescriptor@UiPath.UIAutomation.Activities/25.10.16",
@@ -3753,6 +3753,20 @@
       "enrichment": null
     },
     {
+      "id": "UiPath.Semantic.Activities.NExtractFormDataGeneric@UiPath.UIAutomation.Activities/25.10.16",
+      "fullName": "UiPath.Semantic.Activities.NExtractFormDataGeneric",
+      "displayName": "Extract Form Data",
+      "description": "Uses AI to seamlessly extract form data.",
+      "category": "UI Automation",
+      "visibility": "browsable",
+      "hasGenericParameters": true,
+      "genericParameterNames": [
+        "T"
+      ],
+      "members": [],
+      "enrichment": null
+    },
+    {
       "id": "UiPath.Semantic.Activities.NFillForm@UiPath.UIAutomation.Activities/25.10.16",
       "fullName": "UiPath.Semantic.Activities.NFillForm",
       "displayName": "Fill Form",
@@ -5662,6 +5676,201 @@
       "enrichment": null
     },
     {
+      "id": "UiPath.UIAutomationNext.Activities.NExtractDataGeneric@UiPath.UIAutomation.Activities/25.10.16",
+      "fullName": "UiPath.UIAutomationNext.Activities.NExtractDataGeneric",
+      "displayName": "Extract Table Data",
+      "description": "Extracts tabular data from a specified web page or application.",
+      "category": "UI Automation",
+      "visibility": "legacy",
+      "hasGenericParameters": true,
+      "genericParameterNames": [
+        "T"
+      ],
+      "members": [
+        {
+          "name": "InputDataTable",
+          "displayName": "InputDataTable",
+          "dataType": "System.Activities.InArgument<System.Data.DataTable>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ExtractedData",
+          "displayName": "ExtractedData",
+          "dataType": "System.Activities.OutArgument<T>",
+          "memberKind": "argument",
+          "argumentDirection": "out",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ExtractMetadata",
+          "displayName": "ExtractMetadata",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "LimitExtractionTo",
+          "displayName": "LimitExtractionTo",
+          "dataType": "UiPath.UIAutomationNext.Models.ExtractData.LimitType",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "MaximumResults",
+          "displayName": "MaximumResults",
+          "dataType": "System.Activities.InArgument<System.Int32>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "NextLink",
+          "displayName": "NextLink",
+          "dataType": "UiPath.UIAutomationNext.TargetAnchorable",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "InteractionMode",
+          "displayName": "InteractionMode",
+          "dataType": "System.Activities.InArgument<UiPath.UIAutomationNext.Enums.NChildInteractionMode>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "DelayBetweenPages",
+          "displayName": "DelayBetweenPages",
+          "dataType": "System.Activities.InArgument<System.Double>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ExtractDataSettings",
+          "displayName": "ExtractDataSettings",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "Timeout",
+          "displayName": "Timeout",
+          "dataType": "System.Activities.InArgument<System.Double>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "DelayAfter",
+          "displayName": "DelayAfter",
+          "dataType": "System.Activities.InArgument<System.Double>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "DelayBefore",
+          "displayName": "DelayBefore",
+          "dataType": "System.Activities.InArgument<System.Double>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "Target",
+          "displayName": "Target",
+          "dataType": "UiPath.UIAutomationNext.TargetAnchorable",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ContinueOnError",
+          "displayName": "ContinueOnError",
+          "dataType": "System.Activities.InArgument<System.Boolean>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "HealingAgentBehavior",
+          "displayName": "HealingAgentBehavior",
+          "dataType": "System.Activities.InArgument<UiPath.UIAutomationNext.Enums.NChildHealingAgentBehavior>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        }
+      ],
+      "enrichment": null
+    },
+    {
       "id": "UiPath.UIAutomationNext.Activities.NForEachUiElement@UiPath.UIAutomation.Activities/25.10.16",
       "fullName": "UiPath.UIAutomationNext.Activities.NForEachUiElement",
       "displayName": "For Each UI Element",
@@ -5808,6 +6017,141 @@
           "name": "Result",
           "displayName": "Result",
           "dataType": "System.Activities.OutArgument",
+          "memberKind": "argument",
+          "argumentDirection": "out",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "Attribute",
+          "displayName": "Attribute",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "Timeout",
+          "displayName": "Timeout",
+          "dataType": "System.Activities.InArgument<System.Double>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "DelayAfter",
+          "displayName": "DelayAfter",
+          "dataType": "System.Activities.InArgument<System.Double>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "DelayBefore",
+          "displayName": "DelayBefore",
+          "dataType": "System.Activities.InArgument<System.Double>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "Target",
+          "displayName": "Target",
+          "dataType": "UiPath.UIAutomationNext.TargetAnchorable",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ContinueOnError",
+          "displayName": "ContinueOnError",
+          "dataType": "System.Activities.InArgument<System.Boolean>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "OutUiElement",
+          "displayName": "OutUiElement",
+          "dataType": "System.Activities.OutArgument<UiPath.Core.UiElement>",
+          "memberKind": "argument",
+          "argumentDirection": "out",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "HealingAgentBehavior",
+          "displayName": "HealingAgentBehavior",
+          "dataType": "System.Activities.InArgument<UiPath.UIAutomationNext.Enums.NChildHealingAgentBehavior>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "InUiElement",
+          "displayName": "InUiElement",
+          "dataType": "System.Activities.InArgument<UiPath.Core.UiElement>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        }
+      ],
+      "enrichment": null
+    },
+    {
+      "id": "UiPath.UIAutomationNext.Activities.NGetAttributeGeneric@UiPath.UIAutomation.Activities/25.10.16",
+      "fullName": "UiPath.UIAutomationNext.Activities.NGetAttributeGeneric",
+      "displayName": "Get Attribute",
+      "description": "Retrieves the value of a specified attribute of the indicated UI element.",
+      "category": "UI Automation",
+      "visibility": "browsable",
+      "hasGenericParameters": true,
+      "genericParameterNames": [
+        "T"
+      ],
+      "members": [
+        {
+          "name": "Result",
+          "displayName": "Result",
+          "dataType": "System.Activities.OutArgument<T>",
           "memberKind": "argument",
           "argumentDirection": "out",
           "isRequiredArgument": false,
@@ -7388,6 +7732,20 @@
           "typeConverter": null
         }
       ],
+      "enrichment": null
+    },
+    {
+      "id": "UiPath.UIAutomationNext.Activities.NNativeEventTrigger@UiPath.UIAutomation.Activities/25.10.16",
+      "fullName": "UiPath.UIAutomationNext.Activities.NNativeEventTrigger",
+      "displayName": "Application Event Trigger",
+      "description": "Setup a trigger on a given event on the indicated UI Element.",
+      "category": "UI Automation",
+      "visibility": "legacy",
+      "hasGenericParameters": true,
+      "genericParameterNames": [
+        "T"
+      ],
+      "members": [],
       "enrichment": null
     },
     {

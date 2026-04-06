@@ -15,8 +15,22 @@
     "tags": "UiPathActivities UiPathStudioX",
     "packageTypes": []
   },
-  "generatedAt": "2026-04-05T19:17:18Z",
+  "generatedAt": "2026-04-06T07:50:44Z",
   "activities": [
+    {
+      "id": "UiPath.Core.Activities.CollectionToDataTable@UiPath.System.Activities/23.4.5",
+      "fullName": "UiPath.Core.Activities.CollectionToDataTable",
+      "displayName": "Collection to DataTable",
+      "description": "Converts a Collection to a DataTable.",
+      "category": "Collection",
+      "visibility": "browsable",
+      "hasGenericParameters": true,
+      "genericParameterNames": [
+        "T"
+      ],
+      "members": [],
+      "enrichment": null
+    },
     {
       "id": "UiPath.Core.Activities.RaiseAlert@UiPath.System.Activities/23.4.5",
       "fullName": "UiPath.Core.Activities.RaiseAlert",
@@ -2421,6 +2435,69 @@
       "enrichment": null
     },
     {
+      "id": "UiPath.Core.Activities.ForEach@UiPath.System.Activities/23.4.5",
+      "fullName": "UiPath.Core.Activities.ForEach",
+      "displayName": "For Each",
+      "description": "Performs an activity or a series of activities on each element of an enumeration.",
+      "category": "Workflow",
+      "visibility": "browsable",
+      "hasGenericParameters": true,
+      "genericParameterNames": [
+        "T"
+      ],
+      "members": [
+        {
+          "name": "Values",
+          "displayName": "Values",
+          "dataType": "System.Activities.InArgument<System.Collections.IEnumerable>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "Condition",
+          "displayName": "Condition",
+          "dataType": "System.Activities.Activity<System.Boolean>",
+          "memberKind": "child",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "MaxIterations",
+          "displayName": "MaxIterations",
+          "dataType": "System.Activities.InArgument<System.Int32>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "CurrentIndex",
+          "displayName": "CurrentIndex",
+          "dataType": "System.Activities.OutArgument<System.Int32>",
+          "memberKind": "argument",
+          "argumentDirection": "out",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        }
+      ],
+      "enrichment": null
+    },
+    {
       "id": "UiPath.Core.Activities.LogMessage@UiPath.System.Activities/23.4.5",
       "fullName": "UiPath.Core.Activities.LogMessage",
       "displayName": "Log Message",
@@ -2499,6 +2576,213 @@
           "memberKind": "argument",
           "argumentDirection": "in",
           "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        }
+      ],
+      "enrichment": null
+    },
+    {
+      "id": "UiPath.Activities.System.Collections.AppendItemToCollection@UiPath.System.Activities/23.4.5",
+      "fullName": "UiPath.Activities.System.Collections.AppendItemToCollection",
+      "displayName": "Append Items to Collection",
+      "description": "Appends one or more items at the end of the specified collection.",
+      "category": "Collection",
+      "visibility": "browsable",
+      "hasGenericParameters": true,
+      "genericParameterNames": [
+        "T"
+      ],
+      "members": [],
+      "enrichment": null
+    },
+    {
+      "id": "UiPath.Activities.System.Collections.BuildCollection@UiPath.System.Activities/23.4.5",
+      "fullName": "UiPath.Activities.System.Collections.BuildCollection",
+      "displayName": "Build Collection",
+      "description": "Create a collection of items that have the same type as the first specified element.",
+      "category": "Collection",
+      "visibility": "browsable",
+      "hasGenericParameters": true,
+      "genericParameterNames": [
+        "T"
+      ],
+      "members": [],
+      "enrichment": null
+    },
+    {
+      "id": "UiPath.Activities.System.Collections.ExistsInCollection@UiPath.System.Activities/23.4.5",
+      "fullName": "UiPath.Activities.System.Collections.ExistsInCollection",
+      "displayName": "Exists In Collection",
+      "description": "Checks if the given Item exists in the collection",
+      "category": "Collection",
+      "visibility": "browsable",
+      "hasGenericParameters": true,
+      "genericParameterNames": [
+        "T"
+      ],
+      "members": [
+        {
+          "name": "Collection",
+          "displayName": "Collection",
+          "dataType": "System.Activities.InArgument<System.Collections.Generic.ICollection<T>>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "Item",
+          "displayName": "Item",
+          "dataType": "System.Activities.InArgument<T>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "Exists",
+          "displayName": "Exists",
+          "dataType": "System.Activities.OutArgument<System.Boolean>",
+          "memberKind": "argument",
+          "argumentDirection": "out",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "Index",
+          "displayName": "Index",
+          "dataType": "System.Activities.OutArgument<System.Int32>",
+          "memberKind": "argument",
+          "argumentDirection": "out",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        }
+      ],
+      "enrichment": null
+    },
+    {
+      "id": "UiPath.Activities.System.Collections.FilterCollection@UiPath.System.Activities/23.4.5",
+      "fullName": "UiPath.Activities.System.Collections.FilterCollection",
+      "displayName": "Filter Collection",
+      "description": "Filter a collection based on custom conditions",
+      "category": "Collection",
+      "visibility": "browsable",
+      "hasGenericParameters": true,
+      "genericParameterNames": [
+        "T"
+      ],
+      "members": [],
+      "enrichment": null
+    },
+    {
+      "id": "UiPath.Activities.System.Collections.MergeCollections@UiPath.System.Activities/23.4.5",
+      "fullName": "UiPath.Activities.System.Collections.MergeCollections",
+      "displayName": "Merge Collections",
+      "description": "Combine collections in a new collection that contains all the elements",
+      "category": "Collection",
+      "visibility": "browsable",
+      "hasGenericParameters": true,
+      "genericParameterNames": [
+        "T"
+      ],
+      "members": [
+        {
+          "name": "Collection",
+          "displayName": "Collection",
+          "dataType": "System.Activities.InArgument<System.Collections.Generic.ICollection<T>>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "SecondCollection",
+          "displayName": "SecondCollection",
+          "dataType": "System.Activities.InArgument<System.Collections.Generic.ICollection<T>>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        }
+      ],
+      "enrichment": null
+    },
+    {
+      "id": "UiPath.Activities.System.Collections.RemoveFromCollection@UiPath.System.Activities/23.4.5",
+      "fullName": "UiPath.Activities.System.Collections.RemoveFromCollection",
+      "displayName": "Remove From Collection",
+      "description": "Remove the specified element from a collection",
+      "category": "Collection",
+      "visibility": "browsable",
+      "hasGenericParameters": true,
+      "genericParameterNames": [
+        "T"
+      ],
+      "members": [
+        {
+          "name": "Collection",
+          "displayName": "Collection",
+          "dataType": "System.Activities.InArgument<System.Collections.Generic.ICollection<T>>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "RemoveAllElements",
+          "displayName": "RemoveAllElements",
+          "dataType": "System.Boolean",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "Item",
+          "displayName": "Item",
+          "dataType": "System.Activities.InArgument<T>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "Index",
+          "displayName": "Index",
+          "dataType": "System.Activities.InArgument<System.Int32>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
           "description": null,
           "category": null,
           "defaultValue": null,
