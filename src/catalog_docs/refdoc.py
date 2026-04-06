@@ -153,9 +153,9 @@ _HTML_TEMPLATE = """\
 
 def _dir_span(d: str | None) -> markupsafe.Markup:
     mapping = {
-        "In":    '<span class="dir-in">In</span>',
-        "Out":   '<span class="dir-out">Out</span>',
-        "InOut": '<span class="dir-inout">InOut</span>',
+        "in":     '<span class="dir-in">In</span>',
+        "out":    '<span class="dir-out">Out</span>',
+        "in-out": '<span class="dir-inout">InOut</span>',
     }
     return markupsafe.Markup(mapping.get(d or "", "&mdash;"))
 
