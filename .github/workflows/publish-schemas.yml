@@ -28,7 +28,7 @@ jobs:
       - name: Publish dist files to pages repo
         run: |
           python3 - << 'PYEOF'
-          import glob, os, shutil
+          import glob, json, os, shutil
           from pathlib import Path
 
           DIST  = Path("catalog/data/dist")
@@ -77,15 +77,19 @@ jobs:
                   llms_c += 1
 
               elif src_path.suffix == ".json" and src_path.name != "index.json" and len(parts) == 3:
-                  # {set}/{pkg}/{ver}.json → catalog/{pkg}/{ver}.json (deduplicated)
-                  dest = PAGES / "catalog" / parts[1] / parts[2]
+                  # {set}/{pkg}/{ver}.json → catalog/{schema_ver}/{pkg}/{ver}.json (deduplicated)
+                  doc = json.loads(src_path.read_text(encoding="utf-8"))
+                  schema_ver = doc.get("schema", {}).get("version", "unknown")
+                  dest = PAGES / "catalog" / schema_ver / parts[1] / parts[2]
                   dest.parent.mkdir(parents=True, exist_ok=True)
                   shutil.copy2(src, dest)
                   json_c += 1
 
               elif src_path.name == "index.json" and len(parts) == 2:
-                  # {set}/index.json → catalog/{set}/index.json
-                  dest = PAGES / "catalog" / parts[0] / "index.json"
+                  # {set}/index.json → catalog/{schema_ver}/{set}/index.json
+                  doc = json.loads(src_path.read_text(encoding="utf-8"))
+                  schema_ver = doc[0].get("metadata", {}).get("schema", {}).get("version", "unknown")
+                  dest = PAGES / "catalog" / schema_ver / parts[0] / "index.json"
                   dest.parent.mkdir(parents=True, exist_ok=True)
                   shutil.copy2(src, dest)
                   json_c += 1
