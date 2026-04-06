@@ -97,7 +97,7 @@ jobs:
 
           print(f"refdoc: {html} html, llms: {txt} txt + {llms_c} set aggregations, catalog: {json_c} json")
 
-          # Generate catalog/index.html — lists schema versions → packages → versioned files
+          # Generate catalog/index.html
           catalog_dir = PAGES / "catalog"
           rows = []
           for schema_ver_dir in sorted(catalog_dir.iterdir()):
@@ -107,22 +107,24 @@ jobs:
                   if not pkg_dir.is_dir(): continue
                   pkg_id = pkg_dir.name
                   for f in sorted(pkg_dir.glob("*.json")):
-                      url = f"/{f.relative_to(PAGES).as_posix()}"
-                      rows.append(f'<tr><td>{schema_ver}</td><td>{pkg_id}</td>'
-                                  f'<td><a href="{url}">{f.name}</a></td></tr>')
-          index_html = f"""<!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"/>
-<title>Activity Catalog — uips-fixtures</title>
-<style>body{{font-family:system-ui,sans-serif;padding:2rem}}
-table{{border-collapse:collapse;width:100%}}
-th,td{{text-align:left;padding:.3rem .6rem;border-bottom:1px solid #ddd}}
-th{{background:#eee}}</style></head>
-<body><h1>Activity Catalog</h1>
-<table><tr><th>Schema</th><th>Package</th><th>File</th></tr>
-{"".join(rows)}
-</table></body></html>"""
-          (catalog_dir / "index.html").write_text(index_html, encoding="utf-8", newline="\n")
-          print(f"  catalog/index.html: {len(rows)} entries")
+                      url = "/" + f.relative_to(PAGES).as_posix()
+                      rows.append(
+                          "<tr><td>" + schema_ver + "</td><td>" + pkg_id + "</td>"
+                          + '<td><a href="' + url + '">' + f.name + "</a></td></tr>"
+                      )
+          lines = [
+              "<!DOCTYPE html>",
+              '<html lang="en"><head><meta charset="UTF-8"/>',
+              "<title>Activity Catalog - uips-fixtures</title>",
+              "<style>body{font-family:system-ui,sans-serif;padding:2rem}",
+              "table{border-collapse:collapse;width:100%}",
+              "th,td{text-align:left;padding:.3rem .6rem;border-bottom:1px solid #ddd}",
+              "th{background:#eee}</style></head>",
+              "<body><h1>Activity Catalog</h1>",
+              "<table><tr><th>Schema</th><th>Package</th><th>File</th></tr>",
+          ] + rows + ["</table></body></html>"]
+          (catalog_dir / "index.html").write_text("\n".join(lines), encoding="utf-8", newline="\n")
+          print("  catalog/index.html: " + str(len(rows)) + " entries")
           PYEOF
 
       - name: Commit and push
