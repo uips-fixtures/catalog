@@ -7,7 +7,7 @@ import jinja2
 from ._io import group_by_package, normalize_type
 
 GENERATOR_NAME    = "uips-fixtures catalog"
-GENERATOR_VERSION = "v0.1"
+GENERATOR_VERSION = "v0.2"
 
 # ── Template ──────────────────────────────────────────────────────────────────
 
@@ -43,17 +43,21 @@ _MD_TEMPLATE = """\
 {% if args -%}
 **Arguments**:
 {% for m in args -%}
-{% set d = m.get("argumentDirection") or "?" -%}
-{% set req = " [required]" if m.get("isRequiredArgument") else "" -%}
+{% set dname = m.get("displayName") or m["name"] -%}
+{% set dir_tag = (m.get("argumentDirection") or "?") | upper -%}
+{% set req_tag = ", Required" if m.get("isRequiredArgument") else "" -%}
+{% set type_tag = m["dataType"] | normalize_type -%}
+{% set default_part = " (default: " + m["defaultValue"] + ")" if m.get("defaultValue") else "" -%}
 {% set desc_part = " \u2014 " + m["description"] if m.get("description") else "" -%}
-  - `{{ m["name"] }}` ({{ d }}{{ req }}): `{{ m["dataType"] | normalize_type }}`{{ desc_part }}
+  - [{{ dir_tag }}{{ req_tag }}] `{{ type_tag }}` **{{ dname }}**{{ default_part }}{{ desc_part }}
 {% endfor %}
 {% endif -%}
 {% if props -%}
-**Other members**:
+**Properties / VariableScope / Child**:
 {% for m in props -%}
+{% set dname = m.get("displayName") or m["name"] -%}
 {% set desc_part = " \u2014 " + m["description"] if m.get("description") else "" -%}
-  - `{{ m["name"] }}` [{{ m["memberKind"] }}]: `{{ m["dataType"] | normalize_type }}`{{ desc_part }}
+  - [{{ m["memberKind"] }}] `{{ m["dataType"] | normalize_type }}` **{{ dname }}**{{ desc_part }}
 {% endfor %}
 {% endif -%}
 {% if not members -%}

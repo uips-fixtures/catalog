@@ -8,7 +8,7 @@ import markupsafe
 from ._io import group_by_package, normalize_type
 
 GENERATOR_NAME    = "uips-fixtures catalog"
-GENERATOR_VERSION = "v0.1"
+GENERATOR_VERSION = "v0.2"
 
 # ── CSS (Solarized Light) ──────────────────────────────────────────────────────
 
@@ -67,6 +67,7 @@ _CSS = """\
     table { border-collapse: collapse; width: 100%; font-size: 0.82rem; }
     th, td { text-align: left; padding: 0.3rem 0.6rem; border-bottom: 1px solid var(--base2); }
     th { background: var(--base2); color: var(--base01); font-size: 0.75rem; font-weight: 600; }
+    th:nth-child(5) { min-width: 6rem; }
     tr:last-child td { border-bottom: none; }
     .dir-in    { color: var(--green);  font-weight: 600; }
     .dir-out   { color: var(--blue);   font-weight: 600; }
@@ -102,36 +103,53 @@ _HTML_TEMPLATE = """\
     </p>
     {% for act in activities %}
     {% set name = act.get("displayName") or act["fullName"].split(".")[-1] %}
-    {% set args = act.get("members", []) | selectattr("memberKind", "equalto", "argument") | list %}
-    {% set props = act.get("members", []) | rejectattr("memberKind", "equalto", "argument") | list %}
+    {% set s = act.get("members", []) | split_members %}
     <div class="activity" id="{{ act['id'] }}">
       <div class="activity-name">{{ name }}</div>
       <div class="activity-full">{{ act["fullName"] }}</div>
       <span class="badge badge-src">{{ pkg_id }} {{ src.get("version", "") }}</span>
       {% if act.get("category") %}<span class="badge badge-cat">{{ act["category"] }}</span>{% endif %}
       {% if act.get("description") %}<p class="activity-desc">{{ act["description"] }}</p>{% endif %}
-      {% if args %}
-      <p class="members-heading">Arguments</p>
+      {% for cat, group in s["arg_categories"].items() %}
+      <p class="members-heading">Arguments{% if cat %} &mdash; {{ cat }}{% endif %}</p>
       <table>
-        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Description</th></tr>
-        {% for m in args %}
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        {% for m in group %}
+        {% set dname = m.get("displayName") or m["name"] %}
         <tr>
-          <td>{{ m["displayName"] }}</td>
+          <td>{{ dname }}</td>
           <td>{{ m.get("argumentDirection") | dir_span }}</td>
           <td><code>{{ m["dataType"] | normalize_type }}</code></td>
           <td>{% if m.get("isRequiredArgument") %}<span class="req">&#10003;</span>{% endif %}</td>
+          <td>{% if m.get("defaultValue") %}<code>{{ m["defaultValue"] }}</code>{% endif %}</td>
+          <td>{{ m.get("description") or "" }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+      {% endfor %}
+      {% if s["props"] %}
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        {% for m in s["props"] %}
+        {% set dname = m.get("displayName") or m["name"] %}
+        <tr>
+          <td>{{ dname }}</td>
+          <td>{{ m["memberKind"] }}</td>
+          <td><code>{{ m["dataType"] | normalize_type }}</code></td>
           <td>{{ m.get("description") or "" }}</td>
         </tr>
         {% endfor %}
       </table>
       {% endif %}
-      {% if props %}
-      <p class="members-heading">Properties / child slots</p>
+      {% if s["special"] %}
+      <p class="members-heading">Child Activities / Variable Scope</p>
       <table>
         <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
-        {% for m in props %}
+        {% for m in s["special"] %}
+        {% set dname = m.get("displayName") or m["name"] %}
         <tr>
-          <td>{{ m["displayName"] }}</td>
+          <td>{{ dname }}</td>
           <td>{{ m["memberKind"] }}</td>
           <td><code>{{ m["dataType"] | normalize_type }}</code></td>
           <td>{{ m.get("description") or "" }}</td>
@@ -160,6 +178,17 @@ def _dir_span(d: str | None) -> markupsafe.Markup:
     return markupsafe.Markup(mapping.get(d or "", "&mdash;"))
 
 
+def _split_members(members: list[dict]) -> dict:
+    """Split members into arg_categories, props, and special (variableScope/child)."""
+    args    = [m for m in members if m.get("memberKind") == "argument"]
+    props   = [m for m in members if m.get("memberKind") not in ("argument", "variableScope", "child")]
+    special = [m for m in members if m.get("memberKind") in ("variableScope", "child")]
+    cats: dict[str, list[dict]] = {}
+    for m in args:
+        cats.setdefault(m.get("category") or "", []).append(m)
+    return {"arg_categories": cats, "props": props, "special": special}
+
+
 _env = jinja2.Environment(
     autoescape=True,
     trim_blocks=True,
@@ -167,6 +196,7 @@ _env = jinja2.Environment(
 )
 _env.filters["normalize_type"] = normalize_type
 _env.filters["dir_span"] = _dir_span
+_env.filters["split_members"] = _split_members
 _tmpl = _env.from_string(_HTML_TEMPLATE)
 
 # ── Public API ────────────────────────────────────────────────────────────────

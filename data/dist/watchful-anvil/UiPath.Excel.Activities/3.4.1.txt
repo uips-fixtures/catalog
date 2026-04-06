@@ -1,7 +1,7 @@
 # UiPath.Excel.Activities 3.4.1
 
-> generator: uips-fixtures catalog v0.1
-> generated: 2026-04-06T13:59:09Z
+> generator: uips-fixtures catalog v0.2
+> generated: 2026-04-06T15:10:38Z
 > set: watchful-anvil
 > url: https://uips-fixtures.github.io/llms/UiPath.Excel.Activities/3.4.1.txt
 > activities: 86
@@ -17,11 +17,11 @@
 **Category**: Excel.CSV
 **Description**: Copies an Excel range, table, or sheet, or table data saved for later, and pastes it after existing data in a specified CSV file
 **Arguments**:
-- `FilePath` (in [required]): `InArgument<String>`
-- `DataTable` (in [required]): `InArgument<Data.DataTable>`
-- `Encoding` (in): `InArgument<String>`
-**Other members**:
-- `Delimitator` [property]: `UiPath.CSV.DelimitatorOptions`
+- [IN, Required] `InArgument<String>` **FilePath**
+- [IN, Required] `InArgument<Data.DataTable>` **DataTable**
+- [IN] `InArgument<String>` **Encoding**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.CSV.DelimitatorOptions` **Delimitator**
 ### Write CSV
 
 **ID**: `UiPath.CSV.Activities.AppendWriteCsvFile@UiPath.Excel.Activities/3.4.1`
@@ -29,15 +29,15 @@
 **Category**: Excel.CSV
 **Description**: Copies an Excel range, table, or sheet, or table data saved for later, and pastes it in a specified CSV file either pasting it after existing data or replacing any existing data in the file.
 **Arguments**:
-- `FilePath` (in [required]): `InArgument<String>`
-- `PathResource` (in [required]): `InArgument<UiPath.Platform.ResourceHandling.IResource>`
-- `DataTable` (in [required]): `InArgument<Data.DataTable>`
-- `Encoding` (in): `InArgument<String>`
-**Other members**:
-- `CsvAction` [property]: `UiPath.CSV.Activities.CsvWriteAction`
-- `Delimitator` [property]: `UiPath.CSV.DelimitatorOptions`
-- `AddHeaders` [property]: `Boolean`
-- `ShouldQuote` [property]: `Boolean`
+- [IN, Required] `InArgument<String>` **FilePath**
+- [IN, Required] `InArgument<UiPath.Platform.ResourceHandling.IResource>` **PathResource**
+- [IN, Required] `InArgument<Data.DataTable>` **DataTable**
+- [IN] `InArgument<String>` **Encoding**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.CSV.Activities.CsvWriteAction` **CsvAction**
+- [property] `UiPath.CSV.DelimitatorOptions` **Delimitator**
+- [property] `Boolean` **AddHeaders**
+- [property] `Boolean` **ShouldQuote**
 ### Read CSV
 
 **ID**: `UiPath.CSV.Activities.ReadCsvFile@UiPath.Excel.Activities/3.4.1`
@@ -45,14 +45,14 @@
 **Category**: Excel.CSV
 **Description**: Copies all entries from a specified CSV file to an Excel range, table, or sheet, or saves the data for later use in the automation.
 **Arguments**:
-- `FilePath` (in [required]): `InArgument<String>`
-- `PathResource` (in [required]): `InArgument<UiPath.Platform.ResourceHandling.IResource>`
-- `DataTable` (out): `OutArgument<Data.DataTable>`
-- `Encoding` (in): `InArgument<String>`
-- `IgnoreQuotes` (in): `InArgument<Boolean>`
-**Other members**:
-- `Delimitator` [property]: `UiPath.CSV.DelimitatorOptions`
-- `IncludeColumnNames` [property]: `Boolean`
+- [IN, Required] `InArgument<String>` **FilePath**
+- [IN, Required] `InArgument<UiPath.Platform.ResourceHandling.IResource>` **PathResource**
+- [OUT] `OutArgument<Data.DataTable>` **DataTable**
+- [IN] `InArgument<String>` **Encoding**
+- [IN] `InArgument<Boolean>` **IgnoreQuotes**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.CSV.DelimitatorOptions` **Delimitator**
+- [property] `Boolean` **IncludeColumnNames**
 ### Write CSV
 
 **ID**: `UiPath.CSV.Activities.WriteCsvFile@UiPath.Excel.Activities/3.4.1`
@@ -60,13 +60,13 @@
 **Category**: Excel.CSV
 **Description**: Copies an Excel range, table, or sheet, or table data saved for later, and pastes it in a specified CSV file replacing any existing data in the file
 **Arguments**:
-- `Encoding` (in): `InArgument<String>`
-- `FilePath` (in [required]): `InArgument<String>`
-- `DataTable` (in [required]): `InArgument<Data.DataTable>`
-**Other members**:
-- `AddHeaders` [property]: `Boolean`
-- `ShouldQuote` [property]: `Boolean`
-- `Delimitator` [property]: `UiPath.CSV.DelimitatorOptions`
+- [IN] `InArgument<String>` **Encoding**
+- [IN, Required] `InArgument<String>` **FilePath**
+- [IN, Required] `InArgument<Data.DataTable>` **DataTable**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **AddHeaders**
+- [property] `Boolean` **ShouldQuote**
+- [property] `UiPath.CSV.DelimitatorOptions` **Delimitator**
 ### Append Range Workbook
 
 **ID**: `UiPath.Excel.Activities.AppendRange@UiPath.Excel.Activities/3.4.1`
@@ -74,12 +74,12 @@
 **Category**: Excel
 **Description**: Appends the data from a DataTable to a spreadsheet. If the sheet does not exist, a new one is created with the SheetName value. Changes are immediately saved
 **Arguments**:
-- `DataTable` (in [required]): `InArgument<Data.DataTable>`
-- `SheetName` (in [required]): `InArgument<String>`
-- `Workbook` (in): `InArgument<UiPath.Excel.Workbook>`
-- `WorkbookPath` (in [required]): `InArgument<String>`
-- `WorkbookPathResource` (in [required]): `InArgument<UiPath.Platform.ResourceHandling.IResource>`
-- `Password` (in): `InArgument<String>`
+- [IN, Required] `InArgument<Data.DataTable>` **DataTable**
+- [IN, Required] `InArgument<String>` **SheetName** (default: Sheet1)
+- [IN] `InArgument<UiPath.Excel.Workbook>` **Workbook**
+- [IN, Required] `InArgument<String>` **WorkbookPath**
+- [IN, Required] `InArgument<UiPath.Platform.ResourceHandling.IResource>` **WorkbookPathResource**
+- [IN] `InArgument<String>` **Password**
 ### Create New Workbook
 
 **ID**: `UiPath.Excel.Activities.CreateNewWorkbook@UiPath.Excel.Activities/3.4.1`
@@ -87,13 +87,13 @@
 **Category**: Excel
 **Description**: Creates a new workbook with a new empty sheet.
 **Arguments**:
-- `ConflictResolution` (in): `InArgument<UiPath.Excel.ConflictBehavior>`
-- `WorkbookFile` (out): `OutArgument<UiPath.Excel.Workbook>`
-- `SheetName` (in [required]): `InArgument<String>`
-- `Workbook` (in): `InArgument<UiPath.Excel.Workbook>`
-- `WorkbookPath` (in [required]): `InArgument<String>`
-- `WorkbookPathResource` (in [required]): `InArgument<UiPath.Platform.ResourceHandling.IResource>`
-- `Password` (in): `InArgument<String>`
+- [IN] `InArgument<UiPath.Excel.ConflictBehavior>` **ConflictResolution**
+- [OUT] `OutArgument<UiPath.Excel.Workbook>` **WorkbookFile**
+- [IN, Required] `InArgument<String>` **SheetName** (default: Sheet1)
+- [IN] `InArgument<UiPath.Excel.Workbook>` **Workbook**
+- [IN, Required] `InArgument<String>` **WorkbookPath**
+- [IN, Required] `InArgument<UiPath.Platform.ResourceHandling.IResource>` **WorkbookPathResource**
+- [IN] `InArgument<String>` **Password**
 ### Create Pivot Table Workbook
 
 **ID**: `UiPath.Excel.Activities.CreatePivotTable@UiPath.Excel.Activities/3.4.1`
@@ -101,22 +101,22 @@
 **Category**: Excel
 **Description**: Creates a pivot table from a specified range or table to help you calculate, summarize, and analyze data.
 **Arguments**:
-- `SourceSheet` (in): `InArgument<String>`
-- `SourceRange` (in): `InArgument<String>`
-- `SourceTable` (in): `InArgument<String>`
-- `PivotTableName` (in [required]): `InArgument<String>`
-- `PlacementCell` (in): `InArgument<String>`
-- `LayoutRowType` (in): `InArgument<UiPath.Excel.PivotTableLayoutRowType>`
-- `ValuesMode` (in): `InArgument<UiPath.Excel.PivotTableValuesMode>`
-- `PivotTableFieldsVariable` (in): `InArgument<IEnumerable<UiPath.Excel.PivotTableField>>`
-- `SheetName` (in [required]): `InArgument<String>`
-- `Workbook` (in): `InArgument<UiPath.Excel.Workbook>`
-- `WorkbookPath` (in [required]): `InArgument<String>`
-- `WorkbookPathResource` (in [required]): `InArgument<UiPath.Platform.ResourceHandling.IResource>`
-- `Password` (in): `InArgument<String>`
-**Other members**:
-- `UseTableSource` [property]: `Boolean`
-- `PivotTableFields` [property]: `List<InArgument<UiPath.Excel.PivotTableField>>`
+- [IN] `InArgument<String>` **SourceSheet**
+- [IN] `InArgument<String>` **SourceRange**
+- [IN] `InArgument<String>` **SourceTable**
+- [IN, Required] `InArgument<String>` **PivotTableName**
+- [IN] `InArgument<String>` **PlacementCell**
+- [IN] `InArgument<UiPath.Excel.PivotTableLayoutRowType>` **LayoutRowType**
+- [IN] `InArgument<UiPath.Excel.PivotTableValuesMode>` **ValuesMode**
+- [IN] `InArgument<IEnumerable<UiPath.Excel.PivotTableField>>` **PivotTableFieldsVariable**
+- [IN, Required] `InArgument<String>` **SheetName** (default: Sheet1)
+- [IN] `InArgument<UiPath.Excel.Workbook>` **Workbook**
+- [IN, Required] `InArgument<String>` **WorkbookPath**
+- [IN, Required] `InArgument<UiPath.Platform.ResourceHandling.IResource>` **WorkbookPathResource**
+- [IN] `InArgument<String>` **Password**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **UseTableSource**
+- [property] `List<InArgument<UiPath.Excel.PivotTableField>>` **PivotTableFields**
 ### Get Cell Color Workbook
 
 **ID**: `UiPath.Excel.Activities.GetCellColor@UiPath.Excel.Activities/3.4.1`
@@ -124,13 +124,13 @@
 **Category**: Excel
 **Description**: Gets the color of a cell
 **Arguments**:
-- `Cell` (in [required]): `InArgument<String>`
-- `Color` (out): `OutArgument<Drawing.Color>`
-- `SheetName` (in [required]): `InArgument<String>`
-- `Workbook` (in): `InArgument<UiPath.Excel.Workbook>`
-- `WorkbookPath` (in [required]): `InArgument<String>`
-- `WorkbookPathResource` (in [required]): `InArgument<UiPath.Platform.ResourceHandling.IResource>`
-- `Password` (in): `InArgument<String>`
+- [IN, Required] `InArgument<String>` **Cell**
+- [OUT] `OutArgument<Drawing.Color>` **Color**
+- [IN, Required] `InArgument<String>` **SheetName** (default: Sheet1)
+- [IN] `InArgument<UiPath.Excel.Workbook>` **Workbook**
+- [IN, Required] `InArgument<String>` **WorkbookPath**
+- [IN, Required] `InArgument<UiPath.Platform.ResourceHandling.IResource>` **WorkbookPathResource**
+- [IN] `InArgument<String>` **Password**
 ### Get Sheets Workbook
 
 **ID**: `UiPath.Excel.Activities.GetSheets@UiPath.Excel.Activities/3.4.1`
@@ -138,13 +138,13 @@
 **Category**: Excel
 **Description**: Returns the sheets from the workbook
 **Arguments**:
-- `Result` (out): `OutArgument<IEnumerable<String>>`
-- `Workbook` (in): `InArgument<UiPath.Excel.Workbook>`
-- `WorkbookPath` (in [required]): `InArgument<String>`
-- `WorkbookPathResource` (in [required]): `InArgument<UiPath.Platform.ResourceHandling.IResource>`
-- `Password` (in): `InArgument<String>`
-**Other members**:
-- `OnlyVisibleSheets` [property]: `Boolean`
+- [OUT] `OutArgument<IEnumerable<String>>` **Result**
+- [IN] `InArgument<UiPath.Excel.Workbook>` **Workbook**
+- [IN, Required] `InArgument<String>` **WorkbookPath**
+- [IN, Required] `InArgument<UiPath.Platform.ResourceHandling.IResource>` **WorkbookPathResource**
+- [IN] `InArgument<String>` **Password**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **OnlyVisibleSheets**
 ### Get Table Range Workbook
 
 **ID**: `UiPath.Excel.Activities.GetTableRange@UiPath.Excel.Activities/3.4.1`
@@ -152,15 +152,15 @@
 **Category**: Excel
 **Description**: Extracts the range of an Excel table from a specified spreadsheet
 **Arguments**:
-- `TableName` (in [required]): `InArgument<String>`
-- `Range` (out): `OutArgument<String>`
-- `SheetName` (in [required]): `InArgument<String>`
-- `Workbook` (in): `InArgument<UiPath.Excel.Workbook>`
-- `WorkbookPath` (in [required]): `InArgument<String>`
-- `WorkbookPathResource` (in [required]): `InArgument<UiPath.Platform.ResourceHandling.IResource>`
-- `Password` (in): `InArgument<String>`
-**Other members**:
-- `IsPivot` [property]: `Boolean`
+- [IN, Required] `InArgument<String>` **TableName**
+- [OUT] `OutArgument<String>` **Range**
+- [IN, Required] `InArgument<String>` **SheetName** (default: Sheet1)
+- [IN] `InArgument<UiPath.Excel.Workbook>` **Workbook**
+- [IN, Required] `InArgument<String>` **WorkbookPath**
+- [IN, Required] `InArgument<UiPath.Platform.ResourceHandling.IResource>` **WorkbookPathResource**
+- [IN] `InArgument<String>` **Password**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **IsPivot**
 ### Read Cell Workbook
 
 **ID**: `UiPath.Excel.Activities.ReadCell@UiPath.Excel.Activities/3.4.1`
@@ -168,15 +168,15 @@
 **Category**: Excel
 **Description**: Reads the value of a cell from a spreadsheet as a string
 **Arguments**:
-- `Cell` (in [required]): `InArgument<String>`
-- `Result` (out): `OutArgument`
-- `SheetName` (in [required]): `InArgument<String>`
-- `Workbook` (in): `InArgument<UiPath.Excel.Workbook>`
-- `WorkbookPath` (in [required]): `InArgument<String>`
-- `WorkbookPathResource` (in [required]): `InArgument<UiPath.Platform.ResourceHandling.IResource>`
-- `Password` (in): `InArgument<String>`
-**Other members**:
-- `PreserveFormat` [property]: `Boolean`
+- [IN, Required] `InArgument<String>` **Cell** (default: A1)
+- [OUT] `OutArgument` **Result**
+- [IN, Required] `InArgument<String>` **SheetName** (default: Sheet1)
+- [IN] `InArgument<UiPath.Excel.Workbook>` **Workbook**
+- [IN, Required] `InArgument<String>` **WorkbookPath**
+- [IN, Required] `InArgument<UiPath.Platform.ResourceHandling.IResource>` **WorkbookPathResource**
+- [IN] `InArgument<String>` **Password**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **PreserveFormat**
 ### Read Cell Formula Workbook
 
 **ID**: `UiPath.Excel.Activities.ReadCellFormula@UiPath.Excel.Activities/3.4.1`
@@ -184,13 +184,13 @@
 **Category**: Excel
 **Description**: Reads the formula of a cell from a spreadsheet as a string
 **Arguments**:
-- `Cell` (in [required]): `InArgument<String>`
-- `Result` (out): `OutArgument<String>`
-- `SheetName` (in [required]): `InArgument<String>`
-- `Workbook` (in): `InArgument<UiPath.Excel.Workbook>`
-- `WorkbookPath` (in [required]): `InArgument<String>`
-- `WorkbookPathResource` (in [required]): `InArgument<UiPath.Platform.ResourceHandling.IResource>`
-- `Password` (in): `InArgument<String>`
+- [IN, Required] `InArgument<String>` **Cell** (default: A1)
+- [OUT] `OutArgument<String>` **Result**
+- [IN, Required] `InArgument<String>` **SheetName** (default: Sheet1)
+- [IN] `InArgument<UiPath.Excel.Workbook>` **Workbook**
+- [IN, Required] `InArgument<String>` **WorkbookPath**
+- [IN, Required] `InArgument<UiPath.Platform.ResourceHandling.IResource>` **WorkbookPathResource**
+- [IN] `InArgument<String>` **Password**
 ### Read Column Workbook
 
 **ID**: `UiPath.Excel.Activities.ReadColumn@UiPath.Excel.Activities/3.4.1`
@@ -198,15 +198,15 @@
 **Category**: Excel
 **Description**: Reads the values from a column beginning from the cell specified in the StartingCell field, and stores them in an IEnumerable &lt;object&gt;variable
 **Arguments**:
-- `StartingCell` (in [required]): `InArgument<String>`
-- `Result` (out): `OutArgument<IEnumerable<Object>>`
-- `SheetName` (in [required]): `InArgument<String>`
-- `Workbook` (in): `InArgument<UiPath.Excel.Workbook>`
-- `WorkbookPath` (in [required]): `InArgument<String>`
-- `WorkbookPathResource` (in [required]): `InArgument<UiPath.Platform.ResourceHandling.IResource>`
-- `Password` (in): `InArgument<String>`
-**Other members**:
-- `PreserveFormat` [property]: `Boolean`
+- [IN, Required] `InArgument<String>` **StartingCell** (default: A1)
+- [OUT] `OutArgument<IEnumerable<Object>>` **Result**
+- [IN, Required] `InArgument<String>` **SheetName** (default: Sheet1)
+- [IN] `InArgument<UiPath.Excel.Workbook>` **Workbook**
+- [IN, Required] `InArgument<String>` **WorkbookPath**
+- [IN, Required] `InArgument<UiPath.Platform.ResourceHandling.IResource>` **WorkbookPathResource**
+- [IN] `InArgument<String>` **Password**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **PreserveFormat**
 ### Read Range Workbook
 
 **ID**: `UiPath.Excel.Activities.ReadRange@UiPath.Excel.Activities/3.4.1`
@@ -214,16 +214,16 @@
 **Category**: Excel
 **Description**: Reads the value of a range in Range Excel Format from a spreadsheet as a DataTable. If Range isn&apos;t specified, the whole spreadsheet is read. If range is specified as a cell, the whole spreadsheet starting from that cell is read
 **Arguments**:
-- `Range` (in): `InArgument<String>`
-- `DataTable` (out): `OutArgument<Data.DataTable>`
-- `SheetName` (in [required]): `InArgument<String>`
-- `Workbook` (in): `InArgument<UiPath.Excel.Workbook>`
-- `WorkbookPath` (in [required]): `InArgument<String>`
-- `WorkbookPathResource` (in [required]): `InArgument<UiPath.Platform.ResourceHandling.IResource>`
-- `Password` (in): `InArgument<String>`
-**Other members**:
-- `AddHeaders` [property]: `Boolean`
-- `PreserveFormat` [property]: `Boolean`
+- [IN] `InArgument<String>` **Range** (default: A1:A2)
+- [OUT] `OutArgument<Data.DataTable>` **DataTable**
+- [IN, Required] `InArgument<String>` **SheetName** (default: Sheet1)
+- [IN] `InArgument<UiPath.Excel.Workbook>` **Workbook**
+- [IN, Required] `InArgument<String>` **WorkbookPath**
+- [IN, Required] `InArgument<UiPath.Platform.ResourceHandling.IResource>` **WorkbookPathResource**
+- [IN] `InArgument<String>` **Password**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **AddHeaders**
+- [property] `Boolean` **PreserveFormat**
 ### Read Row Workbook
 
 **ID**: `UiPath.Excel.Activities.ReadRow@UiPath.Excel.Activities/3.4.1`
@@ -231,15 +231,15 @@
 **Category**: Excel
 **Description**: Reads the values of an Excel row beginning from the cell specified in the StartingCell field, and stores it in an IEnumerable&lt;object&gt; variable
 **Arguments**:
-- `StartingCell` (in [required]): `InArgument<String>`
-- `Result` (out): `OutArgument<IEnumerable<Object>>`
-- `SheetName` (in [required]): `InArgument<String>`
-- `Workbook` (in): `InArgument<UiPath.Excel.Workbook>`
-- `WorkbookPath` (in [required]): `InArgument<String>`
-- `WorkbookPathResource` (in [required]): `InArgument<UiPath.Platform.ResourceHandling.IResource>`
-- `Password` (in): `InArgument<String>`
-**Other members**:
-- `PreserveFormat` [property]: `Boolean`
+- [IN, Required] `InArgument<String>` **StartingCell** (default: A1)
+- [OUT] `OutArgument<IEnumerable<Object>>` **Result**
+- [IN, Required] `InArgument<String>` **SheetName** (default: Sheet1)
+- [IN] `InArgument<UiPath.Excel.Workbook>` **Workbook**
+- [IN, Required] `InArgument<String>` **WorkbookPath**
+- [IN, Required] `InArgument<UiPath.Platform.ResourceHandling.IResource>` **WorkbookPathResource**
+- [IN] `InArgument<String>` **Password**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **PreserveFormat**
 ### Set Range Color Workbook
 
 **ID**: `UiPath.Excel.Activities.SetRangeColor@UiPath.Excel.Activities/3.4.1`
@@ -247,13 +247,13 @@
 **Category**: Excel
 **Description**: Sets the color of a range
 **Arguments**:
-- `Range` (in [required]): `InArgument<String>`
-- `Color` (in [required]): `InArgument<Drawing.Color>`
-- `SheetName` (in [required]): `InArgument<String>`
-- `Workbook` (in): `InArgument<UiPath.Excel.Workbook>`
-- `WorkbookPath` (in [required]): `InArgument<String>`
-- `WorkbookPathResource` (in [required]): `InArgument<UiPath.Platform.ResourceHandling.IResource>`
-- `Password` (in): `InArgument<String>`
+- [IN, Required] `InArgument<String>` **Range**
+- [IN, Required] `InArgument<Drawing.Color>` **Color**
+- [IN, Required] `InArgument<String>` **SheetName** (default: Sheet1)
+- [IN] `InArgument<UiPath.Excel.Workbook>` **Workbook**
+- [IN, Required] `InArgument<String>` **WorkbookPath**
+- [IN, Required] `InArgument<UiPath.Platform.ResourceHandling.IResource>` **WorkbookPathResource**
+- [IN] `InArgument<String>` **Password**
 ### Write Cell Workbook
 
 **ID**: `UiPath.Excel.Activities.WriteCell@UiPath.Excel.Activities/3.4.1`
@@ -261,13 +261,13 @@
 **Category**: Excel
 **Description**: Writes the Text value into a cell from a spreadsheet. If the sheet does not exist, a new one is created with the SheetName value. If a value exists, it is overwritten. Changes are immediately saved
 **Arguments**:
-- `Cell` (in [required]): `InArgument<String>`
-- `Text` (in [required]): `InArgument<String>`
-- `SheetName` (in [required]): `InArgument<String>`
-- `Workbook` (in): `InArgument<UiPath.Excel.Workbook>`
-- `WorkbookPath` (in [required]): `InArgument<String>`
-- `WorkbookPathResource` (in [required]): `InArgument<UiPath.Platform.ResourceHandling.IResource>`
-- `Password` (in): `InArgument<String>`
+- [IN, Required] `InArgument<String>` **Cell** (default: A1)
+- [IN, Required] `InArgument<String>` **Text**
+- [IN, Required] `InArgument<String>` **SheetName** (default: Sheet1)
+- [IN] `InArgument<UiPath.Excel.Workbook>` **Workbook**
+- [IN, Required] `InArgument<String>` **WorkbookPath**
+- [IN, Required] `InArgument<UiPath.Platform.ResourceHandling.IResource>` **WorkbookPathResource**
+- [IN] `InArgument<String>` **Password**
 ### Write Range Workbook
 
 **ID**: `UiPath.Excel.Activities.WriteRange@UiPath.Excel.Activities/3.4.1`
@@ -275,15 +275,15 @@
 **Category**: Excel
 **Description**: Writes the data from a DataTable in a spreadsheet starting from StartingCell. If StartingCell isn&apos;t specified, the writing begins at A1 cell. If the sheet does not exist, a new one is created with the SheetName value. All cells within the DataTable range are overwritten. Changes are immediately saved
 **Arguments**:
-- `StartingCell` (in): `InArgument<String>`
-- `DataTable` (in [required]): `InArgument<Data.DataTable>`
-- `SheetName` (in [required]): `InArgument<String>`
-- `Workbook` (in): `InArgument<UiPath.Excel.Workbook>`
-- `WorkbookPath` (in [required]): `InArgument<String>`
-- `WorkbookPathResource` (in [required]): `InArgument<UiPath.Platform.ResourceHandling.IResource>`
-- `Password` (in): `InArgument<String>`
-**Other members**:
-- `AddHeaders` [property]: `Boolean`
+- [IN] `InArgument<String>` **StartingCell** (default: A1)
+- [IN, Required] `InArgument<Data.DataTable>` **DataTable**
+- [IN, Required] `InArgument<String>` **SheetName** (default: Sheet1)
+- [IN] `InArgument<UiPath.Excel.Workbook>` **Workbook**
+- [IN, Required] `InArgument<String>` **WorkbookPath**
+- [IN, Required] `InArgument<UiPath.Platform.ResourceHandling.IResource>` **WorkbookPathResource**
+- [IN] `InArgument<String>` **Password**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **AddHeaders**
 ### Get Cell Color
 
 **ID**: `UiPath.Excel.Activities.GetCellColorX@UiPath.Excel.Activities/3.4.1`
@@ -291,8 +291,8 @@
 **Category**: Excel.Windows.Cell
 **Description**: Extracts the background color of a cell and saves it as a Color variable.
 **Arguments**:
-- `Cell` (in [required]): `InArgument<UiPath.Excel.IReadCellRef>`
-- `OutputColor` (out): `OutArgument<Drawing.Color>`
+- [IN, Required] `InArgument<UiPath.Excel.IReadCellRef>` **Cell**
+- [OUT] `OutArgument<Drawing.Color>` **OutputColor**
 ### Get Selected Range
 
 **ID**: `UiPath.Excel.Activities.Windows.Business.GetSelectedRangeX@UiPath.Excel.Activities/3.4.1`
@@ -300,8 +300,8 @@
 **Category**: Excel.Windows.Range
 **Description**: Get the selected range from the target Excel file.
 **Arguments**:
-- `Workbook` (in [required]): `InArgument<UiPath.Excel.IWorkbookQuickHandle>`
-- `Range` (out): `OutArgument<UiPath.Excel.IReadRangeRef>`
+- [IN, Required] `InArgument<UiPath.Excel.IWorkbookQuickHandle>` **Workbook**
+- [OUT] `OutArgument<UiPath.Excel.IReadRangeRef>` **Range**
 ### Select Range
 
 **ID**: `UiPath.Excel.Activities.Windows.Business.SelectRangeX@UiPath.Excel.Activities/3.4.1`
@@ -309,7 +309,7 @@
 **Category**: Excel.Windows.Range
 **Description**: Selects a range in the specified Excel file.
 **Arguments**:
-- `Range` (in [required]): `InArgument<UiPath.Excel.IReadRangeRef>`
+- [IN, Required] `InArgument<UiPath.Excel.IReadRangeRef>` **Range**
 ### Add or Update Excel Sensitivity Label
 
 **ID**: `UiPath.Excel.Activities.Business.AddSensitivityLabelX@UiPath.Excel.Activities/3.4.1`
@@ -317,9 +317,9 @@
 **Category**: Excel.Windows.Workbook
 **Description**: Adds a sensitivity label to an Excel file
 **Arguments**:
-- `Workbook` (in [required]): `InArgument<UiPath.Excel.IWorkbookQuickHandle>`
-- `SensitivityLabel` (in [required]): `InArgument<Object>`
-- `Justification` (in): `InArgument<String>`
+- [IN, Required] `InArgument<UiPath.Excel.IWorkbookQuickHandle>` **Workbook**
+- [IN, Required] `InArgument<Object>` **SensitivityLabel**
+- [IN] `InArgument<String>` **Justification**
 ### Append Range
 
 **ID**: `UiPath.Excel.Activities.Business.AppendRangeX@UiPath.Excel.Activities/3.4.1`
@@ -327,14 +327,14 @@
 **Category**: Excel.Windows.Range
 **Description**: Copies the data in a table, range, or sheet and pastes it after existing data in another specified table, range, or sheet.
 **Arguments**:
-- `SourceRange` (in [required]): `InArgument<UiPath.Excel.IReadRangeRef>`
-- `DestinationRange` (in [required]): `InArgument<UiPath.Excel.IReadWriteRangeRef>`
-- `StartingColumnName` (in): `InArgument<String>`
-**Other members**:
-- `PasteOptions` [property]: `UiPath.Excel.CopyPasteRangeOptions`
-- `Transpose` [property]: `Boolean`
-- `HasHeaders` [property]: `Boolean`
-- `DestinationHasHeaders` [property]: `Boolean`
+- [IN, Required] `InArgument<UiPath.Excel.IReadRangeRef>` **SourceRange**
+- [IN, Required] `InArgument<UiPath.Excel.IReadWriteRangeRef>` **DestinationRange**
+- [IN] `InArgument<String>` **StartingColumnName**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.Excel.CopyPasteRangeOptions` **PasteOptions**
+- [property] `Boolean` **Transpose**
+- [property] `Boolean` **HasHeaders**
+- [property] `Boolean` **DestinationHasHeaders**
 ### Auto Fill
 
 **ID**: `UiPath.Excel.Activities.Business.AutoFillX@UiPath.Excel.Activities/3.4.1`
@@ -342,7 +342,7 @@
 **Category**: Excel.Windows.Cell
 **Description**: Fills cells with data based on data in other cells using the AutoFill feature in Excel.
 **Arguments**:
-- `StartRange` (in [required]): `InArgument<UiPath.Excel.IWellDefinedReadRangeRef>`
+- [IN, Required] `InArgument<UiPath.Excel.IWellDefinedReadRangeRef>` **StartRange**
 ### Autofit Range
 
 **ID**: `UiPath.Excel.Activities.Business.AutoFitX@UiPath.Excel.Activities/3.4.1`
@@ -350,10 +350,10 @@
 **Category**: Excel.Windows.Range
 **Description**: Fits data in cells.
 **Arguments**:
-- `Range` (in [required]): `InArgument<UiPath.Excel.IReadRangeRef>`
-**Other members**:
-- `Columns` [property]: `Boolean`
-- `Rows` [property]: `Boolean`
+- [IN, Required] `InArgument<UiPath.Excel.IReadRangeRef>` **Range**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **Columns**
+- [property] `Boolean` **Rows**
 ### Change Pivot Data Source
 
 **ID**: `UiPath.Excel.Activities.Business.ChangePivotTableDataSourceX@UiPath.Excel.Activities/3.4.1`
@@ -361,8 +361,8 @@
 **Category**: Excel.Windows.Pivot Table
 **Description**: Change the Source range for a Pivot Table.
 **Arguments**:
-- `PivotTable` (in [required]): `InArgument<UiPath.Excel.IPivotTableRef>`
-- `NewSourceRange` (in [required]): `InArgument<UiPath.Excel.IWellDefinedReadRangeRef>`
+- [IN, Required] `InArgument<UiPath.Excel.IPivotTableRef>` **PivotTable**
+- [IN, Required] `InArgument<UiPath.Excel.IWellDefinedReadRangeRef>` **NewSourceRange**
 ### Clear Sheet/Range/Table
 
 **ID**: `UiPath.Excel.Activities.Business.ClearRangeX@UiPath.Excel.Activities/3.4.1`
@@ -370,9 +370,9 @@
 **Category**: Excel.Windows.Range
 **Description**: Clears the data from a spreadsheet sheet, range, or table.
 **Arguments**:
-- `TargetRange` (in [required]): `InArgument<UiPath.Excel.IReadWriteRangeRef>`
-**Other members**:
-- `HasHeaders` [property]: `Boolean`
+- [IN, Required] `InArgument<UiPath.Excel.IReadWriteRangeRef>` **TargetRange**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **HasHeaders**
 ### Create Pivot Table
 
 **ID**: `UiPath.Excel.Activities.Business.CreatePivotTableX@UiPath.Excel.Activities/3.4.1`
@@ -380,12 +380,12 @@
 **Category**: Excel.Windows.Pivot Table
 **Description**: Creates a pivot table from a specified range or table to help you calculate, summarize, and analyze data.
 **Arguments**:
-- `Range` (in [required]): `InArgument<UiPath.Excel.IWellDefinedReadRangeRef>`
-- `TableName` (in [required]): `InArgument<String>`
-- `DestinationRange` (in [required]): `InArgument<UiPath.Excel.IReadWriteRangeRef>`
-**Other members**:
-- `LayoutRowType` [property]: `UiPath.Excel.PivotTableLayoutRowType`
-- `ValuesMode` [property]: `UiPath.Excel.PivotTableValuesMode`
+- [IN, Required] `InArgument<UiPath.Excel.IWellDefinedReadRangeRef>` **Range**
+- [IN, Required] `InArgument<String>` **TableName**
+- [IN, Required] `InArgument<UiPath.Excel.IReadWriteRangeRef>` **DestinationRange**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.Excel.PivotTableLayoutRowType` **LayoutRowType**
+- [property] `UiPath.Excel.PivotTableValuesMode` **ValuesMode**
 ### For Each Excel Row
 
 **ID**: `UiPath.Excel.Activities.Business.ExcelForEachRow@UiPath.Excel.Activities/3.4.1`
@@ -393,11 +393,11 @@
 **Category**: Excel.Windows.Range
 **Description**: Repeats the contained activities once for each row in the specified sheet, range, or table.
 **Arguments**:
-- `Range` (in [required]): `InArgument<UiPath.Excel.IReadRangeRef>`
-**Other members**:
-- `HasHeaders` [property]: `Boolean`
-- `EmptyRowBehavior` [property]: `UiPath.Excel.EmptyRowBehavior`
-- `SaveAfterEachRow` [property]: `Boolean`
+- [IN, Required] `InArgument<UiPath.Excel.IReadRangeRef>` **Range**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **HasHeaders**
+- [property] `UiPath.Excel.EmptyRowBehavior` **EmptyRowBehavior**
+- [property] `Boolean` **SaveAfterEachRow**
 ### Get Chart
 
 **ID**: `UiPath.Excel.Activities.Business.CopyChartToClipboardX@UiPath.Excel.Activities/3.4.1`
@@ -405,11 +405,11 @@
 **Category**: Excel.Windows.Chart
 **Description**: Saves an Excel chart to an image file or to the clipboard for use in other activities.
 **Arguments**:
-- `Chart` (in [required]): `InArgument<UiPath.Excel.IChartRef>`
-- `FilePath` (in): `InArgument<String>`
-**Other members**:
-- `Action` [property]: `UiPath.Excel.ExcelChartAction`
-- `ReplaceFile` [property]: `Boolean`
+- [IN, Required] `InArgument<UiPath.Excel.IChartRef>` **Chart**
+- [IN] `InArgument<String>` **FilePath**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.Excel.ExcelChartAction` **Action**
+- [property] `Boolean` **ReplaceFile**
 ### Copy/Paste Range
 
 **ID**: `UiPath.Excel.Activities.Business.CopyPasteRangeX@UiPath.Excel.Activities/3.4.1`
@@ -417,13 +417,13 @@
 **Category**: Excel.Windows.Range
 **Description**: Copies a range or sheet and optionally pastes it to another location in the current workbook or a different one.
 **Arguments**:
-- `SourceRange` (in [required]): `InArgument<UiPath.Excel.IReadRangeRef>`
-- `DestinationRange` (in [required]): `InArgument<UiPath.Excel.IReadWriteRangeRef>`
-**Other members**:
-- `PasteOptions` [property]: `UiPath.Excel.CopyPasteRangeOptions`
-- `ExcludeHeaders` [property]: `Boolean`
-- `ExcludeHeaderFromSourceTable` [property]: `Boolean`
-- `Transpose` [property]: `Boolean`
+- [IN, Required] `InArgument<UiPath.Excel.IReadRangeRef>` **SourceRange**
+- [IN, Required] `InArgument<UiPath.Excel.IReadWriteRangeRef>` **DestinationRange**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.Excel.CopyPasteRangeOptions` **PasteOptions**
+- [property] `Boolean` **ExcludeHeaders**
+- [property] `Boolean` **ExcludeHeaderFromSourceTable**
+- [property] `Boolean` **Transpose**
 ### Create Pivot Table
 
 **ID**: `UiPath.Excel.Activities.Business.CreatePivotTableXv2@UiPath.Excel.Activities/3.4.1`
@@ -431,12 +431,12 @@
 **Category**: Excel.Windows.Pivot Table
 **Description**: Creates a pivot table from a specified range or table to help you calculate, summarize, and analyze data.
 **Arguments**:
-- `Range` (in [required]): `InArgument<UiPath.Excel.IReadRangeRef>`
-- `TableName` (in [required]): `InArgument<String>`
-- `DestinationRange` (in [required]): `InArgument<UiPath.Excel.IReadWriteRangeRef>`
-**Other members**:
-- `LayoutRowType` [property]: `UiPath.Excel.PivotTableLayoutRowType`
-- `ValuesMode` [property]: `UiPath.Excel.PivotTableValuesMode`
+- [IN, Required] `InArgument<UiPath.Excel.IReadRangeRef>` **Range**
+- [IN, Required] `InArgument<String>` **TableName**
+- [IN, Required] `InArgument<UiPath.Excel.IReadWriteRangeRef>` **DestinationRange**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.Excel.PivotTableLayoutRowType` **LayoutRowType**
+- [property] `UiPath.Excel.PivotTableValuesMode` **ValuesMode**
 ### Format as Table
 
 **ID**: `UiPath.Excel.Activities.Business.CreateTableX@UiPath.Excel.Activities/3.4.1`
@@ -444,12 +444,12 @@
 **Category**: Excel.Windows.Range
 **Description**: Formats a range of cells as a table with a specified name.
 **Arguments**:
-- `Range` (in [required]): `InArgument<UiPath.Excel.IReadWriteRangeRef>`
-- `TableName` (in): `InArgument<String>`
-- `OutTableName` (out): `OutArgument<String>`
-**Other members**:
-- `HasHeaders` [property]: `Boolean`
-- `ReplaceExisting` [property]: `Boolean`
+- [IN, Required] `InArgument<UiPath.Excel.IReadWriteRangeRef>` **Range**
+- [IN] `InArgument<String>` **TableName**
+- [OUT] `OutArgument<String>` **OutTableName**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **HasHeaders**
+- [property] `Boolean` **ReplaceExisting**
 ### Delete Column
 
 **ID**: `UiPath.Excel.Activities.Business.DeleteColumnX@UiPath.Excel.Activities/3.4.1`
@@ -457,10 +457,10 @@
 **Category**: Excel.Windows.Range
 **Description**: Deletes a specified column from a sheet, table or range.
 **Arguments**:
-- `Range` (in [required]): `InArgument<UiPath.Excel.IReadWriteRangeRef>`
-- `ColumnName` (in [required]): `InArgument<String>`
-**Other members**:
-- `HasHeaders` [property]: `Boolean`
+- [IN, Required] `InArgument<UiPath.Excel.IReadWriteRangeRef>` **Range**
+- [IN, Required] `InArgument<String>` **ColumnName**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **HasHeaders**
 ### Delete Rows
 
 **ID**: `UiPath.Excel.Activities.Business.DeleteRowsX@UiPath.Excel.Activities/3.4.1`
@@ -468,11 +468,11 @@
 **Category**: Excel.Windows.Range
 **Description**: Deletes the specified rows from a sheet, table, or range.
 **Arguments**:
-- `Range` (in [required]): `InArgument<UiPath.Excel.IReadWriteRangeRef>`
-- `RowPositions` (in): `InArgument<String>`
-**Other members**:
-- `DeleteRowsOption` [property]: `UiPath.Excel.DeleteRowsOption`
-- `HasHeaders` [property]: `Boolean`
+- [IN, Required] `InArgument<UiPath.Excel.IReadWriteRangeRef>` **Range**
+- [IN] `InArgument<String>` **RowPositions**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.Excel.DeleteRowsOption` **DeleteRowsOption**
+- [property] `Boolean` **HasHeaders**
 ### Delete Sheet
 
 **ID**: `UiPath.Excel.Activities.Business.DeleteSheetX@UiPath.Excel.Activities/3.4.1`
@@ -480,7 +480,7 @@
 **Category**: Excel.Windows.Workbook
 **Description**: Deletes a specified sheet from an Excel file.
 **Arguments**:
-- `Sheet` (in [required]): `InArgument<UiPath.Excel.ISheetRef>`
+- [IN, Required] `InArgument<UiPath.Excel.ISheetRef>` **Sheet**
 ### Duplicate Sheet
 
 **ID**: `UiPath.Excel.Activities.Business.DuplicateSheetX@UiPath.Excel.Activities/3.4.1`
@@ -488,8 +488,8 @@
 **Category**: Excel.Windows.Workbook
 **Description**: Creates a copy of the specified sheet in an Excel file.
 **Arguments**:
-- `SheetToDuplicate` (in [required]): `InArgument<UiPath.Excel.ISheetRef>`
-- `NewSheetName` (in [required]): `InArgument<String>`
+- [IN, Required] `InArgument<UiPath.Excel.ISheetRef>` **SheetToDuplicate**
+- [IN, Required] `InArgument<String>` **NewSheetName**
 ### Use Excel File
 
 **ID**: `UiPath.Excel.Activities.Business.ExcelApplicationCard@UiPath.Excel.Activities/3.4.1`
@@ -497,20 +497,20 @@
 **Category**: Excel.Windows
 **Description**: Open or create an Excel file to use in your automation.
 **Arguments**:
-- `WorkbookPath` (in [required]): `InArgument<String>`
-- `Password` (in): `InArgument<String>`
-- `SecurePassword` (in): `InArgument<Security.SecureString>`
-- `EditPassword` (in): `InArgument<String>`
-- `SecureEditPassword` (in): `InArgument<Security.SecureString>`
-- `SensitivityLabel` (in): `InArgument<Object>`
-**Other members**:
-- `CreateNewFile` [property]: `Boolean`
-- `AutoSave` [property]: `Boolean`
-- `ReadOnly` [property]: `Boolean`
-- `KeepExcelFileOpen` [property]: `Boolean`
-- `ReadFormatting` [property]: `Nullable<UiPath.Excel.ReadFormattingOptions>`
-- `ResizeWindow` [property]: `UiPath.Excel.Model.ResizeWindowOptions`
-- `SensitivityOperation` [property]: `UiPath.Excel.ExcelLabelOperation`
+- [IN, Required] `InArgument<String>` **WorkbookPath**
+- [IN] `InArgument<String>` **Password**
+- [IN] `InArgument<Security.SecureString>` **SecurePassword**
+- [IN] `InArgument<String>` **EditPassword**
+- [IN] `InArgument<Security.SecureString>` **SecureEditPassword**
+- [IN] `InArgument<Object>` **SensitivityLabel**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **CreateNewFile**
+- [property] `Boolean` **AutoSave**
+- [property] `Boolean` **ReadOnly**
+- [property] `Boolean` **KeepExcelFileOpen**
+- [property] `Nullable<UiPath.Excel.ReadFormattingOptions>` **ReadFormatting**
+- [property] `UiPath.Excel.Model.ResizeWindowOptions` **ResizeWindow**
+- [property] `UiPath.Excel.ExcelLabelOperation` **SensitivityOperation**
 ### For Each Excel Row
 
 **ID**: `UiPath.Excel.Activities.Business.ExcelForEachRowX@UiPath.Excel.Activities/3.4.1`
@@ -518,26 +518,26 @@
 **Category**: Excel.Windows.Range
 **Description**: Repeats the contained activities once for each row in the specified sheet, range, or table.
 **Arguments**:
-- `Range` (in [required]): `InArgument<UiPath.Excel.IReadRangeRef>`
-**Other members**:
-- `HasHeaders` [property]: `Boolean`
-- `EmptyRowBehavior` [property]: `UiPath.Excel.EmptyRowBehavior`
-- `SaveAfterEachRow` [property]: `Boolean`
+- [IN, Required] `InArgument<UiPath.Excel.IReadRangeRef>` **Range**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **HasHeaders**
+- [property] `UiPath.Excel.EmptyRowBehavior` **EmptyRowBehavior**
+- [property] `Boolean` **SaveAfterEachRow**
 ### Excel Process Scope
 
 **ID**: `UiPath.Excel.Activities.Business.ExcelProcessScopeX@UiPath.Excel.Activities/3.4.1`
 **Type**: `UiPath.Excel.Activities.Business.ExcelProcessScopeX`
 **Category**: Excel.Windows
 **Description**: Opens or reuses an Excel process. To be used in combination with the "Use Excel" activity to open Excel documents.
-**Other members**:
-- `ProcessMode` [property]: `Nullable<UiPath.Excel.ExcelProcessMode>`
-- `LaunchMethod` [property]: `Nullable<UiPath.Excel.ExcelStartMethod>`
-- `LaunchTimeout` [property]: `Nullable<Int32>`
-- `FileConflictResolution` [property]: `Nullable<UiPath.Excel.ExcelFileConflictResolution>`
-- `ExistingProcessAction` [property]: `Nullable<UiPath.Excel.ExistingExcelProcessAction>`
-- `DisplayAlerts` [property]: `Nullable<Boolean>`
-- `ShowExcelWindow` [property]: `Nullable<Boolean>`
-- `MacroSettings` [property]: `Nullable<UiPath.Excel.MacroSetting>`
+**Properties / VariableScope / Child**:
+- [property] `Nullable<UiPath.Excel.ExcelProcessMode>` **ProcessMode**
+- [property] `Nullable<UiPath.Excel.ExcelStartMethod>` **LaunchMethod**
+- [property] `Nullable<Int32>` **LaunchTimeout**
+- [property] `Nullable<UiPath.Excel.ExcelFileConflictResolution>` **FileConflictResolution**
+- [property] `Nullable<UiPath.Excel.ExistingExcelProcessAction>` **ExistingProcessAction**
+- [property] `Nullable<Boolean>` **DisplayAlerts**
+- [property] `Nullable<Boolean>` **ShowExcelWindow**
+- [property] `Nullable<UiPath.Excel.MacroSetting>` **MacroSettings**
 ### Run Spreadsheet Macro
 
 **ID**: `UiPath.Excel.Activities.Business.ExecuteMacroX@UiPath.Excel.Activities/3.4.1`
@@ -545,16 +545,16 @@
 **Category**: Excel.Windows.Workbook
 **Description**: Executes a specified macro within a macro-enabled workbook.
 **Arguments**:
-- `Workbook` (in [required]): `InArgument<UiPath.Excel.IWorkbookQuickHandle>`
-- `MacroName` (in [required]): `InArgument<String>`
-- `Result` (out): `OutArgument`
+- [IN, Required] `InArgument<UiPath.Excel.IWorkbookQuickHandle>` **Workbook**
+- [IN, Required] `InArgument<String>` **MacroName**
+- [OUT] `OutArgument` **Result**
 ### Macro Argument
 
 **ID**: `UiPath.Excel.Activities.Business.ExecuteMacroArgumentX@UiPath.Excel.Activities/3.4.1`
 **Type**: `UiPath.Excel.Activities.Business.ExecuteMacroArgumentX`
 **Description**: Add an argument to use when executing the macro.
 **Arguments**:
-- `ArgumentValue` (in [required]): `InArgument<Object>`
+- [IN, Required] `InArgument<Object>` **ArgumentValue**
 ### Export to CSV
 
 **ID**: `UiPath.Excel.Activities.Business.ExportExcelToCsvX@UiPath.Excel.Activities/3.4.1`
@@ -562,8 +562,8 @@
 **Category**: Excel.Windows.Range
 **Description**: Exports the specified range, table, pivotTable or sheet to a CSV file.
 **Arguments**:
-- `FilePath` (in [required]): `InArgument<String>`
-- `TargetRange` (in [required]): `InArgument<UiPath.Excel.IReadRangeRef>`
+- [IN, Required] `InArgument<String>` **FilePath**
+- [IN, Required] `InArgument<UiPath.Excel.IReadRangeRef>` **TargetRange**
 ### Fill Range
 
 **ID**: `UiPath.Excel.Activities.Business.FillRangeX@UiPath.Excel.Activities/3.4.1`
@@ -571,8 +571,8 @@
 **Category**: Excel.Windows.Range
 **Description**: Enters a formula or value in all the cells in a range.
 **Arguments**:
-- `DestinationRange` (in [required]): `InArgument<UiPath.Excel.IWellDefinedReadWriteRangeRef>`
-- `Value` (in [required]): `InArgument<Object>`
+- [IN, Required] `InArgument<UiPath.Excel.IWellDefinedReadWriteRangeRef>` **DestinationRange**
+- [IN, Required] `InArgument<Object>` **Value**
 ### Filter Pivot Table
 
 **ID**: `UiPath.Excel.Activities.Business.FilterPivotTableX@UiPath.Excel.Activities/3.4.1`
@@ -580,10 +580,10 @@
 **Category**: Excel.Windows.Pivot Table
 **Description**: Creates a filter in a pivot table based on the values in a single column. Can also be used to clear existing filters.
 **Arguments**:
-- `Table` (in [required]): `InArgument<UiPath.Excel.IPivotTableRef>`
-- `ColumnName` (in): `InArgument<String>`
-**Other members**:
-- `ClearFilter` [property]: `Boolean`
+- [IN, Required] `InArgument<UiPath.Excel.IPivotTableRef>` **Table**
+- [IN] `InArgument<String>` **ColumnName**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **ClearFilter**
 ### Filter
 
 **ID**: `UiPath.Excel.Activities.Business.FilterX@UiPath.Excel.Activities/3.4.1`
@@ -591,10 +591,10 @@
 **Category**: Excel.Windows.Range
 **Description**: Creates a filter in a range, table, or sheet based on the values in a single column. Can also be used to clear existing filters.
 **Arguments**:
-- `Range` (in [required]): `InArgument<UiPath.Excel.IReadWriteRangeRef>`
-- `ColumnName` (in): `InArgument<String>`
-**Other members**:
-- `ClearFilter` [property]: `Boolean`
+- [IN, Required] `InArgument<UiPath.Excel.IReadWriteRangeRef>` **Range**
+- [IN] `InArgument<String>` **ColumnName**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **ClearFilter**
 ### Find First/Last Data Row
 
 **ID**: `UiPath.Excel.Activities.Business.FindFirstLastDataRowX@UiPath.Excel.Activities/3.4.1`
@@ -602,17 +602,17 @@
 **Category**: Excel.Windows.Range
 **Description**: Finds the first and the last rows containing data in a given sheet, range or table.
 **Arguments**:
-- `Range` (in [required]): `InArgument<UiPath.Excel.IReadRangeRef>`
-- `ColumnName` (in [required]): `InArgument<String>`
-- `FirstRowIndex` (out): `OutArgument<Int32>`
-- `LastRowIndex` (out): `OutArgument<Int32>`
-**Other members**:
-- `FirstRowOffset` [property]: `Int32`
-- `LastRowOffset` [property]: `Int32`
-- `BlankRowsToSkip` [property]: `Int32`
-- `HasHeaders` [property]: `Boolean`
-- `ConfigureLastRowAs` [property]: `UiPath.Excel.LastRowConfiguration`
-- `VisibleRowsOnly` [property]: `Boolean`
+- [IN, Required] `InArgument<UiPath.Excel.IReadRangeRef>` **Range**
+- [IN, Required] `InArgument<String>` **ColumnName**
+- [OUT] `OutArgument<Int32>` **FirstRowIndex**
+- [OUT] `OutArgument<Int32>` **LastRowIndex**
+**Properties / VariableScope / Child**:
+- [property] `Int32` **FirstRowOffset**
+- [property] `Int32` **LastRowOffset**
+- [property] `Int32` **BlankRowsToSkip**
+- [property] `Boolean` **HasHeaders**
+- [property] `UiPath.Excel.LastRowConfiguration` **ConfigureLastRowAs**
+- [property] `Boolean` **VisibleRowsOnly**
 ### Find/Replace Value
 
 **ID**: `UiPath.Excel.Activities.Business.FindReplaceValueX@UiPath.Excel.Activities/3.4.1`
@@ -620,15 +620,15 @@
 **Category**: Excel.Windows.Range
 **Description**: Searches in a specified range for a certain value. Depending on the Operation chosen, it either returns the location of the cell or it replaces the value(s) with another given value.
 **Arguments**:
-- `WhereToSearch` (in [required]): `InArgument<UiPath.Excel.IReadRangeRef>`
-- `ValueToFind` (in [required]): `InArgument<Object>`
-- `ReplaceWith` (in): `InArgument<Object>`
-- `FoundAt` (out): `OutArgument<String>`
-**Other members**:
-- `Operation` [property]: `UiPath.Excel.FindReplaceOptions`
-- `LookIn` [property]: `UiPath.Excel.LookInOptions`
-- `MatchCase` [property]: `Boolean`
-- `MatchEntireCellContents` [property]: `Boolean`
+- [IN, Required] `InArgument<UiPath.Excel.IReadRangeRef>` **WhereToSearch**
+- [IN, Required] `InArgument<Object>` **ValueToFind**
+- [IN] `InArgument<Object>` **ReplaceWith**
+- [OUT] `OutArgument<String>` **FoundAt**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.Excel.FindReplaceOptions` **Operation**
+- [property] `UiPath.Excel.LookInOptions` **LookIn**
+- [property] `Boolean` **MatchCase**
+- [property] `Boolean` **MatchEntireCellContents**
 ### For Each Excel Sheet
 
 **ID**: `UiPath.Excel.Activities.Business.ForEachSheetX@UiPath.Excel.Activities/3.4.1`
@@ -636,7 +636,7 @@
 **Category**: Excel.Windows.Workbook
 **Description**: Repeats actions for each sheet in an Excel workbook.
 **Arguments**:
-- `Workbook` (in [required]): `InArgument<UiPath.Excel.IWorkbookQuickHandle>`
+- [IN, Required] `InArgument<UiPath.Excel.IWorkbookQuickHandle>` **Workbook**
 ### Format Cells
 
 **ID**: `UiPath.Excel.Activities.Business.FormatRangeX@UiPath.Excel.Activities/3.4.1`
@@ -644,7 +644,7 @@
 **Category**: Excel.Windows.Range
 **Description**: Sets the format for all the cells in a specified range.
 **Arguments**:
-- `Range` (in [required]): `InArgument<UiPath.Excel.IReadRangeRef>`
+- [IN, Required] `InArgument<UiPath.Excel.IReadRangeRef>` **Range**
 ### Get Excel Sensitivity Label
 
 **ID**: `UiPath.Excel.Activities.Business.GetSensitivityLabelX@UiPath.Excel.Activities/3.4.1`
@@ -652,8 +652,8 @@
 **Category**: Excel.Windows.Workbook
 **Description**: Retrieves the sensitivity label from an Excel file
 **Arguments**:
-- `Workbook` (in [required]): `InArgument<UiPath.Excel.IWorkbookQuickHandle>`
-- `SensitivityLabel` (out): `OutArgument<UiPath.Excel.IExcelLabelObject>`
+- [IN, Required] `InArgument<UiPath.Excel.IWorkbookQuickHandle>` **Workbook**
+- [OUT] `OutArgument<UiPath.Excel.IExcelLabelObject>` **SensitivityLabel**
 ### Insert Column
 
 **ID**: `UiPath.Excel.Activities.Business.InsertColumnX@UiPath.Excel.Activities/3.4.1`
@@ -661,12 +661,12 @@
 **Category**: Excel.Windows.Range
 **Description**: Inserts a column in a sheet, table, or range at the specified location.
 **Arguments**:
-- `Range` (in [required]): `InArgument<UiPath.Excel.IReadWriteRangeRef>`
-- `RelativeColumnName` (in [required]): `InArgument<String>`
-- `NewColumnName` (in): `InArgument<String>`
-**Other members**:
-- `RelativePosition` [property]: `UiPath.Excel.ColumnRelativePosition`
-- `HasHeaders` [property]: `Boolean`
+- [IN, Required] `InArgument<UiPath.Excel.IReadWriteRangeRef>` **Range**
+- [IN, Required] `InArgument<String>` **RelativeColumnName**
+- [IN] `InArgument<String>` **NewColumnName**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.Excel.ColumnRelativePosition` **RelativePosition**
+- [property] `Boolean` **HasHeaders**
 ### Insert Chart
 
 **ID**: `UiPath.Excel.Activities.Business.InsertExcelChartX@UiPath.Excel.Activities/3.4.1`
@@ -674,16 +674,16 @@
 **Category**: Excel.Windows.Chart
 **Description**: Create a chart in an Excel file.
 **Arguments**:
-- `Range` (in [required]): `InArgument<UiPath.Excel.IReadRangeRef>`
-- `InsertIntoSheet` (in [required]): `InArgument<UiPath.Excel.ISheetRef>`
-- `ChartHeight` (in [required]): `InArgument<Int32>`
-- `ChartWidth` (in [required]): `InArgument<Int32>`
-- `Left` (in [required]): `InArgument<Int32>`
-- `Top` (in [required]): `InArgument<Int32>`
-- `InsertedChart` (out): `OutArgument<UiPath.Excel.IChartRef>`
-**Other members**:
-- `ChartCategory` [property]: `UiPath.Excel.ExcelChartCategory`
-- `ChartType` [property]: `UiPath.Excel.ExcelChartType`
+- [IN, Required] `InArgument<UiPath.Excel.IReadRangeRef>` **Range**
+- [IN, Required] `InArgument<UiPath.Excel.ISheetRef>` **InsertIntoSheet**
+- [IN, Required] `InArgument<Int32>` **ChartHeight**
+- [IN, Required] `InArgument<Int32>` **ChartWidth**
+- [IN, Required] `InArgument<Int32>` **Left**
+- [IN, Required] `InArgument<Int32>` **Top**
+- [OUT] `OutArgument<UiPath.Excel.IChartRef>` **InsertedChart**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.Excel.ExcelChartCategory` **ChartCategory**
+- [property] `UiPath.Excel.ExcelChartType` **ChartType**
 ### Insert Rows
 
 **ID**: `UiPath.Excel.Activities.Business.InsertRowsX@UiPath.Excel.Activities/3.4.1`
@@ -691,12 +691,12 @@
 **Category**: Excel.Windows.Range
 **Description**: Inserts one or more rows in a table, range, or sheet at the specified location.
 **Arguments**:
-- `Range` (in [required]): `InArgument<UiPath.Excel.IReadWriteRangeRef>`
-- `NbOfRows` (in [required]): `InArgument<Int32>`
-- `SpecificIndex` (in): `InArgument<Int32>`
-**Other members**:
-- `InsertPosition` [property]: `UiPath.Excel.InsertRowPosition`
-- `HasHeaders` [property]: `Boolean`
+- [IN, Required] `InArgument<UiPath.Excel.IReadWriteRangeRef>` **Range**
+- [IN, Required] `InArgument<Int32>` **NbOfRows**
+- [IN] `InArgument<Int32>` **SpecificIndex**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.Excel.InsertRowPosition` **InsertPosition**
+- [property] `Boolean` **HasHeaders**
 ### Insert Sheet
 
 **ID**: `UiPath.Excel.Activities.Business.InsertSheetX@UiPath.Excel.Activities/3.4.1`
@@ -704,9 +704,9 @@
 **Category**: Excel.Windows.Workbook
 **Description**: Inserts a sheet in an Excel file.
 **Arguments**:
-- `Workbook` (in [required]): `InArgument<UiPath.Excel.IWorkbookQuickHandle>`
-- `Name` (in [required]): `InArgument<String>`
-- `ReferenceNewSheetAs` (out): `OutArgument<UiPath.Excel.ISheetRef>`
+- [IN, Required] `InArgument<UiPath.Excel.IWorkbookQuickHandle>` **Workbook**
+- [IN, Required] `InArgument<String>` **Name**
+- [OUT] `OutArgument<UiPath.Excel.ISheetRef>` **ReferenceNewSheetAs**
 ### Invoke VBA
 
 **ID**: `UiPath.Excel.Activities.Business.InvokeVBAX@UiPath.Excel.Activities/3.4.1`
@@ -714,17 +714,17 @@
 **Category**: Excel.Windows.Workbook
 **Description**: Invokes a macro from an external file containing VBA code and runs it against an Excel file.
 **Arguments**:
-- `Workbook` (in [required]): `InArgument<UiPath.Excel.IWorkbookQuickHandle>`
-- `EntryMethodName` (in [required]): `InArgument<String>`
-- `CodeFilePath` (in [required]): `InArgument<String>`
-- `Result` (out): `OutArgument`
+- [IN, Required] `InArgument<UiPath.Excel.IWorkbookQuickHandle>` **Workbook**
+- [IN, Required] `InArgument<String>` **EntryMethodName** (default: Main)
+- [IN, Required] `InArgument<String>` **CodeFilePath**
+- [OUT] `OutArgument` **Result**
 ### VBA Argument
 
 **ID**: `UiPath.Excel.Activities.Business.InvokeVBAArgumentX@UiPath.Excel.Activities/3.4.1`
 **Type**: `UiPath.Excel.Activities.Business.InvokeVBAArgumentX`
 **Description**: The value to be passed to the Input argument of the VBA Sub/Function..
 **Arguments**:
-- `ArgumentValue` (in [required]): `InArgument<Object>`
+- [IN, Required] `InArgument<Object>` **ArgumentValue**
 ### Lookup Range
 
 **ID**: `UiPath.Excel.Activities.Business.LookupX@UiPath.Excel.Activities/3.4.1`
@@ -732,10 +732,10 @@
 **Category**: Excel.Windows.Range
 **Description**: Finds data in a range or sheet using Excel's LOOKUP function.
 **Arguments**:
-- `SourceRange` (in [required]): `InArgument<UiPath.Excel.IReadRangeRef>`
-- `ResultRange` (in): `InArgument<UiPath.Excel.IReadRangeRef>`
-- `Label` (in [required]): `InArgument<Object>`
-- `Value` (out): `OutArgument`
+- [IN, Required] `InArgument<UiPath.Excel.IReadRangeRef>` **SourceRange**
+- [IN] `InArgument<UiPath.Excel.IReadRangeRef>` **ResultRange**
+- [IN, Required] `InArgument<Object>` **Label**
+- [OUT] `OutArgument` **Value**
 ### Match function
 
 **ID**: `UiPath.Excel.Activities.Business.MatchFunctionX@UiPath.Excel.Activities/3.4.1`
@@ -743,21 +743,21 @@
 **Category**: Excel.Windows.Range
 **Description**: Searches for a specified item in a range of cells, and then returns the relative position of that item in the range.
 **Arguments**:
-- `ValueToMatch` (in [required]): `InArgument<Object>`
-- `InRange` (in [required]): `InArgument<UiPath.Excel.IWellDefinedReadRangeRef>`
-- `SaveTo` (out): `OutArgument<Int32>`
-**Other members**:
-- `MatchFunctionType` [property]: `UiPath.Excel.MatchType`
+- [IN, Required] `InArgument<Object>` **ValueToMatch**
+- [IN, Required] `InArgument<UiPath.Excel.IWellDefinedReadRangeRef>` **InRange**
+- [OUT] `OutArgument<Int32>` **SaveTo**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.Excel.MatchType` **MatchFunctionType**
 ### Pivot Field
 
 **ID**: `UiPath.Excel.Activities.Business.PivotTableFieldX@UiPath.Excel.Activities/3.4.1`
 **Type**: `UiPath.Excel.Activities.Business.PivotTableFieldX`
 **Description**: Formats a range of cells as a table with a specified name.
 **Arguments**:
-- `FieldName` (in [required]): `InArgument<String>`
-**Other members**:
-- `Type` [property]: `UiPath.Excel.Activities.Business.PivotTableFieldType`
-- `Function` [property]: `UiPath.Excel.PivotTableFunction`
+- [IN, Required] `InArgument<String>` **FieldName**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.Excel.Activities.Business.PivotTableFieldType` **Type**
+- [property] `UiPath.Excel.PivotTableFunction` **Function**
 ### Protect Sheet
 
 **ID**: `UiPath.Excel.Activities.Business.ProtectSheetX@UiPath.Excel.Activities/3.4.1`
@@ -765,11 +765,11 @@
 **Category**: Excel.Windows.Workbook
 **Description**: Protects a sheet in an Excel workbook.
 **Arguments**:
-- `Sheet` (in [required]): `InArgument<UiPath.Excel.ISheetRef>`
-- `Password` (in): `InArgument<String>`
-- `SecurePassword` (in): `InArgument<Security.SecureString>`
-**Other members**:
-- `AdditionalPermissions` [property]: `UiPath.Excel.ProtectSheetAdditionalPermissions`
+- [IN, Required] `InArgument<UiPath.Excel.ISheetRef>` **Sheet**
+- [IN] `InArgument<String>` **Password**
+- [IN] `InArgument<Security.SecureString>` **SecurePassword**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.Excel.ProtectSheetAdditionalPermissions` **AdditionalPermissions**
 ### Read Cell Formula
 
 **ID**: `UiPath.Excel.Activities.Business.ReadCellFormulaX@UiPath.Excel.Activities/3.4.1`
@@ -777,8 +777,8 @@
 **Category**: Excel.Windows.Cell
 **Description**: Reads the formula from a spreadsheet cell.
 **Arguments**:
-- `Cell` (in [required]): `InArgument<UiPath.Excel.IReadCellRef>`
-- `SaveTo` (out): `OutArgument<String>`
+- [IN, Required] `InArgument<UiPath.Excel.IReadCellRef>` **Cell**
+- [OUT] `OutArgument<String>` **SaveTo**
 ### Read Cell Value
 
 **ID**: `UiPath.Excel.Activities.Business.ReadCellValueX@UiPath.Excel.Activities/3.4.1`
@@ -786,10 +786,10 @@
 **Category**: Excel.Windows.Cell
 **Description**: Reads the value from a spreadsheet cell.
 **Arguments**:
-- `Cell` (in [required]): `InArgument<UiPath.Excel.IReadCellRef>`
-- `SaveTo` (out): `OutArgument`
-**Other members**:
-- `GetFormattedText` [property]: `Boolean`
+- [IN, Required] `InArgument<UiPath.Excel.IReadCellRef>` **Cell**
+- [OUT] `OutArgument` **SaveTo**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **GetFormattedText**
 ### Read Range
 
 **ID**: `UiPath.Excel.Activities.Business.ReadRangeX@UiPath.Excel.Activities/3.4.1`
@@ -797,12 +797,12 @@
 **Category**: Excel.Windows.Range
 **Description**: Reads the value of an Excel range as a DataTable.
 **Arguments**:
-- `Range` (in [required]): `InArgument<UiPath.Excel.IReadRangeRef>`
-- `SaveTo` (out): `OutArgument<Data.DataTable>`
-**Other members**:
-- `ReadFormatting` [property]: `Nullable<UiPath.Excel.ReadFormattingOptions>`
-- `HasHeaders` [property]: `Boolean`
-- `VisibleOnly` [property]: `Boolean`
+- [IN, Required] `InArgument<UiPath.Excel.IReadRangeRef>` **Range**
+- [OUT] `OutArgument<Data.DataTable>` **SaveTo**
+**Properties / VariableScope / Child**:
+- [property] `Nullable<UiPath.Excel.ReadFormattingOptions>` **ReadFormatting**
+- [property] `Boolean` **HasHeaders**
+- [property] `Boolean` **VisibleOnly**
 ### Refresh Excel Data Connections
 
 **ID**: `UiPath.Excel.Activities.Business.RefreshDataConnectionsX@UiPath.Excel.Activities/3.4.1`
@@ -810,7 +810,7 @@
 **Category**: Excel.Windows.Workbook
 **Description**: Get the latest data by refreshing all sources in the workbook.
 **Arguments**:
-- `Workbook` (in [required]): `InArgument<UiPath.Excel.IWorkbookQuickHandle>`
+- [IN, Required] `InArgument<UiPath.Excel.IWorkbookQuickHandle>` **Workbook**
 ### Refresh Pivot Table
 
 **ID**: `UiPath.Excel.Activities.Business.RefreshPivotTableX@UiPath.Excel.Activities/3.4.1`
@@ -818,9 +818,9 @@
 **Category**: Excel.Windows.Pivot Table
 **Description**: Updates the data for a pivot table.
 **Arguments**:
-- `Table` (in [required]): `InArgument<UiPath.Excel.IPivotTableRef>`
-**Other members**:
-- `LayoutRowType` [property]: `Nullable<UiPath.Excel.PivotTableLayoutRowType>`
+- [IN, Required] `InArgument<UiPath.Excel.IPivotTableRef>` **Table**
+**Properties / VariableScope / Child**:
+- [property] `Nullable<UiPath.Excel.PivotTableLayoutRowType>` **LayoutRowType**
 ### Remove Duplicates
 
 **ID**: `UiPath.Excel.Activities.Business.RemoveDuplicatesX@UiPath.Excel.Activities/3.4.1`
@@ -828,10 +828,10 @@
 **Category**: Excel.Windows.Range
 **Description**: Delete duplicate rows
 **Arguments**:
-- `Range` (in [required]): `InArgument<UiPath.Excel.IReadWriteRangeRef>`
-**Other members**:
-- `HasHeaders` [property]: `Boolean`
-- `ColumnsCompareMode` [property]: `UiPath.Excel.ColumnsCompare`
+- [IN, Required] `InArgument<UiPath.Excel.IReadWriteRangeRef>` **Range**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **HasHeaders**
+- [property] `UiPath.Excel.ColumnsCompare` **ColumnsCompareMode**
 ### Rename Sheet
 
 **ID**: `UiPath.Excel.Activities.Business.RenameSheetX@UiPath.Excel.Activities/3.4.1`
@@ -839,8 +839,8 @@
 **Category**: Excel.Windows.Workbook
 **Description**: Renames a sheet in an Excel file.
 **Arguments**:
-- `From` (in [required]): `InArgument<UiPath.Excel.ISheetRef>`
-- `To` (in [required]): `InArgument<String>`
+- [IN, Required] `InArgument<UiPath.Excel.ISheetRef>` **From**
+- [IN, Required] `InArgument<String>` **To**
 ### Save Excel File As PDF
 
 **ID**: `UiPath.Excel.Activities.Business.SaveAsPdfX@UiPath.Excel.Activities/3.4.1`
@@ -848,13 +848,13 @@
 **Category**: Excel.Windows.Workbook
 **Description**: Saves an Excel file as a PDF file.
 **Arguments**:
-- `Workbook` (in [required]): `InArgument<UiPath.Excel.IWorkbookQuickHandle>`
-- `DestinationPdfPath` (in [required]): `InArgument<String>`
-- `StartPage` (in): `InArgument<Nullable<Int32>>`
-- `EndPage` (in): `InArgument<Nullable<Int32>>`
-**Other members**:
-- `SaveQuality` [property]: `UiPath.Excel.PdfSaveQuality`
-- `ReplaceExisting` [property]: `Boolean`
+- [IN, Required] `InArgument<UiPath.Excel.IWorkbookQuickHandle>` **Workbook**
+- [IN, Required] `InArgument<String>` **DestinationPdfPath**
+- [IN] `InArgument<Nullable<Int32>>` **StartPage**
+- [IN] `InArgument<Nullable<Int32>>` **EndPage**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.Excel.PdfSaveQuality` **SaveQuality**
+- [property] `Boolean` **ReplaceExisting**
 ### Save Excel File As
 
 **ID**: `UiPath.Excel.Activities.Business.SaveExcelFileAsX@UiPath.Excel.Activities/3.4.1`
@@ -862,11 +862,11 @@
 **Category**: Excel.Windows.Workbook
 **Description**: Save an Excel file as a different file.
 **Arguments**:
-- `Workbook` (in [required]): `InArgument<UiPath.Excel.IWorkbookQuickHandle>`
-- `FilePath` (in [required]): `InArgument<String>`
-**Other members**:
-- `SaveAsFileType` [property]: `UiPath.Excel.ExcelSaveAsType`
-- `ReplaceExisting` [property]: `Boolean`
+- [IN, Required] `InArgument<UiPath.Excel.IWorkbookQuickHandle>` **Workbook**
+- [IN, Required] `InArgument<String>` **FilePath**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.Excel.ExcelSaveAsType` **SaveAsFileType**
+- [property] `Boolean` **ReplaceExisting**
 ### Save Excel File
 
 **ID**: `UiPath.Excel.Activities.Business.SaveExcelFileX@UiPath.Excel.Activities/3.4.1`
@@ -874,7 +874,7 @@
 **Category**: Excel.Windows.Workbook
 **Description**: Saves any pending changes in the selected Excel file.
 **Arguments**:
-- `Workbook` (in [required]): `InArgument<UiPath.Excel.IWorkbookQuickHandle>`
+- [IN, Required] `InArgument<UiPath.Excel.IWorkbookQuickHandle>` **Workbook**
 ### Single Excel Process Scope
 
 **ID**: `UiPath.Excel.Activities.Business.SequenceX@UiPath.Excel.Activities/3.4.1`
@@ -889,9 +889,9 @@ _No members extracted._
 **Category**: Excel.Windows
 **Description**: Sorts the range by the column in the indicated direction.
 **Arguments**:
-- `ColumnName` (in [required]): `InArgument<String>`
-**Other members**:
-- `SortDirection` [property]: `UiPath.Excel.Activities.Business.SortDirectionType`
+- [IN, Required] `InArgument<String>` **ColumnName**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.Excel.Activities.Business.SortDirectionType` **SortDirection**
 ### Sort Range
 
 **ID**: `UiPath.Excel.Activities.Business.SortX@UiPath.Excel.Activities/3.4.1`
@@ -899,7 +899,7 @@ _No members extracted._
 **Category**: Excel.Windows.Range
 **Description**: Sorts the data in a specified sheet, table, or range by one or more columns.
 **Arguments**:
-- `Range` (in [required]): `InArgument<UiPath.Excel.IReadWriteRangeRef>`
+- [IN, Required] `InArgument<UiPath.Excel.IReadWriteRangeRef>` **Range**
 ### Text to Columns
 
 **ID**: `UiPath.Excel.Activities.Business.TextToColumnsX@UiPath.Excel.Activities/3.4.1`
@@ -907,20 +907,20 @@ _No members extracted._
 **Category**: Excel.Windows.Range
 **Description**: Splits the text from a cell, range, or table into different columns.
 **Arguments**:
-- `SourceRange` (in [required]): `InArgument<UiPath.Excel.IWellDefinedReadRangeRef>`
-- `DestinationRange` (in [required]): `InArgument<UiPath.Excel.IReadWriteRangeRef>`
-- `NumberOfCharactersPerColumn` (in): `InArgument<Int32>`
-**Other members**:
-- `ParsingType` [property]: `UiPath.Excel.TextToColumnsParsingType`
-- `SplitByTabs` [property]: `Boolean`
-- `SplitBySemicolon` [property]: `Boolean`
-- `SplitByComma` [property]: `Boolean`
-- `SplitBySpace` [property]: `Boolean`
-- `SplitByLineBreak` [property]: `Boolean`
-- `SplitByOther` [property]: `Boolean`
-- `OtherSeparator` [property]: `Nullable<Char>`
-- `ConsecutiveOperatorsAsOne` [property]: `Boolean`
-- `TextQualifier` [property]: `UiPath.Excel.TextToColumnsTextQualifier`
+- [IN, Required] `InArgument<UiPath.Excel.IWellDefinedReadRangeRef>` **SourceRange**
+- [IN, Required] `InArgument<UiPath.Excel.IReadWriteRangeRef>` **DestinationRange**
+- [IN] `InArgument<Int32>` **NumberOfCharactersPerColumn**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.Excel.TextToColumnsParsingType` **ParsingType**
+- [property] `Boolean` **SplitByTabs**
+- [property] `Boolean` **SplitBySemicolon**
+- [property] `Boolean` **SplitByComma**
+- [property] `Boolean` **SplitBySpace**
+- [property] `Boolean` **SplitByLineBreak**
+- [property] `Boolean` **SplitByOther**
+- [property] `Nullable<Char>` **OtherSeparator**
+- [property] `Boolean` **ConsecutiveOperatorsAsOne**
+- [property] `UiPath.Excel.TextToColumnsTextQualifier` **TextQualifier**
 ### Unprotect Sheet
 
 **ID**: `UiPath.Excel.Activities.Business.UnprotectSheetX@UiPath.Excel.Activities/3.4.1`
@@ -928,9 +928,9 @@ _No members extracted._
 **Category**: Excel.Windows.Workbook
 **Description**: Unprotects a sheet in an Excel workbook.
 **Arguments**:
-- `Sheet` (in [required]): `InArgument<UiPath.Excel.ISheetRef>`
-- `Password` (in): `InArgument<String>`
-- `SecurePassword` (in): `InArgument<Security.SecureString>`
+- [IN, Required] `InArgument<UiPath.Excel.ISheetRef>` **Sheet**
+- [IN] `InArgument<String>` **Password**
+- [IN] `InArgument<Security.SecureString>` **SecurePassword**
 ### Update Chart
 
 **ID**: `UiPath.Excel.Activities.Business.UpdateChartX@UiPath.Excel.Activities/3.4.1`
@@ -938,7 +938,7 @@ _No members extracted._
 **Category**: Excel.Windows.Chart
 **Description**: Update properties of an existing Excel chart.
 **Arguments**:
-- `Chart` (in [required]): `InArgument<UiPath.Excel.IChartRef>`
+- [IN, Required] `InArgument<UiPath.Excel.IChartRef>` **Chart**
 ### VLookup
 
 **ID**: `UiPath.Excel.Activities.Business.VLookupX@UiPath.Excel.Activities/3.4.1`
@@ -946,12 +946,12 @@ _No members extracted._
 **Category**: Excel.Windows.Range
 **Description**: Finds data in a range or sheet using Excel's VLOOKUP function.
 **Arguments**:
-- `SourceRange` (in [required]): `InArgument<UiPath.Excel.IReadRangeRef>`
-- `Label` (in [required]): `InArgument<Object>`
-- `ColumnIndex` (in): `InArgument<Int32>`
-- `Value` (out): `OutArgument`
-**Other members**:
-- `ExactMatch` [property]: `Boolean`
+- [IN, Required] `InArgument<UiPath.Excel.IReadRangeRef>` **SourceRange**
+- [IN, Required] `InArgument<Object>` **Label**
+- [IN] `InArgument<Int32>` **ColumnIndex**
+- [OUT] `OutArgument` **Value**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **ExactMatch**
 ### Write Cell
 
 **ID**: `UiPath.Excel.Activities.Business.WriteCellX@UiPath.Excel.Activities/3.4.1`
@@ -959,10 +959,10 @@ _No members extracted._
 **Category**: Excel.Windows.Cell
 **Description**: Enters a text or a formula in a cell.
 **Arguments**:
-- `Cell` (in [required]): `InArgument<UiPath.Excel.IReadWriteCellRef>`
-- `Value` (in [required]): `InArgument<Object>`
-**Other members**:
-- `AutoIncrementRow` [property]: `Boolean`
+- [IN, Required] `InArgument<UiPath.Excel.IReadWriteCellRef>` **Cell**
+- [IN, Required] `InArgument<Object>` **Value**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **AutoIncrementRow**
 ### Write DataTable to Excel
 
 **ID**: `UiPath.Excel.Activities.Business.WriteRangeX@UiPath.Excel.Activities/3.4.1`
@@ -970,54 +970,54 @@ _No members extracted._
 **Category**: Excel.Windows.Range
 **Description**: Write Range is intended for writing data from external Data Table sources into Excel.
 **Arguments**:
-- `Source` (in [required]): `InArgument<Data.DataTable>`
-- `Destination` (in [required]): `InArgument<UiPath.Excel.IReadWriteRangeRef>`
-**Other members**:
-- `Append` [property]: `Boolean`
-- `ExcludeHeaders` [property]: `Boolean`
-- `IgnoreEmptySource` [property]: `Boolean`
+- [IN, Required] `InArgument<Data.DataTable>` **Source**
+- [IN, Required] `InArgument<UiPath.Excel.IReadWriteRangeRef>` **Destination**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **Append**
+- [property] `Boolean` **ExcludeHeaders**
+- [property] `Boolean` **IgnoreEmptySource**
 ### Change Data Range
 
 **ID**: `UiPath.Excel.Activities.Business.ChartModifications.ChangeDataRangeModification@UiPath.Excel.Activities/3.4.1`
 **Type**: `UiPath.Excel.Activities.Business.ChartModifications.ChangeDataRangeModification`
 **Arguments**:
-- `Range` (in [required]): `InArgument<UiPath.Excel.IReadRangeRef>`
+- [IN, Required] `InArgument<UiPath.Excel.IReadRangeRef>` **Range**
 ### Modify Chart Title
 
 **ID**: `UiPath.Excel.Activities.Business.ChartModifications.ModifyChartTitleModification@UiPath.Excel.Activities/3.4.1`
 **Type**: `UiPath.Excel.Activities.Business.ChartModifications.ModifyChartTitleModification`
 **Arguments**:
-- `Title` (in): `InArgument<String>`
-**Other members**:
-- `ShowTitle` [property]: `Boolean`
+- [IN] `InArgument<String>` **Title**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **ShowTitle**
 ### Show/Hide Data Labels
 
 **ID**: `UiPath.Excel.Activities.Business.ChartModifications.ShowHideDataLabelsModification@UiPath.Excel.Activities/3.4.1`
 **Type**: `UiPath.Excel.Activities.Business.ChartModifications.ShowHideDataLabelsModification`
-**Other members**:
-- `ShowDataLabels` [property]: `Boolean`
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **ShowDataLabels**
 ### Show/Hide Legend
 
 **ID**: `UiPath.Excel.Activities.Business.ChartModifications.ShowHideLegendModification@UiPath.Excel.Activities/3.4.1`
 **Type**: `UiPath.Excel.Activities.Business.ChartModifications.ShowHideLegendModification`
-**Other members**:
-- `ShowLegend` [property]: `Boolean`
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **ShowLegend**
 ### Update Axis Bounds
 
 **ID**: `UiPath.Excel.Activities.Business.ChartModifications.UpdateAxisBoundsModification@UiPath.Excel.Activities/3.4.1`
 **Type**: `UiPath.Excel.Activities.Business.ChartModifications.UpdateAxisBoundsModification`
 **Arguments**:
-- `MinBound` (in): `InArgument<Double>`
-- `MaxBound` (in): `InArgument<Double>`
-**Other members**:
-- `Axis` [property]: `UiPath.Excel.Activities.Business.ChartModifications.AxisOrientation`
+- [IN] `InArgument<Double>` **MinBound**
+- [IN] `InArgument<Double>` **MaxBound**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.Excel.Activities.Business.ChartModifications.AxisOrientation` **Axis**
 ### Update Axis Title
 
 **ID**: `UiPath.Excel.Activities.Business.ChartModifications.UpdateAxisTitleModification@UiPath.Excel.Activities/3.4.1`
 **Type**: `UiPath.Excel.Activities.Business.ChartModifications.UpdateAxisTitleModification`
 **Arguments**:
-- `Title` (in): `InArgument<String>`
-**Other members**:
-- `Axis` [property]: `UiPath.Excel.Activities.Business.ChartModifications.AxisOrientation`
-- `ShowTitle` [property]: `Boolean`
+- [IN] `InArgument<String>` **Title**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.Excel.Activities.Business.ChartModifications.AxisOrientation` **Axis**
+- [property] `Boolean` **ShowTitle**
 ---

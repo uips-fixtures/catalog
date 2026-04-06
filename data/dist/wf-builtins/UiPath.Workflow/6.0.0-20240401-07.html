@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>UiPath.Workflow 6.0.0-20240401-07 — Activity Reference</title>
-  <!-- uips-fixtures catalog v0.1 | generated 2026-04-06T14:58:47Z -->
+  <!-- uips-fixtures catalog v0.2 | generated 2026-04-06T15:10:12Z -->
   <style>
     :root {
       --base3:  #fdf6e3; --base2: #eee8d5; --base1: #93a1a1;
@@ -60,6 +60,7 @@
     table { border-collapse: collapse; width: 100%; font-size: 0.82rem; }
     th, td { text-align: left; padding: 0.3rem 0.6rem; border-bottom: 1px solid var(--base2); }
     th { background: var(--base2); color: var(--base01); font-size: 0.75rem; font-weight: 600; }
+    th:nth-child(5) { min-width: 6rem; }
     tr:last-child td { border-bottom: none; }
     .dir-in    { color: var(--green);  font-weight: 600; }
     .dir-out   { color: var(--blue);   font-weight: 600; }
@@ -78,7 +79,7 @@
   <div class="content">
     <p class="gen-meta">
       35 activities &middot;
-      uips-fixtures catalog v0.1 &middot; generated 2026-04-06T14:58:47Z
+      uips-fixtures catalog v0.2 &middot; generated 2026-04-06T15:10:12Z
     </p>
     <div class="activity" id="System.Activities.Statements.AddToCollection@UiPath.Workflow/6.0.0-20240401-07">
       <div class="activity-name">AddToCollection</div>
@@ -86,12 +87,13 @@
       <span class="badge badge-src">UiPath.Workflow 6.0.0-20240401-07</span>
       <p class="members-heading">Arguments</p>
       <table>
-        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Description</th></tr>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
         <tr>
           <td>Collection</td>
           <td><span class="dir-in">In</span></td>
           <td><code>InArgument&lt;ICollection&lt;T&gt;&gt;</code></td>
           <td><span class="req">&#10003;</span></td>
+          <td></td>
           <td></td>
         </tr>
         <tr>
@@ -100,9 +102,10 @@
           <td><code>InArgument&lt;T&gt;</code></td>
           <td><span class="req">&#10003;</span></td>
           <td></td>
+          <td></td>
         </tr>
       </table>
-      <p class="members-heading">Properties / child slots</p>
+      <p class="members-heading">Properties</p>
       <table>
         <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
         <tr>
@@ -125,12 +128,13 @@
       <span class="badge badge-src">UiPath.Workflow 6.0.0-20240401-07</span>
       <p class="members-heading">Arguments</p>
       <table>
-        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Description</th></tr>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
         <tr>
           <td>To</td>
           <td><span class="dir-out">Out</span></td>
           <td><code>OutArgument</code></td>
           <td><span class="req">&#10003;</span></td>
+          <td></td>
           <td></td>
         </tr>
         <tr>
@@ -139,9 +143,10 @@
           <td><code>InArgument</code></td>
           <td><span class="req">&#10003;</span></td>
           <td></td>
+          <td></td>
         </tr>
       </table>
-      <p class="members-heading">Properties / child slots</p>
+      <p class="members-heading">Properties</p>
       <table>
         <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
         <tr>
@@ -162,25 +167,13 @@
       <div class="activity-name">CancellationScope</div>
       <div class="activity-full">System.Activities.Statements.CancellationScope</div>
       <span class="badge badge-src">UiPath.Workflow 6.0.0-20240401-07</span>
-      <p class="members-heading">Properties / child slots</p>
+      <p class="members-heading">Properties</p>
       <table>
         <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
         <tr>
           <td>Variables</td>
           <td>variable-scope</td>
           <td><code>Collection&lt;Variable&gt;</code></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Body</td>
-          <td>child</td>
-          <td><code>Activity</code></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>CancellationHandler</td>
-          <td>child</td>
-          <td><code>Activity</code></td>
           <td></td>
         </tr>
         <tr>
@@ -196,6 +189,22 @@
           <td></td>
         </tr>
       </table>
+      <p class="members-heading">Child Activities / Variable Scope</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Body</td>
+          <td>child</td>
+          <td><code>Activity</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>CancellationHandler</td>
+          <td>child</td>
+          <td><code>Activity</code></td>
+          <td></td>
+        </tr>
+      </table>
     </div>
     <div class="activity" id="System.Activities.Statements.ClearCollection@UiPath.Workflow/6.0.0-20240401-07">
       <div class="activity-name">ClearCollection</div>
@@ -203,16 +212,17 @@
       <span class="badge badge-src">UiPath.Workflow 6.0.0-20240401-07</span>
       <p class="members-heading">Arguments</p>
       <table>
-        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Description</th></tr>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
         <tr>
           <td>Collection</td>
           <td><span class="dir-in">In</span></td>
           <td><code>InArgument&lt;ICollection&lt;T&gt;&gt;</code></td>
           <td><span class="req">&#10003;</span></td>
           <td></td>
+          <td></td>
         </tr>
       </table>
-      <p class="members-heading">Properties / child slots</p>
+      <p class="members-heading">Properties</p>
       <table>
         <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
         <tr>
@@ -235,16 +245,17 @@
       <span class="badge badge-src">UiPath.Workflow 6.0.0-20240401-07</span>
       <p class="members-heading">Arguments</p>
       <table>
-        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Description</th></tr>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
         <tr>
           <td>Result</td>
           <td><span class="dir-out">Out</span></td>
           <td><code>OutArgument&lt;TResult&gt;</code></td>
           <td></td>
           <td></td>
+          <td></td>
         </tr>
       </table>
-      <p class="members-heading">Properties / child slots</p>
+      <p class="members-heading">Properties</p>
       <table>
         <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
         <tr>
@@ -253,6 +264,28 @@
           <td><code>Collection&lt;Variable&gt;</code></td>
           <td></td>
         </tr>
+        <tr>
+          <td>ResultType</td>
+          <td>property</td>
+          <td><code>Type</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>DisplayName</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Id</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Child Activities / Variable Scope</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
         <tr>
           <td>Body</td>
           <td>child</td>
@@ -277,24 +310,6 @@
           <td><code>Activity</code></td>
           <td></td>
         </tr>
-        <tr>
-          <td>ResultType</td>
-          <td>property</td>
-          <td><code>Type</code></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>DisplayName</td>
-          <td>property</td>
-          <td><code>String</code></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Id</td>
-          <td>property</td>
-          <td><code>String</code></td>
-          <td></td>
-        </tr>
       </table>
     </div>
     <div class="activity" id="System.Activities.Statements.Compensate@UiPath.Workflow/6.0.0-20240401-07">
@@ -303,16 +318,17 @@
       <span class="badge badge-src">UiPath.Workflow 6.0.0-20240401-07</span>
       <p class="members-heading">Arguments</p>
       <table>
-        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Description</th></tr>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
         <tr>
           <td>Target</td>
           <td><span class="dir-in">In</span></td>
           <td><code>InArgument&lt;Statements.CompensationToken&gt;</code></td>
           <td></td>
           <td></td>
+          <td></td>
         </tr>
       </table>
-      <p class="members-heading">Properties / child slots</p>
+      <p class="members-heading">Properties</p>
       <table>
         <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
         <tr>
@@ -335,16 +351,17 @@
       <span class="badge badge-src">UiPath.Workflow 6.0.0-20240401-07</span>
       <p class="members-heading">Arguments</p>
       <table>
-        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Description</th></tr>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
         <tr>
           <td>Target</td>
           <td><span class="dir-in">In</span></td>
           <td><code>InArgument&lt;Statements.CompensationToken&gt;</code></td>
           <td></td>
           <td></td>
+          <td></td>
         </tr>
       </table>
-      <p class="members-heading">Properties / child slots</p>
+      <p class="members-heading">Properties</p>
       <table>
         <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
         <tr>
@@ -367,16 +384,17 @@
       <span class="badge badge-src">UiPath.Workflow 6.0.0-20240401-07</span>
       <p class="members-heading">Arguments</p>
       <table>
-        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Description</th></tr>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
         <tr>
           <td>Result</td>
           <td><span class="dir-out">Out</span></td>
           <td><code>OutArgument&lt;TResult&gt;</code></td>
           <td></td>
           <td></td>
+          <td></td>
         </tr>
       </table>
-      <p class="members-heading">Properties / child slots</p>
+      <p class="members-heading">Properties</p>
       <table>
         <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
         <tr>
@@ -405,16 +423,17 @@
       <span class="badge badge-src">UiPath.Workflow 6.0.0-20240401-07</span>
       <p class="members-heading">Arguments</p>
       <table>
-        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Description</th></tr>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
         <tr>
           <td>Duration</td>
           <td><span class="dir-in">In</span></td>
           <td><code>InArgument&lt;TimeSpan&gt;</code></td>
           <td><span class="req">&#10003;</span></td>
           <td></td>
+          <td></td>
         </tr>
       </table>
-      <p class="members-heading">Properties / child slots</p>
+      <p class="members-heading">Properties</p>
       <table>
         <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
         <tr>
@@ -437,16 +456,17 @@
       <span class="badge badge-src">UiPath.Workflow 6.0.0-20240401-07</span>
       <p class="members-heading">Arguments</p>
       <table>
-        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Description</th></tr>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
         <tr>
           <td>Scope</td>
           <td><span class="dir-in">In</span></td>
           <td><code>InArgument&lt;BookmarkScope&gt;</code></td>
           <td></td>
           <td></td>
+          <td></td>
         </tr>
       </table>
-      <p class="members-heading">Properties / child slots</p>
+      <p class="members-heading">Properties</p>
       <table>
         <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
         <tr>
@@ -467,25 +487,13 @@
       <div class="activity-name">DoWhile</div>
       <div class="activity-full">System.Activities.Statements.DoWhile</div>
       <span class="badge badge-src">UiPath.Workflow 6.0.0-20240401-07</span>
-      <p class="members-heading">Properties / child slots</p>
+      <p class="members-heading">Properties</p>
       <table>
         <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
         <tr>
           <td>Variables</td>
           <td>variable-scope</td>
           <td><code>Collection&lt;Variable&gt;</code></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Condition</td>
-          <td>child</td>
-          <td><code>Activity&lt;Boolean&gt;</code></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Body</td>
-          <td>child</td>
-          <td><code>Activity</code></td>
           <td></td>
         </tr>
         <tr>
@@ -501,6 +509,22 @@
           <td></td>
         </tr>
       </table>
+      <p class="members-heading">Child Activities / Variable Scope</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Condition</td>
+          <td>child</td>
+          <td><code>Activity&lt;Boolean&gt;</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Body</td>
+          <td>child</td>
+          <td><code>Activity</code></td>
+          <td></td>
+        </tr>
+      </table>
     </div>
     <div class="activity" id="System.Activities.Statements.ExistsInCollection@UiPath.Workflow/6.0.0-20240401-07">
       <div class="activity-name">ExistsInCollection</div>
@@ -508,12 +532,13 @@
       <span class="badge badge-src">UiPath.Workflow 6.0.0-20240401-07</span>
       <p class="members-heading">Arguments</p>
       <table>
-        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Description</th></tr>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
         <tr>
           <td>Collection</td>
           <td><span class="dir-in">In</span></td>
           <td><code>InArgument&lt;ICollection&lt;T&gt;&gt;</code></td>
           <td><span class="req">&#10003;</span></td>
+          <td></td>
           <td></td>
         </tr>
         <tr>
@@ -522,6 +547,7 @@
           <td><code>InArgument&lt;T&gt;</code></td>
           <td><span class="req">&#10003;</span></td>
           <td></td>
+          <td></td>
         </tr>
         <tr>
           <td>Result</td>
@@ -529,9 +555,10 @@
           <td><code>OutArgument&lt;TResult&gt;</code></td>
           <td></td>
           <td></td>
+          <td></td>
         </tr>
       </table>
-      <p class="members-heading">Properties / child slots</p>
+      <p class="members-heading">Properties</p>
       <table>
         <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
         <tr>
@@ -558,7 +585,7 @@
       <div class="activity-name">Flowchart</div>
       <div class="activity-full">System.Activities.Statements.Flowchart</div>
       <span class="badge badge-src">UiPath.Workflow 6.0.0-20240401-07</span>
-      <p class="members-heading">Properties / child slots</p>
+      <p class="members-heading">Properties</p>
       <table>
         <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
         <tr>
@@ -605,24 +632,19 @@
       <span class="badge badge-src">UiPath.Workflow 6.0.0-20240401-07</span>
       <p class="members-heading">Arguments</p>
       <table>
-        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Description</th></tr>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
         <tr>
           <td>Values</td>
           <td><span class="dir-in">In</span></td>
           <td><code>InArgument&lt;IEnumerable&lt;T&gt;&gt;</code></td>
           <td><span class="req">&#10003;</span></td>
           <td></td>
-        </tr>
-      </table>
-      <p class="members-heading">Properties / child slots</p>
-      <table>
-        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
-        <tr>
-          <td>Body</td>
-          <td>child</td>
-          <td><code>ActivityAction&lt;T&gt;</code></td>
           <td></td>
         </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
         <tr>
           <td>DisplayName</td>
           <td>property</td>
@@ -633,6 +655,16 @@
           <td>Id</td>
           <td>property</td>
           <td><code>String</code></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Child Activities / Variable Scope</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Body</td>
+          <td>child</td>
+          <td><code>ActivityAction&lt;T&gt;</code></td>
           <td></td>
         </tr>
       </table>
@@ -643,24 +675,19 @@
       <span class="badge badge-src">UiPath.Workflow 6.0.0-20240401-07</span>
       <p class="members-heading">Arguments</p>
       <table>
-        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Description</th></tr>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
         <tr>
           <td>Handle</td>
           <td><span class="dir-in">In</span></td>
           <td><code>InArgument&lt;THandle&gt;</code></td>
           <td></td>
           <td></td>
-        </tr>
-      </table>
-      <p class="members-heading">Properties / child slots</p>
-      <table>
-        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
-        <tr>
-          <td>Body</td>
-          <td>child</td>
-          <td><code>Activity</code></td>
           <td></td>
         </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
         <tr>
           <td>DisplayName</td>
           <td>property</td>
@@ -674,6 +701,16 @@
           <td></td>
         </tr>
       </table>
+      <p class="members-heading">Child Activities / Variable Scope</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Body</td>
+          <td>child</td>
+          <td><code>Activity</code></td>
+          <td></td>
+        </tr>
+      </table>
     </div>
     <div class="activity" id="System.Activities.Statements.If@UiPath.Workflow/6.0.0-20240401-07">
       <div class="activity-name">If</div>
@@ -681,16 +718,33 @@
       <span class="badge badge-src">UiPath.Workflow 6.0.0-20240401-07</span>
       <p class="members-heading">Arguments</p>
       <table>
-        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Description</th></tr>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
         <tr>
           <td>Condition</td>
           <td><span class="dir-in">In</span></td>
           <td><code>InArgument&lt;Boolean&gt;</code></td>
           <td><span class="req">&#10003;</span></td>
           <td></td>
+          <td></td>
         </tr>
       </table>
-      <p class="members-heading">Properties / child slots</p>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>DisplayName</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Id</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Child Activities / Variable Scope</p>
       <table>
         <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
         <tr>
@@ -705,6 +759,15 @@
           <td><code>Activity</code></td>
           <td></td>
         </tr>
+      </table>
+    </div>
+    <div class="activity" id="System.Activities.Statements.InvokeAction@UiPath.Workflow/6.0.0-20240401-07">
+      <div class="activity-name">InvokeAction</div>
+      <div class="activity-full">System.Activities.Statements.InvokeAction</div>
+      <span class="badge badge-src">UiPath.Workflow 6.0.0-20240401-07</span>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
         <tr>
           <td>DisplayName</td>
           <td>property</td>
@@ -718,12 +781,7 @@
           <td></td>
         </tr>
       </table>
-    </div>
-    <div class="activity" id="System.Activities.Statements.InvokeAction@UiPath.Workflow/6.0.0-20240401-07">
-      <div class="activity-name">InvokeAction</div>
-      <div class="activity-full">System.Activities.Statements.InvokeAction</div>
-      <span class="badge badge-src">UiPath.Workflow 6.0.0-20240401-07</span>
-      <p class="members-heading">Properties / child slots</p>
+      <p class="members-heading">Child Activities / Variable Scope</p>
       <table>
         <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
         <tr>
@@ -732,6 +790,21 @@
           <td><code>ActivityAction</code></td>
           <td></td>
         </tr>
+      </table>
+    </div>
+    <div class="activity" id="System.Activities.Statements.InvokeDelegate@UiPath.Workflow/6.0.0-20240401-07">
+      <div class="activity-name">InvokeDelegate</div>
+      <div class="activity-full">System.Activities.Statements.InvokeDelegate</div>
+      <span class="badge badge-src">UiPath.Workflow 6.0.0-20240401-07</span>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>DelegateArguments</td>
+          <td>property</td>
+          <td><code>IDictionary&lt;String, Argument&gt;</code></td>
+          <td></td>
+        </tr>
         <tr>
           <td>DisplayName</td>
           <td>property</td>
@@ -745,12 +818,7 @@
           <td></td>
         </tr>
       </table>
-    </div>
-    <div class="activity" id="System.Activities.Statements.InvokeDelegate@UiPath.Workflow/6.0.0-20240401-07">
-      <div class="activity-name">InvokeDelegate</div>
-      <div class="activity-full">System.Activities.Statements.InvokeDelegate</div>
-      <span class="badge badge-src">UiPath.Workflow 6.0.0-20240401-07</span>
-      <p class="members-heading">Properties / child slots</p>
+      <p class="members-heading">Child Activities / Variable Scope</p>
       <table>
         <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
         <tr>
@@ -760,27 +828,9 @@
           <td></td>
         </tr>
         <tr>
-          <td>DelegateArguments</td>
-          <td>property</td>
-          <td><code>IDictionary&lt;String, Argument&gt;</code></td>
-          <td></td>
-        </tr>
-        <tr>
           <td>Default</td>
           <td>child</td>
           <td><code>Activity</code></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>DisplayName</td>
-          <td>property</td>
-          <td><code>String</code></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Id</td>
-          <td>property</td>
-          <td><code>String</code></td>
           <td></td>
         </tr>
       </table>
@@ -791,11 +841,12 @@
       <span class="badge badge-src">UiPath.Workflow 6.0.0-20240401-07</span>
       <p class="members-heading">Arguments</p>
       <table>
-        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Description</th></tr>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
         <tr>
           <td>Result</td>
           <td><span class="dir-out">Out</span></td>
           <td><code>OutArgument</code></td>
+          <td></td>
           <td></td>
           <td></td>
         </tr>
@@ -805,9 +856,10 @@
           <td><code>InArgument</code></td>
           <td></td>
           <td></td>
+          <td></td>
         </tr>
       </table>
-      <p class="members-heading">Properties / child slots</p>
+      <p class="members-heading">Properties</p>
       <table>
         <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
         <tr>
@@ -858,13 +910,44 @@
       <div class="activity-name">NoPersistScope</div>
       <div class="activity-full">System.Activities.Statements.NoPersistScope</div>
       <span class="badge badge-src">UiPath.Workflow 6.0.0-20240401-07</span>
-      <p class="members-heading">Properties / child slots</p>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>DisplayName</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Id</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Child Activities / Variable Scope</p>
       <table>
         <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
         <tr>
           <td>Body</td>
           <td>child</td>
           <td><code>Activity</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="System.Activities.Statements.Parallel@UiPath.Workflow/6.0.0-20240401-07">
+      <div class="activity-name">Parallel</div>
+      <div class="activity-full">System.Activities.Statements.Parallel</div>
+      <span class="badge badge-src">UiPath.Workflow 6.0.0-20240401-07</span>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Variables</td>
+          <td>variable-scope</td>
+          <td><code>Collection&lt;Variable&gt;</code></td>
           <td></td>
         </tr>
         <tr>
@@ -880,20 +963,9 @@
           <td></td>
         </tr>
       </table>
-    </div>
-    <div class="activity" id="System.Activities.Statements.Parallel@UiPath.Workflow/6.0.0-20240401-07">
-      <div class="activity-name">Parallel</div>
-      <div class="activity-full">System.Activities.Statements.Parallel</div>
-      <span class="badge badge-src">UiPath.Workflow 6.0.0-20240401-07</span>
-      <p class="members-heading">Properties / child slots</p>
+      <p class="members-heading">Child Activities / Variable Scope</p>
       <table>
         <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
-        <tr>
-          <td>Variables</td>
-          <td>variable-scope</td>
-          <td><code>Collection&lt;Variable&gt;</code></td>
-          <td></td>
-        </tr>
         <tr>
           <td>CompletionCondition</td>
           <td>child</td>
@@ -906,6 +978,27 @@
           <td><code>Collection&lt;Activity&gt;</code></td>
           <td></td>
         </tr>
+      </table>
+    </div>
+    <div class="activity" id="System.Activities.Statements.ParallelForEach@UiPath.Workflow/6.0.0-20240401-07">
+      <div class="activity-name">ParallelForEach</div>
+      <div class="activity-full">System.Activities.Statements.ParallelForEach</div>
+      <span class="badge badge-src">UiPath.Workflow 6.0.0-20240401-07</span>
+      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>Values</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;IEnumerable&lt;T&gt;&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
         <tr>
           <td>DisplayName</td>
           <td>property</td>
@@ -919,23 +1012,7 @@
           <td></td>
         </tr>
       </table>
-    </div>
-    <div class="activity" id="System.Activities.Statements.ParallelForEach@UiPath.Workflow/6.0.0-20240401-07">
-      <div class="activity-name">ParallelForEach</div>
-      <div class="activity-full">System.Activities.Statements.ParallelForEach</div>
-      <span class="badge badge-src">UiPath.Workflow 6.0.0-20240401-07</span>
-      <p class="members-heading">Arguments</p>
-      <table>
-        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Description</th></tr>
-        <tr>
-          <td>Values</td>
-          <td><span class="dir-in">In</span></td>
-          <td><code>InArgument&lt;IEnumerable&lt;T&gt;&gt;</code></td>
-          <td><span class="req">&#10003;</span></td>
-          <td></td>
-        </tr>
-      </table>
-      <p class="members-heading">Properties / child slots</p>
+      <p class="members-heading">Child Activities / Variable Scope</p>
       <table>
         <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
         <tr>
@@ -950,25 +1027,13 @@
           <td><code>Activity&lt;Boolean&gt;</code></td>
           <td></td>
         </tr>
-        <tr>
-          <td>DisplayName</td>
-          <td>property</td>
-          <td><code>String</code></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Id</td>
-          <td>property</td>
-          <td><code>String</code></td>
-          <td></td>
-        </tr>
       </table>
     </div>
     <div class="activity" id="System.Activities.Statements.Persist@UiPath.Workflow/6.0.0-20240401-07">
       <div class="activity-name">Persist</div>
       <div class="activity-full">System.Activities.Statements.Persist</div>
       <span class="badge badge-src">UiPath.Workflow 6.0.0-20240401-07</span>
-      <p class="members-heading">Properties / child slots</p>
+      <p class="members-heading">Properties</p>
       <table>
         <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
         <tr>
@@ -989,7 +1054,7 @@
       <div class="activity-name">Pick</div>
       <div class="activity-full">System.Activities.Statements.Pick</div>
       <span class="badge badge-src">UiPath.Workflow 6.0.0-20240401-07</span>
-      <p class="members-heading">Properties / child slots</p>
+      <p class="members-heading">Properties</p>
       <table>
         <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
         <tr>
@@ -1018,12 +1083,13 @@
       <span class="badge badge-src">UiPath.Workflow 6.0.0-20240401-07</span>
       <p class="members-heading">Arguments</p>
       <table>
-        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Description</th></tr>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
         <tr>
           <td>Collection</td>
           <td><span class="dir-in">In</span></td>
           <td><code>InArgument&lt;ICollection&lt;T&gt;&gt;</code></td>
           <td><span class="req">&#10003;</span></td>
+          <td></td>
           <td></td>
         </tr>
         <tr>
@@ -1032,6 +1098,7 @@
           <td><code>InArgument&lt;T&gt;</code></td>
           <td><span class="req">&#10003;</span></td>
           <td></td>
+          <td></td>
         </tr>
         <tr>
           <td>Result</td>
@@ -1039,9 +1106,10 @@
           <td><code>OutArgument&lt;TResult&gt;</code></td>
           <td></td>
           <td></td>
+          <td></td>
         </tr>
       </table>
-      <p class="members-heading">Properties / child slots</p>
+      <p class="members-heading">Properties</p>
       <table>
         <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
         <tr>
@@ -1068,7 +1136,7 @@
       <div class="activity-name">Rethrow</div>
       <div class="activity-full">System.Activities.Statements.Rethrow</div>
       <span class="badge badge-src">UiPath.Workflow 6.0.0-20240401-07</span>
-      <p class="members-heading">Properties / child slots</p>
+      <p class="members-heading">Properties</p>
       <table>
         <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
         <tr>
@@ -1089,19 +1157,13 @@
       <div class="activity-name">Sequence</div>
       <div class="activity-full">System.Activities.Statements.Sequence</div>
       <span class="badge badge-src">UiPath.Workflow 6.0.0-20240401-07</span>
-      <p class="members-heading">Properties / child slots</p>
+      <p class="members-heading">Properties</p>
       <table>
         <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
         <tr>
           <td>Variables</td>
           <td>variable-scope</td>
           <td><code>Collection&lt;Variable&gt;</code></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Activities</td>
-          <td>child</td>
-          <td><code>Collection&lt;Activity&gt;</code></td>
           <td></td>
         </tr>
         <tr>
@@ -1117,12 +1179,22 @@
           <td></td>
         </tr>
       </table>
+      <p class="members-heading">Child Activities / Variable Scope</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Activities</td>
+          <td>child</td>
+          <td><code>Collection&lt;Activity&gt;</code></td>
+          <td></td>
+        </tr>
+      </table>
     </div>
     <div class="activity" id="System.Activities.Statements.StateMachine@UiPath.Workflow/6.0.0-20240401-07">
       <div class="activity-name">StateMachine</div>
       <div class="activity-full">System.Activities.Statements.StateMachine</div>
       <span class="badge badge-src">UiPath.Workflow 6.0.0-20240401-07</span>
-      <p class="members-heading">Properties / child slots</p>
+      <p class="members-heading">Properties</p>
       <table>
         <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
         <tr>
@@ -1163,16 +1235,33 @@
       <span class="badge badge-src">UiPath.Workflow 6.0.0-20240401-07</span>
       <p class="members-heading">Arguments</p>
       <table>
-        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Description</th></tr>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
         <tr>
           <td>Expression</td>
           <td><span class="dir-in">In</span></td>
           <td><code>InArgument&lt;T&gt;</code></td>
           <td><span class="req">&#10003;</span></td>
           <td></td>
+          <td></td>
         </tr>
       </table>
-      <p class="members-heading">Properties / child slots</p>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>DisplayName</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Id</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Child Activities / Variable Scope</p>
       <table>
         <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
         <tr>
@@ -1187,18 +1276,6 @@
           <td><code>Activity</code></td>
           <td></td>
         </tr>
-        <tr>
-          <td>DisplayName</td>
-          <td>property</td>
-          <td><code>String</code></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Id</td>
-          <td>property</td>
-          <td><code>String</code></td>
-          <td></td>
-        </tr>
       </table>
     </div>
     <div class="activity" id="System.Activities.Statements.TerminateWorkflow@UiPath.Workflow/6.0.0-20240401-07">
@@ -1207,11 +1284,12 @@
       <span class="badge badge-src">UiPath.Workflow 6.0.0-20240401-07</span>
       <p class="members-heading">Arguments</p>
       <table>
-        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Description</th></tr>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
         <tr>
           <td>Reason</td>
           <td><span class="dir-in">In</span></td>
           <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
           <td></td>
           <td></td>
         </tr>
@@ -1221,9 +1299,10 @@
           <td><code>InArgument&lt;Exception&gt;</code></td>
           <td></td>
           <td></td>
+          <td></td>
         </tr>
       </table>
-      <p class="members-heading">Properties / child slots</p>
+      <p class="members-heading">Properties</p>
       <table>
         <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
         <tr>
@@ -1246,16 +1325,17 @@
       <span class="badge badge-src">UiPath.Workflow 6.0.0-20240401-07</span>
       <p class="members-heading">Arguments</p>
       <table>
-        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Description</th></tr>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
         <tr>
           <td>Exception</td>
           <td><span class="dir-in">In</span></td>
           <td><code>InArgument&lt;Exception&gt;</code></td>
           <td><span class="req">&#10003;</span></td>
           <td></td>
+          <td></td>
         </tr>
       </table>
-      <p class="members-heading">Properties / child slots</p>
+      <p class="members-heading">Properties</p>
       <table>
         <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
         <tr>
@@ -1278,24 +1358,19 @@
       <span class="badge badge-src">UiPath.Workflow 6.0.0-20240401-07</span>
       <p class="members-heading">Arguments</p>
       <table>
-        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Description</th></tr>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
         <tr>
           <td>Timeout</td>
           <td><span class="dir-in">In</span></td>
           <td><code>InArgument&lt;TimeSpan&gt;</code></td>
           <td></td>
           <td></td>
-        </tr>
-      </table>
-      <p class="members-heading">Properties / child slots</p>
-      <table>
-        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
-        <tr>
-          <td>Body</td>
-          <td>child</td>
-          <td><code>Activity</code></td>
           <td></td>
         </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
         <tr>
           <td>AbortInstanceOnTransactionFailure</td>
           <td>property</td>
@@ -1321,12 +1396,22 @@
           <td></td>
         </tr>
       </table>
+      <p class="members-heading">Child Activities / Variable Scope</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Body</td>
+          <td>child</td>
+          <td><code>Activity</code></td>
+          <td></td>
+        </tr>
+      </table>
     </div>
     <div class="activity" id="System.Activities.Statements.TryCatch@UiPath.Workflow/6.0.0-20240401-07">
       <div class="activity-name">TryCatch</div>
       <div class="activity-full">System.Activities.Statements.TryCatch</div>
       <span class="badge badge-src">UiPath.Workflow 6.0.0-20240401-07</span>
-      <p class="members-heading">Properties / child slots</p>
+      <p class="members-heading">Properties</p>
       <table>
         <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
         <tr>
@@ -1336,21 +1421,9 @@
           <td></td>
         </tr>
         <tr>
-          <td>Try</td>
-          <td>child</td>
-          <td><code>Activity</code></td>
-          <td></td>
-        </tr>
-        <tr>
           <td>Catches</td>
           <td>property</td>
           <td><code>Collection&lt;Statements.Catch&gt;</code></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Finally</td>
-          <td>child</td>
-          <td><code>Activity</code></td>
           <td></td>
         </tr>
         <tr>
@@ -1366,12 +1439,28 @@
           <td></td>
         </tr>
       </table>
+      <p class="members-heading">Child Activities / Variable Scope</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Try</td>
+          <td>child</td>
+          <td><code>Activity</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Finally</td>
+          <td>child</td>
+          <td><code>Activity</code></td>
+          <td></td>
+        </tr>
+      </table>
     </div>
     <div class="activity" id="System.Activities.Statements.While@UiPath.Workflow/6.0.0-20240401-07">
       <div class="activity-name">While</div>
       <div class="activity-full">System.Activities.Statements.While</div>
       <span class="badge badge-src">UiPath.Workflow 6.0.0-20240401-07</span>
-      <p class="members-heading">Properties / child slots</p>
+      <p class="members-heading">Properties</p>
       <table>
         <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
         <tr>
@@ -1380,6 +1469,22 @@
           <td><code>Collection&lt;Variable&gt;</code></td>
           <td></td>
         </tr>
+        <tr>
+          <td>DisplayName</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Id</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Child Activities / Variable Scope</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
         <tr>
           <td>Condition</td>
           <td>child</td>
@@ -1392,18 +1497,6 @@
           <td><code>Activity</code></td>
           <td></td>
         </tr>
-        <tr>
-          <td>DisplayName</td>
-          <td>property</td>
-          <td><code>String</code></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Id</td>
-          <td>property</td>
-          <td><code>String</code></td>
-          <td></td>
-        </tr>
       </table>
     </div>
     <div class="activity" id="System.Activities.Statements.WriteLine@UiPath.Workflow/6.0.0-20240401-07">
@@ -1412,11 +1505,12 @@
       <span class="badge badge-src">UiPath.Workflow 6.0.0-20240401-07</span>
       <p class="members-heading">Arguments</p>
       <table>
-        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Description</th></tr>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
         <tr>
           <td>TextWriter</td>
           <td><span class="dir-in">In</span></td>
           <td><code>InArgument&lt;IO.TextWriter&gt;</code></td>
+          <td></td>
           <td></td>
           <td></td>
         </tr>
@@ -1426,9 +1520,10 @@
           <td><code>InArgument&lt;String&gt;</code></td>
           <td></td>
           <td></td>
+          <td></td>
         </tr>
       </table>
-      <p class="members-heading">Properties / child slots</p>
+      <p class="members-heading">Properties</p>
       <table>
         <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
         <tr>
