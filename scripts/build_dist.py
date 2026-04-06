@@ -245,7 +245,13 @@ def _is_legacy_suppressed(item: dict) -> bool:
 
 # ── Set builder ────────────────────────────────────────────────────────────────
 
-def build_set(set_cfg: dict) -> None:
+def build_set(set_cfg: dict, builtins_catalogs: list | None = None) -> list:
+    """Build one dist set. Returns the list of per-package catalog dicts produced.
+
+    builtins_catalogs: pre-built catalog dicts from the builtins set to merge into
+    this set's index. Ignored when the set itself is the builtins set or when the
+    set declares includeBuiltins: false.
+    """
     set_id           = set_cfg["id"]
     generated_at     = datetime.datetime.now(datetime.UTC).strftime("%Y-%m-%dT%H:%M:%SZ")
     per_pkg_catalogs = []
@@ -311,6 +317,11 @@ def build_set(set_cfg: dict) -> None:
                   f"{member_count} members, {len(seen_enums)} enums -> {out_path}")
 
     # ── Set index ──────────────────────────────────────────────────────────────
+    # Merge builtins into every set that hasn't opted out and isn't itself the builtins set.
+    is_builtins_set   = bool(set_cfg.get("builtins", False))
+    include_builtins  = set_cfg.get("includeBuiltins", True)
+    extra = (builtins_catalogs or []) if (not is_builtins_set and include_builtins) else []
+
     set_index = [
         {"metadata": {
             "schema":      {"id": "activity-catalog-set", "version": "v0.2"},
@@ -318,11 +329,14 @@ def build_set(set_cfg: dict) -> None:
             "generatedAt": generated_at,
         }},
         *per_pkg_catalogs,
+        *extra,
     ]
     index_path = OUT_DIR / set_id / "index.json"
     index_path.parent.mkdir(parents=True, exist_ok=True)
     write_json(index_path, set_index)
-    print(f"  {set_id}: index -> {index_path} ({len(per_pkg_catalogs)} packages)")
+    total = len(per_pkg_catalogs) + len(extra)
+    print(f"  {set_id}: index -> {index_path} ({total} packages{', incl. builtins' if extra else ''})")
+    return per_pkg_catalogs
 
 # ── CLI ────────────────────────────────────────────────────────────────────────
 
@@ -331,14 +345,31 @@ def main() -> None:
         description="Build publishable activity-catalog v0.2 JSON from PackageFurnace engine-result v1 sources."
     )
     parser.add_argument("--set", metavar="ID", help="Build only this set id")
+    parser.add_argument("--skip-builtins", action="store_true",
+                        help="Do not build or merge sets marked builtins: true")
     args = parser.parse_args()
 
+    sets = config["sets"]
+    builtins_sets = [s for s in sets if s.get("builtins")]
+    other_sets    = [s for s in sets if not s.get("builtins")]
+
     built = 0
-    for set_cfg in config["sets"]:
+    builtins_catalogs: list = []
+
+    # ── Always build builtins sets first (unless --skip-builtins) ────────────
+    if not args.skip_builtins:
+        for set_cfg in builtins_sets:
+            print(f"Building set (builtins): {set_cfg['id']}")
+            catalogs = build_set(set_cfg)
+            builtins_catalogs.extend(catalogs)
+            built += 1
+
+    # ── Build target sets ──────────────────────────────────────────────────────
+    for set_cfg in other_sets:
         if args.set and set_cfg["id"] != args.set:
             continue
         print(f"Building set: {set_cfg['id']}")
-        build_set(set_cfg)
+        build_set(set_cfg, builtins_catalogs=builtins_catalogs)
         built += 1
 
     if built == 0:
