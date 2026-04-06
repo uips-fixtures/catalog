@@ -171,11 +171,16 @@ _tmpl = _env.from_string(_HTML_TEMPLATE)
 
 # ── Public API ────────────────────────────────────────────────────────────────
 
-def iter_packages(catalog: dict) -> list[tuple[str, dict, list[dict]]]:
-    """Return [(pkg_id, src, activities), ...] in source order."""
-    groups   = group_by_package(catalog["activities"])
-    src_meta = {s["id"]: s for s in catalog["sources"]}
-    return [(pkg_id, src_meta.get(pkg_id, {}), acts) for pkg_id, acts in groups.items()]
+def iter_packages(catalogs: list[dict]) -> list[tuple[str, dict, list[dict]]]:
+    """Return [(pkg_id, src, activities), ...] in source order.
+
+    Accepts the list of per-package catalog dicts returned by load_catalog().
+    Each entry has a top-level 'source' dict and an 'activities' list.
+    """
+    return [
+        (entry["source"]["id"], entry["source"], entry["activities"])
+        for entry in catalogs
+    ]
 
 
 def build_html(set_id: str, pkg_id: str, src: dict, activities: list[dict], generated_at: str) -> str:

@@ -9,17 +9,25 @@ REPO_ROOT = Path(__file__).resolve().parent.parent.parent
 DIST_DIR  = REPO_ROOT / "data" / "dist"
 
 
-def load_catalog(set_id: str) -> dict | None:
-    path = DIST_DIR / set_id / "activities.json"
+def load_catalog(set_id: str) -> list[dict] | None:
+    """Return the list of per-package catalog dicts for a set.
+
+    Reads data/dist/{set_id}/index.json (current format: list where entry 0
+    is the metadata header and entries 1..N are per-package catalogs).
+    Returns None when the file is absent.
+    """
+    path = DIST_DIR / set_id / "index.json"
     if not path.exists():
         return None
-    return json.loads(path.read_text(encoding="utf-8"))
+    raw = json.loads(path.read_text(encoding="utf-8"))
+    # Skip entry 0 (metadata header); return only per-package catalog entries.
+    return [entry for entry in raw if "source" in entry]
 
 
 def discover_sets() -> list[str]:
     return sorted(
         d.name for d in DIST_DIR.iterdir()
-        if d.is_dir() and (d / "activities.json").exists()
+        if d.is_dir() and (d / "index.json").exists()
     )
 
 

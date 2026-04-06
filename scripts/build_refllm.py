@@ -46,7 +46,7 @@ def main() -> None:
     for set_id in set_ids:
         catalog = load_catalog(set_id)
         if catalog is None:
-            print(f"  [error] missing dist: {DIST_DIR / set_id / 'activities.json'}", file=sys.stderr)
+            print(f"  [error] missing dist: {DIST_DIR / set_id / 'index.json'}", file=sys.stderr)
             continue
         parts = []
         for pkg_id, src, activities in iter_packages(catalog):
