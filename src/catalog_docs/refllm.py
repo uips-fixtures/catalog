@@ -17,6 +17,7 @@ _MD_TEMPLATE = """\
 > generator: {{ generator_name }} {{ generator_version }}
 > generated: {{ generated_at }}
 > set: {{ set_id }}
+> url: https://uips-fixtures.github.io/llms/{{ pkg_id }}/{{ src.get("version", "") }}.txt
 > activities: {{ activities | length }}
 {% if src.get("authors") %}> authors: {{ src["authors"] }}
 {% endif %}

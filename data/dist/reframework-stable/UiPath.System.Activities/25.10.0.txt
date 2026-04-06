@@ -1,0 +1,1395 @@
+# UiPath.System.Activities 25.10.0
+
+> generator: uips-fixtures catalog v0.1
+> generated: 2026-04-06T12:23:36Z
+> set: reframework-stable
+> url: https://uips-fixtures.github.io/llms/UiPath.System.Activities/25.10.0.txt
+> activities: 119
+> authors: UiPath
+**ID format**: `{fullName}@{packageId}/{packageVersion}`
+**Argument directions**: In (input), Out (output), InOut (bidirectional)
+
+---
+### Get Username/Password
+
+**ID**: `UiPath.Activities.System.GetUsernamePasswordX@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Activities.System.GetUsernamePasswordX`
+**Category**: System.Dialog
+**Description**: Securely store and load usernames and passwords.
+**Arguments**:
+- `OrchestratorCredentialName` (in): `InArgument<String>`
+- `TimeoutInSeconds` (in): `InArgument<Int32>`
+- `Credential` (out [required]): `OutArgument<UiPath.Core.Activities.PasswordCredentials>`
+- `OrchestratorFolderPath` (in): `InArgument<String>`
+**Other members**:
+- `CredentialName` [property]: `String`
+- `AutosubmitTimeoutSeconds` [property]: `Int32`
+- `CredentialsSource` [property]: `UiPath.Activities.CredentialSource`
+### Pause Transaction Tracking
+
+**ID**: `UiPath.Activities.System.ProcessTracking.PauseTransactionTracking@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Activities.System.ProcessTracking.PauseTransactionTracking`
+**Category**: Process Tracking
+**Description**: Pauses adding Business Transaction logs for the operations to the ongoing transaction.
+_No members extracted._
+### Resume Transaction Tracking
+
+**ID**: `UiPath.Activities.System.ProcessTracking.ResumeTransactionTracking@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Activities.System.ProcessTracking.ResumeTransactionTracking`
+**Category**: Process Tracking
+**Description**: Resumes adding Business Transaction logs for the operations to the ongoing transaction.
+_No members extracted._
+### Run Job
+
+**ID**: `UiPath.Activities.System.Jobs.RunJob@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Activities.System.Jobs.RunJob`
+**Category**: Run
+**Description**: Initiates any type of job (Agent, Agentic process, RPA workflows, API workflow, Testing process, etc.) via Orchestrator to be picked up by any available robots. It allows for flexible configuration of the execution mode (Do not wait, Wait for job completion or Suspend execution until job completion). It returns output arguments unless started in the Do not wait mode.
+**Arguments**:
+- `FolderPath` (in): `InArgument<String>`
+- `ProcessName` (in [required]): `InArgument<String>`
+- `ContinueOnError` (in): `InArgument<Boolean>`
+- `TimeoutMS` (in): `InArgument<Int32>`
+- `Machine` (in): `InArgument<String>`
+- `Account` (in): `InArgument<String>`
+- `Job` (out): `OutArgument<UiPath.Core.Activities.OrchestratorJob>`
+**Other members**:
+- `BindingsKey` [property]: `String`
+- `ExecutionMode` [property]: `UiPath.Activities.Jobs.JobExecutionMode`
+- `FailWhenFaulted` [property]: `Boolean`
+### Send Email Notification
+
+**ID**: `UiPath.Activities.System.Orchestrator.Mail.SendEmailNotification@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Activities.System.Orchestrator.Mail.SendEmailNotification`
+**Category**: Alerts
+**Description**: Sends an email notification via the Orchestrator API
+**Arguments**:
+- `Subject` (in [required]): `InArgument<String>`
+- `Body` (in [required]): `InArgument<String>`
+- `Recipients` (in [required]): `InArgument<IEnumerable<String>>`
+- `Cc` (in): `InArgument<IEnumerable<String>>`
+- `TimeoutMS` (in): `InArgument<Int32>`
+- `ContinueOnError` (in): `InArgument<Boolean>`
+### Download File from URL
+
+**ID**: `UiPath.Activities.System.FileOperations.DownloadFileFromUrl@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Activities.System.FileOperations.DownloadFileFromUrl`
+**Category**: System.File
+**Description**: Use this activity to download any file from a given URL.
+**Arguments**:
+- `Url` (in [required]): `InArgument<String>`
+- `FileName` (in): `InArgument<String>`
+- `ConflictResolution` (in): `InArgument<UiPath.Activities.FileOperations.FileConflictBehavior>`
+- `Timeout` (in): `InArgument<Nullable<Int32>>`
+- `UserAgentHeader` (in): `InArgument<String>`
+- `ResponseAttachment` (out): `OutArgument<UiPath.Platform.ResourceHandling.ILocalResource>`
+- `ContinueOnError` (in): `InArgument<Boolean>`
+### Add or Subtract from Date
+
+**ID**: `UiPath.Activities.System.Date.AddOrSubtractFromDate@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Activities.System.Date.AddOrSubtractFromDate`
+**Category**: Formatting
+**Description**: Allows to add or subtract a specified unit of time from the source date.
+**Arguments**:
+- `AmountOfTime` (in): `InArgument<Int32>`
+- `Source` (in [required]): `InArgument<DateTime>`
+**Other members**:
+- `SelectedOperation` [property]: `UiPath.Activities.Date.AddOrSubtractFromDate.DateOperations`
+- `UnitOfTime` [property]: `UiPath.Core.Activities.DateTimeUtilities.UnitsOfTime`
+### Format Date as Text
+
+**ID**: `UiPath.Activities.System.Date.FormatDateAsText@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Activities.System.Date.FormatDateAsText`
+**Category**: Formatting
+**Description**: Format the source DateTime variable in a text (string).
+**Arguments**:
+- `Format` (in [required]): `InArgument<String>`
+- `Source` (in [required]): `InArgument<DateTime>`
+**Other members**:
+- `LocalizationCode` [property]: `Globalization.CultureInfo`
+### Change Case
+
+**ID**: `UiPath.Activities.System.Text.ChangeCase@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Activities.System.Text.ChangeCase`
+**Category**: Formatting
+**Description**: Select the desired letter case to convert the text to
+**Arguments**:
+- `Source` (in [required]): `InArgument<String>`
+**Other members**:
+- `ChangeCaseOptions` [property]: `UiPath.Activities.Text.ChangeCaseOptions`
+### Combine Text
+
+**ID**: `UiPath.Activities.System.Text.CombineText@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Activities.System.Text.CombineText`
+**Category**: Formatting
+**Description**: Combines text from a given collection, with the provided separator
+**Arguments**:
+- `Source` (in): `InArgument<IEnumerable<String>>`
+- `Separator` (in [required]): `InArgument<String>`
+### Extract Date and Time from Text
+
+**ID**: `UiPath.Activities.System.Text.ExtractDateTime@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Activities.System.Text.ExtractDateTime`
+**Category**: Formatting
+**Description**: Extracts date and time from the given input text matching the specified format and outputs it as a variable.
+**Arguments**:
+- `Format` (in [required]): `InArgument<String>`
+- `Results` (out): `OutArgument<IEnumerable<DateTime>>`
+- `Source` (in [required]): `InArgument<String>`
+**Other members**:
+- `LocalizationCode` [property]: `Globalization.CultureInfo`
+### Extract Text
+
+**ID**: `UiPath.Activities.System.Text.ExtractText@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Activities.System.Text.ExtractText`
+**Category**: Formatting
+**Description**: Extracts text from the given input matching the specified criteria. The following extraction options are available: value between two strings, e-mail addresses, urls, and text from HTML code.
+**Arguments**:
+- `StartingText` (in): `InArgument<String>`
+- `EndingText` (in): `InArgument<String>`
+- `Results` (out): `OutArgument<IEnumerable<String>>`
+- `Source` (in [required]): `InArgument<String>`
+**Other members**:
+- `ExtractOptions` [property]: `UiPath.Activities.Text.TextExtractOptions`
+- `IgnoreDuplicates` [property]: `Boolean`
+- `MatchCase` [property]: `Boolean`
+- `ExtractBaseURLOnly` [property]: `Boolean`
+### Find and Replace
+
+**ID**: `UiPath.Activities.System.Text.FindAndReplace@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Activities.System.Text.FindAndReplace`
+**Category**: Formatting
+**Description**: Search for a specified text and replace all occurrences with a new text.
+**Arguments**:
+- `ValueToFind` (in): `InArgument<String>`
+- `ReplaceWith` (in): `InArgument<String>`
+- `Source` (in [required]): `InArgument<String>`
+**Other members**:
+- `MatchCase` [property]: `Boolean`
+### Split Text
+
+**ID**: `UiPath.Activities.System.Text.SplitText@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Activities.System.Text.SplitText`
+**Category**: Formatting
+**Description**: Split the source text into a list of substrings based on a specified separator
+**Arguments**:
+- `Separator` (in [required]): `InArgument<String>`
+- `Results` (out): `OutArgument<IEnumerable<String>>`
+- `Source` (in [required]): `InArgument<String>`
+### Append Items to Collection
+
+**ID**: `UiPath.Activities.System.Collections.AppendItemToCollection@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Activities.System.Collections.AppendItemToCollection`
+**Category**: Collection
+**Description**: Appends one or more items at the end of the specified collection.
+_No members extracted._
+### Build Collection
+
+**ID**: `UiPath.Activities.System.Collections.BuildCollection@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Activities.System.Collections.BuildCollection`
+**Category**: Collection
+**Description**: Create a collection of items that have the same type as the first specified element.
+_No members extracted._
+### Exists In Collection
+
+**ID**: `UiPath.Activities.System.Collections.ExistsInCollection@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Activities.System.Collections.ExistsInCollection`
+**Category**: Collection
+**Description**: Checks if the given Item exists in the collection
+**Arguments**:
+- `Collection` (in [required]): `InArgument<ICollection<T>>`
+- `Item` (in [required]): `InArgument<T>`
+- `Exists` (out): `OutArgument<Boolean>`
+- `Index` (out): `OutArgument<Int32>`
+### Filter Collection
+
+**ID**: `UiPath.Activities.System.Collections.FilterCollection@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Activities.System.Collections.FilterCollection`
+**Category**: Collection
+**Description**: Filter a collection based on custom conditions
+_No members extracted._
+### Merge Collections
+
+**ID**: `UiPath.Activities.System.Collections.MergeCollections@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Activities.System.Collections.MergeCollections`
+**Category**: Collection
+**Description**: Combine collections in a new collection that contains all the elements
+**Arguments**:
+- `Collection` (in [required]): `InArgument<ICollection<T>>`
+- `SecondCollection` (in [required]): `InArgument<ICollection<T>>`
+### Remove From Collection
+
+**ID**: `UiPath.Activities.System.Collections.RemoveFromCollection@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Activities.System.Collections.RemoveFromCollection`
+**Category**: Collection
+**Description**: Remove the specified element from a collection
+**Arguments**:
+- `Collection` (in [required]): `InArgument<ICollection<T>>`
+- `Item` (in): `InArgument<T>`
+- `Index` (in): `InArgument<Int32>`
+**Other members**:
+- `RemoveAllElements` [property]: `Boolean`
+### Append Item to List
+
+**ID**: `UiPath.Activities.System.Arrays.AppendItemToList@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Activities.System.Arrays.AppendItemToList`
+**Category**: Data Lists
+**Description**: Adds an item at the end of the specified list.
+**Arguments**:
+- `List` (in [required]): `InArgument<IList<T>>`
+- `ItemToAppend` (in [required]): `InArgument<T>`
+- `ItemIndex` (out): `OutArgument<Int32>`
+### Create List
+
+**ID**: `UiPath.Core.Activities.CreateList@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.CreateList`
+**Category**: Data Lists
+**Description**: Creates a new empty list.
+**Arguments**:
+- `NewList` (out [required]): `OutArgument<IList<T>>`
+### Custom Input
+
+**ID**: `UiPath.Core.Activities.CustomInput@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.CustomInput`
+**Category**: System.Dialog
+**Description**: Displays an HTML file that sends data back to the workflow.
+**Arguments**:
+- `URI` (in [required]): `InArgument<String>`
+- `Result` (out): `OutArgument<String>`
+- `Width` (in): `InArgument<Int32>`
+- `Height` (in): `InArgument<Int32>`
+- `TopMost` (in): `InArgument<Boolean>`
+### Input Dialog
+
+**ID**: `UiPath.Core.Activities.InputDialog@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.InputDialog`
+**Category**: System.Dialog
+**Description**: Displays a dialog box that prompts the user with a label message and an input field.
+**Arguments**:
+- `Title` (in): `InArgument<String>`
+- `Label` (in): `InArgument<String>`
+- `Options` (in): `InArgument<String[]>`
+- `OptionsString` (in): `InArgument<String>`
+- `TopMost` (in): `InArgument<Boolean>`
+- `Result` (out): `OutArgument`
+**Other members**:
+- `IsPassword` [property]: `Boolean`
+### Message Box
+
+**ID**: `UiPath.Core.Activities.MessageBox@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.MessageBox`
+**Category**: System.Dialog
+**Description**: Displays a message box with a specified text and buttons.
+**Arguments**:
+- `Text` (in [required]): `InArgument<Object>`
+- `AutoCloseAfter` (in): `InArgument<TimeSpan>`
+- `Buttons` (in): `InArgument<UiPath.Core.Activities.ButtonOptions>`
+- `Caption` (in): `InArgument<String>`
+- `TopMost` (in): `InArgument<Boolean>`
+- `ChosenButton` (out): `OutArgument<String>`
+### Browse for File
+
+**ID**: `UiPath.Core.Activities.SelectFile@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.SelectFile`
+**Category**: System.File
+**Description**: Opens a dialog box at runtime to browse for a file and select it to use in the task.
+**Arguments**:
+- `InitialDirectory` (in): `InArgument<String>`
+- `Multiselect` (in): `InArgument<Boolean>`
+- `SelectedFile` (out): `OutArgument<String>`
+- `SelectedFiles` (out): `OutArgument<IEnumerable<String>>`
+**Other members**:
+- `Filter` [property]: `String`
+### Browse for Folder
+
+**ID**: `UiPath.Core.Activities.SelectFolder@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.SelectFolder`
+**Category**: System.File
+**Description**: Opens a dialog box at runtime to select a folder to use later.
+**Arguments**:
+- `SelectedFolder` (out): `OutArgument<String>`
+### Beep
+
+**ID**: `UiPath.Core.Activities.Beep@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.Beep`
+**Category**: System.Environment
+**Description**: Generates a simple tone on the speaker.
+_No members extracted._
+### Kill Process
+
+**ID**: `UiPath.Core.Activities.KillProcess@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.KillProcess`
+**Category**: System.Application
+**Description**: Terminates a specified process.
+**Arguments**:
+- `ProcessName` (in [required]): `InArgument<String>`
+- `Process` (in [required]): `InArgument<Diagnostics.Process>`
+- `AppliesTo` (in): `InArgument<UiPath.Core.Activities.KillProcessApplyOn>`
+- `ContinueOnError` (in): `InArgument<Boolean>`
+### Copy Folder
+
+**ID**: `UiPath.Core.Activities.CopyFolderX@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.CopyFolderX`
+**Category**: System.File
+**Description**: Copies a specified folder to another location
+**Arguments**:
+- `From` (in): `InArgument<String>`
+- `FromResource` (in): `InArgument<UiPath.Platform.ResourceHandling.IResource>`
+- `To` (in): `InArgument<String>`
+- `ToResource` (in): `InArgument<UiPath.Platform.ResourceHandling.IResource>`
+- `ContinueOnError` (in): `InArgument<Boolean>`
+**Other members**:
+- `Overwrite` [property]: `Boolean`
+- `IncludeSubfolders` [property]: `Boolean`
+### Delete File
+
+**ID**: `UiPath.Core.Activities.DeleteFileX@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.DeleteFileX`
+**Category**: System.File
+**Description**: Deletes a specified file.
+**Arguments**:
+- `Path` (in [required]): `InArgument<String>`
+### Delete Folder
+
+**ID**: `UiPath.Core.Activities.DeleteFolderX@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.DeleteFolderX`
+**Category**: System.File
+**Description**: Deletes a specified folder.
+**Arguments**:
+- `Path` (in [required]): `InArgument<String>`
+- `Recursive` (in): `InArgument<Boolean>`
+### File Exists
+
+**ID**: `UiPath.Core.Activities.FileExistsX@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.FileExistsX`
+**Category**: System.File
+**Description**: Checks if the specified file exists and returns True if the file exists, False if it does not.
+**Arguments**:
+- `Path` (in [required]): `InArgument<String>`
+- `Exists` (out): `OutArgument<Boolean>`
+### Folder Exists
+
+**ID**: `UiPath.Core.Activities.FolderExistsX@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.FolderExistsX`
+**Category**: System.File
+**Description**: Checks if the specified folder exists and returns True if the folder exists, False if it does not.
+**Arguments**:
+- `Path` (in [required]): `InArgument<String>`
+- `Exists` (out): `OutArgument<Boolean>`
+### For Each File in Folder
+
+**ID**: `UiPath.Core.Activities.ForEachFileX@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.ForEachFileX`
+**Category**: System.File
+**Description**: Repeats the contained activities once for each file in a specified folder.
+**Arguments**:
+- `Folder` (in [required]): `InArgument<String>`
+- `Filter` (in): `InArgument<String>`
+**Other members**:
+- `IncludeSubDirectories` [property]: `Boolean`
+- `SkipFolderWithoutPermission` [property]: `Boolean`
+- `OrderBy` [property]: `UiPath.Core.Activities.ForEachFileOrderByOptions`
+### For Each Folder in Folder
+
+**ID**: `UiPath.Core.Activities.ForEachFolderX@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.ForEachFolderX`
+**Category**: System.File
+**Description**: Repeats the contained activities once for each child folder in the specified folder.
+**Arguments**:
+- `Folder` (in [required]): `InArgument<String>`
+- `FilterByName` (in): `InArgument<String>`
+**Other members**:
+- `IncludeSubFolders` [property]: `Boolean`
+- `SkipFoldersWithoutPermission` [property]: `Boolean`
+- `OrderBy` [property]: `UiPath.Core.Activities.ForEachFolderOrderByOptions`
+### Get File Info
+
+**ID**: `UiPath.Core.Activities.GetFileInfoX@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.GetFileInfoX`
+**Category**: System.File
+**Description**: Retrieves the properties of a specified file and saves the information for later use in the project.
+**Arguments**:
+- `FilePath` (in [required]): `InArgument<String>`
+- `Output` (out): `OutArgument<IO.FileInfo>`
+### Get Folder Info
+
+**ID**: `UiPath.Core.Activities.GetFolderInfoX@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.GetFolderInfoX`
+**Category**: System.File
+**Description**: Retrieves the properties of a specified folder and saves the information for later use in the project.
+**Arguments**:
+- `FolderPath` (in [required]): `InArgument<String>`
+- `Output` (out): `OutArgument<IO.DirectoryInfo>`
+**Other members**:
+- `ThrowIfNotExists` [property]: `Boolean`
+### Move Folder
+
+**ID**: `UiPath.Core.Activities.MoveFolderX@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.MoveFolderX`
+**Category**: System.File
+**Description**: Moves a specified folder to another location.
+**Arguments**:
+- `From` (in [required]): `InArgument<String>`
+- `To` (in [required]): `InArgument<String>`
+**Other members**:
+- `Overwrite` [property]: `Boolean`
+### Rename File
+
+**ID**: `UiPath.Core.Activities.RenameFileX@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.RenameFileX`
+**Category**: System.File
+**Description**: Renames the selected file
+**Arguments**:
+- `FilePath` (in [required]): `InArgument<String>`
+- `FileResource` (in [required]): `InArgument<UiPath.Platform.ResourceHandling.IResource>`
+- `NewName` (in [required]): `InArgument<String>`
+- `OutputFileResource` (out): `OutArgument<UiPath.Platform.ResourceHandling.IResource>`
+**Other members**:
+- `KeepExtension` [property]: `Boolean`
+### Rename Folder
+
+**ID**: `UiPath.Core.Activities.RenameFolderX@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.RenameFolderX`
+**Category**: System.File
+**Description**: Renames the selected folder.
+**Arguments**:
+- `FolderPath` (in [required]): `InArgument<String>`
+- `NewName` (in [required]): `InArgument<String>`
+### File Change Trigger
+
+**ID**: `UiPath.Core.Activities.FileChangeTriggerV3@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.FileChangeTriggerV3`
+**Category**: System.File
+**Description**: Monitors changes on a specified file or folder.
+**Arguments**:
+- `Path` (in [required]): `InArgument<String>`
+- `FileNameFilter` (in): `InArgument<String>`
+- `NotifyFilters` (in [required]): `InArgument<IO.NotifyFilters>`
+- `ChangeType` (in [required]): `InArgument<IO.WatcherChangeTypes>`
+- `IncludeSubdirectories` (in): `InArgument<Boolean>`
+### Invoke Power Shell
+
+**ID**: `UiPath.Core.Activities.InvokePowerShell@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.InvokePowerShell`
+**Category**: System.PowerShell
+**Description**: Executes a PowerShell command with specified input parameters.
+_No members extracted._
+### Change Type
+
+**ID**: `UiPath.Core.Activities.ChangeType@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.ChangeType`
+**Category**: Programming.String
+**Description**: Change the data type of a variable.
+**Arguments**:
+- `SourceValue` (in [required]): `InArgument<Object>`
+- `ConvertedValue` (out [required]): `OutArgument<T>`
+**Other members**:
+- `Format` [property]: `IFormatProvider`
+### Global Variable Changed Trigger
+
+**ID**: `UiPath.Core.Activities.GlobalVariableChangedTrigger@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.GlobalVariableChangedTrigger`
+**Category**: Triggers
+**Description**: Trigger which fires when a global variable's value has changed.
+**Arguments**:
+- `VariableName` (in [required]): `InArgument<Object>`
+### Notify Global Variable Changed
+
+**ID**: `UiPath.Core.Activities.NotifyGlobalVariableChanged@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.NotifyGlobalVariableChanged`
+**Description**: Forces a global variable changed notification to be sent to all subscribers.
+**Arguments**:
+- `VariableName` (in [required]): `InArgument<Object>`
+### Trigger Scope
+
+**ID**: `UiPath.Core.Activities.TriggerScope@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.TriggerScope`
+**Category**: System.Application
+**Description**: A container activity that allows management of triggers and handler activities.
+**Arguments**:
+- `ContinueOnError` (in): `InArgument<Boolean>`
+**Other members**:
+- `SchedulingMode` [property]: `UiPath.Core.Activities.ActionSchedulingMode`
+### Invoke VBScript
+
+**ID**: `UiPath.Core.Activities.InvokeVBScript@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.InvokeVBScript`
+**Category**: System.VBScript
+**Description**: Executes a specified VBScript, optionally passing it a list of input parameters.
+**Arguments**:
+- `TimeoutMS` (in): `InArgument<Int32>`
+- `FileName` (in [required]): `InArgument<String>`
+- `RunInBatchMode` (in): `InArgument<Boolean>`
+- `WaitForOutput` (in): `InArgument<Boolean>`
+- `KillOnTimeout` (in): `InArgument<Boolean>`
+- `UnicodeSupport` (in): `InArgument<Boolean>`
+- `Result` (out): `OutArgument<String>`
+**Other members**:
+- `Arguments` [property]: `List<InArgument<String>>`
+### Process End Trigger
+
+**ID**: `UiPath.Core.Activities.ProcessEndTriggerV2@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.ProcessEndTriggerV2`
+**Category**: System.Application
+**Description**: Monitors termination of a specified Windows process.
+**Arguments**:
+- `ProcessName` (in [required]): `InArgument<String>`
+### Process Start Trigger
+
+**ID**: `UiPath.Core.Activities.ProcessStartTriggerV2@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.ProcessStartTriggerV2`
+**Category**: System.Application
+**Description**: Monitors launch of a specified Windows process.
+**Arguments**:
+- `ProcessName` (in [required]): `InArgument<String>`
+### Invoke Com Method
+
+**ID**: `UiPath.Core.Activities.InvokeComMethod@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.InvokeComMethod`
+**Category**: Programming.Execute
+**Description**: Invokes a method of a specified COM object.
+**Arguments**:
+- `MethodName` (in): `InArgument<String>`
+- `ProgID` (in): `InArgument<String>`
+- `CLSID` (in): `InArgument<String>`
+- `ContinueOnError` (in): `InArgument<Boolean>`
+**Other members**:
+- `BindingFlags` [property]: `Reflection.BindingFlags`
+- `Arguments` [property]: `Dictionary<String, Argument>`
+### Multiple Assign
+
+**ID**: `UiPath.Core.Activities.MultipleAssign@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.MultipleAssign`
+**Category**: Workflow.Control
+**Description**: Sets multiple variables or arguments values in one activity
+_No members extracted._
+### Modify Text
+
+**ID**: `UiPath.Core.Activities.ModifyText@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.ModifyText`
+**Category**: Programming.String
+**Description**: Updates a text value using modifications including find and replace, trim, and combining (concatentating) with another text value.
+**Arguments**:
+- `SourceText` (in [required]): `InArgument<String>`
+- `OutputText` (out [required]): `OutArgument<String>`
+### Else If
+
+**ID**: `UiPath.Core.Activities.IfElseIfV2@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.IfElseIfV2`
+**Category**: Workflow
+**Description**: Else If activity chooses between different paths based on a series of conditions being true or false.
+**Arguments**:
+- `Condition` (in): `InArgument<Boolean>`
+**Other members**:
+- `Then` [child]: `Activity`
+- `ElseIfs` [property]: `ComponentModel.BindingList<UiPath.Core.Activities.IfElseIfBlock>`
+- `Else` [child]: `Activity`
+### Build Data Table
+
+**ID**: `UiPath.Core.Activities.BuildDataTable@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.BuildDataTable`
+**Category**: Programming.DataTable
+**Description**: Creates a DataTable according to a specified schema.
+**Arguments**:
+- `DataTable` (out): `OutArgument<Data.DataTable>`
+### Collection to DataTable
+
+**ID**: `UiPath.Core.Activities.CollectionToDataTable@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.CollectionToDataTable`
+**Category**: Collection
+**Description**: Converts a Collection to a DataTable.
+_No members extracted._
+### For Each Row in Data Table
+
+**ID**: `UiPath.Core.Activities.ForEachRow@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.ForEachRow`
+**Category**: Programming.DataTable
+**Description**: Executes an action once for each row in the DataTable provided.
+**Arguments**:
+- `DataTable` (in [required]): `InArgument<Data.DataTable>`
+- `Values` (in): `InArgument<Collections.IEnumerable>`
+- `MaxIterations` (in): `InArgument<Int32>`
+- `CurrentIndex` (out): `OutArgument<Int32>`
+**Other members**:
+- `Condition` [child]: `Activity<Boolean>`
+### Get Environment Folder
+
+**ID**: `UiPath.Core.Activities.GetEnvironmentFolder@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.GetEnvironmentFolder`
+**Category**: System.Environment
+**Description**: Gets the path to the specified system special folder.
+**Arguments**:
+- `FolderPath` (out): `OutArgument<String>`
+**Other members**:
+- `SpecialFolder` [property]: `Environment.SpecialFolder`
+### Get Environment Variable
+
+**ID**: `UiPath.Core.Activities.GetEnvironmentVariable@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.GetEnvironmentVariable`
+**Category**: System.Environment
+**Description**: Gets the contents of the specified environment variable.
+**Arguments**:
+- `Variable` (in [required]): `InArgument<String>`
+- `VariableValue` (out): `OutArgument<String>`
+### Get Processes
+
+**ID**: `UiPath.Core.Activities.GetProcesses@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.GetProcesses`
+**Category**: System.Application
+**Description**: Gets the list of all running processes.
+**Arguments**:
+- `Processes` (out): `OutArgument<Collection<Diagnostics.Process>>`
+- `ContinueOnError` (in): `InArgument<Boolean>`
+### Set Environment Variable
+
+**ID**: `UiPath.Core.Activities.SetEnvironmentVariable@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.SetEnvironmentVariable`
+**Category**: System.Environment
+**Description**: Set Environment Variable
+**Arguments**:
+- `Name` (in [required]): `InArgument<String>`
+- `Value` (in [required]): `InArgument<String>`
+### Copy File
+
+**ID**: `UiPath.Core.Activities.CopyFile@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.CopyFile`
+**Category**: System.File
+**Description**: Copies a specified file to another location.
+**Arguments**:
+- `Path` (in): `InArgument<String>`
+- `Destination` (in): `InArgument<String>`
+- `PathResource` (in): `InArgument<UiPath.Platform.ResourceHandling.IResource>`
+- `DestinationResource` (in): `InArgument<UiPath.Platform.ResourceHandling.IResource>`
+- `ContinueOnError` (in): `InArgument<Boolean>`
+**Other members**:
+- `Overwrite` [property]: `Boolean`
+### Create Folder
+
+**ID**: `UiPath.Core.Activities.CreateDirectory@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.CreateDirectory`
+**Category**: System.File
+**Description**: Creates a folder in the specified location.
+**Arguments**:
+- `Path` (in [required]): `InArgument<String>`
+- `ContinueOnError` (in): `InArgument<Boolean>`
+- `Output` (out): `OutArgument<UiPath.Platform.ResourceHandling.ILocalResource>`
+### Create File
+
+**ID**: `UiPath.Core.Activities.CreateFile@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.CreateFile`
+**Category**: System.File
+**Description**: Creates a file in the specified location.
+**Arguments**:
+- `Path` (in): `InArgument<String>`
+- `PathResource` (in): `InArgument<UiPath.Platform.ResourceHandling.IResource>`
+- `Name` (in): `InArgument<String>`
+- `ContinueOnError` (in): `InArgument<Boolean>`
+- `Output` (out): `OutArgument<UiPath.Platform.ResourceHandling.ILocalResource>`
+### Delete File or Folder
+
+**ID**: `UiPath.Core.Activities.Delete@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.Delete`
+**Category**: System.File
+**Description**: Deletes the file or folder in the specified location.
+**Arguments**:
+- `Path` (in [required]): `InArgument<String>`
+- `ResourceFile` (in [required]): `InArgument<UiPath.Platform.ResourceHandling.ILocalResource>`
+- `ContinueOnError` (in): `InArgument<Boolean>`
+### Get Local File or Folder
+
+**ID**: `UiPath.Core.Activities.PathExists@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.PathExists`
+**Category**: System.File
+**Description**: Checks if the specified path exists. The path can represent a file path or a directory path.
+**Arguments**:
+- `Path` (in [required]): `InArgument<String>`
+- `Exists` (out): `OutArgument<Boolean>`
+- `Resource` (out): `OutArgument<UiPath.Platform.ResourceHandling.ILocalResource>`
+**Other members**:
+- `PathType` [property]: `UiPath.Core.Activities.PathType`
+### Read Text File
+
+**ID**: `UiPath.Core.Activities.ReadTextFile@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.ReadTextFile`
+**Category**: System.File
+**Description**: Copies all the characters from a specified text file.
+**Arguments**:
+- `FileName` (in [required]): `InArgument<String>`
+- `File` (in [required]): `InArgument<UiPath.Platform.ResourceHandling.IResource>`
+- `Encoding` (in): `InArgument<String>`
+- `Content` (out): `OutArgument<String>`
+- `ContinueOnError` (in): `InArgument<Boolean>`
+### Write Text File
+
+**ID**: `UiPath.Core.Activities.WriteTextFile@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.WriteTextFile`
+**Category**: System.File
+**Description**: Copies a text and pastes it in a text file replacing any existing data in the file.
+**Arguments**:
+- `FileName` (in [required]): `InArgument<String>`
+- `File` (in [required]): `InArgument<UiPath.Platform.ResourceHandling.ILocalResource>`
+- `Encoding` (in): `InArgument<String>`
+- `Text` (in [required]): `InArgument<String>`
+- `Output` (out): `OutArgument<UiPath.Platform.ResourceHandling.ILocalResource>`
+- `ContinueOnError` (in): `InArgument<Boolean>`
+### Raise Alert
+
+**ID**: `UiPath.Core.Activities.RaiseAlert@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.RaiseAlert`
+**Category**: Alerts
+**Description**: Helps you add custom alerts in Orchestrator, with a selected severity.
+**Arguments**:
+- `Notification` (in [required]): `InArgument<String>`
+- `TimeoutMS` (in): `InArgument<Int32>`
+- `ContinueOnError` (in): `InArgument<Boolean>`
+- `FolderPath` (in): `InArgument<String>`
+**Other members**:
+- `Severity` [property]: `UiPath.Core.Activities.AlertSeverity`
+### Orchestrator HTTP Request
+
+**ID**: `UiPath.Core.Activities.OrchestratorHttpRequest@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.OrchestratorHttpRequest`
+**Category**: API
+**Description**: Performs HTTP requests to the Orchestrator API by authenticating under the robot it is executed on.
+**Arguments**:
+- `RelativeEndpoint` (in): `InArgument<String>`
+- `JSONPayload` (in): `InArgument<String>`
+- `StatusCode` (out): `OutArgument<Int32>`
+- `ResponseHeaders` (out): `OutArgument<Dictionary<String, String>>`
+- `TimeoutMS` (in): `InArgument<Int32>`
+- `ContinueOnError` (in): `InArgument<Boolean>`
+- `FolderPath` (in): `InArgument<String>`
+**Other members**:
+- `Method` [property]: `UiPath.Core.Activities.OrchestratorAPIHttpMethods`
+### Get Secret
+
+**ID**: `UiPath.Core.Activities.GetSecret@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.GetSecret`
+**Category**: Assets
+**Description**: Gets a specified secret asset by using a provided Asset Name. If the secret asset is not global, it must be assigned to the local robot in order to be retrieved.
+**Arguments**:
+- `AssetName` (in): `InArgument<String>`
+- `Secret` (out): `OutArgument<Security.SecureString>`
+- `TimeoutMS` (in): `InArgument<Int32>`
+- `FolderPath` (in): `InArgument<String>`
+**Other members**:
+- `BindingsKey` [property]: `String`
+### Get Asset
+
+**ID**: `UiPath.Core.Activities.GetRobotAsset@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.GetRobotAsset`
+**Category**: Assets
+**Description**: Gets a specified asset by using a provided AssetName. If the asset is not global, it must be assigned to the local robot in order to be retrieved.
+**Arguments**:
+- `Value` (out): `OutArgument`
+- `AssetName` (in): `InArgument<String>`
+- `TimeoutMS` (in): `InArgument<Int32>`
+- `FolderPath` (in): `InArgument<String>`
+**Other members**:
+- `BindingsKey` [property]: `String`
+- `CacheStrategy` [property]: `UiPath.Core.Activities.CacheStrategyEnum`
+### Get Credential
+
+**ID**: `UiPath.Core.Activities.GetRobotCredential@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.GetRobotCredential`
+**Category**: Assets
+**Description**: Gets a specified credential asset by using a provided Asset Name. If the credential asset is not global, it must be assigned to the local robot in order to be retrieved.
+**Arguments**:
+- `Username` (out): `OutArgument<String>`
+- `Password` (out): `OutArgument<Security.SecureString>`
+- `AssetName` (in): `InArgument<String>`
+- `TimeoutMS` (in): `InArgument<Int32>`
+- `FolderPath` (in): `InArgument<String>`
+**Other members**:
+- `BindingsKey` [property]: `String`
+- `CacheStrategy` [property]: `UiPath.Core.Activities.CacheStrategyEnum`
+### Set Asset
+
+**ID**: `UiPath.Core.Activities.SetAsset@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.SetAsset`
+**Category**: Assets
+**Description**: Updates the value of an indicated asset, that is already available in Orchestrator, be it a global or a Per Robot asset.
+**Arguments**:
+- `AssetName` (in [required]): `InArgument<String>`
+- `Value` (in [required]): `InArgument<Object>`
+- `TimeoutMS` (in): `InArgument<Int32>`
+- `ContinueOnError` (in): `InArgument<Boolean>`
+- `FolderPath` (in): `InArgument<String>`
+**Other members**:
+- `BindingsKey` [property]: `String`
+### Set Secret
+
+**ID**: `UiPath.Core.Activities.SetSecret@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.SetSecret`
+**Category**: Assets
+**Description**: Updates the value of an indicated secret asset, that is already available in Orchestrator, be it a global or a Per Robot asset.
+**Arguments**:
+- `AssetName` (in [required]): `InArgument<String>`
+- `SecretValue` (in [required]): `InArgument<String>`
+- `SecureSecretValue` (in [required]): `InArgument<Security.SecureString>`
+- `TimeoutMS` (in): `InArgument<Int32>`
+- `ContinueOnError` (in): `InArgument<Boolean>`
+- `FolderPath` (in): `InArgument<String>`
+**Other members**:
+- `BindingsKey` [property]: `String`
+### Set Credential
+
+**ID**: `UiPath.Core.Activities.SetCredential@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.SetCredential`
+**Category**: Assets
+**Description**: Updates the value of an indicated credential asset, that is already available in Orchestrator, be it a global or a Per Robot asset.
+**Arguments**:
+- `CredentialName` (in [required]): `InArgument<String>`
+- `UserName` (in [required]): `InArgument<String>`
+- `Password` (in [required]): `InArgument<String>`
+- `SecurePassword` (in [required]): `InArgument<Security.SecureString>`
+- `TimeoutMS` (in): `InArgument<Int32>`
+- `ContinueOnError` (in): `InArgument<Boolean>`
+- `FolderPath` (in): `InArgument<String>`
+**Other members**:
+- `BindingsKey` [property]: `String`
+### Get Jobs
+
+**ID**: `UiPath.Core.Activities.GetJobs@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.GetJobs`
+**Category**: Jobs
+**Description**: Retrieves a list of Orchestrator jobs according to a custom filter, using the Orchestrator API.
+**Arguments**:
+- `Filter` (in): `InArgument<String>`
+- `Top` (in): `InArgument<Int32>`
+- `Skip` (in): `InArgument<Int32>`
+- `TimeoutMS` (in): `InArgument<Int32>`
+- `ContinueOnError` (in): `InArgument<Boolean>`
+- `FolderPath` (in): `InArgument<String>`
+**Other members**:
+- `FilterBuilder` [property]: `UiPath.Activities.Jobs.JobFilterSettings`
+### Start Job
+
+**ID**: `UiPath.Core.Activities.StartJob@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.StartJob`
+**Category**: Jobs
+**Description**: Initiates a new job via Orchestrator to be picked up by any available robots. It immediately continues the execution without waiting for the job to finish. It does not return output arguments.
+**Arguments**:
+- `ProcessName` (in [required]): `InArgument<String>`
+- `NumberOfRobots` (in): `InArgument<Int32>`
+- `ModernFolder` (in): `InArgument<Boolean>`
+- `ArgumentsVariable` (in): `InArgument<Dictionary<String, Object>>`
+- `JobPriority` (in): `InArgument<UiPath.Orchestrator.Client.Models.StartProcessDtoJobPriority>`
+- `ResumeOnSameContext` (in): `InArgument<Boolean>`
+- `Key` (out): `OutArgument<String>`
+- `JobId` (out): `OutArgument<String>`
+- `TimeoutMS` (in): `InArgument<Int32>`
+- `ContinueOnError` (in): `InArgument<Boolean>`
+- `FolderPath` (in): `InArgument<String>`
+**Other members**:
+- `BindingsKey` [property]: `String`
+- `Arguments` [property]: `Dictionary<String, Argument>`
+### Stop Job
+
+**ID**: `UiPath.Core.Activities.StopJob@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.StopJob`
+**Category**: Jobs
+**Description**: Stops or kills a job on Orchestrator.
+**Arguments**:
+- `Job` (in [required]): `InArgument<UiPath.Core.Activities.OrchestratorJob>`
+- `Strategy` (in): `InArgument<UiPath.Core.Activities.StopStrategy>`
+- `TimeoutMS` (in): `InArgument<Int32>`
+- `ContinueOnError` (in): `InArgument<Boolean>`
+### Add Queue Item
+
+**ID**: `UiPath.Core.Activities.AddQueueItem@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.AddQueueItem`
+**Category**: Queues
+**Description**: Adds a new item in the queue. The status of the item will be New.
+**Arguments**:
+- `Reference` (in): `InArgument<String>`
+- `QueueType` (in [required]): `InArgument<String>`
+- `ItemInformationCollection` (in): `InArgument<Dictionary<String, Object>>`
+- `DeferDate` (in): `InArgument<DateTime>`
+- `DueDate` (in): `InArgument<DateTime>`
+- `TimeoutMS` (in): `InArgument<Int32>`
+- `FolderPath` (in): `InArgument<String>`
+- `ContinueOnError` (in): `InArgument<Boolean>`
+**Other members**:
+- `BindingsKey` [property]: `String`
+- `ItemInformation` [property]: `Dictionary<String, InArgument>`
+- `Priority` [property]: `UiPath.Core.QueueItemPriority`
+### Add Transaction Item
+
+**ID**: `UiPath.Core.Activities.AddTransactionItem@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.AddTransactionItem`
+**Category**: Queues
+**Description**: Adds a new item in the queue and starts a transaction. The status of the item will be set to InProgress. Returns the item as a QueueItem variable.
+**Arguments**:
+- `Reference` (in): `InArgument<String>`
+- `FolderPath` (in): `InArgument<String>`
+- `QueueType` (in [required]): `InArgument<String>`
+- `ContinueOnError` (in): `InArgument<Boolean>`
+- `TimeoutMS` (in): `InArgument<Int32>`
+- `TransactionItem` (out): `OutArgument<UiPath.Core.QueueItem>`
+- `SpecificData` (out): `OutArgument`
+**Other members**:
+- `TransactionInformation` [property]: `Dictionary<String, InArgument>`
+- `BindingsKey` [property]: `String`
+### Bulk Add Queue Items
+
+**ID**: `UiPath.Core.Activities.BulkAddQueueItems@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.BulkAddQueueItems`
+**Category**: Queues
+**Description**: Adds a collection of items from a Data Table to a queue. The status of the items will be New.
+**Arguments**:
+- `QueueItemsDataTable` (in [required]): `InArgument<Data.DataTable>`
+- `QueueName` (in [required]): `InArgument<String>`
+- `TimeoutMS` (in): `InArgument<Int32>`
+- `ContinueOnError` (in): `InArgument<Boolean>`
+- `FolderPath` (in): `InArgument<String>`
+**Other members**:
+- `BindingsKey` [property]: `String`
+- `CommitType` [property]: `UiPath.Core.Activities.BulkAddQueueItems.CommitTypeEnum`
+### Delete Queue Items
+
+**ID**: `UiPath.Core.Activities.DeleteQueueItems@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.DeleteQueueItems`
+**Category**: Queues
+**Description**: Deletes items with the New state from a specified queue.
+**Arguments**:
+- `QueueItems` (in [required]): `InArgument<IEnumerable<UiPath.Core.QueueItem>>`
+- `TimeoutMS` (in): `InArgument<Int32>`
+- `ContinueOnError` (in): `InArgument<Boolean>`
+### Get Transaction Item
+
+**ID**: `UiPath.Core.Activities.GetQueueItem@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.GetQueueItem`
+**Category**: Queues
+**Description**: Gets an item from the queue so that you can process it (start the transaction) and sets its status to In Progress.
+**Arguments**:
+- `FolderPath` (in): `InArgument<String>`
+- `QueueType` (in [required]): `InArgument<String>`
+- `ContinueOnError` (in): `InArgument<Boolean>`
+- `TimeoutMS` (in): `InArgument<Int32>`
+- `Reference` (in): `InArgument<String>`
+- `TransactionItem` (out): `OutArgument<UiPath.Core.QueueItem>`
+- `SpecificData` (out): `OutArgument`
+**Other members**:
+- `BindingsKey` [property]: `String`
+- `FilterStrategy` [property]: `UiPath.Core.Activities.ReferenceFilterStrategy`
+### Get Queue Items
+
+**ID**: `UiPath.Core.Activities.GetQueueItems@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.GetQueueItems`
+**Category**: Queues
+**Description**: Retrieves a list of transactions from an indicated queue, according to multiple filters, such as creation date, priority, state and reference.
+**Arguments**:
+- `QueueName` (in [required]): `InArgument<String>`
+- `Reference` (in): `InArgument<String>`
+- `From` (in): `InArgument<Nullable<DateTime>>`
+- `To` (in): `InArgument<Nullable<DateTime>>`
+- `Duration` (in): `InArgument<Nullable<Int32>>`
+- `Top` (in): `InArgument<Int32>`
+- `Skip` (in): `InArgument<Int32>`
+- `TimeoutMS` (in): `InArgument<Int32>`
+- `ContinueOnError` (in): `InArgument<Boolean>`
+- `FolderPath` (in): `InArgument<String>`
+**Other members**:
+- `BindingsKey` [property]: `String`
+- `FilterStrategy` [property]: `UiPath.Core.Activities.ReferenceFilterStrategy`
+- `QueueItemStates` [property]: `UiPath.Core.Activities.QueueItemStates`
+- `PriorityEnum` [property]: `Nullable<UiPath.Core.QueueItemPriority>`
+### Postpone Transaction Item
+
+**ID**: `UiPath.Core.Activities.PostponeTransactionItem@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.PostponeTransactionItem`
+**Category**: Queues
+**Description**: Adds time parameters between which a transaction must be processed (not before Postpone Date and no later than Deadline Date).
+**Arguments**:
+- `DeferDate` (in): `InArgument<DateTime>`
+- `DueDate` (in): `InArgument<DateTime>`
+- `TransactionItem` (in [required]): `InArgument<UiPath.Core.QueueItem>`
+- `ContinueOnError` (in): `InArgument<Boolean>`
+- `TimeoutMS` (in): `InArgument<Int32>`
+### New Item Added to Queue
+
+**ID**: `UiPath.Core.Activities.QueueTrigger@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.QueueTrigger`
+**Category**: Triggers
+**Description**: Start a job when a new item is added to the specified queue.
+**Arguments**:
+- `TransactionItem` (out): `OutArgument<UiPath.Core.QueueItem>`
+- `ExtractedQueueItem` (out): `OutArgument`
+**Other members**:
+- `FolderPath` [property]: `String`
+- `QueueName` [property]: `String`
+- `BindingsKey` [property]: `String`
+### Set Transaction Progress
+
+**ID**: `UiPath.Core.Activities.SetTransactionProgress@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.SetTransactionProgress`
+**Category**: Queues
+**Description**: Helps you create custom progress statuses for your In Progress transactions.
+**Arguments**:
+- `TransactionItem` (in [required]): `InArgument<UiPath.Core.QueueItem>`
+- `Progress` (in [required]): `InArgument<String>`
+- `TimeoutMS` (in): `InArgument<Int32>`
+- `ContinueOnError` (in): `InArgument<Boolean>`
+### Set Transaction Status
+
+**ID**: `UiPath.Core.Activities.SetTransactionStatus@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.SetTransactionStatus`
+**Category**: Queues
+**Description**: Sets the status of a transaction item to Failed or Successful.
+**Arguments**:
+- `TransactionItem` (in [required]): `InArgument<UiPath.Core.QueueItem>`
+- `Status` (in): `InArgument<UiPath.Core.ProcessingStatus>`
+- `OutputVariable` (in): `InArgument<Dictionary<String, Object>>`
+- `AnalyticsVariable` (in): `InArgument<Dictionary<String, Object>>`
+- `Reason` (in): `InArgument<String>`
+- `Details` (in): `InArgument<String>`
+- `ErrorType` (in): `InArgument<UiPath.Core.Activities.ErrorType>`
+- `AssociatedFilePath` (in): `InArgument<String>`
+- `ContinueOnError` (in): `InArgument<Boolean>`
+- `TimeoutMS` (in): `InArgument<Int32>`
+**Other members**:
+- `Output` [property]: `Dictionary<String, InArgument>`
+- `Analytics` [property]: `Dictionary<String, InArgument>`
+### Wait Queue Item
+
+**ID**: `UiPath.Core.Activities.WaitQueueItem@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.WaitQueueItem`
+**Category**: Queues
+**Description**: Waits for an item in the queue to be available so that you can process it (start the transaction) and sets its status to In Progress.
+**Arguments**:
+- `QueueName` (in [required]): `InArgument<String>`
+- `PollTimeMS` (in): `InArgument<Int32>`
+- `Reference` (in): `InArgument<String>`
+- `TimeoutMS` (in): `InArgument<Int32>`
+- `ContinueOnError` (in): `InArgument<Boolean>`
+- `FolderPath` (in): `InArgument<String>`
+**Other members**:
+- `BindingsKey` [property]: `String`
+- `FilterStrategy` [property]: `UiPath.Core.Activities.ReferenceFilterStrategy`
+### Should Stop
+
+**ID**: `UiPath.Core.Activities.ShouldStop@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.ShouldStop`
+**Category**: Process
+**Description**: Checks if Stop was triggered in UiPath Orchestrator.
+_No members extracted._
+### Return
+
+**ID**: `UiPath.Core.Activities.Return@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.Return`
+**Category**: Workflow.Control
+**Description**: Ends the current workflow and resumes the process immediately after the point where the workflow was invoked. Compatible with Robots version 23.8 and above.
+    
+_No members extracted._
+### Timeout Scope
+
+**ID**: `UiPath.Core.Activities.TimeoutScope@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.TimeoutScope`
+**Category**: System.Timer
+**Description**: Creates a scope with limited execution time. It throws a System.TimeoutException in case of timeout.
+**Arguments**:
+- `ThrowExceptionAfter` (in [required]): `InArgument<TimeSpan>`
+- `TimeoutMessage` (in): `InArgument<String>`
+### Add Log Fields
+
+**ID**: `UiPath.Core.Activities.AddLogFields@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.AddLogFields`
+**Category**: Logging
+**Description**: Adds custom log fields to each Log Message. 
+**Other members**:
+- `Fields` [property]: `Dictionary<String, InArgument>`
+### Run Parallel Process
+
+**ID**: `UiPath.Core.Activities.BeginProcess@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.BeginProcess`
+**Category**: Workflow.Invoke
+**Description**: Starts the specified process within the current robot execution. It does not wait for the invoked process to finish before resuming the execution. It does not return output arguments. It only works in attended scenarios.
+**Arguments**:
+- `ProcessName` (in [required]): `InArgument<String>`
+- `FolderPath` (in): `InArgument<String>`
+- `EntryPointPath` (in): `InArgument<String>`
+**Other members**:
+- `TargetSession` [property]: `UiPath.Core.Activities.InvokeProcessTargetSession`
+- `Arguments` [property]: `Dictionary<String, InArgument>`
+- `UsePackage` [property]: `Boolean`
+### Break
+
+**ID**: `UiPath.Core.Activities.Break@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.Break`
+**Category**: Workflow.Control
+**Description**: Exits the Loop activity (For Each, While, Do While) or Trigger Scope activity in which it is placed and continues the workflow execution with the activity that follows it
+_No members extracted._
+### Continue
+
+**ID**: `UiPath.Core.Activities.Continue@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.Continue`
+**Category**: Workflow.Control
+**Description**: Skips the current iteration in a Loop activity (For Each, While, Do While) and continues the execution with the next iteration.
+_No members extracted._
+### Invoke Process
+
+**ID**: `UiPath.Core.Activities.InvokeProcess@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.InvokeProcess`
+**Category**: Workflow
+**Description**: Starts the specified process within the current robot execution. It waits for the invoked process to finish before resuming the execution. It returns output arguments.
+**Arguments**:
+- `ProcessName` (in [required]): `InArgument<String>`
+- `FolderPath` (in): `InArgument<String>`
+- `EntryPointPath` (in): `InArgument<String>`
+- `OutputArguments` (out): `OutArgument<Dictionary<String, Object>>`
+- `ContinueOnError` (in): `InArgument<Boolean>`
+- `Timeout` (in): `InArgument<TimeSpan>`
+- `LogEntry` (in): `InArgument<UiPath.Core.Activities.LogEntryType>`
+- `LogExit` (in): `InArgument<UiPath.Core.Activities.LogExitType>`
+- `ArgumentsVariable` (in): `InArgument<Dictionary<String, Object>>`
+- `Level` (in): `InArgument<UiPath.Core.Activities.LogLevel>`
+**Other members**:
+- `BindingsKey` [property]: `String`
+- `TargetSession` [property]: `UiPath.Core.Activities.InvokeProcessTargetSession`
+- `UsePackage` [property]: `Boolean`
+- `Arguments` [property]: `Dictionary<String, Argument>`
+### Invoke Workflow File
+
+**ID**: `UiPath.Core.Activities.InvokeWorkflowFile@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.InvokeWorkflowFile`
+**Category**: Workflow
+**Description**: Synchronously invokes a specified workflow, optionally passing it a list of input arguments.
+**Arguments**:
+- `WorkflowFileName` (in [required]): `InArgument<String>`
+- `ContinueOnError` (in): `InArgument<Boolean>`
+- `Timeout` (in): `InArgument<TimeSpan>`
+- `LogEntry` (in): `InArgument<UiPath.Core.Activities.LogEntryType>`
+- `LogExit` (in): `InArgument<UiPath.Core.Activities.LogExitType>`
+- `ArgumentsVariable` (in): `InArgument<Dictionary<String, Object>>`
+- `Level` (in): `InArgument<UiPath.Core.Activities.LogLevel>`
+**Other members**:
+- `TargetSession` [property]: `UiPath.Core.Activities.InvokeWorkflowTargetSession`
+- `UnSafe` [property]: `Boolean`
+- `Arguments` [property]: `Dictionary<String, Argument>`
+### For Each
+
+**ID**: `UiPath.Core.Activities.ForEach@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.ForEach`
+**Category**: Workflow
+**Description**: Performs an activity or a series of activities on each element of an enumeration.
+**Arguments**:
+- `Values` (in [required]): `InArgument<Collections.IEnumerable>`
+- `MaxIterations` (in): `InArgument<Int32>`
+- `CurrentIndex` (out): `OutArgument<Int32>`
+**Other members**:
+- `Condition` [child]: `Activity<Boolean>`
+### Format Value
+
+**ID**: `UiPath.Core.Activities.FormatValue@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.FormatValue`
+**Category**: Programming.GenericValue
+**Description**: Associates a specific format to a generic value that can be used with .ToString and Parse operations. The available formats are Number, DateTime, Currency and Percentage.
+**Arguments**:
+- `Value` (in-out [required]): `InOutArgument<UiPath.Core.GenericValue>`
+**Other members**:
+- `Format` [property]: `IFormatProvider`
+### Do While
+
+**ID**: `UiPath.Core.Activities.InterruptibleDoWhile@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.InterruptibleDoWhile`
+**Category**: Workflow
+**Description**: Executes contained activities first and then loops if the condition is True
+**Arguments**:
+- `MaxIterations` (in): `InArgument<Int32>`
+- `CurrentIndex` (out): `OutArgument<Int32>`
+**Other members**:
+- `Condition` [child]: `Activity<Boolean>`
+### While
+
+**ID**: `UiPath.Core.Activities.InterruptibleWhile@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.InterruptibleWhile`
+**Category**: Workflow
+**Description**: Executes contained activities while the condition is True
+**Arguments**:
+- `MaxIterations` (in): `InArgument<Int32>`
+- `CurrentIndex` (out): `OutArgument<Int32>`
+**Other members**:
+- `Condition` [child]: `Activity<Boolean>`
+### Log Message
+
+**ID**: `UiPath.Core.Activities.LogMessage@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.LogMessage`
+**Category**: Logging
+**Description**: Writes the specified diagnostic message at the specified level. These messages are also sent to Orchestrator and displayed in the Logs page.
+**Arguments**:
+- `Message` (in [required]): `InArgument<Object>`
+- `Level` (in): `InArgument<UiPath.Core.Activities.LogLevel>`
+### Remove Log Fields
+
+**ID**: `UiPath.Core.Activities.RemoveLogFields@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.RemoveLogFields`
+**Category**: Logging
+**Description**: Removes custom log fields to each Log Message.
+**Other members**:
+- `Fields` [property]: `List<InArgument<String>>`
+### Report Status
+
+**ID**: `UiPath.Core.Activities.ReportStatus@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.ReportStatus`
+**Category**: Logging
+**Description**: Displays a custom status in the UiPath Assistant for the process that is running.
+**Arguments**:
+- `StatusText` (in [required]): `InArgument<Object>`
+### Retry Scope
+
+**ID**: `UiPath.Core.Activities.RetryScope@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.RetryScope`
+**Category**: Workflow
+**Description**: Retries the contained activities as long as the condition is not met or an error is thrown. 
+**Arguments**:
+- `NumberOfRetries` (in): `InArgument<Int32>`
+- `RetryInterval` (in): `InArgument<TimeSpan>`
+- `LogRetriedExceptions` (in): `InArgument<Boolean>`
+- `RetriedExceptionsLogLevel` (in): `InArgument<UiPath.Core.Activities.LogLevel>`
+- `ContinueOnError` (in): `InArgument<Boolean>`
+### Enable Local Trigger
+
+**ID**: `UiPath.Core.Activities.EnableTrigger@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.EnableTrigger`
+**Category**: Triggers
+**Description**: Enables a local trigger.
+**Other members**:
+- `TriggerId` [property]: `String`
+### Disable Local Trigger
+
+**ID**: `UiPath.Core.Activities.DisableTrigger@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.DisableTrigger`
+**Category**: Triggers
+**Description**: Disables a local trigger.
+**Other members**:
+- `TriggerId` [property]: `String`
+### Repeat Trigger
+
+**ID**: `UiPath.Core.Activities.RepeatTrigger@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.RepeatTrigger`
+**Category**: Triggers
+**Description**: This trigger will fire an event after each interval.
+**Arguments**:
+- `Interval` (in [required]): `InArgument<TimeSpan>`
+### Run Local Triggers
+
+**ID**: `UiPath.Core.Activities.StartTriggers@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.StartTriggers`
+**Category**: Triggers
+**Description**: This activity initialises and starts all local triggers that listen for events on the user’s machine.
+**Arguments**:
+- `WorkflowFileName` (in [required]): `InArgument<String>`
+- `ContinueOnError` (in): `InArgument<Boolean>`
+- `Timeout` (in): `InArgument<TimeSpan>`
+- `LogEntry` (in): `InArgument<UiPath.Core.Activities.LogEntryType>`
+- `LogExit` (in): `InArgument<UiPath.Core.Activities.LogExitType>`
+- `ArgumentsVariable` (in): `InArgument<Dictionary<String, Object>>`
+- `Level` (in): `InArgument<UiPath.Core.Activities.LogLevel>`
+**Other members**:
+- `TargetSession` [property]: `UiPath.Core.Activities.InvokeWorkflowTargetSession`
+- `UnSafe` [property]: `Boolean`
+- `Arguments` [property]: `Dictionary<String, Argument>`
+### Stop Local Triggers
+
+**ID**: `UiPath.Core.Activities.StopTriggers@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.StopTriggers`
+**Category**: Triggers
+**Description**: This activity stops all local triggers that listen for events on the user’s machine.
+**Arguments**:
+- `ShouldStop` (out): `OutArgument<Boolean>`
+### Manual Trigger
+
+**ID**: `UiPath.Core.Activities.ManualTrigger@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.ManualTrigger`
+**Category**: Triggers
+**Description**: Contains job info such as Process name, Workflow name, User Name, User Email and Timestamp.
+**Arguments**:
+- `Result` (out): `OutArgument<UiPath.Core.Activities.CurrentJobInfo>`
+### Time Trigger
+
+**ID**: `UiPath.Core.Activities.TimeTrigger@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.TimeTrigger`
+**Category**: Triggers
+**Description**: Schedule a recurrent time to start a job.
+**Arguments**:
+- `Result` (out): `OutArgument<UiPath.Core.Activities.CurrentJobInfo>`
+**Other members**:
+- `TimeZone` [property]: `String`
+- `Frequency` [property]: `UiPath.Core.Activities.TimeTrigger.TimeFrequency`
+- `MinuteByMinuteRepeat` [property]: `Nullable<Int32>`
+- `HourlyRepeat` [property]: `Nullable<Int32>`
+- `HourlyStartingMinutes` [property]: `Nullable<Int32>`
+- `DailyRepeat` [property]: `Nullable<Int32>`
+- `DailyStartingTime` [property]: `Nullable<DateTime>`
+- `WeeklyDaysToRunOn` [property]: `List<DayOfWeek>`
+- `WeeklyStartingTime` [property]: `Nullable<DateTime>`
+- `MonthlyRepeat` [property]: `Nullable<Int32>`
+- `MonthDaySelection` [property]: `UiPath.Core.Activities.TimeTrigger.MonthDaySelectionType`
+- `DaysOfMonthToRunOn` [property]: `List<String>`
+- `MonthlyDaysToRunOn` [property]: `List<DayOfWeek>`
+- `MonthlyStartingTime` [property]: `Nullable<DateTime>`
+- `CronExpression` [property]: `String`
+### Evaluate Business Rule
+
+**ID**: `UiPath.Core.Activities.EvaluateBusinessRule@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.EvaluateBusinessRule`
+**Category**: Workflow
+**Description**: Evaluate Business Rule
+**Arguments**:
+- `BusinessRule` (in [required]): `InArgument<String>`
+- `ArgumentsVariable` (in): `InArgument<Dictionary<String, Object>>`
+- `TimeoutMS` (in): `InArgument<Int32>`
+- `ContinueOnError` (in): `InArgument<Boolean>`
+- `FolderPath` (in): `InArgument<String>`
+**Other members**:
+- `BindingsKey` [property]: `String`
+- `Arguments` [property]: `Dictionary<String, Argument>`
+### Set Trace Status
+
+**ID**: `UiPath.Core.Activities.ProcessTracking.SetTraceStatus@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.ProcessTracking.SetTraceStatus`
+**Category**: Process Tracking
+**Description**: Sets the status of the current Process Trace and close it. Do not set a status if the Process Trace extends beyond this Task scope.
+**Arguments**:
+- `Status` (in [required]): `InArgument<UiPath.Activities.ProcessTracking.TraceStatus>`
+**Other members**:
+- `TraceGuid` [property]: `String`
+### Set Task Status
+
+**ID**: `UiPath.Core.Activities.ProcessTracking.SetTaskStatus@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.ProcessTracking.SetTaskStatus`
+**Category**: Process Tracking
+**Description**: Sets the status of a Task.
+**Arguments**:
+- `Status` (in [required]): `InArgument<UiPath.Activities.ProcessTracking.TaskStatus>`
+**Other members**:
+- `TaskGuid` [property]: `String`
+### Track Object
+
+**ID**: `UiPath.Core.Activities.ProcessTracking.TrackObject@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.ProcessTracking.TrackObject`
+**Category**: Process Tracking
+**Description**: Adds a new object to the task. This object will appear as metadata information on the task in Process Mining.
+**Arguments**:
+- `ObjectInteraction` (in): `InArgument<UiPath.Activities.ProcessTracking.PTSObjectInteraction>`
+- `ObjectType` (in [required]): `InArgument<String>`
+- `ObjectId` (in [required]): `InArgument<String>`
+- `ObjectPropertiesV2` (in): `InArgument<Dictionary<String, Object>>`
+- `ObjectProperties` (in): `InArgument<Dictionary<String, String>>`
+### Process Tracking Scope
+
+**ID**: `UiPath.Core.Activities.ProcessTracking.ProcessTrackingScope@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.ProcessTracking.ProcessTrackingScope`
+**Category**: Process Tracking
+**Description**: Enables Process Tracking. This will track the execution of a Sequence as a Task in Process Mining.  You can configure this scope using properties panel and control how the execution gets tracked as part of a Task and Process within Process Mining.
+**Arguments**:
+- `ProcessCaseName` (in): `InArgument<String>`
+- `TaskName` (in): `InArgument<String>`
+- `ProcessCaseNameToSwitchTo` (in): `InArgument<String>`
+- `ObjectId` (in): `InArgument<String>`
+- `ObjectType` (in): `InArgument<String>`
+- `ObjectInteraction` (in): `InArgument<UiPath.Activities.ProcessTracking.PTSObjectInteraction>`
+**Other members**:
+- `ProcessLogMode` [property]: `UiPath.Activities.ProcessTracking.ProcessTrackingMode`
+---

@@ -48,11 +48,13 @@ def main() -> None:
             print(f"  [error] missing dist: {DIST_DIR / set_id / 'index.json'}", file=sys.stderr)
             continue
         for pkg_id, src, activities in iter_packages(catalog):
+            version = src.get("version", "unknown")
             html = build_html(set_id, pkg_id, src, activities, generated_at)
-            out  = DIST_DIR / set_id / f"{pkg_id}.html"
+            out  = DIST_DIR / set_id / pkg_id / f"{version}.html"
+            out.parent.mkdir(parents=True, exist_ok=True)
             out.write_text(html, encoding="utf-8", newline="\n")
             members = sum(len(a["members"]) for a in activities)
-            print(f"  {set_id}/{pkg_id}: {len(activities)} activities, {members} members -> {out}")
+            print(f"  {set_id}/{pkg_id}/{version}: {len(activities)} activities, {members} members -> {out}")
 
 
 if __name__ == "__main__":

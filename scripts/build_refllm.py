@@ -50,10 +50,12 @@ def main() -> None:
             continue
         parts = []
         for pkg_id, src, activities in iter_packages(catalog):
+            version = src.get("version", "unknown")
             txt = build_refllm(set_id, pkg_id, src, activities, generated_at)
-            out = DIST_DIR / set_id / f"{pkg_id}.txt"
+            out = DIST_DIR / set_id / pkg_id / f"{version}.txt"
+            out.parent.mkdir(parents=True, exist_ok=True)
             out.write_text(txt, encoding="utf-8", newline="\n")
-            print(f"  {set_id}/{pkg_id}: {len(activities)} activities -> {out}")
+            print(f"  {set_id}/{pkg_id}/{version}: {len(activities)} activities -> {out}")
             parts.append(txt)
         combined = "\n\n---\n\n".join(parts)
         llms_path = DIST_DIR / set_id / "llms.txt"

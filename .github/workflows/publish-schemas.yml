@@ -25,66 +25,72 @@ jobs:
           token: ${{ secrets.ORG_UIPSF_PAGES_PAT }}
           path: pages
 
-      - name: Copy schemas to pages repo (path from $id)
-        run: |
-          python3 - << 'PYEOF'
-          import glob, json, os, shutil
-
-          PAGES_BASE = "https://uips-fixtures.github.io/"
-          PAGES_SRC  = "pages/src"
-
-          copied = []
-          skipped = []
-
-          for src in sorted(glob.glob("catalog/schemas/**/*.schema.json", recursive=True)):
-              with open(src, encoding="utf-8") as f:
-                  schema_id = json.load(f).get("$id", "")
-
-              if not schema_id.startswith(PAGES_BASE):
-                  skipped.append(f"  skip {src}: $id does not point to {PAGES_BASE!r}")
-                  continue
-
-              rel  = schema_id.removeprefix(PAGES_BASE)
-              dest = os.path.join(PAGES_SRC, rel)
-              os.makedirs(os.path.dirname(dest), exist_ok=True)
-              shutil.copy2(src, dest)
-              copied.append(f"  {src} -> {dest}")
-
-          for msg in copied:
-              print(msg)
-          for msg in skipped:
-              print(msg)
-          print(f"\n{len(copied)} copied, {len(skipped)} skipped")
-          PYEOF
-
-      - name: Copy refdoc and llms dist files to pages repo
+      - name: Publish dist files to pages repo
         run: |
           python3 - << 'PYEOF'
           import glob, os, shutil
+          from pathlib import Path
 
-          DIST   = "catalog/data/dist"
-          PAGES  = "pages/src"
+          DIST  = Path("catalog/data/dist")
+          PAGES = Path("pages/src")
 
-          html_copied = txt_copied = 0
+          # Wipe stale directories so removed files don't linger
+          for d in ["refdoc", "llms", "catalog", "schemas"]:
+              shutil.rmtree(PAGES / d, ignore_errors=True)
 
-          for src in sorted(glob.glob(f"{DIST}/**/*.html", recursive=True)):
-              # data/dist/{set}/{pkg}.html -> pages/src/refdoc/{set}/{pkg}.html
-              rel  = os.path.relpath(src, DIST)
-              dest = os.path.join(PAGES, "refdoc", rel)
-              os.makedirs(os.path.dirname(dest), exist_ok=True)
+          # 1. Schemas → src/schemas/v0.2/
+          for src in sorted(glob.glob("catalog/schemas/**/*.schema.json", recursive=True)):
+              rel  = os.path.relpath(src, "catalog/schemas")
+              dest = PAGES / "schemas" / rel
+              dest.parent.mkdir(parents=True, exist_ok=True)
               shutil.copy2(src, dest)
-              html_copied += 1
+              print(f"  schema: {src} -> {dest}")
 
-          for src in sorted(glob.glob(f"{DIST}/**/*.txt", recursive=True)):
-              # data/dist/{set}/{pkg}.txt -> pages/src/llms/{set}/{pkg}.txt
-              rel  = os.path.relpath(src, DIST)
-              dest = os.path.join(PAGES, "llms", rel)
-              os.makedirs(os.path.dirname(dest), exist_ok=True)
-              shutil.copy2(src, dest)
-              txt_copied += 1
+          html = txt = json_c = llms_c = 0
 
-          print(f"refdoc: {html_copied} html files copied")
-          print(f"llms:   {txt_copied} txt files copied")
+          for src in sorted(glob.glob(str(DIST / "**" / "*"), recursive=True)):
+              src_path = Path(src)
+              if not src_path.is_file():
+                  continue
+              # rel parts relative to DIST: (set, ...) or (set, pkg, ver.ext)
+              parts = src_path.relative_to(DIST).parts
+
+              if src_path.suffix == ".html" and len(parts) == 3:
+                  # {set}/{pkg}/{ver}.html → refdoc/{pkg}/{ver}.html
+                  dest = PAGES / "refdoc" / parts[1] / parts[2]
+                  dest.parent.mkdir(parents=True, exist_ok=True)
+                  shutil.copy2(src, dest)
+                  html += 1
+
+              elif src_path.suffix == ".txt" and len(parts) == 3:
+                  # {set}/{pkg}/{ver}.txt → llms/{pkg}/{ver}.txt
+                  dest = PAGES / "llms" / parts[1] / parts[2]
+                  dest.parent.mkdir(parents=True, exist_ok=True)
+                  shutil.copy2(src, dest)
+                  txt += 1
+
+              elif src_path.name == "llms.txt" and len(parts) == 2:
+                  # {set}/llms.txt → llms/{set}.txt
+                  dest = PAGES / "llms" / f"{parts[0]}.txt"
+                  dest.parent.mkdir(parents=True, exist_ok=True)
+                  shutil.copy2(src, dest)
+                  llms_c += 1
+
+              elif src_path.suffix == ".json" and src_path.name != "index.json" and len(parts) == 3:
+                  # {set}/{pkg}/{ver}.json → catalog/{pkg}/{ver}.json (deduplicated)
+                  dest = PAGES / "catalog" / parts[1] / parts[2]
+                  dest.parent.mkdir(parents=True, exist_ok=True)
+                  shutil.copy2(src, dest)
+                  json_c += 1
+
+              elif src_path.name == "index.json" and len(parts) == 2:
+                  # {set}/index.json → catalog/{set}/index.json
+                  dest = PAGES / "catalog" / parts[0] / "index.json"
+                  dest.parent.mkdir(parents=True, exist_ok=True)
+                  shutil.copy2(src, dest)
+                  json_c += 1
+
+          print(f"refdoc: {html} html, llms: {txt} txt + {llms_c} set aggregations, catalog: {json_c} json")
           PYEOF
 
       - name: Commit and push

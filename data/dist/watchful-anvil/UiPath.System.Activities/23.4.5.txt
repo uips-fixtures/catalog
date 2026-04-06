@@ -1,0 +1,530 @@
+# UiPath.System.Activities 23.4.5
+
+> generator: uips-fixtures catalog v0.1
+> generated: 2026-04-06T12:23:36Z
+> set: watchful-anvil
+> url: https://uips-fixtures.github.io/llms/UiPath.System.Activities/23.4.5.txt
+> activities: 44
+> authors: UiPath
+**ID format**: `{fullName}@{packageId}/{packageVersion}`
+**Argument directions**: In (input), Out (output), InOut (bidirectional)
+
+---
+### Collection to DataTable
+
+**ID**: `UiPath.Core.Activities.CollectionToDataTable@UiPath.System.Activities/23.4.5`
+**Type**: `UiPath.Core.Activities.CollectionToDataTable`
+**Category**: Collection
+**Description**: Converts a Collection to a DataTable.
+_No members extracted._
+### Raise Alert
+
+**ID**: `UiPath.Core.Activities.RaiseAlert@UiPath.System.Activities/23.4.5`
+**Type**: `UiPath.Core.Activities.RaiseAlert`
+**Category**: Alerts
+**Description**: Helps you add custom alerts in Orchestrator, with a selected severity.
+**Arguments**:
+- `Notification` (in [required]): `InArgument<String>`
+- `TimeoutMS` (in): `InArgument<Int32>`
+- `ContinueOnError` (in): `InArgument<Boolean>`
+- `FolderPath` (in): `InArgument<String>`
+**Other members**:
+- `Severity` [property]: `UiPath.Core.Activities.AlertSeverity`
+### Orchestrator HTTP Request
+
+**ID**: `UiPath.Core.Activities.OrchestratorHttpRequest@UiPath.System.Activities/23.4.5`
+**Type**: `UiPath.Core.Activities.OrchestratorHttpRequest`
+**Category**: API
+**Description**: Performs HTTP requests to the Orchestrator API by authenticating under the robot it is executed on.
+**Arguments**:
+- `RelativeEndpoint` (in): `InArgument<String>`
+- `JSONPayload` (in): `InArgument<String>`
+- `StatusCode` (out): `OutArgument<Int32>`
+- `ResponseHeaders` (out): `OutArgument<Dictionary<String, String>>`
+- `TimeoutMS` (in): `InArgument<Int32>`
+- `ContinueOnError` (in): `InArgument<Boolean>`
+- `FolderPath` (in): `InArgument<String>`
+**Other members**:
+- `Method` [property]: `UiPath.Core.Activities.OrchestratorAPIHttpMethods`
+### Get Asset
+
+**ID**: `UiPath.Core.Activities.GetRobotAsset@UiPath.System.Activities/23.4.5`
+**Type**: `UiPath.Core.Activities.GetRobotAsset`
+**Category**: Assets
+**Description**: Gets a specified asset by using a provided AssetName. If the asset is not global, it must be assigned to the local robot in order to be retrieved.
+**Arguments**:
+- `Value` (out): `OutArgument`
+- `AssetName` (in): `InArgument<String>`
+- `TimeoutMS` (in): `InArgument<Int32>`
+- `FolderPath` (in): `InArgument<String>`
+**Other members**:
+- `CacheStrategy` [property]: `UiPath.Core.Activities.CacheStrategyEnum`
+### Get Credential
+
+**ID**: `UiPath.Core.Activities.GetRobotCredential@UiPath.System.Activities/23.4.5`
+**Type**: `UiPath.Core.Activities.GetRobotCredential`
+**Category**: Assets
+**Description**: Gets a specified credential asset by using a provided Asset Name. If the credential asset is not global, it must be assigned to the local robot in order to be retrieved.
+**Arguments**:
+- `Username` (out): `OutArgument<String>`
+- `Password` (out): `OutArgument<Security.SecureString>`
+- `AssetName` (in): `InArgument<String>`
+- `TimeoutMS` (in): `InArgument<Int32>`
+- `FolderPath` (in): `InArgument<String>`
+**Other members**:
+- `CacheStrategy` [property]: `UiPath.Core.Activities.CacheStrategyEnum`
+### Set Asset
+
+**ID**: `UiPath.Core.Activities.SetAsset@UiPath.System.Activities/23.4.5`
+**Type**: `UiPath.Core.Activities.SetAsset`
+**Category**: Assets
+**Description**: Updates the value of an indicated asset, that is already available in Orchestrator, be it a global or a Per Robot asset.
+**Arguments**:
+- `AssetName` (in [required]): `InArgument<String>`
+- `Value` (in [required]): `InArgument<Object>`
+- `TimeoutMS` (in): `InArgument<Int32>`
+- `ContinueOnError` (in): `InArgument<Boolean>`
+- `FolderPath` (in): `InArgument<String>`
+### Set Credential
+
+**ID**: `UiPath.Core.Activities.SetCredential@UiPath.System.Activities/23.4.5`
+**Type**: `UiPath.Core.Activities.SetCredential`
+**Category**: Assets
+**Description**: Updates the value of an indicated credential asset, that is already available in Orchestrator, be it a global or a Per Robot asset.
+**Arguments**:
+- `CredentialName` (in [required]): `InArgument<String>`
+- `UserName` (in [required]): `InArgument<String>`
+- `Password` (in [required]): `InArgument<String>`
+- `SecurePassword` (in [required]): `InArgument<Security.SecureString>`
+- `TimeoutMS` (in): `InArgument<Int32>`
+- `ContinueOnError` (in): `InArgument<Boolean>`
+- `FolderPath` (in): `InArgument<String>`
+### Get Jobs
+
+**ID**: `UiPath.Core.Activities.GetJobs@UiPath.System.Activities/23.4.5`
+**Type**: `UiPath.Core.Activities.GetJobs`
+**Category**: Jobs
+**Description**: Retrieves a list of Orchestrator jobs according to a custom filter, using the Orchestrator API.
+**Arguments**:
+- `Filter` (in): `InArgument<String>`
+- `Top` (in): `InArgument<Int32>`
+- `Skip` (in): `InArgument<Int32>`
+- `TimeoutMS` (in): `InArgument<Int32>`
+- `ContinueOnError` (in): `InArgument<Boolean>`
+- `FolderPath` (in): `InArgument<String>`
+**Other members**:
+- `FilterBuilder` [property]: `UiPath.Activities.Jobs.JobFilterSettings`
+### Start Job
+
+**ID**: `UiPath.Core.Activities.StartJob@UiPath.System.Activities/23.4.5`
+**Type**: `UiPath.Core.Activities.StartJob`
+**Category**: Jobs
+**Description**: Starts a job on Orchestrator and continue execution without waiting for the job to be finished.
+**Arguments**:
+- `ProcessName` (in [required]): `InArgument<String>`
+- `NumberOfRobots` (in): `InArgument<Int32>`
+- `ModernFolder` (in): `InArgument<Boolean>`
+- `ArgumentsVariable` (in): `InArgument<Dictionary<String, Object>>`
+- `JobPriority` (in): `InArgument<UiPath.Orchestrator.Client.Models.StartProcessDtoJobPriority>`
+- `ResumeOnSameContext` (in): `InArgument<Boolean>`
+- `Key` (out): `OutArgument<String>`
+- `JobId` (out): `OutArgument<String>`
+- `TimeoutMS` (in): `InArgument<Int32>`
+- `ContinueOnError` (in): `InArgument<Boolean>`
+- `FolderPath` (in): `InArgument<String>`
+**Other members**:
+- `Arguments` [property]: `Dictionary<String, Argument>`
+### Stop Job
+
+**ID**: `UiPath.Core.Activities.StopJob@UiPath.System.Activities/23.4.5`
+**Type**: `UiPath.Core.Activities.StopJob`
+**Category**: Jobs
+**Description**: Stops or kills a job on Orchestrator.
+**Arguments**:
+- `Job` (in [required]): `InArgument<UiPath.Core.Activities.OrchestratorJob>`
+- `Strategy` (in): `InArgument<UiPath.Core.Activities.StopStrategy>`
+- `TimeoutMS` (in): `InArgument<Int32>`
+- `ContinueOnError` (in): `InArgument<Boolean>`
+- `FolderPath` (in): `InArgument<String>`
+### Add Queue Item
+
+**ID**: `UiPath.Core.Activities.AddQueueItem@UiPath.System.Activities/23.4.5`
+**Type**: `UiPath.Core.Activities.AddQueueItem`
+**Category**: Queues
+**Description**: Adds a new item in the queue. The status of the item will be New.
+**Arguments**:
+- `Reference` (in): `InArgument<String>`
+- `QueueType` (in): `InArgument<String>`
+- `ItemInformationCollection` (in): `InArgument<Dictionary<String, Object>>`
+- `DeferDate` (in): `InArgument<DateTime>`
+- `DueDate` (in): `InArgument<DateTime>`
+- `TimeoutMS` (in): `InArgument<Int32>`
+- `FolderPath` (in): `InArgument<String>`
+- `ContinueOnError` (in): `InArgument<Boolean>`
+**Other members**:
+- `ItemInformation` [property]: `Dictionary<String, InArgument>`
+- `Priority` [property]: `UiPath.Core.QueueItemPriority`
+### Add Transaction Item
+
+**ID**: `UiPath.Core.Activities.AddTransactionItem@UiPath.System.Activities/23.4.5`
+**Type**: `UiPath.Core.Activities.AddTransactionItem`
+**Category**: Queues
+**Description**: Adds a new item in the queue and starts a transaction. The status of the item will be set to InProgress. Returns the item as a QueueItem variable.
+**Arguments**:
+- `Reference` (in): `InArgument<String>`
+- `QueueType` (in): `InArgument<String>`
+- `ContinueOnError` (in): `InArgument<Boolean>`
+- `TimeoutMS` (in): `InArgument<Int32>`
+- `TransactionItem` (out): `OutArgument<UiPath.Core.QueueItem>`
+- `FolderPath` (in): `InArgument<String>`
+**Other members**:
+- `TransactionInformation` [property]: `Dictionary<String, InArgument>`
+### Bulk Add Queue Items
+
+**ID**: `UiPath.Core.Activities.BulkAddQueueItems@UiPath.System.Activities/23.4.5`
+**Type**: `UiPath.Core.Activities.BulkAddQueueItems`
+**Category**: Queues
+**Description**: Adds a collection of items from a Data Table to a queue. The status of the items will be New.
+**Arguments**:
+- `QueueItemsDataTable` (in [required]): `InArgument<Data.DataTable>`
+- `QueueName` (in [required]): `InArgument<String>`
+- `TimeoutMS` (in): `InArgument<Int32>`
+- `ContinueOnError` (in): `InArgument<Boolean>`
+- `FolderPath` (in): `InArgument<String>`
+**Other members**:
+- `CommitType` [property]: `UiPath.Core.Activities.BulkAddQueueItems.CommitTypeEnum`
+### Enable Local Trigger
+
+**ID**: `UiPath.Core.Activities.EnableTrigger@UiPath.System.Activities/23.4.5`
+**Type**: `UiPath.Core.Activities.EnableTrigger`
+**Category**: Workflow
+**Description**: Enables a local trigger.
+**Other members**:
+- `TriggerId` [property]: `String`
+### Disable Local Trigger
+
+**ID**: `UiPath.Core.Activities.DisableTrigger@UiPath.System.Activities/23.4.5`
+**Type**: `UiPath.Core.Activities.DisableTrigger`
+**Category**: Workflow
+**Description**: Disables a local trigger.
+**Other members**:
+- `TriggerId` [property]: `String`
+### Repeat trigger
+
+**ID**: `UiPath.Core.Activities.RepeatTrigger@UiPath.System.Activities/23.4.5`
+**Type**: `UiPath.Core.Activities.RepeatTrigger`
+**Category**: Workflow
+**Description**: This trigger will fire an event after each interval.
+**Arguments**:
+- `Interval` (in [required]): `InArgument<TimeSpan>`
+### Run Local Triggers
+
+**ID**: `UiPath.Core.Activities.StartTriggers@UiPath.System.Activities/23.4.5`
+**Type**: `UiPath.Core.Activities.StartTriggers`
+**Category**: Workflow
+**Description**: This activity initialises and starts all local triggers that listen for events on the user’s machine.
+**Arguments**:
+- `WorkflowFileName` (in [required]): `InArgument<String>`
+- `ContinueOnError` (in): `InArgument<Boolean>`
+- `Timeout` (in): `InArgument<TimeSpan>`
+- `LogEntry` (in): `InArgument<UiPath.Core.Activities.LogEntryType>`
+- `LogExit` (in): `InArgument<UiPath.Core.Activities.LogExitType>`
+- `ArgumentsVariable` (in): `InArgument<Dictionary<String, Object>>`
+- `Level` (in): `InArgument<UiPath.Core.Activities.LogLevel>`
+**Other members**:
+- `TargetSession` [property]: `UiPath.Core.Activities.InvokeWorkflowTargetSession`
+- `UnSafe` [property]: `Boolean`
+- `Arguments` [property]: `Dictionary<String, Argument>`
+### Stop Local Triggers
+
+**ID**: `UiPath.Core.Activities.StopTriggers@UiPath.System.Activities/23.4.5`
+**Type**: `UiPath.Core.Activities.StopTriggers`
+**Category**: Workflow
+**Description**: This activity stops all local triggers that listen for events on the user’s machine.
+**Arguments**:
+- `ShouldStop` (out): `OutArgument<Boolean>`
+### Manual Trigger
+
+**ID**: `UiPath.Core.Activities.ManualTrigger@UiPath.System.Activities/23.4.5`
+**Type**: `UiPath.Core.Activities.ManualTrigger`
+**Category**: Workflow
+**Description**: Contains job info such as Process name, Workflow name, User Name, User Email and Timestamp.
+**Arguments**:
+- `Result` (out): `OutArgument<UiPath.Core.Activities.CurrentJobInfo>`
+### Time Trigger
+
+**ID**: `UiPath.Core.Activities.TimeTrigger@UiPath.System.Activities/23.4.5`
+**Type**: `UiPath.Core.Activities.TimeTrigger`
+**Category**: Workflow
+**Description**: Schedule a recurrent time to start a job.
+**Arguments**:
+- `Result` (out): `OutArgument<UiPath.Core.Activities.CurrentJobInfo>`
+**Other members**:
+- `TimeZone` [property]: `String`
+- `Frequency` [property]: `UiPath.Core.Activities.TimeTrigger.TimeFrequency`
+- `MinuteByMinuteRepeat` [property]: `Nullable<Int32>`
+- `HourlyRepeat` [property]: `Nullable<Int32>`
+- `HourlyStartingMinutes` [property]: `Nullable<Int32>`
+- `DailyRepeat` [property]: `Nullable<Int32>`
+- `DailyStartingTime` [property]: `Nullable<DateTime>`
+- `WeeklyDaysToRunOn` [property]: `List<DayOfWeek>`
+- `WeeklyStartingTime` [property]: `Nullable<DateTime>`
+- `MonthlyRepeat` [property]: `Nullable<Int32>`
+- `MonthDaySelection` [property]: `UiPath.Core.Activities.TimeTrigger.MonthDaySelectionType`
+- `DaysOfMonthToRunOn` [property]: `List<String>`
+- `MonthlyDaysToRunOn` [property]: `List<DayOfWeek>`
+- `MonthlyStartingTime` [property]: `Nullable<DateTime>`
+- `CronExpression` [property]: `String`
+### Delete Queue Items
+
+**ID**: `UiPath.Core.Activities.DeleteQueueItems@UiPath.System.Activities/23.4.5`
+**Type**: `UiPath.Core.Activities.DeleteQueueItems`
+**Category**: Queues
+**Description**: Deletes items with the New state from a specified queue.
+**Arguments**:
+- `QueueItems` (in [required]): `InArgument<IEnumerable<UiPath.Core.QueueItem>>`
+- `TimeoutMS` (in): `InArgument<Int32>`
+- `ContinueOnError` (in): `InArgument<Boolean>`
+- `FolderPath` (in): `InArgument<String>`
+### Get Transaction Item
+
+**ID**: `UiPath.Core.Activities.GetQueueItem@UiPath.System.Activities/23.4.5`
+**Type**: `UiPath.Core.Activities.GetQueueItem`
+**Category**: Queues
+**Description**: Gets an item from the queue so that you can process it (start the transaction) and sets its status to In Progress.
+**Arguments**:
+- `QueueType` (in): `InArgument<String>`
+- `ContinueOnError` (in): `InArgument<Boolean>`
+- `TimeoutMS` (in): `InArgument<Int32>`
+- `Reference` (in): `InArgument<String>`
+- `TransactionItem` (out): `OutArgument<UiPath.Core.QueueItem>`
+- `FolderPath` (in): `InArgument<String>`
+**Other members**:
+- `FilterStrategy` [property]: `UiPath.Core.Activities.ReferenceFilterStrategy`
+### Get Queue Items
+
+**ID**: `UiPath.Core.Activities.GetQueueItems@UiPath.System.Activities/23.4.5`
+**Type**: `UiPath.Core.Activities.GetQueueItems`
+**Category**: Queues
+**Description**: Retrieves a list of transactions from an indicated queue, according to multiple filters, such as creation date, priority, state and reference.
+**Arguments**:
+- `QueueName` (in [required]): `InArgument<String>`
+- `Reference` (in): `InArgument<String>`
+- `From` (in): `InArgument<Nullable<DateTime>>`
+- `To` (in): `InArgument<Nullable<DateTime>>`
+- `Duration` (in): `InArgument<Nullable<Int32>>`
+- `Top` (in): `InArgument<Int32>`
+- `Skip` (in): `InArgument<Int32>`
+- `TimeoutMS` (in): `InArgument<Int32>`
+- `ContinueOnError` (in): `InArgument<Boolean>`
+- `FolderPath` (in): `InArgument<String>`
+**Other members**:
+- `FilterStrategy` [property]: `UiPath.Core.Activities.ReferenceFilterStrategy`
+- `QueueItemStates` [property]: `UiPath.Core.Activities.QueueItemStates`
+- `PriorityEnum` [property]: `Nullable<UiPath.Core.QueueItemPriority>`
+### Postpone Transaction Item
+
+**ID**: `UiPath.Core.Activities.PostponeTransactionItem@UiPath.System.Activities/23.4.5`
+**Type**: `UiPath.Core.Activities.PostponeTransactionItem`
+**Category**: Queues
+**Description**: Adds time parameters between which a transaction must be processed (not before Postpone Date and no later than Deadline Date).
+**Arguments**:
+- `DeferDate` (in): `InArgument<DateTime>`
+- `DueDate` (in): `InArgument<DateTime>`
+- `TransactionItem` (in [required]): `InArgument<UiPath.Core.QueueItem>`
+- `ContinueOnError` (in): `InArgument<Boolean>`
+- `TimeoutMS` (in): `InArgument<Int32>`
+- `FolderPath` (in): `InArgument<String>`
+### Set Transaction Progress
+
+**ID**: `UiPath.Core.Activities.SetTransactionProgress@UiPath.System.Activities/23.4.5`
+**Type**: `UiPath.Core.Activities.SetTransactionProgress`
+**Category**: Queues
+**Description**: Helps you create custom progress statuses for your In Progress transactions.
+**Arguments**:
+- `TransactionItem` (in [required]): `InArgument<UiPath.Core.QueueItem>`
+- `Progress` (in [required]): `InArgument<String>`
+- `TimeoutMS` (in): `InArgument<Int32>`
+- `FolderPath` (in): `InArgument<String>`
+- `ContinueOnError` (in): `InArgument<Boolean>`
+### Set Transaction Status
+
+**ID**: `UiPath.Core.Activities.SetTransactionStatus@UiPath.System.Activities/23.4.5`
+**Type**: `UiPath.Core.Activities.SetTransactionStatus`
+**Category**: Queues
+**Description**: Sets the status of a transaction item to Failed or Successful.
+**Arguments**:
+- `TransactionItem` (in [required]): `InArgument<UiPath.Core.QueueItem>`
+- `Reason` (in): `InArgument<String>`
+- `Details` (in): `InArgument<String>`
+- `AssociatedFilePath` (in): `InArgument<String>`
+- `ContinueOnError` (in): `InArgument<Boolean>`
+- `TimeoutMS` (in): `InArgument<Int32>`
+- `FolderPath` (in): `InArgument<String>`
+**Other members**:
+- `Status` [property]: `UiPath.Core.ProcessingStatus`
+- `Output` [property]: `Dictionary<String, InArgument>`
+- `Analytics` [property]: `Dictionary<String, InArgument>`
+- `ErrorType` [property]: `UiPath.Core.Activities.ErrorType`
+### Wait Queue Item
+
+**ID**: `UiPath.Core.Activities.WaitQueueItem@UiPath.System.Activities/23.4.5`
+**Type**: `UiPath.Core.Activities.WaitQueueItem`
+**Category**: Queues
+**Description**: Waits for an item in the queue to be available so that you can process it (start the transaction) and sets its status to In Progress.
+**Arguments**:
+- `QueueName` (in [required]): `InArgument<String>`
+- `PollTimeMS` (in): `InArgument<Int32>`
+- `Reference` (in): `InArgument<String>`
+- `TimeoutMS` (in): `InArgument<Int32>`
+- `ContinueOnError` (in): `InArgument<Boolean>`
+- `FolderPath` (in): `InArgument<String>`
+**Other members**:
+- `FilterStrategy` [property]: `UiPath.Core.Activities.ReferenceFilterStrategy`
+### Should Stop
+
+**ID**: `UiPath.Core.Activities.ShouldStop@UiPath.System.Activities/23.4.5`
+**Type**: `UiPath.Core.Activities.ShouldStop`
+**Category**: Process
+**Description**: Checks if Stop was triggered in UiPath Orchestrator.
+_No members extracted._
+### Add Log Fields
+
+**ID**: `UiPath.Core.Activities.AddLogFields@UiPath.System.Activities/23.4.5`
+**Type**: `UiPath.Core.Activities.AddLogFields`
+**Category**: Logging
+**Description**: Adds custom log fields to each Log Message. 
+**Other members**:
+- `Fields` [property]: `Dictionary<String, InArgument>`
+### Break
+
+**ID**: `UiPath.Core.Activities.Break@UiPath.System.Activities/23.4.5`
+**Type**: `UiPath.Core.Activities.Break`
+**Category**: Workflow
+**Description**: Exits the Loop activity (For Each, While, Do While) or Trigger Scope activity in which it is placed and continues the workflow execution with the activity that follows it
+_No members extracted._
+### Continue
+
+**ID**: `UiPath.Core.Activities.Continue@UiPath.System.Activities/23.4.5`
+**Type**: `UiPath.Core.Activities.Continue`
+**Category**: Workflow
+**Description**: Skips the current iteration in a Loop activity (For Each, While, Do While) and continues the execution with the next iteration.
+_No members extracted._
+### For Each
+
+**ID**: `UiPath.Core.Activities.ForEach@UiPath.System.Activities/23.4.5`
+**Type**: `UiPath.Core.Activities.ForEach`
+**Category**: Workflow
+**Description**: Performs an activity or a series of activities on each element of an enumeration.
+**Arguments**:
+- `Values` (in [required]): `InArgument<Collections.IEnumerable>`
+- `MaxIterations` (in): `InArgument<Int32>`
+- `CurrentIndex` (out): `OutArgument<Int32>`
+**Other members**:
+- `Condition` [child]: `Activity<Boolean>`
+### Log Message
+
+**ID**: `UiPath.Core.Activities.LogMessage@UiPath.System.Activities/23.4.5`
+**Type**: `UiPath.Core.Activities.LogMessage`
+**Category**: Logging
+**Description**: Writes the specified diagnostic message at the specified level. These messages are also sent to Orchestrator and displayed in the Logs page.
+**Arguments**:
+- `Message` (in [required]): `InArgument<Object>`
+- `Level` (in): `InArgument<UiPath.Core.Activities.LogLevel>`
+### Remove Log Fields
+
+**ID**: `UiPath.Core.Activities.RemoveLogFields@UiPath.System.Activities/23.4.5`
+**Type**: `UiPath.Core.Activities.RemoveLogFields`
+**Category**: Logging
+**Description**: Removes custom log fields to each Log Message.
+**Other members**:
+- `Fields` [property]: `List<InArgument<String>>`
+### Report Status
+
+**ID**: `UiPath.Core.Activities.ReportStatus@UiPath.System.Activities/23.4.5`
+**Type**: `UiPath.Core.Activities.ReportStatus`
+**Category**: Logging
+**Description**: Reports specified status text to the Executor
+**Arguments**:
+- `StatusText` (in [required]): `InArgument<Object>`
+### Append Items to Collection
+
+**ID**: `UiPath.Activities.System.Collections.AppendItemToCollection@UiPath.System.Activities/23.4.5`
+**Type**: `UiPath.Activities.System.Collections.AppendItemToCollection`
+**Category**: Collection
+**Description**: Appends one or more items at the end of the specified collection.
+_No members extracted._
+### Build Collection
+
+**ID**: `UiPath.Activities.System.Collections.BuildCollection@UiPath.System.Activities/23.4.5`
+**Type**: `UiPath.Activities.System.Collections.BuildCollection`
+**Category**: Collection
+**Description**: Create a collection of items that have the same type as the first specified element.
+_No members extracted._
+### Exists In Collection
+
+**ID**: `UiPath.Activities.System.Collections.ExistsInCollection@UiPath.System.Activities/23.4.5`
+**Type**: `UiPath.Activities.System.Collections.ExistsInCollection`
+**Category**: Collection
+**Description**: Checks if the given Item exists in the collection
+**Arguments**:
+- `Collection` (in [required]): `InArgument<ICollection<T>>`
+- `Item` (in [required]): `InArgument<T>`
+- `Exists` (out): `OutArgument<Boolean>`
+- `Index` (out): `OutArgument<Int32>`
+### Filter Collection
+
+**ID**: `UiPath.Activities.System.Collections.FilterCollection@UiPath.System.Activities/23.4.5`
+**Type**: `UiPath.Activities.System.Collections.FilterCollection`
+**Category**: Collection
+**Description**: Filter a collection based on custom conditions
+_No members extracted._
+### Merge Collections
+
+**ID**: `UiPath.Activities.System.Collections.MergeCollections@UiPath.System.Activities/23.4.5`
+**Type**: `UiPath.Activities.System.Collections.MergeCollections`
+**Category**: Collection
+**Description**: Combine collections in a new collection that contains all the elements
+**Arguments**:
+- `Collection` (in [required]): `InArgument<ICollection<T>>`
+- `SecondCollection` (in [required]): `InArgument<ICollection<T>>`
+### Remove From Collection
+
+**ID**: `UiPath.Activities.System.Collections.RemoveFromCollection@UiPath.System.Activities/23.4.5`
+**Type**: `UiPath.Activities.System.Collections.RemoveFromCollection`
+**Category**: Collection
+**Description**: Remove the specified element from a collection
+**Arguments**:
+- `Collection` (in [required]): `InArgument<ICollection<T>>`
+- `Item` (in): `InArgument<T>`
+- `Index` (in): `InArgument<Int32>`
+**Other members**:
+- `RemoveAllElements` [property]: `Boolean`
+### Global Variable Changed Trigger
+
+**ID**: `UiPath.Core.Activities.GlobalVariableChangedTrigger@UiPath.System.Activities/23.4.5`
+**Type**: `UiPath.Core.Activities.GlobalVariableChangedTrigger`
+**Category**: Triggers
+**Description**: Trigger which fires when a global variable's value has changed.
+**Arguments**:
+- `VariableName` (in [required]): `InArgument<Object>`
+### Notify Global Variable Changed
+
+**ID**: `UiPath.Core.Activities.NotifyGlobalVariableChanged@UiPath.System.Activities/23.4.5`
+**Type**: `UiPath.Core.Activities.NotifyGlobalVariableChanged`
+**Description**: Forces a global variable changed notification to be sent to all subscribers.
+**Arguments**:
+- `VariableName` (in [required]): `InArgument<Object>`
+### New Item Added to Queue
+
+**ID**: `UiPath.Core.Activities.QueueTrigger@UiPath.System.Activities/23.4.5`
+**Type**: `UiPath.Core.Activities.QueueTrigger`
+**Category**: Workflow
+**Description**: Start a job when a new item is added to the specified queue.
+**Arguments**:
+- `TransactionItem` (out): `OutArgument<UiPath.Core.QueueItem>`
+**Other members**:
+- `FolderPath` [property]: `String`
+- `QueueName` [property]: `String`
+- `BindingsKey` [property]: `String`
+---
