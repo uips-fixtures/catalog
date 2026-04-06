@@ -77,10 +77,11 @@ jobs:
                   llms_c += 1
 
               elif src_path.suffix == ".json" and src_path.name != "index.json" and len(parts) == 3:
-                  # {set}/{pkg}/{ver}.json → catalog/{schema_ver}/{pkg}/{ver}.json (deduplicated)
+                  # {set}/{pkg}/{ver}.json → catalog/{schema_ver}/{pkg}/{pkg}-{ver}.json (deduplicated)
                   doc = json.loads(src_path.read_text(encoding="utf-8"))
                   schema_ver = doc.get("schema", {}).get("version", "unknown")
-                  dest = PAGES / "catalog" / schema_ver / parts[1] / parts[2]
+                  filename = f"{parts[1]}-{src_path.stem}.json"
+                  dest = PAGES / "catalog" / schema_ver / parts[1] / filename
                   dest.parent.mkdir(parents=True, exist_ok=True)
                   shutil.copy2(src, dest)
                   json_c += 1
