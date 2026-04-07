@@ -19,6 +19,12 @@ PackageFurnace CLI is expected at its default install location:
   %LOCALAPPDATA%/cpmf/tools/PackageFurnace/PackageFurnace.exe  (Windows)
   ~/.local/share/cpmf/tools/PackageFurnace/PackageFurnace      (Linux/macOS)
 Override with PF_EXE env var.
+
+Cache location (downloaded .nupkg files):
+  If NUGET_PACKAGES is set: sibling folder <parent>/pf-cache  (e.g. T:\\nuget\\pf-cache)
+  Otherwise: %LOCALAPPDATA%/cpmf/pf-cache  (Windows)
+             ~/.local/share/cpmf/pf-cache  (Linux/macOS)
+Override with PF_CACHE env var.
 """
 
 import json
@@ -35,7 +41,6 @@ import yaml
 REPO_ROOT = Path(__file__).resolve().parent.parent   # catalog/ root
 CURATED   = REPO_ROOT / "config" / "curated.yaml"
 FEEDS     = REPO_ROOT / "data" / "feeds" / "feed_index.json"
-CACHE     = REPO_ROOT / ".cache"
 OUT_BASE  = REPO_ROOT / "data" / "sources" / "packagefurnace" / "pkg"
 
 def default_pf_exe() -> Path:
@@ -46,7 +51,20 @@ def default_pf_exe() -> Path:
     suffix = ".exe" if sys.platform == "win32" else ""
     return base / "cpmf" / "tools" / "PackageFurnace" / f"PackageFurnace{suffix}"
 
-PF_EXE = Path(os.environ.get("PF_EXE", str(default_pf_exe())))
+def default_pf_cache() -> Path:
+    nuget_packages = os.environ.get("NUGET_PACKAGES")
+    if nuget_packages:
+        # Sibling of the NuGet packages folder — keeps everything on the same drive
+        return Path(nuget_packages).parent / "pf-cache"
+    # Fall back to a well-known per-user location outside the repo
+    if sys.platform == "win32":
+        base = Path(os.environ.get("LOCALAPPDATA", Path.home() / "AppData" / "Local"))
+    else:
+        base = Path(os.environ.get("XDG_DATA_HOME", Path.home() / ".local" / "share"))
+    return base / "cpmf" / "pf-cache"
+
+PF_EXE   = Path(os.environ.get("PF_EXE",   str(default_pf_exe())))
+CACHE    = Path(os.environ.get("PF_CACHE",  str(default_pf_cache())))
 
 # ── Package resolution ─────────────────────────────────────────────────────────
 

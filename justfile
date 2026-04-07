@@ -2,7 +2,8 @@
 
 # Extract engine-results from NuGet packages via PackageFurnace CLI.
 # PackageFurnace must be installed: run `just install` in the PackageFurnace repo.
-# Override binary path with: PF_EXE=/path/to/PackageFurnace just extract
+# Override binary path with:  PF_EXE=/path/to/PackageFurnace just extract
+# Override cache location with: PF_CACHE=/path/to/cache just extract
 extract:
     uv run scripts/extract_activities.py
 
