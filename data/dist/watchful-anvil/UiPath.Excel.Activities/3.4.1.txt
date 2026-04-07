@@ -1,11 +1,10 @@
 # UiPath.Excel.Activities 3.4.1
 
 > generator: uips-fixtures catalog v0.2
-> generated: 2026-04-06T15:10:38Z
+> generated: 2026-04-07T08:06:45Z
 > set: watchful-anvil
 > url: https://uips-fixtures.github.io/llms/UiPath.Excel.Activities/3.4.1.txt
 > activities: 86
-> authors: UiPath
 **ID format**: `{fullName}@{packageId}/{packageVersion}`
 **Argument directions**: In (input), Out (output), InOut (bidirectional)
 
@@ -75,7 +74,7 @@
 **Description**: Appends the data from a DataTable to a spreadsheet. If the sheet does not exist, a new one is created with the SheetName value. Changes are immediately saved
 **Arguments**:
 - [IN, Required] `InArgument<Data.DataTable>` **DataTable**
-- [IN, Required] `InArgument<String>` **SheetName** (default: Sheet1)
+- [IN, Required] `InArgument<String>` **SheetName**
 - [IN] `InArgument<UiPath.Excel.Workbook>` **Workbook**
 - [IN, Required] `InArgument<String>` **WorkbookPath**
 - [IN, Required] `InArgument<UiPath.Platform.ResourceHandling.IResource>` **WorkbookPathResource**
@@ -89,7 +88,7 @@
 **Arguments**:
 - [IN] `InArgument<UiPath.Excel.ConflictBehavior>` **ConflictResolution**
 - [OUT] `OutArgument<UiPath.Excel.Workbook>` **WorkbookFile**
-- [IN, Required] `InArgument<String>` **SheetName** (default: Sheet1)
+- [IN, Required] `InArgument<String>` **SheetName**
 - [IN] `InArgument<UiPath.Excel.Workbook>` **Workbook**
 - [IN, Required] `InArgument<String>` **WorkbookPath**
 - [IN, Required] `InArgument<UiPath.Platform.ResourceHandling.IResource>` **WorkbookPathResource**
@@ -109,7 +108,7 @@
 - [IN] `InArgument<UiPath.Excel.PivotTableLayoutRowType>` **LayoutRowType**
 - [IN] `InArgument<UiPath.Excel.PivotTableValuesMode>` **ValuesMode**
 - [IN] `InArgument<IEnumerable<UiPath.Excel.PivotTableField>>` **PivotTableFieldsVariable**
-- [IN, Required] `InArgument<String>` **SheetName** (default: Sheet1)
+- [IN, Required] `InArgument<String>` **SheetName**
 - [IN] `InArgument<UiPath.Excel.Workbook>` **Workbook**
 - [IN, Required] `InArgument<String>` **WorkbookPath**
 - [IN, Required] `InArgument<UiPath.Platform.ResourceHandling.IResource>` **WorkbookPathResource**
@@ -126,7 +125,7 @@
 **Arguments**:
 - [IN, Required] `InArgument<String>` **Cell**
 - [OUT] `OutArgument<Drawing.Color>` **Color**
-- [IN, Required] `InArgument<String>` **SheetName** (default: Sheet1)
+- [IN, Required] `InArgument<String>` **SheetName**
 - [IN] `InArgument<UiPath.Excel.Workbook>` **Workbook**
 - [IN, Required] `InArgument<String>` **WorkbookPath**
 - [IN, Required] `InArgument<UiPath.Platform.ResourceHandling.IResource>` **WorkbookPathResource**
@@ -154,7 +153,7 @@
 **Arguments**:
 - [IN, Required] `InArgument<String>` **TableName**
 - [OUT] `OutArgument<String>` **Range**
-- [IN, Required] `InArgument<String>` **SheetName** (default: Sheet1)
+- [IN, Required] `InArgument<String>` **SheetName**
 - [IN] `InArgument<UiPath.Excel.Workbook>` **Workbook**
 - [IN, Required] `InArgument<String>` **WorkbookPath**
 - [IN, Required] `InArgument<UiPath.Platform.ResourceHandling.IResource>` **WorkbookPathResource**
@@ -168,9 +167,9 @@
 **Category**: Excel
 **Description**: Reads the value of a cell from a spreadsheet as a string
 **Arguments**:
-- [IN, Required] `InArgument<String>` **Cell** (default: A1)
+- [IN, Required] `InArgument<String>` **Cell**
 - [OUT] `OutArgument` **Result**
-- [IN, Required] `InArgument<String>` **SheetName** (default: Sheet1)
+- [IN, Required] `InArgument<String>` **SheetName**
 - [IN] `InArgument<UiPath.Excel.Workbook>` **Workbook**
 - [IN, Required] `InArgument<String>` **WorkbookPath**
 - [IN, Required] `InArgument<UiPath.Platform.ResourceHandling.IResource>` **WorkbookPathResource**
@@ -184,9 +183,9 @@
 **Category**: Excel
 **Description**: Reads the formula of a cell from a spreadsheet as a string
 **Arguments**:
-- [IN, Required] `InArgument<String>` **Cell** (default: A1)
+- [IN, Required] `InArgument<String>` **Cell**
 - [OUT] `OutArgument<String>` **Result**
-- [IN, Required] `InArgument<String>` **SheetName** (default: Sheet1)
+- [IN, Required] `InArgument<String>` **SheetName**
 - [IN] `InArgument<UiPath.Excel.Workbook>` **Workbook**
 - [IN, Required] `InArgument<String>` **WorkbookPath**
 - [IN, Required] `InArgument<UiPath.Platform.ResourceHandling.IResource>` **WorkbookPathResource**
@@ -198,9 +197,9 @@
 **Category**: Excel
 **Description**: Reads the values from a column beginning from the cell specified in the StartingCell field, and stores them in an IEnumerable &lt;object&gt;variable
 **Arguments**:
-- [IN, Required] `InArgument<String>` **StartingCell** (default: A1)
+- [IN, Required] `InArgument<String>` **StartingCell**
 - [OUT] `OutArgument<IEnumerable<Object>>` **Result**
-- [IN, Required] `InArgument<String>` **SheetName** (default: Sheet1)
+- [IN, Required] `InArgument<String>` **SheetName**
 - [IN] `InArgument<UiPath.Excel.Workbook>` **Workbook**
 - [IN, Required] `InArgument<String>` **WorkbookPath**
 - [IN, Required] `InArgument<UiPath.Platform.ResourceHandling.IResource>` **WorkbookPathResource**
@@ -214,9 +213,9 @@
 **Category**: Excel
 **Description**: Reads the value of a range in Range Excel Format from a spreadsheet as a DataTable. If Range isn&apos;t specified, the whole spreadsheet is read. If range is specified as a cell, the whole spreadsheet starting from that cell is read
 **Arguments**:
-- [IN] `InArgument<String>` **Range** (default: A1:A2)
+- [IN] `InArgument<String>` **Range**
 - [OUT] `OutArgument<Data.DataTable>` **DataTable**
-- [IN, Required] `InArgument<String>` **SheetName** (default: Sheet1)
+- [IN, Required] `InArgument<String>` **SheetName**
 - [IN] `InArgument<UiPath.Excel.Workbook>` **Workbook**
 - [IN, Required] `InArgument<String>` **WorkbookPath**
 - [IN, Required] `InArgument<UiPath.Platform.ResourceHandling.IResource>` **WorkbookPathResource**
@@ -231,9 +230,9 @@
 **Category**: Excel
 **Description**: Reads the values of an Excel row beginning from the cell specified in the StartingCell field, and stores it in an IEnumerable&lt;object&gt; variable
 **Arguments**:
-- [IN, Required] `InArgument<String>` **StartingCell** (default: A1)
+- [IN, Required] `InArgument<String>` **StartingCell**
 - [OUT] `OutArgument<IEnumerable<Object>>` **Result**
-- [IN, Required] `InArgument<String>` **SheetName** (default: Sheet1)
+- [IN, Required] `InArgument<String>` **SheetName**
 - [IN] `InArgument<UiPath.Excel.Workbook>` **Workbook**
 - [IN, Required] `InArgument<String>` **WorkbookPath**
 - [IN, Required] `InArgument<UiPath.Platform.ResourceHandling.IResource>` **WorkbookPathResource**
@@ -249,7 +248,7 @@
 **Arguments**:
 - [IN, Required] `InArgument<String>` **Range**
 - [IN, Required] `InArgument<Drawing.Color>` **Color**
-- [IN, Required] `InArgument<String>` **SheetName** (default: Sheet1)
+- [IN, Required] `InArgument<String>` **SheetName**
 - [IN] `InArgument<UiPath.Excel.Workbook>` **Workbook**
 - [IN, Required] `InArgument<String>` **WorkbookPath**
 - [IN, Required] `InArgument<UiPath.Platform.ResourceHandling.IResource>` **WorkbookPathResource**
@@ -261,9 +260,9 @@
 **Category**: Excel
 **Description**: Writes the Text value into a cell from a spreadsheet. If the sheet does not exist, a new one is created with the SheetName value. If a value exists, it is overwritten. Changes are immediately saved
 **Arguments**:
-- [IN, Required] `InArgument<String>` **Cell** (default: A1)
+- [IN, Required] `InArgument<String>` **Cell**
 - [IN, Required] `InArgument<String>` **Text**
-- [IN, Required] `InArgument<String>` **SheetName** (default: Sheet1)
+- [IN, Required] `InArgument<String>` **SheetName**
 - [IN] `InArgument<UiPath.Excel.Workbook>` **Workbook**
 - [IN, Required] `InArgument<String>` **WorkbookPath**
 - [IN, Required] `InArgument<UiPath.Platform.ResourceHandling.IResource>` **WorkbookPathResource**
@@ -275,9 +274,9 @@
 **Category**: Excel
 **Description**: Writes the data from a DataTable in a spreadsheet starting from StartingCell. If StartingCell isn&apos;t specified, the writing begins at A1 cell. If the sheet does not exist, a new one is created with the SheetName value. All cells within the DataTable range are overwritten. Changes are immediately saved
 **Arguments**:
-- [IN] `InArgument<String>` **StartingCell** (default: A1)
+- [IN] `InArgument<String>` **StartingCell**
 - [IN, Required] `InArgument<Data.DataTable>` **DataTable**
-- [IN, Required] `InArgument<String>` **SheetName** (default: Sheet1)
+- [IN, Required] `InArgument<String>` **SheetName**
 - [IN] `InArgument<UiPath.Excel.Workbook>` **Workbook**
 - [IN, Required] `InArgument<String>` **WorkbookPath**
 - [IN, Required] `InArgument<UiPath.Platform.ResourceHandling.IResource>` **WorkbookPathResource**
@@ -715,7 +714,7 @@
 **Description**: Invokes a macro from an external file containing VBA code and runs it against an Excel file.
 **Arguments**:
 - [IN, Required] `InArgument<UiPath.Excel.IWorkbookQuickHandle>` **Workbook**
-- [IN, Required] `InArgument<String>` **EntryMethodName** (default: Main)
+- [IN, Required] `InArgument<String>` **EntryMethodName**
 - [IN, Required] `InArgument<String>` **CodeFilePath**
 - [OUT] `OutArgument` **Result**
 ### VBA Argument

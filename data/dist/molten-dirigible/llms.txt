@@ -1,11 +1,10 @@
 # UiPath.Excel.Activities 3.2.1
 
 > generator: uips-fixtures catalog v0.2
-> generated: 2026-04-06T15:10:38Z
+> generated: 2026-04-07T08:06:45Z
 > set: molten-dirigible
 > url: https://uips-fixtures.github.io/llms/UiPath.Excel.Activities/3.2.1.txt
 > activities: 65
-> authors: UiPath
 **ID format**: `{fullName}@{packageId}/{packageVersion}`
 **Argument directions**: In (input), Out (output), InOut (bidirectional)
 
@@ -53,7 +52,7 @@
 - [IN, Required] `InArgument<String>` **WorkbookPath**
 - [IN, Required] `InArgument<UiPath.Platform.ResourceHandling.IResource>` **WorkbookPathResource**
 - [IN] `InArgument<String>` **Password**
-- [IN, Required] `InArgument<String>` **SheetName** (default: Sheet1)
+- [IN, Required] `InArgument<String>` **SheetName**
 ### Create Pivot Table Workbook
 
 **ID**: `UiPath.Excel.Activities.CreatePivotTable@UiPath.Excel.Activities/3.2.1`
@@ -73,7 +72,7 @@
 - [IN, Required] `InArgument<String>` **WorkbookPath**
 - [IN, Required] `InArgument<UiPath.Platform.ResourceHandling.IResource>` **WorkbookPathResource**
 - [IN] `InArgument<String>` **Password**
-- [IN, Required] `InArgument<String>` **SheetName** (default: Sheet1)
+- [IN, Required] `InArgument<String>` **SheetName**
 **Properties / VariableScope / Child**:
 - [property] `Boolean` **UseTableSource**
 - [property] `List<InArgument<UiPath.Excel.PivotTableField>>` **PivotTableFields**
@@ -90,7 +89,7 @@
 - [IN, Required] `InArgument<String>` **WorkbookPath**
 - [IN, Required] `InArgument<UiPath.Platform.ResourceHandling.IResource>` **WorkbookPathResource**
 - [IN] `InArgument<String>` **Password**
-- [IN, Required] `InArgument<String>` **SheetName** (default: Sheet1)
+- [IN, Required] `InArgument<String>` **SheetName**
 ### Get Table Range Workbook
 
 **ID**: `UiPath.Excel.Activities.GetTableRange@UiPath.Excel.Activities/3.2.1`
@@ -104,7 +103,7 @@
 - [IN, Required] `InArgument<String>` **WorkbookPath**
 - [IN, Required] `InArgument<UiPath.Platform.ResourceHandling.IResource>` **WorkbookPathResource**
 - [IN] `InArgument<String>` **Password**
-- [IN, Required] `InArgument<String>` **SheetName** (default: Sheet1)
+- [IN, Required] `InArgument<String>` **SheetName**
 **Properties / VariableScope / Child**:
 - [property] `Boolean` **IsPivot**
 ### Read Cell Workbook
@@ -114,13 +113,13 @@
 **Category**: Excel
 **Description**: Reads the value of a cell from a spreadsheet as a string
 **Arguments**:
-- [IN, Required] `InArgument<String>` **Cell** (default: A1)
+- [IN, Required] `InArgument<String>` **Cell**
 - [OUT] `OutArgument` **Result**
 - [IN] `InArgument<UiPath.Excel.Workbook>` **Workbook**
 - [IN, Required] `InArgument<String>` **WorkbookPath**
 - [IN, Required] `InArgument<UiPath.Platform.ResourceHandling.IResource>` **WorkbookPathResource**
 - [IN] `InArgument<String>` **Password**
-- [IN, Required] `InArgument<String>` **SheetName** (default: Sheet1)
+- [IN, Required] `InArgument<String>` **SheetName**
 **Properties / VariableScope / Child**:
 - [property] `Boolean` **PreserveFormat**
 ### Read Cell Formula Workbook
@@ -130,13 +129,13 @@
 **Category**: Excel
 **Description**: Reads the formula of a cell from a spreadsheet as a string
 **Arguments**:
-- [IN, Required] `InArgument<String>` **Cell** (default: A1)
+- [IN, Required] `InArgument<String>` **Cell**
 - [OUT] `OutArgument<String>` **Result**
 - [IN] `InArgument<UiPath.Excel.Workbook>` **Workbook**
 - [IN, Required] `InArgument<String>` **WorkbookPath**
 - [IN, Required] `InArgument<UiPath.Platform.ResourceHandling.IResource>` **WorkbookPathResource**
 - [IN] `InArgument<String>` **Password**
-- [IN, Required] `InArgument<String>` **SheetName** (default: Sheet1)
+- [IN, Required] `InArgument<String>` **SheetName**
 ### Read Column Workbook
 
 **ID**: `UiPath.Excel.Activities.ReadColumn@UiPath.Excel.Activities/3.2.1`
@@ -144,13 +143,13 @@
 **Category**: Excel
 **Description**: Reads the values from a column beginning from the cell specified in the StartingCell field, and stores them in an IEnumerable <object>variable.
 **Arguments**:
-- [IN, Required] `InArgument<String>` **StartingCell** (default: A1)
+- [IN, Required] `InArgument<String>` **StartingCell**
 - [OUT] `OutArgument<IEnumerable<Object>>` **Result**
 - [IN] `InArgument<UiPath.Excel.Workbook>` **Workbook**
 - [IN, Required] `InArgument<String>` **WorkbookPath**
 - [IN, Required] `InArgument<UiPath.Platform.ResourceHandling.IResource>` **WorkbookPathResource**
 - [IN] `InArgument<String>` **Password**
-- [IN, Required] `InArgument<String>` **SheetName** (default: Sheet1)
+- [IN, Required] `InArgument<String>` **SheetName**
 **Properties / VariableScope / Child**:
 - [property] `Boolean` **PreserveFormat**
 ### Read Range Workbook
@@ -160,13 +159,13 @@
 **Category**: Excel
 **Description**: Reads the value of a range in Range Excel Format from a spreadsheet as a DataTable. If Range isn&apos;t specified, the whole spreadsheet is read. If range is specified as a cell, the whole spreadsheet starting from that cell is read
 **Arguments**:
-- [IN] `InArgument<String>` **Range** (default: A1:A2)
+- [IN] `InArgument<String>` **Range**
 - [OUT] `OutArgument<Data.DataTable>` **DataTable**
 - [IN] `InArgument<UiPath.Excel.Workbook>` **Workbook**
 - [IN, Required] `InArgument<String>` **WorkbookPath**
 - [IN, Required] `InArgument<UiPath.Platform.ResourceHandling.IResource>` **WorkbookPathResource**
 - [IN] `InArgument<String>` **Password**
-- [IN, Required] `InArgument<String>` **SheetName** (default: Sheet1)
+- [IN, Required] `InArgument<String>` **SheetName**
 **Properties / VariableScope / Child**:
 - [property] `Boolean` **AddHeaders**
 - [property] `Boolean` **PreserveFormat**
@@ -177,13 +176,13 @@
 **Category**: Excel
 **Description**: Reads the values of an Excel row beginning from the cell specified in the StartingCell field, and stores it in an IEnumerable<object> variable.
 **Arguments**:
-- [IN, Required] `InArgument<String>` **StartingCell** (default: A1)
+- [IN, Required] `InArgument<String>` **StartingCell**
 - [OUT] `OutArgument<IEnumerable<Object>>` **Result**
 - [IN] `InArgument<UiPath.Excel.Workbook>` **Workbook**
 - [IN, Required] `InArgument<String>` **WorkbookPath**
 - [IN, Required] `InArgument<UiPath.Platform.ResourceHandling.IResource>` **WorkbookPathResource**
 - [IN] `InArgument<String>` **Password**
-- [IN, Required] `InArgument<String>` **SheetName** (default: Sheet1)
+- [IN, Required] `InArgument<String>` **SheetName**
 **Properties / VariableScope / Child**:
 - [property] `Boolean` **PreserveFormat**
 ### Set Range Color Workbook
@@ -199,7 +198,7 @@
 - [IN, Required] `InArgument<String>` **WorkbookPath**
 - [IN, Required] `InArgument<UiPath.Platform.ResourceHandling.IResource>` **WorkbookPathResource**
 - [IN] `InArgument<String>` **Password**
-- [IN, Required] `InArgument<String>` **SheetName** (default: Sheet1)
+- [IN, Required] `InArgument<String>` **SheetName**
 ### Write Cell Workbook
 
 **ID**: `UiPath.Excel.Activities.WriteCell@UiPath.Excel.Activities/3.2.1`
@@ -207,9 +206,9 @@
 **Category**: Excel
 **Description**: Writes the Text value into a cell from a spreadsheet. If the sheet does not exist, a new one is created with the SheetName value. If a value exists, it is overwritten. Changes are immediately saved
 **Arguments**:
-- [IN, Required] `InArgument<String>` **Cell** (default: A1)
+- [IN, Required] `InArgument<String>` **Cell**
 - [IN, Required] `InArgument<String>` **Text**
-- [IN, Required] `InArgument<String>` **SheetName** (default: Sheet1)
+- [IN, Required] `InArgument<String>` **SheetName**
 - [IN] `InArgument<UiPath.Excel.Workbook>` **Workbook**
 - [IN, Required] `InArgument<String>` **WorkbookPath**
 - [IN, Required] `InArgument<UiPath.Platform.ResourceHandling.IResource>` **WorkbookPathResource**
@@ -575,7 +574,7 @@
 **Description**: Invokes a macro from an external file containing VBA code and runs it against an Excel file.
 **Arguments**:
 - [IN, Required] `InArgument<UiPath.Excel.IWorkbookQuickHandle>` **Workbook**
-- [IN, Required] `InArgument<String>` **EntryMethodName** (default: Main)
+- [IN, Required] `InArgument<String>` **EntryMethodName**
 - [IN, Required] `InArgument<String>` **CodeFilePath**
 - [OUT] `OutArgument` **Result**
 ### Lookup Range
@@ -817,11 +816,10 @@ _No members extracted._
 # UiPath.System.Activities 25.10.0
 
 > generator: uips-fixtures catalog v0.2
-> generated: 2026-04-06T15:10:38Z
+> generated: 2026-04-07T08:06:45Z
 > set: molten-dirigible
 > url: https://uips-fixtures.github.io/llms/UiPath.System.Activities/25.10.0.txt
 > activities: 119
-> authors: UiPath
 **ID format**: `{fullName}@{packageId}/{packageVersion}`
 **Argument directions**: In (input), Out (output), InOut (bidirectional)
 
@@ -994,22 +992,29 @@ _No members extracted._
 - [IN, Required] `InArgument<String>` **Source**
 ### Append Items to Collection
 
-**ID**: `UiPath.Activities.System.Collections.AppendItemToCollection@UiPath.System.Activities/25.10.0`
-**Type**: `UiPath.Activities.System.Collections.AppendItemToCollection`
+**ID**: `UiPath.Activities.System.Collections.AppendItemToCollection`1@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Activities.System.Collections.AppendItemToCollection`1`
 **Category**: Collection
 **Description**: Appends one or more items at the end of the specified collection.
-_No members extracted._
+**Arguments**:
+- [IN, Required] `InArgument<ICollection<T>>` **Collection**
+**Properties / VariableScope / Child**:
+- [property] `IEnumerable<InArgument<T>>` **Items**
 ### Build Collection
 
-**ID**: `UiPath.Activities.System.Collections.BuildCollection@UiPath.System.Activities/25.10.0`
-**Type**: `UiPath.Activities.System.Collections.BuildCollection`
+**ID**: `UiPath.Activities.System.Collections.BuildCollection`1@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Activities.System.Collections.BuildCollection`1`
 **Category**: Collection
 **Description**: Create a collection of items that have the same type as the first specified element.
-_No members extracted._
+**Arguments**:
+- [IN, Required] `InArgument<T>` **FirstItem**
+- [IN] `InArgument<ICollection<T>>` **Items**
+**Properties / VariableScope / Child**:
+- [property] `List<InArgument<T>>` **NextItems**
 ### Exists In Collection
 
-**ID**: `UiPath.Activities.System.Collections.ExistsInCollection@UiPath.System.Activities/25.10.0`
-**Type**: `UiPath.Activities.System.Collections.ExistsInCollection`
+**ID**: `UiPath.Activities.System.Collections.ExistsInCollection`1@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Activities.System.Collections.ExistsInCollection`1`
 **Category**: Collection
 **Description**: Checks if the given Item exists in the collection
 **Arguments**:
@@ -1019,15 +1024,17 @@ _No members extracted._
 - [OUT] `OutArgument<Int32>` **Index**
 ### Filter Collection
 
-**ID**: `UiPath.Activities.System.Collections.FilterCollection@UiPath.System.Activities/25.10.0`
-**Type**: `UiPath.Activities.System.Collections.FilterCollection`
+**ID**: `UiPath.Activities.System.Collections.FilterCollection`1@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Activities.System.Collections.FilterCollection`1`
 **Category**: Collection
 **Description**: Filter a collection based on custom conditions
-_No members extracted._
+**Arguments**:
+- [IN, Required] `InArgument<ICollection<T>>` **Collection**
+- [IN] `InArgument<UiPath.Activities.Collections.Filters.FilterAction>` **FilterAction**
 ### Merge Collections
 
-**ID**: `UiPath.Activities.System.Collections.MergeCollections@UiPath.System.Activities/25.10.0`
-**Type**: `UiPath.Activities.System.Collections.MergeCollections`
+**ID**: `UiPath.Activities.System.Collections.MergeCollections`1@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Activities.System.Collections.MergeCollections`1`
 **Category**: Collection
 **Description**: Combine collections in a new collection that contains all the elements
 **Arguments**:
@@ -1035,8 +1042,8 @@ _No members extracted._
 - [IN, Required] `InArgument<ICollection<T>>` **SecondCollection**
 ### Remove From Collection
 
-**ID**: `UiPath.Activities.System.Collections.RemoveFromCollection@UiPath.System.Activities/25.10.0`
-**Type**: `UiPath.Activities.System.Collections.RemoveFromCollection`
+**ID**: `UiPath.Activities.System.Collections.RemoveFromCollection`1@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Activities.System.Collections.RemoveFromCollection`1`
 **Category**: Collection
 **Description**: Remove the specified element from a collection
 **Arguments**:
@@ -1047,8 +1054,8 @@ _No members extracted._
 - [property] `Boolean` **RemoveAllElements**
 ### Append Item to List
 
-**ID**: `UiPath.Activities.System.Arrays.AppendItemToList@UiPath.System.Activities/25.10.0`
-**Type**: `UiPath.Activities.System.Arrays.AppendItemToList`
+**ID**: `UiPath.Activities.System.Arrays.AppendItemToList`1@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Activities.System.Arrays.AppendItemToList`1`
 **Category**: Data Lists
 **Description**: Adds an item at the end of the specified list.
 **Arguments**:
@@ -1057,8 +1064,8 @@ _No members extracted._
 - [OUT] `OutArgument<Int32>` **ItemIndex**
 ### Create List
 
-**ID**: `UiPath.Core.Activities.CreateList@UiPath.System.Activities/25.10.0`
-**Type**: `UiPath.Core.Activities.CreateList`
+**ID**: `UiPath.Core.Activities.CreateList`1@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.CreateList`1`
 **Category**: Data Lists
 **Description**: Creates a new empty list.
 **Arguments**:
@@ -1074,7 +1081,7 @@ _No members extracted._
 - [OUT] `OutArgument<String>` **Result**
 - [IN] `InArgument<Int32>` **Width**
 - [IN] `InArgument<Int32>` **Height**
-- [IN] `InArgument<Boolean>` **TopMost** (default: True)
+- [IN] `InArgument<Boolean>` **TopMost**
 ### Input Dialog
 
 **ID**: `UiPath.Core.Activities.InputDialog@UiPath.System.Activities/25.10.0`
@@ -1086,7 +1093,7 @@ _No members extracted._
 - [IN] `InArgument<String>` **Label**
 - [IN] `InArgument<String[]>` **Options**
 - [IN] `InArgument<String>` **OptionsString**
-- [IN] `InArgument<Boolean>` **TopMost** (default: False)
+- [IN] `InArgument<Boolean>` **TopMost**
 - [OUT] `OutArgument` **Result**
 **Properties / VariableScope / Child**:
 - [property] `Boolean` **IsPassword**
@@ -1140,7 +1147,7 @@ _No members extracted._
 **Arguments**:
 - [IN, Required] `InArgument<String>` **ProcessName**
 - [IN, Required] `InArgument<Diagnostics.Process>` **Process**
-- [IN] `InArgument<UiPath.Core.Activities.KillProcessApplyOn>` **AppliesTo** (default: Mono.Cecil.CustomAttributeArgument)
+- [IN] `InArgument<UiPath.Core.Activities.KillProcessApplyOn>` **AppliesTo**
 - [IN] `InArgument<Boolean>` **ContinueOnError**
 ### Copy Folder
 
@@ -1285,15 +1292,24 @@ _No members extracted._
 - [IN] `InArgument<Boolean>` **IncludeSubdirectories**
 ### Invoke Power Shell
 
-**ID**: `UiPath.Core.Activities.InvokePowerShell@UiPath.System.Activities/25.10.0`
-**Type**: `UiPath.Core.Activities.InvokePowerShell`
+**ID**: `UiPath.Core.Activities.InvokePowerShell`1@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.InvokePowerShell`1`
 **Category**: System.PowerShell
 **Description**: Executes a PowerShell command with specified input parameters.
-_No members extracted._
+**Arguments**:
+- [IN] `InArgument<String>` **CommandText**
+- [IN] `InArgument<Collection<Management.Automation.PSObject>>` **Input**
+- [OUT] `OutArgument<Collection<TResult>>` **Output**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `Dictionary<String, InArgument>` **Parameters**
+- [property] `Dictionary<String, Argument>` **PowerShellVariables**
+- [property] `Boolean` **IsScript**
+- [property] `UiPath.Core.Activities.PowerShellProcessVersion` **PowerShellProcess**
 ### Change Type
 
-**ID**: `UiPath.Core.Activities.ChangeType@UiPath.System.Activities/25.10.0`
-**Type**: `UiPath.Core.Activities.ChangeType`
+**ID**: `UiPath.Core.Activities.ChangeType`1@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.ChangeType`1`
 **Category**: Programming.String
 **Description**: Change the data type of a variable.
 **Arguments**:
@@ -1410,11 +1426,13 @@ _No members extracted._
 - [OUT] `OutArgument<Data.DataTable>` **DataTable**
 ### Collection to DataTable
 
-**ID**: `UiPath.Core.Activities.CollectionToDataTable@UiPath.System.Activities/25.10.0`
-**Type**: `UiPath.Core.Activities.CollectionToDataTable`
+**ID**: `UiPath.Core.Activities.CollectionToDataTable`1@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.CollectionToDataTable`1`
 **Category**: Collection
 **Description**: Converts a Collection to a DataTable.
-_No members extracted._
+**Arguments**:
+- [IN, Required] `InArgument<ICollection<T>>` **Collection**
+- [OUT] `OutArgument<Data.DataTable>` **DataTable**
 ### For Each Row in Data Table
 
 **ID**: `UiPath.Core.Activities.ForEachRow@UiPath.System.Activities/25.10.0`
@@ -1688,7 +1706,7 @@ _No members extracted._
 **Arguments**:
 - [IN, Required] `InArgument<String>` **ProcessName**
 - [IN] `InArgument<Int32>` **NumberOfRobots**
-- [IN] `InArgument<Boolean>` **ModernFolder** (default: True)
+- [IN] `InArgument<Boolean>` **ModernFolder**
 - [IN] `InArgument<Dictionary<String, Object>>` **ArgumentsVariable**
 - [IN] `InArgument<UiPath.Orchestrator.Client.Models.StartProcessDtoJobPriority>` **JobPriority**
 - [IN] `InArgument<Boolean>` **ResumeOnSameContext**
@@ -1740,7 +1758,7 @@ _No members extracted._
 - [IN] `InArgument<String>` **Reference**
 - [IN] `InArgument<String>` **FolderPath**
 - [IN, Required] `InArgument<String>` **QueueType**
-- [IN] `InArgument<Boolean>` **ContinueOnError** (default: False)
+- [IN] `InArgument<Boolean>` **ContinueOnError**
 - [IN] `InArgument<Int32>` **TimeoutMS**
 - [OUT] `OutArgument<UiPath.Core.QueueItem>` **TransactionItem**
 - [OUT] `OutArgument` **SpecificData**
@@ -1781,7 +1799,7 @@ _No members extracted._
 **Arguments**:
 - [IN] `InArgument<String>` **FolderPath**
 - [IN, Required] `InArgument<String>` **QueueType**
-- [IN] `InArgument<Boolean>` **ContinueOnError** (default: False)
+- [IN] `InArgument<Boolean>` **ContinueOnError**
 - [IN] `InArgument<Int32>` **TimeoutMS**
 - [IN] `InArgument<String>` **Reference**
 - [OUT] `OutArgument<UiPath.Core.QueueItem>` **TransactionItem**
@@ -1821,7 +1839,7 @@ _No members extracted._
 - [IN] `InArgument<DateTime>` **DeferDate**
 - [IN] `InArgument<DateTime>` **DueDate**
 - [IN, Required] `InArgument<UiPath.Core.QueueItem>` **TransactionItem**
-- [IN] `InArgument<Boolean>` **ContinueOnError** (default: False)
+- [IN] `InArgument<Boolean>` **ContinueOnError**
 - [IN] `InArgument<Int32>` **TimeoutMS**
 ### New Item Added to Queue
 
@@ -1862,7 +1880,7 @@ _No members extracted._
 - [IN] `InArgument<String>` **Details**
 - [IN] `InArgument<UiPath.Core.Activities.ErrorType>` **ErrorType**
 - [IN] `InArgument<String>` **AssociatedFilePath**
-- [IN] `InArgument<Boolean>` **ContinueOnError** (default: False)
+- [IN] `InArgument<Boolean>` **ContinueOnError**
 - [IN] `InArgument<Int32>` **TimeoutMS**
 **Properties / VariableScope / Child**:
 - [property] `Dictionary<String, InArgument>` **Output**
@@ -1985,8 +2003,8 @@ _No members extracted._
 - [property] `Dictionary<String, Argument>` **Arguments**
 ### For Each
 
-**ID**: `UiPath.Core.Activities.ForEach@UiPath.System.Activities/25.10.0`
-**Type**: `UiPath.Core.Activities.ForEach`
+**ID**: `UiPath.Core.Activities.ForEach`1@UiPath.System.Activities/25.10.0`
+**Type**: `UiPath.Core.Activities.ForEach`1`
 **Category**: Workflow
 **Description**: Performs an activity or a series of activities on each element of an enumeration.
 **Arguments**:
@@ -2216,11 +2234,10 @@ _No members extracted._
 # UiPath.Testing.Activities 25.10.0
 
 > generator: uips-fixtures catalog v0.2
-> generated: 2026-04-06T15:10:38Z
+> generated: 2026-04-07T08:06:45Z
 > set: molten-dirigible
 > url: https://uips-fixtures.github.io/llms/UiPath.Testing.Activities/25.10.0.txt
 > activities: 19
-> authors: UiPath
 **ID format**: `{fullName}@{packageId}/{packageVersion}`
 **Argument directions**: In (input), Out (output), InOut (bidirectional)
 
@@ -2480,11 +2497,10 @@ _No members extracted._
 # UiPath.UIAutomation.Activities 25.10.16
 
 > generator: uips-fixtures catalog v0.2
-> generated: 2026-04-06T15:10:38Z
+> generated: 2026-04-07T08:06:45Z
 > set: molten-dirigible
 > url: https://uips-fixtures.github.io/llms/UiPath.UIAutomation.Activities/25.10.16.txt
 > activities: 93
-> authors: UiPath
 **ID format**: `{fullName}@{packageId}/{packageVersion}`
 **Argument directions**: In (input), Out (output), InOut (bidirectional)
 
@@ -2556,17 +2572,17 @@ _No members extracted._
 - [IN] `InArgument<Int32>` **TimeoutMS**
 - [IN] `InArgument<UiPath.CV.CvDescriptor>` **Descriptor**
 - [IN] `InArgument<Boolean>` **ContinueOnError**
-- [IN] `InArgument<UiPath.CV.Scroll>` **ScrollDirection** (default: Mono.Cecil.CustomAttributeArgument)
-- [IN] `InArgument<Int32>` **NumberOfScrolls** (default: 2)
+- [IN] `InArgument<UiPath.CV.Scroll>` **ScrollDirection**
+- [IN] `InArgument<Int32>` **NumberOfScrolls**
 - [OUT] `OutArgument<Drawing.Rectangle>` **OutRegion**
 - [OUT] `OutArgument<Data.DataTable>` **Result**
 - [IN] `InArgument<Int32>` **DelayBefore**
 - [IN] `InArgument<Int32>` **DelayMS**
 - [IN] `InArgument<Int32>` **DelayScreenshotAfterScroll**
-- [IN] `InArgument<Boolean>` **AddHeaders** (default: True)
-- [IN] `InArgument<Boolean>` **RefreshBefore** (default: True)
-- [IN] `InArgument<Boolean>` **IgnoreEmptyRows** (default: False)
-- [IN] `InArgument<Boolean>` **Scroll** (default: False)
+- [IN] `InArgument<Boolean>` **AddHeaders**
+- [IN] `InArgument<Boolean>` **RefreshBefore**
+- [IN] `InArgument<Boolean>` **IgnoreEmptyRows**
+- [IN] `InArgument<Boolean>` **Scroll**
 - [IN] `InArgument<Drawing.Point>` **ScrollOffset**
 ### CV Get Text
 
@@ -2585,7 +2601,7 @@ _No members extracted._
 - [IN] `InArgument<Boolean>` **ContinueOnError**
 - [IN] `InArgument<Drawing.Rectangle>` **InRegion**
 - [OUT] `OutArgument<Drawing.Rectangle>` **OutRegion**
-- [IN] `InArgument<Boolean>` **RefreshBefore** (default: True)
+- [IN] `InArgument<Boolean>` **RefreshBefore**
 - [OUT] `OutArgument<String>` **Result**
 - [IN] `InArgument<Int32>` **DelayBefore**
 - [IN] `InArgument<Int32>` **DelayMS**
@@ -2776,7 +2792,7 @@ _No members extracted._
 **Description**: Selects one or more options from a multiple options list box. After you indicate the element on the screen, use MultipleItems property to define the options that will be selected at runtime. 
 **Arguments**:
 - [IN, Required] `InArgument<String[]>` **MultipleItems**
-- [IN] `InArgument<Boolean>` **AddToSelection** (default: False)
+- [IN] `InArgument<Boolean>` **AddToSelection**
 - [IN] `InArgument<Int32>` **DelayBefore**
 - [IN] `InArgument<Int32>` **DelayAfter**
 - [IN] `InArgument<Boolean>` **AlterIfDisabled**
@@ -3054,11 +3070,21 @@ _No members extracted._
 - [IN] `InArgument<Boolean>` **ContinueOnError**
 ### Extract Form Data
 
-**ID**: `UiPath.Semantic.Activities.NExtractFormDataGeneric@UiPath.UIAutomation.Activities/25.10.16`
-**Type**: `UiPath.Semantic.Activities.NExtractFormDataGeneric`
+**ID**: `UiPath.Semantic.Activities.NExtractFormDataGeneric`1@UiPath.UIAutomation.Activities/25.10.16`
+**Type**: `UiPath.Semantic.Activities.NExtractFormDataGeneric`1`
 **Category**: UI Automation
 **Description**: Uses AI to seamlessly extract form data.
-_No members extracted._
+**Arguments**:
+- [OUT] `OutArgument<T>` **FormData**
+- [IN] `InArgument<Double>` **Timeout**
+- [IN] `InArgument<Double>` **DelayAfter**
+- [IN] `InArgument<Double>` **DelayBefore**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+- [OUT] `OutArgument<UiPath.Core.UiElement>` **OutUiElement**
+- [IN] `InArgument<UiPath.UIAutomationNext.Enums.NChildHealingAgentBehavior>` **HealingAgentBehavior**
+- [IN] `InArgument<UiPath.Core.UiElement>` **InUiElement**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.UIAutomationNext.TargetAnchorable` **Target**
 ### Fill Form
 
 **ID**: `UiPath.Semantic.Activities.NFillForm@UiPath.UIAutomation.Activities/25.10.16`
@@ -3310,8 +3336,8 @@ _No members extracted._
 - [property] `UiPath.UIAutomationNext.TargetAnchorable` **Target**
 ### Extract Table Data
 
-**ID**: `UiPath.UIAutomationNext.Activities.NExtractDataGeneric@UiPath.UIAutomation.Activities/25.10.16`
-**Type**: `UiPath.UIAutomationNext.Activities.NExtractDataGeneric`
+**ID**: `UiPath.UIAutomationNext.Activities.NExtractDataGeneric`1@UiPath.UIAutomation.Activities/25.10.16`
+**Type**: `UiPath.UIAutomationNext.Activities.NExtractDataGeneric`1`
 **Category**: UI Automation
 **Description**: Extracts tabular data from a specified web page or application.
 **Arguments**:
@@ -3369,8 +3395,8 @@ _No members extracted._
 - [property] `UiPath.UIAutomationNext.TargetAnchorable` **Target**
 ### Get Attribute
 
-**ID**: `UiPath.UIAutomationNext.Activities.NGetAttributeGeneric@UiPath.UIAutomation.Activities/25.10.16`
-**Type**: `UiPath.UIAutomationNext.Activities.NGetAttributeGeneric`
+**ID**: `UiPath.UIAutomationNext.Activities.NGetAttributeGeneric`1@UiPath.UIAutomation.Activities/25.10.16`
+**Type**: `UiPath.UIAutomationNext.Activities.NGetAttributeGeneric`1`
 **Category**: UI Automation
 **Description**: Retrieves the value of a specified attribute of the indicated UI element.
 **Arguments**:
@@ -3582,11 +3608,17 @@ _No members extracted._
 - [property] `UiPath.UIAutomationNext.TargetAnchorable` **Target**
 ### Application Event Trigger
 
-**ID**: `UiPath.UIAutomationNext.Activities.NNativeEventTrigger@UiPath.UIAutomation.Activities/25.10.16`
-**Type**: `UiPath.UIAutomationNext.Activities.NNativeEventTrigger`
+**ID**: `UiPath.UIAutomationNext.Activities.NNativeEventTrigger`1@UiPath.UIAutomation.Activities/25.10.16`
+**Type**: `UiPath.UIAutomationNext.Activities.NNativeEventTrigger`1`
 **Category**: UI Automation
 **Description**: Setup a trigger on a given event on the indicated UI Element.
-_No members extracted._
+**Arguments**:
+- [IN] `InArgument<Boolean>` **IncludeChildren**
+- [IN] `InArgument<IEnumerable<String>>` **Selectors**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **MatchSync**
+- [property] `UiPath.Platform.Triggers.TriggerActionSchedulingMode` **SchedulingMode**
+- [property] `UiPath.UIAutomationNext.TargetAnchorable` **Target**
 ### Navigate Browser
 
 **ID**: `UiPath.UIAutomationNext.Activities.NNavigateBrowser@UiPath.UIAutomation.Activities/25.10.16`
@@ -4030,7 +4062,7 @@ _No members extracted._
 # UiPath.Workflow 6.0.0-20240401-07
 
 > generator: uips-fixtures catalog v0.2
-> generated: 2026-04-06T15:10:38Z
+> generated: 2026-04-07T08:06:45Z
 > set: molten-dirigible
 > url: https://uips-fixtures.github.io/llms/UiPath.Workflow/6.0.0-20240401-07.txt
 > activities: 35

@@ -1,22 +1,23 @@
 # UiPath.System.Activities 23.4.5
 
 > generator: uips-fixtures catalog v0.2
-> generated: 2026-04-06T15:10:38Z
+> generated: 2026-04-07T08:06:45Z
 > set: watchful-anvil
 > url: https://uips-fixtures.github.io/llms/UiPath.System.Activities/23.4.5.txt
 > activities: 44
-> authors: UiPath
 **ID format**: `{fullName}@{packageId}/{packageVersion}`
 **Argument directions**: In (input), Out (output), InOut (bidirectional)
 
 ---
 ### Collection to DataTable
 
-**ID**: `UiPath.Core.Activities.CollectionToDataTable@UiPath.System.Activities/23.4.5`
-**Type**: `UiPath.Core.Activities.CollectionToDataTable`
+**ID**: `UiPath.Core.Activities.CollectionToDataTable`1@UiPath.System.Activities/23.4.5`
+**Type**: `UiPath.Core.Activities.CollectionToDataTable`1`
 **Category**: Collection
 **Description**: Converts a Collection to a DataTable.
-_No members extracted._
+**Arguments**:
+- [IN, Required] `InArgument<ICollection<T>>` **Collection**
+- [OUT] `OutArgument<Data.DataTable>` **DataTable**
 ### Raise Alert
 
 **ID**: `UiPath.Core.Activities.RaiseAlert@UiPath.System.Activities/23.4.5`
@@ -123,7 +124,7 @@ _No members extracted._
 **Arguments**:
 - [IN, Required] `InArgument<String>` **ProcessName**
 - [IN] `InArgument<Int32>` **NumberOfRobots**
-- [IN] `InArgument<Boolean>` **ModernFolder** (default: True)
+- [IN] `InArgument<Boolean>` **ModernFolder**
 - [IN] `InArgument<Dictionary<String, Object>>` **ArgumentsVariable**
 - [IN] `InArgument<UiPath.Orchestrator.Client.Models.StartProcessDtoJobPriority>` **JobPriority**
 - [IN] `InArgument<Boolean>` **ResumeOnSameContext**
@@ -173,7 +174,7 @@ _No members extracted._
 **Arguments**:
 - [IN] `InArgument<String>` **Reference**
 - [IN] `InArgument<String>` **QueueType**
-- [IN] `InArgument<Boolean>` **ContinueOnError** (default: False)
+- [IN] `InArgument<Boolean>` **ContinueOnError**
 - [IN] `InArgument<Int32>` **TimeoutMS**
 - [OUT] `OutArgument<UiPath.Core.QueueItem>` **TransactionItem**
 - [IN] `InArgument<String>` **FolderPath**
@@ -294,7 +295,7 @@ _No members extracted._
 **Description**: Gets an item from the queue so that you can process it (start the transaction) and sets its status to In Progress.
 **Arguments**:
 - [IN] `InArgument<String>` **QueueType**
-- [IN] `InArgument<Boolean>` **ContinueOnError** (default: False)
+- [IN] `InArgument<Boolean>` **ContinueOnError**
 - [IN] `InArgument<Int32>` **TimeoutMS**
 - [IN] `InArgument<String>` **Reference**
 - [OUT] `OutArgument<UiPath.Core.QueueItem>` **TransactionItem**
@@ -332,7 +333,7 @@ _No members extracted._
 - [IN] `InArgument<DateTime>` **DeferDate**
 - [IN] `InArgument<DateTime>` **DueDate**
 - [IN, Required] `InArgument<UiPath.Core.QueueItem>` **TransactionItem**
-- [IN] `InArgument<Boolean>` **ContinueOnError** (default: False)
+- [IN] `InArgument<Boolean>` **ContinueOnError**
 - [IN] `InArgument<Int32>` **TimeoutMS**
 - [IN] `InArgument<String>` **FolderPath**
 ### Set Transaction Progress
@@ -358,7 +359,7 @@ _No members extracted._
 - [IN] `InArgument<String>` **Reason**
 - [IN] `InArgument<String>` **Details**
 - [IN] `InArgument<String>` **AssociatedFilePath**
-- [IN] `InArgument<Boolean>` **ContinueOnError** (default: False)
+- [IN] `InArgument<Boolean>` **ContinueOnError**
 - [IN] `InArgument<Int32>` **TimeoutMS**
 - [IN] `InArgument<String>` **FolderPath**
 **Properties / VariableScope / Child**:
@@ -412,8 +413,8 @@ _No members extracted._
 _No members extracted._
 ### For Each
 
-**ID**: `UiPath.Core.Activities.ForEach@UiPath.System.Activities/23.4.5`
-**Type**: `UiPath.Core.Activities.ForEach`
+**ID**: `UiPath.Core.Activities.ForEach`1@UiPath.System.Activities/23.4.5`
+**Type**: `UiPath.Core.Activities.ForEach`1`
 **Category**: Workflow
 **Description**: Performs an activity or a series of activities on each element of an enumeration.
 **Arguments**:
@@ -449,22 +450,29 @@ _No members extracted._
 - [IN, Required] `InArgument<Object>` **StatusText**
 ### Append Items to Collection
 
-**ID**: `UiPath.Activities.System.Collections.AppendItemToCollection@UiPath.System.Activities/23.4.5`
-**Type**: `UiPath.Activities.System.Collections.AppendItemToCollection`
+**ID**: `UiPath.Activities.System.Collections.AppendItemToCollection`1@UiPath.System.Activities/23.4.5`
+**Type**: `UiPath.Activities.System.Collections.AppendItemToCollection`1`
 **Category**: Collection
 **Description**: Appends one or more items at the end of the specified collection.
-_No members extracted._
+**Arguments**:
+- [IN, Required] `InArgument<ICollection<T>>` **Collection**
+**Properties / VariableScope / Child**:
+- [property] `IEnumerable<InArgument<T>>` **Items**
 ### Build Collection
 
-**ID**: `UiPath.Activities.System.Collections.BuildCollection@UiPath.System.Activities/23.4.5`
-**Type**: `UiPath.Activities.System.Collections.BuildCollection`
+**ID**: `UiPath.Activities.System.Collections.BuildCollection`1@UiPath.System.Activities/23.4.5`
+**Type**: `UiPath.Activities.System.Collections.BuildCollection`1`
 **Category**: Collection
 **Description**: Create a collection of items that have the same type as the first specified element.
-_No members extracted._
+**Arguments**:
+- [IN, Required] `InArgument<T>` **FirstItem**
+- [IN] `InArgument<ICollection<T>>` **Items**
+**Properties / VariableScope / Child**:
+- [property] `List<InArgument<T>>` **NextItems**
 ### Exists In Collection
 
-**ID**: `UiPath.Activities.System.Collections.ExistsInCollection@UiPath.System.Activities/23.4.5`
-**Type**: `UiPath.Activities.System.Collections.ExistsInCollection`
+**ID**: `UiPath.Activities.System.Collections.ExistsInCollection`1@UiPath.System.Activities/23.4.5`
+**Type**: `UiPath.Activities.System.Collections.ExistsInCollection`1`
 **Category**: Collection
 **Description**: Checks if the given Item exists in the collection
 **Arguments**:
@@ -474,15 +482,17 @@ _No members extracted._
 - [OUT] `OutArgument<Int32>` **Index**
 ### Filter Collection
 
-**ID**: `UiPath.Activities.System.Collections.FilterCollection@UiPath.System.Activities/23.4.5`
-**Type**: `UiPath.Activities.System.Collections.FilterCollection`
+**ID**: `UiPath.Activities.System.Collections.FilterCollection`1@UiPath.System.Activities/23.4.5`
+**Type**: `UiPath.Activities.System.Collections.FilterCollection`1`
 **Category**: Collection
 **Description**: Filter a collection based on custom conditions
-_No members extracted._
+**Arguments**:
+- [IN, Required] `InArgument<ICollection<T>>` **Collection**
+- [IN] `InArgument<UiPath.Activities.Collections.Filters.FilterAction>` **FilterAction**
 ### Merge Collections
 
-**ID**: `UiPath.Activities.System.Collections.MergeCollections@UiPath.System.Activities/23.4.5`
-**Type**: `UiPath.Activities.System.Collections.MergeCollections`
+**ID**: `UiPath.Activities.System.Collections.MergeCollections`1@UiPath.System.Activities/23.4.5`
+**Type**: `UiPath.Activities.System.Collections.MergeCollections`1`
 **Category**: Collection
 **Description**: Combine collections in a new collection that contains all the elements
 **Arguments**:
@@ -490,8 +500,8 @@ _No members extracted._
 - [IN, Required] `InArgument<ICollection<T>>` **SecondCollection**
 ### Remove From Collection
 
-**ID**: `UiPath.Activities.System.Collections.RemoveFromCollection@UiPath.System.Activities/23.4.5`
-**Type**: `UiPath.Activities.System.Collections.RemoveFromCollection`
+**ID**: `UiPath.Activities.System.Collections.RemoveFromCollection`1@UiPath.System.Activities/23.4.5`
+**Type**: `UiPath.Activities.System.Collections.RemoveFromCollection`1`
 **Category**: Collection
 **Description**: Remove the specified element from a collection
 **Arguments**:

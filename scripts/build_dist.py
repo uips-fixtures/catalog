@@ -138,6 +138,8 @@ def infer_member_kind(data_type: str | None, arg_dir: str | None) -> str:
 
 # ── Property → member mapping ──────────────────────────────────────────────────
 
+_ARG_DIR_MAP = {0: "in", 1: "out", 2: "in-out"}
+
 def map_property(prop: dict) -> dict | None:
     """Return a member dict, or None if the property should be excluded.
 
@@ -150,7 +152,8 @@ def map_property(prop: dict) -> dict | None:
         return None
 
     raw_dt  = prop.get("dataType")             # null when absent in source
-    arg_dir = prop.get("argumentDirection")   # "in" / "out" / "in-out" / None
+    raw_dir = prop.get("argumentDirection")    # int (0/1/2) or str or None
+    arg_dir = _ARG_DIR_MAP.get(raw_dir, raw_dir) if isinstance(raw_dir, int) else raw_dir
     dt      = normalize_datatype(raw_dt) if raw_dt else None
     kind    = infer_member_kind(dt, arg_dir)
 
@@ -170,12 +173,13 @@ def map_property(prop: dict) -> dict | None:
 # ── Source and activity builders ───────────────────────────────────────────────
 
 def build_source(shape_b: dict) -> dict:
-    # engine-result v1: sourceId/sourceVersion at top level; package contains nuspec metadata
+    # engine-result: sourceId/sourceVersion live in requestedUnit
+    ru  = shape_b.get("requestedUnit", shape_b)   # fallback to root for older format
     pkg = shape_b.get("package", {})
     return {
         "kind":         "nuget-package",
-        "id":           shape_b["sourceId"],
-        "version":      shape_b["sourceVersion"],
+        "id":           ru["sourceId"],
+        "version":      ru["sourceVersion"],
         "feedUrl":      shape_b.get("feedUrl") or None,
         "authors":      pkg.get("authors") or None,
         "projectUrl":   pkg.get("projectUrl") or None,

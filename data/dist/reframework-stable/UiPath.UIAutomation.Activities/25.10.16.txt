@@ -1,11 +1,10 @@
 # UiPath.UIAutomation.Activities 25.10.16
 
 > generator: uips-fixtures catalog v0.2
-> generated: 2026-04-06T15:10:38Z
+> generated: 2026-04-07T08:06:45Z
 > set: reframework-stable
 > url: https://uips-fixtures.github.io/llms/UiPath.UIAutomation.Activities/25.10.16.txt
 > activities: 93
-> authors: UiPath
 **ID format**: `{fullName}@{packageId}/{packageVersion}`
 **Argument directions**: In (input), Out (output), InOut (bidirectional)
 
@@ -77,17 +76,17 @@
 - [IN] `InArgument<Int32>` **TimeoutMS**
 - [IN] `InArgument<UiPath.CV.CvDescriptor>` **Descriptor**
 - [IN] `InArgument<Boolean>` **ContinueOnError**
-- [IN] `InArgument<UiPath.CV.Scroll>` **ScrollDirection** (default: Mono.Cecil.CustomAttributeArgument)
-- [IN] `InArgument<Int32>` **NumberOfScrolls** (default: 2)
+- [IN] `InArgument<UiPath.CV.Scroll>` **ScrollDirection**
+- [IN] `InArgument<Int32>` **NumberOfScrolls**
 - [OUT] `OutArgument<Drawing.Rectangle>` **OutRegion**
 - [OUT] `OutArgument<Data.DataTable>` **Result**
 - [IN] `InArgument<Int32>` **DelayBefore**
 - [IN] `InArgument<Int32>` **DelayMS**
 - [IN] `InArgument<Int32>` **DelayScreenshotAfterScroll**
-- [IN] `InArgument<Boolean>` **AddHeaders** (default: True)
-- [IN] `InArgument<Boolean>` **RefreshBefore** (default: True)
-- [IN] `InArgument<Boolean>` **IgnoreEmptyRows** (default: False)
-- [IN] `InArgument<Boolean>` **Scroll** (default: False)
+- [IN] `InArgument<Boolean>` **AddHeaders**
+- [IN] `InArgument<Boolean>` **RefreshBefore**
+- [IN] `InArgument<Boolean>` **IgnoreEmptyRows**
+- [IN] `InArgument<Boolean>` **Scroll**
 - [IN] `InArgument<Drawing.Point>` **ScrollOffset**
 ### CV Get Text
 
@@ -106,7 +105,7 @@
 - [IN] `InArgument<Boolean>` **ContinueOnError**
 - [IN] `InArgument<Drawing.Rectangle>` **InRegion**
 - [OUT] `OutArgument<Drawing.Rectangle>` **OutRegion**
-- [IN] `InArgument<Boolean>` **RefreshBefore** (default: True)
+- [IN] `InArgument<Boolean>` **RefreshBefore**
 - [OUT] `OutArgument<String>` **Result**
 - [IN] `InArgument<Int32>` **DelayBefore**
 - [IN] `InArgument<Int32>` **DelayMS**
@@ -297,7 +296,7 @@
 **Description**: Selects one or more options from a multiple options list box. After you indicate the element on the screen, use MultipleItems property to define the options that will be selected at runtime. 
 **Arguments**:
 - [IN, Required] `InArgument<String[]>` **MultipleItems**
-- [IN] `InArgument<Boolean>` **AddToSelection** (default: False)
+- [IN] `InArgument<Boolean>` **AddToSelection**
 - [IN] `InArgument<Int32>` **DelayBefore**
 - [IN] `InArgument<Int32>` **DelayAfter**
 - [IN] `InArgument<Boolean>` **AlterIfDisabled**
@@ -575,11 +574,21 @@
 - [IN] `InArgument<Boolean>` **ContinueOnError**
 ### Extract Form Data
 
-**ID**: `UiPath.Semantic.Activities.NExtractFormDataGeneric@UiPath.UIAutomation.Activities/25.10.16`
-**Type**: `UiPath.Semantic.Activities.NExtractFormDataGeneric`
+**ID**: `UiPath.Semantic.Activities.NExtractFormDataGeneric`1@UiPath.UIAutomation.Activities/25.10.16`
+**Type**: `UiPath.Semantic.Activities.NExtractFormDataGeneric`1`
 **Category**: UI Automation
 **Description**: Uses AI to seamlessly extract form data.
-_No members extracted._
+**Arguments**:
+- [OUT] `OutArgument<T>` **FormData**
+- [IN] `InArgument<Double>` **Timeout**
+- [IN] `InArgument<Double>` **DelayAfter**
+- [IN] `InArgument<Double>` **DelayBefore**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+- [OUT] `OutArgument<UiPath.Core.UiElement>` **OutUiElement**
+- [IN] `InArgument<UiPath.UIAutomationNext.Enums.NChildHealingAgentBehavior>` **HealingAgentBehavior**
+- [IN] `InArgument<UiPath.Core.UiElement>` **InUiElement**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.UIAutomationNext.TargetAnchorable` **Target**
 ### Fill Form
 
 **ID**: `UiPath.Semantic.Activities.NFillForm@UiPath.UIAutomation.Activities/25.10.16`
@@ -831,8 +840,8 @@ _No members extracted._
 - [property] `UiPath.UIAutomationNext.TargetAnchorable` **Target**
 ### Extract Table Data
 
-**ID**: `UiPath.UIAutomationNext.Activities.NExtractDataGeneric@UiPath.UIAutomation.Activities/25.10.16`
-**Type**: `UiPath.UIAutomationNext.Activities.NExtractDataGeneric`
+**ID**: `UiPath.UIAutomationNext.Activities.NExtractDataGeneric`1@UiPath.UIAutomation.Activities/25.10.16`
+**Type**: `UiPath.UIAutomationNext.Activities.NExtractDataGeneric`1`
 **Category**: UI Automation
 **Description**: Extracts tabular data from a specified web page or application.
 **Arguments**:
@@ -890,8 +899,8 @@ _No members extracted._
 - [property] `UiPath.UIAutomationNext.TargetAnchorable` **Target**
 ### Get Attribute
 
-**ID**: `UiPath.UIAutomationNext.Activities.NGetAttributeGeneric@UiPath.UIAutomation.Activities/25.10.16`
-**Type**: `UiPath.UIAutomationNext.Activities.NGetAttributeGeneric`
+**ID**: `UiPath.UIAutomationNext.Activities.NGetAttributeGeneric`1@UiPath.UIAutomation.Activities/25.10.16`
+**Type**: `UiPath.UIAutomationNext.Activities.NGetAttributeGeneric`1`
 **Category**: UI Automation
 **Description**: Retrieves the value of a specified attribute of the indicated UI element.
 **Arguments**:
@@ -1103,11 +1112,17 @@ _No members extracted._
 - [property] `UiPath.UIAutomationNext.TargetAnchorable` **Target**
 ### Application Event Trigger
 
-**ID**: `UiPath.UIAutomationNext.Activities.NNativeEventTrigger@UiPath.UIAutomation.Activities/25.10.16`
-**Type**: `UiPath.UIAutomationNext.Activities.NNativeEventTrigger`
+**ID**: `UiPath.UIAutomationNext.Activities.NNativeEventTrigger`1@UiPath.UIAutomation.Activities/25.10.16`
+**Type**: `UiPath.UIAutomationNext.Activities.NNativeEventTrigger`1`
 **Category**: UI Automation
 **Description**: Setup a trigger on a given event on the indicated UI Element.
-_No members extracted._
+**Arguments**:
+- [IN] `InArgument<Boolean>` **IncludeChildren**
+- [IN] `InArgument<IEnumerable<String>>` **Selectors**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **MatchSync**
+- [property] `UiPath.Platform.Triggers.TriggerActionSchedulingMode` **SchedulingMode**
+- [property] `UiPath.UIAutomationNext.TargetAnchorable` **Target**
 ### Navigate Browser
 
 **ID**: `UiPath.UIAutomationNext.Activities.NNavigateBrowser@UiPath.UIAutomation.Activities/25.10.16`

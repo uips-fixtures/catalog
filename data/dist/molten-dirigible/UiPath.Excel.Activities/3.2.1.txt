@@ -1,11 +1,10 @@
 # UiPath.Excel.Activities 3.2.1
 
 > generator: uips-fixtures catalog v0.2
-> generated: 2026-04-06T15:10:38Z
+> generated: 2026-04-07T08:06:45Z
 > set: molten-dirigible
 > url: https://uips-fixtures.github.io/llms/UiPath.Excel.Activities/3.2.1.txt
 > activities: 65
-> authors: UiPath
 **ID format**: `{fullName}@{packageId}/{packageVersion}`
 **Argument directions**: In (input), Out (output), InOut (bidirectional)
 
@@ -53,7 +52,7 @@
 - [IN, Required] `InArgument<String>` **WorkbookPath**
 - [IN, Required] `InArgument<UiPath.Platform.ResourceHandling.IResource>` **WorkbookPathResource**
 - [IN] `InArgument<String>` **Password**
-- [IN, Required] `InArgument<String>` **SheetName** (default: Sheet1)
+- [IN, Required] `InArgument<String>` **SheetName**
 ### Create Pivot Table Workbook
 
 **ID**: `UiPath.Excel.Activities.CreatePivotTable@UiPath.Excel.Activities/3.2.1`
@@ -73,7 +72,7 @@
 - [IN, Required] `InArgument<String>` **WorkbookPath**
 - [IN, Required] `InArgument<UiPath.Platform.ResourceHandling.IResource>` **WorkbookPathResource**
 - [IN] `InArgument<String>` **Password**
-- [IN, Required] `InArgument<String>` **SheetName** (default: Sheet1)
+- [IN, Required] `InArgument<String>` **SheetName**
 **Properties / VariableScope / Child**:
 - [property] `Boolean` **UseTableSource**
 - [property] `List<InArgument<UiPath.Excel.PivotTableField>>` **PivotTableFields**
@@ -90,7 +89,7 @@
 - [IN, Required] `InArgument<String>` **WorkbookPath**
 - [IN, Required] `InArgument<UiPath.Platform.ResourceHandling.IResource>` **WorkbookPathResource**
 - [IN] `InArgument<String>` **Password**
-- [IN, Required] `InArgument<String>` **SheetName** (default: Sheet1)
+- [IN, Required] `InArgument<String>` **SheetName**
 ### Get Table Range Workbook
 
 **ID**: `UiPath.Excel.Activities.GetTableRange@UiPath.Excel.Activities/3.2.1`
@@ -104,7 +103,7 @@
 - [IN, Required] `InArgument<String>` **WorkbookPath**
 - [IN, Required] `InArgument<UiPath.Platform.ResourceHandling.IResource>` **WorkbookPathResource**
 - [IN] `InArgument<String>` **Password**
-- [IN, Required] `InArgument<String>` **SheetName** (default: Sheet1)
+- [IN, Required] `InArgument<String>` **SheetName**
 **Properties / VariableScope / Child**:
 - [property] `Boolean` **IsPivot**
 ### Read Cell Workbook
@@ -114,13 +113,13 @@
 **Category**: Excel
 **Description**: Reads the value of a cell from a spreadsheet as a string
 **Arguments**:
-- [IN, Required] `InArgument<String>` **Cell** (default: A1)
+- [IN, Required] `InArgument<String>` **Cell**
 - [OUT] `OutArgument` **Result**
 - [IN] `InArgument<UiPath.Excel.Workbook>` **Workbook**
 - [IN, Required] `InArgument<String>` **WorkbookPath**
 - [IN, Required] `InArgument<UiPath.Platform.ResourceHandling.IResource>` **WorkbookPathResource**
 - [IN] `InArgument<String>` **Password**
-- [IN, Required] `InArgument<String>` **SheetName** (default: Sheet1)
+- [IN, Required] `InArgument<String>` **SheetName**
 **Properties / VariableScope / Child**:
 - [property] `Boolean` **PreserveFormat**
 ### Read Cell Formula Workbook
@@ -130,13 +129,13 @@
 **Category**: Excel
 **Description**: Reads the formula of a cell from a spreadsheet as a string
 **Arguments**:
-- [IN, Required] `InArgument<String>` **Cell** (default: A1)
+- [IN, Required] `InArgument<String>` **Cell**
 - [OUT] `OutArgument<String>` **Result**
 - [IN] `InArgument<UiPath.Excel.Workbook>` **Workbook**
 - [IN, Required] `InArgument<String>` **WorkbookPath**
 - [IN, Required] `InArgument<UiPath.Platform.ResourceHandling.IResource>` **WorkbookPathResource**
 - [IN] `InArgument<String>` **Password**
-- [IN, Required] `InArgument<String>` **SheetName** (default: Sheet1)
+- [IN, Required] `InArgument<String>` **SheetName**
 ### Read Column Workbook
 
 **ID**: `UiPath.Excel.Activities.ReadColumn@UiPath.Excel.Activities/3.2.1`
@@ -144,13 +143,13 @@
 **Category**: Excel
 **Description**: Reads the values from a column beginning from the cell specified in the StartingCell field, and stores them in an IEnumerable <object>variable.
 **Arguments**:
-- [IN, Required] `InArgument<String>` **StartingCell** (default: A1)
+- [IN, Required] `InArgument<String>` **StartingCell**
 - [OUT] `OutArgument<IEnumerable<Object>>` **Result**
 - [IN] `InArgument<UiPath.Excel.Workbook>` **Workbook**
 - [IN, Required] `InArgument<String>` **WorkbookPath**
 - [IN, Required] `InArgument<UiPath.Platform.ResourceHandling.IResource>` **WorkbookPathResource**
 - [IN] `InArgument<String>` **Password**
-- [IN, Required] `InArgument<String>` **SheetName** (default: Sheet1)
+- [IN, Required] `InArgument<String>` **SheetName**
 **Properties / VariableScope / Child**:
 - [property] `Boolean` **PreserveFormat**
 ### Read Range Workbook
@@ -160,13 +159,13 @@
 **Category**: Excel
 **Description**: Reads the value of a range in Range Excel Format from a spreadsheet as a DataTable. If Range isn&apos;t specified, the whole spreadsheet is read. If range is specified as a cell, the whole spreadsheet starting from that cell is read
 **Arguments**:
-- [IN] `InArgument<String>` **Range** (default: A1:A2)
+- [IN] `InArgument<String>` **Range**
 - [OUT] `OutArgument<Data.DataTable>` **DataTable**
 - [IN] `InArgument<UiPath.Excel.Workbook>` **Workbook**
 - [IN, Required] `InArgument<String>` **WorkbookPath**
 - [IN, Required] `InArgument<UiPath.Platform.ResourceHandling.IResource>` **WorkbookPathResource**
 - [IN] `InArgument<String>` **Password**
-- [IN, Required] `InArgument<String>` **SheetName** (default: Sheet1)
+- [IN, Required] `InArgument<String>` **SheetName**
 **Properties / VariableScope / Child**:
 - [property] `Boolean` **AddHeaders**
 - [property] `Boolean` **PreserveFormat**
@@ -177,13 +176,13 @@
 **Category**: Excel
 **Description**: Reads the values of an Excel row beginning from the cell specified in the StartingCell field, and stores it in an IEnumerable<object> variable.
 **Arguments**:
-- [IN, Required] `InArgument<String>` **StartingCell** (default: A1)
+- [IN, Required] `InArgument<String>` **StartingCell**
 - [OUT] `OutArgument<IEnumerable<Object>>` **Result**
 - [IN] `InArgument<UiPath.Excel.Workbook>` **Workbook**
 - [IN, Required] `InArgument<String>` **WorkbookPath**
 - [IN, Required] `InArgument<UiPath.Platform.ResourceHandling.IResource>` **WorkbookPathResource**
 - [IN] `InArgument<String>` **Password**
-- [IN, Required] `InArgument<String>` **SheetName** (default: Sheet1)
+- [IN, Required] `InArgument<String>` **SheetName**
 **Properties / VariableScope / Child**:
 - [property] `Boolean` **PreserveFormat**
 ### Set Range Color Workbook
@@ -199,7 +198,7 @@
 - [IN, Required] `InArgument<String>` **WorkbookPath**
 - [IN, Required] `InArgument<UiPath.Platform.ResourceHandling.IResource>` **WorkbookPathResource**
 - [IN] `InArgument<String>` **Password**
-- [IN, Required] `InArgument<String>` **SheetName** (default: Sheet1)
+- [IN, Required] `InArgument<String>` **SheetName**
 ### Write Cell Workbook
 
 **ID**: `UiPath.Excel.Activities.WriteCell@UiPath.Excel.Activities/3.2.1`
@@ -207,9 +206,9 @@
 **Category**: Excel
 **Description**: Writes the Text value into a cell from a spreadsheet. If the sheet does not exist, a new one is created with the SheetName value. If a value exists, it is overwritten. Changes are immediately saved
 **Arguments**:
-- [IN, Required] `InArgument<String>` **Cell** (default: A1)
+- [IN, Required] `InArgument<String>` **Cell**
 - [IN, Required] `InArgument<String>` **Text**
-- [IN, Required] `InArgument<String>` **SheetName** (default: Sheet1)
+- [IN, Required] `InArgument<String>` **SheetName**
 - [IN] `InArgument<UiPath.Excel.Workbook>` **Workbook**
 - [IN, Required] `InArgument<String>` **WorkbookPath**
 - [IN, Required] `InArgument<UiPath.Platform.ResourceHandling.IResource>` **WorkbookPathResource**
@@ -575,7 +574,7 @@
 **Description**: Invokes a macro from an external file containing VBA code and runs it against an Excel file.
 **Arguments**:
 - [IN, Required] `InArgument<UiPath.Excel.IWorkbookQuickHandle>` **Workbook**
-- [IN, Required] `InArgument<String>` **EntryMethodName** (default: Main)
+- [IN, Required] `InArgument<String>` **EntryMethodName**
 - [IN, Required] `InArgument<String>` **CodeFilePath**
 - [OUT] `OutArgument` **Result**
 ### Lookup Range
