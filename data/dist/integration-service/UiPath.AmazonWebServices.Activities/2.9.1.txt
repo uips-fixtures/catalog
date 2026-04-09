@@ -1,0 +1,1313 @@
+# UiPath.AmazonWebServices.Activities 2.9.1
+
+> generator: uips-fixtures catalog v0.2
+> generated: 2026-04-09T22:10:08Z
+> set: integration-service
+> url: https://uips-fixtures.github.io/llms/UiPath.AmazonWebServices.Activities/2.9.1.txt
+> activities: 76
+> authors: UiPath
+**ID format**: `{fullName}@{packageId}/{packageVersion}`
+**Argument directions**: In (input), Out (output), InOut (bidirectional)
+
+---
+### Amazon Web Services Scope
+
+**ID**: `UiPath.AmazonWebServices.Activities.AWSScope@UiPath.AmazonWebServices.Activities/2.9.1`
+**Type**: `UiPath.AmazonWebServices.Activities.AWSScope`
+**Category**: Cloud.AWS
+**Description**: Connects to Amazon Web Services (AWS) and provides a scope for other AWS activities.
+**Arguments**:
+- [IN] `InArgument<String>` **AccessKeyId**
+- [IN] `InArgument<Security.SecureString>` **SecretAccessKey**
+- [IN] `InArgument<Security.SecureString>` **TemporarySessionToken**
+- [IN, Required] `InArgument<String>` **Region**
+### Copy Object
+
+**ID**: `UiPath.AmazonWebServices.Activities.S3.Objects.AWSCopyObject@UiPath.AmazonWebServices.Activities/2.9.1`
+**Type**: `UiPath.AmazonWebServices.Activities.S3.Objects.AWSCopyObject`
+**Category**: Cloud.AWS.S3.Objects
+**Description**: Copies an object to another bucket.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.AmazonWebServices.Models.AWSS3Object>` **SourceObject**
+- [IN] `InArgument<String>` **SourceObjectVersionId**
+- [IN, Required] `InArgument<UiPath.AmazonWebServices.Models.AWSS3Bucket>` **DestinationBucket**
+- [IN, Required] `InArgument<String>` **DestinationObjectKeyName**
+- [OUT] `OutArgument<UiPath.AmazonWebServices.Models.AWSS3Object>` **DestinationObject**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Delete Multiple Objects
+
+**ID**: `UiPath.AmazonWebServices.Activities.S3.Objects.AWSDeleteMultipleObjects@UiPath.AmazonWebServices.Activities/2.9.1`
+**Type**: `UiPath.AmazonWebServices.Activities.S3.Objects.AWSDeleteMultipleObjects`
+**Category**: Cloud.AWS.S3.Objects
+**Description**: Deletes multiple objects at once.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.AmazonWebServices.Models.AWSS3Bucket>` **Bucket**
+- [IN, Required] `InArgument<Data.DataTable>` **ObjectsKeysAndVersionsIds**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Delete Single Object
+
+**ID**: `UiPath.AmazonWebServices.Activities.S3.Objects.AWSDeleteSingleObject@UiPath.AmazonWebServices.Activities/2.9.1`
+**Type**: `UiPath.AmazonWebServices.Activities.S3.Objects.AWSDeleteSingleObject`
+**Category**: Cloud.AWS.S3.Objects
+**Description**: Deletes the specified object.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.AmazonWebServices.Models.AWSS3Object>` **Object**
+- [IN] `InArgument<String>` **VersionId**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Download Object to File
+
+**ID**: `UiPath.AmazonWebServices.Activities.S3.Objects.AWSDownloadSingleObject@UiPath.AmazonWebServices.Activities/2.9.1`
+**Type**: `UiPath.AmazonWebServices.Activities.S3.Objects.AWSDownloadSingleObject`
+**Category**: Cloud.AWS.S3.Objects
+**Description**: Downloads an object to a specified file.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.AmazonWebServices.Models.AWSS3Object>` **Object**
+- [IN] `InArgument<String>` **ObjectVersionID**
+- [IN] `InArgument<String>` **Folder**
+- [IN] `InArgument<String>` **FileName**
+- [IN] `InArgument<Boolean>` **Overwrite**
+- [IN] `InArgument<Nullable<Int32>>` **Timeout**
+- [IN] `InArgument<Boolean>` **CreateSubfolderStructure**
+- [OUT] `OutArgument<String>` **FilePath**
+- [OUT] `OutArgument<UiPath.Platform.ResourceHandling.ILocalResource>` **File**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### For Each Object in Bucket
+
+**ID**: `UiPath.AmazonWebServices.Activities.S3.Objects.AWSForEachObject@UiPath.AmazonWebServices.Activities/2.9.1`
+**Type**: `UiPath.AmazonWebServices.Activities.S3.Objects.AWSForEachObject`
+**Category**: Cloud.AWS.S3.Objects
+**Description**: Performs an activity or a series of activities on each object in a specified bucket.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.AmazonWebServices.Models.AWSS3Bucket>` **Bucket**
+- [IN] `InArgument<Boolean>` **IncludeVersionsInfo**
+- [IN] `InArgument<String>` **Prefix**
+- [IN] `InArgument<String>` **TagKey**
+- [IN] `InArgument<String>` **TagValue**
+- [OUT] `OutArgument<Int32>` **CurrentIndex**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **SkipFolders**
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Get Object
+
+**ID**: `UiPath.AmazonWebServices.Activities.S3.Objects.AWSGetObject@UiPath.AmazonWebServices.Activities/2.9.1`
+**Type**: `UiPath.AmazonWebServices.Activities.S3.Objects.AWSGetObject`
+**Category**: Cloud.AWS.S3.Objects
+**Description**: Retrieves the details of the specified object.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.AmazonWebServices.Models.AWSS3Bucket>` **Bucket**
+- [IN, Required] `InArgument<String>` **ObjectKeyName**
+- [IN] `InArgument<Boolean>` **IncludeVersions**
+- [OUT] `OutArgument<UiPath.AmazonWebServices.Models.AWSS3Object>` **Object**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Get Object ACL
+
+**ID**: `UiPath.AmazonWebServices.Activities.S3.Objects.AWSGetObjectACL@UiPath.AmazonWebServices.Activities/2.9.1`
+**Type**: `UiPath.AmazonWebServices.Activities.S3.Objects.AWSGetObjectACL`
+**Category**: Cloud.AWS.S3.Objects
+**Description**: Gets the access control list (ACL) permissions for an object.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.AmazonWebServices.Models.AWSS3Object>` **Object**
+- [OUT] `OutArgument<UiPath.AmazonWebServices.Models.AWSS3ObjectACL[]>` **Permissions**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Move Object
+
+**ID**: `UiPath.AmazonWebServices.Activities.S3.Objects.AWSMoveObject@UiPath.AmazonWebServices.Activities/2.9.1`
+**Type**: `UiPath.AmazonWebServices.Activities.S3.Objects.AWSMoveObject`
+**Category**: Cloud.AWS.S3.Objects
+**Description**: Moves an object to another bucket.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.AmazonWebServices.Models.AWSS3Object>` **SourceObject**
+- [IN] `InArgument<String>` **SourceObjectVersionId**
+- [IN, Required] `InArgument<UiPath.AmazonWebServices.Models.AWSS3Bucket>` **DestinationBucket**
+- [IN, Required] `InArgument<String>` **DestinationObjectKeyName**
+- [OUT] `OutArgument<UiPath.AmazonWebServices.Models.AWSS3Object>` **DestinationObject**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Set Object ACL
+
+**ID**: `UiPath.AmazonWebServices.Activities.S3.Objects.AWSSetObjectACL@UiPath.AmazonWebServices.Activities/2.9.1`
+**Type**: `UiPath.AmazonWebServices.Activities.S3.Objects.AWSSetObjectACL`
+**Category**: Cloud.AWS.S3.Objects
+**Description**: Sets the access control list (ACL) permissions for an object.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.AmazonWebServices.Models.AWSS3Object>` **Object**
+- [IN, Required] `InArgument<UiPath.AmazonWebServices.Models.AWSS3ObjectACL[]>` **Permissions**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Upload Objects from Folder
+
+**ID**: `UiPath.AmazonWebServices.Activities.S3.Objects.AWSUploadMultipleObjects@UiPath.AmazonWebServices.Activities/2.9.1`
+**Type**: `UiPath.AmazonWebServices.Activities.S3.Objects.AWSUploadMultipleObjects`
+**Category**: Cloud.AWS.S3.Objects
+**Description**: Uploads an entire folder to a bucket.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.AmazonWebServices.Models.AWSS3Bucket>` **Bucket**
+- [IN, Required] `InArgument<String>` **Folder**
+- [IN] `InArgument<Boolean>` **IncludeSubFolders**
+- [IN] `InArgument<Nullable<Int32>>` **Timeout**
+- [IN] `InArgument<String>` **Prefix**
+- [IN] `InArgument<UiPath.Core.S3ObjectStorageType>` **StorageClass**
+- [IN] `InArgument<Data.DataTable>` **Tags**
+- [IN, Required] `InArgument<UiPath.Core.AWSEncryptionMethod>` **Encryption**
+- [IN] `InArgument<String>` **EncryptionKey**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Upload Object from File
+
+**ID**: `UiPath.AmazonWebServices.Activities.S3.Objects.AWSUploadSingleObject@UiPath.AmazonWebServices.Activities/2.9.1`
+**Type**: `UiPath.AmazonWebServices.Activities.S3.Objects.AWSUploadSingleObject`
+**Category**: Cloud.AWS.S3.Objects
+**Description**: Uploads a file to a bucket.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.AmazonWebServices.Models.AWSS3Bucket>` **Bucket**
+- [IN, Required] `InArgument<String>` **ObjectKeyName**
+- [IN] `InArgument<String>` **FileToUpload**
+- [IN] `InArgument<UiPath.Platform.ResourceHandling.IResource>` **FileResourceToUpload**
+- [IN] `InArgument<String>` **ContentType**
+- [IN] `InArgument<Nullable<Int32>>` **Timeout**
+- [IN] `InArgument<UiPath.Core.S3ObjectStorageType>` **StorageClass**
+- [IN] `InArgument<Data.DataTable>` **Tags**
+- [IN] `InArgument<UiPath.AmazonWebServices.Models.AWSS3ObjectACL[]>` **Permissions**
+- [IN, Required] `InArgument<UiPath.Core.AWSEncryptionMethod>` **Encryption**
+- [IN] `InArgument<String>` **EncryptionKey**
+- [OUT] `OutArgument<UiPath.AmazonWebServices.Models.AWSS3Object>` **Object**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Configure Logging for Bucket
+
+**ID**: `UiPath.AmazonWebServices.Activities.S3.Buckets.AWSConfigureLoggingBucket@UiPath.AmazonWebServices.Activities/2.9.1`
+**Type**: `UiPath.AmazonWebServices.Activities.S3.Buckets.AWSConfigureLoggingBucket`
+**Category**: Cloud.AWS.S3.Buckets
+**Description**: Configures the logging settings for the bucket.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.AmazonWebServices.Models.AWSS3Bucket>` **Bucket**
+- [IN, Required] `InArgument<Boolean>` **EnableServerAccessLogging**
+- [IN] `InArgument<String>` **TargetBucketName**
+- [IN] `InArgument<String>` **TargetPrefix**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Configure Public Access to Bucket
+
+**ID**: `UiPath.AmazonWebServices.Activities.S3.Buckets.AWSConfigurePublicAccessBucket@UiPath.AmazonWebServices.Activities/2.9.1`
+**Type**: `UiPath.AmazonWebServices.Activities.S3.Buckets.AWSConfigurePublicAccessBucket`
+**Category**: Cloud.AWS.S3.Buckets
+**Description**: Configures the public access for a bucket.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.AmazonWebServices.Models.AWSS3Bucket>` **Bucket**
+- [IN] `InArgument<Boolean>` **BlockPublicAcls**
+- [IN] `InArgument<Boolean>` **IgnorePublicAcls**
+- [IN] `InArgument<Boolean>` **BlockPublicPolicy**
+- [IN] `InArgument<Boolean>` **RestrictPublicBuckets**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Create Bucket
+
+**ID**: `UiPath.AmazonWebServices.Activities.S3.Buckets.AWSCreateBucket@UiPath.AmazonWebServices.Activities/2.9.1`
+**Type**: `UiPath.AmazonWebServices.Activities.S3.Buckets.AWSCreateBucket`
+**Category**: Cloud.AWS.S3.Buckets
+**Description**: Creates a new S3 bucket. All public access to this bucket will be blocked by default.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **KeyName**
+- [IN, Required] `InArgument<Boolean>` **EnableVersioning**
+- [IN] `InArgument<Boolean>` **EnableObjectLock**
+- [IN] `InArgument<Data.DataTable>` **Tags**
+- [IN, Required] `InArgument<UiPath.Core.AWSEncryptionMethod>` **DefaultEncryption**
+- [IN] `InArgument<String>` **AWSEncryptionKey**
+- [OUT] `OutArgument<UiPath.AmazonWebServices.Models.AWSS3Bucket>` **Bucket**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Delete Bucket
+
+**ID**: `UiPath.AmazonWebServices.Activities.S3.Buckets.AWSDeleteBucket@UiPath.AmazonWebServices.Activities/2.9.1`
+**Type**: `UiPath.AmazonWebServices.Activities.S3.Buckets.AWSDeleteBucket`
+**Category**: Cloud.AWS.S3.Buckets
+**Description**: Deletes a bucket.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.AmazonWebServices.Models.AWSS3Bucket>` **Bucket**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Delete Bucket Policy
+
+**ID**: `UiPath.AmazonWebServices.Activities.S3.Buckets.AWSDeleteBucketPolicy@UiPath.AmazonWebServices.Activities/2.9.1`
+**Type**: `UiPath.AmazonWebServices.Activities.S3.Buckets.AWSDeleteBucketPolicy`
+**Category**: Cloud.AWS.S3.Buckets
+**Description**: Deletes the current bucket policy.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.AmazonWebServices.Models.AWSS3Bucket>` **Bucket**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Empty Bucket
+
+**ID**: `UiPath.AmazonWebServices.Activities.S3.Buckets.AWSEmptyBucket@UiPath.AmazonWebServices.Activities/2.9.1`
+**Type**: `UiPath.AmazonWebServices.Activities.S3.Buckets.AWSEmptyBucket`
+**Category**: Cloud.AWS.S3.Buckets
+**Description**: Removes all the content of a bucket.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.AmazonWebServices.Models.AWSS3Bucket>` **Bucket**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Get Bucket
+
+**ID**: `UiPath.AmazonWebServices.Activities.S3.Buckets.AWSGetBucket@UiPath.AmazonWebServices.Activities/2.9.1`
+**Type**: `UiPath.AmazonWebServices.Activities.S3.Buckets.AWSGetBucket`
+**Category**: Cloud.AWS.S3.Buckets
+**Description**: Gets information about a specific bucket.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **BucketName**
+- [IN] `InArgument<Boolean>` **IncludeDetails**
+- [OUT] `OutArgument<UiPath.AmazonWebServices.Models.AWSS3Bucket>` **Bucket**
+- [OUT] `OutArgument<UiPath.AmazonWebServices.Models.AWSS3BucketDetails>` **BucketDetails**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Get Bucket List
+
+**ID**: `UiPath.AmazonWebServices.Activities.S3.Buckets.AWSGetBucketList@UiPath.AmazonWebServices.Activities/2.9.1`
+**Type**: `UiPath.AmazonWebServices.Activities.S3.Buckets.AWSGetBucketList`
+**Category**: Cloud.AWS.S3.Buckets
+**Description**: Gets the list of buckets in a specific region.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **Region**
+- [IN] `InArgument<String>` **TagKey**
+- [IN] `InArgument<String>` **TagValue**
+- [OUT] `OutArgument<UiPath.AmazonWebServices.Models.AWSS3Bucket[]>` **BucketList**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Get Bucket Policy
+
+**ID**: `UiPath.AmazonWebServices.Activities.S3.Buckets.AWSGetBucketPolicy@UiPath.AmazonWebServices.Activities/2.9.1`
+**Type**: `UiPath.AmazonWebServices.Activities.S3.Buckets.AWSGetBucketPolicy`
+**Category**: Cloud.AWS.S3.Buckets
+**Description**: Gets the bucket policy.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.AmazonWebServices.Models.AWSS3Bucket>` **Bucket**
+- [OUT] `OutArgument<String>` **BucketPolicy**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Set Bucket Policy
+
+**ID**: `UiPath.AmazonWebServices.Activities.S3.Buckets.AWSSetBucketPolicy@UiPath.AmazonWebServices.Activities/2.9.1`
+**Type**: `UiPath.AmazonWebServices.Activities.S3.Buckets.AWSSetBucketPolicy`
+**Category**: Cloud.AWS.S3.Buckets
+**Description**: Sets the bucket policy.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.AmazonWebServices.Models.AWSS3Bucket>` **Bucket**
+- [IN, Required] `InArgument<String>` **BucketPolicy**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Update Bucket Properties
+
+**ID**: `UiPath.AmazonWebServices.Activities.S3.Buckets.AWSUpdateBucket@UiPath.AmazonWebServices.Activities/2.9.1`
+**Type**: `UiPath.AmazonWebServices.Activities.S3.Buckets.AWSUpdateBucket`
+**Category**: Cloud.AWS.S3.Buckets
+**Description**: Updates the properties of an existing bucket.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.AmazonWebServices.Models.AWSS3Bucket>` **Bucket**
+- [IN] `InArgument<Boolean>` **EnableVersioning**
+- [IN] `InArgument<Data.DataTable>` **Tags**
+- [IN, Required] `InArgument<UiPath.Core.AWSEncryptionMethod>` **DefaultEncryption**
+- [IN] `InArgument<String>` **AWSEncryptionKey**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Change User Password
+
+**ID**: `UiPath.AmazonWebServices.Activities.IAM.User.AWSChangeUserPassword@UiPath.AmazonWebServices.Activities/2.9.1`
+**Type**: `UiPath.AmazonWebServices.Activities.IAM.User.AWSChangeUserPassword`
+**Category**: Cloud.AWS.IAM.Users
+**Description**: Changes the password for the specified IAM user.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **Name**
+- [IN] `InArgument<String>` **NewPassword**
+- [IN] `InArgument<Security.SecureString>` **NewSecurePassword**
+- [IN] `InArgument<Boolean>` **ForcePasswordChange**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Create User
+
+**ID**: `UiPath.AmazonWebServices.Activities.IAM.User.AWSCreateUser@UiPath.AmazonWebServices.Activities/2.9.1`
+**Type**: `UiPath.AmazonWebServices.Activities.IAM.User.AWSCreateUser`
+**Category**: Cloud.AWS.IAM.Users
+**Description**: Creates a new IAM user for the current AWS account.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **Name**
+- [IN] `InArgument<String>` **Path**
+- [IN] `InArgument<String>` **PermissionsBoundaryArn**
+- [IN] `InArgument<Data.DataTable>` **Tags**
+- [IN] `InArgument<String>` **Password**
+- [IN] `InArgument<Security.SecureString>` **SecurePassword**
+- [IN] `InArgument<Boolean>` **ForcePasswordChange**
+- [IN] `InArgument<Boolean>` **GenerateAwsAccessKeys**
+- [OUT] `OutArgument<UiPath.AmazonWebServices.Models.AWSIAMUser>` **User**
+- [OUT] `OutArgument<String>` **AwsAccessKeyId**
+- [OUT] `OutArgument<String>` **AwsSecretAccessKey**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Delete User
+
+**ID**: `UiPath.AmazonWebServices.Activities.IAM.User.AWSDeleteUser@UiPath.AmazonWebServices.Activities/2.9.1`
+**Type**: `UiPath.AmazonWebServices.Activities.IAM.User.AWSDeleteUser`
+**Category**: Cloud.AWS.IAM.Users
+**Description**: Deletes the specified IAM user.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **Name**
+- [IN] `InArgument<Boolean>` **RemoveAllAttachedEntities**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### For Each User
+
+**ID**: `UiPath.AmazonWebServices.Activities.IAM.User.AWSForEachUser@UiPath.AmazonWebServices.Activities/2.9.1`
+**Type**: `UiPath.AmazonWebServices.Activities.IAM.User.AWSForEachUser`
+**Category**: Cloud.AWS.IAM.Users
+**Description**: Performs an activity or a series of activities on each IAM user in the current AWS account that matches the filter criteria.
+**Arguments**:
+- [IN] `InArgument<String>` **PathPrefix**
+- [IN] `InArgument<Boolean>` **RetrieveTags**
+- [OUT] `OutArgument<Int32>` **CurrentIndex**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### For Each User Group
+
+**ID**: `UiPath.AmazonWebServices.Activities.IAM.User.AWSForEachUserGroup@UiPath.AmazonWebServices.Activities/2.9.1`
+**Type**: `UiPath.AmazonWebServices.Activities.IAM.User.AWSForEachUserGroup`
+**Category**: Cloud.AWS.IAM.Users
+**Description**: Performs an activity or a series of activities on each IAM group that the specified IAM user belongs to.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **UserName**
+- [OUT] `OutArgument<Int32>` **CurrentIndex**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### For Each User in Group
+
+**ID**: `UiPath.AmazonWebServices.Activities.IAM.User.AWSForEachUserInGroup@UiPath.AmazonWebServices.Activities/2.9.1`
+**Type**: `UiPath.AmazonWebServices.Activities.IAM.User.AWSForEachUserInGroup`
+**Category**: Cloud.AWS.IAM.Users
+**Description**: Performs an activity or a series of activities on each IAM user that is in the specified IAM group.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **GroupName**
+- [IN] `InArgument<Boolean>` **RetrieveTags**
+- [OUT] `OutArgument<Int32>` **CurrentIndex**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Get User
+
+**ID**: `UiPath.AmazonWebServices.Activities.IAM.User.AWSGetUser@UiPath.AmazonWebServices.Activities/2.9.1`
+**Type**: `UiPath.AmazonWebServices.Activities.IAM.User.AWSGetUser`
+**Category**: Cloud.AWS.IAM.Users
+**Description**: Gets information about the specified IAM user.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **Name**
+- [OUT] `OutArgument<UiPath.AmazonWebServices.Models.AWSIAMUser>` **User**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Update User
+
+**ID**: `UiPath.AmazonWebServices.Activities.IAM.User.AWSUpdateUser@UiPath.AmazonWebServices.Activities/2.9.1`
+**Type**: `UiPath.AmazonWebServices.Activities.IAM.User.AWSUpdateUser`
+**Category**: Cloud.AWS.IAM.Users
+**Description**: Updates the specified IAM user.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **Name**
+- [IN] `InArgument<String>` **NewName**
+- [IN] `InArgument<String>` **NewPath**
+- [IN] `InArgument<Boolean>` **DeletePermissionsBoundary**
+- [IN] `InArgument<String>` **NewPermissionsBoundaryArn**
+- [IN] `InArgument<String[]>` **TagsToRemove**
+- [IN] `InArgument<Data.DataTable>` **TagsToAdd**
+- [OUT] `OutArgument<UiPath.AmazonWebServices.Models.AWSIAMUser>` **User**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Add Role to Instance Profile
+
+**ID**: `UiPath.AmazonWebServices.Activities.IAM.Role.AWSAddRoleToInstanceProfile@UiPath.AmazonWebServices.Activities/2.9.1`
+**Type**: `UiPath.AmazonWebServices.Activities.IAM.Role.AWSAddRoleToInstanceProfile`
+**Category**: Cloud.AWS.IAM.Roles
+**Description**: Adds the specified IAM role to the specified instance profile. An instance profile can contain only one role.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **RoleName**
+- [IN, Required] `InArgument<String>` **InstanceProfileName**
+- [IN] `InArgument<Boolean>` **RemoveExistingRole**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Create Role
+
+**ID**: `UiPath.AmazonWebServices.Activities.IAM.Role.AWSCreateRole@UiPath.AmazonWebServices.Activities/2.9.1`
+**Type**: `UiPath.AmazonWebServices.Activities.IAM.Role.AWSCreateRole`
+**Category**: Cloud.AWS.IAM.Roles
+**Description**: Creates a new IAM role for the current AWS account.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **AssumeRolePolicyDocument**
+- [IN] `InArgument<String>` **Description**
+- [IN] `InArgument<Nullable<Int32>>` **MaxSessionDuration**
+- [IN, Required] `InArgument<String>` **Name**
+- [IN] `InArgument<String>` **Path**
+- [IN] `InArgument<String>` **PermissionsBoundaryArn**
+- [IN] `InArgument<Data.DataTable>` **Tags**
+- [OUT] `OutArgument<UiPath.AmazonWebServices.Models.AWSIAMRole>` **Role**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Delete Role
+
+**ID**: `UiPath.AmazonWebServices.Activities.IAM.Role.AWSDeleteRole@UiPath.AmazonWebServices.Activities/2.9.1`
+**Type**: `UiPath.AmazonWebServices.Activities.IAM.Role.AWSDeleteRole`
+**Category**: Cloud.AWS.IAM.Roles
+**Description**: Deletes the specified IAM role.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **Name**
+- [IN] `InArgument<Boolean>` **RemoveAllAttachedEntities**
+- [IN] `InArgument<Boolean>` **DeleteDefaultInstanceProfile**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### For Each Role
+
+**ID**: `UiPath.AmazonWebServices.Activities.IAM.Role.AWSForEachRole@UiPath.AmazonWebServices.Activities/2.9.1`
+**Type**: `UiPath.AmazonWebServices.Activities.IAM.Role.AWSForEachRole`
+**Category**: Cloud.AWS.IAM.Roles
+**Description**: Performs an activity or a series of activities on each IAM role in the current AWS account that matches the filter criteria.
+**Arguments**:
+- [IN] `InArgument<String>` **PathPrefix**
+- [IN] `InArgument<Boolean>` **RetrieveTags**
+- [OUT] `OutArgument<Int32>` **CurrentIndex**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Get Role
+
+**ID**: `UiPath.AmazonWebServices.Activities.IAM.Role.AWSGetRole@UiPath.AmazonWebServices.Activities/2.9.1`
+**Type**: `UiPath.AmazonWebServices.Activities.IAM.Role.AWSGetRole`
+**Category**: Cloud.AWS.IAM.Roles
+**Description**: Gets information about the specified IAM role.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **Name**
+- [OUT] `OutArgument<UiPath.AmazonWebServices.Models.AWSIAMRole>` **Role**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Remove Role from Instance Profile
+
+**ID**: `UiPath.AmazonWebServices.Activities.IAM.Role.AWSRemoveRoleFromInstanceProfile@UiPath.AmazonWebServices.Activities/2.9.1`
+**Type**: `UiPath.AmazonWebServices.Activities.IAM.Role.AWSRemoveRoleFromInstanceProfile`
+**Category**: Cloud.AWS.IAM.Roles
+**Description**: Removes the specified IAM role from the specified instance profile.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **RoleName**
+- [IN, Required] `InArgument<String>` **InstanceProfileName**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Update Role
+
+**ID**: `UiPath.AmazonWebServices.Activities.IAM.Role.AWSUpdateRole@UiPath.AmazonWebServices.Activities/2.9.1`
+**Type**: `UiPath.AmazonWebServices.Activities.IAM.Role.AWSUpdateRole`
+**Category**: Cloud.AWS.IAM.Roles
+**Description**: Updates the specified IAM role.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **Name**
+- [IN] `InArgument<String>` **NewDescription**
+- [IN] `InArgument<Int32>` **NewMaxSessionDuration**
+- [IN] `InArgument<Boolean>` **DeletePermissionsBoundary**
+- [IN] `InArgument<String>` **NewPermissionsBoundaryArn**
+- [IN] `InArgument<String[]>` **TagsToRemove**
+- [IN] `InArgument<Data.DataTable>` **TagsToAdd**
+- [OUT] `OutArgument<UiPath.AmazonWebServices.Models.AWSIAMRole>` **Role**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Add/Remove Inline Policy
+
+**ID**: `UiPath.AmazonWebServices.Activities.IAM.Policy.AWSAddRemoveInlinePolicy@UiPath.AmazonWebServices.Activities/2.9.1`
+**Type**: `UiPath.AmazonWebServices.Activities.IAM.Policy.AWSAddRemoveInlinePolicy`
+**Category**: Cloud.AWS.IAM.Policies
+**Description**: Adds, updates or removes the specified inline policy document to / from the specified IAM identity (group, role, or user).
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.Core.InlinePolicyAction>` **Action**
+- [IN, Required] `InArgument<String>` **Name**
+- [IN, Required] `InArgument<UiPath.Core.IAMIdentityType>` **Type**
+- [IN, Required] `InArgument<String>` **PolicyName**
+- [IN] `InArgument<String>` **PolicyDocument**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Attach/Detach Managed Policy
+
+**ID**: `UiPath.AmazonWebServices.Activities.IAM.Policy.AWSAttachDetachManagedPolicy@UiPath.AmazonWebServices.Activities/2.9.1`
+**Type**: `UiPath.AmazonWebServices.Activities.IAM.Policy.AWSAttachDetachManagedPolicy`
+**Category**: Cloud.AWS.IAM.Policies
+**Description**: Attaches or detaches the specified managed policy to / from the specified IAM identity (group, role, or user).
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.Core.ManagedPolicyAction>` **Action**
+- [IN, Required] `InArgument<String>` **Name**
+- [IN, Required] `InArgument<UiPath.Core.IAMIdentityType>` **Type**
+- [IN, Required] `InArgument<String>` **PolicyArn**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Create Managed Policy
+
+**ID**: `UiPath.AmazonWebServices.Activities.IAM.Policy.AWSCreateManagedPolicy@UiPath.AmazonWebServices.Activities/2.9.1`
+**Type**: `UiPath.AmazonWebServices.Activities.IAM.Policy.AWSCreateManagedPolicy`
+**Category**: Cloud.AWS.IAM.Policies
+**Description**: Creates a new managed policy for the current AWS account.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **Name**
+- [IN, Required] `InArgument<String>` **Document**
+- [IN] `InArgument<String>` **Description**
+- [IN] `InArgument<String>` **Path**
+- [IN] `InArgument<Data.DataTable>` **Tags**
+- [OUT] `OutArgument<UiPath.AmazonWebServices.Models.AWSIAMManagedPolicy>` **ManagedPolicy**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Delete Managed Policy
+
+**ID**: `UiPath.AmazonWebServices.Activities.IAM.Policy.AWSDeleteManagedPolicy@UiPath.AmazonWebServices.Activities/2.9.1`
+**Type**: `UiPath.AmazonWebServices.Activities.IAM.Policy.AWSDeleteManagedPolicy`
+**Category**: Cloud.AWS.IAM.Policies
+**Description**: Deletes the specified managed policy, including all versions of the policy.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **PolicyArn**
+- [IN] `InArgument<Boolean>` **DetachPolicyFromIAMIdentities**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### For Each Managed Policy
+
+**ID**: `UiPath.AmazonWebServices.Activities.IAM.Policy.AWSForEachManagedPolicy@UiPath.AmazonWebServices.Activities/2.9.1`
+**Type**: `UiPath.AmazonWebServices.Activities.IAM.Policy.AWSForEachManagedPolicy`
+**Category**: Cloud.AWS.IAM.Policies
+**Description**: Performs an activity or a series of activities on each managed policy in the current AWS account that matches the filter criteria.
+**Arguments**:
+- [IN] `InArgument<String>` **PathPrefix**
+- [IN] `InArgument<UiPath.Core.IAMPolicyUsage>` **PolicyUsage**
+- [IN] `InArgument<Boolean>` **OnlyAttached**
+- [IN] `InArgument<UiPath.Core.IAMPolicyScope>` **Scope**
+- [IN] `InArgument<Boolean>` **IncludeVersions**
+- [IN] `InArgument<Boolean>` **RetrieveTags**
+- [OUT] `OutArgument<Int32>` **CurrentIndex**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Get IAM Identity Inline Policies
+
+**ID**: `UiPath.AmazonWebServices.Activities.IAM.Policy.AWSGetIAMIdentityInlinePolicies@UiPath.AmazonWebServices.Activities/2.9.1`
+**Type**: `UiPath.AmazonWebServices.Activities.IAM.Policy.AWSGetIAMIdentityInlinePolicies`
+**Category**: Cloud.AWS.IAM.Policies
+**Description**: Gets the inline policies that are embedded in the specified IAM identity (group, role, or user).
+**Arguments**:
+- [IN, Required] `InArgument<String>` **Name**
+- [IN, Required] `InArgument<UiPath.Core.IAMIdentityType>` **Type**
+- [OUT] `OutArgument<UiPath.AmazonWebServices.Models.AWSIAMInlinePolicy[]>` **InlinePolicies**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Get IAM Identity Managed Policies
+
+**ID**: `UiPath.AmazonWebServices.Activities.IAM.Policy.AWSGetIAMIdentityManagedPolicies@UiPath.AmazonWebServices.Activities/2.9.1`
+**Type**: `UiPath.AmazonWebServices.Activities.IAM.Policy.AWSGetIAMIdentityManagedPolicies`
+**Category**: Cloud.AWS.IAM.Policies
+**Description**: Gets the managed policies that are attached to the specified IAM identity (group, role, or user).
+**Arguments**:
+- [IN] `InArgument<String>` **PolicyPathPrefix**
+- [IN, Required] `InArgument<String>` **Name**
+- [IN, Required] `InArgument<UiPath.Core.IAMIdentityType>` **Type**
+- [OUT] `OutArgument<UiPath.AmazonWebServices.Models.AWSIAMManagedPolicyBasic[]>` **ManagedPolicies**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Get Managed Policy IAM Identities
+
+**ID**: `UiPath.AmazonWebServices.Activities.IAM.Policy.AWSGetIdentitiesAttachedToPolicy@UiPath.AmazonWebServices.Activities/2.9.1`
+**Type**: `UiPath.AmazonWebServices.Activities.IAM.Policy.AWSGetIdentitiesAttachedToPolicy`
+**Category**: Cloud.AWS.IAM.Policies
+**Description**: Gets the IAM identities (group, role, or user) that the specified managed policy is attached to.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **PolicyArn**
+- [IN] `InArgument<UiPath.Core.IAMIdentityTypeExtended>` **IdentityType**
+- [IN] `InArgument<String>` **IdentityPathPrefix**
+- [IN] `InArgument<UiPath.Core.IAMPolicyUsage>` **PolicyUsage**
+- [OUT] `OutArgument<String[]>` **GroupNames**
+- [OUT] `OutArgument<String[]>` **RoleNames**
+- [OUT] `OutArgument<String[]>` **UserNames**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Get Managed Policy
+
+**ID**: `UiPath.AmazonWebServices.Activities.IAM.Policy.AWSGetManagedPolicy@UiPath.AmazonWebServices.Activities/2.9.1`
+**Type**: `UiPath.AmazonWebServices.Activities.IAM.Policy.AWSGetManagedPolicy`
+**Category**: Cloud.AWS.IAM.Policies
+**Description**: Gets information about the specified managed policy.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **PolicyArn**
+- [IN] `InArgument<Boolean>` **IncludeVersions**
+- [OUT] `OutArgument<UiPath.AmazonWebServices.Models.AWSIAMManagedPolicy>` **ManagedPolicy**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Update Managed Policy
+
+**ID**: `UiPath.AmazonWebServices.Activities.IAM.Policy.AWSUpdateManagedPolicy@UiPath.AmazonWebServices.Activities/2.9.1`
+**Type**: `UiPath.AmazonWebServices.Activities.IAM.Policy.AWSUpdateManagedPolicy`
+**Category**: Cloud.AWS.IAM.Policies
+**Description**: Updates the specified managed policy.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **PolicyArn**
+- [IN] `InArgument<String[]>` **TagsToRemove**
+- [IN] `InArgument<Data.DataTable>` **TagsToAdd**
+- [IN] `InArgument<String>` **NewVersionPolicyDocument**
+- [IN] `InArgument<String>` **VersionToRemove**
+- [IN] `InArgument<String>` **VersionToSetAsDefault**
+- [OUT] `OutArgument<UiPath.AmazonWebServices.Models.AWSIAMManagedPolicy>` **ManagedPolicy**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Add User To Group
+
+**ID**: `UiPath.AmazonWebServices.Activities.IAM.Group.AWSAddUserToGroup@UiPath.AmazonWebServices.Activities/2.9.1`
+**Type**: `UiPath.AmazonWebServices.Activities.IAM.Group.AWSAddUserToGroup`
+**Category**: Cloud.AWS.IAM.Groups
+**Description**: Adds the specified IAM user to the specified IAM group.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **GroupName**
+- [IN, Required] `InArgument<String>` **UserName**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Create Group
+
+**ID**: `UiPath.AmazonWebServices.Activities.IAM.Group.AWSCreateGroup@UiPath.AmazonWebServices.Activities/2.9.1`
+**Type**: `UiPath.AmazonWebServices.Activities.IAM.Group.AWSCreateGroup`
+**Category**: Cloud.AWS.IAM.Groups
+**Description**: Creates a new IAM group for the current AWS account.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **Name**
+- [IN] `InArgument<String>` **Path**
+- [OUT] `OutArgument<UiPath.AmazonWebServices.Models.AWSIAMGroup>` **Group**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Delete Group
+
+**ID**: `UiPath.AmazonWebServices.Activities.IAM.Group.AWSDeleteGroup@UiPath.AmazonWebServices.Activities/2.9.1`
+**Type**: `UiPath.AmazonWebServices.Activities.IAM.Group.AWSDeleteGroup`
+**Category**: Cloud.AWS.IAM.Groups
+**Description**: Deletes the specified IAM group.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **Name**
+- [IN] `InArgument<Boolean>` **RemoveAllAttachedEntities**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### For Each Group
+
+**ID**: `UiPath.AmazonWebServices.Activities.IAM.Group.AWSForEachGroup@UiPath.AmazonWebServices.Activities/2.9.1`
+**Type**: `UiPath.AmazonWebServices.Activities.IAM.Group.AWSForEachGroup`
+**Category**: Cloud.AWS.IAM.Groups
+**Description**: Performs an activity or a series of activities on each IAM group in the current AWS account that matches the filter criteria.
+**Arguments**:
+- [IN] `InArgument<String>` **PathPrefix**
+- [OUT] `OutArgument<Int32>` **CurrentIndex**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Get Group
+
+**ID**: `UiPath.AmazonWebServices.Activities.IAM.Group.AWSGetGroup@UiPath.AmazonWebServices.Activities/2.9.1`
+**Type**: `UiPath.AmazonWebServices.Activities.IAM.Group.AWSGetGroup`
+**Category**: Cloud.AWS.IAM.Groups
+**Description**: Gets information about the specified IAM group.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **GroupName**
+- [OUT] `OutArgument<UiPath.AmazonWebServices.Models.AWSIAMGroup>` **Group**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Remove User From Group
+
+**ID**: `UiPath.AmazonWebServices.Activities.IAM.Group.AWSRemoveUserFromGroup@UiPath.AmazonWebServices.Activities/2.9.1`
+**Type**: `UiPath.AmazonWebServices.Activities.IAM.Group.AWSRemoveUserFromGroup`
+**Category**: Cloud.AWS.IAM.Groups
+**Description**: Removes the specified IAM user from the specified IAM group.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **GroupName**
+- [IN, Required] `InArgument<String>` **UserName**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Update Group
+
+**ID**: `UiPath.AmazonWebServices.Activities.IAM.Group.AWSUpdateGroup@UiPath.AmazonWebServices.Activities/2.9.1`
+**Type**: `UiPath.AmazonWebServices.Activities.IAM.Group.AWSUpdateGroup`
+**Category**: Cloud.AWS.IAM.Groups
+**Description**: Updates the specified IAM group.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **Name**
+- [IN] `InArgument<String>` **NewName**
+- [IN] `InArgument<String>` **NewPath**
+- [OUT] `OutArgument<UiPath.AmazonWebServices.Models.AWSIAMGroup>` **Group**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Attach Volume To Instance
+
+**ID**: `UiPath.AmazonWebServices.Activities.Ec2.Volume.AWSAttachVolumeToInstance@UiPath.AmazonWebServices.Activities/2.9.1`
+**Type**: `UiPath.AmazonWebServices.Activities.Ec2.Volume.AWSAttachVolumeToInstance`
+**Category**: Cloud.AWS.EC2.Storage Volumes
+**Description**: Attaches a given volume to a given instance.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.AmazonWebServices.Models.AWSEBSVolume>` **Volume**
+- [IN, Required] `InArgument<UiPath.AmazonWebServices.Models.AWSEc2Instance>` **Instance**
+- [IN, Required] `InArgument<String>` **Device**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Create Instance Snapshots
+
+**ID**: `UiPath.AmazonWebServices.Activities.Ec2.Volume.AWSCreateInstanceSnapshots@UiPath.AmazonWebServices.Activities/2.9.1`
+**Type**: `UiPath.AmazonWebServices.Activities.Ec2.Volume.AWSCreateInstanceSnapshots`
+**Category**: Cloud.AWS.EC2.Storage Volumes
+**Description**: Creates snapshots of all the volume attached to a given instance.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.AmazonWebServices.Models.AWSEc2Instance>` **Instance**
+- [IN] `InArgument<String>` **Description**
+- [IN] `InArgument<Boolean>` **ExcludeRootVolume**
+- [IN] `InArgument<Data.DataTable>` **Tags**
+- [OUT] `OutArgument<UiPath.AmazonWebServices.Models.AWSEBSSnapshot[]>` **Snapshots**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Create Volume
+
+**ID**: `UiPath.AmazonWebServices.Activities.Ec2.Volume.AWSCreateVolume@UiPath.AmazonWebServices.Activities/2.9.1`
+**Type**: `UiPath.AmazonWebServices.Activities.Ec2.Volume.AWSCreateVolume`
+**Category**: Cloud.AWS.EC2.Storage Volumes
+**Description**: Creates a storage volume inside Elastic Block Storage in AWS.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **AvailabilityZone**
+- [IN, Required] `InArgument<Int32>` **SizeInGiBs**
+- [IN] `InArgument<Int32>` **IOPs**
+- [IN] `InArgument<Int32>` **Throughput**
+- [IN] `InArgument<String>` **SnapshotId**
+- [IN] `InArgument<Boolean>` **EnableEncryption**
+- [IN] `InArgument<Data.DataTable>` **Tags**
+- [OUT] `OutArgument<UiPath.AmazonWebServices.Models.AWSEBSVolume>` **Volume**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.Core.VolumeType` **Type**
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Create Volume Snapshot
+
+**ID**: `UiPath.AmazonWebServices.Activities.Ec2.Volume.AWSCreateVolumeSnapshot@UiPath.AmazonWebServices.Activities/2.9.1`
+**Type**: `UiPath.AmazonWebServices.Activities.Ec2.Volume.AWSCreateVolumeSnapshot`
+**Category**: Cloud.AWS.EC2.Storage Volumes
+**Description**: Creates a snapshot for a given volume.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.AmazonWebServices.Models.AWSEBSVolume>` **Volume**
+- [IN] `InArgument<String>` **Description**
+- [IN] `InArgument<Data.DataTable>` **Tags**
+- [OUT] `OutArgument<UiPath.AmazonWebServices.Models.AWSEBSSnapshot>` **Snapshot**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Delete Snapshot
+
+**ID**: `UiPath.AmazonWebServices.Activities.Ec2.Volume.AWSDeleteSnapshot@UiPath.AmazonWebServices.Activities/2.9.1`
+**Type**: `UiPath.AmazonWebServices.Activities.Ec2.Volume.AWSDeleteSnapshot`
+**Category**: Cloud.AWS.EC2.Storage Volumes
+**Description**: Deletes a given snapshot.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.AmazonWebServices.Models.AWSEBSSnapshot>` **Snapshot**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Delete Volume
+
+**ID**: `UiPath.AmazonWebServices.Activities.Ec2.Volume.AWSDeleteVolume@UiPath.AmazonWebServices.Activities/2.9.1`
+**Type**: `UiPath.AmazonWebServices.Activities.Ec2.Volume.AWSDeleteVolume`
+**Category**: Cloud.AWS.EC2.Storage Volumes
+**Description**: Deletes a given volume.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.AmazonWebServices.Models.AWSEBSVolume>` **Volume**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Detach Volume From Instance
+
+**ID**: `UiPath.AmazonWebServices.Activities.Ec2.Volume.AWSDetachVolumeFromInstance@UiPath.AmazonWebServices.Activities/2.9.1`
+**Type**: `UiPath.AmazonWebServices.Activities.Ec2.Volume.AWSDetachVolumeFromInstance`
+**Category**: Cloud.AWS.EC2.Storage Volumes
+**Description**: Detaches a volume from a given instance
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.AmazonWebServices.Models.AWSEBSVolume>` **Volume**
+- [IN, Required] `InArgument<UiPath.AmazonWebServices.Models.AWSEc2Instance>` **Instance**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **Force**
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Get Instance Volumes
+
+**ID**: `UiPath.AmazonWebServices.Activities.Ec2.Volume.AWSGetInstanceVolumes@UiPath.AmazonWebServices.Activities/2.9.1`
+**Type**: `UiPath.AmazonWebServices.Activities.Ec2.Volume.AWSGetInstanceVolumes`
+**Category**: Cloud.AWS.EC2.Storage Volumes
+**Description**: Fetches a list of volumes attached to a given instance.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.AmazonWebServices.Models.AWSEc2Instance>` **Instance**
+- [IN] `InArgument<Nullable<Int32>>` **Timeout**
+- [OUT] `OutArgument<UiPath.AmazonWebServices.Models.AWSEBSVolume[]>` **Volumes**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Get Snapshot
+
+**ID**: `UiPath.AmazonWebServices.Activities.Ec2.Volume.AWSGetSnapshot@UiPath.AmazonWebServices.Activities/2.9.1`
+**Type**: `UiPath.AmazonWebServices.Activities.Ec2.Volume.AWSGetSnapshot`
+**Category**: Cloud.AWS.EC2.Storage Volumes
+**Description**: Gets a snapshot with given snapshot id.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **SnapshotId**
+- [OUT] `OutArgument<UiPath.AmazonWebServices.Models.AWSEBSSnapshot>` **Snapshot**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Get Volume
+
+**ID**: `UiPath.AmazonWebServices.Activities.Ec2.Volume.AWSGetVolume@UiPath.AmazonWebServices.Activities/2.9.1`
+**Type**: `UiPath.AmazonWebServices.Activities.Ec2.Volume.AWSGetVolume`
+**Category**: Cloud.AWS.EC2.Storage Volumes
+**Description**: Fetches a volume with given volume id.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **VolumeId**
+- [OUT] `OutArgument<UiPath.AmazonWebServices.Models.AWSEBSVolume>` **Volume**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Get Volume List
+
+**ID**: `UiPath.AmazonWebServices.Activities.Ec2.Volume.AWSGetVolumeList@UiPath.AmazonWebServices.Activities/2.9.1`
+**Type**: `UiPath.AmazonWebServices.Activities.Ec2.Volume.AWSGetVolumeList`
+**Category**: Cloud.AWS.EC2.Storage Volumes
+**Description**: Fetches a list of volumes in a given availability zone.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **AvailabilityZone**
+- [IN] `InArgument<Nullable<Int32>>` **Timeout**
+- [OUT] `OutArgument<UiPath.AmazonWebServices.Models.AWSEBSVolume[]>` **Volumes**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Configure Robot
+
+**ID**: `UiPath.AmazonWebServices.Activities.Ec2.Instances.AWSConfigureRobot@UiPath.AmazonWebServices.Activities/2.9.1`
+**Type**: `UiPath.AmazonWebServices.Activities.Ec2.Instances.AWSConfigureRobot`
+**Category**: Cloud.AWS.EC2.Instances
+**Description**: Connects the Robot in a given instance to UiPath Orchestrator.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.AmazonWebServices.Models.AWSEc2Instance>` **Instance**
+- [IN] `InArgument<String>` **OrchestratorURL**
+- [IN] `InArgument<String>` **OrchestratorConnectionString**
+- [IN] `InArgument<String>` **MachineKey**
+- [IN] `InArgument<Nullable<Int32>>` **Timeout**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Create Instance
+
+**ID**: `UiPath.AmazonWebServices.Activities.Ec2.Instances.AWSCreateInstance@UiPath.AmazonWebServices.Activities/2.9.1`
+**Type**: `UiPath.AmazonWebServices.Activities.Ec2.Instances.AWSCreateInstance`
+**Category**: Cloud.AWS.EC2.Instances
+**Description**: Creates a new instance.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **InstanceName**
+- [IN] `InArgument<String>` **AvailabilityZone**
+- [IN] `InArgument<Boolean>` **WaitForCompletion**
+- [IN] `InArgument<Nullable<Int32>>` **Timeout**
+- [IN, Required] `InArgument<String>` **InstanceType**
+- [IN, Required] `InArgument<String>` **ImageId**
+- [IN] `InArgument<Boolean>` **EnableHibernation**
+- [IN] `InArgument<UiPath.Core.InstanceShutdownBehavior>` **ShutdownBehavior**
+- [IN] `InArgument<Data.DataTable>` **Tags**
+- [IN] `InArgument<String>` **UserData**
+- [IN] `InArgument<String>` **SubnetId**
+- [IN] `InArgument<UiPath.Core.Ec2InstanceAutoAssignPublicIP>` **AutoAssignPublicIPv4Address**
+- [IN] `InArgument<String>` **IAMRole**
+- [IN] `InArgument<String[]>` **SecurityGroupsIds**
+- [IN] `InArgument<String>` **KeyPairName**
+- [OUT] `OutArgument<UiPath.AmazonWebServices.Models.AWSEc2Instance>` **Instance**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Create Instance from Launch Template
+
+**ID**: `UiPath.AmazonWebServices.Activities.Ec2.Instances.AWSCreateInstanceFromTemplate@UiPath.AmazonWebServices.Activities/2.9.1`
+**Type**: `UiPath.AmazonWebServices.Activities.Ec2.Instances.AWSCreateInstanceFromTemplate`
+**Category**: Cloud.AWS.EC2.Instances
+**Description**: Creates a new instance from a launch template.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **InstanceName**
+- [IN, Required] `InArgument<String>` **LaunchTemplateId**
+- [IN] `InArgument<Boolean>` **WaitForCompletion**
+- [IN] `InArgument<Nullable<Int32>>` **Timeout**
+- [OUT] `OutArgument<UiPath.AmazonWebServices.Models.AWSEc2Instance>` **Instance**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Get Instance by ID
+
+**ID**: `UiPath.AmazonWebServices.Activities.Ec2.Instances.AWSGetInstance@UiPath.AmazonWebServices.Activities/2.9.1`
+**Type**: `UiPath.AmazonWebServices.Activities.Ec2.Instances.AWSGetInstance`
+**Category**: Cloud.AWS.EC2.Instances
+**Description**: Gets the details of the specified instance.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **InstanceId**
+- [OUT] `OutArgument<UiPath.AmazonWebServices.Models.AWSEc2Instance>` **Instance**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Get Instance List
+
+**ID**: `UiPath.AmazonWebServices.Activities.Ec2.Instances.AWSGetInstanceList@UiPath.AmazonWebServices.Activities/2.9.1`
+**Type**: `UiPath.AmazonWebServices.Activities.Ec2.Instances.AWSGetInstanceList`
+**Category**: Cloud.AWS.EC2.Instances
+**Description**: Gets the list of instances matching the filter criteria.
+**Arguments**:
+- [IN] `InArgument<Nullable<Int32>>` **Timeout**
+- [IN] `InArgument<UiPath.Core.Ec2InstanceState>` **State**
+- [IN] `InArgument<String>` **TagKey**
+- [IN] `InArgument<String>` **TagValue**
+- [IN] `InArgument<String>` **AvailablityZone**
+- [OUT] `OutArgument<UiPath.AmazonWebServices.Models.AWSEc2Instance[]>` **InstanceList**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Reboot Instance
+
+**ID**: `UiPath.AmazonWebServices.Activities.Ec2.Instances.AWSRebootInstance@UiPath.AmazonWebServices.Activities/2.9.1`
+**Type**: `UiPath.AmazonWebServices.Activities.Ec2.Instances.AWSRebootInstance`
+**Category**: Cloud.AWS.EC2.Instances
+**Description**: Reboots an instance.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.AmazonWebServices.Models.AWSEc2Instance>` **Instance**
+- [IN] `InArgument<Boolean>` **WaitForCompletion**
+- [IN] `InArgument<Nullable<Int32>>` **Timeout**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Run Power Shell Command
+
+**ID**: `UiPath.AmazonWebServices.Activities.Ec2.Instances.AWSRunPowerShellCommand@UiPath.AmazonWebServices.Activities/2.9.1`
+**Type**: `UiPath.AmazonWebServices.Activities.Ec2.Instances.AWSRunPowerShellCommand`
+**Category**: Cloud.AWS.EC2.Instances
+**Description**: Runs a PowerShell command on a EC2 instance.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.AmazonWebServices.Models.AWSEc2Instance>` **Instance**
+- [IN, Required] `InArgument<String>` **Commands**
+- [IN] `InArgument<String>` **WorkingDirectory**
+- [IN] `InArgument<String>` **Comment**
+- [IN] `InArgument<Nullable<Int32>>` **Timeout**
+- [OUT] `OutArgument<UiPath.AmazonWebServices.Models.AWSPSCommandOutput>` **CommandOutput**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Start Instance
+
+**ID**: `UiPath.AmazonWebServices.Activities.Ec2.Instances.AWSStartInstance@UiPath.AmazonWebServices.Activities/2.9.1`
+**Type**: `UiPath.AmazonWebServices.Activities.Ec2.Instances.AWSStartInstance`
+**Category**: Cloud.AWS.EC2.Instances
+**Description**: Starts an instance.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.AmazonWebServices.Models.AWSEc2Instance>` **Instance**
+- [IN] `InArgument<Boolean>` **WaitForCompletion**
+- [IN] `InArgument<Nullable<Int32>>` **Timeout**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Stop Instance
+
+**ID**: `UiPath.AmazonWebServices.Activities.Ec2.Instances.AWSStopInstance@UiPath.AmazonWebServices.Activities/2.9.1`
+**Type**: `UiPath.AmazonWebServices.Activities.Ec2.Instances.AWSStopInstance`
+**Category**: Cloud.AWS.EC2.Instances
+**Description**: Stops an instance.
+**Arguments**:
+- [IN] `InArgument<Boolean>` **Hibernate**
+- [IN] `InArgument<Boolean>` **Force**
+- [IN, Required] `InArgument<UiPath.AmazonWebServices.Models.AWSEc2Instance>` **Instance**
+- [IN] `InArgument<Boolean>` **WaitForCompletion**
+- [IN] `InArgument<Nullable<Int32>>` **Timeout**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Terminate Instance
+
+**ID**: `UiPath.AmazonWebServices.Activities.Ec2.Instances.AWSTerminateInstance@UiPath.AmazonWebServices.Activities/2.9.1`
+**Type**: `UiPath.AmazonWebServices.Activities.Ec2.Instances.AWSTerminateInstance`
+**Category**: Cloud.AWS.EC2.Instances
+**Description**: Terminates an instance.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.AmazonWebServices.Models.AWSEc2Instance>` **Instance**
+- [IN] `InArgument<Boolean>` **WaitForCompletion**
+- [IN] `InArgument<Nullable<Int32>>` **Timeout**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+---

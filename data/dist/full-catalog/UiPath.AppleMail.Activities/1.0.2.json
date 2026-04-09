@@ -1,0 +1,368 @@
+{
+  "schema": {
+    "id": "activity-catalog",
+    "version": "v0.2"
+  },
+  "source": {
+    "kind": "nuget-package",
+    "id": "UiPath.AppleMail.Activities",
+    "version": "1.0.2",
+    "feedUrl": null,
+    "authors": "UiPath",
+    "projectUrl": "https://docs.uipath.com/activities/other/latest/productivity/about-the-apple-mail-activities-pack",
+    "description": "IMPORTANT: This package only runs on OS X systems with the Apple Mail application installed and configured.\n———————————\nActivities used to automate Apple's Mail.",
+    "license": "https://www.uipath.com/hubfs/legalspot/UiPath_MSSA.pdf",
+    "tags": "UiPathActivities UiPath Apple Mail Productivity",
+    "packageTypes": []
+  },
+  "generatedAt": "2026-04-09T21:48:08Z",
+  "activities": [
+    {
+      "id": "UiPath.AppleMail.Activities.ForEachEmail@UiPath.AppleMail.Activities/1.0.2",
+      "fullName": "UiPath.AppleMail.Activities.ForEachEmail",
+      "displayName": "For Each Email",
+      "description": "Executes one or more activities for each email message in the specified folder",
+      "category": "App Integration.Apple.Mail",
+      "visibility": "browsable",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "members": [
+        {
+          "name": "Account",
+          "displayName": "Account",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "Folder",
+          "displayName": "Folder",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "Top",
+          "displayName": "Top",
+          "dataType": "System.Activities.InArgument<System.Int32>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "DownloadAttachments",
+          "displayName": "DownloadAttachments",
+          "dataType": "System.Activities.InArgument<System.Boolean>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "Filter",
+          "displayName": "Filter",
+          "dataType": "UiPath.AppleMail.Activities.Filters.MailFilterCollection",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "CurrentItemVariableName",
+          "displayName": "CurrentItemVariableName",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        }
+      ],
+      "enrichment": null
+    },
+    {
+      "id": "UiPath.AppleMail.Activities.GetAccountList@UiPath.AppleMail.Activities/1.0.2",
+      "fullName": "UiPath.AppleMail.Activities.GetAccountList",
+      "displayName": "List Accounts",
+      "description": "Lists all mail folders from all accounts",
+      "category": "App Integration.Apple.Mail",
+      "visibility": "browsable",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "members": [],
+      "enrichment": null
+    },
+    {
+      "id": "UiPath.AppleMail.Activities.SendEmail@UiPath.AppleMail.Activities/1.0.2",
+      "fullName": "UiPath.AppleMail.Activities.SendEmail",
+      "displayName": "Send Email",
+      "description": "Sends an email message",
+      "category": "App Integration.Apple.Mail",
+      "visibility": "browsable",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "members": [
+        {
+          "name": "To",
+          "displayName": "To",
+          "dataType": "System.Activities.InArgument<System.Collections.Generic.IEnumerable<System.String>>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "Cc",
+          "displayName": "Cc",
+          "dataType": "System.Activities.InArgument<System.Collections.Generic.IEnumerable<System.String>>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "Bcc",
+          "displayName": "Bcc",
+          "dataType": "System.Activities.InArgument<System.Collections.Generic.IEnumerable<System.String>>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "Subject",
+          "displayName": "Subject",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "Body",
+          "displayName": "Body",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "Attachments",
+          "displayName": "Attachments",
+          "dataType": "System.Activities.InArgument<System.Collections.Generic.IEnumerable<UiPath.Platform.ResourceHandling.IResource>>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "AttachmentList",
+          "displayName": "AttachmentList",
+          "dataType": "System.Collections.Generic.IEnumerable<System.Activities.InArgument<UiPath.Platform.ResourceHandling.IResource>>",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "AccountEmail",
+          "displayName": "AccountEmail",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ReplyTo",
+          "displayName": "ReplyTo",
+          "dataType": "System.Activities.InArgument<System.Collections.Generic.IEnumerable<System.String>>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "SaveAsDraft",
+          "displayName": "SaveAsDraft",
+          "dataType": "System.Activities.InArgument<System.Boolean>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        }
+      ],
+      "enrichment": null
+    }
+  ],
+  "enums": [
+    {
+      "fullName": "UiPath.Sdk.Activities.DependencyInjection.Contracts.Lifetime",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Singleton",
+          "value": 0
+        },
+        {
+          "name": "Transient",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Sdk.Activities.Bindings.Attributes.KeyType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Property",
+          "value": 0
+        },
+        {
+          "name": "Constant",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AppleMail.Activities.Filters.FilterCriteria",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Sender",
+          "value": 0
+        },
+        {
+          "name": "Subject",
+          "value": 1
+        },
+        {
+          "name": "MessageId",
+          "value": 2
+        },
+        {
+          "name": "DateReceived",
+          "value": 3
+        },
+        {
+          "name": "DateSent",
+          "value": 4
+        },
+        {
+          "name": "ReadStatus",
+          "value": 5
+        },
+        {
+          "name": "HasAttachments",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AppleMail.Activities.Filters.FilterOperator",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Contains",
+          "value": 0
+        },
+        {
+          "name": "NotContains",
+          "value": 1
+        },
+        {
+          "name": "Equals",
+          "value": 2
+        },
+        {
+          "name": "NotEquals",
+          "value": 3
+        },
+        {
+          "name": "NewerThan",
+          "value": 4
+        },
+        {
+          "name": "OlderThan",
+          "value": 5
+        },
+        {
+          "name": "IsTrue",
+          "value": 6
+        },
+        {
+          "name": "IsFalse",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AppleMail.Activities.Filters.LogicalOperator",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "And",
+          "value": 0
+        },
+        {
+          "name": "Or",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "namespaceMappings": []
+}

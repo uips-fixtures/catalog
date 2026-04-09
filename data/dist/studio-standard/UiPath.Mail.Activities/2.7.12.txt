@@ -1,0 +1,594 @@
+# UiPath.Mail.Activities 2.7.12
+
+> generator: uips-fixtures catalog v0.2
+> generated: 2026-04-09T22:10:08Z
+> set: studio-standard
+> url: https://uips-fixtures.github.io/llms/UiPath.Mail.Activities/2.7.12.txt
+> activities: 31
+> authors: UiPath
+**ID format**: `{fullName}@{packageId}/{packageVersion}`
+**Argument directions**: In (input), Out (output), InOut (bidirectional)
+
+---
+### Send SMTP Email
+
+**ID**: `UiPath.Mail.SMTP.Activities.SendMail@UiPath.Mail.Activities/2.7.12`
+**Type**: `UiPath.Mail.SMTP.Activities.SendMail`
+**Category**: Mail.SMTP
+**Description**: Sends an email message by using the SMTP protocol. 
+**Arguments**:
+- [IN] `InArgument<Boolean>` **UseOAuth**
+- [IN] `InArgument<String>` **Email**
+- [IN] `InArgument<String>` **Password**
+- [IN] `InArgument<Security.SecureString>` **SecurePassword**
+- [IN] `InArgument<String>` **Server**
+- [IN] `InArgument<Int32>` **Port**
+- [IN] `InArgument<String>` **Name**
+- [IN] `InArgument<String>` **From**
+- [IN] `InArgument<UiPath.Mail.MailAction>` **Action** (default: Mono.Cecil.CustomAttributeArgument)
+- [IN] `InArgument<IEnumerable<UiPath.Platform.ResourceHandling.IResource>>` **ResourceAttachments**
+- [IN] `InArgument<String>` **ReplyTo**
+- [IN] `InArgument<Boolean>` **IgnoreCRL** (default: False)
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+- [OUT] `OutArgument<String>` **Result**
+- [IN] `InArgument<String>` **To**
+- [IN] `InArgument<String>` **Cc**
+- [IN] `InArgument<String>` **Bcc**
+- [IN] `InArgument<String>` **Subject**
+- [IN] `InArgument<String>` **Body**
+- [IN] `InArgument<Int32>` **TimeoutMS**
+- [IN] `InArgument<IEnumerable<String>>` **AttachmentsCollection**
+- [IN] `InArgument<Net.Mail.MailMessage>` **MailMessage**
+**Properties / VariableScope / Child**:
+- [property] `IEnumerable<InArgument<UiPath.Platform.ResourceHandling.IResource>>` **ResourceAttachmentList**
+- [property] `UiPath.Mail.SecureSocketEncryption` **SecureConnection**
+- [property] `Boolean` **IsBodyHtml**
+- [property] `List<InArgument<String>>` **Files**
+### Get POP3 Email List
+
+**ID**: `UiPath.Mail.POP3.Activities.GetPOP3MailMessages@UiPath.Mail.Activities/2.7.12`
+**Type**: `UiPath.Mail.POP3.Activities.GetPOP3MailMessages`
+**Category**: Mail.POP3
+**Description**: Retrieves a POP3 email message from a specified server.
+**Arguments**:
+- [IN] `InArgument<Boolean>` **UseOAuth**
+- [IN] `InArgument<String>` **Email**
+- [IN] `InArgument<String>` **Password**
+- [IN] `InArgument<Security.SecureString>` **SecurePassword**
+- [IN] `InArgument<String>` **Server**
+- [IN] `InArgument<Int32>` **Port**
+- [IN] `InArgument<Boolean>` **DeleteMessages**
+- [IN] `InArgument<Boolean>` **IgnoreCRL** (default: False)
+- [IN] `InArgument<Int32>` **TimeoutMS**
+- [IN] `InArgument<Int32>` **Top**
+- [OUT] `OutArgument<List<Net.Mail.MailMessage>>` **Messages**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.Mail.SecureSocketEncryption` **SecureConnection**
+### Delete Outlook Desktop Mail Message
+
+**ID**: `UiPath.Mail.Outlook.Activities.DeleteOutlookMailMessage@UiPath.Mail.Activities/2.7.12`
+**Type**: `UiPath.Mail.Outlook.Activities.DeleteOutlookMailMessage`
+**Category**: Mail.Outlook Windows
+**Description**: Deletes an email message.
+**Arguments**:
+- [IN, Required] `InArgument<Net.Mail.MailMessage>` **MailMessage**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **PermanentlyDelete**
+### Get Outlook Desktop Mail Messages
+
+**ID**: `UiPath.Mail.Outlook.Activities.GetOutlookMailMessages@UiPath.Mail.Activities/2.7.12`
+**Type**: `UiPath.Mail.Outlook.Activities.GetOutlookMailMessages`
+**Category**: Mail.Outlook Windows
+**Description**: Retrieves an email message from Outlook.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **MailFolder**
+- [IN] `InArgument<String>` **Account**
+- [IN] `InArgument<String>` **Filter**
+- [IN] `InArgument<String[]>` **FilterByMessageIds**
+- [IN] `InArgument<Int32>` **TimeoutMS**
+- [IN] `InArgument<Int32>` **Top**
+- [OUT] `OutArgument<List<Net.Mail.MailMessage>>` **Messages**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.Mail.EOrderByDate` **OrderByDate**
+- [property] `Boolean` **OnlyUnreadMessages**
+- [property] `Boolean` **MarkAsRead**
+### Mark Outlook Desktop Mail As Read/Unread
+
+**ID**: `UiPath.Mail.Outlook.Activities.MarkOutlookMailAsRead@UiPath.Mail.Activities/2.7.12`
+**Type**: `UiPath.Mail.Outlook.Activities.MarkOutlookMailAsRead`
+**Category**: Mail.Outlook Windows
+**Description**: Marks the specified mail message as read or unread.
+**Arguments**:
+- [IN, Required] `InArgument<Net.Mail.MailMessage>` **MailMessage**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.Mail.Activities.Business.MarkMailAs` **MarkAs**
+### Move Outlook Desktop Mail Message
+
+**ID**: `UiPath.Mail.Outlook.Activities.MoveOutlookMessage@UiPath.Mail.Activities/2.7.12`
+**Type**: `UiPath.Mail.Outlook.Activities.MoveOutlookMessage`
+**Category**: Mail.Outlook Windows
+**Description**: Moves an Outlook email message to a specified folder. 
+**Arguments**:
+- [IN, Required] `InArgument<Net.Mail.MailMessage>` **MailMessage**
+- [IN] `InArgument<String>` **Account**
+- [IN, Required] `InArgument<String>` **MailFolder**
+### Reply To Outlook Desktop Mail Message
+
+**ID**: `UiPath.Mail.Outlook.Activities.ReplyToOutlookMailMessage@UiPath.Mail.Activities/2.7.12`
+**Type**: `UiPath.Mail.Outlook.Activities.ReplyToOutlookMailMessage`
+**Category**: Mail.Outlook Windows
+**Description**: Reply to an email message identified by its UniversalID
+**Arguments**:
+- [IN] `InArgument<Int32>` **TimeoutMS**
+- [IN, Required] `InArgument<Net.Mail.MailMessage>` **MailMessage**
+- [IN] `InArgument<String>` **Body**
+- [IN] `InArgument<IEnumerable<String>>` **AttachmentsCollection**
+- [IN] `InArgument<String>` **ReplyFrom**
+- [IN] `InArgument<String>` **AddTo**
+- [IN] `InArgument<String>` **AddCc**
+- [IN] `InArgument<String>` **AddBcc**
+- [IN] `InArgument<String>` **NewSubject**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **ReplyAll**
+- [property] `List<InArgument<String>>` **Files**
+- [property] `UiPath.Mail.MailImportance` **Importance**
+### Save Outlook Desktop Mail Message
+
+**ID**: `UiPath.Mail.Outlook.Activities.SaveOutlookMailMessage@UiPath.Mail.Activities/2.7.12`
+**Type**: `UiPath.Mail.Outlook.Activities.SaveOutlookMailMessage`
+**Category**: Mail.Outlook Windows
+**Description**: Saves an Outlook mail message.
+**Arguments**:
+- [IN, Required] `InArgument<Net.Mail.MailMessage>` **MailMessage**
+- [IN, Required] `InArgument<String>` **Folder**
+- [IN] `InArgument<String>` **FileName**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **ReplaceExisting**
+- [property] `UiPath.Mail.Outlook.Enums.ESaveMessageAsType` **SaveAsType**
+### Send Outlook Desktop Mail Message
+
+**ID**: `UiPath.Mail.Outlook.Activities.SendOutlookMail@UiPath.Mail.Activities/2.7.12`
+**Type**: `UiPath.Mail.Outlook.Activities.SendOutlookMail`
+**Category**: Mail.Outlook Windows
+**Description**: Sends an email message from Outlook. 
+**Arguments**:
+- [IN] `InArgument<String>` **Account**
+- [IN] `InArgument<String>` **SentOnBehalfOfName**
+- [IN] `InArgument<String>` **ReplyTo**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+- [IN] `InArgument<String>` **To**
+- [IN] `InArgument<String>` **Cc**
+- [IN] `InArgument<String>` **Bcc**
+- [IN] `InArgument<String>` **Subject**
+- [IN] `InArgument<String>` **Body**
+- [IN] `InArgument<Int32>` **TimeoutMS**
+- [IN] `InArgument<IEnumerable<String>>` **AttachmentsCollection**
+- [IN] `InArgument<Net.Mail.MailMessage>` **MailMessage**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **IsDraft**
+- [property] `UiPath.Mail.MailImportance` **Importance**
+- [property] `UiPath.Mail.MailSensitivity` **Sensitivity**
+- [property] `Boolean` **IsBodyHtml**
+- [property] `List<InArgument<String>>` **Files**
+### Set Outlook Desktop Mail Categories
+
+**ID**: `UiPath.Mail.Outlook.Activities.SetOutlookMailCategories@UiPath.Mail.Activities/2.7.12`
+**Type**: `UiPath.Mail.Outlook.Activities.SetOutlookMailCategories`
+**Category**: Mail.Outlook Windows
+**Description**: Associates categories with a mail message.
+**Arguments**:
+- [IN, Required] `InArgument<Net.Mail.MailMessage>` **MailMessage**
+- [IN] `InArgument<String[]>` **Categories**
+### Delete IBM Notes Mail Message
+
+**ID**: `UiPath.Mail.LotusNotes.Activities.DeleteLotusNotesMailMessage@UiPath.Mail.Activities/2.7.12`
+**Type**: `UiPath.Mail.LotusNotes.Activities.DeleteLotusNotesMailMessage`
+**Category**: Mail.IBM Notes
+**Description**: Deletes an IBM Notes email message.
+**Arguments**:
+- [IN, Required] `InArgument<Net.Mail.MailMessage>` **MailMessage**
+- [IN, Required] `InArgument<String>` **FromFolder**
+- [IN] `InArgument<String>` **Password**
+- [IN] `InArgument<Security.SecureString>` **SecurePassword**
+### Get IBM Notes Mail Messages
+
+**ID**: `UiPath.Mail.LotusNotes.Activities.GetLotusNotesMailMessages@UiPath.Mail.Activities/2.7.12`
+**Type**: `UiPath.Mail.LotusNotes.Activities.GetLotusNotesMailMessages`
+**Category**: Mail.IBM Notes
+**Description**: Retrieves emails from the IBM Notes client on which the workflow is deployed
+**Arguments**:
+- [IN] `InArgument<String>` **Password**
+- [IN] `InArgument<Security.SecureString>` **SecurePassword**
+- [IN, Required] `InArgument<String>` **MailFolder**
+- [IN] `InArgument<Int32>` **TimeoutMS**
+- [IN] `InArgument<Int32>` **Top**
+- [OUT] `OutArgument<List<Net.Mail.MailMessage>>` **Messages**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **GetAttachments**
+### Move IBM Notes Mail Message
+
+**ID**: `UiPath.Mail.LotusNotes.Activities.MoveLotusNotesMailMessage@UiPath.Mail.Activities/2.7.12`
+**Type**: `UiPath.Mail.LotusNotes.Activities.MoveLotusNotesMailMessage`
+**Category**: Mail.IBM Notes
+**Description**: Moves an IBM Notes email message to a specified folder.
+**Arguments**:
+- [IN, Required] `InArgument<Net.Mail.MailMessage>` **MailMessage**
+- [IN, Required] `InArgument<String>` **MailFolder**
+- [IN, Required] `InArgument<String>` **FromFolder**
+- [IN] `InArgument<String>` **Password**
+- [IN] `InArgument<Security.SecureString>` **SecurePassword**
+### Send IBM Notes Mail Message
+
+**ID**: `UiPath.Mail.LotusNotes.Activities.SendLotusNotesMailMessage@UiPath.Mail.Activities/2.7.12`
+**Type**: `UiPath.Mail.LotusNotes.Activities.SendLotusNotesMailMessage`
+**Category**: Mail.IBM Notes
+**Description**: Sends an email message by using the IBM Notes client.
+**Arguments**:
+- [IN] `InArgument<String>` **Password**
+- [IN] `InArgument<Security.SecureString>` **SecurePassword**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+- [IN] `InArgument<String>` **To**
+- [IN] `InArgument<String>` **Cc**
+- [IN] `InArgument<String>` **Bcc**
+- [IN] `InArgument<String>` **Subject**
+- [IN] `InArgument<String>` **Body**
+- [IN] `InArgument<Int32>` **TimeoutMS**
+- [IN] `InArgument<IEnumerable<String>>` **AttachmentsCollection**
+- [IN] `InArgument<Net.Mail.MailMessage>` **MailMessage**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **IsBodyHtml**
+- [property] `List<InArgument<String>>` **Files**
+### Delete IMAP Email
+
+**ID**: `UiPath.Mail.IMAP.Activities.DeleteImapMailMessage@UiPath.Mail.Activities/2.7.12`
+**Type**: `UiPath.Mail.IMAP.Activities.DeleteImapMailMessage`
+**Category**: Mail.IMAP
+**Description**: Deletes the given mail message using IMAP.
+**Arguments**:
+- [IN] `InArgument<Boolean>` **UseOAuth**
+- [IN] `InArgument<String>` **Email**
+- [IN] `InArgument<String>` **Password**
+- [IN] `InArgument<Security.SecureString>` **SecurePassword**
+- [IN] `InArgument<String>` **Server**
+- [IN] `InArgument<Int32>` **Port**
+- [IN] `InArgument<String>` **ClientName**
+- [IN] `InArgument<String>` **ClientVersion**
+- [IN] `InArgument<Boolean>` **IgnoreCRL** (default: False)
+- [IN] `InArgument<Net.Mail.MailMessage>` **MailMessage**
+- [IN] `InArgument<String>` **FromFolder**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.Mail.SecureSocketEncryption` **SecureConnection**
+### Get IMAP Email List
+
+**ID**: `UiPath.Mail.IMAP.Activities.GetIMAPMailMessages@UiPath.Mail.Activities/2.7.12`
+**Type**: `UiPath.Mail.IMAP.Activities.GetIMAPMailMessages`
+**Category**: Mail.IMAP
+**Description**: Retrieves an IMAP email message from a specified server.
+**Arguments**:
+- [IN] `InArgument<Boolean>` **UseOAuth**
+- [IN] `InArgument<String>` **Email**
+- [IN] `InArgument<String>` **Password**
+- [IN] `InArgument<Security.SecureString>` **SecurePassword**
+- [IN] `InArgument<String>` **Server**
+- [IN] `InArgument<Int32>` **Port**
+- [IN] `InArgument<String>` **MailFolder**
+- [IN] `InArgument<String>` **FilterExpression**
+- [IN] `InArgument<String>` **FilterExpressionCharacterSet**
+- [IN] `InArgument<Boolean>` **DeleteMessages**
+- [IN] `InArgument<Boolean>` **OnlyUnreadMessages**
+- [IN] `InArgument<Boolean>` **MarkAsRead**
+- [IN] `InArgument<String>` **ClientName**
+- [IN] `InArgument<String>` **ClientVersion**
+- [IN] `InArgument<Boolean>` **IgnoreCRL** (default: False)
+- [IN] `InArgument<Int32>` **TimeoutMS**
+- [IN] `InArgument<Int32>` **Top**
+- [OUT] `OutArgument<List<Net.Mail.MailMessage>>` **Messages**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.Mail.EOrderByDate` **OrderByDate**
+- [property] `UiPath.Mail.SecureSocketEncryption` **SecureConnection**
+### Move IMAP Email
+
+**ID**: `UiPath.Mail.IMAP.Activities.MoveIMAPMailMessageToFolder@UiPath.Mail.Activities/2.7.12`
+**Type**: `UiPath.Mail.IMAP.Activities.MoveIMAPMailMessageToFolder`
+**Category**: Mail.IMAP
+**Description**: Moves an IMAP email message to a specified folder. 
+**Arguments**:
+- [IN] `InArgument<Boolean>` **UseOAuth**
+- [IN] `InArgument<String>` **Email**
+- [IN] `InArgument<String>` **Password**
+- [IN] `InArgument<Security.SecureString>` **SecurePassword**
+- [IN] `InArgument<String>` **Server**
+- [IN] `InArgument<Int32>` **Port**
+- [IN] `InArgument<Net.Mail.MailMessage>` **MailMessage**
+- [IN] `InArgument<String>` **MailFolder**
+- [IN] `InArgument<String>` **FromFolder**
+- [IN] `InArgument<String>` **ClientName**
+- [IN] `InArgument<String>` **ClientVersion**
+- [IN] `InArgument<Boolean>` **IgnoreCRL** (default: False)
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **EnableSSL**
+- [property] `UiPath.Mail.SecureSocketEncryption` **SecureConnection**
+### Create Exchange Draft
+
+**ID**: `UiPath.Mail.Exchange.Activities.CreateDraft@UiPath.Mail.Activities/2.7.12`
+**Type**: `UiPath.Mail.Exchange.Activities.CreateDraft`
+**Category**: Mail.Exchange
+**Description**: Creates an Exchange draft email message.
+**Arguments**:
+- [IN] `InArgument<String>` **Name**
+- [IN] `InArgument<String>` **From**
+- [IN] `InArgument<String>` **To**
+- [IN] `InArgument<String>` **Cc**
+- [IN] `InArgument<String>` **Bcc**
+- [IN] `InArgument<String>` **Subject**
+- [IN] `InArgument<String>` **Body**
+- [IN] `InArgument<Net.Mail.MailMessage>` **MailMessage**
+- [IN] `InArgument<IEnumerable<String>>` **AttachmentsCollection**
+- [IN] `InArgument<IEnumerable<UiPath.Platform.ResourceHandling.IResource>>` **ResourceAttachments**
+- [IN] `InArgument<String>` **Server**
+- [IN] `InArgument<String>` **EmailAutodiscover**
+- [IN] `InArgument<String>` **ApplicationId**
+- [IN] `InArgument<String>` **DirectoryId**
+- [IN] `InArgument<String>` **User**
+- [IN] `InArgument<String>` **Password**
+- [IN] `InArgument<Security.SecureString>` **SecurePassword**
+- [IN] `InArgument<String>` **Domain**
+- [IN] `InArgument<Int32>` **TimeoutMS**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **IsBodyHtml**
+- [property] `List<InArgument<String>>` **Files**
+- [property] `IEnumerable<InArgument<UiPath.Platform.ResourceHandling.IResource>>` **ResourceAttachmentList**
+- [property] `Microsoft.Exchange.WebServices.Data.ExchangeVersion` **ExchangeVersion**
+- [property] `UiPath.Mail.Exchange.AuthenticationType` **AuthenticationMode**
+### Delete Exchange Mail Message
+
+**ID**: `UiPath.Mail.Exchange.Activities.DeleteMail@UiPath.Mail.Activities/2.7.12`
+**Type**: `UiPath.Mail.Exchange.Activities.DeleteMail`
+**Category**: Mail.Exchange
+**Description**: Deletes an Exchange email message.
+**Arguments**:
+- [IN, Required] `InArgument<Net.Mail.MailMessage>` **MailMessage**
+- [IN] `InArgument<String>` **Server**
+- [IN] `InArgument<String>` **EmailAutodiscover**
+- [IN] `InArgument<String>` **ApplicationId**
+- [IN] `InArgument<String>` **DirectoryId**
+- [IN] `InArgument<String>` **User**
+- [IN] `InArgument<String>` **Password**
+- [IN] `InArgument<Security.SecureString>` **SecurePassword**
+- [IN] `InArgument<String>` **Domain**
+- [IN] `InArgument<Int32>` **TimeoutMS**
+**Properties / VariableScope / Child**:
+- [property] `Microsoft.Exchange.WebServices.Data.DeleteMode` **DeleteMode**
+- [property] `Microsoft.Exchange.WebServices.Data.ExchangeVersion` **ExchangeVersion**
+- [property] `UiPath.Mail.Exchange.AuthenticationType` **AuthenticationMode**
+### Exchange Scope
+
+**ID**: `UiPath.Mail.Exchange.Activities.ExchangeScope@UiPath.Mail.Activities/2.7.12`
+**Type**: `UiPath.Mail.Exchange.Activities.ExchangeScope`
+**Category**: Mail.Exchange
+**Description**: Connects to Exchange and provides a scope for other Exchange activities. 
+**Arguments**:
+- [IN, Required] `InArgument<String>` **Server**
+- [IN, Required] `InArgument<String>` **EmailAutodiscover**
+- [IN] `InArgument<String>` **ApplicationId**
+- [IN] `InArgument<String>` **DirectoryId**
+- [IN] `InArgument<Microsoft.Exchange.WebServices.Data.ExchangeService>` **ExistingExchangeService**
+- [IN] `InArgument<String>` **User**
+- [IN] `InArgument<String>` **Password**
+- [IN] `InArgument<Security.SecureString>` **SecurePassword**
+- [IN] `InArgument<String>` **Domain**
+- [OUT] `OutArgument<Microsoft.Exchange.WebServices.Data.ExchangeService>` **ExchangeService**
+- [IN] `InArgument<Int32>` **TimeoutMS**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `Microsoft.Exchange.WebServices.Data.ExchangeVersion` **ExchangeVersion**
+- [property] `UiPath.Mail.Exchange.AuthenticationType` **AuthenticationMode**
+### Get Exchange Mail Messages
+
+**ID**: `UiPath.Mail.Exchange.Activities.GetExchangeMailMessages@UiPath.Mail.Activities/2.7.12`
+**Type**: `UiPath.Mail.Exchange.Activities.GetExchangeMailMessages`
+**Category**: Mail.Exchange
+**Description**: Retrieves an email message from Exchange.
+**Arguments**:
+- [IN] `InArgument<String>` **CustomFolder**
+- [IN] `InArgument<String>` **SharedMailbox**
+- [IN] `InArgument<Boolean>` **GetAttachements**
+- [IN] `InArgument<Boolean>` **IsBodyHtml**
+- [IN] `InArgument<Int32>` **Top**
+- [IN] `InArgument<Boolean>` **OnlyUnreadMessages**
+- [IN] `InArgument<Boolean>` **MarkAsRead**
+- [IN] `InArgument<String>` **FilterExpression**
+- [IN] `InArgument<String[]>` **FilterByMessageIds**
+- [OUT] `OutArgument<List<Net.Mail.MailMessage>>` **Messages**
+- [IN] `InArgument<String>` **Server**
+- [IN] `InArgument<String>` **EmailAutodiscover**
+- [IN] `InArgument<String>` **ApplicationId**
+- [IN] `InArgument<String>` **DirectoryId**
+- [IN] `InArgument<String>` **User**
+- [IN] `InArgument<String>` **Password**
+- [IN] `InArgument<Security.SecureString>` **SecurePassword**
+- [IN] `InArgument<String>` **Domain**
+- [IN] `InArgument<Int32>` **TimeoutMS**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.Mail.EOrderByDate` **OrderByDate**
+- [property] `Microsoft.Exchange.WebServices.Data.ExchangeVersion` **ExchangeVersion**
+- [property] `UiPath.Mail.Exchange.AuthenticationType` **AuthenticationMode**
+### Move Message To Folder
+
+**ID**: `UiPath.Mail.Exchange.Activities.MoveMessageToFolder@UiPath.Mail.Activities/2.7.12`
+**Type**: `UiPath.Mail.Exchange.Activities.MoveMessageToFolder`
+**Category**: Mail.Exchange
+**Description**: Moves an email message from Exchange to another folder.
+**Arguments**:
+- [IN, Required] `InArgument<Net.Mail.MailMessage>` **MailMessage**
+- [IN, Required] `InArgument<String>` **MailFolder**
+- [IN] `InArgument<String>` **SharedMailbox**
+- [IN] `InArgument<String>` **Server**
+- [IN] `InArgument<String>` **EmailAutodiscover**
+- [IN] `InArgument<String>` **ApplicationId**
+- [IN] `InArgument<String>` **DirectoryId**
+- [IN] `InArgument<String>` **User**
+- [IN] `InArgument<String>` **Password**
+- [IN] `InArgument<Security.SecureString>` **SecurePassword**
+- [IN] `InArgument<String>` **Domain**
+- [IN] `InArgument<Int32>` **TimeoutMS**
+**Properties / VariableScope / Child**:
+- [property] `Microsoft.Exchange.WebServices.Data.ExchangeVersion` **ExchangeVersion**
+- [property] `UiPath.Mail.Exchange.AuthenticationType` **AuthenticationMode**
+### Save Exchange Attachments
+
+**ID**: `UiPath.Mail.Exchange.Activities.SaveExchangeAttachements@UiPath.Mail.Activities/2.7.12`
+**Type**: `UiPath.Mail.Exchange.Activities.SaveExchangeAttachements`
+**Category**: Mail.Exchange
+**Description**: Save Exchange Attachments
+**Arguments**:
+- [IN] `InArgument<String>` **FolderPath**
+- [IN] `InArgument<Net.Mail.MailMessage>` **MailMessage**
+- [OUT] `OutArgument<IEnumerable<String>>` **Files**
+- [OUT] `OutArgument<IEnumerable<UiPath.Platform.ResourceHandling.ILocalResource>>` **ResourceAttachments**
+- [IN] `InArgument<String>` **Server**
+- [IN] `InArgument<String>` **EmailAutodiscover**
+- [IN] `InArgument<String>` **ApplicationId**
+- [IN] `InArgument<String>` **DirectoryId**
+- [IN] `InArgument<String>` **User**
+- [IN] `InArgument<String>` **Password**
+- [IN] `InArgument<Security.SecureString>` **SecurePassword**
+- [IN] `InArgument<String>` **Domain**
+- [IN] `InArgument<Int32>` **TimeoutMS**
+**Properties / VariableScope / Child**:
+- [property] `Microsoft.Exchange.WebServices.Data.ExchangeVersion` **ExchangeVersion**
+- [property] `UiPath.Mail.Exchange.AuthenticationType` **AuthenticationMode**
+### Send Exchange Mail Message
+
+**ID**: `UiPath.Mail.Exchange.Activities.SendExchangeMail@UiPath.Mail.Activities/2.7.12`
+**Type**: `UiPath.Mail.Exchange.Activities.SendExchangeMail`
+**Category**: Mail.Exchange
+**Description**: Sends an email message from Exchange. 
+**Arguments**:
+- [IN, Required] `InArgument<String>` **To**
+- [IN] `InArgument<String>` **Cc**
+- [IN] `InArgument<String>` **Bcc**
+- [IN] `InArgument<String>` **Subject**
+- [IN] `InArgument<String>` **Body**
+- [IN] `InArgument<Net.Mail.MailMessage>` **MailMessage**
+- [IN] `InArgument<String>` **Name**
+- [IN] `InArgument<String>` **From**
+- [IN] `InArgument<Boolean>` **SaveCopy**
+- [IN] `InArgument<IEnumerable<String>>` **AttachmentsCollection**
+- [IN] `InArgument<IEnumerable<UiPath.Platform.ResourceHandling.IResource>>` **ResourceAttachments**
+- [IN] `InArgument<Boolean>` **IsDraft**
+- [IN] `InArgument<String>` **Server**
+- [IN] `InArgument<String>` **EmailAutodiscover**
+- [IN] `InArgument<String>` **ApplicationId**
+- [IN] `InArgument<String>` **DirectoryId**
+- [IN] `InArgument<String>` **User**
+- [IN] `InArgument<String>` **Password**
+- [IN] `InArgument<Security.SecureString>` **SecurePassword**
+- [IN] `InArgument<String>` **Domain**
+- [IN] `InArgument<Int32>` **TimeoutMS**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **IsBodyHtml**
+- [property] `List<InArgument<String>>` **Files**
+- [property] `IEnumerable<InArgument<UiPath.Platform.ResourceHandling.IResource>>` **ResourceAttachmentList**
+- [property] `Microsoft.Exchange.WebServices.Data.ExchangeVersion` **ExchangeVersion**
+- [property] `UiPath.Mail.Exchange.AuthenticationType` **AuthenticationMode**
+### Get Mail Message from File
+
+**ID**: `UiPath.Mail.Activities.GetMailMessageFromFile@UiPath.Mail.Activities/2.7.12`
+**Type**: `UiPath.Mail.Activities.GetMailMessageFromFile`
+**Category**: Mail
+**Description**: Generate a mail message from an eml file
+**Arguments**:
+- [IN] `InArgument<UiPath.Platform.ResourceHandling.IResource>` **EmailFile**
+- [OUT] `OutArgument<UiPath.Mail.UiPathMailMessage>` **MailMessage**
+### Save Email Message
+
+**ID**: `UiPath.Mail.Activities.SaveMail@UiPath.Mail.Activities/2.7.12`
+**Type**: `UiPath.Mail.Activities.SaveMail`
+**Category**: Mail
+**Description**: Saves the email message to the specified path. If the folder doesn't exist, it is created. If the file name is specified instead, the email is saved in the project folder. Files in the specified folder with the same name as the messages are overwritten.
+**Arguments**:
+- [IN] `InArgument<Net.Mail.MailMessage>` **MailMessage**
+- [IN] `InArgument<String>` **FilePath**
+- [OUT] `OutArgument<UiPath.Platform.ResourceHandling.ILocalResource>` **Email**
+### Save Email Attachments
+
+**ID**: `UiPath.Mail.Activities.SaveMailAttachments@UiPath.Mail.Activities/2.7.12`
+**Type**: `UiPath.Mail.Activities.SaveMailAttachments`
+**Category**: Mail
+**Description**: Saves the email message attachments to the specified folder. If the folder doesn't exist, it is created. If no folder is specified, the downloads are saved in the project folder. Files in the specified folder with the same name as the attachments are overwritten.
+**Arguments**:
+- [IN] `InArgument<String>` **FolderPath**
+- [IN] `InArgument<Net.Mail.MailMessage>` **Message**
+- [OUT] `OutArgument<IEnumerable<String>>` **Attachments**
+- [OUT] `OutArgument<IEnumerable<UiPath.Platform.ResourceHandling.ILocalResource>>` **ResourceAttachments**
+- [IN] `InArgument<String>` **Filter**
+- [IN] `InArgument<Boolean>` **OverwriteExisting**
+- [IN] `InArgument<Boolean>` **ExcludeInlineAttachments**
+### Outlook Mail Message Trigger
+
+**ID**: `UiPath.Mail.Activities.Outlook.OutlookMailMessagesTrigger@UiPath.Mail.Activities/2.7.12`
+**Type**: `UiPath.Mail.Activities.Outlook.OutlookMailMessagesTrigger`
+**Category**: Mail.Outlook Windows
+**Description**: Sets up a trigger to watch for incoming/outgoing mail messages that match a certain criteria.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **MailFolder**
+- [IN] `InArgument<String>` **Account**
+- [IN] `InArgument<String>` **From**
+- [IN] `InArgument<String>` **Cc**
+- [IN] `InArgument<String>` **To**
+- [IN] `InArgument<String>` **SubjectFilter**
+- [IN] `InArgument<String>` **BodyFilter**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **MarkAsRead**
+- [property] `UiPath.Mail.Outlook.Enums.WhenOutlookIsClosedEnum` **WhenOutlookIsClosed**
+- [property] `UiPath.Mail.Activities.Triggers.Importance` **Importance**
+- [property] `Boolean` **Enabled**
+### IMAP Email Received
+
+**ID**: `UiPath.Mail.Activities.IMAP.NewIMAPEmailReceivedTrigger@UiPath.Mail.Activities/2.7.12`
+**Type**: `UiPath.Mail.Activities.IMAP.NewIMAPEmailReceivedTrigger`
+**Category**: Mail.IMAP.Triggers
+**Description**: Initiates an automation workflow when a new IMAP email arrives
+**Arguments**:
+- [IN] `InArgument<Boolean>` **MarkAsRead**
+- [IN] `InArgument<Boolean>` **IncludeAttachments**
+- [OUT] `OutArgument<Net.Mail.MailMessage>` **Result**
+- [OUT] `OutArgument<UiPath.Mail.Activities.Utils.JobInformation>` **JobData**
+**Properties / VariableScope / Child**:
+- [property] `String` **Operation**
+- [property] `String` **ObjectName**
+- [property] `String` **Connector**
+- [property] `String` **MailFolderBindingsKey**
+- [property] `String` **MailFolder**
+- [property] `Boolean` **WithAttachmentsOnly**
+- [property] `String` **BindingsKey**
+### New Email Received
+
+**ID**: `UiPath.Mail.Activities.Business.NewGmailTrigger@UiPath.Mail.Activities/2.7.12`
+**Type**: `UiPath.Mail.Activities.Business.NewGmailTrigger`
+**Description**: Trigger for Gmail emails
+**Arguments**:
+- [IN] `InArgument<String>` **ConnectionId**
+- [OUT] `OutArgument<Net.Mail.MailMessage>` **Result**
+**Properties / VariableScope / Child**:
+- [property] `String` **Operation**
+- [property] `String` **ObjectName**
+- [property] `String` **Connector**
+- [property] `String` **ConnectionAccountName**
+- [property] `String` **FilterExpression**
+### New Email Received
+
+**ID**: `UiPath.Mail.Activities.Business.NewO365EmailTrigger@UiPath.Mail.Activities/2.7.12`
+**Type**: `UiPath.Mail.Activities.Business.NewO365EmailTrigger`
+**Description**: Trigger for O365 Emails
+**Arguments**:
+- [IN] `InArgument<String>` **ConnectionId**
+- [OUT] `OutArgument<Net.Mail.MailMessage>` **Result**
+**Properties / VariableScope / Child**:
+- [property] `String` **Operation**
+- [property] `String` **ObjectName**
+- [property] `String` **Connector**
+- [property] `String` **ConnectionAccountName**
+- [property] `String` **FilterExpression**
+---

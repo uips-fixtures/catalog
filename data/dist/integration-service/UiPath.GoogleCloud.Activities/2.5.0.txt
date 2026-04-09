@@ -1,0 +1,623 @@
+# UiPath.GoogleCloud.Activities 2.5.0
+
+> generator: uips-fixtures catalog v0.2
+> generated: 2026-04-09T22:10:08Z
+> set: integration-service
+> url: https://uips-fixtures.github.io/llms/UiPath.GoogleCloud.Activities/2.5.0.txt
+> activities: 34
+> authors: UiPath
+**ID format**: `{fullName}@{packageId}/{packageVersion}`
+**Argument directions**: In (input), Out (output), InOut (bidirectional)
+
+---
+### Get IAM Policy
+
+**ID**: `UiPath.GoogleCloud.Activities.GCPGetIAMPolicy@UiPath.GoogleCloud.Activities/2.5.0`
+**Type**: `UiPath.GoogleCloud.Activities.GCPGetIAMPolicy`
+**Category**: Cloud.Google.IAM.Policies
+**Description**: Gets the policy for the specified resource.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **ResourceType**
+- [IN, Required] `InArgument<String>` **FullResourceName**
+- [IN] `InArgument<Nullable<Int32>>` **PolicyVersion**
+- [OUT] `OutArgument<UiPath.GoogleCloud.Models.GCPIAMPolicy>` **Policy**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Set IAM Policy
+
+**ID**: `UiPath.GoogleCloud.Activities.GCPSetIAMPolicy@UiPath.GoogleCloud.Activities/2.5.0`
+**Type**: `UiPath.GoogleCloud.Activities.GCPSetIAMPolicy`
+**Category**: Cloud.Google.IAM.Policies
+**Description**: Sets the access control policy on the specified resource. It replaces any existing policy.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **ResourceType**
+- [IN, Required] `InArgument<String>` **FullResourceName**
+- [IN] `InArgument<String>` **JSONPolicy**
+- [IN] `InArgument<UiPath.GoogleCloud.Models.GCPIAMPolicy>` **Policy**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Create Role
+
+**ID**: `UiPath.GoogleCloud.Activities.GCPCreateRole@UiPath.GoogleCloud.Activities/2.5.0`
+**Type**: `UiPath.GoogleCloud.Activities.GCPCreateRole`
+**Category**: Cloud.Google.IAM.Roles
+**Description**: Creates a new custom role.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **Name**
+- [IN] `InArgument<String>` **Title**
+- [IN] `InArgument<String>` **Description**
+- [IN] `InArgument<String[]>` **Permissions**
+- [IN] `InArgument<String>` **OrganizationId**
+- [IN] `InArgument<String>` **ProjectId**
+- [OUT] `OutArgument<UiPath.GoogleCloud.Models.GCPIAMRole>` **Role**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.Core.RoleLaunchStage` **LaunchStage**
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Delete Role
+
+**ID**: `UiPath.GoogleCloud.Activities.GCPDeleteRole@UiPath.GoogleCloud.Activities/2.5.0`
+**Type**: `UiPath.GoogleCloud.Activities.GCPDeleteRole`
+**Category**: Cloud.Google.IAM.Roles
+**Description**: Deletes the specified custom role.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.GoogleCloud.Models.GCPIAMRole>` **Role**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### For Each Grantable Role
+
+**ID**: `UiPath.GoogleCloud.Activities.GCPForEachGrantableRole@UiPath.GoogleCloud.Activities/2.5.0`
+**Type**: `UiPath.GoogleCloud.Activities.GCPForEachGrantableRole`
+**Category**: Cloud.Google.IAM.Roles
+**Description**: Performs an activity or a series of activities on each role that can be granted on a Google Cloud resource.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **FullResourceName**
+- [IN] `InArgument<Boolean>` **IncludeAssignedPermissions**
+- [OUT] `OutArgument<Int32>` **Index**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### For Each Role
+
+**ID**: `UiPath.GoogleCloud.Activities.GCPForEachRole@UiPath.GoogleCloud.Activities/2.5.0`
+**Type**: `UiPath.GoogleCloud.Activities.GCPForEachRole`
+**Category**: Cloud.Google.IAM.Roles
+**Description**: Performs an activity or a series of activities on each role that matches the filter criteria.
+**Arguments**:
+- [IN] `InArgument<String>` **ParentId**
+- [IN] `InArgument<Boolean>` **IncludeAssignedPermissions**
+- [IN] `InArgument<Boolean>` **IncludeDeleted**
+- [OUT] `OutArgument<Int32>` **Index**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.Core.RoleType` **RoleType**
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Get Role
+
+**ID**: `UiPath.GoogleCloud.Activities.GCPGetRole@UiPath.GoogleCloud.Activities/2.5.0`
+**Type**: `UiPath.GoogleCloud.Activities.GCPGetRole`
+**Category**: Cloud.Google.IAM.Roles
+**Description**: Gets information about the specified role.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **Name**
+- [IN] `InArgument<String>` **ParentId**
+- [OUT] `OutArgument<UiPath.GoogleCloud.Models.GCPIAMRole>` **Role**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.Core.RoleType` **Type**
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Undelete Role
+
+**ID**: `UiPath.GoogleCloud.Activities.GCPUndeleteRole@UiPath.GoogleCloud.Activities/2.5.0`
+**Type**: `UiPath.GoogleCloud.Activities.GCPUndeleteRole`
+**Category**: Cloud.Google.IAM.Roles
+**Description**: Cancels the deletion of the specified custom role.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.GoogleCloud.Models.GCPIAMRole>` **Role**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Update Role
+
+**ID**: `UiPath.GoogleCloud.Activities.GCPUpdateRole@UiPath.GoogleCloud.Activities/2.5.0`
+**Type**: `UiPath.GoogleCloud.Activities.GCPUpdateRole`
+**Category**: Cloud.Google.IAM.Roles
+**Description**: Updates the specified custom role.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.GoogleCloud.Models.GCPIAMRole>` **Role**
+- [IN] `InArgument<String>` **NewTitle**
+- [IN] `InArgument<String>` **NewDescription**
+- [IN] `InArgument<String[]>` **PermissionsToAdd**
+- [IN] `InArgument<String[]>` **PermissionsToRemove**
+- [IN] `InArgument<UiPath.Core.RoleLaunchStage>` **NewLaunchStage**
+- [OUT] `OutArgument<UiPath.GoogleCloud.Models.GCPIAMRole>` **UpdatedRole**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Configure Robot
+
+**ID**: `UiPath.GoogleCloud.Activities.GCPConfigureRobot@UiPath.GoogleCloud.Activities/2.5.0`
+**Type**: `UiPath.GoogleCloud.Activities.GCPConfigureRobot`
+**Category**: Cloud.Google.Compute Engine.Instances
+**Description**: Connects the Robot in a given instance to UiPath Orchestrator.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.GoogleCloud.Models.GCPInstance>` **Instance**
+- [IN] `InArgument<String>` **OrchestratorURL**
+- [IN] `InArgument<String>` **OrchestratorConnectionString**
+- [IN] `InArgument<String>` **MachineKey**
+- [IN] `InArgument<Nullable<Int32>>` **Timeout**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Create Instance
+
+**ID**: `UiPath.GoogleCloud.Activities.GCPCreateInstance@UiPath.GoogleCloud.Activities/2.5.0`
+**Type**: `UiPath.GoogleCloud.Activities.GCPCreateInstance`
+**Category**: Cloud.Google.Compute Engine.Instances
+**Description**: Creates a new instance. An instance is a virtual machine that is hosted on Google Cloud Platform.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **Name**
+- [IN] `InArgument<String>` **Description**
+- [IN] `InArgument<Data.DataTable>` **Labels**
+- [IN, Required] `InArgument<String>` **ProjectId**
+- [IN, Required] `InArgument<String>` **Zone**
+- [IN, Required] `InArgument<String>` **MachineType**
+- [IN] `InArgument<Nullable<Int32>>` **Timeout**
+- [IN] `InArgument<String>` **ServiceAccount**
+- [IN] `InArgument<String>` **StartupScript**
+- [IN] `InArgument<String>` **StartupScriptKey**
+- [IN] `InArgument<Data.DataTable>` **Metadata**
+- [IN, Required] `InArgument<String>` **Source**
+- [IN] `InArgument<Nullable<Int64>>` **SizeGb**
+- [IN] `InArgument<String>` **Hostname**
+- [IN] `InArgument<String>` **NetworkUrl**
+- [IN] `InArgument<String>` **SubnetworkUrl**
+- [IN] `InArgument<String>` **NetworkIp**
+- [OUT] `OutArgument<UiPath.GoogleCloud.Models.GCPInstance>` **Instance**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **WaitForCompletion**
+- [property] `UiPath.Core.AccessScope` **AccessScopes**
+- [property] `UiPath.Core.DiskSourceType` **SourceType**
+- [property] `UiPath.Core.BootDiskType` **DiskType**
+- [property] `Boolean` **AutoDelete**
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Create Instance from Template
+
+**ID**: `UiPath.GoogleCloud.Activities.GCPCreateInstanceFromTemplate@UiPath.GoogleCloud.Activities/2.5.0`
+**Type**: `UiPath.GoogleCloud.Activities.GCPCreateInstanceFromTemplate`
+**Category**: Cloud.Google.Compute Engine.Instances
+**Description**: Creates a new instance from an instance template.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **Name**
+- [IN] `InArgument<String>` **Description**
+- [IN, Required] `InArgument<String>` **ProjectId**
+- [IN, Required] `InArgument<String>` **Template**
+- [IN, Required] `InArgument<String>` **Zone**
+- [IN] `InArgument<Nullable<Int32>>` **Timeout**
+- [OUT] `OutArgument<UiPath.GoogleCloud.Models.GCPInstance>` **Instance**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **WaitForCompletion**
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Delete Instance
+
+**ID**: `UiPath.GoogleCloud.Activities.GCPDeleteInstance@UiPath.GoogleCloud.Activities/2.5.0`
+**Type**: `UiPath.GoogleCloud.Activities.GCPDeleteInstance`
+**Category**: Cloud.Google.Compute Engine.Instances
+**Description**: Deletes an instance.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.GoogleCloud.Models.GCPInstance>` **Instance**
+- [IN] `InArgument<Nullable<Int32>>` **Timeout**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **WaitForCompletion**
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### For Each Instance
+
+**ID**: `UiPath.GoogleCloud.Activities.GCPForEachInstance@UiPath.GoogleCloud.Activities/2.5.0`
+**Type**: `UiPath.GoogleCloud.Activities.GCPForEachInstance`
+**Category**: Cloud.Google.Compute Engine.Instances
+**Description**: Performs an activity or a series of activities on each instance matching the filter criteria.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **ProjectId**
+- [IN] `InArgument<String>` **Zone**
+- [IN] `InArgument<String>` **Filter**
+- [IN] `InArgument<Int32>` **LimitToFirst**
+- [OUT] `OutArgument<Int32>` **Index**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Get Instance
+
+**ID**: `UiPath.GoogleCloud.Activities.GCPGetInstance@UiPath.GoogleCloud.Activities/2.5.0`
+**Type**: `UiPath.GoogleCloud.Activities.GCPGetInstance`
+**Category**: Cloud.Google.Compute Engine.Instances
+**Description**: Gets the details of the specified instance.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **InstanceName**
+- [IN, Required] `InArgument<String>` **ProjectId**
+- [IN, Required] `InArgument<String>` **Zone**
+- [OUT] `OutArgument<UiPath.GoogleCloud.Models.GCPInstance>` **Instance**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Reset Instance
+
+**ID**: `UiPath.GoogleCloud.Activities.GCPResetInstance@UiPath.GoogleCloud.Activities/2.5.0`
+**Type**: `UiPath.GoogleCloud.Activities.GCPResetInstance`
+**Category**: Cloud.Google.Compute Engine.Instances
+**Description**: Resets an instance. This is a hard reset, it is not a graceful shutdown.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.GoogleCloud.Models.GCPInstance>` **Instance**
+- [IN] `InArgument<Nullable<Int32>>` **Timeout**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **WaitForCompletion**
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Run Script on Instance
+
+**ID**: `UiPath.GoogleCloud.Activities.GCPRunScriptOnInstance@UiPath.GoogleCloud.Activities/2.5.0`
+**Type**: `UiPath.GoogleCloud.Activities.GCPRunScriptOnInstance`
+**Category**: Cloud.Google.Compute Engine.Instances
+**Description**: Runs a script on an instance.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.GoogleCloud.Models.GCPInstance>` **Instance**
+- [IN, Required] `InArgument<String>` **Script**
+- [IN, Required] `InArgument<String>` **ScriptKey**
+- [IN] `InArgument<Nullable<Int32>>` **TotalExecutionTimeout**
+- [IN] `InArgument<Nullable<Int32>>` **ConsoleOutputTimeout**
+- [OUT] `OutArgument<String>` **CommandOutput**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Start Instance
+
+**ID**: `UiPath.GoogleCloud.Activities.GCPStartInstance@UiPath.GoogleCloud.Activities/2.5.0`
+**Type**: `UiPath.GoogleCloud.Activities.GCPStartInstance`
+**Category**: Cloud.Google.Compute Engine.Instances
+**Description**: Starts an instance.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.GoogleCloud.Models.GCPInstance>` **Instance**
+- [IN] `InArgument<Nullable<Int32>>` **Timeout**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **WaitForCompletion**
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Stop Instance
+
+**ID**: `UiPath.GoogleCloud.Activities.GCPStopInstance@UiPath.GoogleCloud.Activities/2.5.0`
+**Type**: `UiPath.GoogleCloud.Activities.GCPStopInstance`
+**Category**: Cloud.Google.Compute Engine.Instances
+**Description**: Stops a running instance.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.GoogleCloud.Models.GCPInstance>` **Instance**
+- [IN] `InArgument<Nullable<Int32>>` **Timeout**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **WaitForCompletion**
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### For Each Project
+
+**ID**: `UiPath.GoogleCloud.Activities.GCPForEachProject@UiPath.GoogleCloud.Activities/2.5.0`
+**Type**: `UiPath.GoogleCloud.Activities.GCPForEachProject`
+**Category**: Cloud.Google.Projects
+**Description**: Performs an activity or a series of activities on each project that matches the filter criteria.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **Parent**
+- [IN] `InArgument<Boolean>` **ShowDeleted**
+- [OUT] `OutArgument<Int32>` **Index**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Get Project
+
+**ID**: `UiPath.GoogleCloud.Activities.GCPGetProject@UiPath.GoogleCloud.Activities/2.5.0`
+**Type**: `UiPath.GoogleCloud.Activities.GCPGetProject`
+**Category**: Cloud.Google.Projects
+**Description**: Retrieves the project identified by the specified project ID.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **ProjectId**
+- [OUT] `OutArgument<UiPath.GoogleCloud.Models.GCPProject>` **Project**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Google Cloud Scope
+
+**ID**: `UiPath.GoogleCloud.Activities.GCPScope@UiPath.GoogleCloud.Activities/2.5.0`
+**Type**: `UiPath.GoogleCloud.Activities.GCPScope`
+**Category**: Cloud.Google
+**Description**: Connects to Google Cloud and provides a scope for other Google Cloud activities.
+**Arguments**:
+- [IN] `InArgument<Security.SecureString>` **ServiceAccountKey**
+- [IN] `InArgument<String>` **ServiceAccountKeyFromFile**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.Core.ScopeType` **ScopeType**
+### Get Secret Data
+
+**ID**: `UiPath.GoogleCloud.Activities.GCPGetSecretData@UiPath.GoogleCloud.Activities/2.5.0`
+**Type**: `UiPath.GoogleCloud.Activities.GCPGetSecretData`
+**Category**: Cloud.Google.Secrets
+**Description**: Gets the secret data associated with the specified secret version.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **ProjectId**
+- [IN, Required] `InArgument<String>` **SecretName**
+- [IN] `InArgument<String>` **SecretVersionName**
+- [OUT] `OutArgument<String>` **SecretData**
+- [OUT] `OutArgument<Security.SecureString>` **SecureSecretData**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Create Bucket
+
+**ID**: `UiPath.GoogleCloud.Activities.GCPCreateBucket@UiPath.GoogleCloud.Activities/2.5.0`
+**Type**: `UiPath.GoogleCloud.Activities.GCPCreateBucket`
+**Category**: Cloud.Google.Storage.Buckets
+**Description**: Creates a new bucket.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **Name**
+- [IN, Required] `InArgument<String>` **ProjectId**
+- [IN] `InArgument<String>` **Region**
+- [IN] `InArgument<String>` **MultiRegion**
+- [IN] `InArgument<String>` **DualRegion**
+- [IN] `InArgument<Data.DataTable>` **Labels**
+- [IN] `InArgument<String>` **CustomerManagedKey**
+- [OUT] `OutArgument<UiPath.GoogleCloud.Models.GCPBucket>` **Bucket**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.Core.BucketACL` **AccessControlType**
+- [property] `UiPath.Core.Storage` **StorageClass**
+- [property] `UiPath.Core.BucketEncryption` **EncryptionType**
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Delete Bucket
+
+**ID**: `UiPath.GoogleCloud.Activities.GCPDeleteBucket@UiPath.GoogleCloud.Activities/2.5.0`
+**Type**: `UiPath.GoogleCloud.Activities.GCPDeleteBucket`
+**Category**: Cloud.Google.Storage.Buckets
+**Description**: Deletes a bucket.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.GoogleCloud.Models.GCPBucket>` **Bucket**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **EmptyContent**
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### For Each Bucket
+
+**ID**: `UiPath.GoogleCloud.Activities.GCPForEachBucket@UiPath.GoogleCloud.Activities/2.5.0`
+**Type**: `UiPath.GoogleCloud.Activities.GCPForEachBucket`
+**Category**: Cloud.Google.Storage.Buckets
+**Description**: Performs an activity or a series of activities on each bucket in the specified project.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **ProjectId**
+- [IN] `InArgument<Int32>` **LimitToFirst**
+- [IN] `InArgument<String>` **Prefix**
+- [OUT] `OutArgument<Int32>` **Index**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Get Bucket
+
+**ID**: `UiPath.GoogleCloud.Activities.GCPGetBucket@UiPath.GoogleCloud.Activities/2.5.0`
+**Type**: `UiPath.GoogleCloud.Activities.GCPGetBucket`
+**Category**: Cloud.Google.Storage.Buckets
+**Description**: Gets information about a specific bucket.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **BucketName**
+- [OUT] `OutArgument<UiPath.GoogleCloud.Models.GCPBucket>` **Bucket**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Update Bucket Properties
+
+**ID**: `UiPath.GoogleCloud.Activities.GCPUpdateBucketProperties@UiPath.GoogleCloud.Activities/2.5.0`
+**Type**: `UiPath.GoogleCloud.Activities.GCPUpdateBucketProperties`
+**Category**: Cloud.Google.Storage.Buckets
+**Description**: Updates the properties of a bucket.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.GoogleCloud.Models.GCPBucket>` **Bucket**
+- [IN] `InArgument<Boolean>` **EnableVersioning**
+- [IN] `InArgument<Data.DataTable>` **Labels**
+- [IN] `InArgument<String>` **StorageClass**
+- [IN] `InArgument<String>` **EncryptionType**
+- [IN] `InArgument<String>` **CustomerManagedKey**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Copy Object
+
+**ID**: `UiPath.GoogleCloud.Activities.GCPCopyObject@UiPath.GoogleCloud.Activities/2.5.0`
+**Type**: `UiPath.GoogleCloud.Activities.GCPCopyObject`
+**Category**: Cloud.Google.Storage.Objects
+**Description**: Copies an object to another bucket.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.GoogleCloud.Models.GCPObject>` **SourceObject**
+- [IN] `InArgument<Int64>` **SourceObjectGeneration**
+- [IN, Required] `InArgument<UiPath.GoogleCloud.Models.GCPBucket>` **DestinationBucket**
+- [IN, Required] `InArgument<String>` **DestinationObjectName**
+- [IN] `InArgument<String>` **DestinationPredefinedAcl**
+- [OUT] `OutArgument<UiPath.GoogleCloud.Models.GCPObject>` **DestinationObject**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Delete Object
+
+**ID**: `UiPath.GoogleCloud.Activities.GCPDeleteObject@UiPath.GoogleCloud.Activities/2.5.0`
+**Type**: `UiPath.GoogleCloud.Activities.GCPDeleteObject`
+**Category**: Cloud.Google.Storage.Objects
+**Description**: Deletes the specified object. The object is permanently deleted if versioning is not enabled for the bucket or if the Generation parameter is used.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.GoogleCloud.Models.GCPObject>` **Object**
+- [IN] `InArgument<Int64>` **Generation**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Download Object to File
+
+**ID**: `UiPath.GoogleCloud.Activities.GCPDownloadObject@UiPath.GoogleCloud.Activities/2.5.0`
+**Type**: `UiPath.GoogleCloud.Activities.GCPDownloadObject`
+**Category**: Cloud.Google.Storage.Objects
+**Description**: Downloads an object to a specified file.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.GoogleCloud.Models.GCPObject>` **Object**
+- [IN] `InArgument<Int64>` **Generation**
+- [IN] `InArgument<Nullable<Int32>>` **Timeout**
+- [IN] `InArgument<String>` **Folder**
+- [IN] `InArgument<String>` **FileName**
+- [IN] `InArgument<Boolean>` **Overwrite**
+- [OUT] `OutArgument<String>` **FilePath**
+- [OUT] `OutArgument<UiPath.Platform.ResourceHandling.ILocalResource>` **File**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### For Each Object in Bucket
+
+**ID**: `UiPath.GoogleCloud.Activities.GCPForEachObjectInBucket@UiPath.GoogleCloud.Activities/2.5.0`
+**Type**: `UiPath.GoogleCloud.Activities.GCPForEachObjectInBucket`
+**Category**: Cloud.Google.Storage.Objects
+**Description**: Performs an activity or a series of activities on each object in a specified bucket.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.GoogleCloud.Models.GCPBucket>` **Bucket**
+- [IN] `InArgument<String>` **Prefix**
+- [IN] `InArgument<Int32>` **LimitToFirst**
+- [OUT] `OutArgument<Int32>` **Index**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Get Object
+
+**ID**: `UiPath.GoogleCloud.Activities.GCPGetObject@UiPath.GoogleCloud.Activities/2.5.0`
+**Type**: `UiPath.GoogleCloud.Activities.GCPGetObject`
+**Category**: Cloud.Google.Storage.Objects
+**Description**: Retrieves the details of the specified object.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.GoogleCloud.Models.GCPBucket>` **Bucket**
+- [IN, Required] `InArgument<String>` **ObjectName**
+- [IN] `InArgument<Int64>` **Generation**
+- [OUT] `OutArgument<UiPath.GoogleCloud.Models.GCPObject>` **Object**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Upload Object from File
+
+**ID**: `UiPath.GoogleCloud.Activities.GCPUploadObject@UiPath.GoogleCloud.Activities/2.5.0`
+**Type**: `UiPath.GoogleCloud.Activities.GCPUploadObject`
+**Category**: Cloud.Google.Storage.Objects
+**Description**: Uploads a file to a bucket.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.GoogleCloud.Models.GCPBucket>` **Bucket**
+- [IN, Required] `InArgument<String>` **ObjectName**
+- [IN] `InArgument<String>` **FileToUpload**
+- [IN] `InArgument<UiPath.Platform.ResourceHandling.IResource>` **FileResourceToUpload**
+- [IN] `InArgument<String>` **ContentType**
+- [IN] `InArgument<Nullable<Int32>>` **Timeout**
+- [IN] `InArgument<UiPath.Core.Storage>` **StorageClass**
+- [IN] `InArgument<Data.DataTable>` **Metadata**
+- [IN] `InArgument<String>` **PredefinedAcl**
+- [IN] `InArgument<String>` **CustomerManagedKey**
+- [OUT] `OutArgument<UiPath.GoogleCloud.Models.GCPObject>` **Object**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+---

@@ -1,0 +1,284 @@
+# UiPath.IntelligentOCR.Activities 6.27.3
+
+> generator: uips-fixtures catalog v0.2
+> generated: 2026-04-09T22:10:08Z
+> set: studio-intelligent
+> url: https://uips-fixtures.github.io/llms/UiPath.IntelligentOCR.Activities/6.27.3.txt
+> activities: 20
+> authors: UiPath
+**ID format**: `{fullName}@{packageId}/{packageVersion}`
+**Argument directions**: In (input), Out (output), InOut (bidirectional)
+
+---
+### Create Document Classification Action
+
+**ID**: `UiPath.IntelligentOCR.Activities.CreateDocumentClassificationAction@UiPath.IntelligentOCR.Activities/6.27.3`
+**Type**: `UiPath.IntelligentOCR.Activities.CreateDocumentClassificationAction`
+**Description**: Creates a document classification action. To be used in conjunction with the "Wait For Document Classification Action And Resume" activity to collect the results.
+**Arguments**:
+- [IN] `InArgument<UiPath.DocumentProcessing.Contracts.Results.ClassificationResult[]>` **AutomaticClassificationResults**
+- [IN] `InArgument<Boolean>` **EnablePageReorderging**
+- [IN, Required] `InArgument<String>` **ActionTitle**
+- [IN] `InArgument<String>` **ActionCatalog**
+- [IN, Required] `InArgument<UiPath.DocumentProcessing.Contracts.Actions.DocumentActionPriority>` **ActionPriority**
+- [IN, Required] `InArgument<String>` **DocumentPath**
+- [IN, Required] `InArgument<String>` **DocumentText**
+- [IN, Required] `InArgument<UiPath.DocumentProcessing.Contracts.Dom.Document>` **DocumentObjectModel**
+- [IN, Required] `InArgument<UiPath.DocumentProcessing.Contracts.Taxonomy.DocumentTaxonomy>` **Taxonomy**
+- [OUT] `OutArgument<T>` **ActionOutput**
+- [IN, Required] `InArgument<String>` **BucketName**
+- [IN, Required] `InArgument<String>` **BucketFolderPath**
+- [IN] `InArgument<String>` **FolderPath**
+- [IN] `InArgument<Int32>` **TimeoutMs**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **RetryOnFailure**
+### Create Document Validation Action
+
+**ID**: `UiPath.IntelligentOCR.Activities.CreateDocumentValidationAction@UiPath.IntelligentOCR.Activities/6.27.3`
+**Type**: `UiPath.IntelligentOCR.Activities.CreateDocumentValidationAction`
+**Description**: Creates a document validation action. To be used in conjunction with the "Wait For Document Validation Action And Resume" activity to collect the results.
+**Arguments**:
+- [IN] `InArgument<UiPath.DocumentProcessing.Contracts.Results.ExtractionResult>` **AutomaticExtractionResults**
+- [IN] `InArgument<UiPath.DU.Shared.Actions.DisplayModeArgument>` **DisplayMode**
+- [IN] `InArgument<Boolean>` **EnableRTLControls**
+- [IN, Required] `InArgument<String>` **ActionTitle**
+- [IN] `InArgument<String>` **ActionCatalog**
+- [IN, Required] `InArgument<UiPath.DocumentProcessing.Contracts.Actions.DocumentActionPriority>` **ActionPriority**
+- [IN, Required] `InArgument<String>` **DocumentPath**
+- [IN, Required] `InArgument<String>` **DocumentText**
+- [IN, Required] `InArgument<UiPath.DocumentProcessing.Contracts.Dom.Document>` **DocumentObjectModel**
+- [IN, Required] `InArgument<UiPath.DocumentProcessing.Contracts.Taxonomy.DocumentTaxonomy>` **Taxonomy**
+- [OUT] `OutArgument<T>` **ActionOutput**
+- [IN, Required] `InArgument<String>` **BucketName**
+- [IN, Required] `InArgument<String>` **BucketFolderPath**
+- [IN] `InArgument<String>` **FolderPath**
+- [IN] `InArgument<Int32>` **TimeoutMs**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `Nullable<Int32>` **FieldsValidationConfidence**
+- [property] `Boolean` **ShowOnlyRelevantPageRange**
+- [property] `Boolean` **RetryOnFailure**
+### Wait For Document Classification Action And Resume
+
+**ID**: `UiPath.IntelligentOCR.Activities.WaitForDocumentClassificationActionAndResume@UiPath.IntelligentOCR.Activities/6.27.3`
+**Type**: `UiPath.IntelligentOCR.Activities.WaitForDocumentClassificationActionAndResume`
+**Description**: Suspends the workflow until the document classification action is completed and then resumes the workflow. To be used in conjunction with the output of a "Create Document Classification Action" activity.
+**Arguments**:
+- [OUT] `OutArgument<UiPath.DocumentProcessing.Contracts.Results.ClassificationResult[]>` **AutomaticClassificationResults**
+- [OUT] `OutArgument<UiPath.DocumentProcessing.Contracts.Results.ClassificationResult[]>` **ValidatedClassificationResults**
+- [IN, Required] `InArgument<T>` **ActionInput**
+- [IN] `InArgument<String>` **DownloadFolderPath**
+- [OUT] `OutArgument<String>` **DocumentPath**
+- [OUT] `OutArgument<String>` **DocumentText**
+- [OUT] `OutArgument<UiPath.DocumentProcessing.Contracts.Dom.Document>` **DocumentObjectModel**
+- [OUT] `OutArgument<UiPath.DocumentProcessing.Contracts.Taxonomy.DocumentTaxonomy>` **Taxonomy**
+- [OUT] `OutArgument<T>` **ActionOutput**
+- [IN] `InArgument<String>` **StatusMessage**
+- [IN] `InArgument<Int32>` **TimeoutMs**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **RemoveDataFromStorage**
+- [property] `Boolean` **RetryOnFailure**
+### Wait For Document Validation Action And Resume
+
+**ID**: `UiPath.IntelligentOCR.Activities.WaitForDocumentValidationActionAndResume@UiPath.IntelligentOCR.Activities/6.27.3`
+**Type**: `UiPath.IntelligentOCR.Activities.WaitForDocumentValidationActionAndResume`
+**Description**: Suspends the workflow until the document validation action is completed and then resumes the workflow. To be used in conjunction with the output of a "Create Document Validation Action" activity.
+**Arguments**:
+- [OUT] `OutArgument<UiPath.DocumentProcessing.Contracts.Results.ExtractionResult>` **AutomaticExtractionResults**
+- [OUT] `OutArgument<UiPath.DocumentProcessing.Contracts.Results.ExtractionResult>` **ValidatedExtractionResults**
+- [IN, Required] `InArgument<T>` **ActionInput**
+- [IN] `InArgument<String>` **DownloadFolderPath**
+- [OUT] `OutArgument<String>` **DocumentPath**
+- [OUT] `OutArgument<String>` **DocumentText**
+- [OUT] `OutArgument<UiPath.DocumentProcessing.Contracts.Dom.Document>` **DocumentObjectModel**
+- [OUT] `OutArgument<UiPath.DocumentProcessing.Contracts.Taxonomy.DocumentTaxonomy>` **Taxonomy**
+- [OUT] `OutArgument<T>` **ActionOutput**
+- [IN] `InArgument<String>` **StatusMessage**
+- [IN] `InArgument<Int32>` **TimeoutMs**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **RemoveDataFromStorage**
+- [property] `Boolean` **RetryOnFailure**
+### Present Validation Station
+
+**ID**: `UiPath.IntelligentOCR.Activities.ValidationStation.PresentValidationStation@UiPath.IntelligentOCR.Activities/6.27.3`
+**Type**: `UiPath.IntelligentOCR.Activities.ValidationStation.PresentValidationStation`
+**Description**: Opens Validation Station and allows for human review of automatic clasification and data extraction, if any
+**Arguments**:
+- [IN] `InArgument<UiPath.DocumentProcessing.Contracts.Results.ExtractionResult>` **AutomaticExtractionResults**
+- [IN, Required] `InArgument<UiPath.DocumentProcessing.Contracts.Dom.Document>` **DocumentObjectModel**
+- [IN, Required] `InArgument<String>` **DocumentText**
+- [IN, Required] `InArgument<String>` **DocumentPath**
+- [IN, Required] `InArgument<UiPath.DocumentProcessing.Contracts.Taxonomy.DocumentTaxonomy>` **Taxonomy**
+- [IN] `InArgument<UiPath.DU.Shared.Actions.DisplayModeArgument>` **DisplayMode**
+- [IN] `InArgument<Boolean>` **EnableRTLControls**
+- [OUT] `OutArgument<UiPath.DocumentProcessing.Contracts.Results.ExtractionResult>` **ValidatedExtractionResults**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **ShowOnlyRelevantPageRange**
+- [property] `Nullable<Int32>` **FieldsValidationConfidence**
+### Intelligent Keyword Classifier Trainer
+
+**ID**: `UiPath.IntelligentOCR.Activities.Training.IntelligentKeywordClassifierTrainer@UiPath.IntelligentOCR.Activities/6.27.3`
+**Type**: `UiPath.IntelligentOCR.Activities.Training.IntelligentKeywordClassifierTrainer`
+**Description**: Intelligent Keyword Classifier Trainer
+**Arguments**:
+- [IN] `InArgument<String>` **LearningFilePath**
+- [IN-OUT] `InOutArgument<String>` **LearningData**
+### Keyword Based Classifier Trainer
+
+**ID**: `UiPath.IntelligentOCR.Activities.Training.KeywordBasedClassifierTrainer@UiPath.IntelligentOCR.Activities/6.27.3`
+**Type**: `UiPath.IntelligentOCR.Activities.Training.KeywordBasedClassifierTrainer`
+**Description**: Keyword Based Classifier Trainer
+**Arguments**:
+- [IN] `InArgument<String>` **LearningFilePath**
+- [IN-OUT] `InOutArgument<String>` **LearningData**
+### Train Classifiers Scope
+
+**ID**: `UiPath.IntelligentOCR.Activities.Training.TrainClassifiersScope@UiPath.IntelligentOCR.Activities/6.27.3`
+**Type**: `UiPath.IntelligentOCR.Activities.Training.TrainClassifiersScope`
+**Description**: Train Classifiers Scope
+**Arguments**:
+- [IN] `InArgument<UiPath.DocumentProcessing.Contracts.Results.ExtractionResult>` **HumanValidatedData**
+- [IN] `InArgument<UiPath.DocumentProcessing.Contracts.Taxonomy.DocumentTaxonomy>` **Taxonomy**
+- [IN] `InArgument<UiPath.DocumentProcessing.Contracts.Results.ClassificationResult[]>` **HumanValidatedClassificationData**
+- [IN, Required] `InArgument<String>` **DocumentText**
+- [IN, Required] `InArgument<UiPath.DocumentProcessing.Contracts.Dom.Document>` **DocumentObjectModel**
+- [IN, Required] `InArgument<String>` **DocumentPath**
+### Train Extractors Scope
+
+**ID**: `UiPath.IntelligentOCR.Activities.Training.TrainExtractorsScope@UiPath.IntelligentOCR.Activities/6.27.3`
+**Type**: `UiPath.IntelligentOCR.Activities.Training.TrainExtractorsScope`
+**Description**: Train Extractors Scope
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.DocumentProcessing.Contracts.Results.ExtractionResult>` **HumanValidatedData**
+- [IN, Required] `InArgument<String>` **DocumentText**
+- [IN, Required] `InArgument<UiPath.DocumentProcessing.Contracts.Dom.Document>` **DocumentObjectModel**
+- [IN, Required] `InArgument<String>` **DocumentPath**
+### Load Taxonomy
+
+**ID**: `UiPath.IntelligentOCR.Activities.TaxonomyManagement.LoadTaxonomy@UiPath.IntelligentOCR.Activities/6.27.3`
+**Type**: `UiPath.IntelligentOCR.Activities.TaxonomyManagement.LoadTaxonomy`
+**Description**: Load Taxonomy
+**Arguments**:
+- [OUT] `OutArgument<UiPath.DocumentProcessing.Contracts.Taxonomy.DocumentTaxonomy>` **Taxonomy**
+### RunDevAccessProviderHost
+
+**ID**: `UiPath.IntelligentOCR.Activities.Internal.RunDevAccessProviderHost@UiPath.IntelligentOCR.Activities/6.27.3`
+**Type**: `UiPath.IntelligentOCR.Activities.Internal.RunDevAccessProviderHost`
+_No members extracted._
+### Classify Document Scope
+
+**ID**: `UiPath.IntelligentOCR.Activities.DocumentClassification.ClassifyDocumentScope@UiPath.IntelligentOCR.Activities/6.27.3`
+**Type**: `UiPath.IntelligentOCR.Activities.DocumentClassification.ClassifyDocumentScope`
+**Description**: Classify Document Scope
+**Arguments**:
+- [IN, Required] `InArgument<String>` **DocumentText**
+- [IN, Required] `InArgument<UiPath.DocumentProcessing.Contracts.Dom.Document>` **DocumentObjectModel**
+- [IN, Required] `InArgument<String>` **DocumentPath**
+- [IN, Required] `InArgument<UiPath.DocumentProcessing.Contracts.Taxonomy.DocumentTaxonomy>` **Taxonomy**
+- [OUT] `OutArgument<UiPath.DocumentProcessing.Contracts.Results.ClassificationResult[]>` **ClassificationResults**
+### Intelligent Keyword Classifier
+
+**ID**: `UiPath.IntelligentOCR.Activities.DocumentClassification.IntelligentKeywordClassifier@UiPath.IntelligentOCR.Activities/6.27.3`
+**Type**: `UiPath.IntelligentOCR.Activities.DocumentClassification.IntelligentKeywordClassifier`
+**Description**: Intelligent Keyword Classifier
+**Arguments**:
+- [IN] `InArgument<String>` **LearningFilePath**
+- [IN] `InArgument<String>` **LearningData**
+- [IN, Required] `InArgument<String>` **Endpoint**
+- [IN] `InArgument<String>` **ApiKey**
+- [IN] `InArgument<Int32>` **TimeoutMs**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **SendDocumentsForAlgorithmImprovements**
+- [property] `Boolean` **UsePageNumbers**
+- [property] `Boolean` **PerformDocumentSplitting**
+### Keyword Based Classifier
+
+**ID**: `UiPath.IntelligentOCR.Activities.DocumentClassification.KeywordBasedClassifier@UiPath.IntelligentOCR.Activities/6.27.3`
+**Type**: `UiPath.IntelligentOCR.Activities.DocumentClassification.KeywordBasedClassifier`
+**Description**: Keyword Based Classifier
+**Arguments**:
+- [IN] `InArgument<String>` **LearningFilePath**
+- [IN] `InArgument<String>` **LearningData**
+- [IN] `InArgument<String>` **OriginalDocumentText**
+- [IN] `InArgument<UiPath.DocumentProcessing.Contracts.Dom.Document>` **OriginalDocumentObjectModel**
+- [IN] `InArgument<String>` **OriginalDocumentPath**
+### Present Classification Station
+
+**ID**: `UiPath.IntelligentOCR.Activities.DocumentClassification.PresentClassificationStation@UiPath.IntelligentOCR.Activities/6.27.3`
+**Type**: `UiPath.IntelligentOCR.Activities.DocumentClassification.PresentClassificationStation`
+**Description**: Opens Classification Station and allows for human review of automatic document classification
+**Arguments**:
+- [IN] `InArgument<UiPath.DocumentProcessing.Contracts.Results.ClassificationResult[]>` **AutomaticClassificationResults**
+- [IN, Required] `InArgument<UiPath.DocumentProcessing.Contracts.Dom.Document>` **DocumentObjectModel**
+- [IN, Required] `InArgument<String>` **DocumentText**
+- [IN, Required] `InArgument<String>` **DocumentPath**
+- [IN, Required] `InArgument<UiPath.DocumentProcessing.Contracts.Taxonomy.DocumentTaxonomy>` **Taxonomy**
+- [IN] `InArgument<Boolean>` **EnablePageReorderging**
+- [OUT] `OutArgument<UiPath.DocumentProcessing.Contracts.Results.ClassificationResult[]>` **ValidatedClassificationResults**
+### Digitize Document
+
+**ID**: `UiPath.IntelligentOCR.Activities.Digitization.DigitizeDocument@UiPath.IntelligentOCR.Activities/6.27.3`
+**Type**: `UiPath.IntelligentOCR.Activities.Digitization.DigitizeDocument`
+**Description**: Processes PDF and image files to obtain document object model and text version
+**Arguments**:
+- [IN, Required] `InArgument<String>` **DocumentPath**
+- [IN, Required] `InArgument<Int32>` **DegreeOfParallelism**
+- [IN, Required] `InArgument<Boolean>` **DetectCheckboxes**
+- [IN, Required] `InArgument<UiPath.IntelligentOCR.Activities.Digitization.ApplyOcrOnPdfArgument>` **ApplyOcrOnPdf**
+- [OUT] `OutArgument<String>` **DocumentText**
+- [OUT] `OutArgument<UiPath.DocumentProcessing.Contracts.Dom.Document>` **DocumentObjectModel**
+### Data Extraction Scope
+
+**ID**: `UiPath.IntelligentOCR.Activities.DataExtraction.DataExtractionScope@UiPath.IntelligentOCR.Activities/6.27.3`
+**Type**: `UiPath.IntelligentOCR.Activities.DataExtraction.DataExtractionScope`
+**Description**: Data Extraction Scope
+**Arguments**:
+- [IN] `InArgument<UiPath.DocumentProcessing.Contracts.Results.ClassificationResult>` **ClassificationResult**
+- [IN] `InArgument<String>` **DocumentTypeId**
+- [IN, Required] `InArgument<String>` **DocumentText**
+- [IN, Required] `InArgument<UiPath.DocumentProcessing.Contracts.Dom.Document>` **DocumentObjectModel**
+- [IN, Required] `InArgument<String>` **DocumentPath**
+- [IN, Required] `InArgument<UiPath.DocumentProcessing.Contracts.Taxonomy.DocumentTaxonomy>` **Taxonomy**
+- [IN] `InArgument<Int32>` **GenerativeValidationConfidenceThreshold**
+- [OUT] `OutArgument<UiPath.DocumentProcessing.Contracts.Results.ExtractionResult>` **ExtractionResult**
+- [IN] `InArgument<String>` **RuntimeAssetPath**
+- [IN] `InArgument<String>` **RuntimeTenantUrl**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **FormatValuesIfPossible**
+- [property] `Boolean` **ApplyGenerativeValidation**
+### Export Extraction Results
+
+**ID**: `UiPath.IntelligentOCR.Activities.DataExtraction.ExportExtractionResults@UiPath.IntelligentOCR.Activities/6.27.3`
+**Type**: `UiPath.IntelligentOCR.Activities.DataExtraction.ExportExtractionResults`
+**Description**: Exports an ExtractionResults object to a DataSet containing multiple Tables, for all types of fields and values.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.DocumentProcessing.Contracts.Results.ExtractionResult>` **ExtractionResult**
+- [OUT] `OutArgument<Data.DataSet>` **DataSet**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **IncludeConfidence**
+- [property] `Boolean` **IncludeOCRConfidence**
+### Form Extractor
+
+**ID**: `UiPath.IntelligentOCR.Activities.DataExtraction.FormExtractor@UiPath.IntelligentOCR.Activities/6.27.3`
+**Type**: `UiPath.IntelligentOCR.Activities.DataExtraction.FormExtractor`
+**Description**: Data extractor for fixed template document types
+**Arguments**:
+- [IN, Required] `InArgument<String>` **Endpoint**
+- [IN] `InArgument<String>` **ApiKey**
+- [IN, Required] `InArgument<Int32>` **MinOverlapPercentage**
+- [IN, Required] `InArgument<Int32>` **Timeout**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **SendDocumentsForAlgorithmImprovements**
+### Regex Based Extractor
+
+**ID**: `UiPath.IntelligentOCR.Activities.DataExtraction.RegexBasedExtractor@UiPath.IntelligentOCR.Activities/6.27.3`
+**Type**: `UiPath.IntelligentOCR.Activities.DataExtraction.RegexBasedExtractor`
+**Description**: An extractor using regular expressions
+**Arguments**:
+- [IN, Required] `InArgument<String>` **Configuration**
+- [IN, Required] `InArgument<Int32>` **Timeout**
+- [IN] `InArgument<Boolean>` **UseVisualAlignment**
+---

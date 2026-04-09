@@ -1,0 +1,378 @@
+# UiPath.Presentations.Activities 2.4.1
+
+> generator: uips-fixtures catalog v0.2
+> generated: 2026-04-09T22:10:08Z
+> set: integration-service
+> url: https://uips-fixtures.github.io/llms/UiPath.Presentations.Activities/2.4.1.txt
+> activities: 31
+> authors: UiPath
+**ID format**: `{fullName}@{packageId}/{packageVersion}`
+**Argument directions**: In (input), Out (output), InOut (bidirectional)
+
+---
+### Bring to front / Send to back
+
+**ID**: `UiPath.Presentations.Activities.ShapeZOrderSlideContentModification@UiPath.Presentations.Activities/2.4.1`
+**Type**: `UiPath.Presentations.Activities.ShapeZOrderSlideContentModification`
+**Category**: PowerPoint
+**Properties / VariableScope / Child**:
+- [property] `UiPath.Presentations.Activities.ZOrderChangeType` **Action**
+### Set font size
+
+**ID**: `UiPath.Presentations.Activities.ShapeFontSizeSlideContentModification@UiPath.Presentations.Activities/2.4.1`
+**Type**: `UiPath.Presentations.Activities.ShapeFontSizeSlideContentModification`
+**Category**: PowerPoint
+**Arguments**:
+- [IN, Required] `InArgument<Int32>` **FontSize**
+### Change shape name
+
+**ID**: `UiPath.Presentations.Activities.ShapeChangeNameSlideContentModification@UiPath.Presentations.Activities/2.4.1`
+**Type**: `UiPath.Presentations.Activities.ShapeChangeNameSlideContentModification`
+**Category**: PowerPoint
+**Arguments**:
+- [IN, Required] `InArgument<String>` **NewShapeName**
+### Add Text to Slide
+
+**ID**: `UiPath.Presentations.Activities.PptDocumentAddTextToSlide@UiPath.Presentations.Activities/2.4.1`
+**Type**: `UiPath.Presentations.Activities.PptDocumentAddTextToSlide`
+**Category**: PowerPoint
+**Description**: Inserts text into a placeholder. This activity can be used in a setup where Desktop PowerPoint isn’t installed and should be faster than their equivalent.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **FilePath**
+- [IN, Required] `InArgument<UiPath.Platform.ResourceHandling.IResource>` **PathResource**
+- [IN, Required] `InArgument<Int32>` **SlideIndex**
+- [IN, Required] `InArgument<String>` **ShapeName**
+- [IN, Required] `InArgument<String>` **Text**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **ClearExistingText**
+### Create New PowerPoint Document
+
+**ID**: `UiPath.Presentations.Activities.PptDocumentCreateNew@UiPath.Presentations.Activities/2.4.1`
+**Type**: `UiPath.Presentations.Activities.PptDocumentCreateNew`
+**Category**: PowerPoint
+**Description**: Creates a new PowerPoint document in the specified location
+**Arguments**:
+- [IN] `InArgument<String>` **FilePath**
+- [IN] `InArgument<String>` **TemplatePath**
+- [IN] `InArgument<UiPath.Platform.ResourceHandling.IResource>` **TemplateResource**
+- [OUT] `OutArgument<UiPath.Platform.ResourceHandling.IResource>` **Presentation**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **UseTemplate**
+- [property] `Boolean` **PreserveTemplateMetadata**
+- [property] `UiPath.Presentations.Activities.ConflictBehavior` **ConflictResolution**
+### Delete Slide
+
+**ID**: `UiPath.Presentations.Activities.PptDocumentDeleteSlide@UiPath.Presentations.Activities/2.4.1`
+**Type**: `UiPath.Presentations.Activities.PptDocumentDeleteSlide`
+**Category**: PowerPoint
+**Description**: Deletes a slide. This activity can be used in a setup where Desktop PowerPoint isn’t installed and should be faster than their equivalent.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **FilePath**
+- [IN, Required] `InArgument<UiPath.Platform.ResourceHandling.IResource>` **PathResource**
+- [IN, Required] `InArgument<Int32>` **SlideIndex**
+### Replace Text in Presentation
+
+**ID**: `UiPath.Presentations.Activities.PptDocumentFindAndReplaceTextInPresentation@UiPath.Presentations.Activities/2.4.1`
+**Type**: `UiPath.Presentations.Activities.PptDocumentFindAndReplaceTextInPresentation`
+**Category**: PowerPoint
+**Description**: Replaces all occurrences of a text within a presentation with another text. This activity can be used in a setup where Desktop PowerPoint isn’t installed and should be faster than their equivalent.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **FilePath**
+- [IN, Required] `InArgument<UiPath.Platform.ResourceHandling.IResource>` **PathResource**
+- [IN, Required] `InArgument<String>` **SearchFor**
+- [IN] `InArgument<String>` **ReplaceWith**
+- [OUT] `OutArgument<Int32>` **NumberOfReplacements**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **MatchCase**
+- [property] `Boolean` **WholeWordsOnly**
+- [property] `Boolean` **ReplaceAll**
+### Format Slide Content
+
+**ID**: `UiPath.Presentations.Activities.PptDocumentFormatSlideContent@UiPath.Presentations.Activities/2.4.1`
+**Type**: `UiPath.Presentations.Activities.PptDocumentFormatSlideContent`
+**Category**: PowerPoint
+**Arguments**:
+- [IN, Required] `InArgument<String>` **Presentation**
+- [IN, Required] `InArgument<UiPath.Platform.ResourceHandling.IResource>` **PathResource**
+- [IN, Required] `InArgument<Int32>` **SlideNumber**
+- [IN, Required] `InArgument<String>` **ContentToModify**
+### Add New Slide
+
+**ID**: `UiPath.Presentations.Activities.PptDocumentInsertSlide@UiPath.Presentations.Activities/2.4.1`
+**Type**: `UiPath.Presentations.Activities.PptDocumentInsertSlide`
+**Category**: PowerPoint
+**Description**: Replaces all occurrences of a text within a presentation with another text. This activity can be used in a setup where Desktop PowerPoint isn’t installed and should be faster than their equivalent.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **FilePath**
+- [IN, Required] `InArgument<UiPath.Platform.ResourceHandling.IResource>` **PathResource**
+- [IN, Required] `InArgument<String>` **SlideMasterName**
+- [IN, Required] `InArgument<String>` **LayoutName**
+- [IN] `InArgument<Int32>` **InsertPosition**
+- [OUT] `OutArgument<Int32>` **InsertedAtPosition**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.Presentations.Activities.InsertPositionType` **InsertType**
+### Add Data Table to Slide
+
+**ID**: `UiPath.Presentations.Activities.PptDocumentReplaceShapeWithDataTable@UiPath.Presentations.Activities/2.4.1`
+**Type**: `UiPath.Presentations.Activities.PptDocumentReplaceShapeWithDataTable`
+**Category**: PowerPoint
+**Description**: Insert a data table into a presentation. Replace an empty placeholder or a previous DataTable. This activity can be used in a setup where Desktop PowerPoint isn’t installed and should be faster than their equivalent.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **FilePath**
+- [IN, Required] `InArgument<UiPath.Platform.ResourceHandling.IResource>` **PathResource**
+- [IN, Required] `InArgument<Int32>` **SlideIndex**
+- [IN, Required] `InArgument<String>` **ShapeName**
+- [IN, Required] `InArgument<Data.DataTable>` **TableToInsert**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **ExcludeHeaders**
+- [property] `UiPath.Presentations.TableAppendMode` **AppendMode**
+- [property] `Int32` **StartRow**
+- [property] `Int32` **StartColumn**
+### Add Image/Video to Slide
+
+**ID**: `UiPath.Presentations.Activities.PptDocumentReplaceShapeWithMedia@UiPath.Presentations.Activities/2.4.1`
+**Type**: `UiPath.Presentations.Activities.PptDocumentReplaceShapeWithMedia`
+**Category**: PowerPoint
+**Description**: Replaces a placeholder with a media element with the same name. This activity can be used in a setup where Desktop PowerPoint isn’t installed and should be faster than their equivalent.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **FilePath**
+- [IN, Required] `InArgument<UiPath.Platform.ResourceHandling.IResource>` **PathResource**
+- [IN, Required] `InArgument<Int32>` **SlideIndex**
+- [IN, Required] `InArgument<String>` **ShapeName**
+- [IN, Required] `InArgument<String>` **Media**
+- [IN] `InArgument<String>` **NewShapeName**
+- [IN] `InArgument<Nullable<Single>>` **Left**
+- [IN] `InArgument<Nullable<Single>>` **Top**
+- [IN] `InArgument<Nullable<Single>>` **Width**
+- [IN] `InArgument<Nullable<Single>>` **Height**
+### Add sensitivity label
+
+**ID**: `UiPath.Presentations.Activities.AddSensitivityLabel@UiPath.Presentations.Activities/2.4.1`
+**Type**: `UiPath.Presentations.Activities.AddSensitivityLabel`
+**Category**: PowerPoint.Windows
+**Description**: Adds a sensitivity label to a Powerpoint document
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.Presentations.Activities.IPresentationQuickHandle>` **Presentation**
+- [IN, Required] `InArgument<Object>` **SensitivityLabel**
+- [IN] `InArgument<String>` **Justification**
+### Copy Paste Slide
+
+**ID**: `UiPath.Presentations.Activities.CopyPasteSlide@UiPath.Presentations.Activities/2.4.1`
+**Type**: `UiPath.Presentations.Activities.CopyPasteSlide`
+**Category**: PowerPoint.Windows
+**Description**: Copies a slide and paste it to another position.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.Presentations.Activities.IPresentationQuickHandle>` **SourcePresentation**
+- [IN, Required] `InArgument<Int32>` **SlideToCopy**
+- [IN, Required] `InArgument<UiPath.Presentations.Activities.IPresentationQuickHandle>` **DestinationPresentation**
+- [IN, Required] `InArgument<Int32>` **WhereToInsert**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **Move**
+### Delete Slide
+
+**ID**: `UiPath.Presentations.Activities.DeleteSlide@UiPath.Presentations.Activities/2.4.1`
+**Type**: `UiPath.Presentations.Activities.DeleteSlide`
+**Category**: PowerPoint.Windows
+**Description**: Delete a slide.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.Presentations.Activities.IPresentationQuickHandle>` **Presentation**
+- [IN, Required] `InArgument<Int32>` **DeletePosition**
+### Replace Text in Presentation
+
+**ID**: `UiPath.Presentations.Activities.FindAndReplaceTextInPresentation@UiPath.Presentations.Activities/2.4.1`
+**Type**: `UiPath.Presentations.Activities.FindAndReplaceTextInPresentation`
+**Category**: PowerPoint.Windows
+**Description**: Replaces all occurrences of a text within a presentation with another text.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.Presentations.Activities.IPresentationQuickHandle>` **Presentation**
+- [IN, Required] `InArgument<String>` **SearchFor**
+- [IN] `InArgument<String>` **ReplaceWith**
+- [OUT] `OutArgument<Int32>` **NumberOfReplacements**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **MatchCase**
+- [property] `Boolean` **WholeWordsOnly**
+- [property] `Boolean` **ReplaceAll**
+### Format Slide Content
+
+**ID**: `UiPath.Presentations.Activities.FormatSlideContent@UiPath.Presentations.Activities/2.4.1`
+**Type**: `UiPath.Presentations.Activities.FormatSlideContent`
+**Category**: PowerPoint
+**Description**: Enables you to modify formatting slide content.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.Presentations.Activities.IPresentationQuickHandle>` **Presentation**
+- [IN, Required] `InArgument<Int32>` **SlideIndex**
+- [IN, Required] `InArgument<String>` **ShapeName**
+### Bring to front / Send to back
+
+**ID**: `UiPath.Presentations.Activities.ZIndexFormatSlideModification@UiPath.Presentations.Activities/2.4.1`
+**Type**: `UiPath.Presentations.Activities.ZIndexFormatSlideModification`
+**Category**: PowerPoint
+**Properties / VariableScope / Child**:
+- [property] `UiPath.Presentations.Activities.ZIndexChangeType` **Action**
+### Set font size
+
+**ID**: `UiPath.Presentations.Activities.FontSizeFormatSlideContentModification@UiPath.Presentations.Activities/2.4.1`
+**Type**: `UiPath.Presentations.Activities.FontSizeFormatSlideContentModification`
+**Category**: PowerPoint
+**Arguments**:
+- [IN, Required] `InArgument<Int32>` **FontSize**
+### Change shape name
+
+**ID**: `UiPath.Presentations.Activities.ChangeShapeNameSlideContentModification@UiPath.Presentations.Activities/2.4.1`
+**Type**: `UiPath.Presentations.Activities.ChangeShapeNameSlideContentModification`
+**Category**: PowerPoint
+**Arguments**:
+- [IN, Required] `InArgument<String>` **NewShapeName**
+### Get sensitivity label
+
+**ID**: `UiPath.Presentations.Activities.GetSensitivityLabel@UiPath.Presentations.Activities/2.4.1`
+**Type**: `UiPath.Presentations.Activities.GetSensitivityLabel`
+**Category**: PowerPoint.Windows
+**Description**: Retrieves the sensitivity label from a Powerpoint file
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.Presentations.Activities.IPresentationQuickHandle>` **Presentation**
+- [OUT] `OutArgument<UiPath.Presentations.IPptLabelObject>` **SensitivityLabel**
+### Add File to Slide
+
+**ID**: `UiPath.Presentations.Activities.InsertFile@UiPath.Presentations.Activities/2.4.1`
+**Type**: `UiPath.Presentations.Activities.InsertFile`
+**Category**: PowerPoint.Windows
+**Description**: Inserts a file from the disk to a slide and displays it as an icon.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.Presentations.Activities.IPresentationQuickHandle>` **Presentation**
+- [IN, Required] `InArgument<Int32>` **SlideIndex**
+- [IN] `InArgument<String>` **ShapeName**
+- [IN, Required] `InArgument<String>` **FilePath**
+- [IN] `InArgument<String>` **IconLabel**
+- [IN] `InArgument<String>` **NewShapeName**
+### Add New Slide
+
+**ID**: `UiPath.Presentations.Activities.InsertSlide@UiPath.Presentations.Activities/2.4.1`
+**Type**: `UiPath.Presentations.Activities.InsertSlide`
+**Category**: PowerPoint.Windows
+**Description**: Insert a new slide.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.Presentations.Activities.IPresentationQuickHandle>` **Presentation**
+- [IN, Required] `InArgument<String>` **SlideMasterName**
+- [IN, Required] `InArgument<String>` **LayoutName**
+- [IN] `InArgument<Int32>` **InsertPosition**
+- [OUT] `OutArgument<Int32>` **InsertedAtPosition**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.Presentations.Activities.InsertPositionType` **InsertType**
+### Add Text to Slide
+
+**ID**: `UiPath.Presentations.Activities.InsertTextInPresentation@UiPath.Presentations.Activities/2.4.1`
+**Type**: `UiPath.Presentations.Activities.InsertTextInPresentation`
+**Category**: PowerPoint.Windows
+**Description**: Inserts text into a placeholder.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.Presentations.Activities.IPresentationQuickHandle>` **Presentation**
+- [IN, Required] `InArgument<Int32>` **SlideIndex**
+- [IN, Required] `InArgument<String>` **ShapeName**
+- [IN, Required] `InArgument<String>` **Text**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **ClearExistingText**
+### Paste Item into Slide
+
+**ID**: `UiPath.Presentations.Activities.PasteIntoSlide@UiPath.Presentations.Activities/2.4.1`
+**Type**: `UiPath.Presentations.Activities.PasteIntoSlide`
+**Category**: PowerPoint.Windows
+**Description**: Pastes the clipboard content into a presentation.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.Presentations.Activities.IPresentationQuickHandle>` **Presentation**
+- [IN, Required] `InArgument<Int32>` **SlideIndex**
+- [IN, Required] `InArgument<String>` **ShapeName**
+- [IN] `InArgument<Nullable<Single>>` **Left**
+- [IN] `InArgument<Nullable<Single>>` **Top**
+- [IN] `InArgument<Nullable<Single>>` **Width**
+- [IN] `InArgument<Nullable<Single>>` **Height**
+- [IN] `InArgument<String>` **NewShapeName**
+### Use PowerPoint Presentation
+
+**ID**: `UiPath.Presentations.Activities.PowerPointApplicationScope@UiPath.Presentations.Activities/2.4.1`
+**Type**: `UiPath.Presentations.Activities.PowerPointApplicationScope`
+**Category**: PowerPoint.Windows
+**Description**: Open or create a PowerPoint file to use in your automation.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **PresentationPath**
+- [IN] `InArgument<String>` **Password**
+- [IN] `InArgument<String>` **EditPassword**
+- [IN] `InArgument<Object>` **SensitivityLabel**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **CreateIfNotExists**
+- [property] `Boolean` **AutoSave**
+- [property] `Boolean` **ReadOnly**
+- [property] `UiPath.Presentations.PptLabelOperation` **SensitivityOperation**
+### Add Data Table to Slide
+
+**ID**: `UiPath.Presentations.Activities.ReplaceShapeWithDataTable@UiPath.Presentations.Activities/2.4.1`
+**Type**: `UiPath.Presentations.Activities.ReplaceShapeWithDataTable`
+**Category**: PowerPoint.Windows
+**Description**: Insert a data table into a presentation. Replace an empty placeholder or a previous Datatable.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.Presentations.Activities.IPresentationQuickHandle>` **Presentation**
+- [IN, Required] `InArgument<Int32>` **SlideIndex**
+- [IN, Required] `InArgument<String>` **ShapeName**
+- [IN, Required] `InArgument<Data.DataTable>` **TableToInsert**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **ExcludeHeaders**
+- [property] `UiPath.Presentations.TableAppendMode` **AppendMode**
+- [property] `Int32` **StartRow**
+- [property] `Int32` **StartColumn**
+### Add Image/Video to Slide
+
+**ID**: `UiPath.Presentations.Activities.ReplaceShapeWithMedia@UiPath.Presentations.Activities/2.4.1`
+**Type**: `UiPath.Presentations.Activities.ReplaceShapeWithMedia`
+**Category**: PowerPoint.Windows
+**Description**: Replaces a placeholder with a media element with the same name.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.Presentations.Activities.IPresentationQuickHandle>` **Presentation**
+- [IN, Required] `InArgument<Int32>` **SlideIndex**
+- [IN, Required] `InArgument<String>` **ShapeName**
+- [IN, Required] `InArgument<String>` **Media**
+- [IN] `InArgument<String>` **NewShapeName**
+- [IN] `InArgument<Nullable<Single>>` **Left**
+- [IN] `InArgument<Nullable<Single>>` **Top**
+- [IN] `InArgument<Nullable<Single>>` **Width**
+- [IN] `InArgument<Nullable<Single>>` **Height**
+### Run Presentation Macro
+
+**ID**: `UiPath.Presentations.Activities.RunMacro@UiPath.Presentations.Activities/2.4.1`
+**Type**: `UiPath.Presentations.Activities.RunMacro`
+**Category**: PowerPoint
+**Description**: Runs a specified macro in a macro-enabled presentation.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.Presentations.Activities.IPresentationQuickHandle>` **Presentation**
+- [IN, Required] `InArgument<String>` **MacroName**
+- [OUT] `OutArgument` **Result**
+### Macro Argument
+
+**ID**: `UiPath.Presentations.Activities.RunMacroArgument@UiPath.Presentations.Activities/2.4.1`
+**Type**: `UiPath.Presentations.Activities.RunMacroArgument`
+**Category**: PowerPoint
+**Arguments**:
+- [IN, Required] `InArgument<Object>` **ArgumentValue**
+### Save Presentation as PDF
+
+**ID**: `UiPath.Presentations.Activities.SavePresentationAsPdf@UiPath.Presentations.Activities/2.4.1`
+**Type**: `UiPath.Presentations.Activities.SavePresentationAsPdf`
+**Category**: PowerPoint.Windows
+**Description**: Exports a PowerPoint presentation to PDF.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.Presentations.Activities.IPresentationQuickHandle>` **Presentation**
+- [IN, Required] `InArgument<String>` **PdfPath**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **ReplaceExisting**
+### Save PowerPoint File As
+
+**ID**: `UiPath.Presentations.Activities.SavePresentationFileAs@UiPath.Presentations.Activities/2.4.1`
+**Type**: `UiPath.Presentations.Activities.SavePresentationFileAs`
+**Category**: PowerPoint.Windows
+**Description**: Save a PowerPoint file as a new file.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.Presentations.Activities.IPresentationQuickHandle>` **Presentation**
+- [IN, Required] `InArgument<String>` **FilePath**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.Presentations.PresentationSaveAsType` **SaveAsFileType**
+- [property] `Boolean` **ReplaceExisting**
+---

@@ -1,0 +1,52 @@
+# UiPath.AppleMail.Activities 1.0.2
+
+> generator: uips-fixtures catalog v0.2
+> generated: 2026-04-09T22:10:08Z
+> set: full-catalog
+> url: https://uips-fixtures.github.io/llms/UiPath.AppleMail.Activities/1.0.2.txt
+> activities: 3
+> authors: UiPath
+**ID format**: `{fullName}@{packageId}/{packageVersion}`
+**Argument directions**: In (input), Out (output), InOut (bidirectional)
+
+---
+### For Each Email
+
+**ID**: `UiPath.AppleMail.Activities.ForEachEmail@UiPath.AppleMail.Activities/1.0.2`
+**Type**: `UiPath.AppleMail.Activities.ForEachEmail`
+**Category**: App Integration.Apple.Mail
+**Description**: Executes one or more activities for each email message in the specified folder
+**Arguments**:
+- [IN] `InArgument<String>` **Account**
+- [IN] `InArgument<String>` **Folder**
+- [IN] `InArgument<Int32>` **Top**
+- [IN] `InArgument<Boolean>` **DownloadAttachments**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.AppleMail.Activities.Filters.MailFilterCollection` **Filter**
+- [property] `String` **CurrentItemVariableName**
+### List Accounts
+
+**ID**: `UiPath.AppleMail.Activities.GetAccountList@UiPath.AppleMail.Activities/1.0.2`
+**Type**: `UiPath.AppleMail.Activities.GetAccountList`
+**Category**: App Integration.Apple.Mail
+**Description**: Lists all mail folders from all accounts
+_No members extracted._
+### Send Email
+
+**ID**: `UiPath.AppleMail.Activities.SendEmail@UiPath.AppleMail.Activities/1.0.2`
+**Type**: `UiPath.AppleMail.Activities.SendEmail`
+**Category**: App Integration.Apple.Mail
+**Description**: Sends an email message
+**Arguments**:
+- [IN, Required] `InArgument<IEnumerable<String>>` **To**
+- [IN] `InArgument<IEnumerable<String>>` **Cc**
+- [IN] `InArgument<IEnumerable<String>>` **Bcc**
+- [IN] `InArgument<String>` **Subject**
+- [IN] `InArgument<String>` **Body**
+- [IN] `InArgument<IEnumerable<UiPath.Platform.ResourceHandling.IResource>>` **Attachments**
+- [IN] `InArgument<String>` **AccountEmail**
+- [IN] `InArgument<IEnumerable<String>>` **ReplyTo**
+- [IN] `InArgument<Boolean>` **SaveAsDraft**
+**Properties / VariableScope / Child**:
+- [property] `IEnumerable<InArgument<UiPath.Platform.ResourceHandling.IResource>>` **AttachmentList**
+---

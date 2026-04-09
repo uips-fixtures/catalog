@@ -1,0 +1,37 @@
+# UiPath.WorkflowEvents.Activities 3.35.1
+
+> generator: uips-fixtures catalog v0.2
+> generated: 2026-04-09T22:10:08Z
+> set: studio-intelligent
+> url: https://uips-fixtures.github.io/llms/UiPath.WorkflowEvents.Activities/3.35.1.txt
+> activities: 3
+> authors: UiPath
+**ID format**: `{fullName}@{packageId}/{packageVersion}`
+**Argument directions**: In (input), Out (output), InOut (bidirectional)
+
+---
+### Apps Request Trigger
+
+**ID**: `UiPath.WorkflowEvents.Activities.AppRequestTrigger@UiPath.WorkflowEvents.Activities/3.35.1`
+**Type**: `UiPath.WorkflowEvents.Activities.AppRequestTrigger`
+**Description**: [Internal] Trigger to invoke workflow file from Apps
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **Enabled**
+### Handle Apps Request
+
+**ID**: `UiPath.WorkflowEvents.Activities.HandleAppRequest@UiPath.WorkflowEvents.Activities/3.35.1`
+**Type**: `UiPath.WorkflowEvents.Activities.HandleAppRequest`
+**Description**: [Internal] A helper activity that works with Apps Trigger Activity, to run the workflow and send back result
+**Arguments**:
+- [IN] `InArgument<TimeSpan>` **Timeout**
+- [IN, Required] `InArgument<UiPath.WorkflowEvents.Activities.Models.AppRequestTriggerArgs>` **Arguments**
+- [IN] `InArgument<DateTime>` **StartTime**
+### Send Interim Result
+
+**ID**: `UiPath.WorkflowEvents.Activities.SendInterimResult@UiPath.WorkflowEvents.Activities/3.35.1`
+**Type**: `UiPath.WorkflowEvents.Activities.SendInterimResult`
+**Description**: Send Interim Result (IPR  or Interim Process Result) activity allows you to send the results of an Attended Job to a UiPath Apps, or a custom app using Robot.js, before it has finished executing. Select an output argument and value to set, it'll update the out argument with the value and send it out to the app.
+**Arguments**:
+- [OUT, Required] `OutArgument` **ArgumentName**
+- [IN, Required] `InArgument` **ArgumentValue**
+---

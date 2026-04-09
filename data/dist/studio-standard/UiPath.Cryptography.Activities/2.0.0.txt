@@ -1,0 +1,99 @@
+# UiPath.Cryptography.Activities 2.0.0
+
+> generator: uips-fixtures catalog v0.2
+> generated: 2026-04-09T22:10:08Z
+> set: studio-standard
+> url: https://uips-fixtures.github.io/llms/UiPath.Cryptography.Activities/2.0.0.txt
+> activities: 6
+> authors: UiPath
+**ID format**: `{fullName}@{packageId}/{packageVersion}`
+**Argument directions**: In (input), Out (output), InOut (bidirectional)
+
+---
+### Decrypt File
+
+**ID**: `UiPath.Cryptography.Activities.DecryptFile@UiPath.Cryptography.Activities/2.0.0`
+**Type**: `UiPath.Cryptography.Activities.DecryptFile`
+**Description**: Decrypts a file based on a specified key encoding and algorithm.
+**Arguments**:
+- [IN] `InArgument<String>` **InputFilePath**
+- [IN] `InArgument<String>` **Key**
+- [IN] `InArgument<Security.SecureString>` **KeySecureString**
+- [IN] `InArgument<Text.Encoding>` **KeyEncoding**
+- [IN] `InArgument<String>` **OutputFilePath**
+- [IN] `InArgument<String>` **OutputFileName**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.Cryptography.SymmetricAlgorithms` **Algorithm**
+- [property] `Boolean` **Overwrite**
+### Decrypt Text
+
+**ID**: `UiPath.Cryptography.Activities.DecryptText@UiPath.Cryptography.Activities/2.0.0`
+**Type**: `UiPath.Cryptography.Activities.DecryptText`
+**Description**: Decrypts text based on a specified key encoding and algorithm.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **Input**
+- [IN] `InArgument<String>` **Key**
+- [IN] `InArgument<Security.SecureString>` **KeySecureString**
+- [IN] `InArgument<Text.Encoding>` **Encoding**
+- [OUT] `OutArgument<String>` **Result**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.Cryptography.SymmetricAlgorithms` **Algorithm**
+### Encrypt File
+
+**ID**: `UiPath.Cryptography.Activities.EncryptFile@UiPath.Cryptography.Activities/2.0.0`
+**Type**: `UiPath.Cryptography.Activities.EncryptFile`
+**Description**: Encrypts a file with a key based on a specified key encoding and algorithm.
+**Arguments**:
+- [IN] `InArgument<String>` **InputFilePath**
+- [IN] `InArgument<String>` **Key**
+- [IN] `InArgument<Security.SecureString>` **KeySecureString**
+- [IN] `InArgument<Text.Encoding>` **KeyEncoding**
+- [IN] `InArgument<String>` **OutputFilePath**
+- [IN] `InArgument<String>` **OutputFileName**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.Cryptography.SymmetricAlgorithms` **Algorithm**
+- [property] `Boolean` **Overwrite**
+### Encrypt Text
+
+**ID**: `UiPath.Cryptography.Activities.EncryptText@UiPath.Cryptography.Activities/2.0.0`
+**Type**: `UiPath.Cryptography.Activities.EncryptText`
+**Description**: Encrypts a string with a key based on a specified key encoding and algorithm.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **Input**
+- [IN] `InArgument<String>` **Key**
+- [IN] `InArgument<Security.SecureString>` **KeySecureString**
+- [IN] `InArgument<Text.Encoding>` **Encoding**
+- [OUT] `OutArgument<String>` **Result**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.Cryptography.SymmetricAlgorithms` **Algorithm**
+### Hash File
+
+**ID**: `UiPath.Cryptography.Activities.KeyedHashFile@UiPath.Cryptography.Activities/2.0.0`
+**Type**: `UiPath.Cryptography.Activities.KeyedHashFile`
+**Description**: Hashes a file with a key using a specified algorithm and returns the hexadecimal string representation of the resulting hash. It supports hashing algorithms with a key and without a key.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **FilePath**
+- [IN] `InArgument<String>` **Key**
+- [IN] `InArgument<Security.SecureString>` **KeySecureString**
+- [OUT] `OutArgument<String>` **Result**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.Cryptography.KeyedHashAlgorithms` **Algorithm**
+### Hash Text
+
+**ID**: `UiPath.Cryptography.Activities.KeyedHashText@UiPath.Cryptography.Activities/2.0.0`
+**Type**: `UiPath.Cryptography.Activities.KeyedHashText`
+**Description**: Hashes a string with a key using a specified algorithm and returns the hexadecimal string representation of the resulting hash. It supports hashing algorithms with a key and without a key.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **Input**
+- [IN] `InArgument<String>` **Key**
+- [IN] `InArgument<Security.SecureString>` **KeySecureString**
+- [OUT] `OutArgument<String>` **Result**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.Cryptography.KeyedHashAlgorithms` **Algorithm**
+---

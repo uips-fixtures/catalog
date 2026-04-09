@@ -1,0 +1,685 @@
+# UiPath.ActiveDirectoryDomainServices.Activities 1.7.1
+
+> generator: uips-fixtures catalog v0.2
+> generated: 2026-04-09T22:10:08Z
+> set: full-catalog
+> url: https://uips-fixtures.github.io/llms/UiPath.ActiveDirectoryDomainServices.Activities/1.7.1.txt
+> activities: 39
+> authors: UiPath
+**ID format**: `{fullName}@{packageId}/{packageVersion}`
+**Argument directions**: In (input), Out (output), InOut (bidirectional)
+
+---
+### Active Directory Scope
+
+**ID**: `UiPath.ActiveDirectoryDomainServices.Activities.ActiveDirectoryScope@UiPath.ActiveDirectoryDomainServices.Activities/1.7.1`
+**Type**: `UiPath.ActiveDirectoryDomainServices.Activities.ActiveDirectoryScope`
+**Description**: Connects to Active Directory and provides a scope for other Active Directory activities.
+**Arguments**:
+- [IN] `InArgument<String>` **Username**
+- [IN] `InArgument<Security.SecureString>` **Password**
+- [IN] `InArgument<String>` **ActiveDirectoryServer**
+- [IN] `InArgument<Int32>` **Port**
+- [IN] `InArgument<String>` **SecondaryUsername**
+- [IN] `InArgument<Security.SecureString>` **SecondaryPassword**
+- [IN] `InArgument<String>` **SecondaryActiveDirectoryServer**
+- [IN] `InArgument<Int32>` **SecondaryPort**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.ActiveDirectoryDomainServices.Core.ConnectionType` **ConnectionType**
+- [property] `UiPath.ActiveDirectoryDomainServices.Core.ConnectionType` **SecondaryConnectionType**
+### Get Object Distinguished Name
+
+**ID**: `UiPath.ActiveDirectoryDomainServices.Activities.GetObjectDistinguishedName@UiPath.ActiveDirectoryDomainServices.Activities/1.7.1`
+**Type**: `UiPath.ActiveDirectoryDomainServices.Activities.GetObjectDistinguishedName`
+**Description**: Retrieves the distinguished name of a given Active Directory object.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **SAMAccountName**
+- [OUT] `OutArgument<String>` **DistinguishedName**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.ActiveDirectoryDomainServices.Core.ConnectionWithoutAuto` **Connection**
+- [property] `String` **ScopeTag**
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Get Object Properties
+
+**ID**: `UiPath.ActiveDirectoryDomainServices.Activities.GetObjectProperties@UiPath.ActiveDirectoryDomainServices.Activities/1.7.1`
+**Type**: `UiPath.ActiveDirectoryDomainServices.Activities.GetObjectProperties`
+**Description**: Retrieves all properties and their values for the specified object if SingleProperty is empty or only the value for a single property if SingleProperty parameter is set.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **DistinguishedName**
+- [IN] `InArgument<String>` **SingleProperty**
+- [OUT] `OutArgument<Object>` **SinglePropertyValue**
+- [OUT] `OutArgument<Dictionary<String, Object>>` **AllProperties**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.ActiveDirectoryDomainServices.Core.Connection` **Connection**
+- [property] `String` **ScopeTag**
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Get Objects by Filter
+
+**ID**: `UiPath.ActiveDirectoryDomainServices.Activities.GetObjectsByFilter@UiPath.ActiveDirectoryDomainServices.Activities/1.7.1`
+**Type**: `UiPath.ActiveDirectoryDomainServices.Activities.GetObjectsByFilter`
+**Description**: Retrieves the list of Active Directory objects based on an input filter.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **PropertyToFilterBy**
+- [IN, Required] `InArgument<String>` **PropertyValue**
+- [IN] `InArgument<String>` **ObjectClass**
+- [IN] `InArgument<String>` **ObjectCategory**
+- [IN] `InArgument<String>` **Location**
+- [OUT] `OutArgument<String[]>` **Objects**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.ActiveDirectoryDomainServices.Core.Relation` **Relation**
+- [property] `UiPath.ActiveDirectoryDomainServices.Core.ConnectionWithoutAuto` **Connection**
+- [property] `String` **ScopeTag**
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Get Objects by LDAP Filter
+
+**ID**: `UiPath.ActiveDirectoryDomainServices.Activities.GetObjectsByLDAPFilter@UiPath.ActiveDirectoryDomainServices.Activities/1.7.1`
+**Type**: `UiPath.ActiveDirectoryDomainServices.Activities.GetObjectsByLDAPFilter`
+**Description**: Retrieves the list of Active Directory objects matching an LDAP (Lightweight Directory Access Protocol) filter.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **LDAPFilter**
+- [IN] `InArgument<String>` **Location**
+- [OUT] `OutArgument<String[]>` **Objects**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.ActiveDirectoryDomainServices.Core.ConnectionWithoutAuto` **Connection**
+- [property] `String` **ScopeTag**
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Is Object Member of Group
+
+**ID**: `UiPath.ActiveDirectoryDomainServices.Activities.IsObjectMemberOfGroup@UiPath.ActiveDirectoryDomainServices.Activities/1.7.1`
+**Type**: `UiPath.ActiveDirectoryDomainServices.Activities.IsObjectMemberOfGroup`
+**Description**: Checks whether a given object belongs to a group.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **ObjectDistinguishedName**
+- [IN, Required] `InArgument<String>` **GroupDistinguishedName**
+- [OUT] `OutArgument<Boolean>` **IsMember**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **RecurseIntoChildGroups**
+- [property] `UiPath.ActiveDirectoryDomainServices.Core.Connection` **Connection**
+- [property] `UiPath.ActiveDirectoryDomainServices.Core.Connection` **SecondConnection**
+- [property] `String` **ScopeTag**
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Move Object
+
+**ID**: `UiPath.ActiveDirectoryDomainServices.Activities.MoveObject@UiPath.ActiveDirectoryDomainServices.Activities/1.7.1`
+**Type**: `UiPath.ActiveDirectoryDomainServices.Activities.MoveObject`
+**Description**: Moves an object to a new location in Active Directory.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **ObjectDistinguishedName**
+- [IN, Required] `InArgument<String>` **NewParentDistinguishedName**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.ActiveDirectoryDomainServices.Core.Connection` **Connection**
+- [property] `String` **ScopeTag**
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Rename Object
+
+**ID**: `UiPath.ActiveDirectoryDomainServices.Activities.RenameObject@UiPath.ActiveDirectoryDomainServices.Activities/1.7.1`
+**Type**: `UiPath.ActiveDirectoryDomainServices.Activities.RenameObject`
+**Description**: Renames an Active Directory object.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **ObjectDistinguishedName**
+- [IN, Required] `InArgument<String>` **NewCommonName**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.ActiveDirectoryDomainServices.Core.Connection` **Connection**
+- [property] `String` **ScopeTag**
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Update Object Properties
+
+**ID**: `UiPath.ActiveDirectoryDomainServices.Activities.UpdateObjectProperties@UiPath.ActiveDirectoryDomainServices.Activities/1.7.1`
+**Type**: `UiPath.ActiveDirectoryDomainServices.Activities.UpdateObjectProperties`
+**Description**: Updates the specified properties of an object.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **DistinguishedName**
+- [IN] `InArgument<String>` **SingleProperty**
+- [IN] `InArgument<Object>` **SinglePropertyValue**
+- [IN] `InArgument<Data.DataTable>` **Properties**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.ActiveDirectoryDomainServices.Core.Connection` **Connection**
+- [property] `String` **ScopeTag**
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Add Computer to Group
+
+**ID**: `UiPath.ActiveDirectoryDomainServices.Activities.AddComputerToGroup@UiPath.ActiveDirectoryDomainServices.Activities/1.7.1`
+**Type**: `UiPath.ActiveDirectoryDomainServices.Activities.AddComputerToGroup`
+**Description**: Adds a computer to a group.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **ComputerDistinguishedName**
+- [IN, Required] `InArgument<String>` **GroupDistinguishedName**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.ActiveDirectoryDomainServices.Core.Connection` **Connection**
+- [property] `UiPath.ActiveDirectoryDomainServices.Core.Connection` **SecondConnection**
+- [property] `String` **ScopeTag**
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Computer Exists
+
+**ID**: `UiPath.ActiveDirectoryDomainServices.Activities.ComputerExists@UiPath.ActiveDirectoryDomainServices.Activities/1.7.1`
+**Type**: `UiPath.ActiveDirectoryDomainServices.Activities.ComputerExists`
+**Description**: Checks if a computer exists in Active Directory.
+**Arguments**:
+- [IN] `InArgument<String>` **Location**
+- [OUT] `OutArgument<Boolean>` **Exists**
+- [IN, Required] `InArgument<String>` **Value**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.ActiveDirectoryDomainServices.Core.ObjectPropertyFilter` **CheckComputerBy**
+- [property] `UiPath.ActiveDirectoryDomainServices.Core.ConnectionWithoutAuto` **Connection**
+- [property] `String` **ScopeTag**
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Create Computer
+
+**ID**: `UiPath.ActiveDirectoryDomainServices.Activities.CreateComputer@UiPath.ActiveDirectoryDomainServices.Activities/1.7.1`
+**Type**: `UiPath.ActiveDirectoryDomainServices.Activities.CreateComputer`
+**Description**: Creates a new computer in Active Directory
+**Arguments**:
+- [IN, Required] `InArgument<String>` **CommonName**
+- [IN, Required] `InArgument<String>` **SAMAccountName**
+- [IN] `InArgument<Data.DataTable>` **Properties**
+- [IN, Required] `InArgument<String>` **Location**
+- [OUT] `OutArgument<String>` **DistinguishedName**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **Enabled**
+- [property] `UiPath.ActiveDirectoryDomainServices.Core.Connection` **Connection**
+- [property] `String` **ScopeTag**
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Delete Computer
+
+**ID**: `UiPath.ActiveDirectoryDomainServices.Activities.DeleteComputer@UiPath.ActiveDirectoryDomainServices.Activities/1.7.1`
+**Type**: `UiPath.ActiveDirectoryDomainServices.Activities.DeleteComputer`
+**Description**: Deletes a computer from Active Directory
+**Arguments**:
+- [IN, Required] `InArgument<String>` **DistinguishedName**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **Recursive**
+- [property] `UiPath.ActiveDirectoryDomainServices.Core.Connection` **Connection**
+- [property] `String` **ScopeTag**
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Get Computer Status
+
+**ID**: `UiPath.ActiveDirectoryDomainServices.Activities.GetComputerStatus@UiPath.ActiveDirectoryDomainServices.Activities/1.7.1`
+**Type**: `UiPath.ActiveDirectoryDomainServices.Activities.GetComputerStatus`
+**Description**: Retrieves the active status of a computer.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **DistinguishedName**
+- [OUT] `OutArgument<UiPath.ActiveDirectoryDomainServices.Core.ActiveStatus>` **ActiveStatus**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.ActiveDirectoryDomainServices.Core.Connection` **Connection**
+- [property] `String` **ScopeTag**
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Join Computer to Domain
+
+**ID**: `UiPath.ActiveDirectoryDomainServices.Activities.JoinComputerToDomain@UiPath.ActiveDirectoryDomainServices.Activities/1.7.1`
+**Type**: `UiPath.ActiveDirectoryDomainServices.Activities.JoinComputerToDomain`
+**Description**: Adds a computer to the domain.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **ComputerName**
+- [IN] `InArgument<String>` **Location**
+- [IN] `InArgument<String>` **LocalComputerAccount**
+- [IN] `InArgument<Security.SecureString>` **LocalComputerAccountPassword**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **CreateComputerAccount**
+- [property] `Boolean` **Rejoin**
+- [property] `UiPath.ActiveDirectoryDomainServices.Core.ConnectionWithoutAuto` **Connection**
+- [property] `String` **ScopeTag**
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Remove Computer from Group
+
+**ID**: `UiPath.ActiveDirectoryDomainServices.Activities.RemoveComputerFromGroup@UiPath.ActiveDirectoryDomainServices.Activities/1.7.1`
+**Type**: `UiPath.ActiveDirectoryDomainServices.Activities.RemoveComputerFromGroup`
+**Description**: Removes a computer from a group.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **ComputerDistinguishedName**
+- [IN, Required] `InArgument<String>` **GroupDistinguishedName**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.ActiveDirectoryDomainServices.Core.Connection` **Connection**
+- [property] `UiPath.ActiveDirectoryDomainServices.Core.Connection` **SecondConnection**
+- [property] `String` **ScopeTag**
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Set Computer Status
+
+**ID**: `UiPath.ActiveDirectoryDomainServices.Activities.SetComputerStatus@UiPath.ActiveDirectoryDomainServices.Activities/1.7.1`
+**Type**: `UiPath.ActiveDirectoryDomainServices.Activities.SetComputerStatus`
+**Description**: Sets the active status of a computer.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **DistinguishedName**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.ActiveDirectoryDomainServices.Core.ActiveStatus` **Status**
+- [property] `UiPath.ActiveDirectoryDomainServices.Core.Connection` **Connection**
+- [property] `String` **ScopeTag**
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Unjoin Computer from Domain
+
+**ID**: `UiPath.ActiveDirectoryDomainServices.Activities.UnjoinComputerFromDomain@UiPath.ActiveDirectoryDomainServices.Activities/1.7.1`
+**Type**: `UiPath.ActiveDirectoryDomainServices.Activities.UnjoinComputerFromDomain`
+**Description**: Removes a computer from the domain.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **ComputerName**
+- [IN] `InArgument<String>` **LocalComputerAccount**
+- [IN] `InArgument<Security.SecureString>` **LocalComputerAccountPassword**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **DisableComputerAccount**
+- [property] `UiPath.ActiveDirectoryDomainServices.Core.ConnectionWithoutAuto` **Connection**
+- [property] `String` **ScopeTag**
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Add Group to Group
+
+**ID**: `UiPath.ActiveDirectoryDomainServices.Activities.AddGroupToGroup@UiPath.ActiveDirectoryDomainServices.Activities/1.7.1`
+**Type**: `UiPath.ActiveDirectoryDomainServices.Activities.AddGroupToGroup`
+**Description**: Adds a group to another group.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **GroupDistinguishedName**
+- [IN, Required] `InArgument<String>` **ParentGroupDistinguishedName**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.ActiveDirectoryDomainServices.Core.Connection` **Connection**
+- [property] `UiPath.ActiveDirectoryDomainServices.Core.Connection` **SecondConnection**
+- [property] `String` **ScopeTag**
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Create Group
+
+**ID**: `UiPath.ActiveDirectoryDomainServices.Activities.CreateGroup@UiPath.ActiveDirectoryDomainServices.Activities/1.7.1`
+**Type**: `UiPath.ActiveDirectoryDomainServices.Activities.CreateGroup`
+**Description**: Creates a new group in Active Directory.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **CommonName**
+- [IN, Required] `InArgument<String>` **SAMAccountName**
+- [IN] `InArgument<Data.DataTable>` **Properties**
+- [IN, Required] `InArgument<String>` **Location**
+- [OUT] `OutArgument<String>` **DistinguishedName**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.ActiveDirectoryDomainServices.Core.GroupType` **Type**
+- [property] `UiPath.ActiveDirectoryDomainServices.Core.Connection` **Connection**
+- [property] `String` **ScopeTag**
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Delete Group
+
+**ID**: `UiPath.ActiveDirectoryDomainServices.Activities.DeleteGroup@UiPath.ActiveDirectoryDomainServices.Activities/1.7.1`
+**Type**: `UiPath.ActiveDirectoryDomainServices.Activities.DeleteGroup`
+**Description**: Deletes a group from Active Directory.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **DistinguishedName**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **Recursive**
+- [property] `UiPath.ActiveDirectoryDomainServices.Core.Connection` **Connection**
+- [property] `String` **ScopeTag**
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Get Computers in Group
+
+**ID**: `UiPath.ActiveDirectoryDomainServices.Activities.GetComputersInGroup@UiPath.ActiveDirectoryDomainServices.Activities/1.7.1`
+**Type**: `UiPath.ActiveDirectoryDomainServices.Activities.GetComputersInGroup`
+**Description**: Retrieves the list of computers belonging to the specified group.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **GroupDistinguishedName**
+- [OUT] `OutArgument<String[]>` **Computers**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.ActiveDirectoryDomainServices.Core.Connection` **Connection**
+- [property] `String` **ScopeTag**
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Get Users in Group
+
+**ID**: `UiPath.ActiveDirectoryDomainServices.Activities.GetUsersInGroup@UiPath.ActiveDirectoryDomainServices.Activities/1.7.1`
+**Type**: `UiPath.ActiveDirectoryDomainServices.Activities.GetUsersInGroup`
+**Description**: Retrieves the list of user accounts belonging to the specified group.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **GroupDistinguishedName**
+- [OUT] `OutArgument<String[]>` **Users**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.ActiveDirectoryDomainServices.Core.Connection` **Connection**
+- [property] `String` **ScopeTag**
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Group Exists
+
+**ID**: `UiPath.ActiveDirectoryDomainServices.Activities.GroupExists@UiPath.ActiveDirectoryDomainServices.Activities/1.7.1`
+**Type**: `UiPath.ActiveDirectoryDomainServices.Activities.GroupExists`
+**Description**: Checks if a group exists in Active Directory.
+**Arguments**:
+- [IN] `InArgument<String>` **Location**
+- [OUT] `OutArgument<Boolean>` **Exists**
+- [IN, Required] `InArgument<String>` **Value**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.ActiveDirectoryDomainServices.Core.ObjectPropertyFilter` **CheckGroupBy**
+- [property] `UiPath.ActiveDirectoryDomainServices.Core.ConnectionWithoutAuto` **Connection**
+- [property] `String` **ScopeTag**
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Remove Group from Group
+
+**ID**: `UiPath.ActiveDirectoryDomainServices.Activities.RemoveGroupFromGroup@UiPath.ActiveDirectoryDomainServices.Activities/1.7.1`
+**Type**: `UiPath.ActiveDirectoryDomainServices.Activities.RemoveGroupFromGroup`
+**Description**: Removes a group from another group.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **GroupDistinguishedName**
+- [IN, Required] `InArgument<String>` **ParentGroupDistinguishedName**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.ActiveDirectoryDomainServices.Core.Connection` **Connection**
+- [property] `UiPath.ActiveDirectoryDomainServices.Core.Connection` **SecondConnection**
+- [property] `String` **ScopeTag**
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Add User to Group
+
+**ID**: `UiPath.ActiveDirectoryDomainServices.Activities.AddUserToGroup@UiPath.ActiveDirectoryDomainServices.Activities/1.7.1`
+**Type**: `UiPath.ActiveDirectoryDomainServices.Activities.AddUserToGroup`
+**Description**: Adds an user account to a group.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **UserDistinguishedName**
+- [IN, Required] `InArgument<String>` **GroupDistinguishedName**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.ActiveDirectoryDomainServices.Core.Connection` **Connection**
+- [property] `UiPath.ActiveDirectoryDomainServices.Core.Connection` **SecondConnection**
+- [property] `String` **ScopeTag**
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Change User Password
+
+**ID**: `UiPath.ActiveDirectoryDomainServices.Activities.ChangeUserPassword@UiPath.ActiveDirectoryDomainServices.Activities/1.7.1`
+**Type**: `UiPath.ActiveDirectoryDomainServices.Activities.ChangeUserPassword`
+**Description**: Changes the password of an user account.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **DistinguishedName**
+- [IN, Required] `InArgument<String>` **Password**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.ActiveDirectoryDomainServices.Core.Connection` **Connection**
+- [property] `String` **ScopeTag**
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Create User
+
+**ID**: `UiPath.ActiveDirectoryDomainServices.Activities.CreateUser@UiPath.ActiveDirectoryDomainServices.Activities/1.7.1`
+**Type**: `UiPath.ActiveDirectoryDomainServices.Activities.CreateUser`
+**Description**: Create a new user account in Active Directory.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **CommonName**
+- [IN, Required] `InArgument<String>` **Location**
+- [IN, Required] `InArgument<String>` **SAMAccountName**
+- [IN, Required] `InArgument<String>` **Password**
+- [IN] `InArgument<Data.DataTable>` **Properties**
+- [OUT] `OutArgument<String>` **DistinguishedName**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **Enabled**
+- [property] `UiPath.ActiveDirectoryDomainServices.Core.Connection` **Connection**
+- [property] `String` **ScopeTag**
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Delete User
+
+**ID**: `UiPath.ActiveDirectoryDomainServices.Activities.DeleteUser@UiPath.ActiveDirectoryDomainServices.Activities/1.7.1`
+**Type**: `UiPath.ActiveDirectoryDomainServices.Activities.DeleteUser`
+**Description**: Permanently deletes a user account from Active Directory.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **DistinguishedName**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **Recursive**
+- [property] `UiPath.ActiveDirectoryDomainServices.Core.Connection` **Connection**
+- [property] `String` **ScopeTag**
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Force Password Change
+
+**ID**: `UiPath.ActiveDirectoryDomainServices.Activities.ForcePasswordChange@UiPath.ActiveDirectoryDomainServices.Activities/1.7.1`
+**Type**: `UiPath.ActiveDirectoryDomainServices.Activities.ForcePasswordChange`
+**Description**: Forces the user to change password at the next login.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **DistinguishedName**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.ActiveDirectoryDomainServices.Core.Connection` **Connection**
+- [property] `String` **ScopeTag**
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Get Password Expiration Date
+
+**ID**: `UiPath.ActiveDirectoryDomainServices.Activities.GetPasswordExpirationDate@UiPath.ActiveDirectoryDomainServices.Activities/1.7.1`
+**Type**: `UiPath.ActiveDirectoryDomainServices.Activities.GetPasswordExpirationDate`
+**Description**: Retrieves the password expiration date for the specified user.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **DistinguishedName**
+- [OUT] `OutArgument<Nullable<DateTime>>` **ExpirationDate**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.ActiveDirectoryDomainServices.Core.Connection` **Connection**
+- [property] `String` **ScopeTag**
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Get User Expiration Date
+
+**ID**: `UiPath.ActiveDirectoryDomainServices.Activities.GetUserExpirationDate@UiPath.ActiveDirectoryDomainServices.Activities/1.7.1`
+**Type**: `UiPath.ActiveDirectoryDomainServices.Activities.GetUserExpirationDate`
+**Description**: Retrieves the expiration date for a given user account.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **DistinguishedName**
+- [OUT] `OutArgument<Nullable<DateTime>>` **ExpirationDate**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.ActiveDirectoryDomainServices.Core.Connection` **Connection**
+- [property] `String` **ScopeTag**
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Get User Groups
+
+**ID**: `UiPath.ActiveDirectoryDomainServices.Activities.GetUserGroups@UiPath.ActiveDirectoryDomainServices.Activities/1.7.1`
+**Type**: `UiPath.ActiveDirectoryDomainServices.Activities.GetUserGroups`
+**Description**: Retrieves the list of groups a user account is a member of.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **UserDistinguishedName**
+- [OUT] `OutArgument<String[]>` **Groups**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.ActiveDirectoryDomainServices.Core.Connection` **Connection**
+- [property] `String` **ScopeTag**
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Get User Status
+
+**ID**: `UiPath.ActiveDirectoryDomainServices.Activities.GetUserStatus@UiPath.ActiveDirectoryDomainServices.Activities/1.7.1`
+**Type**: `UiPath.ActiveDirectoryDomainServices.Activities.GetUserStatus`
+**Description**: Retrieves the lock and active status of an user account.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **DistinguishedName**
+- [OUT] `OutArgument<UiPath.ActiveDirectoryDomainServices.Core.LockStatus>` **LockStatus**
+- [OUT] `OutArgument<UiPath.ActiveDirectoryDomainServices.Core.ActiveStatus>` **ActiveStatus**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.ActiveDirectoryDomainServices.Core.Connection` **Connection**
+- [property] `String` **ScopeTag**
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Remove User from Group
+
+**ID**: `UiPath.ActiveDirectoryDomainServices.Activities.RemoveUserFromGroup@UiPath.ActiveDirectoryDomainServices.Activities/1.7.1`
+**Type**: `UiPath.ActiveDirectoryDomainServices.Activities.RemoveUserFromGroup`
+**Description**: Removes a user account from a group.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **UserDistinguishedName**
+- [IN, Required] `InArgument<String>` **GroupDistinguishedName**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.ActiveDirectoryDomainServices.Core.Connection` **Connection**
+- [property] `UiPath.ActiveDirectoryDomainServices.Core.Connection` **SecondConnection**
+- [property] `String` **ScopeTag**
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Set User Expiration Date
+
+**ID**: `UiPath.ActiveDirectoryDomainServices.Activities.SetUserExpirationDate@UiPath.ActiveDirectoryDomainServices.Activities/1.7.1`
+**Type**: `UiPath.ActiveDirectoryDomainServices.Activities.SetUserExpirationDate`
+**Description**: Sets the expiration date for a given user account.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **DistinguishedName**
+- [IN, Required] `InArgument<DateTime>` **ExpirationDate**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.ActiveDirectoryDomainServices.Core.Connection` **Connection**
+- [property] `String` **ScopeTag**
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Set User Status
+
+**ID**: `UiPath.ActiveDirectoryDomainServices.Activities.SetUserStatus@UiPath.ActiveDirectoryDomainServices.Activities/1.7.1`
+**Type**: `UiPath.ActiveDirectoryDomainServices.Activities.SetUserStatus`
+**Description**: Set the status of a user account.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **DistinguishedName**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.ActiveDirectoryDomainServices.Core.UserStatus` **Status**
+- [property] `UiPath.ActiveDirectoryDomainServices.Core.Connection` **Connection**
+- [property] `String` **ScopeTag**
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### User Exists
+
+**ID**: `UiPath.ActiveDirectoryDomainServices.Activities.UserExists@UiPath.ActiveDirectoryDomainServices.Activities/1.7.1`
+**Type**: `UiPath.ActiveDirectoryDomainServices.Activities.UserExists`
+**Description**: Checks if an user account exists in Active Directory
+**Arguments**:
+- [IN] `InArgument<String>` **Location**
+- [OUT] `OutArgument<Boolean>` **Exists**
+- [IN, Required] `InArgument<String>` **Value**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.ActiveDirectoryDomainServices.Core.UserPropertyFilter` **CheckUserBy**
+- [property] `UiPath.ActiveDirectoryDomainServices.Core.ConnectionWithoutAuto` **Connection**
+- [property] `String` **ScopeTag**
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Validate User Credentials
+
+**ID**: `UiPath.ActiveDirectoryDomainServices.Activities.ValidateUserCredentials@UiPath.ActiveDirectoryDomainServices.Activities/1.7.1`
+**Type**: `UiPath.ActiveDirectoryDomainServices.Activities.ValidateUserCredentials`
+**Description**: Validates a user credentials against the current Active Directory.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **Value**
+- [IN] `InArgument<String>` **Password**
+- [IN] `InArgument<Security.SecureString>` **SecurePassword**
+- [OUT] `OutArgument<Boolean>` **IsValid**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.ActiveDirectoryDomainServices.Core.ValidateCredentialsUserFilter` **User**
+- [property] `UiPath.ActiveDirectoryDomainServices.Core.ConnectionWithoutAuto` **Connection**
+- [property] `String` **ScopeTag**
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+---

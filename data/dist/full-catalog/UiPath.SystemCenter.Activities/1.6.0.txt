@@ -1,0 +1,179 @@
+# UiPath.SystemCenter.Activities 1.6.0
+
+> generator: uips-fixtures catalog v0.2
+> generated: 2026-04-09T22:10:08Z
+> set: full-catalog
+> url: https://uips-fixtures.github.io/llms/UiPath.SystemCenter.Activities/1.6.0.txt
+> activities: 12
+> authors: UiPath
+**ID format**: `{fullName}@{packageId}/{packageVersion}`
+**Argument directions**: In (input), Out (output), InOut (bidirectional)
+
+---
+### For Each Event
+
+**ID**: `UiPath.SystemCenter.Activities.SystemCenterForEachEvent@UiPath.SystemCenter.Activities/1.6.0`
+**Type**: `UiPath.SystemCenter.Activities.SystemCenterForEachEvent`
+**Description**: Performs an activity or a series of activities on each event matching the filter criteria.
+**Arguments**:
+- [IN] `InArgument<String>` **RunbookServerId**
+- [IN] `InArgument<String>` **ODataFilter**
+- [OUT] `OutArgument<Int32>` **CurrentIndex**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### For Each Job
+
+**ID**: `UiPath.SystemCenter.Activities.SystemCenterForEachJob@UiPath.SystemCenter.Activities/1.6.0`
+**Type**: `UiPath.SystemCenter.Activities.SystemCenterForEachJob`
+**Description**: Performs an activity or a series of activities on each runbook job matching the filter criteria.
+**Arguments**:
+- [IN] `InArgument<String>` **RunbookId**
+- [IN] `InArgument<String>` **RunbookServerId**
+- [IN] `InArgument<String>` **ODataFilter**
+- [OUT] `OutArgument<Int32>` **CurrentIndex**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Get Job
+
+**ID**: `UiPath.SystemCenter.Activities.SystemCenterGetJob@UiPath.SystemCenter.Activities/1.6.0`
+**Type**: `UiPath.SystemCenter.Activities.SystemCenterGetJob`
+**Description**: Gets details about a runbook job.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **JobId**
+- [OUT] `OutArgument<UiPath.SystemCenter.Models.RunbookJob>` **Job**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Stop Job
+
+**ID**: `UiPath.SystemCenter.Activities.SystemCenterStopJob@UiPath.SystemCenter.Activities/1.6.0`
+**Type**: `UiPath.SystemCenter.Activities.SystemCenterStopJob`
+**Description**: Stops a runbook job.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **JobId**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Get Runbook Servers
+
+**ID**: `UiPath.SystemCenter.Activities.SystemCenterGetRunbookServers@UiPath.SystemCenter.Activities/1.6.0`
+**Type**: `UiPath.SystemCenter.Activities.SystemCenterGetRunbookServers`
+**Description**: Gets all runbook servers collection.
+**Arguments**:
+- [OUT] `OutArgument<UiPath.SystemCenter.Models.RunbookServer[]>` **RunbookServers**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### For Each Runbook
+
+**ID**: `UiPath.SystemCenter.Activities.SystemCenterForEachRunbook@UiPath.SystemCenter.Activities/1.6.0`
+**Type**: `UiPath.SystemCenter.Activities.SystemCenterForEachRunbook`
+**Description**: Performs an activity or a series of activities on each runbook matching the filter criteria.
+**Arguments**:
+- [IN] `InArgument<String>` **ODataFilter**
+- [OUT] `OutArgument<Int32>` **CurrentIndex**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Get Runbook By Id
+
+**ID**: `UiPath.SystemCenter.Activities.SystemCenterGetRunbookById@UiPath.SystemCenter.Activities/1.6.0`
+**Type**: `UiPath.SystemCenter.Activities.SystemCenterGetRunbookById`
+**Description**: Get details about a runbook based on its unique identifier.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **RunbookId**
+- [OUT] `OutArgument<UiPath.SystemCenter.Models.Runbook>` **Runbook**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Get Runbook By Path
+
+**ID**: `UiPath.SystemCenter.Activities.SystemCenterGetRunbookByPath@UiPath.SystemCenter.Activities/1.6.0`
+**Type**: `UiPath.SystemCenter.Activities.SystemCenterGetRunbookByPath`
+**Description**: Get details about a runbook based on its full path.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **RunbookPath**
+- [OUT] `OutArgument<UiPath.SystemCenter.Models.Runbook>` **Runbook**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Get Runbook Instances
+
+**ID**: `UiPath.SystemCenter.Activities.SystemCenterGetRunbookInstances@UiPath.SystemCenter.Activities/1.6.0`
+**Type**: `UiPath.SystemCenter.Activities.SystemCenterGetRunbookInstances`
+**Description**: Gets all instances of a specified runbook.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **RunbookId**
+- [IN] `InArgument<String>` **JobId**
+- [OUT] `OutArgument<UiPath.SystemCenter.Models.RunbookInstance[]>` **RunbookInstances**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Start Runbook
+
+**ID**: `UiPath.SystemCenter.Activities.SystemCenterStartRunbook@UiPath.SystemCenter.Activities/1.6.0`
+**Type**: `UiPath.SystemCenter.Activities.SystemCenterStartRunbook`
+**Description**: Starts a runbook.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **RunbookId**
+- [IN] `InArgument<Data.DataTable>` **RunbookParameterValues**
+- [IN] `InArgument<String>` **RunbookServerId**
+- [OUT] `OutArgument<UiPath.SystemCenter.Models.RunbookJob>` **Job**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Stop Runbook
+
+**ID**: `UiPath.SystemCenter.Activities.SystemCenterStopRunbook@UiPath.SystemCenter.Activities/1.6.0`
+**Type**: `UiPath.SystemCenter.Activities.SystemCenterStopRunbook`
+**Description**: Stops a runbook.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **RunbookId**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### System Center Orchestrator Scope
+
+**ID**: `UiPath.SystemCenter.Activities.SystemCenterOrchestratorScope@UiPath.SystemCenter.Activities/1.6.0`
+**Type**: `UiPath.SystemCenter.Activities.SystemCenterOrchestratorScope`
+**Description**: Connects to System Center Orchestrator and provides a scope for other Orchestrator activities.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **Orchestrator**
+- [IN, Required] `InArgument<String>` **Username**
+- [IN, Required] `InArgument<Security.SecureString>` **Password**
+---

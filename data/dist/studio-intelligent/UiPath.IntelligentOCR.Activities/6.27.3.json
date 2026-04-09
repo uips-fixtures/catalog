@@ -1,0 +1,4035 @@
+{
+  "schema": {
+    "id": "activity-catalog",
+    "version": "v0.2"
+  },
+  "source": {
+    "kind": "nuget-package",
+    "id": "UiPath.IntelligentOCR.Activities",
+    "version": "6.27.3",
+    "feedUrl": null,
+    "authors": "UiPath",
+    "projectUrl": "https://activities.uipath.com/docs/about-the-intelligent-ocr-activities-pack",
+    "description": "IMPORTANT: Installing this package version requires upgrading all the other Document Understanding packages to their latest version. (in case any are installed).\n\nThis includes the following packages: IntelligentOCR (>= 6.23.0), PDF (>= 3.21.0), OCR.Activities (>= 3.21.0), OmniPage (>= 1.21.0) and Vision (>= 3.14.0). On lower versions, some functionality may be missing or unexpected errors might occur.\n\nRequires Studio 21.10.x or greater. \n\nThis package version is compatible with UIAutomation.Activities versions that are 24.10.0 or later.\n\nCore activities that enable the usage of a complete document processing framework, from taxonomy definition, digitization, document classification, data extraction, data validation and classifier / extractor training.",
+    "license": "https://www.uipath.com/hubfs/legalspot/UiPath_MSSA.pdf",
+    "tags": "UiPathActivities",
+    "packageTypes": []
+  },
+  "generatedAt": "2026-04-09T21:48:00Z",
+  "activities": [
+    {
+      "id": "UiPath.IntelligentOCR.Activities.CreateDocumentClassificationAction@UiPath.IntelligentOCR.Activities/6.27.3",
+      "fullName": "UiPath.IntelligentOCR.Activities.CreateDocumentClassificationAction",
+      "displayName": "Create Document Classification Action",
+      "description": "Creates a document classification action. To be used in conjunction with the \"Wait For Document Classification Action And Resume\" activity to collect the results.",
+      "category": null,
+      "visibility": "legacy",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "members": [
+        {
+          "name": "AutomaticClassificationResults",
+          "displayName": "AutomaticClassificationResults",
+          "dataType": "System.Activities.InArgument<UiPath.DocumentProcessing.Contracts.Results.ClassificationResult[]>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "EnablePageReorderging",
+          "displayName": "EnablePageReorderging",
+          "dataType": "System.Activities.InArgument<System.Boolean>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ActionTitle",
+          "displayName": "ActionTitle",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ActionCatalog",
+          "displayName": "ActionCatalog",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ActionPriority",
+          "displayName": "ActionPriority",
+          "dataType": "System.Activities.InArgument<UiPath.DocumentProcessing.Contracts.Actions.DocumentActionPriority>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "DocumentPath",
+          "displayName": "DocumentPath",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "DocumentText",
+          "displayName": "DocumentText",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "DocumentObjectModel",
+          "displayName": "DocumentObjectModel",
+          "dataType": "System.Activities.InArgument<UiPath.DocumentProcessing.Contracts.Dom.Document>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "Taxonomy",
+          "displayName": "Taxonomy",
+          "dataType": "System.Activities.InArgument<UiPath.DocumentProcessing.Contracts.Taxonomy.DocumentTaxonomy>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ActionOutput",
+          "displayName": "ActionOutput",
+          "dataType": "System.Activities.OutArgument<T>",
+          "memberKind": "argument",
+          "argumentDirection": "out",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "BucketName",
+          "displayName": "BucketName",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "BucketFolderPath",
+          "displayName": "BucketFolderPath",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "FolderPath",
+          "displayName": "FolderPath",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "TimeoutMs",
+          "displayName": "TimeoutMs",
+          "dataType": "System.Activities.InArgument<System.Int32>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "RetryOnFailure",
+          "displayName": "RetryOnFailure",
+          "dataType": "System.Boolean",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ContinueOnError",
+          "displayName": "ContinueOnError",
+          "dataType": "System.Activities.InArgument<System.Boolean>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        }
+      ],
+      "enrichment": null
+    },
+    {
+      "id": "UiPath.IntelligentOCR.Activities.CreateDocumentValidationAction@UiPath.IntelligentOCR.Activities/6.27.3",
+      "fullName": "UiPath.IntelligentOCR.Activities.CreateDocumentValidationAction",
+      "displayName": "Create Document Validation Action",
+      "description": "Creates a document validation action. To be used in conjunction with the \"Wait For Document Validation Action And Resume\" activity to collect the results.",
+      "category": null,
+      "visibility": "legacy",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "members": [
+        {
+          "name": "AutomaticExtractionResults",
+          "displayName": "AutomaticExtractionResults",
+          "dataType": "System.Activities.InArgument<UiPath.DocumentProcessing.Contracts.Results.ExtractionResult>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "FieldsValidationConfidence",
+          "displayName": "FieldsValidationConfidence",
+          "dataType": "System.Nullable<System.Int32>",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "DisplayMode",
+          "displayName": "DisplayMode",
+          "dataType": "System.Activities.InArgument<UiPath.DU.Shared.Actions.DisplayModeArgument>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "EnableRTLControls",
+          "displayName": "EnableRTLControls",
+          "dataType": "System.Activities.InArgument<System.Boolean>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ActionTitle",
+          "displayName": "ActionTitle",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ActionCatalog",
+          "displayName": "ActionCatalog",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ActionPriority",
+          "displayName": "ActionPriority",
+          "dataType": "System.Activities.InArgument<UiPath.DocumentProcessing.Contracts.Actions.DocumentActionPriority>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "DocumentPath",
+          "displayName": "DocumentPath",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "DocumentText",
+          "displayName": "DocumentText",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "DocumentObjectModel",
+          "displayName": "DocumentObjectModel",
+          "dataType": "System.Activities.InArgument<UiPath.DocumentProcessing.Contracts.Dom.Document>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "Taxonomy",
+          "displayName": "Taxonomy",
+          "dataType": "System.Activities.InArgument<UiPath.DocumentProcessing.Contracts.Taxonomy.DocumentTaxonomy>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ActionOutput",
+          "displayName": "ActionOutput",
+          "dataType": "System.Activities.OutArgument<T>",
+          "memberKind": "argument",
+          "argumentDirection": "out",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "BucketName",
+          "displayName": "BucketName",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "BucketFolderPath",
+          "displayName": "BucketFolderPath",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ShowOnlyRelevantPageRange",
+          "displayName": "ShowOnlyRelevantPageRange",
+          "dataType": "System.Boolean",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "FolderPath",
+          "displayName": "FolderPath",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "TimeoutMs",
+          "displayName": "TimeoutMs",
+          "dataType": "System.Activities.InArgument<System.Int32>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "RetryOnFailure",
+          "displayName": "RetryOnFailure",
+          "dataType": "System.Boolean",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ContinueOnError",
+          "displayName": "ContinueOnError",
+          "dataType": "System.Activities.InArgument<System.Boolean>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        }
+      ],
+      "enrichment": null
+    },
+    {
+      "id": "UiPath.IntelligentOCR.Activities.WaitForDocumentClassificationActionAndResume@UiPath.IntelligentOCR.Activities/6.27.3",
+      "fullName": "UiPath.IntelligentOCR.Activities.WaitForDocumentClassificationActionAndResume",
+      "displayName": "Wait For Document Classification Action And Resume",
+      "description": "Suspends the workflow until the document classification action is completed and then resumes the workflow. To be used in conjunction with the output of a \"Create Document Classification Action\" activity.",
+      "category": null,
+      "visibility": "legacy",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "members": [
+        {
+          "name": "AutomaticClassificationResults",
+          "displayName": "AutomaticClassificationResults",
+          "dataType": "System.Activities.OutArgument<UiPath.DocumentProcessing.Contracts.Results.ClassificationResult[]>",
+          "memberKind": "argument",
+          "argumentDirection": "out",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ValidatedClassificationResults",
+          "displayName": "ValidatedClassificationResults",
+          "dataType": "System.Activities.OutArgument<UiPath.DocumentProcessing.Contracts.Results.ClassificationResult[]>",
+          "memberKind": "argument",
+          "argumentDirection": "out",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ActionInput",
+          "displayName": "ActionInput",
+          "dataType": "System.Activities.InArgument<T>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "DownloadFolderPath",
+          "displayName": "DownloadFolderPath",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "RemoveDataFromStorage",
+          "displayName": "RemoveDataFromStorage",
+          "dataType": "System.Boolean",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "DocumentPath",
+          "displayName": "DocumentPath",
+          "dataType": "System.Activities.OutArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "out",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "DocumentText",
+          "displayName": "DocumentText",
+          "dataType": "System.Activities.OutArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "out",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "DocumentObjectModel",
+          "displayName": "DocumentObjectModel",
+          "dataType": "System.Activities.OutArgument<UiPath.DocumentProcessing.Contracts.Dom.Document>",
+          "memberKind": "argument",
+          "argumentDirection": "out",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "Taxonomy",
+          "displayName": "Taxonomy",
+          "dataType": "System.Activities.OutArgument<UiPath.DocumentProcessing.Contracts.Taxonomy.DocumentTaxonomy>",
+          "memberKind": "argument",
+          "argumentDirection": "out",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ActionOutput",
+          "displayName": "ActionOutput",
+          "dataType": "System.Activities.OutArgument<T>",
+          "memberKind": "argument",
+          "argumentDirection": "out",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "StatusMessage",
+          "displayName": "StatusMessage",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "TimeoutMs",
+          "displayName": "TimeoutMs",
+          "dataType": "System.Activities.InArgument<System.Int32>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "RetryOnFailure",
+          "displayName": "RetryOnFailure",
+          "dataType": "System.Boolean",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ContinueOnError",
+          "displayName": "ContinueOnError",
+          "dataType": "System.Activities.InArgument<System.Boolean>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        }
+      ],
+      "enrichment": null
+    },
+    {
+      "id": "UiPath.IntelligentOCR.Activities.WaitForDocumentValidationActionAndResume@UiPath.IntelligentOCR.Activities/6.27.3",
+      "fullName": "UiPath.IntelligentOCR.Activities.WaitForDocumentValidationActionAndResume",
+      "displayName": "Wait For Document Validation Action And Resume",
+      "description": "Suspends the workflow until the document validation action is completed and then resumes the workflow. To be used in conjunction with the output of a \"Create Document Validation Action\" activity.",
+      "category": null,
+      "visibility": "legacy",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "members": [
+        {
+          "name": "AutomaticExtractionResults",
+          "displayName": "AutomaticExtractionResults",
+          "dataType": "System.Activities.OutArgument<UiPath.DocumentProcessing.Contracts.Results.ExtractionResult>",
+          "memberKind": "argument",
+          "argumentDirection": "out",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ValidatedExtractionResults",
+          "displayName": "ValidatedExtractionResults",
+          "dataType": "System.Activities.OutArgument<UiPath.DocumentProcessing.Contracts.Results.ExtractionResult>",
+          "memberKind": "argument",
+          "argumentDirection": "out",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ActionInput",
+          "displayName": "ActionInput",
+          "dataType": "System.Activities.InArgument<T>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "DownloadFolderPath",
+          "displayName": "DownloadFolderPath",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "RemoveDataFromStorage",
+          "displayName": "RemoveDataFromStorage",
+          "dataType": "System.Boolean",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "DocumentPath",
+          "displayName": "DocumentPath",
+          "dataType": "System.Activities.OutArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "out",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "DocumentText",
+          "displayName": "DocumentText",
+          "dataType": "System.Activities.OutArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "out",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "DocumentObjectModel",
+          "displayName": "DocumentObjectModel",
+          "dataType": "System.Activities.OutArgument<UiPath.DocumentProcessing.Contracts.Dom.Document>",
+          "memberKind": "argument",
+          "argumentDirection": "out",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "Taxonomy",
+          "displayName": "Taxonomy",
+          "dataType": "System.Activities.OutArgument<UiPath.DocumentProcessing.Contracts.Taxonomy.DocumentTaxonomy>",
+          "memberKind": "argument",
+          "argumentDirection": "out",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ActionOutput",
+          "displayName": "ActionOutput",
+          "dataType": "System.Activities.OutArgument<T>",
+          "memberKind": "argument",
+          "argumentDirection": "out",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "StatusMessage",
+          "displayName": "StatusMessage",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "TimeoutMs",
+          "displayName": "TimeoutMs",
+          "dataType": "System.Activities.InArgument<System.Int32>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "RetryOnFailure",
+          "displayName": "RetryOnFailure",
+          "dataType": "System.Boolean",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ContinueOnError",
+          "displayName": "ContinueOnError",
+          "dataType": "System.Activities.InArgument<System.Boolean>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        }
+      ],
+      "enrichment": null
+    },
+    {
+      "id": "UiPath.IntelligentOCR.Activities.ValidationStation.PresentValidationStation@UiPath.IntelligentOCR.Activities/6.27.3",
+      "fullName": "UiPath.IntelligentOCR.Activities.ValidationStation.PresentValidationStation",
+      "displayName": "Present Validation Station",
+      "description": "Opens Validation Station and allows for human review of automatic clasification and data extraction, if any",
+      "category": null,
+      "visibility": "legacy",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "members": [
+        {
+          "name": "AutomaticExtractionResults",
+          "displayName": "AutomaticExtractionResults",
+          "dataType": "System.Activities.InArgument<UiPath.DocumentProcessing.Contracts.Results.ExtractionResult>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "DocumentObjectModel",
+          "displayName": "DocumentObjectModel",
+          "dataType": "System.Activities.InArgument<UiPath.DocumentProcessing.Contracts.Dom.Document>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "DocumentText",
+          "displayName": "DocumentText",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "DocumentPath",
+          "displayName": "DocumentPath",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "Taxonomy",
+          "displayName": "Taxonomy",
+          "dataType": "System.Activities.InArgument<UiPath.DocumentProcessing.Contracts.Taxonomy.DocumentTaxonomy>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ShowOnlyRelevantPageRange",
+          "displayName": "ShowOnlyRelevantPageRange",
+          "dataType": "System.Boolean",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "FieldsValidationConfidence",
+          "displayName": "FieldsValidationConfidence",
+          "dataType": "System.Nullable<System.Int32>",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "DisplayMode",
+          "displayName": "DisplayMode",
+          "dataType": "System.Activities.InArgument<UiPath.DU.Shared.Actions.DisplayModeArgument>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "EnableRTLControls",
+          "displayName": "EnableRTLControls",
+          "dataType": "System.Activities.InArgument<System.Boolean>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ValidatedExtractionResults",
+          "displayName": "ValidatedExtractionResults",
+          "dataType": "System.Activities.OutArgument<UiPath.DocumentProcessing.Contracts.Results.ExtractionResult>",
+          "memberKind": "argument",
+          "argumentDirection": "out",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        }
+      ],
+      "enrichment": null
+    },
+    {
+      "id": "UiPath.IntelligentOCR.Activities.Training.IntelligentKeywordClassifierTrainer@UiPath.IntelligentOCR.Activities/6.27.3",
+      "fullName": "UiPath.IntelligentOCR.Activities.Training.IntelligentKeywordClassifierTrainer",
+      "displayName": "Intelligent Keyword Classifier Trainer",
+      "description": "Intelligent Keyword Classifier Trainer",
+      "category": null,
+      "visibility": "legacy",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "members": [
+        {
+          "name": "LearningFilePath",
+          "displayName": "LearningFilePath",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "LearningData",
+          "displayName": "LearningData",
+          "dataType": "System.Activities.InOutArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in-out",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        }
+      ],
+      "enrichment": null
+    },
+    {
+      "id": "UiPath.IntelligentOCR.Activities.Training.KeywordBasedClassifierTrainer@UiPath.IntelligentOCR.Activities/6.27.3",
+      "fullName": "UiPath.IntelligentOCR.Activities.Training.KeywordBasedClassifierTrainer",
+      "displayName": "Keyword Based Classifier Trainer",
+      "description": "Keyword Based Classifier Trainer",
+      "category": null,
+      "visibility": "legacy",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "members": [
+        {
+          "name": "LearningFilePath",
+          "displayName": "LearningFilePath",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "LearningData",
+          "displayName": "LearningData",
+          "dataType": "System.Activities.InOutArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in-out",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        }
+      ],
+      "enrichment": null
+    },
+    {
+      "id": "UiPath.IntelligentOCR.Activities.Training.TrainClassifiersScope@UiPath.IntelligentOCR.Activities/6.27.3",
+      "fullName": "UiPath.IntelligentOCR.Activities.Training.TrainClassifiersScope",
+      "displayName": "Train Classifiers Scope",
+      "description": "Train Classifiers Scope",
+      "category": null,
+      "visibility": "legacy",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "members": [
+        {
+          "name": "HumanValidatedData",
+          "displayName": "HumanValidatedData",
+          "dataType": "System.Activities.InArgument<UiPath.DocumentProcessing.Contracts.Results.ExtractionResult>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "Taxonomy",
+          "displayName": "Taxonomy",
+          "dataType": "System.Activities.InArgument<UiPath.DocumentProcessing.Contracts.Taxonomy.DocumentTaxonomy>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "HumanValidatedClassificationData",
+          "displayName": "HumanValidatedClassificationData",
+          "dataType": "System.Activities.InArgument<UiPath.DocumentProcessing.Contracts.Results.ClassificationResult[]>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "DocumentText",
+          "displayName": "DocumentText",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "DocumentObjectModel",
+          "displayName": "DocumentObjectModel",
+          "dataType": "System.Activities.InArgument<UiPath.DocumentProcessing.Contracts.Dom.Document>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "DocumentPath",
+          "displayName": "DocumentPath",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        }
+      ],
+      "enrichment": null
+    },
+    {
+      "id": "UiPath.IntelligentOCR.Activities.Training.TrainExtractorsScope@UiPath.IntelligentOCR.Activities/6.27.3",
+      "fullName": "UiPath.IntelligentOCR.Activities.Training.TrainExtractorsScope",
+      "displayName": "Train Extractors Scope",
+      "description": "Train Extractors Scope",
+      "category": null,
+      "visibility": "legacy",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "members": [
+        {
+          "name": "HumanValidatedData",
+          "displayName": "HumanValidatedData",
+          "dataType": "System.Activities.InArgument<UiPath.DocumentProcessing.Contracts.Results.ExtractionResult>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "DocumentText",
+          "displayName": "DocumentText",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "DocumentObjectModel",
+          "displayName": "DocumentObjectModel",
+          "dataType": "System.Activities.InArgument<UiPath.DocumentProcessing.Contracts.Dom.Document>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "DocumentPath",
+          "displayName": "DocumentPath",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        }
+      ],
+      "enrichment": null
+    },
+    {
+      "id": "UiPath.IntelligentOCR.Activities.TaxonomyManagement.LoadTaxonomy@UiPath.IntelligentOCR.Activities/6.27.3",
+      "fullName": "UiPath.IntelligentOCR.Activities.TaxonomyManagement.LoadTaxonomy",
+      "displayName": "Load Taxonomy",
+      "description": "Load Taxonomy",
+      "category": null,
+      "visibility": "legacy",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "members": [
+        {
+          "name": "Taxonomy",
+          "displayName": "Taxonomy",
+          "dataType": "System.Activities.OutArgument<UiPath.DocumentProcessing.Contracts.Taxonomy.DocumentTaxonomy>",
+          "memberKind": "argument",
+          "argumentDirection": "out",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        }
+      ],
+      "enrichment": null
+    },
+    {
+      "id": "UiPath.IntelligentOCR.Activities.Internal.RunDevAccessProviderHost@UiPath.IntelligentOCR.Activities/6.27.3",
+      "fullName": "UiPath.IntelligentOCR.Activities.Internal.RunDevAccessProviderHost",
+      "displayName": "RunDevAccessProviderHost",
+      "description": null,
+      "category": null,
+      "visibility": "legacy",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "members": [],
+      "enrichment": null
+    },
+    {
+      "id": "UiPath.IntelligentOCR.Activities.DocumentClassification.ClassifyDocumentScope@UiPath.IntelligentOCR.Activities/6.27.3",
+      "fullName": "UiPath.IntelligentOCR.Activities.DocumentClassification.ClassifyDocumentScope",
+      "displayName": "Classify Document Scope",
+      "description": "Classify Document Scope",
+      "category": null,
+      "visibility": "legacy",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "members": [
+        {
+          "name": "DocumentText",
+          "displayName": "DocumentText",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "DocumentObjectModel",
+          "displayName": "DocumentObjectModel",
+          "dataType": "System.Activities.InArgument<UiPath.DocumentProcessing.Contracts.Dom.Document>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "DocumentPath",
+          "displayName": "DocumentPath",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "Taxonomy",
+          "displayName": "Taxonomy",
+          "dataType": "System.Activities.InArgument<UiPath.DocumentProcessing.Contracts.Taxonomy.DocumentTaxonomy>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ClassificationResults",
+          "displayName": "ClassificationResults",
+          "dataType": "System.Activities.OutArgument<UiPath.DocumentProcessing.Contracts.Results.ClassificationResult[]>",
+          "memberKind": "argument",
+          "argumentDirection": "out",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        }
+      ],
+      "enrichment": null
+    },
+    {
+      "id": "UiPath.IntelligentOCR.Activities.DocumentClassification.IntelligentKeywordClassifier@UiPath.IntelligentOCR.Activities/6.27.3",
+      "fullName": "UiPath.IntelligentOCR.Activities.DocumentClassification.IntelligentKeywordClassifier",
+      "displayName": "Intelligent Keyword Classifier",
+      "description": "Intelligent Keyword Classifier",
+      "category": null,
+      "visibility": "legacy",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "members": [
+        {
+          "name": "LearningFilePath",
+          "displayName": "LearningFilePath",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "LearningData",
+          "displayName": "LearningData",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "Endpoint",
+          "displayName": "Endpoint",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ApiKey",
+          "displayName": "ApiKey",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "TimeoutMs",
+          "displayName": "TimeoutMs",
+          "dataType": "System.Activities.InArgument<System.Int32>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "SendDocumentsForAlgorithmImprovements",
+          "displayName": "SendDocumentsForAlgorithmImprovements",
+          "dataType": "System.Boolean",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "UsePageNumbers",
+          "displayName": "UsePageNumbers",
+          "dataType": "System.Boolean",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "PerformDocumentSplitting",
+          "displayName": "PerformDocumentSplitting",
+          "dataType": "System.Boolean",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        }
+      ],
+      "enrichment": null
+    },
+    {
+      "id": "UiPath.IntelligentOCR.Activities.DocumentClassification.KeywordBasedClassifier@UiPath.IntelligentOCR.Activities/6.27.3",
+      "fullName": "UiPath.IntelligentOCR.Activities.DocumentClassification.KeywordBasedClassifier",
+      "displayName": "Keyword Based Classifier",
+      "description": "Keyword Based Classifier",
+      "category": null,
+      "visibility": "legacy",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "members": [
+        {
+          "name": "LearningFilePath",
+          "displayName": "LearningFilePath",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "LearningData",
+          "displayName": "LearningData",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "OriginalDocumentText",
+          "displayName": "OriginalDocumentText",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "OriginalDocumentObjectModel",
+          "displayName": "OriginalDocumentObjectModel",
+          "dataType": "System.Activities.InArgument<UiPath.DocumentProcessing.Contracts.Dom.Document>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "OriginalDocumentPath",
+          "displayName": "OriginalDocumentPath",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        }
+      ],
+      "enrichment": null
+    },
+    {
+      "id": "UiPath.IntelligentOCR.Activities.DocumentClassification.PresentClassificationStation@UiPath.IntelligentOCR.Activities/6.27.3",
+      "fullName": "UiPath.IntelligentOCR.Activities.DocumentClassification.PresentClassificationStation",
+      "displayName": "Present Classification Station",
+      "description": "Opens Classification Station and allows for human review of automatic document classification",
+      "category": null,
+      "visibility": "legacy",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "members": [
+        {
+          "name": "AutomaticClassificationResults",
+          "displayName": "AutomaticClassificationResults",
+          "dataType": "System.Activities.InArgument<UiPath.DocumentProcessing.Contracts.Results.ClassificationResult[]>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "DocumentObjectModel",
+          "displayName": "DocumentObjectModel",
+          "dataType": "System.Activities.InArgument<UiPath.DocumentProcessing.Contracts.Dom.Document>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "DocumentText",
+          "displayName": "DocumentText",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "DocumentPath",
+          "displayName": "DocumentPath",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "Taxonomy",
+          "displayName": "Taxonomy",
+          "dataType": "System.Activities.InArgument<UiPath.DocumentProcessing.Contracts.Taxonomy.DocumentTaxonomy>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "EnablePageReorderging",
+          "displayName": "EnablePageReorderging",
+          "dataType": "System.Activities.InArgument<System.Boolean>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ValidatedClassificationResults",
+          "displayName": "ValidatedClassificationResults",
+          "dataType": "System.Activities.OutArgument<UiPath.DocumentProcessing.Contracts.Results.ClassificationResult[]>",
+          "memberKind": "argument",
+          "argumentDirection": "out",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        }
+      ],
+      "enrichment": null
+    },
+    {
+      "id": "UiPath.IntelligentOCR.Activities.Digitization.DigitizeDocument@UiPath.IntelligentOCR.Activities/6.27.3",
+      "fullName": "UiPath.IntelligentOCR.Activities.Digitization.DigitizeDocument",
+      "displayName": "Digitize Document",
+      "description": "Processes PDF and image files to obtain document object model and text version",
+      "category": null,
+      "visibility": "legacy",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "members": [
+        {
+          "name": "DocumentPath",
+          "displayName": "DocumentPath",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "DegreeOfParallelism",
+          "displayName": "DegreeOfParallelism",
+          "dataType": "System.Activities.InArgument<System.Int32>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "DetectCheckboxes",
+          "displayName": "DetectCheckboxes",
+          "dataType": "System.Activities.InArgument<System.Boolean>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ApplyOcrOnPdf",
+          "displayName": "ApplyOcrOnPdf",
+          "dataType": "System.Activities.InArgument<UiPath.IntelligentOCR.Activities.Digitization.ApplyOcrOnPdfArgument>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "DocumentText",
+          "displayName": "DocumentText",
+          "dataType": "System.Activities.OutArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "out",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "DocumentObjectModel",
+          "displayName": "DocumentObjectModel",
+          "dataType": "System.Activities.OutArgument<UiPath.DocumentProcessing.Contracts.Dom.Document>",
+          "memberKind": "argument",
+          "argumentDirection": "out",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        }
+      ],
+      "enrichment": null
+    },
+    {
+      "id": "UiPath.IntelligentOCR.Activities.DataExtraction.DataExtractionScope@UiPath.IntelligentOCR.Activities/6.27.3",
+      "fullName": "UiPath.IntelligentOCR.Activities.DataExtraction.DataExtractionScope",
+      "displayName": "Data Extraction Scope",
+      "description": "Data Extraction Scope",
+      "category": null,
+      "visibility": "legacy",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "members": [
+        {
+          "name": "ClassificationResult",
+          "displayName": "ClassificationResult",
+          "dataType": "System.Activities.InArgument<UiPath.DocumentProcessing.Contracts.Results.ClassificationResult>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "DocumentTypeId",
+          "displayName": "DocumentTypeId",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "DocumentText",
+          "displayName": "DocumentText",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "DocumentObjectModel",
+          "displayName": "DocumentObjectModel",
+          "dataType": "System.Activities.InArgument<UiPath.DocumentProcessing.Contracts.Dom.Document>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "DocumentPath",
+          "displayName": "DocumentPath",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "Taxonomy",
+          "displayName": "Taxonomy",
+          "dataType": "System.Activities.InArgument<UiPath.DocumentProcessing.Contracts.Taxonomy.DocumentTaxonomy>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "FormatValuesIfPossible",
+          "displayName": "FormatValuesIfPossible",
+          "dataType": "System.Boolean",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ApplyGenerativeValidation",
+          "displayName": "ApplyGenerativeValidation",
+          "dataType": "System.Boolean",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "GenerativeValidationConfidenceThreshold",
+          "displayName": "GenerativeValidationConfidenceThreshold",
+          "dataType": "System.Activities.InArgument<System.Int32>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ExtractionResult",
+          "displayName": "ExtractionResult",
+          "dataType": "System.Activities.OutArgument<UiPath.DocumentProcessing.Contracts.Results.ExtractionResult>",
+          "memberKind": "argument",
+          "argumentDirection": "out",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "RuntimeAssetPath",
+          "displayName": "RuntimeAssetPath",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "RuntimeTenantUrl",
+          "displayName": "RuntimeTenantUrl",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        }
+      ],
+      "enrichment": null
+    },
+    {
+      "id": "UiPath.IntelligentOCR.Activities.DataExtraction.ExportExtractionResults@UiPath.IntelligentOCR.Activities/6.27.3",
+      "fullName": "UiPath.IntelligentOCR.Activities.DataExtraction.ExportExtractionResults",
+      "displayName": "Export Extraction Results",
+      "description": "Exports an ExtractionResults object to a DataSet containing multiple Tables, for all types of fields and values.",
+      "category": null,
+      "visibility": "legacy",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "members": [
+        {
+          "name": "ExtractionResult",
+          "displayName": "ExtractionResult",
+          "dataType": "System.Activities.InArgument<UiPath.DocumentProcessing.Contracts.Results.ExtractionResult>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "IncludeConfidence",
+          "displayName": "IncludeConfidence",
+          "dataType": "System.Boolean",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "IncludeOCRConfidence",
+          "displayName": "IncludeOCRConfidence",
+          "dataType": "System.Boolean",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "DataSet",
+          "displayName": "DataSet",
+          "dataType": "System.Activities.OutArgument<System.Data.DataSet>",
+          "memberKind": "argument",
+          "argumentDirection": "out",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        }
+      ],
+      "enrichment": null
+    },
+    {
+      "id": "UiPath.IntelligentOCR.Activities.DataExtraction.FormExtractor@UiPath.IntelligentOCR.Activities/6.27.3",
+      "fullName": "UiPath.IntelligentOCR.Activities.DataExtraction.FormExtractor",
+      "displayName": "Form Extractor",
+      "description": "Data extractor for fixed template document types",
+      "category": null,
+      "visibility": "legacy",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "members": [
+        {
+          "name": "Endpoint",
+          "displayName": "Endpoint",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ApiKey",
+          "displayName": "ApiKey",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "MinOverlapPercentage",
+          "displayName": "MinOverlapPercentage",
+          "dataType": "System.Activities.InArgument<System.Int32>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "Timeout",
+          "displayName": "Timeout",
+          "dataType": "System.Activities.InArgument<System.Int32>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "SendDocumentsForAlgorithmImprovements",
+          "displayName": "SendDocumentsForAlgorithmImprovements",
+          "dataType": "System.Boolean",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        }
+      ],
+      "enrichment": null
+    },
+    {
+      "id": "UiPath.IntelligentOCR.Activities.DataExtraction.RegexBasedExtractor@UiPath.IntelligentOCR.Activities/6.27.3",
+      "fullName": "UiPath.IntelligentOCR.Activities.DataExtraction.RegexBasedExtractor",
+      "displayName": "Regex Based Extractor",
+      "description": "An extractor using regular expressions",
+      "category": null,
+      "visibility": "legacy",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "members": [
+        {
+          "name": "Configuration",
+          "displayName": "Configuration",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "Timeout",
+          "displayName": "Timeout",
+          "dataType": "System.Activities.InArgument<System.Int32>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "UseVisualAlignment",
+          "displayName": "UseVisualAlignment",
+          "dataType": "System.Activities.InArgument<System.Boolean>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        }
+      ],
+      "enrichment": null
+    }
+  ],
+  "enums": [
+    {
+      "fullName": "UiPath.DU.Shared.DuAppClient.ApplyOcrOnPdfs",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "YES",
+          "value": 0
+        },
+        {
+          "name": "NO",
+          "value": 1
+        },
+        {
+          "name": "AUTO",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Shared.Activities.Services.Language",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "VisualBasic",
+          "value": 0
+        },
+        {
+          "name": "CSharp",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Shared.Activities.Performance.ApplicationType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "API",
+          "value": 1
+        },
+        {
+          "name": "WindowsApplication",
+          "value": 2
+        },
+        {
+          "name": "Chrome",
+          "value": 3
+        },
+        {
+          "name": "Default",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Shared.Activities.Performance.PerfCommandType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "Start",
+          "value": 1
+        },
+        {
+          "name": "Stop",
+          "value": 2
+        },
+        {
+          "name": "Alive",
+          "value": 3
+        },
+        {
+          "name": "Data",
+          "value": 4
+        },
+        {
+          "name": "Error",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.IntelligentOCR.Activities.Digitization.ApplyOcrOnPdfArgument",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Auto",
+          "value": 0
+        },
+        {
+          "name": "Yes",
+          "value": 1
+        },
+        {
+          "name": "No",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.IntelligentOCR.Activities.Actions.Utils.OperationStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Successful",
+          "value": 0
+        },
+        {
+          "name": "Cancelled",
+          "value": 1
+        },
+        {
+          "name": "Failed",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.AssetDtoValueScope",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Global",
+          "value": 0
+        },
+        {
+          "name": "PerRobot",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.AssetDtoValueType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DBConnectionString",
+          "value": 0
+        },
+        {
+          "name": "HttpConnectionString",
+          "value": 1
+        },
+        {
+          "name": "Text",
+          "value": 2
+        },
+        {
+          "name": "Bool",
+          "value": 3
+        },
+        {
+          "name": "Integer",
+          "value": 4
+        },
+        {
+          "name": "Credential",
+          "value": 5
+        },
+        {
+          "name": "WindowsCredential",
+          "value": 6
+        },
+        {
+          "name": "KeyValueList",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.AssetRobotValueDtoValueType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DBConnectionString",
+          "value": 0
+        },
+        {
+          "name": "HttpConnectionString",
+          "value": 1
+        },
+        {
+          "name": "Text",
+          "value": 2
+        },
+        {
+          "name": "Bool",
+          "value": 3
+        },
+        {
+          "name": "Integer",
+          "value": 4
+        },
+        {
+          "name": "Credential",
+          "value": 5
+        },
+        {
+          "name": "WindowsCredential",
+          "value": 6
+        },
+        {
+          "name": "KeyValueList",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.AssetUserValueDtoValueType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DBConnectionString",
+          "value": 0
+        },
+        {
+          "name": "HttpConnectionString",
+          "value": 1
+        },
+        {
+          "name": "Text",
+          "value": 2
+        },
+        {
+          "name": "Bool",
+          "value": 3
+        },
+        {
+          "name": "Integer",
+          "value": 4
+        },
+        {
+          "name": "Credential",
+          "value": 5
+        },
+        {
+          "name": "WindowsCredential",
+          "value": 6
+        },
+        {
+          "name": "KeyValueList",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.AttendedRobotDtoRobotType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NonProduction",
+          "value": 0
+        },
+        {
+          "name": "Attended",
+          "value": 1
+        },
+        {
+          "name": "Unattended",
+          "value": 2
+        },
+        {
+          "name": "Development",
+          "value": 3
+        },
+        {
+          "name": "Studio",
+          "value": 4
+        },
+        {
+          "name": "RpaDeveloper",
+          "value": 5
+        },
+        {
+          "name": "StudioX",
+          "value": 6
+        },
+        {
+          "name": "CitizenDeveloper",
+          "value": 7
+        },
+        {
+          "name": "Headless",
+          "value": 8
+        },
+        {
+          "name": "StudioPro",
+          "value": 9
+        },
+        {
+          "name": "RpaDeveloperPro",
+          "value": 10
+        },
+        {
+          "name": "TestAutomation",
+          "value": 11
+        },
+        {
+          "name": "AutomationCloud",
+          "value": 12
+        },
+        {
+          "name": "Serverless",
+          "value": 13
+        },
+        {
+          "name": "AutomationKit",
+          "value": 14
+        },
+        {
+          "name": "ServerlessTestAutomation",
+          "value": 15
+        },
+        {
+          "name": "AutomationCloudTestAutomation",
+          "value": 16
+        },
+        {
+          "name": "AttendedStudioWeb",
+          "value": 17
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.BucketDtoOptions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "ReadOnly",
+          "value": 1
+        },
+        {
+          "name": "AuditReadAccess",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.ConfigurationEntryValueType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "String",
+          "value": 0
+        },
+        {
+          "name": "Number",
+          "value": 1
+        },
+        {
+          "name": "Choice",
+          "value": 2
+        },
+        {
+          "name": "Boolean",
+          "value": 3
+        },
+        {
+          "name": "Section",
+          "value": 4
+        },
+        {
+          "name": "Secret",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.DirectoryObjectType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "User",
+          "value": 0
+        },
+        {
+          "name": "Group",
+          "value": 1
+        },
+        {
+          "name": "Machine",
+          "value": 2
+        },
+        {
+          "name": "Robot",
+          "value": 3
+        },
+        {
+          "name": "ExternalApplication",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.DomainUserAssignmentDtoUserType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "User",
+          "value": 0
+        },
+        {
+          "name": "Robot",
+          "value": 1
+        },
+        {
+          "name": "DirectoryUser",
+          "value": 2
+        },
+        {
+          "name": "DirectoryGroup",
+          "value": 3
+        },
+        {
+          "name": "DirectoryRobot",
+          "value": 4
+        },
+        {
+          "name": "DirectoryExternalApplication",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.EnvironmentDtoType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Dev",
+          "value": 0
+        },
+        {
+          "name": "Test",
+          "value": 1
+        },
+        {
+          "name": "Prod",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.ExecutionSettingsConfigurationScope",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Global",
+          "value": 0
+        },
+        {
+          "name": "Robot",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.FolderDtoFeedType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "Processes",
+          "value": 1
+        },
+        {
+          "name": "Libraries",
+          "value": 2
+        },
+        {
+          "name": "PersonalWorkspace",
+          "value": 3
+        },
+        {
+          "name": "FolderHierarchy",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.FolderDtoPermissionModel",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "InheritFromTenant",
+          "value": 0
+        },
+        {
+          "name": "FineGrained",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.FolderDtoProvisionType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Manual",
+          "value": 0
+        },
+        {
+          "name": "Automatic",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.FolderNavigationContextDtoProvisionType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Manual",
+          "value": 0
+        },
+        {
+          "name": "Automatic",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.FolderType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Standard",
+          "value": 0
+        },
+        {
+          "name": "Personal",
+          "value": 1
+        },
+        {
+          "name": "Virtual",
+          "value": 2
+        },
+        {
+          "name": "Solution",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.JobTriggerType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "QueueItem",
+          "value": 1
+        },
+        {
+          "name": "Job",
+          "value": 2
+        },
+        {
+          "name": "Task",
+          "value": 3
+        },
+        {
+          "name": "Timer",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.MachineDtoAutomationType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Any",
+          "value": 0
+        },
+        {
+          "name": "Foreground",
+          "value": 1
+        },
+        {
+          "name": "Background",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.MachineDtoEndpointDetectionStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NotAvailable",
+          "value": 0
+        },
+        {
+          "name": "Mixed",
+          "value": 1
+        },
+        {
+          "name": "Enabled",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.MachineDtoScope",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "Shared",
+          "value": 1
+        },
+        {
+          "name": "PersonalWorkspace",
+          "value": 2
+        },
+        {
+          "name": "Cloud",
+          "value": 3
+        },
+        {
+          "name": "Serverless",
+          "value": 4
+        },
+        {
+          "name": "AutomationCloudRobot",
+          "value": 5
+        },
+        {
+          "name": "ElasticRobot",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.MachineDtoServerlessLicensingModel",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "RobotUnits",
+          "value": 0
+        },
+        {
+          "name": "LicenseSlots",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.MachineDtoTargetFramework",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Any",
+          "value": 0
+        },
+        {
+          "name": "Windows",
+          "value": 1
+        },
+        {
+          "name": "Portable",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.MachineDtoType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Standard",
+          "value": 0
+        },
+        {
+          "name": "Template",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.MaintenanceWindowDtoJobStopStrategy",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Kill",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.MoveFolderMachineChangeNewMachineFolderState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "NotAssigned",
+          "value": 1
+        },
+        {
+          "name": "Assigned",
+          "value": 2
+        },
+        {
+          "name": "Inherited",
+          "value": 3
+        },
+        {
+          "name": "EroAcrError",
+          "value": 4
+        },
+        {
+          "name": "ServerlessError",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.MoveFolderMachineChangeOldMachineFolderState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "NotAssigned",
+          "value": 1
+        },
+        {
+          "name": "Assigned",
+          "value": 2
+        },
+        {
+          "name": "Inherited",
+          "value": 3
+        },
+        {
+          "name": "EroAcrError",
+          "value": 4
+        },
+        {
+          "name": "ServerlessError",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.PermissionDtoScope",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Global",
+          "value": 0
+        },
+        {
+          "name": "Folder",
+          "value": 1
+        },
+        {
+          "name": "GlobalOrFolder",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.RobotAssetDtoValueType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DBConnectionString",
+          "value": 0
+        },
+        {
+          "name": "HttpConnectionString",
+          "value": 1
+        },
+        {
+          "name": "Text",
+          "value": 2
+        },
+        {
+          "name": "Bool",
+          "value": 3
+        },
+        {
+          "name": "Integer",
+          "value": 4
+        },
+        {
+          "name": "Credential",
+          "value": 5
+        },
+        {
+          "name": "WindowsCredential",
+          "value": 6
+        },
+        {
+          "name": "KeyValueList",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.RobotDtoCredentialType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "SmartCard",
+          "value": 1
+        },
+        {
+          "name": "NCipher",
+          "value": 2
+        },
+        {
+          "name": "SafeNet",
+          "value": 3
+        },
+        {
+          "name": "NoCredential",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.RobotDtoHostingType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Standard",
+          "value": 0
+        },
+        {
+          "name": "Floating",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.RobotDtoProvisionType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Manual",
+          "value": 0
+        },
+        {
+          "name": "Automatic",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.RobotDtoType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NonProduction",
+          "value": 0
+        },
+        {
+          "name": "Attended",
+          "value": 1
+        },
+        {
+          "name": "Unattended",
+          "value": 2
+        },
+        {
+          "name": "Development",
+          "value": 3
+        },
+        {
+          "name": "Studio",
+          "value": 4
+        },
+        {
+          "name": "RpaDeveloper",
+          "value": 5
+        },
+        {
+          "name": "StudioX",
+          "value": 6
+        },
+        {
+          "name": "CitizenDeveloper",
+          "value": 7
+        },
+        {
+          "name": "Headless",
+          "value": 8
+        },
+        {
+          "name": "StudioPro",
+          "value": 9
+        },
+        {
+          "name": "RpaDeveloperPro",
+          "value": 10
+        },
+        {
+          "name": "TestAutomation",
+          "value": 11
+        },
+        {
+          "name": "AutomationCloud",
+          "value": 12
+        },
+        {
+          "name": "Serverless",
+          "value": 13
+        },
+        {
+          "name": "AutomationKit",
+          "value": 14
+        },
+        {
+          "name": "ServerlessTestAutomation",
+          "value": 15
+        },
+        {
+          "name": "AutomationCloudTestAutomation",
+          "value": 16
+        },
+        {
+          "name": "AttendedStudioWeb",
+          "value": 17
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.RoleDtoType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Mixed",
+          "value": 0
+        },
+        {
+          "name": "Tenant",
+          "value": 1
+        },
+        {
+          "name": "Folder",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.SettingsDtoScope",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Application",
+          "value": 0
+        },
+        {
+          "name": "Tenant",
+          "value": 1
+        },
+        {
+          "name": "User",
+          "value": 2
+        },
+        {
+          "name": "All",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.SimpleRoleDtoOrigin",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Assigned",
+          "value": 0
+        },
+        {
+          "name": "Inherited",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.SimpleRoleDtoRoleType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Mixed",
+          "value": 0
+        },
+        {
+          "name": "Tenant",
+          "value": 1
+        },
+        {
+          "name": "Folder",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.SimpleUserEntityDtoSource",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Orchestrator",
+          "value": 0
+        },
+        {
+          "name": "Portal",
+          "value": 1
+        },
+        {
+          "name": "All",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.SimpleUserEntityDtoType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "User",
+          "value": 0
+        },
+        {
+          "name": "Robot",
+          "value": 1
+        },
+        {
+          "name": "DirectoryUser",
+          "value": 2
+        },
+        {
+          "name": "DirectoryGroup",
+          "value": 3
+        },
+        {
+          "name": "DirectoryRobot",
+          "value": 4
+        },
+        {
+          "name": "DirectoryExternalApplication",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.TaskCreateRequestPriority",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Low",
+          "value": 0
+        },
+        {
+          "name": "Medium",
+          "value": 1
+        },
+        {
+          "name": "High",
+          "value": 2
+        },
+        {
+          "name": "Critical",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.TaskCreateRequestType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "FormTask",
+          "value": 0
+        },
+        {
+          "name": "ExternalTask",
+          "value": 1
+        },
+        {
+          "name": "DocumentValidationTask",
+          "value": 2
+        },
+        {
+          "name": "DocumentClassificationTask",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.TaskDataDtoStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unassigned",
+          "value": 0
+        },
+        {
+          "name": "Pending",
+          "value": 1
+        },
+        {
+          "name": "Completed",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.TaskDtoPriority",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Low",
+          "value": 0
+        },
+        {
+          "name": "Medium",
+          "value": 1
+        },
+        {
+          "name": "High",
+          "value": 2
+        },
+        {
+          "name": "Critical",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.TaskDtoStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unassigned",
+          "value": 0
+        },
+        {
+          "name": "Pending",
+          "value": 1
+        },
+        {
+          "name": "Completed",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.TaskDtoType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DocumentValidationTask",
+          "value": 0
+        },
+        {
+          "name": "DocumentClassificationTask",
+          "value": 1
+        },
+        {
+          "name": "ExternalTask",
+          "value": 2
+        },
+        {
+          "name": "FormTask",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.UnattendedRobotDtoCredentialType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "SmartCard",
+          "value": 1
+        },
+        {
+          "name": "NCipher",
+          "value": 2
+        },
+        {
+          "name": "SafeNet",
+          "value": 3
+        },
+        {
+          "name": "NoCredential",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.UpdateInfoDtoReason",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NonCompliantWithDifferentVersion",
+          "value": 0
+        },
+        {
+          "name": "NonCompliantWithoutTargetVersion",
+          "value": 1
+        },
+        {
+          "name": "NotApplicableForOlderSessions",
+          "value": 2
+        },
+        {
+          "name": "NotApplicableForMachineType",
+          "value": 3
+        },
+        {
+          "name": "NotApplicableTemplateWithoutRobotSessions",
+          "value": 4
+        },
+        {
+          "name": "NotApplicableForPlatform",
+          "value": 5
+        },
+        {
+          "name": "NotApplicableForTargetFramework",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.UpdateInfoDtoUpdateStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "InProgress",
+          "value": 1
+        },
+        {
+          "name": "Failed",
+          "value": 2
+        },
+        {
+          "name": "NonCompliant",
+          "value": 3
+        },
+        {
+          "name": "Compliant",
+          "value": 4
+        },
+        {
+          "name": "NotApplicable",
+          "value": 5
+        },
+        {
+          "name": "Scheduled",
+          "value": 6
+        },
+        {
+          "name": "FailedRescheduled",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.UpdatePolicyDtoType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "SpecificVersion",
+          "value": 1
+        },
+        {
+          "name": "LatestVersion",
+          "value": 2
+        },
+        {
+          "name": "LatestPatch",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.UserDtoLicenseType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NonProduction",
+          "value": 0
+        },
+        {
+          "name": "Attended",
+          "value": 1
+        },
+        {
+          "name": "Unattended",
+          "value": 2
+        },
+        {
+          "name": "Development",
+          "value": 3
+        },
+        {
+          "name": "Studio",
+          "value": 4
+        },
+        {
+          "name": "RpaDeveloper",
+          "value": 5
+        },
+        {
+          "name": "StudioX",
+          "value": 6
+        },
+        {
+          "name": "CitizenDeveloper",
+          "value": 7
+        },
+        {
+          "name": "Headless",
+          "value": 8
+        },
+        {
+          "name": "StudioPro",
+          "value": 9
+        },
+        {
+          "name": "RpaDeveloperPro",
+          "value": 10
+        },
+        {
+          "name": "TestAutomation",
+          "value": 11
+        },
+        {
+          "name": "AutomationCloud",
+          "value": 12
+        },
+        {
+          "name": "Serverless",
+          "value": 13
+        },
+        {
+          "name": "AutomationKit",
+          "value": 14
+        },
+        {
+          "name": "ServerlessTestAutomation",
+          "value": 15
+        },
+        {
+          "name": "AutomationCloudTestAutomation",
+          "value": 16
+        },
+        {
+          "name": "AttendedStudioWeb",
+          "value": 17
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.UserDtoProvisionType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Manual",
+          "value": 0
+        },
+        {
+          "name": "Automatic",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.UserDtoType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "User",
+          "value": 0
+        },
+        {
+          "name": "Robot",
+          "value": 1
+        },
+        {
+          "name": "DirectoryUser",
+          "value": 2
+        },
+        {
+          "name": "DirectoryGroup",
+          "value": 3
+        },
+        {
+          "name": "DirectoryRobot",
+          "value": 4
+        },
+        {
+          "name": "DirectoryExternalApplication",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.UserRoleDtoRoleType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Mixed",
+          "value": 0
+        },
+        {
+          "name": "Tenant",
+          "value": 1
+        },
+        {
+          "name": "Folder",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.UserType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "User",
+          "value": 0
+        },
+        {
+          "name": "Robot",
+          "value": 1
+        },
+        {
+          "name": "DirectoryUser",
+          "value": 2
+        },
+        {
+          "name": "DirectoryGroup",
+          "value": 3
+        },
+        {
+          "name": "DirectoryRobot",
+          "value": 4
+        },
+        {
+          "name": "DirectoryExternalApplication",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Integration.AccessProviderScope",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "OrchestratorScope",
+          "value": 0
+        },
+        {
+          "name": "OrchestratorManagementScope",
+          "value": 1
+        },
+        {
+          "name": "AiFabricScope",
+          "value": 2
+        },
+        {
+          "name": "AiFabricPublicScope",
+          "value": 3
+        },
+        {
+          "name": "OrchestratorAndAIFabricScope",
+          "value": 4
+        },
+        {
+          "name": "DocumentUnderstandingScope",
+          "value": 5
+        },
+        {
+          "name": "IdentityScope",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.AiFabricClient.AuditLogSeverity",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "INFO",
+          "value": 0
+        },
+        {
+          "name": "SUCCESS",
+          "value": 1
+        },
+        {
+          "name": "WARN",
+          "value": 2
+        },
+        {
+          "name": "ERROR",
+          "value": 3
+        },
+        {
+          "name": "FATAL",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Shared.Actions.DisplayModeArgument",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Classic",
+          "value": 0
+        },
+        {
+          "name": "Compact",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Shared.JobWrapper.JobObjectInfoType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AssociateCompletionPortInformation",
+          "value": 7
+        },
+        {
+          "name": "BasicLimitInformation",
+          "value": 2
+        },
+        {
+          "name": "BasicUIRestrictions",
+          "value": 4
+        },
+        {
+          "name": "EndOfJobTimeInformation",
+          "value": 6
+        },
+        {
+          "name": "ExtendedLimitInformation",
+          "value": 9
+        },
+        {
+          "name": "SecurityLimitInformation",
+          "value": 5
+        },
+        {
+          "name": "GroupInformation",
+          "value": 11
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Shared.NativeMessageBox.MessageBoxOptions",
+      "underlyingType": "System.UInt32",
+      "members": [
+        {
+          "name": "OkOnly",
+          "value": 0
+        },
+        {
+          "name": "OkCancel",
+          "value": 1
+        },
+        {
+          "name": "AbortRetryIgnore",
+          "value": 2
+        },
+        {
+          "name": "YesNoCancel",
+          "value": 3
+        },
+        {
+          "name": "YesNo",
+          "value": 4
+        },
+        {
+          "name": "RetryCancel",
+          "value": 5
+        },
+        {
+          "name": "CancelTryContinue",
+          "value": 6
+        },
+        {
+          "name": "IconHand",
+          "value": 16
+        },
+        {
+          "name": "IconQuestion",
+          "value": 32
+        },
+        {
+          "name": "IconExclamation",
+          "value": 48
+        },
+        {
+          "name": "IconAsterisk",
+          "value": 64
+        },
+        {
+          "name": "UserIcon",
+          "value": 128
+        },
+        {
+          "name": "IconWarning",
+          "value": 48
+        },
+        {
+          "name": "IconError",
+          "value": 16
+        },
+        {
+          "name": "IconInformation",
+          "value": 64
+        },
+        {
+          "name": "IconStop",
+          "value": 16
+        },
+        {
+          "name": "DefButton1",
+          "value": 0
+        },
+        {
+          "name": "DefButton2",
+          "value": 256
+        },
+        {
+          "name": "DefButton3",
+          "value": 512
+        },
+        {
+          "name": "DefButton4",
+          "value": 768
+        },
+        {
+          "name": "ApplicationModal",
+          "value": 0
+        },
+        {
+          "name": "SystemModal",
+          "value": 4096
+        },
+        {
+          "name": "TaskModal",
+          "value": 8192
+        },
+        {
+          "name": "Help",
+          "value": 16384
+        },
+        {
+          "name": "NoFocus",
+          "value": 32768
+        },
+        {
+          "name": "SetForeground",
+          "value": 65536
+        },
+        {
+          "name": "DefaultDesktopOnly",
+          "value": 131072
+        },
+        {
+          "name": "Topmost",
+          "value": 262144
+        },
+        {
+          "name": "Right",
+          "value": 524288
+        },
+        {
+          "name": "RTLReading",
+          "value": 1048576
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Shared.NativeMessageBox.MessageBoxResult",
+      "underlyingType": "System.UInt32",
+      "members": [
+        {
+          "name": "Error",
+          "value": 0
+        },
+        {
+          "name": "Ok",
+          "value": 1
+        },
+        {
+          "name": "Cancel",
+          "value": 2
+        },
+        {
+          "name": "Abort",
+          "value": 3
+        },
+        {
+          "name": "Retry",
+          "value": 4
+        },
+        {
+          "name": "Ignore",
+          "value": 5
+        },
+        {
+          "name": "Yes",
+          "value": 6
+        },
+        {
+          "name": "No",
+          "value": 7
+        },
+        {
+          "name": "Close",
+          "value": 8
+        },
+        {
+          "name": "Help",
+          "value": 9
+        },
+        {
+          "name": "TryAgain",
+          "value": 10
+        },
+        {
+          "name": "Continue",
+          "value": 11
+        },
+        {
+          "name": "Timeout",
+          "value": 32000
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.SmartData.BusinessRules.Rules.Aggregate",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Addition",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.Activities.Anchor2.Relation.Direction",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Top",
+          "value": 0
+        },
+        {
+          "name": "TopLeft",
+          "value": 1
+        },
+        {
+          "name": "Left",
+          "value": 2
+        },
+        {
+          "name": "BottomLeft",
+          "value": 3
+        },
+        {
+          "name": "Bottom",
+          "value": 4
+        },
+        {
+          "name": "BottomRight",
+          "value": 5
+        },
+        {
+          "name": "Right",
+          "value": 6
+        },
+        {
+          "name": "TopRight",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.Activities.Anchor2.Relation.DirectionCase",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Straight",
+          "value": 0
+        },
+        {
+          "name": "Aligned",
+          "value": 1
+        },
+        {
+          "name": "Diagonal",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.Activities.Anchor2.Relation.OverlapPercentage",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Small",
+          "value": 0
+        },
+        {
+          "name": "Mid",
+          "value": 1
+        },
+        {
+          "name": "Big",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Shared.Anchor2.Anchor2Version",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "V1",
+          "value": 0
+        },
+        {
+          "name": "V2",
+          "value": 1
+        },
+        {
+          "name": "V3",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Shared.Anchor2.AutoAnchor.AutoAnchorSearchType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Left",
+          "value": 1
+        },
+        {
+          "name": "Right",
+          "value": 2
+        },
+        {
+          "name": "Top",
+          "value": 4
+        },
+        {
+          "name": "Bottom",
+          "value": 8
+        },
+        {
+          "name": "Inner",
+          "value": 16
+        },
+        {
+          "name": "ContainedBy",
+          "value": 32
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Shared.Anchor2.AutoAnchor.Contracts.AutoAnchorElementType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "AnyText",
+          "value": 1
+        },
+        {
+          "name": "AnyWordGroup",
+          "value": 2
+        },
+        {
+          "name": "ArrowButton",
+          "value": 3
+        },
+        {
+          "name": "Button",
+          "value": 4
+        },
+        {
+          "name": "CheckBox",
+          "value": 5
+        },
+        {
+          "name": "Icon",
+          "value": 6
+        },
+        {
+          "name": "InputBox",
+          "value": 7
+        },
+        {
+          "name": "RadioButton",
+          "value": 8
+        },
+        {
+          "name": "Text",
+          "value": 9
+        },
+        {
+          "name": "Cell",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.SmartData.Utils.ApplyOcrOnPdf",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Auto",
+          "value": 0
+        },
+        {
+          "name": "Yes",
+          "value": 1
+        },
+        {
+          "name": "No",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.SmartData.ValidationStation.DTO.Customization.SelectionMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Tokens",
+          "value": 1
+        },
+        {
+          "name": "Area",
+          "value": 2
+        },
+        {
+          "name": "UserChoice",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.SmartData.WPF.Dialog.FileFilter",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Json",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.SmartData.WPF.Theme.ApplicationTheme",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Light",
+          "value": 0
+        },
+        {
+          "name": "Dark",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "namespaceMappings": []
+}

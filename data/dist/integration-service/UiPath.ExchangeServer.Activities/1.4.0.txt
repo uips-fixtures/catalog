@@ -1,0 +1,80 @@
+# UiPath.ExchangeServer.Activities 1.4.0
+
+> generator: uips-fixtures catalog v0.2
+> generated: 2026-04-09T22:10:08Z
+> set: integration-service
+> url: https://uips-fixtures.github.io/llms/UiPath.ExchangeServer.Activities/1.4.0.txt
+> activities: 5
+> authors: UiPath
+**ID format**: `{fullName}@{packageId}/{packageVersion}`
+**Argument directions**: In (input), Out (output), InOut (bidirectional)
+
+---
+### Create Mailbox
+
+**ID**: `UiPath.ExchangeServer.Activities.CreateMailbox@UiPath.ExchangeServer.Activities/1.4.0`
+**Type**: `UiPath.ExchangeServer.Activities.CreateMailbox`
+**Description**: Creates a new mailbox for an existing Active Directory user account.
+**Arguments**:
+- [IN] `InArgument<String>` **Alias**
+- [IN, Required] `InArgument<String>` **UserPrincipalName**
+- [IN] `InArgument<String>` **MailboxDatabase**
+- [IN] `InArgument<String>` **ArchiveDatabase**
+- [IN] `InArgument<String>` **AddressBookPolicy**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **Archive**
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Delete Mailbox
+
+**ID**: `UiPath.ExchangeServer.Activities.DeleteMailbox@UiPath.ExchangeServer.Activities/1.4.0`
+**Type**: `UiPath.ExchangeServer.Activities.DeleteMailbox`
+**Description**: Deletes a specified mailbox.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **UserPrincipalName**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Disable Mailbox Archive
+
+**ID**: `UiPath.ExchangeServer.Activities.DisableMailboxArchive@UiPath.ExchangeServer.Activities/1.4.0`
+**Type**: `UiPath.ExchangeServer.Activities.DisableMailboxArchive`
+**Description**: Disables the archive for the specified mailbox.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **UserPrincipalName**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Enable Mailbox Archive
+
+**ID**: `UiPath.ExchangeServer.Activities.EnableMailboxArchive@UiPath.ExchangeServer.Activities/1.4.0`
+**Type**: `UiPath.ExchangeServer.Activities.EnableMailboxArchive`
+**Description**: Enables the archive for the specified mailbox.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **UserPrincipalName**
+- [IN] `InArgument<String>` **ArchiveDatabase**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Exchange Server Scope
+
+**ID**: `UiPath.ExchangeServer.Activities.ExchangeServerScope@UiPath.ExchangeServer.Activities/1.4.0`
+**Type**: `UiPath.ExchangeServer.Activities.ExchangeServerScope`
+**Description**: Provides a scope for Exchange Server activities.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **Username**
+- [IN, Required] `InArgument<Security.SecureString>` **Password**
+- [IN, Required] `InArgument<String>` **Server**
+---

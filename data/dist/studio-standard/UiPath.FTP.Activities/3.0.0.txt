@@ -1,0 +1,115 @@
+# UiPath.FTP.Activities 3.0.0
+
+> generator: uips-fixtures catalog v0.2
+> generated: 2026-04-09T22:10:08Z
+> set: studio-standard
+> url: https://uips-fixtures.github.io/llms/UiPath.FTP.Activities/3.0.0.txt
+> activities: 8
+> authors: UiPath
+**ID format**: `{fullName}@{packageId}/{packageVersion}`
+**Argument directions**: In (input), Out (output), InOut (bidirectional)
+
+---
+### Delete File or Folder
+
+**ID**: `UiPath.FTP.Activities.Delete@UiPath.FTP.Activities/3.0.0`
+**Type**: `UiPath.FTP.Activities.Delete`
+**Description**: Removes a specified file from an FTP server. This activity only works if it is placed inside a With FTP Session scope activity.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **RemotePath**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+### Directory Exists
+
+**ID**: `UiPath.FTP.Activities.DirectoryExists@UiPath.FTP.Activities/3.0.0`
+**Type**: `UiPath.FTP.Activities.DirectoryExists`
+**Description**: Checks whether a certain directory exists on an FTP server. This activity only works if it is placed inside a With FTP Session scope activity.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **RemotePath**
+- [OUT] `OutArgument<Boolean>` **Exists**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+### Download Files
+
+**ID**: `UiPath.FTP.Activities.DownloadFiles@UiPath.FTP.Activities/3.0.0`
+**Type**: `UiPath.FTP.Activities.DownloadFiles`
+**Description**: Downloads the specified files from an FTP server to the specified local folder. This activity only works if it is placed inside a With FTP Session scope activity.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **RemotePath**
+- [IN, Required] `InArgument<String>` **LocalPath**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **Recursive**
+- [property] `Boolean` **Create**
+- [property] `Boolean` **Overwrite**
+### Enumerate Objects
+
+**ID**: `UiPath.FTP.Activities.EnumerateObjects@UiPath.FTP.Activities/3.0.0`
+**Type**: `UiPath.FTP.Activities.EnumerateObjects`
+**Description**: Generates a collection of files that have been found on the FTP server. Subfolders can also be included in the search by checking the Includes subfolders box. This activity only works if it is placed inside a With FTP Session scope activity.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **RemotePath**
+- [OUT] `OutArgument<IEnumerable<UiPath.FTP.FtpObjectInfo>>` **Files**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **Recursive**
+- [property] `UiPath.FTP.FtpFilterObjectType` **Filter**
+### File Exists
+
+**ID**: `UiPath.FTP.Activities.FileExists@UiPath.FTP.Activities/3.0.0`
+**Type**: `UiPath.FTP.Activities.FileExists`
+**Description**: Checks whether a certain file exists in the specified FTP directory. This activity only works if it is placed inside a With FTP Session scope activity.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **RemotePath**
+- [OUT] `OutArgument<Boolean>` **Exists**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+### Move File or Folder
+
+**ID**: `UiPath.FTP.Activities.MoveItem@UiPath.FTP.Activities/3.0.0`
+**Type**: `UiPath.FTP.Activities.MoveItem`
+**Description**: Moves an item on an FTP server to a different remote path. This activity only works if it is placed inside a With FTP
+**Arguments**:
+- [IN, Required] `InArgument<String>` **RemotePath**
+- [IN, Required] `InArgument<String>` **NewPath**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **Overwrite**
+### Upload Files
+
+**ID**: `UiPath.FTP.Activities.UploadFiles@UiPath.FTP.Activities/3.0.0`
+**Type**: `UiPath.FTP.Activities.UploadFiles`
+**Description**: Uploads a file to an FTP server. This activity only works if it is placed inside a With FTP Session scope activity.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **LocalPath**
+- [IN, Required] `InArgument<String>` **RemotePath**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **Recursive**
+- [property] `Boolean` **Create**
+- [property] `Boolean` **Overwrite**
+### Use FTP Connection
+
+**ID**: `UiPath.FTP.Activities.WithFtpSession@UiPath.FTP.Activities/3.0.0`
+**Type**: `UiPath.FTP.Activities.WithFtpSession`
+**Description**: Connects to FTP server and provides a scope for other FTP activities.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **Host**
+- [IN] `InArgument<Int32>` **Port**
+- [IN] `InArgument<String>` **Username**
+- [IN] `InArgument<String>` **Password**
+- [IN] `InArgument<Security.SecureString>` **SecurePassword**
+- [IN] `InArgument<String>` **ClientCertificatePath**
+- [IN] `InArgument<String>` **ClientCertificatePassword**
+- [IN] `InArgument<Security.SecureString>` **ClientCertificateSecurePassword**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+- [IN] `InArgument<String>` **ProxyServer**
+- [IN] `InArgument<Int32>` **ProxyPort**
+- [IN] `InArgument<String>` **ProxyUser**
+- [IN] `InArgument<String>` **ProxyPassword**
+- [IN] `InArgument<Security.SecureString>` **ProxySecurePassword**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **UseAnonymousLogin**
+- [property] `UiPath.FTP.FtpsMode` **FtpsMode**
+- [property] `UiPath.FTP.FtpSslProtocols` **SslProtocols**
+- [property] `Boolean` **UseSftp**
+- [property] `Boolean` **AcceptAllCertificates**
+- [property] `UiPath.FTP.FtpProxyType` **ProxyType**
+---

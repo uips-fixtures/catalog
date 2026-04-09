@@ -1,0 +1,799 @@
+{
+  "schema": {
+    "id": "activity-catalog",
+    "version": "v0.2"
+  },
+  "source": {
+    "kind": "nuget-package",
+    "id": "UiPath.Workato.Activities",
+    "version": "1.3.1",
+    "feedUrl": null,
+    "authors": "UiPath",
+    "projectUrl": "https://docs.uipath.com/activities/docs/workato-about",
+    "description": "Automation activities for Workato.",
+    "license": "https://www.uipath.com/hubfs/legalspot/UiPath_MSSA.pdf",
+    "tags": "UiPathActivities",
+    "packageTypes": []
+  },
+  "generatedAt": "2026-04-09T21:48:08Z",
+  "activities": [],
+  "enums": [
+    {
+      "fullName": "UiPath.BAF.Activities.Design.View.Enums.FlatviewFilter",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ShowValued",
+          "value": 0
+        },
+        {
+          "name": "Contains",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Activities.Design.View.Enums.HierarchicalViewState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NotSet",
+          "value": 0
+        },
+        {
+          "name": "TreeView",
+          "value": 1
+        },
+        {
+          "name": "FlatView",
+          "value": 2
+        },
+        {
+          "name": "FlatViewAllChildren",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Activities.Design.View.Enums.WindowScreenState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "MandatoryParametersState",
+          "value": 0
+        },
+        {
+          "name": "OptionalParametersState",
+          "value": 1
+        },
+        {
+          "name": "MultiInputState",
+          "value": 2
+        },
+        {
+          "name": "PreviewResultsState",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Activities.Design.LangInvariant.Language",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "VisualBasic",
+          "value": 0
+        },
+        {
+          "name": "CSharp",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Activities.Design.Common.Model.CommandResultState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Valid",
+          "value": 0
+        },
+        {
+          "name": "Invalid",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Activities.Design.Common.Model.MessageBoxSelection",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Cancel",
+          "value": 0
+        },
+        {
+          "name": "Yes",
+          "value": 1
+        },
+        {
+          "name": "No",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "HttpClientFramework.Apis.Logging.LogLevel",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "All",
+          "value": 0
+        },
+        {
+          "name": "Debug",
+          "value": 100
+        },
+        {
+          "name": "Info",
+          "value": 200
+        },
+        {
+          "name": "Warning",
+          "value": 300
+        },
+        {
+          "name": "Error",
+          "value": 400
+        },
+        {
+          "name": "None",
+          "value": 1000
+        }
+      ]
+    },
+    {
+      "fullName": "HttpClientFramework.Apis.Http.ConfigurableMessageHandler.LogEventType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "RequestUri",
+          "value": 1
+        },
+        {
+          "name": "RequestHeaders",
+          "value": 2
+        },
+        {
+          "name": "RequestBody",
+          "value": 4
+        },
+        {
+          "name": "ResponseStatus",
+          "value": 8
+        },
+        {
+          "name": "ResponseHeaders",
+          "value": 16
+        },
+        {
+          "name": "ResponseBody",
+          "value": 32
+        },
+        {
+          "name": "ResponseAbnormal",
+          "value": 64
+        }
+      ]
+    },
+    {
+      "fullName": "HttpClientFramework.Apis.Http.ExponentialBackOffPolicy",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Exception",
+          "value": 1
+        },
+        {
+          "name": "UnsuccessfulResponse503",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "HttpClientFramework.Apis.Discovery.DiscoveryVersion",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Version_1_0",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "fullName": "HttpClientFramework.Apis.Discovery.Features",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "LegacyDataResponse",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "fullName": "HttpClientFramework.Apis.Util.RequestParameterType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Path",
+          "value": 0
+        },
+        {
+          "name": "Query",
+          "value": 1
+        },
+        {
+          "name": "UserDefinedQueries",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "HttpClientFramework.Apis.Upload.UploadStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NotStarted",
+          "value": 0
+        },
+        {
+          "name": "Starting",
+          "value": 1
+        },
+        {
+          "name": "Uploading",
+          "value": 2
+        },
+        {
+          "name": "Completed",
+          "value": 3
+        },
+        {
+          "name": "Failed",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "HttpClientFramework.Apis.Download.DownloadStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NotStarted",
+          "value": 0
+        },
+        {
+          "name": "Downloading",
+          "value": 1
+        },
+        {
+          "name": "Completed",
+          "value": 2
+        },
+        {
+          "name": "Failed",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Swagger.Utilities.SwaggerEventCodes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "RestRequestFailed",
+          "value": 202
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Swagger.Enums.ApiKeyLocation",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "Query",
+          "value": 1
+        },
+        {
+          "name": "Header",
+          "value": 2
+        },
+        {
+          "name": "Cookie",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Swagger.Enums.AuthType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "BasicAuth",
+          "value": 10
+        },
+        {
+          "name": "BearerAuth",
+          "value": 20
+        },
+        {
+          "name": "ApiKey",
+          "value": 30
+        },
+        {
+          "name": "ApiToken",
+          "value": 31
+        },
+        {
+          "name": "OAuth1",
+          "value": 35
+        },
+        {
+          "name": "OAuth2AuthorizationCode",
+          "value": 37
+        },
+        {
+          "name": "OAuth2ClientCredentials",
+          "value": 40
+        },
+        {
+          "name": "OAuth2Implicit",
+          "value": 45
+        },
+        {
+          "name": "OAuth2Password",
+          "value": 50
+        },
+        {
+          "name": "OpenIdConnect",
+          "value": 55
+        },
+        {
+          "name": "ExistingConnection",
+          "value": 60
+        },
+        {
+          "name": "OAuthJWT",
+          "value": 65
+        },
+        {
+          "name": "OAuthPassthrough",
+          "value": 67
+        },
+        {
+          "name": "AWS",
+          "value": 68
+        },
+        {
+          "name": "None",
+          "value": 69
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Models.OperationParameterKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "Body",
+          "value": 1
+        },
+        {
+          "name": "Query",
+          "value": 2
+        },
+        {
+          "name": "Path",
+          "value": 3
+        },
+        {
+          "name": "Header",
+          "value": 4
+        },
+        {
+          "name": "FormData",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Models.CrudOperation.CrudOperations",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Create",
+          "value": 1
+        },
+        {
+          "name": "Get",
+          "value": 2
+        },
+        {
+          "name": "Update",
+          "value": 4
+        },
+        {
+          "name": "Delete",
+          "value": 8
+        },
+        {
+          "name": "Function",
+          "value": 16
+        },
+        {
+          "name": "Action",
+          "value": 32
+        },
+        {
+          "name": "Search",
+          "value": 64
+        },
+        {
+          "name": "Upsert",
+          "value": 128
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Models.Connection.Authentication.Enums.AccessTokenKeyLocation",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Header",
+          "value": 0
+        },
+        {
+          "name": "Query",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Models.Annotations.OperationState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Preview",
+          "value": 1
+        },
+        {
+          "name": "Warning",
+          "value": 2
+        },
+        {
+          "name": "Info",
+          "value": 3
+        },
+        {
+          "name": "Hide",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Utilities.EventCodes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ArgumentNullException",
+          "value": 101
+        },
+        {
+          "name": "ArgumentConverterError",
+          "value": 102
+        },
+        {
+          "name": "BackgroundWorkCompletedUnsuccessfully",
+          "value": 103
+        },
+        {
+          "name": "AutocompleteBoxError",
+          "value": 104
+        },
+        {
+          "name": "ConnectionFailed",
+          "value": 105
+        },
+        {
+          "name": "DisconnectionFailed",
+          "value": 106
+        },
+        {
+          "name": "ScopeExecutionFailed",
+          "value": 107
+        },
+        {
+          "name": "GetEntityFieldsFailed",
+          "value": 108
+        },
+        {
+          "name": "RestRequestError",
+          "value": 109
+        },
+        {
+          "name": "FetchSampleDataFailed",
+          "value": 110
+        },
+        {
+          "name": "TestWithSampleDataFailed",
+          "value": 111
+        },
+        {
+          "name": "OutsideScopeError",
+          "value": 112
+        },
+        {
+          "name": "ConnectionClosedSuccessfully",
+          "value": 201
+        },
+        {
+          "name": "AutocompleteBoxResultSet",
+          "value": 202
+        },
+        {
+          "name": "ConnectionSuccessful",
+          "value": 201
+        },
+        {
+          "name": "RestRequestResponseReceived",
+          "value": 203
+        },
+        {
+          "name": "EncryptionFailure",
+          "value": 204
+        },
+        {
+          "name": "DecryptionFailure",
+          "value": 205
+        },
+        {
+          "name": "RestRequestFailed",
+          "value": 206
+        },
+        {
+          "name": "RestRequestArgumentException",
+          "value": 207
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Utilities.FormDataType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ComboBox",
+          "value": 0
+        },
+        {
+          "name": "FilePicker",
+          "value": 1
+        },
+        {
+          "name": "FolderPicker",
+          "value": 2
+        },
+        {
+          "name": "ExpressionTextBox",
+          "value": 3
+        },
+        {
+          "name": "MultiSelect",
+          "value": 4
+        },
+        {
+          "name": "TextBoxWithButton",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Utilities.OAuthBase.SignatureTypes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "HMACSHA1",
+          "value": 0
+        },
+        {
+          "name": "PLAINTEXT",
+          "value": 1
+        },
+        {
+          "name": "RSASHA1",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Telemetry.TelemetryGroup",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "PreAPIOperation",
+          "value": 0
+        },
+        {
+          "name": "PostAPIOperation",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Enums.ProjectType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Swagger",
+          "value": 0
+        },
+        {
+          "name": "SDK",
+          "value": 1
+        },
+        {
+          "name": "OData",
+          "value": 2
+        },
+        {
+          "name": "HttpClient",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Enums.WindowType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "FindObject",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Enums.ApiKeyLocation",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "Query",
+          "value": 1
+        },
+        {
+          "name": "Header",
+          "value": 2
+        },
+        {
+          "name": "Cookie",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Enums.AuthType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "BasicAuth",
+          "value": 10
+        },
+        {
+          "name": "BearerAuth",
+          "value": 20
+        },
+        {
+          "name": "ApiKey",
+          "value": 30
+        },
+        {
+          "name": "ApiToken",
+          "value": 31
+        },
+        {
+          "name": "OAuth1",
+          "value": 35
+        },
+        {
+          "name": "OAuth2AuthorizationCode",
+          "value": 37
+        },
+        {
+          "name": "OAuth2ClientCredentials",
+          "value": 40
+        },
+        {
+          "name": "OAuth2Implicit",
+          "value": 45
+        },
+        {
+          "name": "OAuth2Password",
+          "value": 50
+        },
+        {
+          "name": "OpenIdConnect",
+          "value": 55
+        },
+        {
+          "name": "ExistingConnection",
+          "value": 60
+        },
+        {
+          "name": "OAuthJWT",
+          "value": 65
+        },
+        {
+          "name": "JWT",
+          "value": 66
+        },
+        {
+          "name": "OAuthPassthrough",
+          "value": 67
+        },
+        {
+          "name": "AWS",
+          "value": 68
+        },
+        {
+          "name": "None",
+          "value": 69
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workato.Enums.FieldType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Actual",
+          "value": 0
+        },
+        {
+          "name": "Sample",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "namespaceMappings": []
+}

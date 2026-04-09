@@ -1,0 +1,2762 @@
+# UiPath.MicrosoftOffice365.Activities 3.7.10
+
+> generator: uips-fixtures catalog v0.2
+> generated: 2026-04-09T22:10:08Z
+> set: integration-service
+> url: https://uips-fixtures.github.io/llms/UiPath.MicrosoftOffice365.Activities/3.7.10.txt
+> activities: 116
+> authors: UiPath
+**ID format**: `{fullName}@{packageId}/{packageVersion}`
+**Argument directions**: In (input), Out (output), InOut (bidirectional)
+
+---
+### Wait for Email Received and Resume
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.WaitForEmailReceived@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.WaitForEmailReceived`
+**Category**: Microsoft 365.Outlook
+**Description**: Wait for a new email to be received and resume the workflow
+**Arguments**:
+- [IN] `InArgument<String>` **BrowserFolder**
+- [IN] `InArgument<Boolean>` **MarkAsRead**
+- [IN] `InArgument<Boolean>` **WithAttachmentsOnly**
+- [IN] `InArgument<Boolean>` **IncludeAttachments**
+- [IN] `InArgument<String>` **Mailbox**
+- [OUT] `OutArgument<UiPath.MicrosoftOffice365.Activities.Utilities.JobInformation>` **JobData**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.MicrosoftOffice365.Activities.Mail.Models.MailFolderArgument` **MailFolderArgument**
+- [property] `String` **Operation**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `Boolean` **UseSharedMailbox**
+- [property] `UiPath.MicrosoftOffice365.Activities.Mail.Models.MailboxArgument` **MailboxArg**
+- [property] `String` **Connector**
+- [property] `String` **ObjectName**
+- [property] `String` **ParentResourceKey**
+- [property] `String` **ResourceKey**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+### Wait for Calendar Event Created and Resume
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.WaitForEventCreated@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.WaitForEventCreated`
+**Category**: Microsoft 365.Calendar
+**Description**: Wait for a new event to be created in the selected user calendar and resume the workflow
+**Arguments**:
+- [IN] `InArgument<String>` **BrowserCalendarId**
+- [IN] `InArgument<String>` **BrowserCalendarFriendlyName**
+- [OUT] `OutArgument<UiPath.MicrosoftOffice365.Activities.Utilities.JobInformation>` **JobData**
+**Properties / VariableScope / Child**:
+- [property] `String` **Operation**
+- [property] `UiPath.MicrosoftOffice365.Activities.Calendar.Models.CalendarArgument` **CalendarArgument**
+- [property] `UiPath.MicrosoftOffice365.Activities.Calendar.Filters.EventFilterWithVariablesCollection` **Filter**
+- [property] `String` **ObjectName**
+- [property] `String` **Connector**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `String` **ParentResourceKey**
+- [property] `String` **ResourceKey**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+### Wait for Calendar Event Received and Resume
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.WaitForEventInvitationReceived@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.WaitForEventInvitationReceived`
+**Category**: Microsoft 365.Calendar
+**Description**: Wait for a new event invitation to be received on the selected user calendar and resume the workflow
+**Arguments**:
+- [IN] `InArgument<String>` **BrowserCalendarId**
+- [IN] `InArgument<String>` **BrowserCalendarFriendlyName**
+- [OUT] `OutArgument<UiPath.MicrosoftOffice365.Activities.Utilities.JobInformation>` **JobData**
+**Properties / VariableScope / Child**:
+- [property] `String` **Operation**
+- [property] `UiPath.MicrosoftOffice365.Activities.Calendar.Models.CalendarArgument` **CalendarArgument**
+- [property] `UiPath.MicrosoftOffice365.Activities.Calendar.Filters.EventFilterWithVariablesCollection` **Filter**
+- [property] `String` **ObjectName**
+- [property] `String` **Connector**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `String` **ParentResourceKey**
+- [property] `String` **ResourceKey**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+### Wait for Calendar Event Replied and Resume
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.WaitForEventReplied@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.WaitForEventReplied`
+**Category**: Microsoft 365.Calendar
+**Description**: Wait for someone to reply to a calendar event in the selected user calendar and resume the workflow
+**Arguments**:
+- [IN] `InArgument<String>` **BrowserCalendarId**
+- [IN] `InArgument<String>` **BrowserCalendarFriendlyName**
+- [OUT] `OutArgument<UiPath.MicrosoftOffice365.Activities.Utilities.JobInformation>` **JobData**
+**Properties / VariableScope / Child**:
+- [property] `String` **Operation**
+- [property] `UiPath.MicrosoftOffice365.Activities.Calendar.Models.CalendarArgument` **CalendarArgument**
+- [property] `UiPath.MicrosoftOffice365.Activities.Calendar.Filters.EventFilterWithVariablesCollection` **Filter**
+- [property] `String` **ObjectName**
+- [property] `String` **Connector**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `String` **ParentResourceKey**
+- [property] `String` **ResourceKey**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+### Wait for Calendar Event Updated and Resume
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.WaitForEventUpdated@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.WaitForEventUpdated`
+**Category**: Microsoft 365.Calendar
+**Description**: Wait for an event to be updated in the selected user calendar and resume the workflow
+**Arguments**:
+- [IN] `InArgument<String>` **BrowserCalendarId**
+- [IN] `InArgument<String>` **BrowserCalendarFriendlyName**
+- [OUT] `OutArgument<UiPath.MicrosoftOffice365.Activities.Utilities.JobInformation>` **JobData**
+**Properties / VariableScope / Child**:
+- [property] `String` **Operation**
+- [property] `UiPath.MicrosoftOffice365.Activities.Calendar.Models.CalendarArgument` **CalendarArgument**
+- [property] `UiPath.MicrosoftOffice365.Activities.Calendar.Filters.EventFilterWithVariablesCollection` **Filter**
+- [property] `String` **ObjectName**
+- [property] `String` **Connector**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `String` **ParentResourceKey**
+- [property] `String` **ResourceKey**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+### Microsoft 365 Scope
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Office365ApplicationScope@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Office365ApplicationScope`
+**Category**: Microsoft 365
+**Description**: Opens a connection to and authenticates all activities for Microsoft Office 365
+**Arguments**:
+- [IN] `InArgument<String>` **BrowserItemId**
+- [IN] `InArgument<String>` **BrowserParentItemId**
+- [IN] `InArgument<String>` **BrowserRuntimeItemId**
+- [IN] `InArgument<String>` **BrowserRuntimeParentItemId**
+- [IN] `InArgument<String>` **ApplicationId**
+- [IN] `InArgument<String>` **TenantId**
+- [IN] `InArgument<String>` **Username**
+- [IN] `InArgument<String>` **Password**
+- [IN] `InArgument<Security.SecureString>` **SecurePassword**
+- [IN] `InArgument<String>` **ApplicationSecret**
+- [IN] `InArgument<Security.SecureString>` **SecureApplicationSecret**
+- [IN] `InArgument<String>` **CertificateAsBase64**
+- [IN] `InArgument<Security.SecureString>` **CertificatePassword**
+- [IN] `InArgument<Int32>` **Timeout**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+- [IN] `InArgument<String>` **EmailAddress**
+- [IN] `InArgument<String>` **ImpersonatedUserEmailAddress**
+- [IN] `InArgument<String>` **Folder**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.Shared.Activities.Utils.BackupSlot<UiPath.MicrosoftOffice365.Activities.Files.Enums.EDriveItemMode>` **RuntimeItemFullPathBackup**
+- [property] `UiPath.MicrosoftOffice365.Activities.Enums.ActivityConfigLocation` **ConfigLocation**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Enums.EDriveItemMode` **RuntimeItemInputMode**
+- [property] `UiPath.MicrosoftOffice365.Enums.AuthenticationType` **AuthenticationType**
+- [property] `UiPath.MicrosoftOffice365.Enums.MicrosoftService` **Services**
+- [property] `UiPath.MicrosoftOffice365.Enums.HostingEnvironment` **Environment**
+- [property] `UiPath.MicrosoftOffice365.Enums.OAuthApplication` **OAuthApplication**
+- [property] `String` **Connector**
+- [property] `Nullable<Boolean>` **UseBroker**
+- [property] `UiPath.MicrosoftOffice365.Activities.Enums.DataStoreLocation` **DataStoreLocation**
+- [property] `Boolean` **UseConnectionService**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+### Wait for Row Added to the Bottom of a Table and Resume
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.WaitForRowAddedToTableBottom@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.WaitForRowAddedToTableBottom`
+**Category**: Microsoft 365.Excel
+**Description**: Waits for a row at the bottom of a table to be filled in and resumes the workflow
+_No members extracted._
+### Wait for Cell in Worksheet Updated and Resume
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.WaitForWorksheetCellUpdated@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.WaitForWorksheetCellUpdated`
+**Category**: Microsoft 365.Excel
+**Description**: Waits for a cell within a Worksheet to be updated and resumes the workflow
+**Arguments**:
+- [IN] `InArgument<String>` **CellAddress**
+- [OUT] `OutArgument<UiPath.MicrosoftOffice365.Excel.Models.CellInformation>` **UpdatedCell**
+- [IN] `InArgument<String>` **BrowserItemId**
+- [IN] `InArgument<String>` **BrowserParentItemId**
+- [OUT] `OutArgument<UiPath.MicrosoftOffice365.Files.Models.O365DriveRemoteItem>` **Workbook**
+- [OUT] `OutArgument<UiPath.MicrosoftOffice365.Activities.Utilities.JobInformation>` **JobData**
+**Properties / VariableScope / Child**:
+- [property] `String` **Operation**
+- [property] `String` **ObjectName**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Models.DriveItemArgument` **TemplateDriveItemArgument**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Models.DriveItemArgument` **DriveItemArgument**
+- [property] `String` **ParentFolderObjectName**
+- [property] `String` **RelativePathBindingsKey**
+- [property] `String` **Connector**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `String` **ParentResourceKey**
+- [property] `String` **ResourceKey**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+### Wait for Worksheet Created and Resume
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.WaitForWorksheetCreated@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.WaitForWorksheetCreated`
+**Category**: Microsoft 365.Excel
+**Description**: Waits for a new Sheet within a Workbook to be created and resumes the workflow
+**Arguments**:
+- [IN] `InArgument<String>` **BrowserItemId**
+- [IN] `InArgument<String>` **BrowserParentItemId**
+- [OUT] `OutArgument<UiPath.MicrosoftOffice365.Files.Models.O365DriveRemoteItem>` **Workbook**
+- [OUT] `OutArgument<UiPath.MicrosoftOffice365.Activities.Utilities.JobInformation>` **JobData**
+**Properties / VariableScope / Child**:
+- [property] `String` **Operation**
+- [property] `String` **ObjectName**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Models.DriveItemArgument` **DriveItemArgument**
+- [property] `String` **ParentFolderObjectName**
+- [property] `String` **RelativePathBindingsKey**
+- [property] `String` **Connector**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `String` **ParentResourceKey**
+- [property] `String` **ResourceKey**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+### Wait for File Created and Resume
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.WaitForFileCreated@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.WaitForFileCreated`
+**Category**: Microsoft 365.OneDrive & SharePoint
+**Description**: Wait for a new file to be created in the specified location and resume the workflow
+**Arguments**:
+- [IN] `InArgument<String>` **BrowserParentItemId**
+- [IN] `InArgument<String>` **BrowserItemId**
+- [OUT] `OutArgument<UiPath.MicrosoftOffice365.Activities.Utilities.JobInformation>` **JobData**
+**Properties / VariableScope / Child**:
+- [property] `String` **Operation**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Models.DriveItemArgument` **DriveItemArgument**
+- [property] `String` **RelativePathBindingsKey**
+- [property] `String` **Connector**
+- [property] `String` **ObjectName**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `String` **ParentFolderObjectName**
+- [property] `String` **ParentResourceKey**
+- [property] `String` **ResourceKey**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+### Wait for File Updated and Resume
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.WaitForFileUpdated@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.WaitForFileUpdated`
+**Category**: Microsoft 365.OneDrive & SharePoint
+**Description**: Waits for a new item from the specified sharepoint list to be updated and resumes the workflow.
+**Arguments**:
+- [IN] `InArgument<String>` **BrowserParentItemId**
+- [IN] `InArgument<String>` **BrowserItemId**
+- [OUT] `OutArgument<UiPath.MicrosoftOffice365.Activities.Utilities.JobInformation>` **JobData**
+**Properties / VariableScope / Child**:
+- [property] `String` **Operation**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Models.DriveItemArgument` **DriveItemArgument**
+- [property] `String` **RelativePathBindingsKey**
+- [property] `String` **Connector**
+- [property] `String` **ObjectName**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `String` **ParentFolderObjectName**
+- [property] `String` **ParentResourceKey**
+- [property] `String` **ResourceKey**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+### Wait for Email Sent and Resume
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.WaitForEmailSent@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.WaitForEmailSent`
+**Category**: Microsoft 365.Outlook
+**Description**: Waits for an email to be sent and resumes the automation workflow
+**Arguments**:
+- [IN] `InArgument<Boolean>` **WithAttachmentsOnly**
+- [IN] `InArgument<Boolean>` **IncludeAttachments**
+- [IN] `InArgument<String>` **Mailbox**
+- [OUT] `OutArgument<UiPath.MicrosoftOffice365.Activities.Utilities.JobInformation>` **JobData**
+**Properties / VariableScope / Child**:
+- [property] `String` **Operation**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `Boolean` **UseSharedMailbox**
+- [property] `UiPath.MicrosoftOffice365.Activities.Mail.Models.MailboxArgument` **MailboxArg**
+- [property] `String` **Connector**
+- [property] `String` **ObjectName**
+- [property] `String` **ParentResourceKey**
+- [property] `String` **ResourceKey**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+### Create Task
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Planner.Tasks.CreateTask@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Planner.Tasks.CreateTask`
+**Category**: Microsoft 365.Planner.Tasks
+**Description**: Creates a new task
+**Arguments**:
+- [IN] `InArgument<Microsoft.Graph.PlannerPlan>` **Plan**
+- [IN] `InArgument<Microsoft.Graph.PlannerBucket>` **Bucket**
+- [IN] `InArgument<String>` **Title**
+- [OUT] `OutArgument<Microsoft.Graph.PlannerTask>` **Result**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+### Delete Task
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Planner.Tasks.DeleteTask@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Planner.Tasks.DeleteTask`
+**Category**: Microsoft 365.Planner.Tasks
+**Description**: Deletes an existing task
+**Arguments**:
+- [IN] `InArgument<Microsoft.Graph.PlannerTask>` **Task**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+### Get Task
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Planner.Tasks.GetTask@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Planner.Tasks.GetTask`
+**Category**: Microsoft 365.Planner.Tasks
+**Description**: Gets a specific task
+**Arguments**:
+- [IN] `InArgument<String>` **TaskID**
+- [OUT] `OutArgument<Microsoft.Graph.PlannerTask>` **Result**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+### List Tasks
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Planner.Tasks.ListTasks@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Planner.Tasks.ListTasks`
+**Category**: Microsoft 365.Planner.Tasks
+**Description**: Lists all the tasks from a specific plan
+**Arguments**:
+- [IN] `InArgument<Microsoft.Graph.PlannerPlan>` **Plan**
+- [OUT] `OutArgument<Microsoft.Graph.PlannerTask[]>` **Result**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+### Update Task
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Planner.Tasks.UpdateTask@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Planner.Tasks.UpdateTask`
+**Category**: Microsoft 365.Planner.Tasks
+**Description**: Updates an existing task
+**Arguments**:
+- [IN] `InArgument<Microsoft.Graph.PlannerTask>` **Task**
+- [IN] `InArgument<String>` **Title**
+- [IN] `InArgument<DateTime>` **StartDateTime**
+- [IN] `InArgument<DateTime>` **DueDateTime**
+- [IN] `InArgument<String[]>` **Assignees**
+- [IN] `InArgument<Int32>` **PercentComplete**
+- [OUT] `OutArgument<Microsoft.Graph.PlannerTask>` **Result**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **OverwriteAssignees**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+### Create Plan
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Planner.Plans.CreatePlan@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Planner.Plans.CreatePlan`
+**Category**: Microsoft 365.Planner.Plans
+**Description**: Creates a new plan
+**Arguments**:
+- [IN] `InArgument<Microsoft.Graph.Group>` **Group**
+- [IN] `InArgument<String>` **PlanTitle**
+- [OUT] `OutArgument<Microsoft.Graph.PlannerPlan>` **Result**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+### Get Plan
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Planner.Plans.GetPlan@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Planner.Plans.GetPlan`
+**Category**: Microsoft 365.Planner.Plans
+**Description**: Retrieves the plan with a specified ID
+**Arguments**:
+- [IN] `InArgument<String>` **PlanID**
+- [OUT] `OutArgument<Microsoft.Graph.PlannerPlan>` **Result**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+### List Plans
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Planner.Plans.ListPlans@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Planner.Plans.ListPlans`
+**Category**: Microsoft 365.Planner.Plans
+**Description**: The entire list of PlannerPlan objects from a specific Group
+**Arguments**:
+- [IN] `InArgument<Microsoft.Graph.Group>` **Group**
+- [OUT] `OutArgument<Microsoft.Graph.PlannerPlan[]>` **Result**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+### Create Bucket
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Planner.Buckets.CreateBucket@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Planner.Buckets.CreateBucket`
+**Category**: Microsoft 365.Planner.Buckets
+**Description**: Creates a new bucket inside a plan
+**Arguments**:
+- [IN] `InArgument<Microsoft.Graph.PlannerPlan>` **Plan**
+- [IN] `InArgument<String>` **Name**
+- [OUT] `OutArgument<Microsoft.Graph.PlannerBucket>` **Result**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+### Create Group
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Groups.CreateGroup@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Groups.CreateGroup`
+**Category**: Microsoft 365.Groups
+**Description**: Creates a new group
+**Arguments**:
+- [IN] `InArgument<String>` **GroupName**
+- [IN] `InArgument<String>` **GroupDescription**
+- [IN] `InArgument<String>` **MailNickname**
+- [IN] `InArgument<String>` **Account**
+- [OUT] `OutArgument<Microsoft.Graph.Group>` **Result**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **MailEnabled**
+- [property] `Boolean` **SecurityEnabled**
+- [property] `UiPath.MicrosoftOffice365.Enums.GroupType` **GroupType**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+### Delete Group
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Groups.DeleteGroup@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Groups.DeleteGroup`
+**Category**: Microsoft 365.Groups
+**Description**: Deletes a specific group
+**Arguments**:
+- [IN] `InArgument<Microsoft.Graph.Group>` **Group**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+### Get Group
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Groups.GetGroup@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Groups.GetGroup`
+**Category**: Microsoft 365.Groups
+**Description**: Gets a Microsoft Office 365 Group
+**Arguments**:
+- [IN] `InArgument<String>` **MailNickname**
+- [OUT] `OutArgument<Microsoft.Graph.Group>` **Result**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+### Microsoft 365 HTTP Request
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.General.HttpRequestConnections@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.General.HttpRequestConnections`
+**Category**: Microsoft 365.General
+**Description**: Run HTTP calls in Microsoft 365 using Microsoft Graph
+**Arguments**:
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Activities.General.Enums.RequestMethod>` **RequestMethod**
+- [IN] `InArgument<String>` **RequestUrl**
+- [IN] `InArgument<Dictionary<String, String>>` **ParametersVariable**
+- [IN] `InArgument<Dictionary<String, String>>` **HeadersVariable**
+- [IN] `InArgument<String>` **Body**
+- [OUT] `OutArgument<String>` **ResponseContent**
+- [OUT] `OutArgument<Int32>` **ResponseStatus**
+- [OUT] `OutArgument<Dictionary<String, String>>` **ResponseHeaders**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.MicrosoftOffice365.Activities.General.Enums.DictionaryInputMode` **ParametersInputMode**
+- [property] `Dictionary<String, InArgument<String>>` **Parameters**
+- [property] `UiPath.MicrosoftOffice365.Activities.General.Enums.DictionaryInputMode` **HeadersInputMode**
+- [property] `Dictionary<String, InArgument<String>>` **Headers**
+- [property] `String[]` **Scopes**
+- [property] `String` **Connector**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+### Assign Sensitivity Label
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Files.AssignSensitivityLabelConnections@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Files.AssignSensitivityLabelConnections`
+**Category**: Microsoft 365.OneDrive & SharePoint
+**Description**: Assign a sensitivity label to a specified file
+**Arguments**:
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Files.Models.O365DriveRemoteItem>` **Item**
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Enums.SensitivityLabelActionType>` **ActionType**
+- [IN] `InArgument<String>` **SensitivityLabel**
+- [IN] `InArgument<String>` **Justification**
+- [IN] `InArgument<Boolean>` **WaitActionToComplete**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+### File Check-in/Check-out
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Files.CheckinCheckoutFileConnections@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Files.CheckinCheckoutFileConnections`
+**Category**: Microsoft 365.OneDrive & SharePoint
+**Description**: Check-in or check-out a SharePoint file
+**Arguments**:
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Files.Models.O365DriveRemoteItem>` **Item**
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Enums.CheckinCheckoutActionType>` **ActionType**
+- [IN] `InArgument<String>` **Comment**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+### Copy file or folder
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Files.CopyItemConnections@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Files.CopyItemConnections`
+**Category**: Microsoft 365.OneDrive & SharePoint
+**Description**: Copies a file or folder to the specified destination folder in OneDrive or SharePoint
+**Arguments**:
+- [IN] `InArgument<String>` **NewName**
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Enums.ConflictBehavior>` **ConflictResolution**
+- [OUT] `OutArgument<UiPath.MicrosoftOffice365.Files.Models.O365DriveRemoteItem>` **Result**
+- [IN] `InArgument<String>` **BrowserItemDriveName**
+- [IN] `InArgument<String>` **BrowserItemSiteUrl**
+- [IN] `InArgument<String>` **BrowserFolderId**
+- [IN] `InArgument<String>` **BrowserFolderDriveName**
+- [IN] `InArgument<String>` **BrowserFolderSiteUrl**
+- [IN] `InArgument<String>` **ManualEntryFolderId**
+- [IN] `InArgument<String>` **ManualEntryFolderDriveName**
+- [IN] `InArgument<String>` **ManualEntryFolderSiteUrl**
+- [IN] `InArgument<String>` **ManualEntryFolderUrl**
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Files.Models.O365DriveRemoteItem>` **Folder**
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Files.Models.O365DriveRemoteItem>` **Item**
+- [IN] `InArgument<String>` **BrowserItemId**
+- [IN] `InArgument<String>` **BrowserDriveName**
+- [IN] `InArgument<String>` **BrowserSiteUrl**
+- [IN] `InArgument<String>` **ManualEntryItemId**
+- [IN] `InArgument<String>` **ManualEntryDriveName**
+- [IN] `InArgument<String>` **ManualEntrySiteUrl**
+- [IN] `InArgument<String>` **ManualEntryItemUrl**
+- [IN] `InArgument<String>` **ManualEntryItemFullPath**
+- [IN] `InArgument<String>` **BrowserParentItemId**
+- [IN] `InArgument<String>` **ManualEntryItemRelativePath**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **SecondaryResourceKey**
+- [property] `String` **SecondaryObjectName**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `Nullable<UiPath.MicrosoftOffice365.Activities.Files.Enums.EDriveItemMode>` **ItemInputMode**
+- [property] `Nullable<UiPath.MicrosoftOffice365.Activities.Files.Enums.EDriveItemMode>` **FolderInputMode**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Models.DriveItemArgument` **FolderArgument**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Enums.EDriveItemMode` **FolderSelectionMode**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Models.DriveItemArgument` **DriveItemArgument**
+- [property] `String` **RelativePathBindingsKey**
+- [property] `String` **ParentFolderObjectName**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Enums.EDriveItemMode` **ItemSelectionMode**
+- [property] `String` **ParentResourceKey**
+- [property] `String` **ResourceKey**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+### Create Folder
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Files.CreateFolderConnections@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Files.CreateFolderConnections`
+**Category**: Microsoft 365.OneDrive & SharePoint
+**Description**: Creates a folder at the specified location in OneDrive or SharePoint
+**Arguments**:
+- [IN] `InArgument<String>` **NewFolderName**
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Enums.ConflictBehavior>` **ConflictResolution**
+- [OUT] `OutArgument<UiPath.MicrosoftOffice365.Files.Models.O365DriveRemoteItem>` **Result**
+- [IN] `InArgument<String>` **BrowserParentFolderId**
+- [IN] `InArgument<String>` **BrowserParentFolderDriveName**
+- [IN] `InArgument<String>` **BrowserParentFolderSiteUrl**
+- [IN] `InArgument<String>` **BrowserParentFolderFriendlyName**
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Files.Models.O365DriveRemoteItem>` **Item**
+- [IN] `InArgument<String>` **BrowserItemId**
+- [IN] `InArgument<String>` **BrowserDriveName**
+- [IN] `InArgument<String>` **BrowserSiteUrl**
+- [IN] `InArgument<String>` **ManualEntryItemId**
+- [IN] `InArgument<String>` **ManualEntryDriveName**
+- [IN] `InArgument<String>` **ManualEntrySiteUrl**
+- [IN] `InArgument<String>` **ManualEntryItemUrl**
+- [IN] `InArgument<String>` **ManualEntryItemFullPath**
+- [IN] `InArgument<String>` **BrowserParentItemId**
+- [IN] `InArgument<String>` **ManualEntryItemRelativePath**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `Nullable<UiPath.MicrosoftOffice365.Activities.Files.Enums.EDriveItemMode>` **ParentFolderSelectionMode**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Models.DriveItemArgument` **DriveItemArgument**
+- [property] `String` **RelativePathBindingsKey**
+- [property] `String` **ParentFolderObjectName**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Enums.EDriveItemMode` **ItemSelectionMode**
+- [property] `String` **ParentResourceKey**
+- [property] `String` **ResourceKey**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+### Delete file or folder
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Files.DeleteItemConnections@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Files.DeleteItemConnections`
+**Category**: Microsoft 365.OneDrive & SharePoint
+**Description**: Deletes a file or folder at the specified location in OneDrive or SharePoint
+**Arguments**:
+- [IN] `InArgument<Boolean>` **PermanentlyDelete**
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Files.Models.O365DriveRemoteItem>` **Item**
+- [IN] `InArgument<String>` **BrowserItemId**
+- [IN] `InArgument<String>` **BrowserDriveName**
+- [IN] `InArgument<String>` **BrowserSiteUrl**
+- [IN] `InArgument<String>` **ManualEntryItemId**
+- [IN] `InArgument<String>` **ManualEntryDriveName**
+- [IN] `InArgument<String>` **ManualEntrySiteUrl**
+- [IN] `InArgument<String>` **ManualEntryItemUrl**
+- [IN] `InArgument<String>` **ManualEntryItemFullPath**
+- [IN] `InArgument<String>` **BrowserParentItemId**
+- [IN] `InArgument<String>` **ManualEntryItemRelativePath**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `Nullable<UiPath.MicrosoftOffice365.Activities.Files.Enums.EDriveItemMode>` **ItemInputMode**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Models.DriveItemArgument` **DriveItemArgument**
+- [property] `String` **RelativePathBindingsKey**
+- [property] `String` **ParentFolderObjectName**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Enums.EDriveItemMode` **ItemSelectionMode**
+- [property] `String` **ParentResourceKey**
+- [property] `String` **ResourceKey**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+### Download File
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Files.DownloadFileConnections@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Files.DownloadFileConnections`
+**Category**: Microsoft 365.OneDrive & SharePoint
+**Description**: Downloads the specified file
+**Arguments**:
+- [IN] `InArgument<Boolean>` **ConvertToPdf**
+- [IN] `InArgument<String>` **DestinationPath**
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Enums.ConflictBehavior>` **ConflictResolution**
+- [OUT] `OutArgument<UiPath.Platform.ResourceHandling.ILocalResource>` **Result**
+- [OUT] `OutArgument<UiPath.MicrosoftOffice365.Files.Models.O365DriveLocalItem>` **NewResult**
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Files.Models.O365DriveRemoteItem>` **File**
+- [IN] `InArgument<String>` **BrowserFileId**
+- [IN] `InArgument<String>` **BrowserFileFriendlyName**
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Files.Models.O365DriveRemoteItem>` **Item**
+- [IN] `InArgument<String>` **BrowserItemId**
+- [IN] `InArgument<String>` **BrowserDriveName**
+- [IN] `InArgument<String>` **BrowserSiteUrl**
+- [IN] `InArgument<String>` **ManualEntryItemId**
+- [IN] `InArgument<String>` **ManualEntryDriveName**
+- [IN] `InArgument<String>` **ManualEntrySiteUrl**
+- [IN] `InArgument<String>` **ManualEntryItemUrl**
+- [IN] `InArgument<String>` **ManualEntryItemFullPath**
+- [IN] `InArgument<String>` **BrowserParentItemId**
+- [IN] `InArgument<String>` **ManualEntryItemRelativePath**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `Nullable<UiPath.MicrosoftOffice365.Activities.Files.Enums.EDriveItemMode>` **FileInputMode**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Models.DriveItemArgument` **DriveItemArgument**
+- [property] `String` **RelativePathBindingsKey**
+- [property] `String` **ParentFolderObjectName**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Enums.EDriveItemMode` **ItemSelectionMode**
+- [property] `String` **ParentResourceKey**
+- [property] `String` **ResourceKey**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+### For Each File or Folder
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Files.ForEachFileFolderConnections@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Files.ForEachFileFolderConnections`
+**Category**: Microsoft 365.OneDrive & SharePoint
+**Description**: Iterates over a list of files and folders from OneDrive or SharePoint
+**Arguments**:
+- [IN] `InArgument<Int32>` **MaxResults**
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Enums.FindFilesAndFoldersResultType>` **WhatToReturn**
+- [IN] `InArgument<Boolean>` **TrimDuplicates**
+- [IN] `InArgument<Boolean>` **IncludeSubfolders**
+- [IN] `InArgument<String>` **SimpleSearch**
+- [IN] `InArgument<String>` **FreeTextFilter**
+- [IN] `InArgument<String>` **QueryFilter**
+- [OUT] `OutArgument<Int32>` **Length**
+- [IN] `InArgument<String>` **BrowserParentItemId**
+- [IN] `InArgument<String>` **BrowserSpecificUrl**
+- [IN] `InArgument<String>` **ManualEntryItemFullPath**
+- [IN] `InArgument<String>` **ManualEntryItemRelativePath**
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Files.Models.O365DriveRemoteItem>` **Item**
+- [IN] `InArgument<String>` **BrowserItemId**
+- [IN] `InArgument<String>` **BrowserDriveName**
+- [IN] `InArgument<String>` **BrowserSiteUrl**
+- [IN] `InArgument<String>` **ManualEntryItemId**
+- [IN] `InArgument<String>` **ManualEntryDriveName**
+- [IN] `InArgument<String>` **ManualEntrySiteUrl**
+- [IN] `InArgument<String>` **ManualEntryItemUrl**
+**Properties / VariableScope / Child**:
+- [property] `String` **CurrentItemVariableName**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Enums.SearchSelectionMode` **SearchMode**
+- [property] `UiPath.MicrosoftOffice365.Files.Enums.SortOrder` **SortOptions**
+- [property] `String` **Connector**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `Nullable<UiPath.MicrosoftOffice365.Activities.Files.Enums.EDriveItemMode>` **LocationInputMode**
+- [property] `String` **RelativePathBindingsKey**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Models.DriveItemArgument` **DriveItemArgument**
+- [property] `String` **ParentFolderObjectName**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Enums.EDriveItemMode` **ItemSelectionMode**
+- [property] `String` **ParentResourceKey**
+- [property] `String` **ResourceKey**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+### Get File or Folder
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Files.GetFileFolderConnections@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Files.GetFileFolderConnections`
+**Category**: Microsoft 365.OneDrive & SharePoint
+**Description**: Gets a file or folder from OneDrive or SharePoint to use in other activities
+**Arguments**:
+- [OUT] `OutArgument<UiPath.MicrosoftOffice365.Files.Models.O365DriveRemoteItem>` **Result**
+- [IN] `InArgument<String>` **BrowserParentItemId**
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Files.Models.O365DriveRemoteItem>` **Item**
+- [IN] `InArgument<String>` **BrowserItemId**
+- [IN] `InArgument<String>` **BrowserDriveName**
+- [IN] `InArgument<String>` **BrowserSiteUrl**
+- [IN] `InArgument<String>` **ManualEntryItemId**
+- [IN] `InArgument<String>` **ManualEntryDriveName**
+- [IN] `InArgument<String>` **ManualEntrySiteUrl**
+- [IN] `InArgument<String>` **ManualEntryItemUrl**
+- [IN] `InArgument<String>` **ManualEntryItemFullPath**
+- [IN] `InArgument<String>` **ManualEntryItemRelativePath**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Models.DriveItemArgument` **DriveItemArgument**
+- [property] `String` **RelativePathBindingsKey**
+- [property] `String` **ParentFolderObjectName**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Enums.EDriveItemMode` **ItemSelectionMode**
+- [property] `String` **ParentResourceKey**
+- [property] `String` **ResourceKey**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+### Get File or Folder Metadata
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Files.GetFileFolderMetadataConnections@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Files.GetFileFolderMetadataConnections`
+**Category**: Microsoft 365.OneDrive & SharePoint
+**Description**: Retrieves file or folder metadata
+_No members extracted._
+### Get File or Folder List
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Files.GetFileListConnections@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Files.GetFileListConnections`
+**Category**: Microsoft 365.OneDrive & SharePoint
+**Description**: Retrieves a list of files and folders from the specified OneDrive or SharePoint location
+**Arguments**:
+- [IN] `InArgument<Int32>` **MaxResults**
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Enums.FindFilesAndFoldersResultType>` **WhatToReturn**
+- [IN] `InArgument<Boolean>` **TrimDuplicates**
+- [IN] `InArgument<Boolean>` **IncludeSubfolders**
+- [OUT] `OutArgument<UiPath.MicrosoftOffice365.Files.Models.O365DriveRemoteItem[]>` **Result**
+- [IN] `InArgument<String>` **SimpleSearch**
+- [IN] `InArgument<String>` **FreeTextFilter**
+- [IN] `InArgument<String>` **QueryFilter**
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Files.Models.O365DriveRemoteItem>` **DestinationFolder**
+- [IN] `InArgument<String>` **BrowserSpecificUrl**
+- [IN] `InArgument<String>` **SharepointSiteUrl**
+- [IN] `InArgument<String>` **SharepointListId**
+- [IN] `InArgument<String>` **SharepointLibraryItemFriendlyName**
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Files.Models.O365DriveRemoteItem>` **Item**
+- [IN] `InArgument<String>` **BrowserItemId**
+- [IN] `InArgument<String>` **BrowserDriveName**
+- [IN] `InArgument<String>` **BrowserSiteUrl**
+- [IN] `InArgument<String>` **ManualEntryItemId**
+- [IN] `InArgument<String>` **ManualEntryDriveName**
+- [IN] `InArgument<String>` **ManualEntrySiteUrl**
+- [IN] `InArgument<String>` **ManualEntryItemUrl**
+- [IN] `InArgument<String>` **ManualEntryItemFullPath**
+- [IN] `InArgument<String>` **BrowserParentItemId**
+- [IN] `InArgument<String>` **ManualEntryItemRelativePath**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.MicrosoftOffice365.Activities.Sharepoint.Filters.ColumnFilterCollection` **MetadataFilter**
+- [property] `UiPath.MicrosoftOffice365.Activities.Sharepoint.Filters.ColumnByNameFilterCollection` **DynamicMetadataFilter**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Enums.SearchSelectionMode` **SearchMode**
+- [property] `UiPath.MicrosoftOffice365.Files.Enums.SortOrder` **SortOptions**
+- [property] `String` **Connector**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `Nullable<UiPath.MicrosoftOffice365.Activities.Files.Enums.EDriveItemMode>` **LocationInputMode**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Models.DriveItemArgument` **DriveItemArgument**
+- [property] `String` **RelativePathBindingsKey**
+- [property] `String` **ParentFolderObjectName**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Enums.EDriveItemMode` **ItemSelectionMode**
+- [property] `String` **ParentResourceKey**
+- [property] `String` **ResourceKey**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+### Get Sensitivity Labels
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Files.GetSensitivityLabelsConnections@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Files.GetSensitivityLabelsConnections`
+**Category**: Microsoft 365.OneDrive & SharePoint
+**Description**: Gets the list of sensitivity labels assigned to the specified file
+**Arguments**:
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Files.Models.O365DriveRemoteItem>` **Item**
+- [OUT] `OutArgument<IEnumerable<UiPath.MicrosoftOffice365.Files.Models.SensitivityLabel>>` **SensitivityLabels**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+### Move file or folder
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Files.MoveItemConnections@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Files.MoveItemConnections`
+**Category**: Microsoft 365.OneDrive & SharePoint
+**Description**: Moves a file or folder to the specified destination folder in OneDrive or SharePoint
+**Arguments**:
+- [IN] `InArgument<String>` **NewName**
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Enums.ConflictBehavior>` **ConflictResolution**
+- [OUT] `OutArgument<UiPath.MicrosoftOffice365.Files.Models.O365DriveRemoteItem>` **Result**
+- [IN] `InArgument<String>` **BrowserItemDriveName**
+- [IN] `InArgument<String>` **BrowserItemSiteUrl**
+- [IN] `InArgument<String>` **BrowserFolderId**
+- [IN] `InArgument<String>` **BrowserFolderDriveName**
+- [IN] `InArgument<String>` **BrowserFolderSiteUrl**
+- [IN] `InArgument<String>` **ManualEntryFolderId**
+- [IN] `InArgument<String>` **ManualEntryFolderDriveName**
+- [IN] `InArgument<String>` **ManualEntryFolderSiteUrl**
+- [IN] `InArgument<String>` **ManualEntryFolderUrl**
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Files.Models.O365DriveRemoteItem>` **Folder**
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Files.Models.O365DriveRemoteItem>` **Item**
+- [IN] `InArgument<String>` **BrowserItemId**
+- [IN] `InArgument<String>` **BrowserDriveName**
+- [IN] `InArgument<String>` **BrowserSiteUrl**
+- [IN] `InArgument<String>` **ManualEntryItemId**
+- [IN] `InArgument<String>` **ManualEntryDriveName**
+- [IN] `InArgument<String>` **ManualEntrySiteUrl**
+- [IN] `InArgument<String>` **ManualEntryItemUrl**
+- [IN] `InArgument<String>` **ManualEntryItemFullPath**
+- [IN] `InArgument<String>` **BrowserParentItemId**
+- [IN] `InArgument<String>` **ManualEntryItemRelativePath**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **SecondaryResourceKey**
+- [property] `String` **SecondaryObjectName**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `Nullable<UiPath.MicrosoftOffice365.Activities.Files.Enums.EDriveItemMode>` **ItemInputMode**
+- [property] `Nullable<UiPath.MicrosoftOffice365.Activities.Files.Enums.EDriveItemMode>` **FolderInputMode**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Models.DriveItemArgument` **FolderArgument**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Enums.EDriveItemMode` **FolderSelectionMode**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Models.DriveItemArgument` **DriveItemArgument**
+- [property] `String` **RelativePathBindingsKey**
+- [property] `String` **ParentFolderObjectName**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Enums.EDriveItemMode` **ItemSelectionMode**
+- [property] `String` **ParentResourceKey**
+- [property] `String` **ResourceKey**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+### Rename file or folder
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Files.RenameItemConnections@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Files.RenameItemConnections`
+**Category**: Microsoft 365.OneDrive & SharePoint
+**Description**: Renames the specified file or folder from OneDrive or SharePoint.
+**Arguments**:
+- [IN] `InArgument<String>` **NewName**
+- [IN] `InArgument<String>` **BrowserItemId**
+- [IN] `InArgument<String>` **BrowserParentItemId**
+**Properties / VariableScope / Child**:
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Models.DriveItemArgument` **Item**
+- [property] `String` **Connector**
+- [property] `String` **ArgumentsPrefix**
+- [property] `String` **ParentFolderObjectName**
+- [property] `String` **RelativePathBindingsKey**
+- [property] `String` **BindingsKey**
+- [property] `String` **ParentResourceKey**
+- [property] `String` **ResourceKey**
+### Share file or folder
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Files.ShareItemConnections@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Files.ShareItemConnections`
+**Category**: Microsoft 365.OneDrive & SharePoint
+**Description**: Shares a file or folder with the specified recipients
+**Arguments**:
+- [IN] `InArgument<String>` **SharingLinkPassword**
+- [IN] `InArgument<DateTime>` **ExpirationDate**
+- [IN] `InArgument<IEnumerable<String>>` **Recipients**
+- [IN] `InArgument<String>` **Message**
+- [IN] `InArgument<Boolean>` **SendInvitationEmail**
+- [IN] `InArgument<Boolean>` **SignInRequired**
+- [OUT] `OutArgument<String>` **AccessUrl**
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Files.Models.O365DriveRemoteItem>` **Item**
+- [IN] `InArgument<String>` **BrowserItemId**
+- [IN] `InArgument<String>` **BrowserDriveName**
+- [IN] `InArgument<String>` **BrowserSiteUrl**
+- [IN] `InArgument<String>` **ManualEntryItemId**
+- [IN] `InArgument<String>` **ManualEntryDriveName**
+- [IN] `InArgument<String>` **ManualEntrySiteUrl**
+- [IN] `InArgument<String>` **ManualEntryItemUrl**
+- [IN] `InArgument<String>` **ManualEntryItemFullPath**
+- [IN] `InArgument<String>` **BrowserParentItemId**
+- [IN] `InArgument<String>` **ManualEntryItemRelativePath**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `UiPath.MicrosoftOffice365.Enums.GranteeType` **RecipientType**
+- [property] `UiPath.MicrosoftOffice365.Enums.GranteePermission` **PermissionType**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `Nullable<UiPath.MicrosoftOffice365.Activities.Files.Enums.EDriveItemMode>` **ItemInputMode**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Models.DriveItemArgument` **DriveItemArgument**
+- [property] `String` **RelativePathBindingsKey**
+- [property] `String` **ParentFolderObjectName**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Enums.EDriveItemMode` **ItemSelectionMode**
+- [property] `String` **ParentResourceKey**
+- [property] `String` **ResourceKey**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+### Update File or Folder Metadata
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Files.UpdateFileFolderMetadataConnections@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Files.UpdateFileFolderMetadataConnections`
+**Category**: Microsoft 365.OneDrive & SharePoint
+**Description**: Updates file or folder metadata
+_No members extracted._
+### Upload Files
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Files.UploadFilesConnections@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Files.UploadFilesConnections`
+**Category**: Microsoft 365.OneDrive & SharePoint
+**Description**: Uploads the specified files to OneDrive or SharePoint
+**Arguments**:
+- [IN] `InArgument<UiPath.Platform.ResourceHandling.IResource>` **SingleFileToUpload**
+- [IN] `InArgument<IEnumerable<UiPath.Platform.ResourceHandling.IResource>>` **MultipleFilesToUpload**
+- [IN] `InArgument<Data.DataTable>` **Metadata**
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Enums.ConflictBehavior>` **ConflictResolution**
+- [OUT] `OutArgument<UiPath.MicrosoftOffice365.Files.Models.O365DriveRemoteItem>` **FirstResult**
+- [OUT] `OutArgument<UiPath.MicrosoftOffice365.Files.Models.O365DriveRemoteItem[]>` **AllResults**
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Files.Models.O365DriveRemoteItem>` **DestinationFolder**
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Files.Models.O365DriveRemoteItem>` **Item**
+- [IN] `InArgument<String>` **BrowserItemId**
+- [IN] `InArgument<String>` **BrowserDriveName**
+- [IN] `InArgument<String>` **BrowserSiteUrl**
+- [IN] `InArgument<String>` **ManualEntryItemId**
+- [IN] `InArgument<String>` **ManualEntryDriveName**
+- [IN] `InArgument<String>` **ManualEntrySiteUrl**
+- [IN] `InArgument<String>` **ManualEntryItemUrl**
+- [IN] `InArgument<String>` **ManualEntryItemFullPath**
+- [IN] `InArgument<String>` **BrowserParentItemId**
+- [IN] `InArgument<String>` **ManualEntryItemRelativePath**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Enums.FilesInputMode` **FilesInputMode**
+- [property] `IEnumerable<InArgument<UiPath.Platform.ResourceHandling.IResource>>` **FilesList**
+- [property] `String` **Connector**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `Nullable<UiPath.MicrosoftOffice365.Activities.Files.Enums.EDriveItemMode>` **FolderInputMode**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Models.DriveItemArgument` **DriveItemArgument**
+- [property] `String` **RelativePathBindingsKey**
+- [property] `String` **ParentFolderObjectName**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Enums.EDriveItemMode` **ItemSelectionMode**
+- [property] `String` **ParentResourceKey**
+- [property] `String` **ResourceKey**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+### File Updated
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Files.Triggers.FileUpdated@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Files.Triggers.FileUpdated`
+**Category**: Microsoft 365.OneDrive & SharePoint.Triggers
+**Description**: Initiates an automation workflow when a file is updated in the specified location
+**Arguments**:
+- [IN] `InArgument<String>` **BrowserItemFriendlyName**
+- [IN] `InArgument<String>` **BrowserItemId**
+- [IN] `InArgument<String>` **BrowserDriveName**
+- [IN] `InArgument<String>` **BrowserSiteUrl**
+- [OUT] `OutArgument<UiPath.MicrosoftOffice365.Files.Models.O365DriveRemoteItem>` **Result**
+- [OUT] `OutArgument<UiPath.MicrosoftOffice365.Activities.Utilities.JobInformation>` **JobData**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `String` **Operation**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Models.DriveItemArgument` **DriveItemArgument**
+- [property] `String` **ObjectName**
+- [property] `String` **Connector**
+- [property] `String` **ParentResourceKey**
+- [property] `String` **ResourceKey**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+### File Created
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Files.Triggers.NewFileCreated@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Files.Triggers.NewFileCreated`
+**Category**: Microsoft 365.OneDrive & SharePoint.Triggers
+**Description**: Initiates an automation workflow when a new file is created in the specified location
+**Arguments**:
+- [IN] `InArgument<String>` **BrowserItemFriendlyName**
+- [IN] `InArgument<String>` **BrowserItemId**
+- [IN] `InArgument<String>` **BrowserDriveName**
+- [IN] `InArgument<String>` **BrowserSiteUrl**
+- [OUT] `OutArgument<UiPath.MicrosoftOffice365.Files.Models.O365DriveRemoteItem>` **Result**
+- [OUT] `OutArgument<UiPath.MicrosoftOffice365.Activities.Utilities.JobInformation>` **JobData**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `String` **Operation**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Models.DriveItemArgument` **DriveItemArgument**
+- [property] `String` **ObjectName**
+- [property] `String` **Connector**
+- [property] `String` **ParentResourceKey**
+- [property] `String` **ResourceKey**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+### Get Mail
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Mail.GetMail@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Mail.GetMail`
+**Category**: Microsoft 365.Outlook
+**Description**: Returns all emails from the user's inbox
+**Arguments**:
+- [IN] `InArgument<String>` **Account**
+- [IN] `InArgument<String>` **MailFolder**
+- [IN] `InArgument<String>` **EmailId**
+- [IN] `InArgument<String>` **Query**
+- [IN] `InArgument<Int32>` **Top**
+- [OUT] `OutArgument<UiPath.MicrosoftOffice365.Models.Office365Message[]>` **Results**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **OnlyUnreadMessages**
+- [property] `UiPath.MicrosoftOffice365.Activities.Mail.EOrderByDate` **OrderByDate**
+- [property] `Boolean` **MarkAsRead**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+### Archive Email
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Mail.ArchiveEmailConnections@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Mail.ArchiveEmailConnections`
+**Category**: Microsoft 365.Outlook
+**Description**: Archives an email
+**Arguments**:
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Models.Office365Message>` **Email**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+### Delete Email
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Mail.DeleteEmailConnections@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Mail.DeleteEmailConnections`
+**Category**: Microsoft 365.Outlook
+**Description**: Deletes an email
+**Arguments**:
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Models.Office365Message>` **Email**
+- [IN] `InArgument<Boolean>` **PermanentlyDelete**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+### Download Email Attachments
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Mail.DownloadEmailAttachments@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Mail.DownloadEmailAttachments`
+**Category**: Microsoft 365.Outlook
+**Description**: Downloads the Outlook attachments for further use
+**Arguments**:
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Models.Office365Message>` **Email**
+- [IN] `InArgument<Boolean>` **ExcludeInlineAttachments**
+- [IN] `InArgument<String>` **FilterByFileNames**
+- [IN] `InArgument<String>` **DestinationPath**
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Enums.ConflictBehavior>` **ConflictResolution**
+- [OUT] `OutArgument<UiPath.Platform.ResourceHandling.ILocalResource[]>` **Result**
+- [OUT] `OutArgument<UiPath.MicrosoftOffice365.Mail.Models.O365AttachmentLocalItem[]>` **NewResult**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Enums.SearchSelectionMode` **SearchMode**
+- [property] `String` **Connector**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+### Download Email
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Mail.DownloadEmailConnections@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Mail.DownloadEmailConnections`
+**Category**: Microsoft 365.Outlook
+**Description**: Downloads the Outlook email message for further use
+**Arguments**:
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Models.Office365Message>` **Email**
+- [IN] `InArgument<String>` **DestinationPath**
+- [IN] `InArgument<Boolean>` **CreateMissingFolders**
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Enums.ConflictBehavior>` **ConflictResolution**
+- [OUT] `OutArgument<UiPath.Platform.ResourceHandling.ILocalResource>` **Result**
+- [OUT] `OutArgument<UiPath.MicrosoftOffice365.Mail.Models.O365MailLocalItem>` **NewResult**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+### For Each Email
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Mail.ForEachEmailConnections@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Mail.ForEachEmailConnections`
+**Category**: Microsoft 365.Outlook
+**Description**: Repeats the contained activities for each email matching the filter criteria
+**Arguments**:
+- [IN] `InArgument<String>` **Mailbox**
+- [IN] `InArgument<Boolean>` **IncludeSubfolders**
+- [IN] `InArgument<Int32>` **MaxResults**
+- [IN] `InArgument<Boolean>` **UnreadOnly**
+- [IN] `InArgument<Boolean>` **WithAttachmentsOnly**
+- [IN] `InArgument<Boolean>` **MarkAsRead**
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Activities.Mail.Enums.ImportanceFilter>` **Importance**
+- [IN] `InArgument<String>` **FreeTextFilter**
+- [IN] `InArgument<String>` **QueryFilter**
+- [OUT] `OutArgument<Int32>` **Length**
+- [IN] `InArgument<String>` **ManualEntryFolder**
+- [IN] `InArgument<String>` **BrowserFolder**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.MicrosoftOffice365.Activities.Mail.Models.MailFolderArgument` **MailFolderArgument**
+- [property] `String` **CurrentItemVariableName**
+- [property] `Boolean` **UseSharedMailbox**
+- [property] `UiPath.MicrosoftOffice365.Activities.Mail.Models.MailboxArgument` **MailboxArg**
+- [property] `UiPath.MicrosoftOffice365.Activities.Mail.Enums.FilterMode` **FilterSelectionMode**
+- [property] `String` **Connector**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `UiPath.MicrosoftOffice365.Activities.Mail.Enums.ItemSelectionMode` **SelectionMode**
+- [property] `String` **ParentResourceKey**
+- [property] `String` **ResourceKey**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+### Forward Email
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Mail.ForwardEmailConnections@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Mail.ForwardEmailConnections`
+**Category**: Microsoft 365.Outlook
+**Description**: Forwards an email to new recipients
+**Arguments**:
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Models.Office365Message>` **Email**
+- [IN] `InArgument<String>` **ForwardAs**
+- [IN] `InArgument<String>` **Body**
+- [IN] `InArgument<String>` **NewSubject**
+- [IN] `InArgument<UiPath.Platform.ResourceHandling.IResource>` **SingleAttachment**
+- [IN] `InArgument<IEnumerable<UiPath.Platform.ResourceHandling.IResource>>` **Attachments**
+- [IN] `InArgument<IEnumerable<String>>` **AttachmentPaths**
+- [IN] `InArgument<String>` **PreferredTimezone**
+- [IN] `InArgument<IEnumerable<String>>` **To**
+- [IN] `InArgument<IEnumerable<String>>` **Cc**
+- [IN] `InArgument<IEnumerable<String>>` **Bcc**
+- [IN] `InArgument<Boolean>` **SaveAsDraft**
+- [IN] `InArgument<Boolean>` **IsDeliveryReceiptRequested**
+- [IN] `InArgument<Boolean>` **IsReadReceiptRequested**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `Boolean` **UseSharedMailbox**
+- [property] `UiPath.MicrosoftOffice365.Activities.Mail.Models.MailboxArgument` **MailboxArg**
+- [property] `UiPath.MicrosoftOffice365.Activities.Mail.Enums.AttachmentInputMode` **AttachmentInputMode**
+- [property] `IEnumerable<InArgument<UiPath.Platform.ResourceHandling.IResource>>` **ArgumentAttachments**
+- [property] `IEnumerable<InArgument<String>>` **ArgumentAttachmentPaths**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+### Get Email by ID
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Mail.GetEmailByIdConnections@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Mail.GetEmailByIdConnections`
+**Category**: Microsoft 365.Outlook
+**Description**: Retrieves the email with the specified ID
+**Arguments**:
+- [IN] `InArgument<String>` **SharedMailbox**
+- [IN] `InArgument<String>` **EmailId**
+- [OUT] `OutArgument<UiPath.MicrosoftOffice365.Models.Office365Message>` **Result**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **UseSharedMailbox**
+- [property] `UiPath.MicrosoftOffice365.Activities.Mail.Models.MailboxArgument` **MailboxArg**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+### Get Email Folders List
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Mail.GetEmailFoldersListConnections@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Mail.GetEmailFoldersListConnections`
+**Category**: Microsoft 365.Outlook
+**Description**: Retrieves the list of email folders for the selected account
+**Properties / VariableScope / Child**:
+- [property] `UiPath.MicrosoftOffice365.Activities.Mail.Models.MailboxArgument` **MailboxArg**
+- [property] `String` **Connector**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `String` **BindingsKey**
+- [property] `String` **ParentResourceKey**
+- [property] `String` **ResourceKey**
+### Get Email List
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Mail.GetEmailListConnections@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Mail.GetEmailListConnections`
+**Category**: Microsoft 365.Outlook
+**Description**: Retrieves a list of emails from the specified folder that matches the filter criteria
+**Arguments**:
+- [IN] `InArgument<Boolean>` **IncludeSubfolders**
+- [IN] `InArgument<Int32>` **MaxResults**
+- [IN] `InArgument<Boolean>` **UnreadOnly**
+- [IN] `InArgument<Boolean>` **WithAttachmentsOnly**
+- [IN] `InArgument<Boolean>` **MarkAsRead**
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Activities.Mail.Enums.ImportanceFilter>` **Importance**
+- [OUT] `OutArgument<List<UiPath.MicrosoftOffice365.Models.Office365Message>>` **EmailList**
+- [IN] `InArgument<String>` **BrowserFolder**
+- [IN] `InArgument<String>` **FreeTextFilter**
+- [IN] `InArgument<String>` **QueryFilter**
+- [IN] `InArgument<String>` **ManualEntryFolder**
+- [IN] `InArgument<String>` **Mailbox**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `UiPath.MicrosoftOffice365.Activities.Mail.Enums.FilterMode` **FilterSelectionMode**
+- [property] `UiPath.MicrosoftOffice365.Activities.Mail.Models.MailFolderArgument` **MailFolderArgument**
+- [property] `UiPath.MicrosoftOffice365.Activities.Mail.Models.MailboxArgument` **MailboxArg**
+- [property] `UiPath.MicrosoftOffice365.Activities.Mail.Enums.ItemSelectionMode` **SelectionMode**
+- [property] `Boolean` **UseSharedMailbox**
+- [property] `String` **ParentResourceKey**
+- [property] `String` **ResourceKey**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+### Get Email Thread
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Mail.GetEmailThreadConnections@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Mail.GetEmailThreadConnections`
+**Category**: Microsoft 365.Outlook
+**Description**: Retrieves the list of emails within a conversation
+**Arguments**:
+- [IN] `InArgument<String>` **ConversationId**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.MicrosoftOffice365.Activities.Mail.Models.MailboxArgument` **MailboxArg**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **ParentResourceKey**
+- [property] `String` **ResourceKey**
+### Get Newest Email
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Mail.GetNewestEmail@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Mail.GetNewestEmail`
+**Category**: Microsoft 365.Outlook
+**Description**: Returns the most recent email matching the search criteria
+**Arguments**:
+- [IN] `InArgument<Boolean>` **UnreadOnly**
+- [IN] `InArgument<Boolean>` **WithAttachmentsOnly**
+- [IN] `InArgument<Boolean>` **MarkAsRead**
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Activities.Mail.Enums.ImportanceFilter>` **Importance**
+- [OUT] `OutArgument<UiPath.MicrosoftOffice365.Models.Office365Message>` **Result**
+- [IN] `InArgument<String>` **BrowserFolder**
+- [IN] `InArgument<String>` **FreeTextFilter**
+- [IN] `InArgument<String>` **QueryFilter**
+- [IN] `InArgument<String>` **ManualEntryFolder**
+- [IN] `InArgument<String>` **Mailbox**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `UiPath.MicrosoftOffice365.Activities.Mail.Enums.FilterMode` **FilterSelectionMode**
+- [property] `UiPath.MicrosoftOffice365.Activities.Mail.Models.MailFolderArgument` **MailFolderArgument**
+- [property] `UiPath.MicrosoftOffice365.Activities.Mail.Models.MailboxArgument` **MailboxArg**
+- [property] `UiPath.MicrosoftOffice365.Activities.Mail.Enums.ItemSelectionMode` **SelectionMode**
+- [property] `Boolean` **UseSharedMailbox**
+- [property] `String` **ParentResourceKey**
+- [property] `String` **ResourceKey**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+### Mark Email as Read or Unread
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Mail.MarkAsReadUnreadConnections@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Mail.MarkAsReadUnreadConnections`
+**Category**: Microsoft 365.Outlook
+**Description**: Marks an email as read or unread
+**Arguments**:
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Models.Office365Message>` **Email**
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Activities.Mail.Enums.MarkAsReadUnread>` **MarkAsReadUnread**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+### Move Email
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Mail.MoveEmailConnections@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Mail.MoveEmailConnections`
+**Category**: Microsoft 365.Outlook
+**Description**: Moves an email to a folder within the same mailbox
+**Arguments**:
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Models.Office365Message>` **Email**
+- [IN] `InArgument<Boolean>` **CreateFolderIfMissing** (default: False)
+- [OUT] `OutArgument<UiPath.MicrosoftOffice365.Models.Office365Message>` **Result**
+- [IN] `InArgument<String>` **SharedMailbox**
+- [IN] `InArgument<String>` **BrowserFolder**
+- [IN] `InArgument<String>` **ManualEntryFolder**
+- [IN] `InArgument<String>` **Mailbox**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `UiPath.MicrosoftOffice365.Activities.Mail.Models.MailFolderArgument` **MailFolderArgument**
+- [property] `UiPath.MicrosoftOffice365.Activities.Mail.Models.MailboxArgument` **MailboxArg**
+- [property] `UiPath.MicrosoftOffice365.Activities.Mail.Enums.ItemSelectionMode` **SelectionMode**
+- [property] `Boolean` **UseSharedMailbox**
+- [property] `String` **ParentResourceKey**
+- [property] `String` **ResourceKey**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+### Reply to Email
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Mail.ReplyToEmailConnections@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Mail.ReplyToEmailConnections`
+**Category**: Microsoft 365.Outlook
+**Description**: Replies to an email
+**Arguments**:
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Models.Office365Message>` **Email**
+- [IN] `InArgument<String>` **ReplyAs**
+- [IN] `InArgument<String>` **Body**
+- [IN] `InArgument<UiPath.Platform.ResourceHandling.IResource>` **SingleAttachment**
+- [IN] `InArgument<IEnumerable<UiPath.Platform.ResourceHandling.IResource>>` **Attachments**
+- [IN] `InArgument<IEnumerable<String>>` **AttachmentPaths**
+- [IN] `InArgument<String>` **NewSubject**
+- [IN] `InArgument<String>` **PreferredTimezone**
+- [IN] `InArgument<IEnumerable<String>>` **To**
+- [IN] `InArgument<IEnumerable<String>>` **Cc**
+- [IN] `InArgument<IEnumerable<String>>` **Bcc**
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Activities.Mail.Enums.Importance>` **Importance**
+- [IN] `InArgument<Boolean>` **SaveAsDraft**
+- [IN] `InArgument<Boolean>` **ReplyToAll**
+- [IN] `InArgument<Boolean>` **IsDeliveryReceiptRequested**
+- [IN] `InArgument<Boolean>` **IsReadReceiptRequested**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **UseSharedMailbox**
+- [property] `UiPath.MicrosoftOffice365.Activities.Mail.Models.MailboxArgument` **MailboxArg**
+- [property] `UiPath.MicrosoftOffice365.Activities.Mail.Enums.AttachmentInputMode` **AttachmentInputMode**
+- [property] `IEnumerable<InArgument<UiPath.Platform.ResourceHandling.IResource>>` **ArgumentAttachments**
+- [property] `IEnumerable<InArgument<String>>` **ArgumentAttachmentPaths**
+- [property] `String` **Connector**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+### Send Email
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Mail.SendMailConnections@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Mail.SendMailConnections`
+**Category**: Microsoft 365.Outlook
+**Description**: Sends an email message
+**Arguments**:
+- [IN] `InArgument<String>` **Mailbox**
+- [IN] `InArgument<IEnumerable<String>>` **To**
+- [IN] `InArgument<IEnumerable<String>>` **Cc**
+- [IN] `InArgument<IEnumerable<String>>` **Bcc**
+- [IN] `InArgument<String>` **Subject**
+- [IN] `InArgument<String>` **Body**
+- [IN] `InArgument<String>` **TextBody**
+- [IN] `InArgument<UiPath.Platform.ResourceHandling.IResource>` **SingleAttachment**
+- [IN] `InArgument<IEnumerable<UiPath.Platform.ResourceHandling.IResource>>` **Attachments**
+- [IN] `InArgument<IEnumerable<String>>` **AttachmentPaths**
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Activities.Mail.Enums.Importance>` **Importance**
+- [IN] `InArgument<IEnumerable<String>>` **ReplyTo**
+- [IN] `InArgument<Boolean>` **SaveAsDraft**
+- [IN] `InArgument<Boolean>` **IsDeliveryReceiptRequested**
+- [IN] `InArgument<Boolean>` **IsReadReceiptRequested**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **UseSharedMailbox**
+- [property] `UiPath.MicrosoftOffice365.Activities.Mail.Models.MailboxArgument` **MailboxArg**
+- [property] `UiPath.MicrosoftOffice365.Activities.Mail.Enums.BodyInputType` **InputType**
+- [property] `UiPath.MicrosoftOffice365.Activities.Mail.Enums.AttachmentInputMode` **AttachmentInputMode**
+- [property] `IEnumerable<InArgument<UiPath.Platform.ResourceHandling.IResource>>` **AttachmentList**
+- [property] `IEnumerable<InArgument<String>>` **ArgumentAttachmentPaths**
+- [property] `String` **Connector**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+### Set Email Categories
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Mail.SetEmailCategoriesConnections@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Mail.SetEmailCategoriesConnections`
+**Category**: Microsoft 365.Outlook
+**Description**: Assigns categories to an email
+**Arguments**:
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Models.Office365Message>` **Email**
+- [IN] `InArgument<String[]>` **CategoriesToAssign**
+- [IN] `InArgument<String[]>` **SpecificCategoriesToRemove**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.MicrosoftOffice365.Activities.Mail.Models.MailboxArgument` **MailboxArg**
+- [property] `UiPath.MicrosoftOffice365.Activities.Mail.Enums.CategoriesToRemove` **CategoriesToRemove**
+- [property] `String` **Connector**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+### Turn Off Automatic Replies
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Mail.TurnOffAutomaticRepliesConnections@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Mail.TurnOffAutomaticRepliesConnections`
+**Category**: Microsoft 365.Outlook
+**Description**: Stops the send automatic replies to notify others that you are out of office
+**Arguments**:
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+### Turn On Automatic Replies
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Mail.TurnOnAutomaticRepliesConnections@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Mail.TurnOnAutomaticRepliesConnections`
+**Category**: Microsoft 365.Outlook
+**Description**: Activates and configure the send automatic replies to notify others that you are out of the office. If Out of Office is already activated, this activity will also update the existing settings
+**Arguments**:
+- [IN] `InArgument<DateTimeOffset>` **StartTime**
+- [IN] `InArgument<DateTimeOffset>` **EndTime**
+- [IN] `InArgument<String>` **InternalMessage**
+- [IN] `InArgument<Boolean>` **SendRepliesOutsideOrganization**
+- [IN] `InArgument<Boolean>` **SendRepliesToContactsOnly**
+- [IN] `InArgument<String>` **ExternalMessage**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+### Email Sent
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Mail.Triggers.EmailSent@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Mail.Triggers.EmailSent`
+**Category**: Microsoft 365.Outlook.Triggers
+**Description**: Initiates an automation workflow when an email is sent
+**Arguments**:
+- [IN] `InArgument<Boolean>` **IncludeAttachments**
+- [OUT] `OutArgument<UiPath.MicrosoftOffice365.Models.Office365Message>` **Result**
+- [OUT] `OutArgument<UiPath.MicrosoftOffice365.Activities.Utilities.JobInformation>` **JobData**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `String` **Operation**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `String` **SharedMailboxBindingKey**
+- [property] `String` **Connector**
+- [property] `String` **ObjectName**
+- [property] `Boolean` **WithAttachmentsOnly**
+- [property] `Boolean` **UseSharedMailbox**
+- [property] `String` **Mailbox**
+- [property] `UiPath.MicrosoftOffice365.Activities.Mail.Models.TriggerMailboxArgument` **MailboxArg**
+- [property] `String` **ParentResourceKey**
+- [property] `String` **ResourceKey**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+### Email Received
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Mail.Triggers.NewEmailReceived@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Mail.Triggers.NewEmailReceived`
+**Category**: Microsoft 365.Outlook.Triggers
+**Description**: Starts workflow execution when a new email arrives
+**Arguments**:
+- [IN] `InArgument<Boolean>` **MarkAsRead**
+- [OUT] `OutArgument<UiPath.MicrosoftOffice365.Models.Office365Message>` **Result**
+- [IN] `InArgument<Boolean>` **IncludeAttachments**
+- [OUT] `OutArgument<UiPath.MicrosoftOffice365.Activities.Utilities.JobInformation>` **JobData**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `String` **Operation**
+- [property] `UiPath.MicrosoftOffice365.Activities.Mail.Models.TriggerMailFolderArgument` **MailFolderArg**
+- [property] `String` **BrowserFolderName**
+- [property] `String` **BrowserFolderId**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `String` **SharedMailboxBindingKey**
+- [property] `String` **Connector**
+- [property] `String` **ObjectName**
+- [property] `Boolean` **WithAttachmentsOnly**
+- [property] `Boolean` **UseSharedMailbox**
+- [property] `String` **Mailbox**
+- [property] `UiPath.MicrosoftOffice365.Activities.Mail.Models.TriggerMailboxArgument` **MailboxArg**
+- [property] `String` **ParentResourceKey**
+- [property] `String` **ResourceKey**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+### Create Event
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Calendar.CreateEventConnections@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Calendar.CreateEventConnections`
+**Category**: Microsoft 365.Calendar
+**Description**: Adds an event to the indicated calendar
+**Arguments**:
+- [IN] `InArgument<String>` **Title**
+- [IN] `InArgument<DateTimeOffset>` **StartDateTime**
+- [IN] `InArgument<DateTimeOffset>` **EndDateTime**
+- [IN] `InArgument<String>` **Timezone**
+- [IN] `InArgument<String>` **Recurrence**
+- [IN] `InArgument<Boolean>` **AllDayEvent**
+- [IN] `InArgument<IEnumerable<String>>` **RequiredAttendees**
+- [IN] `InArgument<IEnumerable<String>>` **OptionalAttendees**
+- [IN] `InArgument<IEnumerable<String>>` **ResourceAttendees**
+- [IN] `InArgument<String>` **Location**
+- [IN] `InArgument<String>` **MeetingUrl**
+- [IN] `InArgument<Boolean>` **IsOnlineMeeting**
+- [IN] `InArgument<String>` **Description**
+- [IN] `InArgument<IEnumerable<UiPath.Platform.ResourceHandling.IResource>>` **Attachments**
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Activities.Mail.Enums.Importance>` **Importance**
+- [IN] `InArgument<IEnumerable<String>>` **Categories**
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Activities.Calendar.Enums.FreeBusyStatus>` **ShowAs**
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Activities.Mail.Enums.Sensitivity>` **Sensitivity**
+- [IN] `InArgument<String>` **PreferredReturnTimezone**
+- [OUT] `OutArgument<UiPath.MicrosoftOffice365.Calendar.Models.O365EventItem>` **Result**
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Calendar.Models.O365CalendarItem>` **Calendar**
+- [IN] `InArgument<String>` **BrowserCalendarFriendlyName**
+- [IN] `InArgument<String>` **BrowserCalendarId**
+- [IN] `InArgument<String>` **BrowserCalendarGroupId**
+- [IN] `InArgument<String>` **BrowserGroupId**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.MicrosoftOffice365.Activities.Calendar.Models.CalendarArgument` **CalendarArgument**
+- [property] `UiPath.MicrosoftOffice365.Activities.Mail.Enums.AttachmentInputMode` **AttachmentInputMode**
+- [property] `IEnumerable<InArgument<UiPath.Platform.ResourceHandling.IResource>>` **ArgumentAttachments**
+- [property] `String` **Connector**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `UiPath.MicrosoftOffice365.Activities.Calendar.Enums.ECalendarMode` **CalendarInputMode**
+- [property] `String` **ParentResourceKey**
+- [property] `String` **ResourceKey**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+### Delete Event
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Calendar.DeleteEventConnections@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Calendar.DeleteEventConnections`
+**Category**: Microsoft 365.Calendar
+**Description**: Cancels an event and sends cancellation notification to all event attendees. Event is considered as deleted afterwards. 
+**Arguments**:
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Calendar.Models.O365EventItem>` **Event**
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Enums.DeleteOptionType>` **DeleteOption**
+- [IN] `InArgument<String>` **Comment**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+### Find Meeting Times
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Calendar.FindMeetingTimesConnections@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Calendar.FindMeetingTimesConnections`
+**Category**: Microsoft 365.Calendar
+**Description**: Returns possible time-slots for a meeting between the specified attendees.
+**Arguments**:
+- [IN] `InArgument<IEnumerable<String>>` **Attendees**
+- [IN] `InArgument<DateTimeOffset>` **IntervalStart**
+- [IN] `InArgument<DateTimeOffset>` **IntervalEnd**
+- [IN] `InArgument<TimeSpan>` **MeetingDuration**
+- [IN] `InArgument<String>` **Timezone**
+- [IN] `InArgument<Boolean>` **OrganizerRequired**
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Calendar.Enums.MeetingTimeConstraint>` **Constraint**
+- [IN] `InArgument<IEnumerable<String>>` **Locations**
+- [OUT] `OutArgument<String>` **EmptySuggestionsReason**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `String` **BindingsKey**
+- [property] `String` **ParentResourceKey**
+- [property] `String` **ResourceKey**
+### For Each Event
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Calendar.ForEachEventConnections@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Calendar.ForEachEventConnections`
+**Category**: Microsoft 365.Calendar
+**Description**: Iterates through a list of calendar events defined by the filter criteria. The output can be used in further activities
+**Arguments**:
+- [IN] `InArgument<DateTimeOffset>` **StartDate**
+- [IN] `InArgument<DateTimeOffset>` **EndDate**
+- [IN] `InArgument<Int32>` **MaxResults**
+- [IN] `InArgument<String>` **PreferredReturnTimezone**
+- [IN] `InArgument<String>` **QueryFilter**
+- [OUT] `OutArgument<Int32>` **Length**
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Calendar.Models.O365CalendarItem>` **Calendar**
+- [IN] `InArgument<String>` **BrowserCalendarFriendlyName**
+- [IN] `InArgument<String>` **BrowserCalendarId**
+- [IN] `InArgument<String>` **BrowserCalendarGroupId**
+- [IN] `InArgument<String>` **BrowserGroupId**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.MicrosoftOffice365.Activities.Calendar.Models.CalendarArgument` **CalendarArgument**
+- [property] `String` **CurrentItemVariableName**
+- [property] `UiPath.MicrosoftOffice365.Activities.Calendar.Enums.EventFilterMode` **FilterSelectionMode**
+- [property] `String` **Connector**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `UiPath.MicrosoftOffice365.Activities.Calendar.Enums.ECalendarMode` **CalendarInputMode**
+- [property] `String` **ParentResourceKey**
+- [property] `String` **ResourceKey**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+### Forward Event
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Calendar.ForwardEventConnections@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Calendar.ForwardEventConnections`
+**Category**: Microsoft 365.Calendar
+**Description**: Forwards an event to all the specified attendees
+**Arguments**:
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Calendar.Models.O365EventItem>` **Event**
+- [IN] `InArgument<IEnumerable<String>>` **Attendees**
+- [IN] `InArgument<Boolean>` **ApplyOnSeries**
+- [IN] `InArgument<String>` **Comment**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+### Get Calendars
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Calendar.GetCalendarsConnections@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Calendar.GetCalendarsConnections`
+**Category**: Microsoft 365.Calendar
+**Description**: Retrieves a list of calendars. The output can be used in further activities
+**Arguments**:
+- [OUT] `OutArgument<List<UiPath.MicrosoftOffice365.Calendar.Models.O365CalendarItem>>` **Calendars**
+- [OUT] `OutArgument<UiPath.MicrosoftOffice365.Calendar.Models.O365CalendarItem>` **DefaultCalendar**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **IncludeGroupCalendars**
+- [property] `String` **Connector**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `String` **ParentResourceKey**
+- [property] `String` **ResourceKey**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+### Get Event By Id
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Calendar.GetEventByIdConnections@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Calendar.GetEventByIdConnections`
+**Category**: Microsoft 365.Calendar
+**Arguments**:
+- [IN] `InArgument<String>` **EventId**
+- [OUT] `OutArgument<UiPath.MicrosoftOffice365.Calendar.Models.O365EventItem>` **Event**
+- [IN] `InArgument<String>` **BrowserCalendarFriendlyName**
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Calendar.Models.O365CalendarItem>` **Calendar**
+- [IN] `InArgument<String>` **BrowserCalendarId**
+- [IN] `InArgument<String>` **BrowserCalendarGroupId**
+- [IN] `InArgument<String>` **BrowserGroupId**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `UiPath.MicrosoftOffice365.Activities.Calendar.Models.CalendarArgument` **CalendarArgument**
+- [property] `String` **Connector**
+- [property] `UiPath.MicrosoftOffice365.Activities.Calendar.Enums.ECalendarMode` **CalendarInputMode**
+- [property] `String` **ParentResourceKey**
+- [property] `String` **ResourceKey**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+### Get Event List
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Calendar.GetEventListConnections@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Calendar.GetEventListConnections`
+**Category**: Microsoft 365.Calendar
+**Description**: Retrieves a list of calendar events defined by the filter criteria. The output can be used in further activities
+**Arguments**:
+- [IN] `InArgument<DateTimeOffset>` **StartDate**
+- [IN] `InArgument<DateTimeOffset>` **EndDate**
+- [IN] `InArgument<Int32>` **MaxResults**
+- [IN] `InArgument<String>` **PreferredReturnTimezone**
+- [IN] `InArgument<String>` **QueryFilter**
+- [OUT] `OutArgument<List<UiPath.MicrosoftOffice365.Calendar.Models.O365EventItem>>` **EventList**
+- [IN] `InArgument<String>` **BrowserCalendarFriendlyName**
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Calendar.Models.O365CalendarItem>` **Calendar**
+- [IN] `InArgument<String>` **BrowserCalendarId**
+- [IN] `InArgument<String>` **BrowserCalendarGroupId**
+- [IN] `InArgument<String>` **BrowserGroupId**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.MicrosoftOffice365.Activities.Calendar.Enums.EventFilterMode` **FilterSelectionMode**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `UiPath.MicrosoftOffice365.Activities.Calendar.Models.CalendarArgument` **CalendarArgument**
+- [property] `String` **Connector**
+- [property] `UiPath.MicrosoftOffice365.Activities.Calendar.Enums.ECalendarMode` **CalendarInputMode**
+- [property] `String` **ParentResourceKey**
+- [property] `String` **ResourceKey**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+### Update Event
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Calendar.ModifyEventConnections@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Calendar.ModifyEventConnections`
+**Category**: Microsoft 365.Calendar
+**Description**: Modifies and updates the properties of the chosen event. The properties left blank remain unchanged
+**Arguments**:
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Calendar.Models.O365EventItem>` **Event**
+- [IN] `InArgument<String>` **Title**
+- [IN] `InArgument<DateTimeOffset>` **StartDateTime**
+- [IN] `InArgument<DateTimeOffset>` **EndDateTime**
+- [IN] `InArgument<String>` **Timezone**
+- [IN] `InArgument<Boolean>` **AllDayEvent**
+- [IN] `InArgument<String>` **Recurrence**
+- [IN] `InArgument<IEnumerable<String>>` **OverwriteRequiredAttendees**
+- [IN] `InArgument<IEnumerable<String>>` **AddRequiredAttendees**
+- [IN] `InArgument<IEnumerable<String>>` **RemoveRequiredAttendees**
+- [IN] `InArgument<IEnumerable<String>>` **OverwriteOptionalAttendees**
+- [IN] `InArgument<IEnumerable<String>>` **AddOptionalAttendees**
+- [IN] `InArgument<IEnumerable<String>>` **RemoveOptionalAttendees**
+- [IN] `InArgument<IEnumerable<String>>` **OverwriteResourceAttendees**
+- [IN] `InArgument<IEnumerable<String>>` **AddResourceAttendees**
+- [IN] `InArgument<IEnumerable<String>>` **RemoveResourceAttendees**
+- [IN] `InArgument<String>` **Location**
+- [IN] `InArgument<String>` **MeetingUrl**
+- [IN] `InArgument<Boolean>` **IsOnlineMeeting**
+- [IN] `InArgument<String>` **Description**
+- [IN] `InArgument<IEnumerable<UiPath.Platform.ResourceHandling.IResource>>` **OverwriteAttachments**
+- [IN] `InArgument<IEnumerable<UiPath.Platform.ResourceHandling.IResource>>` **AddAttachments**
+- [IN] `InArgument<IEnumerable<UiPath.Platform.ResourceHandling.IResource>>` **RemoveAttachments**
+- [IN] `InArgument<Nullable<UiPath.MicrosoftOffice365.Activities.Mail.Enums.Importance>>` **Importance**
+- [IN] `InArgument<IEnumerable<String>>` **OverwriteCategories**
+- [IN] `InArgument<IEnumerable<String>>` **AddCategories**
+- [IN] `InArgument<IEnumerable<String>>` **RemoveCategories**
+- [IN] `InArgument<Nullable<UiPath.MicrosoftOffice365.Activities.Calendar.Enums.FreeBusyStatus>>` **ShowAs**
+- [IN] `InArgument<Nullable<UiPath.MicrosoftOffice365.Activities.Mail.Enums.Sensitivity>>` **Sensitivity**
+- [IN] `InArgument<String>` **PreferredReturnTimezone**
+- [OUT] `OutArgument<UiPath.MicrosoftOffice365.Calendar.Models.O365EventItem>` **Result**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.MicrosoftOffice365.Activities.Calendar.Enums.EventPropertyChange` **ChangeRequiredAttendees**
+- [property] `UiPath.MicrosoftOffice365.Activities.Calendar.Enums.EventPropertyChange` **ChangeOptionalAttendees**
+- [property] `UiPath.MicrosoftOffice365.Activities.Calendar.Enums.EventPropertyChange` **ChangeResourceAttendees**
+- [property] `UiPath.MicrosoftOffice365.Activities.Calendar.Enums.EventPropertyChange` **ChangeAttachments**
+- [property] `UiPath.MicrosoftOffice365.Activities.Mail.Enums.AttachmentInputMode` **OverwriteAttachmentInputMode**
+- [property] `IEnumerable<InArgument<UiPath.Platform.ResourceHandling.IResource>>` **OverwriteArgumentAttachments**
+- [property] `UiPath.MicrosoftOffice365.Activities.Mail.Enums.AttachmentInputMode` **AddAttachmentInputMode**
+- [property] `IEnumerable<InArgument<UiPath.Platform.ResourceHandling.IResource>>` **AddArgumentAttachments**
+- [property] `UiPath.MicrosoftOffice365.Activities.Mail.Enums.AttachmentInputMode` **RemoveAttachmentInputMode**
+- [property] `IEnumerable<InArgument<UiPath.Platform.ResourceHandling.IResource>>` **RemoveArgumentAttachments**
+- [property] `UiPath.MicrosoftOffice365.Activities.Calendar.Enums.EventPropertyChange` **ChangeCategories**
+- [property] `String` **Connector**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+### Respond to Event Invitation
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Calendar.RsvpConnections@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Calendar.RsvpConnections`
+**Category**: Microsoft 365.Calendar
+**Description**: Defines a reply to an event invitation
+**Arguments**:
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Calendar.Models.O365EventItem>` **Event**
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Enums.EventResponseType>` **Response**
+- [IN] `InArgument<Boolean>` **ApplyOnSeries**
+- [IN] `InArgument<Boolean>` **EmailOrganizer**
+- [IN] `InArgument<String>` **Comment**
+- [IN] `InArgument<DateTimeOffset>` **NewStartTime**
+- [IN] `InArgument<DateTimeOffset>` **NewEndTime**
+- [IN] `InArgument<String>` **NewTimezone**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+### Calendar Event Replied
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Calendar.Triggers.EventReplied@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Calendar.Triggers.EventReplied`
+**Category**: Microsoft 365.Calendar.Triggers
+**Description**: Initiates an automation workflow when someone replies to a calendar event in the selected user calendar
+**Arguments**:
+- [IN] `InArgument<String>` **BrowserCalendarFriendlyName**
+- [IN] `InArgument<String>` **BrowserCalendarId**
+- [IN] `InArgument<String>` **BrowserCalendarGroupId**
+- [IN] `InArgument<String>` **BrowserGroupId**
+- [OUT] `OutArgument<UiPath.MicrosoftOffice365.Calendar.Models.O365EventItem>` **Result**
+- [OUT] `OutArgument<UiPath.MicrosoftOffice365.Activities.Utilities.JobInformation>` **JobData**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `String` **Operation**
+- [property] `UiPath.MicrosoftOffice365.Activities.Calendar.Models.CalendarArgument` **CalendarArgument**
+- [property] `String` **ObjectName**
+- [property] `String` **Connector**
+- [property] `UiPath.MicrosoftOffice365.Activities.Calendar.Filters.TriggerEventFilterCollection` **Filter**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `String` **ParentResourceKey**
+- [property] `String` **ResourceKey**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+### Calendar Event Updated
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Calendar.Triggers.EventUpdated@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Calendar.Triggers.EventUpdated`
+**Category**: Microsoft 365.Calendar.Triggers
+**Description**: Initiates an automation workflow when an event is updated in the selected user calendar
+**Arguments**:
+- [IN] `InArgument<String>` **BrowserCalendarFriendlyName**
+- [IN] `InArgument<String>` **BrowserCalendarId**
+- [IN] `InArgument<String>` **BrowserCalendarGroupId**
+- [IN] `InArgument<String>` **BrowserGroupId**
+- [OUT] `OutArgument<UiPath.MicrosoftOffice365.Calendar.Models.O365EventItem>` **Result**
+- [OUT] `OutArgument<UiPath.MicrosoftOffice365.Activities.Utilities.JobInformation>` **JobData**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `String` **Operation**
+- [property] `UiPath.MicrosoftOffice365.Activities.Calendar.Models.CalendarArgument` **CalendarArgument**
+- [property] `String` **ObjectName**
+- [property] `String` **Connector**
+- [property] `UiPath.MicrosoftOffice365.Activities.Calendar.Filters.TriggerEventFilterCollection` **Filter**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `String` **ParentResourceKey**
+- [property] `String` **ResourceKey**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+### Calendar Event Created
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Calendar.Triggers.NewEventCreated@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Calendar.Triggers.NewEventCreated`
+**Category**: Microsoft 365.Calendar.Triggers
+**Description**: Initiates an automation workflow when a new event is created in the selected user calendar
+**Arguments**:
+- [IN] `InArgument<String>` **BrowserCalendarFriendlyName**
+- [IN] `InArgument<String>` **BrowserCalendarId**
+- [IN] `InArgument<String>` **BrowserCalendarGroupId**
+- [IN] `InArgument<String>` **BrowserGroupId**
+- [OUT] `OutArgument<UiPath.MicrosoftOffice365.Calendar.Models.O365EventItem>` **Result**
+- [OUT] `OutArgument<UiPath.MicrosoftOffice365.Activities.Utilities.JobInformation>` **JobData**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.MicrosoftOffice365.Activities.Calendar.Models.CalendarArgument` **CalendarArgument**
+- [property] `String` **Operation**
+- [property] `String` **ObjectName**
+- [property] `String` **Connector**
+- [property] `UiPath.MicrosoftOffice365.Activities.Calendar.Filters.TriggerEventFilterCollection` **Filter**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `String` **ParentResourceKey**
+- [property] `String` **ResourceKey**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+### Calendar Event Received
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Calendar.Triggers.NewEventInvitationReceived@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Calendar.Triggers.NewEventInvitationReceived`
+**Category**: Microsoft 365.Calendar.Triggers
+**Description**: Initiates an automation workflow when a new event invitation is received on the selected user calendar
+**Arguments**:
+- [IN] `InArgument<String>` **BrowserCalendarFriendlyName**
+- [IN] `InArgument<String>` **BrowserCalendarId**
+- [IN] `InArgument<String>` **BrowserCalendarGroupId**
+- [IN] `InArgument<String>` **BrowserGroupId**
+- [OUT] `OutArgument<UiPath.MicrosoftOffice365.Calendar.Models.O365EventItem>` **Result**
+- [OUT] `OutArgument<UiPath.MicrosoftOffice365.Activities.Utilities.JobInformation>` **JobData**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `String` **Operation**
+- [property] `UiPath.MicrosoftOffice365.Activities.Calendar.Models.CalendarArgument` **CalendarArgument**
+- [property] `String` **ObjectName**
+- [property] `String` **Connector**
+- [property] `UiPath.MicrosoftOffice365.Activities.Calendar.Filters.TriggerEventFilterCollection` **Filter**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `String` **ParentResourceKey**
+- [property] `String` **ResourceKey**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+### Copy Range
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Excel.CopyRangeConnections@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Excel.CopyRangeConnections`
+**Category**: Microsoft 365.Excel
+**Description**: Copies a range and pastes it to another location
+**Arguments**:
+- [IN] `InArgument<String>` **BrowserDestinationItemId**
+- [IN] `InArgument<String>` **BrowserItemId**
+- [IN] `InArgument<String>` **BrowserParentItemId**
+- [IN] `InArgument<String>` **BrowserParentDestinationItemId**
+- [IN] `InArgument<String>` **BrowserItemFriendlyName**
+- [IN] `InArgument<String>` **DestinationRange**
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Enums.ValuesType>` **WhatToCopy**
+- [IN] `InArgument<String>` **Range**
+**Properties / VariableScope / Child**:
+- [property] `String` **SecondaryResourceKey**
+- [property] `String` **SecondaryResourceRelativePathBindingsKey**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Models.DriveItemArgument` **DestinationItem**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Models.DriveItemArgument` **TemplateDestinationItem**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Models.DriveItemArgument` **TemplateItem**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Models.DriveItemArgument` **Item**
+- [property] `String` **Connector**
+- [property] `String` **ArgumentsPrefix**
+- [property] `String` **ParentFolderObjectName**
+- [property] `String` **RelativePathBindingsKey**
+- [property] `String` **BindingsKey**
+- [property] `String` **ParentResourceKey**
+- [property] `String` **ResourceKey**
+### Get Cell Color
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Excel.GetCellColorConnections@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Excel.GetCellColorConnections`
+**Category**: Microsoft 365.Excel
+**Description**: Gets the color of a given cell
+**Arguments**:
+- [IN] `InArgument<String>` **BrowserItemFriendlyName**
+- [IN] `InArgument<String>` **CellAddress**
+- [IN] `InArgument<String>` **BrowserItemId**
+- [IN] `InArgument<String>` **BrowserParentItemId**
+- [IN] `InArgument<String>` **Range**
+**Properties / VariableScope / Child**:
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Models.DriveItemArgument` **TemplateItem**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Models.DriveItemArgument` **Item**
+- [property] `String` **Connector**
+- [property] `String` **ArgumentsPrefix**
+- [property] `String` **ParentFolderObjectName**
+- [property] `String` **RelativePathBindingsKey**
+- [property] `String` **BindingsKey**
+- [property] `String` **ParentResourceKey**
+- [property] `String` **ResourceKey**
+### Set Range Color
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Excel.SetRangeColorConnections@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Excel.SetRangeColorConnections`
+**Category**: Microsoft 365.Excel
+**Description**: Sets the background color of a specified range
+**Arguments**:
+- [IN] `InArgument<String>` **BrowserItemFriendlyName**
+- [IN] `InArgument<String>` **BrowserItemId**
+- [IN] `InArgument<String>` **BrowserParentItemId**
+- [IN] `InArgument<Drawing.Color>` **Color**
+- [IN] `InArgument<String>` **Range**
+**Properties / VariableScope / Child**:
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Models.DriveItemArgument` **TemplateItem**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Models.DriveItemArgument` **Item**
+- [property] `String` **Connector**
+- [property] `String` **ArgumentsPrefix**
+- [property] `String` **ParentFolderObjectName**
+- [property] `String` **RelativePathBindingsKey**
+- [property] `String` **BindingsKey**
+- [property] `String` **ParentResourceKey**
+- [property] `String` **ResourceKey**
+### VLookup range
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Excel.VLookupRangeConnections@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Excel.VLookupRangeConnections`
+**Category**: Microsoft 365.Excel
+**Description**: Finds a value in a range using VLOOKUP function
+**Arguments**:
+- [IN] `InArgument<String>` **BrowserItemFriendlyName**
+- [IN] `InArgument<String>` **BrowserItemId**
+- [IN] `InArgument<String>` **BrowserParentItemId**
+- [IN] `InArgument<Object>` **ValueToLookup**
+- [IN] `InArgument<Int32>` **ColumnIndex**
+- [IN] `InArgument<Boolean>` **ExactMatch**
+- [IN] `InArgument<String>` **Range**
+**Properties / VariableScope / Child**:
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Models.DriveItemArgument` **TemplateItem**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Models.DriveItemArgument` **Item**
+- [property] `String` **Connector**
+- [property] `String` **ArgumentsPrefix**
+- [property] `String` **ParentFolderObjectName**
+- [property] `String` **RelativePathBindingsKey**
+- [property] `String` **BindingsKey**
+- [property] `String` **ParentResourceKey**
+- [property] `String` **ResourceKey**
+### Add Sheet
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Excel.AddSheetConnections@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Excel.AddSheetConnections`
+**Category**: Microsoft 365.Excel
+**Description**: Adds a new sheet to the specified workbook
+**Arguments**:
+- [IN] `InArgument<String>` **SheetName**
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Enums.ConflictBehavior>` **ConflictResolution** (default: Mono.Cecil.CustomAttributeArgument)
+- [OUT] `OutArgument<String>` **NewSheetName**
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Files.Models.O365DriveRemoteItem>` **Workbook**
+- [IN] `InArgument<String>` **BrowserItemId**
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Files.Models.O365DriveRemoteItem>` **Item**
+- [IN] `InArgument<String>` **BrowserDriveName**
+- [IN] `InArgument<String>` **BrowserSiteUrl**
+- [IN] `InArgument<String>` **ManualEntryItemId**
+- [IN] `InArgument<String>` **ManualEntryDriveName**
+- [IN] `InArgument<String>` **ManualEntrySiteUrl**
+- [IN] `InArgument<String>` **ManualEntryItemUrl**
+- [IN] `InArgument<String>` **ManualEntryItemFullPath**
+- [IN] `InArgument<String>` **BrowserParentItemId**
+- [IN] `InArgument<String>` **ManualEntryItemRelativePath**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Models.DriveItemArgument` **DriveItemArgument**
+- [property] `String` **RelativePathBindingsKey**
+- [property] `String` **ParentFolderObjectName**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Enums.EDriveItemMode` **ItemSelectionMode**
+- [property] `String` **ParentResourceKey**
+- [property] `String` **ResourceKey**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+### Create Table
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Excel.CreateTableConnections@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Excel.CreateTableConnections`
+**Category**: Microsoft 365.Excel
+**Description**: Creates a table from the specified range
+**Arguments**:
+- [IN] `InArgument<String>` **SheetName**
+- [IN] `InArgument<String>` **Range**
+- [IN] `InArgument<String>` **TableName**
+- [IN] `InArgument<String>` **BrowserItemId**
+- [IN] `InArgument<String>` **BrowserParentItemId**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **HasHeaders**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Models.DriveItemArgument` **Item**
+- [property] `String` **Connector**
+- [property] `String` **ArgumentsPrefix**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `String` **ParentFolderObjectName**
+- [property] `String` **RelativePathBindingsKey**
+- [property] `String` **BindingsKey**
+- [property] `String` **ParentResourceKey**
+- [property] `String` **ResourceKey**
+### Create Workbook
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Excel.CreateWorkbookConnections@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Excel.CreateWorkbookConnections`
+**Category**: Microsoft 365.Excel
+**Description**: Creates a new Excel workbook
+**Arguments**:
+- [IN] `InArgument<String>` **WorkbookName**
+- [IN] `InArgument<String>` **FirstSheetName**
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Enums.ConflictBehavior>` **ConflictResolution**
+- [OUT] `OutArgument<UiPath.MicrosoftOffice365.Files.Models.O365DriveRemoteItem>` **Result**
+- [IN] `InArgument<String>` **BrowserParentFolderId**
+- [IN] `InArgument<String>` **BrowserParentFolderDriveName**
+- [IN] `InArgument<String>` **BrowserParentFolderSiteUrl**
+- [IN] `InArgument<String>` **BrowserParentFolderFriendlyName**
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Files.Models.O365DriveRemoteItem>` **ParentFolderExisting**
+- [IN] `InArgument<String>` **BrowserItemId**
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Files.Models.O365DriveRemoteItem>` **Item**
+- [IN] `InArgument<String>` **BrowserDriveName**
+- [IN] `InArgument<String>` **BrowserSiteUrl**
+- [IN] `InArgument<String>` **ManualEntryItemId**
+- [IN] `InArgument<String>` **ManualEntryDriveName**
+- [IN] `InArgument<String>` **ManualEntrySiteUrl**
+- [IN] `InArgument<String>` **ManualEntryItemUrl**
+- [IN] `InArgument<String>` **ManualEntryItemFullPath**
+- [IN] `InArgument<String>` **BrowserParentItemId**
+- [IN] `InArgument<String>` **ManualEntryItemRelativePath**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `Nullable<UiPath.MicrosoftOffice365.Activities.Files.Enums.EDriveItemMode>` **ParentFolderSelectionMode**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Models.DriveItemArgument` **DriveItemArgument**
+- [property] `String` **RelativePathBindingsKey**
+- [property] `String` **ParentFolderObjectName**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Enums.EDriveItemMode` **ItemSelectionMode**
+- [property] `String` **ParentResourceKey**
+- [property] `String` **ResourceKey**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+### Delete Column
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Excel.DeleteColumnConnections@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Excel.DeleteColumnConnections`
+**Category**: Microsoft 365.Excel
+**Description**: Deletes a specified column from a sheet, table or range. The column on the right of the deleted column is shifted to the left
+**Arguments**:
+- [IN] `InArgument<Boolean>` **HasHeaders**
+- [IN] `InArgument<String>` **Column**
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Activities.Excel.Enums.ColumnDeleteMode>` **DeleteMode**
+- [OUT] `OutArgument<UiPath.MicrosoftOffice365.Excel.Models.RangeInformation>` **RangeInformation**
+- [IN] `InArgument<String>` **Range**
+- [IN] `InArgument<String>` **BrowserItemId**
+- [IN] `InArgument<String>` **TemplateBrowserItemId**
+- [IN] `InArgument<String>` **TemplateBrowserDriveName**
+- [IN] `InArgument<String>` **TemplateBrowserSiteUrl**
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Files.Models.O365DriveRemoteItem>` **WorkbookSample**
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Files.Models.O365DriveRemoteItem>` **Item**
+- [IN] `InArgument<String>` **BrowserDriveName**
+- [IN] `InArgument<String>` **BrowserSiteUrl**
+- [IN] `InArgument<String>` **ManualEntryItemId**
+- [IN] `InArgument<String>` **ManualEntryDriveName**
+- [IN] `InArgument<String>` **ManualEntrySiteUrl**
+- [IN] `InArgument<String>` **ManualEntryItemUrl**
+- [IN] `InArgument<String>` **ManualEntryItemFullPath**
+- [IN] `InArgument<String>` **BrowserParentItemId**
+- [IN] `InArgument<String>` **ManualEntryItemRelativePath**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Models.DriveItemArgument` **TemplateArgument**
+- [property] `UiPath.MicrosoftOffice365.Activities.Excel.Enums.InputRangeMode` **RangeMode**
+- [property] `String` **Connector**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Models.DriveItemArgument` **DriveItemArgument**
+- [property] `String` **RelativePathBindingsKey**
+- [property] `String` **ParentFolderObjectName**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Enums.EDriveItemMode` **ItemSelectionMode**
+- [property] `String` **ParentResourceKey**
+- [property] `String` **ResourceKey**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+### Delete Range
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Excel.DeleteRangeConnections@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Excel.DeleteRangeConnections`
+**Category**: Microsoft 365.Excel
+**Description**: Deletes a range from the selected Excel Workbook
+**Arguments**:
+- [IN] `InArgument<String>` **Range**
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Activities.Excel.Enums.RangeDeleteMode>` **DeleteMode**
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Files.Models.O365DriveRemoteItem>` **Workbook**
+- [IN] `InArgument<String>` **BrowserItemId**
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Files.Models.O365DriveRemoteItem>` **Item**
+- [IN] `InArgument<String>` **BrowserDriveName**
+- [IN] `InArgument<String>` **BrowserSiteUrl**
+- [IN] `InArgument<String>` **ManualEntryItemId**
+- [IN] `InArgument<String>` **ManualEntryDriveName**
+- [IN] `InArgument<String>` **ManualEntrySiteUrl**
+- [IN] `InArgument<String>` **ManualEntryItemUrl**
+- [IN] `InArgument<String>` **ManualEntryItemFullPath**
+- [IN] `InArgument<String>` **BrowserParentItemId**
+- [IN] `InArgument<String>` **ManualEntryItemRelativePath**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Models.DriveItemArgument` **DriveItemArgument**
+- [property] `String` **RelativePathBindingsKey**
+- [property] `String` **ParentFolderObjectName**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Enums.EDriveItemMode` **ItemSelectionMode**
+- [property] `String` **ParentResourceKey**
+- [property] `String` **ResourceKey**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+### Delete Rows
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Excel.DeleteRowsConnections@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Excel.DeleteRowsConnections`
+**Category**: Microsoft 365.Excel
+**Description**: Deletes one or several rows from a specified positions in an Workbook Range. The bellow cells will be shifted up
+**Arguments**:
+- [IN] `InArgument<String>` **Rows**
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Activities.Excel.Enums.RowsDeleteMode>` **DeleteMode**
+- [OUT] `OutArgument<UiPath.MicrosoftOffice365.Excel.Models.RangeInformation>` **RangeInformation**
+- [IN] `InArgument<String>` **Range**
+- [IN] `InArgument<String>` **BrowserItemId**
+- [IN] `InArgument<String>` **TemplateBrowserItemId**
+- [IN] `InArgument<String>` **TemplateBrowserDriveName**
+- [IN] `InArgument<String>` **TemplateBrowserSiteUrl**
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Files.Models.O365DriveRemoteItem>` **WorkbookSample**
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Files.Models.O365DriveRemoteItem>` **Item**
+- [IN] `InArgument<String>` **BrowserDriveName**
+- [IN] `InArgument<String>` **BrowserSiteUrl**
+- [IN] `InArgument<String>` **ManualEntryItemId**
+- [IN] `InArgument<String>` **ManualEntryDriveName**
+- [IN] `InArgument<String>` **ManualEntrySiteUrl**
+- [IN] `InArgument<String>` **ManualEntryItemUrl**
+- [IN] `InArgument<String>` **ManualEntryItemFullPath**
+- [IN] `InArgument<String>` **BrowserParentItemId**
+- [IN] `InArgument<String>` **ManualEntryItemRelativePath**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Models.DriveItemArgument` **TemplateArgument**
+- [property] `UiPath.MicrosoftOffice365.Activities.Excel.Enums.InputRangeMode` **RangeMode**
+- [property] `String` **Connector**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Models.DriveItemArgument` **DriveItemArgument**
+- [property] `String` **RelativePathBindingsKey**
+- [property] `String` **ParentFolderObjectName**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Enums.EDriveItemMode` **ItemSelectionMode**
+- [property] `String` **ParentResourceKey**
+- [property] `String` **ResourceKey**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+### Delete Sheet
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Excel.DeleteSheetConnections@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Excel.DeleteSheetConnections`
+**Category**: Microsoft 365.Excel
+**Description**: Deletes a sheet from the specified workbook
+**Arguments**:
+- [IN] `InArgument<String>` **SheetName**
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Files.Models.O365DriveRemoteItem>` **Workbook**
+- [IN] `InArgument<String>` **BrowserItemId**
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Files.Models.O365DriveRemoteItem>` **Item**
+- [IN] `InArgument<String>` **BrowserDriveName**
+- [IN] `InArgument<String>` **BrowserSiteUrl**
+- [IN] `InArgument<String>` **ManualEntryItemId**
+- [IN] `InArgument<String>` **ManualEntryDriveName**
+- [IN] `InArgument<String>` **ManualEntrySiteUrl**
+- [IN] `InArgument<String>` **ManualEntryItemUrl**
+- [IN] `InArgument<String>` **ManualEntryItemFullPath**
+- [IN] `InArgument<String>` **BrowserParentItemId**
+- [IN] `InArgument<String>` **ManualEntryItemRelativePath**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Models.DriveItemArgument` **DriveItemArgument**
+- [property] `String` **RelativePathBindingsKey**
+- [property] `String` **ParentFolderObjectName**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Enums.EDriveItemMode` **ItemSelectionMode**
+- [property] `String` **ParentResourceKey**
+- [property] `String` **ResourceKey**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+### For Each Row in Workbook
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Excel.ForEachRowConnections@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Excel.ForEachRowConnections`
+**Category**: Microsoft 365.Excel
+**Description**: Iterates through the rows in a specified range within a worksheet
+_No members extracted._
+### For Each Sheet in Workbook
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Excel.ForEachSheetConnections@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Excel.ForEachSheetConnections`
+**Category**: Microsoft 365.Excel
+**Description**: Iterates through the sheets within a workbook
+**Arguments**:
+- [OUT] `OutArgument<Int32>` **Length**
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Files.Models.O365DriveRemoteItem>` **Workbook**
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Files.Models.O365DriveRemoteItem>` **Item**
+- [IN] `InArgument<String>` **BrowserItemId**
+- [IN] `InArgument<String>` **BrowserDriveName**
+- [IN] `InArgument<String>` **BrowserSiteUrl**
+- [IN] `InArgument<String>` **ManualEntryItemId**
+- [IN] `InArgument<String>` **ManualEntryDriveName**
+- [IN] `InArgument<String>` **ManualEntrySiteUrl**
+- [IN] `InArgument<String>` **ManualEntryItemUrl**
+- [IN] `InArgument<String>` **ManualEntryItemFullPath**
+- [IN] `InArgument<String>` **BrowserParentItemId**
+- [IN] `InArgument<String>` **ManualEntryItemRelativePath**
+**Properties / VariableScope / Child**:
+- [property] `String` **CurrentItemVariableName**
+- [property] `String` **Connector**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `String` **RelativePathBindingsKey**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Models.DriveItemArgument` **DriveItemArgument**
+- [property] `String` **ParentFolderObjectName**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Enums.EDriveItemMode` **ItemSelectionMode**
+- [property] `String` **ParentResourceKey**
+- [property] `String` **ResourceKey**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+### Read Cell
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Excel.ReadCellConnections@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Excel.ReadCellConnections`
+**Category**: Microsoft 365.Excel
+**Description**: Reads the information from the indicated cell for subsequent activities like Write Cell
+_No members extracted._
+### Read Column
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Excel.ReadColumnConnections@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Excel.ReadColumnConnections`
+**Category**: Microsoft 365.Excel
+**Description**: Read the values in a column from the first cell to the last completed value.
+**Arguments**:
+- [IN] `InArgument<String>` **Cell**
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Enums.ValuesType>` **ValuesType**
+- [IN] `InArgument<String>` **BrowserItemId**
+- [IN] `InArgument<String>` **Range**
+- [IN] `InArgument<String>` **BrowserParentItemId**
+**Properties / VariableScope / Child**:
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Models.DriveItemArgument` **TemplateItem**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Models.DriveItemArgument` **Item**
+- [property] `String` **Connector**
+- [property] `String` **ArgumentsPrefix**
+- [property] `String` **ParentFolderObjectName**
+- [property] `String` **RelativePathBindingsKey**
+- [property] `String` **BindingsKey**
+- [property] `String` **ParentResourceKey**
+- [property] `String` **ResourceKey**
+### Read Range
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Excel.ReadRangeConnections@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Excel.ReadRangeConnections`
+**Category**: Microsoft 365.Excel
+**Description**: Reads and saves the information from an Excel Workbook’s range for subsequent activities like Write Range
+_No members extracted._
+### Read Row
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Excel.ReadRowConnections@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Excel.ReadRowConnections`
+**Category**: Microsoft 365.Excel
+**Description**: Reads the specified row's value from the first to the last completed cell.
+**Arguments**:
+- [IN] `InArgument<String>` **Cell**
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Enums.ValuesType>` **ValuesType**
+- [IN] `InArgument<String>` **BrowserItemId**
+- [IN] `InArgument<String>` **Range**
+- [IN] `InArgument<String>` **BrowserParentItemId**
+**Properties / VariableScope / Child**:
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Models.DriveItemArgument` **TemplateItem**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Models.DriveItemArgument` **Item**
+- [property] `String` **Connector**
+- [property] `String` **ArgumentsPrefix**
+- [property] `String` **ParentFolderObjectName**
+- [property] `String` **RelativePathBindingsKey**
+- [property] `String` **BindingsKey**
+- [property] `String` **ParentResourceKey**
+- [property] `String` **ResourceKey**
+### Rename Sheet
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Excel.RenameSheetConnections@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Excel.RenameSheetConnections`
+**Category**: Microsoft 365.Excel
+**Description**: Renames a sheet from the specified workbook
+**Arguments**:
+- [IN] `InArgument<String>` **OldSheetName**
+- [IN] `InArgument<String>` **NewSheetName**
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Files.Models.O365DriveRemoteItem>` **Workbook**
+- [IN] `InArgument<String>` **BrowserItemId**
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Files.Models.O365DriveRemoteItem>` **Item**
+- [IN] `InArgument<String>` **BrowserDriveName**
+- [IN] `InArgument<String>` **BrowserSiteUrl**
+- [IN] `InArgument<String>` **ManualEntryItemId**
+- [IN] `InArgument<String>` **ManualEntryDriveName**
+- [IN] `InArgument<String>` **ManualEntrySiteUrl**
+- [IN] `InArgument<String>` **ManualEntryItemUrl**
+- [IN] `InArgument<String>` **ManualEntryItemFullPath**
+- [IN] `InArgument<String>` **BrowserParentItemId**
+- [IN] `InArgument<String>` **ManualEntryItemRelativePath**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Models.DriveItemArgument` **DriveItemArgument**
+- [property] `String` **RelativePathBindingsKey**
+- [property] `String` **ParentFolderObjectName**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Enums.EDriveItemMode` **ItemSelectionMode**
+- [property] `String` **ParentResourceKey**
+- [property] `String` **ResourceKey**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+### Write Cell
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Excel.WriteCellConnections@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Excel.WriteCellConnections`
+**Category**: Microsoft 365.Excel
+**Description**: Writes information in the selected Workbook cell
+**Arguments**:
+- [IN] `InArgument<String>` **RangeLocation**
+- [IN] `InArgument<String>` **Cell**
+- [IN] `InArgument<Object>` **WhatToWrite**
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Files.Models.O365DriveRemoteItem>` **Workbook**
+- [IN] `InArgument<String>` **BrowserItemId**
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Files.Models.O365DriveRemoteItem>` **Item**
+- [IN] `InArgument<String>` **BrowserDriveName**
+- [IN] `InArgument<String>` **BrowserSiteUrl**
+- [IN] `InArgument<String>` **ManualEntryItemId**
+- [IN] `InArgument<String>` **ManualEntryDriveName**
+- [IN] `InArgument<String>` **ManualEntrySiteUrl**
+- [IN] `InArgument<String>` **ManualEntryItemUrl**
+- [IN] `InArgument<String>` **ManualEntryItemFullPath**
+- [IN] `InArgument<String>` **BrowserParentItemId**
+- [IN] `InArgument<String>` **ManualEntryItemRelativePath**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Models.DriveItemArgument` **DriveItemArgument**
+- [property] `String` **RelativePathBindingsKey**
+- [property] `String` **ParentFolderObjectName**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Enums.EDriveItemMode` **ItemSelectionMode**
+- [property] `String` **ParentResourceKey**
+- [property] `String` **ResourceKey**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+### Write Column
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Excel.WriteColumnConnections@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Excel.WriteColumnConnections`
+**Category**: Microsoft 365.Excel
+**Description**: Writes a column in a selected Excel file using an Array column or a Data column. You can map individual fields to target columns using the individual fields option under Data column to write “+” icon
+**Arguments**:
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Activities.Excel.Enums.RangeWriteMode>` **WriteMode**
+- [IN] `InArgument<Data.DataColumn>` **DataColumn**
+- [IN] `InArgument<IEnumerable<Object>>` **ArrayColumn**
+- [IN] `InArgument<Int32>` **ColumnPosition**
+- [IN] `InArgument<String>` **Range**
+- [IN] `InArgument<String>` **BrowserItemId**
+- [IN] `InArgument<String>` **TemplateBrowserItemId**
+- [IN] `InArgument<String>` **TemplateBrowserDriveName**
+- [IN] `InArgument<String>` **TemplateBrowserSiteUrl**
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Files.Models.O365DriveRemoteItem>` **WorkbookSample**
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Files.Models.O365DriveRemoteItem>` **Item**
+- [IN] `InArgument<String>` **BrowserDriveName**
+- [IN] `InArgument<String>` **BrowserSiteUrl**
+- [IN] `InArgument<String>` **ManualEntryItemId**
+- [IN] `InArgument<String>` **ManualEntryDriveName**
+- [IN] `InArgument<String>` **ManualEntrySiteUrl**
+- [IN] `InArgument<String>` **ManualEntryItemUrl**
+- [IN] `InArgument<String>` **ManualEntryItemFullPath**
+- [IN] `InArgument<String>` **BrowserParentItemId**
+- [IN] `InArgument<String>` **ManualEntryItemRelativePath**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.MicrosoftOffice365.Activities.Excel.Enums.InputDataType` **DataType**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Models.DriveItemArgument` **TemplateArgument**
+- [property] `UiPath.MicrosoftOffice365.Activities.Excel.Enums.InputRangeMode` **RangeMode**
+- [property] `String` **Connector**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Models.DriveItemArgument` **DriveItemArgument**
+- [property] `String` **RelativePathBindingsKey**
+- [property] `String` **ParentFolderObjectName**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Enums.EDriveItemMode` **ItemSelectionMode**
+- [property] `String` **ParentResourceKey**
+- [property] `String` **ResourceKey**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+### Write Range
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Excel.WriteRangeConnections@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Excel.WriteRangeConnections`
+**Category**: Microsoft 365.Excel
+**Description**: Writes a data table to the indicated range from the selected Excel Workbook
+**Arguments**:
+- [IN] `InArgument<String>` **TableName**
+- [IN] `InArgument<String>` **RangeWorksheetName**
+- [IN] `InArgument<String>` **RangeAddress**
+- [IN] `InArgument<String>` **SheetName**
+- [IN] `InArgument<String>` **GlobalRange**
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Activities.Excel.Enums.RangeWriteMode>` **WriteMode**
+- [IN] `InArgument<Data.DataTable>` **Source**
+- [IN] `InArgument<Boolean>` **IncludeHeaders**
+- [IN] `InArgument<Int32>` **RowPosition**
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Files.Models.O365DriveRemoteItem>` **Workbook**
+- [IN] `InArgument<String>` **Range**
+- [IN] `InArgument<String>` **BrowserItemId**
+- [IN] `InArgument<String>` **TemplateBrowserItemId**
+- [IN] `InArgument<String>` **TemplateBrowserDriveName**
+- [IN] `InArgument<String>` **TemplateBrowserSiteUrl**
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Files.Models.O365DriveRemoteItem>` **WorkbookSample**
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Files.Models.O365DriveRemoteItem>` **Item**
+- [IN] `InArgument<String>` **BrowserDriveName**
+- [IN] `InArgument<String>` **BrowserSiteUrl**
+- [IN] `InArgument<String>` **ManualEntryItemId**
+- [IN] `InArgument<String>` **ManualEntryDriveName**
+- [IN] `InArgument<String>` **ManualEntrySiteUrl**
+- [IN] `InArgument<String>` **ManualEntryItemUrl**
+- [IN] `InArgument<String>` **ManualEntryItemFullPath**
+- [IN] `InArgument<String>` **BrowserParentItemId**
+- [IN] `InArgument<String>` **ManualEntryItemRelativePath**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.MicrosoftOffice365.Activities.Excel.Enums.InputRangeMode` **RangeType**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Models.DriveItemArgument` **TemplateArgument**
+- [property] `UiPath.MicrosoftOffice365.Activities.Excel.Enums.InputRangeMode` **RangeMode**
+- [property] `String` **Connector**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Models.DriveItemArgument` **DriveItemArgument**
+- [property] `String` **RelativePathBindingsKey**
+- [property] `String` **ParentFolderObjectName**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Enums.EDriveItemMode` **ItemSelectionMode**
+- [property] `String` **ParentResourceKey**
+- [property] `String` **ResourceKey**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+### Write Row
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Excel.WriteRowConnections@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Excel.WriteRowConnections`
+**Category**: Microsoft 365.Excel
+**Description**: Writes a row in a selected Excel file using an Array row or a Data row. You can map individual fields to target columns using the individual fields option under Data row to write “+” icon
+**Arguments**:
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Activities.Excel.Enums.RangeWriteMode>` **WriteMode**
+- [IN] `InArgument<Data.DataRow>` **DataRow**
+- [IN] `InArgument<IEnumerable<Object>>` **ArrayRow**
+- [IN] `InArgument<Int32>` **RowPosition**
+- [IN] `InArgument<Boolean>` **HasHeaders**
+- [IN] `InArgument<String>` **Range**
+- [IN] `InArgument<String>` **BrowserItemId**
+- [IN] `InArgument<String>` **TemplateBrowserItemId**
+- [IN] `InArgument<String>` **TemplateBrowserDriveName**
+- [IN] `InArgument<String>` **TemplateBrowserSiteUrl**
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Files.Models.O365DriveRemoteItem>` **WorkbookSample**
+- [IN] `InArgument<UiPath.MicrosoftOffice365.Files.Models.O365DriveRemoteItem>` **Item**
+- [IN] `InArgument<String>` **BrowserDriveName**
+- [IN] `InArgument<String>` **BrowserSiteUrl**
+- [IN] `InArgument<String>` **ManualEntryItemId**
+- [IN] `InArgument<String>` **ManualEntryDriveName**
+- [IN] `InArgument<String>` **ManualEntrySiteUrl**
+- [IN] `InArgument<String>` **ManualEntryItemUrl**
+- [IN] `InArgument<String>` **ManualEntryItemFullPath**
+- [IN] `InArgument<String>` **BrowserParentItemId**
+- [IN] `InArgument<String>` **ManualEntryItemRelativePath**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.MicrosoftOffice365.Activities.Excel.Enums.InputDataType` **DataType**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Models.DriveItemArgument` **TemplateArgument**
+- [property] `UiPath.MicrosoftOffice365.Activities.Excel.Enums.InputRangeMode` **RangeMode**
+- [property] `String` **Connector**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Models.DriveItemArgument` **DriveItemArgument**
+- [property] `String` **RelativePathBindingsKey**
+- [property] `String` **ParentFolderObjectName**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Enums.EDriveItemMode` **ItemSelectionMode**
+- [property] `String` **ParentResourceKey**
+- [property] `String` **ResourceKey**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+### Row Added to the Bottom of a Table
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Excel.Triggers.RowAddedToTableBottom@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Excel.Triggers.RowAddedToTableBottom`
+**Category**: Microsoft 365.Excel.Triggers
+**Description**: When a row at the bottom of a table is filled in with appropriate columns as an optional data filter
+_No members extracted._
+### Cell in Worksheet Updated
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Excel.Triggers.WorksheetCellUpdated@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Excel.Triggers.WorksheetCellUpdated`
+**Category**: Microsoft 365.Excel.Triggers
+**Description**: Starts the automation when a cell within a Worksheet is updated
+**Arguments**:
+- [IN] `InArgument<String>` **BrowserItemFriendlyName**
+- [IN] `InArgument<String>` **BrowserItemId**
+- [OUT] `OutArgument<UiPath.MicrosoftOffice365.Excel.Models.CellInformation>` **UpdatedCell**
+- [IN] `InArgument<String>` **BrowserDriveName**
+- [IN] `InArgument<String>` **BrowserSiteUrl**
+- [OUT] `OutArgument<UiPath.MicrosoftOffice365.Files.Models.O365DriveRemoteItem>` **Workbook**
+- [OUT] `OutArgument<UiPath.MicrosoftOffice365.Activities.Utilities.JobInformation>` **JobData**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `String` **Operation**
+- [property] `String` **ObjectName**
+- [property] `String` **SheetCellBindingKey**
+- [property] `String` **ReferenceId**
+- [property] `String` **SheetId**
+- [property] `String` **CellAddress**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Models.DriveItemArgument` **DriveItemArgument**
+- [property] `String` **Connector**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `String` **ParentResourceKey**
+- [property] `String` **ResourceKey**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+### Worksheet Created
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Excel.Triggers.WorksheetCreated@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Excel.Triggers.WorksheetCreated`
+**Category**: Microsoft 365.Excel.Triggers
+**Description**: Starts the automation when a new Sheet within a Workbook is created
+**Arguments**:
+- [IN] `InArgument<String>` **BrowserItemFriendlyName**
+- [IN] `InArgument<String>` **BrowserItemId**
+- [OUT] `OutArgument<String>` **WorksheetName**
+- [IN] `InArgument<String>` **BrowserDriveName**
+- [IN] `InArgument<String>` **BrowserSiteUrl**
+- [OUT] `OutArgument<UiPath.MicrosoftOffice365.Files.Models.O365DriveRemoteItem>` **Workbook**
+- [OUT] `OutArgument<UiPath.MicrosoftOffice365.Activities.Utilities.JobInformation>` **JobData**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `String` **Operation**
+- [property] `String` **ObjectName**
+- [property] `String` **ReferenceId**
+- [property] `UiPath.MicrosoftOffice365.Activities.Files.Models.DriveItemArgument` **DriveItemArgument**
+- [property] `String` **Connector**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `String` **ParentResourceKey**
+- [property] `String` **ResourceKey**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+### Bulk Add List Items
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Sharepoint.BulkAddListItemsConnections@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Sharepoint.BulkAddListItemsConnections`
+**Category**: Microsoft 365.SharePoint Lists
+**Description**: Adds multiple list items to the specified SharePoint list
+**Arguments**:
+- [IN] `InArgument<String>` **BrowserListId**
+- [IN] `InArgument<Data.DataTable>` **ListItems**
+- [IN] `InArgument<Boolean>` **HasHeadersRow**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.MicrosoftOffice365.Activities.Sharepoint.Models.ListArgument` **List**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **ParentResourceKey**
+- [property] `String` **ResourceKey**
+### Get List Info
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Sharepoint.GetListInfo@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Sharepoint.GetListInfo`
+**Category**: Microsoft 365.SharePoint Lists
+**Description**: Gets the information about the specified SharePoint List
+**Arguments**:
+- [IN] `InArgument<String>` **BrowserListId**
+- [IN] `InArgument<Boolean>` **IncludeColumnDefinitions**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.MicrosoftOffice365.Activities.Sharepoint.Models.ListArgument` **List**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **ParentResourceKey**
+- [property] `String` **ResourceKey**
+### For Each List Item
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Sharepoint.ForEachListItemConnections@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Sharepoint.ForEachListItemConnections`
+**Category**: Microsoft 365.SharePoint Lists
+**Description**: Iterates through the items of a SharePoint list
+_No members extracted._
+### Add List Item
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Sharepoint.AddListItemConnections@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Sharepoint.AddListItemConnections`
+**Category**: Microsoft 365.SharePoint Lists
+**Description**: Adds a new item to a specified SharePoint List
+_No members extracted._
+### Delete List Items
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Sharepoint.DeleteSharepointListItemsConnections@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Sharepoint.DeleteSharepointListItemsConnections`
+**Category**: Microsoft 365.SharePoint Lists
+**Description**: Deletes all list items which match a condition or a single list item based on the item ID
+_No members extracted._
+### For Each List
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Sharepoint.ForEachListConnections@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Sharepoint.ForEachListConnections`
+**Category**: Microsoft 365.SharePoint Lists
+**Description**: Iterates through the lists of a SharePoint site
+**Arguments**:
+- [IN, Required] `InArgument<String>` **SiteUrlOrId**
+- [IN] `InArgument<Boolean>` **IncludeColumnsDefinitions**
+- [OUT] `OutArgument<Int32>` **Length**
+**Properties / VariableScope / Child**:
+- [property] `String` **CurrentItemVariableName**
+- [property] `String` **ObjectName**
+- [property] `String` **Connector**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `String` **ParentResourceKey**
+- [property] `String` **ResourceKey**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+### Get List Items
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Sharepoint.GetListItemsConnections@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Sharepoint.GetListItemsConnections`
+**Category**: Microsoft 365.SharePoint Lists
+**Description**: Retrieves SharePoint List Items from the specified list
+_No members extracted._
+### Get Single List Item
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Sharepoint.GetSingleSharepointListItemConnections@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Sharepoint.GetSingleSharepointListItemConnections`
+**Category**: Microsoft 365.SharePoint Lists
+**Description**: Retrieves Single SharePoint List Item from the specified list
+_No members extracted._
+### Wait for List Item Added and Resume
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Sharepoint.WaitForListItemAdded@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Sharepoint.WaitForListItemAdded`
+**Category**: Microsoft 365.SharePoint Lists
+**Description**: Waits for a new item to be added to the specified sharepoint list and resumes the workflow.
+**Arguments**:
+- [OUT] `OutArgument<UiPath.MicrosoftOffice365.Activities.Utilities.JobInformation>` **JobData**
+**Properties / VariableScope / Child**:
+- [property] `String` **Operation**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `UiPath.MicrosoftOffice365.Activities.Sharepoint.Models.ListArgument` **ListArgument**
+- [property] `String` **ObjectName**
+- [property] `String` **TriggerListItemId**
+- [property] `UiPath.MicrosoftOffice365.Activities.Sharepoint.Filters.TriggerArgColumnFilterCollection` **Filter**
+- [property] `UiPath.MicrosoftOffice365.Activities.Sharepoint.Filters.ColumnByNameFilterCollection` **DynamicCriteriaFilter**
+- [property] `UiPath.MicrosoftOffice365.Sharepoint.Models.Office365SharepointListColumnSlim[]` **ColumnsToRetrieve**
+- [property] `String` **Connector**
+- [property] `String` **ParentResourceKey**
+- [property] `String` **ResourceKey**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+### Wait for List Item Updated and Resume
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Sharepoint.WaitForListItemUpdated@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Sharepoint.WaitForListItemUpdated`
+**Category**: Microsoft 365.SharePoint Lists
+**Description**: Triggers when a new item is updated on the specified sharepoint list
+**Arguments**:
+- [IN] `InArgument<Object>` **ItemId**
+- [OUT] `OutArgument<UiPath.MicrosoftOffice365.Activities.Utilities.JobInformation>` **JobData**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **WorkById**
+- [property] `String` **Operation**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `UiPath.MicrosoftOffice365.Activities.Sharepoint.Models.ListArgument` **ListArgument**
+- [property] `String` **ObjectName**
+- [property] `String` **TriggerListItemId**
+- [property] `UiPath.MicrosoftOffice365.Activities.Sharepoint.Filters.TriggerArgColumnFilterCollection` **Filter**
+- [property] `UiPath.MicrosoftOffice365.Activities.Sharepoint.Filters.ColumnByNameFilterCollection` **DynamicCriteriaFilter**
+- [property] `UiPath.MicrosoftOffice365.Sharepoint.Models.Office365SharepointListColumnSlim[]` **ColumnsToRetrieve**
+- [property] `String` **Connector**
+- [property] `String` **ParentResourceKey**
+- [property] `String` **ResourceKey**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+### Update Single List Item
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Sharepoint.UpdateListItemConnections@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Sharepoint.UpdateListItemConnections`
+**Category**: Microsoft 365.SharePoint Lists
+**Description**: Updates a SharePoint List item based on item ID
+_No members extracted._
+### List Item Added
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Sharepoint.Triggers.SharepointListItemAdded@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Sharepoint.Triggers.SharepointListItemAdded`
+**Category**: Microsoft 365.SharePoint Lists.Triggers
+**Description**: Triggers when a new item is added to the specified sharepoint list
+**Arguments**:
+- [OUT] `OutArgument<UiPath.MicrosoftOffice365.Models.Office365SharepointList>` **List**
+- [OUT] `OutArgument<T>` **Result**
+- [OUT] `OutArgument<UiPath.MicrosoftOffice365.Activities.Utilities.JobInformation>` **JobData**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `String` **Operation**
+- [property] `String` **BrowserSiteUrl**
+- [property] `String` **BrowserListId**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `String` **ObjectName**
+- [property] `String` **ReferenceId**
+- [property] `UiPath.MicrosoftOffice365.Activities.Sharepoint.Filters.TriggerColumnFilterCollection` **Filter**
+- [property] `UiPath.MicrosoftOffice365.Sharepoint.Models.Office365SharepointListColumnSlim[]` **ColumnsToRetrieve**
+- [property] `UiPath.MicrosoftOffice365.Activities.Sharepoint.Models.TriggerListArgument` **ListArgument**
+- [property] `String` **FilterExpression**
+- [property] `UiPath.MicrosoftOffice365.Activities.Sharepoint.Enums.ItemSelectionMode` **ItemSelectionMode**
+- [property] `String` **BrowserListFriendlyName**
+- [property] `String` **ListNameOrId**
+- [property] `String` **SiteUrl**
+- [property] `String` **Connector**
+- [property] `String` **ParentResourceKey**
+- [property] `String` **ResourceKey**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+### List Item Updated
+
+**ID**: `UiPath.MicrosoftOffice365.Activities.Sharepoint.Triggers.SharepointListItemUpdated@UiPath.MicrosoftOffice365.Activities/3.7.10`
+**Type**: `UiPath.MicrosoftOffice365.Activities.Sharepoint.Triggers.SharepointListItemUpdated`
+**Category**: Microsoft 365.SharePoint Lists.Triggers
+**Description**: Triggers when a new item is updated on the specified sharepoint list
+**Arguments**:
+- [OUT] `OutArgument<UiPath.MicrosoftOffice365.Models.Office365SharepointList>` **List**
+- [OUT] `OutArgument<T>` **Result**
+- [OUT] `OutArgument<UiPath.MicrosoftOffice365.Activities.Utilities.JobInformation>` **JobData**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **WorkById**
+- [property] `Object` **ItemId**
+- [property] `String` **Operation**
+- [property] `String` **BrowserSiteUrl**
+- [property] `String` **BrowserListId**
+- [property] `IEnumerable<IEnumerable<String>>` **RequiredScopes**
+- [property] `String` **ObjectName**
+- [property] `String` **ReferenceId**
+- [property] `UiPath.MicrosoftOffice365.Activities.Sharepoint.Filters.TriggerColumnFilterCollection` **Filter**
+- [property] `UiPath.MicrosoftOffice365.Sharepoint.Models.Office365SharepointListColumnSlim[]` **ColumnsToRetrieve**
+- [property] `UiPath.MicrosoftOffice365.Activities.Sharepoint.Models.TriggerListArgument` **ListArgument**
+- [property] `String` **FilterExpression**
+- [property] `UiPath.MicrosoftOffice365.Activities.Sharepoint.Enums.ItemSelectionMode` **ItemSelectionMode**
+- [property] `String` **BrowserListFriendlyName**
+- [property] `String` **ListNameOrId**
+- [property] `String` **SiteUrl**
+- [property] `String` **Connector**
+- [property] `String` **ParentResourceKey**
+- [property] `String` **ResourceKey**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+---

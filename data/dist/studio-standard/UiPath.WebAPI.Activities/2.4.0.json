@@ -1,0 +1,1688 @@
+{
+  "schema": {
+    "id": "activity-catalog",
+    "version": "v0.2"
+  },
+  "source": {
+    "kind": "nuget-package",
+    "id": "UiPath.WebAPI.Activities",
+    "version": "2.4.0",
+    "feedUrl": null,
+    "authors": "UiPath",
+    "projectUrl": null,
+    "description": "IMPORTANT: This package version requires Studio 22.10.5 or higher. On lower versions, some functionality may be missing, or unexpected behaviours may occur.\n\nPackage contains activities that enable the automation of various software components with less effort by using their APIs, including JSON, REST, SOAP, XML. Please check the documentation for more details.",
+    "license": "https://activities.uipath.com/docs/about-the-web-activities-pack",
+    "tags": "UiPathActivities",
+    "packageTypes": []
+  },
+  "generatedAt": "2026-04-09T21:47:58Z",
+  "activities": [
+    {
+      "id": "UiPath.Web.Activities.SoapClient@UiPath.WebAPI.Activities/2.4.0",
+      "fullName": "UiPath.Web.Activities.SoapClient",
+      "displayName": "SOAP Request",
+      "description": "Takes a SOAP service description, descovering its contracts and methods. It then calls the specified method and returns the response in a string format. It has authentication capabilities allowing communication with secured endpoints",
+      "category": "Web",
+      "visibility": "browsable",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "members": [
+        {
+          "name": "ContinueOnError",
+          "displayName": "ContinueOnError",
+          "dataType": "System.Activities.InArgument<System.Boolean>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ContractName",
+          "displayName": "ContractName",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "EndPoint",
+          "displayName": "EndPoint",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "Method",
+          "displayName": "Method",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "Parameters",
+          "displayName": "Parameters",
+          "dataType": "System.Collections.Generic.Dictionary<System.String, System.Activities.InArgument>",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "Username",
+          "displayName": "Username",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "Password",
+          "displayName": "Password",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "SecurePassword",
+          "displayName": "SecurePassword",
+          "dataType": "System.Activities.InArgument<System.Security.SecureString>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "UseWindowsCredentials",
+          "displayName": "UseWindowsCredentials",
+          "dataType": "System.Boolean",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ClientCertificate",
+          "displayName": "ClientCertificate",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ClientCertificatePassword",
+          "displayName": "ClientCertificatePassword",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "SecureClientCertificatePassword",
+          "displayName": "SecureClientCertificatePassword",
+          "dataType": "System.Activities.InArgument<System.Security.SecureString>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ResponseHeaders",
+          "displayName": "ResponseHeaders",
+          "dataType": "System.Activities.OutArgument<System.Collections.Generic.Dictionary<System.String, System.String>>",
+          "memberKind": "argument",
+          "argumentDirection": "out",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        }
+      ],
+      "enrichment": null
+    },
+    {
+      "id": "UiPath.Web.Activities.DeserializeJson@UiPath.WebAPI.Activities/2.4.0",
+      "fullName": "UiPath.Web.Activities.DeserializeJson",
+      "displayName": "Deserialize JSON",
+      "description": "Deserializes the Json string to a JObject object",
+      "category": "Programming.JSON",
+      "visibility": "browsable",
+      "hasGenericParameters": true,
+      "genericParameterNames": [
+        "T"
+      ],
+      "members": [
+        {
+          "name": "JsonString",
+          "displayName": "JsonString",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "JsonSample",
+          "displayName": "JsonSample",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "Settings",
+          "displayName": "Settings",
+          "dataType": "System.Activities.InArgument<UiPath.Web.Activities.JSON.Models.JsonDeserializationSettings>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "JsonObject",
+          "displayName": "JsonObject",
+          "dataType": "System.Activities.OutArgument<T>",
+          "memberKind": "argument",
+          "argumentDirection": "out",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        }
+      ],
+      "enrichment": null
+    },
+    {
+      "id": "UiPath.Web.Activities.JSON.SerializeJson@UiPath.WebAPI.Activities/2.4.0",
+      "fullName": "UiPath.Web.Activities.JSON.SerializeJson",
+      "displayName": "Serialize JSON",
+      "description": "Serializes the given Object to a JSON string, optionally based on the custom serializer settings.",
+      "category": "Programming.JSON",
+      "visibility": "browsable",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "members": [
+        {
+          "name": "InputObject",
+          "displayName": "InputObject",
+          "dataType": "System.Activities.InArgument<System.Object>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "Settings",
+          "displayName": "Settings",
+          "dataType": "System.Activities.InArgument<UiPath.Web.Activities.JSON.Models.JsonSerializationSettings>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        }
+      ],
+      "enrichment": null
+    },
+    {
+      "id": "UiPath.Web.Activities.Http.NetHttpRequest@UiPath.WebAPI.Activities/2.4.0",
+      "fullName": "UiPath.Web.Activities.Http.NetHttpRequest",
+      "displayName": "HTTP Request",
+      "description": "Configures and sends an HTTP request with customizable options for headers, authentication, cookies, retries, SSL, and request body formats. Includes flexible retry mechanisms and graceful handling of errors, with optional continuation on failure.",
+      "category": "Web",
+      "visibility": "browsable",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "members": [
+        {
+          "name": "Method",
+          "displayName": "Method",
+          "dataType": "UiPath.Web.Activities.Http.Models.HttpMethod",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "RequestUrl",
+          "displayName": "RequestUrl",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "Parameters",
+          "displayName": "Parameters",
+          "dataType": "System.Activities.InArgument<System.Collections.Generic.Dictionary<System.String, System.String>>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "Headers",
+          "displayName": "Headers",
+          "dataType": "System.Activities.InArgument<System.Collections.Generic.Dictionary<System.String, System.String>>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "DisableSslVerification",
+          "displayName": "DisableSslVerification",
+          "dataType": "System.Activities.InArgument<System.Boolean>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "TlsProtocol",
+          "displayName": "TlsProtocol",
+          "dataType": "System.Activities.InArgument<UiPath.Web.Activities.Http.Models.SupportedTlsProtocols>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "EnableCookies",
+          "displayName": "EnableCookies",
+          "dataType": "System.Activities.InArgument<System.Boolean>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ProxySetting",
+          "displayName": "ProxySetting",
+          "dataType": "UiPath.Web.Activities.Http.Models.ProxySettingType",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": "Mono.Cecil.CustomAttributeArgument",
+          "typeConverter": null
+        },
+        {
+          "name": "ProxyConfiguration",
+          "displayName": "ProxyConfiguration",
+          "dataType": "System.Activities.InArgument<UiPath.Web.Activities.Http.Models.WebProxyConfiguration>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ClientCertPath",
+          "displayName": "ClientCertPath",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ClientCertPassword",
+          "displayName": "ClientCertPassword",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ClientCertSecurePassword",
+          "displayName": "ClientCertSecurePassword",
+          "dataType": "System.Activities.InArgument<System.Security.SecureString>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "Cookies",
+          "displayName": "Cookies",
+          "dataType": "System.Activities.InArgument<System.Collections.Generic.Dictionary<System.String, System.String>>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "TimeoutInMiliseconds",
+          "displayName": "TimeoutInMiliseconds",
+          "dataType": "System.Activities.InArgument<System.Nullable<System.Int32>>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ContinueOnError",
+          "displayName": "ContinueOnError",
+          "dataType": "System.Activities.InArgument<System.Boolean>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "FollowRedirects",
+          "displayName": "FollowRedirects",
+          "dataType": "System.Activities.InArgument<System.Boolean>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "MaxRedirects",
+          "displayName": "MaxRedirects",
+          "dataType": "System.Activities.InArgument<System.Int32>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "AuthenticationType",
+          "displayName": "AuthenticationType",
+          "dataType": "UiPath.Web.Activities.Http.Models.AuthenticationType",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "BasicAuthUsername",
+          "displayName": "BasicAuthUsername",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "BasicAuthPassword",
+          "displayName": "BasicAuthPassword",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "BasicAuthSecurePassword",
+          "displayName": "BasicAuthSecurePassword",
+          "dataType": "System.Activities.InArgument<System.Security.SecureString>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "OAuthToken",
+          "displayName": "OAuthToken",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "UseOsNegotiatedAuthCredentials",
+          "displayName": "UseOsNegotiatedAuthCredentials",
+          "dataType": "System.Activities.InArgument<System.Boolean>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "CustomNegotiatedAuthCredentials",
+          "displayName": "CustomNegotiatedAuthCredentials",
+          "dataType": "System.Activities.InArgument<System.Net.NetworkCredential>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "RetryPolicyType",
+          "displayName": "RetryPolicyType",
+          "dataType": "UiPath.Web.Activities.Http.Models.RetryPolicyType",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "RetryCount",
+          "displayName": "RetryCount",
+          "dataType": "System.Activities.InArgument<System.Int32>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "InitialDelay",
+          "displayName": "InitialDelay",
+          "dataType": "System.Activities.InArgument<System.Int32>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "Multiplier",
+          "displayName": "Multiplier",
+          "dataType": "System.Activities.InArgument<System.Double>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "UseJitter",
+          "displayName": "UseJitter",
+          "dataType": "System.Activities.InArgument<System.Boolean>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "MaxRetryAfterDelay",
+          "displayName": "MaxRetryAfterDelay",
+          "dataType": "System.Activities.InArgument<System.Int32>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "PreferRetryAfterValue",
+          "displayName": "PreferRetryAfterValue",
+          "dataType": "System.Activities.InArgument<System.Boolean>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "RetryStatusCodes",
+          "displayName": "RetryStatusCodes",
+          "dataType": "System.Activities.InArgument<System.Collections.Generic.IEnumerable<System.Net.HttpStatusCode>>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "RequestBodyType",
+          "displayName": "RequestBodyType",
+          "dataType": "UiPath.Web.Activities.Http.Models.HttpRequestBodyType",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "FormData",
+          "displayName": "FormData",
+          "dataType": "System.Activities.InArgument<System.Collections.Generic.Dictionary<System.String, System.String>>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "TextPayload",
+          "displayName": "TextPayload",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "TextPayloadEncoding",
+          "displayName": "TextPayloadEncoding",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "TextPayloadContentType",
+          "displayName": "TextPayloadContentType",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "BinaryPayload",
+          "displayName": "BinaryPayload",
+          "dataType": "System.Activities.InArgument<System.Byte[]>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "FormDataParts",
+          "displayName": "FormDataParts",
+          "dataType": "System.Activities.InArgument<System.Collections.Generic.IEnumerable<UiPath.Web.Activities.Http.Models.FormDataPart>>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "LocalFiles",
+          "displayName": "LocalFiles",
+          "dataType": "System.Activities.InArgument<System.Collections.Generic.IEnumerable<System.String>>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ResourceFiles",
+          "displayName": "ResourceFiles",
+          "dataType": "System.Activities.InArgument<System.Collections.Generic.IEnumerable<UiPath.Platform.ResourceHandling.IResource>>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "FilePath",
+          "displayName": "FilePath",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "PathResource",
+          "displayName": "PathResource",
+          "dataType": "System.Activities.InArgument<UiPath.Platform.ResourceHandling.IResource>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "OutputFileName",
+          "displayName": "OutputFileName",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "OutputFileTargetFolder",
+          "displayName": "OutputFileTargetFolder",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "FileOverwrite",
+          "displayName": "FileOverwrite",
+          "dataType": "UiPath.Web.Activities.Http.Models.FileOverwriteOption",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "SaveResponseAsFile",
+          "displayName": "SaveResponseAsFile",
+          "dataType": "System.Activities.InArgument<System.Boolean>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "SaveRawRequestResponse",
+          "displayName": "SaveRawRequestResponse",
+          "dataType": "System.Activities.InArgument<System.Boolean>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        }
+      ],
+      "enrichment": null
+    }
+  ],
+  "enums": [
+    {
+      "fullName": "UiPath.Sdk.Activities.DependencyInjection.Contracts.Lifetime",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Singleton",
+          "value": 0
+        },
+        {
+          "name": "Transient",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Sdk.Activities.Bindings.Attributes.KeyType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Property",
+          "value": 0
+        },
+        {
+          "name": "Constant",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Shared.Activities.Services.Language",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "VisualBasic",
+          "value": 0
+        },
+        {
+          "name": "CSharp",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Web.Activities.HttpClient.AuthType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "SimpleHttp",
+          "value": 1
+        },
+        {
+          "name": "OAuth1",
+          "value": 2
+        },
+        {
+          "name": "OAuth2",
+          "value": 3
+        },
+        {
+          "name": "ClientCertificate",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Web.Activities.Utils.ParameterType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "GetOrPost",
+          "value": 0
+        },
+        {
+          "name": "UrlSegment",
+          "value": 1
+        },
+        {
+          "name": "Attachment",
+          "value": 2
+        },
+        {
+          "name": "HttpHeader",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Web.Activities.JSON.Models.JsonNullValueHandling",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Include",
+          "value": 0
+        },
+        {
+          "name": "Ignore",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Web.Activities.JSON.Models.JsonDefaultValueHandling",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Include",
+          "value": 0
+        },
+        {
+          "name": "Ignore",
+          "value": 1
+        },
+        {
+          "name": "Populate",
+          "value": 2
+        },
+        {
+          "name": "IgnoreAndPopulate",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Web.Activities.JSON.Models.JsonPreserveReferencesHandling",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Objects",
+          "value": 1
+        },
+        {
+          "name": "Arrays",
+          "value": 2
+        },
+        {
+          "name": "All",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Web.Activities.JSON.Models.JsonTypeNameHandling",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Objects",
+          "value": 1
+        },
+        {
+          "name": "Arrays",
+          "value": 2
+        },
+        {
+          "name": "All",
+          "value": 3
+        },
+        {
+          "name": "Auto",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Web.Activities.JSON.Models.JsonDateTimeZoneHandling",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Local",
+          "value": 0
+        },
+        {
+          "name": "Utc",
+          "value": 1
+        },
+        {
+          "name": "Unspecified",
+          "value": 2
+        },
+        {
+          "name": "RoundtripKind",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Web.Activities.JSON.Models.JsonFormatting",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Indented",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Web.Activities.JSON.Models.JsonStringEscapeHandling",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "EscapeNonAscii",
+          "value": 1
+        },
+        {
+          "name": "EscapeHtml",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Web.Activities.JSON.Models.JsonDateFormatHandling",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "IsoDateFormat",
+          "value": 0
+        },
+        {
+          "name": "MicrosoftDateFormat",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Web.Activities.JSON.Models.JsonFloatFormatHandling",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "String",
+          "value": 0
+        },
+        {
+          "name": "Symbol",
+          "value": 1
+        },
+        {
+          "name": "DefaultValue",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Web.Activities.JSON.Models.JsonReferenceLoopHandling",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Error",
+          "value": 0
+        },
+        {
+          "name": "Ignore",
+          "value": 1
+        },
+        {
+          "name": "Serialize",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Web.Activities.JSON.Models.JsonMissingMemberHandling",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Ignore",
+          "value": 0
+        },
+        {
+          "name": "Error",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Web.Activities.JSON.Models.JsonObjectCreationHandling",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Auto",
+          "value": 0
+        },
+        {
+          "name": "Reuse",
+          "value": 1
+        },
+        {
+          "name": "Replace",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Web.Activities.JSON.Models.JsonConstructorHandling",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "AllowNonPublicDefaultConstructor",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Web.Activities.JSON.Models.JsonDateParseHandling",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "DateTime",
+          "value": 1
+        },
+        {
+          "name": "DateTimeOffset",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Web.Activities.JSON.Models.JsonFloatParseHandling",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Double",
+          "value": 0
+        },
+        {
+          "name": "Decimal",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Web.Activities.JSON.Models.JsonMetadataPropertyHandling",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "ReadAhead",
+          "value": 1
+        },
+        {
+          "name": "Ignore",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Web.Activities.Http.Services.BodyType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Text",
+          "value": 0
+        },
+        {
+          "name": "Stream",
+          "value": 1
+        },
+        {
+          "name": "Bytes",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Web.Activities.Http.Models.FileOverwriteOption",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AutoRename",
+          "value": 0
+        },
+        {
+          "name": "Replace",
+          "value": 1
+        },
+        {
+          "name": "Discard",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Web.Activities.Http.Models.HttpMethod",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "GET",
+          "value": 0
+        },
+        {
+          "name": "POST",
+          "value": 1
+        },
+        {
+          "name": "PUT",
+          "value": 2
+        },
+        {
+          "name": "DELETE",
+          "value": 3
+        },
+        {
+          "name": "HEAD",
+          "value": 4
+        },
+        {
+          "name": "OPTIONS",
+          "value": 5
+        },
+        {
+          "name": "PATCH",
+          "value": 6
+        },
+        {
+          "name": "TRACE",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Web.Activities.Http.Models.HttpRequestBodyType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Text",
+          "value": 1
+        },
+        {
+          "name": "FormUrlEncoded",
+          "value": 2
+        },
+        {
+          "name": "MultipartFormData",
+          "value": 3
+        },
+        {
+          "name": "Binary",
+          "value": 4
+        },
+        {
+          "name": "Stream",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Web.Activities.Http.Models.AuthenticationType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "BasicUsernamePassword",
+          "value": 1
+        },
+        {
+          "name": "OAuthToken",
+          "value": 2
+        },
+        {
+          "name": "NegotiatedAuthentication",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Web.Activities.Http.Models.ProxySettingType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "SystemDefault",
+          "value": 1
+        },
+        {
+          "name": "Custom",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Web.Activities.Http.Models.RetryPolicyType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Basic",
+          "value": 1
+        },
+        {
+          "name": "ExponentialBackoff",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Web.Activities.Http.Models.SupportedTlsProtocols",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Automatic",
+          "value": 0
+        },
+        {
+          "name": "Tls12",
+          "value": 1
+        },
+        {
+          "name": "Tls13",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Web.Activities.Http.CurlImport.Dialect",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "CurlBash",
+          "value": 0
+        },
+        {
+          "name": "CurlCmd",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Web.Activities.Http.CurlImport.WarningSeverity",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Info",
+          "value": 0
+        },
+        {
+          "name": "Warning",
+          "value": 1
+        },
+        {
+          "name": "Error",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Web.Activities.Http.CurlImport.DataKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Raw",
+          "value": 0
+        },
+        {
+          "name": "FromFile",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Web.Activities.Http.CurlImport.FormItemKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Text",
+          "value": 0
+        },
+        {
+          "name": "File",
+          "value": 1
+        },
+        {
+          "name": "InMemoryContent",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Web.Activities.Http.CurlImport.AuthSource",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "HeaderBasic",
+          "value": 1
+        },
+        {
+          "name": "HeaderBearer",
+          "value": 2
+        },
+        {
+          "name": "CurlUserFlag",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Web.Activities.Http.CurlImport.BinaryBodyHint",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "FromFileSkipped",
+          "value": 1
+        },
+        {
+          "name": "InMemorySkipped",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Web.AcceptHeaderType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ANY",
+          "value": 0
+        },
+        {
+          "name": "JSON",
+          "value": 1
+        },
+        {
+          "name": "XML",
+          "value": 2
+        },
+        {
+          "name": "CUSTOM",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Web.Method",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "GET",
+          "value": 0
+        },
+        {
+          "name": "POST",
+          "value": 1
+        },
+        {
+          "name": "PUT",
+          "value": 2
+        },
+        {
+          "name": "DELETE",
+          "value": 3
+        },
+        {
+          "name": "HEAD",
+          "value": 4
+        },
+        {
+          "name": "OPTIONS",
+          "value": 5
+        },
+        {
+          "name": "PATCH",
+          "value": 6
+        },
+        {
+          "name": "MERGE",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Web.CurlParser.Models.CertificateType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Pem",
+          "value": 0
+        },
+        {
+          "name": "Der",
+          "value": 1
+        },
+        {
+          "name": "Eng",
+          "value": 2
+        },
+        {
+          "name": "P12",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Web.CurlParser.Models.UploadDataType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Inline",
+          "value": 0
+        },
+        {
+          "name": "InlineFile",
+          "value": 1
+        },
+        {
+          "name": "BinaryFile",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Web.CurlParser.Models.HttpVersion",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "Http09",
+          "value": 1
+        },
+        {
+          "name": "Http10",
+          "value": 2
+        },
+        {
+          "name": "Http11",
+          "value": 3
+        },
+        {
+          "name": "Http20",
+          "value": 4
+        },
+        {
+          "name": "Http30",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Web.CurlParser.Models.KeyType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Pem",
+          "value": 0
+        },
+        {
+          "name": "Der",
+          "value": 1
+        },
+        {
+          "name": "Eng",
+          "value": 2
+        }
+      ]
+    }
+  ],
+  "namespaceMappings": []
+}

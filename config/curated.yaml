@@ -71,3 +71,374 @@ sets:
         version: "23.4.5"
       - id: UiPath.UIAutomation.Activities
         version: "23.10.20"
+
+  # ── Widening tiers — all at latest-stable ────────────────────────────────────
+  #
+  # Each tier is a strict superset of the one above it.  Tiers are independent
+  # dist outputs (set-agnostic catalog files); consumers pick the narrowest scope
+  # that covers their needs.
+  #
+  #   reframework-core      4 packages  — REFramework template staples
+  #   studio-standard      16           — + commonly bundled Studio packages
+  #   studio-intelligent   30           — + Document Understanding / OCR / AI
+  #   cloud-productivity   46           — + major cloud & productivity suites
+  #   integration-service  88           — + all UiPath IntegrationService connectors
+  #   full-catalog        124           — + everything else on the official feed
+  # ─────────────────────────────────────────────────────────────────────────────
+
+  - id: reframework-core
+    description: >
+      Tier 1 — The four packages shipped with the UiPath REFramework template,
+      always at latest stable. Narrowest useful scope; every wider tier is a
+      superset of this one.
+    packages:
+      - id: UiPath.Excel.Activities
+      - id: UiPath.System.Activities
+      - id: UiPath.Testing.Activities
+      - id: UiPath.UIAutomation.Activities
+
+  - id: studio-standard
+    description: >
+      Tier 2 — REFramework core plus the packages commonly bundled with a
+      standard UiPath Studio installation: mail, Office documents, file
+      transfer, web/API, database, terminal, scripting runtimes, and
+      infrastructure utilities.
+    packages:
+      - id: UiPath.Excel.Activities
+      - id: UiPath.System.Activities
+      - id: UiPath.Testing.Activities
+      - id: UiPath.UIAutomation.Activities
+      - id: UiPath.Mail.Activities
+      - id: UiPath.Word.Activities
+      - id: UiPath.PDF.Activities
+      - id: UiPath.FTP.Activities
+      - id: UiPath.WebAPI.Activities
+      - id: UiPath.Database.Activities
+      - id: UiPath.Terminal.Activities
+      - id: UiPath.Credentials.Activities
+      - id: UiPath.Cryptography.Activities
+      - id: UiPath.Python.Activities
+      - id: UiPath.Java.Activities
+      - id: UiPath.IPC.Activities
+
+  - id: studio-intelligent
+    description: >
+      Tier 3 — Studio Standard plus the intelligent-automation stack:
+      Document Understanding, OCR engines, ML Services, cognitive vision,
+      forms, persistence, workflow events, data service, and communications
+      mining.
+    packages:
+      - id: UiPath.Excel.Activities
+      - id: UiPath.System.Activities
+      - id: UiPath.Testing.Activities
+      - id: UiPath.UIAutomation.Activities
+      - id: UiPath.Mail.Activities
+      - id: UiPath.Word.Activities
+      - id: UiPath.PDF.Activities
+      - id: UiPath.FTP.Activities
+      - id: UiPath.WebAPI.Activities
+      - id: UiPath.Database.Activities
+      - id: UiPath.Terminal.Activities
+      - id: UiPath.Credentials.Activities
+      - id: UiPath.Cryptography.Activities
+      - id: UiPath.Python.Activities
+      - id: UiPath.Java.Activities
+      - id: UiPath.IPC.Activities
+      - id: UiPath.IntelligentOCR.Activities
+      - id: UiPath.OCR.Activities
+      - id: UiPath.OmniPage.Activities
+      - id: UiPath.DocumentUnderstanding.Activities
+      - id: UiPath.DocumentUnderstanding.ML.Activities
+      - id: UiPath.MLServices.Activities
+      - id: UiPath.Cognitive.Activities
+      - id: UiPath.MicrosoftVision.Activities
+      - id: UiPath.GoogleVision.Activities
+      - id: UiPath.Form.Activities
+      - id: UiPath.Persistence.Activities
+      - id: UiPath.WorkflowEvents.Activities
+      - id: UiPath.DataService.Activities
+      - id: UiPath.CommunicationsMining.Activities
+
+  - id: cloud-productivity
+    description: >
+      Tier 4 — Studio Intelligent plus major cloud-platform and productivity
+      suites: Google Workspace, Microsoft 365 / Teams, AWS, Azure, Google
+      Cloud, Salesforce, Jira, ServiceNow, Exchange, SAP BAPI, Slack,
+      DocuSign, and Box.
+    packages:
+      - id: UiPath.Excel.Activities
+      - id: UiPath.System.Activities
+      - id: UiPath.Testing.Activities
+      - id: UiPath.UIAutomation.Activities
+      - id: UiPath.Mail.Activities
+      - id: UiPath.Word.Activities
+      - id: UiPath.PDF.Activities
+      - id: UiPath.FTP.Activities
+      - id: UiPath.WebAPI.Activities
+      - id: UiPath.Database.Activities
+      - id: UiPath.Terminal.Activities
+      - id: UiPath.Credentials.Activities
+      - id: UiPath.Cryptography.Activities
+      - id: UiPath.Python.Activities
+      - id: UiPath.Java.Activities
+      - id: UiPath.IPC.Activities
+      - id: UiPath.IntelligentOCR.Activities
+      - id: UiPath.OCR.Activities
+      - id: UiPath.OmniPage.Activities
+      - id: UiPath.DocumentUnderstanding.Activities
+      - id: UiPath.DocumentUnderstanding.ML.Activities
+      - id: UiPath.MLServices.Activities
+      - id: UiPath.Cognitive.Activities
+      - id: UiPath.MicrosoftVision.Activities
+      - id: UiPath.GoogleVision.Activities
+      - id: UiPath.Form.Activities
+      - id: UiPath.Persistence.Activities
+      - id: UiPath.WorkflowEvents.Activities
+      - id: UiPath.DataService.Activities
+      - id: UiPath.CommunicationsMining.Activities
+      - id: UiPath.GSuite.Activities
+      - id: UiPath.MicrosoftOffice365.Activities
+      - id: UiPath.MicrosoftTeams.Activities
+      - id: UiPath.Presentations.Activities
+      - id: UiPath.AmazonWebServices.Activities
+      - id: UiPath.Azure.Activities
+      - id: UiPath.AzureActiveDirectory.Activities
+      - id: UiPath.GoogleCloud.Activities
+      - id: UiPath.Salesforce.Activities
+      - id: UiPath.Jira.Activities
+      - id: UiPath.ServiceNow.Activities
+      - id: UiPath.ExchangeServer.Activities
+      - id: UiPath.SAP.BAPI.Activities
+      - id: UiPath.Slack.Activities
+      - id: UiPath.DocuSign.Activities
+      - id: UiPath.Box.Activities
+
+  - id: integration-service
+    description: >
+      Tier 5 — Cloud Productivity plus the full UiPath Integration Service
+      connector library: all *.IntegrationService.Activities packages on the
+      official feed, covering SaaS platforms from OpenAI and Azure OpenAI to
+      Salesforce, Workday, ServiceNow, Jira, Snowflake, Zendesk, and more.
+    packages:
+      - id: UiPath.Excel.Activities
+      - id: UiPath.System.Activities
+      - id: UiPath.Testing.Activities
+      - id: UiPath.UIAutomation.Activities
+      - id: UiPath.Mail.Activities
+      - id: UiPath.Word.Activities
+      - id: UiPath.PDF.Activities
+      - id: UiPath.FTP.Activities
+      - id: UiPath.WebAPI.Activities
+      - id: UiPath.Database.Activities
+      - id: UiPath.Terminal.Activities
+      - id: UiPath.Credentials.Activities
+      - id: UiPath.Cryptography.Activities
+      - id: UiPath.Python.Activities
+      - id: UiPath.Java.Activities
+      - id: UiPath.IPC.Activities
+      - id: UiPath.IntelligentOCR.Activities
+      - id: UiPath.OCR.Activities
+      - id: UiPath.OmniPage.Activities
+      - id: UiPath.DocumentUnderstanding.Activities
+      - id: UiPath.DocumentUnderstanding.ML.Activities
+      - id: UiPath.MLServices.Activities
+      - id: UiPath.Cognitive.Activities
+      - id: UiPath.MicrosoftVision.Activities
+      - id: UiPath.GoogleVision.Activities
+      - id: UiPath.Form.Activities
+      - id: UiPath.Persistence.Activities
+      - id: UiPath.WorkflowEvents.Activities
+      - id: UiPath.DataService.Activities
+      - id: UiPath.CommunicationsMining.Activities
+      - id: UiPath.GSuite.Activities
+      - id: UiPath.MicrosoftOffice365.Activities
+      - id: UiPath.MicrosoftTeams.Activities
+      - id: UiPath.Presentations.Activities
+      - id: UiPath.AmazonWebServices.Activities
+      - id: UiPath.Azure.Activities
+      - id: UiPath.AzureActiveDirectory.Activities
+      - id: UiPath.GoogleCloud.Activities
+      - id: UiPath.Salesforce.Activities
+      - id: UiPath.Jira.Activities
+      - id: UiPath.ServiceNow.Activities
+      - id: UiPath.ExchangeServer.Activities
+      - id: UiPath.SAP.BAPI.Activities
+      - id: UiPath.Slack.Activities
+      - id: UiPath.DocuSign.Activities
+      - id: UiPath.Box.Activities
+      - id: UiPath.IntegrationService.Activities
+      - id: UiPath.Act365.IntegrationService.Activities
+      - id: UiPath.AdobePdfServices.IntegrationService.Activities
+      - id: UiPath.BambooHR.IntegrationService.Activities
+      - id: UiPath.Box.IntegrationService.Activities
+      - id: UiPath.CampaignMonitor.IntegrationService.Activities
+      - id: UiPath.CiscoWebexTeams.IntegrationService.Activities
+      - id: UiPath.ConfluenceCloud.IntegrationService.Activities
+      - id: UiPath.Coupa.IntegrationService.Activities
+      - id: UiPath.Docusign.IntegrationService.Activities
+      - id: UiPath.Dropbox.IntegrationService.Activities
+      - id: UiPath.DropboxBusiness.IntegrationService.Activities
+      - id: UiPath.Expensify.IntegrationService.Activities
+      - id: UiPath.Freshservice.IntegrationService.Activities
+      - id: UiPath.GitHub.IntegrationService.Activities
+      - id: UiPath.GoToWebinar.IntegrationService.Activities
+      - id: UiPath.GoogleVertex.IntegrationService.Activities
+      - id: UiPath.Jira.IntegrationService.Activities
+      - id: UiPath.Mailchimp.IntegrationService.Activities
+      - id: UiPath.Marketo.IntegrationService.Activities
+      - id: UiPath.MicrosoftAzureOpenAI.IntegrationService.Activities
+      - id: UiPath.MicrosoftDynamicsCRM.IntegrationService.Activities
+      - id: UiPath.OpenAI.IntegrationService.Activities
+      - id: UiPath.OracleEloqua.IntegrationService.Activities
+      - id: UiPath.OracleNetSuite.IntegrationService.Activities
+      - id: UiPath.QuickBooksOnline.IntegrationService.Activities
+      - id: UiPath.SAPCloudForCustomer.IntegrationService.Activities
+      - id: UiPath.Salesforce.IntegrationService.Activities
+      - id: UiPath.SalesforceMarketingCloud.IntegrationService.Activities
+      - id: UiPath.SendGrid.IntegrationService.Activities
+      - id: UiPath.ServiceNow.IntegrationService.Activities
+      - id: UiPath.Smartsheet.IntegrationService.Activities
+      - id: UiPath.Snowflake.IntegrationService.Activities
+      - id: UiPath.SugarEnterprise.IntegrationService.Activities
+      - id: UiPath.SugarProfessional.IntegrationService.Activities
+      - id: UiPath.SugarSell.IntegrationService.Activities
+      - id: UiPath.SugarServe.IntegrationService.Activities
+      - id: UiPath.Twilio.IntegrationService.Activities
+      - id: UiPath.Twitter.IntegrationService.Activities
+      - id: UiPath.Workday.IntegrationService.Activities
+      - id: UiPath.Zendesk.IntegrationService.Activities
+      - id: UiPath.Zoom.IntegrationService.Activities
+
+  - id: full-catalog
+    description: >
+      Tier 6 — Every UiPath.*.Activities package on the official feed at
+      latest stable. Adds the remaining specialist and platform-specific
+      packages: Active Directory, Amazon specialist services, Apple
+      scripting, Azure Form Recognizer, Citrix, DesktopTriggers,
+      FlowchartBuilder, HyperV, MobileAutomation, Oracle, SAP SuccessFactors,
+      SystemCenter, Tableau, VMware, Workato, and more.
+    packages:
+      - id: UiPath.Excel.Activities
+      - id: UiPath.System.Activities
+      - id: UiPath.Testing.Activities
+      - id: UiPath.UIAutomation.Activities
+      - id: UiPath.Mail.Activities
+      - id: UiPath.Word.Activities
+      - id: UiPath.PDF.Activities
+      - id: UiPath.FTP.Activities
+      - id: UiPath.WebAPI.Activities
+      - id: UiPath.Database.Activities
+      - id: UiPath.Terminal.Activities
+      - id: UiPath.Credentials.Activities
+      - id: UiPath.Cryptography.Activities
+      - id: UiPath.Python.Activities
+      - id: UiPath.Java.Activities
+      - id: UiPath.IPC.Activities
+      - id: UiPath.IntelligentOCR.Activities
+      - id: UiPath.OCR.Activities
+      - id: UiPath.OmniPage.Activities
+      - id: UiPath.DocumentUnderstanding.Activities
+      - id: UiPath.DocumentUnderstanding.ML.Activities
+      - id: UiPath.MLServices.Activities
+      - id: UiPath.Cognitive.Activities
+      - id: UiPath.MicrosoftVision.Activities
+      - id: UiPath.GoogleVision.Activities
+      - id: UiPath.Form.Activities
+      - id: UiPath.Persistence.Activities
+      - id: UiPath.WorkflowEvents.Activities
+      - id: UiPath.DataService.Activities
+      - id: UiPath.CommunicationsMining.Activities
+      - id: UiPath.GSuite.Activities
+      - id: UiPath.MicrosoftOffice365.Activities
+      - id: UiPath.MicrosoftTeams.Activities
+      - id: UiPath.Presentations.Activities
+      - id: UiPath.AmazonWebServices.Activities
+      - id: UiPath.Azure.Activities
+      - id: UiPath.AzureActiveDirectory.Activities
+      - id: UiPath.GoogleCloud.Activities
+      - id: UiPath.Salesforce.Activities
+      - id: UiPath.Jira.Activities
+      - id: UiPath.ServiceNow.Activities
+      - id: UiPath.ExchangeServer.Activities
+      - id: UiPath.SAP.BAPI.Activities
+      - id: UiPath.Slack.Activities
+      - id: UiPath.DocuSign.Activities
+      - id: UiPath.Box.Activities
+      - id: UiPath.IntegrationService.Activities
+      - id: UiPath.Act365.IntegrationService.Activities
+      - id: UiPath.AdobePdfServices.IntegrationService.Activities
+      - id: UiPath.BambooHR.IntegrationService.Activities
+      - id: UiPath.Box.IntegrationService.Activities
+      - id: UiPath.CampaignMonitor.IntegrationService.Activities
+      - id: UiPath.CiscoWebexTeams.IntegrationService.Activities
+      - id: UiPath.ConfluenceCloud.IntegrationService.Activities
+      - id: UiPath.Coupa.IntegrationService.Activities
+      - id: UiPath.Docusign.IntegrationService.Activities
+      - id: UiPath.Dropbox.IntegrationService.Activities
+      - id: UiPath.DropboxBusiness.IntegrationService.Activities
+      - id: UiPath.Expensify.IntegrationService.Activities
+      - id: UiPath.Freshservice.IntegrationService.Activities
+      - id: UiPath.GitHub.IntegrationService.Activities
+      - id: UiPath.GoToWebinar.IntegrationService.Activities
+      - id: UiPath.GoogleVertex.IntegrationService.Activities
+      - id: UiPath.Jira.IntegrationService.Activities
+      - id: UiPath.Mailchimp.IntegrationService.Activities
+      - id: UiPath.Marketo.IntegrationService.Activities
+      - id: UiPath.MicrosoftAzureOpenAI.IntegrationService.Activities
+      - id: UiPath.MicrosoftDynamicsCRM.IntegrationService.Activities
+      - id: UiPath.OpenAI.IntegrationService.Activities
+      - id: UiPath.OracleEloqua.IntegrationService.Activities
+      - id: UiPath.OracleNetSuite.IntegrationService.Activities
+      - id: UiPath.QuickBooksOnline.IntegrationService.Activities
+      - id: UiPath.SAPCloudForCustomer.IntegrationService.Activities
+      - id: UiPath.Salesforce.IntegrationService.Activities
+      - id: UiPath.SalesforceMarketingCloud.IntegrationService.Activities
+      - id: UiPath.SendGrid.IntegrationService.Activities
+      - id: UiPath.ServiceNow.IntegrationService.Activities
+      - id: UiPath.Smartsheet.IntegrationService.Activities
+      - id: UiPath.Snowflake.IntegrationService.Activities
+      - id: UiPath.SugarEnterprise.IntegrationService.Activities
+      - id: UiPath.SugarProfessional.IntegrationService.Activities
+      - id: UiPath.SugarSell.IntegrationService.Activities
+      - id: UiPath.SugarServe.IntegrationService.Activities
+      - id: UiPath.Twilio.IntegrationService.Activities
+      - id: UiPath.Twitter.IntegrationService.Activities
+      - id: UiPath.Workday.IntegrationService.Activities
+      - id: UiPath.Zendesk.IntegrationService.Activities
+      - id: UiPath.Zoom.IntegrationService.Activities
+      - id: UiPath.ActiveDirectoryDomainServices.Activities
+      - id: UiPath.Adobe.AdobeSign.Activities
+      - id: UiPath.Alteryx.Activities
+      - id: UiPath.Amazon.Comprehend.Activities
+      - id: UiPath.Amazon.Rekognition.Activities
+      - id: UiPath.Amazon.Scope.Activities
+      - id: UiPath.Amazon.Textract.Activities
+      - id: UiPath.AmazonConnect.Activities
+      - id: UiPath.AmazonWorkSpaces.Activities
+      - id: UiPath.AppleMail.Activities
+      - id: UiPath.AppleNumbers.Activities
+      - id: UiPath.AppleScripting.Activities
+      - id: UiPath.AzureFormRecognizerV3.Activities
+      - id: UiPath.AzureWindowsVirtualDesktop.Activities
+      - id: UiPath.Callout.Activities
+      - id: UiPath.Citrix.Activities
+      - id: UiPath.ComplexScenarios.Activities
+      - id: UiPath.DesktopTriggers.Activities
+      - id: UiPath.FlowchartBuilder.Activities
+      - id: UiPath.HyperV.Activities
+      - id: UiPath.Marketo.Activities
+      - id: UiPath.MicrosoftDynamics.Activities
+      - id: UiPath.MicrosoftTranslator.Activities
+      - id: UiPath.MobileAutomation.Activities
+      - id: UiPath.NetIQeDirectory.Activities
+      - id: UiPath.Oracle.IntegrationCloud.Process.Activities
+      - id: UiPath.OracleNetSuite.Activities
+      - id: UiPath.Pipelines.Activities
+      - id: UiPath.Smartsheet.Activities
+      - id: UiPath.SuccessFactors.Activities
+      - id: UiPath.SystemCenter.Activities
+      - id: UiPath.Tableau.Activities
+      - id: UiPath.Twilio.Activities
+      - id: UiPath.VMware.Activities
+      - id: UiPath.Workato.Activities
+      - id: UiPath.Workday.Activities

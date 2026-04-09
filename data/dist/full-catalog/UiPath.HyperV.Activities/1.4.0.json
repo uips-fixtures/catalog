@@ -1,0 +1,2298 @@
+{
+  "schema": {
+    "id": "activity-catalog",
+    "version": "v0.2"
+  },
+  "source": {
+    "kind": "nuget-package",
+    "id": "UiPath.HyperV.Activities",
+    "version": "1.4.0",
+    "feedUrl": null,
+    "authors": "UiPath",
+    "projectUrl": "https://activities.uipath.com/docs/about-the-hyperv-activities-pack",
+    "description": "Hyper-V Activities Pack",
+    "license": "https://www.uipath.com/hubfs/legalspot/UiPath_MSSA.pdf",
+    "tags": "UiPathActivities Virtual Machines VM Snapshots Checkpoints",
+    "packageTypes": []
+  },
+  "generatedAt": "2026-04-09T21:48:08Z",
+  "activities": [
+    {
+      "id": "UiPath.HyperV.Activities.HyperVScope@UiPath.HyperV.Activities/1.4.0",
+      "fullName": "UiPath.HyperV.Activities.HyperVScope",
+      "displayName": "HyperV Scope",
+      "description": "Connects to a Hyper-V Host and provides a scope for other Hyper-V activities.",
+      "category": null,
+      "visibility": "browsable",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "members": [
+        {
+          "name": "HyperVHost",
+          "displayName": "HyperVHost",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "Username",
+          "displayName": "Username",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "Password",
+          "displayName": "Password",
+          "dataType": "System.Activities.InArgument<System.Security.SecureString>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        }
+      ],
+      "enrichment": null
+    },
+    {
+      "id": "UiPath.HyperV.Activities.HyperVDeleteAllVMCheckpoints@UiPath.HyperV.Activities/1.4.0",
+      "fullName": "UiPath.HyperV.Activities.HyperVDeleteAllVMCheckpoints",
+      "displayName": "Delete All VM Checkpoints",
+      "description": "Deletes all checkpoints of the specified virtual machine.",
+      "category": null,
+      "visibility": "browsable",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "members": [
+        {
+          "name": "VirtualMachine",
+          "displayName": "VirtualMachine",
+          "dataType": "System.Activities.InArgument<UiPath.HyperV.Models.VirtualMachine>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "Connector",
+          "displayName": "Connector",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "BindingsKey",
+          "displayName": "BindingsKey",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "BindingsVersion",
+          "displayName": "BindingsVersion",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ConnectionId",
+          "displayName": "ConnectionId",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ConnectionClient",
+          "displayName": "ConnectionClient",
+          "dataType": "UiPath.ConnectionClient.IConnectionClient",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        }
+      ],
+      "enrichment": null
+    },
+    {
+      "id": "UiPath.HyperV.Activities.HyperVDeleteVMCheckpoint@UiPath.HyperV.Activities/1.4.0",
+      "fullName": "UiPath.HyperV.Activities.HyperVDeleteVMCheckpoint",
+      "displayName": "Delete VM Checkpoint",
+      "description": "Deletes a given checkpoint of the specified virtual machine.",
+      "category": null,
+      "visibility": "browsable",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "members": [
+        {
+          "name": "VirtualMachine",
+          "displayName": "VirtualMachine",
+          "dataType": "System.Activities.InArgument<UiPath.HyperV.Models.VirtualMachine>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "Checkpoint",
+          "displayName": "Checkpoint",
+          "dataType": "System.Activities.InArgument<UiPath.HyperV.Models.Checkpoint>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "IncludeAllChildCheckpoints",
+          "displayName": "IncludeAllChildCheckpoints",
+          "dataType": "System.Activities.InArgument<System.Boolean>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "Connector",
+          "displayName": "Connector",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "BindingsKey",
+          "displayName": "BindingsKey",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "BindingsVersion",
+          "displayName": "BindingsVersion",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ConnectionId",
+          "displayName": "ConnectionId",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ConnectionClient",
+          "displayName": "ConnectionClient",
+          "dataType": "UiPath.ConnectionClient.IConnectionClient",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        }
+      ],
+      "enrichment": null
+    },
+    {
+      "id": "UiPath.HyperV.Activities.HyperVGetVMCheckpointList@UiPath.HyperV.Activities/1.4.0",
+      "fullName": "UiPath.HyperV.Activities.HyperVGetVMCheckpointList",
+      "displayName": "Get VM Checkpoint List",
+      "description": "Retrieves all checkpoints of the specified virtual machine.",
+      "category": null,
+      "visibility": "browsable",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "members": [
+        {
+          "name": "VirtualMachine",
+          "displayName": "VirtualMachine",
+          "dataType": "System.Activities.InArgument<UiPath.HyperV.Models.VirtualMachine>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "Checkpoints",
+          "displayName": "Checkpoints",
+          "dataType": "System.Activities.OutArgument<System.Collections.Generic.List<UiPath.HyperV.Models.Checkpoint>>",
+          "memberKind": "argument",
+          "argumentDirection": "out",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "Connector",
+          "displayName": "Connector",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "BindingsKey",
+          "displayName": "BindingsKey",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "BindingsVersion",
+          "displayName": "BindingsVersion",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ConnectionId",
+          "displayName": "ConnectionId",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ConnectionClient",
+          "displayName": "ConnectionClient",
+          "dataType": "UiPath.ConnectionClient.IConnectionClient",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        }
+      ],
+      "enrichment": null
+    },
+    {
+      "id": "UiPath.HyperV.Activities.HyperVRevertVMCheckpoint@UiPath.HyperV.Activities/1.4.0",
+      "fullName": "UiPath.HyperV.Activities.HyperVRevertVMCheckpoint",
+      "displayName": "Revert VM to Checkpoint",
+      "description": "Reverts the virtual machine to a specified checkpoint. If no checkpoint exists, the activity does nothing and the virtual machine state remains unchanged.",
+      "category": null,
+      "visibility": "browsable",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "members": [
+        {
+          "name": "VirtualMachine",
+          "displayName": "VirtualMachine",
+          "dataType": "System.Activities.InArgument<UiPath.HyperV.Models.VirtualMachine>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "Checkpoint",
+          "displayName": "Checkpoint",
+          "dataType": "System.Activities.InArgument<UiPath.HyperV.Models.Checkpoint>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "Connector",
+          "displayName": "Connector",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "BindingsKey",
+          "displayName": "BindingsKey",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "BindingsVersion",
+          "displayName": "BindingsVersion",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ConnectionId",
+          "displayName": "ConnectionId",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ConnectionClient",
+          "displayName": "ConnectionClient",
+          "dataType": "UiPath.ConnectionClient.IConnectionClient",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        }
+      ],
+      "enrichment": null
+    },
+    {
+      "id": "UiPath.HyperV.Activities.HyperVTakeVMCheckpoint@UiPath.HyperV.Activities/1.4.0",
+      "fullName": "UiPath.HyperV.Activities.HyperVTakeVMCheckpoint",
+      "displayName": "Take VM Checkpoint",
+      "description": "Takes a checkpoint of the specified virtual machine.",
+      "category": null,
+      "visibility": "browsable",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "members": [
+        {
+          "name": "VirtualMachine",
+          "displayName": "VirtualMachine",
+          "dataType": "System.Activities.InArgument<UiPath.HyperV.Models.VirtualMachine>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "CheckpointName",
+          "displayName": "CheckpointName",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "CheckpointDescription",
+          "displayName": "CheckpointDescription",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "Checkpoint",
+          "displayName": "Checkpoint",
+          "dataType": "System.Activities.OutArgument<UiPath.HyperV.Models.Checkpoint>",
+          "memberKind": "argument",
+          "argumentDirection": "out",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "Connector",
+          "displayName": "Connector",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "BindingsKey",
+          "displayName": "BindingsKey",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "BindingsVersion",
+          "displayName": "BindingsVersion",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ConnectionId",
+          "displayName": "ConnectionId",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ConnectionClient",
+          "displayName": "ConnectionClient",
+          "dataType": "UiPath.ConnectionClient.IConnectionClient",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        }
+      ],
+      "enrichment": null
+    },
+    {
+      "id": "UiPath.HyperV.Activities.HyperVConfigureRobot@UiPath.HyperV.Activities/1.4.0",
+      "fullName": "UiPath.HyperV.Activities.HyperVConfigureRobot",
+      "displayName": "Configure Robot",
+      "description": "Connects the Robot in a given VM to Orchestrator.",
+      "category": null,
+      "visibility": "browsable",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "members": [
+        {
+          "name": "VirtualMachine",
+          "displayName": "VirtualMachine",
+          "dataType": "System.Activities.InArgument<UiPath.HyperV.Models.VirtualMachine>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "OrchestratorURL",
+          "displayName": "OrchestratorURL",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "OrchestratorConnectionString",
+          "displayName": "OrchestratorConnectionString",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "MachineKey",
+          "displayName": "MachineKey",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "Username",
+          "displayName": "Username",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "Password",
+          "displayName": "Password",
+          "dataType": "System.Activities.InArgument<System.Security.SecureString>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "Connector",
+          "displayName": "Connector",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "BindingsKey",
+          "displayName": "BindingsKey",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "BindingsVersion",
+          "displayName": "BindingsVersion",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ConnectionId",
+          "displayName": "ConnectionId",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ConnectionClient",
+          "displayName": "ConnectionClient",
+          "dataType": "UiPath.ConnectionClient.IConnectionClient",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        }
+      ],
+      "enrichment": null
+    },
+    {
+      "id": "UiPath.HyperV.Activities.HyperVCreateVM@UiPath.HyperV.Activities/1.4.0",
+      "fullName": "UiPath.HyperV.Activities.HyperVCreateVM",
+      "displayName": "Create VM From Template",
+      "description": "Provisions a new virtual machine from a template.",
+      "category": null,
+      "visibility": "browsable",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "members": [
+        {
+          "name": "VirtualMachineName",
+          "displayName": "VirtualMachineName",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "VirtualMachineDescription",
+          "displayName": "VirtualMachineDescription",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "Location",
+          "displayName": "Location",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "Generation",
+          "displayName": "Generation",
+          "dataType": "System.Activities.InArgument<UiPath.Core.VMGeneration>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "VhdFile",
+          "displayName": "VhdFile",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "PowerOnAfterCreation",
+          "displayName": "PowerOnAfterCreation",
+          "dataType": "System.Activities.InArgument<System.Boolean>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "StartupMemoryInMB",
+          "displayName": "StartupMemoryInMB",
+          "dataType": "System.Activities.InArgument<System.Nullable<System.Int32>>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "UseDynamicMemory",
+          "displayName": "UseDynamicMemory",
+          "dataType": "System.Activities.InArgument<System.Boolean>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "VirtualMachine",
+          "displayName": "VirtualMachine",
+          "dataType": "System.Activities.OutArgument<UiPath.HyperV.Models.VirtualMachine>",
+          "memberKind": "argument",
+          "argumentDirection": "out",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "Connector",
+          "displayName": "Connector",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "BindingsKey",
+          "displayName": "BindingsKey",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "BindingsVersion",
+          "displayName": "BindingsVersion",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ConnectionId",
+          "displayName": "ConnectionId",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ConnectionClient",
+          "displayName": "ConnectionClient",
+          "dataType": "UiPath.ConnectionClient.IConnectionClient",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        }
+      ],
+      "enrichment": null
+    },
+    {
+      "id": "UiPath.HyperV.Activities.HyperVDeleteVM@UiPath.HyperV.Activities/1.4.0",
+      "fullName": "UiPath.HyperV.Activities.HyperVDeleteVM",
+      "displayName": "Delete VM",
+      "description": "Deletes a virtual machine.",
+      "category": null,
+      "visibility": "browsable",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "members": [
+        {
+          "name": "VirtualMachine",
+          "displayName": "VirtualMachine",
+          "dataType": "System.Activities.InArgument<UiPath.HyperV.Models.VirtualMachine>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "DeleteAssociatedDisks",
+          "displayName": "DeleteAssociatedDisks",
+          "dataType": "System.Activities.InArgument<System.Boolean>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "Connector",
+          "displayName": "Connector",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "BindingsKey",
+          "displayName": "BindingsKey",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "BindingsVersion",
+          "displayName": "BindingsVersion",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ConnectionId",
+          "displayName": "ConnectionId",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ConnectionClient",
+          "displayName": "ConnectionClient",
+          "dataType": "UiPath.ConnectionClient.IConnectionClient",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        }
+      ],
+      "enrichment": null
+    },
+    {
+      "id": "UiPath.HyperV.Activities.HyperVExportVM@UiPath.HyperV.Activities/1.4.0",
+      "fullName": "UiPath.HyperV.Activities.HyperVExportVM",
+      "displayName": "Export VM",
+      "description": "Exports a virtual machine.",
+      "category": null,
+      "visibility": "browsable",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "members": [
+        {
+          "name": "VirtualMachine",
+          "displayName": "VirtualMachine",
+          "dataType": "System.Activities.InArgument<UiPath.HyperV.Models.VirtualMachine>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "Folder",
+          "displayName": "Folder",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "Connector",
+          "displayName": "Connector",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "BindingsKey",
+          "displayName": "BindingsKey",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "BindingsVersion",
+          "displayName": "BindingsVersion",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ConnectionId",
+          "displayName": "ConnectionId",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ConnectionClient",
+          "displayName": "ConnectionClient",
+          "dataType": "UiPath.ConnectionClient.IConnectionClient",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        }
+      ],
+      "enrichment": null
+    },
+    {
+      "id": "UiPath.HyperV.Activities.HyperVGetVMByID@UiPath.HyperV.Activities/1.4.0",
+      "fullName": "UiPath.HyperV.Activities.HyperVGetVMByID",
+      "displayName": "Get VM by ID",
+      "description": "Retrieves the details of the specified virtual machine.",
+      "category": null,
+      "visibility": "browsable",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "members": [
+        {
+          "name": "VirtualMachineId",
+          "displayName": "VirtualMachineId",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "VirtualMachine",
+          "displayName": "VirtualMachine",
+          "dataType": "System.Activities.OutArgument<UiPath.HyperV.Models.VirtualMachine>",
+          "memberKind": "argument",
+          "argumentDirection": "out",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "Connector",
+          "displayName": "Connector",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "BindingsKey",
+          "displayName": "BindingsKey",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "BindingsVersion",
+          "displayName": "BindingsVersion",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ConnectionId",
+          "displayName": "ConnectionId",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ConnectionClient",
+          "displayName": "ConnectionClient",
+          "dataType": "UiPath.ConnectionClient.IConnectionClient",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        }
+      ],
+      "enrichment": null
+    },
+    {
+      "id": "UiPath.HyperV.Activities.HyperVGetVMList@UiPath.HyperV.Activities/1.4.0",
+      "fullName": "UiPath.HyperV.Activities.HyperVGetVMList",
+      "displayName": "Get VM List",
+      "description": "Retrieves a list of virtual machines.",
+      "category": null,
+      "visibility": "browsable",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "members": [
+        {
+          "name": "FilterBy",
+          "displayName": "FilterBy",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "FilterOperator",
+          "displayName": "FilterOperator",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "FilterValue",
+          "displayName": "FilterValue",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "Generation",
+          "displayName": "Generation",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "State",
+          "displayName": "State",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "IncludeGuestOSDetails",
+          "displayName": "IncludeGuestOSDetails",
+          "dataType": "System.Activities.InArgument<System.Boolean>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "VMList",
+          "displayName": "VMList",
+          "dataType": "System.Activities.OutArgument<UiPath.HyperV.Models.VirtualMachine[]>",
+          "memberKind": "argument",
+          "argumentDirection": "out",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "Connector",
+          "displayName": "Connector",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "BindingsKey",
+          "displayName": "BindingsKey",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "BindingsVersion",
+          "displayName": "BindingsVersion",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ConnectionId",
+          "displayName": "ConnectionId",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ConnectionClient",
+          "displayName": "ConnectionClient",
+          "dataType": "UiPath.ConnectionClient.IConnectionClient",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        }
+      ],
+      "enrichment": null
+    },
+    {
+      "id": "UiPath.HyperV.Activities.HyperVImportVM@UiPath.HyperV.Activities/1.4.0",
+      "fullName": "UiPath.HyperV.Activities.HyperVImportVM",
+      "displayName": "Import VM",
+      "description": "Imports a virtual machine.",
+      "category": null,
+      "visibility": "browsable",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "members": [
+        {
+          "name": "VMFile",
+          "displayName": "VMFile",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "CheckpointFolder",
+          "displayName": "CheckpointFolder",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ImportType",
+          "displayName": "ImportType",
+          "dataType": "System.Activities.InArgument<UiPath.Core.VMImportType>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "VhdFolder",
+          "displayName": "VhdFolder",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "VMName",
+          "displayName": "VMName",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "StorageFolder",
+          "displayName": "StorageFolder",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "Location",
+          "displayName": "Location",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "VirtualMachine",
+          "displayName": "VirtualMachine",
+          "dataType": "System.Activities.OutArgument<UiPath.HyperV.Models.VirtualMachine>",
+          "memberKind": "argument",
+          "argumentDirection": "out",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "Connector",
+          "displayName": "Connector",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "BindingsKey",
+          "displayName": "BindingsKey",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "BindingsVersion",
+          "displayName": "BindingsVersion",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ConnectionId",
+          "displayName": "ConnectionId",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ConnectionClient",
+          "displayName": "ConnectionClient",
+          "dataType": "UiPath.ConnectionClient.IConnectionClient",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        }
+      ],
+      "enrichment": null
+    },
+    {
+      "id": "UiPath.HyperV.Activities.HyperVPauseVM@UiPath.HyperV.Activities/1.4.0",
+      "fullName": "UiPath.HyperV.Activities.HyperVPauseVM",
+      "displayName": "Pause VM",
+      "description": "Pauses a virtual machine.",
+      "category": null,
+      "visibility": "browsable",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "members": [
+        {
+          "name": "VirtualMachine",
+          "displayName": "VirtualMachine",
+          "dataType": "System.Activities.InArgument<UiPath.HyperV.Models.VirtualMachine>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "Connector",
+          "displayName": "Connector",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "BindingsKey",
+          "displayName": "BindingsKey",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "BindingsVersion",
+          "displayName": "BindingsVersion",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ConnectionId",
+          "displayName": "ConnectionId",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ConnectionClient",
+          "displayName": "ConnectionClient",
+          "dataType": "UiPath.ConnectionClient.IConnectionClient",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        }
+      ],
+      "enrichment": null
+    },
+    {
+      "id": "UiPath.HyperV.Activities.HyperVRenameVM@UiPath.HyperV.Activities/1.4.0",
+      "fullName": "UiPath.HyperV.Activities.HyperVRenameVM",
+      "displayName": "Rename VM",
+      "description": "Renames a virtual machine.",
+      "category": null,
+      "visibility": "browsable",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "members": [
+        {
+          "name": "VirtualMachine",
+          "displayName": "VirtualMachine",
+          "dataType": "System.Activities.InArgument<UiPath.HyperV.Models.VirtualMachine>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "NewName",
+          "displayName": "NewName",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "Connector",
+          "displayName": "Connector",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "BindingsKey",
+          "displayName": "BindingsKey",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "BindingsVersion",
+          "displayName": "BindingsVersion",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ConnectionId",
+          "displayName": "ConnectionId",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ConnectionClient",
+          "displayName": "ConnectionClient",
+          "dataType": "UiPath.ConnectionClient.IConnectionClient",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        }
+      ],
+      "enrichment": null
+    },
+    {
+      "id": "UiPath.HyperV.Activities.HyperVResetVM@UiPath.HyperV.Activities/1.4.0",
+      "fullName": "UiPath.HyperV.Activities.HyperVResetVM",
+      "displayName": "Reset VM",
+      "description": "Resets a virtual machine.",
+      "category": null,
+      "visibility": "browsable",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "members": [
+        {
+          "name": "VirtualMachine",
+          "displayName": "VirtualMachine",
+          "dataType": "System.Activities.InArgument<UiPath.HyperV.Models.VirtualMachine>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "Connector",
+          "displayName": "Connector",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "BindingsKey",
+          "displayName": "BindingsKey",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "BindingsVersion",
+          "displayName": "BindingsVersion",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ConnectionId",
+          "displayName": "ConnectionId",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ConnectionClient",
+          "displayName": "ConnectionClient",
+          "dataType": "UiPath.ConnectionClient.IConnectionClient",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        }
+      ],
+      "enrichment": null
+    },
+    {
+      "id": "UiPath.HyperV.Activities.HyperVResumeVM@UiPath.HyperV.Activities/1.4.0",
+      "fullName": "UiPath.HyperV.Activities.HyperVResumeVM",
+      "displayName": "Resume VM",
+      "description": "Resumes a virtual machine.",
+      "category": null,
+      "visibility": "browsable",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "members": [
+        {
+          "name": "VirtualMachine",
+          "displayName": "VirtualMachine",
+          "dataType": "System.Activities.InArgument<UiPath.HyperV.Models.VirtualMachine>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "Connector",
+          "displayName": "Connector",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "BindingsKey",
+          "displayName": "BindingsKey",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "BindingsVersion",
+          "displayName": "BindingsVersion",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ConnectionId",
+          "displayName": "ConnectionId",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ConnectionClient",
+          "displayName": "ConnectionClient",
+          "dataType": "UiPath.ConnectionClient.IConnectionClient",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        }
+      ],
+      "enrichment": null
+    },
+    {
+      "id": "UiPath.HyperV.Activities.HyperVShutdownVM@UiPath.HyperV.Activities/1.4.0",
+      "fullName": "UiPath.HyperV.Activities.HyperVShutdownVM",
+      "displayName": "Shutdown VM",
+      "description": "Shuts down the Operating System of the specified virtual machine.",
+      "category": null,
+      "visibility": "browsable",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "members": [
+        {
+          "name": "VirtualMachine",
+          "displayName": "VirtualMachine",
+          "dataType": "System.Activities.InArgument<UiPath.HyperV.Models.VirtualMachine>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "Connector",
+          "displayName": "Connector",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "BindingsKey",
+          "displayName": "BindingsKey",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "BindingsVersion",
+          "displayName": "BindingsVersion",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ConnectionId",
+          "displayName": "ConnectionId",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ConnectionClient",
+          "displayName": "ConnectionClient",
+          "dataType": "UiPath.ConnectionClient.IConnectionClient",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        }
+      ],
+      "enrichment": null
+    },
+    {
+      "id": "UiPath.HyperV.Activities.HyperVStartVM@UiPath.HyperV.Activities/1.4.0",
+      "fullName": "UiPath.HyperV.Activities.HyperVStartVM",
+      "displayName": "Start VM",
+      "description": "Starts a virtual machine.",
+      "category": null,
+      "visibility": "browsable",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "members": [
+        {
+          "name": "VirtualMachine",
+          "displayName": "VirtualMachine",
+          "dataType": "System.Activities.InArgument<UiPath.HyperV.Models.VirtualMachine>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "Connector",
+          "displayName": "Connector",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "BindingsKey",
+          "displayName": "BindingsKey",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "BindingsVersion",
+          "displayName": "BindingsVersion",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ConnectionId",
+          "displayName": "ConnectionId",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ConnectionClient",
+          "displayName": "ConnectionClient",
+          "dataType": "UiPath.ConnectionClient.IConnectionClient",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        }
+      ],
+      "enrichment": null
+    },
+    {
+      "id": "UiPath.HyperV.Activities.HyperVTurnOffVM@UiPath.HyperV.Activities/1.4.0",
+      "fullName": "UiPath.HyperV.Activities.HyperVTurnOffVM",
+      "displayName": "Turn Off VM",
+      "description": "Turns off a virtual machine.",
+      "category": null,
+      "visibility": "browsable",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "members": [
+        {
+          "name": "VirtualMachine",
+          "displayName": "VirtualMachine",
+          "dataType": "System.Activities.InArgument<UiPath.HyperV.Models.VirtualMachine>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "Connector",
+          "displayName": "Connector",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "BindingsKey",
+          "displayName": "BindingsKey",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "BindingsVersion",
+          "displayName": "BindingsVersion",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ConnectionId",
+          "displayName": "ConnectionId",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        },
+        {
+          "name": "ConnectionClient",
+          "displayName": "ConnectionClient",
+          "dataType": "UiPath.ConnectionClient.IConnectionClient",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null
+        }
+      ],
+      "enrichment": null
+    }
+  ],
+  "enums": [
+    {
+      "fullName": "UiPath.Shared.Activities.TokenType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ACCCESS_TOKEN",
+          "value": 0
+        },
+        {
+          "name": "CE_ACCESS_TOKEN",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.VMBootOrder",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Floppy",
+          "value": 0
+        },
+        {
+          "name": "CD",
+          "value": 1
+        },
+        {
+          "name": "IDE",
+          "value": 2
+        },
+        {
+          "name": "PXE",
+          "value": 3
+        },
+        {
+          "name": "SCSI",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.VMGeneration",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Generation1",
+          "value": 0
+        },
+        {
+          "name": "Generation2",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.VMImportType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Restore",
+          "value": 0
+        },
+        {
+          "name": "Copy",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.VmStateFilter",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Running",
+          "value": 2
+        },
+        {
+          "name": "Stopped",
+          "value": 3
+        },
+        {
+          "name": "Paused",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.FilterBy",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Name",
+          "value": 0
+        },
+        {
+          "name": "Location",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.FilterOperator",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Equals",
+          "value": 0
+        },
+        {
+          "name": "Contains",
+          "value": 1
+        },
+        {
+          "name": "StartsWith",
+          "value": 2
+        },
+        {
+          "name": "EndsWith",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.VMSnapshotType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Full",
+          "value": 2
+        },
+        {
+          "name": "Disk",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.VMState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Enabled",
+          "value": 2
+        },
+        {
+          "name": "Disabled",
+          "value": 3
+        },
+        {
+          "name": "ShutDown",
+          "value": 4
+        },
+        {
+          "name": "Offline",
+          "value": 6
+        },
+        {
+          "name": "Pause",
+          "value": 9
+        },
+        {
+          "name": "Reset",
+          "value": 11
+        }
+      ]
+    }
+  ],
+  "namespaceMappings": []
+}

@@ -1,0 +1,336 @@
+# UiPath.Persistence.Activities 1.8.1
+
+> generator: uips-fixtures catalog v0.2
+> generated: 2026-04-09T22:10:08Z
+> set: studio-intelligent
+> url: https://uips-fixtures.github.io/llms/UiPath.Persistence.Activities/1.8.1.txt
+> activities: 21
+> authors: UiPath
+**ID format**: `{fullName}@{packageId}/{packageVersion}`
+**Argument directions**: In (input), Out (output), InOut (bidirectional)
+
+---
+### Create App Task
+
+**ID**: `UiPath.Persistence.Activities.UserAction.CreateUserAction@UiPath.Persistence.Activities/1.8.1`
+**Type**: `UiPath.Persistence.Activities.UserAction.CreateUserAction`
+**Category**: Long Running.Tasks
+**Description**: Creates a App Task. The returned Task object can be used in the 'Wait For App Task and Resume' activity to wait for the task to be completed.
+**Arguments**:
+- [IN] `InArgument<String[]>` **TaskFieldsForWeb**
+- [IN] `InArgument<String>` **PrimaryButtonLabel**
+- [IN] `InArgument<String>` **SecondaryButtonLabel**
+- [IN, Required] `InArgument<String>` **TaskTitle**
+- [IN] `InArgument<String>` **TaskCatalog**
+- [IN, Required] `InArgument<UiPath.Persistence.Activities.Model.Task.TaskPriority>` **TaskPriority**
+- [IN] `InArgument<String>` **ExternalTag**
+- [IN] `InArgument<String>` **Labels**
+- [OUT] `OutArgument<TItem>` **TaskOutput**
+- [IN] `InArgument<String>` **FolderPath**
+- [IN] `InArgument<Int32>` **TimeoutMs**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **ActionableNotification**
+- [property] `String[]` **TaskFieldsForDesktop**
+- [property] `String` **PrimaryActionableOutcome**
+- [property] `String` **SecondaryActionableOutcome**
+- [property] `String` **AppBindingsKey**
+- [property] `String` **CatalogBindingsKey**
+### Get App Tasks
+
+**ID**: `UiPath.Persistence.Activities.UserAction.GetAppTasks@UiPath.Persistence.Activities/1.8.1`
+**Type**: `UiPath.Persistence.Activities.UserAction.GetAppTasks`
+**Category**: Long Running.Tasks
+**Description**: Get App task objects based on the filter criteria provided
+**Arguments**:
+- [IN] `InArgument<String>` **Expand**
+- [IN] `InArgument<String>` **Filter**
+- [IN] `InArgument<String>` **Select**
+- [IN] `InArgument<String>` **OrderBy**
+- [IN] `InArgument<Nullable<Int32>>` **Top**
+- [IN] `InArgument<Nullable<Int32>>` **Skip**
+- [IN] `InArgument<String>` **TaskCatalogName**
+- [IN] `InArgument<String>` **Reference**
+- [OUT, Required] `OutArgument<List<UiPath.Persistence.Activities.UserAction.UserActionData>>` **TaskObjects**
+- [IN] `InArgument<String>` **FolderPath**
+- [IN] `InArgument<Int32>` **TimeoutMs**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+### Wait For App Task and Resume
+
+**ID**: `UiPath.Persistence.Activities.UserAction.WaitForUserActionAndResume@UiPath.Persistence.Activities/1.8.1`
+**Type**: `UiPath.Persistence.Activities.UserAction.WaitForUserActionAndResume`
+**Category**: Long Running.Tasks
+**Description**: To be used in paired mode with 'Create App Task' activity by providing the task object as the input. Upon completion of a task, arguments of type IN/OUT and OUT provided in the task data will be assigned back to the mapped workflow variables.
+**Arguments**:
+- [IN, Required] `InArgument<TItem>` **TaskInput**
+- [OUT] `OutArgument<String>` **TaskAction**
+- [OUT] `OutArgument<TItem>` **TaskOutput**
+- [IN] `InArgument<Int32>` **TimeoutMs**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+- [IN] `InArgument<String>` **StatusMessage**
+### Add Task Comment
+
+**ID**: `UiPath.Persistence.Activities.Tasks.AddTaskComment@UiPath.Persistence.Activities/1.8.1`
+**Type**: `UiPath.Persistence.Activities.Tasks.AddTaskComment`
+**Category**: Long Running.Tasks
+**Description**: Provide additional context for a user through Task comments.
+**Arguments**:
+- [IN, Required] `InArgument<Int64>` **TaskId**
+- [IN, Required] `InArgument<String>` **Comment**
+- [IN] `InArgument<String>` **FolderPath**
+- [IN] `InArgument<Int32>` **TimeoutMs**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+### Assign Tasks
+
+**ID**: `UiPath.Persistence.Activities.Tasks.AssignTasks@UiPath.Persistence.Activities/1.8.1`
+**Type**: `UiPath.Persistence.Activities.Tasks.AssignTasks`
+**Category**: Long Running.Tasks
+**Description**: Assign one or more tasks created in this workflow to users by providing email address or username registered with Orchestrator
+**Arguments**:
+- [IN] `InArgument<Int64>` **TaskId**
+- [IN] `InArgument<String>` **UserNameOrEmail**
+- [IN] `InArgument<Int64>` **UserId**
+- [IN] `InArgument<String>` **Group**
+- [IN] `InArgument<List<UiPath.Persistence.Activities.Tasks.TaskUserAssignment>>` **TaskUserAssignments**
+- [IN, Required] `InArgument<UiPath.Persistence.Activities.Model.Task.TaskAssignmentType>` **TaskAssignmentType**
+- [OUT] `OutArgument<List<UiPath.Persistence.Activities.Tasks.TaskAssignmentResponse>>` **FailedTaskAssignments**
+- [IN] `InArgument<String>` **FolderPath**
+- [IN] `InArgument<Int32>` **TimeoutMs**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.Persistence.Activities.Tasks.Criteria` **AssignmentCriteria**
+- [property] `Boolean` **EnableMultipleAssignments**
+### Complete Task
+
+**ID**: `UiPath.Persistence.Activities.Tasks.CompleteTask@UiPath.Persistence.Activities/1.8.1`
+**Type**: `UiPath.Persistence.Activities.Tasks.CompleteTask`
+**Category**: Long Running.Tasks
+**Description**: Activity to complete a task
+**Arguments**:
+- [IN, Required] `InArgument<Int64>` **TaskId**
+- [IN, Required] `InArgument<String>` **Action**
+- [IN] `InArgument<Newtonsoft.Json.Linq.JObject>` **Data**
+- [IN] `InArgument<String>` **FolderPath**
+- [IN] `InArgument<Int32>` **TimeoutMs**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+### Configure task timer
+
+**ID**: `UiPath.Persistence.Activities.Tasks.ConfigureTaskTimer@UiPath.Persistence.Activities/1.8.1`
+**Type**: `UiPath.Persistence.Activities.Tasks.ConfigureTaskTimer`
+**Category**: Long Running.Tasks
+**Description**: Configure the timer on a task
+**Arguments**:
+- [IN] `InArgument<Int64>` **TaskId**
+- [IN] `InArgument<String>` **ReassignUser**
+- [IN] `InArgument<String>` **FolderPath**
+- [IN] `InArgument<Int32>` **TimeoutMs**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.Persistence.Activities.Model.TaskTimer.SlaStartCriteria` **StartCriteria**
+- [property] `UiPath.Persistence.Activities.Model.TaskTimer.SlaEndCriteria` **EndCriteria**
+- [property] `Byte` **TimerDays**
+- [property] `Byte` **TimerHours**
+- [property] `UiPath.Persistence.Activities.Model.TaskTimer.MinuteSteps` **TimerMinutes**
+- [property] `UiPath.Persistence.Activities.Model.TaskTimer.SlaOutcome` **Outcome**
+### Forward Task
+
+**ID**: `UiPath.Persistence.Activities.Tasks.ForwardTask@UiPath.Persistence.Activities/1.8.1`
+**Type**: `UiPath.Persistence.Activities.Tasks.ForwardTask`
+**Category**: Long Running.Tasks
+**Description**: Use this activity to Forward a task assigned to you to another user
+**Arguments**:
+- [IN, Required] `InArgument<Int64>` **TaskId**
+- [IN, Required] `InArgument<String>` **UserNameOrEmail**
+- [IN] `InArgument<String>` **Comments**
+- [IN] `InArgument<String>` **FolderPath**
+- [IN] `InArgument<Int32>` **TimeoutMs**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+### Get Task Data
+
+**ID**: `UiPath.Persistence.Activities.Tasks.GetTaskData@UiPath.Persistence.Activities/1.8.1`
+**Type**: `UiPath.Persistence.Activities.Tasks.GetTaskData`
+**Category**: Long Running.Tasks
+**Description**: Activity to fetch Task Data object for specific TaskId
+**Arguments**:
+- [IN, Required] `InArgument<Int64>` **TaskId**
+- [OUT] `OutArgument<UiPath.Persistence.Activities.Model.Task.TaskData>` **TaskOutput**
+- [IN] `InArgument<String>` **FolderPath**
+- [IN] `InArgument<Int32>` **TimeoutMs**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+### Update Task Labels
+
+**ID**: `UiPath.Persistence.Activities.Tasks.UpdateTaskLabels@UiPath.Persistence.Activities/1.8.1`
+**Type**: `UiPath.Persistence.Activities.Tasks.UpdateTaskLabels`
+**Category**: Long Running.Tasks
+**Description**: Adds/removes labels to/from the specified task.
+**Arguments**:
+- [IN, Required] `InArgument<Int64>` **TaskId**
+- [IN] `InArgument<String>` **AddLabels**
+- [IN] `InArgument<String>` **DeleteLabels**
+- [IN] `InArgument<String>` **FolderPath**
+- [IN] `InArgument<Int32>` **TimeoutMs**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+### Add Queue Item And Get Reference
+
+**ID**: `UiPath.Persistence.Activities.Queue.AddQueueItemAndGetReference@UiPath.Persistence.Activities/1.8.1`
+**Type**: `UiPath.Persistence.Activities.Queue.AddQueueItemAndGetReference`
+**Category**: Long Running.Queues
+**Description**: Add Orchestrator Queue Item with parameters (IN, IN/OUT and OUT) and fetch the corresponding Queue Item Object in-order to wait for the completion of Queue item processing at any point in the workflow. Up on completion of its processing, arguments of type IN/OUT and OUT will be assigned back to the mapped workflow variables.
+**Arguments**:
+- [IN] `InArgument<String>` **Reference**
+- [IN, Required] `InArgument<String>` **QueueName**
+- [IN] `InArgument<Dictionary<String, Object>>` **ItemInformationCollection**
+- [IN] `InArgument<Nullable<DateTime>>` **DeferDate**
+- [IN] `InArgument<Nullable<DateTime>>` **DueDate**
+- [OUT] `OutArgument<UiPath.Persistence.Activities.Queue.QueueItemData>` **QueueItemOutput**
+- [IN] `InArgument<String>` **FolderPath**
+- [IN] `InArgument<Int32>` **TimeoutMs**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `Dictionary<String, Argument>` **ItemInformation**
+- [property] `UiPath.Persistence.Activities.Queue.QueueItemDataPriority` **Priority**
+- [property] `String` **BindingsKey**
+### Wait For Queue Item And Resume
+
+**ID**: `UiPath.Persistence.Activities.Queue.WaitForQueueItemAndResume@UiPath.Persistence.Activities/1.8.1`
+**Type**: `UiPath.Persistence.Activities.Queue.WaitForQueueItemAndResume`
+**Category**: Long Running.Queues
+**Description**: To be used in paired mode with 'Add Queue Item and Get Reference' activity by providing the Queue item object as the input .Upon completion of this queue item, arguments of type IN/OUT and OUT provided as part of the Queue item parameters will be assigned back to the mapped workflow variables.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.Persistence.Activities.Queue.QueueItemData>` **QueueItemInput**
+- [OUT] `OutArgument<UiPath.Persistence.Activities.Queue.QueueItemData>` **QueueItemOutput**
+- [IN] `InArgument<Int32>` **TimeoutMs**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+- [IN] `InArgument<String>` **StatusMessage**
+### Start Job And Get Reference
+
+**ID**: `UiPath.Persistence.Activities.Job.StartJobAndGetReference@UiPath.Persistence.Activities/1.8.1`
+**Type**: `UiPath.Persistence.Activities.Job.StartJobAndGetReference`
+**Category**: Long Running.Jobs
+**Description**: Invoke an orchestrator job with arguments (IN, IN/OUT and OUT) and fetch the corresponding job object in-order to wait for this job completion at any point in the workflow. Upon completion of this job, arguments of type IN/OUT and OUT will be assigned back to the mapped workflow variables.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **ProcessName**
+- [OUT] `OutArgument<UiPath.Persistence.Activities.Job.JobData>` **JobOutput**
+- [IN] `InArgument<String>` **FolderPath**
+- [IN] `InArgument<Int32>` **TimeoutMs**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `Dictionary<String, Argument>` **JobArguments**
+- [property] `String` **BindingsKey**
+### Wait for Job and Resume
+
+**ID**: `UiPath.Persistence.Activities.Job.WaitForJobAndResume@UiPath.Persistence.Activities/1.8.1`
+**Type**: `UiPath.Persistence.Activities.Job.WaitForJobAndResume`
+**Category**: Long Running.Jobs
+**Description**: To be used in paired mode with 'Start Job and Get Reference' activity by providing the Job object as the input. Upon completion of this job, arguments of type IN/OUT and OUT provided as part of the Job arguments will be assigned back to the mapped workflow variables.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.Persistence.Activities.Job.JobData>` **JobInput**
+- [OUT] `OutArgument<UiPath.Persistence.Activities.Job.JobData>` **JobOutput**
+- [IN] `InArgument<Int32>` **TimeoutMs**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+- [IN] `InArgument<String>` **StatusMessage**
+### Create Form Task
+
+**ID**: `UiPath.Persistence.Activities.FormTask.CreateFormTask@UiPath.Persistence.Activities/1.8.1`
+**Type**: `UiPath.Persistence.Activities.FormTask.CreateFormTask`
+**Category**: Long Running.Tasks
+**Description**: Creates a form task. The returned Task object can be used in the 'Wait For Form Task and Resume' activity to wait for the task to be completed.
+**Arguments**:
+- [IN] `InArgument<String>` **BucketName**
+- [IN] `InArgument<String>` **BucketFolderPath**
+- [IN] `InArgument<String>` **DynamicFormPath**
+- [IN, Required] `InArgument<String>` **TaskTitle**
+- [IN] `InArgument<String>` **TaskCatalog**
+- [IN, Required] `InArgument<UiPath.Persistence.Activities.Model.Task.TaskPriority>` **TaskPriority**
+- [IN] `InArgument<String>` **ExternalTag**
+- [IN] `InArgument<String>` **Labels**
+- [OUT] `OutArgument<TItem>` **TaskOutput**
+- [IN] `InArgument<String>` **FolderPath**
+- [IN] `InArgument<Int32>` **TimeoutMs**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `Dictionary<String, Argument>` **FormData**
+- [property] `Boolean` **GenerateInputFields**
+- [property] `Boolean` **EnableBulkEdit**
+- [property] `Boolean` **EnableV2**
+- [property] `Boolean` **EnableDynamicForms**
+### Get Form Tasks
+
+**ID**: `UiPath.Persistence.Activities.FormTask.GetFormTasks@UiPath.Persistence.Activities/1.8.1`
+**Type**: `UiPath.Persistence.Activities.FormTask.GetFormTasks`
+**Category**: Long Running.Tasks
+**Description**: Get Form task objects based on the filter criteria provided
+**Arguments**:
+- [IN] `InArgument<String>` **Expand**
+- [IN] `InArgument<String>` **Filter**
+- [IN] `InArgument<String>` **Select**
+- [IN] `InArgument<String>` **OrderBy**
+- [IN] `InArgument<Nullable<Int32>>` **Top**
+- [IN] `InArgument<Nullable<Int32>>` **Skip**
+- [IN] `InArgument<String>` **TaskCatalogName**
+- [IN] `InArgument<String>` **Reference**
+- [OUT, Required] `OutArgument<List<UiPath.Persistence.Activities.FormTask.FormTaskData>>` **TaskObjects**
+- [IN] `InArgument<String>` **FolderPath**
+- [IN] `InArgument<Int32>` **TimeoutMs**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+### Wait for Form Task and Resume
+
+**ID**: `UiPath.Persistence.Activities.FormTask.WaitForFormTaskAndResume@UiPath.Persistence.Activities/1.8.1`
+**Type**: `UiPath.Persistence.Activities.FormTask.WaitForFormTaskAndResume`
+**Category**: Long Running.Tasks
+**Description**: To be used in paired mode with 'Create Form Task' activity by providing the task object as the input. Upon completion of a task, arguments of type IN/OUT and OUT provided in the task data will be assigned back to the mapped workflow variables.
+**Arguments**:
+- [IN, Required] `InArgument<TItem>` **TaskInput**
+- [OUT] `OutArgument<String>` **TaskAction**
+- [OUT] `OutArgument<TItem>` **TaskOutput**
+- [IN] `InArgument<Int32>` **TimeoutMs**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+- [IN] `InArgument<String>` **StatusMessage**
+### Approval Task
+
+**ID**: `UiPath.Persistence.Activities.Factories.ApprovalTaskFactory@UiPath.Persistence.Activities/1.8.1`
+**Type**: `UiPath.Persistence.Activities.Factories.ApprovalTaskFactory`
+**Category**: Process Diagram.User Task
+**Description**: Create and assign tasks to human users for business approvals, set task timers and pause workflows till task completion
+_No members extracted._
+### Create External Task
+
+**ID**: `UiPath.Persistence.Activities.ExternalTask.CreateExternalTask@UiPath.Persistence.Activities/1.8.1`
+**Type**: `UiPath.Persistence.Activities.ExternalTask.CreateExternalTask`
+**Category**: Long Running.Tasks
+**Description**: Creates an external task. The returned Task object can be used in the 'Wait For External Task and Resume' activity to wait for the task to be completed.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **TaskTitle**
+- [IN] `InArgument<String>` **TaskCatalog**
+- [IN, Required] `InArgument<UiPath.Persistence.Activities.Model.Task.TaskPriority>` **TaskPriority**
+- [IN] `InArgument<String>` **ExternalTag**
+- [IN] `InArgument<String>` **Labels**
+- [OUT] `OutArgument<TItem>` **TaskOutput**
+- [IN] `InArgument<String>` **FolderPath**
+- [IN] `InArgument<Int32>` **TimeoutMs**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+**Properties / VariableScope / Child**:
+- [property] `Dictionary<String, Argument>` **TaskData**
+### Wait For External Task and Resume
+
+**ID**: `UiPath.Persistence.Activities.ExternalTask.WaitForExternalTaskAndResume@UiPath.Persistence.Activities/1.8.1`
+**Type**: `UiPath.Persistence.Activities.ExternalTask.WaitForExternalTaskAndResume`
+**Category**: Long Running.Tasks
+**Description**: To be used in paired mode with 'Create External Task' activity by providing the task object as the input. Upon completion of a task, arguments of type IN/OUT and OUT provided in the task data will be assigned back to the mapped workflow variables.
+**Arguments**:
+- [IN, Required] `InArgument<TItem>` **TaskInput**
+- [OUT] `OutArgument<String>` **TaskAction**
+- [OUT] `OutArgument<TItem>` **TaskOutput**
+- [IN] `InArgument<Int32>` **TimeoutMs**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+- [IN] `InArgument<String>` **StatusMessage**
+### Resume After Delay
+
+**ID**: `UiPath.Persistence.Activities.Delay.ResumeAfterDelay@UiPath.Persistence.Activities/1.8.1`
+**Type**: `UiPath.Persistence.Activities.Delay.ResumeAfterDelay`
+**Category**: Long Running
+**Description**: Activity to build workflows that can be suspended for a period of time that auto resumes based on a timer
+**Arguments**:
+- [IN, Required] `InArgument<DateTime>` **ResumeTime**
+- [IN] `InArgument<String>` **StatusMessage**
+---

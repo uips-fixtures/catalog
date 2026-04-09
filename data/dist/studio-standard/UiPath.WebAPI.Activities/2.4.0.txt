@@ -1,0 +1,111 @@
+# UiPath.WebAPI.Activities 2.4.0
+
+> generator: uips-fixtures catalog v0.2
+> generated: 2026-04-09T22:10:08Z
+> set: studio-standard
+> url: https://uips-fixtures.github.io/llms/UiPath.WebAPI.Activities/2.4.0.txt
+> activities: 4
+> authors: UiPath
+**ID format**: `{fullName}@{packageId}/{packageVersion}`
+**Argument directions**: In (input), Out (output), InOut (bidirectional)
+
+---
+### SOAP Request
+
+**ID**: `UiPath.Web.Activities.SoapClient@UiPath.WebAPI.Activities/2.4.0`
+**Type**: `UiPath.Web.Activities.SoapClient`
+**Category**: Web
+**Description**: Takes a SOAP service description, descovering its contracts and methods. It then calls the specified method and returns the response in a string format. It has authentication capabilities allowing communication with secured endpoints
+**Arguments**:
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+- [IN, Required] `InArgument<String>` **ContractName**
+- [IN, Required] `InArgument<String>` **EndPoint**
+- [IN, Required] `InArgument<String>` **Method**
+- [IN] `InArgument<String>` **Username**
+- [IN] `InArgument<String>` **Password**
+- [IN] `InArgument<Security.SecureString>` **SecurePassword**
+- [IN] `InArgument<String>` **ClientCertificate**
+- [IN] `InArgument<String>` **ClientCertificatePassword**
+- [IN] `InArgument<Security.SecureString>` **SecureClientCertificatePassword**
+- [OUT] `OutArgument<Dictionary<String, String>>` **ResponseHeaders**
+**Properties / VariableScope / Child**:
+- [property] `Dictionary<String, InArgument>` **Parameters**
+- [property] `Boolean` **UseWindowsCredentials**
+### Deserialize JSON
+
+**ID**: `UiPath.Web.Activities.DeserializeJson@UiPath.WebAPI.Activities/2.4.0`
+**Type**: `UiPath.Web.Activities.DeserializeJson`
+**Category**: Programming.JSON
+**Description**: Deserializes the Json string to a JObject object
+**Arguments**:
+- [IN, Required] `InArgument<String>` **JsonString**
+- [IN] `InArgument<UiPath.Web.Activities.JSON.Models.JsonDeserializationSettings>` **Settings**
+- [OUT] `OutArgument<T>` **JsonObject**
+**Properties / VariableScope / Child**:
+- [property] `String` **JsonSample**
+### Serialize JSON
+
+**ID**: `UiPath.Web.Activities.JSON.SerializeJson@UiPath.WebAPI.Activities/2.4.0`
+**Type**: `UiPath.Web.Activities.JSON.SerializeJson`
+**Category**: Programming.JSON
+**Description**: Serializes the given Object to a JSON string, optionally based on the custom serializer settings.
+**Arguments**:
+- [IN, Required] `InArgument<Object>` **InputObject**
+- [IN] `InArgument<UiPath.Web.Activities.JSON.Models.JsonSerializationSettings>` **Settings**
+### HTTP Request
+
+**ID**: `UiPath.Web.Activities.Http.NetHttpRequest@UiPath.WebAPI.Activities/2.4.0`
+**Type**: `UiPath.Web.Activities.Http.NetHttpRequest`
+**Category**: Web
+**Description**: Configures and sends an HTTP request with customizable options for headers, authentication, cookies, retries, SSL, and request body formats. Includes flexible retry mechanisms and graceful handling of errors, with optional continuation on failure.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **RequestUrl**
+- [IN] `InArgument<Dictionary<String, String>>` **Parameters**
+- [IN] `InArgument<Dictionary<String, String>>` **Headers**
+- [IN] `InArgument<Boolean>` **DisableSslVerification**
+- [IN] `InArgument<UiPath.Web.Activities.Http.Models.SupportedTlsProtocols>` **TlsProtocol**
+- [IN] `InArgument<Boolean>` **EnableCookies**
+- [IN] `InArgument<UiPath.Web.Activities.Http.Models.WebProxyConfiguration>` **ProxyConfiguration**
+- [IN] `InArgument<String>` **ClientCertPath**
+- [IN] `InArgument<String>` **ClientCertPassword**
+- [IN] `InArgument<Security.SecureString>` **ClientCertSecurePassword**
+- [IN] `InArgument<Dictionary<String, String>>` **Cookies**
+- [IN] `InArgument<Nullable<Int32>>` **TimeoutInMiliseconds**
+- [IN] `InArgument<Boolean>` **ContinueOnError**
+- [IN] `InArgument<Boolean>` **FollowRedirects**
+- [IN] `InArgument<Int32>` **MaxRedirects**
+- [IN] `InArgument<String>` **BasicAuthUsername**
+- [IN] `InArgument<String>` **BasicAuthPassword**
+- [IN] `InArgument<Security.SecureString>` **BasicAuthSecurePassword**
+- [IN] `InArgument<String>` **OAuthToken**
+- [IN] `InArgument<Boolean>` **UseOsNegotiatedAuthCredentials**
+- [IN] `InArgument<Net.NetworkCredential>` **CustomNegotiatedAuthCredentials**
+- [IN] `InArgument<Int32>` **RetryCount**
+- [IN] `InArgument<Int32>` **InitialDelay**
+- [IN] `InArgument<Double>` **Multiplier**
+- [IN] `InArgument<Boolean>` **UseJitter**
+- [IN] `InArgument<Int32>` **MaxRetryAfterDelay**
+- [IN] `InArgument<Boolean>` **PreferRetryAfterValue**
+- [IN] `InArgument<IEnumerable<Net.HttpStatusCode>>` **RetryStatusCodes**
+- [IN] `InArgument<Dictionary<String, String>>` **FormData**
+- [IN] `InArgument<String>` **TextPayload**
+- [IN] `InArgument<String>` **TextPayloadEncoding**
+- [IN] `InArgument<String>` **TextPayloadContentType**
+- [IN] `InArgument<Byte[]>` **BinaryPayload**
+- [IN] `InArgument<IEnumerable<UiPath.Web.Activities.Http.Models.FormDataPart>>` **FormDataParts**
+- [IN] `InArgument<IEnumerable<String>>` **LocalFiles**
+- [IN] `InArgument<IEnumerable<UiPath.Platform.ResourceHandling.IResource>>` **ResourceFiles**
+- [IN] `InArgument<String>` **FilePath**
+- [IN] `InArgument<UiPath.Platform.ResourceHandling.IResource>` **PathResource**
+- [IN] `InArgument<String>` **OutputFileName**
+- [IN] `InArgument<String>` **OutputFileTargetFolder**
+- [IN] `InArgument<Boolean>` **SaveResponseAsFile**
+- [IN] `InArgument<Boolean>` **SaveRawRequestResponse**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.Web.Activities.Http.Models.HttpMethod` **Method**
+- [property] `UiPath.Web.Activities.Http.Models.ProxySettingType` **ProxySetting**
+- [property] `UiPath.Web.Activities.Http.Models.AuthenticationType` **AuthenticationType**
+- [property] `UiPath.Web.Activities.Http.Models.RetryPolicyType` **RetryPolicyType**
+- [property] `UiPath.Web.Activities.Http.Models.HttpRequestBodyType` **RequestBodyType**
+- [property] `UiPath.Web.Activities.Http.Models.FileOverwriteOption` **FileOverwrite**
+---

@@ -1,0 +1,433 @@
+# UiPath.AzureWindowsVirtualDesktop.Activities 1.5.0
+
+> generator: uips-fixtures catalog v0.2
+> generated: 2026-04-09T22:10:08Z
+> set: full-catalog
+> url: https://uips-fixtures.github.io/llms/UiPath.AzureWindowsVirtualDesktop.Activities/1.5.0.txt
+> activities: 24
+> authors: UiPath
+**ID format**: `{fullName}@{packageId}/{packageVersion}`
+**Argument directions**: In (input), Out (output), InOut (bidirectional)
+
+---
+### Assign Users and Groups to Application Group
+
+**ID**: `UiPath.AzureWVD.Activities.AzureWVDAssignUsersGroupsToApplicationGroup@UiPath.AzureWindowsVirtualDesktop.Activities/1.5.0`
+**Type**: `UiPath.AzureWVD.Activities.AzureWVDAssignUsersGroupsToApplicationGroup`
+**Category**: Desktop and App Virtualization.Azure Virtual Desktop.Application Groups
+**Description**: Assigns users and groups to an application group.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.AzureWVD.Models.WVDApplicationGroup>` **ApplicationGroup**
+- [IN, Required] `InArgument<String[]>` **UsersAndGroupsIds**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **ScopeTag**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### For Each Application Group
+
+**ID**: `UiPath.AzureWVD.Activities.AzureWVDForEachApplicationGroup@UiPath.AzureWindowsVirtualDesktop.Activities/1.5.0`
+**Type**: `UiPath.AzureWVD.Activities.AzureWVDForEachApplicationGroup`
+**Category**: Desktop and App Virtualization.Azure Virtual Desktop.Application Groups
+**Description**: Performs an activity or a series of activities on each application group, in the current subscription, that matches the filter criteria.
+**Arguments**:
+- [IN] `InArgument<String>` **ResourceGroupName**
+- [IN] `InArgument<String>` **ApplicationGroupType**
+- [OUT] `OutArgument<Int32>` **Index**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **ScopeTag**
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Get Application Group
+
+**ID**: `UiPath.AzureWVD.Activities.AzureWVDGetApplicationGroup@UiPath.AzureWindowsVirtualDesktop.Activities/1.5.0`
+**Type**: `UiPath.AzureWVD.Activities.AzureWVDGetApplicationGroup`
+**Category**: Desktop and App Virtualization.Azure Virtual Desktop.Application Groups
+**Description**: Gets details about an application group.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **ApplicationGroupName**
+- [IN, Required] `InArgument<String>` **ResourceGroupName**
+- [OUT] `OutArgument<UiPath.AzureWVD.Models.WVDApplicationGroup>` **ApplicationGroup**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **ScopeTag**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Remove Users and Groups from Application Group
+
+**ID**: `UiPath.AzureWVD.Activities.AzureWVDRemoveUsersGroupsFromApplicationGroup@UiPath.AzureWindowsVirtualDesktop.Activities/1.5.0`
+**Type**: `UiPath.AzureWVD.Activities.AzureWVDRemoveUsersGroupsFromApplicationGroup`
+**Category**: Desktop and App Virtualization.Azure Virtual Desktop.Application Groups
+**Description**: Removes users and groups from an application group.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.AzureWVD.Models.WVDApplicationGroup>` **ApplicationGroup**
+- [IN, Required] `InArgument<String[]>` **UsersAndGroupsIds**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **ScopeTag**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Azure Virtual Desktop Scope
+
+**ID**: `UiPath.AzureWVD.Activities.AzureWVDScope@UiPath.AzureWindowsVirtualDesktop.Activities/1.5.0`
+**Type**: `UiPath.AzureWVD.Activities.AzureWVDScope`
+**Category**: Desktop and App Virtualization.Azure Virtual Desktop
+**Description**: Connects to Azure Virtual Desktop and provides a scope for other Azure Virtual Desktop activities.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **ClientID**
+- [IN, Required] `InArgument<Security.SecureString>` **ClientSecret**
+- [IN, Required] `InArgument<String>` **SubscriptionID**
+- [IN, Required] `InArgument<String>` **TenantID**
+- [IN] `InArgument<UiPath.Core.AzureWVDEnvironment>` **Environment**
+**Properties / VariableScope / Child**:
+- [property] `String` **ScopeTag**
+### Add Virtual Machine to Host Pool
+
+**ID**: `UiPath.AzureWVD.Activities.AzureWVDAddVMToHostPool@UiPath.AzureWindowsVirtualDesktop.Activities/1.5.0`
+**Type**: `UiPath.AzureWVD.Activities.AzureWVDAddVMToHostPool`
+**Category**: Desktop and App Virtualization.Azure Virtual Desktop.Host Pools
+**Description**: Adds an existing Azure virtual machine to the specified host pool.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.AzureWVD.Models.WVDHostPool>` **HostPool**
+- [IN, Required] `InArgument<String>` **Name**
+- [IN, Required] `InArgument<String>` **ResourceGroupName**
+- [IN] `InArgument<Int32>` **Timeout**
+- [IN] `InArgument<String>` **DomainToJoin**
+- [IN] `InArgument<String>` **DomainOrganizationalUnit**
+- [IN, Required] `InArgument<String>` **DomainUsername**
+- [IN, Required] `InArgument<Security.SecureString>` **DomainUserPassword**
+- [OUT] `OutArgument<UiPath.AzureWVD.Models.WVDSessionHost>` **SessionHost**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **WaitForCompletion**
+- [property] `String` **Connector**
+- [property] `String` **ScopeTag**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Create Host Pool
+
+**ID**: `UiPath.AzureWVD.Activities.AzureWVDCreateHostPool@UiPath.AzureWindowsVirtualDesktop.Activities/1.5.0`
+**Type**: `UiPath.AzureWVD.Activities.AzureWVDCreateHostPool`
+**Category**: Desktop and App Virtualization.Azure Virtual Desktop.Host Pools
+**Description**: Creates a new host pool. A default desktop application group is created by the activity.
+**Arguments**:
+- [IN] `InArgument<String>` **Description**
+- [IN] `InArgument<String>` **FriendlyName**
+- [IN, Required] `InArgument<String>` **Name**
+- [IN, Required] `InArgument<String>` **ResourceGroupName**
+- [IN, Required] `InArgument<String>` **Region**
+- [IN] `InArgument<Data.DataTable>` **Tags**
+- [IN] `InArgument<String>` **Workspace**
+- [IN] `InArgument<Nullable<Int32>>` **PooledDesktopMaxSessionLimit**
+- [OUT] `OutArgument<UiPath.AzureWVD.Models.WVDHostPool>` **HostPool**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **ValidationEnvironment**
+- [property] `UiPath.Core.HostPoolType` **Type**
+- [property] `UiPath.Core.PersonalDesktopAssignmentType` **PersonalDesktopAssignmentType**
+- [property] `UiPath.Core.LoadBalancerType` **PooledDesktopLoadBalancing**
+- [property] `String` **Connector**
+- [property] `String` **ScopeTag**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Delete Host Pool
+
+**ID**: `UiPath.AzureWVD.Activities.AzureWVDDeleteHostPool@UiPath.AzureWindowsVirtualDesktop.Activities/1.5.0`
+**Type**: `UiPath.AzureWVD.Activities.AzureWVDDeleteHostPool`
+**Category**: Desktop and App Virtualization.Azure Virtual Desktop.Host Pools
+**Description**: Deletes a host pool.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.AzureWVD.Models.WVDHostPool>` **HostPool**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **ScopeTag**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### For Each Host Pool
+
+**ID**: `UiPath.AzureWVD.Activities.AzureWVDForEachHostPool@UiPath.AzureWindowsVirtualDesktop.Activities/1.5.0`
+**Type**: `UiPath.AzureWVD.Activities.AzureWVDForEachHostPool`
+**Category**: Desktop and App Virtualization.Azure Virtual Desktop.Host Pools
+**Description**: Performs an activity or a series of activities on each host pool in the current subscription.
+**Arguments**:
+- [IN] `InArgument<String>` **ResourceGroupName**
+- [OUT] `OutArgument<Int32>` **Index**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **ScopeTag**
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Get Host Pool
+
+**ID**: `UiPath.AzureWVD.Activities.AzureWVDGetHostPool@UiPath.AzureWindowsVirtualDesktop.Activities/1.5.0`
+**Type**: `UiPath.AzureWVD.Activities.AzureWVDGetHostPool`
+**Category**: Desktop and App Virtualization.Azure Virtual Desktop.Host Pools
+**Description**: Gets details about a host pool.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **HostPoolName**
+- [IN, Required] `InArgument<String>` **ResourceGroupName**
+- [OUT] `OutArgument<UiPath.AzureWVD.Models.WVDHostPool>` **HostPool**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **ScopeTag**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Update Host Pool
+
+**ID**: `UiPath.AzureWVD.Activities.AzureWVDUpdateHostPool@UiPath.AzureWindowsVirtualDesktop.Activities/1.5.0`
+**Type**: `UiPath.AzureWVD.Activities.AzureWVDUpdateHostPool`
+**Category**: Desktop and App Virtualization.Azure Virtual Desktop.Host Pools
+**Description**: Updates a host pool.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.AzureWVD.Models.WVDHostPool>` **HostPool**
+- [IN] `InArgument<String>` **Description**
+- [IN] `InArgument<String>` **FriendlyName**
+- [IN] `InArgument<Data.DataTable>` **Tags**
+- [IN] `InArgument<Boolean>` **ValidationEnvironment**
+- [IN] `InArgument<Nullable<Int32>>` **PooledMaxSessionLimit**
+- [IN] `InArgument<String>` **PooledLoadBalancing**
+- [IN] `InArgument<String>` **PersonalDesktopAssignmentType**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **ScopeTag**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Delete Session Host
+
+**ID**: `UiPath.AzureWVD.Activities.AzureWVDDeleteSessionHost@UiPath.AzureWindowsVirtualDesktop.Activities/1.5.0`
+**Type**: `UiPath.AzureWVD.Activities.AzureWVDDeleteSessionHost`
+**Category**: Desktop and App Virtualization.Azure Virtual Desktop.Session Hosts
+**Description**: Deletes a session host.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.AzureWVD.Models.WVDSessionHost>` **SessionHost**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **ScopeTag**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### For Each Session Host
+
+**ID**: `UiPath.AzureWVD.Activities.AzureWVDForEachSessionHost@UiPath.AzureWindowsVirtualDesktop.Activities/1.5.0`
+**Type**: `UiPath.AzureWVD.Activities.AzureWVDForEachSessionHost`
+**Category**: Desktop and App Virtualization.Azure Virtual Desktop.Session Hosts
+**Description**: Performs an activity or a series of activities on each session host within the specified host pool.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.AzureWVD.Models.WVDHostPool>` **HostPool**
+- [OUT] `OutArgument<Int32>` **Index**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **ScopeTag**
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Get Session Host
+
+**ID**: `UiPath.AzureWVD.Activities.AzureWVDGetSessionHost@UiPath.AzureWindowsVirtualDesktop.Activities/1.5.0`
+**Type**: `UiPath.AzureWVD.Activities.AzureWVDGetSessionHost`
+**Category**: Desktop and App Virtualization.Azure Virtual Desktop.Session Hosts
+**Description**: Gets details about a session host within the specified host pool.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.AzureWVD.Models.WVDHostPool>` **HostPool**
+- [IN, Required] `InArgument<String>` **SessionHostName**
+- [OUT] `OutArgument<UiPath.AzureWVD.Models.WVDSessionHost>` **SessionHost**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **ScopeTag**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Update Session Host
+
+**ID**: `UiPath.AzureWVD.Activities.AzureWVDUpdateSessionHost@UiPath.AzureWindowsVirtualDesktop.Activities/1.5.0`
+**Type**: `UiPath.AzureWVD.Activities.AzureWVDUpdateSessionHost`
+**Category**: Desktop and App Virtualization.Azure Virtual Desktop.Session Hosts
+**Description**: Updates a session host.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.AzureWVD.Models.WVDSessionHost>` **SessionHost**
+- [IN] `InArgument<Boolean>` **AllowNewSession**
+- [IN] `InArgument<String>` **AssignedUser**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **ScopeTag**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Delete User Session
+
+**ID**: `UiPath.AzureWVD.Activities.AzureWVDDeleteUserSession@UiPath.AzureWindowsVirtualDesktop.Activities/1.5.0`
+**Type**: `UiPath.AzureWVD.Activities.AzureWVDDeleteUserSession`
+**Category**: Desktop and App Virtualization.Azure Virtual Desktop.User Sessions
+**Description**: Deletes (logs off) a user session.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.AzureWVD.Models.WVDUserSession>` **UserSession**
+- [IN] `InArgument<Boolean>` **Force**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **ScopeTag**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Disconnect User Session
+
+**ID**: `UiPath.AzureWVD.Activities.AzureWVDDisconnectUserSession@UiPath.AzureWindowsVirtualDesktop.Activities/1.5.0`
+**Type**: `UiPath.AzureWVD.Activities.AzureWVDDisconnectUserSession`
+**Category**: Desktop and App Virtualization.Azure Virtual Desktop.User Sessions
+**Description**: Disconnects a user session.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.AzureWVD.Models.WVDUserSession>` **UserSession**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **ScopeTag**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### For Each User Session
+
+**ID**: `UiPath.AzureWVD.Activities.AzureWVDForEachUserSession@UiPath.AzureWindowsVirtualDesktop.Activities/1.5.0`
+**Type**: `UiPath.AzureWVD.Activities.AzureWVDForEachUserSession`
+**Category**: Desktop and App Virtualization.Azure Virtual Desktop.User Sessions
+**Description**: Performs an activity or a series of activities on each user session within a specified session host.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.AzureWVD.Models.WVDSessionHost>` **SessionHost**
+- [OUT] `OutArgument<Int32>` **Index**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **ScopeTag**
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Send Message to User Session
+
+**ID**: `UiPath.AzureWVD.Activities.AzureWVDSendMessageToUserSession@UiPath.AzureWindowsVirtualDesktop.Activities/1.5.0`
+**Type**: `UiPath.AzureWVD.Activities.AzureWVDSendMessageToUserSession`
+**Category**: Desktop and App Virtualization.Azure Virtual Desktop.User Sessions
+**Description**: Sends a message to a user session.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.AzureWVD.Models.WVDUserSession>` **UserSession**
+- [IN, Required] `InArgument<String>` **MessageTitle**
+- [IN, Required] `InArgument<String>` **MessageBody**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **ScopeTag**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Create Workspace
+
+**ID**: `UiPath.AzureWVD.Activities.AzureWVDCreateWorkspace@UiPath.AzureWindowsVirtualDesktop.Activities/1.5.0`
+**Type**: `UiPath.AzureWVD.Activities.AzureWVDCreateWorkspace`
+**Category**: Desktop and App Virtualization.Azure Virtual Desktop.Workspaces
+**Description**: Creates a new workspace.
+**Arguments**:
+- [IN] `InArgument<String>` **Description**
+- [IN] `InArgument<String>` **FriendlyName**
+- [IN, Required] `InArgument<String>` **Name**
+- [IN, Required] `InArgument<String>` **ResourceGroupName**
+- [IN, Required] `InArgument<String>` **Region**
+- [IN] `InArgument<Data.DataTable>` **Tags**
+- [IN] `InArgument<String[]>` **ApplicationGroupsToRegister**
+- [OUT] `OutArgument<UiPath.AzureWVD.Models.WVDWorkspace>` **Workspace**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **ScopeTag**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Delete Workspace
+
+**ID**: `UiPath.AzureWVD.Activities.AzureWVDDeleteWorkspace@UiPath.AzureWindowsVirtualDesktop.Activities/1.5.0`
+**Type**: `UiPath.AzureWVD.Activities.AzureWVDDeleteWorkspace`
+**Category**: Desktop and App Virtualization.Azure Virtual Desktop.Workspaces
+**Description**: Deletes a workspace.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.AzureWVD.Models.WVDWorkspace>` **Workspace**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **ScopeTag**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### For Each Workspace
+
+**ID**: `UiPath.AzureWVD.Activities.AzureWVDForEachWorkspace@UiPath.AzureWindowsVirtualDesktop.Activities/1.5.0`
+**Type**: `UiPath.AzureWVD.Activities.AzureWVDForEachWorkspace`
+**Category**: Desktop and App Virtualization.Azure Virtual Desktop.Workspaces
+**Description**: Performs an activity or a series of activities on each workspace, in the current subscription, that matches the filter criteria.
+**Arguments**:
+- [IN] `InArgument<String>` **ResourceGroupName**
+- [OUT] `OutArgument<Int32>` **Index**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **ScopeTag**
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Get Workspace
+
+**ID**: `UiPath.AzureWVD.Activities.AzureWVDGetWorkspace@UiPath.AzureWindowsVirtualDesktop.Activities/1.5.0`
+**Type**: `UiPath.AzureWVD.Activities.AzureWVDGetWorkspace`
+**Category**: Desktop and App Virtualization.Azure Virtual Desktop.Workspaces
+**Description**: Gets details about a workspace.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **WorkspaceName**
+- [IN, Required] `InArgument<String>` **ResourceGroupName**
+- [OUT] `OutArgument<UiPath.AzureWVD.Models.WVDWorkspace>` **Workspace**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **ScopeTag**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Update Workspace
+
+**ID**: `UiPath.AzureWVD.Activities.AzureWVDUpdateWorkspace@UiPath.AzureWindowsVirtualDesktop.Activities/1.5.0`
+**Type**: `UiPath.AzureWVD.Activities.AzureWVDUpdateWorkspace`
+**Category**: Desktop and App Virtualization.Azure Virtual Desktop.Workspaces
+**Description**: Updates a workspace.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.AzureWVD.Models.WVDWorkspace>` **Workspace**
+- [IN] `InArgument<String>` **Description**
+- [IN] `InArgument<String>` **FriendlyName**
+- [IN] `InArgument<String[]>` **ApplicationGroupsToAdd**
+- [IN] `InArgument<String[]>` **ApplicationGroupsToRemove**
+- [IN] `InArgument<Data.DataTable>` **Tags**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **ScopeTag**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+---

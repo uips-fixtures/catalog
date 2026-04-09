@@ -1,5 +1,18 @@
 # catalog justfile — pipeline tasks for activity-catalog data
 
+# Seed latest-stable PackageFurnace results for every unpinned package in curated.yaml.
+# Run this before `build` to ensure all latest-stable sets have up-to-date activity data.
+seed:
+    uv run scripts/seed_latest.py
+
+# Seed a single set (e.g. `just seed-set reframework-core`)
+seed-set set:
+    uv run scripts/seed_latest.py --set {{set}}
+
+# Seed every package in the full UiPath official feed at latest-stable (~904 packages).
+seed-full:
+    uv run scripts/seed_latest.py --full-feed
+
 # Extract engine-results from NuGet packages via PackageFurnace CLI.
 # PackageFurnace must be installed: run `just install` in the PackageFurnace repo.
 # Override binary path with:  PF_EXE=/path/to/PackageFurnace just extract

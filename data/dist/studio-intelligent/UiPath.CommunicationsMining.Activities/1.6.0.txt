@@ -1,0 +1,186 @@
+# UiPath.CommunicationsMining.Activities 1.6.0
+
+> generator: uips-fixtures catalog v0.2
+> generated: 2026-04-09T22:10:08Z
+> set: studio-intelligent
+> url: https://uips-fixtures.github.io/llms/UiPath.CommunicationsMining.Activities/1.6.0.txt
+> activities: 13
+> authors: UiPath
+**ID format**: `{fullName}@{packageId}/{packageVersion}`
+**Argument directions**: In (input), Out (output), InOut (bidirectional)
+
+---
+### Advance Stream
+
+**ID**: `UiPath.CommunicationsMining.Activities.Streams.AdvanceStream@UiPath.CommunicationsMining.Activities/1.6.0`
+**Type**: `UiPath.CommunicationsMining.Activities.Streams.AdvanceStream`
+**Category**: Communications Mining
+**Description**: Advance Stream
+**Arguments**:
+- [IN] `InArgument<UiPath.CommunicationsMining.Activities.Streams.Models.IAdvance>` **Stream**
+- [IN] `InArgument<String>` **SequenceId**
+- [OUT] `OutArgument<UiPath.CommunicationsMining.Activities.Streams.Models.AdvanceResponse>` **Response**
+### Fetch Batch from Stream (Legacy)
+
+**ID**: `UiPath.CommunicationsMining.Activities.Streams.FetchBatch@UiPath.CommunicationsMining.Activities/1.6.0`
+**Type**: `UiPath.CommunicationsMining.Activities.Streams.FetchBatch`
+**Category**: Communications Mining
+**Description**: This activity is legacy, you should use "Get Stream Results" instead.
+**Arguments**:
+- [IN] `InArgument<String>` **Dataset**
+- [IN] `InArgument<String>` **Project**
+- [IN] `InArgument<String>` **Stream**
+- [OUT] `OutArgument<UiPath.CommunicationsMining.Activities.Streams.Models.FetchResponse>` **Response**
+### Get Stream Results
+
+**ID**: `UiPath.CommunicationsMining.Activities.Streams.GetStreamResults@UiPath.CommunicationsMining.Activities/1.6.0`
+**Type**: `UiPath.CommunicationsMining.Activities.Streams.GetStreamResults`
+**Category**: Communications Mining
+**Description**: Get results from a Communications Mining stream
+**Arguments**:
+- [IN] `InArgument<String>` **Dataset**
+- [IN] `InArgument<String>` **Project**
+- [IN] `InArgument<String>` **Stream**
+- [OUT] `OutArgument<UiPath.CommunicationsMining.Activities.Streams.Models.GetStreamResultsResponse>` **Results**
+### Reset Stream
+
+**ID**: `UiPath.CommunicationsMining.Activities.Streams.ResetStream@UiPath.CommunicationsMining.Activities/1.6.0`
+**Type**: `UiPath.CommunicationsMining.Activities.Streams.ResetStream`
+**Category**: Communications Mining
+**Description**: Reset Stream
+**Arguments**:
+- [IN] `InArgument<String>` **Dataset**
+- [IN] `InArgument<String>` **Project**
+- [IN] `InArgument<String>` **Stream**
+- [IN] `InArgument<DateTime>` **ResetDateTime**
+- [OUT] `OutArgument<UiPath.CommunicationsMining.Activities.Streams.Models.ResetResponse>` **Response**
+### Get Record
+
+**ID**: `UiPath.CommunicationsMining.Activities.Sources.GetRecord@UiPath.CommunicationsMining.Activities/1.6.0`
+**Type**: `UiPath.CommunicationsMining.Activities.Sources.GetRecord`
+**Category**: Communications Mining
+**Description**: Get Record
+**Arguments**:
+- [IN] `InArgument<String>` **RecordId**
+- [IN] `InArgument<String>` **Source**
+- [IN] `InArgument<String>` **Project**
+- [OUT] `OutArgument<UiPath.CommunicationsMining.Activities.Records.Models.Record>` **Record**
+### Upload Record(s)
+
+**ID**: `UiPath.CommunicationsMining.Activities.Sources.UploadRecords@UiPath.CommunicationsMining.Activities/1.6.0`
+**Type**: `UiPath.CommunicationsMining.Activities.Sources.UploadRecords`
+**Category**: Communications Mining
+**Description**: Upload records to a Communications Mining source
+**Arguments**:
+- [IN] `InArgument<UiPath.CommunicationsMining.Activities.Records.Models.Record>` **Record**
+- [IN] `InArgument<List<UiPath.CommunicationsMining.Activities.Records.Models.Record>>` **Records**
+- [IN] `InArgument<String>` **Source**
+- [IN] `InArgument<String>` **Project**
+- [OUT] `OutArgument<List<UiPath.CommunicationsMining.Activities.Sources.Models.SyncRecordResponse>>` **Responses**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **UploadAList**
+### Create Record
+
+**ID**: `UiPath.CommunicationsMining.Activities.Records.CreateRecord@UiPath.CommunicationsMining.Activities/1.6.0`
+**Type**: `UiPath.CommunicationsMining.Activities.Records.CreateRecord`
+**Category**: Communications Mining
+**Description**: Create Communications Mining Record
+**Arguments**:
+- [IN] `InArgument<String>` **RecordId**
+- [IN] `InArgument<String>` **ExternalCommentId**
+- [IN] `InArgument<DateTime>` **Timestamp**
+- [IN] `InArgument<String>` **MessageBody**
+- [IN] `InArgument<String>` **ThreadId**
+- [IN] `InArgument<String>` **EmailThreadId**
+- [IN] `InArgument<String>` **Subject**
+- [IN] `InArgument<String>` **From**
+- [IN] `InArgument<String>` **To**
+- [IN] `InArgument<String>` **Cc**
+- [IN] `InArgument<String>` **Bcc**
+- [OUT] `OutArgument<UiPath.CommunicationsMining.Activities.Records.Models.Record>` **Record**
+**Properties / VariableScope / Child**:
+- [property] `Dictionary<String, InArgument<String>>` **UserStringProperties**
+- [property] `Dictionary<String, InArgument<Double>>` **UserNumberProperties**
+### Predict Record(s)
+
+**ID**: `UiPath.CommunicationsMining.Activities.Predictions.PredictRecords@UiPath.CommunicationsMining.Activities/1.6.0`
+**Type**: `UiPath.CommunicationsMining.Activities.Predictions.PredictRecords`
+**Category**: Communications Mining
+**Description**: Predict Record(s)
+**Arguments**:
+- [IN] `InArgument<String>` **Project**
+- [IN] `InArgument<String>` **Dataset**
+- [IN] `InArgument<String>` **AiModelVersion**
+- [IN] `InArgument<Double>` **Threshold**
+- [IN] `InArgument<UiPath.CommunicationsMining.Activities.Records.Models.Record>` **Record**
+- [IN] `InArgument<List<UiPath.CommunicationsMining.Activities.Records.Models.Record>>` **Records**
+- [IN] `InArgument<String>` **TransformTag**
+- [OUT] `OutArgument<UiPath.CommunicationsMining.Activities.Predictions.Models.PredictResponse>` **Prediction**
+**Properties / VariableScope / Child**:
+- [property] `Boolean` **UploadAList**
+### Create Communications Mining Validation Action
+
+**ID**: `UiPath.CommunicationsMining.Activities.DataValidation.CreateCommunicationsMiningValidationAction@UiPath.CommunicationsMining.Activities/1.6.0`
+**Type**: `UiPath.CommunicationsMining.Activities.DataValidation.CreateCommunicationsMiningValidationAction`
+**Category**: Communications Mining
+**Description**: Create Communications Mining Validation Action
+**Arguments**:
+- [IN] `InArgument<String>` **ActionTitle**
+- [IN] `InArgument<String>` **ActionPriority**
+- [IN] `InArgument<String>` **ActionCatalogue**
+- [OUT] `OutArgument<UiPath.CommunicationsMining.Activities.DataValidation.CreatedValidationAction>` **CreatedValidationAction**
+- [IN] `InArgument<UiPath.CommunicationsMining.Activities.Streams.Models.StreamResult>` **StreamResult**
+- [IN] `InArgument<UiPath.CommunicationsMining.Activities.Streams.Models.ModelDetails>` **Model**
+- [IN] `InArgument<String>` **OrchestratorBucketFolderPath**
+- [IN] `InArgument<String>` **OrchestratorBucketName**
+- [IN] `InArgument<String>` **OrchestratorBucketDirectoryPath**
+- [IN] `InArgument<Nullable<Int32>>` **OrchestratorTimeout**
+### Create Communications Mining Validation Artifacts
+
+**ID**: `UiPath.CommunicationsMining.Activities.DataValidation.CreateCommunicationsMiningValidationArtifacts@UiPath.CommunicationsMining.Activities/1.6.0`
+**Type**: `UiPath.CommunicationsMining.Activities.DataValidation.CreateCommunicationsMiningValidationArtifacts`
+**Category**: Communications Mining
+**Arguments**:
+- [OUT] `OutArgument<UiPath.DocumentProcessing.Contracts.Actions.ContentValidationData>` **ContentValidationData**
+- [IN] `InArgument<UiPath.CommunicationsMining.Activities.Streams.Models.StreamResult>` **StreamResult**
+- [IN] `InArgument<UiPath.CommunicationsMining.Activities.Streams.Models.ModelDetails>` **Model**
+- [IN] `InArgument<String>` **OrchestratorBucketFolderPath**
+- [IN] `InArgument<String>` **OrchestratorBucketName**
+- [IN] `InArgument<String>` **OrchestratorBucketDirectoryPath**
+- [IN] `InArgument<Nullable<Int32>>` **OrchestratorTimeout**
+### Retrieve Communications Mining Validation Artifacts
+
+**ID**: `UiPath.CommunicationsMining.Activities.DataValidation.RetrieveCommunicationsMiningValidationArtifacts@UiPath.CommunicationsMining.Activities/1.6.0`
+**Type**: `UiPath.CommunicationsMining.Activities.DataValidation.RetrieveCommunicationsMiningValidationArtifacts`
+**Category**: Communications Mining
+**Description**: Retrieve Communications Mining Validation Artifacts
+**Arguments**:
+- [IN] `InArgument<UiPath.DocumentProcessing.Contracts.Actions.ContentValidationData>` **ContentValidationData**
+- [IN] `InArgument<Boolean>` **RemoveDataFromStorage**
+- [OUT] `OutArgument<UiPath.CommunicationsMining.Activities.Streams.Models.StreamResult>` **StreamResult**
+- [IN] `InArgument<String>` **OrchestratorBucketFolderPath**
+- [IN] `InArgument<String>` **OrchestratorBucketName**
+- [IN] `InArgument<String>` **OrchestratorBucketDirectoryPath**
+- [IN] `InArgument<Nullable<Int32>>` **OrchestratorTimeout**
+### Wait For Communications Mining Validation Action
+
+**ID**: `UiPath.CommunicationsMining.Activities.DataValidation.WaitForCommunicationsMiningValidationAction@UiPath.CommunicationsMining.Activities/1.6.0`
+**Type**: `UiPath.CommunicationsMining.Activities.DataValidation.WaitForCommunicationsMiningValidationAction`
+**Category**: Communications Mining
+**Description**: Wait For Communications Mining Validation Action
+**Arguments**:
+- [IN] `InArgument<UiPath.CommunicationsMining.Activities.DataValidation.CreatedValidationAction>` **CreatedValidationAction**
+- [IN] `InArgument<Boolean>` **RemoveDataAfterProcessing**
+- [OUT] `OutArgument<UiPath.CommunicationsMining.Activities.Streams.Models.StreamResult>` **ValidatedStreamResult**
+**Properties / VariableScope / Child**:
+- [property] `UiPath.CommunicationsMining.Activities.Actions.IActionCenterServiceFactory` **ActionCenterServiceFactory**
+### Get Attachment
+
+**ID**: `UiPath.CommunicationsMining.Activities.Attachments.GetAttachment@UiPath.CommunicationsMining.Activities/1.6.0`
+**Type**: `UiPath.CommunicationsMining.Activities.Attachments.GetAttachment`
+**Category**: Communications Mining
+**Description**: Retrieve an attachment from Communications Mining
+**Arguments**:
+- [IN] `InArgument<String>` **AttachmentReference**
+- [OUT] `OutArgument<UiPath.CommunicationsMining.Activities.Attachments.CommunicationsMiningAttachmentLocalItem>` **Attachment**
+---

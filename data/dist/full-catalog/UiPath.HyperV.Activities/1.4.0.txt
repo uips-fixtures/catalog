@@ -1,0 +1,306 @@
+# UiPath.HyperV.Activities 1.4.0
+
+> generator: uips-fixtures catalog v0.2
+> generated: 2026-04-09T22:10:08Z
+> set: full-catalog
+> url: https://uips-fixtures.github.io/llms/UiPath.HyperV.Activities/1.4.0.txt
+> activities: 20
+> authors: UiPath
+**ID format**: `{fullName}@{packageId}/{packageVersion}`
+**Argument directions**: In (input), Out (output), InOut (bidirectional)
+
+---
+### HyperV Scope
+
+**ID**: `UiPath.HyperV.Activities.HyperVScope@UiPath.HyperV.Activities/1.4.0`
+**Type**: `UiPath.HyperV.Activities.HyperVScope`
+**Description**: Connects to a Hyper-V Host and provides a scope for other Hyper-V activities.
+**Arguments**:
+- [IN] `InArgument<String>` **HyperVHost**
+- [IN] `InArgument<String>` **Username**
+- [IN] `InArgument<Security.SecureString>` **Password**
+### Delete All VM Checkpoints
+
+**ID**: `UiPath.HyperV.Activities.HyperVDeleteAllVMCheckpoints@UiPath.HyperV.Activities/1.4.0`
+**Type**: `UiPath.HyperV.Activities.HyperVDeleteAllVMCheckpoints`
+**Description**: Deletes all checkpoints of the specified virtual machine.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.HyperV.Models.VirtualMachine>` **VirtualMachine**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Delete VM Checkpoint
+
+**ID**: `UiPath.HyperV.Activities.HyperVDeleteVMCheckpoint@UiPath.HyperV.Activities/1.4.0`
+**Type**: `UiPath.HyperV.Activities.HyperVDeleteVMCheckpoint`
+**Description**: Deletes a given checkpoint of the specified virtual machine.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.HyperV.Models.VirtualMachine>` **VirtualMachine**
+- [IN, Required] `InArgument<UiPath.HyperV.Models.Checkpoint>` **Checkpoint**
+- [IN] `InArgument<Boolean>` **IncludeAllChildCheckpoints**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Get VM Checkpoint List
+
+**ID**: `UiPath.HyperV.Activities.HyperVGetVMCheckpointList@UiPath.HyperV.Activities/1.4.0`
+**Type**: `UiPath.HyperV.Activities.HyperVGetVMCheckpointList`
+**Description**: Retrieves all checkpoints of the specified virtual machine.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.HyperV.Models.VirtualMachine>` **VirtualMachine**
+- [OUT] `OutArgument<List<UiPath.HyperV.Models.Checkpoint>>` **Checkpoints**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Revert VM to Checkpoint
+
+**ID**: `UiPath.HyperV.Activities.HyperVRevertVMCheckpoint@UiPath.HyperV.Activities/1.4.0`
+**Type**: `UiPath.HyperV.Activities.HyperVRevertVMCheckpoint`
+**Description**: Reverts the virtual machine to a specified checkpoint. If no checkpoint exists, the activity does nothing and the virtual machine state remains unchanged.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.HyperV.Models.VirtualMachine>` **VirtualMachine**
+- [IN] `InArgument<UiPath.HyperV.Models.Checkpoint>` **Checkpoint**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Take VM Checkpoint
+
+**ID**: `UiPath.HyperV.Activities.HyperVTakeVMCheckpoint@UiPath.HyperV.Activities/1.4.0`
+**Type**: `UiPath.HyperV.Activities.HyperVTakeVMCheckpoint`
+**Description**: Takes a checkpoint of the specified virtual machine.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.HyperV.Models.VirtualMachine>` **VirtualMachine**
+- [IN, Required] `InArgument<String>` **CheckpointName**
+- [IN] `InArgument<String>` **CheckpointDescription**
+- [OUT] `OutArgument<UiPath.HyperV.Models.Checkpoint>` **Checkpoint**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Configure Robot
+
+**ID**: `UiPath.HyperV.Activities.HyperVConfigureRobot@UiPath.HyperV.Activities/1.4.0`
+**Type**: `UiPath.HyperV.Activities.HyperVConfigureRobot`
+**Description**: Connects the Robot in a given VM to Orchestrator.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.HyperV.Models.VirtualMachine>` **VirtualMachine**
+- [IN] `InArgument<String>` **OrchestratorURL**
+- [IN] `InArgument<String>` **OrchestratorConnectionString**
+- [IN] `InArgument<String>` **MachineKey**
+- [IN, Required] `InArgument<String>` **Username**
+- [IN, Required] `InArgument<Security.SecureString>` **Password**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Create VM From Template
+
+**ID**: `UiPath.HyperV.Activities.HyperVCreateVM@UiPath.HyperV.Activities/1.4.0`
+**Type**: `UiPath.HyperV.Activities.HyperVCreateVM`
+**Description**: Provisions a new virtual machine from a template.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **VirtualMachineName**
+- [IN] `InArgument<String>` **VirtualMachineDescription**
+- [IN] `InArgument<String>` **Location**
+- [IN] `InArgument<UiPath.Core.VMGeneration>` **Generation**
+- [IN, Required] `InArgument<String>` **VhdFile**
+- [IN] `InArgument<Boolean>` **PowerOnAfterCreation**
+- [IN] `InArgument<Nullable<Int32>>` **StartupMemoryInMB**
+- [IN] `InArgument<Boolean>` **UseDynamicMemory**
+- [OUT] `OutArgument<UiPath.HyperV.Models.VirtualMachine>` **VirtualMachine**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Delete VM
+
+**ID**: `UiPath.HyperV.Activities.HyperVDeleteVM@UiPath.HyperV.Activities/1.4.0`
+**Type**: `UiPath.HyperV.Activities.HyperVDeleteVM`
+**Description**: Deletes a virtual machine.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.HyperV.Models.VirtualMachine>` **VirtualMachine**
+- [IN] `InArgument<Boolean>` **DeleteAssociatedDisks**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Export VM
+
+**ID**: `UiPath.HyperV.Activities.HyperVExportVM@UiPath.HyperV.Activities/1.4.0`
+**Type**: `UiPath.HyperV.Activities.HyperVExportVM`
+**Description**: Exports a virtual machine.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.HyperV.Models.VirtualMachine>` **VirtualMachine**
+- [IN, Required] `InArgument<String>` **Folder**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Get VM by ID
+
+**ID**: `UiPath.HyperV.Activities.HyperVGetVMByID@UiPath.HyperV.Activities/1.4.0`
+**Type**: `UiPath.HyperV.Activities.HyperVGetVMByID`
+**Description**: Retrieves the details of the specified virtual machine.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **VirtualMachineId**
+- [OUT] `OutArgument<UiPath.HyperV.Models.VirtualMachine>` **VirtualMachine**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Get VM List
+
+**ID**: `UiPath.HyperV.Activities.HyperVGetVMList@UiPath.HyperV.Activities/1.4.0`
+**Type**: `UiPath.HyperV.Activities.HyperVGetVMList`
+**Description**: Retrieves a list of virtual machines.
+**Arguments**:
+- [IN] `InArgument<String>` **FilterBy**
+- [IN] `InArgument<String>` **FilterOperator**
+- [IN] `InArgument<String>` **FilterValue**
+- [IN] `InArgument<String>` **Generation**
+- [IN] `InArgument<String>` **State**
+- [IN] `InArgument<Boolean>` **IncludeGuestOSDetails**
+- [OUT] `OutArgument<UiPath.HyperV.Models.VirtualMachine[]>` **VMList**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Import VM
+
+**ID**: `UiPath.HyperV.Activities.HyperVImportVM@UiPath.HyperV.Activities/1.4.0`
+**Type**: `UiPath.HyperV.Activities.HyperVImportVM`
+**Description**: Imports a virtual machine.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **VMFile**
+- [IN, Required] `InArgument<String>` **CheckpointFolder**
+- [IN, Required] `InArgument<UiPath.Core.VMImportType>` **ImportType**
+- [IN, Required] `InArgument<String>` **VhdFolder**
+- [IN] `InArgument<String>` **VMName**
+- [IN] `InArgument<String>` **StorageFolder**
+- [IN] `InArgument<String>` **Location**
+- [OUT] `OutArgument<UiPath.HyperV.Models.VirtualMachine>` **VirtualMachine**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Pause VM
+
+**ID**: `UiPath.HyperV.Activities.HyperVPauseVM@UiPath.HyperV.Activities/1.4.0`
+**Type**: `UiPath.HyperV.Activities.HyperVPauseVM`
+**Description**: Pauses a virtual machine.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.HyperV.Models.VirtualMachine>` **VirtualMachine**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Rename VM
+
+**ID**: `UiPath.HyperV.Activities.HyperVRenameVM@UiPath.HyperV.Activities/1.4.0`
+**Type**: `UiPath.HyperV.Activities.HyperVRenameVM`
+**Description**: Renames a virtual machine.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.HyperV.Models.VirtualMachine>` **VirtualMachine**
+- [IN, Required] `InArgument<String>` **NewName**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Reset VM
+
+**ID**: `UiPath.HyperV.Activities.HyperVResetVM@UiPath.HyperV.Activities/1.4.0`
+**Type**: `UiPath.HyperV.Activities.HyperVResetVM`
+**Description**: Resets a virtual machine.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.HyperV.Models.VirtualMachine>` **VirtualMachine**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Resume VM
+
+**ID**: `UiPath.HyperV.Activities.HyperVResumeVM@UiPath.HyperV.Activities/1.4.0`
+**Type**: `UiPath.HyperV.Activities.HyperVResumeVM`
+**Description**: Resumes a virtual machine.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.HyperV.Models.VirtualMachine>` **VirtualMachine**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Shutdown VM
+
+**ID**: `UiPath.HyperV.Activities.HyperVShutdownVM@UiPath.HyperV.Activities/1.4.0`
+**Type**: `UiPath.HyperV.Activities.HyperVShutdownVM`
+**Description**: Shuts down the Operating System of the specified virtual machine.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.HyperV.Models.VirtualMachine>` **VirtualMachine**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Start VM
+
+**ID**: `UiPath.HyperV.Activities.HyperVStartVM@UiPath.HyperV.Activities/1.4.0`
+**Type**: `UiPath.HyperV.Activities.HyperVStartVM`
+**Description**: Starts a virtual machine.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.HyperV.Models.VirtualMachine>` **VirtualMachine**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Turn Off VM
+
+**ID**: `UiPath.HyperV.Activities.HyperVTurnOffVM@UiPath.HyperV.Activities/1.4.0`
+**Type**: `UiPath.HyperV.Activities.HyperVTurnOffVM`
+**Description**: Turns off a virtual machine.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.HyperV.Models.VirtualMachine>` **VirtualMachine**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+---

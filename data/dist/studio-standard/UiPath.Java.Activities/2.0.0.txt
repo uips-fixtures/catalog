@@ -1,0 +1,70 @@
+# UiPath.Java.Activities 2.0.0
+
+> generator: uips-fixtures catalog v0.2
+> generated: 2026-04-09T22:10:08Z
+> set: studio-standard
+> url: https://uips-fixtures.github.io/llms/UiPath.Java.Activities/2.0.0.txt
+> activities: 6
+> authors: UiPath
+**ID format**: `{fullName}@{packageId}/{packageVersion}`
+**Argument directions**: In (input), Out (output), InOut (bidirectional)
+
+---
+### Convert Java Object
+
+**ID**: `UiPath.Java.Activities.ConvertJavaObject@UiPath.Java.Activities/2.0.0`
+**Type**: `UiPath.Java.Activities.ConvertJavaObject`
+**Description**: Convert a java object to the specified .net type. If the cast was not possible throws exception.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.Java.JavaObject>` **JavaObject**
+- [OUT] `OutArgument<T>` **Result**
+### Create Java Object
+
+**ID**: `UiPath.Java.Activities.CreateJavaObject@UiPath.Java.Activities/2.0.0`
+**Type**: `UiPath.Java.Activities.CreateJavaObject`
+**Description**: Invokes the constructor on the specified class.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **TargetType**
+- [OUT] `OutArgument<UiPath.Java.JavaObject>` **Result**
+- [IN] `InArgument<List<Object>>` **ParametersList**
+**Properties / VariableScope / Child**:
+- [property] `List<InArgument>` **Parameters**
+### Get Field
+
+**ID**: `UiPath.Java.Activities.GetJavaField@UiPath.Java.Activities/2.0.0`
+**Type**: `UiPath.Java.Activities.GetJavaField`
+**Description**: Returns a public field from a java object.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **FieldName**
+- [IN, Required] `InArgument<UiPath.Java.JavaObject>` **TargetObject**
+- [IN, Required] `InArgument<String>` **TargetType**
+- [OUT] `OutArgument<UiPath.Java.JavaObject>` **Result**
+### Invoke Java Method
+
+**ID**: `UiPath.Java.Activities.InvokeJavaMethod@UiPath.Java.Activities/2.0.0`
+**Type**: `UiPath.Java.Activities.InvokeJavaMethod`
+**Description**: Invoke Java Method
+**Arguments**:
+- [IN, Required] `InArgument<String>` **MethodName**
+- [IN, Required] `InArgument<UiPath.Java.JavaObject>` **TargetObject**
+- [IN, Required] `InArgument<String>` **TargetType**
+- [OUT] `OutArgument<UiPath.Java.JavaObject>` **Result**
+- [IN] `InArgument<List<Object>>` **ParametersList**
+**Properties / VariableScope / Child**:
+- [property] `List<InArgument>` **Parameters**
+### Java Scope
+
+**ID**: `UiPath.Java.Activities.JavaScope@UiPath.Java.Activities/2.0.0`
+**Type**: `UiPath.Java.Activities.JavaScope`
+**Description**: Java Activities Container
+**Arguments**:
+- [IN] `InArgument<String>` **JavaPath**
+- [IN] `InArgument<Int32>` **TimeoutMS** (default: 15000)
+### Load Jar
+
+**ID**: `UiPath.Java.Activities.LoadJar@UiPath.Java.Activities/2.0.0`
+**Type**: `UiPath.Java.Activities.LoadJar`
+**Description**: Loads a jar in the current java scope.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **JarPath**
+---

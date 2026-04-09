@@ -1,0 +1,702 @@
+# UiPath.AzureActiveDirectory.Activities 1.6.3
+
+> generator: uips-fixtures catalog v0.2
+> generated: 2026-04-09T22:10:08Z
+> set: integration-service
+> url: https://uips-fixtures.github.io/llms/UiPath.AzureActiveDirectory.Activities/1.6.3.txt
+> activities: 45
+> authors: UiPath
+**ID format**: `{fullName}@{packageId}/{packageVersion}`
+**Argument directions**: In (input), Out (output), InOut (bidirectional)
+
+---
+### Create Assigned Group
+
+**ID**: `UiPath.AzureActiveDirectory.Activities.AzureADCreateAssignedGroup@UiPath.AzureActiveDirectory.Activities/1.6.3`
+**Type**: `UiPath.AzureActiveDirectory.Activities.AzureADCreateAssignedGroup`
+**Category**: Identity Services.Azure Active Directory.Groups
+**Description**: Creates a new assigned group in Azure Active Directory.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.AzureActiveDirectory.Contracts.Groups.GroupType>` **Type**
+- [IN, Required] `InArgument<String>` **Name**
+- [IN] `InArgument<String>` **Description**
+- [IN, Required] `InArgument<String>` **MailNickname**
+- [IN, Required] `InArgument<Boolean>` **MailEnabled**
+- [IN, Required] `InArgument<Boolean>` **SecurityEnabled**
+- [IN] `InArgument<String>` **Visibility**
+- [OUT] `OutArgument<UiPath.AzureActiveDirectory.Contracts.Groups.GroupInfo>` **Group**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Delete Group
+
+**ID**: `UiPath.AzureActiveDirectory.Activities.AzureADDeleteGroup@UiPath.AzureActiveDirectory.Activities/1.6.3`
+**Type**: `UiPath.AzureActiveDirectory.Activities.AzureADDeleteGroup`
+**Category**: Identity Services.Azure Active Directory.Groups
+**Description**: Deletes a group from Azure Active Directory.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **GroupId**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### For Each Group
+
+**ID**: `UiPath.AzureActiveDirectory.Activities.AzureADForEachGroup@UiPath.AzureActiveDirectory.Activities/1.6.3`
+**Type**: `UiPath.AzureActiveDirectory.Activities.AzureADForEachGroup`
+**Category**: Identity Services.Azure Active Directory.Groups
+**Description**: Gets detailed information about the groups matching a filter criteria.
+**Arguments**:
+- [IN] `InArgument<Int32>` **Top**
+- [IN] `InArgument<String>` **ODataFilter**
+- [OUT] `OutArgument<Int32>` **CurrentIndex**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Get Group by Id
+
+**ID**: `UiPath.AzureActiveDirectory.Activities.AzureADGetGroupById@UiPath.AzureActiveDirectory.Activities/1.6.3`
+**Type**: `UiPath.AzureActiveDirectory.Activities.AzureADGetGroupById`
+**Category**: Identity Services.Azure Active Directory.Groups
+**Description**: Gets detailed information about a group.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **GroupId**
+- [OUT] `OutArgument<UiPath.AzureActiveDirectory.Contracts.Groups.GroupInfo>` **Group**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Get Group by Name
+
+**ID**: `UiPath.AzureActiveDirectory.Activities.AzureADGetGroupByName@UiPath.AzureActiveDirectory.Activities/1.6.3`
+**Type**: `UiPath.AzureActiveDirectory.Activities.AzureADGetGroupByName`
+**Category**: Identity Services.Azure Active Directory.Groups
+**Description**: Gets detailed information about the first group having the specified displayed name.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **Name**
+- [OUT] `OutArgument<UiPath.AzureActiveDirectory.Contracts.Groups.GroupInfo>` **Group**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Group Exists
+
+**ID**: `UiPath.AzureActiveDirectory.Activities.AzureADGroupExists@UiPath.AzureActiveDirectory.Activities/1.6.3`
+**Type**: `UiPath.AzureActiveDirectory.Activities.AzureADGroupExists`
+**Category**: Identity Services.Azure Active Directory.Groups
+**Description**: Checks if a group exists in Azure Active Directory.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **Name**
+- [OUT] `OutArgument<Boolean>` **Exists**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Update Group
+
+**ID**: `UiPath.AzureActiveDirectory.Activities.AzureADUpdateGroup@UiPath.AzureActiveDirectory.Activities/1.6.3`
+**Type**: `UiPath.AzureActiveDirectory.Activities.AzureADUpdateGroup`
+**Category**: Identity Services.Azure Active Directory.Groups
+**Description**: Updates the properties of an existing group.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.AzureActiveDirectory.Contracts.Groups.GroupInfo>` **Group**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Add Group to Lifecycle Policy
+
+**ID**: `UiPath.AzureActiveDirectory.Activities.AzureADAddGroupToLifecyclePolicy@UiPath.AzureActiveDirectory.Activities/1.6.3`
+**Type**: `UiPath.AzureActiveDirectory.Activities.AzureADAddGroupToLifecyclePolicy`
+**Category**: Identity Services.Azure Active Directory.Groups.Lifecycle Policies
+**Description**: Adds a group to a lifecycle policy.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **GroupId**
+- [IN, Required] `InArgument<String>` **LifecyclePolicyId**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Create Lifecycle Policy
+
+**ID**: `UiPath.AzureActiveDirectory.Activities.AzureADCreateLifecyclePolicy@UiPath.AzureActiveDirectory.Activities/1.6.3`
+**Type**: `UiPath.AzureActiveDirectory.Activities.AzureADCreateLifecyclePolicy`
+**Category**: Identity Services.Azure Active Directory.Groups.Lifecycle Policies
+**Description**: Creates a lifecycle policy for an Office 365 group.
+**Arguments**:
+- [IN, Required] `InArgument<Int32>` **GroupLifetimeInDays**
+- [IN, Required] `InArgument<String>` **AlternateNotificationEmails**
+- [IN, Required] `InArgument<UiPath.AzureActiveDirectory.Contracts.Groups.LifecyclePolicies.ManagedGroupTypes>` **ManagedGroupTypes**
+- [OUT] `OutArgument<UiPath.AzureActiveDirectory.Contracts.Groups.LifecyclePolicies.LifecyclePolicyInfo>` **LifecyclePolicy**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Delete Lifecycle Policy
+
+**ID**: `UiPath.AzureActiveDirectory.Activities.AzureADDeleteLifecyclePolicy@UiPath.AzureActiveDirectory.Activities/1.6.3`
+**Type**: `UiPath.AzureActiveDirectory.Activities.AzureADDeleteLifecyclePolicy`
+**Category**: Identity Services.Azure Active Directory.Groups.Lifecycle Policies
+**Description**: Deletes a lifecycle policy.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **LifecyclePolicyId**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### For Each Lifecycle Policy
+
+**ID**: `UiPath.AzureActiveDirectory.Activities.AzureADForEachLifecyclePolicy@UiPath.AzureActiveDirectory.Activities/1.6.3`
+**Type**: `UiPath.AzureActiveDirectory.Activities.AzureADForEachLifecyclePolicy`
+**Category**: Identity Services.Azure Active Directory.Groups.Lifecycle Policies
+**Description**: Performs an activity or a series of activities on each lifecycle policy.
+**Arguments**:
+- [OUT] `OutArgument<Int32>` **CurrentIndex**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Is Group in Lifecycle Policy
+
+**ID**: `UiPath.AzureActiveDirectory.Activities.AzureADIsGroupInLifecyclePolicy@UiPath.AzureActiveDirectory.Activities/1.6.3`
+**Type**: `UiPath.AzureActiveDirectory.Activities.AzureADIsGroupInLifecyclePolicy`
+**Category**: Identity Services.Azure Active Directory.Groups.Lifecycle Policies
+**Description**: Checks whether a group is member of a lifecycle policy.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **GroupId**
+- [IN, Required] `InArgument<String>` **LifecyclePolicyId**
+- [OUT] `OutArgument<Boolean>` **IsMember**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Remove Group from Lifecycle Policy
+
+**ID**: `UiPath.AzureActiveDirectory.Activities.AzureADRemoveGroupFromLifecyclePolicy@UiPath.AzureActiveDirectory.Activities/1.6.3`
+**Type**: `UiPath.AzureActiveDirectory.Activities.AzureADRemoveGroupFromLifecyclePolicy`
+**Category**: Identity Services.Azure Active Directory.Groups.Lifecycle Policies
+**Description**: Removes a group from a lifecycle policy.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **GroupId**
+- [IN, Required] `InArgument<String>` **LifecyclePolicyId**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Update Lifecycle Policy
+
+**ID**: `UiPath.AzureActiveDirectory.Activities.AzureADUpdateLifecyclePolicy@UiPath.AzureActiveDirectory.Activities/1.6.3`
+**Type**: `UiPath.AzureActiveDirectory.Activities.AzureADUpdateLifecyclePolicy`
+**Category**: Identity Services.Azure Active Directory.Groups.Lifecycle Policies
+**Description**: Updates an existing lifecycle policy.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.AzureActiveDirectory.Contracts.Groups.LifecyclePolicies.LifecyclePolicyInfo>` **LifecyclePolicy**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Add Member to Group
+
+**ID**: `UiPath.AzureActiveDirectory.Activities.AzureADAddMemberToGroup@UiPath.AzureActiveDirectory.Activities/1.6.3`
+**Type**: `UiPath.AzureActiveDirectory.Activities.AzureADAddMemberToGroup`
+**Category**: Identity Services.Azure Active Directory.Groups.Membership
+**Description**: Adds a member to a group.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **GroupId**
+- [IN, Required] `InArgument<String>` **MemberId**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### For Each Group in Group
+
+**ID**: `UiPath.AzureActiveDirectory.Activities.AzureADForEachGroupInGroup@UiPath.AzureActiveDirectory.Activities/1.6.3`
+**Type**: `UiPath.AzureActiveDirectory.Activities.AzureADForEachGroupInGroup`
+**Category**: Identity Services.Azure Active Directory.Groups.Membership
+**Description**: Performs an activity or a series of activities on each group which is a direct member of a group.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **GroupId**
+- [OUT] `OutArgument<Int32>` **CurrentIndex**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### For Each Parent Group
+
+**ID**: `UiPath.AzureActiveDirectory.Activities.AzureADForEachParentGroup@UiPath.AzureActiveDirectory.Activities/1.6.3`
+**Type**: `UiPath.AzureActiveDirectory.Activities.AzureADForEachParentGroup`
+**Category**: Identity Services.Azure Active Directory.Groups.Membership
+**Description**: Performs an activity or a series of activities on each parent group of the specified group.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **GroupId**
+- [IN, Required] `InArgument<Boolean>` **Transitive**
+- [OUT] `OutArgument<Int32>` **CurrentIndex**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### For Each User in Group
+
+**ID**: `UiPath.AzureActiveDirectory.Activities.AzureADForEachUserInGroup@UiPath.AzureActiveDirectory.Activities/1.6.3`
+**Type**: `UiPath.AzureActiveDirectory.Activities.AzureADForEachUserInGroup`
+**Category**: Identity Services.Azure Active Directory.Groups.Membership
+**Description**: Performs an activity or a series of activities on each user which is a direct member of a group.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **GroupId**
+- [OUT] `OutArgument<Int32>` **CurrentIndex**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Is Member of Group
+
+**ID**: `UiPath.AzureActiveDirectory.Activities.AzureADIsMemberOfGroup@UiPath.AzureActiveDirectory.Activities/1.6.3`
+**Type**: `UiPath.AzureActiveDirectory.Activities.AzureADIsMemberOfGroup`
+**Category**: Identity Services.Azure Active Directory.Groups.Membership
+**Description**: Checks whether a given object belongs to a group.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **ObjectId**
+- [IN, Required] `InArgument<String>` **GroupId**
+- [IN, Required] `InArgument<Boolean>` **RecurseIntoChildGroups**
+- [OUT] `OutArgument<Boolean>` **IsMember**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Remove Member from Group
+
+**ID**: `UiPath.AzureActiveDirectory.Activities.AzureADRemoveMemberFromGroup@UiPath.AzureActiveDirectory.Activities/1.6.3`
+**Type**: `UiPath.AzureActiveDirectory.Activities.AzureADRemoveMemberFromGroup`
+**Category**: Identity Services.Azure Active Directory.Groups.Membership
+**Description**: Removes a member from a group.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **GroupId**
+- [IN, Required] `InArgument<String>` **MemberId**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Add Owner to Group
+
+**ID**: `UiPath.AzureActiveDirectory.Activities.AzureADAddOwnerToGroup@UiPath.AzureActiveDirectory.Activities/1.6.3`
+**Type**: `UiPath.AzureActiveDirectory.Activities.AzureADAddOwnerToGroup`
+**Category**: Identity Services.Azure Active Directory.Groups.Ownership
+**Description**: Adds an owner to a group.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **GroupId**
+- [IN, Required] `InArgument<String>` **OwnerId**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### For Each User in Group Owners
+
+**ID**: `UiPath.AzureActiveDirectory.Activities.AzureADForEachUserInGroupOwners@UiPath.AzureActiveDirectory.Activities/1.6.3`
+**Type**: `UiPath.AzureActiveDirectory.Activities.AzureADForEachUserInGroupOwners`
+**Category**: Identity Services.Azure Active Directory.Groups.Ownership
+**Description**: Performs an activity or a series of activities on each user which is an owner of the group.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **GroupId**
+- [OUT] `OutArgument<Int32>` **CurrentIndex**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Is Owner of Group
+
+**ID**: `UiPath.AzureActiveDirectory.Activities.AzureADIsOwnerOfGroup@UiPath.AzureActiveDirectory.Activities/1.6.3`
+**Type**: `UiPath.AzureActiveDirectory.Activities.AzureADIsOwnerOfGroup`
+**Category**: Identity Services.Azure Active Directory.Groups.Ownership
+**Description**: Checks whether a given object is an owner of a group.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **OwnerId**
+- [IN, Required] `InArgument<String>` **GroupId**
+- [OUT] `OutArgument<Boolean>` **IsOwner**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Remove Owner from Group
+
+**ID**: `UiPath.AzureActiveDirectory.Activities.AzureADRemoveOwnerFromGroup@UiPath.AzureActiveDirectory.Activities/1.6.3`
+**Type**: `UiPath.AzureActiveDirectory.Activities.AzureADRemoveOwnerFromGroup`
+**Category**: Identity Services.Azure Active Directory.Groups.Ownership
+**Description**: Removes an owner from a group.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **GroupId**
+- [IN, Required] `InArgument<String>` **OwnerId**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Add Member to Role
+
+**ID**: `UiPath.AzureActiveDirectory.Activities.AzureADAddMemberToRole@UiPath.AzureActiveDirectory.Activities/1.6.3`
+**Type**: `UiPath.AzureActiveDirectory.Activities.AzureADAddMemberToRole`
+**Category**: Identity Services.Azure Active Directory.Directory Roles
+**Description**: Adds a user or a service principal to a directory role.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **MemberId**
+- [IN, Required] `InArgument<String>` **RoleId**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### For Each Role
+
+**ID**: `UiPath.AzureActiveDirectory.Activities.AzureADForEachRole@UiPath.AzureActiveDirectory.Activities/1.6.3`
+**Type**: `UiPath.AzureActiveDirectory.Activities.AzureADForEachRole`
+**Category**: Identity Services.Azure Active Directory.Directory Roles
+**Description**: Performs an activity or a series of activities on each directory role that is activated in the tenant.
+**Arguments**:
+- [IN] `InArgument<Int32>` **Top**
+- [IN] `InArgument<String>` **ODataFilter**
+- [OUT] `OutArgument<Int32>` **CurrentIndex**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### For Each User in Role
+
+**ID**: `UiPath.AzureActiveDirectory.Activities.AzureADForEachUserInRole@UiPath.AzureActiveDirectory.Activities/1.6.3`
+**Type**: `UiPath.AzureActiveDirectory.Activities.AzureADForEachUserInRole`
+**Category**: Identity Services.Azure Active Directory.Directory Roles
+**Description**: Performs an activity or a series of activities on each user that is a member of a directory role.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **RoleId**
+- [OUT] `OutArgument<Int32>` **CurrentIndex**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Is Member in Role
+
+**ID**: `UiPath.AzureActiveDirectory.Activities.AzureADIsMemberInRole@UiPath.AzureActiveDirectory.Activities/1.6.3`
+**Type**: `UiPath.AzureActiveDirectory.Activities.AzureADIsMemberInRole`
+**Category**: Identity Services.Azure Active Directory.Directory Roles
+**Description**: Checks whether a given user or service principal is in a directory role.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **MemberId**
+- [IN, Required] `InArgument<String>` **RoleId**
+- [OUT] `OutArgument<Boolean>` **IsObjectInRole**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Remove Member from Role
+
+**ID**: `UiPath.AzureActiveDirectory.Activities.AzureADRemoveMemberFromRole@UiPath.AzureActiveDirectory.Activities/1.6.3`
+**Type**: `UiPath.AzureActiveDirectory.Activities.AzureADRemoveMemberFromRole`
+**Category**: Identity Services.Azure Active Directory.Directory Roles
+**Description**: Removes a user or a service principal from a directory role.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **MemberId**
+- [IN, Required] `InArgument<String>` **RoleId**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Azure AD Application Scope
+
+**ID**: `UiPath.AzureActiveDirectory.Activities.AzureADApplicationScope@UiPath.AzureActiveDirectory.Activities/1.6.3`
+**Type**: `UiPath.AzureActiveDirectory.Activities.AzureADApplicationScope`
+**Category**: Identity Services.Azure Active Directory
+**Description**: Provides an application permission scope for other Azure Active Directory activities. Activities executed using an application scope are executed on behalf of an application.
+**Arguments**:
+- [IN, Required] `InArgument<Security.SecureString>` **ClientSecret**
+- [IN, Required] `InArgument<String>` **TenantId**
+- [IN, Required] `InArgument<String>` **ClientId**
+### Azure AD Delegated Scope
+
+**ID**: `UiPath.AzureActiveDirectory.Activities.AzureADDelegatedScope@UiPath.AzureActiveDirectory.Activities/1.6.3`
+**Type**: `UiPath.AzureActiveDirectory.Activities.AzureADDelegatedScope`
+**Category**: Identity Services.Azure Active Directory
+**Description**: Provides a delegated permission scope for other Azure Active Directory activities. Activities executed using a delegated scope are always executed on behalf of an authenticated user.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **Username**
+- [IN, Required] `InArgument<Security.SecureString>` **Password**
+- [IN, Required] `InArgument<String>` **TenantId**
+- [IN, Required] `InArgument<String>` **ClientId**
+### Create User
+
+**ID**: `UiPath.AzureActiveDirectory.Activities.AzureADCreateUser@UiPath.AzureActiveDirectory.Activities/1.6.3`
+**Type**: `UiPath.AzureActiveDirectory.Activities.AzureADCreateUser`
+**Category**: Identity Services.Azure Active Directory.Users
+**Description**: Creates a new user account in Azure Active Directory.
+**Arguments**:
+- [IN, Required] `InArgument<Boolean>` **Enabled** (default: True)
+- [IN, Required] `InArgument<String>` **MailNickname**
+- [IN, Required] `InArgument<String>` **UserPrincipalName**
+- [IN, Required] `InArgument<String>` **Name**
+- [IN] `InArgument<String>` **FirstName**
+- [IN] `InArgument<String>` **LastName**
+- [IN, Required] `InArgument<String>` **InitialPassword**
+- [IN, Required] `InArgument<Boolean>` **ForcePasswordChangeNextLogin**
+- [IN, Required] `InArgument<Boolean>` **ForcePasswordChangeNextLoginMfa**
+- [IN] `InArgument<String>` **JobTitle**
+- [IN] `InArgument<String>` **Department**
+- [OUT] `OutArgument<UiPath.AzureActiveDirectory.Contracts.Users.UserInfo>` **User**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Delete User
+
+**ID**: `UiPath.AzureActiveDirectory.Activities.AzureADDeleteUser@UiPath.AzureActiveDirectory.Activities/1.6.3`
+**Type**: `UiPath.AzureActiveDirectory.Activities.AzureADDeleteUser`
+**Category**: Identity Services.Azure Active Directory.Users
+**Description**: Deletes a user from Azure Active Directory.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **UserIdOrUpn**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### For Each User
+
+**ID**: `UiPath.AzureActiveDirectory.Activities.AzureADForEachUser@UiPath.AzureActiveDirectory.Activities/1.6.3`
+**Type**: `UiPath.AzureActiveDirectory.Activities.AzureADForEachUser`
+**Category**: Identity Services.Azure Active Directory.Users
+**Description**: Performs an activity or a series of activities on each user matching a filter criteria.
+**Arguments**:
+- [IN] `InArgument<Int32>` **Top**
+- [IN] `InArgument<String>` **ODataFilter**
+- [OUT] `OutArgument<Int32>` **CurrentIndex**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### For Each User Group
+
+**ID**: `UiPath.AzureActiveDirectory.Activities.AzureADForEachUserGroup@UiPath.AzureActiveDirectory.Activities/1.6.3`
+**Type**: `UiPath.AzureActiveDirectory.Activities.AzureADForEachUserGroup`
+**Category**: Identity Services.Azure Active Directory.Users
+**Description**: Performs an activity or a series of activities on each group the user is a direct member of.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **UserIdOrUpn**
+- [OUT] `OutArgument<Int32>` **CurrentIndex**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### For Each User Role
+
+**ID**: `UiPath.AzureActiveDirectory.Activities.AzureADForEachUserRole@UiPath.AzureActiveDirectory.Activities/1.6.3`
+**Type**: `UiPath.AzureActiveDirectory.Activities.AzureADForEachUserRole`
+**Category**: Identity Services.Azure Active Directory.Users
+**Description**: Performs an activity or a series of activities on each directory role the user is a member of.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **UserIdOrUpn**
+- [OUT] `OutArgument<Int32>` **CurrentIndex**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Get User
+
+**ID**: `UiPath.AzureActiveDirectory.Activities.AzureADGetUser@UiPath.AzureActiveDirectory.Activities/1.6.3`
+**Type**: `UiPath.AzureActiveDirectory.Activities.AzureADGetUser`
+**Category**: Identity Services.Azure Active Directory.Users
+**Description**: Gets detailed information about a user.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **UserIdOrUpn**
+- [OUT] `OutArgument<UiPath.AzureActiveDirectory.Contracts.Users.UserInfo>` **User**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Reset Password
+
+**ID**: `UiPath.AzureActiveDirectory.Activities.AzureADResetPassword@UiPath.AzureActiveDirectory.Activities/1.6.3`
+**Type**: `UiPath.AzureActiveDirectory.Activities.AzureADResetPassword`
+**Category**: Identity Services.Azure Active Directory.Users
+**Description**: Resets the password of a user account.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **UserIdOrUpn**
+- [IN, Required] `InArgument<String>` **Password**
+- [IN, Required] `InArgument<Boolean>` **ForcePasswordChangeNextLogin**
+- [IN, Required] `InArgument<Boolean>` **ForcePasswordChangeNextLoginMfa**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Update User
+
+**ID**: `UiPath.AzureActiveDirectory.Activities.AzureADUpdateUser@UiPath.AzureActiveDirectory.Activities/1.6.3`
+**Type**: `UiPath.AzureActiveDirectory.Activities.AzureADUpdateUser`
+**Category**: Identity Services.Azure Active Directory.Users
+**Description**: Updates the properties of an existing user.
+**Arguments**:
+- [IN, Required] `InArgument<UiPath.AzureActiveDirectory.Contracts.Users.UserInfo>` **User**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### User Exists
+
+**ID**: `UiPath.AzureActiveDirectory.Activities.AzureADUserExists@UiPath.AzureActiveDirectory.Activities/1.6.3`
+**Type**: `UiPath.AzureActiveDirectory.Activities.AzureADUserExists`
+**Category**: Identity Services.Azure Active Directory.Users
+**Description**: Checks if a user exists in Azure Active Directory.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **UserIdOrUpn**
+- [OUT] `OutArgument<Boolean>` **Exists**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Assign License
+
+**ID**: `UiPath.AzureActiveDirectory.Activities.AzureADAssignLicenseToUser@UiPath.AzureActiveDirectory.Activities/1.6.3`
+**Type**: `UiPath.AzureActiveDirectory.Activities.AzureADAssignLicenseToUser`
+**Category**: Identity Services.Azure Active Directory.Users.Licenses
+**Description**: Assigns a license for a user.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **UserIdOrUpn**
+- [IN, Required] `InArgument<String>` **LicenseID**
+- [IN] `InArgument<String[]>` **DisabledServicePlans**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Remove License
+
+**ID**: `UiPath.AzureActiveDirectory.Activities.AzureADRemoveLicenseFromUser@UiPath.AzureActiveDirectory.Activities/1.6.3`
+**Type**: `UiPath.AzureActiveDirectory.Activities.AzureADRemoveLicenseFromUser`
+**Category**: Identity Services.Azure Active Directory.Users.Licenses
+**Description**: Removes a license for a user.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **UserIdOrUpn**
+- [IN, Required] `InArgument<String>` **LicenseID**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### For Each Direct Report
+
+**ID**: `UiPath.AzureActiveDirectory.Activities.AzureADForEachDirectReport@UiPath.AzureActiveDirectory.Activities/1.6.3`
+**Type**: `UiPath.AzureActiveDirectory.Activities.AzureADForEachDirectReport`
+**Category**: Identity Services.Azure Active Directory.Users.Manager
+**Description**: Performs an activity or a series of activities on each direct report of a user.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **UserIdOrUpn**
+- [OUT] `OutArgument<Int32>` **CurrentIndex**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Get Manager
+
+**ID**: `UiPath.AzureActiveDirectory.Activities.AzureADGetManager@UiPath.AzureActiveDirectory.Activities/1.6.3`
+**Type**: `UiPath.AzureActiveDirectory.Activities.AzureADGetManager`
+**Category**: Identity Services.Azure Active Directory.Users.Manager
+**Description**: Gets the user's manager.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **UserIdOrUpn**
+- [OUT] `OutArgument<UiPath.AzureActiveDirectory.Contracts.DirectoryObjectInfo>` **Manager**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+### Set Manager
+
+**ID**: `UiPath.AzureActiveDirectory.Activities.AzureADSetManager@UiPath.AzureActiveDirectory.Activities/1.6.3`
+**Type**: `UiPath.AzureActiveDirectory.Activities.AzureADSetManager`
+**Category**: Identity Services.Azure Active Directory.Users.Manager
+**Description**: Sets the user's manager.
+**Arguments**:
+- [IN, Required] `InArgument<String>` **UserIdOrUpn**
+- [IN] `InArgument<String>` **ManagerIdOrUpn**
+- [IN] `InArgument<String>` **ConnectionId**
+**Properties / VariableScope / Child**:
+- [property] `String` **Connector**
+- [property] `String` **BindingsKey**
+- [property] `String` **BindingsVersion**
+- [property] `UiPath.ConnectionClient.IConnectionClient` **ConnectionClient**
+---

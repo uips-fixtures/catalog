@@ -1,0 +1,549 @@
+{
+  "schema": {
+    "id": "activity-catalog",
+    "version": "v0.2"
+  },
+  "source": {
+    "kind": "nuget-package",
+    "id": "UiPath.AzureFormRecognizerV3.Activities",
+    "version": "1.0.1",
+    "feedUrl": null,
+    "authors": "UiPath",
+    "projectUrl": "https://docs.uipath.com/integrations/docs/microsoft-azure-form-recognizer-about",
+    "description": "A set of activities for interacting with Azure Form Recognizer V3.",
+    "license": "https://www.uipath.com/hubfs/legalspot/UiPath_MSSA.pdf",
+    "tags": "Microsoft Azure Text Recognition Recognizer Form Receipt",
+    "packageTypes": []
+  },
+  "generatedAt": "2026-04-09T21:48:08Z",
+  "activities": [],
+  "enums": [
+    {
+      "fullName": "HttpClientFramework.Apis.Logging.LogLevel",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "All",
+          "value": 0
+        },
+        {
+          "name": "Debug",
+          "value": 100
+        },
+        {
+          "name": "Info",
+          "value": 200
+        },
+        {
+          "name": "Warning",
+          "value": 300
+        },
+        {
+          "name": "Error",
+          "value": 400
+        },
+        {
+          "name": "None",
+          "value": 1000
+        }
+      ]
+    },
+    {
+      "fullName": "HttpClientFramework.Apis.Http.ConfigurableMessageHandler.LogEventType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "RequestUri",
+          "value": 1
+        },
+        {
+          "name": "RequestHeaders",
+          "value": 2
+        },
+        {
+          "name": "RequestBody",
+          "value": 4
+        },
+        {
+          "name": "ResponseStatus",
+          "value": 8
+        },
+        {
+          "name": "ResponseHeaders",
+          "value": 16
+        },
+        {
+          "name": "ResponseBody",
+          "value": 32
+        },
+        {
+          "name": "ResponseAbnormal",
+          "value": 64
+        }
+      ]
+    },
+    {
+      "fullName": "HttpClientFramework.Apis.Http.ExponentialBackOffPolicy",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Exception",
+          "value": 1
+        },
+        {
+          "name": "UnsuccessfulResponse503",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "HttpClientFramework.Apis.Discovery.DiscoveryVersion",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Version_1_0",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "fullName": "HttpClientFramework.Apis.Discovery.Features",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "LegacyDataResponse",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "fullName": "HttpClientFramework.Apis.Auth.OAuth2.LocalServerCodeReceiver.CallbackUriChooserStrategy",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "ForceLoopbackIp",
+          "value": 1
+        },
+        {
+          "name": "ForceLocalhost",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "HttpClientFramework.Apis.Util.RequestParameterType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Path",
+          "value": 0
+        },
+        {
+          "name": "Query",
+          "value": 1
+        },
+        {
+          "name": "UserDefinedQueries",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "HttpClientFramework.Apis.Upload.UploadStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NotStarted",
+          "value": 0
+        },
+        {
+          "name": "Starting",
+          "value": 1
+        },
+        {
+          "name": "Uploading",
+          "value": 2
+        },
+        {
+          "name": "Completed",
+          "value": 3
+        },
+        {
+          "name": "Failed",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "HttpClientFramework.Apis.Download.DownloadStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NotStarted",
+          "value": 0
+        },
+        {
+          "name": "Downloading",
+          "value": 1
+        },
+        {
+          "name": "Completed",
+          "value": 2
+        },
+        {
+          "name": "Failed",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Shared.Activities.Services.Language",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "VisualBasic",
+          "value": 0
+        },
+        {
+          "name": "CSharp",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureFormRecognizerV3.ApiVersion",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "_20220831",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureFormRecognizerV3.DocumentSelectionMarkState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Selected",
+          "value": 0
+        },
+        {
+          "name": "Unselected",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureFormRecognizerV3.StringIndexType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "TextElements",
+          "value": 0
+        },
+        {
+          "name": "UnicodeCodePoint",
+          "value": 1
+        },
+        {
+          "name": "Utf16CodeUnit",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureFormRecognizerV3.DocumentBuildMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Template",
+          "value": 0
+        },
+        {
+          "name": "Neural",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureFormRecognizerV3.DocumentFieldType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "String",
+          "value": 0
+        },
+        {
+          "name": "Date",
+          "value": 1
+        },
+        {
+          "name": "Time",
+          "value": 2
+        },
+        {
+          "name": "PhoneNumber",
+          "value": 3
+        },
+        {
+          "name": "Number",
+          "value": 4
+        },
+        {
+          "name": "Integer",
+          "value": 5
+        },
+        {
+          "name": "SelectionMark",
+          "value": 6
+        },
+        {
+          "name": "CountryRegion",
+          "value": 7
+        },
+        {
+          "name": "Currency",
+          "value": 8
+        },
+        {
+          "name": "Signature",
+          "value": 9
+        },
+        {
+          "name": "Array",
+          "value": 10
+        },
+        {
+          "name": "Object",
+          "value": 11
+        },
+        {
+          "name": "Address",
+          "value": 12
+        },
+        {
+          "name": "Boolean",
+          "value": 13
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureFormRecognizerV3.StringIndexType2",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "TextElements",
+          "value": 0
+        },
+        {
+          "name": "UnicodeCodePoint",
+          "value": 1
+        },
+        {
+          "name": "Utf16CodeUnit",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureFormRecognizerV3.AnalyzeResultOperationStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NotStarted",
+          "value": 0
+        },
+        {
+          "name": "Running",
+          "value": 1
+        },
+        {
+          "name": "Failed",
+          "value": 2
+        },
+        {
+          "name": "Succeeded",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureFormRecognizerV3.OperationInfoStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NotStarted",
+          "value": 0
+        },
+        {
+          "name": "Running",
+          "value": 1
+        },
+        {
+          "name": "Failed",
+          "value": 2
+        },
+        {
+          "name": "Succeeded",
+          "value": 3
+        },
+        {
+          "name": "Canceled",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureFormRecognizerV3.OperationInfoKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DocumentModelBuild",
+          "value": 0
+        },
+        {
+          "name": "DocumentModelCompose",
+          "value": 1
+        },
+        {
+          "name": "DocumentModelCopyTo",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureFormRecognizerV3.DocumentPageKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Document",
+          "value": 0
+        },
+        {
+          "name": "Sheet",
+          "value": 1
+        },
+        {
+          "name": "Slide",
+          "value": 2
+        },
+        {
+          "name": "Image",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureFormRecognizerV3.DocumentPageUnit",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Pixel",
+          "value": 0
+        },
+        {
+          "name": "Inch",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureFormRecognizerV3.DocumentParagraphRole",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "PageHeader",
+          "value": 0
+        },
+        {
+          "name": "PageFooter",
+          "value": 1
+        },
+        {
+          "name": "PageNumber",
+          "value": 2
+        },
+        {
+          "name": "Title",
+          "value": 3
+        },
+        {
+          "name": "SectionHeading",
+          "value": 4
+        },
+        {
+          "name": "Footnote",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureFormRecognizerV3.DocumentTableCellKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Content",
+          "value": 0
+        },
+        {
+          "name": "RowHeader",
+          "value": 1
+        },
+        {
+          "name": "ColumnHeader",
+          "value": 2
+        },
+        {
+          "name": "StubHead",
+          "value": 3
+        },
+        {
+          "name": "Description",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureFormRecognizerV3.DocumentFieldValueSignature",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Signed",
+          "value": 0
+        },
+        {
+          "name": "Unsigned",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureFormRecognizerV3.Enums.ModelsReturnType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "FULL",
+          "value": 0
+        },
+        {
+          "name": "SUMMARY",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "namespaceMappings": []
+}
