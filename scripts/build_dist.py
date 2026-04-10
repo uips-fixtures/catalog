@@ -38,7 +38,7 @@ REPO_ROOT      = Path(__file__).resolve().parent.parent
 SHAPE_B_DIR    = REPO_ROOT / "data" / "sources" / "packagefurnace" / "pkg"
 FILESYSTEM_DIR = REPO_ROOT / "data" / "sources" / "filesystem" / "pkg"
 PKG_DATA_DIR   = REPO_ROOT / "data" / "pkg"
-OUT_PACKAGES_DIR     = REPO_ROOT / "data" / "dist" / "packages"
+OUT_LLMS_DIR         = REPO_ROOT / "data" / "dist" / "llms"
 CONFIG_PATH          = REPO_ROOT / "config" / "curated.yaml"
 VISIBILITY_RULES_PATH = REPO_ROOT / "config" / "visibility_rules.yaml"
 
@@ -349,7 +349,7 @@ def write_llms_txt(pkg_id: str, versions: list[str]) -> None:
     for v in sorted_versions:
         lines.append(f"- [{v}]({v}.json)")
     lines.append("")
-    out_path = OUT_PACKAGES_DIR / pkg_id / "llms.txt"
+    out_path = OUT_LLMS_DIR / pkg_id / "llms.txt"
     out_path.parent.mkdir(parents=True, exist_ok=True)
     out_path.write_text("\n".join(lines), encoding="utf-8")
     print(f"  {pkg_id}: llms.txt ({len(sorted_versions)} versions) -> {out_path}")
@@ -402,7 +402,7 @@ def build_package(pkg_id: str, version: str) -> dict | None:
         "namespaceMappings": list(seen_xmlns.values()),
     }
 
-    out_path = OUT_PACKAGES_DIR / pkg_id / f"{version}.json"
+    out_path = OUT_LLMS_DIR / pkg_id / f"{version}.json"
     out_path.parent.mkdir(parents=True, exist_ok=True)
     write_json(out_path, catalog)
 
@@ -447,7 +447,7 @@ def main() -> None:
 
     total = sum(len(v) for v in built_versions.values())
     print(f"\nDone: {total} package/version catalogs, {len(built_versions)} llms.txt files "
-          f"-> {OUT_PACKAGES_DIR}")
+          f"-> {OUT_LLMS_DIR}")
 
 
 if __name__ == "__main__":
