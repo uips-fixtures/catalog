@@ -24,17 +24,11 @@ jobs:
       - name: Build dist JSON
         run: uv run scripts/build_dist.py
 
-      - name: Build refdoc HTML
-        run: uv run scripts/build_refdoc.py
-
-      - name: Build refllm txt
-        run: uv run scripts/build_refllm.py
-
       - name: Commit and push dist
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/dist/
+          git add data/dist/packages/
           if git diff --cached --quiet; then
             echo "No dist changes."
           else

@@ -7,11 +7,16 @@ build_dist.py — Transform PackageFurnace enriched-catalog into activity-catalo
 
 Reads config/curated.yaml, resolves package versions, reads enriched-catalog files from
 data/sources/packagefurnace/pkg/{id}/{version}.json, maps activities/members/enums/
-namespaceMappings, and writes data/dist/{set-id}/{pkg-id}/{version}.json conforming to
-schemas/v0.3/activity-catalog.schema.json.
+namespaceMappings, and writes:
+
+  data/dist/packages/{pkg-id}/{version}.json   — per-package/version catalog
+  data/dist/packages/{pkg-id}/llms.txt         — version index (one per package)
+
+Output is set-independent: the same (pkg-id, version) is built once regardless of
+how many curated sets reference it.
 
 Usage:
-    uv run scripts/build_dist.py                    # all sets
+    uv run scripts/build_dist.py                    # all packages across all sets
     uv run scripts/build_dist.py --set watchful-anvil
 """
 
@@ -33,7 +38,7 @@ REPO_ROOT      = Path(__file__).resolve().parent.parent
 SHAPE_B_DIR    = REPO_ROOT / "data" / "sources" / "packagefurnace" / "pkg"
 FILESYSTEM_DIR = REPO_ROOT / "data" / "sources" / "filesystem" / "pkg"
 PKG_DATA_DIR   = REPO_ROOT / "data" / "pkg"
-OUT_DIR        = REPO_ROOT / "data" / "dist"
+OUT_PACKAGES_DIR     = REPO_ROOT / "data" / "dist" / "packages"
 CONFIG_PATH          = REPO_ROOT / "config" / "curated.yaml"
 VISIBILITY_RULES_PATH = REPO_ROOT / "config" / "visibility_rules.yaml"
 
@@ -291,7 +296,7 @@ def _is_legacy_suppressed(item: dict) -> bool:
     return full_name.startswith(_legacy_suppress_prefixes)
 
 
-# ── Set builder ────────────────────────────────────────────────────────────────
+# ── Package collectors ─────────────────────────────────────────────────────────
 
 def _all_extracted_packages() -> list[dict]:
     """Return [{id, version}, ...] for every stable version present in SHAPE_B_DIR."""
@@ -308,99 +313,104 @@ def _all_extracted_packages() -> list[dict]:
     return entries
 
 
-def build_set(set_cfg: dict, builtins_catalogs: list | None = None) -> list:
-    """Build one dist set. Returns the list of per-package catalog dicts produced.
+def _collect_pkg_versions(sets: list[dict]) -> dict[str, list[str]]:
+    """Return {pkg_id: [version, ...]} deduplicated across all sets."""
+    result: dict[str, list[str]] = {}
+    for set_cfg in sets:
+        pkg_list = _all_extracted_packages() if set_cfg.get("all_extracted") else set_cfg.get("packages", [])
+        for pkg_cfg in pkg_list:
+            pkg_id   = pkg_cfg["id"]
+            versions = resolve_versions(pkg_id, pkg_cfg)
+            for version in versions:
+                if version not in result.get(pkg_id, []):
+                    result.setdefault(pkg_id, []).append(version)
+    return result
 
-    builtins_catalogs: pre-built catalog dicts from the builtins set to merge into
-    this set's index. Ignored when the set itself is the builtins set or when the
-    set declares includeBuiltins: false.
-    """
-    set_id           = set_cfg["id"]
-    generated_at     = datetime.datetime.now(datetime.UTC).strftime("%Y-%m-%dT%H:%M:%SZ")
-    per_pkg_catalogs = []
 
-    pkg_list = _all_extracted_packages() if set_cfg.get("all_extracted") else set_cfg.get("packages", [])
-    for pkg_cfg in pkg_list:
-        pkg_id   = pkg_cfg["id"]
-        versions = resolve_versions(pkg_id, pkg_cfg)
+# ── llms.txt writer ────────────────────────────────────────────────────────────
 
-        if not versions:
-            print(f"  [error] {pkg_id}: no versions resolved", file=sys.stderr)
-            continue
+def write_llms_txt(pkg_id: str, versions: list[str]) -> None:
+    """Write data/dist/packages/{pkg_id}/llms.txt — a token-efficient version index."""
+    def _version_key(v: str):
+        try:
+            return (1, Version(v))
+        except Exception:
+            return (0, v)
 
-        for version in versions:
-            shape_b_path = _resolve_source_path(pkg_id, version)
-            if not shape_b_path.exists():
-                print(f"  [error] missing source: {shape_b_path}", file=sys.stderr)
-                continue
-
-            check_tfm(pkg_id, version)
-
-            shape_b    = json.loads(shape_b_path.read_text(encoding="utf-8"))
-            source_obj = build_source(shape_b)
-
-            _seen_act: dict[str, dict] = {}
-            for item in shape_b.get("activities", []):
-                if item.get("visibility") == "hidden":
-                    continue
-                if _is_legacy_suppressed(item):
-                    continue
-                act = build_activity(item, source_obj)
-                if act is not None and act["fullName"] not in _seen_act:
-                    _seen_act[act["fullName"]] = act
-            activities = list(_seen_act.values())
-
-            seen_enums = {}
-            for item in shape_b.get("enums", []):
-                fn = item.get("fullName", "")
-                if fn and fn not in seen_enums:
-                    seen_enums[fn] = build_enum(item)
-
-            seen_xmlns = {}
-            for item in shape_b.get("namespaceMappings", []):
-                ns_key = (item.get("xmlNamespace", ""), item.get("sourceAssembly", ""))
-                if ns_key not in seen_xmlns:
-                    seen_xmlns[ns_key] = build_xmlns_mapping(item)
-
-            catalog = {
-                "schema":            {"id": "activity-catalog", "version": "v0.3"},
-                "source":            source_obj,
-                "generatedAt":       generated_at,
-                "activities":        activities,
-                "enums":             list(seen_enums.values()),
-                "namespaceMappings": list(seen_xmlns.values()),
-            }
-
-            out_path = OUT_DIR / set_id / pkg_id / f"{version}.json"
-            out_path.parent.mkdir(parents=True, exist_ok=True)
-            write_json(out_path, catalog)
-            per_pkg_catalogs.append(catalog)
-
-            member_count = sum(len(a["members"]) for a in activities)
-            print(f"  {pkg_id}/{version}: {len(activities)} activities, "
-                  f"{member_count} members, {len(seen_enums)} enums -> {out_path}")
-
-    # ── Set index ──────────────────────────────────────────────────────────────
-    # Merge builtins into every set that hasn't opted out and isn't itself the builtins set.
-    is_builtins_set   = bool(set_cfg.get("builtins", False))
-    include_builtins  = set_cfg.get("includeBuiltins", True)
-    extra = (builtins_catalogs or []) if (not is_builtins_set and include_builtins) else []
-
-    set_index = [
-        {"metadata": {
-            "schema":      {"id": "activity-catalog-set", "version": "v0.3"},
-            "set":         set_id,
-            "generatedAt": generated_at,
-        }},
-        *per_pkg_catalogs,
-        *extra,
+    sorted_versions = sorted(versions, key=_version_key, reverse=True)
+    lines = [
+        f"# {pkg_id}",
+        "",
+        "> activity catalog — fetch a version JSON to get all data needed for XAML generation",
+        "",
+        "## Versions",
+        "",
     ]
-    index_path = OUT_DIR / set_id / "index.json"
-    index_path.parent.mkdir(parents=True, exist_ok=True)
-    write_json(index_path, set_index)
-    total = len(per_pkg_catalogs) + len(extra)
-    print(f"  {set_id}: index -> {index_path} ({total} packages{', incl. builtins' if extra else ''})")
-    return per_pkg_catalogs
+    for v in sorted_versions:
+        lines.append(f"- [{v}]({v}.json)")
+    lines.append("")
+    out_path = OUT_PACKAGES_DIR / pkg_id / "llms.txt"
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    out_path.write_text("\n".join(lines), encoding="utf-8")
+    print(f"  {pkg_id}: llms.txt ({len(sorted_versions)} versions) -> {out_path}")
+
+
+# ── Package builder ────────────────────────────────────────────────────────────
+
+def build_package(pkg_id: str, version: str) -> dict | None:
+    """Build and write one per-package/version catalog. Returns catalog dict or None on error."""
+    shape_b_path = _resolve_source_path(pkg_id, version)
+    if not shape_b_path.exists():
+        print(f"  [error] missing source: {shape_b_path}", file=sys.stderr)
+        return None
+
+    check_tfm(pkg_id, version)
+
+    generated_at = datetime.datetime.now(datetime.UTC).strftime("%Y-%m-%dT%H:%M:%SZ")
+    shape_b      = json.loads(shape_b_path.read_text(encoding="utf-8"))
+    source_obj   = build_source(shape_b)
+
+    _seen_act: dict[str, dict] = {}
+    for item in shape_b.get("activities", []):
+        if item.get("visibility") == "hidden":
+            continue
+        if _is_legacy_suppressed(item):
+            continue
+        act = build_activity(item, source_obj)
+        if act is not None and act["fullName"] not in _seen_act:
+            _seen_act[act["fullName"]] = act
+    activities = list(_seen_act.values())
+
+    seen_enums = {}
+    for item in shape_b.get("enums", []):
+        fn = item.get("fullName", "")
+        if fn and fn not in seen_enums:
+            seen_enums[fn] = build_enum(item)
+
+    seen_xmlns = {}
+    for item in shape_b.get("namespaceMappings", []):
+        ns_key = (item.get("xmlNamespace", ""), item.get("sourceAssembly", ""))
+        if ns_key not in seen_xmlns:
+            seen_xmlns[ns_key] = build_xmlns_mapping(item)
+
+    catalog = {
+        "schema":            {"id": "activity-catalog", "version": "v0.3"},
+        "source":            source_obj,
+        "generatedAt":       generated_at,
+        "activities":        activities,
+        "enums":             list(seen_enums.values()),
+        "namespaceMappings": list(seen_xmlns.values()),
+    }
+
+    out_path = OUT_PACKAGES_DIR / pkg_id / f"{version}.json"
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    write_json(out_path, catalog)
+
+    member_count = sum(len(a["members"]) for a in activities)
+    print(f"  {pkg_id}/{version}: {len(activities)} activities, "
+          f"{member_count} members, {len(seen_enums)} enums -> {out_path}")
+    return catalog
+
 
 # ── CLI ────────────────────────────────────────────────────────────────────────
 
@@ -408,37 +418,36 @@ def main() -> None:
     parser = argparse.ArgumentParser(
         description="Build publishable activity-catalog v0.3 JSON from PackageFurnace enriched-catalog sources."
     )
-    parser.add_argument("--set", metavar="ID", help="Build only this set id")
-    parser.add_argument("--skip-builtins", action="store_true",
-                        help="Do not build or merge sets marked builtins: true")
+    parser.add_argument("--set", metavar="ID", help="Build only packages from this set id")
     args = parser.parse_args()
 
     sets = config["sets"]
-    builtins_sets = [s for s in sets if s.get("builtins")]
-    other_sets    = [s for s in sets if not s.get("builtins")]
+    if args.set:
+        target_sets = [s for s in sets if s["id"] == args.set]
+        if not target_sets:
+            print(f"[error] No matching set found for --set={args.set!r}", file=sys.stderr)
+            sys.exit(1)
+    else:
+        target_sets = sets
 
-    built = 0
-    builtins_catalogs: list = []
-
-    # ── Always build builtins sets first (unless --skip-builtins) ────────────
-    if not args.skip_builtins:
-        for set_cfg in builtins_sets:
-            print(f"Building set (builtins): {set_cfg['id']}")
-            catalogs = build_set(set_cfg)
-            builtins_catalogs.extend(catalogs)
-            built += 1
-
-    # ── Build target sets ──────────────────────────────────────────────────────
-    for set_cfg in other_sets:
-        if args.set and set_cfg["id"] != args.set:
-            continue
-        print(f"Building set: {set_cfg['id']}")
-        build_set(set_cfg, builtins_catalogs=builtins_catalogs)
-        built += 1
-
-    if built == 0:
-        print(f"[error] No matching set found for --set={args.set!r}", file=sys.stderr)
+    pkg_versions = _collect_pkg_versions(target_sets)
+    if not pkg_versions:
+        print("[error] No packages resolved", file=sys.stderr)
         sys.exit(1)
+
+    built_versions: dict[str, list[str]] = {}
+    for pkg_id, versions in sorted(pkg_versions.items()):
+        for version in versions:
+            result = build_package(pkg_id, version)
+            if result is not None:
+                built_versions.setdefault(pkg_id, []).append(version)
+
+    for pkg_id, versions in sorted(built_versions.items()):
+        write_llms_txt(pkg_id, versions)
+
+    total = sum(len(v) for v in built_versions.values())
+    print(f"\nDone: {total} package/version catalogs, {len(built_versions)} llms.txt files "
+          f"-> {OUT_PACKAGES_DIR}")
 
 
 if __name__ == "__main__":
