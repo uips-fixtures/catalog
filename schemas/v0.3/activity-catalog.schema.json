@@ -1,0 +1,284 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://uips-fixtures.github.io/schemas/v0.3/activity-catalog.schema.json",
+  "title": "Workflow Activity Catalog v0.3",
+  "description": "Catalog of workflow activities for a single package source. Extracted and enriched by PackageFurnace; includes XAML-generation fields (xmlPrefix, enumValues, typeMembers, delegateArgumentName).",
+  "type": "object",
+  "required": ["schema", "source", "generatedAt", "activities", "enums", "namespaceMappings"],
+  "additionalProperties": false,
+  "properties": {
+
+    "schema": {
+      "type": "object",
+      "description": "Schema identity and version. Verify before parsing.",
+      "required": ["id", "version"],
+      "additionalProperties": false,
+      "properties": {
+        "id":      { "type": "string", "const": "activity-catalog" },
+        "version": { "type": "string", "const": "v0.3" }
+      }
+    },
+
+    "source": {
+      "$ref": "#/$defs/source",
+      "description": "The package this catalog was extracted from."
+    },
+
+    "generatedAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 UTC timestamp of when this catalog was generated."
+    },
+
+    "activities": {
+      "type": "array",
+      "$comment": "Order is not guaranteed. Use the id field as the stable key.",
+      "description": "All non-hidden workflow activities in this package.",
+      "items": { "$ref": "#/$defs/activity" }
+    },
+
+    "enums": {
+      "type": "array",
+      "description": "Public enum types referenced by activity member data types.",
+      "items": { "$ref": "#/$defs/enumType" }
+    },
+
+    "namespaceMappings": {
+      "type": "array",
+      "description": "XML namespace → CLR namespace mappings from XmlnsDefinitionAttribute. Within a catalog, entries are deduplicated by (xmlNamespace, sourceAssembly). When merging across catalogs in a set, the first occurrence of each xmlNamespace wins for prefix assignment; clrNamespaces lists are per-catalog and are not merged.",
+      "items": { "$ref": "#/$defs/xmlnsMapping" }
+    }
+
+  },
+
+  "$defs": {
+
+    "source": {
+      "type": "object",
+      "description": "Package identity and metadata.",
+      "required": ["kind", "id", "version", "feedUrl", "authors", "projectUrl", "description", "license", "tags", "packageTypes"],
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": ["nuget-package", "dotnet-runtime", "local-path", "synthetic"],
+          "description": "'nuget-package': from a NuGet feed. 'dotnet-runtime': from the .NET WF4 runtime. 'local-path': from a local DLL or folder (dev-loop, CI pre-publish). 'synthetic': hand-authored; not extracted by PackageFurnace — used for gap analysis and activity design planning. Note for XAML generators: synthetic catalogs may omit or partially populate namespaceMappings; generators should emit a diagnostic warning when encountering synthetic-sourced activities, as output cannot be verified against a real assembly. Synthetic activities are intended for planning and design tooling, not production XAML generation."
+        },
+        "id":          { "type": "string", "description": "Package id." },
+        "version":     { "type": "string", "description": "Package version." },
+        "feedUrl":     { "type": ["string", "null"], "format": "uri", "description": "NuGet feed URL this package was sourced from. null when not recorded." },
+        "authors":     { "type": ["string", "null"], "description": "free-form. nuspec <authors>." },
+        "projectUrl":  { "type": ["string", "null"], "format": "uri", "description": "nuspec <projectUrl>." },
+        "description": { "type": ["string", "null"], "description": "free-form. nuspec <description>." },
+        "license":     { "type": ["string", "null"], "description": "free-form. SPDX expression or licenseUrl fallback." },
+        "tags":        { "type": ["string", "null"], "description": "free-form. nuspec <tags>. Space-separated by convention." },
+        "packageTypes": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "nuspec <packageTypes>. Empty array when not declared."
+        }
+      }
+    },
+
+    "activity": {
+      "type": "object",
+      "description": "A workflow primitive that can be placed in a workflow graph.",
+      "required": [
+        "id", "fullName", "displayName", "description", "category",
+        "visibility", "hasGenericParameters", "genericParameterNames",
+        "isObsolete", "obsoleteMessage",
+        "xmlNamespace", "xmlPrefix",
+        "members"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Stable compound identifier: '{fullName}@{source.id}/{source.version}'. Matches the PackageFurnace engine-result activity id.",
+          "examples": ["UiPath.Core.Activities.Delay@UiPath.System.Activities/25.10.0"]
+        },
+        "fullName": {
+          "type": "string",
+          "description": "Fully-qualified CLR type name. No backtick arity suffix."
+        },
+        "displayName": {
+          "type": ["string", "null"],
+          "description": "Name shown in the Studio activity panel. null = absent in source."
+        },
+        "description": {
+          "type": ["string", "null"],
+          "description": "Short description / tooltip shown in Studio. null = absent in source."
+        },
+        "category": {
+          "type": ["string", "null"],
+          "description": "Activity panel category path. null = absent in source."
+        },
+        "visibility": {
+          "type": "string",
+          "enum": ["browsable", "legacy"],
+          "description": "'browsable': appears in Studio activity panel. 'legacy': Classic-mode only. Hidden activities are excluded at transform time and never appear here."
+        },
+        "hasGenericParameters": {
+          "type": "boolean",
+          "description": "true when the CLR type has open generic parameters (requires x:TypeArguments in XAML)."
+        },
+        "genericParameterNames": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "description": "Generic parameter names in declaration order. Empty array when hasGenericParameters is false."
+        },
+        "isObsolete": {
+          "type": "boolean",
+          "description": "True when System.ObsoleteAttribute is present on the CLR type."
+        },
+        "obsoleteMessage": {
+          "type": ["string", "null"],
+          "description": "Message from System.ObsoleteAttribute. null when absent or no message was given."
+        },
+        "xmlNamespace": {
+          "type": ["string", "null"],
+          "description": "XML namespace URI for this activity's CLR namespace (e.g. 'http://schemas.uipath.com/workflow/activities/uix'). null when not mapped via XmlnsDefinitionAttribute."
+        },
+        "xmlPrefix": {
+          "type": ["string", "null"],
+          "description": "Conventional xmlns prefix for the activity's XML namespace (e.g. 'uix'). null when not mapped. Use with namespaceMappings to construct the xmlns declaration."
+        },
+        "members": {
+          "type": "array",
+          "$comment": "Only browsable members are included. Order is not guaranteed.",
+          "description": "Configurable members: arguments, child-activity slots, variable scopes, plain properties.",
+          "items": { "$ref": "#/$defs/member" }
+        }
+      }
+    },
+
+    "member": {
+      "type": "object",
+      "description": "A single configurable member of an activity.",
+      "required": [
+        "name", "displayName", "dataType", "memberKind",
+        "isRequiredArgument", "argumentDirection",
+        "description", "category", "defaultValue", "typeConverter",
+        "isObsolete", "obsoleteMessage",
+        "delegateArgumentName", "enumValues", "typeMembers"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "CLR property name. Stable key within members[]."
+        },
+        "displayName": {
+          "type": "string",
+          "description": "Member name as shown in Studio Properties panel. Guaranteed non-null: the extraction pipeline falls back to the CLR property name when no display attribute is present."
+        },
+        "dataType": {
+          "type": ["string", "null"],
+          "description": "CLR type, fully namespace-qualified, C#-style generics (e.g. 'System.Activities.InArgument<System.String>'). null when absent in source."
+        },
+        "memberKind": {
+          "type": "string",
+          "enum": ["argument", "variable-scope", "child", "property"],
+          "description": "WF4 semantic role."
+        },
+        "argumentDirection": {
+          "type": ["string", "null"],
+          "enum": ["in", "out", "in-out", null],
+          "description": "Data flow direction. Non-null only when memberKind is 'argument'. Maps to WF4 CLR argument wrapper types: 'in' → System.Activities.InArgument<T>, 'out' → System.Activities.OutArgument<T>, 'in-out' → System.Activities.InOutArgument<T>."
+        },
+        "isRequiredArgument": {
+          "type": "boolean",
+          "description": "Whether this argument must be bound before the workflow runs. Always false when memberKind is not 'argument'."
+        },
+        "description": {
+          "type": ["string", "null"],
+          "description": "Tooltip text. null = absent in source."
+        },
+        "category": {
+          "type": ["string", "null"],
+          "description": "Properties panel group (e.g. 'Input', 'Output', 'Options'). null = absent in source."
+        },
+        "defaultValue": {
+          "type": ["string", "null"],
+          "description": "From DefaultValueAttribute, serialised as string. Enum values are resolved to member names (e.g. 'ByProcessName', not an integer). null = absent in source."
+        },
+        "typeConverter": {
+          "type": ["string", "null"],
+          "description": "CLR full name of the TypeConverter. null = absent in source."
+        },
+        "isObsolete": {
+          "type": "boolean",
+          "description": "True when System.ObsoleteAttribute is present on the CLR property."
+        },
+        "obsoleteMessage": {
+          "type": ["string", "null"],
+          "description": "Message from System.ObsoleteAttribute. null when absent or no message was given."
+        },
+        "delegateArgumentName": {
+          "type": ["string", "null"],
+          "description": "For memberKind 'child': the Name value of the DelegateInArgument declared in XAML (e.g. 'WSSessionData'). null when absent or not applicable."
+        },
+        "enumValues": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Valid serialization strings for enum-typed members (e.g. ['ByProcessName','ByInstance','SingleWindow']). Empty array when the member type is not an enum or values could not be resolved."
+        },
+        "typeMembers": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/member" },
+          "description": "For memberKind 'property' with a complex declared type: the public sub-properties of that type, one level deep, filtered to browsable members only. Empty array when not applicable. Self-referential."
+        }
+      }
+    },
+
+    "enumType": {
+      "type": "object",
+      "description": "A public enum type referenced by activity member data types.",
+      "required": ["fullName", "underlyingType", "members"],
+      "additionalProperties": false,
+      "properties": {
+        "fullName": {
+          "type": "string",
+          "description": "Fully-qualified CLR type name. Nested type separator is '.' not '/'."
+        },
+        "underlyingType": {
+          "type": "string",
+          "description": "CLR full name of the integral backing type, e.g. 'System.Int32'."
+        },
+        "members": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/enumMember" }
+        }
+      }
+    },
+
+    "enumMember": {
+      "type": "object",
+      "required": ["name", "value"],
+      "additionalProperties": false,
+      "properties": {
+        "name":  { "type": "string", "minLength": 1, "description": "CLR field name." },
+        "value": { "type": "integer", "description": "Ordinal value as int64." }
+      }
+    },
+
+    "xmlnsMapping": {
+      "type": "object",
+      "description": "One XML namespace → CLR namespace mapping from XmlnsDefinitionAttribute.",
+      "required": ["xmlNamespace", "prefix", "clrNamespaces", "sourceAssembly"],
+      "additionalProperties": false,
+      "properties": {
+        "xmlNamespace":  { "type": "string", "format": "uri", "description": "The XML namespace URI." },
+        "prefix":        { "type": "string", "description": "Conventional XML prefix from XmlnsPrefixAttribute." },
+        "clrNamespaces": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "minItems": 1,
+          "description": "CLR namespaces mapped to this XML namespace."
+        },
+        "sourceAssembly": { "type": "string", "description": "Assembly name (no extension) where the attribute was declared." }
+      }
+    }
+
+  }
+}

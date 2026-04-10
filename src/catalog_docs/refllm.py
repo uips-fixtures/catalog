@@ -7,7 +7,7 @@ import jinja2
 from ._io import group_by_package, normalize_type
 
 GENERATOR_NAME    = "uips-fixtures catalog"
-GENERATOR_VERSION = "v0.2"
+GENERATOR_VERSION = "v0.3"
 
 # ── Template ──────────────────────────────────────────────────────────────────
 

@@ -13,6 +13,10 @@ seed-set set:
 seed-full:
     uv run scripts/seed_latest.py --full-feed
 
+# Seed every stable version of every package in the feed (powers full-catalog all_extracted).
+seed-all-versions:
+    uv run scripts/seed_latest.py --all-versions
+
 # Extract engine-results from NuGet packages via PackageFurnace CLI.
 # PackageFurnace must be installed: run `just install` in the PackageFurnace repo.
 # Override binary path with:  PF_EXE=/path/to/PackageFurnace just extract

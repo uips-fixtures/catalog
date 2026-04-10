@@ -153,6 +153,23 @@ def build_feed_latest() -> dict[str, str]:
     return result
 
 
+def build_feed_all_stable() -> list[tuple[str, str]]:
+    """Return [(package_id, version), ...] for every stable version in the feed index."""
+    with open(FEED_INDEX, encoding="utf-8") as f:
+        data = json.load(f)
+    pairs: list[tuple[str, str]] = []
+    for item in data.get("items", []):
+        pkg_id   = item["id"]
+        versions = item.get("versions", [])
+        stable   = [v for v in versions if not re.search(r"[a-zA-Z]", v)]
+        try:
+            for v in sorted(stable, key=Version):
+                pairs.append((pkg_id, v))
+        except Exception:
+            pass
+    return pairs
+
+
 def unpinned_curated_packages(curated: dict, set_filter: str | None) -> dict[str, str]:
     """Return {package_id: latest_stable_version} for every package in curated.yaml
     that has no explicit version pin, resolved against the feed."""
@@ -195,7 +212,9 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__.strip().splitlines()[0])
     group = parser.add_mutually_exclusive_group()
     group.add_argument("--full-feed", action="store_true",
-                       help="Seed every package in the feed (ignores curated.yaml)")
+                       help="Seed every package in the feed at latest-stable (ignores curated.yaml)")
+    group.add_argument("--all-versions", action="store_true",
+                       help="Seed every stable version of every package in the feed")
     group.add_argument("--set", metavar="ID",
                        help="Seed only unpinned packages in this curated set")
     parser.add_argument("--no-suggested", action="store_true",
@@ -213,7 +232,11 @@ def main() -> int:
         print("        Run `just install` in the PackageFurnace repo, or set PF_EXE.")
         return 1
 
-    if args.full_feed:
+    if args.all_versions:
+        all_pairs = build_feed_all_stable()
+        seed_map = {}   # unused in this mode; pairs fed directly to queue below
+        scope_label = "full feed — all stable versions"
+    elif args.full_feed:
         seed_map = build_feed_latest()
         scope_label = "full feed"
     else:
@@ -222,17 +245,24 @@ def main() -> int:
         seed_map = unpinned_curated_packages(curated, args.set)
         scope_label = f"set '{args.set}'" if args.set else "curated.yaml (unpinned)"
 
-    if not seed_map:
+    if args.all_versions:
+        if not all_pairs:
+            print("[warn] No packages to seed.")
+            return 0
+        mem_label = f"{args.mem_limit_gb:.0f} GB" if mem_limit_bytes else "unlimited"
+        print(f"Seeding {len(all_pairs)} (package, version) pairs  "
+              f"[{scope_label}]  mem-limit={mem_label}\n")
+    elif not seed_map:
         print("[warn] No packages to seed.")
         return 0
-
-    mem_label = f"{args.mem_limit_gb:.0f} GB" if mem_limit_bytes else "unlimited"
-    print(f"Seeding {len(seed_map)} package(s) at latest-stable  "
+    else:
+        mem_label = f"{args.mem_limit_gb:.0f} GB" if mem_limit_bytes else "unlimited"
+        print(f"Seeding {len(seed_map)} package(s) at latest-stable  "
           f"[{scope_label}]  mem-limit={mem_label}\n")
 
     CACHE.mkdir(parents=True, exist_ok=True)
 
-    seed = list(seed_map.items())
+    seed = all_pairs if args.all_versions else list(seed_map.items())
     queue:  deque[tuple[str, str]] = deque(seed)
     queued: set[tuple[str, str]]   = set(seed)
 

@@ -3,12 +3,12 @@
 # dependencies = ["pyyaml", "packaging"]
 # ///
 """
-build_dist.py — Transform PackageFurnace engine-result v1 into activity-catalog v0.2 JSON.
+build_dist.py — Transform PackageFurnace enriched-catalog into activity-catalog v0.3 JSON.
 
-Reads config/curated.yaml, resolves package versions, reads engine-result files from
+Reads config/curated.yaml, resolves package versions, reads enriched-catalog files from
 data/sources/packagefurnace/pkg/{id}/{version}.json, maps activities/members/enums/
-namespaceMappings, and writes data/dist/{set-id}/activities.json conforming to
-schemas/v0.2/activity-catalog.schema.json.
+namespaceMappings, and writes data/dist/{set-id}/{pkg-id}/{version}.json conforming to
+schemas/v0.3/activity-catalog.schema.json.
 
 Usage:
     uv run scripts/build_dist.py                    # all sets
@@ -27,6 +27,8 @@ from packaging.version import Version
 
 # ── Paths ─────────────────────────────────────────────────────────────────────
 
+import os
+
 REPO_ROOT      = Path(__file__).resolve().parent.parent
 SHAPE_B_DIR    = REPO_ROOT / "data" / "sources" / "packagefurnace" / "pkg"
 FILESYSTEM_DIR = REPO_ROOT / "data" / "sources" / "filesystem" / "pkg"
@@ -34,6 +36,24 @@ PKG_DATA_DIR   = REPO_ROOT / "data" / "pkg"
 OUT_DIR        = REPO_ROOT / "data" / "dist"
 CONFIG_PATH          = REPO_ROOT / "config" / "curated.yaml"
 VISIBILITY_RULES_PATH = REPO_ROOT / "config" / "visibility_rules.yaml"
+
+# Optional pf-cache root — when set, enriched-catalog.json is preferred over plain engine-result.
+# Set via PF_CACHE env var (same as used by seed scripts).
+_PF_CACHE = Path(os.environ["PF_CACHE"]) if "PF_CACHE" in os.environ else None
+
+
+def _resolve_source_path(pkg_id: str, version: str) -> Path:
+    """Return the best available source JSON for (pkg_id, version).
+
+    Preference order:
+    1. pf-cache enriched-catalog.json  (when PF_CACHE is set and file exists)
+    2. data/sources/packagefurnace/    (plain engine-result, always present after seeding)
+    """
+    if _PF_CACHE is not None:
+        enriched = _PF_CACHE / pkg_id.lower() / version / "enriched-catalog.json"
+        if enriched.exists():
+            return enriched
+    return SHAPE_B_DIR / pkg_id / f"{version}.json"
 
 # ── Config ────────────────────────────────────────────────────────────────────
 
@@ -140,6 +160,17 @@ def infer_member_kind(data_type: str | None, arg_dir: str | None) -> str:
 
 _ARG_DIR_MAP = {0: "in", 1: "out", 2: "in-out"}
 
+
+def _map_type_members(raw: list[dict]) -> list[dict]:
+    """Apply map_property to nested typeMembers, filtering non-browsable entries."""
+    result = []
+    for p in raw:
+        mapped = map_property(p)
+        if mapped is not None:
+            result.append(mapped)
+    return result
+
+
 def map_property(prop: dict) -> dict | None:
     """Return a member dict, or None if the property should be excluded.
 
@@ -148,26 +179,34 @@ def map_property(prop: dict) -> dict | None:
       isRequired        (was: isRequiredArgument)
       members           (was: properties)
     """
-    if prop.get("isBrowsable") is False:
-        return None
-
     raw_dt  = prop.get("dataType")             # null when absent in source
     raw_dir = prop.get("argumentDirection")    # int (0/1/2) or str or None
     arg_dir = _ARG_DIR_MAP.get(raw_dir, raw_dir) if isinstance(raw_dir, int) else raw_dir
     dt      = normalize_datatype(raw_dt) if raw_dt else None
     kind    = infer_member_kind(dt, arg_dir)
 
+    # Filter non-browsable members — but always keep child/variable-scope:
+    # those are structural slots (activity body, variable declarations) that
+    # must be serialized in XAML even when hidden from the Properties panel.
+    if prop.get("isBrowsable") is False and kind not in ("child", "variable-scope"):
+        return None
+
     return {
-        "name":               prop["name"],
-        "displayName":        prop.get("displayName") or prop["name"],
-        "dataType":           dt,
-        "memberKind":         kind,
-        "argumentDirection":  arg_dir if kind == "argument" else None,
-        "isRequiredArgument": bool(prop.get("isRequired")) if kind == "argument" else False,
-        "description":        prop.get("description"),
-        "category":           prop.get("category"),
-        "defaultValue":       prop.get("defaultValue"),
-        "typeConverter":      prop.get("typeConverter"),
+        "name":                  prop["name"],
+        "displayName":           prop.get("displayName") or prop["name"],
+        "dataType":              dt,
+        "memberKind":            kind,
+        "argumentDirection":     arg_dir if kind == "argument" else None,
+        "isRequiredArgument":    bool(prop.get("isRequired")) if kind == "argument" else False,
+        "description":           prop.get("description"),
+        "category":              prop.get("category"),
+        "defaultValue":          prop.get("defaultValue"),
+        "typeConverter":         prop.get("typeConverter"),
+        "isObsolete":            bool(prop.get("isObsolete", False)),
+        "obsoleteMessage":       prop.get("obsoleteMessage"),
+        "delegateArgumentName":  prop.get("delegateArgumentName"),
+        "enumValues":            prop.get("enumValues") or [],
+        "typeMembers":           _map_type_members(prop.get("typeMembers") or []),
     }
 
 # ── Source and activity builders ───────────────────────────────────────────────
@@ -204,8 +243,11 @@ def build_activity(item: dict, source_obj: dict) -> dict:
         "visibility":            item.get("visibility", "browsable"),
         "hasGenericParameters":  bool(item.get("hasGenericParameters", False)),
         "genericParameterNames": item.get("genericParameterNames") or [],
+        "isObsolete":            bool(item.get("isObsolete", False)),
+        "obsoleteMessage":       item.get("obsoleteMessage"),
+        "xmlNamespace":          item.get("xmlNamespace"),
+        "xmlPrefix":             item.get("xmlPrefix"),
         "members":               members,
-        "enrichment":            None,
     }
 
 
@@ -251,6 +293,21 @@ def _is_legacy_suppressed(item: dict) -> bool:
 
 # ── Set builder ────────────────────────────────────────────────────────────────
 
+def _all_extracted_packages() -> list[dict]:
+    """Return [{id, version}, ...] for every stable version present in SHAPE_B_DIR."""
+    entries = []
+    if not SHAPE_B_DIR.exists():
+        return entries
+    for pkg_dir in sorted(SHAPE_B_DIR.iterdir()):
+        if not pkg_dir.is_dir():
+            continue
+        for json_file in sorted(pkg_dir.glob("*.json")):
+            ver = json_file.stem
+            if not re.search(r"[a-zA-Z]", ver):  # stable versions only
+                entries.append({"id": pkg_dir.name, "version": ver})
+    return entries
+
+
 def build_set(set_cfg: dict, builtins_catalogs: list | None = None) -> list:
     """Build one dist set. Returns the list of per-package catalog dicts produced.
 
@@ -262,7 +319,8 @@ def build_set(set_cfg: dict, builtins_catalogs: list | None = None) -> list:
     generated_at     = datetime.datetime.now(datetime.UTC).strftime("%Y-%m-%dT%H:%M:%SZ")
     per_pkg_catalogs = []
 
-    for pkg_cfg in set_cfg["packages"]:
+    pkg_list = _all_extracted_packages() if set_cfg.get("all_extracted") else set_cfg.get("packages", [])
+    for pkg_cfg in pkg_list:
         pkg_id   = pkg_cfg["id"]
         versions = resolve_versions(pkg_id, pkg_cfg)
 
@@ -271,9 +329,9 @@ def build_set(set_cfg: dict, builtins_catalogs: list | None = None) -> list:
             continue
 
         for version in versions:
-            shape_b_path = SHAPE_B_DIR / pkg_id / f"{version}.json"
+            shape_b_path = _resolve_source_path(pkg_id, version)
             if not shape_b_path.exists():
-                print(f"  [error] missing engine-result: {shape_b_path}", file=sys.stderr)
+                print(f"  [error] missing source: {shape_b_path}", file=sys.stderr)
                 continue
 
             check_tfm(pkg_id, version)
@@ -305,7 +363,7 @@ def build_set(set_cfg: dict, builtins_catalogs: list | None = None) -> list:
                     seen_xmlns[ns_key] = build_xmlns_mapping(item)
 
             catalog = {
-                "schema":            {"id": "activity-catalog", "version": "v0.2"},
+                "schema":            {"id": "activity-catalog", "version": "v0.3"},
                 "source":            source_obj,
                 "generatedAt":       generated_at,
                 "activities":        activities,
@@ -330,7 +388,7 @@ def build_set(set_cfg: dict, builtins_catalogs: list | None = None) -> list:
 
     set_index = [
         {"metadata": {
-            "schema":      {"id": "activity-catalog-set", "version": "v0.2"},
+            "schema":      {"id": "activity-catalog-set", "version": "v0.3"},
             "set":         set_id,
             "generatedAt": generated_at,
         }},
@@ -348,7 +406,7 @@ def build_set(set_cfg: dict, builtins_catalogs: list | None = None) -> list:
 
 def main() -> None:
     parser = argparse.ArgumentParser(
-        description="Build publishable activity-catalog v0.2 JSON from PackageFurnace engine-result v1 sources."
+        description="Build publishable activity-catalog v0.3 JSON from PackageFurnace enriched-catalog sources."
     )
     parser.add_argument("--set", metavar="ID", help="Build only this set id")
     parser.add_argument("--skip-builtins", action="store_true",
