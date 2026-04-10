@@ -1,30 +1,40 @@
-# catalog justfile — pipeline tasks for activity-catalog data
+# catalog justfile — single source of pipeline orchestration
+#
+# Full pipeline:
+#   seed → extract → enrich → build → refdoc
+#
+# Environment variables (all have working defaults):
+#   PF_EXE    Path to PackageFurnace binary
+#             default: %LOCALAPPDATA%\cpmf\tools\PackageFurnace\PackageFurnace.exe
+#             install:  `just install` in the PackageFurnace repo
+#   PF_CACHE  pf-cache root (nupkg download cache + pipeline artefacts)
+#             default: sibling of %NUGET_PACKAGES% or %LOCALAPPDATA%\cpmf\pf-cache
 
-# Seed latest-stable PackageFurnace results for every unpinned package in curated.yaml.
-# Run this before `build` to ensure all latest-stable sets have up-to-date activity data.
+# ── Seed ──────────────────────────────────────────────────────────────────────
+
+# Seed latest-stable engine-results for every unpinned package in curated.yaml.
 seed:
     uv run scripts/seed_latest.py
 
-# Seed a single set (e.g. `just seed-set reframework-core`)
+# Seed a single set (e.g. `just seed-set reframework-stable`)
 seed-set set:
     uv run scripts/seed_latest.py --set {{set}}
 
-# Seed every package in the full UiPath official feed at latest-stable (~904 packages).
+# Seed every package in the full UiPath official feed at latest-stable.
 seed-full:
     uv run scripts/seed_latest.py --full-feed
 
-# Seed every stable version of every package in the feed (powers full-catalog all_extracted).
+# Seed every stable version of every package in the feed.
 seed-all-versions:
     uv run scripts/seed_latest.py --all-versions
 
-# Extract engine-results from NuGet packages via PackageFurnace CLI.
-# PackageFurnace must be installed: run `just install` in the PackageFurnace repo.
-# Override binary path with:  PF_EXE=/path/to/PackageFurnace just extract
-# Override cache location with: PF_CACHE=/path/to/cache just extract
+# ── Extract ───────────────────────────────────────────────────────────────────
+
+# Extract engine-results for pinned packages via PackageFurnace CLI.
 extract:
     uv run scripts/extract_activities.py
 
-# Re-extract all packages, overwriting existing output files.
+# Re-extract all pinned packages, overwriting existing output files.
 extract-force:
     uv run scripts/extract_activities.py --force
 
@@ -32,24 +42,38 @@ extract-force:
 extract-set set:
     uv run scripts/extract_activities.py --set {{set}}
 
-# Build publishable dist JSON from extracted engine-results.
+# ── Enrich ────────────────────────────────────────────────────────────────────
+
+# Run the full PackageFurnace pipeline (unpack → map-deps → index-types → merge-index → enrich)
+# for a single package/version. Writes enriched-catalog.json to pf-cache.
+# Usage: just enrich UiPath.System.Activities 26.2.4
+enrich id version:
+    uv run scripts/enrich.py {{id}} {{version}}
+
+# Run enrich for every package/version present in data/sources/packagefurnace/pkg/.
+enrich-all:
+    uv run scripts/enrich.py --all
+
+# ── Build ─────────────────────────────────────────────────────────────────────
+
+# Build publishable dist JSON. Prefers enriched-catalog.json when PF_CACHE is set.
 build:
     uv run scripts/build_dist.py
 
-# Build dist for a single set (e.g. `just build-set watchful-anvil`)
+# Build dist for a single set (e.g. `just build-set reframework-stable`)
 build-set set:
     uv run scripts/build_dist.py --set {{set}}
 
-# Generate HTML developer reference docs from dist.
+# ── Refdoc ────────────────────────────────────────────────────────────────────
+
+# Generate HTML reference + index pages from dist.
 refdoc:
     uv run scripts/build_refdoc.py
 
-# Generate LLM reference files (llms.txt) from dist.
-refllm:
-    uv run scripts/build_refllm.py
+# ── Full pipelines ────────────────────────────────────────────────────────────
 
-# Full pipeline: extract → build → refdoc + refllm
-all: extract build refdoc refllm
+# Full pipeline: seed → extract → enrich-all → build → refdoc
+all: seed extract enrich-all build refdoc
 
 # Full pipeline with forced re-extraction.
-all-force: extract-force build refdoc refllm
+all-force: seed extract-force enrich-all build refdoc
