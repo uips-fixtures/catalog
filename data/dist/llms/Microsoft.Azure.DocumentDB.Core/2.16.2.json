@@ -1,0 +1,2097 @@
+{
+  "schema": {
+    "id": "activity-catalog",
+    "version": "v0.3"
+  },
+  "source": {
+    "kind": "nuget-package",
+    "id": "Microsoft.Azure.DocumentDB.Core",
+    "version": "2.16.2",
+    "feedUrl": null,
+    "authors": "Microsoft",
+    "projectUrl": "http://go.microsoft.com/fwlink/?LinkID=509927",
+    "description": "This client library enables client applications targeting .NET Core to connect to Azure Cosmos DB via the DocumentDB (SQL) API. Azure Cosmos DB is a globally distributed, multi-model database service. For more information, refer to http://azure.microsoft.com/services/cosmos-db/.",
+    "license": "License.txt",
+    "tags": "microsoft azure cosmos cosmosdb documentdb docdb nosql azureofficial dotnetcore netcore netstandard",
+    "packageTypes": []
+  },
+  "generatedAt": "2026-04-10T09:21:13Z",
+  "activities": [],
+  "enums": [
+    {
+      "fullName": "Microsoft.Azure.Documents.CompositePathSortOrder",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Ascending",
+          "value": 0
+        },
+        {
+          "name": "Descending",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Documents.ConflictResolutionMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "LastWriterWins",
+          "value": 0
+        },
+        {
+          "name": "Custom",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Documents.ConsistencyLevel",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Strong",
+          "value": 0
+        },
+        {
+          "name": "BoundedStaleness",
+          "value": 1
+        },
+        {
+          "name": "Session",
+          "value": 2
+        },
+        {
+          "name": "Eventual",
+          "value": 3
+        },
+        {
+          "name": "ConsistentPrefix",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Documents.DataType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Number",
+          "value": 0
+        },
+        {
+          "name": "String",
+          "value": 1
+        },
+        {
+          "name": "Point",
+          "value": 2
+        },
+        {
+          "name": "LineString",
+          "value": 3
+        },
+        {
+          "name": "Polygon",
+          "value": 4
+        },
+        {
+          "name": "MultiPolygon",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Documents.GeospatialType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Geography",
+          "value": 0
+        },
+        {
+          "name": "Geometry",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Documents.IndexingDirective",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "Include",
+          "value": 1
+        },
+        {
+          "name": "Exclude",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Documents.IndexingMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Consistent",
+          "value": 0
+        },
+        {
+          "name": "Lazy",
+          "value": 1
+        },
+        {
+          "name": "None",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Documents.IndexKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Hash",
+          "value": 0
+        },
+        {
+          "name": "Range",
+          "value": 1
+        },
+        {
+          "name": "Spatial",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Documents.OperationKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Invalid",
+          "value": 0
+        },
+        {
+          "name": "Create",
+          "value": 1
+        },
+        {
+          "name": "Replace",
+          "value": 2
+        },
+        {
+          "name": "Delete",
+          "value": 3
+        },
+        {
+          "name": "Read",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Documents.PartitionKeyDefinitionVersion",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "V1",
+          "value": 1
+        },
+        {
+          "name": "V2",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Documents.PermissionMode",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Read",
+          "value": 1
+        },
+        {
+          "name": "All",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Documents.PortReuseMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ReuseUnicastPort",
+          "value": 0
+        },
+        {
+          "name": "PrivatePortPool",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Documents.QueryPlanGenerationMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DefaultWindowsX64NativeWithFallbackToGateway",
+          "value": 0
+        },
+        {
+          "name": "WindowsX64NativeOnly",
+          "value": 1
+        },
+        {
+          "name": "GatewayOnly",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Documents.RntbdConstants.RntbdResourceType",
+      "underlyingType": "System.UInt16",
+      "members": [
+        {
+          "name": "Connection",
+          "value": 0
+        },
+        {
+          "name": "Database",
+          "value": 1
+        },
+        {
+          "name": "Collection",
+          "value": 2
+        },
+        {
+          "name": "Document",
+          "value": 3
+        },
+        {
+          "name": "Attachment",
+          "value": 4
+        },
+        {
+          "name": "User",
+          "value": 5
+        },
+        {
+          "name": "Permission",
+          "value": 6
+        },
+        {
+          "name": "StoredProcedure",
+          "value": 7
+        },
+        {
+          "name": "Conflict",
+          "value": 8
+        },
+        {
+          "name": "Trigger",
+          "value": 9
+        },
+        {
+          "name": "UserDefinedFunction",
+          "value": 10
+        },
+        {
+          "name": "Module",
+          "value": 11
+        },
+        {
+          "name": "Replica",
+          "value": 12
+        },
+        {
+          "name": "ModuleCommand",
+          "value": 13
+        },
+        {
+          "name": "Record",
+          "value": 14
+        },
+        {
+          "name": "Offer",
+          "value": 15
+        },
+        {
+          "name": "PartitionSetInformation",
+          "value": 16
+        },
+        {
+          "name": "XPReplicatorAddress",
+          "value": 17
+        },
+        {
+          "name": "MasterPartition",
+          "value": 18
+        },
+        {
+          "name": "ServerPartition",
+          "value": 19
+        },
+        {
+          "name": "DatabaseAccount",
+          "value": 20
+        },
+        {
+          "name": "Topology",
+          "value": 21
+        },
+        {
+          "name": "PartitionKeyRange",
+          "value": 22
+        },
+        {
+          "name": "Schema",
+          "value": 24
+        },
+        {
+          "name": "BatchApply",
+          "value": 25
+        },
+        {
+          "name": "RestoreMetadata",
+          "value": 26
+        },
+        {
+          "name": "ComputeGatewayCharges",
+          "value": 27
+        },
+        {
+          "name": "RidRange",
+          "value": 28
+        },
+        {
+          "name": "UserDefinedType",
+          "value": 29
+        },
+        {
+          "name": "VectorClock",
+          "value": 31
+        },
+        {
+          "name": "PartitionKey",
+          "value": 32
+        },
+        {
+          "name": "Snapshot",
+          "value": 33
+        },
+        {
+          "name": "ClientEncryptionKey",
+          "value": 35
+        },
+        {
+          "name": "Transaction",
+          "value": 37
+        },
+        {
+          "name": "PartitionedSystemDocument",
+          "value": 38
+        },
+        {
+          "name": "RoleDefinition",
+          "value": 39
+        },
+        {
+          "name": "RoleAssignment",
+          "value": 40
+        },
+        {
+          "name": "SystemDocument",
+          "value": 41
+        },
+        {
+          "name": "InteropUser",
+          "value": 42
+        },
+        {
+          "name": "TransportControlCommand",
+          "value": 43
+        },
+        {
+          "name": "AuthPolicyElement",
+          "value": 44
+        },
+        {
+          "name": "StorageAuthToken",
+          "value": 45
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Documents.RntbdConstants.RntbdOperationType",
+      "underlyingType": "System.UInt16",
+      "members": [
+        {
+          "name": "Connection",
+          "value": 0
+        },
+        {
+          "name": "Create",
+          "value": 1
+        },
+        {
+          "name": "Patch",
+          "value": 2
+        },
+        {
+          "name": "Read",
+          "value": 3
+        },
+        {
+          "name": "ReadFeed",
+          "value": 4
+        },
+        {
+          "name": "Delete",
+          "value": 5
+        },
+        {
+          "name": "Replace",
+          "value": 6
+        },
+        {
+          "name": "ExecuteJavaScript",
+          "value": 8
+        },
+        {
+          "name": "SQLQuery",
+          "value": 9
+        },
+        {
+          "name": "Pause",
+          "value": 10
+        },
+        {
+          "name": "Resume",
+          "value": 11
+        },
+        {
+          "name": "Stop",
+          "value": 12
+        },
+        {
+          "name": "Recycle",
+          "value": 13
+        },
+        {
+          "name": "Crash",
+          "value": 14
+        },
+        {
+          "name": "Query",
+          "value": 15
+        },
+        {
+          "name": "ForceConfigRefresh",
+          "value": 16
+        },
+        {
+          "name": "Head",
+          "value": 17
+        },
+        {
+          "name": "HeadFeed",
+          "value": 18
+        },
+        {
+          "name": "Upsert",
+          "value": 19
+        },
+        {
+          "name": "Recreate",
+          "value": 20
+        },
+        {
+          "name": "Throttle",
+          "value": 21
+        },
+        {
+          "name": "GetSplitPoint",
+          "value": 22
+        },
+        {
+          "name": "PreCreateValidation",
+          "value": 23
+        },
+        {
+          "name": "BatchApply",
+          "value": 24
+        },
+        {
+          "name": "AbortSplit",
+          "value": 25
+        },
+        {
+          "name": "CompleteSplit",
+          "value": 26
+        },
+        {
+          "name": "OfferUpdateOperation",
+          "value": 27
+        },
+        {
+          "name": "OfferPreGrowValidation",
+          "value": 28
+        },
+        {
+          "name": "BatchReportThroughputUtilization",
+          "value": 29
+        },
+        {
+          "name": "CompletePartitionMigration",
+          "value": 30
+        },
+        {
+          "name": "AbortPartitionMigration",
+          "value": 31
+        },
+        {
+          "name": "PreReplaceValidation",
+          "value": 32
+        },
+        {
+          "name": "AddComputeGatewayRequestCharges",
+          "value": 33
+        },
+        {
+          "name": "MigratePartition",
+          "value": 34
+        },
+        {
+          "name": "MasterReplaceOfferOperation",
+          "value": 35
+        },
+        {
+          "name": "ProvisionedCollectionOfferUpdateOperation",
+          "value": 36
+        },
+        {
+          "name": "Batch",
+          "value": 37
+        },
+        {
+          "name": "InitiateDatabaseOfferPartitionShrink",
+          "value": 38
+        },
+        {
+          "name": "CompleteDatabaseOfferPartitionShrink",
+          "value": 39
+        },
+        {
+          "name": "EnsureSnapshotOperation",
+          "value": 40
+        },
+        {
+          "name": "GetSplitPoints",
+          "value": 41
+        },
+        {
+          "name": "CompleteMergeOnTarget",
+          "value": 42
+        },
+        {
+          "name": "CompleteMergeOnMaster",
+          "value": 44
+        },
+        {
+          "name": "ForcePartitionBackup",
+          "value": 46
+        },
+        {
+          "name": "CompleteUserTransaction",
+          "value": 47
+        },
+        {
+          "name": "MasterInitiatedProgressCoordination",
+          "value": 48
+        },
+        {
+          "name": "MetadataCheckAccess",
+          "value": 49
+        },
+        {
+          "name": "CreateSystemSnapshot",
+          "value": 50
+        },
+        {
+          "name": "UpdateFailoverPriorityList",
+          "value": 51
+        },
+        {
+          "name": "GetStorageAuthToken",
+          "value": 52
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Documents.RntbdConstants.ConnectionContextRequestTokenIdentifiers",
+      "underlyingType": "System.UInt16",
+      "members": [
+        {
+          "name": "ProtocolVersion",
+          "value": 0
+        },
+        {
+          "name": "ClientVersion",
+          "value": 1
+        },
+        {
+          "name": "UserAgent",
+          "value": 2
+        },
+        {
+          "name": "CallerId",
+          "value": 3
+        },
+        {
+          "name": "EnableChannelMultiplexing",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Documents.RntbdConstants.ConnectionContextResponseTokenIdentifiers",
+      "underlyingType": "System.UInt16",
+      "members": [
+        {
+          "name": "ProtocolVersion",
+          "value": 0
+        },
+        {
+          "name": "ClientVersion",
+          "value": 1
+        },
+        {
+          "name": "ServerAgent",
+          "value": 2
+        },
+        {
+          "name": "ServerVersion",
+          "value": 3
+        },
+        {
+          "name": "IdleTimeoutInSeconds",
+          "value": 4
+        },
+        {
+          "name": "UnauthenticatedTimeoutInSeconds",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Documents.RntbdConstants.RntbdIndexingDirective",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "Include",
+          "value": 1
+        },
+        {
+          "name": "Exclude",
+          "value": 2
+        },
+        {
+          "name": "Invalid",
+          "value": 255
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Documents.RntbdConstants.RntbdMigrateCollectionDirective",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Thaw",
+          "value": 0
+        },
+        {
+          "name": "Freeze",
+          "value": 1
+        },
+        {
+          "name": "Invalid",
+          "value": 255
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Documents.RntbdConstants.RntbdRemoteStorageType",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Invalid",
+          "value": 0
+        },
+        {
+          "name": "NotSpecified",
+          "value": 1
+        },
+        {
+          "name": "Standard",
+          "value": 2
+        },
+        {
+          "name": "Premium",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Documents.RntbdConstants.RntbdConsistencyLevel",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Strong",
+          "value": 0
+        },
+        {
+          "name": "BoundedStaleness",
+          "value": 1
+        },
+        {
+          "name": "Session",
+          "value": 2
+        },
+        {
+          "name": "Eventual",
+          "value": 3
+        },
+        {
+          "name": "ConsistentPrefix",
+          "value": 4
+        },
+        {
+          "name": "Invalid",
+          "value": 255
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Documents.RntbdConstants.RntdbEnumerationDirection",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Invalid",
+          "value": 0
+        },
+        {
+          "name": "Forward",
+          "value": 1
+        },
+        {
+          "name": "Reverse",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Documents.RntbdConstants.RntbdFanoutOperationState",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Started",
+          "value": 1
+        },
+        {
+          "name": "Completed",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Documents.RntbdConstants.RntdbReadFeedKeyType",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Invalid",
+          "value": 0
+        },
+        {
+          "name": "ResourceId",
+          "value": 1
+        },
+        {
+          "name": "EffectivePartitionKey",
+          "value": 2
+        },
+        {
+          "name": "EffectivePartitionKeyRange",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Documents.RntbdConstants.RntbdContentSerializationFormat",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "JsonText",
+          "value": 0
+        },
+        {
+          "name": "CosmosBinary",
+          "value": 1
+        },
+        {
+          "name": "HybridRow",
+          "value": 2
+        },
+        {
+          "name": "Invalid",
+          "value": 255
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Documents.RntbdConstants.RntbdSystemDocumentType",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "PartitionKey",
+          "value": 0
+        },
+        {
+          "name": "MaterializedViewLeaseDocument",
+          "value": 1
+        },
+        {
+          "name": "MaterializedViewBuilderOwnershipDocument",
+          "value": 2
+        },
+        {
+          "name": "MaterializedViewLeaseStoreInitDocument",
+          "value": 3
+        },
+        {
+          "name": "Invalid",
+          "value": 255
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Documents.RntbdConstants.RntbdRequestedCollectionType",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "All",
+          "value": 0
+        },
+        {
+          "name": "Standard",
+          "value": 1
+        },
+        {
+          "name": "MaterializedView",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Documents.RntbdConstants.RequestIdentifiers",
+      "underlyingType": "System.UInt16",
+      "members": [
+        {
+          "name": "ResourceId",
+          "value": 0
+        },
+        {
+          "name": "AuthorizationToken",
+          "value": 1
+        },
+        {
+          "name": "PayloadPresent",
+          "value": 2
+        },
+        {
+          "name": "Date",
+          "value": 3
+        },
+        {
+          "name": "PageSize",
+          "value": 4
+        },
+        {
+          "name": "SessionToken",
+          "value": 5
+        },
+        {
+          "name": "ContinuationToken",
+          "value": 6
+        },
+        {
+          "name": "IndexingDirective",
+          "value": 7
+        },
+        {
+          "name": "Match",
+          "value": 8
+        },
+        {
+          "name": "PreTriggerInclude",
+          "value": 9
+        },
+        {
+          "name": "PostTriggerInclude",
+          "value": 10
+        },
+        {
+          "name": "IsFanout",
+          "value": 11
+        },
+        {
+          "name": "CollectionPartitionIndex",
+          "value": 12
+        },
+        {
+          "name": "CollectionServiceIndex",
+          "value": 13
+        },
+        {
+          "name": "PreTriggerExclude",
+          "value": 14
+        },
+        {
+          "name": "PostTriggerExclude",
+          "value": 15
+        },
+        {
+          "name": "ConsistencyLevel",
+          "value": 16
+        },
+        {
+          "name": "EntityId",
+          "value": 17
+        },
+        {
+          "name": "ResourceSchemaName",
+          "value": 18
+        },
+        {
+          "name": "ReplicaPath",
+          "value": 19
+        },
+        {
+          "name": "ResourceTokenExpiry",
+          "value": 20
+        },
+        {
+          "name": "DatabaseName",
+          "value": 21
+        },
+        {
+          "name": "CollectionName",
+          "value": 22
+        },
+        {
+          "name": "DocumentName",
+          "value": 23
+        },
+        {
+          "name": "AttachmentName",
+          "value": 24
+        },
+        {
+          "name": "UserName",
+          "value": 25
+        },
+        {
+          "name": "PermissionName",
+          "value": 26
+        },
+        {
+          "name": "StoredProcedureName",
+          "value": 27
+        },
+        {
+          "name": "UserDefinedFunctionName",
+          "value": 28
+        },
+        {
+          "name": "TriggerName",
+          "value": 29
+        },
+        {
+          "name": "EnableScanInQuery",
+          "value": 30
+        },
+        {
+          "name": "EmitVerboseTracesInQuery",
+          "value": 31
+        },
+        {
+          "name": "ConflictName",
+          "value": 32
+        },
+        {
+          "name": "BindReplicaDirective",
+          "value": 33
+        },
+        {
+          "name": "PrimaryMasterKey",
+          "value": 34
+        },
+        {
+          "name": "SecondaryMasterKey",
+          "value": 35
+        },
+        {
+          "name": "PrimaryReadonlyKey",
+          "value": 36
+        },
+        {
+          "name": "SecondaryReadonlyKey",
+          "value": 37
+        },
+        {
+          "name": "ProfileRequest",
+          "value": 38
+        },
+        {
+          "name": "EnableLowPrecisionOrderBy",
+          "value": 39
+        },
+        {
+          "name": "ClientVersion",
+          "value": 40
+        },
+        {
+          "name": "CanCharge",
+          "value": 41
+        },
+        {
+          "name": "CanThrottle",
+          "value": 42
+        },
+        {
+          "name": "PartitionKey",
+          "value": 43
+        },
+        {
+          "name": "PartitionKeyRangeId",
+          "value": 44
+        },
+        {
+          "name": "NotUsed2D",
+          "value": 45
+        },
+        {
+          "name": "NotUsed2E",
+          "value": 46
+        },
+        {
+          "name": "NotUsed2F",
+          "value": 47
+        },
+        {
+          "name": "MigrateCollectionDirective",
+          "value": 49
+        },
+        {
+          "name": "NotUsed32",
+          "value": 50
+        },
+        {
+          "name": "SupportSpatialLegacyCoordinates",
+          "value": 51
+        },
+        {
+          "name": "PartitionCount",
+          "value": 52
+        },
+        {
+          "name": "CollectionRid",
+          "value": 53
+        },
+        {
+          "name": "PartitionKeyRangeName",
+          "value": 54
+        },
+        {
+          "name": "SchemaName",
+          "value": 58
+        },
+        {
+          "name": "FilterBySchemaRid",
+          "value": 59
+        },
+        {
+          "name": "UsePolygonsSmallerThanAHemisphere",
+          "value": 60
+        },
+        {
+          "name": "GatewaySignature",
+          "value": 61
+        },
+        {
+          "name": "EnableLogging",
+          "value": 62
+        },
+        {
+          "name": "A_IM",
+          "value": 63
+        },
+        {
+          "name": "PopulateQuotaInfo",
+          "value": 64
+        },
+        {
+          "name": "DisableRUPerMinuteUsage",
+          "value": 65
+        },
+        {
+          "name": "PopulateQueryMetrics",
+          "value": 66
+        },
+        {
+          "name": "ResponseContinuationTokenLimitInKb",
+          "value": 67
+        },
+        {
+          "name": "PopulatePartitionStatistics",
+          "value": 68
+        },
+        {
+          "name": "RemoteStorageType",
+          "value": 69
+        },
+        {
+          "name": "CollectionRemoteStorageSecurityIdentifier",
+          "value": 70
+        },
+        {
+          "name": "IfModifiedSince",
+          "value": 71
+        },
+        {
+          "name": "PopulateCollectionThroughputInfo",
+          "value": 72
+        },
+        {
+          "name": "RemainingTimeInMsOnClientRequest",
+          "value": 73
+        },
+        {
+          "name": "ClientRetryAttemptCount",
+          "value": 74
+        },
+        {
+          "name": "TargetLsn",
+          "value": 75
+        },
+        {
+          "name": "TargetGlobalCommittedLsn",
+          "value": 76
+        },
+        {
+          "name": "TransportRequestID",
+          "value": 77
+        },
+        {
+          "name": "RestoreMetadaFilter",
+          "value": 78
+        },
+        {
+          "name": "RestoreParams",
+          "value": 79
+        },
+        {
+          "name": "ShareThroughput",
+          "value": 80
+        },
+        {
+          "name": "PartitionResourceFilter",
+          "value": 81
+        },
+        {
+          "name": "IsReadOnlyScript",
+          "value": 82
+        },
+        {
+          "name": "IsAutoScaleRequest",
+          "value": 83
+        },
+        {
+          "name": "ForceQueryScan",
+          "value": 84
+        },
+        {
+          "name": "CanOfferReplaceComplete",
+          "value": 86
+        },
+        {
+          "name": "ExcludeSystemProperties",
+          "value": 87
+        },
+        {
+          "name": "BinaryId",
+          "value": 88
+        },
+        {
+          "name": "TimeToLiveInSeconds",
+          "value": 89
+        },
+        {
+          "name": "EffectivePartitionKey",
+          "value": 90
+        },
+        {
+          "name": "BinaryPassthroughRequest",
+          "value": 91
+        },
+        {
+          "name": "UserDefinedTypeName",
+          "value": 92
+        },
+        {
+          "name": "EnableDynamicRidRangeAllocation",
+          "value": 93
+        },
+        {
+          "name": "EnumerationDirection",
+          "value": 94
+        },
+        {
+          "name": "StartId",
+          "value": 95
+        },
+        {
+          "name": "EndId",
+          "value": 96
+        },
+        {
+          "name": "FanoutOperationState",
+          "value": 97
+        },
+        {
+          "name": "StartEpk",
+          "value": 98
+        },
+        {
+          "name": "EndEpk",
+          "value": 99
+        },
+        {
+          "name": "ReadFeedKeyType",
+          "value": 100
+        },
+        {
+          "name": "ContentSerializationFormat",
+          "value": 101
+        },
+        {
+          "name": "AllowTentativeWrites",
+          "value": 102
+        },
+        {
+          "name": "IsUserRequest",
+          "value": 103
+        },
+        {
+          "name": "SharedOfferthroughput",
+          "value": 104
+        },
+        {
+          "name": "PreserveFullContent",
+          "value": 105
+        },
+        {
+          "name": "IncludeTentativeWrites",
+          "value": 112
+        },
+        {
+          "name": "PopulateResourceCount",
+          "value": 113
+        },
+        {
+          "name": "MergeStaticId",
+          "value": 114
+        },
+        {
+          "name": "IsBatchAtomic",
+          "value": 115
+        },
+        {
+          "name": "ShouldBatchContinueOnError",
+          "value": 116
+        },
+        {
+          "name": "IsBatchOrdered",
+          "value": 117
+        },
+        {
+          "name": "SchemaOwnerRid",
+          "value": 118
+        },
+        {
+          "name": "SchemaHash",
+          "value": 119
+        },
+        {
+          "name": "IsRUPerGBEnforcementRequest",
+          "value": 120
+        },
+        {
+          "name": "MaxPollingIntervalMilliseconds",
+          "value": 121
+        },
+        {
+          "name": "SnapshotName",
+          "value": 122
+        },
+        {
+          "name": "PopulateLogStoreInfo",
+          "value": 123
+        },
+        {
+          "name": "GetAllPartitionKeyStatistics",
+          "value": 124
+        },
+        {
+          "name": "ForceSideBySideIndexMigration",
+          "value": 125
+        },
+        {
+          "name": "CollectionChildResourceNameLimitInBytes",
+          "value": 126
+        },
+        {
+          "name": "CollectionChildResourceContentLengthLimitInKB",
+          "value": 127
+        },
+        {
+          "name": "ClientEncryptionKeyName",
+          "value": 128
+        },
+        {
+          "name": "MergeCheckpointGLSNKeyName",
+          "value": 129
+        },
+        {
+          "name": "ReturnPreference",
+          "value": 130
+        },
+        {
+          "name": "UniqueIndexNameEncodingMode",
+          "value": 131
+        },
+        {
+          "name": "PopulateUnflushedMergeEntryCount",
+          "value": 132
+        },
+        {
+          "name": "MigrateOfferToManualThroughput",
+          "value": 133
+        },
+        {
+          "name": "MigrateOfferToAutopilot",
+          "value": 134
+        },
+        {
+          "name": "IsClientEncrypted",
+          "value": 135
+        },
+        {
+          "name": "SystemDocumentType",
+          "value": 136
+        },
+        {
+          "name": "IsofferStorageRefreshRequest",
+          "value": 137
+        },
+        {
+          "name": "ResourceTypes",
+          "value": 138
+        },
+        {
+          "name": "TransactionId",
+          "value": 139
+        },
+        {
+          "name": "TransactionFirstRequest",
+          "value": 140
+        },
+        {
+          "name": "TransactionCommit",
+          "value": 141
+        },
+        {
+          "name": "SystemDocumentName",
+          "value": 142
+        },
+        {
+          "name": "UpdateMaxThroughputEverProvisioned",
+          "value": 143
+        },
+        {
+          "name": "UniqueIndexReIndexingState",
+          "value": 144
+        },
+        {
+          "name": "RoleDefinitionName",
+          "value": 145
+        },
+        {
+          "name": "RoleAssignmentName",
+          "value": 146
+        },
+        {
+          "name": "UseSystemBudget",
+          "value": 147
+        },
+        {
+          "name": "IgnoreSystemLoweringMaxThroughput",
+          "value": 148
+        },
+        {
+          "name": "TruncateMergeLogRequest",
+          "value": 149
+        },
+        {
+          "name": "RetriableWriteRequestId",
+          "value": 150
+        },
+        {
+          "name": "IsRetriedWriteReqeuest",
+          "value": 151
+        },
+        {
+          "name": "RetriableWriteRequestStartTimestamp",
+          "value": 152
+        },
+        {
+          "name": "AddResourcePropertiesToResponse",
+          "value": 153
+        },
+        {
+          "name": "ChangeFeedStartFullFidelityIfNoneMatch",
+          "value": 154
+        },
+        {
+          "name": "SystemRestoreOperation",
+          "value": 155
+        },
+        {
+          "name": "SkipRefreshDatabaseAccountConfigs",
+          "value": 156
+        },
+        {
+          "name": "IntendedCollectionRid",
+          "value": 157
+        },
+        {
+          "name": "UseArchivalPartition",
+          "value": 158
+        },
+        {
+          "name": "PopulateUniqueIndexReIndexProgress",
+          "value": 159
+        },
+        {
+          "name": "CollectionSchemaId",
+          "value": 160
+        },
+        {
+          "name": "CollectionTruncate",
+          "value": 161
+        },
+        {
+          "name": "SDKSupportedCapabilities",
+          "value": 162
+        },
+        {
+          "name": "IsMaterializedViewBuild",
+          "value": 163
+        },
+        {
+          "name": "BuilderClientIdentifier",
+          "value": 164
+        },
+        {
+          "name": "SourceCollectionIfMatch",
+          "value": 165
+        },
+        {
+          "name": "RequestedCollectionType",
+          "value": 166
+        },
+        {
+          "name": "InteropUserName",
+          "value": 168
+        },
+        {
+          "name": "PopulateIndexMetrics",
+          "value": 169
+        },
+        {
+          "name": "PopulateAnalyticalMigrationProgress",
+          "value": 170
+        },
+        {
+          "name": "AuthPolicyElementName",
+          "value": 171
+        },
+        {
+          "name": "ShouldReturnCurrentServerDateTime",
+          "value": 172
+        },
+        {
+          "name": "RbacUserId",
+          "value": 173
+        },
+        {
+          "name": "RbacAction",
+          "value": 174
+        },
+        {
+          "name": "RbacResource",
+          "value": 175
+        },
+        {
+          "name": "CorrelatedActivityId",
+          "value": 176
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Documents.RntbdConstants.ResponseIdentifiers",
+      "underlyingType": "System.UInt16",
+      "members": [
+        {
+          "name": "PayloadPresent",
+          "value": 0
+        },
+        {
+          "name": "LastStateChangeDateTime",
+          "value": 2
+        },
+        {
+          "name": "ContinuationToken",
+          "value": 3
+        },
+        {
+          "name": "ETag",
+          "value": 4
+        },
+        {
+          "name": "ReadsPerformed",
+          "value": 7
+        },
+        {
+          "name": "WritesPerformed",
+          "value": 8
+        },
+        {
+          "name": "QueriesPerformed",
+          "value": 9
+        },
+        {
+          "name": "IndexTermsGenerated",
+          "value": 10
+        },
+        {
+          "name": "ScriptsExecuted",
+          "value": 11
+        },
+        {
+          "name": "RetryAfterMilliseconds",
+          "value": 12
+        },
+        {
+          "name": "IndexingDirective",
+          "value": 13
+        },
+        {
+          "name": "StorageMaxResoureQuota",
+          "value": 14
+        },
+        {
+          "name": "StorageResourceQuotaUsage",
+          "value": 15
+        },
+        {
+          "name": "SchemaVersion",
+          "value": 16
+        },
+        {
+          "name": "CollectionPartitionIndex",
+          "value": 17
+        },
+        {
+          "name": "CollectionServiceIndex",
+          "value": 18
+        },
+        {
+          "name": "LSN",
+          "value": 19
+        },
+        {
+          "name": "ItemCount",
+          "value": 20
+        },
+        {
+          "name": "RequestCharge",
+          "value": 21
+        },
+        {
+          "name": "OwnerFullName",
+          "value": 23
+        },
+        {
+          "name": "OwnerId",
+          "value": 24
+        },
+        {
+          "name": "DatabaseAccountId",
+          "value": 25
+        },
+        {
+          "name": "QuorumAckedLSN",
+          "value": 26
+        },
+        {
+          "name": "RequestValidationFailure",
+          "value": 27
+        },
+        {
+          "name": "SubStatus",
+          "value": 28
+        },
+        {
+          "name": "CollectionUpdateProgress",
+          "value": 29
+        },
+        {
+          "name": "CurrentWriteQuorum",
+          "value": 30
+        },
+        {
+          "name": "CurrentReplicaSetSize",
+          "value": 31
+        },
+        {
+          "name": "CollectionLazyIndexProgress",
+          "value": 32
+        },
+        {
+          "name": "PartitionKeyRangeId",
+          "value": 33
+        },
+        {
+          "name": "LogResults",
+          "value": 37
+        },
+        {
+          "name": "XPRole",
+          "value": 38
+        },
+        {
+          "name": "IsRUPerMinuteUsed",
+          "value": 39
+        },
+        {
+          "name": "QueryMetrics",
+          "value": 40
+        },
+        {
+          "name": "GlobalCommittedLSN",
+          "value": 41
+        },
+        {
+          "name": "NumberOfReadRegions",
+          "value": 48
+        },
+        {
+          "name": "OfferReplacePending",
+          "value": 49
+        },
+        {
+          "name": "ItemLSN",
+          "value": 50
+        },
+        {
+          "name": "RestoreState",
+          "value": 51
+        },
+        {
+          "name": "CollectionSecurityIdentifier",
+          "value": 52
+        },
+        {
+          "name": "TransportRequestID",
+          "value": 53
+        },
+        {
+          "name": "ShareThroughput",
+          "value": 54
+        },
+        {
+          "name": "DisableRntbdChannel",
+          "value": 56
+        },
+        {
+          "name": "ServerDateTimeUtc",
+          "value": 57
+        },
+        {
+          "name": "LocalLSN",
+          "value": 58
+        },
+        {
+          "name": "QuorumAckedLocalLSN",
+          "value": 59
+        },
+        {
+          "name": "ItemLocalLSN",
+          "value": 60
+        },
+        {
+          "name": "HasTentativeWrites",
+          "value": 61
+        },
+        {
+          "name": "SessionToken",
+          "value": 62
+        },
+        {
+          "name": "ReplicatorLSNToGLSNDelta",
+          "value": 63
+        },
+        {
+          "name": "ReplicatorLSNToLLSNDelta",
+          "value": 64
+        },
+        {
+          "name": "VectorClockLocalProgress",
+          "value": 65
+        },
+        {
+          "name": "MinimumRUsForOffer",
+          "value": 66
+        },
+        {
+          "name": "XPConfigurationSessionsCount",
+          "value": 67
+        },
+        {
+          "name": "IndexUtilization",
+          "value": 68
+        },
+        {
+          "name": "QueryExecutionInfo",
+          "value": 69
+        },
+        {
+          "name": "UnflishedMergeLogEntryCount",
+          "value": 70
+        },
+        {
+          "name": "ResourceName",
+          "value": 71
+        },
+        {
+          "name": "TimeToLiveInSeconds",
+          "value": 72
+        },
+        {
+          "name": "ReplicaStatusRevoked",
+          "value": 73
+        },
+        {
+          "name": "SoftMaxAllowedThroughput",
+          "value": 80
+        },
+        {
+          "name": "BackendRequestDurationMilliseconds",
+          "value": 81
+        },
+        {
+          "name": "CorrelatedActivityId",
+          "value": 82
+        },
+        {
+          "name": "ConfirmedStoreChecksum",
+          "value": 83
+        },
+        {
+          "name": "TentativeStoreChecksum",
+          "value": 84
+        },
+        {
+          "name": "PendingPKDelete",
+          "value": 85
+        },
+        {
+          "name": "AadAppliedRoleAssignmentId",
+          "value": 86
+        },
+        {
+          "name": "CollectionUniqueIndexReIndexProgress",
+          "value": 87
+        },
+        {
+          "name": "CollectionUniqueKeysUnderReIndex",
+          "value": 88
+        },
+        {
+          "name": "AnalyticalMigrationProgress",
+          "value": 89
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Documents.RntbdConstants.CallerId",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Anonymous",
+          "value": 0
+        },
+        {
+          "name": "Gateway",
+          "value": 1
+        },
+        {
+          "name": "Invalid",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Documents.SerializationFormattingPolicy",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Indented",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Documents.SpatialType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Point",
+          "value": 0
+        },
+        {
+          "name": "LineString",
+          "value": 1
+        },
+        {
+          "name": "Polygon",
+          "value": 2
+        },
+        {
+          "name": "MultiPolygon",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Documents.TransportRequestStats.RequestStage",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Created",
+          "value": 0
+        },
+        {
+          "name": "ChannelAcquisitionStarted",
+          "value": 1
+        },
+        {
+          "name": "Pipelined",
+          "value": 2
+        },
+        {
+          "name": "Sent",
+          "value": 3
+        },
+        {
+          "name": "Received",
+          "value": 4
+        },
+        {
+          "name": "Completed",
+          "value": 5
+        },
+        {
+          "name": "Failed",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Documents.TriggerOperation",
+      "underlyingType": "System.Int16",
+      "members": [
+        {
+          "name": "All",
+          "value": 0
+        },
+        {
+          "name": "Create",
+          "value": 1
+        },
+        {
+          "name": "Update",
+          "value": 2
+        },
+        {
+          "name": "Delete",
+          "value": 3
+        },
+        {
+          "name": "Replace",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Documents.TriggerType",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Pre",
+          "value": 0
+        },
+        {
+          "name": "Post",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Documents.Spatial.CrsType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Named",
+          "value": 0
+        },
+        {
+          "name": "Linked",
+          "value": 1
+        },
+        {
+          "name": "Unspecified",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Documents.Spatial.GeometryType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Point",
+          "value": 0
+        },
+        {
+          "name": "MultiPoint",
+          "value": 1
+        },
+        {
+          "name": "LineString",
+          "value": 2
+        },
+        {
+          "name": "MultiLineString",
+          "value": 3
+        },
+        {
+          "name": "Polygon",
+          "value": 4
+        },
+        {
+          "name": "MultiPolygon",
+          "value": 5
+        },
+        {
+          "name": "GeometryCollection",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Documents.Client.AccessConditionType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "IfMatch",
+          "value": 0
+        },
+        {
+          "name": "IfNoneMatch",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Documents.Client.ConnectionMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Gateway",
+          "value": 0
+        },
+        {
+          "name": "Direct",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Documents.Client.MediaReadMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Buffered",
+          "value": 0
+        },
+        {
+          "name": "Streamed",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Documents.Client.Protocol",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Https",
+          "value": 0
+        },
+        {
+          "name": "Tcp",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "namespaceMappings": []
+}

@@ -1,0 +1,657 @@
+{
+  "schema": {
+    "id": "activity-catalog",
+    "version": "v0.3"
+  },
+  "source": {
+    "kind": "nuget-package",
+    "id": "Box.V2.Core",
+    "version": "5.2.2",
+    "feedUrl": null,
+    "authors": "Box, Inc.",
+    "projectUrl": "https://github.com/box/box-windows-sdk-v2",
+    "description": "Windows SDK for v2 of the Box API. The SDK is built for .NET Core and includes JWTAuth support.",
+    "license": "Apache-2.0",
+    "tags": "Box V2 SDK Platform Enterprise Collaboration Storage File Management",
+    "packageTypes": []
+  },
+  "generatedAt": "2026-04-10T09:21:12Z",
+  "activities": [],
+  "enums": [
+    {
+      "fullName": "BoxType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "file",
+          "value": 0
+        },
+        {
+          "name": "discussion",
+          "value": 1
+        },
+        {
+          "name": "comment",
+          "value": 2
+        },
+        {
+          "name": "folder",
+          "value": 3
+        },
+        {
+          "name": "retention_policy",
+          "value": 4
+        },
+        {
+          "name": "enterprise",
+          "value": 5
+        },
+        {
+          "name": "user",
+          "value": 6
+        },
+        {
+          "name": "group",
+          "value": 7
+        },
+        {
+          "name": "web_link",
+          "value": 8
+        },
+        {
+          "name": "file_version",
+          "value": 9
+        },
+        {
+          "name": "metadata_template",
+          "value": 10
+        },
+        {
+          "name": "terms_of_service",
+          "value": 11
+        }
+      ]
+    },
+    {
+      "fullName": "Box.V2.RequestMethod",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Get",
+          "value": 0
+        },
+        {
+          "name": "Post",
+          "value": 1
+        },
+        {
+          "name": "Put",
+          "value": 2
+        },
+        {
+          "name": "Delete",
+          "value": 3
+        },
+        {
+          "name": "Options",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Box.V2.ResponseStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "Success",
+          "value": 1
+        },
+        {
+          "name": "Pending",
+          "value": 2
+        },
+        {
+          "name": "Error",
+          "value": 3
+        },
+        {
+          "name": "Unauthorized",
+          "value": 4
+        },
+        {
+          "name": "Found",
+          "value": 5
+        },
+        {
+          "name": "Forbidden",
+          "value": 6
+        },
+        {
+          "name": "TooManyRequests",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "Box.V2.Models.BoxSharedLinkAccessType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "open",
+          "value": 0
+        },
+        {
+          "name": "company",
+          "value": 1
+        },
+        {
+          "name": "collaborators",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Box.V2.Models.BoxSyncStateType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "synced",
+          "value": 0
+        },
+        {
+          "name": "not_synced",
+          "value": 1
+        },
+        {
+          "name": "partially_synced",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Box.V2.Models.BoxSortBy",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Type",
+          "value": 0
+        },
+        {
+          "name": "Name",
+          "value": 1
+        },
+        {
+          "name": "file_version_id",
+          "value": 2
+        },
+        {
+          "name": "Id",
+          "value": 3
+        },
+        {
+          "name": "policy_name",
+          "value": 4
+        },
+        {
+          "name": "retention_policy_id",
+          "value": 5
+        },
+        {
+          "name": "retention_policy_object_id",
+          "value": 6
+        },
+        {
+          "name": "retention_policy_set_id",
+          "value": 7
+        },
+        {
+          "name": "interacted_at",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "Box.V2.Models.BoxSortDirection",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ASC",
+          "value": 0
+        },
+        {
+          "name": "DESC",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Box.V2.Models.MetadataUpdateOp",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "add",
+          "value": 0
+        },
+        {
+          "name": "replace",
+          "value": 1
+        },
+        {
+          "name": "remove",
+          "value": 2
+        },
+        {
+          "name": "test",
+          "value": 3
+        },
+        {
+          "name": "move",
+          "value": 4
+        },
+        {
+          "name": "copy",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Box.V2.Models.ResolutionStateType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "completed",
+          "value": 0
+        },
+        {
+          "name": "incomplete",
+          "value": 1
+        },
+        {
+          "name": "approved",
+          "value": 2
+        },
+        {
+          "name": "rejected",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Box.V2.Models.MetadataTemplateUpdateOp",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "addEnumOption",
+          "value": 0
+        },
+        {
+          "name": "addField",
+          "value": 1
+        },
+        {
+          "name": "editField",
+          "value": 2
+        },
+        {
+          "name": "editTemplate",
+          "value": 3
+        },
+        {
+          "name": "editEnumOption",
+          "value": 4
+        },
+        {
+          "name": "reorderEnumOptions",
+          "value": 5
+        },
+        {
+          "name": "reorderFields",
+          "value": 6
+        },
+        {
+          "name": "removeField",
+          "value": 7
+        },
+        {
+          "name": "removeEnumOption",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "Box.V2.Models.UserEventsStreamType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "all",
+          "value": 0
+        },
+        {
+          "name": "changes",
+          "value": 1
+        },
+        {
+          "name": "sync",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Box.V2.Models.DispositionAction",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "permanently_delete",
+          "value": 0
+        },
+        {
+          "name": "remove_retention",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Box.V2.Models.BoxCompletionRule",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "all_assignees",
+          "value": 0
+        },
+        {
+          "name": "any_assignee",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Box.V2.Models.BoxFileRequestStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "active",
+          "value": 0
+        },
+        {
+          "name": "inactive",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Box.V2.Models.BoxRetentionType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "modifiable",
+          "value": 0
+        },
+        {
+          "name": "non_modifiable",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Box.V2.Models.BoxSignRequestStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "converting",
+          "value": 0
+        },
+        {
+          "name": "created",
+          "value": 1
+        },
+        {
+          "name": "sent",
+          "value": 2
+        },
+        {
+          "name": "viewed",
+          "value": 3
+        },
+        {
+          "name": "signed",
+          "value": 4
+        },
+        {
+          "name": "cancelled",
+          "value": 5
+        },
+        {
+          "name": "declined",
+          "value": 6
+        },
+        {
+          "name": "error_converting",
+          "value": 7
+        },
+        {
+          "name": "error_sending",
+          "value": 8
+        },
+        {
+          "name": "expired",
+          "value": 9
+        },
+        {
+          "name": "downloaded",
+          "value": 10
+        },
+        {
+          "name": "signed_and_downloaded",
+          "value": 11
+        }
+      ]
+    },
+    {
+      "fullName": "Box.V2.Models.BoxSignRequestSignerRole",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "signer",
+          "value": 0
+        },
+        {
+          "name": "approver",
+          "value": 1
+        },
+        {
+          "name": "final_copy_reader",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Box.V2.Models.BoxSignRequestSingerInputType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "signature",
+          "value": 0
+        },
+        {
+          "name": "date",
+          "value": 1
+        },
+        {
+          "name": "text",
+          "value": 2
+        },
+        {
+          "name": "checkbox",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Box.V2.Models.BoxSignRequestSingerInputContentType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "initial",
+          "value": 0
+        },
+        {
+          "name": "stamp",
+          "value": 1
+        },
+        {
+          "name": "signature",
+          "value": 2
+        },
+        {
+          "name": "company",
+          "value": 3
+        },
+        {
+          "name": "title",
+          "value": 4
+        },
+        {
+          "name": "email",
+          "value": 5
+        },
+        {
+          "name": "full_name",
+          "value": 6
+        },
+        {
+          "name": "first_name",
+          "value": 7
+        },
+        {
+          "name": "last_name",
+          "value": 8
+        },
+        {
+          "name": "text",
+          "value": 9
+        },
+        {
+          "name": "date",
+          "value": 10
+        },
+        {
+          "name": "checkbox",
+          "value": 11
+        }
+      ]
+    },
+    {
+      "fullName": "Box.V2.Models.BoxSignRequestSingerDecisionType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "signed",
+          "value": 0
+        },
+        {
+          "name": "declined",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Box.V2.Models.BoxPermissionType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Open",
+          "value": 0
+        },
+        {
+          "name": "Company",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Box.V2.Models.BoxCollaborationRole",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Editor",
+          "value": 0
+        },
+        {
+          "name": "Viewer",
+          "value": 1
+        },
+        {
+          "name": "Previewer",
+          "value": 2
+        },
+        {
+          "name": "Uploader",
+          "value": 3
+        },
+        {
+          "name": "PreviewerUploader",
+          "value": 4
+        },
+        {
+          "name": "ViewerUploader",
+          "value": 5
+        },
+        {
+          "name": "CoOwner",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "Box.V2.Models.Request.BoxZipDownloadState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "succeeded",
+          "value": 0
+        },
+        {
+          "name": "in_progress",
+          "value": 1
+        },
+        {
+          "name": "failed",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Box.V2.Models.Request.BoxZipItemType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "file",
+          "value": 0
+        },
+        {
+          "name": "folder",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Box.V2.Config.CompressionType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "gzip",
+          "value": 0
+        },
+        {
+          "name": "deflate",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "namespaceMappings": []
+}

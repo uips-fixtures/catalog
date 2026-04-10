@@ -1,0 +1,607 @@
+{
+  "schema": {
+    "id": "activity-catalog",
+    "version": "v0.3"
+  },
+  "source": {
+    "kind": "nuget-package",
+    "id": "System.Xml.XPath",
+    "version": "4.0.1",
+    "feedUrl": null,
+    "authors": "Microsoft",
+    "projectUrl": "https://dot.net/",
+    "description": "Provides the classes that define a cursor model for navigating and editing Extensible Markup Language (XML) information items as instances of the XQuery 1.0 and XPath 2.0 Data Model.\n\nCommonly Used Types:\nSystem.Xml.XPath.XPathNavigator\nSystem.Xml.XPath.IXPathNavigable\nSystem.Xml.XPath.XPathNodeType\nSystem.Xml.XPath.XPathNodeIterator\nSystem.Xml.XPath.XPathExpression\nSystem.Xml.XPath.XPathResultType\nSystem.Xml.XPath.XPathException\nSystem.Xml.XPath.XPathDocument\nSystem.Xml.XPath.XPathItem\nSystem.Xml.XPath.XPathNamespaceScope\n \nWhen using NuGet 3.x this package requires at least version 3.4.",
+    "license": "http://go.microsoft.com/fwlink/?LinkId=329770",
+    "tags": null,
+    "packageTypes": []
+  },
+  "generatedAt": "2026-04-10T09:21:18Z",
+  "activities": [],
+  "enums": [
+    {
+      "fullName": "MS.Internal.Xml.XPath.AstNode.AstType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Axis",
+          "value": 0
+        },
+        {
+          "name": "Operator",
+          "value": 1
+        },
+        {
+          "name": "Filter",
+          "value": 2
+        },
+        {
+          "name": "ConstantOperand",
+          "value": 3
+        },
+        {
+          "name": "Function",
+          "value": 4
+        },
+        {
+          "name": "Group",
+          "value": 5
+        },
+        {
+          "name": "Root",
+          "value": 6
+        },
+        {
+          "name": "Variable",
+          "value": 7
+        },
+        {
+          "name": "Error",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "MS.Internal.Xml.XPath.Axis.AxisType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Ancestor",
+          "value": 0
+        },
+        {
+          "name": "AncestorOrSelf",
+          "value": 1
+        },
+        {
+          "name": "Attribute",
+          "value": 2
+        },
+        {
+          "name": "Child",
+          "value": 3
+        },
+        {
+          "name": "Descendant",
+          "value": 4
+        },
+        {
+          "name": "DescendantOrSelf",
+          "value": 5
+        },
+        {
+          "name": "Following",
+          "value": 6
+        },
+        {
+          "name": "FollowingSibling",
+          "value": 7
+        },
+        {
+          "name": "Namespace",
+          "value": 8
+        },
+        {
+          "name": "Parent",
+          "value": 9
+        },
+        {
+          "name": "Preceding",
+          "value": 10
+        },
+        {
+          "name": "PrecedingSibling",
+          "value": 11
+        },
+        {
+          "name": "Self",
+          "value": 12
+        },
+        {
+          "name": "None",
+          "value": 13
+        }
+      ]
+    },
+    {
+      "fullName": "MS.Internal.Xml.XPath.Function.FunctionType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "FuncLast",
+          "value": 0
+        },
+        {
+          "name": "FuncPosition",
+          "value": 1
+        },
+        {
+          "name": "FuncCount",
+          "value": 2
+        },
+        {
+          "name": "FuncID",
+          "value": 3
+        },
+        {
+          "name": "FuncLocalName",
+          "value": 4
+        },
+        {
+          "name": "FuncNameSpaceUri",
+          "value": 5
+        },
+        {
+          "name": "FuncName",
+          "value": 6
+        },
+        {
+          "name": "FuncString",
+          "value": 7
+        },
+        {
+          "name": "FuncBoolean",
+          "value": 8
+        },
+        {
+          "name": "FuncNumber",
+          "value": 9
+        },
+        {
+          "name": "FuncTrue",
+          "value": 10
+        },
+        {
+          "name": "FuncFalse",
+          "value": 11
+        },
+        {
+          "name": "FuncNot",
+          "value": 12
+        },
+        {
+          "name": "FuncConcat",
+          "value": 13
+        },
+        {
+          "name": "FuncStartsWith",
+          "value": 14
+        },
+        {
+          "name": "FuncContains",
+          "value": 15
+        },
+        {
+          "name": "FuncSubstringBefore",
+          "value": 16
+        },
+        {
+          "name": "FuncSubstringAfter",
+          "value": 17
+        },
+        {
+          "name": "FuncSubstring",
+          "value": 18
+        },
+        {
+          "name": "FuncStringLength",
+          "value": 19
+        },
+        {
+          "name": "FuncNormalize",
+          "value": 20
+        },
+        {
+          "name": "FuncTranslate",
+          "value": 21
+        },
+        {
+          "name": "FuncLang",
+          "value": 22
+        },
+        {
+          "name": "FuncSum",
+          "value": 23
+        },
+        {
+          "name": "FuncFloor",
+          "value": 24
+        },
+        {
+          "name": "FuncCeiling",
+          "value": 25
+        },
+        {
+          "name": "FuncRound",
+          "value": 26
+        },
+        {
+          "name": "FuncUserDefined",
+          "value": 27
+        }
+      ]
+    },
+    {
+      "fullName": "MS.Internal.Xml.XPath.Operator.Op",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "INVALID",
+          "value": 0
+        },
+        {
+          "name": "OR",
+          "value": 1
+        },
+        {
+          "name": "AND",
+          "value": 2
+        },
+        {
+          "name": "EQ",
+          "value": 3
+        },
+        {
+          "name": "NE",
+          "value": 4
+        },
+        {
+          "name": "LT",
+          "value": 5
+        },
+        {
+          "name": "LE",
+          "value": 6
+        },
+        {
+          "name": "GT",
+          "value": 7
+        },
+        {
+          "name": "GE",
+          "value": 8
+        },
+        {
+          "name": "PLUS",
+          "value": 9
+        },
+        {
+          "name": "MINUS",
+          "value": 10
+        },
+        {
+          "name": "MUL",
+          "value": 11
+        },
+        {
+          "name": "DIV",
+          "value": 12
+        },
+        {
+          "name": "MOD",
+          "value": 13
+        },
+        {
+          "name": "UNION",
+          "value": 14
+        }
+      ]
+    },
+    {
+      "fullName": "MS.Internal.Xml.XPath.XPathScanner.LexKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Comma",
+          "value": 44
+        },
+        {
+          "name": "Slash",
+          "value": 47
+        },
+        {
+          "name": "At",
+          "value": 64
+        },
+        {
+          "name": "Dot",
+          "value": 46
+        },
+        {
+          "name": "LParens",
+          "value": 40
+        },
+        {
+          "name": "RParens",
+          "value": 41
+        },
+        {
+          "name": "LBracket",
+          "value": 91
+        },
+        {
+          "name": "RBracket",
+          "value": 93
+        },
+        {
+          "name": "Star",
+          "value": 42
+        },
+        {
+          "name": "Plus",
+          "value": 43
+        },
+        {
+          "name": "Minus",
+          "value": 45
+        },
+        {
+          "name": "Eq",
+          "value": 61
+        },
+        {
+          "name": "Lt",
+          "value": 60
+        },
+        {
+          "name": "Gt",
+          "value": 62
+        },
+        {
+          "name": "Bang",
+          "value": 33
+        },
+        {
+          "name": "Dollar",
+          "value": 36
+        },
+        {
+          "name": "Apos",
+          "value": 39
+        },
+        {
+          "name": "Quote",
+          "value": 34
+        },
+        {
+          "name": "Union",
+          "value": 124
+        },
+        {
+          "name": "Ne",
+          "value": 78
+        },
+        {
+          "name": "Le",
+          "value": 76
+        },
+        {
+          "name": "Ge",
+          "value": 71
+        },
+        {
+          "name": "And",
+          "value": 65
+        },
+        {
+          "name": "Or",
+          "value": 79
+        },
+        {
+          "name": "DotDot",
+          "value": 68
+        },
+        {
+          "name": "SlashSlash",
+          "value": 83
+        },
+        {
+          "name": "Name",
+          "value": 110
+        },
+        {
+          "name": "String",
+          "value": 115
+        },
+        {
+          "name": "Number",
+          "value": 100
+        },
+        {
+          "name": "Axe",
+          "value": 97
+        },
+        {
+          "name": "Eof",
+          "value": 69
+        }
+      ]
+    },
+    {
+      "fullName": "System.Xml.XmlNodeOrder",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Before",
+          "value": 0
+        },
+        {
+          "name": "After",
+          "value": 1
+        },
+        {
+          "name": "Same",
+          "value": 2
+        },
+        {
+          "name": "Unknown",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "System.Xml.XPath.XmlSortOrder",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Ascending",
+          "value": 1
+        },
+        {
+          "name": "Descending",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "System.Xml.XPath.XmlCaseOrder",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "UpperFirst",
+          "value": 1
+        },
+        {
+          "name": "LowerFirst",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "System.Xml.XPath.XmlDataType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Text",
+          "value": 1
+        },
+        {
+          "name": "Number",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "System.Xml.XPath.XPathResultType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Number",
+          "value": 0
+        },
+        {
+          "name": "String",
+          "value": 1
+        },
+        {
+          "name": "Boolean",
+          "value": 2
+        },
+        {
+          "name": "NodeSet",
+          "value": 3
+        },
+        {
+          "name": "Navigator",
+          "value": 1
+        },
+        {
+          "name": "Any",
+          "value": 5
+        },
+        {
+          "name": "Error",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "System.Xml.XPath.XPathNamespaceScope",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "All",
+          "value": 0
+        },
+        {
+          "name": "ExcludeXml",
+          "value": 1
+        },
+        {
+          "name": "Local",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "System.Xml.XPath.XPathNodeType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Root",
+          "value": 0
+        },
+        {
+          "name": "Element",
+          "value": 1
+        },
+        {
+          "name": "Attribute",
+          "value": 2
+        },
+        {
+          "name": "Namespace",
+          "value": 3
+        },
+        {
+          "name": "Text",
+          "value": 4
+        },
+        {
+          "name": "SignificantWhitespace",
+          "value": 5
+        },
+        {
+          "name": "Whitespace",
+          "value": 6
+        },
+        {
+          "name": "ProcessingInstruction",
+          "value": 7
+        },
+        {
+          "name": "Comment",
+          "value": 8
+        },
+        {
+          "name": "All",
+          "value": 9
+        }
+      ]
+    }
+  ],
+  "namespaceMappings": []
+}

@@ -1,0 +1,910 @@
+{
+  "schema": {
+    "id": "activity-catalog",
+    "version": "v0.3"
+  },
+  "source": {
+    "kind": "nuget-package",
+    "id": "FluentFTP",
+    "version": "34.0.0",
+    "feedUrl": null,
+    "authors": "Robin Rodricks, FluentFTP Contributors",
+    "projectUrl": "https://github.com/robinrodricks/FluentFTP",
+    "description": "An FTP and FTPS client for .NET & .NET Standard, optimized for speed. Provides extensive FTP commands, File uploads/downloads, SSL/TLS connections, Directory listing parsing, File hashing/checksums, File permissions/CHMOD, FTP proxies, FXP transfers, UTF-8 support, Async/await support, Powershell support and more. Written entirely in C#, with no external dependencies.",
+    "license": "LICENSE.TXT",
+    "tags": "ftp,ftp-client,ftps,ssl,tls,unix,iis",
+    "packageTypes": []
+  },
+  "generatedAt": "2026-04-10T09:21:13Z",
+  "activities": [],
+  "enums": [
+    {
+      "fullName": "FluentFTP.FtpCapability",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NONE",
+          "value": 1
+        },
+        {
+          "name": "MLSD",
+          "value": 2
+        },
+        {
+          "name": "SIZE",
+          "value": 3
+        },
+        {
+          "name": "MDTM",
+          "value": 4
+        },
+        {
+          "name": "REST",
+          "value": 5
+        },
+        {
+          "name": "UTF8",
+          "value": 6
+        },
+        {
+          "name": "PRET",
+          "value": 7
+        },
+        {
+          "name": "MFMT",
+          "value": 8
+        },
+        {
+          "name": "MFCT",
+          "value": 9
+        },
+        {
+          "name": "MFF",
+          "value": 10
+        },
+        {
+          "name": "STAT",
+          "value": 11
+        },
+        {
+          "name": "HASH",
+          "value": 12
+        },
+        {
+          "name": "MD5",
+          "value": 13
+        },
+        {
+          "name": "XMD5",
+          "value": 14
+        },
+        {
+          "name": "XCRC",
+          "value": 15
+        },
+        {
+          "name": "XSHA1",
+          "value": 16
+        },
+        {
+          "name": "XSHA256",
+          "value": 17
+        },
+        {
+          "name": "XSHA512",
+          "value": 18
+        },
+        {
+          "name": "EPSV",
+          "value": 19
+        },
+        {
+          "name": "CPSV",
+          "value": 20
+        },
+        {
+          "name": "NOOP",
+          "value": 21
+        },
+        {
+          "name": "CLNT",
+          "value": 22
+        },
+        {
+          "name": "SSCN",
+          "value": 23
+        },
+        {
+          "name": "SITE_MKDIR",
+          "value": 24
+        },
+        {
+          "name": "SITE_RMDIR",
+          "value": 25
+        },
+        {
+          "name": "SITE_UTIME",
+          "value": 26
+        },
+        {
+          "name": "SITE_SYMLINK",
+          "value": 27
+        },
+        {
+          "name": "AVBL",
+          "value": 28
+        },
+        {
+          "name": "THMB",
+          "value": 29
+        },
+        {
+          "name": "RMDA",
+          "value": 30
+        },
+        {
+          "name": "DSIZ",
+          "value": 31
+        },
+        {
+          "name": "HOST",
+          "value": 32
+        },
+        {
+          "name": "CCC",
+          "value": 33
+        },
+        {
+          "name": "MODE_Z",
+          "value": 34
+        },
+        {
+          "name": "LANG",
+          "value": 35
+        },
+        {
+          "name": "MMD5",
+          "value": 36
+        }
+      ]
+    },
+    {
+      "fullName": "FluentFTP.FtpCompareOption",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Auto",
+          "value": 0
+        },
+        {
+          "name": "Size",
+          "value": 1
+        },
+        {
+          "name": "DateModified",
+          "value": 2
+        },
+        {
+          "name": "Checksum",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "FluentFTP.FtpCompareResult",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Equal",
+          "value": 1
+        },
+        {
+          "name": "NotEqual",
+          "value": 2
+        },
+        {
+          "name": "FileNotExisting",
+          "value": 3
+        },
+        {
+          "name": "ChecksumNotSupported",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "FluentFTP.FtpDataConnectionType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AutoPassive",
+          "value": 0
+        },
+        {
+          "name": "PASV",
+          "value": 1
+        },
+        {
+          "name": "PASVEX",
+          "value": 2
+        },
+        {
+          "name": "EPSV",
+          "value": 3
+        },
+        {
+          "name": "AutoActive",
+          "value": 4
+        },
+        {
+          "name": "PORT",
+          "value": 5
+        },
+        {
+          "name": "EPRT",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "FluentFTP.FtpDataType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ASCII",
+          "value": 0
+        },
+        {
+          "name": "Binary",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "FluentFTP.FtpDate",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ServerTime",
+          "value": 0
+        },
+        {
+          "name": "LocalTime",
+          "value": 1
+        },
+        {
+          "name": "UTC",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "FluentFTP.FtpEncryptionMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Implicit",
+          "value": 1
+        },
+        {
+          "name": "Explicit",
+          "value": 2
+        },
+        {
+          "name": "Auto",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "FluentFTP.FtpError",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "DeleteProcessed",
+          "value": 1
+        },
+        {
+          "name": "Stop",
+          "value": 2
+        },
+        {
+          "name": "Throw",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "FluentFTP.FtpFileSystemObjectSubType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "SubDirectory",
+          "value": 1
+        },
+        {
+          "name": "SelfDirectory",
+          "value": 2
+        },
+        {
+          "name": "ParentDirectory",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "FluentFTP.FtpFileSystemObjectType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "File",
+          "value": 0
+        },
+        {
+          "name": "Directory",
+          "value": 1
+        },
+        {
+          "name": "Link",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "FluentFTP.FtpFolderSyncMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Mirror",
+          "value": 0
+        },
+        {
+          "name": "Update",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "FluentFTP.FtpHashAlgorithm",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NONE",
+          "value": 0
+        },
+        {
+          "name": "SHA1",
+          "value": 1
+        },
+        {
+          "name": "SHA256",
+          "value": 2
+        },
+        {
+          "name": "SHA512",
+          "value": 4
+        },
+        {
+          "name": "MD5",
+          "value": 8
+        },
+        {
+          "name": "CRC",
+          "value": 16
+        }
+      ]
+    },
+    {
+      "fullName": "FluentFTP.FtpIpVersion",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "IPv4",
+          "value": 1
+        },
+        {
+          "name": "IPv6",
+          "value": 2
+        },
+        {
+          "name": "ANY",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "FluentFTP.FtpListOption",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Auto",
+          "value": 0
+        },
+        {
+          "name": "Modify",
+          "value": 1
+        },
+        {
+          "name": "Size",
+          "value": 2
+        },
+        {
+          "name": "SizeModify",
+          "value": 3
+        },
+        {
+          "name": "AllFiles",
+          "value": 4
+        },
+        {
+          "name": "ForceList",
+          "value": 8
+        },
+        {
+          "name": "NameList",
+          "value": 16
+        },
+        {
+          "name": "ForceNameList",
+          "value": 24
+        },
+        {
+          "name": "DerefLinks",
+          "value": 32
+        },
+        {
+          "name": "UseLS",
+          "value": 72
+        },
+        {
+          "name": "Recursive",
+          "value": 128
+        },
+        {
+          "name": "NoPath",
+          "value": 256
+        },
+        {
+          "name": "IncludeSelfAndParent",
+          "value": 512
+        },
+        {
+          "name": "UseStat",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "fullName": "FluentFTP.FtpLocalExists",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Overwrite",
+          "value": 0
+        },
+        {
+          "name": "Append",
+          "value": 1
+        },
+        {
+          "name": "Skip",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "FluentFTP.FtpOperatingSystem",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "Windows",
+          "value": 1
+        },
+        {
+          "name": "Unix",
+          "value": 2
+        },
+        {
+          "name": "VMS",
+          "value": 3
+        },
+        {
+          "name": "IBMOS400",
+          "value": 4
+        },
+        {
+          "name": "IBMzOS",
+          "value": 5
+        },
+        {
+          "name": "SunOS",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "FluentFTP.FtpOperator",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Equals",
+          "value": 0
+        },
+        {
+          "name": "NotEquals",
+          "value": 1
+        },
+        {
+          "name": "LessThan",
+          "value": 2
+        },
+        {
+          "name": "LessThanOrEquals",
+          "value": 3
+        },
+        {
+          "name": "MoreThan",
+          "value": 4
+        },
+        {
+          "name": "MoreThanOrEquals",
+          "value": 5
+        },
+        {
+          "name": "BetweenRange",
+          "value": 6
+        },
+        {
+          "name": "OutsideRange",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "FluentFTP.FtpParser",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Custom",
+          "value": -1
+        },
+        {
+          "name": "Auto",
+          "value": 0
+        },
+        {
+          "name": "Machine",
+          "value": 1
+        },
+        {
+          "name": "Windows",
+          "value": 2
+        },
+        {
+          "name": "Unix",
+          "value": 3
+        },
+        {
+          "name": "UnixAlt",
+          "value": 4
+        },
+        {
+          "name": "VMS",
+          "value": 5
+        },
+        {
+          "name": "IBM",
+          "value": 6
+        },
+        {
+          "name": "NonStop",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "FluentFTP.FtpPermission",
+      "underlyingType": "System.UInt32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Execute",
+          "value": 1
+        },
+        {
+          "name": "Write",
+          "value": 2
+        },
+        {
+          "name": "Read",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "FluentFTP.FtpExists",
+      "underlyingType": "System.Int32",
+      "members": []
+    },
+    {
+      "fullName": "FluentFTP.FtpRemoteExists",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NoCheck",
+          "value": 0
+        },
+        {
+          "name": "Skip",
+          "value": 1
+        },
+        {
+          "name": "Overwrite",
+          "value": 2
+        },
+        {
+          "name": "Append",
+          "value": 3
+        },
+        {
+          "name": "AppendNoCheck",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "FluentFTP.FtpResponseType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "PositivePreliminary",
+          "value": 1
+        },
+        {
+          "name": "PositiveCompletion",
+          "value": 2
+        },
+        {
+          "name": "PositiveIntermediate",
+          "value": 3
+        },
+        {
+          "name": "TransientNegativeCompletion",
+          "value": 4
+        },
+        {
+          "name": "PermanentNegativeCompletion",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "FluentFTP.FtpsBuffering",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Auto",
+          "value": 0
+        },
+        {
+          "name": "Off",
+          "value": 1
+        },
+        {
+          "name": "On",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "FluentFTP.FtpServer",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "PureFTPd",
+          "value": 1
+        },
+        {
+          "name": "VsFTPd",
+          "value": 2
+        },
+        {
+          "name": "ProFTPD",
+          "value": 3
+        },
+        {
+          "name": "FileZilla",
+          "value": 4
+        },
+        {
+          "name": "OpenVMS",
+          "value": 5
+        },
+        {
+          "name": "WindowsCE",
+          "value": 6
+        },
+        {
+          "name": "WuFTPd",
+          "value": 7
+        },
+        {
+          "name": "GlobalScapeEFT",
+          "value": 8
+        },
+        {
+          "name": "NonStopTandem",
+          "value": 9
+        },
+        {
+          "name": "ServU",
+          "value": 10
+        },
+        {
+          "name": "Cerberus",
+          "value": 11
+        },
+        {
+          "name": "WindowsServerIIS",
+          "value": 12
+        },
+        {
+          "name": "CrushFTP",
+          "value": 13
+        },
+        {
+          "name": "glFTPd",
+          "value": 14
+        },
+        {
+          "name": "HomegateFTP",
+          "value": 15
+        },
+        {
+          "name": "BFTPd",
+          "value": 16
+        },
+        {
+          "name": "FTP2S3Gateway",
+          "value": 17
+        },
+        {
+          "name": "XLight",
+          "value": 18
+        },
+        {
+          "name": "SolarisFTP",
+          "value": 19
+        },
+        {
+          "name": "IBMzOSFTP",
+          "value": 20
+        },
+        {
+          "name": "FritzBox",
+          "value": 21
+        },
+        {
+          "name": "WSFTPServer",
+          "value": 22
+        }
+      ]
+    },
+    {
+      "fullName": "FluentFTP.FtpSpecialPermissions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Sticky",
+          "value": 1
+        },
+        {
+          "name": "SetGroupID",
+          "value": 2
+        },
+        {
+          "name": "SetUserID",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "FluentFTP.FtpStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Failed",
+          "value": 0
+        },
+        {
+          "name": "Success",
+          "value": 1
+        },
+        {
+          "name": "Skipped",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "FluentFTP.FtpTraceLevel",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Verbose",
+          "value": 0
+        },
+        {
+          "name": "Info",
+          "value": 1
+        },
+        {
+          "name": "Warn",
+          "value": 2
+        },
+        {
+          "name": "Error",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "FluentFTP.FtpVerify",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Retry",
+          "value": 1
+        },
+        {
+          "name": "Delete",
+          "value": 2
+        },
+        {
+          "name": "Throw",
+          "value": 4
+        },
+        {
+          "name": "OnlyChecksum",
+          "value": 8
+        }
+      ]
+    }
+  ],
+  "namespaceMappings": []
+}

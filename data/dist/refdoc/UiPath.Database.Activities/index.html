@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UiPath.Database.Activities 2.0.0 — Activity Reference</title>
+  <style>
+    :root {
+      --base3:  #fdf6e3; --base2: #eee8d5; --base1: #93a1a1;
+      --base00: #657b83; --base01: #586e75;
+      --orange: #cb4b16; --blue: #268bd2; --cyan: #2aa198;
+      --green:  #859900;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: var(--base3); color: var(--base00);
+      line-height: 1.55; padding: 0 0 4rem;
+    }
+    .topbar {
+      background: var(--orange); color: #fff;
+      padding: 0 2rem; height: 50px;
+      display: flex; align-items: center; gap: 1rem;
+      font-weight: 700; font-size: 1rem;
+    }
+    .topbar a { color: #fff; text-decoration: none; }
+    .topbar-sub { font-weight: 400; font-size: 0.82rem; opacity: 0.82; }
+    .content { max-width: 960px; margin: 0 auto; padding: 2rem 1.5rem 0; }
+    .gen-meta {
+      font-size: 0.78rem; color: var(--base1);
+      border-bottom: 1px solid var(--base2);
+      padding-bottom: 0.75rem; margin-bottom: 2rem;
+    }
+    .pkg-section { margin-bottom: 3rem; }
+    .pkg-heading {
+      font-size: 1.05rem; font-weight: 700;
+      color: var(--base01); border-bottom: 2px solid var(--orange);
+      padding-bottom: 0.3rem; margin-bottom: 1.25rem;
+    }
+    .activity {
+      background: #fff; border: 1px solid var(--base2);
+      border-radius: 4px; padding: 1rem 1.25rem; margin-bottom: 1rem;
+    }
+    .activity-name { font-size: 1rem; font-weight: 700; color: var(--base01); margin-bottom: 0.15rem; }
+    .activity-full { font-family: ui-monospace, monospace; font-size: 0.78rem; color: var(--base1); margin-bottom: 0.5rem; }
+    .activity-desc { font-size: 0.875rem; margin-bottom: 0.75rem; }
+    .badge {
+      display: inline-block; font-size: 0.72rem; padding: 0.1em 0.5em;
+      border-radius: 3px; margin-right: 0.35rem; margin-bottom: 0.5rem;
+      background: var(--base2); color: var(--base01);
+    }
+    .badge-cat { background: #d4edda; color: #155724; }
+    .members-heading {
+      font-size: 0.72rem; text-transform: uppercase;
+      letter-spacing: 0.07em; color: var(--base1);
+      margin: 0.75rem 0 0.35rem;
+    }
+    table { border-collapse: collapse; width: 100%; font-size: 0.82rem; }
+    th, td { text-align: left; padding: 0.3rem 0.6rem; border-bottom: 1px solid var(--base2); }
+    th { background: var(--base2); color: var(--base01); font-size: 0.75rem; font-weight: 600; }
+    tr:last-child td { border-bottom: none; }
+    .dir-in    { color: var(--green);  font-weight: 600; }
+    .dir-out   { color: var(--blue);   font-weight: 600; }
+    .dir-inout { color: var(--cyan);   font-weight: 600; }
+    .req       { color: var(--orange); font-weight: 700; }
+    code { background: var(--base2); padding: 0.1em 0.35em; border-radius: 3px;
+           font-size: 0.85em; font-family: ui-monospace, monospace; }
+    .no-members { font-size: 0.8rem; color: var(--base1); font-style: italic; }
+    .pkg-list { list-style: none; columns: 2; }
+    .pkg-list li { padding: 0.2rem 0; }
+    .pkg-list a { color: var(--blue); text-decoration: none; }
+    .pkg-list a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a href="../../index.html">uips-fixtures</a>
+    <span class="topbar-sub">UiPath.Database.Activities 2.0.0</span>
+  </header>
+  <div class="content">
+    <p class="gen-meta">
+      8 activities &middot;
+      uips-fixtures catalog v0.3 &middot; generated 2026-04-10T09:21:43Z
+    </p>
+    <div class="activity" id="UiPath-Database-Activities-BulkInsert">
+      <div class="activity-name">Bulk Insert</div>
+      <div class="activity-full">UiPath.Database.Activities.BulkInsert</div>
+<span class="badge badge-cat">Database</span><p class="activity-desc">Updates a database table via Bulk operations of the specific database driver. Falls back to Insert Data Table if the database driver does not support Bulk operations.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>TableName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>DataTable</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Data.DataTable&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>AffectedRecords</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;Int64&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ProviderName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionString</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionSecureString</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Security.SecureString&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ExistingDbConnection</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;UiPath.Database.DatabaseConnection&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ContinueOnError</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Boolean&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-Database-Activities-BulkUpdate">
+      <div class="activity-name">Bulk Update</div>
+      <div class="activity-full">UiPath.Database.Activities.BulkUpdate</div>
+<span class="badge badge-cat">Database</span><p class="activity-desc">Updates a compatible DataTable in an existing database table. The activity also updates all the columns that are not in the collection of column names used as a primary key. Returns the number of rows affected.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>TableName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>DataTable</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Data.DataTable&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ColumnNames</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String[]&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>AffectedRecords</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;Int64&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ProviderName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionString</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionSecureString</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Security.SecureString&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ExistingDbConnection</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;UiPath.Database.DatabaseConnection&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ContinueOnError</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Boolean&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>BulkUpdateFlag</td>
+          <td>property</td>
+          <td><code>Boolean</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-Database-Activities-DatabaseConnect">
+      <div class="activity-name">Connect to Database</div>
+      <div class="activity-full">UiPath.Database.Activities.DatabaseConnect</div>
+<span class="badge badge-cat">Database</span><p class="activity-desc">Connects to a database by using a standard connection string</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>ProviderName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionString</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionSecureString</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Security.SecureString&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>DatabaseConnection</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;UiPath.Database.DatabaseConnection&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-Database-Activities-DatabaseDisconnect">
+      <div class="activity-name">Disconnect from Database</div>
+      <div class="activity-full">UiPath.Database.Activities.DatabaseDisconnect</div>
+<span class="badge badge-cat">Database</span><p class="activity-desc">Closes a connection to a database</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>DatabaseConnection</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;UiPath.Database.DatabaseConnection&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-Database-Activities-DatabaseTransaction">
+      <div class="activity-name">Start Transaction</div>
+      <div class="activity-full">UiPath.Database.Activities.DatabaseTransaction</div>
+<span class="badge badge-cat">Database</span><p class="activity-desc">Connects to a database and features a Sequence which can perform multiple transactions with the database. It returns a DatabaseConnection variable, providing a scope for Database activities.
+If UseTransaction is set to True, the contained operations are executed in a single transaction, and applied at the end if none of the them failed. If UseTransaction is set to False, all operations are committed individually. When this activity ends, the connection to the database is closed.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>ProviderName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionString</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionSecureString</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Security.SecureString&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ExistingDbConnection</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;UiPath.Database.DatabaseConnection&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ContinueOnError</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Boolean&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>DatabaseConnection</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;UiPath.Database.DatabaseConnection&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>UseTransaction</td>
+          <td>property</td>
+          <td><code>Boolean</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-Database-Activities-ExecuteNonQuery">
+      <div class="activity-name">Run Command</div>
+      <div class="activity-full">UiPath.Database.Activities.ExecuteNonQuery</div>
+<span class="badge badge-cat">Database</span><p class="activity-desc">Executes an SQL statement on a database. For UPDATE, INSERT, and DELETE statements, the return value is the number of rows affected by the command. For all other types of statements, the return value is -1.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>Sql</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>AffectedRecords</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;Int32&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ProviderName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionString</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionSecureString</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Security.SecureString&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ExistingDbConnection</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;UiPath.Database.DatabaseConnection&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ContinueOnError</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Boolean&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>TimeoutMS</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Int32&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>CommandType</td>
+          <td>property</td>
+          <td><code>Data.CommandType</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Parameters</td>
+          <td>property</td>
+          <td><code>Dictionary&lt;String, Argument&gt;</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-Database-Activities-ExecuteQuery">
+      <div class="activity-name">Run Query</div>
+      <div class="activity-full">UiPath.Database.Activities.ExecuteQuery</div>
+<span class="badge badge-cat">Database</span><p class="activity-desc">Executes a query on a database and returns the query result as a Data Table</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>Sql</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>DataTable</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;Data.DataTable&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ProviderName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionString</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionSecureString</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Security.SecureString&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ExistingDbConnection</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;UiPath.Database.DatabaseConnection&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ContinueOnError</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Boolean&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>TimeoutMS</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Int32&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>CommandType</td>
+          <td>property</td>
+          <td><code>Data.CommandType</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Parameters</td>
+          <td>property</td>
+          <td><code>Dictionary&lt;String, Argument&gt;</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-Database-Activities-InsertDataTable">
+      <div class="activity-name">Insert</div>
+      <div class="activity-full">UiPath.Database.Activities.InsertDataTable</div>
+<span class="badge badge-cat">Database</span><p class="activity-desc">Inserts a compatible DataTable in an existing database table. Returns the number of rows affected.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>TableName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>DataTable</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Data.DataTable&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>AffectedRecords</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;Int32&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ProviderName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionString</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionSecureString</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Security.SecureString&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ExistingDbConnection</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;UiPath.Database.DatabaseConnection&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ContinueOnError</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Boolean&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,4589 @@
+{
+  "schema": {
+    "id": "activity-catalog",
+    "version": "v0.3"
+  },
+  "source": {
+    "kind": "nuget-package",
+    "id": "EPPlus",
+    "version": "4.0.4",
+    "feedUrl": null,
+    "authors": "Jan Källman",
+    "projectUrl": "http://epplus.codeplex.com/",
+    "description": "A library to manage Excel spreadsheets, using OOXML.",
+    "license": "http://epplus.codeplex.com/license",
+    "tags": "Excel OOXML",
+    "packageTypes": []
+  },
+  "generatedAt": "2026-04-10T09:21:13Z",
+  "activities": [],
+  "enums": [
+    {
+      "fullName": "OfficeOpenXml.ConditionalFormatting.eExcelConditionalFormattingRuleType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AboveAverage",
+          "value": 0
+        },
+        {
+          "name": "AboveOrEqualAverage",
+          "value": 1
+        },
+        {
+          "name": "BelowAverage",
+          "value": 2
+        },
+        {
+          "name": "BelowOrEqualAverage",
+          "value": 3
+        },
+        {
+          "name": "AboveStdDev",
+          "value": 4
+        },
+        {
+          "name": "BelowStdDev",
+          "value": 5
+        },
+        {
+          "name": "Bottom",
+          "value": 6
+        },
+        {
+          "name": "BottomPercent",
+          "value": 7
+        },
+        {
+          "name": "Top",
+          "value": 8
+        },
+        {
+          "name": "TopPercent",
+          "value": 9
+        },
+        {
+          "name": "Last7Days",
+          "value": 10
+        },
+        {
+          "name": "LastMonth",
+          "value": 11
+        },
+        {
+          "name": "LastWeek",
+          "value": 12
+        },
+        {
+          "name": "NextMonth",
+          "value": 13
+        },
+        {
+          "name": "NextWeek",
+          "value": 14
+        },
+        {
+          "name": "ThisMonth",
+          "value": 15
+        },
+        {
+          "name": "ThisWeek",
+          "value": 16
+        },
+        {
+          "name": "Today",
+          "value": 17
+        },
+        {
+          "name": "Tomorrow",
+          "value": 18
+        },
+        {
+          "name": "Yesterday",
+          "value": 19
+        },
+        {
+          "name": "BeginsWith",
+          "value": 20
+        },
+        {
+          "name": "Between",
+          "value": 21
+        },
+        {
+          "name": "ContainsBlanks",
+          "value": 22
+        },
+        {
+          "name": "ContainsErrors",
+          "value": 23
+        },
+        {
+          "name": "ContainsText",
+          "value": 24
+        },
+        {
+          "name": "DuplicateValues",
+          "value": 25
+        },
+        {
+          "name": "EndsWith",
+          "value": 26
+        },
+        {
+          "name": "Equal",
+          "value": 27
+        },
+        {
+          "name": "Expression",
+          "value": 28
+        },
+        {
+          "name": "GreaterThan",
+          "value": 29
+        },
+        {
+          "name": "GreaterThanOrEqual",
+          "value": 30
+        },
+        {
+          "name": "LessThan",
+          "value": 31
+        },
+        {
+          "name": "LessThanOrEqual",
+          "value": 32
+        },
+        {
+          "name": "NotBetween",
+          "value": 33
+        },
+        {
+          "name": "NotContains",
+          "value": 34
+        },
+        {
+          "name": "NotContainsBlanks",
+          "value": 35
+        },
+        {
+          "name": "NotContainsErrors",
+          "value": 36
+        },
+        {
+          "name": "NotContainsText",
+          "value": 37
+        },
+        {
+          "name": "NotEqual",
+          "value": 38
+        },
+        {
+          "name": "UniqueValues",
+          "value": 39
+        },
+        {
+          "name": "ThreeColorScale",
+          "value": 40
+        },
+        {
+          "name": "TwoColorScale",
+          "value": 41
+        },
+        {
+          "name": "ThreeIconSet",
+          "value": 42
+        },
+        {
+          "name": "FourIconSet",
+          "value": 43
+        },
+        {
+          "name": "FiveIconSet",
+          "value": 44
+        },
+        {
+          "name": "DataBar",
+          "value": 45
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.ConditionalFormatting.eExcelConditionalFormattingValueObjectType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Formula",
+          "value": 0
+        },
+        {
+          "name": "Max",
+          "value": 1
+        },
+        {
+          "name": "Min",
+          "value": 2
+        },
+        {
+          "name": "Num",
+          "value": 3
+        },
+        {
+          "name": "Percent",
+          "value": 4
+        },
+        {
+          "name": "Percentile",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.ConditionalFormatting.eExcelConditionalFormattingValueObjectPosition",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Low",
+          "value": 0
+        },
+        {
+          "name": "Middle",
+          "value": 1
+        },
+        {
+          "name": "High",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.ConditionalFormatting.eExcelConditionalFormattingValueObjectNodeType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Cfvo",
+          "value": 0
+        },
+        {
+          "name": "Color",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.ConditionalFormatting.eExcelConditionalFormattingOperatorType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "BeginsWith",
+          "value": 0
+        },
+        {
+          "name": "Between",
+          "value": 1
+        },
+        {
+          "name": "ContainsText",
+          "value": 2
+        },
+        {
+          "name": "EndsWith",
+          "value": 3
+        },
+        {
+          "name": "Equal",
+          "value": 4
+        },
+        {
+          "name": "GreaterThan",
+          "value": 5
+        },
+        {
+          "name": "GreaterThanOrEqual",
+          "value": 6
+        },
+        {
+          "name": "LessThan",
+          "value": 7
+        },
+        {
+          "name": "LessThanOrEqual",
+          "value": 8
+        },
+        {
+          "name": "NotBetween",
+          "value": 9
+        },
+        {
+          "name": "NotContains",
+          "value": 10
+        },
+        {
+          "name": "NotEqual",
+          "value": 11
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.ConditionalFormatting.eExcelConditionalFormattingTimePeriodType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Last7Days",
+          "value": 0
+        },
+        {
+          "name": "LastMonth",
+          "value": 1
+        },
+        {
+          "name": "LastWeek",
+          "value": 2
+        },
+        {
+          "name": "NextMonth",
+          "value": 3
+        },
+        {
+          "name": "NextWeek",
+          "value": 4
+        },
+        {
+          "name": "ThisMonth",
+          "value": 5
+        },
+        {
+          "name": "ThisWeek",
+          "value": 6
+        },
+        {
+          "name": "Today",
+          "value": 7
+        },
+        {
+          "name": "Tomorrow",
+          "value": 8
+        },
+        {
+          "name": "Yesterday",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.ConditionalFormatting.eExcelconditionalFormatting3IconsSetType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Arrows",
+          "value": 0
+        },
+        {
+          "name": "ArrowsGray",
+          "value": 1
+        },
+        {
+          "name": "Flags",
+          "value": 2
+        },
+        {
+          "name": "Signs",
+          "value": 3
+        },
+        {
+          "name": "Symbols",
+          "value": 4
+        },
+        {
+          "name": "Symbols2",
+          "value": 5
+        },
+        {
+          "name": "TrafficLights1",
+          "value": 6
+        },
+        {
+          "name": "TrafficLights2",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.ConditionalFormatting.eExcelconditionalFormatting4IconsSetType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Arrows",
+          "value": 0
+        },
+        {
+          "name": "ArrowsGray",
+          "value": 1
+        },
+        {
+          "name": "Rating",
+          "value": 2
+        },
+        {
+          "name": "RedToBlack",
+          "value": 3
+        },
+        {
+          "name": "TrafficLights",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.ConditionalFormatting.eExcelconditionalFormatting5IconsSetType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Arrows",
+          "value": 0
+        },
+        {
+          "name": "ArrowsGray",
+          "value": 1
+        },
+        {
+          "name": "Quarters",
+          "value": 2
+        },
+        {
+          "name": "Rating",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.ConditionalFormatting.eExcelconditionalFormattingIconsSetType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ThreeArrows",
+          "value": 0
+        },
+        {
+          "name": "ThreeArrowsGray",
+          "value": 1
+        },
+        {
+          "name": "ThreeFlags",
+          "value": 2
+        },
+        {
+          "name": "ThreeSigns",
+          "value": 3
+        },
+        {
+          "name": "ThreeSymbols",
+          "value": 4
+        },
+        {
+          "name": "ThreeSymbols2",
+          "value": 5
+        },
+        {
+          "name": "ThreeTrafficLights1",
+          "value": 6
+        },
+        {
+          "name": "ThreeTrafficLights2",
+          "value": 7
+        },
+        {
+          "name": "FourArrows",
+          "value": 8
+        },
+        {
+          "name": "FourArrowsGray",
+          "value": 9
+        },
+        {
+          "name": "FourRating",
+          "value": 10
+        },
+        {
+          "name": "FourRedToBlack",
+          "value": 11
+        },
+        {
+          "name": "FourTrafficLights",
+          "value": 12
+        },
+        {
+          "name": "FiveArrows",
+          "value": 13
+        },
+        {
+          "name": "FiveArrowsGray",
+          "value": 14
+        },
+        {
+          "name": "FiveQuarters",
+          "value": 15
+        },
+        {
+          "name": "FiveRating",
+          "value": 16
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.DataValidation.ExcelDataValidationOperator",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "any",
+          "value": 0
+        },
+        {
+          "name": "equal",
+          "value": 1
+        },
+        {
+          "name": "notEqual",
+          "value": 2
+        },
+        {
+          "name": "lessThan",
+          "value": 3
+        },
+        {
+          "name": "lessThanOrEqual",
+          "value": 4
+        },
+        {
+          "name": "greaterThan",
+          "value": 5
+        },
+        {
+          "name": "greaterThanOrEqual",
+          "value": 6
+        },
+        {
+          "name": "between",
+          "value": 7
+        },
+        {
+          "name": "notBetween",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.DataValidation.ExcelDataValidationWarningStyle",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "undefined",
+          "value": 0
+        },
+        {
+          "name": "stop",
+          "value": 1
+        },
+        {
+          "name": "warning",
+          "value": 2
+        },
+        {
+          "name": "information",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.Drawing.Chart.eChartType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Area3D",
+          "value": -4098
+        },
+        {
+          "name": "AreaStacked3D",
+          "value": 78
+        },
+        {
+          "name": "AreaStacked1003D",
+          "value": 79
+        },
+        {
+          "name": "BarClustered3D",
+          "value": 60
+        },
+        {
+          "name": "BarStacked3D",
+          "value": 61
+        },
+        {
+          "name": "BarStacked1003D",
+          "value": 62
+        },
+        {
+          "name": "Column3D",
+          "value": -4100
+        },
+        {
+          "name": "ColumnClustered3D",
+          "value": 54
+        },
+        {
+          "name": "ColumnStacked3D",
+          "value": 55
+        },
+        {
+          "name": "ColumnStacked1003D",
+          "value": 56
+        },
+        {
+          "name": "Line3D",
+          "value": -4101
+        },
+        {
+          "name": "Pie3D",
+          "value": -4102
+        },
+        {
+          "name": "PieExploded3D",
+          "value": 70
+        },
+        {
+          "name": "Area",
+          "value": 1
+        },
+        {
+          "name": "AreaStacked",
+          "value": 76
+        },
+        {
+          "name": "AreaStacked100",
+          "value": 77
+        },
+        {
+          "name": "BarClustered",
+          "value": 57
+        },
+        {
+          "name": "BarOfPie",
+          "value": 71
+        },
+        {
+          "name": "BarStacked",
+          "value": 58
+        },
+        {
+          "name": "BarStacked100",
+          "value": 59
+        },
+        {
+          "name": "Bubble",
+          "value": 15
+        },
+        {
+          "name": "Bubble3DEffect",
+          "value": 87
+        },
+        {
+          "name": "ColumnClustered",
+          "value": 51
+        },
+        {
+          "name": "ColumnStacked",
+          "value": 52
+        },
+        {
+          "name": "ColumnStacked100",
+          "value": 53
+        },
+        {
+          "name": "ConeBarClustered",
+          "value": 102
+        },
+        {
+          "name": "ConeBarStacked",
+          "value": 103
+        },
+        {
+          "name": "ConeBarStacked100",
+          "value": 104
+        },
+        {
+          "name": "ConeCol",
+          "value": 105
+        },
+        {
+          "name": "ConeColClustered",
+          "value": 99
+        },
+        {
+          "name": "ConeColStacked",
+          "value": 100
+        },
+        {
+          "name": "ConeColStacked100",
+          "value": 101
+        },
+        {
+          "name": "CylinderBarClustered",
+          "value": 95
+        },
+        {
+          "name": "CylinderBarStacked",
+          "value": 96
+        },
+        {
+          "name": "CylinderBarStacked100",
+          "value": 97
+        },
+        {
+          "name": "CylinderCol",
+          "value": 98
+        },
+        {
+          "name": "CylinderColClustered",
+          "value": 92
+        },
+        {
+          "name": "CylinderColStacked",
+          "value": 93
+        },
+        {
+          "name": "CylinderColStacked100",
+          "value": 94
+        },
+        {
+          "name": "Doughnut",
+          "value": -4120
+        },
+        {
+          "name": "DoughnutExploded",
+          "value": 80
+        },
+        {
+          "name": "Line",
+          "value": 4
+        },
+        {
+          "name": "LineMarkers",
+          "value": 65
+        },
+        {
+          "name": "LineMarkersStacked",
+          "value": 66
+        },
+        {
+          "name": "LineMarkersStacked100",
+          "value": 67
+        },
+        {
+          "name": "LineStacked",
+          "value": 63
+        },
+        {
+          "name": "LineStacked100",
+          "value": 64
+        },
+        {
+          "name": "Pie",
+          "value": 5
+        },
+        {
+          "name": "PieExploded",
+          "value": 69
+        },
+        {
+          "name": "PieOfPie",
+          "value": 68
+        },
+        {
+          "name": "PyramidBarClustered",
+          "value": 109
+        },
+        {
+          "name": "PyramidBarStacked",
+          "value": 110
+        },
+        {
+          "name": "PyramidBarStacked100",
+          "value": 111
+        },
+        {
+          "name": "PyramidCol",
+          "value": 112
+        },
+        {
+          "name": "PyramidColClustered",
+          "value": 106
+        },
+        {
+          "name": "PyramidColStacked",
+          "value": 107
+        },
+        {
+          "name": "PyramidColStacked100",
+          "value": 108
+        },
+        {
+          "name": "Radar",
+          "value": -4151
+        },
+        {
+          "name": "RadarFilled",
+          "value": 82
+        },
+        {
+          "name": "RadarMarkers",
+          "value": 81
+        },
+        {
+          "name": "StockHLC",
+          "value": 88
+        },
+        {
+          "name": "StockOHLC",
+          "value": 89
+        },
+        {
+          "name": "StockVHLC",
+          "value": 90
+        },
+        {
+          "name": "StockVOHLC",
+          "value": 91
+        },
+        {
+          "name": "Surface",
+          "value": 83
+        },
+        {
+          "name": "SurfaceTopView",
+          "value": 85
+        },
+        {
+          "name": "SurfaceTopViewWireframe",
+          "value": 86
+        },
+        {
+          "name": "SurfaceWireframe",
+          "value": 84
+        },
+        {
+          "name": "XYScatter",
+          "value": -4169
+        },
+        {
+          "name": "XYScatterLines",
+          "value": 74
+        },
+        {
+          "name": "XYScatterLinesNoMarkers",
+          "value": 75
+        },
+        {
+          "name": "XYScatterSmooth",
+          "value": 72
+        },
+        {
+          "name": "XYScatterSmoothNoMarkers",
+          "value": 73
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.Drawing.Chart.eDirection",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Column",
+          "value": 0
+        },
+        {
+          "name": "Bar",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.Drawing.Chart.eGrouping",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Standard",
+          "value": 0
+        },
+        {
+          "name": "Clustered",
+          "value": 1
+        },
+        {
+          "name": "Stacked",
+          "value": 2
+        },
+        {
+          "name": "PercentStacked",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.Drawing.Chart.eShape",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Box",
+          "value": 0
+        },
+        {
+          "name": "Cone",
+          "value": 1
+        },
+        {
+          "name": "ConeToMax",
+          "value": 2
+        },
+        {
+          "name": "Cylinder",
+          "value": 3
+        },
+        {
+          "name": "Pyramid",
+          "value": 4
+        },
+        {
+          "name": "PyramidToMax",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.Drawing.Chart.eScatterStyle",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "LineMarker",
+          "value": 0
+        },
+        {
+          "name": "SmoothMarker",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.Drawing.Chart.eRadarStyle",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Filled",
+          "value": 0
+        },
+        {
+          "name": "Marker",
+          "value": 1
+        },
+        {
+          "name": "Standard",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.Drawing.Chart.ePieType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Bar",
+          "value": 0
+        },
+        {
+          "name": "Pie",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.Drawing.Chart.eLabelPosition",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "BestFit",
+          "value": 0
+        },
+        {
+          "name": "Left",
+          "value": 1
+        },
+        {
+          "name": "Right",
+          "value": 2
+        },
+        {
+          "name": "Center",
+          "value": 3
+        },
+        {
+          "name": "Top",
+          "value": 4
+        },
+        {
+          "name": "Bottom",
+          "value": 5
+        },
+        {
+          "name": "InBase",
+          "value": 6
+        },
+        {
+          "name": "InEnd",
+          "value": 7
+        },
+        {
+          "name": "OutEnd",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.Drawing.Chart.eTickLabelPosition",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "High",
+          "value": 0
+        },
+        {
+          "name": "Low",
+          "value": 1
+        },
+        {
+          "name": "NextTo",
+          "value": 2
+        },
+        {
+          "name": "None",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.Drawing.Chart.eMarkerStyle",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Circle",
+          "value": 0
+        },
+        {
+          "name": "Dash",
+          "value": 1
+        },
+        {
+          "name": "Diamond",
+          "value": 2
+        },
+        {
+          "name": "Dot",
+          "value": 3
+        },
+        {
+          "name": "None",
+          "value": 4
+        },
+        {
+          "name": "Picture",
+          "value": 5
+        },
+        {
+          "name": "Plus",
+          "value": 6
+        },
+        {
+          "name": "Square",
+          "value": 7
+        },
+        {
+          "name": "Star",
+          "value": 8
+        },
+        {
+          "name": "Triangle",
+          "value": 9
+        },
+        {
+          "name": "X",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.Drawing.Chart.eChartStyle",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Style1",
+          "value": 1
+        },
+        {
+          "name": "Style2",
+          "value": 2
+        },
+        {
+          "name": "Style3",
+          "value": 3
+        },
+        {
+          "name": "Style4",
+          "value": 4
+        },
+        {
+          "name": "Style5",
+          "value": 5
+        },
+        {
+          "name": "Style6",
+          "value": 6
+        },
+        {
+          "name": "Style7",
+          "value": 7
+        },
+        {
+          "name": "Style8",
+          "value": 8
+        },
+        {
+          "name": "Style9",
+          "value": 9
+        },
+        {
+          "name": "Style10",
+          "value": 10
+        },
+        {
+          "name": "Style11",
+          "value": 11
+        },
+        {
+          "name": "Style12",
+          "value": 12
+        },
+        {
+          "name": "Style13",
+          "value": 13
+        },
+        {
+          "name": "Style14",
+          "value": 14
+        },
+        {
+          "name": "Style15",
+          "value": 15
+        },
+        {
+          "name": "Style16",
+          "value": 16
+        },
+        {
+          "name": "Style17",
+          "value": 17
+        },
+        {
+          "name": "Style18",
+          "value": 18
+        },
+        {
+          "name": "Style19",
+          "value": 19
+        },
+        {
+          "name": "Style20",
+          "value": 20
+        },
+        {
+          "name": "Style21",
+          "value": 21
+        },
+        {
+          "name": "Style22",
+          "value": 22
+        },
+        {
+          "name": "Style23",
+          "value": 23
+        },
+        {
+          "name": "Style24",
+          "value": 24
+        },
+        {
+          "name": "Style25",
+          "value": 25
+        },
+        {
+          "name": "Style26",
+          "value": 26
+        },
+        {
+          "name": "Style27",
+          "value": 27
+        },
+        {
+          "name": "Style28",
+          "value": 28
+        },
+        {
+          "name": "Style29",
+          "value": 29
+        },
+        {
+          "name": "Style30",
+          "value": 30
+        },
+        {
+          "name": "Style31",
+          "value": 31
+        },
+        {
+          "name": "Style32",
+          "value": 32
+        },
+        {
+          "name": "Style33",
+          "value": 33
+        },
+        {
+          "name": "Style34",
+          "value": 34
+        },
+        {
+          "name": "Style35",
+          "value": 35
+        },
+        {
+          "name": "Style36",
+          "value": 36
+        },
+        {
+          "name": "Style37",
+          "value": 37
+        },
+        {
+          "name": "Style38",
+          "value": 38
+        },
+        {
+          "name": "Style39",
+          "value": 39
+        },
+        {
+          "name": "Style40",
+          "value": 40
+        },
+        {
+          "name": "Style41",
+          "value": 41
+        },
+        {
+          "name": "Style42",
+          "value": 42
+        },
+        {
+          "name": "Style43",
+          "value": 43
+        },
+        {
+          "name": "Style44",
+          "value": 44
+        },
+        {
+          "name": "Style45",
+          "value": 45
+        },
+        {
+          "name": "Style46",
+          "value": 46
+        },
+        {
+          "name": "Style47",
+          "value": 47
+        },
+        {
+          "name": "Style48",
+          "value": 48
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.Drawing.Chart.eTrendLine",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Exponential",
+          "value": 0
+        },
+        {
+          "name": "Linear",
+          "value": 1
+        },
+        {
+          "name": "Logarithmic",
+          "value": 2
+        },
+        {
+          "name": "MovingAvgerage",
+          "value": 3
+        },
+        {
+          "name": "Polynomial",
+          "value": 4
+        },
+        {
+          "name": "Power",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.Drawing.Chart.eDisplayBlanksAs",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Gap",
+          "value": 0
+        },
+        {
+          "name": "Span",
+          "value": 1
+        },
+        {
+          "name": "Zero",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.Drawing.Chart.eSizeRepresents",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Area",
+          "value": 0
+        },
+        {
+          "name": "Width",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.Drawing.eTextAnchoringType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Bottom",
+          "value": 0
+        },
+        {
+          "name": "Center",
+          "value": 1
+        },
+        {
+          "name": "Distributed",
+          "value": 2
+        },
+        {
+          "name": "Justify",
+          "value": 3
+        },
+        {
+          "name": "Top",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.Drawing.eTextVerticalType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "EastAsianVertical",
+          "value": 0
+        },
+        {
+          "name": "Horizontal",
+          "value": 1
+        },
+        {
+          "name": "MongolianVertical",
+          "value": 2
+        },
+        {
+          "name": "Vertical",
+          "value": 3
+        },
+        {
+          "name": "Vertical270",
+          "value": 4
+        },
+        {
+          "name": "WordArtVertical",
+          "value": 5
+        },
+        {
+          "name": "WordArtVerticalRightToLeft",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.Drawing.eEditAs",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Absolute",
+          "value": 0
+        },
+        {
+          "name": "OneCell",
+          "value": 1
+        },
+        {
+          "name": "TwoCell",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.Drawing.Vml.eTextAlignHorizontalVml",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Left",
+          "value": 0
+        },
+        {
+          "name": "Center",
+          "value": 1
+        },
+        {
+          "name": "Right",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.Drawing.Vml.eTextAlignVerticalVml",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Top",
+          "value": 0
+        },
+        {
+          "name": "Center",
+          "value": 1
+        },
+        {
+          "name": "Bottom",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.Drawing.Vml.eLineStyleVml",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Solid",
+          "value": 0
+        },
+        {
+          "name": "Round",
+          "value": 1
+        },
+        {
+          "name": "Square",
+          "value": 2
+        },
+        {
+          "name": "Dash",
+          "value": 3
+        },
+        {
+          "name": "DashDot",
+          "value": 4
+        },
+        {
+          "name": "LongDash",
+          "value": 5
+        },
+        {
+          "name": "LongDashDot",
+          "value": 6
+        },
+        {
+          "name": "LongDashDotDot",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.DataValidation.eDataValidationType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Any",
+          "value": 0
+        },
+        {
+          "name": "Whole",
+          "value": 1
+        },
+        {
+          "name": "Decimal",
+          "value": 2
+        },
+        {
+          "name": "List",
+          "value": 3
+        },
+        {
+          "name": "TextLength",
+          "value": 4
+        },
+        {
+          "name": "DateTime",
+          "value": 5
+        },
+        {
+          "name": "Time",
+          "value": 6
+        },
+        {
+          "name": "Custom",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.EncryptionAlgorithm",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AES128",
+          "value": 0
+        },
+        {
+          "name": "AES192",
+          "value": 1
+        },
+        {
+          "name": "AES256",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.EncryptionVersion",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Standard",
+          "value": 0
+        },
+        {
+          "name": "Agile",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.PictureAlignment",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Left",
+          "value": 0
+        },
+        {
+          "name": "Centered",
+          "value": 1
+        },
+        {
+          "name": "Right",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.CompressionLevel",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Level0",
+          "value": 0
+        },
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Level1",
+          "value": 1
+        },
+        {
+          "name": "BestSpeed",
+          "value": 1
+        },
+        {
+          "name": "Level2",
+          "value": 2
+        },
+        {
+          "name": "Level3",
+          "value": 3
+        },
+        {
+          "name": "Level4",
+          "value": 4
+        },
+        {
+          "name": "Level5",
+          "value": 5
+        },
+        {
+          "name": "Level6",
+          "value": 6
+        },
+        {
+          "name": "Default",
+          "value": 6
+        },
+        {
+          "name": "Level7",
+          "value": 7
+        },
+        {
+          "name": "Level8",
+          "value": 8
+        },
+        {
+          "name": "BestCompression",
+          "value": 9
+        },
+        {
+          "name": "Level9",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "fullName": "eShapeStyle",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AccentBorderCallout1",
+          "value": 0
+        },
+        {
+          "name": "AccentBorderCallout2",
+          "value": 1
+        },
+        {
+          "name": "AccentBorderCallout3",
+          "value": 2
+        },
+        {
+          "name": "AccentCallout1",
+          "value": 3
+        },
+        {
+          "name": "AccentCallout2",
+          "value": 4
+        },
+        {
+          "name": "AccentCallout3",
+          "value": 5
+        },
+        {
+          "name": "ActionButtonBackPrevious",
+          "value": 6
+        },
+        {
+          "name": "ActionButtonBeginning",
+          "value": 7
+        },
+        {
+          "name": "ActionButtonBlank",
+          "value": 8
+        },
+        {
+          "name": "ActionButtonDocument",
+          "value": 9
+        },
+        {
+          "name": "ActionButtonEnd",
+          "value": 10
+        },
+        {
+          "name": "ActionButtonForwardNext",
+          "value": 11
+        },
+        {
+          "name": "ActionButtonHelp",
+          "value": 12
+        },
+        {
+          "name": "ActionButtonHome",
+          "value": 13
+        },
+        {
+          "name": "ActionButtonInformation",
+          "value": 14
+        },
+        {
+          "name": "ActionButtonMovie",
+          "value": 15
+        },
+        {
+          "name": "ActionButtonReturn",
+          "value": 16
+        },
+        {
+          "name": "ActionButtonSound",
+          "value": 17
+        },
+        {
+          "name": "Arc",
+          "value": 18
+        },
+        {
+          "name": "BentArrow",
+          "value": 19
+        },
+        {
+          "name": "BentConnector2",
+          "value": 20
+        },
+        {
+          "name": "BentConnector3",
+          "value": 21
+        },
+        {
+          "name": "BentConnector4",
+          "value": 22
+        },
+        {
+          "name": "BentConnector5",
+          "value": 23
+        },
+        {
+          "name": "BentUpArrow",
+          "value": 24
+        },
+        {
+          "name": "Bevel",
+          "value": 25
+        },
+        {
+          "name": "BlockArc",
+          "value": 26
+        },
+        {
+          "name": "BorderCallout1",
+          "value": 27
+        },
+        {
+          "name": "BorderCallout2",
+          "value": 28
+        },
+        {
+          "name": "BorderCallout3",
+          "value": 29
+        },
+        {
+          "name": "BracePair",
+          "value": 30
+        },
+        {
+          "name": "BracketPair",
+          "value": 31
+        },
+        {
+          "name": "Callout1",
+          "value": 32
+        },
+        {
+          "name": "Callout2",
+          "value": 33
+        },
+        {
+          "name": "Callout3",
+          "value": 34
+        },
+        {
+          "name": "Can",
+          "value": 35
+        },
+        {
+          "name": "ChartPlus",
+          "value": 36
+        },
+        {
+          "name": "ChartStar",
+          "value": 37
+        },
+        {
+          "name": "ChartX",
+          "value": 38
+        },
+        {
+          "name": "Chevron",
+          "value": 39
+        },
+        {
+          "name": "Chord",
+          "value": 40
+        },
+        {
+          "name": "CircularArrow",
+          "value": 41
+        },
+        {
+          "name": "Cloud",
+          "value": 42
+        },
+        {
+          "name": "CloudCallout",
+          "value": 43
+        },
+        {
+          "name": "Corner",
+          "value": 44
+        },
+        {
+          "name": "CornerTabs",
+          "value": 45
+        },
+        {
+          "name": "Cube",
+          "value": 46
+        },
+        {
+          "name": "CurvedConnector2",
+          "value": 47
+        },
+        {
+          "name": "CurvedConnector3",
+          "value": 48
+        },
+        {
+          "name": "CurvedConnector4",
+          "value": 49
+        },
+        {
+          "name": "CurvedConnector5",
+          "value": 50
+        },
+        {
+          "name": "CurvedDownArrow",
+          "value": 51
+        },
+        {
+          "name": "CurvedLeftArrow",
+          "value": 52
+        },
+        {
+          "name": "CurvedRightArrow",
+          "value": 53
+        },
+        {
+          "name": "CurvedUpArrow",
+          "value": 54
+        },
+        {
+          "name": "Decagon",
+          "value": 55
+        },
+        {
+          "name": "DiagStripe",
+          "value": 56
+        },
+        {
+          "name": "Diamond",
+          "value": 57
+        },
+        {
+          "name": "Dodecagon",
+          "value": 58
+        },
+        {
+          "name": "Donut",
+          "value": 59
+        },
+        {
+          "name": "DoubleWave",
+          "value": 60
+        },
+        {
+          "name": "DownArrow",
+          "value": 61
+        },
+        {
+          "name": "DownArrowCallout",
+          "value": 62
+        },
+        {
+          "name": "Ellipse",
+          "value": 63
+        },
+        {
+          "name": "EllipseRibbon",
+          "value": 64
+        },
+        {
+          "name": "EllipseRibbon2",
+          "value": 65
+        },
+        {
+          "name": "FlowChartAlternateProcess",
+          "value": 66
+        },
+        {
+          "name": "FlowChartCollate",
+          "value": 67
+        },
+        {
+          "name": "FlowChartConnector",
+          "value": 68
+        },
+        {
+          "name": "FlowChartDecision",
+          "value": 69
+        },
+        {
+          "name": "FlowChartDelay",
+          "value": 70
+        },
+        {
+          "name": "FlowChartDisplay",
+          "value": 71
+        },
+        {
+          "name": "FlowChartDocument",
+          "value": 72
+        },
+        {
+          "name": "FlowChartExtract",
+          "value": 73
+        },
+        {
+          "name": "FlowChartInputOutput",
+          "value": 74
+        },
+        {
+          "name": "FlowChartInternalStorage",
+          "value": 75
+        },
+        {
+          "name": "FlowChartMagneticDisk",
+          "value": 76
+        },
+        {
+          "name": "FlowChartMagneticDrum",
+          "value": 77
+        },
+        {
+          "name": "FlowChartMagneticTape",
+          "value": 78
+        },
+        {
+          "name": "FlowChartManualInput",
+          "value": 79
+        },
+        {
+          "name": "FlowChartManualOperation",
+          "value": 80
+        },
+        {
+          "name": "FlowChartMerge",
+          "value": 81
+        },
+        {
+          "name": "FlowChartMultidocument",
+          "value": 82
+        },
+        {
+          "name": "FlowChartOfflineStorage",
+          "value": 83
+        },
+        {
+          "name": "FlowChartOffpageConnector",
+          "value": 84
+        },
+        {
+          "name": "FlowChartOnlineStorage",
+          "value": 85
+        },
+        {
+          "name": "FlowChartOr",
+          "value": 86
+        },
+        {
+          "name": "FlowChartPredefinedProcess",
+          "value": 87
+        },
+        {
+          "name": "FlowChartPreparation",
+          "value": 88
+        },
+        {
+          "name": "FlowChartProcess",
+          "value": 89
+        },
+        {
+          "name": "FlowChartPunchedCard",
+          "value": 90
+        },
+        {
+          "name": "FlowChartPunchedTape",
+          "value": 91
+        },
+        {
+          "name": "FlowChartSort",
+          "value": 92
+        },
+        {
+          "name": "FlowChartSummingJunction",
+          "value": 93
+        },
+        {
+          "name": "FlowChartTerminator",
+          "value": 94
+        },
+        {
+          "name": "FoldedCorner",
+          "value": 95
+        },
+        {
+          "name": "Frame",
+          "value": 96
+        },
+        {
+          "name": "Funnel",
+          "value": 97
+        },
+        {
+          "name": "Gear6",
+          "value": 98
+        },
+        {
+          "name": "Gear9",
+          "value": 99
+        },
+        {
+          "name": "HalfFrame",
+          "value": 100
+        },
+        {
+          "name": "Heart",
+          "value": 101
+        },
+        {
+          "name": "Heptagon",
+          "value": 102
+        },
+        {
+          "name": "Hexagon",
+          "value": 103
+        },
+        {
+          "name": "HomePlate",
+          "value": 104
+        },
+        {
+          "name": "HorizontalScroll",
+          "value": 105
+        },
+        {
+          "name": "IrregularSeal1",
+          "value": 106
+        },
+        {
+          "name": "IrregularSeal2",
+          "value": 107
+        },
+        {
+          "name": "LeftArrow",
+          "value": 108
+        },
+        {
+          "name": "LeftArrowCallout",
+          "value": 109
+        },
+        {
+          "name": "LeftBrace",
+          "value": 110
+        },
+        {
+          "name": "LeftBracket",
+          "value": 111
+        },
+        {
+          "name": "LeftCircularArrow",
+          "value": 112
+        },
+        {
+          "name": "LeftRightArrow",
+          "value": 113
+        },
+        {
+          "name": "LeftRightArrowCallout",
+          "value": 114
+        },
+        {
+          "name": "LeftRightCircularArrow",
+          "value": 115
+        },
+        {
+          "name": "LeftRightRibbon",
+          "value": 116
+        },
+        {
+          "name": "LeftRightUpArrow",
+          "value": 117
+        },
+        {
+          "name": "LeftUpArrow",
+          "value": 118
+        },
+        {
+          "name": "LightningBolt",
+          "value": 119
+        },
+        {
+          "name": "Line",
+          "value": 120
+        },
+        {
+          "name": "LineInv",
+          "value": 121
+        },
+        {
+          "name": "MathDivide",
+          "value": 122
+        },
+        {
+          "name": "MathEqual",
+          "value": 123
+        },
+        {
+          "name": "MathMinus",
+          "value": 124
+        },
+        {
+          "name": "MathMultiply",
+          "value": 125
+        },
+        {
+          "name": "MathNotEqual",
+          "value": 126
+        },
+        {
+          "name": "MathPlus",
+          "value": 127
+        },
+        {
+          "name": "Moon",
+          "value": 128
+        },
+        {
+          "name": "NonIsoscelesTrapezoid",
+          "value": 129
+        },
+        {
+          "name": "NoSmoking",
+          "value": 130
+        },
+        {
+          "name": "NotchedRightArrow",
+          "value": 131
+        },
+        {
+          "name": "Octagon",
+          "value": 132
+        },
+        {
+          "name": "Parallelogram",
+          "value": 133
+        },
+        {
+          "name": "Pentagon",
+          "value": 134
+        },
+        {
+          "name": "Pie",
+          "value": 135
+        },
+        {
+          "name": "PieWedge",
+          "value": 136
+        },
+        {
+          "name": "Plaque",
+          "value": 137
+        },
+        {
+          "name": "PlaqueTabs",
+          "value": 138
+        },
+        {
+          "name": "Plus",
+          "value": 139
+        },
+        {
+          "name": "QuadArrow",
+          "value": 140
+        },
+        {
+          "name": "QuadArrowCallout",
+          "value": 141
+        },
+        {
+          "name": "Rect",
+          "value": 142
+        },
+        {
+          "name": "Ribbon",
+          "value": 143
+        },
+        {
+          "name": "Ribbon2",
+          "value": 144
+        },
+        {
+          "name": "RightArrow",
+          "value": 145
+        },
+        {
+          "name": "RightArrowCallout",
+          "value": 146
+        },
+        {
+          "name": "RightBrace",
+          "value": 147
+        },
+        {
+          "name": "RightBracket",
+          "value": 148
+        },
+        {
+          "name": "Round1Rect",
+          "value": 149
+        },
+        {
+          "name": "Round2DiagRect",
+          "value": 150
+        },
+        {
+          "name": "Round2SameRect",
+          "value": 151
+        },
+        {
+          "name": "RoundRect",
+          "value": 152
+        },
+        {
+          "name": "RtTriangle",
+          "value": 153
+        },
+        {
+          "name": "SmileyFace",
+          "value": 154
+        },
+        {
+          "name": "Snip1Rect",
+          "value": 155
+        },
+        {
+          "name": "Snip2DiagRect",
+          "value": 156
+        },
+        {
+          "name": "Snip2SameRect",
+          "value": 157
+        },
+        {
+          "name": "SnipRoundRect",
+          "value": 158
+        },
+        {
+          "name": "SquareTabs",
+          "value": 159
+        },
+        {
+          "name": "Star10",
+          "value": 160
+        },
+        {
+          "name": "Star12",
+          "value": 161
+        },
+        {
+          "name": "Star16",
+          "value": 162
+        },
+        {
+          "name": "Star24",
+          "value": 163
+        },
+        {
+          "name": "Star32",
+          "value": 164
+        },
+        {
+          "name": "Star4",
+          "value": 165
+        },
+        {
+          "name": "Star5",
+          "value": 166
+        },
+        {
+          "name": "Star6",
+          "value": 167
+        },
+        {
+          "name": "Star7",
+          "value": 168
+        },
+        {
+          "name": "Star8",
+          "value": 169
+        },
+        {
+          "name": "StraightConnector1",
+          "value": 170
+        },
+        {
+          "name": "StripedRightArrow",
+          "value": 171
+        },
+        {
+          "name": "Sun",
+          "value": 172
+        },
+        {
+          "name": "SwooshArrow",
+          "value": 173
+        },
+        {
+          "name": "Teardrop",
+          "value": 174
+        },
+        {
+          "name": "Trapezoid",
+          "value": 175
+        },
+        {
+          "name": "Triangle",
+          "value": 176
+        },
+        {
+          "name": "UpArrow",
+          "value": 177
+        },
+        {
+          "name": "UpArrowCallout",
+          "value": 178
+        },
+        {
+          "name": "UpDownArrow",
+          "value": 179
+        },
+        {
+          "name": "UpDownArrowCallout",
+          "value": 180
+        },
+        {
+          "name": "UturnArrow",
+          "value": 181
+        },
+        {
+          "name": "Wave",
+          "value": 182
+        },
+        {
+          "name": "WedgeEllipseCallout",
+          "value": 183
+        },
+        {
+          "name": "WedgeRectCallout",
+          "value": 184
+        },
+        {
+          "name": "WedgeRoundRectCallout",
+          "value": 185
+        },
+        {
+          "name": "VerticalScroll",
+          "value": 186
+        }
+      ]
+    },
+    {
+      "fullName": "eTextAlignment",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Left",
+          "value": 0
+        },
+        {
+          "name": "Center",
+          "value": 1
+        },
+        {
+          "name": "Right",
+          "value": 2
+        },
+        {
+          "name": "Distributed",
+          "value": 3
+        },
+        {
+          "name": "Justified",
+          "value": 4
+        },
+        {
+          "name": "JustifiedLow",
+          "value": 5
+        },
+        {
+          "name": "ThaiDistributed",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "eFillStyle",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NoFill",
+          "value": 0
+        },
+        {
+          "name": "SolidFill",
+          "value": 1
+        },
+        {
+          "name": "GradientFill",
+          "value": 2
+        },
+        {
+          "name": "PatternFill",
+          "value": 3
+        },
+        {
+          "name": "BlipFill",
+          "value": 4
+        },
+        {
+          "name": "GroupFill",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.eDataTypes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "String",
+          "value": 1
+        },
+        {
+          "name": "Number",
+          "value": 2
+        },
+        {
+          "name": "DateTime",
+          "value": 3
+        },
+        {
+          "name": "Percent",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.FormulaParsing.ExcelUtilities.AddressTranslator.RangeCalculationBehaviour",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "FirstPart",
+          "value": 0
+        },
+        {
+          "name": "LastPart",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.FormulaParsing.ExcelUtilities.ExcelReferenceType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AbsoluteRowAndColumn",
+          "value": 1
+        },
+        {
+          "name": "AbsoluteRowRelativeColumn",
+          "value": 2
+        },
+        {
+          "name": "RelativeRowAbsolutColumn",
+          "value": 3
+        },
+        {
+          "name": "RelativeRowAndColumn",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.eErrorType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Div0",
+          "value": 0
+        },
+        {
+          "name": "NA",
+          "value": 1
+        },
+        {
+          "name": "Name",
+          "value": 2
+        },
+        {
+          "name": "Null",
+          "value": 3
+        },
+        {
+          "name": "Num",
+          "value": 4
+        },
+        {
+          "name": "Ref",
+          "value": 5
+        },
+        {
+          "name": "Value",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.FormulaParsing.Excel.ExcelCellState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "HiddenCell",
+          "value": 1
+        },
+        {
+          "name": "ContainsError",
+          "value": 2
+        },
+        {
+          "name": "IsResultOfSubtotal",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.FormulaParsing.Excel.Functions.RefAndLookup.LookupArguments.LookupArgumentDataType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ExcelRange",
+          "value": 0
+        },
+        {
+          "name": "DataArray",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.FormulaParsing.Excel.Functions.RefAndLookup.LookupDirection",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Vertical",
+          "value": 0
+        },
+        {
+          "name": "Horizontal",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.FormulaParsing.Excel.Operators.Operators",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "Concat",
+          "value": 1
+        },
+        {
+          "name": "Plus",
+          "value": 2
+        },
+        {
+          "name": "Minus",
+          "value": 3
+        },
+        {
+          "name": "Multiply",
+          "value": 4
+        },
+        {
+          "name": "Divide",
+          "value": 5
+        },
+        {
+          "name": "Modulus",
+          "value": 6
+        },
+        {
+          "name": "Percent",
+          "value": 7
+        },
+        {
+          "name": "Equals",
+          "value": 8
+        },
+        {
+          "name": "GreaterThan",
+          "value": 9
+        },
+        {
+          "name": "GreaterThanOrEqual",
+          "value": 10
+        },
+        {
+          "name": "LessThan",
+          "value": 11
+        },
+        {
+          "name": "LessThanOrEqual",
+          "value": 12
+        },
+        {
+          "name": "NotEqualTo",
+          "value": 13
+        },
+        {
+          "name": "IntegerDivision",
+          "value": 14
+        },
+        {
+          "name": "Exponentiation",
+          "value": 15
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.FormulaParsing.ExpressionGraph.DataType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Integer",
+          "value": 0
+        },
+        {
+          "name": "Decimal",
+          "value": 1
+        },
+        {
+          "name": "String",
+          "value": 2
+        },
+        {
+          "name": "Boolean",
+          "value": 3
+        },
+        {
+          "name": "Date",
+          "value": 4
+        },
+        {
+          "name": "Time",
+          "value": 5
+        },
+        {
+          "name": "Enumerable",
+          "value": 6
+        },
+        {
+          "name": "LookupArray",
+          "value": 7
+        },
+        {
+          "name": "ExcelAddress",
+          "value": 8
+        },
+        {
+          "name": "ExcelError",
+          "value": 9
+        },
+        {
+          "name": "Empty",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.FormulaParsing.LexicalAnalysis.TokenType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Operator",
+          "value": 0
+        },
+        {
+          "name": "Negator",
+          "value": 1
+        },
+        {
+          "name": "OpeningParenthesis",
+          "value": 2
+        },
+        {
+          "name": "ClosingParenthesis",
+          "value": 3
+        },
+        {
+          "name": "OpeningEnumerable",
+          "value": 4
+        },
+        {
+          "name": "ClosingEnumerable",
+          "value": 5
+        },
+        {
+          "name": "OpeningBracket",
+          "value": 6
+        },
+        {
+          "name": "ClosingBracket",
+          "value": 7
+        },
+        {
+          "name": "Enumerable",
+          "value": 8
+        },
+        {
+          "name": "Comma",
+          "value": 9
+        },
+        {
+          "name": "SemiColon",
+          "value": 10
+        },
+        {
+          "name": "String",
+          "value": 11
+        },
+        {
+          "name": "StringContent",
+          "value": 12
+        },
+        {
+          "name": "Integer",
+          "value": 13
+        },
+        {
+          "name": "Boolean",
+          "value": 14
+        },
+        {
+          "name": "Decimal",
+          "value": 15
+        },
+        {
+          "name": "Percent",
+          "value": 16
+        },
+        {
+          "name": "Function",
+          "value": 17
+        },
+        {
+          "name": "ExcelAddress",
+          "value": 18
+        },
+        {
+          "name": "NameValue",
+          "value": 19
+        },
+        {
+          "name": "InvalidReference",
+          "value": 20
+        },
+        {
+          "name": "NumericError",
+          "value": 21
+        },
+        {
+          "name": "ValueDataTypeError",
+          "value": 22
+        },
+        {
+          "name": "Null",
+          "value": 23
+        },
+        {
+          "name": "Unrecognized",
+          "value": 24
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.Packaging.Ionic.Zlib.FlushType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Partial",
+          "value": 1
+        },
+        {
+          "name": "Sync",
+          "value": 2
+        },
+        {
+          "name": "Full",
+          "value": 3
+        },
+        {
+          "name": "Finish",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.Packaging.Ionic.Zlib.CompressionLevel",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Level0",
+          "value": 0
+        },
+        {
+          "name": "BestSpeed",
+          "value": 1
+        },
+        {
+          "name": "Level1",
+          "value": 1
+        },
+        {
+          "name": "Level2",
+          "value": 2
+        },
+        {
+          "name": "Level3",
+          "value": 3
+        },
+        {
+          "name": "Level4",
+          "value": 4
+        },
+        {
+          "name": "Level5",
+          "value": 5
+        },
+        {
+          "name": "Default",
+          "value": 6
+        },
+        {
+          "name": "Level6",
+          "value": 6
+        },
+        {
+          "name": "Level7",
+          "value": 7
+        },
+        {
+          "name": "Level8",
+          "value": 8
+        },
+        {
+          "name": "BestCompression",
+          "value": 9
+        },
+        {
+          "name": "Level9",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.Packaging.Ionic.Zlib.CompressionStrategy",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "Filtered",
+          "value": 1
+        },
+        {
+          "name": "HuffmanOnly",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.Packaging.Ionic.Zlib.CompressionMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Compress",
+          "value": 0
+        },
+        {
+          "name": "Decompress",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.Packaging.TargetMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Internal",
+          "value": 0
+        },
+        {
+          "name": "External",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.VBA.eModuleType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Document",
+          "value": 0
+        },
+        {
+          "name": "Module",
+          "value": 1
+        },
+        {
+          "name": "Class",
+          "value": 2
+        },
+        {
+          "name": "Designer",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.VBA.eAttributeDataType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "String",
+          "value": 0
+        },
+        {
+          "name": "NonString",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.VBA.ExcelVbaProject.eSyskind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Win16",
+          "value": 0
+        },
+        {
+          "name": "Win32",
+          "value": 1
+        },
+        {
+          "name": "Macintosh",
+          "value": 2
+        },
+        {
+          "name": "Win64",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.ExcelCalcMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Automatic",
+          "value": 0
+        },
+        {
+          "name": "AutomaticNoTable",
+          "value": 1
+        },
+        {
+          "name": "Manual",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.eWorkSheetHidden",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Visible",
+          "value": 0
+        },
+        {
+          "name": "Hidden",
+          "value": 1
+        },
+        {
+          "name": "VeryHidden",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.Table.PivotTable.eSourceType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Consolidation",
+          "value": 0
+        },
+        {
+          "name": "External",
+          "value": 1
+        },
+        {
+          "name": "Scenario",
+          "value": 2
+        },
+        {
+          "name": "Worksheet",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.Table.PivotTable.ePivotFieldAxis",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": -1
+        },
+        {
+          "name": "Column",
+          "value": 0
+        },
+        {
+          "name": "Page",
+          "value": 1
+        },
+        {
+          "name": "Row",
+          "value": 2
+        },
+        {
+          "name": "Values",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.Table.PivotTable.DataFieldFunctions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Average",
+          "value": 0
+        },
+        {
+          "name": "Count",
+          "value": 1
+        },
+        {
+          "name": "CountNums",
+          "value": 2
+        },
+        {
+          "name": "Max",
+          "value": 3
+        },
+        {
+          "name": "Min",
+          "value": 4
+        },
+        {
+          "name": "Product",
+          "value": 5
+        },
+        {
+          "name": "None",
+          "value": 6
+        },
+        {
+          "name": "StdDev",
+          "value": 7
+        },
+        {
+          "name": "StdDevP",
+          "value": 8
+        },
+        {
+          "name": "Sum",
+          "value": 9
+        },
+        {
+          "name": "Var",
+          "value": 10
+        },
+        {
+          "name": "VarP",
+          "value": 11
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.Table.PivotTable.eShowDataAs",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Difference",
+          "value": 0
+        },
+        {
+          "name": "Index",
+          "value": 1
+        },
+        {
+          "name": "Normal",
+          "value": 2
+        },
+        {
+          "name": "Percent",
+          "value": 3
+        },
+        {
+          "name": "PercentDiff",
+          "value": 4
+        },
+        {
+          "name": "PercentOfCol",
+          "value": 5
+        },
+        {
+          "name": "PercentOfRow",
+          "value": 6
+        },
+        {
+          "name": "PercentOfTotal",
+          "value": 7
+        },
+        {
+          "name": "RunTotal",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.Table.PivotTable.eSubTotalFunctions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 1
+        },
+        {
+          "name": "Count",
+          "value": 2
+        },
+        {
+          "name": "CountA",
+          "value": 4
+        },
+        {
+          "name": "Avg",
+          "value": 8
+        },
+        {
+          "name": "Default",
+          "value": 16
+        },
+        {
+          "name": "Min",
+          "value": 32
+        },
+        {
+          "name": "Max",
+          "value": 64
+        },
+        {
+          "name": "Product",
+          "value": 128
+        },
+        {
+          "name": "StdDev",
+          "value": 256
+        },
+        {
+          "name": "StdDevP",
+          "value": 512
+        },
+        {
+          "name": "Sum",
+          "value": 1024
+        },
+        {
+          "name": "Var",
+          "value": 2048
+        },
+        {
+          "name": "VarP",
+          "value": 4096
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.Table.PivotTable.eDateGroupBy",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Years",
+          "value": 1
+        },
+        {
+          "name": "Quarters",
+          "value": 2
+        },
+        {
+          "name": "Months",
+          "value": 4
+        },
+        {
+          "name": "Days",
+          "value": 8
+        },
+        {
+          "name": "Hours",
+          "value": 16
+        },
+        {
+          "name": "Minutes",
+          "value": 32
+        },
+        {
+          "name": "Seconds",
+          "value": 64
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.Table.PivotTable.eSortType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Ascending",
+          "value": 1
+        },
+        {
+          "name": "Descending",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.Table.TableStyles",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Custom",
+          "value": 1
+        },
+        {
+          "name": "Light1",
+          "value": 2
+        },
+        {
+          "name": "Light2",
+          "value": 3
+        },
+        {
+          "name": "Light3",
+          "value": 4
+        },
+        {
+          "name": "Light4",
+          "value": 5
+        },
+        {
+          "name": "Light5",
+          "value": 6
+        },
+        {
+          "name": "Light6",
+          "value": 7
+        },
+        {
+          "name": "Light7",
+          "value": 8
+        },
+        {
+          "name": "Light8",
+          "value": 9
+        },
+        {
+          "name": "Light9",
+          "value": 10
+        },
+        {
+          "name": "Light10",
+          "value": 11
+        },
+        {
+          "name": "Light11",
+          "value": 12
+        },
+        {
+          "name": "Light12",
+          "value": 13
+        },
+        {
+          "name": "Light13",
+          "value": 14
+        },
+        {
+          "name": "Light14",
+          "value": 15
+        },
+        {
+          "name": "Light15",
+          "value": 16
+        },
+        {
+          "name": "Light16",
+          "value": 17
+        },
+        {
+          "name": "Light17",
+          "value": 18
+        },
+        {
+          "name": "Light18",
+          "value": 19
+        },
+        {
+          "name": "Light19",
+          "value": 20
+        },
+        {
+          "name": "Light20",
+          "value": 21
+        },
+        {
+          "name": "Light21",
+          "value": 22
+        },
+        {
+          "name": "Medium1",
+          "value": 23
+        },
+        {
+          "name": "Medium2",
+          "value": 24
+        },
+        {
+          "name": "Medium3",
+          "value": 25
+        },
+        {
+          "name": "Medium4",
+          "value": 26
+        },
+        {
+          "name": "Medium5",
+          "value": 27
+        },
+        {
+          "name": "Medium6",
+          "value": 28
+        },
+        {
+          "name": "Medium7",
+          "value": 29
+        },
+        {
+          "name": "Medium8",
+          "value": 30
+        },
+        {
+          "name": "Medium9",
+          "value": 31
+        },
+        {
+          "name": "Medium10",
+          "value": 32
+        },
+        {
+          "name": "Medium11",
+          "value": 33
+        },
+        {
+          "name": "Medium12",
+          "value": 34
+        },
+        {
+          "name": "Medium13",
+          "value": 35
+        },
+        {
+          "name": "Medium14",
+          "value": 36
+        },
+        {
+          "name": "Medium15",
+          "value": 37
+        },
+        {
+          "name": "Medium16",
+          "value": 38
+        },
+        {
+          "name": "Medium17",
+          "value": 39
+        },
+        {
+          "name": "Medium18",
+          "value": 40
+        },
+        {
+          "name": "Medium19",
+          "value": 41
+        },
+        {
+          "name": "Medium20",
+          "value": 42
+        },
+        {
+          "name": "Medium21",
+          "value": 43
+        },
+        {
+          "name": "Medium22",
+          "value": 44
+        },
+        {
+          "name": "Medium23",
+          "value": 45
+        },
+        {
+          "name": "Medium24",
+          "value": 46
+        },
+        {
+          "name": "Medium25",
+          "value": 47
+        },
+        {
+          "name": "Medium26",
+          "value": 48
+        },
+        {
+          "name": "Medium27",
+          "value": 49
+        },
+        {
+          "name": "Medium28",
+          "value": 50
+        },
+        {
+          "name": "Dark1",
+          "value": 51
+        },
+        {
+          "name": "Dark2",
+          "value": 52
+        },
+        {
+          "name": "Dark3",
+          "value": 53
+        },
+        {
+          "name": "Dark4",
+          "value": 54
+        },
+        {
+          "name": "Dark5",
+          "value": 55
+        },
+        {
+          "name": "Dark6",
+          "value": 56
+        },
+        {
+          "name": "Dark7",
+          "value": 57
+        },
+        {
+          "name": "Dark8",
+          "value": 58
+        },
+        {
+          "name": "Dark9",
+          "value": 59
+        },
+        {
+          "name": "Dark10",
+          "value": 60
+        },
+        {
+          "name": "Dark11",
+          "value": 61
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.Table.RowFunctions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Average",
+          "value": 0
+        },
+        {
+          "name": "Count",
+          "value": 1
+        },
+        {
+          "name": "CountNums",
+          "value": 2
+        },
+        {
+          "name": "Custom",
+          "value": 3
+        },
+        {
+          "name": "Max",
+          "value": 4
+        },
+        {
+          "name": "Min",
+          "value": 5
+        },
+        {
+          "name": "None",
+          "value": 6
+        },
+        {
+          "name": "StdDev",
+          "value": 7
+        },
+        {
+          "name": "Sum",
+          "value": 8
+        },
+        {
+          "name": "Var",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.Drawing.Chart.eLegendPosition",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Top",
+          "value": 0
+        },
+        {
+          "name": "Left",
+          "value": 1
+        },
+        {
+          "name": "Right",
+          "value": 2
+        },
+        {
+          "name": "Bottom",
+          "value": 3
+        },
+        {
+          "name": "TopRight",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.Drawing.eLineCap",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Flat",
+          "value": 0
+        },
+        {
+          "name": "Round",
+          "value": 1
+        },
+        {
+          "name": "Square",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.Drawing.eLineStyle",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Dash",
+          "value": 0
+        },
+        {
+          "name": "DashDot",
+          "value": 1
+        },
+        {
+          "name": "Dot",
+          "value": 2
+        },
+        {
+          "name": "LongDash",
+          "value": 3
+        },
+        {
+          "name": "LongDashDot",
+          "value": 4
+        },
+        {
+          "name": "LongDashDotDot",
+          "value": 5
+        },
+        {
+          "name": "Solid",
+          "value": 6
+        },
+        {
+          "name": "SystemDash",
+          "value": 7
+        },
+        {
+          "name": "SystemDashDot",
+          "value": 8
+        },
+        {
+          "name": "SystemDashDotDot",
+          "value": 9
+        },
+        {
+          "name": "SystemDot",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.Drawing.Chart.eAxisPosition",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Left",
+          "value": 0
+        },
+        {
+          "name": "Bottom",
+          "value": 1
+        },
+        {
+          "name": "Right",
+          "value": 2
+        },
+        {
+          "name": "Top",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.Drawing.Chart.eYAxisPosition",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Left",
+          "value": 0
+        },
+        {
+          "name": "Right",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.Drawing.Chart.eXAxisPosition",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Bottom",
+          "value": 1
+        },
+        {
+          "name": "Top",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.Drawing.Chart.eAxisOrientation",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "MaxMin",
+          "value": 0
+        },
+        {
+          "name": "MinMax",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.Drawing.Chart.eCrossBetween",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Between",
+          "value": 0
+        },
+        {
+          "name": "MidCat",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.Drawing.Chart.eCrosses",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AutoZero",
+          "value": 0
+        },
+        {
+          "name": "Max",
+          "value": 1
+        },
+        {
+          "name": "Min",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.Drawing.Chart.eAxisTickMark",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Cross",
+          "value": 0
+        },
+        {
+          "name": "In",
+          "value": 1
+        },
+        {
+          "name": "None",
+          "value": 2
+        },
+        {
+          "name": "Out",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.Drawing.Chart.eBuildInUnits",
+      "underlyingType": "System.Int64",
+      "members": [
+        {
+          "name": "hundreds",
+          "value": 100
+        },
+        {
+          "name": "thousands",
+          "value": 1000
+        },
+        {
+          "name": "tenThousands",
+          "value": 10000
+        },
+        {
+          "name": "hundredThousands",
+          "value": 100000
+        },
+        {
+          "name": "millions",
+          "value": 1000000
+        },
+        {
+          "name": "tenMillions",
+          "value": 10000000
+        },
+        {
+          "name": "hundredMillions",
+          "value": 100000000
+        },
+        {
+          "name": "billions",
+          "value": 1000000000
+        },
+        {
+          "name": "trillions",
+          "value": 1000000000000
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.eOrientation",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Portrait",
+          "value": 0
+        },
+        {
+          "name": "Landscape",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.ePaperSize",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Letter",
+          "value": 1
+        },
+        {
+          "name": "LetterSmall",
+          "value": 2
+        },
+        {
+          "name": "Tabloid",
+          "value": 3
+        },
+        {
+          "name": "Ledger",
+          "value": 4
+        },
+        {
+          "name": "Legal",
+          "value": 5
+        },
+        {
+          "name": "Statement",
+          "value": 6
+        },
+        {
+          "name": "Executive",
+          "value": 7
+        },
+        {
+          "name": "A3",
+          "value": 8
+        },
+        {
+          "name": "A4",
+          "value": 9
+        },
+        {
+          "name": "A4Small",
+          "value": 10
+        },
+        {
+          "name": "A5",
+          "value": 11
+        },
+        {
+          "name": "B4",
+          "value": 12
+        },
+        {
+          "name": "B5",
+          "value": 13
+        },
+        {
+          "name": "Folio",
+          "value": 14
+        },
+        {
+          "name": "Quarto",
+          "value": 15
+        },
+        {
+          "name": "Standard10_14",
+          "value": 16
+        },
+        {
+          "name": "Standard11_17",
+          "value": 17
+        },
+        {
+          "name": "Note",
+          "value": 18
+        },
+        {
+          "name": "Envelope9",
+          "value": 19
+        },
+        {
+          "name": "Envelope10",
+          "value": 20
+        },
+        {
+          "name": "Envelope11",
+          "value": 21
+        },
+        {
+          "name": "Envelope12",
+          "value": 22
+        },
+        {
+          "name": "Envelope14",
+          "value": 23
+        },
+        {
+          "name": "C",
+          "value": 24
+        },
+        {
+          "name": "D",
+          "value": 25
+        },
+        {
+          "name": "E",
+          "value": 26
+        },
+        {
+          "name": "DLEnvelope",
+          "value": 27
+        },
+        {
+          "name": "C5Envelope",
+          "value": 28
+        },
+        {
+          "name": "C3Envelope",
+          "value": 29
+        },
+        {
+          "name": "C4Envelope",
+          "value": 30
+        },
+        {
+          "name": "C6Envelope",
+          "value": 31
+        },
+        {
+          "name": "C65Envelope",
+          "value": 32
+        },
+        {
+          "name": "B4Envelope",
+          "value": 33
+        },
+        {
+          "name": "B5Envelope",
+          "value": 34
+        },
+        {
+          "name": "B6Envelope",
+          "value": 35
+        },
+        {
+          "name": "ItalyEnvelope",
+          "value": 36
+        },
+        {
+          "name": "MonarchEnvelope",
+          "value": 37
+        },
+        {
+          "name": "Six3_4Envelope",
+          "value": 38
+        },
+        {
+          "name": "USStandard",
+          "value": 39
+        },
+        {
+          "name": "GermanStandard",
+          "value": 40
+        },
+        {
+          "name": "GermanLegal",
+          "value": 41
+        },
+        {
+          "name": "ISOB4",
+          "value": 42
+        },
+        {
+          "name": "JapaneseDoublePostcard",
+          "value": 43
+        },
+        {
+          "name": "Standard9",
+          "value": 44
+        },
+        {
+          "name": "Standard10",
+          "value": 45
+        },
+        {
+          "name": "Standard15",
+          "value": 46
+        },
+        {
+          "name": "InviteEnvelope",
+          "value": 47
+        },
+        {
+          "name": "LetterExtra",
+          "value": 50
+        },
+        {
+          "name": "LegalExtra",
+          "value": 51
+        },
+        {
+          "name": "TabloidExtra",
+          "value": 52
+        },
+        {
+          "name": "A4Extra",
+          "value": 53
+        },
+        {
+          "name": "LetterTransverse",
+          "value": 54
+        },
+        {
+          "name": "A4Transverse",
+          "value": 55
+        },
+        {
+          "name": "LetterExtraTransverse",
+          "value": 56
+        },
+        {
+          "name": "SuperA",
+          "value": 57
+        },
+        {
+          "name": "SuperB",
+          "value": 58
+        },
+        {
+          "name": "LetterPlus",
+          "value": 59
+        },
+        {
+          "name": "A4Plus",
+          "value": 60
+        },
+        {
+          "name": "A5Transverse",
+          "value": 61
+        },
+        {
+          "name": "JISB5Transverse",
+          "value": 62
+        },
+        {
+          "name": "A3Extra",
+          "value": 63
+        },
+        {
+          "name": "A5Extra",
+          "value": 64
+        },
+        {
+          "name": "ISOB5",
+          "value": 65
+        },
+        {
+          "name": "A2",
+          "value": 66
+        },
+        {
+          "name": "A3Transverse",
+          "value": 67
+        },
+        {
+          "name": "A3ExtraTransverse",
+          "value": 68
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.ePageOrder",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DownThenOver",
+          "value": 0
+        },
+        {
+          "name": "OverThenDown",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.Style.ExcelBorderStyle",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Hair",
+          "value": 1
+        },
+        {
+          "name": "Dotted",
+          "value": 2
+        },
+        {
+          "name": "DashDot",
+          "value": 3
+        },
+        {
+          "name": "Thin",
+          "value": 4
+        },
+        {
+          "name": "DashDotDot",
+          "value": 5
+        },
+        {
+          "name": "Dashed",
+          "value": 6
+        },
+        {
+          "name": "MediumDashDotDot",
+          "value": 7
+        },
+        {
+          "name": "MediumDashed",
+          "value": 8
+        },
+        {
+          "name": "MediumDashDot",
+          "value": 9
+        },
+        {
+          "name": "Thick",
+          "value": 10
+        },
+        {
+          "name": "Medium",
+          "value": 11
+        },
+        {
+          "name": "Double",
+          "value": 12
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.Style.ExcelHorizontalAlignment",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "General",
+          "value": 0
+        },
+        {
+          "name": "Left",
+          "value": 1
+        },
+        {
+          "name": "Center",
+          "value": 2
+        },
+        {
+          "name": "CenterContinuous",
+          "value": 3
+        },
+        {
+          "name": "Right",
+          "value": 4
+        },
+        {
+          "name": "Fill",
+          "value": 5
+        },
+        {
+          "name": "Distributed",
+          "value": 6
+        },
+        {
+          "name": "Justify",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.Style.ExcelVerticalAlignment",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Top",
+          "value": 0
+        },
+        {
+          "name": "Center",
+          "value": 1
+        },
+        {
+          "name": "Bottom",
+          "value": 2
+        },
+        {
+          "name": "Distributed",
+          "value": 3
+        },
+        {
+          "name": "Justify",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.Style.ExcelVerticalAlignmentFont",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Subscript",
+          "value": 1
+        },
+        {
+          "name": "Superscript",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.Style.ExcelUnderLineType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Single",
+          "value": 1
+        },
+        {
+          "name": "Double",
+          "value": 2
+        },
+        {
+          "name": "SingleAccounting",
+          "value": 3
+        },
+        {
+          "name": "DoubleAccounting",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.Style.ExcelFillStyle",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Solid",
+          "value": 1
+        },
+        {
+          "name": "DarkGray",
+          "value": 2
+        },
+        {
+          "name": "MediumGray",
+          "value": 3
+        },
+        {
+          "name": "LightGray",
+          "value": 4
+        },
+        {
+          "name": "Gray125",
+          "value": 5
+        },
+        {
+          "name": "Gray0625",
+          "value": 6
+        },
+        {
+          "name": "DarkVertical",
+          "value": 7
+        },
+        {
+          "name": "DarkHorizontal",
+          "value": 8
+        },
+        {
+          "name": "DarkDown",
+          "value": 9
+        },
+        {
+          "name": "DarkUp",
+          "value": 10
+        },
+        {
+          "name": "DarkGrid",
+          "value": 11
+        },
+        {
+          "name": "DarkTrellis",
+          "value": 12
+        },
+        {
+          "name": "LightVertical",
+          "value": 13
+        },
+        {
+          "name": "LightHorizontal",
+          "value": 14
+        },
+        {
+          "name": "LightDown",
+          "value": 15
+        },
+        {
+          "name": "LightUp",
+          "value": 16
+        },
+        {
+          "name": "LightGrid",
+          "value": 17
+        },
+        {
+          "name": "LightTrellis",
+          "value": 18
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.Style.ExcelFillGradientType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Linear",
+          "value": 1
+        },
+        {
+          "name": "Path",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.Style.ExcelReadingOrder",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ContextDependent",
+          "value": 0
+        },
+        {
+          "name": "LeftToRight",
+          "value": 1
+        },
+        {
+          "name": "RightToLeft",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.Style.eUnderLineType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Dash",
+          "value": 0
+        },
+        {
+          "name": "DashHeavy",
+          "value": 1
+        },
+        {
+          "name": "DashLong",
+          "value": 2
+        },
+        {
+          "name": "DashLongHeavy",
+          "value": 3
+        },
+        {
+          "name": "Double",
+          "value": 4
+        },
+        {
+          "name": "DotDash",
+          "value": 5
+        },
+        {
+          "name": "DotDashHeavy",
+          "value": 6
+        },
+        {
+          "name": "DotDotDash",
+          "value": 7
+        },
+        {
+          "name": "DotDotDashHeavy",
+          "value": 8
+        },
+        {
+          "name": "Dotted",
+          "value": 9
+        },
+        {
+          "name": "DottedHeavy",
+          "value": 10
+        },
+        {
+          "name": "Heavy",
+          "value": 11
+        },
+        {
+          "name": "None",
+          "value": 12
+        },
+        {
+          "name": "Single",
+          "value": 13
+        },
+        {
+          "name": "Wavy",
+          "value": 14
+        },
+        {
+          "name": "WavyDbl",
+          "value": 15
+        },
+        {
+          "name": "WavyHeavy",
+          "value": 16
+        },
+        {
+          "name": "Words",
+          "value": 17
+        }
+      ]
+    },
+    {
+      "fullName": "OfficeOpenXml.Style.eStrikeType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Double",
+          "value": 0
+        },
+        {
+          "name": "No",
+          "value": 1
+        },
+        {
+          "name": "Single",
+          "value": 2
+        }
+      ]
+    }
+  ],
+  "namespaceMappings": []
+}

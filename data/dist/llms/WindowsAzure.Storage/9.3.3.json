@@ -1,0 +1,999 @@
+{
+  "schema": {
+    "id": "activity-catalog",
+    "version": "v0.3"
+  },
+  "source": {
+    "kind": "nuget-package",
+    "id": "WindowsAzure.Storage",
+    "version": "9.3.3",
+    "feedUrl": null,
+    "authors": "Microsoft",
+    "projectUrl": "https://github.com/Azure/azure-storage-net",
+    "description": "NOTE: As of version 9.4.0, this library has been split into multiple parts and replaced:  See https://www.nuget.org/packages/Microsoft.Azure.Storage.Blob/, https://www.nuget.org/packages/Microsoft.Azure.Storage.File/, https://www.nuget.org/packages/Microsoft.Azure.Storage.Queue/, and https://www.nuget.org/packages/Microsoft.Azure.Storage.Common/.\n      For table support, see https://www.nuget.org/packages/Microsoft.Azure.CosmosDB.Table/.\n      This client library enables working with the Microsoft Azure storage services which include the blob and file service for storing binary and text data, the table service for storing structured non-relational data, and the queue service for storing messages that may be accessed by a client.\n      For this release see notes - https://github.com/Azure/azure-storage-net/blob/master/README.md and https://github.com/Azure/azure-storage-net/blob/master/changelog.txt\n      Microsoft Azure Storage team's blog - http://blogs.msdn.com/b/windowsazurestorage/",
+    "license": "https://github.com/Azure/azure-storage-net/blob/master/LICENSE.txt",
+    "tags": "Microsoft, Azure, Storage, Table, Blob, File, Queue, Scalable, windowsazureofficial",
+    "packageTypes": []
+  },
+  "generatedAt": "2026-04-10T09:21:25Z",
+  "activities": [],
+  "enums": [
+    {
+      "fullName": "Microsoft.WindowsAzure.Storage.AuthenticationScheme",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "SharedKeyLite",
+          "value": 0
+        },
+        {
+          "name": "SharedKey",
+          "value": 1
+        },
+        {
+          "name": "Token",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.WindowsAzure.Storage.LogLevel",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Off",
+          "value": 0
+        },
+        {
+          "name": "Error",
+          "value": 1
+        },
+        {
+          "name": "Warning",
+          "value": 2
+        },
+        {
+          "name": "Informational",
+          "value": 3
+        },
+        {
+          "name": "Verbose",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.WindowsAzure.Storage.SharedAccessAccountPermissions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Read",
+          "value": 1
+        },
+        {
+          "name": "Add",
+          "value": 2
+        },
+        {
+          "name": "Create",
+          "value": 4
+        },
+        {
+          "name": "Update",
+          "value": 8
+        },
+        {
+          "name": "ProcessMessages",
+          "value": 16
+        },
+        {
+          "name": "Write",
+          "value": 32
+        },
+        {
+          "name": "Delete",
+          "value": 64
+        },
+        {
+          "name": "List",
+          "value": 128
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.WindowsAzure.Storage.SharedAccessAccountResourceTypes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Service",
+          "value": 1
+        },
+        {
+          "name": "Container",
+          "value": 2
+        },
+        {
+          "name": "Object",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.WindowsAzure.Storage.SharedAccessAccountServices",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Blob",
+          "value": 1
+        },
+        {
+          "name": "File",
+          "value": 2
+        },
+        {
+          "name": "Queue",
+          "value": 4
+        },
+        {
+          "name": "Table",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.WindowsAzure.Storage.SharedAccessProtocol",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "HttpsOnly",
+          "value": 1
+        },
+        {
+          "name": "HttpsOrHttp",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.WindowsAzure.Storage.StorageLocation",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Primary",
+          "value": 0
+        },
+        {
+          "name": "Secondary",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.WindowsAzure.Storage.Table.EdmType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "String",
+          "value": 0
+        },
+        {
+          "name": "Binary",
+          "value": 1
+        },
+        {
+          "name": "Boolean",
+          "value": 2
+        },
+        {
+          "name": "DateTime",
+          "value": 3
+        },
+        {
+          "name": "Double",
+          "value": 4
+        },
+        {
+          "name": "Guid",
+          "value": 5
+        },
+        {
+          "name": "Int32",
+          "value": 6
+        },
+        {
+          "name": "Int64",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.WindowsAzure.Storage.Table.SharedAccessTablePermissions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Query",
+          "value": 1
+        },
+        {
+          "name": "Add",
+          "value": 2
+        },
+        {
+          "name": "Update",
+          "value": 4
+        },
+        {
+          "name": "Delete",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.WindowsAzure.Storage.Table.TableOperationType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Insert",
+          "value": 0
+        },
+        {
+          "name": "Delete",
+          "value": 1
+        },
+        {
+          "name": "Replace",
+          "value": 2
+        },
+        {
+          "name": "Merge",
+          "value": 3
+        },
+        {
+          "name": "InsertOrReplace",
+          "value": 4
+        },
+        {
+          "name": "InsertOrMerge",
+          "value": 5
+        },
+        {
+          "name": "Retrieve",
+          "value": 6
+        },
+        {
+          "name": "RotateEncryptionKey",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.WindowsAzure.Storage.Table.TablePayloadFormat",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "JsonFullMetadata",
+          "value": 0
+        },
+        {
+          "name": "Json",
+          "value": 1
+        },
+        {
+          "name": "JsonNoMetadata",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.WindowsAzure.Storage.Shared.Protocol.CorsHttpMethods",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Get",
+          "value": 1
+        },
+        {
+          "name": "Head",
+          "value": 2
+        },
+        {
+          "name": "Post",
+          "value": 4
+        },
+        {
+          "name": "Put",
+          "value": 8
+        },
+        {
+          "name": "Delete",
+          "value": 16
+        },
+        {
+          "name": "Trace",
+          "value": 32
+        },
+        {
+          "name": "Options",
+          "value": 64
+        },
+        {
+          "name": "Connect",
+          "value": 128
+        },
+        {
+          "name": "Merge",
+          "value": 256
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.WindowsAzure.Storage.Shared.Protocol.GeoReplicationStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unavailable",
+          "value": 0
+        },
+        {
+          "name": "Live",
+          "value": 1
+        },
+        {
+          "name": "Bootstrap",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.WindowsAzure.Storage.Shared.Protocol.LoggingOperations",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Read",
+          "value": 1
+        },
+        {
+          "name": "Write",
+          "value": 2
+        },
+        {
+          "name": "Delete",
+          "value": 4
+        },
+        {
+          "name": "All",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.WindowsAzure.Storage.Shared.Protocol.MetricsLevel",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Service",
+          "value": 1
+        },
+        {
+          "name": "ServiceAndApi",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.WindowsAzure.Storage.RetryPolicies.LocationMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "PrimaryOnly",
+          "value": 0
+        },
+        {
+          "name": "PrimaryThenSecondary",
+          "value": 1
+        },
+        {
+          "name": "SecondaryOnly",
+          "value": 2
+        },
+        {
+          "name": "SecondaryThenPrimary",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.WindowsAzure.Storage.Queue.MessageUpdateFields",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Visibility",
+          "value": 1
+        },
+        {
+          "name": "Content",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.WindowsAzure.Storage.Queue.SharedAccessQueuePermissions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Read",
+          "value": 1
+        },
+        {
+          "name": "Add",
+          "value": 2
+        },
+        {
+          "name": "Update",
+          "value": 4
+        },
+        {
+          "name": "ProcessMessages",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.WindowsAzure.Storage.Queue.Protocol.QueueListingDetails",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Metadata",
+          "value": 1
+        },
+        {
+          "name": "All",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.WindowsAzure.Storage.File.DeleteShareSnapshotsOption",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "IncludeSnapshots",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.WindowsAzure.Storage.File.FileSharePublicAccessType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Off",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.WindowsAzure.Storage.File.SharedAccessFilePermissions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Read",
+          "value": 1
+        },
+        {
+          "name": "Write",
+          "value": 2
+        },
+        {
+          "name": "Delete",
+          "value": 4
+        },
+        {
+          "name": "List",
+          "value": 8
+        },
+        {
+          "name": "Create",
+          "value": 16
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.WindowsAzure.Storage.File.ShareListingDetails",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Metadata",
+          "value": 1
+        },
+        {
+          "name": "Snapshots",
+          "value": 2
+        },
+        {
+          "name": "All",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.WindowsAzure.Storage.File.Protocol.FileRangeWrite",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Update",
+          "value": 0
+        },
+        {
+          "name": "Clear",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.WindowsAzure.Storage.Blob.BlobContainerPublicAccessType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Off",
+          "value": 0
+        },
+        {
+          "name": "Container",
+          "value": 1
+        },
+        {
+          "name": "Blob",
+          "value": 2
+        },
+        {
+          "name": "Unknown",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.WindowsAzure.Storage.Blob.BlobListingDetails",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Snapshots",
+          "value": 1
+        },
+        {
+          "name": "Metadata",
+          "value": 2
+        },
+        {
+          "name": "UncommittedBlobs",
+          "value": 4
+        },
+        {
+          "name": "Copy",
+          "value": 8
+        },
+        {
+          "name": "Deleted",
+          "value": 16
+        },
+        {
+          "name": "All",
+          "value": 31
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.WindowsAzure.Storage.Blob.BlobType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unspecified",
+          "value": 0
+        },
+        {
+          "name": "PageBlob",
+          "value": 1
+        },
+        {
+          "name": "BlockBlob",
+          "value": 2
+        },
+        {
+          "name": "AppendBlob",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.WindowsAzure.Storage.Blob.BlockListingFilter",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Committed",
+          "value": 0
+        },
+        {
+          "name": "Uncommitted",
+          "value": 1
+        },
+        {
+          "name": "All",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.WindowsAzure.Storage.Blob.BlockSearchMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Committed",
+          "value": 0
+        },
+        {
+          "name": "Uncommitted",
+          "value": 1
+        },
+        {
+          "name": "Latest",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.WindowsAzure.Storage.Blob.ContainerListingDetails",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Metadata",
+          "value": 1
+        },
+        {
+          "name": "All",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.WindowsAzure.Storage.Blob.CopyStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Invalid",
+          "value": 0
+        },
+        {
+          "name": "Pending",
+          "value": 1
+        },
+        {
+          "name": "Success",
+          "value": 2
+        },
+        {
+          "name": "Aborted",
+          "value": 3
+        },
+        {
+          "name": "Failed",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.WindowsAzure.Storage.Blob.DeleteSnapshotsOption",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "IncludeSnapshots",
+          "value": 1
+        },
+        {
+          "name": "DeleteSnapshotsOnly",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.WindowsAzure.Storage.Blob.LeaseAction",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Acquire",
+          "value": 0
+        },
+        {
+          "name": "Renew",
+          "value": 1
+        },
+        {
+          "name": "Release",
+          "value": 2
+        },
+        {
+          "name": "Break",
+          "value": 3
+        },
+        {
+          "name": "Change",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.WindowsAzure.Storage.Blob.LeaseDuration",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unspecified",
+          "value": 0
+        },
+        {
+          "name": "Fixed",
+          "value": 1
+        },
+        {
+          "name": "Infinite",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.WindowsAzure.Storage.Blob.LeaseState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unspecified",
+          "value": 0
+        },
+        {
+          "name": "Available",
+          "value": 1
+        },
+        {
+          "name": "Leased",
+          "value": 2
+        },
+        {
+          "name": "Expired",
+          "value": 3
+        },
+        {
+          "name": "Breaking",
+          "value": 4
+        },
+        {
+          "name": "Broken",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.WindowsAzure.Storage.Blob.LeaseStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unspecified",
+          "value": 0
+        },
+        {
+          "name": "Locked",
+          "value": 1
+        },
+        {
+          "name": "Unlocked",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.WindowsAzure.Storage.Blob.PremiumPageBlobTier",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "P4",
+          "value": 1
+        },
+        {
+          "name": "P6",
+          "value": 2
+        },
+        {
+          "name": "P10",
+          "value": 3
+        },
+        {
+          "name": "P20",
+          "value": 4
+        },
+        {
+          "name": "P30",
+          "value": 5
+        },
+        {
+          "name": "P40",
+          "value": 6
+        },
+        {
+          "name": "P50",
+          "value": 7
+        },
+        {
+          "name": "P60",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.WindowsAzure.Storage.Blob.RehydrationStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "PendingToHot",
+          "value": 1
+        },
+        {
+          "name": "PendingToCool",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.WindowsAzure.Storage.Blob.SequenceNumberAction",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Max",
+          "value": 0
+        },
+        {
+          "name": "Update",
+          "value": 1
+        },
+        {
+          "name": "Increment",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.WindowsAzure.Storage.Blob.SharedAccessBlobPermissions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Read",
+          "value": 1
+        },
+        {
+          "name": "Write",
+          "value": 2
+        },
+        {
+          "name": "Delete",
+          "value": 4
+        },
+        {
+          "name": "List",
+          "value": 8
+        },
+        {
+          "name": "Add",
+          "value": 16
+        },
+        {
+          "name": "Create",
+          "value": 32
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.WindowsAzure.Storage.Blob.StandardBlobTier",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "Hot",
+          "value": 1
+        },
+        {
+          "name": "Cool",
+          "value": 2
+        },
+        {
+          "name": "Archive",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.WindowsAzure.Storage.Blob.Protocol.PageWrite",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Update",
+          "value": 0
+        },
+        {
+          "name": "Clear",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "namespaceMappings": []
+}

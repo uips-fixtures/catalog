@@ -1,0 +1,8448 @@
+{
+  "schema": {
+    "id": "activity-catalog",
+    "version": "v0.3"
+  },
+  "source": {
+    "kind": "nuget-package",
+    "id": "UiPath.System.Activities.Runtime.Portable",
+    "version": "26.2.4",
+    "feedUrl": null,
+    "authors": "UiPath",
+    "projectUrl": null,
+    "description": "IMPORTANT: This package version requires Studio v23.4 or above. Installing it on versions lower than the recommended ones may cause unexpected changes in your workflows.\nCore activities which enable the robots to manipulate data tables and collections, work with files and folders. Package also contains workflow operators, dialog forms, debugging and invoking methods.",
+    "license": "https://www.uipath.com/hubfs/legalspot/UiPath_MSSA.pdf",
+    "tags": null,
+    "packageTypes": []
+  },
+  "generatedAt": "2026-04-10T09:21:24Z",
+  "activities": [],
+  "enums": [
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.AccessTokenRequestGrantType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "ClientCredentials",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.AlertDtoComponent",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Robots",
+          "value": 0
+        },
+        {
+          "name": "Transactions",
+          "value": 1
+        },
+        {
+          "name": "Schedules",
+          "value": 2
+        },
+        {
+          "name": "Jobs",
+          "value": 3
+        },
+        {
+          "name": "Process",
+          "value": 4
+        },
+        {
+          "name": "Tasks",
+          "value": 5
+        },
+        {
+          "name": "Queues",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.AlertDtoSeverity",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Info",
+          "value": 0
+        },
+        {
+          "name": "Success",
+          "value": 1
+        },
+        {
+          "name": "Warn",
+          "value": 2
+        },
+        {
+          "name": "Error",
+          "value": 3
+        },
+        {
+          "name": "Fatal",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.AlertDtoState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unread",
+          "value": 0
+        },
+        {
+          "name": "Read",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.AssetDtoValueScope",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Global",
+          "value": 0
+        },
+        {
+          "name": "PerRobot",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.AssetDtoValueType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DBConnectionString",
+          "value": 0
+        },
+        {
+          "name": "HttpConnectionString",
+          "value": 1
+        },
+        {
+          "name": "Text",
+          "value": 2
+        },
+        {
+          "name": "Bool",
+          "value": 3
+        },
+        {
+          "name": "Integer",
+          "value": 4
+        },
+        {
+          "name": "Credential",
+          "value": 5
+        },
+        {
+          "name": "Secret",
+          "value": 6
+        },
+        {
+          "name": "WindowsCredential",
+          "value": 7
+        },
+        {
+          "name": "KeyValueList",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.AssetRobotValueDtoValueType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DBConnectionString",
+          "value": 0
+        },
+        {
+          "name": "HttpConnectionString",
+          "value": 1
+        },
+        {
+          "name": "Text",
+          "value": 2
+        },
+        {
+          "name": "Bool",
+          "value": 3
+        },
+        {
+          "name": "Integer",
+          "value": 4
+        },
+        {
+          "name": "Credential",
+          "value": 5
+        },
+        {
+          "name": "WindowsCredential",
+          "value": 6
+        },
+        {
+          "name": "Secret",
+          "value": 7
+        },
+        {
+          "name": "KeyValueList",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.AuditLogDtoAction",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "Create",
+          "value": 1
+        },
+        {
+          "name": "Update",
+          "value": 2
+        },
+        {
+          "name": "Delete",
+          "value": 3
+        },
+        {
+          "name": "StartJob",
+          "value": 4
+        },
+        {
+          "name": "StopJob",
+          "value": 5
+        },
+        {
+          "name": "Associate",
+          "value": 6
+        },
+        {
+          "name": "Upload",
+          "value": 7
+        },
+        {
+          "name": "ChangeStatus",
+          "value": 8
+        },
+        {
+          "name": "Import",
+          "value": 9
+        },
+        {
+          "name": "ChangePassword",
+          "value": 10
+        },
+        {
+          "name": "Register",
+          "value": 11
+        },
+        {
+          "name": "Toggle",
+          "value": 12
+        },
+        {
+          "name": "ResetPassword",
+          "value": 13
+        },
+        {
+          "name": "PasswordResetAttempt",
+          "value": 14
+        },
+        {
+          "name": "Download",
+          "value": 15
+        },
+        {
+          "name": "Acknowledge",
+          "value": 16
+        },
+        {
+          "name": "Activate",
+          "value": 17
+        },
+        {
+          "name": "Assign",
+          "value": 18
+        },
+        {
+          "name": "BulkUpload",
+          "value": 19
+        },
+        {
+          "name": "UpdateFeature",
+          "value": 20
+        },
+        {
+          "name": "ResumeJob",
+          "value": 21
+        },
+        {
+          "name": "Start",
+          "value": 22
+        },
+        {
+          "name": "End",
+          "value": 23
+        },
+        {
+          "name": "Skip",
+          "value": 24
+        },
+        {
+          "name": "Unassign",
+          "value": 25
+        },
+        {
+          "name": "Deactivate",
+          "value": 26
+        },
+        {
+          "name": "CreateBlobFileSas",
+          "value": 27
+        },
+        {
+          "name": "DeleteBlobFile",
+          "value": 28
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.AuditLogDtoComponent",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "Assets",
+          "value": 1
+        },
+        {
+          "name": "Environments",
+          "value": 2
+        },
+        {
+          "name": "Processes",
+          "value": 3
+        },
+        {
+          "name": "Queues",
+          "value": 4
+        },
+        {
+          "name": "Robots",
+          "value": 5
+        },
+        {
+          "name": "Roles",
+          "value": 6
+        },
+        {
+          "name": "Schedules",
+          "value": 7
+        },
+        {
+          "name": "Users",
+          "value": 8
+        },
+        {
+          "name": "Comments",
+          "value": 9
+        },
+        {
+          "name": "Units",
+          "value": 10
+        },
+        {
+          "name": "Jobs",
+          "value": 11
+        },
+        {
+          "name": "Settings",
+          "value": 12
+        },
+        {
+          "name": "Packages",
+          "value": 13
+        },
+        {
+          "name": "License",
+          "value": 14
+        },
+        {
+          "name": "Tenant",
+          "value": 15
+        },
+        {
+          "name": "Machines",
+          "value": 16
+        },
+        {
+          "name": "Libraries",
+          "value": 17
+        },
+        {
+          "name": "Webhooks",
+          "value": 18
+        },
+        {
+          "name": "ExecutionMedia",
+          "value": 19
+        },
+        {
+          "name": "Monitoring",
+          "value": 20
+        },
+        {
+          "name": "CredentialStores",
+          "value": 21
+        },
+        {
+          "name": "DefaultCredentialStores",
+          "value": 22
+        },
+        {
+          "name": "TaskCatalogs",
+          "value": 23
+        },
+        {
+          "name": "Tasks",
+          "value": 24
+        },
+        {
+          "name": "Maintenance",
+          "value": 25
+        },
+        {
+          "name": "Folders",
+          "value": 26
+        },
+        {
+          "name": "DirectoryService",
+          "value": 27
+        },
+        {
+          "name": "Buckets",
+          "value": 28
+        },
+        {
+          "name": "DataRetentionPolicies",
+          "value": 29
+        },
+        {
+          "name": "TenantMove",
+          "value": 30
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.AuditLogDtoUserType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "User",
+          "value": 0
+        },
+        {
+          "name": "Robot",
+          "value": 1
+        },
+        {
+          "name": "DirectoryUser",
+          "value": 2
+        },
+        {
+          "name": "DirectoryGroup",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.AuditLogEntityDtoAction",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "Create",
+          "value": 1
+        },
+        {
+          "name": "Update",
+          "value": 2
+        },
+        {
+          "name": "Delete",
+          "value": 3
+        },
+        {
+          "name": "StartJob",
+          "value": 4
+        },
+        {
+          "name": "StopJob",
+          "value": 5
+        },
+        {
+          "name": "Associate",
+          "value": 6
+        },
+        {
+          "name": "Upload",
+          "value": 7
+        },
+        {
+          "name": "ChangeStatus",
+          "value": 8
+        },
+        {
+          "name": "Import",
+          "value": 9
+        },
+        {
+          "name": "ChangePassword",
+          "value": 10
+        },
+        {
+          "name": "Register",
+          "value": 11
+        },
+        {
+          "name": "Toggle",
+          "value": 12
+        },
+        {
+          "name": "ResetPassword",
+          "value": 13
+        },
+        {
+          "name": "PasswordResetAttempt",
+          "value": 14
+        },
+        {
+          "name": "Download",
+          "value": 15
+        },
+        {
+          "name": "Acknowledge",
+          "value": 16
+        },
+        {
+          "name": "Activate",
+          "value": 17
+        },
+        {
+          "name": "Assign",
+          "value": 18
+        },
+        {
+          "name": "BulkUpload",
+          "value": 19
+        },
+        {
+          "name": "UpdateFeature",
+          "value": 20
+        },
+        {
+          "name": "ResumeJob",
+          "value": 21
+        },
+        {
+          "name": "Start",
+          "value": 22
+        },
+        {
+          "name": "End",
+          "value": 23
+        },
+        {
+          "name": "Skip",
+          "value": 24
+        },
+        {
+          "name": "Unassign",
+          "value": 25
+        },
+        {
+          "name": "Deactivate",
+          "value": 26
+        },
+        {
+          "name": "CreateBlobFileSas",
+          "value": 27
+        },
+        {
+          "name": "DeleteBlobFile",
+          "value": 28
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.BucketDtoOptions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "ReadOnly",
+          "value": 1
+        },
+        {
+          "name": "AuditReadAccess",
+          "value": 2
+        },
+        {
+          "name": "AccessDataThroughOrchestrator",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.BulkAddQueueItemsParametersEnum",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AllOrNothing",
+          "value": 0
+        },
+        {
+          "name": "StopOnFirstFailure",
+          "value": 1
+        },
+        {
+          "name": "ProcessAllIndependently",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.BulkItemDto1Status",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Continue",
+          "value": 0
+        },
+        {
+          "name": "SwitchingProtocols",
+          "value": 1
+        },
+        {
+          "name": "OK",
+          "value": 2
+        },
+        {
+          "name": "Created",
+          "value": 3
+        },
+        {
+          "name": "Accepted",
+          "value": 4
+        },
+        {
+          "name": "NonAuthoritativeInformation",
+          "value": 5
+        },
+        {
+          "name": "NoContent",
+          "value": 6
+        },
+        {
+          "name": "ResetContent",
+          "value": 7
+        },
+        {
+          "name": "PartialContent",
+          "value": 8
+        },
+        {
+          "name": "MultipleChoices",
+          "value": 9
+        },
+        {
+          "name": "Ambiguous",
+          "value": 10
+        },
+        {
+          "name": "MovedPermanently",
+          "value": 11
+        },
+        {
+          "name": "Moved",
+          "value": 12
+        },
+        {
+          "name": "Found",
+          "value": 13
+        },
+        {
+          "name": "Redirect",
+          "value": 14
+        },
+        {
+          "name": "SeeOther",
+          "value": 15
+        },
+        {
+          "name": "RedirectMethod",
+          "value": 16
+        },
+        {
+          "name": "NotModified",
+          "value": 17
+        },
+        {
+          "name": "UseProxy",
+          "value": 18
+        },
+        {
+          "name": "Unused",
+          "value": 19
+        },
+        {
+          "name": "TemporaryRedirect",
+          "value": 20
+        },
+        {
+          "name": "RedirectKeepVerb",
+          "value": 21
+        },
+        {
+          "name": "BadRequest",
+          "value": 22
+        },
+        {
+          "name": "Unauthorized",
+          "value": 23
+        },
+        {
+          "name": "PaymentRequired",
+          "value": 24
+        },
+        {
+          "name": "Forbidden",
+          "value": 25
+        },
+        {
+          "name": "NotFound",
+          "value": 26
+        },
+        {
+          "name": "MethodNotAllowed",
+          "value": 27
+        },
+        {
+          "name": "NotAcceptable",
+          "value": 28
+        },
+        {
+          "name": "ProxyAuthenticationRequired",
+          "value": 29
+        },
+        {
+          "name": "RequestTimeout",
+          "value": 30
+        },
+        {
+          "name": "Conflict",
+          "value": 31
+        },
+        {
+          "name": "Gone",
+          "value": 32
+        },
+        {
+          "name": "LengthRequired",
+          "value": 33
+        },
+        {
+          "name": "PreconditionFailed",
+          "value": 34
+        },
+        {
+          "name": "RequestEntityTooLarge",
+          "value": 35
+        },
+        {
+          "name": "RequestUriTooLong",
+          "value": 36
+        },
+        {
+          "name": "UnsupportedMediaType",
+          "value": 37
+        },
+        {
+          "name": "RequestedRangeNotSatisfiable",
+          "value": 38
+        },
+        {
+          "name": "ExpectationFailed",
+          "value": 39
+        },
+        {
+          "name": "UpgradeRequired",
+          "value": 40
+        },
+        {
+          "name": "InternalServerError",
+          "value": 41
+        },
+        {
+          "name": "NotImplemented",
+          "value": 42
+        },
+        {
+          "name": "BadGateway",
+          "value": 43
+        },
+        {
+          "name": "ServiceUnavailable",
+          "value": 44
+        },
+        {
+          "name": "GatewayTimeout",
+          "value": 45
+        },
+        {
+          "name": "HttpVersionNotSupported",
+          "value": 46
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.ConfigurationEntryValueType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "String",
+          "value": 0
+        },
+        {
+          "name": "Number",
+          "value": 1
+        },
+        {
+          "name": "Choice",
+          "value": 2
+        },
+        {
+          "name": "Boolean",
+          "value": 3
+        },
+        {
+          "name": "Section",
+          "value": 4
+        },
+        {
+          "name": "Secret",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.CredentialStoreResourceDtoType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AssetCredential",
+          "value": 0
+        },
+        {
+          "name": "RobotCredential",
+          "value": 1
+        },
+        {
+          "name": "BucketCredential",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.DefaultCredentialStoreDtoResourceType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AssetCredential",
+          "value": 0
+        },
+        {
+          "name": "RobotCredential",
+          "value": 1
+        },
+        {
+          "name": "BucketCredential",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.DefaultStoreActionParametersEnum",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AssetCredential",
+          "value": 0
+        },
+        {
+          "name": "RobotCredential",
+          "value": 1
+        },
+        {
+          "name": "BucketCredential",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.DirectoryObjectType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "User",
+          "value": 0
+        },
+        {
+          "name": "Group",
+          "value": 1
+        },
+        {
+          "name": "Machine",
+          "value": 2
+        },
+        {
+          "name": "Robot",
+          "value": 3
+        },
+        {
+          "name": "ExternalApplication",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.DomainUserAssignmentDtoUserType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "User",
+          "value": 0
+        },
+        {
+          "name": "Robot",
+          "value": 1
+        },
+        {
+          "name": "DirectoryUser",
+          "value": 2
+        },
+        {
+          "name": "DirectoryGroup",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.EntryPointDataVariationDtoContentType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Json",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.EnvironmentDtoType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Dev",
+          "value": 0
+        },
+        {
+          "name": "Test",
+          "value": 1
+        },
+        {
+          "name": "Prod",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.ExecutionSettingsConfigurationScope",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Global",
+          "value": 0
+        },
+        {
+          "name": "Robot",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.ExtendedFolderDtoPermissionModel",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "InheritFromTenant",
+          "value": 0
+        },
+        {
+          "name": "FineGrained",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.ExtendedFolderDtoProvisionType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Manual",
+          "value": 0
+        },
+        {
+          "name": "Automatic",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.ExtendedMachineDtoType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Standard",
+          "value": 0
+        },
+        {
+          "name": "Template",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.FailedQueueItemDtoErrorCode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "MultipleErrors",
+          "value": 1
+        },
+        {
+          "name": "InvalidRequest",
+          "value": 2
+        },
+        {
+          "name": "NameAlreadyUsed",
+          "value": 3
+        },
+        {
+          "name": "ItemNotFound",
+          "value": 4
+        },
+        {
+          "name": "StringProtectFailed",
+          "value": 5
+        },
+        {
+          "name": "ItemAlreadyExists",
+          "value": 6
+        },
+        {
+          "name": "ErrorDeleting",
+          "value": 7
+        },
+        {
+          "name": "ErrorInserting",
+          "value": 8
+        },
+        {
+          "name": "ErrorUpdating",
+          "value": 9
+        },
+        {
+          "name": "ErrorSendingEmail",
+          "value": 10
+        },
+        {
+          "name": "InvalidArgument",
+          "value": 11
+        },
+        {
+          "name": "SqlAcquireLockFailure",
+          "value": 12
+        },
+        {
+          "name": "LibrariesFeedInUse",
+          "value": 13
+        },
+        {
+          "name": "HasDependentItems",
+          "value": 14
+        },
+        {
+          "name": "ItemIsInUse",
+          "value": 15
+        },
+        {
+          "name": "ParameterMissing",
+          "value": 16
+        },
+        {
+          "name": "ParameterInvalid",
+          "value": 17
+        },
+        {
+          "name": "DuplicateReference",
+          "value": 18
+        },
+        {
+          "name": "ForbiddenOperation",
+          "value": 19
+        },
+        {
+          "name": "InvalidUser",
+          "value": 20
+        },
+        {
+          "name": "FeatureDisabled",
+          "value": 21
+        },
+        {
+          "name": "OptimisticConcurrency",
+          "value": 22
+        },
+        {
+          "name": "EncryptionException",
+          "value": 23
+        },
+        {
+          "name": "CannotCreateOrMigrateTenantDb",
+          "value": 24
+        },
+        {
+          "name": "TenantIsRequired",
+          "value": 25
+        },
+        {
+          "name": "FieldNotEditable",
+          "value": 26
+        },
+        {
+          "name": "ServiceUnavailable",
+          "value": 27
+        },
+        {
+          "name": "SharedAccessSignatureFailure",
+          "value": 28
+        },
+        {
+          "name": "ProviderNotSupported",
+          "value": 29
+        },
+        {
+          "name": "InvalidAuditRelationship",
+          "value": 30
+        },
+        {
+          "name": "InvalidOrganizationUnit",
+          "value": 31
+        },
+        {
+          "name": "RequiredOrganizationUnit",
+          "value": 32
+        },
+        {
+          "name": "OrganizationUnitNotEditable",
+          "value": 33
+        },
+        {
+          "name": "MachineAlreadyPairedWithDifferentLicenseKey",
+          "value": 34
+        },
+        {
+          "name": "NoAvailableLicenses",
+          "value": 35
+        },
+        {
+          "name": "HasAttachedRobots",
+          "value": 36
+        },
+        {
+          "name": "InvalidMachineKey",
+          "value": 37
+        },
+        {
+          "name": "MachineNameRequired",
+          "value": 38
+        },
+        {
+          "name": "UserNameRequired",
+          "value": 39
+        },
+        {
+          "name": "CannotDeleteBusyRobot",
+          "value": 40
+        },
+        {
+          "name": "MachineNameCannotChange",
+          "value": 41
+        },
+        {
+          "name": "MachineLicenseCannotChange",
+          "value": 42
+        },
+        {
+          "name": "CannotUpdateBusyRobot",
+          "value": 43
+        },
+        {
+          "name": "MachineTypeCannotChange",
+          "value": 44
+        },
+        {
+          "name": "UserNameInvalid",
+          "value": 45
+        },
+        {
+          "name": "SessionAlreadyActive",
+          "value": 46
+        },
+        {
+          "name": "CannotAssignMachineToFloatingRobot",
+          "value": 47
+        },
+        {
+          "name": "CannotUpdateRobotHostingType",
+          "value": 48
+        },
+        {
+          "name": "CannotAssignMachineTemplateToStandardRobot",
+          "value": 49
+        },
+        {
+          "name": "CannotUpdateActiveSession",
+          "value": 50
+        },
+        {
+          "name": "MachineTemplateUniqueLicenseKey",
+          "value": 51
+        },
+        {
+          "name": "InvalidMachineId",
+          "value": 52
+        },
+        {
+          "name": "InvalidNonProductionMachineSlots",
+          "value": 53
+        },
+        {
+          "name": "InvalidUnattendedMachineSlots",
+          "value": 54
+        },
+        {
+          "name": "DisconnectedRobot",
+          "value": 55
+        },
+        {
+          "name": "UnresponsiveRobot",
+          "value": 56
+        },
+        {
+          "name": "UnsupportedFloatingSessionRobotType",
+          "value": 57
+        },
+        {
+          "name": "UnsupportedStandardSessionRobotType",
+          "value": 58
+        },
+        {
+          "name": "EnvironmentDeploymentConflict",
+          "value": 59
+        },
+        {
+          "name": "ServerConflict",
+          "value": 60
+        },
+        {
+          "name": "ActionAlreadyPerformed",
+          "value": 61
+        },
+        {
+          "name": "UnavailableResources",
+          "value": 62
+        },
+        {
+          "name": "UserIsDeleted",
+          "value": 63
+        },
+        {
+          "name": "UserIsLockedOut",
+          "value": 64
+        },
+        {
+          "name": "ChangePassword",
+          "value": 65
+        },
+        {
+          "name": "PasswordExpired",
+          "value": 66
+        },
+        {
+          "name": "InvalidPassword",
+          "value": 67
+        },
+        {
+          "name": "CannotDeleteStaticRole",
+          "value": 68
+        },
+        {
+          "name": "UserNotEditable",
+          "value": 69
+        },
+        {
+          "name": "DomainUnreachable",
+          "value": 70
+        },
+        {
+          "name": "PasswordResetFailed",
+          "value": 71
+        },
+        {
+          "name": "ConfirmEmailFailed",
+          "value": 72
+        },
+        {
+          "name": "CannotUsePreviousPassword",
+          "value": 73
+        },
+        {
+          "name": "RoleIsNotEditable",
+          "value": 74
+        },
+        {
+          "name": "UserNotFoundInDomain",
+          "value": 75
+        },
+        {
+          "name": "CannotUpdateUsername",
+          "value": 76
+        },
+        {
+          "name": "InvalidLoginMethod",
+          "value": 77
+        },
+        {
+          "name": "InvalidUsernameOrPassword",
+          "value": 78
+        },
+        {
+          "name": "MultipleMatchingUsers",
+          "value": 79
+        },
+        {
+          "name": "CannotCallFromHost",
+          "value": 80
+        },
+        {
+          "name": "CreateNotAllowed",
+          "value": 81
+        },
+        {
+          "name": "ProvisionError",
+          "value": 82
+        },
+        {
+          "name": "EmptyDomainOrUsername",
+          "value": 83
+        },
+        {
+          "name": "NotDirectoryUserOrGroup",
+          "value": 84
+        },
+        {
+          "name": "CredentialAssetEmptyPasswordForNewUser",
+          "value": 85
+        },
+        {
+          "name": "CredentialAssetEmptyForNewRobot",
+          "value": 86
+        },
+        {
+          "name": "AssetTypeNonUpdatable",
+          "value": 87
+        },
+        {
+          "name": "AssetNotAvailableForRobot",
+          "value": 88
+        },
+        {
+          "name": "InvalidCron",
+          "value": 89
+        },
+        {
+          "name": "ScheduleWillNeverRun",
+          "value": 90
+        },
+        {
+          "name": "ScheduleMisfired",
+          "value": 91
+        },
+        {
+          "name": "ScheduleInvalidTimeZone",
+          "value": 92
+        },
+        {
+          "name": "InvalidScheduleKey",
+          "value": 93
+        },
+        {
+          "name": "ScheduleIsNotEnabled",
+          "value": 94
+        },
+        {
+          "name": "ScheduleNotAssociatedWithAQueue",
+          "value": 95
+        },
+        {
+          "name": "ScheduleCannotBeAssociatedWithAQueue",
+          "value": 96
+        },
+        {
+          "name": "UserIsAssignedToTriggers",
+          "value": 97
+        },
+        {
+          "name": "DownloadUnavailable",
+          "value": 98
+        },
+        {
+          "name": "CannotConnectToPackagesRepository",
+          "value": 99
+        },
+        {
+          "name": "NotSupportedByExternalFeeds",
+          "value": 100
+        },
+        {
+          "name": "ErrorDownloading",
+          "value": 101
+        },
+        {
+          "name": "InvalidPackageDetails",
+          "value": 102
+        },
+        {
+          "name": "TenantFeedInUse",
+          "value": 103
+        },
+        {
+          "name": "InvalidProcessKey",
+          "value": 104
+        },
+        {
+          "name": "JobTypeCannotBeStopped",
+          "value": 105
+        },
+        {
+          "name": "JobCannotBeCancelled",
+          "value": 106
+        },
+        {
+          "name": "JobCannotBeTerminated",
+          "value": 107
+        },
+        {
+          "name": "VersionNotFound",
+          "value": 108
+        },
+        {
+          "name": "ProcessNotFound",
+          "value": 109
+        },
+        {
+          "name": "HasAttachedProcesses",
+          "value": 110
+        },
+        {
+          "name": "InvalidExtension",
+          "value": 111
+        },
+        {
+          "name": "InvalidPackageCount",
+          "value": 112
+        },
+        {
+          "name": "PreviousVersionNotFound",
+          "value": 113
+        },
+        {
+          "name": "HasRunningJobs",
+          "value": 114
+        },
+        {
+          "name": "TenantNotFound",
+          "value": 115
+        },
+        {
+          "name": "PendingJobsAlreadyExist",
+          "value": 116
+        },
+        {
+          "name": "InvalidStartJobRobotIds",
+          "value": 117
+        },
+        {
+          "name": "UnregisteredCannotStartJobs",
+          "value": 118
+        },
+        {
+          "name": "LicenseExpiredCannotStartJobs",
+          "value": 119
+        },
+        {
+          "name": "InvalidReleaseKey",
+          "value": 120
+        },
+        {
+          "name": "InvalidPackageVersion",
+          "value": 121
+        },
+        {
+          "name": "TenantIsDisabled",
+          "value": 122
+        },
+        {
+          "name": "PackageNotFound",
+          "value": 123
+        },
+        {
+          "name": "NoRobotsAvailable",
+          "value": 124
+        },
+        {
+          "name": "PathTooLong",
+          "value": 125
+        },
+        {
+          "name": "JobExecutionFaulted",
+          "value": 126
+        },
+        {
+          "name": "InvalidJobIdOrRobotKey",
+          "value": 127
+        },
+        {
+          "name": "InvalidJobStateForSuspend",
+          "value": 128
+        },
+        {
+          "name": "JobNotFoundByPersistenceId",
+          "value": 129
+        },
+        {
+          "name": "ErrorPackagePublish",
+          "value": 130
+        },
+        {
+          "name": "ErrorSavingPackageDefinition",
+          "value": 131
+        },
+        {
+          "name": "MaxNumberJobsAlreadyExist",
+          "value": 132
+        },
+        {
+          "name": "HasSlaEnabedQueuesAssociated",
+          "value": 133
+        },
+        {
+          "name": "VersionsManagedAutomatically",
+          "value": 134
+        },
+        {
+          "name": "CyberArkEditPasswordNotAllowed",
+          "value": 135
+        },
+        {
+          "name": "LogMessageNotFound",
+          "value": 136
+        },
+        {
+          "name": "LogRobotNameNotFound",
+          "value": 137
+        },
+        {
+          "name": "EncryptionKeyNotFound",
+          "value": 138
+        },
+        {
+          "name": "EncryptionKeyIncorrectFormat",
+          "value": 139
+        },
+        {
+          "name": "AzureKeyVaultRetrieveIssue",
+          "value": 140
+        },
+        {
+          "name": "AzureKeyVaultStoreIssue",
+          "value": 141
+        },
+        {
+          "name": "TransactionReferenceRequired",
+          "value": 142
+        },
+        {
+          "name": "InvalidTransactionProgressStatus",
+          "value": 143
+        },
+        {
+          "name": "TransactionNotStarted",
+          "value": 144
+        },
+        {
+          "name": "ReviewerNotAvailable",
+          "value": 145
+        },
+        {
+          "name": "QueueDefinitionParametersCannotChange",
+          "value": 146
+        },
+        {
+          "name": "QueueProcessingApplicationException",
+          "value": 147
+        },
+        {
+          "name": "QueueItemSchemaViolationException",
+          "value": 148
+        },
+        {
+          "name": "InvalidQueueSchemaDefinition",
+          "value": 149
+        },
+        {
+          "name": "InvalidQueueSchemaDefinitionChange",
+          "value": 150
+        },
+        {
+          "name": "InvalidQueueSchemaType",
+          "value": 151
+        },
+        {
+          "name": "QueueSchemaDefinitionNotFound",
+          "value": 152
+        },
+        {
+          "name": "SlaEnableQueueDefinitionFailure",
+          "value": 153
+        },
+        {
+          "name": "QueueSlaAtPredictedRisk",
+          "value": 154
+        },
+        {
+          "name": "QueueSlaPredictedBreach",
+          "value": 155
+        },
+        {
+          "name": "QueueItemContentSizeExceeded",
+          "value": 156
+        },
+        {
+          "name": "LicenseNotFound",
+          "value": 157
+        },
+        {
+          "name": "LicenseExpired",
+          "value": 158
+        },
+        {
+          "name": "LicenseAlreadyInUse",
+          "value": 159
+        },
+        {
+          "name": "InvalidLicenseFormat",
+          "value": 160
+        },
+        {
+          "name": "LicenseLimitExceeded",
+          "value": 161
+        },
+        {
+          "name": "UnattendedLicenseLimitExceeded",
+          "value": 162
+        },
+        {
+          "name": "NonProductionLicenseLimitExceeded",
+          "value": 163
+        },
+        {
+          "name": "AttendedLicenseLimitExceeded",
+          "value": 164
+        },
+        {
+          "name": "DevelopmentLicenseLimitExceeded",
+          "value": 165
+        },
+        {
+          "name": "RobotFailedToAcquireLicense",
+          "value": 166
+        },
+        {
+          "name": "NonProductionSlotsLimitExceeded",
+          "value": 167
+        },
+        {
+          "name": "UnattendedSlotsLimitExceeded",
+          "value": 168
+        },
+        {
+          "name": "LicenseUnregistered",
+          "value": 169
+        },
+        {
+          "name": "LicenseNotAvailable",
+          "value": 170
+        },
+        {
+          "name": "NotEnoughAvailableSlots",
+          "value": 171
+        },
+        {
+          "name": "NotEnoughRuntimeLicenses",
+          "value": 172
+        },
+        {
+          "name": "SlotsExceedLicenseLimit",
+          "value": 173
+        },
+        {
+          "name": "NotEnoughAvailableLicenses",
+          "value": 174
+        },
+        {
+          "name": "HostLicenseLimitExceeded",
+          "value": 175
+        },
+        {
+          "name": "NoHostLicense",
+          "value": 176
+        },
+        {
+          "name": "LicenseNewInvalidArguments",
+          "value": 177
+        },
+        {
+          "name": "LicenseMachineDisabled",
+          "value": 178
+        },
+        {
+          "name": "CannotDisableBusyMachine",
+          "value": 179
+        },
+        {
+          "name": "HeadlessSlotsLimitExceeded",
+          "value": 180
+        },
+        {
+          "name": "HeadlessLicenseLimitExceeded",
+          "value": 181
+        },
+        {
+          "name": "TestAutomationSlotsLimitExceeded",
+          "value": 182
+        },
+        {
+          "name": "TestAutomationLicenseLimitExceeded",
+          "value": 183
+        },
+        {
+          "name": "ArgumentMetadataExtract",
+          "value": 184
+        },
+        {
+          "name": "ArgumentMetadataValidation",
+          "value": 185
+        },
+        {
+          "name": "ArgumentDefinitionExtract",
+          "value": 186
+        },
+        {
+          "name": "ArgumentValueExtract",
+          "value": 187
+        },
+        {
+          "name": "ArgumentValidation",
+          "value": 188
+        },
+        {
+          "name": "PackageMetadataExtract",
+          "value": 189
+        },
+        {
+          "name": "PackageMetadataValidation",
+          "value": 190
+        },
+        {
+          "name": "UnknownWebhookEventType",
+          "value": 191
+        },
+        {
+          "name": "WebhookQuotaReached",
+          "value": 192
+        },
+        {
+          "name": "ExecutionMediaStorageUnavailable",
+          "value": 193
+        },
+        {
+          "name": "ExecutionMediaNotAvailableForJob",
+          "value": 194
+        },
+        {
+          "name": "ExecutionMediaContentNotAvailable",
+          "value": 195
+        },
+        {
+          "name": "CannotDeleteDefaultCredentialStore",
+          "value": 196
+        },
+        {
+          "name": "CredentialStoreNotFound",
+          "value": 197
+        },
+        {
+          "name": "UnknownCredentialStoreType",
+          "value": 198
+        },
+        {
+          "name": "InvalidCredentialStoreConfiguration",
+          "value": 199
+        },
+        {
+          "name": "FailedToReadFromCredentialStore",
+          "value": 200
+        },
+        {
+          "name": "FailedToWriteToCredentialStore",
+          "value": 201
+        },
+        {
+          "name": "CannotDeleteNonEmptyCredentialStore",
+          "value": 202
+        },
+        {
+          "name": "ContentLengthTooLarge",
+          "value": 203
+        },
+        {
+          "name": "TaskAssignmentError",
+          "value": 204
+        },
+        {
+          "name": "TaskCompletionError",
+          "value": 205
+        },
+        {
+          "name": "TaskAssigneeMismatchError",
+          "value": 206
+        },
+        {
+          "name": "TaskFormInvalidFormLayout",
+          "value": 207
+        },
+        {
+          "name": "TaskFormInvalidFormPayload",
+          "value": 208
+        },
+        {
+          "name": "TaskFormMultipleActions",
+          "value": 209
+        },
+        {
+          "name": "TaskFormNoAction",
+          "value": 210
+        },
+        {
+          "name": "TaskFormInvalidAction",
+          "value": 211
+        },
+        {
+          "name": "InvalidSecureStoreContext",
+          "value": 212
+        },
+        {
+          "name": "MailSmtpSettingsError",
+          "value": 213
+        },
+        {
+          "name": "CannotDeleteCalendarWhenUsedBySchedule",
+          "value": 214
+        },
+        {
+          "name": "IdentityServerApiError",
+          "value": 215
+        },
+        {
+          "name": "IdentityServerTenantCreateError",
+          "value": 216
+        },
+        {
+          "name": "IdentityServerTenantDeleteError",
+          "value": 217
+        },
+        {
+          "name": "IdentityServerTenantUpdateError",
+          "value": 218
+        },
+        {
+          "name": "IdentityServerDiscoveryError",
+          "value": 219
+        },
+        {
+          "name": "IdentityServerMessageTemplateGetError",
+          "value": 220
+        },
+        {
+          "name": "IdentityServerMessageTemplateUpdateError",
+          "value": 221
+        },
+        {
+          "name": "IdentityServerUserGetError",
+          "value": 222
+        },
+        {
+          "name": "IdentityServerUserDeleteError",
+          "value": 223
+        },
+        {
+          "name": "IdentityServerUserCreateError",
+          "value": 224
+        },
+        {
+          "name": "IdentityServerUserUpdateError",
+          "value": 225
+        },
+        {
+          "name": "IdentityServerUserChangePasswordError",
+          "value": 226
+        },
+        {
+          "name": "IdentityServerRobotCreateError",
+          "value": 227
+        },
+        {
+          "name": "IdentityServerRobotDeleteError",
+          "value": 228
+        },
+        {
+          "name": "IdentityServerSettingsUpdateError",
+          "value": 229
+        },
+        {
+          "name": "IdentityServerBulkUserDeleteError",
+          "value": 230
+        },
+        {
+          "name": "MandatoryPropertiesForRootFolderNotSpecified",
+          "value": 231
+        },
+        {
+          "name": "IncompatibleFolderProperties",
+          "value": 232
+        },
+        {
+          "name": "NoHierarchyAllowedForClassicFolders",
+          "value": 233
+        },
+        {
+          "name": "MaximumFolderHierarchyDepthReached",
+          "value": 234
+        },
+        {
+          "name": "CannotChangeRobotProvisionType",
+          "value": 235
+        },
+        {
+          "name": "CannotChangeFolderPermissionModel",
+          "value": 236
+        },
+        {
+          "name": "CannotEditFolderParent",
+          "value": 237
+        },
+        {
+          "name": "EntitiesRequiredForAssignmentNotFound",
+          "value": 238
+        },
+        {
+          "name": "CannotAssignRolesToNonFineGrainedFolders",
+          "value": 239
+        },
+        {
+          "name": "InvalidFolderDisplayName",
+          "value": 240
+        },
+        {
+          "name": "AssociationAlreadyExists",
+          "value": 241
+        },
+        {
+          "name": "UserDoesNotHaveAccessToFolder",
+          "value": 242
+        },
+        {
+          "name": "CannotChangeRobotUserFolderAssignments",
+          "value": 243
+        },
+        {
+          "name": "CannotAssignMachineToClassicFolder",
+          "value": 244
+        },
+        {
+          "name": "StrategyNotAvailableInModernFolder",
+          "value": 245
+        },
+        {
+          "name": "StrategyNotAvailableInClassicFolder",
+          "value": 246
+        },
+        {
+          "name": "ValidModernFolderIdRequired",
+          "value": 247
+        },
+        {
+          "name": "NoMachineAssociatedWithFolder",
+          "value": 248
+        },
+        {
+          "name": "MaintenanceActive",
+          "value": 249
+        },
+        {
+          "name": "TenantMaintenanceActive",
+          "value": 250
+        },
+        {
+          "name": "TenantMaintenanceNotActive",
+          "value": 251
+        },
+        {
+          "name": "AnalyticsNotAuthorized",
+          "value": 252
+        },
+        {
+          "name": "AnalyticsTenantNotProvisioned",
+          "value": 253
+        },
+        {
+          "name": "AnalyticsUserIsHostUser",
+          "value": 254
+        },
+        {
+          "name": "AnalyticsUserHasNoEmail",
+          "value": 255
+        },
+        {
+          "name": "AnalyticsUserNotFound",
+          "value": 256
+        },
+        {
+          "name": "AnalyticsAdminEmailProhibited",
+          "value": 257
+        },
+        {
+          "name": "InvalidStorageProvider",
+          "value": 258
+        },
+        {
+          "name": "BucketIsReadOnly",
+          "value": 259
+        },
+        {
+          "name": "InvalidBlobFilePath",
+          "value": 260
+        },
+        {
+          "name": "TestSetNotNewOnCreate",
+          "value": 261
+        },
+        {
+          "name": "TestAutomationKeyMismatch",
+          "value": 262
+        },
+        {
+          "name": "TestSetNewOnUpdate",
+          "value": 263
+        },
+        {
+          "name": "TestSetEmpty",
+          "value": 264
+        },
+        {
+          "name": "TestSetDuplicatePackages",
+          "value": 265
+        },
+        {
+          "name": "TestSetVersionMaskInvalid",
+          "value": 266
+        },
+        {
+          "name": "TestSetDefinitionNotFound",
+          "value": 267
+        },
+        {
+          "name": "TestSetTestCaseInvalid",
+          "value": 268
+        },
+        {
+          "name": "TestSetTestCaseVersionInvalid",
+          "value": 269
+        },
+        {
+          "name": "TestAutomationVersionInvalid",
+          "value": 270
+        },
+        {
+          "name": "TestSetExecutionEmptyTestSet",
+          "value": 271
+        },
+        {
+          "name": "TestSetExecutionCreateFailed",
+          "value": 272
+        },
+        {
+          "name": "TestCaseAssertionScreenshotMimeTypeMissing",
+          "value": 273
+        },
+        {
+          "name": "TestCaseAssertionScreenshotMissing",
+          "value": 274
+        },
+        {
+          "name": "InvalidTenantMoveStatus",
+          "value": 275
+        },
+        {
+          "name": "TenantMoveIdConflict",
+          "value": 276
+        },
+        {
+          "name": "TenantMoveMigrationConflict",
+          "value": 277
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.FolderDtoFeedType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "Processes",
+          "value": 1
+        },
+        {
+          "name": "Libraries",
+          "value": 2
+        },
+        {
+          "name": "PersonalWorkspace",
+          "value": 3
+        },
+        {
+          "name": "FolderHierarchy",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.FolderDtoFolderType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Standard",
+          "value": 0
+        },
+        {
+          "name": "Personal",
+          "value": 1
+        },
+        {
+          "name": "Virtual",
+          "value": 2
+        },
+        {
+          "name": "Solution",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.FolderDtoPermissionModel",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "InheritFromTenant",
+          "value": 0
+        },
+        {
+          "name": "FineGrained",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.FolderDtoProvisionType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Manual",
+          "value": 0
+        },
+        {
+          "name": "Automatic",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.FolderNavigationContextDtoProvisionType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Manual",
+          "value": 0
+        },
+        {
+          "name": "Automatic",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.FolderPermissionsDtoFolderType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Standard",
+          "value": 0
+        },
+        {
+          "name": "Personal",
+          "value": 1
+        },
+        {
+          "name": "Virtual",
+          "value": 2
+        },
+        {
+          "name": "Solution",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.FolderType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Standard",
+          "value": 0
+        },
+        {
+          "name": "Personal",
+          "value": 1
+        },
+        {
+          "name": "Virtual",
+          "value": 2
+        },
+        {
+          "name": "Solution",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.FormTaskCreateRequestPriority",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Low",
+          "value": 0
+        },
+        {
+          "name": "Medium",
+          "value": 1
+        },
+        {
+          "name": "High",
+          "value": 2
+        },
+        {
+          "name": "Critical",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.HeartbeatDtoJobState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Pending",
+          "value": 0
+        },
+        {
+          "name": "Running",
+          "value": 1
+        },
+        {
+          "name": "Stopping",
+          "value": 2
+        },
+        {
+          "name": "Terminating",
+          "value": 3
+        },
+        {
+          "name": "Faulted",
+          "value": 4
+        },
+        {
+          "name": "Successful",
+          "value": 5
+        },
+        {
+          "name": "Stopped",
+          "value": 6
+        },
+        {
+          "name": "Suspended",
+          "value": 7
+        },
+        {
+          "name": "Resumed",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.HeartbeatDtoRobotState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Available",
+          "value": 0
+        },
+        {
+          "name": "Busy",
+          "value": 1
+        },
+        {
+          "name": "Disconnected",
+          "value": 2
+        },
+        {
+          "name": "Unknown",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.HeartbeatPayloadCommandState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "All",
+          "value": 0
+        },
+        {
+          "name": "Pending",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.IEdmEntityContainerElementContainerElementKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "EntitySet",
+          "value": 1
+        },
+        {
+          "name": "ActionImport",
+          "value": 2
+        },
+        {
+          "name": "FunctionImport",
+          "value": 3
+        },
+        {
+          "name": "Singleton",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.IEdmEntityContainerSchemaElementKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "TypeDefinition",
+          "value": 1
+        },
+        {
+          "name": "Term",
+          "value": 2
+        },
+        {
+          "name": "Action",
+          "value": 3
+        },
+        {
+          "name": "EntityContainer",
+          "value": 4
+        },
+        {
+          "name": "Function",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.IEdmExpressionExpressionKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "BinaryConstant",
+          "value": 1
+        },
+        {
+          "name": "BooleanConstant",
+          "value": 2
+        },
+        {
+          "name": "DateTimeOffsetConstant",
+          "value": 3
+        },
+        {
+          "name": "DecimalConstant",
+          "value": 4
+        },
+        {
+          "name": "FloatingConstant",
+          "value": 5
+        },
+        {
+          "name": "GuidConstant",
+          "value": 6
+        },
+        {
+          "name": "IntegerConstant",
+          "value": 7
+        },
+        {
+          "name": "StringConstant",
+          "value": 8
+        },
+        {
+          "name": "DurationConstant",
+          "value": 9
+        },
+        {
+          "name": "Null",
+          "value": 10
+        },
+        {
+          "name": "Record",
+          "value": 11
+        },
+        {
+          "name": "Collection",
+          "value": 12
+        },
+        {
+          "name": "Path",
+          "value": 13
+        },
+        {
+          "name": "If",
+          "value": 14
+        },
+        {
+          "name": "Cast",
+          "value": 15
+        },
+        {
+          "name": "IsType",
+          "value": 16
+        },
+        {
+          "name": "FunctionApplication",
+          "value": 17
+        },
+        {
+          "name": "LabeledExpressionReference",
+          "value": 18
+        },
+        {
+          "name": "Labeled",
+          "value": 19
+        },
+        {
+          "name": "PropertyPath",
+          "value": 20
+        },
+        {
+          "name": "NavigationPropertyPath",
+          "value": 21
+        },
+        {
+          "name": "DateConstant",
+          "value": 22
+        },
+        {
+          "name": "TimeOfDayConstant",
+          "value": 23
+        },
+        {
+          "name": "EnumMember",
+          "value": 24
+        },
+        {
+          "name": "AnnotationPath",
+          "value": 25
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.IEdmNavigationPropertyOnDelete",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Cascade",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.IEdmNavigationPropertyPropertyKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Structural",
+          "value": 1
+        },
+        {
+          "name": "Navigation",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.IEdmPathExpressionExpressionKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "BinaryConstant",
+          "value": 1
+        },
+        {
+          "name": "BooleanConstant",
+          "value": 2
+        },
+        {
+          "name": "DateTimeOffsetConstant",
+          "value": 3
+        },
+        {
+          "name": "DecimalConstant",
+          "value": 4
+        },
+        {
+          "name": "FloatingConstant",
+          "value": 5
+        },
+        {
+          "name": "GuidConstant",
+          "value": 6
+        },
+        {
+          "name": "IntegerConstant",
+          "value": 7
+        },
+        {
+          "name": "StringConstant",
+          "value": 8
+        },
+        {
+          "name": "DurationConstant",
+          "value": 9
+        },
+        {
+          "name": "Null",
+          "value": 10
+        },
+        {
+          "name": "Record",
+          "value": 11
+        },
+        {
+          "name": "Collection",
+          "value": 12
+        },
+        {
+          "name": "Path",
+          "value": 13
+        },
+        {
+          "name": "If",
+          "value": 14
+        },
+        {
+          "name": "Cast",
+          "value": 15
+        },
+        {
+          "name": "IsType",
+          "value": 16
+        },
+        {
+          "name": "FunctionApplication",
+          "value": 17
+        },
+        {
+          "name": "LabeledExpressionReference",
+          "value": 18
+        },
+        {
+          "name": "Labeled",
+          "value": 19
+        },
+        {
+          "name": "PropertyPath",
+          "value": 20
+        },
+        {
+          "name": "NavigationPropertyPath",
+          "value": 21
+        },
+        {
+          "name": "DateConstant",
+          "value": 22
+        },
+        {
+          "name": "TimeOfDayConstant",
+          "value": 23
+        },
+        {
+          "name": "EnumMember",
+          "value": 24
+        },
+        {
+          "name": "AnnotationPath",
+          "value": 25
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.IEdmPropertyPropertyKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Structural",
+          "value": 1
+        },
+        {
+          "name": "Navigation",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.IEdmSchemaElementSchemaElementKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "TypeDefinition",
+          "value": 1
+        },
+        {
+          "name": "Term",
+          "value": 2
+        },
+        {
+          "name": "Action",
+          "value": 3
+        },
+        {
+          "name": "EntityContainer",
+          "value": 4
+        },
+        {
+          "name": "Function",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.IEdmStructuralPropertyPropertyKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Structural",
+          "value": 1
+        },
+        {
+          "name": "Navigation",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.IEdmStructuredTypeTypeKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Primitive",
+          "value": 1
+        },
+        {
+          "name": "Entity",
+          "value": 2
+        },
+        {
+          "name": "Complex",
+          "value": 3
+        },
+        {
+          "name": "Collection",
+          "value": 4
+        },
+        {
+          "name": "EntityReference",
+          "value": 5
+        },
+        {
+          "name": "Enum",
+          "value": 6
+        },
+        {
+          "name": "TypeDefinition",
+          "value": 7
+        },
+        {
+          "name": "Untyped",
+          "value": 8
+        },
+        {
+          "name": "Path",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.IEdmTermSchemaElementKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "TypeDefinition",
+          "value": 1
+        },
+        {
+          "name": "Term",
+          "value": 2
+        },
+        {
+          "name": "Action",
+          "value": 3
+        },
+        {
+          "name": "EntityContainer",
+          "value": 4
+        },
+        {
+          "name": "Function",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.IEdmTypeTypeKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Primitive",
+          "value": 1
+        },
+        {
+          "name": "Entity",
+          "value": 2
+        },
+        {
+          "name": "Complex",
+          "value": 3
+        },
+        {
+          "name": "Collection",
+          "value": 4
+        },
+        {
+          "name": "EntityReference",
+          "value": 5
+        },
+        {
+          "name": "Enum",
+          "value": 6
+        },
+        {
+          "name": "TypeDefinition",
+          "value": 7
+        },
+        {
+          "name": "Untyped",
+          "value": 8
+        },
+        {
+          "name": "Path",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.JobDtoJobPriority",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Low",
+          "value": 0
+        },
+        {
+          "name": "Normal",
+          "value": 1
+        },
+        {
+          "name": "High",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.JobDtoState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Pending",
+          "value": 0
+        },
+        {
+          "name": "Running",
+          "value": 1
+        },
+        {
+          "name": "Stopping",
+          "value": 2
+        },
+        {
+          "name": "Terminating",
+          "value": 3
+        },
+        {
+          "name": "Faulted",
+          "value": 4
+        },
+        {
+          "name": "Successful",
+          "value": 5
+        },
+        {
+          "name": "Stopped",
+          "value": 6
+        },
+        {
+          "name": "Suspended",
+          "value": 7
+        },
+        {
+          "name": "Resumed",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.JobDtoStopStrategy",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "SoftStop",
+          "value": 0
+        },
+        {
+          "name": "Kill",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.JobDtoType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unattended",
+          "value": 0
+        },
+        {
+          "name": "Attended",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.JobTriggerDtoStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "New",
+          "value": 0
+        },
+        {
+          "name": "Ready",
+          "value": 1
+        },
+        {
+          "name": "Fired",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.JobTriggerDtoTriggerType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "QueueItem",
+          "value": 1
+        },
+        {
+          "name": "Job",
+          "value": 2
+        },
+        {
+          "name": "Task",
+          "value": 3
+        },
+        {
+          "name": "Timer",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.LibraryDtoProjectType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "Process",
+          "value": 1
+        },
+        {
+          "name": "ProcessLibrary",
+          "value": 2
+        },
+        {
+          "name": "BusinessProcess",
+          "value": 3
+        },
+        {
+          "name": "BusinessProcessLibrary",
+          "value": 4
+        },
+        {
+          "name": "TestAutomationProcess",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.LicenseResultErrorCode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NoLicense",
+          "value": 0
+        },
+        {
+          "name": "LicenseExpired",
+          "value": 1
+        },
+        {
+          "name": "LicenseUnregistered",
+          "value": 2
+        },
+        {
+          "name": "NoAvailableLicenses",
+          "value": 3
+        },
+        {
+          "name": "NotEnoughAvailableSlots",
+          "value": 4
+        },
+        {
+          "name": "NotEnoughRuntimeLicenses",
+          "value": 5
+        },
+        {
+          "name": "LicenseIsAlreadyInUse",
+          "value": 6
+        },
+        {
+          "name": "InvalidRequest",
+          "value": 7
+        },
+        {
+          "name": "SlotsExceedLicenseLimit",
+          "value": 8
+        },
+        {
+          "name": "RuntimeDisabled",
+          "value": 9
+        },
+        {
+          "name": "ExternalNotSupported",
+          "value": 10
+        },
+        {
+          "name": "UsageExceedsLicenseLimit",
+          "value": 11
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.LicenseRuntimeDtoMachineType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Standard",
+          "value": 0
+        },
+        {
+          "name": "Template",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.LicenseStatsModelRobotType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NonProduction",
+          "value": 0
+        },
+        {
+          "name": "Attended",
+          "value": 1
+        },
+        {
+          "name": "Unattended",
+          "value": 2
+        },
+        {
+          "name": "Studio",
+          "value": 3
+        },
+        {
+          "name": "Development",
+          "value": 4
+        },
+        {
+          "name": "RpaDeveloper",
+          "value": 5
+        },
+        {
+          "name": "CitizenDeveloper",
+          "value": 6
+        },
+        {
+          "name": "StudioX",
+          "value": 7
+        },
+        {
+          "name": "Headless",
+          "value": 8
+        },
+        {
+          "name": "RpaDeveloperPro",
+          "value": 9
+        },
+        {
+          "name": "StudioPro",
+          "value": 10
+        },
+        {
+          "name": "TestAutomation",
+          "value": 11
+        },
+        {
+          "name": "AutomationCloud",
+          "value": 12
+        },
+        {
+          "name": "Serverless",
+          "value": 13
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.LogDtoLevel",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Trace",
+          "value": 0
+        },
+        {
+          "name": "Debug",
+          "value": 1
+        },
+        {
+          "name": "Info",
+          "value": 2
+        },
+        {
+          "name": "Warn",
+          "value": 3
+        },
+        {
+          "name": "Error",
+          "value": 4
+        },
+        {
+          "name": "Fatal",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.MachineDtoType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Standard",
+          "value": 0
+        },
+        {
+          "name": "Template",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.MachineSessionDtoLicenseErrorCode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NoLicense",
+          "value": 0
+        },
+        {
+          "name": "LicenseExpired",
+          "value": 1
+        },
+        {
+          "name": "LicenseUnregistered",
+          "value": 2
+        },
+        {
+          "name": "NoAvailableLicenses",
+          "value": 3
+        },
+        {
+          "name": "NotEnoughAvailableSlots",
+          "value": 4
+        },
+        {
+          "name": "NotEnoughRuntimeLicenses",
+          "value": 5
+        },
+        {
+          "name": "LicenseIsAlreadyInUse",
+          "value": 6
+        },
+        {
+          "name": "InvalidRequest",
+          "value": 7
+        },
+        {
+          "name": "SlotsExceedLicenseLimit",
+          "value": 8
+        },
+        {
+          "name": "RuntimeDisabled",
+          "value": 9
+        },
+        {
+          "name": "ExternalNotSupported",
+          "value": 10
+        },
+        {
+          "name": "UsageExceedsLicenseLimit",
+          "value": 11
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.MachineSessionDtoState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Available",
+          "value": 0
+        },
+        {
+          "name": "Busy",
+          "value": 1
+        },
+        {
+          "name": "Disconnected",
+          "value": 2
+        },
+        {
+          "name": "Unknown",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.MachineSessionRuntimeDtoMachineType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Standard",
+          "value": 0
+        },
+        {
+          "name": "Template",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.MachineSessionRuntimeDtoRuntimeType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NonProduction",
+          "value": 0
+        },
+        {
+          "name": "Attended",
+          "value": 1
+        },
+        {
+          "name": "Unattended",
+          "value": 2
+        },
+        {
+          "name": "Studio",
+          "value": 3
+        },
+        {
+          "name": "Development",
+          "value": 4
+        },
+        {
+          "name": "RpaDeveloper",
+          "value": 5
+        },
+        {
+          "name": "CitizenDeveloper",
+          "value": 6
+        },
+        {
+          "name": "StudioX",
+          "value": 7
+        },
+        {
+          "name": "Headless",
+          "value": 8
+        },
+        {
+          "name": "RpaDeveloperPro",
+          "value": 9
+        },
+        {
+          "name": "StudioPro",
+          "value": 10
+        },
+        {
+          "name": "TestAutomation",
+          "value": 11
+        },
+        {
+          "name": "AutomationCloud",
+          "value": 12
+        },
+        {
+          "name": "Serverless",
+          "value": 13
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.MachineSessionRuntimeDtoStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Available",
+          "value": 0
+        },
+        {
+          "name": "Busy",
+          "value": 1
+        },
+        {
+          "name": "Disconnected",
+          "value": 2
+        },
+        {
+          "name": "Unknown",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.MaintenanceSettingState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Draining",
+          "value": 1
+        },
+        {
+          "name": "Suspended",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.MaintenanceStateLogState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Draining",
+          "value": 1
+        },
+        {
+          "name": "Suspended",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.OrderByClauseDirection",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Ascending",
+          "value": 0
+        },
+        {
+          "name": "Descending",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.OrderByNodeDirection",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Ascending",
+          "value": 0
+        },
+        {
+          "name": "Descending",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.PermissionDtoScope",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Global",
+          "value": 0
+        },
+        {
+          "name": "Folder",
+          "value": 1
+        },
+        {
+          "name": "GlobalOrFolder",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.ProcessAlertDtoSeverity",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Info",
+          "value": 0
+        },
+        {
+          "name": "Success",
+          "value": 1
+        },
+        {
+          "name": "Warn",
+          "value": 2
+        },
+        {
+          "name": "Error",
+          "value": 3
+        },
+        {
+          "name": "Fatal",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.ProcessingExceptionDtoType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ApplicationException",
+          "value": 0
+        },
+        {
+          "name": "BusinessException",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.ProcessScheduleDtoJobPriority",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Low",
+          "value": 0
+        },
+        {
+          "name": "Normal",
+          "value": 1
+        },
+        {
+          "name": "High",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.ProcessScheduleDtoRuntimeType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NonProduction",
+          "value": 0
+        },
+        {
+          "name": "Attended",
+          "value": 1
+        },
+        {
+          "name": "Unattended",
+          "value": 2
+        },
+        {
+          "name": "Studio",
+          "value": 3
+        },
+        {
+          "name": "Development",
+          "value": 4
+        },
+        {
+          "name": "RpaDeveloper",
+          "value": 5
+        },
+        {
+          "name": "CitizenDeveloper",
+          "value": 6
+        },
+        {
+          "name": "StudioX",
+          "value": 7
+        },
+        {
+          "name": "Headless",
+          "value": 8
+        },
+        {
+          "name": "RpaDeveloperPro",
+          "value": 9
+        },
+        {
+          "name": "StudioPro",
+          "value": 10
+        },
+        {
+          "name": "TestAutomation",
+          "value": 11
+        },
+        {
+          "name": "AutomationCloud",
+          "value": 12
+        },
+        {
+          "name": "Serverless",
+          "value": 13
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.ProcessScheduleDtoStopStrategy",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "SoftStop",
+          "value": 0
+        },
+        {
+          "name": "Kill",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.QueueItemDataDtoPriority",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "High",
+          "value": 0
+        },
+        {
+          "name": "Normal",
+          "value": 1
+        },
+        {
+          "name": "Low",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.QueueItemDtoPriority",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "High",
+          "value": 0
+        },
+        {
+          "name": "Normal",
+          "value": 1
+        },
+        {
+          "name": "Low",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.QueueItemDtoProcessingExceptionType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ApplicationException",
+          "value": 0
+        },
+        {
+          "name": "BusinessException",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.QueueItemDtoReviewStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "InReview",
+          "value": 1
+        },
+        {
+          "name": "Verified",
+          "value": 2
+        },
+        {
+          "name": "Retried",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.QueueItemDtoStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "New",
+          "value": 0
+        },
+        {
+          "name": "InProgress",
+          "value": 1
+        },
+        {
+          "name": "Failed",
+          "value": 2
+        },
+        {
+          "name": "Successful",
+          "value": 3
+        },
+        {
+          "name": "Abandoned",
+          "value": 4
+        },
+        {
+          "name": "Retried",
+          "value": 5
+        },
+        {
+          "name": "Deleted",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.QueueItemEventDtoAction",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Create",
+          "value": 0
+        },
+        {
+          "name": "Edit",
+          "value": 1
+        },
+        {
+          "name": "Delete",
+          "value": 2
+        },
+        {
+          "name": "Status",
+          "value": 3
+        },
+        {
+          "name": "Retry",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.QueueItemEventDtoReviewStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "InReview",
+          "value": 1
+        },
+        {
+          "name": "Verified",
+          "value": 2
+        },
+        {
+          "name": "Retried",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.QueueItemEventDtoStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "New",
+          "value": 0
+        },
+        {
+          "name": "InProgress",
+          "value": 1
+        },
+        {
+          "name": "Failed",
+          "value": 2
+        },
+        {
+          "name": "Successful",
+          "value": 3
+        },
+        {
+          "name": "Abandoned",
+          "value": 4
+        },
+        {
+          "name": "Retried",
+          "value": 5
+        },
+        {
+          "name": "Deleted",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.QueueProcessingRecordDtoReportType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "All",
+          "value": 0
+        },
+        {
+          "name": "Minute",
+          "value": 1
+        },
+        {
+          "name": "Hour",
+          "value": 2
+        },
+        {
+          "name": "Day",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.ReleaseDtoJobPriority",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Low",
+          "value": 0
+        },
+        {
+          "name": "Normal",
+          "value": 1
+        },
+        {
+          "name": "High",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.RobotAssetDtoValueType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DBConnectionString",
+          "value": 0
+        },
+        {
+          "name": "HttpConnectionString",
+          "value": 1
+        },
+        {
+          "name": "Text",
+          "value": 2
+        },
+        {
+          "name": "Bool",
+          "value": 3
+        },
+        {
+          "name": "Integer",
+          "value": 4
+        },
+        {
+          "name": "Credential",
+          "value": 5
+        },
+        {
+          "name": "Secret",
+          "value": 6
+        },
+        {
+          "name": "WindowsCredential",
+          "value": 7
+        },
+        {
+          "name": "KeyValueList",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.RobotCommandRobotType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NonProduction",
+          "value": 0
+        },
+        {
+          "name": "Attended",
+          "value": 1
+        },
+        {
+          "name": "Unattended",
+          "value": 2
+        },
+        {
+          "name": "Studio",
+          "value": 3
+        },
+        {
+          "name": "Development",
+          "value": 4
+        },
+        {
+          "name": "StudioX",
+          "value": 5
+        },
+        {
+          "name": "Headless",
+          "value": 6
+        },
+        {
+          "name": "StudioPro",
+          "value": 7
+        },
+        {
+          "name": "TestAutomation",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.RobotDetailsDtoRobotType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NonProduction",
+          "value": 0
+        },
+        {
+          "name": "Attended",
+          "value": 1
+        },
+        {
+          "name": "Unattended",
+          "value": 2
+        },
+        {
+          "name": "Studio",
+          "value": 3
+        },
+        {
+          "name": "Development",
+          "value": 4
+        },
+        {
+          "name": "StudioX",
+          "value": 5
+        },
+        {
+          "name": "Headless",
+          "value": 6
+        },
+        {
+          "name": "StudioPro",
+          "value": 7
+        },
+        {
+          "name": "TestAutomation",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.RobotDtoCredentialType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "SmartCard",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.RobotDtoHostingType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Standard",
+          "value": 0
+        },
+        {
+          "name": "Floating",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.RobotDtoProvisionType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Manual",
+          "value": 0
+        },
+        {
+          "name": "Automatic",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.RobotDtoType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NonProduction",
+          "value": 0
+        },
+        {
+          "name": "Attended",
+          "value": 1
+        },
+        {
+          "name": "Unattended",
+          "value": 2
+        },
+        {
+          "name": "Studio",
+          "value": 3
+        },
+        {
+          "name": "Development",
+          "value": 4
+        },
+        {
+          "name": "RpaDeveloper",
+          "value": 5
+        },
+        {
+          "name": "CitizenDeveloper",
+          "value": 6
+        },
+        {
+          "name": "StudioX",
+          "value": 7
+        },
+        {
+          "name": "Headless",
+          "value": 8
+        },
+        {
+          "name": "RpaDeveloperPro",
+          "value": 9
+        },
+        {
+          "name": "StudioPro",
+          "value": 10
+        },
+        {
+          "name": "TestAutomation",
+          "value": 11
+        },
+        {
+          "name": "AutomationCloud",
+          "value": 12
+        },
+        {
+          "name": "Serverless",
+          "value": 13
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.RobotWithLicenseDtoCredentialType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "SmartCard",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.RobotWithLicenseDtoHostingType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Standard",
+          "value": 0
+        },
+        {
+          "name": "Floating",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.RobotWithLicenseDtoProvisionType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Manual",
+          "value": 0
+        },
+        {
+          "name": "Automatic",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.RobotWithLicenseDtoType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NonProduction",
+          "value": 0
+        },
+        {
+          "name": "Attended",
+          "value": 1
+        },
+        {
+          "name": "Unattended",
+          "value": 2
+        },
+        {
+          "name": "Studio",
+          "value": 3
+        },
+        {
+          "name": "Development",
+          "value": 4
+        },
+        {
+          "name": "RpaDeveloper",
+          "value": 5
+        },
+        {
+          "name": "CitizenDeveloper",
+          "value": 6
+        },
+        {
+          "name": "StudioX",
+          "value": 7
+        },
+        {
+          "name": "Headless",
+          "value": 8
+        },
+        {
+          "name": "RpaDeveloperPro",
+          "value": 9
+        },
+        {
+          "name": "StudioPro",
+          "value": 10
+        },
+        {
+          "name": "TestAutomation",
+          "value": 11
+        },
+        {
+          "name": "AutomationCloud",
+          "value": 12
+        },
+        {
+          "name": "Serverless",
+          "value": 13
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.SessionDtoLicenseErrorCode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NoLicense",
+          "value": 0
+        },
+        {
+          "name": "LicenseExpired",
+          "value": 1
+        },
+        {
+          "name": "LicenseUnregistered",
+          "value": 2
+        },
+        {
+          "name": "NoAvailableLicenses",
+          "value": 3
+        },
+        {
+          "name": "NotEnoughAvailableSlots",
+          "value": 4
+        },
+        {
+          "name": "NotEnoughRuntimeLicenses",
+          "value": 5
+        },
+        {
+          "name": "LicenseIsAlreadyInUse",
+          "value": 6
+        },
+        {
+          "name": "InvalidRequest",
+          "value": 7
+        },
+        {
+          "name": "SlotsExceedLicenseLimit",
+          "value": 8
+        },
+        {
+          "name": "RuntimeDisabled",
+          "value": 9
+        },
+        {
+          "name": "ExternalNotSupported",
+          "value": 10
+        },
+        {
+          "name": "UsageExceedsLicenseLimit",
+          "value": 11
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.SessionDtoState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Available",
+          "value": 0
+        },
+        {
+          "name": "Busy",
+          "value": 1
+        },
+        {
+          "name": "Disconnected",
+          "value": 2
+        },
+        {
+          "name": "Unknown",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.SettingsDtoScope",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Application",
+          "value": 0
+        },
+        {
+          "name": "Tenant",
+          "value": 1
+        },
+        {
+          "name": "User",
+          "value": 2
+        },
+        {
+          "name": "All",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.SimpleReleaseDtoJobPriority",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Low",
+          "value": 0
+        },
+        {
+          "name": "Normal",
+          "value": 1
+        },
+        {
+          "name": "High",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.SimpleRobotDtoCredentialType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "SmartCard",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.SimpleRobotDtoHostingType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Standard",
+          "value": 0
+        },
+        {
+          "name": "Floating",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.SimpleRobotDtoProvisionType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Manual",
+          "value": 0
+        },
+        {
+          "name": "Automatic",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.SimpleRobotDtoType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NonProduction",
+          "value": 0
+        },
+        {
+          "name": "Attended",
+          "value": 1
+        },
+        {
+          "name": "Unattended",
+          "value": 2
+        },
+        {
+          "name": "Studio",
+          "value": 3
+        },
+        {
+          "name": "Development",
+          "value": 4
+        },
+        {
+          "name": "RpaDeveloper",
+          "value": 5
+        },
+        {
+          "name": "CitizenDeveloper",
+          "value": 6
+        },
+        {
+          "name": "StudioX",
+          "value": 7
+        },
+        {
+          "name": "Headless",
+          "value": 8
+        },
+        {
+          "name": "RpaDeveloperPro",
+          "value": 9
+        },
+        {
+          "name": "StudioPro",
+          "value": 10
+        },
+        {
+          "name": "TestAutomation",
+          "value": 11
+        },
+        {
+          "name": "AutomationCloud",
+          "value": 12
+        },
+        {
+          "name": "Serverless",
+          "value": 13
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.SimpleRoleDtoOrigin",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Assigned",
+          "value": 0
+        },
+        {
+          "name": "Inherited",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.SimpleUserDtoLicenseType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NonProduction",
+          "value": 0
+        },
+        {
+          "name": "Attended",
+          "value": 1
+        },
+        {
+          "name": "Unattended",
+          "value": 2
+        },
+        {
+          "name": "Studio",
+          "value": 3
+        },
+        {
+          "name": "Development",
+          "value": 4
+        },
+        {
+          "name": "RpaDeveloper",
+          "value": 5
+        },
+        {
+          "name": "CitizenDeveloper",
+          "value": 6
+        },
+        {
+          "name": "StudioX",
+          "value": 7
+        },
+        {
+          "name": "Headless",
+          "value": 8
+        },
+        {
+          "name": "RpaDeveloperPro",
+          "value": 9
+        },
+        {
+          "name": "StudioPro",
+          "value": 10
+        },
+        {
+          "name": "TestAutomation",
+          "value": 11
+        },
+        {
+          "name": "AutomationCloud",
+          "value": 12
+        },
+        {
+          "name": "Serverless",
+          "value": 13
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.SimpleUserDtoProvisionType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Manual",
+          "value": 0
+        },
+        {
+          "name": "Automatic",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.SimpleUserDtoType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "User",
+          "value": 0
+        },
+        {
+          "name": "Robot",
+          "value": 1
+        },
+        {
+          "name": "DirectoryUser",
+          "value": 2
+        },
+        {
+          "name": "DirectoryGroup",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.SingleValueNodeKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Constant",
+          "value": 1
+        },
+        {
+          "name": "Convert",
+          "value": 2
+        },
+        {
+          "name": "NonResourceRangeVariableReference",
+          "value": 3
+        },
+        {
+          "name": "BinaryOperator",
+          "value": 4
+        },
+        {
+          "name": "UnaryOperator",
+          "value": 5
+        },
+        {
+          "name": "SingleValuePropertyAccess",
+          "value": 6
+        },
+        {
+          "name": "CollectionPropertyAccess",
+          "value": 7
+        },
+        {
+          "name": "SingleValueFunctionCall",
+          "value": 8
+        },
+        {
+          "name": "Any",
+          "value": 9
+        },
+        {
+          "name": "CollectionNavigationNode",
+          "value": 10
+        },
+        {
+          "name": "SingleNavigationNode",
+          "value": 11
+        },
+        {
+          "name": "SingleValueOpenPropertyAccess",
+          "value": 12
+        },
+        {
+          "name": "SingleResourceCast",
+          "value": 13
+        },
+        {
+          "name": "All",
+          "value": 14
+        },
+        {
+          "name": "CollectionResourceCast",
+          "value": 15
+        },
+        {
+          "name": "ResourceRangeVariableReference",
+          "value": 16
+        },
+        {
+          "name": "SingleResourceFunctionCall",
+          "value": 17
+        },
+        {
+          "name": "CollectionFunctionCall",
+          "value": 18
+        },
+        {
+          "name": "CollectionResourceFunctionCall",
+          "value": 19
+        },
+        {
+          "name": "NamedFunctionParameter",
+          "value": 20
+        },
+        {
+          "name": "ParameterAlias",
+          "value": 21
+        },
+        {
+          "name": "EntitySet",
+          "value": 22
+        },
+        {
+          "name": "KeyLookup",
+          "value": 23
+        },
+        {
+          "name": "SearchTerm",
+          "value": 24
+        },
+        {
+          "name": "CollectionOpenPropertyAccess",
+          "value": 25
+        },
+        {
+          "name": "CollectionComplexNode",
+          "value": 26
+        },
+        {
+          "name": "SingleComplexNode",
+          "value": 27
+        },
+        {
+          "name": "Count",
+          "value": 28
+        },
+        {
+          "name": "SingleValueCast",
+          "value": 29
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.StartProcessDtoJobPriority",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Low",
+          "value": 0
+        },
+        {
+          "name": "Normal",
+          "value": 1
+        },
+        {
+          "name": "High",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.StartProcessDtoRuntimeType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NonProduction",
+          "value": 0
+        },
+        {
+          "name": "Attended",
+          "value": 1
+        },
+        {
+          "name": "Unattended",
+          "value": 2
+        },
+        {
+          "name": "Studio",
+          "value": 3
+        },
+        {
+          "name": "Development",
+          "value": 4
+        },
+        {
+          "name": "RpaDeveloper",
+          "value": 5
+        },
+        {
+          "name": "CitizenDeveloper",
+          "value": 6
+        },
+        {
+          "name": "StudioX",
+          "value": 7
+        },
+        {
+          "name": "Headless",
+          "value": 8
+        },
+        {
+          "name": "RpaDeveloperPro",
+          "value": 9
+        },
+        {
+          "name": "StudioPro",
+          "value": 10
+        },
+        {
+          "name": "TestAutomation",
+          "value": 11
+        },
+        {
+          "name": "AutomationCloud",
+          "value": 12
+        },
+        {
+          "name": "Serverless",
+          "value": 13
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.StartProcessDtoSource",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Manual",
+          "value": 0
+        },
+        {
+          "name": "Schedule",
+          "value": 1
+        },
+        {
+          "name": "Queue",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.StartProcessDtoStrategy",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "All",
+          "value": 0
+        },
+        {
+          "name": "Specific",
+          "value": 1
+        },
+        {
+          "name": "RobotCount",
+          "value": 2
+        },
+        {
+          "name": "JobsCount",
+          "value": 3
+        },
+        {
+          "name": "ModernJobsCount",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.StopJobParametersEnum",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "SoftStop",
+          "value": 0
+        },
+        {
+          "name": "Kill",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.StopJobsParametersEnum",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "SoftStop",
+          "value": 0
+        },
+        {
+          "name": "Kill",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.TaskCreateRequestPriority",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Low",
+          "value": 0
+        },
+        {
+          "name": "Medium",
+          "value": 1
+        },
+        {
+          "name": "High",
+          "value": 2
+        },
+        {
+          "name": "Critical",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.TaskCreateRequestType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DocumentValidationTask",
+          "value": 0
+        },
+        {
+          "name": "ExternalTask",
+          "value": 1
+        },
+        {
+          "name": "FormTask",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.TaskDataDtoStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unassigned",
+          "value": 0
+        },
+        {
+          "name": "Pending",
+          "value": 1
+        },
+        {
+          "name": "Completed",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.TaskDtoPriority",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Low",
+          "value": 0
+        },
+        {
+          "name": "Medium",
+          "value": 1
+        },
+        {
+          "name": "High",
+          "value": 2
+        },
+        {
+          "name": "Critical",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.TaskDtoStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unassigned",
+          "value": 0
+        },
+        {
+          "name": "Pending",
+          "value": 1
+        },
+        {
+          "name": "Completed",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.TaskDtoType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DocumentValidationTask",
+          "value": 0
+        },
+        {
+          "name": "ExternalTask",
+          "value": 1
+        },
+        {
+          "name": "FormTask",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.TaskFormDtoStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unassigned",
+          "value": 0
+        },
+        {
+          "name": "Pending",
+          "value": 1
+        },
+        {
+          "name": "Completed",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.ToggleMachineLicenseParametersEnum",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NonProduction",
+          "value": 0
+        },
+        {
+          "name": "Attended",
+          "value": 1
+        },
+        {
+          "name": "Unattended",
+          "value": 2
+        },
+        {
+          "name": "Development",
+          "value": 3
+        },
+        {
+          "name": "StudioX",
+          "value": 4
+        },
+        {
+          "name": "Headless",
+          "value": 5
+        },
+        {
+          "name": "StudioPro",
+          "value": 6
+        },
+        {
+          "name": "TestAutomation",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.TransactionDataDtoReferenceFilterOption",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Equals",
+          "value": 0
+        },
+        {
+          "name": "StartsWith",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.TransformationNodeKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Aggregate",
+          "value": 0
+        },
+        {
+          "name": "GroupBy",
+          "value": 1
+        },
+        {
+          "name": "Filter",
+          "value": 2
+        },
+        {
+          "name": "Compute",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.UnattendedRobotDtoCredentialType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "SmartCard",
+          "value": 1
+        },
+        {
+          "name": "NCipher",
+          "value": 2
+        },
+        {
+          "name": "SafeNet",
+          "value": 3
+        },
+        {
+          "name": "NoCredential",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.UserDtoLicenseType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NonProduction",
+          "value": 0
+        },
+        {
+          "name": "Attended",
+          "value": 1
+        },
+        {
+          "name": "Unattended",
+          "value": 2
+        },
+        {
+          "name": "Studio",
+          "value": 3
+        },
+        {
+          "name": "Development",
+          "value": 4
+        },
+        {
+          "name": "RpaDeveloper",
+          "value": 5
+        },
+        {
+          "name": "CitizenDeveloper",
+          "value": 6
+        },
+        {
+          "name": "StudioX",
+          "value": 7
+        },
+        {
+          "name": "Headless",
+          "value": 8
+        },
+        {
+          "name": "RpaDeveloperPro",
+          "value": 9
+        },
+        {
+          "name": "StudioPro",
+          "value": 10
+        },
+        {
+          "name": "TestAutomation",
+          "value": 11
+        },
+        {
+          "name": "AutomationCloud",
+          "value": 12
+        },
+        {
+          "name": "Serverless",
+          "value": 13
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.UserDtoProvisionType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Manual",
+          "value": 0
+        },
+        {
+          "name": "Automatic",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.UserDtoType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "User",
+          "value": 0
+        },
+        {
+          "name": "Robot",
+          "value": 1
+        },
+        {
+          "name": "DirectoryUser",
+          "value": 2
+        },
+        {
+          "name": "DirectoryGroup",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.UserLoginAttemptDtoResult",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Success",
+          "value": 0
+        },
+        {
+          "name": "InvalidUserNameOrEmailAddress",
+          "value": 1
+        },
+        {
+          "name": "InvalidPassword",
+          "value": 2
+        },
+        {
+          "name": "UserIsNotActive",
+          "value": 3
+        },
+        {
+          "name": "InvalidTenancyName",
+          "value": 4
+        },
+        {
+          "name": "TenantIsNotActive",
+          "value": 5
+        },
+        {
+          "name": "UserEmailIsNotConfirmed",
+          "value": 6
+        },
+        {
+          "name": "UnknownExternalLogin",
+          "value": 7
+        },
+        {
+          "name": "LockedOut",
+          "value": 8
+        },
+        {
+          "name": "UserPhoneNumberIsNotConfirmed",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.WebhookJobDtoState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Pending",
+          "value": 0
+        },
+        {
+          "name": "Running",
+          "value": 1
+        },
+        {
+          "name": "Stopping",
+          "value": 2
+        },
+        {
+          "name": "Terminating",
+          "value": 3
+        },
+        {
+          "name": "Faulted",
+          "value": 4
+        },
+        {
+          "name": "Successful",
+          "value": 5
+        },
+        {
+          "name": "Stopped",
+          "value": 6
+        },
+        {
+          "name": "Suspended",
+          "value": 7
+        },
+        {
+          "name": "Resumed",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.WebhookJobDtoType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unattended",
+          "value": 0
+        },
+        {
+          "name": "Attended",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.WebhookProcessingExceptionDtoType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ApplicationException",
+          "value": 0
+        },
+        {
+          "name": "BusinessException",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.WebhookProcessScheduleDtoStartStrategy",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "All",
+          "value": 0
+        },
+        {
+          "name": "Specific",
+          "value": 1
+        },
+        {
+          "name": "RobotCount",
+          "value": 2
+        },
+        {
+          "name": "JobsCount",
+          "value": 3
+        },
+        {
+          "name": "ModernJobsCount",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.WebhookProcessScheduleDtoStopStrategy",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "SoftStop",
+          "value": 0
+        },
+        {
+          "name": "Kill",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.WebhookQueueItemDtoPriority",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "High",
+          "value": 0
+        },
+        {
+          "name": "Normal",
+          "value": 1
+        },
+        {
+          "name": "Low",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.WebhookQueueItemDtoReviewStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "InReview",
+          "value": 1
+        },
+        {
+          "name": "Verified",
+          "value": 2
+        },
+        {
+          "name": "Retried",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.WebhookQueueItemDtoStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "New",
+          "value": 0
+        },
+        {
+          "name": "InProgress",
+          "value": 1
+        },
+        {
+          "name": "Failed",
+          "value": 2
+        },
+        {
+          "name": "Successful",
+          "value": 3
+        },
+        {
+          "name": "Abandoned",
+          "value": 4
+        },
+        {
+          "name": "Retried",
+          "value": 5
+        },
+        {
+          "name": "Deleted",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.WebhookRobotDtoHostingType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Standard",
+          "value": 0
+        },
+        {
+          "name": "Floating",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.WebhookRobotDtoType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NonProduction",
+          "value": 0
+        },
+        {
+          "name": "Attended",
+          "value": 1
+        },
+        {
+          "name": "Unattended",
+          "value": 2
+        },
+        {
+          "name": "Studio",
+          "value": 3
+        },
+        {
+          "name": "Development",
+          "value": 4
+        },
+        {
+          "name": "RpaDeveloper",
+          "value": 5
+        },
+        {
+          "name": "CitizenDeveloper",
+          "value": 6
+        },
+        {
+          "name": "StudioX",
+          "value": 7
+        },
+        {
+          "name": "Headless",
+          "value": 8
+        },
+        {
+          "name": "RpaDeveloperPro",
+          "value": 9
+        },
+        {
+          "name": "StudioPro",
+          "value": 10
+        },
+        {
+          "name": "TestAutomation",
+          "value": 11
+        },
+        {
+          "name": "AutomationCloud",
+          "value": 12
+        },
+        {
+          "name": "Serverless",
+          "value": 13
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.WebhookSessionDtoLicenseErrorCode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NoLicense",
+          "value": 0
+        },
+        {
+          "name": "LicenseExpired",
+          "value": 1
+        },
+        {
+          "name": "LicenseUnregistered",
+          "value": 2
+        },
+        {
+          "name": "NoAvailableLicenses",
+          "value": 3
+        },
+        {
+          "name": "NotEnoughAvailableSlots",
+          "value": 4
+        },
+        {
+          "name": "NotEnoughRuntimeLicenses",
+          "value": 5
+        },
+        {
+          "name": "LicenseIsAlreadyInUse",
+          "value": 6
+        },
+        {
+          "name": "InvalidRequest",
+          "value": 7
+        },
+        {
+          "name": "SlotsExceedLicenseLimit",
+          "value": 8
+        },
+        {
+          "name": "RuntimeDisabled",
+          "value": 9
+        },
+        {
+          "name": "ExternalNotSupported",
+          "value": 10
+        },
+        {
+          "name": "UsageExceedsLicenseLimit",
+          "value": 11
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.WebhookSessionDtoState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Available",
+          "value": 0
+        },
+        {
+          "name": "Busy",
+          "value": 1
+        },
+        {
+          "name": "Disconnected",
+          "value": 2
+        },
+        {
+          "name": "Unknown",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.WebhookSimpleJobDtoState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Pending",
+          "value": 0
+        },
+        {
+          "name": "Running",
+          "value": 1
+        },
+        {
+          "name": "Stopping",
+          "value": 2
+        },
+        {
+          "name": "Terminating",
+          "value": 3
+        },
+        {
+          "name": "Faulted",
+          "value": 4
+        },
+        {
+          "name": "Successful",
+          "value": 5
+        },
+        {
+          "name": "Stopped",
+          "value": 6
+        },
+        {
+          "name": "Suspended",
+          "value": 7
+        },
+        {
+          "name": "Resumed",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.WebhookSimpleUserDtoType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "User",
+          "value": 0
+        },
+        {
+          "name": "Robot",
+          "value": 1
+        },
+        {
+          "name": "DirectoryUser",
+          "value": 2
+        },
+        {
+          "name": "DirectoryGroup",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.WebhookStartProcessDtoSource",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Manual",
+          "value": 0
+        },
+        {
+          "name": "Schedule",
+          "value": 1
+        },
+        {
+          "name": "Queue",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.WebhookStartProcessDtoStrategy",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "All",
+          "value": 0
+        },
+        {
+          "name": "Specific",
+          "value": 1
+        },
+        {
+          "name": "RobotCount",
+          "value": 2
+        },
+        {
+          "name": "JobsCount",
+          "value": 3
+        },
+        {
+          "name": "ModernJobsCount",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.WebhookTaskAssignmentChangedDtoPriority",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Low",
+          "value": 0
+        },
+        {
+          "name": "Medium",
+          "value": 1
+        },
+        {
+          "name": "High",
+          "value": 2
+        },
+        {
+          "name": "Critical",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.WebhookTaskAssignmentChangedDtoStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unassigned",
+          "value": 0
+        },
+        {
+          "name": "Pending",
+          "value": 1
+        },
+        {
+          "name": "Completed",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.WebhookTaskAssignmentChangedDtoType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DocumentValidationTask",
+          "value": 0
+        },
+        {
+          "name": "ExternalTask",
+          "value": 1
+        },
+        {
+          "name": "FormTask",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.WebhookTaskCompletedDtoPriority",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Low",
+          "value": 0
+        },
+        {
+          "name": "Medium",
+          "value": 1
+        },
+        {
+          "name": "High",
+          "value": 2
+        },
+        {
+          "name": "Critical",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.WebhookTaskCompletedDtoStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unassigned",
+          "value": 0
+        },
+        {
+          "name": "Pending",
+          "value": 1
+        },
+        {
+          "name": "Completed",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.WebhookTaskCompletedDtoType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DocumentValidationTask",
+          "value": 0
+        },
+        {
+          "name": "ExternalTask",
+          "value": 1
+        },
+        {
+          "name": "FormTask",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.WebhookTaskCreatedDtoPriority",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Low",
+          "value": 0
+        },
+        {
+          "name": "Medium",
+          "value": 1
+        },
+        {
+          "name": "High",
+          "value": 2
+        },
+        {
+          "name": "Critical",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.WebhookTaskCreatedDtoStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unassigned",
+          "value": 0
+        },
+        {
+          "name": "Pending",
+          "value": 1
+        },
+        {
+          "name": "Completed",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.WebhookTaskCreatedDtoType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DocumentValidationTask",
+          "value": 0
+        },
+        {
+          "name": "ExternalTask",
+          "value": 1
+        },
+        {
+          "name": "FormTask",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Shared.JobWrapper.JobObjectInfoType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AssociateCompletionPortInformation",
+          "value": 7
+        },
+        {
+          "name": "BasicLimitInformation",
+          "value": 2
+        },
+        {
+          "name": "BasicUIRestrictions",
+          "value": 4
+        },
+        {
+          "name": "EndOfJobTimeInformation",
+          "value": 6
+        },
+        {
+          "name": "ExtendedLimitInformation",
+          "value": 9
+        },
+        {
+          "name": "SecurityLimitInformation",
+          "value": 5
+        },
+        {
+          "name": "GroupInformation",
+          "value": 11
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Shared.NativeMessageBox.MessageBoxOptions",
+      "underlyingType": "System.UInt32",
+      "members": [
+        {
+          "name": "OkOnly",
+          "value": 0
+        },
+        {
+          "name": "OkCancel",
+          "value": 1
+        },
+        {
+          "name": "AbortRetryIgnore",
+          "value": 2
+        },
+        {
+          "name": "YesNoCancel",
+          "value": 3
+        },
+        {
+          "name": "YesNo",
+          "value": 4
+        },
+        {
+          "name": "RetryCancel",
+          "value": 5
+        },
+        {
+          "name": "CancelTryContinue",
+          "value": 6
+        },
+        {
+          "name": "IconHand",
+          "value": 16
+        },
+        {
+          "name": "IconQuestion",
+          "value": 32
+        },
+        {
+          "name": "IconExclamation",
+          "value": 48
+        },
+        {
+          "name": "IconAsterisk",
+          "value": 64
+        },
+        {
+          "name": "UserIcon",
+          "value": 128
+        },
+        {
+          "name": "IconWarning",
+          "value": 48
+        },
+        {
+          "name": "IconError",
+          "value": 16
+        },
+        {
+          "name": "IconInformation",
+          "value": 64
+        },
+        {
+          "name": "IconStop",
+          "value": 16
+        },
+        {
+          "name": "DefButton1",
+          "value": 0
+        },
+        {
+          "name": "DefButton2",
+          "value": 256
+        },
+        {
+          "name": "DefButton3",
+          "value": 512
+        },
+        {
+          "name": "DefButton4",
+          "value": 768
+        },
+        {
+          "name": "ApplicationModal",
+          "value": 0
+        },
+        {
+          "name": "SystemModal",
+          "value": 4096
+        },
+        {
+          "name": "TaskModal",
+          "value": 8192
+        },
+        {
+          "name": "Help",
+          "value": 16384
+        },
+        {
+          "name": "NoFocus",
+          "value": 32768
+        },
+        {
+          "name": "SetForeground",
+          "value": 65536
+        },
+        {
+          "name": "DefaultDesktopOnly",
+          "value": 131072
+        },
+        {
+          "name": "Topmost",
+          "value": 262144
+        },
+        {
+          "name": "Right",
+          "value": 524288
+        },
+        {
+          "name": "RTLReading",
+          "value": 1048576
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Shared.NativeMessageBox.MessageBoxResult",
+      "underlyingType": "System.UInt32",
+      "members": [
+        {
+          "name": "Error",
+          "value": 0
+        },
+        {
+          "name": "Ok",
+          "value": 1
+        },
+        {
+          "name": "Cancel",
+          "value": 2
+        },
+        {
+          "name": "Abort",
+          "value": 3
+        },
+        {
+          "name": "Retry",
+          "value": 4
+        },
+        {
+          "name": "Ignore",
+          "value": 5
+        },
+        {
+          "name": "Yes",
+          "value": 6
+        },
+        {
+          "name": "No",
+          "value": 7
+        },
+        {
+          "name": "Close",
+          "value": 8
+        },
+        {
+          "name": "Help",
+          "value": 9
+        },
+        {
+          "name": "TryAgain",
+          "value": 10
+        },
+        {
+          "name": "Continue",
+          "value": 11
+        },
+        {
+          "name": "Timeout",
+          "value": 32000
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Shared.Activities.Services.Language",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "VisualBasic",
+          "value": 0
+        },
+        {
+          "name": "CSharp",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Shared.Activities.Performance.ApplicationType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "API",
+          "value": 1
+        },
+        {
+          "name": "WindowsApplication",
+          "value": 2
+        },
+        {
+          "name": "Chrome",
+          "value": 3
+        },
+        {
+          "name": "Default",
+          "value": 4
+        },
+        {
+          "name": "Edge",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Shared.Activities.Performance.PerfCommandType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "Start",
+          "value": 1
+        },
+        {
+          "name": "Stop",
+          "value": 2
+        },
+        {
+          "name": "Alive",
+          "value": 3
+        },
+        {
+          "name": "Data",
+          "value": 4
+        },
+        {
+          "name": "Error",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DataTableUtilities.DataColumnSelectionType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ByIndex",
+          "value": 0
+        },
+        {
+          "name": "ByName",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Activities.System.ProcessTracking.PTSTransactionOptions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Current",
+          "value": 0
+        },
+        {
+          "name": "New",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Activities.System.ProcessTracking.PTSObjectInteraction",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Created",
+          "value": 1
+        },
+        {
+          "name": "Read",
+          "value": 2
+        },
+        {
+          "name": "Updated",
+          "value": 3
+        },
+        {
+          "name": "Deleted",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Activities.System.ProcessTracking.ProcessTrackingMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "CurrentTrace",
+          "value": 0
+        },
+        {
+          "name": "NewTrace",
+          "value": 1
+        },
+        {
+          "name": "ExistingTrace",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Activities.System.ProcessTracking.TaskStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "Successful",
+          "value": 1
+        },
+        {
+          "name": "Failed",
+          "value": 2
+        },
+        {
+          "name": "Cancelled",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Activities.System.ProcessTracking.TraceStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "Successful",
+          "value": 1
+        },
+        {
+          "name": "Failed",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Activities.System.Queues.QueueItemFilterCriteria",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Duration",
+          "value": 0
+        },
+        {
+          "name": "Status",
+          "value": 1
+        },
+        {
+          "name": "Priority",
+          "value": 2
+        },
+        {
+          "name": "Reference",
+          "value": 3
+        },
+        {
+          "name": "CreationTime",
+          "value": 4
+        },
+        {
+          "name": "StartProcessing",
+          "value": 5
+        },
+        {
+          "name": "EndProcessing",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Activities.System.Queues.QueueItemFilterLogicalOperator",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "And",
+          "value": 0
+        },
+        {
+          "name": "Or",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Activities.System.Queues.QueueStringFilterOperator",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Equals",
+          "value": 0
+        },
+        {
+          "name": "EndsWith",
+          "value": 1
+        },
+        {
+          "name": "Contains",
+          "value": 2
+        },
+        {
+          "name": "NotEquals",
+          "value": 3
+        },
+        {
+          "name": "StartsWith",
+          "value": 4
+        },
+        {
+          "name": "NotContains",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Activities.System.Queues.QueueIntegerFilterOperator",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "LessThan",
+          "value": 0
+        },
+        {
+          "name": "MoreThan",
+          "value": 1
+        },
+        {
+          "name": "LessThanOrEqual",
+          "value": 2
+        },
+        {
+          "name": "MoreThanOrEqual",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Activities.System.Queues.QueueDateFilterOperator",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NewerThan",
+          "value": 0
+        },
+        {
+          "name": "NewerThanOrEqual",
+          "value": 1
+        },
+        {
+          "name": "OlderThan",
+          "value": 2
+        },
+        {
+          "name": "OlderThanOrEqual",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Activities.System.Queues.QueueEnumFilterOperator",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Equals",
+          "value": 0
+        },
+        {
+          "name": "NotEquals",
+          "value": 1
+        },
+        {
+          "name": "EqualsVariable",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Activities.System.Queues.QueueEnumFlagsFilterOperator",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Equals",
+          "value": 0
+        },
+        {
+          "name": "NotEquals",
+          "value": 1
+        },
+        {
+          "name": "OneOf",
+          "value": 2
+        },
+        {
+          "name": "OneOfVariable",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Activities.System.Jobs.JobFilterField",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Key",
+          "value": 0
+        },
+        {
+          "name": "State",
+          "value": 1
+        },
+        {
+          "name": "EndTime",
+          "value": 2
+        },
+        {
+          "name": "StartTime",
+          "value": 3
+        },
+        {
+          "name": "ReleaseName",
+          "value": 4
+        },
+        {
+          "name": "JobPriority",
+          "value": 5
+        },
+        {
+          "name": "CreationTime",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Activities.System.Jobs.JobPriority",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Low",
+          "value": 0
+        },
+        {
+          "name": "Normal",
+          "value": 1
+        },
+        {
+          "name": "High",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Activities.System.Jobs.JobFilterLogicalOperator",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "And",
+          "value": 0
+        },
+        {
+          "name": "Or",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Activities.System.Jobs.StringFilterOperator",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Equals",
+          "value": 0
+        },
+        {
+          "name": "EndsWith",
+          "value": 1
+        },
+        {
+          "name": "Contains",
+          "value": 2
+        },
+        {
+          "name": "NotEquals",
+          "value": 3
+        },
+        {
+          "name": "StartsWith",
+          "value": 4
+        },
+        {
+          "name": "NotContains",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Activities.System.Jobs.DateFilterOperator",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NewerThan",
+          "value": 0
+        },
+        {
+          "name": "OlderThan",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Activities.System.Jobs.EnumFilterOperator",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Equals",
+          "value": 0
+        },
+        {
+          "name": "NotEquals",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Activities.System.Jobs.GuidFilterOperator",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Equals",
+          "value": 0
+        },
+        {
+          "name": "NotEquals",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Activities.System.Jobs.JobExecutionMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Busy",
+          "value": 1
+        },
+        {
+          "name": "Suspend",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Activities.System.Jobs.Models.JobTriggerType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "QueueItem",
+          "value": 1
+        },
+        {
+          "name": "Job",
+          "value": 2
+        },
+        {
+          "name": "Task",
+          "value": 3
+        },
+        {
+          "name": "Timer",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Activities.System.Encode.CodePages",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "IBM037",
+          "value": 37
+        },
+        {
+          "name": "IBM437",
+          "value": 437
+        },
+        {
+          "name": "IBM500",
+          "value": 500
+        },
+        {
+          "name": "ASMO_708",
+          "value": 708
+        },
+        {
+          "name": "DOS_720",
+          "value": 720
+        },
+        {
+          "name": "IBM737",
+          "value": 737
+        },
+        {
+          "name": "IBM775",
+          "value": 775
+        },
+        {
+          "name": "IBM850",
+          "value": 850
+        },
+        {
+          "name": "IBM852",
+          "value": 852
+        },
+        {
+          "name": "IBM855",
+          "value": 855
+        },
+        {
+          "name": "IBM857",
+          "value": 857
+        },
+        {
+          "name": "IBM00858",
+          "value": 858
+        },
+        {
+          "name": "IBM860",
+          "value": 860
+        },
+        {
+          "name": "IBM861",
+          "value": 861
+        },
+        {
+          "name": "DOS_862",
+          "value": 862
+        },
+        {
+          "name": "IBM863",
+          "value": 863
+        },
+        {
+          "name": "IBM864",
+          "value": 864
+        },
+        {
+          "name": "IBM865",
+          "value": 865
+        },
+        {
+          "name": "CP866",
+          "value": 866
+        },
+        {
+          "name": "IBM869",
+          "value": 869
+        },
+        {
+          "name": "IBM870",
+          "value": 870
+        },
+        {
+          "name": "WINDOWS_874",
+          "value": 874
+        },
+        {
+          "name": "CP875",
+          "value": 875
+        },
+        {
+          "name": "SHIFT_JIS",
+          "value": 932
+        },
+        {
+          "name": "GB2312",
+          "value": 936
+        },
+        {
+          "name": "KS_C_5601_1987",
+          "value": 949
+        },
+        {
+          "name": "BIG5",
+          "value": 950
+        },
+        {
+          "name": "IBM1026",
+          "value": 1026
+        },
+        {
+          "name": "IBM01047",
+          "value": 1047
+        },
+        {
+          "name": "IBM01140",
+          "value": 1140
+        },
+        {
+          "name": "IBM01141",
+          "value": 1141
+        },
+        {
+          "name": "IBM01142",
+          "value": 1142
+        },
+        {
+          "name": "IBM01143",
+          "value": 1143
+        },
+        {
+          "name": "IBM01144",
+          "value": 1144
+        },
+        {
+          "name": "IBM01145",
+          "value": 1145
+        },
+        {
+          "name": "IBM01146",
+          "value": 1146
+        },
+        {
+          "name": "IBM01147",
+          "value": 1147
+        },
+        {
+          "name": "IBM01148",
+          "value": 1148
+        },
+        {
+          "name": "IBM01149",
+          "value": 1149
+        },
+        {
+          "name": "UTF_16",
+          "value": 1200
+        },
+        {
+          "name": "UTF_16BE",
+          "value": 1201
+        },
+        {
+          "name": "WINDOWS_1250",
+          "value": 1250
+        },
+        {
+          "name": "WINDOWS_1251",
+          "value": 1251
+        },
+        {
+          "name": "WINDOWS_1252",
+          "value": 1252
+        },
+        {
+          "name": "WINDOWS_1253",
+          "value": 1253
+        },
+        {
+          "name": "WINDOWS_1254",
+          "value": 1254
+        },
+        {
+          "name": "WINDOWS_1255",
+          "value": 1255
+        },
+        {
+          "name": "WINDOWS_1256",
+          "value": 1256
+        },
+        {
+          "name": "WINDOWS_1257",
+          "value": 1257
+        },
+        {
+          "name": "WINDOWS_1258",
+          "value": 1258
+        },
+        {
+          "name": "JOHAB",
+          "value": 1361
+        },
+        {
+          "name": "MACINTOSH",
+          "value": 10000
+        },
+        {
+          "name": "X_MAC_JAPANESE",
+          "value": 10001
+        },
+        {
+          "name": "X_MAC_CHINESETRAD",
+          "value": 10002
+        },
+        {
+          "name": "X_MAC_KOREAN",
+          "value": 10003
+        },
+        {
+          "name": "X_MAC_ARABIC",
+          "value": 10004
+        },
+        {
+          "name": "X_MAC_HEBREW",
+          "value": 10005
+        },
+        {
+          "name": "X_MAC_GREEK",
+          "value": 10006
+        },
+        {
+          "name": "X_MAC_CYRILLIC",
+          "value": 10007
+        },
+        {
+          "name": "X_MAC_CHINESESIMP",
+          "value": 10008
+        },
+        {
+          "name": "X_MAC_ROMANIAN",
+          "value": 10010
+        },
+        {
+          "name": "X_MAC_UKRAINIAN",
+          "value": 10017
+        },
+        {
+          "name": "X_MAC_THAI",
+          "value": 10021
+        },
+        {
+          "name": "X_MAC_CE",
+          "value": 10029
+        },
+        {
+          "name": "X_MAC_ICELANDIC",
+          "value": 10079
+        },
+        {
+          "name": "X_MAC_TURKISH",
+          "value": 10081
+        },
+        {
+          "name": "X_MAC_CROATIAN",
+          "value": 10082
+        },
+        {
+          "name": "UTF_32",
+          "value": 12000
+        },
+        {
+          "name": "UTF_32BE",
+          "value": 12001
+        },
+        {
+          "name": "X_CHINESE_CNS",
+          "value": 20000
+        },
+        {
+          "name": "X_CP20001",
+          "value": 20001
+        },
+        {
+          "name": "X_CHINESE_ETEN",
+          "value": 20002
+        },
+        {
+          "name": "X_CP20003",
+          "value": 20003
+        },
+        {
+          "name": "X_CP20004",
+          "value": 20004
+        },
+        {
+          "name": "X_CP20005",
+          "value": 20005
+        },
+        {
+          "name": "X_IA5",
+          "value": 20105
+        },
+        {
+          "name": "X_IA5_GERMAN",
+          "value": 20106
+        },
+        {
+          "name": "X_IA5_SWEDISH",
+          "value": 20107
+        },
+        {
+          "name": "X_IA5_NORWEGIAN",
+          "value": 20108
+        },
+        {
+          "name": "US_ASCII",
+          "value": 20127
+        },
+        {
+          "name": "X_CP20261",
+          "value": 20261
+        },
+        {
+          "name": "X_CP20269",
+          "value": 20269
+        },
+        {
+          "name": "IBM273",
+          "value": 20273
+        },
+        {
+          "name": "IBM277",
+          "value": 20277
+        },
+        {
+          "name": "IBM278",
+          "value": 20278
+        },
+        {
+          "name": "IBM280",
+          "value": 20280
+        },
+        {
+          "name": "IBM284",
+          "value": 20284
+        },
+        {
+          "name": "IBM285",
+          "value": 20285
+        },
+        {
+          "name": "IBM290",
+          "value": 20290
+        },
+        {
+          "name": "IBM297",
+          "value": 20297
+        },
+        {
+          "name": "IBM420",
+          "value": 20420
+        },
+        {
+          "name": "IBM423",
+          "value": 20423
+        },
+        {
+          "name": "IBM424",
+          "value": 20424
+        },
+        {
+          "name": "X_EBCDIC_KOREANEXTENDED",
+          "value": 20833
+        },
+        {
+          "name": "IBM_THAI",
+          "value": 20838
+        },
+        {
+          "name": "KOI8_R",
+          "value": 20866
+        },
+        {
+          "name": "IBM871",
+          "value": 20871
+        },
+        {
+          "name": "IBM880",
+          "value": 20880
+        },
+        {
+          "name": "IBM905",
+          "value": 20905
+        },
+        {
+          "name": "IBM00924",
+          "value": 20924
+        },
+        {
+          "name": "Japanese_JIS0208_1990and0212_1990",
+          "value": 20932
+        },
+        {
+          "name": "X_CP20936",
+          "value": 20936
+        },
+        {
+          "name": "X_CP20949",
+          "value": 20949
+        },
+        {
+          "name": "CP1025",
+          "value": 21025
+        },
+        {
+          "name": "KOI8_U",
+          "value": 21866
+        },
+        {
+          "name": "ISO_8859_1",
+          "value": 28591
+        },
+        {
+          "name": "ISO_8859_2",
+          "value": 28592
+        },
+        {
+          "name": "ISO_8859_3",
+          "value": 28593
+        },
+        {
+          "name": "ISO_8859_4",
+          "value": 28594
+        },
+        {
+          "name": "ISO_8859_5",
+          "value": 28595
+        },
+        {
+          "name": "ISO_8859_6",
+          "value": 28596
+        },
+        {
+          "name": "ISO_8859_7",
+          "value": 28597
+        },
+        {
+          "name": "ISO_8859_8",
+          "value": 28598
+        },
+        {
+          "name": "ISO_8859_9",
+          "value": 28599
+        },
+        {
+          "name": "ISO_8859_13",
+          "value": 28603
+        },
+        {
+          "name": "ISO_8859_15",
+          "value": 28605
+        },
+        {
+          "name": "X_EUROPA",
+          "value": 29001
+        },
+        {
+          "name": "ISO_8859_8_I",
+          "value": 38598
+        },
+        {
+          "name": "ISO_2022_JP",
+          "value": 50220
+        },
+        {
+          "name": "CSISO2022JP",
+          "value": 50221
+        },
+        {
+          "name": "Japanese_JIS_Allow1byteKana_SO_SI",
+          "value": 50222
+        },
+        {
+          "name": "ISO_2022_KR",
+          "value": 50225
+        },
+        {
+          "name": "X_CP50227",
+          "value": 50227
+        },
+        {
+          "name": "EUC_JP",
+          "value": 51932
+        },
+        {
+          "name": "EUC_CN",
+          "value": 51936
+        },
+        {
+          "name": "EUC_KR",
+          "value": 51949
+        },
+        {
+          "name": "HZ_GB_2312",
+          "value": 52936
+        },
+        {
+          "name": "GB18030",
+          "value": 54936
+        },
+        {
+          "name": "X_ISCII_DE",
+          "value": 57002
+        },
+        {
+          "name": "X_ISCII_BE",
+          "value": 57003
+        },
+        {
+          "name": "X_ISCII_TA",
+          "value": 57004
+        },
+        {
+          "name": "X_ISCII_TE",
+          "value": 57005
+        },
+        {
+          "name": "X_ISCII_AS",
+          "value": 57006
+        },
+        {
+          "name": "X_ISCII_OR",
+          "value": 57007
+        },
+        {
+          "name": "X_ISCII_KA",
+          "value": 57008
+        },
+        {
+          "name": "X_ISCII_MA",
+          "value": 57009
+        },
+        {
+          "name": "X_ISCII_GU",
+          "value": 57010
+        },
+        {
+          "name": "X_ISCII_PA",
+          "value": 57011
+        },
+        {
+          "name": "UTF_7",
+          "value": 65000
+        },
+        {
+          "name": "UTF_8",
+          "value": 65001
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Activities.System.Compression.Zip.ArchiveCompressionLevel",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Fast",
+          "value": 1
+        },
+        {
+          "name": "Normal",
+          "value": 2
+        },
+        {
+          "name": "Maximum",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Activities.System.Compression.Zip.ArchiveEncryptionAlgorithm",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Classic",
+          "value": 0
+        },
+        {
+          "name": "AES128",
+          "value": 1
+        },
+        {
+          "name": "AES256",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Activities.System.Collections.Filters.FilterLogicalOperator",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "And",
+          "value": 0
+        },
+        {
+          "name": "Or",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Activities.System.Collections.Filters.FilterAction",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "KeepMatchingElementsOnly",
+          "value": 0
+        },
+        {
+          "name": "RemoveMatchingElements",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Activities.System.Text.ChangeCaseOptions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "LowerCase",
+          "value": 0
+        },
+        {
+          "name": "UpperCase",
+          "value": 1
+        },
+        {
+          "name": "SentenceCase",
+          "value": 2
+        },
+        {
+          "name": "CapitalizeEachWord",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Activities.System.Text.TextExtractOptions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "BetweenStrings",
+          "value": 0
+        },
+        {
+          "name": "Email",
+          "value": 1
+        },
+        {
+          "name": "URLs",
+          "value": 2
+        },
+        {
+          "name": "FromHTML",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Activities.System.Text.SeparatorOptions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Custom",
+          "value": 0
+        },
+        {
+          "name": "NewLine",
+          "value": 1
+        },
+        {
+          "name": "Space",
+          "value": 2
+        },
+        {
+          "name": "Tab",
+          "value": 3
+        },
+        {
+          "name": "Comma",
+          "value": 4
+        },
+        {
+          "name": "Colon",
+          "value": 5
+        },
+        {
+          "name": "SemiColon",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Activities.System.FileOperations.FileConflictBehavior",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Replace",
+          "value": 0
+        },
+        {
+          "name": "Fail",
+          "value": 1
+        },
+        {
+          "name": "Rename",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Activities.System.Date.AddOrSubtractFromDate.DateOperations",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Add",
+          "value": 0
+        },
+        {
+          "name": "Subtract",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Activities.System.Date.GetNextOrPreviousOperations",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Next",
+          "value": 0
+        },
+        {
+          "name": "Previous",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.QueueItemStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "New",
+          "value": 0
+        },
+        {
+          "name": "InProgress",
+          "value": 1
+        },
+        {
+          "name": "Failed",
+          "value": 2
+        },
+        {
+          "name": "Successful",
+          "value": 3
+        },
+        {
+          "name": "Abandoned",
+          "value": 4
+        },
+        {
+          "name": "Retried",
+          "value": 5
+        },
+        {
+          "name": "Deleted",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.ProcessingStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Successful",
+          "value": 3
+        },
+        {
+          "name": "Failed",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.ProcessingExceptionType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ApplicationException",
+          "value": 0
+        },
+        {
+          "name": "BusinessException",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.QueueItemPriority",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "High",
+          "value": 0
+        },
+        {
+          "name": "Normal",
+          "value": 1
+        },
+        {
+          "name": "Low",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.Activities.ForEachFileOrderByOptions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NameAscFirst",
+          "value": 0
+        },
+        {
+          "name": "NameDescFirst",
+          "value": 1
+        },
+        {
+          "name": "CreationDateNewFirst",
+          "value": 2
+        },
+        {
+          "name": "CreationDateOldFirst",
+          "value": 3
+        },
+        {
+          "name": "LastUpdatedDateNewFirst",
+          "value": 4
+        },
+        {
+          "name": "LastUpdatedDateOldFirst",
+          "value": 5
+        },
+        {
+          "name": "SizeSmallestFirst",
+          "value": 6
+        },
+        {
+          "name": "SizeLargestFirst",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.Activities.ForEachFolderOrderByOptions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NameAscFirst",
+          "value": 0
+        },
+        {
+          "name": "NameDescFirst",
+          "value": 1
+        },
+        {
+          "name": "LastUpdatedDateNewFirst",
+          "value": 2
+        },
+        {
+          "name": "LastUpdatedDateOldFirst",
+          "value": 3
+        },
+        {
+          "name": "SizeSmallestFirst",
+          "value": 4
+        },
+        {
+          "name": "SizeLargestFirst",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.Activities.FilterOperator",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "LT",
+          "value": 0
+        },
+        {
+          "name": "GT",
+          "value": 1
+        },
+        {
+          "name": "LTE",
+          "value": 2
+        },
+        {
+          "name": "GTE",
+          "value": 3
+        },
+        {
+          "name": "EQ",
+          "value": 4
+        },
+        {
+          "name": "NOTEQ",
+          "value": 5
+        },
+        {
+          "name": "EMPTY",
+          "value": 6
+        },
+        {
+          "name": "NOTEMPTY",
+          "value": 7
+        },
+        {
+          "name": "STARTSWITH",
+          "value": 8
+        },
+        {
+          "name": "ENDSWITH",
+          "value": 9
+        },
+        {
+          "name": "CONTAINS",
+          "value": 10
+        },
+        {
+          "name": "NOTSTARTSWITH",
+          "value": 11
+        },
+        {
+          "name": "NOTENDSWITH",
+          "value": 12
+        },
+        {
+          "name": "NOTCONTAINS",
+          "value": 13
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.Activities.SelectMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Keep",
+          "value": 0
+        },
+        {
+          "name": "Remove",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.Activities.JoinOperator",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "LT",
+          "value": 0
+        },
+        {
+          "name": "GT",
+          "value": 1
+        },
+        {
+          "name": "LTE",
+          "value": 2
+        },
+        {
+          "name": "GTE",
+          "value": 3
+        },
+        {
+          "name": "EQ",
+          "value": 4
+        },
+        {
+          "name": "NOTEQ",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.Activities.JoinType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Inner",
+          "value": 0
+        },
+        {
+          "name": "Left",
+          "value": 1
+        },
+        {
+          "name": "Full",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.Activities.SortingOrder",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Ascending",
+          "value": 0
+        },
+        {
+          "name": "Decending",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.Activities.SortOrder",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Ascending",
+          "value": 0
+        },
+        {
+          "name": "Descending",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.Activities.KillProcessApplyOn",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "All",
+          "value": 0
+        },
+        {
+          "name": "OnlyCurrentUser",
+          "value": 1
+        },
+        {
+          "name": "OnlyCurrentSession",
+          "value": 2
+        },
+        {
+          "name": "OnlyCurrentDesktop",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.Activities.PathType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "File",
+          "value": 0
+        },
+        {
+          "name": "Folder",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.Activities.AlertSeverity",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Info",
+          "value": 0
+        },
+        {
+          "name": "Success",
+          "value": 1
+        },
+        {
+          "name": "Warning",
+          "value": 2
+        },
+        {
+          "name": "Error",
+          "value": 3
+        },
+        {
+          "name": "Fatal",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.Activities.OrchestratorAPIHttpMethods",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "GET",
+          "value": 0
+        },
+        {
+          "name": "POST",
+          "value": 1
+        },
+        {
+          "name": "PUT",
+          "value": 2
+        },
+        {
+          "name": "PATCH",
+          "value": 3
+        },
+        {
+          "name": "DELETE",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.Activities.CacheStrategyEnum",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Execution",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.Activities.AssetValueType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DBConnectionString",
+          "value": 0
+        },
+        {
+          "name": "HttpConnectionString",
+          "value": 1
+        },
+        {
+          "name": "Text",
+          "value": 2
+        },
+        {
+          "name": "Bool",
+          "value": 3
+        },
+        {
+          "name": "Integer",
+          "value": 4
+        },
+        {
+          "name": "Credential",
+          "value": 5
+        },
+        {
+          "name": "WindowsCredential",
+          "value": 6
+        },
+        {
+          "name": "KeyValueList",
+          "value": 7
+        },
+        {
+          "name": "Secret",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.Activities.ErrorType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Business",
+          "value": 0
+        },
+        {
+          "name": "Application",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.Activities.JobState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Pending",
+          "value": 0
+        },
+        {
+          "name": "Running",
+          "value": 1
+        },
+        {
+          "name": "Stopping",
+          "value": 2
+        },
+        {
+          "name": "Terminating",
+          "value": 3
+        },
+        {
+          "name": "Faulted",
+          "value": 4
+        },
+        {
+          "name": "Successful",
+          "value": 5
+        },
+        {
+          "name": "Stopped",
+          "value": 6
+        },
+        {
+          "name": "Suspended",
+          "value": 7
+        },
+        {
+          "name": "Resumed",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.Activities.StopStrategy",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Stop",
+          "value": 0
+        },
+        {
+          "name": "Kill",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.Activities.BulkAddQueueItems.CommitTypeEnum",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AllOrNothing",
+          "value": 0
+        },
+        {
+          "name": "ProcessAllIndependently",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.Activities.QueueItemStates",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "All",
+          "value": 0
+        },
+        {
+          "name": "New",
+          "value": 1
+        },
+        {
+          "name": "InProgress",
+          "value": 2
+        },
+        {
+          "name": "Failed",
+          "value": 4
+        },
+        {
+          "name": "Successful",
+          "value": 8
+        },
+        {
+          "name": "Abandoned",
+          "value": 16
+        },
+        {
+          "name": "Retried",
+          "value": 32
+        },
+        {
+          "name": "Deleted",
+          "value": 64
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.Activities.ReferenceFilterStrategy",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "StartsWith",
+          "value": 0
+        },
+        {
+          "name": "Equals",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.Activities.ActionSchedulingMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Sequential",
+          "value": 0
+        },
+        {
+          "name": "Concurrent",
+          "value": 1
+        },
+        {
+          "name": "OneTime",
+          "value": 2
+        },
+        {
+          "name": "SequentialCollapse",
+          "value": 3
+        },
+        {
+          "name": "SequentialDrop",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.Activities.BooleanOperator",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "And",
+          "value": 0
+        },
+        {
+          "name": "Or",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.Activities.DateFormat",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DotNetShortDate",
+          "value": 0
+        },
+        {
+          "name": "DotNetLongDate",
+          "value": 1
+        },
+        {
+          "name": "DotNetMonthDay",
+          "value": 2
+        },
+        {
+          "name": "DotNetYearMonth",
+          "value": 3
+        },
+        {
+          "name": "yyyy_MM_dd",
+          "value": 4
+        },
+        {
+          "name": "M_d",
+          "value": 5
+        },
+        {
+          "name": "MM_dd",
+          "value": 6
+        },
+        {
+          "name": "MM_dd_yy",
+          "value": 7
+        },
+        {
+          "name": "MM_dd_yyyy",
+          "value": 8
+        },
+        {
+          "name": "dd_ShortMonth",
+          "value": 9
+        },
+        {
+          "name": "ShortMonth_d",
+          "value": 10
+        },
+        {
+          "name": "LongMonth_d_yyyy",
+          "value": 11
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.Activities.TextToLeftRight.DefaultSeparators",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Custom",
+          "value": 0
+        },
+        {
+          "name": "NewLine",
+          "value": 1
+        },
+        {
+          "name": "Space",
+          "value": 2
+        },
+        {
+          "name": "Tab",
+          "value": 3
+        },
+        {
+          "name": "Comma",
+          "value": 4
+        },
+        {
+          "name": "Colon",
+          "value": 5
+        },
+        {
+          "name": "SemiColon",
+          "value": 6
+        },
+        {
+          "name": "EqualsSign",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.Activities.LogEntryType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "No",
+          "value": 0
+        },
+        {
+          "name": "OnlyInvocation",
+          "value": 1
+        },
+        {
+          "name": "WithArguments",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.Activities.LogExitType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "No",
+          "value": 0
+        },
+        {
+          "name": "OnlySuccessfulReturn",
+          "value": 1
+        },
+        {
+          "name": "WithArguments",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.Activities.InvokeProcessTargetSession",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Current",
+          "value": 0
+        },
+        {
+          "name": "ProcessDefault",
+          "value": 1
+        },
+        {
+          "name": "Main",
+          "value": 2
+        },
+        {
+          "name": "Child",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.Activities.InvokeWorkflowTargetSession",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Current",
+          "value": 0
+        },
+        {
+          "name": "Main",
+          "value": 1
+        },
+        {
+          "name": "Child",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.Activities.IfElseIfBlockType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "If",
+          "value": 0
+        },
+        {
+          "name": "ElseIf",
+          "value": 1
+        },
+        {
+          "name": "Else",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.Activities.NetLanguage",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "VBNet",
+          "value": 0
+        },
+        {
+          "name": "CSharp",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.Activities.LogLevel",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Trace",
+          "value": 16
+        },
+        {
+          "name": "Info",
+          "value": 8
+        },
+        {
+          "name": "Warn",
+          "value": 4
+        },
+        {
+          "name": "Error",
+          "value": 2
+        },
+        {
+          "name": "Fatal",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.Activities.PictureInPictureMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NotSupported",
+          "value": 0
+        },
+        {
+          "name": "Main",
+          "value": 1
+        },
+        {
+          "name": "PictureInPictureSession",
+          "value": 2
+        },
+        {
+          "name": "PictureInPictureDesktop",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.Activities.TimeTrigger.TimeFrequency",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "MinuteByMinute",
+          "value": 0
+        },
+        {
+          "name": "Hourly",
+          "value": 1
+        },
+        {
+          "name": "Daily",
+          "value": 2
+        },
+        {
+          "name": "Weekly",
+          "value": 3
+        },
+        {
+          "name": "Monthly",
+          "value": 4
+        },
+        {
+          "name": "CronExpression",
+          "value": 5
+        },
+        {
+          "name": "SpecificDays",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.Activities.TimeTrigger.MonthDaySelectionType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DayOfMonth",
+          "value": 0
+        },
+        {
+          "name": "DayOfWeek",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.Activities.ButtonOptions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Ok",
+          "value": 0
+        },
+        {
+          "name": "OkCancel",
+          "value": 1
+        },
+        {
+          "name": "YesNo",
+          "value": 4
+        },
+        {
+          "name": "YesNoCancel",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.Activities.DateModifications.DateModification",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "FindDayOfWeek",
+          "value": 0
+        },
+        {
+          "name": "AddSubtractTimePeriod",
+          "value": 1
+        },
+        {
+          "name": "FindStartEnd",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.Activities.DateModifications.ModifyDateOperation",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Add",
+          "value": 1
+        },
+        {
+          "name": "Subtract",
+          "value": -1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.Activities.DateModifications.ModifyDateAddSubtractTimeUnit",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Days",
+          "value": 0
+        },
+        {
+          "name": "Weeks",
+          "value": 1
+        },
+        {
+          "name": "Months",
+          "value": 2
+        },
+        {
+          "name": "Years",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.Activities.DateModifications.FindDayOfWeekDirection",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Previous",
+          "value": -1
+        },
+        {
+          "name": "Next",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.Activities.DateModifications.ModifyDateFirstLastDay",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "LastDay",
+          "value": 1
+        },
+        {
+          "name": "FirstDay",
+          "value": -1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.Activities.DateModifications.ModifyDateFindFirstLastTimeUnit",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Week",
+          "value": 0
+        },
+        {
+          "name": "Month",
+          "value": 1
+        },
+        {
+          "name": "Year",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.Activities.TextModifications.TextModificationsX",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "FindAndReplace",
+          "value": 0
+        },
+        {
+          "name": "CombineText",
+          "value": 1
+        },
+        {
+          "name": "TrimText",
+          "value": 2
+        },
+        {
+          "name": "ToUpperLower",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.Activities.TextModifications.TextInsertionSide",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Before",
+          "value": 0
+        },
+        {
+          "name": "After",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.Activities.TextModifications.UpperLowerModificationType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Uppercase",
+          "value": 0
+        },
+        {
+          "name": "Lowercase",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.Activities.DateTimeUtilities.UnitsOfTime",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Seconds",
+          "value": 0
+        },
+        {
+          "name": "Minutes",
+          "value": 1
+        },
+        {
+          "name": "Hours",
+          "value": 2
+        },
+        {
+          "name": "Days",
+          "value": 3
+        },
+        {
+          "name": "DayOfTheWeek",
+          "value": 4
+        },
+        {
+          "name": "Weeks",
+          "value": 5
+        },
+        {
+          "name": "Months",
+          "value": 6
+        },
+        {
+          "name": "Years",
+          "value": 7
+        }
+      ]
+    }
+  ],
+  "namespaceMappings": [
+    {
+      "xmlNamespace": "http://schemas.uipath.com/workflow/activities",
+      "prefix": "ui",
+      "clrNamespaces": [
+        "UiPath.Orchestrator.Client",
+        "UiPath.Orchestrator.Client.Models"
+      ],
+      "sourceAssembly": "UiPath.OrchestratorClient"
+    },
+    {
+      "xmlNamespace": "http://schemas.uipath.com/workflow/activities",
+      "prefix": "ui",
+      "clrNamespaces": [
+        "UiPath.Core.Activities",
+        "UiPath.Core"
+      ],
+      "sourceAssembly": "UiPath.System.Activities"
+    }
+  ]
+}

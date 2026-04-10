@@ -1,0 +1,3121 @@
+{
+  "schema": {
+    "id": "activity-catalog",
+    "version": "v0.3"
+  },
+  "source": {
+    "kind": "nuget-package",
+    "id": "Microsoft.CodeAnalysis.VisualBasic",
+    "version": "4.5.0-2.22527.10",
+    "feedUrl": null,
+    "authors": "Microsoft",
+    "projectUrl": "https://github.com/dotnet/roslyn",
+    "description": ".NET Compiler Platform (\"Roslyn\") support for Visual Basic, Microsoft.CodeAnalysis.VisualBasic.dll.\n    \n      More details at https://aka.ms/roslyn-packages\n      This package was built from the source at https://github.com/dotnet/roslyn/commit/401447a2c0f805b352d46c2205078c0d8e070f0f.",
+    "license": "MIT",
+    "tags": "Roslyn CodeAnalysis Compiler CSharp VB VisualBasic Parser Scanner Lexer Emit CodeGeneration Metadata IL Compilation Scripting Syntax Semantics",
+    "packageTypes": []
+  },
+  "generatedAt": "2026-04-10T09:21:14Z",
+  "activities": [],
+  "enums": [
+    {
+      "fullName": "Microsoft.CodeAnalysis.VisualBasic.DataFlowPass.SlotKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NotTracked",
+          "value": -1
+        },
+        {
+          "name": "Unreachable",
+          "value": 0
+        },
+        {
+          "name": "FunctionValue",
+          "value": 1
+        },
+        {
+          "name": "FirstAvailable",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.VisualBasic.Binder.DimensionSize.SizeKind",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "Constant",
+          "value": 1
+        },
+        {
+          "name": "NotConstant",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.VisualBasic.Binder.QueryLambdaBinder.JoinConditionSideDeterminationVisitor.Result",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Outer",
+          "value": 1
+        },
+        {
+          "name": "Inner",
+          "value": 2
+        },
+        {
+          "name": "Both",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.VisualBasic.Binder.ModifiedIdentifierTypeDecoderContext",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "LambdaType",
+          "value": 2
+        },
+        {
+          "name": "LocalType",
+          "value": 4
+        },
+        {
+          "name": "FieldType",
+          "value": 8
+        },
+        {
+          "name": "ParameterType",
+          "value": 16
+        },
+        {
+          "name": "QueryRangeVariableType",
+          "value": 32
+        },
+        {
+          "name": "LocalOrFieldType",
+          "value": 12
+        },
+        {
+          "name": "LambdaParameterType",
+          "value": 18
+        },
+        {
+          "name": "StaticLocalType",
+          "value": 64
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.VisualBasic.Binder.ConstantContext",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "ParameterDefaultValue",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.VisualBasic.Syntax.InternalSyntax.Scanner.ConditionalState.BranchTakenState",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "NotTaken",
+          "value": 0
+        },
+        {
+          "name": "Taken",
+          "value": 1
+        },
+        {
+          "name": "AlreadyTaken",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.VisualBasic.Syntax.TypeCharacter",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Integer",
+          "value": 1
+        },
+        {
+          "name": "Long",
+          "value": 2
+        },
+        {
+          "name": "Decimal",
+          "value": 3
+        },
+        {
+          "name": "Single",
+          "value": 4
+        },
+        {
+          "name": "Double",
+          "value": 5
+        },
+        {
+          "name": "String",
+          "value": 6
+        },
+        {
+          "name": "ShortLiteral",
+          "value": 7
+        },
+        {
+          "name": "UShortLiteral",
+          "value": 8
+        },
+        {
+          "name": "IntegerLiteral",
+          "value": 9
+        },
+        {
+          "name": "UIntegerLiteral",
+          "value": 10
+        },
+        {
+          "name": "LongLiteral",
+          "value": 11
+        },
+        {
+          "name": "ULongLiteral",
+          "value": 12
+        },
+        {
+          "name": "SingleLiteral",
+          "value": 13
+        },
+        {
+          "name": "DoubleLiteral",
+          "value": 14
+        },
+        {
+          "name": "DecimalLiteral",
+          "value": 15
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.VisualBasic.Syntax.LiteralBase",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Decimal",
+          "value": 0
+        },
+        {
+          "name": "Hexadecimal",
+          "value": 1
+        },
+        {
+          "name": "Octal",
+          "value": 2
+        },
+        {
+          "name": "Binary",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.VisualBasic.LanguageVersion",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "VisualBasic9",
+          "value": 9
+        },
+        {
+          "name": "VisualBasic10",
+          "value": 10
+        },
+        {
+          "name": "VisualBasic11",
+          "value": 11
+        },
+        {
+          "name": "VisualBasic12",
+          "value": 12
+        },
+        {
+          "name": "VisualBasic14",
+          "value": 14
+        },
+        {
+          "name": "VisualBasic15",
+          "value": 15
+        },
+        {
+          "name": "VisualBasic15_3",
+          "value": 1503
+        },
+        {
+          "name": "VisualBasic15_5",
+          "value": 1505
+        },
+        {
+          "name": "VisualBasic16",
+          "value": 1600
+        },
+        {
+          "name": "VisualBasic16_9",
+          "value": 1609
+        },
+        {
+          "name": "Latest",
+          "value": 2147483647
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.VisualBasic.OptionStrict",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Off",
+          "value": 0
+        },
+        {
+          "name": "Custom",
+          "value": 1
+        },
+        {
+          "name": "On",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.VisualBasic.OverloadResolution.BinaryOperatorTables.TableKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Addition",
+          "value": 0
+        },
+        {
+          "name": "SubtractionMultiplicationModulo",
+          "value": 1
+        },
+        {
+          "name": "Division",
+          "value": 2
+        },
+        {
+          "name": "Power",
+          "value": 3
+        },
+        {
+          "name": "IntegerDivision",
+          "value": 4
+        },
+        {
+          "name": "Shift",
+          "value": 5
+        },
+        {
+          "name": "Logical",
+          "value": 6
+        },
+        {
+          "name": "Bitwise",
+          "value": 7
+        },
+        {
+          "name": "Relational",
+          "value": 8
+        },
+        {
+          "name": "ConcatenationLike",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.VisualBasic.OverloadResolution.CandidateAnalysisResultState",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Applicable",
+          "value": 0
+        },
+        {
+          "name": "HasUnsupportedMetadata",
+          "value": 1
+        },
+        {
+          "name": "HasUseSiteError",
+          "value": 2
+        },
+        {
+          "name": "Ambiguous",
+          "value": 3
+        },
+        {
+          "name": "BadGenericArity",
+          "value": 4
+        },
+        {
+          "name": "ArgumentCountMismatch",
+          "value": 5
+        },
+        {
+          "name": "TypeInferenceFailed",
+          "value": 6
+        },
+        {
+          "name": "ArgumentMismatch",
+          "value": 7
+        },
+        {
+          "name": "GenericConstraintsViolated",
+          "value": 8
+        },
+        {
+          "name": "RequiresNarrowing",
+          "value": 9
+        },
+        {
+          "name": "RequiresNarrowingNotFromObject",
+          "value": 10
+        },
+        {
+          "name": "ExtensionMethodVsInstanceMethod",
+          "value": 11
+        },
+        {
+          "name": "Shadowed",
+          "value": 12
+        },
+        {
+          "name": "LessApplicable",
+          "value": 13
+        },
+        {
+          "name": "ExtensionMethodVsLateBinding",
+          "value": 14
+        },
+        {
+          "name": "Count",
+          "value": 15
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.VisualBasic.TypeArgumentInference.InferenceLevel",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Whidbey",
+          "value": 0
+        },
+        {
+          "name": "Orcas",
+          "value": 1
+        },
+        {
+          "name": "Invalid",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.VisualBasic.TypeArgumentInference.MatchGenericArgumentToParameter",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "MatchBaseOfGenericArgumentToParameter",
+          "value": 0
+        },
+        {
+          "name": "MatchArgumentToBaseOfGenericParameter",
+          "value": 1
+        },
+        {
+          "name": "MatchGenericArgumentToParameterExactly",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.VisualBasic.TypeInferenceCollection`1.HintSatisfaction",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ThroughIdentity",
+          "value": 0
+        },
+        {
+          "name": "ThroughWidening",
+          "value": 1
+        },
+        {
+          "name": "ThroughNarrowing",
+          "value": 2
+        },
+        {
+          "name": "Unsatisfied",
+          "value": 3
+        },
+        {
+          "name": "Count",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.VisualBasic.HandledEventKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Me",
+          "value": 0
+        },
+        {
+          "name": "MyClass",
+          "value": 1
+        },
+        {
+          "name": "MyBase",
+          "value": 2
+        },
+        {
+          "name": "WithEvents",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.VisualBasic.SyntaxKind",
+      "underlyingType": "System.UInt16",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "List",
+          "value": 1
+        },
+        {
+          "name": "EmptyStatement",
+          "value": 2
+        },
+        {
+          "name": "EndIfStatement",
+          "value": 5
+        },
+        {
+          "name": "EndUsingStatement",
+          "value": 6
+        },
+        {
+          "name": "EndWithStatement",
+          "value": 7
+        },
+        {
+          "name": "EndSelectStatement",
+          "value": 8
+        },
+        {
+          "name": "EndStructureStatement",
+          "value": 9
+        },
+        {
+          "name": "EndEnumStatement",
+          "value": 10
+        },
+        {
+          "name": "EndInterfaceStatement",
+          "value": 11
+        },
+        {
+          "name": "EndClassStatement",
+          "value": 12
+        },
+        {
+          "name": "EndModuleStatement",
+          "value": 13
+        },
+        {
+          "name": "EndNamespaceStatement",
+          "value": 14
+        },
+        {
+          "name": "EndSubStatement",
+          "value": 15
+        },
+        {
+          "name": "EndFunctionStatement",
+          "value": 16
+        },
+        {
+          "name": "EndGetStatement",
+          "value": 17
+        },
+        {
+          "name": "EndSetStatement",
+          "value": 18
+        },
+        {
+          "name": "EndPropertyStatement",
+          "value": 19
+        },
+        {
+          "name": "EndOperatorStatement",
+          "value": 20
+        },
+        {
+          "name": "EndEventStatement",
+          "value": 21
+        },
+        {
+          "name": "EndAddHandlerStatement",
+          "value": 22
+        },
+        {
+          "name": "EndRemoveHandlerStatement",
+          "value": 23
+        },
+        {
+          "name": "EndRaiseEventStatement",
+          "value": 24
+        },
+        {
+          "name": "EndWhileStatement",
+          "value": 25
+        },
+        {
+          "name": "EndTryStatement",
+          "value": 26
+        },
+        {
+          "name": "EndSyncLockStatement",
+          "value": 27
+        },
+        {
+          "name": "CompilationUnit",
+          "value": 38
+        },
+        {
+          "name": "OptionStatement",
+          "value": 41
+        },
+        {
+          "name": "ImportsStatement",
+          "value": 42
+        },
+        {
+          "name": "SimpleImportsClause",
+          "value": 44
+        },
+        {
+          "name": "XmlNamespaceImportsClause",
+          "value": 45
+        },
+        {
+          "name": "NamespaceBlock",
+          "value": 48
+        },
+        {
+          "name": "NamespaceStatement",
+          "value": 49
+        },
+        {
+          "name": "ModuleBlock",
+          "value": 50
+        },
+        {
+          "name": "StructureBlock",
+          "value": 51
+        },
+        {
+          "name": "InterfaceBlock",
+          "value": 52
+        },
+        {
+          "name": "ClassBlock",
+          "value": 53
+        },
+        {
+          "name": "EnumBlock",
+          "value": 54
+        },
+        {
+          "name": "InheritsStatement",
+          "value": 57
+        },
+        {
+          "name": "ImplementsStatement",
+          "value": 58
+        },
+        {
+          "name": "ModuleStatement",
+          "value": 59
+        },
+        {
+          "name": "StructureStatement",
+          "value": 60
+        },
+        {
+          "name": "InterfaceStatement",
+          "value": 61
+        },
+        {
+          "name": "ClassStatement",
+          "value": 62
+        },
+        {
+          "name": "EnumStatement",
+          "value": 63
+        },
+        {
+          "name": "TypeParameterList",
+          "value": 66
+        },
+        {
+          "name": "TypeParameter",
+          "value": 67
+        },
+        {
+          "name": "TypeParameterSingleConstraintClause",
+          "value": 70
+        },
+        {
+          "name": "TypeParameterMultipleConstraintClause",
+          "value": 71
+        },
+        {
+          "name": "NewConstraint",
+          "value": 72
+        },
+        {
+          "name": "ClassConstraint",
+          "value": 73
+        },
+        {
+          "name": "StructureConstraint",
+          "value": 74
+        },
+        {
+          "name": "TypeConstraint",
+          "value": 75
+        },
+        {
+          "name": "EnumMemberDeclaration",
+          "value": 78
+        },
+        {
+          "name": "SubBlock",
+          "value": 79
+        },
+        {
+          "name": "FunctionBlock",
+          "value": 80
+        },
+        {
+          "name": "ConstructorBlock",
+          "value": 81
+        },
+        {
+          "name": "OperatorBlock",
+          "value": 82
+        },
+        {
+          "name": "GetAccessorBlock",
+          "value": 83
+        },
+        {
+          "name": "SetAccessorBlock",
+          "value": 84
+        },
+        {
+          "name": "AddHandlerAccessorBlock",
+          "value": 85
+        },
+        {
+          "name": "RemoveHandlerAccessorBlock",
+          "value": 86
+        },
+        {
+          "name": "RaiseEventAccessorBlock",
+          "value": 87
+        },
+        {
+          "name": "PropertyBlock",
+          "value": 88
+        },
+        {
+          "name": "EventBlock",
+          "value": 89
+        },
+        {
+          "name": "ParameterList",
+          "value": 92
+        },
+        {
+          "name": "SubStatement",
+          "value": 93
+        },
+        {
+          "name": "FunctionStatement",
+          "value": 94
+        },
+        {
+          "name": "SubNewStatement",
+          "value": 95
+        },
+        {
+          "name": "DeclareSubStatement",
+          "value": 96
+        },
+        {
+          "name": "DeclareFunctionStatement",
+          "value": 97
+        },
+        {
+          "name": "DelegateSubStatement",
+          "value": 98
+        },
+        {
+          "name": "DelegateFunctionStatement",
+          "value": 99
+        },
+        {
+          "name": "EventStatement",
+          "value": 102
+        },
+        {
+          "name": "OperatorStatement",
+          "value": 103
+        },
+        {
+          "name": "PropertyStatement",
+          "value": 104
+        },
+        {
+          "name": "GetAccessorStatement",
+          "value": 105
+        },
+        {
+          "name": "SetAccessorStatement",
+          "value": 106
+        },
+        {
+          "name": "AddHandlerAccessorStatement",
+          "value": 107
+        },
+        {
+          "name": "RemoveHandlerAccessorStatement",
+          "value": 108
+        },
+        {
+          "name": "RaiseEventAccessorStatement",
+          "value": 111
+        },
+        {
+          "name": "ImplementsClause",
+          "value": 112
+        },
+        {
+          "name": "HandlesClause",
+          "value": 113
+        },
+        {
+          "name": "KeywordEventContainer",
+          "value": 114
+        },
+        {
+          "name": "WithEventsEventContainer",
+          "value": 115
+        },
+        {
+          "name": "WithEventsPropertyEventContainer",
+          "value": 116
+        },
+        {
+          "name": "HandlesClauseItem",
+          "value": 117
+        },
+        {
+          "name": "IncompleteMember",
+          "value": 118
+        },
+        {
+          "name": "FieldDeclaration",
+          "value": 119
+        },
+        {
+          "name": "VariableDeclarator",
+          "value": 122
+        },
+        {
+          "name": "SimpleAsClause",
+          "value": 123
+        },
+        {
+          "name": "AsNewClause",
+          "value": 124
+        },
+        {
+          "name": "ObjectMemberInitializer",
+          "value": 125
+        },
+        {
+          "name": "ObjectCollectionInitializer",
+          "value": 126
+        },
+        {
+          "name": "InferredFieldInitializer",
+          "value": 127
+        },
+        {
+          "name": "NamedFieldInitializer",
+          "value": 128
+        },
+        {
+          "name": "EqualsValue",
+          "value": 129
+        },
+        {
+          "name": "Parameter",
+          "value": 132
+        },
+        {
+          "name": "ModifiedIdentifier",
+          "value": 133
+        },
+        {
+          "name": "ArrayRankSpecifier",
+          "value": 134
+        },
+        {
+          "name": "AttributeList",
+          "value": 135
+        },
+        {
+          "name": "Attribute",
+          "value": 136
+        },
+        {
+          "name": "AttributeTarget",
+          "value": 137
+        },
+        {
+          "name": "AttributesStatement",
+          "value": 138
+        },
+        {
+          "name": "ExpressionStatement",
+          "value": 139
+        },
+        {
+          "name": "PrintStatement",
+          "value": 140
+        },
+        {
+          "name": "WhileBlock",
+          "value": 141
+        },
+        {
+          "name": "UsingBlock",
+          "value": 144
+        },
+        {
+          "name": "SyncLockBlock",
+          "value": 145
+        },
+        {
+          "name": "WithBlock",
+          "value": 146
+        },
+        {
+          "name": "LocalDeclarationStatement",
+          "value": 147
+        },
+        {
+          "name": "LabelStatement",
+          "value": 148
+        },
+        {
+          "name": "GoToStatement",
+          "value": 149
+        },
+        {
+          "name": "IdentifierLabel",
+          "value": 150
+        },
+        {
+          "name": "NumericLabel",
+          "value": 151
+        },
+        {
+          "name": "NextLabel",
+          "value": 152
+        },
+        {
+          "name": "StopStatement",
+          "value": 153
+        },
+        {
+          "name": "EndStatement",
+          "value": 156
+        },
+        {
+          "name": "ExitDoStatement",
+          "value": 157
+        },
+        {
+          "name": "ExitForStatement",
+          "value": 158
+        },
+        {
+          "name": "ExitSubStatement",
+          "value": 159
+        },
+        {
+          "name": "ExitFunctionStatement",
+          "value": 160
+        },
+        {
+          "name": "ExitOperatorStatement",
+          "value": 161
+        },
+        {
+          "name": "ExitPropertyStatement",
+          "value": 162
+        },
+        {
+          "name": "ExitTryStatement",
+          "value": 163
+        },
+        {
+          "name": "ExitSelectStatement",
+          "value": 164
+        },
+        {
+          "name": "ExitWhileStatement",
+          "value": 165
+        },
+        {
+          "name": "ContinueWhileStatement",
+          "value": 166
+        },
+        {
+          "name": "ContinueDoStatement",
+          "value": 167
+        },
+        {
+          "name": "ContinueForStatement",
+          "value": 168
+        },
+        {
+          "name": "ReturnStatement",
+          "value": 169
+        },
+        {
+          "name": "SingleLineIfStatement",
+          "value": 170
+        },
+        {
+          "name": "SingleLineIfPart",
+          "value": 171
+        },
+        {
+          "name": "SingleLineElseClause",
+          "value": 172
+        },
+        {
+          "name": "MultiLineIfBlock",
+          "value": 173
+        },
+        {
+          "name": "ElseIfBlock",
+          "value": 180
+        },
+        {
+          "name": "ElseBlock",
+          "value": 181
+        },
+        {
+          "name": "IfStatement",
+          "value": 182
+        },
+        {
+          "name": "ElseIfStatement",
+          "value": 183
+        },
+        {
+          "name": "ElseStatement",
+          "value": 184
+        },
+        {
+          "name": "TryBlock",
+          "value": 185
+        },
+        {
+          "name": "CatchBlock",
+          "value": 187
+        },
+        {
+          "name": "FinallyBlock",
+          "value": 188
+        },
+        {
+          "name": "TryStatement",
+          "value": 189
+        },
+        {
+          "name": "CatchStatement",
+          "value": 190
+        },
+        {
+          "name": "CatchFilterClause",
+          "value": 191
+        },
+        {
+          "name": "FinallyStatement",
+          "value": 194
+        },
+        {
+          "name": "ErrorStatement",
+          "value": 195
+        },
+        {
+          "name": "OnErrorGoToZeroStatement",
+          "value": 196
+        },
+        {
+          "name": "OnErrorGoToMinusOneStatement",
+          "value": 197
+        },
+        {
+          "name": "OnErrorGoToLabelStatement",
+          "value": 198
+        },
+        {
+          "name": "OnErrorResumeNextStatement",
+          "value": 199
+        },
+        {
+          "name": "ResumeStatement",
+          "value": 200
+        },
+        {
+          "name": "ResumeLabelStatement",
+          "value": 201
+        },
+        {
+          "name": "ResumeNextStatement",
+          "value": 202
+        },
+        {
+          "name": "SelectBlock",
+          "value": 203
+        },
+        {
+          "name": "SelectStatement",
+          "value": 204
+        },
+        {
+          "name": "CaseBlock",
+          "value": 207
+        },
+        {
+          "name": "CaseElseBlock",
+          "value": 210
+        },
+        {
+          "name": "CaseStatement",
+          "value": 211
+        },
+        {
+          "name": "CaseElseStatement",
+          "value": 212
+        },
+        {
+          "name": "ElseCaseClause",
+          "value": 213
+        },
+        {
+          "name": "SimpleCaseClause",
+          "value": 214
+        },
+        {
+          "name": "RangeCaseClause",
+          "value": 215
+        },
+        {
+          "name": "CaseEqualsClause",
+          "value": 216
+        },
+        {
+          "name": "CaseNotEqualsClause",
+          "value": 217
+        },
+        {
+          "name": "CaseLessThanClause",
+          "value": 218
+        },
+        {
+          "name": "CaseLessThanOrEqualClause",
+          "value": 219
+        },
+        {
+          "name": "CaseGreaterThanOrEqualClause",
+          "value": 222
+        },
+        {
+          "name": "CaseGreaterThanClause",
+          "value": 223
+        },
+        {
+          "name": "SyncLockStatement",
+          "value": 226
+        },
+        {
+          "name": "WhileStatement",
+          "value": 234
+        },
+        {
+          "name": "ForBlock",
+          "value": 237
+        },
+        {
+          "name": "ForEachBlock",
+          "value": 238
+        },
+        {
+          "name": "ForStatement",
+          "value": 239
+        },
+        {
+          "name": "ForStepClause",
+          "value": 240
+        },
+        {
+          "name": "ForEachStatement",
+          "value": 241
+        },
+        {
+          "name": "NextStatement",
+          "value": 242
+        },
+        {
+          "name": "UsingStatement",
+          "value": 243
+        },
+        {
+          "name": "ThrowStatement",
+          "value": 246
+        },
+        {
+          "name": "SimpleAssignmentStatement",
+          "value": 247
+        },
+        {
+          "name": "MidAssignmentStatement",
+          "value": 248
+        },
+        {
+          "name": "AddAssignmentStatement",
+          "value": 249
+        },
+        {
+          "name": "SubtractAssignmentStatement",
+          "value": 250
+        },
+        {
+          "name": "MultiplyAssignmentStatement",
+          "value": 251
+        },
+        {
+          "name": "DivideAssignmentStatement",
+          "value": 252
+        },
+        {
+          "name": "IntegerDivideAssignmentStatement",
+          "value": 253
+        },
+        {
+          "name": "ExponentiateAssignmentStatement",
+          "value": 254
+        },
+        {
+          "name": "LeftShiftAssignmentStatement",
+          "value": 255
+        },
+        {
+          "name": "RightShiftAssignmentStatement",
+          "value": 258
+        },
+        {
+          "name": "ConcatenateAssignmentStatement",
+          "value": 259
+        },
+        {
+          "name": "MidExpression",
+          "value": 260
+        },
+        {
+          "name": "CallStatement",
+          "value": 261
+        },
+        {
+          "name": "AddHandlerStatement",
+          "value": 262
+        },
+        {
+          "name": "RemoveHandlerStatement",
+          "value": 263
+        },
+        {
+          "name": "RaiseEventStatement",
+          "value": 264
+        },
+        {
+          "name": "WithStatement",
+          "value": 265
+        },
+        {
+          "name": "ReDimStatement",
+          "value": 266
+        },
+        {
+          "name": "ReDimPreserveStatement",
+          "value": 267
+        },
+        {
+          "name": "RedimClause",
+          "value": 270
+        },
+        {
+          "name": "EraseStatement",
+          "value": 271
+        },
+        {
+          "name": "CharacterLiteralExpression",
+          "value": 272
+        },
+        {
+          "name": "TrueLiteralExpression",
+          "value": 273
+        },
+        {
+          "name": "FalseLiteralExpression",
+          "value": 274
+        },
+        {
+          "name": "NumericLiteralExpression",
+          "value": 275
+        },
+        {
+          "name": "DateLiteralExpression",
+          "value": 276
+        },
+        {
+          "name": "StringLiteralExpression",
+          "value": 279
+        },
+        {
+          "name": "NothingLiteralExpression",
+          "value": 280
+        },
+        {
+          "name": "ParenthesizedExpression",
+          "value": 281
+        },
+        {
+          "name": "MeExpression",
+          "value": 282
+        },
+        {
+          "name": "MyBaseExpression",
+          "value": 283
+        },
+        {
+          "name": "MyClassExpression",
+          "value": 284
+        },
+        {
+          "name": "GetTypeExpression",
+          "value": 285
+        },
+        {
+          "name": "TypeOfIsExpression",
+          "value": 286
+        },
+        {
+          "name": "TypeOfIsNotExpression",
+          "value": 287
+        },
+        {
+          "name": "GetXmlNamespaceExpression",
+          "value": 290
+        },
+        {
+          "name": "SimpleMemberAccessExpression",
+          "value": 291
+        },
+        {
+          "name": "DictionaryAccessExpression",
+          "value": 292
+        },
+        {
+          "name": "XmlElementAccessExpression",
+          "value": 293
+        },
+        {
+          "name": "XmlDescendantAccessExpression",
+          "value": 294
+        },
+        {
+          "name": "XmlAttributeAccessExpression",
+          "value": 295
+        },
+        {
+          "name": "InvocationExpression",
+          "value": 296
+        },
+        {
+          "name": "ObjectCreationExpression",
+          "value": 297
+        },
+        {
+          "name": "AnonymousObjectCreationExpression",
+          "value": 298
+        },
+        {
+          "name": "ArrayCreationExpression",
+          "value": 301
+        },
+        {
+          "name": "CollectionInitializer",
+          "value": 302
+        },
+        {
+          "name": "CTypeExpression",
+          "value": 303
+        },
+        {
+          "name": "DirectCastExpression",
+          "value": 304
+        },
+        {
+          "name": "TryCastExpression",
+          "value": 305
+        },
+        {
+          "name": "PredefinedCastExpression",
+          "value": 306
+        },
+        {
+          "name": "AddExpression",
+          "value": 307
+        },
+        {
+          "name": "SubtractExpression",
+          "value": 308
+        },
+        {
+          "name": "MultiplyExpression",
+          "value": 309
+        },
+        {
+          "name": "DivideExpression",
+          "value": 310
+        },
+        {
+          "name": "IntegerDivideExpression",
+          "value": 311
+        },
+        {
+          "name": "ExponentiateExpression",
+          "value": 314
+        },
+        {
+          "name": "LeftShiftExpression",
+          "value": 315
+        },
+        {
+          "name": "RightShiftExpression",
+          "value": 316
+        },
+        {
+          "name": "ConcatenateExpression",
+          "value": 317
+        },
+        {
+          "name": "ModuloExpression",
+          "value": 318
+        },
+        {
+          "name": "EqualsExpression",
+          "value": 319
+        },
+        {
+          "name": "NotEqualsExpression",
+          "value": 320
+        },
+        {
+          "name": "LessThanExpression",
+          "value": 321
+        },
+        {
+          "name": "LessThanOrEqualExpression",
+          "value": 322
+        },
+        {
+          "name": "GreaterThanOrEqualExpression",
+          "value": 323
+        },
+        {
+          "name": "GreaterThanExpression",
+          "value": 324
+        },
+        {
+          "name": "IsExpression",
+          "value": 325
+        },
+        {
+          "name": "IsNotExpression",
+          "value": 326
+        },
+        {
+          "name": "LikeExpression",
+          "value": 327
+        },
+        {
+          "name": "OrExpression",
+          "value": 328
+        },
+        {
+          "name": "ExclusiveOrExpression",
+          "value": 329
+        },
+        {
+          "name": "AndExpression",
+          "value": 330
+        },
+        {
+          "name": "OrElseExpression",
+          "value": 331
+        },
+        {
+          "name": "AndAlsoExpression",
+          "value": 332
+        },
+        {
+          "name": "UnaryPlusExpression",
+          "value": 333
+        },
+        {
+          "name": "UnaryMinusExpression",
+          "value": 334
+        },
+        {
+          "name": "NotExpression",
+          "value": 335
+        },
+        {
+          "name": "AddressOfExpression",
+          "value": 336
+        },
+        {
+          "name": "BinaryConditionalExpression",
+          "value": 337
+        },
+        {
+          "name": "TernaryConditionalExpression",
+          "value": 338
+        },
+        {
+          "name": "SingleLineFunctionLambdaExpression",
+          "value": 339
+        },
+        {
+          "name": "SingleLineSubLambdaExpression",
+          "value": 342
+        },
+        {
+          "name": "MultiLineFunctionLambdaExpression",
+          "value": 343
+        },
+        {
+          "name": "MultiLineSubLambdaExpression",
+          "value": 344
+        },
+        {
+          "name": "SubLambdaHeader",
+          "value": 345
+        },
+        {
+          "name": "FunctionLambdaHeader",
+          "value": 346
+        },
+        {
+          "name": "ArgumentList",
+          "value": 347
+        },
+        {
+          "name": "OmittedArgument",
+          "value": 348
+        },
+        {
+          "name": "SimpleArgument",
+          "value": 349
+        },
+        {
+          "name": "RangeArgument",
+          "value": 351
+        },
+        {
+          "name": "QueryExpression",
+          "value": 352
+        },
+        {
+          "name": "CollectionRangeVariable",
+          "value": 353
+        },
+        {
+          "name": "ExpressionRangeVariable",
+          "value": 354
+        },
+        {
+          "name": "AggregationRangeVariable",
+          "value": 355
+        },
+        {
+          "name": "VariableNameEquals",
+          "value": 356
+        },
+        {
+          "name": "FunctionAggregation",
+          "value": 357
+        },
+        {
+          "name": "GroupAggregation",
+          "value": 358
+        },
+        {
+          "name": "FromClause",
+          "value": 359
+        },
+        {
+          "name": "LetClause",
+          "value": 360
+        },
+        {
+          "name": "AggregateClause",
+          "value": 361
+        },
+        {
+          "name": "DistinctClause",
+          "value": 362
+        },
+        {
+          "name": "WhereClause",
+          "value": 363
+        },
+        {
+          "name": "SkipWhileClause",
+          "value": 364
+        },
+        {
+          "name": "TakeWhileClause",
+          "value": 365
+        },
+        {
+          "name": "SkipClause",
+          "value": 366
+        },
+        {
+          "name": "TakeClause",
+          "value": 367
+        },
+        {
+          "name": "GroupByClause",
+          "value": 368
+        },
+        {
+          "name": "JoinCondition",
+          "value": 369
+        },
+        {
+          "name": "SimpleJoinClause",
+          "value": 370
+        },
+        {
+          "name": "GroupJoinClause",
+          "value": 371
+        },
+        {
+          "name": "OrderByClause",
+          "value": 372
+        },
+        {
+          "name": "AscendingOrdering",
+          "value": 375
+        },
+        {
+          "name": "DescendingOrdering",
+          "value": 376
+        },
+        {
+          "name": "SelectClause",
+          "value": 377
+        },
+        {
+          "name": "XmlDocument",
+          "value": 378
+        },
+        {
+          "name": "XmlDeclaration",
+          "value": 379
+        },
+        {
+          "name": "XmlDeclarationOption",
+          "value": 380
+        },
+        {
+          "name": "XmlElement",
+          "value": 381
+        },
+        {
+          "name": "XmlText",
+          "value": 382
+        },
+        {
+          "name": "XmlElementStartTag",
+          "value": 383
+        },
+        {
+          "name": "XmlElementEndTag",
+          "value": 384
+        },
+        {
+          "name": "XmlEmptyElement",
+          "value": 385
+        },
+        {
+          "name": "XmlAttribute",
+          "value": 386
+        },
+        {
+          "name": "XmlString",
+          "value": 387
+        },
+        {
+          "name": "XmlPrefixName",
+          "value": 388
+        },
+        {
+          "name": "XmlName",
+          "value": 389
+        },
+        {
+          "name": "XmlBracketedName",
+          "value": 390
+        },
+        {
+          "name": "XmlPrefix",
+          "value": 391
+        },
+        {
+          "name": "XmlComment",
+          "value": 392
+        },
+        {
+          "name": "XmlProcessingInstruction",
+          "value": 393
+        },
+        {
+          "name": "XmlCDataSection",
+          "value": 394
+        },
+        {
+          "name": "XmlEmbeddedExpression",
+          "value": 395
+        },
+        {
+          "name": "ArrayType",
+          "value": 396
+        },
+        {
+          "name": "NullableType",
+          "value": 397
+        },
+        {
+          "name": "PredefinedType",
+          "value": 398
+        },
+        {
+          "name": "IdentifierName",
+          "value": 399
+        },
+        {
+          "name": "GenericName",
+          "value": 400
+        },
+        {
+          "name": "QualifiedName",
+          "value": 401
+        },
+        {
+          "name": "GlobalName",
+          "value": 402
+        },
+        {
+          "name": "TypeArgumentList",
+          "value": 403
+        },
+        {
+          "name": "CrefReference",
+          "value": 404
+        },
+        {
+          "name": "CrefSignature",
+          "value": 407
+        },
+        {
+          "name": "CrefSignaturePart",
+          "value": 408
+        },
+        {
+          "name": "CrefOperatorReference",
+          "value": 409
+        },
+        {
+          "name": "QualifiedCrefOperatorReference",
+          "value": 410
+        },
+        {
+          "name": "YieldStatement",
+          "value": 411
+        },
+        {
+          "name": "AwaitExpression",
+          "value": 412
+        },
+        {
+          "name": "AddHandlerKeyword",
+          "value": 413
+        },
+        {
+          "name": "AddressOfKeyword",
+          "value": 414
+        },
+        {
+          "name": "AliasKeyword",
+          "value": 415
+        },
+        {
+          "name": "AndKeyword",
+          "value": 416
+        },
+        {
+          "name": "AndAlsoKeyword",
+          "value": 417
+        },
+        {
+          "name": "AsKeyword",
+          "value": 418
+        },
+        {
+          "name": "BooleanKeyword",
+          "value": 421
+        },
+        {
+          "name": "ByRefKeyword",
+          "value": 422
+        },
+        {
+          "name": "ByteKeyword",
+          "value": 423
+        },
+        {
+          "name": "ByValKeyword",
+          "value": 424
+        },
+        {
+          "name": "CallKeyword",
+          "value": 425
+        },
+        {
+          "name": "CaseKeyword",
+          "value": 426
+        },
+        {
+          "name": "CatchKeyword",
+          "value": 427
+        },
+        {
+          "name": "CBoolKeyword",
+          "value": 428
+        },
+        {
+          "name": "CByteKeyword",
+          "value": 429
+        },
+        {
+          "name": "CCharKeyword",
+          "value": 432
+        },
+        {
+          "name": "CDateKeyword",
+          "value": 433
+        },
+        {
+          "name": "CDecKeyword",
+          "value": 434
+        },
+        {
+          "name": "CDblKeyword",
+          "value": 435
+        },
+        {
+          "name": "CharKeyword",
+          "value": 436
+        },
+        {
+          "name": "CIntKeyword",
+          "value": 437
+        },
+        {
+          "name": "ClassKeyword",
+          "value": 438
+        },
+        {
+          "name": "CLngKeyword",
+          "value": 439
+        },
+        {
+          "name": "CObjKeyword",
+          "value": 440
+        },
+        {
+          "name": "ConstKeyword",
+          "value": 441
+        },
+        {
+          "name": "ReferenceKeyword",
+          "value": 442
+        },
+        {
+          "name": "ContinueKeyword",
+          "value": 443
+        },
+        {
+          "name": "CSByteKeyword",
+          "value": 444
+        },
+        {
+          "name": "CShortKeyword",
+          "value": 445
+        },
+        {
+          "name": "CSngKeyword",
+          "value": 446
+        },
+        {
+          "name": "CStrKeyword",
+          "value": 447
+        },
+        {
+          "name": "CTypeKeyword",
+          "value": 448
+        },
+        {
+          "name": "CUIntKeyword",
+          "value": 449
+        },
+        {
+          "name": "CULngKeyword",
+          "value": 450
+        },
+        {
+          "name": "CUShortKeyword",
+          "value": 453
+        },
+        {
+          "name": "DateKeyword",
+          "value": 454
+        },
+        {
+          "name": "DecimalKeyword",
+          "value": 455
+        },
+        {
+          "name": "DeclareKeyword",
+          "value": 456
+        },
+        {
+          "name": "DefaultKeyword",
+          "value": 457
+        },
+        {
+          "name": "DelegateKeyword",
+          "value": 458
+        },
+        {
+          "name": "DimKeyword",
+          "value": 459
+        },
+        {
+          "name": "DirectCastKeyword",
+          "value": 460
+        },
+        {
+          "name": "DoKeyword",
+          "value": 461
+        },
+        {
+          "name": "DoubleKeyword",
+          "value": 462
+        },
+        {
+          "name": "EachKeyword",
+          "value": 463
+        },
+        {
+          "name": "ElseKeyword",
+          "value": 464
+        },
+        {
+          "name": "ElseIfKeyword",
+          "value": 465
+        },
+        {
+          "name": "EndKeyword",
+          "value": 466
+        },
+        {
+          "name": "EnumKeyword",
+          "value": 467
+        },
+        {
+          "name": "EraseKeyword",
+          "value": 468
+        },
+        {
+          "name": "ErrorKeyword",
+          "value": 469
+        },
+        {
+          "name": "EventKeyword",
+          "value": 470
+        },
+        {
+          "name": "ExitKeyword",
+          "value": 471
+        },
+        {
+          "name": "FalseKeyword",
+          "value": 474
+        },
+        {
+          "name": "FinallyKeyword",
+          "value": 475
+        },
+        {
+          "name": "ForKeyword",
+          "value": 476
+        },
+        {
+          "name": "FriendKeyword",
+          "value": 477
+        },
+        {
+          "name": "FunctionKeyword",
+          "value": 478
+        },
+        {
+          "name": "GetKeyword",
+          "value": 479
+        },
+        {
+          "name": "GetTypeKeyword",
+          "value": 480
+        },
+        {
+          "name": "GetXmlNamespaceKeyword",
+          "value": 481
+        },
+        {
+          "name": "GlobalKeyword",
+          "value": 482
+        },
+        {
+          "name": "GoToKeyword",
+          "value": 483
+        },
+        {
+          "name": "HandlesKeyword",
+          "value": 484
+        },
+        {
+          "name": "IfKeyword",
+          "value": 485
+        },
+        {
+          "name": "ImplementsKeyword",
+          "value": 486
+        },
+        {
+          "name": "ImportsKeyword",
+          "value": 487
+        },
+        {
+          "name": "InKeyword",
+          "value": 488
+        },
+        {
+          "name": "InheritsKeyword",
+          "value": 489
+        },
+        {
+          "name": "IntegerKeyword",
+          "value": 490
+        },
+        {
+          "name": "InterfaceKeyword",
+          "value": 491
+        },
+        {
+          "name": "IsKeyword",
+          "value": 492
+        },
+        {
+          "name": "IsNotKeyword",
+          "value": 495
+        },
+        {
+          "name": "LetKeyword",
+          "value": 496
+        },
+        {
+          "name": "LibKeyword",
+          "value": 497
+        },
+        {
+          "name": "LikeKeyword",
+          "value": 498
+        },
+        {
+          "name": "LongKeyword",
+          "value": 499
+        },
+        {
+          "name": "LoopKeyword",
+          "value": 500
+        },
+        {
+          "name": "MeKeyword",
+          "value": 501
+        },
+        {
+          "name": "ModKeyword",
+          "value": 502
+        },
+        {
+          "name": "ModuleKeyword",
+          "value": 503
+        },
+        {
+          "name": "MustInheritKeyword",
+          "value": 504
+        },
+        {
+          "name": "MustOverrideKeyword",
+          "value": 505
+        },
+        {
+          "name": "MyBaseKeyword",
+          "value": 506
+        },
+        {
+          "name": "MyClassKeyword",
+          "value": 507
+        },
+        {
+          "name": "NamespaceKeyword",
+          "value": 508
+        },
+        {
+          "name": "NarrowingKeyword",
+          "value": 509
+        },
+        {
+          "name": "NextKeyword",
+          "value": 510
+        },
+        {
+          "name": "NewKeyword",
+          "value": 511
+        },
+        {
+          "name": "NotKeyword",
+          "value": 512
+        },
+        {
+          "name": "NothingKeyword",
+          "value": 513
+        },
+        {
+          "name": "NotInheritableKeyword",
+          "value": 516
+        },
+        {
+          "name": "NotOverridableKeyword",
+          "value": 517
+        },
+        {
+          "name": "ObjectKeyword",
+          "value": 518
+        },
+        {
+          "name": "OfKeyword",
+          "value": 519
+        },
+        {
+          "name": "OnKeyword",
+          "value": 520
+        },
+        {
+          "name": "OperatorKeyword",
+          "value": 521
+        },
+        {
+          "name": "OptionKeyword",
+          "value": 522
+        },
+        {
+          "name": "OptionalKeyword",
+          "value": 523
+        },
+        {
+          "name": "OrKeyword",
+          "value": 524
+        },
+        {
+          "name": "OrElseKeyword",
+          "value": 525
+        },
+        {
+          "name": "OverloadsKeyword",
+          "value": 526
+        },
+        {
+          "name": "OverridableKeyword",
+          "value": 527
+        },
+        {
+          "name": "OverridesKeyword",
+          "value": 528
+        },
+        {
+          "name": "ParamArrayKeyword",
+          "value": 529
+        },
+        {
+          "name": "PartialKeyword",
+          "value": 530
+        },
+        {
+          "name": "PrivateKeyword",
+          "value": 531
+        },
+        {
+          "name": "PropertyKeyword",
+          "value": 532
+        },
+        {
+          "name": "ProtectedKeyword",
+          "value": 533
+        },
+        {
+          "name": "PublicKeyword",
+          "value": 534
+        },
+        {
+          "name": "RaiseEventKeyword",
+          "value": 537
+        },
+        {
+          "name": "ReadOnlyKeyword",
+          "value": 538
+        },
+        {
+          "name": "ReDimKeyword",
+          "value": 539
+        },
+        {
+          "name": "REMKeyword",
+          "value": 540
+        },
+        {
+          "name": "RemoveHandlerKeyword",
+          "value": 541
+        },
+        {
+          "name": "ResumeKeyword",
+          "value": 542
+        },
+        {
+          "name": "ReturnKeyword",
+          "value": 543
+        },
+        {
+          "name": "SByteKeyword",
+          "value": 544
+        },
+        {
+          "name": "SelectKeyword",
+          "value": 545
+        },
+        {
+          "name": "SetKeyword",
+          "value": 546
+        },
+        {
+          "name": "ShadowsKeyword",
+          "value": 547
+        },
+        {
+          "name": "SharedKeyword",
+          "value": 548
+        },
+        {
+          "name": "ShortKeyword",
+          "value": 549
+        },
+        {
+          "name": "SingleKeyword",
+          "value": 550
+        },
+        {
+          "name": "StaticKeyword",
+          "value": 551
+        },
+        {
+          "name": "StepKeyword",
+          "value": 552
+        },
+        {
+          "name": "StopKeyword",
+          "value": 553
+        },
+        {
+          "name": "StringKeyword",
+          "value": 554
+        },
+        {
+          "name": "StructureKeyword",
+          "value": 555
+        },
+        {
+          "name": "SubKeyword",
+          "value": 558
+        },
+        {
+          "name": "SyncLockKeyword",
+          "value": 559
+        },
+        {
+          "name": "ThenKeyword",
+          "value": 560
+        },
+        {
+          "name": "ThrowKeyword",
+          "value": 561
+        },
+        {
+          "name": "ToKeyword",
+          "value": 562
+        },
+        {
+          "name": "TrueKeyword",
+          "value": 563
+        },
+        {
+          "name": "TryKeyword",
+          "value": 564
+        },
+        {
+          "name": "TryCastKeyword",
+          "value": 565
+        },
+        {
+          "name": "TypeOfKeyword",
+          "value": 566
+        },
+        {
+          "name": "UIntegerKeyword",
+          "value": 567
+        },
+        {
+          "name": "ULongKeyword",
+          "value": 568
+        },
+        {
+          "name": "UShortKeyword",
+          "value": 569
+        },
+        {
+          "name": "UsingKeyword",
+          "value": 570
+        },
+        {
+          "name": "WhenKeyword",
+          "value": 571
+        },
+        {
+          "name": "WhileKeyword",
+          "value": 572
+        },
+        {
+          "name": "WideningKeyword",
+          "value": 573
+        },
+        {
+          "name": "WithKeyword",
+          "value": 574
+        },
+        {
+          "name": "WithEventsKeyword",
+          "value": 575
+        },
+        {
+          "name": "WriteOnlyKeyword",
+          "value": 578
+        },
+        {
+          "name": "XorKeyword",
+          "value": 579
+        },
+        {
+          "name": "EndIfKeyword",
+          "value": 580
+        },
+        {
+          "name": "GosubKeyword",
+          "value": 581
+        },
+        {
+          "name": "VariantKeyword",
+          "value": 582
+        },
+        {
+          "name": "WendKeyword",
+          "value": 583
+        },
+        {
+          "name": "AggregateKeyword",
+          "value": 584
+        },
+        {
+          "name": "AllKeyword",
+          "value": 585
+        },
+        {
+          "name": "AnsiKeyword",
+          "value": 586
+        },
+        {
+          "name": "AscendingKeyword",
+          "value": 587
+        },
+        {
+          "name": "AssemblyKeyword",
+          "value": 588
+        },
+        {
+          "name": "AutoKeyword",
+          "value": 589
+        },
+        {
+          "name": "BinaryKeyword",
+          "value": 590
+        },
+        {
+          "name": "ByKeyword",
+          "value": 591
+        },
+        {
+          "name": "CompareKeyword",
+          "value": 592
+        },
+        {
+          "name": "CustomKeyword",
+          "value": 593
+        },
+        {
+          "name": "DescendingKeyword",
+          "value": 594
+        },
+        {
+          "name": "DisableKeyword",
+          "value": 595
+        },
+        {
+          "name": "DistinctKeyword",
+          "value": 596
+        },
+        {
+          "name": "EnableKeyword",
+          "value": 599
+        },
+        {
+          "name": "EqualsKeyword",
+          "value": 600
+        },
+        {
+          "name": "ExplicitKeyword",
+          "value": 601
+        },
+        {
+          "name": "ExternalSourceKeyword",
+          "value": 602
+        },
+        {
+          "name": "ExternalChecksumKeyword",
+          "value": 603
+        },
+        {
+          "name": "FromKeyword",
+          "value": 604
+        },
+        {
+          "name": "GroupKeyword",
+          "value": 605
+        },
+        {
+          "name": "InferKeyword",
+          "value": 606
+        },
+        {
+          "name": "IntoKeyword",
+          "value": 607
+        },
+        {
+          "name": "IsFalseKeyword",
+          "value": 608
+        },
+        {
+          "name": "IsTrueKeyword",
+          "value": 609
+        },
+        {
+          "name": "JoinKeyword",
+          "value": 610
+        },
+        {
+          "name": "KeyKeyword",
+          "value": 611
+        },
+        {
+          "name": "MidKeyword",
+          "value": 612
+        },
+        {
+          "name": "OffKeyword",
+          "value": 613
+        },
+        {
+          "name": "OrderKeyword",
+          "value": 614
+        },
+        {
+          "name": "OutKeyword",
+          "value": 615
+        },
+        {
+          "name": "PreserveKeyword",
+          "value": 616
+        },
+        {
+          "name": "RegionKeyword",
+          "value": 617
+        },
+        {
+          "name": "SkipKeyword",
+          "value": 620
+        },
+        {
+          "name": "StrictKeyword",
+          "value": 621
+        },
+        {
+          "name": "TakeKeyword",
+          "value": 622
+        },
+        {
+          "name": "TextKeyword",
+          "value": 623
+        },
+        {
+          "name": "UnicodeKeyword",
+          "value": 624
+        },
+        {
+          "name": "UntilKeyword",
+          "value": 625
+        },
+        {
+          "name": "WarningKeyword",
+          "value": 626
+        },
+        {
+          "name": "WhereKeyword",
+          "value": 627
+        },
+        {
+          "name": "TypeKeyword",
+          "value": 628
+        },
+        {
+          "name": "XmlKeyword",
+          "value": 629
+        },
+        {
+          "name": "AsyncKeyword",
+          "value": 630
+        },
+        {
+          "name": "AwaitKeyword",
+          "value": 631
+        },
+        {
+          "name": "IteratorKeyword",
+          "value": 632
+        },
+        {
+          "name": "YieldKeyword",
+          "value": 633
+        },
+        {
+          "name": "ExclamationToken",
+          "value": 634
+        },
+        {
+          "name": "AtToken",
+          "value": 635
+        },
+        {
+          "name": "CommaToken",
+          "value": 636
+        },
+        {
+          "name": "HashToken",
+          "value": 637
+        },
+        {
+          "name": "AmpersandToken",
+          "value": 638
+        },
+        {
+          "name": "SingleQuoteToken",
+          "value": 641
+        },
+        {
+          "name": "OpenParenToken",
+          "value": 642
+        },
+        {
+          "name": "CloseParenToken",
+          "value": 643
+        },
+        {
+          "name": "OpenBraceToken",
+          "value": 644
+        },
+        {
+          "name": "CloseBraceToken",
+          "value": 645
+        },
+        {
+          "name": "SemicolonToken",
+          "value": 646
+        },
+        {
+          "name": "AsteriskToken",
+          "value": 647
+        },
+        {
+          "name": "PlusToken",
+          "value": 648
+        },
+        {
+          "name": "MinusToken",
+          "value": 649
+        },
+        {
+          "name": "DotToken",
+          "value": 650
+        },
+        {
+          "name": "SlashToken",
+          "value": 651
+        },
+        {
+          "name": "ColonToken",
+          "value": 652
+        },
+        {
+          "name": "LessThanToken",
+          "value": 653
+        },
+        {
+          "name": "LessThanEqualsToken",
+          "value": 654
+        },
+        {
+          "name": "LessThanGreaterThanToken",
+          "value": 655
+        },
+        {
+          "name": "EqualsToken",
+          "value": 656
+        },
+        {
+          "name": "GreaterThanToken",
+          "value": 657
+        },
+        {
+          "name": "GreaterThanEqualsToken",
+          "value": 658
+        },
+        {
+          "name": "BackslashToken",
+          "value": 659
+        },
+        {
+          "name": "CaretToken",
+          "value": 662
+        },
+        {
+          "name": "ColonEqualsToken",
+          "value": 663
+        },
+        {
+          "name": "AmpersandEqualsToken",
+          "value": 664
+        },
+        {
+          "name": "AsteriskEqualsToken",
+          "value": 665
+        },
+        {
+          "name": "PlusEqualsToken",
+          "value": 666
+        },
+        {
+          "name": "MinusEqualsToken",
+          "value": 667
+        },
+        {
+          "name": "SlashEqualsToken",
+          "value": 668
+        },
+        {
+          "name": "BackslashEqualsToken",
+          "value": 669
+        },
+        {
+          "name": "CaretEqualsToken",
+          "value": 670
+        },
+        {
+          "name": "LessThanLessThanToken",
+          "value": 671
+        },
+        {
+          "name": "GreaterThanGreaterThanToken",
+          "value": 672
+        },
+        {
+          "name": "LessThanLessThanEqualsToken",
+          "value": 673
+        },
+        {
+          "name": "GreaterThanGreaterThanEqualsToken",
+          "value": 674
+        },
+        {
+          "name": "QuestionToken",
+          "value": 675
+        },
+        {
+          "name": "DoubleQuoteToken",
+          "value": 676
+        },
+        {
+          "name": "StatementTerminatorToken",
+          "value": 677
+        },
+        {
+          "name": "EndOfFileToken",
+          "value": 678
+        },
+        {
+          "name": "EmptyToken",
+          "value": 679
+        },
+        {
+          "name": "SlashGreaterThanToken",
+          "value": 680
+        },
+        {
+          "name": "LessThanSlashToken",
+          "value": 683
+        },
+        {
+          "name": "LessThanExclamationMinusMinusToken",
+          "value": 684
+        },
+        {
+          "name": "MinusMinusGreaterThanToken",
+          "value": 685
+        },
+        {
+          "name": "LessThanQuestionToken",
+          "value": 686
+        },
+        {
+          "name": "QuestionGreaterThanToken",
+          "value": 687
+        },
+        {
+          "name": "LessThanPercentEqualsToken",
+          "value": 688
+        },
+        {
+          "name": "PercentGreaterThanToken",
+          "value": 689
+        },
+        {
+          "name": "BeginCDataToken",
+          "value": 690
+        },
+        {
+          "name": "EndCDataToken",
+          "value": 691
+        },
+        {
+          "name": "EndOfXmlToken",
+          "value": 692
+        },
+        {
+          "name": "BadToken",
+          "value": 693
+        },
+        {
+          "name": "XmlNameToken",
+          "value": 694
+        },
+        {
+          "name": "XmlTextLiteralToken",
+          "value": 695
+        },
+        {
+          "name": "XmlEntityLiteralToken",
+          "value": 696
+        },
+        {
+          "name": "DocumentationCommentLineBreakToken",
+          "value": 697
+        },
+        {
+          "name": "IdentifierToken",
+          "value": 700
+        },
+        {
+          "name": "IntegerLiteralToken",
+          "value": 701
+        },
+        {
+          "name": "FloatingLiteralToken",
+          "value": 702
+        },
+        {
+          "name": "DecimalLiteralToken",
+          "value": 703
+        },
+        {
+          "name": "DateLiteralToken",
+          "value": 704
+        },
+        {
+          "name": "StringLiteralToken",
+          "value": 705
+        },
+        {
+          "name": "CharacterLiteralToken",
+          "value": 706
+        },
+        {
+          "name": "SkippedTokensTrivia",
+          "value": 709
+        },
+        {
+          "name": "DocumentationCommentTrivia",
+          "value": 710
+        },
+        {
+          "name": "XmlCrefAttribute",
+          "value": 711
+        },
+        {
+          "name": "XmlNameAttribute",
+          "value": 712
+        },
+        {
+          "name": "ConditionalAccessExpression",
+          "value": 713
+        },
+        {
+          "name": "WhitespaceTrivia",
+          "value": 729
+        },
+        {
+          "name": "EndOfLineTrivia",
+          "value": 730
+        },
+        {
+          "name": "ColonTrivia",
+          "value": 731
+        },
+        {
+          "name": "CommentTrivia",
+          "value": 732
+        },
+        {
+          "name": "LineContinuationTrivia",
+          "value": 733
+        },
+        {
+          "name": "DocumentationCommentExteriorTrivia",
+          "value": 734
+        },
+        {
+          "name": "DisabledTextTrivia",
+          "value": 735
+        },
+        {
+          "name": "ConstDirectiveTrivia",
+          "value": 736
+        },
+        {
+          "name": "IfDirectiveTrivia",
+          "value": 737
+        },
+        {
+          "name": "ElseIfDirectiveTrivia",
+          "value": 738
+        },
+        {
+          "name": "ElseDirectiveTrivia",
+          "value": 739
+        },
+        {
+          "name": "EndIfDirectiveTrivia",
+          "value": 740
+        },
+        {
+          "name": "RegionDirectiveTrivia",
+          "value": 741
+        },
+        {
+          "name": "EndRegionDirectiveTrivia",
+          "value": 744
+        },
+        {
+          "name": "ExternalSourceDirectiveTrivia",
+          "value": 745
+        },
+        {
+          "name": "EndExternalSourceDirectiveTrivia",
+          "value": 746
+        },
+        {
+          "name": "ExternalChecksumDirectiveTrivia",
+          "value": 747
+        },
+        {
+          "name": "EnableWarningDirectiveTrivia",
+          "value": 748
+        },
+        {
+          "name": "DisableWarningDirectiveTrivia",
+          "value": 749
+        },
+        {
+          "name": "ReferenceDirectiveTrivia",
+          "value": 750
+        },
+        {
+          "name": "BadDirectiveTrivia",
+          "value": 753
+        },
+        {
+          "name": "ImportAliasClause",
+          "value": 754
+        },
+        {
+          "name": "NameColonEquals",
+          "value": 755
+        },
+        {
+          "name": "SimpleDoLoopBlock",
+          "value": 756
+        },
+        {
+          "name": "DoWhileLoopBlock",
+          "value": 757
+        },
+        {
+          "name": "DoUntilLoopBlock",
+          "value": 758
+        },
+        {
+          "name": "DoLoopWhileBlock",
+          "value": 759
+        },
+        {
+          "name": "DoLoopUntilBlock",
+          "value": 760
+        },
+        {
+          "name": "SimpleDoStatement",
+          "value": 770
+        },
+        {
+          "name": "DoWhileStatement",
+          "value": 771
+        },
+        {
+          "name": "DoUntilStatement",
+          "value": 772
+        },
+        {
+          "name": "SimpleLoopStatement",
+          "value": 773
+        },
+        {
+          "name": "LoopWhileStatement",
+          "value": 774
+        },
+        {
+          "name": "LoopUntilStatement",
+          "value": 775
+        },
+        {
+          "name": "WhileClause",
+          "value": 776
+        },
+        {
+          "name": "UntilClause",
+          "value": 777
+        },
+        {
+          "name": "NameOfKeyword",
+          "value": 778
+        },
+        {
+          "name": "NameOfExpression",
+          "value": 779
+        },
+        {
+          "name": "InterpolatedStringExpression",
+          "value": 780
+        },
+        {
+          "name": "InterpolatedStringText",
+          "value": 781
+        },
+        {
+          "name": "Interpolation",
+          "value": 782
+        },
+        {
+          "name": "InterpolationAlignmentClause",
+          "value": 783
+        },
+        {
+          "name": "InterpolationFormatClause",
+          "value": 784
+        },
+        {
+          "name": "DollarSignDoubleQuoteToken",
+          "value": 785
+        },
+        {
+          "name": "InterpolatedStringTextToken",
+          "value": 786
+        },
+        {
+          "name": "EndOfInterpolatedStringToken",
+          "value": 787
+        },
+        {
+          "name": "TupleExpression",
+          "value": 788
+        },
+        {
+          "name": "TupleType",
+          "value": 789
+        },
+        {
+          "name": "TypedTupleElement",
+          "value": 790
+        },
+        {
+          "name": "NamedTupleElement",
+          "value": 791
+        },
+        {
+          "name": "ConflictMarkerTrivia",
+          "value": 792
+        }
+      ]
+    }
+  ],
+  "namespaceMappings": []
+}

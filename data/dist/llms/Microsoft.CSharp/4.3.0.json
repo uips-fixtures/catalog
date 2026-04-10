@@ -1,0 +1,557 @@
+{
+  "schema": {
+    "id": "activity-catalog",
+    "version": "v0.3"
+  },
+  "source": {
+    "kind": "nuget-package",
+    "id": "Microsoft.CSharp",
+    "version": "4.3.0",
+    "feedUrl": null,
+    "authors": "Microsoft",
+    "projectUrl": "https://dot.net/",
+    "description": "Provides support for compilation and code generation, including dynamic, using the C# language.\n\nCommonly Used Types:\nMicrosoft.CSharp.RuntimeBinder.Binder\nMicrosoft.CSharp.RuntimeBinder.RuntimeBinderException\nMicrosoft.CSharp.RuntimeBinder.CSharpArgumentInfo\nMicrosoft.CSharp.RuntimeBinder.CSharpArgumentInfoFlags\nMicrosoft.CSharp.RuntimeBinder.CSharpBinderFlags\n \nWhen using NuGet 3.x this package requires at least version 3.4.",
+    "license": "http://go.microsoft.com/fwlink/?LinkId=329770",
+    "tags": null,
+    "packageTypes": []
+  },
+  "generatedAt": "2026-04-10T09:21:14Z",
+  "activities": [],
+  "enums": [
+    {
+      "fullName": "Microsoft.CSharp.RuntimeBinder.CSharpArgumentInfoFlags",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "UseCompileTimeType",
+          "value": 1
+        },
+        {
+          "name": "Constant",
+          "value": 2
+        },
+        {
+          "name": "NamedArgument",
+          "value": 4
+        },
+        {
+          "name": "IsRef",
+          "value": 8
+        },
+        {
+          "name": "IsOut",
+          "value": 16
+        },
+        {
+          "name": "IsStaticType",
+          "value": 32
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CSharp.RuntimeBinder.CSharpBinderFlags",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "CheckedContext",
+          "value": 1
+        },
+        {
+          "name": "InvokeSimpleName",
+          "value": 2
+        },
+        {
+          "name": "InvokeSpecialName",
+          "value": 4
+        },
+        {
+          "name": "BinaryOperationLogical",
+          "value": 8
+        },
+        {
+          "name": "ConvertExplicit",
+          "value": 16
+        },
+        {
+          "name": "ConvertArrayIndex",
+          "value": 32
+        },
+        {
+          "name": "ResultIndexed",
+          "value": 64
+        },
+        {
+          "name": "ValueFromCompoundAssignment",
+          "value": 128
+        },
+        {
+          "name": "ResultDiscarded",
+          "value": 256
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CSharp.RuntimeBinder.Errors.ErrorCode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ERR_BadBinaryOps",
+          "value": 19
+        },
+        {
+          "name": "ERR_IntDivByZero",
+          "value": 20
+        },
+        {
+          "name": "ERR_BadIndexLHS",
+          "value": 21
+        },
+        {
+          "name": "ERR_BadIndexCount",
+          "value": 22
+        },
+        {
+          "name": "ERR_BadUnaryOp",
+          "value": 23
+        },
+        {
+          "name": "ERR_NoImplicitConv",
+          "value": 29
+        },
+        {
+          "name": "ERR_NoExplicitConv",
+          "value": 30
+        },
+        {
+          "name": "ERR_ConstOutOfRange",
+          "value": 31
+        },
+        {
+          "name": "ERR_AmbigBinaryOps",
+          "value": 34
+        },
+        {
+          "name": "ERR_AmbigUnaryOp",
+          "value": 35
+        },
+        {
+          "name": "ERR_ValueCantBeNull",
+          "value": 37
+        },
+        {
+          "name": "ERR_WrongNestedThis",
+          "value": 38
+        },
+        {
+          "name": "ERR_NoSuchMember",
+          "value": 117
+        },
+        {
+          "name": "ERR_ObjectRequired",
+          "value": 120
+        },
+        {
+          "name": "ERR_AmbigCall",
+          "value": 121
+        },
+        {
+          "name": "ERR_BadAccess",
+          "value": 122
+        },
+        {
+          "name": "ERR_MethDelegateMismatch",
+          "value": 123
+        },
+        {
+          "name": "ERR_AssgLvalueExpected",
+          "value": 131
+        },
+        {
+          "name": "ERR_NoConstructors",
+          "value": 143
+        },
+        {
+          "name": "ERR_BadDelegateConstructor",
+          "value": 148
+        },
+        {
+          "name": "ERR_PropertyLacksGet",
+          "value": 154
+        },
+        {
+          "name": "ERR_ObjectProhibited",
+          "value": 176
+        },
+        {
+          "name": "ERR_AssgReadonly",
+          "value": 191
+        },
+        {
+          "name": "ERR_RefReadonly",
+          "value": 192
+        },
+        {
+          "name": "ERR_AssgReadonlyStatic",
+          "value": 198
+        },
+        {
+          "name": "ERR_RefReadonlyStatic",
+          "value": 199
+        },
+        {
+          "name": "ERR_AssgReadonlyProp",
+          "value": 200
+        },
+        {
+          "name": "ERR_AbstractBaseCall",
+          "value": 205
+        },
+        {
+          "name": "ERR_RefProperty",
+          "value": 206
+        },
+        {
+          "name": "ERR_ManagedAddr",
+          "value": 208
+        },
+        {
+          "name": "ERR_FixedNotNeeded",
+          "value": 213
+        },
+        {
+          "name": "ERR_UnsafeNeeded",
+          "value": 214
+        },
+        {
+          "name": "ERR_BadBoolOp",
+          "value": 217
+        },
+        {
+          "name": "ERR_MustHaveOpTF",
+          "value": 218
+        },
+        {
+          "name": "ERR_CheckedOverflow",
+          "value": 220
+        },
+        {
+          "name": "ERR_ConstOutOfRangeChecked",
+          "value": 221
+        },
+        {
+          "name": "ERR_AmbigMember",
+          "value": 229
+        },
+        {
+          "name": "ERR_SizeofUnsafe",
+          "value": 233
+        },
+        {
+          "name": "ERR_FieldInitRefNonstatic",
+          "value": 236
+        },
+        {
+          "name": "ERR_CallingFinalizeDepracated",
+          "value": 245
+        },
+        {
+          "name": "ERR_CallingBaseFinalizeDeprecated",
+          "value": 250
+        },
+        {
+          "name": "ERR_BadCastInFixed",
+          "value": 254
+        },
+        {
+          "name": "ERR_NoImplicitConvCast",
+          "value": 266
+        },
+        {
+          "name": "ERR_InaccessibleGetter",
+          "value": 271
+        },
+        {
+          "name": "ERR_InaccessibleSetter",
+          "value": 272
+        },
+        {
+          "name": "ERR_BadArity",
+          "value": 305
+        },
+        {
+          "name": "ERR_BadTypeArgument",
+          "value": 306
+        },
+        {
+          "name": "ERR_TypeArgsNotAllowed",
+          "value": 307
+        },
+        {
+          "name": "ERR_HasNoTypeVars",
+          "value": 308
+        },
+        {
+          "name": "ERR_NewConstraintNotSatisfied",
+          "value": 310
+        },
+        {
+          "name": "ERR_GenericConstraintNotSatisfiedRefType",
+          "value": 311
+        },
+        {
+          "name": "ERR_GenericConstraintNotSatisfiedNullableEnum",
+          "value": 312
+        },
+        {
+          "name": "ERR_GenericConstraintNotSatisfiedNullableInterface",
+          "value": 313
+        },
+        {
+          "name": "ERR_GenericConstraintNotSatisfiedTyVar",
+          "value": 314
+        },
+        {
+          "name": "ERR_GenericConstraintNotSatisfiedValType",
+          "value": 315
+        },
+        {
+          "name": "ERR_TypeVarCantBeNull",
+          "value": 403
+        },
+        {
+          "name": "ERR_BadRetType",
+          "value": 407
+        },
+        {
+          "name": "ERR_CantInferMethTypeArgs",
+          "value": 411
+        },
+        {
+          "name": "ERR_MethGrpToNonDel",
+          "value": 428
+        },
+        {
+          "name": "ERR_RefConstraintNotSatisfied",
+          "value": 452
+        },
+        {
+          "name": "ERR_ValConstraintNotSatisfied",
+          "value": 453
+        },
+        {
+          "name": "ERR_CircularConstraint",
+          "value": 454
+        },
+        {
+          "name": "ERR_BaseConstraintConflict",
+          "value": 455
+        },
+        {
+          "name": "ERR_ConWithValCon",
+          "value": 456
+        },
+        {
+          "name": "ERR_AmbigUDConv",
+          "value": 457
+        },
+        {
+          "name": "ERR_PredefinedTypeNotFound",
+          "value": 518
+        },
+        {
+          "name": "ERR_PredefinedTypeBadType",
+          "value": 520
+        },
+        {
+          "name": "ERR_BindToBogus",
+          "value": 570
+        },
+        {
+          "name": "ERR_CantCallSpecialMethod",
+          "value": 571
+        },
+        {
+          "name": "ERR_BogusType",
+          "value": 648
+        },
+        {
+          "name": "ERR_MissingPredefinedMember",
+          "value": 656
+        },
+        {
+          "name": "ERR_LiteralDoubleCast",
+          "value": 664
+        },
+        {
+          "name": "ERR_UnifyingInterfaceInstantiations",
+          "value": 695
+        },
+        {
+          "name": "ERR_ConvertToStaticClass",
+          "value": 716
+        },
+        {
+          "name": "ERR_GenericArgIsStaticClass",
+          "value": 718
+        },
+        {
+          "name": "ERR_PartialMethodToDelegate",
+          "value": 762
+        },
+        {
+          "name": "ERR_IncrementLvalueExpected",
+          "value": 1059
+        },
+        {
+          "name": "ERR_NoSuchMemberOrExtension",
+          "value": 1061
+        },
+        {
+          "name": "ERR_ValueTypeExtDelegate",
+          "value": 1113
+        },
+        {
+          "name": "ERR_BadArgCount",
+          "value": 1501
+        },
+        {
+          "name": "ERR_BadArgTypes",
+          "value": 1502
+        },
+        {
+          "name": "ERR_BadArgType",
+          "value": 1503
+        },
+        {
+          "name": "ERR_RefLvalueExpected",
+          "value": 1510
+        },
+        {
+          "name": "ERR_BadProtectedAccess",
+          "value": 1540
+        },
+        {
+          "name": "ERR_BindToBogusProp2",
+          "value": 1545
+        },
+        {
+          "name": "ERR_BindToBogusProp1",
+          "value": 1546
+        },
+        {
+          "name": "ERR_BadDelArgCount",
+          "value": 1593
+        },
+        {
+          "name": "ERR_BadDelArgTypes",
+          "value": 1594
+        },
+        {
+          "name": "ERR_AssgReadonlyLocal",
+          "value": 1604
+        },
+        {
+          "name": "ERR_RefReadonlyLocal",
+          "value": 1605
+        },
+        {
+          "name": "ERR_ReturnNotLValue",
+          "value": 1612
+        },
+        {
+          "name": "ERR_BadArgExtraRef",
+          "value": 1615
+        },
+        {
+          "name": "ERR_BadArgRef",
+          "value": 1620
+        },
+        {
+          "name": "ERR_AssgReadonly2",
+          "value": 1648
+        },
+        {
+          "name": "ERR_RefReadonly2",
+          "value": 1649
+        },
+        {
+          "name": "ERR_AssgReadonlyStatic2",
+          "value": 1650
+        },
+        {
+          "name": "ERR_RefReadonlyStatic2",
+          "value": 1651
+        },
+        {
+          "name": "ERR_AssgReadonlyLocalCause",
+          "value": 1656
+        },
+        {
+          "name": "ERR_RefReadonlyLocalCause",
+          "value": 1657
+        },
+        {
+          "name": "ERR_ThisStructNotInAnonMeth",
+          "value": 1673
+        },
+        {
+          "name": "ERR_DelegateOnNullable",
+          "value": 1728
+        },
+        {
+          "name": "ERR_BadCtorArgCount",
+          "value": 1729
+        },
+        {
+          "name": "ERR_BadExtensionArgTypes",
+          "value": 1928
+        },
+        {
+          "name": "ERR_BadInstanceArgType",
+          "value": 1929
+        },
+        {
+          "name": "ERR_BadArgTypesForCollectionAdd",
+          "value": 1950
+        },
+        {
+          "name": "ERR_InitializerAddHasParamModifiers",
+          "value": 1954
+        },
+        {
+          "name": "ERR_NonInvocableMemberCalled",
+          "value": 1955
+        },
+        {
+          "name": "ERR_NamedArgumentSpecificationBeforeFixedArgument",
+          "value": 5002
+        },
+        {
+          "name": "ERR_BadNamedArgument",
+          "value": 5003
+        },
+        {
+          "name": "ERR_BadNamedArgumentForDelegateInvoke",
+          "value": 5004
+        },
+        {
+          "name": "ERR_DuplicateNamedArgument",
+          "value": 5005
+        },
+        {
+          "name": "ERR_NamedArgumentUsedInPositional",
+          "value": 5006
+        }
+      ]
+    }
+  ],
+  "namespaceMappings": []
+}

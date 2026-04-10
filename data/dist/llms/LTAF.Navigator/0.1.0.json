@@ -1,0 +1,467 @@
+{
+  "schema": {
+    "id": "activity-catalog",
+    "version": "v0.3"
+  },
+  "source": {
+    "kind": "nuget-package",
+    "id": "LTAF.Navigator",
+    "version": "0.1.0",
+    "feedUrl": null,
+    "authors": "Federico Silva Armas",
+    "projectUrl": "https://bitbucket.org/farmas/ltaf-navigator",
+    "description": "Html crawler and navigator using the LTAF core librarires.",
+    "license": null,
+    "tags": null,
+    "packageTypes": []
+  },
+  "generatedAt": "2026-04-10T09:21:13Z",
+  "activities": [],
+  "enums": [
+    {
+      "fullName": "LTAF.PopupAction",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "AlertOK",
+          "value": 1
+        },
+        {
+          "name": "ConfirmOK",
+          "value": 2
+        },
+        {
+          "name": "ConfirmCancel",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "LTAF.WaitFor",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "AsyncPostback",
+          "value": 1
+        },
+        {
+          "name": "Postback",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "LTAF.HtmlEventName",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Load",
+          "value": 0
+        },
+        {
+          "name": "UnLoad",
+          "value": 1
+        },
+        {
+          "name": "Focus",
+          "value": 2
+        },
+        {
+          "name": "Blur",
+          "value": 3
+        },
+        {
+          "name": "Change",
+          "value": 4
+        },
+        {
+          "name": "Submit",
+          "value": 5
+        },
+        {
+          "name": "Reset",
+          "value": 6
+        },
+        {
+          "name": "Select",
+          "value": 7
+        },
+        {
+          "name": "KeyPress",
+          "value": 8
+        },
+        {
+          "name": "KeyDown",
+          "value": 9
+        },
+        {
+          "name": "KeyUp",
+          "value": 10
+        },
+        {
+          "name": "MouseOver",
+          "value": 11
+        },
+        {
+          "name": "MouseOut",
+          "value": 12
+        },
+        {
+          "name": "MouseMove",
+          "value": 13
+        },
+        {
+          "name": "MouseDown",
+          "value": 14
+        },
+        {
+          "name": "MouseUp",
+          "value": 15
+        },
+        {
+          "name": "Click",
+          "value": 16
+        },
+        {
+          "name": "DoubleClick",
+          "value": 17
+        }
+      ]
+    },
+    {
+      "fullName": "LTAF.HtmlInputElementType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NotSet",
+          "value": 0
+        },
+        {
+          "name": "Text",
+          "value": 1
+        },
+        {
+          "name": "Password",
+          "value": 2
+        },
+        {
+          "name": "Checkbox",
+          "value": 3
+        },
+        {
+          "name": "Radio",
+          "value": 4
+        },
+        {
+          "name": "Submit",
+          "value": 5
+        },
+        {
+          "name": "Reset",
+          "value": 6
+        },
+        {
+          "name": "File",
+          "value": 7
+        },
+        {
+          "name": "Hidden",
+          "value": 8
+        },
+        {
+          "name": "Image",
+          "value": 9
+        },
+        {
+          "name": "Button",
+          "value": 10
+        },
+        {
+          "name": "Select",
+          "value": 11
+        },
+        {
+          "name": "Search",
+          "value": 12
+        },
+        {
+          "name": "Tel",
+          "value": 13
+        },
+        {
+          "name": "Url",
+          "value": 14
+        },
+        {
+          "name": "Email",
+          "value": 15
+        },
+        {
+          "name": "Datetime",
+          "value": 16
+        },
+        {
+          "name": "Date",
+          "value": 17
+        },
+        {
+          "name": "Month",
+          "value": 18
+        },
+        {
+          "name": "Week",
+          "value": 19
+        },
+        {
+          "name": "Time",
+          "value": 20
+        },
+        {
+          "name": "Number",
+          "value": 21
+        },
+        {
+          "name": "Range",
+          "value": 22
+        },
+        {
+          "name": "Color",
+          "value": 23
+        }
+      ]
+    },
+    {
+      "fullName": "LTAF.Visibility",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Visible",
+          "value": 0
+        },
+        {
+          "name": "Hidden",
+          "value": 1
+        },
+        {
+          "name": "Collapse",
+          "value": 2
+        },
+        {
+          "name": "NotSet",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "LTAF.Display",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Block",
+          "value": 0
+        },
+        {
+          "name": "Inline",
+          "value": 1
+        },
+        {
+          "name": "None",
+          "value": 2
+        },
+        {
+          "name": "NotSet",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "LTAF.Position",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Static",
+          "value": 0
+        },
+        {
+          "name": "Relative",
+          "value": 1
+        },
+        {
+          "name": "Absolute",
+          "value": 2
+        },
+        {
+          "name": "Fixed",
+          "value": 3
+        },
+        {
+          "name": "NotSet",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "LTAF.WhiteSpace",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Normal",
+          "value": 0
+        },
+        {
+          "name": "Pre",
+          "value": 1
+        },
+        {
+          "name": "NoWrap",
+          "value": 2
+        },
+        {
+          "name": "NotSet",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "LTAF.Overflow",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Visible",
+          "value": 0
+        },
+        {
+          "name": "Hidden",
+          "value": 1
+        },
+        {
+          "name": "Scroll",
+          "value": 2
+        },
+        {
+          "name": "Auto",
+          "value": 3
+        },
+        {
+          "name": "NotSet",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "LTAF.MatchMethod",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Literal",
+          "value": 0
+        },
+        {
+          "name": "EndsWith",
+          "value": 1
+        },
+        {
+          "name": "Contains",
+          "value": 2
+        },
+        {
+          "name": "Regex",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "LTAF.NavigationVerification",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "AspNetAjax",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "LTAF.PostDataFieldType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Text",
+          "value": 0
+        },
+        {
+          "name": "File",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "LTAF.WebTestLogDetail",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Concise",
+          "value": 0
+        },
+        {
+          "name": "Default",
+          "value": 1
+        },
+        {
+          "name": "Verbose",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "LTAF.TagParser.NodeType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Element",
+          "value": 0
+        },
+        {
+          "name": "Text",
+          "value": 1
+        },
+        {
+          "name": "Attribute",
+          "value": 2
+        },
+        {
+          "name": "CloseTag",
+          "value": 3
+        },
+        {
+          "name": "Comment",
+          "value": 4
+        },
+        {
+          "name": "ProcessingInstruction",
+          "value": 5
+        },
+        {
+          "name": "Document",
+          "value": 6
+        },
+        {
+          "name": "Invalid",
+          "value": 99
+        }
+      ]
+    }
+  ],
+  "namespaceMappings": []
+}

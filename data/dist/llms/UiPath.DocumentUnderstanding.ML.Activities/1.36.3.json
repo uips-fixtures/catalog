@@ -1,0 +1,2437 @@
+{
+  "schema": {
+    "id": "activity-catalog",
+    "version": "v0.3"
+  },
+  "source": {
+    "kind": "nuget-package",
+    "id": "UiPath.DocumentUnderstanding.ML.Activities",
+    "version": "1.36.3",
+    "feedUrl": null,
+    "authors": "UiPath",
+    "projectUrl": "https://activities.uipath.com/docs/about-the-documentunderstanding-ml-activities-pack",
+    "description": "IMPORTANT: Installing this package version requires upgrading all the other Document Understanding packages to their latest version. (in case any are installed).\n\nThis includes the following packages: IntelligentOCR (>= 6.23.0), DocumentUnderstanding.ML (>= 1.32.0), PDF (>= 3.21.0), OCR.Activities (>= 3.21.0), OmniPage (>= 1.21.0) and Vision (>= 3.14.0). On lower versions, some functionality may be missing or unexpected errors might occur.\n\nActivity package that enables Machine Learning Document Understanding features, such as the Machine Learning Extractor and the Machine Learning Classifier. This package requires a UiPath Studio and Robot version 2019.10 or above, and access to AI Fabric, for using custom ML models through ML Skills.",
+    "license": "https://www.uipath.com/hubfs/legalspot/UiPath_MSSA.pdf",
+    "tags": "UiPathActivities",
+    "packageTypes": []
+  },
+  "generatedAt": "2026-04-10T09:21:22Z",
+  "activities": [
+    {
+      "id": "UiPath.DocumentUnderstanding.ML.Activities.GenerativeClassifier@UiPath.DocumentUnderstanding.ML.Activities/1.36.3",
+      "fullName": "UiPath.DocumentUnderstanding.ML.Activities.GenerativeClassifier",
+      "displayName": "Generative Classifier",
+      "description": "Generative Classifier",
+      "category": null,
+      "visibility": "legacy",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "isObsolete": false,
+      "obsoleteMessage": null,
+      "xmlNamespace": null,
+      "xmlPrefix": null,
+      "members": [
+        {
+          "name": "Timeout",
+          "displayName": "Timeout",
+          "dataType": "System.Activities.InArgument<System.Int32>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "RuntimeAssetPath",
+          "displayName": "RuntimeAssetPath",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "RuntimeTenantUrl",
+          "displayName": "RuntimeTenantUrl",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ReferenceDocumentId",
+          "displayName": "ReferenceDocumentId",
+          "dataType": "System.Activities.OutArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "out",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        }
+      ]
+    },
+    {
+      "id": "UiPath.DocumentUnderstanding.ML.Activities.GenerativeExtractor@UiPath.DocumentUnderstanding.ML.Activities/1.36.3",
+      "fullName": "UiPath.DocumentUnderstanding.ML.Activities.GenerativeExtractor",
+      "displayName": "Generative Extractor",
+      "description": "Generative Extractor",
+      "category": null,
+      "visibility": "legacy",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "isObsolete": false,
+      "obsoleteMessage": null,
+      "xmlNamespace": null,
+      "xmlPrefix": null,
+      "members": [
+        {
+          "name": "Timeout",
+          "displayName": "Timeout",
+          "dataType": "System.Activities.InArgument<System.Int32>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "RuntimeAssetPath",
+          "displayName": "RuntimeAssetPath",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "RuntimeTenantUrl",
+          "displayName": "RuntimeTenantUrl",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ReferenceDocumentId",
+          "displayName": "ReferenceDocumentId",
+          "dataType": "System.Activities.OutArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "out",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        }
+      ]
+    },
+    {
+      "id": "UiPath.DocumentUnderstanding.ML.Activities.MachineLearningClassifierTrainer@UiPath.DocumentUnderstanding.ML.Activities/1.36.3",
+      "fullName": "UiPath.DocumentUnderstanding.ML.Activities.MachineLearningClassifierTrainer",
+      "displayName": "Machine Learning Classifier Trainer",
+      "description": "Classifier trainer activity that collects data for the Machine Learning Classifier service and makes it available for retraining.",
+      "category": null,
+      "visibility": "legacy",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "isObsolete": false,
+      "obsoleteMessage": null,
+      "xmlNamespace": null,
+      "xmlPrefix": null,
+      "members": [
+        {
+          "name": "SelectedProject",
+          "displayName": "SelectedProject",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "SelectedDataset",
+          "displayName": "SelectedDataset",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "Timeout",
+          "displayName": "Timeout",
+          "dataType": "System.Activities.InArgument<System.Int32>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "RetryOnFailure",
+          "displayName": "RetryOnFailure",
+          "dataType": "System.Boolean",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "PublicDatasetEndpoint",
+          "displayName": "PublicDatasetEndpoint",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "PublicDatasetApiKey",
+          "displayName": "PublicDatasetApiKey",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "SaveOriginalFiles",
+          "displayName": "SaveOriginalFiles",
+          "dataType": "System.Boolean",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "OutputFolder",
+          "displayName": "OutputFolder",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        }
+      ]
+    },
+    {
+      "id": "UiPath.DocumentUnderstanding.ML.Activities.MachineLearningExtractorTrainer@UiPath.DocumentUnderstanding.ML.Activities/1.36.3",
+      "fullName": "UiPath.DocumentUnderstanding.ML.Activities.MachineLearningExtractorTrainer",
+      "displayName": "Machine Learning Extractor Trainer",
+      "description": "Extractor trainer activity that collects data for the Machine Learning extractor service and makes it available for retraining.",
+      "category": null,
+      "visibility": "legacy",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "isObsolete": false,
+      "obsoleteMessage": null,
+      "xmlNamespace": null,
+      "xmlPrefix": null,
+      "members": [
+        {
+          "name": "SelectedProject",
+          "displayName": "SelectedProject",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "SelectedDataset",
+          "displayName": "SelectedDataset",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "OutputFolder",
+          "displayName": "OutputFolder",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "Timeout",
+          "displayName": "Timeout",
+          "dataType": "System.Activities.InArgument<System.Int32>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "RetryOnFailure",
+          "displayName": "RetryOnFailure",
+          "dataType": "System.Boolean",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "PublicDatasetEndpoint",
+          "displayName": "PublicDatasetEndpoint",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "PublicDatasetApiKey",
+          "displayName": "PublicDatasetApiKey",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        }
+      ]
+    },
+    {
+      "id": "UiPath.DocumentUnderstanding.ML.Activities.MachineLearningSplitter@UiPath.DocumentUnderstanding.ML.Activities/1.36.3",
+      "fullName": "UiPath.DocumentUnderstanding.ML.Activities.MachineLearningSplitter",
+      "displayName": "Machine Learning Splitter (Private Preview)",
+      "description": "Activity that is using a machine learning model to split a document into subdocuments",
+      "category": null,
+      "visibility": "legacy",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "isObsolete": false,
+      "obsoleteMessage": null,
+      "xmlNamespace": null,
+      "xmlPrefix": null,
+      "members": [
+        {
+          "name": "Endpoint",
+          "displayName": "Endpoint",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ApiKey",
+          "displayName": "ApiKey",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "DocumentObjectModel",
+          "displayName": "DocumentObjectModel",
+          "dataType": "System.Activities.InArgument<UiPath.DocumentProcessing.Contracts.Dom.Document>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "DocumentText",
+          "displayName": "DocumentText",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "DocumentPath",
+          "displayName": "DocumentPath",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "Timeout",
+          "displayName": "Timeout",
+          "dataType": "System.Activities.InArgument<System.Int32>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "SelectedMLSkill",
+          "displayName": "SelectedMLSkill",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "DocumentSplittingResults",
+          "displayName": "DocumentSplittingResults",
+          "dataType": "System.Activities.OutArgument<UiPath.DocumentProcessing.Contracts.Results.DocumentSplittingResult[]>",
+          "memberKind": "argument",
+          "argumentDirection": "out",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ClassificationResults",
+          "displayName": "ClassificationResults",
+          "dataType": "System.Activities.OutArgument<UiPath.DocumentProcessing.Contracts.Results.ClassificationResult[]>",
+          "memberKind": "argument",
+          "argumentDirection": "out",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "Configuration",
+          "displayName": "Configuration",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        }
+      ]
+    }
+  ],
+  "enums": [
+    {
+      "fullName": "UiPath.SmartData.WPF.Dialog.FileFilter",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Json",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Shared.DuAppClient.ApplyOcrOnPdfs",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "YES",
+          "value": 0
+        },
+        {
+          "name": "NO",
+          "value": 1
+        },
+        {
+          "name": "AUTO",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Shared.JobWrapper.JobObjectInfoType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AssociateCompletionPortInformation",
+          "value": 7
+        },
+        {
+          "name": "BasicLimitInformation",
+          "value": 2
+        },
+        {
+          "name": "BasicUIRestrictions",
+          "value": 4
+        },
+        {
+          "name": "EndOfJobTimeInformation",
+          "value": 6
+        },
+        {
+          "name": "ExtendedLimitInformation",
+          "value": 9
+        },
+        {
+          "name": "SecurityLimitInformation",
+          "value": 5
+        },
+        {
+          "name": "GroupInformation",
+          "value": 11
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Shared.NativeMessageBox.MessageBoxOptions",
+      "underlyingType": "System.UInt32",
+      "members": [
+        {
+          "name": "OkOnly",
+          "value": 0
+        },
+        {
+          "name": "OkCancel",
+          "value": 1
+        },
+        {
+          "name": "AbortRetryIgnore",
+          "value": 2
+        },
+        {
+          "name": "YesNoCancel",
+          "value": 3
+        },
+        {
+          "name": "YesNo",
+          "value": 4
+        },
+        {
+          "name": "RetryCancel",
+          "value": 5
+        },
+        {
+          "name": "CancelTryContinue",
+          "value": 6
+        },
+        {
+          "name": "IconHand",
+          "value": 16
+        },
+        {
+          "name": "IconQuestion",
+          "value": 32
+        },
+        {
+          "name": "IconExclamation",
+          "value": 48
+        },
+        {
+          "name": "IconAsterisk",
+          "value": 64
+        },
+        {
+          "name": "UserIcon",
+          "value": 128
+        },
+        {
+          "name": "IconWarning",
+          "value": 48
+        },
+        {
+          "name": "IconError",
+          "value": 16
+        },
+        {
+          "name": "IconInformation",
+          "value": 64
+        },
+        {
+          "name": "IconStop",
+          "value": 16
+        },
+        {
+          "name": "DefButton1",
+          "value": 0
+        },
+        {
+          "name": "DefButton2",
+          "value": 256
+        },
+        {
+          "name": "DefButton3",
+          "value": 512
+        },
+        {
+          "name": "DefButton4",
+          "value": 768
+        },
+        {
+          "name": "ApplicationModal",
+          "value": 0
+        },
+        {
+          "name": "SystemModal",
+          "value": 4096
+        },
+        {
+          "name": "TaskModal",
+          "value": 8192
+        },
+        {
+          "name": "Help",
+          "value": 16384
+        },
+        {
+          "name": "NoFocus",
+          "value": 32768
+        },
+        {
+          "name": "SetForeground",
+          "value": 65536
+        },
+        {
+          "name": "DefaultDesktopOnly",
+          "value": 131072
+        },
+        {
+          "name": "Topmost",
+          "value": 262144
+        },
+        {
+          "name": "Right",
+          "value": 524288
+        },
+        {
+          "name": "RTLReading",
+          "value": 1048576
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Shared.NativeMessageBox.MessageBoxResult",
+      "underlyingType": "System.UInt32",
+      "members": [
+        {
+          "name": "Error",
+          "value": 0
+        },
+        {
+          "name": "Ok",
+          "value": 1
+        },
+        {
+          "name": "Cancel",
+          "value": 2
+        },
+        {
+          "name": "Abort",
+          "value": 3
+        },
+        {
+          "name": "Retry",
+          "value": 4
+        },
+        {
+          "name": "Ignore",
+          "value": 5
+        },
+        {
+          "name": "Yes",
+          "value": 6
+        },
+        {
+          "name": "No",
+          "value": 7
+        },
+        {
+          "name": "Close",
+          "value": 8
+        },
+        {
+          "name": "Help",
+          "value": 9
+        },
+        {
+          "name": "TryAgain",
+          "value": 10
+        },
+        {
+          "name": "Continue",
+          "value": 11
+        },
+        {
+          "name": "Timeout",
+          "value": 32000
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Shared.Activities.Services.Language",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "VisualBasic",
+          "value": 0
+        },
+        {
+          "name": "CSharp",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Shared.Activities.Performance.ApplicationType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "API",
+          "value": 1
+        },
+        {
+          "name": "WindowsApplication",
+          "value": 2
+        },
+        {
+          "name": "Chrome",
+          "value": 3
+        },
+        {
+          "name": "Default",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Shared.Activities.Performance.PerfCommandType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "Start",
+          "value": 1
+        },
+        {
+          "name": "Stop",
+          "value": 2
+        },
+        {
+          "name": "Alive",
+          "value": 3
+        },
+        {
+          "name": "Data",
+          "value": 4
+        },
+        {
+          "name": "Error",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Integration.AccessProviderScope",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "OrchestratorScope",
+          "value": 0
+        },
+        {
+          "name": "OrchestratorManagementScope",
+          "value": 1
+        },
+        {
+          "name": "AiFabricScope",
+          "value": 2
+        },
+        {
+          "name": "AiFabricPublicScope",
+          "value": 3
+        },
+        {
+          "name": "OrchestratorAndAIFabricScope",
+          "value": 4
+        },
+        {
+          "name": "DocumentUnderstandingScope",
+          "value": 5
+        },
+        {
+          "name": "IdentityScope",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.AiFabricClient.AuditLogSeverity",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "INFO",
+          "value": 0
+        },
+        {
+          "name": "SUCCESS",
+          "value": 1
+        },
+        {
+          "name": "WARN",
+          "value": 2
+        },
+        {
+          "name": "ERROR",
+          "value": 3
+        },
+        {
+          "name": "FATAL",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.AssetDtoValueScope",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Global",
+          "value": 0
+        },
+        {
+          "name": "PerRobot",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.AssetDtoValueType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DBConnectionString",
+          "value": 0
+        },
+        {
+          "name": "HttpConnectionString",
+          "value": 1
+        },
+        {
+          "name": "Text",
+          "value": 2
+        },
+        {
+          "name": "Bool",
+          "value": 3
+        },
+        {
+          "name": "Integer",
+          "value": 4
+        },
+        {
+          "name": "Credential",
+          "value": 5
+        },
+        {
+          "name": "WindowsCredential",
+          "value": 6
+        },
+        {
+          "name": "KeyValueList",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.AssetRobotValueDtoValueType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DBConnectionString",
+          "value": 0
+        },
+        {
+          "name": "HttpConnectionString",
+          "value": 1
+        },
+        {
+          "name": "Text",
+          "value": 2
+        },
+        {
+          "name": "Bool",
+          "value": 3
+        },
+        {
+          "name": "Integer",
+          "value": 4
+        },
+        {
+          "name": "Credential",
+          "value": 5
+        },
+        {
+          "name": "WindowsCredential",
+          "value": 6
+        },
+        {
+          "name": "KeyValueList",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.AssetUserValueDtoValueType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DBConnectionString",
+          "value": 0
+        },
+        {
+          "name": "HttpConnectionString",
+          "value": 1
+        },
+        {
+          "name": "Text",
+          "value": 2
+        },
+        {
+          "name": "Bool",
+          "value": 3
+        },
+        {
+          "name": "Integer",
+          "value": 4
+        },
+        {
+          "name": "Credential",
+          "value": 5
+        },
+        {
+          "name": "WindowsCredential",
+          "value": 6
+        },
+        {
+          "name": "KeyValueList",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.AttendedRobotDtoRobotType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NonProduction",
+          "value": 0
+        },
+        {
+          "name": "Attended",
+          "value": 1
+        },
+        {
+          "name": "Unattended",
+          "value": 2
+        },
+        {
+          "name": "Development",
+          "value": 3
+        },
+        {
+          "name": "Studio",
+          "value": 4
+        },
+        {
+          "name": "RpaDeveloper",
+          "value": 5
+        },
+        {
+          "name": "StudioX",
+          "value": 6
+        },
+        {
+          "name": "CitizenDeveloper",
+          "value": 7
+        },
+        {
+          "name": "Headless",
+          "value": 8
+        },
+        {
+          "name": "StudioPro",
+          "value": 9
+        },
+        {
+          "name": "RpaDeveloperPro",
+          "value": 10
+        },
+        {
+          "name": "TestAutomation",
+          "value": 11
+        },
+        {
+          "name": "AutomationCloud",
+          "value": 12
+        },
+        {
+          "name": "Serverless",
+          "value": 13
+        },
+        {
+          "name": "AutomationKit",
+          "value": 14
+        },
+        {
+          "name": "ServerlessTestAutomation",
+          "value": 15
+        },
+        {
+          "name": "AutomationCloudTestAutomation",
+          "value": 16
+        },
+        {
+          "name": "AttendedStudioWeb",
+          "value": 17
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.BucketDtoOptions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "ReadOnly",
+          "value": 1
+        },
+        {
+          "name": "AuditReadAccess",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.ConfigurationEntryValueType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "String",
+          "value": 0
+        },
+        {
+          "name": "Number",
+          "value": 1
+        },
+        {
+          "name": "Choice",
+          "value": 2
+        },
+        {
+          "name": "Boolean",
+          "value": 3
+        },
+        {
+          "name": "Section",
+          "value": 4
+        },
+        {
+          "name": "Secret",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.DirectoryObjectType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "User",
+          "value": 0
+        },
+        {
+          "name": "Group",
+          "value": 1
+        },
+        {
+          "name": "Machine",
+          "value": 2
+        },
+        {
+          "name": "Robot",
+          "value": 3
+        },
+        {
+          "name": "ExternalApplication",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.DomainUserAssignmentDtoUserType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "User",
+          "value": 0
+        },
+        {
+          "name": "Robot",
+          "value": 1
+        },
+        {
+          "name": "DirectoryUser",
+          "value": 2
+        },
+        {
+          "name": "DirectoryGroup",
+          "value": 3
+        },
+        {
+          "name": "DirectoryRobot",
+          "value": 4
+        },
+        {
+          "name": "DirectoryExternalApplication",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.EnvironmentDtoType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Dev",
+          "value": 0
+        },
+        {
+          "name": "Test",
+          "value": 1
+        },
+        {
+          "name": "Prod",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.ExecutionSettingsConfigurationScope",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Global",
+          "value": 0
+        },
+        {
+          "name": "Robot",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.FolderDtoFeedType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "Processes",
+          "value": 1
+        },
+        {
+          "name": "Libraries",
+          "value": 2
+        },
+        {
+          "name": "PersonalWorkspace",
+          "value": 3
+        },
+        {
+          "name": "FolderHierarchy",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.FolderDtoPermissionModel",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "InheritFromTenant",
+          "value": 0
+        },
+        {
+          "name": "FineGrained",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.FolderDtoProvisionType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Manual",
+          "value": 0
+        },
+        {
+          "name": "Automatic",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.FolderNavigationContextDtoProvisionType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Manual",
+          "value": 0
+        },
+        {
+          "name": "Automatic",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.FolderType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Standard",
+          "value": 0
+        },
+        {
+          "name": "Personal",
+          "value": 1
+        },
+        {
+          "name": "Virtual",
+          "value": 2
+        },
+        {
+          "name": "Solution",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.JobTriggerType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "QueueItem",
+          "value": 1
+        },
+        {
+          "name": "Job",
+          "value": 2
+        },
+        {
+          "name": "Task",
+          "value": 3
+        },
+        {
+          "name": "Timer",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.MachineDtoAutomationType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Any",
+          "value": 0
+        },
+        {
+          "name": "Foreground",
+          "value": 1
+        },
+        {
+          "name": "Background",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.MachineDtoEndpointDetectionStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NotAvailable",
+          "value": 0
+        },
+        {
+          "name": "Mixed",
+          "value": 1
+        },
+        {
+          "name": "Enabled",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.MachineDtoScope",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "Shared",
+          "value": 1
+        },
+        {
+          "name": "PersonalWorkspace",
+          "value": 2
+        },
+        {
+          "name": "Cloud",
+          "value": 3
+        },
+        {
+          "name": "Serverless",
+          "value": 4
+        },
+        {
+          "name": "AutomationCloudRobot",
+          "value": 5
+        },
+        {
+          "name": "ElasticRobot",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.MachineDtoServerlessLicensingModel",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "RobotUnits",
+          "value": 0
+        },
+        {
+          "name": "LicenseSlots",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.MachineDtoTargetFramework",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Any",
+          "value": 0
+        },
+        {
+          "name": "Windows",
+          "value": 1
+        },
+        {
+          "name": "Portable",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.MachineDtoType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Standard",
+          "value": 0
+        },
+        {
+          "name": "Template",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.MaintenanceWindowDtoJobStopStrategy",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Kill",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.MoveFolderMachineChangeNewMachineFolderState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "NotAssigned",
+          "value": 1
+        },
+        {
+          "name": "Assigned",
+          "value": 2
+        },
+        {
+          "name": "Inherited",
+          "value": 3
+        },
+        {
+          "name": "EroAcrError",
+          "value": 4
+        },
+        {
+          "name": "ServerlessError",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.MoveFolderMachineChangeOldMachineFolderState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "NotAssigned",
+          "value": 1
+        },
+        {
+          "name": "Assigned",
+          "value": 2
+        },
+        {
+          "name": "Inherited",
+          "value": 3
+        },
+        {
+          "name": "EroAcrError",
+          "value": 4
+        },
+        {
+          "name": "ServerlessError",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.PermissionDtoScope",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Global",
+          "value": 0
+        },
+        {
+          "name": "Folder",
+          "value": 1
+        },
+        {
+          "name": "GlobalOrFolder",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.RobotAssetDtoValueType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DBConnectionString",
+          "value": 0
+        },
+        {
+          "name": "HttpConnectionString",
+          "value": 1
+        },
+        {
+          "name": "Text",
+          "value": 2
+        },
+        {
+          "name": "Bool",
+          "value": 3
+        },
+        {
+          "name": "Integer",
+          "value": 4
+        },
+        {
+          "name": "Credential",
+          "value": 5
+        },
+        {
+          "name": "WindowsCredential",
+          "value": 6
+        },
+        {
+          "name": "KeyValueList",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.RobotDtoCredentialType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "SmartCard",
+          "value": 1
+        },
+        {
+          "name": "NCipher",
+          "value": 2
+        },
+        {
+          "name": "SafeNet",
+          "value": 3
+        },
+        {
+          "name": "NoCredential",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.RobotDtoHostingType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Standard",
+          "value": 0
+        },
+        {
+          "name": "Floating",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.RobotDtoProvisionType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Manual",
+          "value": 0
+        },
+        {
+          "name": "Automatic",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.RobotDtoType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NonProduction",
+          "value": 0
+        },
+        {
+          "name": "Attended",
+          "value": 1
+        },
+        {
+          "name": "Unattended",
+          "value": 2
+        },
+        {
+          "name": "Development",
+          "value": 3
+        },
+        {
+          "name": "Studio",
+          "value": 4
+        },
+        {
+          "name": "RpaDeveloper",
+          "value": 5
+        },
+        {
+          "name": "StudioX",
+          "value": 6
+        },
+        {
+          "name": "CitizenDeveloper",
+          "value": 7
+        },
+        {
+          "name": "Headless",
+          "value": 8
+        },
+        {
+          "name": "StudioPro",
+          "value": 9
+        },
+        {
+          "name": "RpaDeveloperPro",
+          "value": 10
+        },
+        {
+          "name": "TestAutomation",
+          "value": 11
+        },
+        {
+          "name": "AutomationCloud",
+          "value": 12
+        },
+        {
+          "name": "Serverless",
+          "value": 13
+        },
+        {
+          "name": "AutomationKit",
+          "value": 14
+        },
+        {
+          "name": "ServerlessTestAutomation",
+          "value": 15
+        },
+        {
+          "name": "AutomationCloudTestAutomation",
+          "value": 16
+        },
+        {
+          "name": "AttendedStudioWeb",
+          "value": 17
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.RoleDtoType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Mixed",
+          "value": 0
+        },
+        {
+          "name": "Tenant",
+          "value": 1
+        },
+        {
+          "name": "Folder",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.SettingsDtoScope",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Application",
+          "value": 0
+        },
+        {
+          "name": "Tenant",
+          "value": 1
+        },
+        {
+          "name": "User",
+          "value": 2
+        },
+        {
+          "name": "All",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.SimpleRoleDtoOrigin",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Assigned",
+          "value": 0
+        },
+        {
+          "name": "Inherited",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.SimpleRoleDtoRoleType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Mixed",
+          "value": 0
+        },
+        {
+          "name": "Tenant",
+          "value": 1
+        },
+        {
+          "name": "Folder",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.SimpleUserEntityDtoSource",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Orchestrator",
+          "value": 0
+        },
+        {
+          "name": "Portal",
+          "value": 1
+        },
+        {
+          "name": "All",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.SimpleUserEntityDtoType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "User",
+          "value": 0
+        },
+        {
+          "name": "Robot",
+          "value": 1
+        },
+        {
+          "name": "DirectoryUser",
+          "value": 2
+        },
+        {
+          "name": "DirectoryGroup",
+          "value": 3
+        },
+        {
+          "name": "DirectoryRobot",
+          "value": 4
+        },
+        {
+          "name": "DirectoryExternalApplication",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.TaskCreateRequestPriority",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Low",
+          "value": 0
+        },
+        {
+          "name": "Medium",
+          "value": 1
+        },
+        {
+          "name": "High",
+          "value": 2
+        },
+        {
+          "name": "Critical",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.TaskCreateRequestType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "FormTask",
+          "value": 0
+        },
+        {
+          "name": "ExternalTask",
+          "value": 1
+        },
+        {
+          "name": "DocumentValidationTask",
+          "value": 2
+        },
+        {
+          "name": "DocumentClassificationTask",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.TaskDataDtoStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unassigned",
+          "value": 0
+        },
+        {
+          "name": "Pending",
+          "value": 1
+        },
+        {
+          "name": "Completed",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.TaskDtoPriority",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Low",
+          "value": 0
+        },
+        {
+          "name": "Medium",
+          "value": 1
+        },
+        {
+          "name": "High",
+          "value": 2
+        },
+        {
+          "name": "Critical",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.TaskDtoStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unassigned",
+          "value": 0
+        },
+        {
+          "name": "Pending",
+          "value": 1
+        },
+        {
+          "name": "Completed",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.TaskDtoType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DocumentValidationTask",
+          "value": 0
+        },
+        {
+          "name": "DocumentClassificationTask",
+          "value": 1
+        },
+        {
+          "name": "ExternalTask",
+          "value": 2
+        },
+        {
+          "name": "FormTask",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.UnattendedRobotDtoCredentialType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "SmartCard",
+          "value": 1
+        },
+        {
+          "name": "NCipher",
+          "value": 2
+        },
+        {
+          "name": "SafeNet",
+          "value": 3
+        },
+        {
+          "name": "NoCredential",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.UpdateInfoDtoReason",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NonCompliantWithDifferentVersion",
+          "value": 0
+        },
+        {
+          "name": "NonCompliantWithoutTargetVersion",
+          "value": 1
+        },
+        {
+          "name": "NotApplicableForOlderSessions",
+          "value": 2
+        },
+        {
+          "name": "NotApplicableForMachineType",
+          "value": 3
+        },
+        {
+          "name": "NotApplicableTemplateWithoutRobotSessions",
+          "value": 4
+        },
+        {
+          "name": "NotApplicableForPlatform",
+          "value": 5
+        },
+        {
+          "name": "NotApplicableForTargetFramework",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.UpdateInfoDtoUpdateStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "InProgress",
+          "value": 1
+        },
+        {
+          "name": "Failed",
+          "value": 2
+        },
+        {
+          "name": "NonCompliant",
+          "value": 3
+        },
+        {
+          "name": "Compliant",
+          "value": 4
+        },
+        {
+          "name": "NotApplicable",
+          "value": 5
+        },
+        {
+          "name": "Scheduled",
+          "value": 6
+        },
+        {
+          "name": "FailedRescheduled",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.UpdatePolicyDtoType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "SpecificVersion",
+          "value": 1
+        },
+        {
+          "name": "LatestVersion",
+          "value": 2
+        },
+        {
+          "name": "LatestPatch",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.UserDtoLicenseType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NonProduction",
+          "value": 0
+        },
+        {
+          "name": "Attended",
+          "value": 1
+        },
+        {
+          "name": "Unattended",
+          "value": 2
+        },
+        {
+          "name": "Development",
+          "value": 3
+        },
+        {
+          "name": "Studio",
+          "value": 4
+        },
+        {
+          "name": "RpaDeveloper",
+          "value": 5
+        },
+        {
+          "name": "StudioX",
+          "value": 6
+        },
+        {
+          "name": "CitizenDeveloper",
+          "value": 7
+        },
+        {
+          "name": "Headless",
+          "value": 8
+        },
+        {
+          "name": "StudioPro",
+          "value": 9
+        },
+        {
+          "name": "RpaDeveloperPro",
+          "value": 10
+        },
+        {
+          "name": "TestAutomation",
+          "value": 11
+        },
+        {
+          "name": "AutomationCloud",
+          "value": 12
+        },
+        {
+          "name": "Serverless",
+          "value": 13
+        },
+        {
+          "name": "AutomationKit",
+          "value": 14
+        },
+        {
+          "name": "ServerlessTestAutomation",
+          "value": 15
+        },
+        {
+          "name": "AutomationCloudTestAutomation",
+          "value": 16
+        },
+        {
+          "name": "AttendedStudioWeb",
+          "value": 17
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.UserDtoProvisionType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Manual",
+          "value": 0
+        },
+        {
+          "name": "Automatic",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.UserDtoType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "User",
+          "value": 0
+        },
+        {
+          "name": "Robot",
+          "value": 1
+        },
+        {
+          "name": "DirectoryUser",
+          "value": 2
+        },
+        {
+          "name": "DirectoryGroup",
+          "value": 3
+        },
+        {
+          "name": "DirectoryRobot",
+          "value": 4
+        },
+        {
+          "name": "DirectoryExternalApplication",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.UserRoleDtoRoleType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Mixed",
+          "value": 0
+        },
+        {
+          "name": "Tenant",
+          "value": 1
+        },
+        {
+          "name": "Folder",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.Orchestrator.Client.Models.UserType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "User",
+          "value": 0
+        },
+        {
+          "name": "Robot",
+          "value": 1
+        },
+        {
+          "name": "DirectoryUser",
+          "value": 2
+        },
+        {
+          "name": "DirectoryGroup",
+          "value": 3
+        },
+        {
+          "name": "DirectoryRobot",
+          "value": 4
+        },
+        {
+          "name": "DirectoryExternalApplication",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DocumentUnderstanding.ML.DataModels.GptAsyncResponseStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Created",
+          "value": 0
+        },
+        {
+          "name": "InProgress",
+          "value": 1
+        },
+        {
+          "name": "Done",
+          "value": 2
+        },
+        {
+          "name": "Error",
+          "value": 3
+        }
+      ]
+    }
+  ],
+  "namespaceMappings": []
+}

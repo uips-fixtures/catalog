@@ -1,0 +1,899 @@
+{
+  "schema": {
+    "id": "activity-catalog",
+    "version": "v0.3"
+  },
+  "source": {
+    "kind": "nuget-package",
+    "id": "System.Security.Permissions",
+    "version": "6.0.0",
+    "feedUrl": null,
+    "authors": "Microsoft",
+    "projectUrl": "https://dot.net/",
+    "description": "Provides types supporting Code Access Security (CAS).",
+    "license": "MIT",
+    "tags": null,
+    "packageTypes": []
+  },
+  "generatedAt": "2026-04-10T09:21:17Z",
+  "activities": [],
+  "enums": [
+    {
+      "fullName": "System.Web.AspNetHostingPermissionLevel",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 100
+        },
+        {
+          "name": "Minimal",
+          "value": 200
+        },
+        {
+          "name": "Low",
+          "value": 300
+        },
+        {
+          "name": "Medium",
+          "value": 400
+        },
+        {
+          "name": "High",
+          "value": 500
+        },
+        {
+          "name": "Unrestricted",
+          "value": 600
+        }
+      ]
+    },
+    {
+      "fullName": "System.ServiceProcess.ServiceControllerPermissionAccess",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Browse",
+          "value": 2
+        },
+        {
+          "name": "Control",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "System.Security.HostSecurityManagerOptions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AllFlags",
+          "value": 31
+        },
+        {
+          "name": "HostAppDomainEvidence",
+          "value": 1
+        },
+        {
+          "name": "HostAssemblyEvidence",
+          "value": 4
+        },
+        {
+          "name": "HostDetermineApplicationTrust",
+          "value": 8
+        },
+        {
+          "name": "HostPolicyLevel",
+          "value": 2
+        },
+        {
+          "name": "HostResolvePolicy",
+          "value": 16
+        },
+        {
+          "name": "None",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "fullName": "System.Security.PolicyLevelType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AppDomain",
+          "value": 3
+        },
+        {
+          "name": "Enterprise",
+          "value": 2
+        },
+        {
+          "name": "Machine",
+          "value": 1
+        },
+        {
+          "name": "User",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "fullName": "System.Security.SecurityContextSource",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "CurrentAppDomain",
+          "value": 0
+        },
+        {
+          "name": "CurrentAssembly",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "System.Security.SecurityZone",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Internet",
+          "value": 3
+        },
+        {
+          "name": "Intranet",
+          "value": 1
+        },
+        {
+          "name": "MyComputer",
+          "value": 0
+        },
+        {
+          "name": "NoZone",
+          "value": -1
+        },
+        {
+          "name": "Trusted",
+          "value": 2
+        },
+        {
+          "name": "Untrusted",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "System.Security.Policy.ApplicationVersionMatch",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "MatchAllVersions",
+          "value": 1
+        },
+        {
+          "name": "MatchExactVersion",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "fullName": "System.Security.Policy.PolicyStatementAttribute",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "All",
+          "value": 3
+        },
+        {
+          "name": "Exclusive",
+          "value": 1
+        },
+        {
+          "name": "LevelFinal",
+          "value": 2
+        },
+        {
+          "name": "Nothing",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "fullName": "System.Security.Policy.TrustManagerUIContext",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Install",
+          "value": 0
+        },
+        {
+          "name": "Run",
+          "value": 2
+        },
+        {
+          "name": "Upgrade",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "System.Security.Permissions.DataProtectionPermissionFlags",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NoFlags",
+          "value": 0
+        },
+        {
+          "name": "ProtectData",
+          "value": 1
+        },
+        {
+          "name": "UnprotectData",
+          "value": 2
+        },
+        {
+          "name": "ProtectMemory",
+          "value": 4
+        },
+        {
+          "name": "UnprotectMemory",
+          "value": 8
+        },
+        {
+          "name": "AllFlags",
+          "value": 15
+        }
+      ]
+    },
+    {
+      "fullName": "System.Security.Permissions.EnvironmentPermissionAccess",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AllAccess",
+          "value": 3
+        },
+        {
+          "name": "NoAccess",
+          "value": 0
+        },
+        {
+          "name": "Read",
+          "value": 1
+        },
+        {
+          "name": "Write",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "System.Security.Permissions.FileDialogPermissionAccess",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Open",
+          "value": 1
+        },
+        {
+          "name": "OpenSave",
+          "value": 3
+        },
+        {
+          "name": "Save",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "System.Security.Permissions.FileIOPermissionAccess",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AllAccess",
+          "value": 15
+        },
+        {
+          "name": "Append",
+          "value": 4
+        },
+        {
+          "name": "NoAccess",
+          "value": 0
+        },
+        {
+          "name": "PathDiscovery",
+          "value": 8
+        },
+        {
+          "name": "Read",
+          "value": 1
+        },
+        {
+          "name": "Write",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "System.Security.Permissions.HostProtectionResource",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "All",
+          "value": 511
+        },
+        {
+          "name": "ExternalProcessMgmt",
+          "value": 4
+        },
+        {
+          "name": "ExternalThreading",
+          "value": 16
+        },
+        {
+          "name": "MayLeakOnAbort",
+          "value": 256
+        },
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "SecurityInfrastructure",
+          "value": 64
+        },
+        {
+          "name": "SelfAffectingProcessMgmt",
+          "value": 8
+        },
+        {
+          "name": "SelfAffectingThreading",
+          "value": 32
+        },
+        {
+          "name": "SharedState",
+          "value": 2
+        },
+        {
+          "name": "Synchronization",
+          "value": 1
+        },
+        {
+          "name": "UI",
+          "value": 128
+        }
+      ]
+    },
+    {
+      "fullName": "System.Security.Permissions.IsolatedStorageContainment",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "DomainIsolationByUser",
+          "value": 16
+        },
+        {
+          "name": "ApplicationIsolationByUser",
+          "value": 21
+        },
+        {
+          "name": "AssemblyIsolationByUser",
+          "value": 32
+        },
+        {
+          "name": "DomainIsolationByMachine",
+          "value": 48
+        },
+        {
+          "name": "AssemblyIsolationByMachine",
+          "value": 64
+        },
+        {
+          "name": "ApplicationIsolationByMachine",
+          "value": 69
+        },
+        {
+          "name": "DomainIsolationByRoamingUser",
+          "value": 80
+        },
+        {
+          "name": "AssemblyIsolationByRoamingUser",
+          "value": 96
+        },
+        {
+          "name": "ApplicationIsolationByRoamingUser",
+          "value": 101
+        },
+        {
+          "name": "AdministerIsolatedStorageByUser",
+          "value": 112
+        },
+        {
+          "name": "UnrestrictedIsolatedStorage",
+          "value": 240
+        }
+      ]
+    },
+    {
+      "fullName": "System.Security.Permissions.KeyContainerPermissionFlags",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NoFlags",
+          "value": 0
+        },
+        {
+          "name": "Create",
+          "value": 1
+        },
+        {
+          "name": "Open",
+          "value": 2
+        },
+        {
+          "name": "Delete",
+          "value": 4
+        },
+        {
+          "name": "Import",
+          "value": 16
+        },
+        {
+          "name": "Export",
+          "value": 32
+        },
+        {
+          "name": "Sign",
+          "value": 256
+        },
+        {
+          "name": "Decrypt",
+          "value": 512
+        },
+        {
+          "name": "ViewAcl",
+          "value": 4096
+        },
+        {
+          "name": "ChangeAcl",
+          "value": 8192
+        },
+        {
+          "name": "AllFlags",
+          "value": 13111
+        }
+      ]
+    },
+    {
+      "fullName": "System.Security.Permissions.MediaPermissionAudio",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NoAudio",
+          "value": 0
+        },
+        {
+          "name": "SiteOfOriginAudio",
+          "value": 1
+        },
+        {
+          "name": "SafeAudio",
+          "value": 2
+        },
+        {
+          "name": "AllAudio",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "System.Security.Permissions.MediaPermissionVideo",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NoVideo",
+          "value": 0
+        },
+        {
+          "name": "SiteOfOriginVideo",
+          "value": 1
+        },
+        {
+          "name": "SafeVideo",
+          "value": 2
+        },
+        {
+          "name": "AllVideo",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "System.Security.Permissions.MediaPermissionImage",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NoImage",
+          "value": 0
+        },
+        {
+          "name": "SiteOfOriginImage",
+          "value": 1
+        },
+        {
+          "name": "SafeImage",
+          "value": 2
+        },
+        {
+          "name": "AllImage",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "System.Security.Permissions.ReflectionPermissionFlag",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AllFlags",
+          "value": 7
+        },
+        {
+          "name": "MemberAccess",
+          "value": 2
+        },
+        {
+          "name": "NoFlags",
+          "value": 0
+        },
+        {
+          "name": "ReflectionEmit",
+          "value": 4
+        },
+        {
+          "name": "RestrictedMemberAccess",
+          "value": 8
+        },
+        {
+          "name": "TypeInformation",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "System.Security.Permissions.RegistryPermissionAccess",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AllAccess",
+          "value": 7
+        },
+        {
+          "name": "Create",
+          "value": 4
+        },
+        {
+          "name": "NoAccess",
+          "value": 0
+        },
+        {
+          "name": "Read",
+          "value": 1
+        },
+        {
+          "name": "Write",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "System.Security.Permissions.StorePermissionFlags",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NoFlags",
+          "value": 0
+        },
+        {
+          "name": "CreateStore",
+          "value": 1
+        },
+        {
+          "name": "DeleteStore",
+          "value": 2
+        },
+        {
+          "name": "EnumerateStores",
+          "value": 4
+        },
+        {
+          "name": "OpenStore",
+          "value": 16
+        },
+        {
+          "name": "AddToStore",
+          "value": 32
+        },
+        {
+          "name": "RemoveFromStore",
+          "value": 64
+        },
+        {
+          "name": "EnumerateCertificates",
+          "value": 128
+        },
+        {
+          "name": "AllFlags",
+          "value": 247
+        }
+      ]
+    },
+    {
+      "fullName": "System.Security.Permissions.TypeDescriptorPermissionFlags",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NoFlags",
+          "value": 0
+        },
+        {
+          "name": "RestrictedRegistrationAccess",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "System.Security.Permissions.UIPermissionClipboard",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AllClipboard",
+          "value": 2
+        },
+        {
+          "name": "NoClipboard",
+          "value": 0
+        },
+        {
+          "name": "OwnClipboard",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "System.Security.Permissions.UIPermissionWindow",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AllWindows",
+          "value": 3
+        },
+        {
+          "name": "NoWindows",
+          "value": 0
+        },
+        {
+          "name": "SafeSubWindows",
+          "value": 1
+        },
+        {
+          "name": "SafeTopLevelWindows",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "System.Security.Permissions.WebBrowserPermissionLevel",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Safe",
+          "value": 1
+        },
+        {
+          "name": "Unrestricted",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "System.Net.NetworkAccess",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Accept",
+          "value": 128
+        },
+        {
+          "name": "Connect",
+          "value": 64
+        }
+      ]
+    },
+    {
+      "fullName": "System.Net.TransportType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "All",
+          "value": 3
+        },
+        {
+          "name": "Connectionless",
+          "value": 1
+        },
+        {
+          "name": "ConnectionOriented",
+          "value": 2
+        },
+        {
+          "name": "Tcp",
+          "value": 2
+        },
+        {
+          "name": "Udp",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "System.Net.PeerToPeer.PnrpScope",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "All",
+          "value": 0
+        },
+        {
+          "name": "Global",
+          "value": 1
+        },
+        {
+          "name": "LinkLocal",
+          "value": 3
+        },
+        {
+          "name": "SiteLocal",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "System.Net.NetworkInformation.NetworkInformationAccess",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Read",
+          "value": 1
+        },
+        {
+          "name": "Ping",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "System.Net.Mail.SmtpAccess",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Connect",
+          "value": 1
+        },
+        {
+          "name": "ConnectToUnrestrictedPort",
+          "value": 2
+        },
+        {
+          "name": "None",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "fullName": "System.Drawing.Printing.PrintingPermissionLevel",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AllPrinting",
+          "value": 3
+        },
+        {
+          "name": "DefaultPrinting",
+          "value": 2
+        },
+        {
+          "name": "NoPrinting",
+          "value": 0
+        },
+        {
+          "name": "SafePrinting",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "System.Diagnostics.EventLogPermissionAccess",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Administer",
+          "value": 48
+        },
+        {
+          "name": "Audit",
+          "value": 10
+        },
+        {
+          "name": "Browse",
+          "value": 2
+        },
+        {
+          "name": "Instrument",
+          "value": 6
+        },
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Write",
+          "value": 16
+        }
+      ]
+    },
+    {
+      "fullName": "System.Diagnostics.PerformanceCounterPermissionAccess",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Administer",
+          "value": 7
+        },
+        {
+          "name": "Browse",
+          "value": 1
+        },
+        {
+          "name": "Instrument",
+          "value": 3
+        },
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Read",
+          "value": 1
+        },
+        {
+          "name": "Write",
+          "value": 2
+        }
+      ]
+    }
+  ],
+  "namespaceMappings": []
+}

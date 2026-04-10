@@ -1,0 +1,1401 @@
+{
+  "schema": {
+    "id": "activity-catalog",
+    "version": "v0.3"
+  },
+  "source": {
+    "kind": "nuget-package",
+    "id": "Microsoft.Azure.Management.AppService.Fluent",
+    "version": "1.38.1",
+    "feedUrl": null,
+    "authors": "Microsoft",
+    "projectUrl": "https://github.com/Azure/azure-libraries-for-net",
+    "description": "Provides App Service management (Fluent) capabilities for Microsoft Azure.\n    This package is in low maintenance mode and being phased out. To use the latest Azure SDK for resource management, please see https://aka.ms/azsdk/dotnet/mgmt",
+    "license": "https://raw.githubusercontent.com/Microsoft/dotnet/master/LICENSE",
+    "tags": "Microsoft Azure App Service management app service web app Fluent",
+    "packageTypes": []
+  },
+  "generatedAt": "2026-04-10T09:21:13Z",
+  "activities": [],
+  "enums": [
+    {
+      "fullName": "Microsoft.Azure.Management.AppService.Fluent.OperatingSystem",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Windows",
+          "value": 0
+        },
+        {
+          "name": "Linux",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.AppService.Fluent.PlatformArchitecture",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "X86",
+          "value": 0
+        },
+        {
+          "name": "X64",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.AppService.Fluent.RepositoryType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Git",
+          "value": 0
+        },
+        {
+          "name": "Mercurial",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.AppService.Fluent.Models.AccessControlEntryAction",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Permit",
+          "value": 0
+        },
+        {
+          "name": "Deny",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.AppService.Fluent.Models.AppServicePlanRestrictions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Free",
+          "value": 1
+        },
+        {
+          "name": "Shared",
+          "value": 2
+        },
+        {
+          "name": "Basic",
+          "value": 3
+        },
+        {
+          "name": "Standard",
+          "value": 4
+        },
+        {
+          "name": "Premium",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.AppService.Fluent.Models.AutoHealActionType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Recycle",
+          "value": 0
+        },
+        {
+          "name": "LogEvent",
+          "value": 1
+        },
+        {
+          "name": "CustomAction",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.AppService.Fluent.Models.AzureResourceType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Website",
+          "value": 0
+        },
+        {
+          "name": "TrafficManager",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.AppService.Fluent.Models.AzureStorageState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Ok",
+          "value": 0
+        },
+        {
+          "name": "InvalidCredentials",
+          "value": 1
+        },
+        {
+          "name": "InvalidShare",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.AppService.Fluent.Models.AzureStorageType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AzureFiles",
+          "value": 0
+        },
+        {
+          "name": "AzureBlob",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.AppService.Fluent.Models.BackupItemStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "InProgress",
+          "value": 0
+        },
+        {
+          "name": "Failed",
+          "value": 1
+        },
+        {
+          "name": "Succeeded",
+          "value": 2
+        },
+        {
+          "name": "TimedOut",
+          "value": 3
+        },
+        {
+          "name": "Created",
+          "value": 4
+        },
+        {
+          "name": "Skipped",
+          "value": 5
+        },
+        {
+          "name": "PartiallySucceeded",
+          "value": 6
+        },
+        {
+          "name": "DeleteInProgress",
+          "value": 7
+        },
+        {
+          "name": "DeleteFailed",
+          "value": 8
+        },
+        {
+          "name": "Deleted",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.AppService.Fluent.Models.BackupRestoreOperationType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "Clone",
+          "value": 1
+        },
+        {
+          "name": "Relocation",
+          "value": 2
+        },
+        {
+          "name": "Snapshot",
+          "value": 3
+        },
+        {
+          "name": "CloudFS",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.AppService.Fluent.Models.BuiltInAuthenticationProvider",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AzureActiveDirectory",
+          "value": 0
+        },
+        {
+          "name": "Facebook",
+          "value": 1
+        },
+        {
+          "name": "Google",
+          "value": 2
+        },
+        {
+          "name": "MicrosoftAccount",
+          "value": 3
+        },
+        {
+          "name": "Twitter",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.AppService.Fluent.Models.CertificateOrderActionType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "CertificateIssued",
+          "value": 0
+        },
+        {
+          "name": "CertificateOrderCanceled",
+          "value": 1
+        },
+        {
+          "name": "CertificateOrderCreated",
+          "value": 2
+        },
+        {
+          "name": "CertificateRevoked",
+          "value": 3
+        },
+        {
+          "name": "DomainValidationComplete",
+          "value": 4
+        },
+        {
+          "name": "FraudDetected",
+          "value": 5
+        },
+        {
+          "name": "OrgNameChange",
+          "value": 6
+        },
+        {
+          "name": "OrgValidationComplete",
+          "value": 7
+        },
+        {
+          "name": "SanDrop",
+          "value": 8
+        },
+        {
+          "name": "FraudCleared",
+          "value": 9
+        },
+        {
+          "name": "CertificateExpired",
+          "value": 10
+        },
+        {
+          "name": "CertificateExpirationWarning",
+          "value": 11
+        },
+        {
+          "name": "FraudDocumentationRequired",
+          "value": 12
+        },
+        {
+          "name": "Unknown",
+          "value": 13
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.AppService.Fluent.Models.CertificateOrderStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Pendingissuance",
+          "value": 0
+        },
+        {
+          "name": "Issued",
+          "value": 1
+        },
+        {
+          "name": "Revoked",
+          "value": 2
+        },
+        {
+          "name": "Canceled",
+          "value": 3
+        },
+        {
+          "name": "Denied",
+          "value": 4
+        },
+        {
+          "name": "Pendingrevocation",
+          "value": 5
+        },
+        {
+          "name": "PendingRekey",
+          "value": 6
+        },
+        {
+          "name": "Unused",
+          "value": 7
+        },
+        {
+          "name": "Expired",
+          "value": 8
+        },
+        {
+          "name": "NotSubmitted",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.AppService.Fluent.Models.CertificateProductType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "StandardDomainValidatedSsl",
+          "value": 0
+        },
+        {
+          "name": "StandardDomainValidatedWildCardSsl",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.AppService.Fluent.Models.Channels",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Notification",
+          "value": 0
+        },
+        {
+          "name": "Api",
+          "value": 1
+        },
+        {
+          "name": "Email",
+          "value": 2
+        },
+        {
+          "name": "Webhook",
+          "value": 3
+        },
+        {
+          "name": "All",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.AppService.Fluent.Models.CloneAbilityResult",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Cloneable",
+          "value": 0
+        },
+        {
+          "name": "PartiallyCloneable",
+          "value": 1
+        },
+        {
+          "name": "NotCloneable",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.AppService.Fluent.Models.ComputeModeOptions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Shared",
+          "value": 0
+        },
+        {
+          "name": "Dedicated",
+          "value": 1
+        },
+        {
+          "name": "Dynamic",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.AppService.Fluent.Models.ConfigReferenceLocation",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ApplicationSetting",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.AppService.Fluent.Models.ConfigReferenceSource",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "KeyVault",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.AppService.Fluent.Models.ConnectionStringType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "MySql",
+          "value": 0
+        },
+        {
+          "name": "SQLServer",
+          "value": 1
+        },
+        {
+          "name": "SQLAzure",
+          "value": 2
+        },
+        {
+          "name": "Custom",
+          "value": 3
+        },
+        {
+          "name": "NotificationHub",
+          "value": 4
+        },
+        {
+          "name": "ServiceBus",
+          "value": 5
+        },
+        {
+          "name": "EventHub",
+          "value": 6
+        },
+        {
+          "name": "ApiHub",
+          "value": 7
+        },
+        {
+          "name": "DocDb",
+          "value": 8
+        },
+        {
+          "name": "RedisCache",
+          "value": 9
+        },
+        {
+          "name": "PostgreSQL",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.AppService.Fluent.Models.ContinuousWebJobStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Initializing",
+          "value": 0
+        },
+        {
+          "name": "Starting",
+          "value": 1
+        },
+        {
+          "name": "Running",
+          "value": 2
+        },
+        {
+          "name": "PendingRestart",
+          "value": 3
+        },
+        {
+          "name": "Stopped",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.AppService.Fluent.Models.CustomHostNameDnsRecordType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "CName",
+          "value": 0
+        },
+        {
+          "name": "A",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.AppService.Fluent.Models.DnsType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AzureDns",
+          "value": 0
+        },
+        {
+          "name": "DefaultDomainRegistrarDns",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.AppService.Fluent.Models.DnsVerificationTestResult",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Passed",
+          "value": 0
+        },
+        {
+          "name": "Failed",
+          "value": 1
+        },
+        {
+          "name": "Skipped",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.AppService.Fluent.Models.DomainStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Active",
+          "value": 0
+        },
+        {
+          "name": "Awaiting",
+          "value": 1
+        },
+        {
+          "name": "Cancelled",
+          "value": 2
+        },
+        {
+          "name": "Confiscated",
+          "value": 3
+        },
+        {
+          "name": "Disabled",
+          "value": 4
+        },
+        {
+          "name": "Excluded",
+          "value": 5
+        },
+        {
+          "name": "Expired",
+          "value": 6
+        },
+        {
+          "name": "Failed",
+          "value": 7
+        },
+        {
+          "name": "Held",
+          "value": 8
+        },
+        {
+          "name": "Locked",
+          "value": 9
+        },
+        {
+          "name": "Parked",
+          "value": 10
+        },
+        {
+          "name": "Pending",
+          "value": 11
+        },
+        {
+          "name": "Reserved",
+          "value": 12
+        },
+        {
+          "name": "Reverted",
+          "value": 13
+        },
+        {
+          "name": "Suspended",
+          "value": 14
+        },
+        {
+          "name": "Transferred",
+          "value": 15
+        },
+        {
+          "name": "Unknown",
+          "value": 16
+        },
+        {
+          "name": "Unlocked",
+          "value": 17
+        },
+        {
+          "name": "Unparked",
+          "value": 18
+        },
+        {
+          "name": "Updated",
+          "value": 19
+        },
+        {
+          "name": "JsonConverterFailed",
+          "value": 20
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.AppService.Fluent.Models.DomainType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Regular",
+          "value": 0
+        },
+        {
+          "name": "SoftDeleted",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.AppService.Fluent.Models.FrequencyUnit",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Day",
+          "value": 0
+        },
+        {
+          "name": "Hour",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.AppService.Fluent.Models.HostingEnvironmentStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Preparing",
+          "value": 0
+        },
+        {
+          "name": "Ready",
+          "value": 1
+        },
+        {
+          "name": "Scaling",
+          "value": 2
+        },
+        {
+          "name": "Deleting",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.AppService.Fluent.Models.HostNameType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Verified",
+          "value": 0
+        },
+        {
+          "name": "Managed",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.AppService.Fluent.Models.HostType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Standard",
+          "value": 0
+        },
+        {
+          "name": "Repository",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.AppService.Fluent.Models.InternalLoadBalancingMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Web",
+          "value": 1
+        },
+        {
+          "name": "Publishing",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.AppService.Fluent.Models.IssueType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ServiceIncident",
+          "value": 0
+        },
+        {
+          "name": "AppDeployment",
+          "value": 1
+        },
+        {
+          "name": "AppCrash",
+          "value": 2
+        },
+        {
+          "name": "RuntimeIssueDetected",
+          "value": 3
+        },
+        {
+          "name": "AseDeployment",
+          "value": 4
+        },
+        {
+          "name": "UserIssue",
+          "value": 5
+        },
+        {
+          "name": "PlatformIssue",
+          "value": 6
+        },
+        {
+          "name": "Other",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.AppService.Fluent.Models.KeyVaultSecretStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Initialized",
+          "value": 0
+        },
+        {
+          "name": "WaitingOnCertificateOrder",
+          "value": 1
+        },
+        {
+          "name": "Succeeded",
+          "value": 2
+        },
+        {
+          "name": "CertificateOrderFailed",
+          "value": 3
+        },
+        {
+          "name": "OperationNotPermittedOnKeyVault",
+          "value": 4
+        },
+        {
+          "name": "AzureServiceUnauthorizedToAccessKeyVault",
+          "value": 5
+        },
+        {
+          "name": "KeyVaultDoesNotExist",
+          "value": 6
+        },
+        {
+          "name": "KeyVaultSecretDoesNotExist",
+          "value": 7
+        },
+        {
+          "name": "UnknownError",
+          "value": 8
+        },
+        {
+          "name": "ExternalPrivateKey",
+          "value": 9
+        },
+        {
+          "name": "Unknown",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.AppService.Fluent.Models.LogLevel",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Off",
+          "value": 0
+        },
+        {
+          "name": "Verbose",
+          "value": 1
+        },
+        {
+          "name": "Information",
+          "value": 2
+        },
+        {
+          "name": "Warning",
+          "value": 3
+        },
+        {
+          "name": "Error",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.AppService.Fluent.Models.ManagedPipelineMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Integrated",
+          "value": 0
+        },
+        {
+          "name": "Classic",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.AppService.Fluent.Models.ManagedServiceIdentityType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "SystemAssigned",
+          "value": 1
+        },
+        {
+          "name": "UserAssigned",
+          "value": 2
+        },
+        {
+          "name": "SystemAssignedUserAssigned",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.AppService.Fluent.Models.MSDeployLogEntryType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Message",
+          "value": 0
+        },
+        {
+          "name": "Warning",
+          "value": 1
+        },
+        {
+          "name": "Error",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.AppService.Fluent.Models.MSDeployProvisioningState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Accepted",
+          "value": 0
+        },
+        {
+          "name": "Running",
+          "value": 1
+        },
+        {
+          "name": "Succeeded",
+          "value": 2
+        },
+        {
+          "name": "Failed",
+          "value": 3
+        },
+        {
+          "name": "Canceled",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.AppService.Fluent.Models.MySqlMigrationType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "LocalToRemote",
+          "value": 0
+        },
+        {
+          "name": "RemoteToLocal",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.AppService.Fluent.Models.NotificationLevel",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Critical",
+          "value": 0
+        },
+        {
+          "name": "Warning",
+          "value": 1
+        },
+        {
+          "name": "Information",
+          "value": 2
+        },
+        {
+          "name": "NonUrgentSuggestion",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.AppService.Fluent.Models.OperationStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "InProgress",
+          "value": 0
+        },
+        {
+          "name": "Failed",
+          "value": 1
+        },
+        {
+          "name": "Succeeded",
+          "value": 2
+        },
+        {
+          "name": "TimedOut",
+          "value": 3
+        },
+        {
+          "name": "Created",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.AppService.Fluent.Models.ProvisioningState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Succeeded",
+          "value": 0
+        },
+        {
+          "name": "Failed",
+          "value": 1
+        },
+        {
+          "name": "Canceled",
+          "value": 2
+        },
+        {
+          "name": "InProgress",
+          "value": 3
+        },
+        {
+          "name": "Deleting",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.AppService.Fluent.Models.PublicCertificateLocation",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "CurrentUserMy",
+          "value": 0
+        },
+        {
+          "name": "LocalMachineMy",
+          "value": 1
+        },
+        {
+          "name": "Unknown",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.AppService.Fluent.Models.RedundancyMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Manual",
+          "value": 1
+        },
+        {
+          "name": "Failover",
+          "value": 2
+        },
+        {
+          "name": "ActiveActive",
+          "value": 3
+        },
+        {
+          "name": "GeoRedundant",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.AppService.Fluent.Models.RenderingType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NoGraph",
+          "value": 0
+        },
+        {
+          "name": "Table",
+          "value": 1
+        },
+        {
+          "name": "TimeSeries",
+          "value": 2
+        },
+        {
+          "name": "TimeSeriesPerInstance",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.AppService.Fluent.Models.ResolveStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Initialized",
+          "value": 0
+        },
+        {
+          "name": "Resolved",
+          "value": 1
+        },
+        {
+          "name": "InvalidSyntax",
+          "value": 2
+        },
+        {
+          "name": "MSINotEnabled",
+          "value": 3
+        },
+        {
+          "name": "VaultNotFound",
+          "value": 4
+        },
+        {
+          "name": "SecretNotFound",
+          "value": 5
+        },
+        {
+          "name": "SecretVersionNotFound",
+          "value": 6
+        },
+        {
+          "name": "AccessToKeyVaultDenied",
+          "value": 7
+        },
+        {
+          "name": "OtherReasons",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.AppService.Fluent.Models.SiteAvailabilityState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Normal",
+          "value": 0
+        },
+        {
+          "name": "Limited",
+          "value": 1
+        },
+        {
+          "name": "DisasterRecoveryMode",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.AppService.Fluent.Models.SiteExtensionType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Gallery",
+          "value": 0
+        },
+        {
+          "name": "WebRoot",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.AppService.Fluent.Models.SiteLoadBalancing",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "WeightedRoundRobin",
+          "value": 0
+        },
+        {
+          "name": "LeastRequests",
+          "value": 1
+        },
+        {
+          "name": "LeastResponseTime",
+          "value": 2
+        },
+        {
+          "name": "WeightedTotalTraffic",
+          "value": 3
+        },
+        {
+          "name": "RequestHash",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.AppService.Fluent.Models.SiteRuntimeState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "READY",
+          "value": 0
+        },
+        {
+          "name": "STOPPED",
+          "value": 1
+        },
+        {
+          "name": "UNKNOWN",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.AppService.Fluent.Models.SolutionType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "QuickSolution",
+          "value": 0
+        },
+        {
+          "name": "DeepInvestigation",
+          "value": 1
+        },
+        {
+          "name": "BestPractices",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.AppService.Fluent.Models.SslState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Disabled",
+          "value": 0
+        },
+        {
+          "name": "SniEnabled",
+          "value": 1
+        },
+        {
+          "name": "IpBasedEnabled",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.AppService.Fluent.Models.StatusOptions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Ready",
+          "value": 0
+        },
+        {
+          "name": "Pending",
+          "value": 1
+        },
+        {
+          "name": "Creating",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.AppService.Fluent.Models.TriggeredWebJobStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Success",
+          "value": 0
+        },
+        {
+          "name": "Failed",
+          "value": 1
+        },
+        {
+          "name": "Error",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.AppService.Fluent.Models.UnauthenticatedClientAction",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "RedirectToLoginPage",
+          "value": 0
+        },
+        {
+          "name": "AllowAnonymous",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.AppService.Fluent.Models.UsageState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Normal",
+          "value": 0
+        },
+        {
+          "name": "Exceeded",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.AppService.Fluent.Models.WebJobType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Continuous",
+          "value": 0
+        },
+        {
+          "name": "Triggered",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.AppService.Fluent.Models.WorkerSizeOptions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Small",
+          "value": 0
+        },
+        {
+          "name": "Medium",
+          "value": 1
+        },
+        {
+          "name": "Large",
+          "value": 2
+        },
+        {
+          "name": "D1",
+          "value": 3
+        },
+        {
+          "name": "D2",
+          "value": 4
+        },
+        {
+          "name": "D3",
+          "value": 5
+        },
+        {
+          "name": "NestedSmall",
+          "value": 6
+        },
+        {
+          "name": "Default",
+          "value": 7
+        }
+      ]
+    }
+  ],
+  "namespaceMappings": []
+}

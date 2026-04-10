@@ -1,0 +1,2097 @@
+{
+  "schema": {
+    "id": "activity-catalog",
+    "version": "v0.3"
+  },
+  "source": {
+    "kind": "nuget-package",
+    "id": "DocXCore",
+    "version": "1.0.9",
+    "feedUrl": null,
+    "authors": "Catahl Coffey",
+    "projectUrl": "http://docx.codeplex.com/",
+    "description": "DocX is a .NET library that allows developers to manipulate Word 2007 files, in an easy and intuitive manor. This is a fork of DocX for .NET Core.",
+    "license": "http://docx.codeplex.com/license",
+    "tags": "Word DocX",
+    "packageTypes": []
+  },
+  "generatedAt": "2026-04-10T09:21:13Z",
+  "activities": [],
+  "enums": [
+    {
+      "fullName": "Novacode.BarDirection",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Column",
+          "value": 0
+        },
+        {
+          "name": "Bar",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Novacode.BarGrouping",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Clustered",
+          "value": 0
+        },
+        {
+          "name": "PercentStacked",
+          "value": 1
+        },
+        {
+          "name": "Stacked",
+          "value": 2
+        },
+        {
+          "name": "Standard",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Novacode.ChartLegendPosition",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Top",
+          "value": 0
+        },
+        {
+          "name": "Bottom",
+          "value": 1
+        },
+        {
+          "name": "Left",
+          "value": 2
+        },
+        {
+          "name": "Right",
+          "value": 3
+        },
+        {
+          "name": "TopRight",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Novacode.DisplayBlanksAs",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Gap",
+          "value": 0
+        },
+        {
+          "name": "Span",
+          "value": 1
+        },
+        {
+          "name": "Zero",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Novacode.Grouping",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "PercentStacked",
+          "value": 0
+        },
+        {
+          "name": "Stacked",
+          "value": 1
+        },
+        {
+          "name": "Standard",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Novacode.DocumentTypes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Document",
+          "value": 0
+        },
+        {
+          "name": "Template",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Novacode.ListItemType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Bulleted",
+          "value": 0
+        },
+        {
+          "name": "Numbered",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Novacode.SectionBreakType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "defaultNextPage",
+          "value": 0
+        },
+        {
+          "name": "evenPage",
+          "value": 1
+        },
+        {
+          "name": "oddPage",
+          "value": 2
+        },
+        {
+          "name": "continuous",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Novacode.ContainerType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "TOC",
+          "value": 1
+        },
+        {
+          "name": "Section",
+          "value": 2
+        },
+        {
+          "name": "Cell",
+          "value": 3
+        },
+        {
+          "name": "Table",
+          "value": 4
+        },
+        {
+          "name": "Header",
+          "value": 5
+        },
+        {
+          "name": "Footer",
+          "value": 6
+        },
+        {
+          "name": "Paragraph",
+          "value": 7
+        },
+        {
+          "name": "Body",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "Novacode.PageNumberFormat",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "normal",
+          "value": 0
+        },
+        {
+          "name": "roman",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Novacode.BorderSize",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "one",
+          "value": 0
+        },
+        {
+          "name": "two",
+          "value": 1
+        },
+        {
+          "name": "three",
+          "value": 2
+        },
+        {
+          "name": "four",
+          "value": 3
+        },
+        {
+          "name": "five",
+          "value": 4
+        },
+        {
+          "name": "six",
+          "value": 5
+        },
+        {
+          "name": "seven",
+          "value": 6
+        },
+        {
+          "name": "eight",
+          "value": 7
+        },
+        {
+          "name": "nine",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "Novacode.EditRestrictions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "none",
+          "value": 0
+        },
+        {
+          "name": "readOnly",
+          "value": 1
+        },
+        {
+          "name": "forms",
+          "value": 2
+        },
+        {
+          "name": "comments",
+          "value": 3
+        },
+        {
+          "name": "trackedChanges",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Novacode.BorderStyle",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Tcbs_none",
+          "value": 0
+        },
+        {
+          "name": "Tcbs_single",
+          "value": 1
+        },
+        {
+          "name": "Tcbs_thick",
+          "value": 2
+        },
+        {
+          "name": "Tcbs_double",
+          "value": 3
+        },
+        {
+          "name": "Tcbs_dotted",
+          "value": 4
+        },
+        {
+          "name": "Tcbs_dashed",
+          "value": 5
+        },
+        {
+          "name": "Tcbs_dotDash",
+          "value": 6
+        },
+        {
+          "name": "Tcbs_dotDotDash",
+          "value": 7
+        },
+        {
+          "name": "Tcbs_triple",
+          "value": 8
+        },
+        {
+          "name": "Tcbs_thinThickSmallGap",
+          "value": 9
+        },
+        {
+          "name": "Tcbs_thickThinSmallGap",
+          "value": 10
+        },
+        {
+          "name": "Tcbs_thinThickThinSmallGap",
+          "value": 11
+        },
+        {
+          "name": "Tcbs_thinThickMediumGap",
+          "value": 12
+        },
+        {
+          "name": "Tcbs_thickThinMediumGap",
+          "value": 13
+        },
+        {
+          "name": "Tcbs_thinThickThinMediumGap",
+          "value": 14
+        },
+        {
+          "name": "Tcbs_thinThickLargeGap",
+          "value": 15
+        },
+        {
+          "name": "Tcbs_thickThinLargeGap",
+          "value": 16
+        },
+        {
+          "name": "Tcbs_thinThickThinLargeGap",
+          "value": 17
+        },
+        {
+          "name": "Tcbs_wave",
+          "value": 18
+        },
+        {
+          "name": "Tcbs_doubleWave",
+          "value": 19
+        },
+        {
+          "name": "Tcbs_dashSmallGap",
+          "value": 20
+        },
+        {
+          "name": "Tcbs_dashDotStroked",
+          "value": 21
+        },
+        {
+          "name": "Tcbs_threeDEmboss",
+          "value": 22
+        },
+        {
+          "name": "Tcbs_threeDEngrave",
+          "value": 23
+        },
+        {
+          "name": "Tcbs_outset",
+          "value": 24
+        },
+        {
+          "name": "Tcbs_inset",
+          "value": 25
+        },
+        {
+          "name": "Tcbs_nil",
+          "value": 26
+        }
+      ]
+    },
+    {
+      "fullName": "Novacode.TableCellBorderType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Top",
+          "value": 0
+        },
+        {
+          "name": "Bottom",
+          "value": 1
+        },
+        {
+          "name": "Left",
+          "value": 2
+        },
+        {
+          "name": "Right",
+          "value": 3
+        },
+        {
+          "name": "InsideH",
+          "value": 4
+        },
+        {
+          "name": "InsideV",
+          "value": 5
+        },
+        {
+          "name": "TopLeftToBottomRight",
+          "value": 6
+        },
+        {
+          "name": "TopRightToBottomLeft",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "Novacode.TableBorderType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Top",
+          "value": 0
+        },
+        {
+          "name": "Bottom",
+          "value": 1
+        },
+        {
+          "name": "Left",
+          "value": 2
+        },
+        {
+          "name": "Right",
+          "value": 3
+        },
+        {
+          "name": "InsideH",
+          "value": 4
+        },
+        {
+          "name": "InsideV",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Novacode.VerticalAlignment",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Top",
+          "value": 0
+        },
+        {
+          "name": "Center",
+          "value": 1
+        },
+        {
+          "name": "Bottom",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Novacode.Orientation",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Portrait",
+          "value": 0
+        },
+        {
+          "name": "Landscape",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Novacode.XmlDocument",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Main",
+          "value": 0
+        },
+        {
+          "name": "HeaderOdd",
+          "value": 1
+        },
+        {
+          "name": "HeaderEven",
+          "value": 2
+        },
+        {
+          "name": "HeaderFirst",
+          "value": 3
+        },
+        {
+          "name": "FooterOdd",
+          "value": 4
+        },
+        {
+          "name": "FooterEven",
+          "value": 5
+        },
+        {
+          "name": "FooterFirst",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "Novacode.MatchFormattingOptions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ExactMatch",
+          "value": 0
+        },
+        {
+          "name": "SubsetMatch",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Novacode.Script",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "superscript",
+          "value": 0
+        },
+        {
+          "name": "subscript",
+          "value": 1
+        },
+        {
+          "name": "none",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Novacode.Highlight",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "yellow",
+          "value": 0
+        },
+        {
+          "name": "green",
+          "value": 1
+        },
+        {
+          "name": "cyan",
+          "value": 2
+        },
+        {
+          "name": "magenta",
+          "value": 3
+        },
+        {
+          "name": "blue",
+          "value": 4
+        },
+        {
+          "name": "red",
+          "value": 5
+        },
+        {
+          "name": "darkBlue",
+          "value": 6
+        },
+        {
+          "name": "darkCyan",
+          "value": 7
+        },
+        {
+          "name": "darkGreen",
+          "value": 8
+        },
+        {
+          "name": "darkMagenta",
+          "value": 9
+        },
+        {
+          "name": "darkRed",
+          "value": 10
+        },
+        {
+          "name": "darkYellow",
+          "value": 11
+        },
+        {
+          "name": "darkGray",
+          "value": 12
+        },
+        {
+          "name": "lightGray",
+          "value": 13
+        },
+        {
+          "name": "black",
+          "value": 14
+        },
+        {
+          "name": "none",
+          "value": 15
+        }
+      ]
+    },
+    {
+      "fullName": "Novacode.UnderlineStyle",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "none",
+          "value": 0
+        },
+        {
+          "name": "singleLine",
+          "value": 1
+        },
+        {
+          "name": "words",
+          "value": 2
+        },
+        {
+          "name": "doubleLine",
+          "value": 3
+        },
+        {
+          "name": "dotted",
+          "value": 4
+        },
+        {
+          "name": "thick",
+          "value": 6
+        },
+        {
+          "name": "dash",
+          "value": 7
+        },
+        {
+          "name": "dotDash",
+          "value": 9
+        },
+        {
+          "name": "dotDotDash",
+          "value": 10
+        },
+        {
+          "name": "wave",
+          "value": 11
+        },
+        {
+          "name": "dottedHeavy",
+          "value": 20
+        },
+        {
+          "name": "dashedHeavy",
+          "value": 23
+        },
+        {
+          "name": "dashDotHeavy",
+          "value": 25
+        },
+        {
+          "name": "dashDotDotHeavy",
+          "value": 26
+        },
+        {
+          "name": "dashLongHeavy",
+          "value": 27
+        },
+        {
+          "name": "dashLong",
+          "value": 39
+        },
+        {
+          "name": "wavyDouble",
+          "value": 43
+        },
+        {
+          "name": "wavyHeavy",
+          "value": 55
+        }
+      ]
+    },
+    {
+      "fullName": "Novacode.StrikeThrough",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "none",
+          "value": 0
+        },
+        {
+          "name": "strike",
+          "value": 1
+        },
+        {
+          "name": "doubleStrike",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Novacode.Misc",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "none",
+          "value": 0
+        },
+        {
+          "name": "shadow",
+          "value": 1
+        },
+        {
+          "name": "outline",
+          "value": 2
+        },
+        {
+          "name": "outlineShadow",
+          "value": 3
+        },
+        {
+          "name": "emboss",
+          "value": 4
+        },
+        {
+          "name": "engrave",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Novacode.CapsStyle",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "none",
+          "value": 0
+        },
+        {
+          "name": "caps",
+          "value": 1
+        },
+        {
+          "name": "smallCaps",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Novacode.TableDesign",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Custom",
+          "value": 0
+        },
+        {
+          "name": "TableNormal",
+          "value": 1
+        },
+        {
+          "name": "TableGrid",
+          "value": 2
+        },
+        {
+          "name": "LightShading",
+          "value": 3
+        },
+        {
+          "name": "LightShadingAccent1",
+          "value": 4
+        },
+        {
+          "name": "LightShadingAccent2",
+          "value": 5
+        },
+        {
+          "name": "LightShadingAccent3",
+          "value": 6
+        },
+        {
+          "name": "LightShadingAccent4",
+          "value": 7
+        },
+        {
+          "name": "LightShadingAccent5",
+          "value": 8
+        },
+        {
+          "name": "LightShadingAccent6",
+          "value": 9
+        },
+        {
+          "name": "LightList",
+          "value": 10
+        },
+        {
+          "name": "LightListAccent1",
+          "value": 11
+        },
+        {
+          "name": "LightListAccent2",
+          "value": 12
+        },
+        {
+          "name": "LightListAccent3",
+          "value": 13
+        },
+        {
+          "name": "LightListAccent4",
+          "value": 14
+        },
+        {
+          "name": "LightListAccent5",
+          "value": 15
+        },
+        {
+          "name": "LightListAccent6",
+          "value": 16
+        },
+        {
+          "name": "LightGrid",
+          "value": 17
+        },
+        {
+          "name": "LightGridAccent1",
+          "value": 18
+        },
+        {
+          "name": "LightGridAccent2",
+          "value": 19
+        },
+        {
+          "name": "LightGridAccent3",
+          "value": 20
+        },
+        {
+          "name": "LightGridAccent4",
+          "value": 21
+        },
+        {
+          "name": "LightGridAccent5",
+          "value": 22
+        },
+        {
+          "name": "LightGridAccent6",
+          "value": 23
+        },
+        {
+          "name": "MediumShading1",
+          "value": 24
+        },
+        {
+          "name": "MediumShading1Accent1",
+          "value": 25
+        },
+        {
+          "name": "MediumShading1Accent2",
+          "value": 26
+        },
+        {
+          "name": "MediumShading1Accent3",
+          "value": 27
+        },
+        {
+          "name": "MediumShading1Accent4",
+          "value": 28
+        },
+        {
+          "name": "MediumShading1Accent5",
+          "value": 29
+        },
+        {
+          "name": "MediumShading1Accent6",
+          "value": 30
+        },
+        {
+          "name": "MediumShading2",
+          "value": 31
+        },
+        {
+          "name": "MediumShading2Accent1",
+          "value": 32
+        },
+        {
+          "name": "MediumShading2Accent2",
+          "value": 33
+        },
+        {
+          "name": "MediumShading2Accent3",
+          "value": 34
+        },
+        {
+          "name": "MediumShading2Accent4",
+          "value": 35
+        },
+        {
+          "name": "MediumShading2Accent5",
+          "value": 36
+        },
+        {
+          "name": "MediumShading2Accent6",
+          "value": 37
+        },
+        {
+          "name": "MediumList1",
+          "value": 38
+        },
+        {
+          "name": "MediumList1Accent1",
+          "value": 39
+        },
+        {
+          "name": "MediumList1Accent2",
+          "value": 40
+        },
+        {
+          "name": "MediumList1Accent3",
+          "value": 41
+        },
+        {
+          "name": "MediumList1Accent4",
+          "value": 42
+        },
+        {
+          "name": "MediumList1Accent5",
+          "value": 43
+        },
+        {
+          "name": "MediumList1Accent6",
+          "value": 44
+        },
+        {
+          "name": "MediumList2",
+          "value": 45
+        },
+        {
+          "name": "MediumList2Accent1",
+          "value": 46
+        },
+        {
+          "name": "MediumList2Accent2",
+          "value": 47
+        },
+        {
+          "name": "MediumList2Accent3",
+          "value": 48
+        },
+        {
+          "name": "MediumList2Accent4",
+          "value": 49
+        },
+        {
+          "name": "MediumList2Accent5",
+          "value": 50
+        },
+        {
+          "name": "MediumList2Accent6",
+          "value": 51
+        },
+        {
+          "name": "MediumGrid1",
+          "value": 52
+        },
+        {
+          "name": "MediumGrid1Accent1",
+          "value": 53
+        },
+        {
+          "name": "MediumGrid1Accent2",
+          "value": 54
+        },
+        {
+          "name": "MediumGrid1Accent3",
+          "value": 55
+        },
+        {
+          "name": "MediumGrid1Accent4",
+          "value": 56
+        },
+        {
+          "name": "MediumGrid1Accent5",
+          "value": 57
+        },
+        {
+          "name": "MediumGrid1Accent6",
+          "value": 58
+        },
+        {
+          "name": "MediumGrid2",
+          "value": 59
+        },
+        {
+          "name": "MediumGrid2Accent1",
+          "value": 60
+        },
+        {
+          "name": "MediumGrid2Accent2",
+          "value": 61
+        },
+        {
+          "name": "MediumGrid2Accent3",
+          "value": 62
+        },
+        {
+          "name": "MediumGrid2Accent4",
+          "value": 63
+        },
+        {
+          "name": "MediumGrid2Accent5",
+          "value": 64
+        },
+        {
+          "name": "MediumGrid2Accent6",
+          "value": 65
+        },
+        {
+          "name": "MediumGrid3",
+          "value": 66
+        },
+        {
+          "name": "MediumGrid3Accent1",
+          "value": 67
+        },
+        {
+          "name": "MediumGrid3Accent2",
+          "value": 68
+        },
+        {
+          "name": "MediumGrid3Accent3",
+          "value": 69
+        },
+        {
+          "name": "MediumGrid3Accent4",
+          "value": 70
+        },
+        {
+          "name": "MediumGrid3Accent5",
+          "value": 71
+        },
+        {
+          "name": "MediumGrid3Accent6",
+          "value": 72
+        },
+        {
+          "name": "DarkList",
+          "value": 73
+        },
+        {
+          "name": "DarkListAccent1",
+          "value": 74
+        },
+        {
+          "name": "DarkListAccent2",
+          "value": 75
+        },
+        {
+          "name": "DarkListAccent3",
+          "value": 76
+        },
+        {
+          "name": "DarkListAccent4",
+          "value": 77
+        },
+        {
+          "name": "DarkListAccent5",
+          "value": 78
+        },
+        {
+          "name": "DarkListAccent6",
+          "value": 79
+        },
+        {
+          "name": "ColorfulShading",
+          "value": 80
+        },
+        {
+          "name": "ColorfulShadingAccent1",
+          "value": 81
+        },
+        {
+          "name": "ColorfulShadingAccent2",
+          "value": 82
+        },
+        {
+          "name": "ColorfulShadingAccent3",
+          "value": 83
+        },
+        {
+          "name": "ColorfulShadingAccent4",
+          "value": 84
+        },
+        {
+          "name": "ColorfulShadingAccent5",
+          "value": 85
+        },
+        {
+          "name": "ColorfulShadingAccent6",
+          "value": 86
+        },
+        {
+          "name": "ColorfulList",
+          "value": 87
+        },
+        {
+          "name": "ColorfulListAccent1",
+          "value": 88
+        },
+        {
+          "name": "ColorfulListAccent2",
+          "value": 89
+        },
+        {
+          "name": "ColorfulListAccent3",
+          "value": 90
+        },
+        {
+          "name": "ColorfulListAccent4",
+          "value": 91
+        },
+        {
+          "name": "ColorfulListAccent5",
+          "value": 92
+        },
+        {
+          "name": "ColorfulListAccent6",
+          "value": 93
+        },
+        {
+          "name": "ColorfulGrid",
+          "value": 94
+        },
+        {
+          "name": "ColorfulGridAccent1",
+          "value": 95
+        },
+        {
+          "name": "ColorfulGridAccent2",
+          "value": 96
+        },
+        {
+          "name": "ColorfulGridAccent3",
+          "value": 97
+        },
+        {
+          "name": "ColorfulGridAccent4",
+          "value": 98
+        },
+        {
+          "name": "ColorfulGridAccent5",
+          "value": 99
+        },
+        {
+          "name": "ColorfulGridAccent6",
+          "value": 100
+        },
+        {
+          "name": "None",
+          "value": 101
+        }
+      ]
+    },
+    {
+      "fullName": "Novacode.AutoFit",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Contents",
+          "value": 0
+        },
+        {
+          "name": "Window",
+          "value": 1
+        },
+        {
+          "name": "ColumnWidth",
+          "value": 2
+        },
+        {
+          "name": "Fixed",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Novacode.RectangleShapes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "rect",
+          "value": 0
+        },
+        {
+          "name": "roundRect",
+          "value": 1
+        },
+        {
+          "name": "snip1Rect",
+          "value": 2
+        },
+        {
+          "name": "snip2SameRect",
+          "value": 3
+        },
+        {
+          "name": "snip2DiagRect",
+          "value": 4
+        },
+        {
+          "name": "snipRoundRect",
+          "value": 5
+        },
+        {
+          "name": "round1Rect",
+          "value": 6
+        },
+        {
+          "name": "round2SameRect",
+          "value": 7
+        },
+        {
+          "name": "round2DiagRect",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "Novacode.BasicShapes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ellipse",
+          "value": 0
+        },
+        {
+          "name": "triangle",
+          "value": 1
+        },
+        {
+          "name": "rtTriangle",
+          "value": 2
+        },
+        {
+          "name": "parallelogram",
+          "value": 3
+        },
+        {
+          "name": "trapezoid",
+          "value": 4
+        },
+        {
+          "name": "diamond",
+          "value": 5
+        },
+        {
+          "name": "pentagon",
+          "value": 6
+        },
+        {
+          "name": "hexagon",
+          "value": 7
+        },
+        {
+          "name": "heptagon",
+          "value": 8
+        },
+        {
+          "name": "octagon",
+          "value": 9
+        },
+        {
+          "name": "decagon",
+          "value": 10
+        },
+        {
+          "name": "dodecagon",
+          "value": 11
+        },
+        {
+          "name": "pie",
+          "value": 12
+        },
+        {
+          "name": "chord",
+          "value": 13
+        },
+        {
+          "name": "teardrop",
+          "value": 14
+        },
+        {
+          "name": "frame",
+          "value": 15
+        },
+        {
+          "name": "halfFrame",
+          "value": 16
+        },
+        {
+          "name": "corner",
+          "value": 17
+        },
+        {
+          "name": "diagStripe",
+          "value": 18
+        },
+        {
+          "name": "plus",
+          "value": 19
+        },
+        {
+          "name": "plaque",
+          "value": 20
+        },
+        {
+          "name": "can",
+          "value": 21
+        },
+        {
+          "name": "cube",
+          "value": 22
+        },
+        {
+          "name": "bevel",
+          "value": 23
+        },
+        {
+          "name": "donut",
+          "value": 24
+        },
+        {
+          "name": "noSmoking",
+          "value": 25
+        },
+        {
+          "name": "blockArc",
+          "value": 26
+        },
+        {
+          "name": "foldedCorner",
+          "value": 27
+        },
+        {
+          "name": "smileyFace",
+          "value": 28
+        },
+        {
+          "name": "heart",
+          "value": 29
+        },
+        {
+          "name": "lightningBolt",
+          "value": 30
+        },
+        {
+          "name": "sun",
+          "value": 31
+        },
+        {
+          "name": "moon",
+          "value": 32
+        },
+        {
+          "name": "cloud",
+          "value": 33
+        },
+        {
+          "name": "arc",
+          "value": 34
+        },
+        {
+          "name": "backetPair",
+          "value": 35
+        },
+        {
+          "name": "bracePair",
+          "value": 36
+        },
+        {
+          "name": "leftBracket",
+          "value": 37
+        },
+        {
+          "name": "rightBracket",
+          "value": 38
+        },
+        {
+          "name": "leftBrace",
+          "value": 39
+        },
+        {
+          "name": "rightBrace",
+          "value": 40
+        }
+      ]
+    },
+    {
+      "fullName": "Novacode.BlockArrowShapes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "rightArrow",
+          "value": 0
+        },
+        {
+          "name": "leftArrow",
+          "value": 1
+        },
+        {
+          "name": "upArrow",
+          "value": 2
+        },
+        {
+          "name": "downArrow",
+          "value": 3
+        },
+        {
+          "name": "leftRightArrow",
+          "value": 4
+        },
+        {
+          "name": "upDownArrow",
+          "value": 5
+        },
+        {
+          "name": "quadArrow",
+          "value": 6
+        },
+        {
+          "name": "leftRightUpArrow",
+          "value": 7
+        },
+        {
+          "name": "bentArrow",
+          "value": 8
+        },
+        {
+          "name": "uturnArrow",
+          "value": 9
+        },
+        {
+          "name": "leftUpArrow",
+          "value": 10
+        },
+        {
+          "name": "bentUpArrow",
+          "value": 11
+        },
+        {
+          "name": "curvedRightArrow",
+          "value": 12
+        },
+        {
+          "name": "curvedLeftArrow",
+          "value": 13
+        },
+        {
+          "name": "curvedUpArrow",
+          "value": 14
+        },
+        {
+          "name": "curvedDownArrow",
+          "value": 15
+        },
+        {
+          "name": "stripedRightArrow",
+          "value": 16
+        },
+        {
+          "name": "notchedRightArrow",
+          "value": 17
+        },
+        {
+          "name": "homePlate",
+          "value": 18
+        },
+        {
+          "name": "chevron",
+          "value": 19
+        },
+        {
+          "name": "rightArrowCallout",
+          "value": 20
+        },
+        {
+          "name": "downArrowCallout",
+          "value": 21
+        },
+        {
+          "name": "leftArrowCallout",
+          "value": 22
+        },
+        {
+          "name": "upArrowCallout",
+          "value": 23
+        },
+        {
+          "name": "leftRightArrowCallout",
+          "value": 24
+        },
+        {
+          "name": "quadArrowCallout",
+          "value": 25
+        },
+        {
+          "name": "circularArrow",
+          "value": 26
+        }
+      ]
+    },
+    {
+      "fullName": "Novacode.EquationShapes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "mathPlus",
+          "value": 0
+        },
+        {
+          "name": "mathMinus",
+          "value": 1
+        },
+        {
+          "name": "mathMultiply",
+          "value": 2
+        },
+        {
+          "name": "mathDivide",
+          "value": 3
+        },
+        {
+          "name": "mathEqual",
+          "value": 4
+        },
+        {
+          "name": "mathNotEqual",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Novacode.FlowchartShapes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "flowChartProcess",
+          "value": 0
+        },
+        {
+          "name": "flowChartAlternateProcess",
+          "value": 1
+        },
+        {
+          "name": "flowChartDecision",
+          "value": 2
+        },
+        {
+          "name": "flowChartInputOutput",
+          "value": 3
+        },
+        {
+          "name": "flowChartPredefinedProcess",
+          "value": 4
+        },
+        {
+          "name": "flowChartInternalStorage",
+          "value": 5
+        },
+        {
+          "name": "flowChartDocument",
+          "value": 6
+        },
+        {
+          "name": "flowChartMultidocument",
+          "value": 7
+        },
+        {
+          "name": "flowChartTerminator",
+          "value": 8
+        },
+        {
+          "name": "flowChartPreparation",
+          "value": 9
+        },
+        {
+          "name": "flowChartManualInput",
+          "value": 10
+        },
+        {
+          "name": "flowChartManualOperation",
+          "value": 11
+        },
+        {
+          "name": "flowChartConnector",
+          "value": 12
+        },
+        {
+          "name": "flowChartOffpageConnector",
+          "value": 13
+        },
+        {
+          "name": "flowChartPunchedCard",
+          "value": 14
+        },
+        {
+          "name": "flowChartPunchedTape",
+          "value": 15
+        },
+        {
+          "name": "flowChartSummingJunction",
+          "value": 16
+        },
+        {
+          "name": "flowChartOr",
+          "value": 17
+        },
+        {
+          "name": "flowChartCollate",
+          "value": 18
+        },
+        {
+          "name": "flowChartSort",
+          "value": 19
+        },
+        {
+          "name": "flowChartExtract",
+          "value": 20
+        },
+        {
+          "name": "flowChartMerge",
+          "value": 21
+        },
+        {
+          "name": "flowChartOnlineStorage",
+          "value": 22
+        },
+        {
+          "name": "flowChartDelay",
+          "value": 23
+        },
+        {
+          "name": "flowChartMagneticTape",
+          "value": 24
+        },
+        {
+          "name": "flowChartMagneticDisk",
+          "value": 25
+        },
+        {
+          "name": "flowChartMagneticDrum",
+          "value": 26
+        },
+        {
+          "name": "flowChartDisplay",
+          "value": 27
+        }
+      ]
+    },
+    {
+      "fullName": "Novacode.StarAndBannerShapes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "irregularSeal1",
+          "value": 0
+        },
+        {
+          "name": "irregularSeal2",
+          "value": 1
+        },
+        {
+          "name": "star4",
+          "value": 2
+        },
+        {
+          "name": "star5",
+          "value": 3
+        },
+        {
+          "name": "star6",
+          "value": 4
+        },
+        {
+          "name": "star7",
+          "value": 5
+        },
+        {
+          "name": "star8",
+          "value": 6
+        },
+        {
+          "name": "star10",
+          "value": 7
+        },
+        {
+          "name": "star12",
+          "value": 8
+        },
+        {
+          "name": "star16",
+          "value": 9
+        },
+        {
+          "name": "star24",
+          "value": 10
+        },
+        {
+          "name": "star32",
+          "value": 11
+        },
+        {
+          "name": "ribbon",
+          "value": 12
+        },
+        {
+          "name": "ribbon2",
+          "value": 13
+        },
+        {
+          "name": "ellipseRibbon",
+          "value": 14
+        },
+        {
+          "name": "ellipseRibbon2",
+          "value": 15
+        },
+        {
+          "name": "verticalScroll",
+          "value": 16
+        },
+        {
+          "name": "horizontalScroll",
+          "value": 17
+        },
+        {
+          "name": "wave",
+          "value": 18
+        },
+        {
+          "name": "doubleWave",
+          "value": 19
+        }
+      ]
+    },
+    {
+      "fullName": "Novacode.CalloutShapes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "wedgeRectCallout",
+          "value": 0
+        },
+        {
+          "name": "wedgeRoundRectCallout",
+          "value": 1
+        },
+        {
+          "name": "wedgeEllipseCallout",
+          "value": 2
+        },
+        {
+          "name": "cloudCallout",
+          "value": 3
+        },
+        {
+          "name": "borderCallout1",
+          "value": 4
+        },
+        {
+          "name": "borderCallout2",
+          "value": 5
+        },
+        {
+          "name": "borderCallout3",
+          "value": 6
+        },
+        {
+          "name": "accentCallout1",
+          "value": 7
+        },
+        {
+          "name": "accentCallout2",
+          "value": 8
+        },
+        {
+          "name": "accentCallout3",
+          "value": 9
+        },
+        {
+          "name": "callout1",
+          "value": 10
+        },
+        {
+          "name": "callout2",
+          "value": 11
+        },
+        {
+          "name": "callout3",
+          "value": 12
+        },
+        {
+          "name": "accentBorderCallout1",
+          "value": 13
+        },
+        {
+          "name": "accentBorderCallout2",
+          "value": 14
+        },
+        {
+          "name": "accentBorderCallout3",
+          "value": 15
+        }
+      ]
+    },
+    {
+      "fullName": "Novacode.Alignment",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "left",
+          "value": 0
+        },
+        {
+          "name": "center",
+          "value": 1
+        },
+        {
+          "name": "right",
+          "value": 2
+        },
+        {
+          "name": "both",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Novacode.Direction",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "LeftToRight",
+          "value": 0
+        },
+        {
+          "name": "RightToLeft",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Novacode.RunTextType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Text",
+          "value": 0
+        },
+        {
+          "name": "DelText",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Novacode.LineSpacingType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Line",
+          "value": 0
+        },
+        {
+          "name": "Before",
+          "value": 1
+        },
+        {
+          "name": "After",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Novacode.LineSpacingTypeAuto",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AutoBefore",
+          "value": 0
+        },
+        {
+          "name": "AutoAfter",
+          "value": 1
+        },
+        {
+          "name": "Auto",
+          "value": 2
+        },
+        {
+          "name": "None",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Novacode.TableCellMarginType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "left",
+          "value": 0
+        },
+        {
+          "name": "right",
+          "value": 1
+        },
+        {
+          "name": "bottom",
+          "value": 2
+        },
+        {
+          "name": "top",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Novacode.HeadingType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Heading1",
+          "value": 0
+        },
+        {
+          "name": "Heading2",
+          "value": 1
+        },
+        {
+          "name": "Heading3",
+          "value": 2
+        },
+        {
+          "name": "Heading4",
+          "value": 3
+        },
+        {
+          "name": "Heading5",
+          "value": 4
+        },
+        {
+          "name": "Heading6",
+          "value": 5
+        },
+        {
+          "name": "Heading7",
+          "value": 6
+        },
+        {
+          "name": "Heading8",
+          "value": 7
+        },
+        {
+          "name": "Heading9",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "Novacode.TextDirection",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "btLr",
+          "value": 0
+        },
+        {
+          "name": "right",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Novacode.TableOfContentsSwitches",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "A",
+          "value": 1
+        },
+        {
+          "name": "B",
+          "value": 2
+        },
+        {
+          "name": "C",
+          "value": 4
+        },
+        {
+          "name": "D",
+          "value": 8
+        },
+        {
+          "name": "F",
+          "value": 16
+        },
+        {
+          "name": "H",
+          "value": 32
+        },
+        {
+          "name": "L",
+          "value": 64
+        },
+        {
+          "name": "N",
+          "value": 128
+        },
+        {
+          "name": "O",
+          "value": 256
+        },
+        {
+          "name": "P",
+          "value": 512
+        },
+        {
+          "name": "S",
+          "value": 1024
+        },
+        {
+          "name": "T",
+          "value": 2048
+        },
+        {
+          "name": "U",
+          "value": 4096
+        },
+        {
+          "name": "W",
+          "value": 8192
+        },
+        {
+          "name": "X",
+          "value": 16384
+        },
+        {
+          "name": "Z",
+          "value": 32768
+        }
+      ]
+    }
+  ],
+  "namespaceMappings": []
+}

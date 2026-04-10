@@ -1,0 +1,675 @@
+{
+  "schema": {
+    "id": "activity-catalog",
+    "version": "v0.3"
+  },
+  "source": {
+    "kind": "nuget-package",
+    "id": "Microsoft.Web.WebView2",
+    "version": "1.0.705.50",
+    "feedUrl": null,
+    "authors": "Microsoft",
+    "projectUrl": "https://aka.ms/webview",
+    "description": "The WebView2 control enables you to embed web technologies (HTML, CSS, and JavaScript) in your native applications powered by Microsoft Edge (Chromium).\nThis package is necessary for Win 32 C/C++ applications. To learn more about package versions checkout https://aka.ms/wv2-packageversion. To learn best practices checkout: https://aka.ms/wv2-bestpractices.",
+    "license": "LICENSE.txt",
+    "tags": "Microsoft Web WebView Native native package Edge C++ Win32 Webview2",
+    "packageTypes": []
+  },
+  "generatedAt": "2026-04-10T09:21:15Z",
+  "activities": [],
+  "enums": [
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.CoreWebView2WebResourceContext",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "All",
+          "value": 0
+        },
+        {
+          "name": "Document",
+          "value": 1
+        },
+        {
+          "name": "Stylesheet",
+          "value": 2
+        },
+        {
+          "name": "Image",
+          "value": 3
+        },
+        {
+          "name": "Media",
+          "value": 4
+        },
+        {
+          "name": "Font",
+          "value": 5
+        },
+        {
+          "name": "Script",
+          "value": 6
+        },
+        {
+          "name": "XmlHttpRequest",
+          "value": 7
+        },
+        {
+          "name": "Fetch",
+          "value": 8
+        },
+        {
+          "name": "TextTrack",
+          "value": 9
+        },
+        {
+          "name": "EventSource",
+          "value": 10
+        },
+        {
+          "name": "Websocket",
+          "value": 11
+        },
+        {
+          "name": "Manifest",
+          "value": 12
+        },
+        {
+          "name": "SignedExchange",
+          "value": 13
+        },
+        {
+          "name": "Ping",
+          "value": 14
+        },
+        {
+          "name": "CspViolationReport",
+          "value": 15
+        },
+        {
+          "name": "Other",
+          "value": 16
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.CoreWebView2WebErrorStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "CertificateCommonNameIsIncorrect",
+          "value": 1
+        },
+        {
+          "name": "CertificateExpired",
+          "value": 2
+        },
+        {
+          "name": "ClientCertificateContainsErrors",
+          "value": 3
+        },
+        {
+          "name": "CertificateRevoked",
+          "value": 4
+        },
+        {
+          "name": "CertificateIsInvalid",
+          "value": 5
+        },
+        {
+          "name": "ServerUnreachable",
+          "value": 6
+        },
+        {
+          "name": "Timeout",
+          "value": 7
+        },
+        {
+          "name": "ErrorHttpInvalidServerResponse",
+          "value": 8
+        },
+        {
+          "name": "ConnectionAborted",
+          "value": 9
+        },
+        {
+          "name": "ConnectionReset",
+          "value": 10
+        },
+        {
+          "name": "Disconnected",
+          "value": 11
+        },
+        {
+          "name": "CannotConnect",
+          "value": 12
+        },
+        {
+          "name": "HostNameNotResolved",
+          "value": 13
+        },
+        {
+          "name": "OperationCanceled",
+          "value": 14
+        },
+        {
+          "name": "RedirectFailed",
+          "value": 15
+        },
+        {
+          "name": "UnexpectedError",
+          "value": 16
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.CoreWebView2ScriptDialogKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Alert",
+          "value": 0
+        },
+        {
+          "name": "Confirm",
+          "value": 1
+        },
+        {
+          "name": "Prompt",
+          "value": 2
+        },
+        {
+          "name": "Beforeunload",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.CoreWebView2ProcessFailedKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "BrowserProcessExited",
+          "value": 0
+        },
+        {
+          "name": "RenderProcessExited",
+          "value": 1
+        },
+        {
+          "name": "RenderProcessUnresponsive",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.CoreWebView2PermissionState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "Allow",
+          "value": 1
+        },
+        {
+          "name": "Deny",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.CoreWebView2PermissionKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "UnknownPermission",
+          "value": 0
+        },
+        {
+          "name": "Microphone",
+          "value": 1
+        },
+        {
+          "name": "Camera",
+          "value": 2
+        },
+        {
+          "name": "Geolocation",
+          "value": 3
+        },
+        {
+          "name": "Notifications",
+          "value": 4
+        },
+        {
+          "name": "OtherSensors",
+          "value": 5
+        },
+        {
+          "name": "ClipboardRead",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.CoreWebView2MoveFocusReason",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Programmatic",
+          "value": 0
+        },
+        {
+          "name": "Next",
+          "value": 1
+        },
+        {
+          "name": "Previous",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.CoreWebView2KeyEventKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "KeyDown",
+          "value": 0
+        },
+        {
+          "name": "KeyUp",
+          "value": 1
+        },
+        {
+          "name": "SystemKeyDown",
+          "value": 2
+        },
+        {
+          "name": "SystemKeyUp",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.CoreWebView2CookieSameSiteKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Lax",
+          "value": 1
+        },
+        {
+          "name": "Strict",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.CoreWebView2CapturePreviewImageFormat",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Png",
+          "value": 0
+        },
+        {
+          "name": "Jpeg",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.Raw.COREWEBVIEW2_CAPTURE_PREVIEW_IMAGE_FORMAT",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "COREWEBVIEW2_CAPTURE_PREVIEW_IMAGE_FORMAT_PNG",
+          "value": 0
+        },
+        {
+          "name": "COREWEBVIEW2_CAPTURE_PREVIEW_IMAGE_FORMAT_JPEG",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.Raw.COREWEBVIEW2_COOKIE_SAME_SITE_KIND",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "COREWEBVIEW2_COOKIE_SAME_SITE_KIND_NONE",
+          "value": 0
+        },
+        {
+          "name": "COREWEBVIEW2_COOKIE_SAME_SITE_KIND_LAX",
+          "value": 1
+        },
+        {
+          "name": "COREWEBVIEW2_COOKIE_SAME_SITE_KIND_STRICT",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.Raw.COREWEBVIEW2_KEY_EVENT_KIND",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "COREWEBVIEW2_KEY_EVENT_KIND_KEY_DOWN",
+          "value": 0
+        },
+        {
+          "name": "COREWEBVIEW2_KEY_EVENT_KIND_KEY_UP",
+          "value": 1
+        },
+        {
+          "name": "COREWEBVIEW2_KEY_EVENT_KIND_SYSTEM_KEY_DOWN",
+          "value": 2
+        },
+        {
+          "name": "COREWEBVIEW2_KEY_EVENT_KIND_SYSTEM_KEY_UP",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.Raw.COREWEBVIEW2_MOVE_FOCUS_REASON",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "COREWEBVIEW2_MOVE_FOCUS_REASON_PROGRAMMATIC",
+          "value": 0
+        },
+        {
+          "name": "COREWEBVIEW2_MOVE_FOCUS_REASON_NEXT",
+          "value": 1
+        },
+        {
+          "name": "COREWEBVIEW2_MOVE_FOCUS_REASON_PREVIOUS",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.Raw.COREWEBVIEW2_PERMISSION_KIND",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "COREWEBVIEW2_PERMISSION_KIND_UNKNOWN_PERMISSION",
+          "value": 0
+        },
+        {
+          "name": "COREWEBVIEW2_PERMISSION_KIND_MICROPHONE",
+          "value": 1
+        },
+        {
+          "name": "COREWEBVIEW2_PERMISSION_KIND_CAMERA",
+          "value": 2
+        },
+        {
+          "name": "COREWEBVIEW2_PERMISSION_KIND_GEOLOCATION",
+          "value": 3
+        },
+        {
+          "name": "COREWEBVIEW2_PERMISSION_KIND_NOTIFICATIONS",
+          "value": 4
+        },
+        {
+          "name": "COREWEBVIEW2_PERMISSION_KIND_OTHER_SENSORS",
+          "value": 5
+        },
+        {
+          "name": "COREWEBVIEW2_PERMISSION_KIND_CLIPBOARD_READ",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.Raw.COREWEBVIEW2_PERMISSION_STATE",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "COREWEBVIEW2_PERMISSION_STATE_DEFAULT",
+          "value": 0
+        },
+        {
+          "name": "COREWEBVIEW2_PERMISSION_STATE_ALLOW",
+          "value": 1
+        },
+        {
+          "name": "COREWEBVIEW2_PERMISSION_STATE_DENY",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.Raw.COREWEBVIEW2_PROCESS_FAILED_KIND",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "COREWEBVIEW2_PROCESS_FAILED_KIND_BROWSER_PROCESS_EXITED",
+          "value": 0
+        },
+        {
+          "name": "COREWEBVIEW2_PROCESS_FAILED_KIND_RENDER_PROCESS_EXITED",
+          "value": 1
+        },
+        {
+          "name": "COREWEBVIEW2_PROCESS_FAILED_KIND_RENDER_PROCESS_UNRESPONSIVE",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.Raw.COREWEBVIEW2_SCRIPT_DIALOG_KIND",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "COREWEBVIEW2_SCRIPT_DIALOG_KIND_ALERT",
+          "value": 0
+        },
+        {
+          "name": "COREWEBVIEW2_SCRIPT_DIALOG_KIND_CONFIRM",
+          "value": 1
+        },
+        {
+          "name": "COREWEBVIEW2_SCRIPT_DIALOG_KIND_PROMPT",
+          "value": 2
+        },
+        {
+          "name": "COREWEBVIEW2_SCRIPT_DIALOG_KIND_BEFOREUNLOAD",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.Raw.COREWEBVIEW2_WEB_ERROR_STATUS",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "COREWEBVIEW2_WEB_ERROR_STATUS_UNKNOWN",
+          "value": 0
+        },
+        {
+          "name": "COREWEBVIEW2_WEB_ERROR_STATUS_CERTIFICATE_COMMON_NAME_IS_INCORRECT",
+          "value": 1
+        },
+        {
+          "name": "COREWEBVIEW2_WEB_ERROR_STATUS_CERTIFICATE_EXPIRED",
+          "value": 2
+        },
+        {
+          "name": "COREWEBVIEW2_WEB_ERROR_STATUS_CLIENT_CERTIFICATE_CONTAINS_ERRORS",
+          "value": 3
+        },
+        {
+          "name": "COREWEBVIEW2_WEB_ERROR_STATUS_CERTIFICATE_REVOKED",
+          "value": 4
+        },
+        {
+          "name": "COREWEBVIEW2_WEB_ERROR_STATUS_CERTIFICATE_IS_INVALID",
+          "value": 5
+        },
+        {
+          "name": "COREWEBVIEW2_WEB_ERROR_STATUS_SERVER_UNREACHABLE",
+          "value": 6
+        },
+        {
+          "name": "COREWEBVIEW2_WEB_ERROR_STATUS_TIMEOUT",
+          "value": 7
+        },
+        {
+          "name": "COREWEBVIEW2_WEB_ERROR_STATUS_ERROR_HTTP_INVALID_SERVER_RESPONSE",
+          "value": 8
+        },
+        {
+          "name": "COREWEBVIEW2_WEB_ERROR_STATUS_CONNECTION_ABORTED",
+          "value": 9
+        },
+        {
+          "name": "COREWEBVIEW2_WEB_ERROR_STATUS_CONNECTION_RESET",
+          "value": 10
+        },
+        {
+          "name": "COREWEBVIEW2_WEB_ERROR_STATUS_DISCONNECTED",
+          "value": 11
+        },
+        {
+          "name": "COREWEBVIEW2_WEB_ERROR_STATUS_CANNOT_CONNECT",
+          "value": 12
+        },
+        {
+          "name": "COREWEBVIEW2_WEB_ERROR_STATUS_HOST_NAME_NOT_RESOLVED",
+          "value": 13
+        },
+        {
+          "name": "COREWEBVIEW2_WEB_ERROR_STATUS_OPERATION_CANCELED",
+          "value": 14
+        },
+        {
+          "name": "COREWEBVIEW2_WEB_ERROR_STATUS_REDIRECT_FAILED",
+          "value": 15
+        },
+        {
+          "name": "COREWEBVIEW2_WEB_ERROR_STATUS_UNEXPECTED_ERROR",
+          "value": 16
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.Raw.COREWEBVIEW2_WEB_RESOURCE_CONTEXT",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "COREWEBVIEW2_WEB_RESOURCE_CONTEXT_ALL",
+          "value": 0
+        },
+        {
+          "name": "COREWEBVIEW2_WEB_RESOURCE_CONTEXT_DOCUMENT",
+          "value": 1
+        },
+        {
+          "name": "COREWEBVIEW2_WEB_RESOURCE_CONTEXT_STYLESHEET",
+          "value": 2
+        },
+        {
+          "name": "COREWEBVIEW2_WEB_RESOURCE_CONTEXT_IMAGE",
+          "value": 3
+        },
+        {
+          "name": "COREWEBVIEW2_WEB_RESOURCE_CONTEXT_MEDIA",
+          "value": 4
+        },
+        {
+          "name": "COREWEBVIEW2_WEB_RESOURCE_CONTEXT_FONT",
+          "value": 5
+        },
+        {
+          "name": "COREWEBVIEW2_WEB_RESOURCE_CONTEXT_SCRIPT",
+          "value": 6
+        },
+        {
+          "name": "COREWEBVIEW2_WEB_RESOURCE_CONTEXT_XML_HTTP_REQUEST",
+          "value": 7
+        },
+        {
+          "name": "COREWEBVIEW2_WEB_RESOURCE_CONTEXT_FETCH",
+          "value": 8
+        },
+        {
+          "name": "COREWEBVIEW2_WEB_RESOURCE_CONTEXT_TEXT_TRACK",
+          "value": 9
+        },
+        {
+          "name": "COREWEBVIEW2_WEB_RESOURCE_CONTEXT_EVENT_SOURCE",
+          "value": 10
+        },
+        {
+          "name": "COREWEBVIEW2_WEB_RESOURCE_CONTEXT_WEBSOCKET",
+          "value": 11
+        },
+        {
+          "name": "COREWEBVIEW2_WEB_RESOURCE_CONTEXT_MANIFEST",
+          "value": 12
+        },
+        {
+          "name": "COREWEBVIEW2_WEB_RESOURCE_CONTEXT_SIGNED_EXCHANGE",
+          "value": 13
+        },
+        {
+          "name": "COREWEBVIEW2_WEB_RESOURCE_CONTEXT_PING",
+          "value": 14
+        },
+        {
+          "name": "COREWEBVIEW2_WEB_RESOURCE_CONTEXT_CSP_VIOLATION_REPORT",
+          "value": 15
+        },
+        {
+          "name": "COREWEBVIEW2_WEB_RESOURCE_CONTEXT_OTHER",
+          "value": 16
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Wpf.WebView2.NativeMethods.WS",
+      "underlyingType": "System.UInt32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "VISIBLE",
+          "value": 268435456
+        },
+        {
+          "name": "CHILD",
+          "value": 1073741824
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Wpf.WebView2.NativeMethods.WS_EX",
+      "underlyingType": "System.UInt32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        }
+      ]
+    }
+  ],
+  "namespaceMappings": []
+}

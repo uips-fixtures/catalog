@@ -1,0 +1,2719 @@
+{
+  "schema": {
+    "id": "activity-catalog",
+    "version": "v0.3"
+  },
+  "source": {
+    "kind": "nuget-package",
+    "id": "Microsoft.CodeAnalysis.Common",
+    "version": "4.0.1",
+    "feedUrl": null,
+    "authors": "Microsoft",
+    "projectUrl": "https://github.com/dotnet/roslyn",
+    "description": "A shared package used by the Microsoft .NET Compiler Platform (\"Roslyn\").\n      Do not install this package manually, it will be added as a prerequisite by other packages that require it.\n    \n      More details at https://aka.ms/roslyn-packages\n      This package was built from the source at https://github.com/dotnet/roslyn/commit/b3e69109341a1017423af7981b8b84b646f5bcce.",
+    "license": "MIT",
+    "tags": "Roslyn CodeAnalysis Compiler CSharp VB VisualBasic Parser Scanner Lexer Emit CodeGeneration Metadata IL Compilation Scripting Syntax Semantics",
+    "packageTypes": []
+  },
+  "generatedAt": "2026-04-10T09:21:14Z",
+  "activities": [],
+  "enums": [
+    {
+      "fullName": "Microsoft.CodeAnalysis.SarifVersion",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Sarif1",
+          "value": 1
+        },
+        {
+          "name": "Sarif2",
+          "value": 2
+        },
+        {
+          "name": "Default",
+          "value": 1
+        },
+        {
+          "name": "Latest",
+          "value": 2147483647
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.CandidateReason",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "NotATypeOrNamespace",
+          "value": 1
+        },
+        {
+          "name": "NotAnEvent",
+          "value": 2
+        },
+        {
+          "name": "NotAWithEventsMember",
+          "value": 3
+        },
+        {
+          "name": "NotAnAttributeType",
+          "value": 4
+        },
+        {
+          "name": "WrongArity",
+          "value": 5
+        },
+        {
+          "name": "NotCreatable",
+          "value": 6
+        },
+        {
+          "name": "NotReferencable",
+          "value": 7
+        },
+        {
+          "name": "Inaccessible",
+          "value": 8
+        },
+        {
+          "name": "NotAValue",
+          "value": 9
+        },
+        {
+          "name": "NotAVariable",
+          "value": 10
+        },
+        {
+          "name": "NotInvocable",
+          "value": 11
+        },
+        {
+          "name": "StaticInstanceMismatch",
+          "value": 12
+        },
+        {
+          "name": "OverloadResolutionFailure",
+          "value": 13
+        },
+        {
+          "name": "LateBound",
+          "value": 14
+        },
+        {
+          "name": "Ambiguous",
+          "value": 15
+        },
+        {
+          "name": "MemberGroup",
+          "value": 16
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.GeneratedKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "NotGenerated",
+          "value": 1
+        },
+        {
+          "name": "MarkedGenerated",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.NullableContext",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Disabled",
+          "value": 0
+        },
+        {
+          "name": "WarningsEnabled",
+          "value": 1
+        },
+        {
+          "name": "AnnotationsEnabled",
+          "value": 2
+        },
+        {
+          "name": "Enabled",
+          "value": 3
+        },
+        {
+          "name": "WarningsContextInherited",
+          "value": 4
+        },
+        {
+          "name": "AnnotationsContextInherited",
+          "value": 8
+        },
+        {
+          "name": "ContextInherited",
+          "value": 12
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.NullableContextOptions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Disable",
+          "value": 0
+        },
+        {
+          "name": "Warnings",
+          "value": 1
+        },
+        {
+          "name": "Annotations",
+          "value": 2
+        },
+        {
+          "name": "Enable",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.OptimizationLevel",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Debug",
+          "value": 0
+        },
+        {
+          "name": "Release",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.Platform",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AnyCpu",
+          "value": 0
+        },
+        {
+          "name": "X86",
+          "value": 1
+        },
+        {
+          "name": "X64",
+          "value": 2
+        },
+        {
+          "name": "Itanium",
+          "value": 3
+        },
+        {
+          "name": "AnyCpu32BitPreferred",
+          "value": 4
+        },
+        {
+          "name": "Arm",
+          "value": 5
+        },
+        {
+          "name": "Arm64",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.SpeculativeBindingOption",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "BindAsExpression",
+          "value": 0
+        },
+        {
+          "name": "BindAsTypeOrNamespace",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.SymbolFilter",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Namespace",
+          "value": 1
+        },
+        {
+          "name": "Type",
+          "value": 2
+        },
+        {
+          "name": "Member",
+          "value": 4
+        },
+        {
+          "name": "TypeAndMember",
+          "value": 6
+        },
+        {
+          "name": "All",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.DiagnosticSeverity",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Hidden",
+          "value": 0
+        },
+        {
+          "name": "Info",
+          "value": 1
+        },
+        {
+          "name": "Warning",
+          "value": 2
+        },
+        {
+          "name": "Error",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.LocationKind",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "SourceFile",
+          "value": 1
+        },
+        {
+          "name": "MetadataFile",
+          "value": 2
+        },
+        {
+          "name": "XmlFile",
+          "value": 3
+        },
+        {
+          "name": "ExternalFile",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.ReportDiagnostic",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "Error",
+          "value": 1
+        },
+        {
+          "name": "Warn",
+          "value": 2
+        },
+        {
+          "name": "Info",
+          "value": 3
+        },
+        {
+          "name": "Hidden",
+          "value": 4
+        },
+        {
+          "name": "Suppress",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.DocumentationMode",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Parse",
+          "value": 1
+        },
+        {
+          "name": "Diagnose",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.OperationKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Invalid",
+          "value": 1
+        },
+        {
+          "name": "Block",
+          "value": 2
+        },
+        {
+          "name": "VariableDeclarationGroup",
+          "value": 3
+        },
+        {
+          "name": "Switch",
+          "value": 4
+        },
+        {
+          "name": "Loop",
+          "value": 5
+        },
+        {
+          "name": "Labeled",
+          "value": 6
+        },
+        {
+          "name": "Branch",
+          "value": 7
+        },
+        {
+          "name": "Empty",
+          "value": 8
+        },
+        {
+          "name": "Return",
+          "value": 9
+        },
+        {
+          "name": "YieldBreak",
+          "value": 10
+        },
+        {
+          "name": "Lock",
+          "value": 11
+        },
+        {
+          "name": "Try",
+          "value": 12
+        },
+        {
+          "name": "Using",
+          "value": 13
+        },
+        {
+          "name": "YieldReturn",
+          "value": 14
+        },
+        {
+          "name": "ExpressionStatement",
+          "value": 15
+        },
+        {
+          "name": "LocalFunction",
+          "value": 16
+        },
+        {
+          "name": "Stop",
+          "value": 17
+        },
+        {
+          "name": "End",
+          "value": 18
+        },
+        {
+          "name": "RaiseEvent",
+          "value": 19
+        },
+        {
+          "name": "Literal",
+          "value": 20
+        },
+        {
+          "name": "Conversion",
+          "value": 21
+        },
+        {
+          "name": "Invocation",
+          "value": 22
+        },
+        {
+          "name": "ArrayElementReference",
+          "value": 23
+        },
+        {
+          "name": "LocalReference",
+          "value": 24
+        },
+        {
+          "name": "ParameterReference",
+          "value": 25
+        },
+        {
+          "name": "FieldReference",
+          "value": 26
+        },
+        {
+          "name": "MethodReference",
+          "value": 27
+        },
+        {
+          "name": "PropertyReference",
+          "value": 28
+        },
+        {
+          "name": "EventReference",
+          "value": 30
+        },
+        {
+          "name": "Unary",
+          "value": 31
+        },
+        {
+          "name": "UnaryOperator",
+          "value": 31
+        },
+        {
+          "name": "Binary",
+          "value": 32
+        },
+        {
+          "name": "BinaryOperator",
+          "value": 32
+        },
+        {
+          "name": "Conditional",
+          "value": 33
+        },
+        {
+          "name": "Coalesce",
+          "value": 34
+        },
+        {
+          "name": "AnonymousFunction",
+          "value": 35
+        },
+        {
+          "name": "ObjectCreation",
+          "value": 36
+        },
+        {
+          "name": "TypeParameterObjectCreation",
+          "value": 37
+        },
+        {
+          "name": "ArrayCreation",
+          "value": 38
+        },
+        {
+          "name": "InstanceReference",
+          "value": 39
+        },
+        {
+          "name": "IsType",
+          "value": 40
+        },
+        {
+          "name": "Await",
+          "value": 41
+        },
+        {
+          "name": "SimpleAssignment",
+          "value": 42
+        },
+        {
+          "name": "CompoundAssignment",
+          "value": 43
+        },
+        {
+          "name": "Parenthesized",
+          "value": 44
+        },
+        {
+          "name": "EventAssignment",
+          "value": 45
+        },
+        {
+          "name": "ConditionalAccess",
+          "value": 46
+        },
+        {
+          "name": "ConditionalAccessInstance",
+          "value": 47
+        },
+        {
+          "name": "InterpolatedString",
+          "value": 48
+        },
+        {
+          "name": "AnonymousObjectCreation",
+          "value": 49
+        },
+        {
+          "name": "ObjectOrCollectionInitializer",
+          "value": 50
+        },
+        {
+          "name": "MemberInitializer",
+          "value": 51
+        },
+        {
+          "name": "CollectionElementInitializer",
+          "value": 52
+        },
+        {
+          "name": "NameOf",
+          "value": 53
+        },
+        {
+          "name": "Tuple",
+          "value": 54
+        },
+        {
+          "name": "DynamicObjectCreation",
+          "value": 55
+        },
+        {
+          "name": "DynamicMemberReference",
+          "value": 56
+        },
+        {
+          "name": "DynamicInvocation",
+          "value": 57
+        },
+        {
+          "name": "DynamicIndexerAccess",
+          "value": 58
+        },
+        {
+          "name": "TranslatedQuery",
+          "value": 59
+        },
+        {
+          "name": "DelegateCreation",
+          "value": 60
+        },
+        {
+          "name": "DefaultValue",
+          "value": 61
+        },
+        {
+          "name": "TypeOf",
+          "value": 62
+        },
+        {
+          "name": "SizeOf",
+          "value": 63
+        },
+        {
+          "name": "AddressOf",
+          "value": 64
+        },
+        {
+          "name": "IsPattern",
+          "value": 65
+        },
+        {
+          "name": "Increment",
+          "value": 66
+        },
+        {
+          "name": "Throw",
+          "value": 67
+        },
+        {
+          "name": "Decrement",
+          "value": 68
+        },
+        {
+          "name": "DeconstructionAssignment",
+          "value": 69
+        },
+        {
+          "name": "DeclarationExpression",
+          "value": 70
+        },
+        {
+          "name": "OmittedArgument",
+          "value": 71
+        },
+        {
+          "name": "FieldInitializer",
+          "value": 72
+        },
+        {
+          "name": "VariableInitializer",
+          "value": 73
+        },
+        {
+          "name": "PropertyInitializer",
+          "value": 74
+        },
+        {
+          "name": "ParameterInitializer",
+          "value": 75
+        },
+        {
+          "name": "ArrayInitializer",
+          "value": 76
+        },
+        {
+          "name": "VariableDeclarator",
+          "value": 77
+        },
+        {
+          "name": "VariableDeclaration",
+          "value": 78
+        },
+        {
+          "name": "Argument",
+          "value": 79
+        },
+        {
+          "name": "CatchClause",
+          "value": 80
+        },
+        {
+          "name": "SwitchCase",
+          "value": 81
+        },
+        {
+          "name": "CaseClause",
+          "value": 82
+        },
+        {
+          "name": "InterpolatedStringText",
+          "value": 83
+        },
+        {
+          "name": "Interpolation",
+          "value": 84
+        },
+        {
+          "name": "ConstantPattern",
+          "value": 85
+        },
+        {
+          "name": "DeclarationPattern",
+          "value": 86
+        },
+        {
+          "name": "TupleBinary",
+          "value": 87
+        },
+        {
+          "name": "TupleBinaryOperator",
+          "value": 87
+        },
+        {
+          "name": "MethodBody",
+          "value": 88
+        },
+        {
+          "name": "MethodBodyOperation",
+          "value": 88
+        },
+        {
+          "name": "ConstructorBody",
+          "value": 89
+        },
+        {
+          "name": "ConstructorBodyOperation",
+          "value": 89
+        },
+        {
+          "name": "Discard",
+          "value": 90
+        },
+        {
+          "name": "FlowCapture",
+          "value": 91
+        },
+        {
+          "name": "FlowCaptureReference",
+          "value": 92
+        },
+        {
+          "name": "IsNull",
+          "value": 93
+        },
+        {
+          "name": "CaughtException",
+          "value": 94
+        },
+        {
+          "name": "StaticLocalInitializationSemaphore",
+          "value": 95
+        },
+        {
+          "name": "FlowAnonymousFunction",
+          "value": 96
+        },
+        {
+          "name": "CoalesceAssignment",
+          "value": 97
+        },
+        {
+          "name": "Range",
+          "value": 99
+        },
+        {
+          "name": "ReDim",
+          "value": 101
+        },
+        {
+          "name": "ReDimClause",
+          "value": 102
+        },
+        {
+          "name": "RecursivePattern",
+          "value": 103
+        },
+        {
+          "name": "DiscardPattern",
+          "value": 104
+        },
+        {
+          "name": "SwitchExpression",
+          "value": 105
+        },
+        {
+          "name": "SwitchExpressionArm",
+          "value": 106
+        },
+        {
+          "name": "PropertySubpattern",
+          "value": 107
+        },
+        {
+          "name": "UsingDeclaration",
+          "value": 108
+        },
+        {
+          "name": "NegatedPattern",
+          "value": 109
+        },
+        {
+          "name": "BinaryPattern",
+          "value": 110
+        },
+        {
+          "name": "TypePattern",
+          "value": 111
+        },
+        {
+          "name": "RelationalPattern",
+          "value": 112
+        },
+        {
+          "name": "With",
+          "value": 113
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.MetadataImportOptions",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Public",
+          "value": 0
+        },
+        {
+          "name": "Internal",
+          "value": 1
+        },
+        {
+          "name": "All",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.AssemblyIdentityComparer.ComparisonResult",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NotEquivalent",
+          "value": 0
+        },
+        {
+          "name": "Equivalent",
+          "value": 1
+        },
+        {
+          "name": "EquivalentIgnoringVersion",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.AssemblyIdentityParts",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Name",
+          "value": 1
+        },
+        {
+          "name": "Version",
+          "value": 30
+        },
+        {
+          "name": "VersionMajor",
+          "value": 2
+        },
+        {
+          "name": "VersionMinor",
+          "value": 4
+        },
+        {
+          "name": "VersionBuild",
+          "value": 8
+        },
+        {
+          "name": "VersionRevision",
+          "value": 16
+        },
+        {
+          "name": "Culture",
+          "value": 32
+        },
+        {
+          "name": "PublicKey",
+          "value": 64
+        },
+        {
+          "name": "PublicKeyToken",
+          "value": 128
+        },
+        {
+          "name": "PublicKeyOrToken",
+          "value": 192
+        },
+        {
+          "name": "Retargetability",
+          "value": 256
+        },
+        {
+          "name": "ContentType",
+          "value": 512
+        },
+        {
+          "name": "Unknown",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.MetadataImageKind",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Assembly",
+          "value": 0
+        },
+        {
+          "name": "Module",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.OutputKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ConsoleApplication",
+          "value": 0
+        },
+        {
+          "name": "WindowsApplication",
+          "value": 1
+        },
+        {
+          "name": "DynamicallyLinkedLibrary",
+          "value": 2
+        },
+        {
+          "name": "NetModule",
+          "value": 3
+        },
+        {
+          "name": "WindowsRuntimeMetadata",
+          "value": 4
+        },
+        {
+          "name": "WindowsRuntimeApplication",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.SourceCodeKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Regular",
+          "value": 0
+        },
+        {
+          "name": "Script",
+          "value": 1
+        },
+        {
+          "name": "Interactive",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.IncrementalGeneratorOutputKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Source",
+          "value": 1
+        },
+        {
+          "name": "PostInit",
+          "value": 2
+        },
+        {
+          "name": "Implementation",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.SpecialType",
+      "underlyingType": "System.SByte",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "System_Object",
+          "value": 1
+        },
+        {
+          "name": "System_Enum",
+          "value": 2
+        },
+        {
+          "name": "System_MulticastDelegate",
+          "value": 3
+        },
+        {
+          "name": "System_Delegate",
+          "value": 4
+        },
+        {
+          "name": "System_ValueType",
+          "value": 5
+        },
+        {
+          "name": "System_Void",
+          "value": 6
+        },
+        {
+          "name": "System_Boolean",
+          "value": 7
+        },
+        {
+          "name": "System_Char",
+          "value": 8
+        },
+        {
+          "name": "System_SByte",
+          "value": 9
+        },
+        {
+          "name": "System_Byte",
+          "value": 10
+        },
+        {
+          "name": "System_Int16",
+          "value": 11
+        },
+        {
+          "name": "System_UInt16",
+          "value": 12
+        },
+        {
+          "name": "System_Int32",
+          "value": 13
+        },
+        {
+          "name": "System_UInt32",
+          "value": 14
+        },
+        {
+          "name": "System_Int64",
+          "value": 15
+        },
+        {
+          "name": "System_UInt64",
+          "value": 16
+        },
+        {
+          "name": "System_Decimal",
+          "value": 17
+        },
+        {
+          "name": "System_Single",
+          "value": 18
+        },
+        {
+          "name": "System_Double",
+          "value": 19
+        },
+        {
+          "name": "System_String",
+          "value": 20
+        },
+        {
+          "name": "System_IntPtr",
+          "value": 21
+        },
+        {
+          "name": "System_UIntPtr",
+          "value": 22
+        },
+        {
+          "name": "System_Array",
+          "value": 23
+        },
+        {
+          "name": "System_Collections_IEnumerable",
+          "value": 24
+        },
+        {
+          "name": "System_Collections_Generic_IEnumerable_T",
+          "value": 25
+        },
+        {
+          "name": "System_Collections_Generic_IList_T",
+          "value": 26
+        },
+        {
+          "name": "System_Collections_Generic_ICollection_T",
+          "value": 27
+        },
+        {
+          "name": "System_Collections_IEnumerator",
+          "value": 28
+        },
+        {
+          "name": "System_Collections_Generic_IEnumerator_T",
+          "value": 29
+        },
+        {
+          "name": "System_Collections_Generic_IReadOnlyList_T",
+          "value": 30
+        },
+        {
+          "name": "System_Collections_Generic_IReadOnlyCollection_T",
+          "value": 31
+        },
+        {
+          "name": "System_Nullable_T",
+          "value": 32
+        },
+        {
+          "name": "System_DateTime",
+          "value": 33
+        },
+        {
+          "name": "System_Runtime_CompilerServices_IsVolatile",
+          "value": 34
+        },
+        {
+          "name": "System_IDisposable",
+          "value": 35
+        },
+        {
+          "name": "System_TypedReference",
+          "value": 36
+        },
+        {
+          "name": "System_ArgIterator",
+          "value": 37
+        },
+        {
+          "name": "System_RuntimeArgumentHandle",
+          "value": 38
+        },
+        {
+          "name": "System_RuntimeFieldHandle",
+          "value": 39
+        },
+        {
+          "name": "System_RuntimeMethodHandle",
+          "value": 40
+        },
+        {
+          "name": "System_RuntimeTypeHandle",
+          "value": 41
+        },
+        {
+          "name": "System_IAsyncResult",
+          "value": 42
+        },
+        {
+          "name": "System_AsyncCallback",
+          "value": 43
+        },
+        {
+          "name": "System_Runtime_CompilerServices_RuntimeFeature",
+          "value": 44
+        },
+        {
+          "name": "System_Runtime_CompilerServices_PreserveBaseOverridesAttribute",
+          "value": 45
+        },
+        {
+          "name": "Count",
+          "value": 45
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.SymbolDisplayDelegateStyle",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NameOnly",
+          "value": 0
+        },
+        {
+          "name": "NameAndParameters",
+          "value": 1
+        },
+        {
+          "name": "NameAndSignature",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.SymbolDisplayExtensionMethodStyle",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "InstanceMethod",
+          "value": 1
+        },
+        {
+          "name": "StaticMethod",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.SymbolDisplayGenericsOptions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "IncludeTypeParameters",
+          "value": 1
+        },
+        {
+          "name": "IncludeTypeConstraints",
+          "value": 2
+        },
+        {
+          "name": "IncludeVariance",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.SymbolDisplayGlobalNamespaceStyle",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Omitted",
+          "value": 0
+        },
+        {
+          "name": "OmittedAsContaining",
+          "value": 1
+        },
+        {
+          "name": "Included",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.SymbolDisplayKindOptions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "IncludeNamespaceKeyword",
+          "value": 1
+        },
+        {
+          "name": "IncludeTypeKeyword",
+          "value": 2
+        },
+        {
+          "name": "IncludeMemberKeyword",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.SymbolDisplayLocalOptions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "IncludeType",
+          "value": 1
+        },
+        {
+          "name": "IncludeConstantValue",
+          "value": 2
+        },
+        {
+          "name": "IncludeRef",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.SymbolDisplayMemberOptions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "IncludeType",
+          "value": 1
+        },
+        {
+          "name": "IncludeModifiers",
+          "value": 2
+        },
+        {
+          "name": "IncludeAccessibility",
+          "value": 4
+        },
+        {
+          "name": "IncludeExplicitInterface",
+          "value": 8
+        },
+        {
+          "name": "IncludeParameters",
+          "value": 16
+        },
+        {
+          "name": "IncludeContainingType",
+          "value": 32
+        },
+        {
+          "name": "IncludeConstantValue",
+          "value": 64
+        },
+        {
+          "name": "IncludeRef",
+          "value": 128
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.SymbolDisplayMiscellaneousOptions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "UseSpecialTypes",
+          "value": 1
+        },
+        {
+          "name": "EscapeKeywordIdentifiers",
+          "value": 2
+        },
+        {
+          "name": "UseAsterisksInMultiDimensionalArrays",
+          "value": 4
+        },
+        {
+          "name": "UseErrorTypeSymbolName",
+          "value": 8
+        },
+        {
+          "name": "RemoveAttributeSuffix",
+          "value": 16
+        },
+        {
+          "name": "ExpandNullable",
+          "value": 32
+        },
+        {
+          "name": "IncludeNullableReferenceTypeModifier",
+          "value": 64
+        },
+        {
+          "name": "AllowDefaultLiteral",
+          "value": 128
+        },
+        {
+          "name": "IncludeNotNullableReferenceTypeModifier",
+          "value": 256
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.SymbolDisplayParameterOptions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "IncludeExtensionThis",
+          "value": 1
+        },
+        {
+          "name": "IncludeParamsRefOut",
+          "value": 2
+        },
+        {
+          "name": "IncludeType",
+          "value": 4
+        },
+        {
+          "name": "IncludeName",
+          "value": 8
+        },
+        {
+          "name": "IncludeDefaultValue",
+          "value": 16
+        },
+        {
+          "name": "IncludeOptionalBrackets",
+          "value": 32
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.SymbolDisplayPartKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AliasName",
+          "value": 0
+        },
+        {
+          "name": "AssemblyName",
+          "value": 1
+        },
+        {
+          "name": "ClassName",
+          "value": 2
+        },
+        {
+          "name": "DelegateName",
+          "value": 3
+        },
+        {
+          "name": "EnumName",
+          "value": 4
+        },
+        {
+          "name": "ErrorTypeName",
+          "value": 5
+        },
+        {
+          "name": "EventName",
+          "value": 6
+        },
+        {
+          "name": "FieldName",
+          "value": 7
+        },
+        {
+          "name": "InterfaceName",
+          "value": 8
+        },
+        {
+          "name": "Keyword",
+          "value": 9
+        },
+        {
+          "name": "LabelName",
+          "value": 10
+        },
+        {
+          "name": "LineBreak",
+          "value": 11
+        },
+        {
+          "name": "NumericLiteral",
+          "value": 12
+        },
+        {
+          "name": "StringLiteral",
+          "value": 13
+        },
+        {
+          "name": "LocalName",
+          "value": 14
+        },
+        {
+          "name": "MethodName",
+          "value": 15
+        },
+        {
+          "name": "ModuleName",
+          "value": 16
+        },
+        {
+          "name": "NamespaceName",
+          "value": 17
+        },
+        {
+          "name": "Operator",
+          "value": 18
+        },
+        {
+          "name": "ParameterName",
+          "value": 19
+        },
+        {
+          "name": "PropertyName",
+          "value": 20
+        },
+        {
+          "name": "Punctuation",
+          "value": 21
+        },
+        {
+          "name": "Space",
+          "value": 22
+        },
+        {
+          "name": "StructName",
+          "value": 23
+        },
+        {
+          "name": "AnonymousTypeIndicator",
+          "value": 24
+        },
+        {
+          "name": "Text",
+          "value": 25
+        },
+        {
+          "name": "TypeParameterName",
+          "value": 26
+        },
+        {
+          "name": "RangeVariableName",
+          "value": 27
+        },
+        {
+          "name": "EnumMemberName",
+          "value": 28
+        },
+        {
+          "name": "ExtensionMethodName",
+          "value": 29
+        },
+        {
+          "name": "ConstantName",
+          "value": 30
+        },
+        {
+          "name": "RecordClassName",
+          "value": 31
+        },
+        {
+          "name": "RecordStructName",
+          "value": 32
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.SymbolDisplayPropertyStyle",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NameOnly",
+          "value": 0
+        },
+        {
+          "name": "ShowReadWriteDescriptor",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.SymbolDisplayTypeQualificationStyle",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NameOnly",
+          "value": 0
+        },
+        {
+          "name": "NameAndContainingTypes",
+          "value": 1
+        },
+        {
+          "name": "NameAndContainingTypesAndNamespaces",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.Accessibility",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NotApplicable",
+          "value": 0
+        },
+        {
+          "name": "Private",
+          "value": 1
+        },
+        {
+          "name": "ProtectedAndInternal",
+          "value": 2
+        },
+        {
+          "name": "ProtectedAndFriend",
+          "value": 2
+        },
+        {
+          "name": "Protected",
+          "value": 3
+        },
+        {
+          "name": "Internal",
+          "value": 4
+        },
+        {
+          "name": "Friend",
+          "value": 4
+        },
+        {
+          "name": "ProtectedOrInternal",
+          "value": 5
+        },
+        {
+          "name": "ProtectedOrFriend",
+          "value": 5
+        },
+        {
+          "name": "Public",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.MethodKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AnonymousFunction",
+          "value": 0
+        },
+        {
+          "name": "LambdaMethod",
+          "value": 0
+        },
+        {
+          "name": "Constructor",
+          "value": 1
+        },
+        {
+          "name": "Conversion",
+          "value": 2
+        },
+        {
+          "name": "DelegateInvoke",
+          "value": 3
+        },
+        {
+          "name": "Destructor",
+          "value": 4
+        },
+        {
+          "name": "EventAdd",
+          "value": 5
+        },
+        {
+          "name": "EventRaise",
+          "value": 6
+        },
+        {
+          "name": "EventRemove",
+          "value": 7
+        },
+        {
+          "name": "ExplicitInterfaceImplementation",
+          "value": 8
+        },
+        {
+          "name": "UserDefinedOperator",
+          "value": 9
+        },
+        {
+          "name": "Ordinary",
+          "value": 10
+        },
+        {
+          "name": "PropertyGet",
+          "value": 11
+        },
+        {
+          "name": "PropertySet",
+          "value": 12
+        },
+        {
+          "name": "ReducedExtension",
+          "value": 13
+        },
+        {
+          "name": "StaticConstructor",
+          "value": 14
+        },
+        {
+          "name": "SharedConstructor",
+          "value": 14
+        },
+        {
+          "name": "BuiltinOperator",
+          "value": 15
+        },
+        {
+          "name": "DeclareMethod",
+          "value": 16
+        },
+        {
+          "name": "LocalFunction",
+          "value": 17
+        },
+        {
+          "name": "FunctionPointerSignature",
+          "value": 18
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.NamespaceKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Module",
+          "value": 1
+        },
+        {
+          "name": "Assembly",
+          "value": 2
+        },
+        {
+          "name": "Compilation",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.NullableAnnotation",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "NotAnnotated",
+          "value": 1
+        },
+        {
+          "name": "Annotated",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.NullableFlowState",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "NotNull",
+          "value": 1
+        },
+        {
+          "name": "MaybeNull",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.RefKind",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Ref",
+          "value": 1
+        },
+        {
+          "name": "Out",
+          "value": 2
+        },
+        {
+          "name": "In",
+          "value": 3
+        },
+        {
+          "name": "RefReadOnly",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.SymbolKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Alias",
+          "value": 0
+        },
+        {
+          "name": "ArrayType",
+          "value": 1
+        },
+        {
+          "name": "Assembly",
+          "value": 2
+        },
+        {
+          "name": "DynamicType",
+          "value": 3
+        },
+        {
+          "name": "ErrorType",
+          "value": 4
+        },
+        {
+          "name": "Event",
+          "value": 5
+        },
+        {
+          "name": "Field",
+          "value": 6
+        },
+        {
+          "name": "Label",
+          "value": 7
+        },
+        {
+          "name": "Local",
+          "value": 8
+        },
+        {
+          "name": "Method",
+          "value": 9
+        },
+        {
+          "name": "NetModule",
+          "value": 10
+        },
+        {
+          "name": "NamedType",
+          "value": 11
+        },
+        {
+          "name": "Namespace",
+          "value": 12
+        },
+        {
+          "name": "Parameter",
+          "value": 13
+        },
+        {
+          "name": "PointerType",
+          "value": 14
+        },
+        {
+          "name": "Property",
+          "value": 15
+        },
+        {
+          "name": "RangeVariable",
+          "value": 16
+        },
+        {
+          "name": "TypeParameter",
+          "value": 17
+        },
+        {
+          "name": "Preprocessing",
+          "value": 18
+        },
+        {
+          "name": "Discard",
+          "value": 19
+        },
+        {
+          "name": "FunctionPointerType",
+          "value": 20
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.TypedConstantKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Error",
+          "value": 0
+        },
+        {
+          "name": "Primitive",
+          "value": 1
+        },
+        {
+          "name": "Enum",
+          "value": 2
+        },
+        {
+          "name": "Type",
+          "value": 3
+        },
+        {
+          "name": "Array",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.TypeKind",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "Array",
+          "value": 1
+        },
+        {
+          "name": "Class",
+          "value": 2
+        },
+        {
+          "name": "Delegate",
+          "value": 3
+        },
+        {
+          "name": "Dynamic",
+          "value": 4
+        },
+        {
+          "name": "Enum",
+          "value": 5
+        },
+        {
+          "name": "Error",
+          "value": 6
+        },
+        {
+          "name": "Interface",
+          "value": 7
+        },
+        {
+          "name": "Module",
+          "value": 8
+        },
+        {
+          "name": "Pointer",
+          "value": 9
+        },
+        {
+          "name": "Struct",
+          "value": 10
+        },
+        {
+          "name": "Structure",
+          "value": 10
+        },
+        {
+          "name": "TypeParameter",
+          "value": 11
+        },
+        {
+          "name": "Submission",
+          "value": 12
+        },
+        {
+          "name": "FunctionPointer",
+          "value": 13
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.TypeParameterKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Type",
+          "value": 0
+        },
+        {
+          "name": "Method",
+          "value": 1
+        },
+        {
+          "name": "Cref",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.VarianceKind",
+      "underlyingType": "System.Int16",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Out",
+          "value": 1
+        },
+        {
+          "name": "In",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.LineDirectiveMap`1.PositionState",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "Unmapped",
+          "value": 1
+        },
+        {
+          "name": "Remapped",
+          "value": 2
+        },
+        {
+          "name": "RemappedSpan",
+          "value": 3
+        },
+        {
+          "name": "RemappedAfterUnknown",
+          "value": 4
+        },
+        {
+          "name": "RemappedAfterHidden",
+          "value": 5
+        },
+        {
+          "name": "Hidden",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.LineVisibility",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "BeforeFirstLineDirective",
+          "value": 0
+        },
+        {
+          "name": "Hidden",
+          "value": 1
+        },
+        {
+          "name": "Visible",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.SyntaxNode.TwoEnumeratorListStack.Which",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Node",
+          "value": 0
+        },
+        {
+          "name": "Trivia",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.SyntaxNode.ThreeEnumeratorListStack.Which",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Node",
+          "value": 0
+        },
+        {
+          "name": "Trivia",
+          "value": 1
+        },
+        {
+          "name": "Token",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.SyntaxRemoveOptions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "KeepNoTrivia",
+          "value": 0
+        },
+        {
+          "name": "KeepLeadingTrivia",
+          "value": 1
+        },
+        {
+          "name": "KeepTrailingTrivia",
+          "value": 2
+        },
+        {
+          "name": "KeepExteriorTrivia",
+          "value": 3
+        },
+        {
+          "name": "KeepUnbalancedDirectives",
+          "value": 4
+        },
+        {
+          "name": "KeepDirectives",
+          "value": 8
+        },
+        {
+          "name": "KeepEndOfLine",
+          "value": 16
+        },
+        {
+          "name": "AddElasticMarker",
+          "value": 32
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.SyntaxWalkerDepth",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Node",
+          "value": 0
+        },
+        {
+          "name": "Token",
+          "value": 1
+        },
+        {
+          "name": "Trivia",
+          "value": 2
+        },
+        {
+          "name": "StructuredTrivia",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.FlowAnalysis.BasicBlockKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Entry",
+          "value": 0
+        },
+        {
+          "name": "Exit",
+          "value": 1
+        },
+        {
+          "name": "Block",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.FlowAnalysis.ControlFlowBranchSemantics",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Regular",
+          "value": 1
+        },
+        {
+          "name": "Return",
+          "value": 2
+        },
+        {
+          "name": "StructuredExceptionHandling",
+          "value": 3
+        },
+        {
+          "name": "ProgramTermination",
+          "value": 4
+        },
+        {
+          "name": "Throw",
+          "value": 5
+        },
+        {
+          "name": "Rethrow",
+          "value": 6
+        },
+        {
+          "name": "Error",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.FlowAnalysis.ControlFlowConditionKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "WhenFalse",
+          "value": 1
+        },
+        {
+          "name": "WhenTrue",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.FlowAnalysis.ControlFlowRegionKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Root",
+          "value": 0
+        },
+        {
+          "name": "LocalLifetime",
+          "value": 1
+        },
+        {
+          "name": "Try",
+          "value": 2
+        },
+        {
+          "name": "Filter",
+          "value": 3
+        },
+        {
+          "name": "Catch",
+          "value": 4
+        },
+        {
+          "name": "FilterAndHandler",
+          "value": 5
+        },
+        {
+          "name": "TryAndCatch",
+          "value": 6
+        },
+        {
+          "name": "Finally",
+          "value": 7
+        },
+        {
+          "name": "TryAndFinally",
+          "value": 8
+        },
+        {
+          "name": "StaticLocalInitializer",
+          "value": 9
+        },
+        {
+          "name": "ErroneousBody",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.Text.SourceHashAlgorithm",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Sha1",
+          "value": 1
+        },
+        {
+          "name": "Sha256",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.Diagnostics.AnalyzerLoadFailureEventArgs.FailureErrorCode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "UnableToLoadAnalyzer",
+          "value": 1
+        },
+        {
+          "name": "UnableToCreateAnalyzer",
+          "value": 2
+        },
+        {
+          "name": "NoAnalyzers",
+          "value": 3
+        },
+        {
+          "name": "ReferencesFramework",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.Diagnostics.GeneratedCodeAnalysisFlags",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Analyze",
+          "value": 1
+        },
+        {
+          "name": "ReportDiagnostics",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.Operations.ArgumentKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Explicit",
+          "value": 1
+        },
+        {
+          "name": "ParamArray",
+          "value": 2
+        },
+        {
+          "name": "DefaultValue",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.Operations.BinaryOperatorKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Add",
+          "value": 1
+        },
+        {
+          "name": "Subtract",
+          "value": 2
+        },
+        {
+          "name": "Multiply",
+          "value": 3
+        },
+        {
+          "name": "Divide",
+          "value": 4
+        },
+        {
+          "name": "IntegerDivide",
+          "value": 5
+        },
+        {
+          "name": "Remainder",
+          "value": 6
+        },
+        {
+          "name": "Power",
+          "value": 7
+        },
+        {
+          "name": "LeftShift",
+          "value": 8
+        },
+        {
+          "name": "RightShift",
+          "value": 9
+        },
+        {
+          "name": "And",
+          "value": 10
+        },
+        {
+          "name": "Or",
+          "value": 11
+        },
+        {
+          "name": "ExclusiveOr",
+          "value": 12
+        },
+        {
+          "name": "ConditionalAnd",
+          "value": 13
+        },
+        {
+          "name": "ConditionalOr",
+          "value": 14
+        },
+        {
+          "name": "Concatenate",
+          "value": 15
+        },
+        {
+          "name": "Equals",
+          "value": 16
+        },
+        {
+          "name": "ObjectValueEquals",
+          "value": 17
+        },
+        {
+          "name": "NotEquals",
+          "value": 18
+        },
+        {
+          "name": "ObjectValueNotEquals",
+          "value": 19
+        },
+        {
+          "name": "LessThan",
+          "value": 20
+        },
+        {
+          "name": "LessThanOrEqual",
+          "value": 21
+        },
+        {
+          "name": "GreaterThanOrEqual",
+          "value": 22
+        },
+        {
+          "name": "GreaterThan",
+          "value": 23
+        },
+        {
+          "name": "Like",
+          "value": 24
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.Operations.BranchKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Continue",
+          "value": 1
+        },
+        {
+          "name": "Break",
+          "value": 2
+        },
+        {
+          "name": "GoTo",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.Operations.CaseKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "SingleValue",
+          "value": 1
+        },
+        {
+          "name": "Relational",
+          "value": 2
+        },
+        {
+          "name": "Range",
+          "value": 3
+        },
+        {
+          "name": "Default",
+          "value": 4
+        },
+        {
+          "name": "Pattern",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.Operations.InstanceReferenceKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ContainingTypeInstance",
+          "value": 0
+        },
+        {
+          "name": "ImplicitReceiver",
+          "value": 1
+        },
+        {
+          "name": "PatternInput",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.Operations.LoopKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "While",
+          "value": 1
+        },
+        {
+          "name": "For",
+          "value": 2
+        },
+        {
+          "name": "ForTo",
+          "value": 3
+        },
+        {
+          "name": "ForEach",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.Operations.UnaryOperatorKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "BitwiseNegation",
+          "value": 1
+        },
+        {
+          "name": "Not",
+          "value": 2
+        },
+        {
+          "name": "Plus",
+          "value": 3
+        },
+        {
+          "name": "Minus",
+          "value": 4
+        },
+        {
+          "name": "True",
+          "value": 5
+        },
+        {
+          "name": "False",
+          "value": 6
+        },
+        {
+          "name": "Hat",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.Emit.DebugInformationFormat",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Pdb",
+          "value": 1
+        },
+        {
+          "name": "PortablePdb",
+          "value": 2
+        },
+        {
+          "name": "Embedded",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.Emit.InstrumentationKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "TestCoverage",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.Emit.SemanticEditKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Update",
+          "value": 1
+        },
+        {
+          "name": "Insert",
+          "value": 2
+        },
+        {
+          "name": "Delete",
+          "value": 3
+        },
+        {
+          "name": "Replace",
+          "value": 4
+        }
+      ]
+    }
+  ],
+  "namespaceMappings": []
+}

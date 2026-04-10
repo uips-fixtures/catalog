@@ -1,0 +1,2473 @@
+{
+  "schema": {
+    "id": "activity-catalog",
+    "version": "v0.3"
+  },
+  "source": {
+    "kind": "nuget-package",
+    "id": "UiPath.Marketo.Activities",
+    "version": "1.1.0",
+    "feedUrl": null,
+    "authors": "UiPath",
+    "projectUrl": "https://docs.uipath.com/activities/docs/Marketo-about",
+    "description": "A set of activities for interacting with Activities, Campaigns, Leads and all other objects in Marketo.",
+    "license": "https://www.uipath.com/hubfs/legalspot/UiPath_MSSA.pdf",
+    "tags": "UiPathActivities",
+    "packageTypes": []
+  },
+  "generatedAt": "2026-04-10T09:21:23Z",
+  "activities": [],
+  "enums": [
+    {
+      "fullName": "UiPath.BAF.Activities.Design.View.Enums.FlatviewFilter",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ShowValued",
+          "value": 0
+        },
+        {
+          "name": "Contains",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Activities.Design.View.Enums.HierarchicalViewState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NotSet",
+          "value": 0
+        },
+        {
+          "name": "TreeView",
+          "value": 1
+        },
+        {
+          "name": "FlatView",
+          "value": 2
+        },
+        {
+          "name": "FlatViewAllChildren",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Activities.Design.View.Enums.WindowScreenState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "MandatoryParametersState",
+          "value": 0
+        },
+        {
+          "name": "OptionalParametersState",
+          "value": 1
+        },
+        {
+          "name": "MultiInputState",
+          "value": 2
+        },
+        {
+          "name": "PreviewResultsState",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Activities.Design.LangInvariant.Language",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "VisualBasic",
+          "value": 0
+        },
+        {
+          "name": "CSharp",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Activities.Design.Common.Model.CommandResultState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Valid",
+          "value": 0
+        },
+        {
+          "name": "Invalid",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Activities.Design.Common.Model.MessageBoxSelection",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Cancel",
+          "value": 0
+        },
+        {
+          "name": "Yes",
+          "value": 1
+        },
+        {
+          "name": "No",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Swagger.Utilities.SwaggerEventCodes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "RestRequestFailed",
+          "value": 202
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Swagger.Enums.ApiKeyLocation",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "Query",
+          "value": 1
+        },
+        {
+          "name": "Header",
+          "value": 2
+        },
+        {
+          "name": "Cookie",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Swagger.Enums.AuthType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "BasicAuth",
+          "value": 10
+        },
+        {
+          "name": "BearerAuth",
+          "value": 20
+        },
+        {
+          "name": "ApiKey",
+          "value": 30
+        },
+        {
+          "name": "ApiToken",
+          "value": 31
+        },
+        {
+          "name": "OAuth1",
+          "value": 35
+        },
+        {
+          "name": "OAuth2AuthorizationCode",
+          "value": 37
+        },
+        {
+          "name": "OAuth2ClientCredentials",
+          "value": 40
+        },
+        {
+          "name": "OAuth2Implicit",
+          "value": 45
+        },
+        {
+          "name": "OAuth2Password",
+          "value": 50
+        },
+        {
+          "name": "OpenIdConnect",
+          "value": 55
+        },
+        {
+          "name": "ExistingConnection",
+          "value": 60
+        },
+        {
+          "name": "OAuthJWT",
+          "value": 65
+        },
+        {
+          "name": "OAuthPassthrough",
+          "value": 67
+        },
+        {
+          "name": "AWS",
+          "value": 68
+        },
+        {
+          "name": "None",
+          "value": 69
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Models.OperationParameterKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "Body",
+          "value": 1
+        },
+        {
+          "name": "Query",
+          "value": 2
+        },
+        {
+          "name": "Path",
+          "value": 3
+        },
+        {
+          "name": "Header",
+          "value": 4
+        },
+        {
+          "name": "FormData",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Models.CrudOperation.CrudOperations",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Create",
+          "value": 1
+        },
+        {
+          "name": "Get",
+          "value": 2
+        },
+        {
+          "name": "Update",
+          "value": 4
+        },
+        {
+          "name": "Delete",
+          "value": 8
+        },
+        {
+          "name": "Function",
+          "value": 16
+        },
+        {
+          "name": "Action",
+          "value": 32
+        },
+        {
+          "name": "Search",
+          "value": 64
+        },
+        {
+          "name": "Upsert",
+          "value": 128
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Models.Connection.Authentication.Enums.AccessTokenKeyLocation",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Header",
+          "value": 0
+        },
+        {
+          "name": "Query",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Models.Annotations.OperationState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Preview",
+          "value": 1
+        },
+        {
+          "name": "Warning",
+          "value": 2
+        },
+        {
+          "name": "Info",
+          "value": 3
+        },
+        {
+          "name": "Hide",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Utilities.EventCodes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ArgumentNullException",
+          "value": 101
+        },
+        {
+          "name": "ArgumentConverterError",
+          "value": 102
+        },
+        {
+          "name": "BackgroundWorkCompletedUnsuccessfully",
+          "value": 103
+        },
+        {
+          "name": "AutocompleteBoxError",
+          "value": 104
+        },
+        {
+          "name": "ConnectionFailed",
+          "value": 105
+        },
+        {
+          "name": "DisconnectionFailed",
+          "value": 106
+        },
+        {
+          "name": "ScopeExecutionFailed",
+          "value": 107
+        },
+        {
+          "name": "GetEntityFieldsFailed",
+          "value": 108
+        },
+        {
+          "name": "RestRequestError",
+          "value": 109
+        },
+        {
+          "name": "FetchSampleDataFailed",
+          "value": 110
+        },
+        {
+          "name": "TestWithSampleDataFailed",
+          "value": 111
+        },
+        {
+          "name": "OutsideScopeError",
+          "value": 112
+        },
+        {
+          "name": "ConnectionClosedSuccessfully",
+          "value": 201
+        },
+        {
+          "name": "AutocompleteBoxResultSet",
+          "value": 202
+        },
+        {
+          "name": "ConnectionSuccessful",
+          "value": 201
+        },
+        {
+          "name": "RestRequestResponseReceived",
+          "value": 203
+        },
+        {
+          "name": "EncryptionFailure",
+          "value": 204
+        },
+        {
+          "name": "DecryptionFailure",
+          "value": 205
+        },
+        {
+          "name": "RestRequestFailed",
+          "value": 206
+        },
+        {
+          "name": "RestRequestArgumentException",
+          "value": 207
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Utilities.FormDataType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ComboBox",
+          "value": 0
+        },
+        {
+          "name": "FilePicker",
+          "value": 1
+        },
+        {
+          "name": "FolderPicker",
+          "value": 2
+        },
+        {
+          "name": "ExpressionTextBox",
+          "value": 3
+        },
+        {
+          "name": "MultiSelect",
+          "value": 4
+        },
+        {
+          "name": "TextBoxWithButton",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Utilities.OAuthBase.SignatureTypes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "HMACSHA1",
+          "value": 0
+        },
+        {
+          "name": "PLAINTEXT",
+          "value": 1
+        },
+        {
+          "name": "RSASHA1",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Telemetry.TelemetryGroup",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "PreAPIOperation",
+          "value": 0
+        },
+        {
+          "name": "PostAPIOperation",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Enums.ProjectType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Swagger",
+          "value": 0
+        },
+        {
+          "name": "SDK",
+          "value": 1
+        },
+        {
+          "name": "OData",
+          "value": 2
+        },
+        {
+          "name": "HttpClient",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Enums.WindowType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "FindObject",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Enums.ApiKeyLocation",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "Query",
+          "value": 1
+        },
+        {
+          "name": "Header",
+          "value": 2
+        },
+        {
+          "name": "Cookie",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Enums.AuthType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "BasicAuth",
+          "value": 10
+        },
+        {
+          "name": "BearerAuth",
+          "value": 20
+        },
+        {
+          "name": "ApiKey",
+          "value": 30
+        },
+        {
+          "name": "ApiToken",
+          "value": 31
+        },
+        {
+          "name": "OAuth1",
+          "value": 35
+        },
+        {
+          "name": "OAuth2AuthorizationCode",
+          "value": 37
+        },
+        {
+          "name": "OAuth2ClientCredentials",
+          "value": 40
+        },
+        {
+          "name": "OAuth2Implicit",
+          "value": 45
+        },
+        {
+          "name": "OAuth2Password",
+          "value": 50
+        },
+        {
+          "name": "OpenIdConnect",
+          "value": 55
+        },
+        {
+          "name": "ExistingConnection",
+          "value": 60
+        },
+        {
+          "name": "OAuthJWT",
+          "value": 65
+        },
+        {
+          "name": "JWT",
+          "value": 66
+        },
+        {
+          "name": "OAuthPassthrough",
+          "value": 67
+        },
+        {
+          "name": "AWS",
+          "value": 68
+        },
+        {
+          "name": "None",
+          "value": 69
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.LeadDatabase.Format",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Csv",
+          "value": 0
+        },
+        {
+          "name": "Tsv",
+          "value": 1
+        },
+        {
+          "name": "Ssv",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.LeadDatabase.Format2",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "CSV",
+          "value": 0
+        },
+        {
+          "name": "TSV",
+          "value": 1
+        },
+        {
+          "name": "SSV",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.LeadDatabase.Format3",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Csv",
+          "value": 0
+        },
+        {
+          "name": "Tsv",
+          "value": 1
+        },
+        {
+          "name": "Ssv",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.LeadDatabase.State",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Draft",
+          "value": 0
+        },
+        {
+          "name": "Approved",
+          "value": 1
+        },
+        {
+          "name": "ApprovedWithDraft",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.LeadDatabase.State2",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Draft",
+          "value": 0
+        },
+        {
+          "name": "Approved",
+          "value": 1
+        },
+        {
+          "name": "ApprovedWithDraft",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.LeadDatabase.SyncCustomObjectRequestAction",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "CreateOnly",
+          "value": 0
+        },
+        {
+          "name": "UpdateOnly",
+          "value": 1
+        },
+        {
+          "name": "CreateOrUpdate",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.LeadDatabase.SyncCustomObjectTypeRequestAction",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "CreateOnly",
+          "value": 0
+        },
+        {
+          "name": "UpdateOnly",
+          "value": 1
+        },
+        {
+          "name": "CreateOrUpdate",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.LeadDatabase.SyncLeadRequestAction",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "CreateOnly",
+          "value": 0
+        },
+        {
+          "name": "UpdateOnly",
+          "value": 1
+        },
+        {
+          "name": "CreateOrUpdate",
+          "value": 2
+        },
+        {
+          "name": "CreateDuplicate",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.LeadDatabase.SyncSalesPersonRequestAction",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "CreateOnly",
+          "value": 0
+        },
+        {
+          "name": "UpdateOnly",
+          "value": 1
+        },
+        {
+          "name": "CreateOrUpdate",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.LeadDatabase.NamedAccountListStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Created",
+          "value": 0
+        },
+        {
+          "name": "Updated",
+          "value": 1
+        },
+        {
+          "name": "Deleted",
+          "value": 2
+        },
+        {
+          "name": "Skipped",
+          "value": 3
+        },
+        {
+          "name": "Added",
+          "value": 4
+        },
+        {
+          "name": "Removed",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.LeadDatabase.SyncNamedAccountRequestAction",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "CreateOnly",
+          "value": 0
+        },
+        {
+          "name": "UpdateOnly",
+          "value": 1
+        },
+        {
+          "name": "CreateOrUpdate",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.LeadDatabase.CampaignType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Batch",
+          "value": 0
+        },
+        {
+          "name": "Trigger",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.LeadDatabase.ObjectMetaDataState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Draft",
+          "value": 0
+        },
+        {
+          "name": "Approved",
+          "value": 1
+        },
+        {
+          "name": "ApprovedWithDraft",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.LeadDatabase.ObjectMetaDataVersion",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Draft",
+          "value": 0
+        },
+        {
+          "name": "Approved",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.LeadDatabase.CustomActivityTypeStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Draft",
+          "value": 0
+        },
+        {
+          "name": "Approved",
+          "value": 1
+        },
+        {
+          "name": "Deleted",
+          "value": 2
+        },
+        {
+          "name": "Approved_with_draft",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.LeadDatabase.NamedAccountStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Created",
+          "value": 0
+        },
+        {
+          "name": "Updated",
+          "value": 1
+        },
+        {
+          "name": "Deleted",
+          "value": 2
+        },
+        {
+          "name": "Skipped",
+          "value": 3
+        },
+        {
+          "name": "Added",
+          "value": 4
+        },
+        {
+          "name": "Removed",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.LeadDatabase.CustomActivityTypeAttributeDataType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "String",
+          "value": 0
+        },
+        {
+          "name": "Boolean",
+          "value": 1
+        },
+        {
+          "name": "Integer",
+          "value": 2
+        },
+        {
+          "name": "Float",
+          "value": 3
+        },
+        {
+          "name": "Link",
+          "value": 4
+        },
+        {
+          "name": "Email",
+          "value": 5
+        },
+        {
+          "name": "Currency",
+          "value": 6
+        },
+        {
+          "name": "Date",
+          "value": 7
+        },
+        {
+          "name": "Datetime",
+          "value": 8
+        },
+        {
+          "name": "Phone",
+          "value": 9
+        },
+        {
+          "name": "Text",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.LeadDatabase.SyncCompanyRequestAction",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "CreateOnly",
+          "value": 0
+        },
+        {
+          "name": "UpdateOnly",
+          "value": 1
+        },
+        {
+          "name": "CreateOrUpdate",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.LeadDatabase.CompanyStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Created",
+          "value": 0
+        },
+        {
+          "name": "Updated",
+          "value": 1
+        },
+        {
+          "name": "Deleted",
+          "value": 2
+        },
+        {
+          "name": "Skipped",
+          "value": 3
+        },
+        {
+          "name": "Added",
+          "value": 4
+        },
+        {
+          "name": "Removed",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.LeadDatabase.SalesPersonStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Created",
+          "value": 0
+        },
+        {
+          "name": "Updated",
+          "value": 1
+        },
+        {
+          "name": "Deleted",
+          "value": 2
+        },
+        {
+          "name": "Skipped",
+          "value": 3
+        },
+        {
+          "name": "Added",
+          "value": 4
+        },
+        {
+          "name": "Removed",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.LeadDatabase.CustomActivityStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Created",
+          "value": 0
+        },
+        {
+          "name": "Updated",
+          "value": 1
+        },
+        {
+          "name": "Deleted",
+          "value": 2
+        },
+        {
+          "name": "Skipped",
+          "value": 3
+        },
+        {
+          "name": "Added",
+          "value": 4
+        },
+        {
+          "name": "Removed",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.LeadDatabase.SyncNamedAccountListRequestAction",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "CreateOnly",
+          "value": 0
+        },
+        {
+          "name": "UpdateOnly",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.Asset.Status",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Approved",
+          "value": 0
+        },
+        {
+          "name": "Draft",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.Asset.Status2",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Approved",
+          "value": 0
+        },
+        {
+          "name": "Draft",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.Asset.Status3",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Approved",
+          "value": 0
+        },
+        {
+          "name": "Draft",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.Asset.Status4",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Approved",
+          "value": 0
+        },
+        {
+          "name": "Draft",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.Asset.Status5",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Approved",
+          "value": 0
+        },
+        {
+          "name": "Draft",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.Asset.Status6",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Approved",
+          "value": 0
+        },
+        {
+          "name": "Draft",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.Asset.Status7",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Approved",
+          "value": 0
+        },
+        {
+          "name": "Draft",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.Asset.Status8",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Approved",
+          "value": 0
+        },
+        {
+          "name": "Draft",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.Asset.Status9",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Approved",
+          "value": 0
+        },
+        {
+          "name": "Draft",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.Asset.Status10",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Approved",
+          "value": 0
+        },
+        {
+          "name": "Draft",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.Asset.Type",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Text",
+          "value": 0
+        },
+        {
+          "name": "HTML",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.Asset.Type2",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Folder",
+          "value": 0
+        },
+        {
+          "name": "Program",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.Asset.Type3",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Folder",
+          "value": 0
+        },
+        {
+          "name": "Program",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.Asset.Type4",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Program",
+          "value": 0
+        },
+        {
+          "name": "Folder",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.Asset.FolderType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Folder",
+          "value": 0
+        },
+        {
+          "name": "Program",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.Asset.Status11",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Approved",
+          "value": 0
+        },
+        {
+          "name": "Draft",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.Asset.Status12",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Approved",
+          "value": 0
+        },
+        {
+          "name": "Draft",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.Asset.Status13",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Approved",
+          "value": 0
+        },
+        {
+          "name": "Draft",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.Asset.Status14",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Approved",
+          "value": 0
+        },
+        {
+          "name": "Draft",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.Asset.Status15",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Approved",
+          "value": 0
+        },
+        {
+          "name": "Draft",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.Asset.Status16",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Approved",
+          "value": 0
+        },
+        {
+          "name": "Draft",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.Asset.Status17",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Approved",
+          "value": 0
+        },
+        {
+          "name": "Draft",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.Asset.Status18",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Approved",
+          "value": 0
+        },
+        {
+          "name": "Draft",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.Asset.Status19",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Approved",
+          "value": 0
+        },
+        {
+          "name": "Draft",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.Asset.Status20",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Approved",
+          "value": 0
+        },
+        {
+          "name": "Draft",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.Asset.Status21",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Approved",
+          "value": 0
+        },
+        {
+          "name": "Draft",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.Asset.Status22",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Approved",
+          "value": 0
+        },
+        {
+          "name": "Draft",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.Asset.Status23",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Approved",
+          "value": 0
+        },
+        {
+          "name": "Draft",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.Asset.FilterType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Id",
+          "value": 0
+        },
+        {
+          "name": "ProgramId",
+          "value": 1
+        },
+        {
+          "name": "FolderId",
+          "value": 2
+        },
+        {
+          "name": "Workspace",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.Asset.Status24",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Approved",
+          "value": 0
+        },
+        {
+          "name": "Draft",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.Asset.Status25",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Approved",
+          "value": 0
+        },
+        {
+          "name": "Draft",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.Asset.Status26",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Approved",
+          "value": 0
+        },
+        {
+          "name": "Draft",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.Asset.Status27",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Approved",
+          "value": 0
+        },
+        {
+          "name": "Draft",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.Asset.Type5",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DynamicContent",
+          "value": 0
+        },
+        {
+          "name": "HTML",
+          "value": 1
+        },
+        {
+          "name": "Text",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.Asset.Status28",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Approved",
+          "value": 0
+        },
+        {
+          "name": "Draft",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.Asset.Status29",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Approved",
+          "value": 0
+        },
+        {
+          "name": "Draft",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.Asset.BrowseAllProgramsStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Locked",
+          "value": 0
+        },
+        {
+          "name": "Unlocked",
+          "value": 1
+        },
+        {
+          "name": "On",
+          "value": 2
+        },
+        {
+          "name": "Off",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.Asset.BrowseAllProgramsType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Program",
+          "value": 0
+        },
+        {
+          "name": "Event",
+          "value": 1
+        },
+        {
+          "name": "Webinar",
+          "value": 2
+        },
+        {
+          "name": "Nurture",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.Asset.EmailResponseVersion",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "_1",
+          "value": 1
+        },
+        {
+          "name": "_2",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.Asset.LpTemplateResponseTemplateType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Guided",
+          "value": 0
+        },
+        {
+          "name": "FreeForm",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.Asset.FormFieldVisibilityRequestRuleType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Show",
+          "value": 0
+        },
+        {
+          "name": "AlwaysShow",
+          "value": 1
+        },
+        {
+          "name": "Hide",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.Asset.UpdateFolderRequestType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Folder",
+          "value": 0
+        },
+        {
+          "name": "Program",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.Asset.CreateLandingPageContentRequestType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Image",
+          "value": 0
+        },
+        {
+          "name": "Form",
+          "value": 1
+        },
+        {
+          "name": "Rectangle",
+          "value": 2
+        },
+        {
+          "name": "Snippet",
+          "value": 3
+        },
+        {
+          "name": "RichText",
+          "value": 4
+        },
+        {
+          "name": "HTML",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.Asset.JsonNodeNodeType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ARRAY",
+          "value": 0
+        },
+        {
+          "name": "BINARY",
+          "value": 1
+        },
+        {
+          "name": "BOOLEAN",
+          "value": 2
+        },
+        {
+          "name": "MISSING",
+          "value": 3
+        },
+        {
+          "name": "NULL",
+          "value": 4
+        },
+        {
+          "name": "NUMBER",
+          "value": 5
+        },
+        {
+          "name": "OBJECT",
+          "value": 6
+        },
+        {
+          "name": "POJO",
+          "value": 7
+        },
+        {
+          "name": "STRING",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.Asset.LpFormResponseStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Approved",
+          "value": 0
+        },
+        {
+          "name": "Draft",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.Asset.UpdateLandingPageContentRequestType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Image",
+          "value": 0
+        },
+        {
+          "name": "Form",
+          "value": 1
+        },
+        {
+          "name": "Rectangle",
+          "value": 2
+        },
+        {
+          "name": "Snippet",
+          "value": 3
+        },
+        {
+          "name": "RichText",
+          "value": 4
+        },
+        {
+          "name": "HTML",
+          "value": 5
+        },
+        {
+          "name": "DynamicContent",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.Asset.VisibilityRuleRequestOperator",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Is",
+          "value": 0
+        },
+        {
+          "name": "IsNot",
+          "value": 1
+        },
+        {
+          "name": "IsEmpty",
+          "value": 2
+        },
+        {
+          "name": "IsNotEmpty",
+          "value": 3
+        },
+        {
+          "name": "StartsWith",
+          "value": 4
+        },
+        {
+          "name": "NotStartsWith",
+          "value": 5
+        },
+        {
+          "name": "EndsWith",
+          "value": 6
+        },
+        {
+          "name": "NotEndsWith",
+          "value": 7
+        },
+        {
+          "name": "Contains",
+          "value": 8
+        },
+        {
+          "name": "NotContains",
+          "value": 9
+        },
+        {
+          "name": "GreaterThan",
+          "value": 10
+        },
+        {
+          "name": "LessThan",
+          "value": 11
+        },
+        {
+          "name": "AtLeast",
+          "value": 12
+        },
+        {
+          "name": "AtMost",
+          "value": 13
+        },
+        {
+          "name": "Between",
+          "value": 14
+        },
+        {
+          "name": "NotBetween",
+          "value": 15
+        },
+        {
+          "name": "NotInTimeFrame",
+          "value": 16
+        },
+        {
+          "name": "InPast",
+          "value": 17
+        },
+        {
+          "name": "NotInPast",
+          "value": 18
+        },
+        {
+          "name": "After",
+          "value": 19
+        },
+        {
+          "name": "Before",
+          "value": 20
+        },
+        {
+          "name": "InTimeFrame",
+          "value": 21
+        },
+        {
+          "name": "OnOrAfter",
+          "value": 22
+        },
+        {
+          "name": "OnOrBefore",
+          "value": 23
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.Asset.EmailTemplateResponseVersion",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "_1",
+          "value": 1
+        },
+        {
+          "name": "_2",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.Asset.EmailTemplateUsedByResponseStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Approved",
+          "value": 0
+        },
+        {
+          "name": "Draft",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.Asset.FormUsedByResponseStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Approved",
+          "value": 0
+        },
+        {
+          "name": "Draft",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.Asset.SmartCampaignResponseType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Batch",
+          "value": 0
+        },
+        {
+          "name": "Default",
+          "value": 1
+        },
+        {
+          "name": "Trigger",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.Asset.SmartCampaignResponseQualificationRuleType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Once",
+          "value": 0
+        },
+        {
+          "name": "Any",
+          "value": 1
+        },
+        {
+          "name": "Interval",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.Asset.SmartCampaignResponseQualificationRuleUnit",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Hour",
+          "value": 0
+        },
+        {
+          "name": "Day",
+          "value": 1
+        },
+        {
+          "name": "Week",
+          "value": 2
+        },
+        {
+          "name": "Month",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.Asset.SmartCampaignResponseStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Inactive",
+          "value": 0
+        },
+        {
+          "name": "Single_Run",
+          "value": 1
+        },
+        {
+          "name": "Invalid",
+          "value": 2
+        },
+        {
+          "name": "Recurring_Run",
+          "value": 3
+        },
+        {
+          "name": "Active",
+          "value": 4
+        },
+        {
+          "name": "Requested",
+          "value": 5
+        },
+        {
+          "name": "Never_Run",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.Asset.RecurrenceIntervalType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Daily",
+          "value": 0
+        },
+        {
+          "name": "Weekly",
+          "value": 1
+        },
+        {
+          "name": "Monthly",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.Asset.RecurrenceDayOfWeek",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "_Monday",
+          "value": 1
+        },
+        {
+          "name": "_Tuesday",
+          "value": 2
+        },
+        {
+          "name": "_Wednesday",
+          "value": 3
+        },
+        {
+          "name": "_Thursday",
+          "value": 4
+        },
+        {
+          "name": "_Friday",
+          "value": 5
+        },
+        {
+          "name": "_Saturday",
+          "value": 6
+        },
+        {
+          "name": "_Sunday",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.Asset.UpdateEmailDynamicContentRequestType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Text",
+          "value": 0
+        },
+        {
+          "name": "DynamicContent",
+          "value": 1
+        },
+        {
+          "name": "Snippet",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.Asset.CreateTokenRequestFolderType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Program",
+          "value": 0
+        },
+        {
+          "name": "Folder",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.Asset.LpTemplateGetContentResponseStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Approved",
+          "value": 0
+        },
+        {
+          "name": "Draft",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.Asset.LpTemplateGetContentResponseTemplateType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Guided",
+          "value": 0
+        },
+        {
+          "name": "FreeForm",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.Asset.CreateLpTemplateRequestTemplateType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Guided",
+          "value": 0
+        },
+        {
+          "name": "FreeForm",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.Asset.ProgramResponseStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Locked",
+          "value": 0
+        },
+        {
+          "name": "Unlocked",
+          "value": 1
+        },
+        {
+          "name": "On",
+          "value": 2
+        },
+        {
+          "name": "Off",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.Asset.ProgramResponseType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "Event",
+          "value": 1
+        },
+        {
+          "name": "Webinar",
+          "value": 2
+        },
+        {
+          "name": "Nurture",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.Asset.LandingPageContentResponseFollowupType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Url",
+          "value": 0
+        },
+        {
+          "name": "Lp",
+          "value": 1
+        },
+        {
+          "name": "FormDefined",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.Asset.LandingPageContentResponseType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Image",
+          "value": 0
+        },
+        {
+          "name": "SocialButton",
+          "value": 1
+        },
+        {
+          "name": "Form",
+          "value": 2
+        },
+        {
+          "name": "DynamicContent",
+          "value": 3
+        },
+        {
+          "name": "Rectangle",
+          "value": 4
+        },
+        {
+          "name": "Snippet",
+          "value": 5
+        },
+        {
+          "name": "RichText",
+          "value": 6
+        },
+        {
+          "name": "HTML",
+          "value": 7
+        },
+        {
+          "name": "Video",
+          "value": 8
+        },
+        {
+          "name": "Poll",
+          "value": 9
+        },
+        {
+          "name": "ReferralOffer",
+          "value": 10
+        },
+        {
+          "name": "Sweepstakes",
+          "value": 11
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.Asset.UpdateEmailComponentContentRequestType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Text",
+          "value": 0
+        },
+        {
+          "name": "DynamicContent",
+          "value": 1
+        },
+        {
+          "name": "Snippet",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.Asset.LandingPageDomainType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Domain",
+          "value": 0
+        },
+        {
+          "name": "DomainAlias",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.Asset.FolderResponseFolderType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Folder",
+          "value": 0
+        },
+        {
+          "name": "Program",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.Asset.UpdateSnippetDynamicContentRequestType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Typeofcontent_Either_HTML_or_Text_",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.Asset.FolderType2",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Folder",
+          "value": 0
+        },
+        {
+          "name": "Program",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.Asset.RedirectFromType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "LandingPageId",
+          "value": 0
+        },
+        {
+          "name": "Path",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.Asset.RedirectToType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "LandingPageId",
+          "value": 0
+        },
+        {
+          "name": "Url",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.Asset.SmartListRulesFilterMatchType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "All",
+          "value": 0
+        },
+        {
+          "name": "Any",
+          "value": 1
+        },
+        {
+          "name": "Advanced",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.Asset.EmailTemplateContentResponseStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Approved",
+          "value": 0
+        },
+        {
+          "name": "Draft",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.Asset.GetEmailFullContentResponseStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Approved",
+          "value": 0
+        },
+        {
+          "name": "Draft",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Marketo.Asset.DeleteTokenRequestFolderType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Program",
+          "value": 0
+        },
+        {
+          "name": "Folder",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "namespaceMappings": []
+}

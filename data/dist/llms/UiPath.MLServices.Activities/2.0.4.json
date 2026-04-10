@@ -1,0 +1,503 @@
+{
+  "schema": {
+    "id": "activity-catalog",
+    "version": "v0.3"
+  },
+  "source": {
+    "kind": "nuget-package",
+    "id": "UiPath.MLServices.Activities",
+    "version": "2.0.4",
+    "feedUrl": null,
+    "authors": "UiPath",
+    "projectUrl": null,
+    "description": "IMPORTANT: This package version requires Studio 22.4 or above. A set of activities allowing you to interact with AI Center. Retrieve and call all ML Skills available on your tenant by using ML Skill activity.",
+    "license": "https://www.uipath.com/hubfs/legalspot/UiPath_MSSA.pdf",
+    "tags": null,
+    "packageTypes": []
+  },
+  "generatedAt": "2026-04-10T09:21:23Z",
+  "activities": [],
+  "enums": [
+    {
+      "fullName": "UiPath.MLServices.Activities.Design.Enums.ListOperation",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Add",
+          "value": 0
+        },
+        {
+          "name": "Remove",
+          "value": 1
+        },
+        {
+          "name": "Clear",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.MLServices.Activities.Design.Enums.ResourceGridType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "RetryGrid",
+          "value": 0
+        },
+        {
+          "name": "ShowMoreGrid",
+          "value": 1
+        },
+        {
+          "name": "MLSkillContainer",
+          "value": 2
+        },
+        {
+          "name": "NoMLSkillAvailableGrid",
+          "value": 3
+        },
+        {
+          "name": "LoadingGrid",
+          "value": 4
+        },
+        {
+          "name": "MLDataContainer",
+          "value": 5
+        },
+        {
+          "name": "EmptyDataGrid",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Shared.JobWrapper.JobObjectInfoType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AssociateCompletionPortInformation",
+          "value": 7
+        },
+        {
+          "name": "BasicLimitInformation",
+          "value": 2
+        },
+        {
+          "name": "BasicUIRestrictions",
+          "value": 4
+        },
+        {
+          "name": "EndOfJobTimeInformation",
+          "value": 6
+        },
+        {
+          "name": "ExtendedLimitInformation",
+          "value": 9
+        },
+        {
+          "name": "SecurityLimitInformation",
+          "value": 5
+        },
+        {
+          "name": "GroupInformation",
+          "value": 11
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Shared.NativeMessageBox.MessageBoxOptions",
+      "underlyingType": "System.UInt32",
+      "members": [
+        {
+          "name": "OkOnly",
+          "value": 0
+        },
+        {
+          "name": "OkCancel",
+          "value": 1
+        },
+        {
+          "name": "AbortRetryIgnore",
+          "value": 2
+        },
+        {
+          "name": "YesNoCancel",
+          "value": 3
+        },
+        {
+          "name": "YesNo",
+          "value": 4
+        },
+        {
+          "name": "RetryCancel",
+          "value": 5
+        },
+        {
+          "name": "CancelTryContinue",
+          "value": 6
+        },
+        {
+          "name": "IconHand",
+          "value": 16
+        },
+        {
+          "name": "IconQuestion",
+          "value": 32
+        },
+        {
+          "name": "IconExclamation",
+          "value": 48
+        },
+        {
+          "name": "IconAsterisk",
+          "value": 64
+        },
+        {
+          "name": "UserIcon",
+          "value": 128
+        },
+        {
+          "name": "IconWarning",
+          "value": 48
+        },
+        {
+          "name": "IconError",
+          "value": 16
+        },
+        {
+          "name": "IconInformation",
+          "value": 64
+        },
+        {
+          "name": "IconStop",
+          "value": 16
+        },
+        {
+          "name": "DefButton1",
+          "value": 0
+        },
+        {
+          "name": "DefButton2",
+          "value": 256
+        },
+        {
+          "name": "DefButton3",
+          "value": 512
+        },
+        {
+          "name": "DefButton4",
+          "value": 768
+        },
+        {
+          "name": "ApplicationModal",
+          "value": 0
+        },
+        {
+          "name": "SystemModal",
+          "value": 4096
+        },
+        {
+          "name": "TaskModal",
+          "value": 8192
+        },
+        {
+          "name": "Help",
+          "value": 16384
+        },
+        {
+          "name": "NoFocus",
+          "value": 32768
+        },
+        {
+          "name": "SetForeground",
+          "value": 65536
+        },
+        {
+          "name": "DefaultDesktopOnly",
+          "value": 131072
+        },
+        {
+          "name": "Topmost",
+          "value": 262144
+        },
+        {
+          "name": "Right",
+          "value": 524288
+        },
+        {
+          "name": "RTLReading",
+          "value": 1048576
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Shared.NativeMessageBox.MessageBoxResult",
+      "underlyingType": "System.UInt32",
+      "members": [
+        {
+          "name": "Error",
+          "value": 0
+        },
+        {
+          "name": "Ok",
+          "value": 1
+        },
+        {
+          "name": "Cancel",
+          "value": 2
+        },
+        {
+          "name": "Abort",
+          "value": 3
+        },
+        {
+          "name": "Retry",
+          "value": 4
+        },
+        {
+          "name": "Ignore",
+          "value": 5
+        },
+        {
+          "name": "Yes",
+          "value": 6
+        },
+        {
+          "name": "No",
+          "value": 7
+        },
+        {
+          "name": "Close",
+          "value": 8
+        },
+        {
+          "name": "Help",
+          "value": 9
+        },
+        {
+          "name": "TryAgain",
+          "value": 10
+        },
+        {
+          "name": "Continue",
+          "value": 11
+        },
+        {
+          "name": "Timeout",
+          "value": 32000
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Shared.Activities.Services.Language",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "VisualBasic",
+          "value": 0
+        },
+        {
+          "name": "CSharp",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Shared.Activities.Performance.PerfCommandType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "Start",
+          "value": 1
+        },
+        {
+          "name": "Stop",
+          "value": 2
+        },
+        {
+          "name": "Alive",
+          "value": 3
+        },
+        {
+          "name": "Data",
+          "value": 4
+        },
+        {
+          "name": "Error",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.MLServices.Activities.AccessProviderType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Designer",
+          "value": 0
+        },
+        {
+          "name": "Runtime",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.MLServices.AuditLogSeverity",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "INFO",
+          "value": 0
+        },
+        {
+          "name": "SUCCESS",
+          "value": 1
+        },
+        {
+          "name": "WARN",
+          "value": 2
+        },
+        {
+          "name": "ERROR",
+          "value": 3
+        },
+        {
+          "name": "FATAL",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.MLServices.Enums.ConnectionMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Robot",
+          "value": 0
+        },
+        {
+          "name": "Endpoint",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.MLServices.Enums.DataLabellingAppStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "QUEUED",
+          "value": 0
+        },
+        {
+          "name": "DEPLOYING",
+          "value": 1
+        },
+        {
+          "name": "AVAILABLE",
+          "value": 2
+        },
+        {
+          "name": "FAILED",
+          "value": 3
+        },
+        {
+          "name": "ERROR",
+          "value": 4
+        },
+        {
+          "name": "STOPPED",
+          "value": 5
+        },
+        {
+          "name": "STARTING",
+          "value": 6
+        },
+        {
+          "name": "PURGING",
+          "value": 7
+        },
+        {
+          "name": "PURGED",
+          "value": 8
+        },
+        {
+          "name": "EXPORTING_DATASET",
+          "value": 9
+        },
+        {
+          "name": "STOPPING",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.MLServices.Enums.DataLabellingAppType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DATA_MANAGER",
+          "value": 0
+        },
+        {
+          "name": "DATA_MANAGER_SAAS",
+          "value": 1
+        },
+        {
+          "name": "LABEL_BOX",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.MLServices.Enums.FileTypes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "JSON",
+          "value": 0
+        },
+        {
+          "name": "File",
+          "value": 1
+        },
+        {
+          "name": "Files",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.MLServices.Enums.LabellingFileStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "UPLOAD_SUCCESS",
+          "value": 0
+        },
+        {
+          "name": "PUSH_PENDING",
+          "value": 1
+        },
+        {
+          "name": "PUSH_SUCCESS",
+          "value": 2
+        },
+        {
+          "name": "PUSH_FAILED",
+          "value": 3
+        },
+        {
+          "name": "LABEL_SUCCESS",
+          "value": 4
+        }
+      ]
+    }
+  ],
+  "namespaceMappings": []
+}

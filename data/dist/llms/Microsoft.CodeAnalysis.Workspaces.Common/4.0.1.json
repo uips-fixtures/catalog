@@ -1,0 +1,711 @@
+{
+  "schema": {
+    "id": "activity-catalog",
+    "version": "v0.3"
+  },
+  "source": {
+    "kind": "nuget-package",
+    "id": "Microsoft.CodeAnalysis.Workspaces.Common",
+    "version": "4.0.1",
+    "feedUrl": null,
+    "authors": "Microsoft",
+    "projectUrl": "https://github.com/dotnet/roslyn",
+    "description": "A shared package used by the .NET Compiler Platform (\"Roslyn\") including support for analyzing projects and solutions.\n      Do not install this package manually, it will be added as a prerequisite by other packages that require it.\n    \n      More details at https://aka.ms/roslyn-packages\n      This package was built from the source at https://github.com/dotnet/roslyn/commit/b3e69109341a1017423af7981b8b84b646f5bcce.",
+    "license": "MIT",
+    "tags": "Roslyn CodeAnalysis Compiler CSharp VB VisualBasic Parser Scanner Lexer Emit CodeGeneration Metadata IL Compilation Scripting Syntax Semantics",
+    "packageTypes": []
+  },
+  "generatedAt": "2026-04-10T09:21:14Z",
+  "activities": [],
+  "enums": [
+    {
+      "fullName": "Microsoft.CodeAnalysis.DiagnosticProvider.Options",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Syntax",
+          "value": 1
+        },
+        {
+          "name": "Semantic",
+          "value": 2
+        },
+        {
+          "name": "ScriptSemantic",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.ApplyChangesKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AddProject",
+          "value": 0
+        },
+        {
+          "name": "RemoveProject",
+          "value": 1
+        },
+        {
+          "name": "AddProjectReference",
+          "value": 2
+        },
+        {
+          "name": "RemoveProjectReference",
+          "value": 3
+        },
+        {
+          "name": "AddMetadataReference",
+          "value": 4
+        },
+        {
+          "name": "RemoveMetadataReference",
+          "value": 5
+        },
+        {
+          "name": "AddDocument",
+          "value": 6
+        },
+        {
+          "name": "RemoveDocument",
+          "value": 7
+        },
+        {
+          "name": "ChangeDocument",
+          "value": 8
+        },
+        {
+          "name": "AddAnalyzerReference",
+          "value": 9
+        },
+        {
+          "name": "RemoveAnalyzerReference",
+          "value": 10
+        },
+        {
+          "name": "AddAdditionalDocument",
+          "value": 11
+        },
+        {
+          "name": "RemoveAdditionalDocument",
+          "value": 12
+        },
+        {
+          "name": "ChangeAdditionalDocument",
+          "value": 13
+        },
+        {
+          "name": "ChangeCompilationOptions",
+          "value": 14
+        },
+        {
+          "name": "ChangeParseOptions",
+          "value": 15
+        },
+        {
+          "name": "ChangeDocumentInfo",
+          "value": 16
+        },
+        {
+          "name": "AddAnalyzerConfigDocument",
+          "value": 17
+        },
+        {
+          "name": "RemoveAnalyzerConfigDocument",
+          "value": 18
+        },
+        {
+          "name": "ChangeAnalyzerConfigDocument",
+          "value": 19
+        },
+        {
+          "name": "AddSolutionAnalyzerReference",
+          "value": 20
+        },
+        {
+          "name": "RemoveSolutionAnalyzerReference",
+          "value": 21
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.PreservationMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "PreserveValue",
+          "value": 0
+        },
+        {
+          "name": "PreserveIdentity",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.TextDocumentKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Document",
+          "value": 0
+        },
+        {
+          "name": "AdditionalDocument",
+          "value": 1
+        },
+        {
+          "name": "AnalyzerConfigDocument",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.WorkspaceChangeKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "SolutionChanged",
+          "value": 0
+        },
+        {
+          "name": "SolutionAdded",
+          "value": 1
+        },
+        {
+          "name": "SolutionRemoved",
+          "value": 2
+        },
+        {
+          "name": "SolutionCleared",
+          "value": 3
+        },
+        {
+          "name": "SolutionReloaded",
+          "value": 4
+        },
+        {
+          "name": "ProjectAdded",
+          "value": 5
+        },
+        {
+          "name": "ProjectRemoved",
+          "value": 6
+        },
+        {
+          "name": "ProjectChanged",
+          "value": 7
+        },
+        {
+          "name": "ProjectReloaded",
+          "value": 8
+        },
+        {
+          "name": "DocumentAdded",
+          "value": 9
+        },
+        {
+          "name": "DocumentRemoved",
+          "value": 10
+        },
+        {
+          "name": "DocumentReloaded",
+          "value": 11
+        },
+        {
+          "name": "DocumentChanged",
+          "value": 12
+        },
+        {
+          "name": "AdditionalDocumentAdded",
+          "value": 13
+        },
+        {
+          "name": "AdditionalDocumentRemoved",
+          "value": 14
+        },
+        {
+          "name": "AdditionalDocumentReloaded",
+          "value": 15
+        },
+        {
+          "name": "AdditionalDocumentChanged",
+          "value": 16
+        },
+        {
+          "name": "DocumentInfoChanged",
+          "value": 17
+        },
+        {
+          "name": "AnalyzerConfigDocumentAdded",
+          "value": 18
+        },
+        {
+          "name": "AnalyzerConfigDocumentRemoved",
+          "value": 19
+        },
+        {
+          "name": "AnalyzerConfigDocumentReloaded",
+          "value": 20
+        },
+        {
+          "name": "AnalyzerConfigDocumentChanged",
+          "value": 21
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.WorkspaceDiagnosticKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Failure",
+          "value": 0
+        },
+        {
+          "name": "Warning",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.Rename.RenameEntityKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "BaseSymbol",
+          "value": 0
+        },
+        {
+          "name": "OverloadedSymbols",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.Formatting.FormattingOptions.IndentStyle",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Block",
+          "value": 1
+        },
+        {
+          "name": "Smart",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.Formatting.LineColumnRule.SpaceOperations",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Preserve",
+          "value": 0
+        },
+        {
+          "name": "Force",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.Formatting.LineColumnRule.LineOperations",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Preserve",
+          "value": 0
+        },
+        {
+          "name": "Force",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.Formatting.LineColumnRule.IndentationOperations",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Absolute",
+          "value": 0
+        },
+        {
+          "name": "Default",
+          "value": 1
+        },
+        {
+          "name": "Given",
+          "value": 2
+        },
+        {
+          "name": "Follow",
+          "value": 3
+        },
+        {
+          "name": "Preserve",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.Editing.DeclarationKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "CompilationUnit",
+          "value": 1
+        },
+        {
+          "name": "Class",
+          "value": 2
+        },
+        {
+          "name": "Struct",
+          "value": 3
+        },
+        {
+          "name": "Interface",
+          "value": 4
+        },
+        {
+          "name": "Enum",
+          "value": 5
+        },
+        {
+          "name": "Delegate",
+          "value": 6
+        },
+        {
+          "name": "Method",
+          "value": 7
+        },
+        {
+          "name": "Operator",
+          "value": 8
+        },
+        {
+          "name": "ConversionOperator",
+          "value": 9
+        },
+        {
+          "name": "Constructor",
+          "value": 10
+        },
+        {
+          "name": "Destructor",
+          "value": 11
+        },
+        {
+          "name": "Field",
+          "value": 12
+        },
+        {
+          "name": "Property",
+          "value": 13
+        },
+        {
+          "name": "Indexer",
+          "value": 14
+        },
+        {
+          "name": "EnumMember",
+          "value": 15
+        },
+        {
+          "name": "Event",
+          "value": 16
+        },
+        {
+          "name": "CustomEvent",
+          "value": 17
+        },
+        {
+          "name": "Namespace",
+          "value": 18
+        },
+        {
+          "name": "NamespaceImport",
+          "value": 19
+        },
+        {
+          "name": "Parameter",
+          "value": 20
+        },
+        {
+          "name": "Variable",
+          "value": 21
+        },
+        {
+          "name": "Attribute",
+          "value": 22
+        },
+        {
+          "name": "LambdaExpression",
+          "value": 23
+        },
+        {
+          "name": "GetAccessor",
+          "value": 24
+        },
+        {
+          "name": "SetAccessor",
+          "value": 25
+        },
+        {
+          "name": "AddAccessor",
+          "value": 26
+        },
+        {
+          "name": "RemoveAccessor",
+          "value": 27
+        },
+        {
+          "name": "RaiseAccessor",
+          "value": 28
+        },
+        {
+          "name": "RecordClass",
+          "value": 29
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.Editing.ImportAdderService.Strategy",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AddImportsFromSyntaxes",
+          "value": 0
+        },
+        {
+          "name": "AddImportsFromSymbolAnnotations",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.Editing.OperatorKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ImplicitConversion",
+          "value": 0
+        },
+        {
+          "name": "ExplicitConversion",
+          "value": 1
+        },
+        {
+          "name": "Addition",
+          "value": 2
+        },
+        {
+          "name": "BitwiseAnd",
+          "value": 3
+        },
+        {
+          "name": "BitwiseOr",
+          "value": 4
+        },
+        {
+          "name": "Decrement",
+          "value": 5
+        },
+        {
+          "name": "Division",
+          "value": 6
+        },
+        {
+          "name": "Equality",
+          "value": 7
+        },
+        {
+          "name": "ExclusiveOr",
+          "value": 8
+        },
+        {
+          "name": "False",
+          "value": 9
+        },
+        {
+          "name": "GreaterThan",
+          "value": 10
+        },
+        {
+          "name": "GreaterThanOrEqual",
+          "value": 11
+        },
+        {
+          "name": "Increment",
+          "value": 12
+        },
+        {
+          "name": "Inequality",
+          "value": 13
+        },
+        {
+          "name": "LeftShift",
+          "value": 14
+        },
+        {
+          "name": "LessThan",
+          "value": 15
+        },
+        {
+          "name": "LessThanOrEqual",
+          "value": 16
+        },
+        {
+          "name": "LogicalNot",
+          "value": 17
+        },
+        {
+          "name": "Modulus",
+          "value": 18
+        },
+        {
+          "name": "Multiply",
+          "value": 19
+        },
+        {
+          "name": "OnesComplement",
+          "value": 20
+        },
+        {
+          "name": "RightShift",
+          "value": 21
+        },
+        {
+          "name": "Subtraction",
+          "value": 22
+        },
+        {
+          "name": "True",
+          "value": 23
+        },
+        {
+          "name": "UnaryNegation",
+          "value": 24
+        },
+        {
+          "name": "UnaryPlus",
+          "value": 25
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.Editing.SpecialTypeConstraintKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "ReferenceType",
+          "value": 1
+        },
+        {
+          "name": "ValueType",
+          "value": 2
+        },
+        {
+          "name": "Constructor",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.Differencing.EditKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Update",
+          "value": 1
+        },
+        {
+          "name": "Insert",
+          "value": 2
+        },
+        {
+          "name": "Delete",
+          "value": 3
+        },
+        {
+          "name": "Move",
+          "value": 4
+        },
+        {
+          "name": "Reorder",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.Diagnostics.Analyzers.NamingStyles.SymbolSpecification.ModifierKindEnum",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "IsAbstract",
+          "value": 0
+        },
+        {
+          "name": "IsStatic",
+          "value": 1
+        },
+        {
+          "name": "IsAsync",
+          "value": 2
+        },
+        {
+          "name": "IsReadOnly",
+          "value": 3
+        },
+        {
+          "name": "IsConst",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.CodeAnalysis.CodeFixes.FixAllScope",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Document",
+          "value": 0
+        },
+        {
+          "name": "Project",
+          "value": 1
+        },
+        {
+          "name": "Solution",
+          "value": 2
+        },
+        {
+          "name": "Custom",
+          "value": 3
+        }
+      ]
+    }
+  ],
+  "namespaceMappings": []
+}

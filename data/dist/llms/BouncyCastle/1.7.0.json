@@ -1,0 +1,1601 @@
+{
+  "schema": {
+    "id": "activity-catalog",
+    "version": "v0.3"
+  },
+  "source": {
+    "kind": "nuget-package",
+    "id": "BouncyCastle",
+    "version": "1.7.0",
+    "feedUrl": null,
+    "authors": "Bouncy Castle Project Contributors",
+    "projectUrl": "http://www.bouncycastle.org/csharp/",
+    "description": "BouncyCastle.Crypto is a cryptography API providing:\n -Generation and parsing of PKCS#12 files.\n -X.509: Generators and parsers for V1 and V3 certificates, V2 CRLs and attribute certificates.\n -PBE algorithms supported by PBEUtil: PBEwithMD2andDES-CBC, PBEwithMD2andRC2-CBC, PBEwithMD5andDES-CBC, PBEwithMD5andRC2-CBC, PBEwithSHA1andDES-CBC, PBEwithSHA1andRC2-CBC, PBEwithSHA-1and128bitRC4, PBEwithSHA-1and40bitRC4, PBEwithSHA-1and3-keyDESEDE-CBC, PBEwithSHA-1and2-keyDESEDE-CBC, PBEwithSHA-1and128bitRC2-CBC, PBEwithSHA-1and40bitRC2-CBC, PBEwithHmacSHA-1, PBEwithHmacSHA-224, PBEwithHmacSHA-256, PBEwithHmacRIPEMD128, PBEwithHmacRIPEMD160, and PBEwithHmacRIPEMD256.\n -Signature algorithms supported by SignerUtilities: MD2withRSA, MD4withRSA, MD5withRSA, RIPEMD128withRSA, RIPEMD160withRSA, RIPEMD256withRSA, SHA-1withRSA, SHA-224withRSA, SHA-256withRSAandMGF1, SHA-384withRSAandMGF1, SHA-512withRSAandMGF1, SHA-1withDSA, and SHA-1withECDSA.\n -Symmetric key algorithms: AES, Blowfish, Camellia, CAST5, CAST6, DESede, DES, GOST28147, HC-128, HC-256, IDEA, NaccacheStern, RC2, RC4, RC5-32, RC5-64, RC6, Rijndael, Serpent, Skipjack, TEA/XTEA, Twofish, and VMPC.\n -Symmetric key modes: CBC, CFB, CTS, GOFB, OFB, OpenPGPCFB, and SIC (or CTR).\n -Symmetric key paddings: ISO10126d2, ISO7816d4, PKCS#5/7, TBC, X.923, and Zero Byte.\n -Asymmetric key algorithms: RSA (with blinding), ElGamal, DSA, ECDSA.\n -Asymmetric key paddings/encodings: ISO9796d1, OAEP, and PKCS#1.\n -Digests: GOST3411, MD2, MD4, MD5, RIPEMD128, RIPEMD160, RIPEMD256, RIPEMD320, SHA-1, SHA-224, SHA-256, SHA-384, SHA-512, Tiger, and Whirlpool.\n -Signer mechanisms: DSA, ECDSA, ECGOST3410, GOST3410, ISO9796d2, PSS, RSA.\n -Key Agreement: Diffie-Hellman and EC-DH.\n -Macs: CBCBlockCipher, CFBBlockCipher, GOST28147, HMac, and ISO9797 Alg. 3.\n -PBE generators: PKCS#12, and PKCS#5 - schemes 1 and 2.\n -OpenPGP (RFC 2440)\n -Cryptographic Message Syntax (CMS, RFC 3852), including streaming API.\n -Online Certificate Status Protocol (OCSP, RFC 2560).\n -Time Stamp Protocol (TSP, RFC 3161).\n -TLS/SSL Client with support for client side authentication.",
+    "license": null,
+    "tags": "bouncycastle, cryptography, encryption, security",
+    "packageTypes": []
+  },
+  "generatedAt": "2026-04-10T09:21:12Z",
+  "activities": [],
+  "enums": [
+    {
+      "fullName": "Org.BouncyCastle.Crypto.Tls.EncryptionAlgorithm",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NULL",
+          "value": 0
+        },
+        {
+          "name": "RC4_40",
+          "value": 1
+        },
+        {
+          "name": "RC4_128",
+          "value": 2
+        },
+        {
+          "name": "RC2_CBC_40",
+          "value": 3
+        },
+        {
+          "name": "IDEA_CBC",
+          "value": 4
+        },
+        {
+          "name": "DES40_CBC",
+          "value": 5
+        },
+        {
+          "name": "DES_CBC",
+          "value": 6
+        },
+        {
+          "name": "cls_3DES_EDE_CBC",
+          "value": 7
+        },
+        {
+          "name": "AES_128_CBC",
+          "value": 8
+        },
+        {
+          "name": "AES_256_CBC",
+          "value": 9
+        },
+        {
+          "name": "AES_128_GCM",
+          "value": 10
+        },
+        {
+          "name": "AES_256_GCM",
+          "value": 11
+        }
+      ]
+    },
+    {
+      "fullName": "Org.BouncyCastle.Crypto.Tls.AlertLevel",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "warning",
+          "value": 1
+        },
+        {
+          "name": "fatal",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Org.BouncyCastle.Bcpg.UserAttributeSubpacketTag",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ImageAttribute",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Org.BouncyCastle.Bcpg.PublicKeyAlgorithmTag",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "RsaGeneral",
+          "value": 1
+        },
+        {
+          "name": "RsaEncrypt",
+          "value": 2
+        },
+        {
+          "name": "RsaSign",
+          "value": 3
+        },
+        {
+          "name": "ElGamalEncrypt",
+          "value": 16
+        },
+        {
+          "name": "Dsa",
+          "value": 17
+        },
+        {
+          "name": "EC",
+          "value": 18
+        },
+        {
+          "name": "ECDsa",
+          "value": 19
+        },
+        {
+          "name": "ElGamalGeneral",
+          "value": 20
+        },
+        {
+          "name": "DiffieHellman",
+          "value": 21
+        },
+        {
+          "name": "Experimental_1",
+          "value": 100
+        },
+        {
+          "name": "Experimental_2",
+          "value": 101
+        },
+        {
+          "name": "Experimental_3",
+          "value": 102
+        },
+        {
+          "name": "Experimental_4",
+          "value": 103
+        },
+        {
+          "name": "Experimental_5",
+          "value": 104
+        },
+        {
+          "name": "Experimental_6",
+          "value": 105
+        },
+        {
+          "name": "Experimental_7",
+          "value": 106
+        },
+        {
+          "name": "Experimental_8",
+          "value": 107
+        },
+        {
+          "name": "Experimental_9",
+          "value": 108
+        },
+        {
+          "name": "Experimental_10",
+          "value": 109
+        },
+        {
+          "name": "Experimental_11",
+          "value": 110
+        }
+      ]
+    },
+    {
+      "fullName": "Org.BouncyCastle.Bcpg.Attr.ImageAttrib.Format",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Jpeg",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Org.BouncyCastle.Crypto.Tls.NamedCurve",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "sect163k1",
+          "value": 1
+        },
+        {
+          "name": "sect163r1",
+          "value": 2
+        },
+        {
+          "name": "sect163r2",
+          "value": 3
+        },
+        {
+          "name": "sect193r1",
+          "value": 4
+        },
+        {
+          "name": "sect193r2",
+          "value": 5
+        },
+        {
+          "name": "sect233k1",
+          "value": 6
+        },
+        {
+          "name": "sect233r1",
+          "value": 7
+        },
+        {
+          "name": "sect239k1",
+          "value": 8
+        },
+        {
+          "name": "sect283k1",
+          "value": 9
+        },
+        {
+          "name": "sect283r1",
+          "value": 10
+        },
+        {
+          "name": "sect409k1",
+          "value": 11
+        },
+        {
+          "name": "sect409r1",
+          "value": 12
+        },
+        {
+          "name": "sect571k1",
+          "value": 13
+        },
+        {
+          "name": "sect571r1",
+          "value": 14
+        },
+        {
+          "name": "secp160k1",
+          "value": 15
+        },
+        {
+          "name": "secp160r1",
+          "value": 16
+        },
+        {
+          "name": "secp160r2",
+          "value": 17
+        },
+        {
+          "name": "secp192k1",
+          "value": 18
+        },
+        {
+          "name": "secp192r1",
+          "value": 19
+        },
+        {
+          "name": "secp224k1",
+          "value": 20
+        },
+        {
+          "name": "secp224r1",
+          "value": 21
+        },
+        {
+          "name": "secp256k1",
+          "value": 22
+        },
+        {
+          "name": "secp256r1",
+          "value": 23
+        },
+        {
+          "name": "secp384r1",
+          "value": 24
+        },
+        {
+          "name": "secp521r1",
+          "value": 25
+        },
+        {
+          "name": "arbitrary_explicit_prime_curves",
+          "value": 65281
+        },
+        {
+          "name": "arbitrary_explicit_char2_curves",
+          "value": 65282
+        }
+      ]
+    },
+    {
+      "fullName": "Org.BouncyCastle.Crypto.Tls.DigestAlgorithm",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NULL",
+          "value": 0
+        },
+        {
+          "name": "MD5",
+          "value": 1
+        },
+        {
+          "name": "SHA",
+          "value": 2
+        },
+        {
+          "name": "SHA256",
+          "value": 3
+        },
+        {
+          "name": "SHA384",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Org.BouncyCastle.Crypto.Tls.ContentType",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "change_cipher_spec",
+          "value": 20
+        },
+        {
+          "name": "alert",
+          "value": 21
+        },
+        {
+          "name": "handshake",
+          "value": 22
+        },
+        {
+          "name": "application_data",
+          "value": 23
+        }
+      ]
+    },
+    {
+      "fullName": "Org.BouncyCastle.Bcpg.PacketTag",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Reserved",
+          "value": 0
+        },
+        {
+          "name": "PublicKeyEncryptedSession",
+          "value": 1
+        },
+        {
+          "name": "Signature",
+          "value": 2
+        },
+        {
+          "name": "SymmetricKeyEncryptedSessionKey",
+          "value": 3
+        },
+        {
+          "name": "OnePassSignature",
+          "value": 4
+        },
+        {
+          "name": "SecretKey",
+          "value": 5
+        },
+        {
+          "name": "PublicKey",
+          "value": 6
+        },
+        {
+          "name": "SecretSubkey",
+          "value": 7
+        },
+        {
+          "name": "CompressedData",
+          "value": 8
+        },
+        {
+          "name": "SymmetricKeyEncrypted",
+          "value": 9
+        },
+        {
+          "name": "Marker",
+          "value": 10
+        },
+        {
+          "name": "LiteralData",
+          "value": 11
+        },
+        {
+          "name": "Trust",
+          "value": 12
+        },
+        {
+          "name": "UserId",
+          "value": 13
+        },
+        {
+          "name": "PublicSubkey",
+          "value": 14
+        },
+        {
+          "name": "UserAttribute",
+          "value": 17
+        },
+        {
+          "name": "SymmetricEncryptedIntegrityProtected",
+          "value": 18
+        },
+        {
+          "name": "ModificationDetectionCode",
+          "value": 19
+        },
+        {
+          "name": "Experimental1",
+          "value": 60
+        },
+        {
+          "name": "Experimental2",
+          "value": 61
+        },
+        {
+          "name": "Experimental3",
+          "value": 62
+        },
+        {
+          "name": "Experimental4",
+          "value": 63
+        }
+      ]
+    },
+    {
+      "fullName": "Org.BouncyCastle.Asn1.X509.Target.Choice",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Name",
+          "value": 0
+        },
+        {
+          "name": "Group",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Org.BouncyCastle.Crypto.Tls.KeyExchangeAlgorithm",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NULL",
+          "value": 0
+        },
+        {
+          "name": "RSA",
+          "value": 1
+        },
+        {
+          "name": "RSA_EXPORT",
+          "value": 2
+        },
+        {
+          "name": "DHE_DSS",
+          "value": 3
+        },
+        {
+          "name": "DHE_DSS_EXPORT",
+          "value": 4
+        },
+        {
+          "name": "DHE_RSA",
+          "value": 5
+        },
+        {
+          "name": "DHE_RSA_EXPORT",
+          "value": 6
+        },
+        {
+          "name": "DH_DSS",
+          "value": 7
+        },
+        {
+          "name": "DH_DSS_EXPORT",
+          "value": 8
+        },
+        {
+          "name": "DH_RSA",
+          "value": 9
+        },
+        {
+          "name": "DH_RSA_EXPORT",
+          "value": 10
+        },
+        {
+          "name": "DH_anon",
+          "value": 11
+        },
+        {
+          "name": "DH_anon_export",
+          "value": 12
+        },
+        {
+          "name": "PSK",
+          "value": 13
+        },
+        {
+          "name": "DHE_PSK",
+          "value": 14
+        },
+        {
+          "name": "RSA_PSK",
+          "value": 15
+        },
+        {
+          "name": "ECDH_ECDSA",
+          "value": 16
+        },
+        {
+          "name": "ECDHE_ECDSA",
+          "value": 17
+        },
+        {
+          "name": "ECDH_RSA",
+          "value": 18
+        },
+        {
+          "name": "ECDHE_RSA",
+          "value": 19
+        },
+        {
+          "name": "ECDH_anon",
+          "value": 20
+        },
+        {
+          "name": "SRP",
+          "value": 21
+        },
+        {
+          "name": "SRP_DSS",
+          "value": 22
+        },
+        {
+          "name": "SRP_RSA",
+          "value": 23
+        }
+      ]
+    },
+    {
+      "fullName": "Org.BouncyCastle.Bcpg.SymmetricKeyAlgorithmTag",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Null",
+          "value": 0
+        },
+        {
+          "name": "Idea",
+          "value": 1
+        },
+        {
+          "name": "TripleDes",
+          "value": 2
+        },
+        {
+          "name": "Cast5",
+          "value": 3
+        },
+        {
+          "name": "Blowfish",
+          "value": 4
+        },
+        {
+          "name": "Safer",
+          "value": 5
+        },
+        {
+          "name": "Des",
+          "value": 6
+        },
+        {
+          "name": "Aes128",
+          "value": 7
+        },
+        {
+          "name": "Aes192",
+          "value": 8
+        },
+        {
+          "name": "Aes256",
+          "value": 9
+        },
+        {
+          "name": "Twofish",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "fullName": "Org.BouncyCastle.Bcpg.CompressionAlgorithmTag",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Uncompressed",
+          "value": 0
+        },
+        {
+          "name": "Zip",
+          "value": 1
+        },
+        {
+          "name": "ZLib",
+          "value": 2
+        },
+        {
+          "name": "BZip2",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Org.BouncyCastle.Asn1.IsisMtt.X509.DeclarationOfMajority.Choice",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NotYoungerThan",
+          "value": 0
+        },
+        {
+          "name": "FullAgeAtCountry",
+          "value": 1
+        },
+        {
+          "name": "DateOfBirth",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Org.BouncyCastle.Asn1.Cmp.PkiStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Granted",
+          "value": 0
+        },
+        {
+          "name": "GrantedWithMods",
+          "value": 1
+        },
+        {
+          "name": "Rejection",
+          "value": 2
+        },
+        {
+          "name": "Waiting",
+          "value": 3
+        },
+        {
+          "name": "RevocationWarning",
+          "value": 4
+        },
+        {
+          "name": "RevocationNotification",
+          "value": 5
+        },
+        {
+          "name": "KeyUpdateWarning",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "Org.BouncyCastle.Crypto.Tls.HandshakeType",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "hello_request",
+          "value": 0
+        },
+        {
+          "name": "client_hello",
+          "value": 1
+        },
+        {
+          "name": "server_hello",
+          "value": 2
+        },
+        {
+          "name": "certificate",
+          "value": 11
+        },
+        {
+          "name": "server_key_exchange",
+          "value": 12
+        },
+        {
+          "name": "certificate_request",
+          "value": 13
+        },
+        {
+          "name": "server_hello_done",
+          "value": 14
+        },
+        {
+          "name": "certificate_verify",
+          "value": 15
+        },
+        {
+          "name": "client_key_exchange",
+          "value": 16
+        },
+        {
+          "name": "finished",
+          "value": 20
+        }
+      ]
+    },
+    {
+      "fullName": "Org.BouncyCastle.Crypto.Tls.ExtensionType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "server_name",
+          "value": 0
+        },
+        {
+          "name": "max_fragment_length",
+          "value": 1
+        },
+        {
+          "name": "client_certificate_url",
+          "value": 2
+        },
+        {
+          "name": "trusted_ca_keys",
+          "value": 3
+        },
+        {
+          "name": "truncated_hmac",
+          "value": 4
+        },
+        {
+          "name": "status_request",
+          "value": 5
+        },
+        {
+          "name": "elliptic_curves",
+          "value": 10
+        },
+        {
+          "name": "ec_point_formats",
+          "value": 11
+        },
+        {
+          "name": "srp",
+          "value": 12
+        },
+        {
+          "name": "renegotiation_info",
+          "value": 65281
+        }
+      ]
+    },
+    {
+      "fullName": "Org.BouncyCastle.Crypto.Tls.ClientCertificateType",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "rsa_sign",
+          "value": 1
+        },
+        {
+          "name": "dss_sign",
+          "value": 2
+        },
+        {
+          "name": "rsa_fixed_dh",
+          "value": 3
+        },
+        {
+          "name": "dss_fixed_dh",
+          "value": 4
+        },
+        {
+          "name": "ecdsa_sign",
+          "value": 64
+        },
+        {
+          "name": "rsa_fixed_ecdh",
+          "value": 65
+        },
+        {
+          "name": "ecdsa_fixed_ecdh",
+          "value": 66
+        }
+      ]
+    },
+    {
+      "fullName": "Org.BouncyCastle.Cms.CmsAttributeTableParameter",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ContentType",
+          "value": 0
+        },
+        {
+          "name": "Digest",
+          "value": 1
+        },
+        {
+          "name": "Signature",
+          "value": 2
+        },
+        {
+          "name": "DigestAlgorithmIdentifier",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Org.BouncyCastle.Asn1.IsisMtt.Ocsp.RequestedCertificate.Choice",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Certificate",
+          "value": -1
+        },
+        {
+          "name": "PublicKeyCertificate",
+          "value": 0
+        },
+        {
+          "name": "AttributeCertificate",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Org.BouncyCastle.Crypto.Tls.CompressionMethod",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "NULL",
+          "value": 0
+        },
+        {
+          "name": "DEFLATE",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Org.BouncyCastle.Bcpg.SignatureSubpacketTag",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "CreationTime",
+          "value": 2
+        },
+        {
+          "name": "ExpireTime",
+          "value": 3
+        },
+        {
+          "name": "Exportable",
+          "value": 4
+        },
+        {
+          "name": "TrustSig",
+          "value": 5
+        },
+        {
+          "name": "RegExp",
+          "value": 6
+        },
+        {
+          "name": "Revocable",
+          "value": 7
+        },
+        {
+          "name": "KeyExpireTime",
+          "value": 9
+        },
+        {
+          "name": "Placeholder",
+          "value": 10
+        },
+        {
+          "name": "PreferredSymmetricAlgorithms",
+          "value": 11
+        },
+        {
+          "name": "RevocationKey",
+          "value": 12
+        },
+        {
+          "name": "IssuerKeyId",
+          "value": 16
+        },
+        {
+          "name": "NotationData",
+          "value": 20
+        },
+        {
+          "name": "PreferredHashAlgorithms",
+          "value": 21
+        },
+        {
+          "name": "PreferredCompressionAlgorithms",
+          "value": 22
+        },
+        {
+          "name": "KeyServerPreferences",
+          "value": 23
+        },
+        {
+          "name": "PreferredKeyServer",
+          "value": 24
+        },
+        {
+          "name": "PrimaryUserId",
+          "value": 25
+        },
+        {
+          "name": "PolicyUrl",
+          "value": 26
+        },
+        {
+          "name": "KeyFlags",
+          "value": 27
+        },
+        {
+          "name": "SignerUserId",
+          "value": 28
+        },
+        {
+          "name": "RevocationReason",
+          "value": 29
+        },
+        {
+          "name": "Features",
+          "value": 30
+        },
+        {
+          "name": "SignatureTarget",
+          "value": 31
+        },
+        {
+          "name": "EmbeddedSignature",
+          "value": 32
+        }
+      ]
+    },
+    {
+      "fullName": "Org.BouncyCastle.Crypto.Tls.AlertDescription",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "close_notify",
+          "value": 0
+        },
+        {
+          "name": "unexpected_message",
+          "value": 10
+        },
+        {
+          "name": "bad_record_mac",
+          "value": 20
+        },
+        {
+          "name": "decryption_failed",
+          "value": 21
+        },
+        {
+          "name": "record_overflow",
+          "value": 22
+        },
+        {
+          "name": "decompression_failure",
+          "value": 30
+        },
+        {
+          "name": "handshake_failure",
+          "value": 40
+        },
+        {
+          "name": "bad_certificate",
+          "value": 42
+        },
+        {
+          "name": "unsupported_certificate",
+          "value": 43
+        },
+        {
+          "name": "certificate_revoked",
+          "value": 44
+        },
+        {
+          "name": "certificate_expired",
+          "value": 45
+        },
+        {
+          "name": "certificate_unknown",
+          "value": 46
+        },
+        {
+          "name": "illegal_parameter",
+          "value": 47
+        },
+        {
+          "name": "unknown_ca",
+          "value": 48
+        },
+        {
+          "name": "access_denied",
+          "value": 49
+        },
+        {
+          "name": "decode_error",
+          "value": 50
+        },
+        {
+          "name": "decrypt_error",
+          "value": 51
+        },
+        {
+          "name": "export_restriction",
+          "value": 60
+        },
+        {
+          "name": "protocol_version",
+          "value": 70
+        },
+        {
+          "name": "insufficient_security",
+          "value": 71
+        },
+        {
+          "name": "internal_error",
+          "value": 80
+        },
+        {
+          "name": "user_canceled",
+          "value": 90
+        },
+        {
+          "name": "no_renegotiation",
+          "value": 100
+        },
+        {
+          "name": "unsupported_extension",
+          "value": 110
+        },
+        {
+          "name": "certificate_unobtainable",
+          "value": 111
+        },
+        {
+          "name": "unrecognized_name",
+          "value": 112
+        },
+        {
+          "name": "bad_certificate_status_response",
+          "value": 113
+        },
+        {
+          "name": "bad_certificate_hash_value",
+          "value": 114
+        },
+        {
+          "name": "unknown_psk_identity",
+          "value": 115
+        }
+      ]
+    },
+    {
+      "fullName": "Org.BouncyCastle.Crypto.Tls.ECCurveType",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "explicit_prime",
+          "value": 1
+        },
+        {
+          "name": "explicit_char2",
+          "value": 2
+        },
+        {
+          "name": "named_curve",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Org.BouncyCastle.Crypto.Tls.CipherSuite",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "TLS_NULL_WITH_NULL_NULL",
+          "value": 0
+        },
+        {
+          "name": "TLS_RSA_WITH_NULL_MD5",
+          "value": 1
+        },
+        {
+          "name": "TLS_RSA_WITH_NULL_SHA",
+          "value": 2
+        },
+        {
+          "name": "TLS_RSA_EXPORT_WITH_RC4_40_MD5",
+          "value": 3
+        },
+        {
+          "name": "TLS_RSA_WITH_RC4_128_MD5",
+          "value": 4
+        },
+        {
+          "name": "TLS_RSA_WITH_RC4_128_SHA",
+          "value": 5
+        },
+        {
+          "name": "TLS_RSA_EXPORT_WITH_RC2_CBC_40_MD5",
+          "value": 6
+        },
+        {
+          "name": "TLS_RSA_WITH_IDEA_CBC_SHA",
+          "value": 7
+        },
+        {
+          "name": "TLS_RSA_EXPORT_WITH_DES40_CBC_SHA",
+          "value": 8
+        },
+        {
+          "name": "TLS_RSA_WITH_DES_CBC_SHA",
+          "value": 9
+        },
+        {
+          "name": "TLS_RSA_WITH_3DES_EDE_CBC_SHA",
+          "value": 10
+        },
+        {
+          "name": "TLS_DH_DSS_EXPORT_WITH_DES40_CBC_SHA",
+          "value": 11
+        },
+        {
+          "name": "TLS_DH_DSS_WITH_DES_CBC_SHA",
+          "value": 12
+        },
+        {
+          "name": "TLS_DH_DSS_WITH_3DES_EDE_CBC_SHA",
+          "value": 13
+        },
+        {
+          "name": "TLS_DH_RSA_EXPORT_WITH_DES40_CBC_SHA",
+          "value": 14
+        },
+        {
+          "name": "TLS_DH_RSA_WITH_DES_CBC_SHA",
+          "value": 15
+        },
+        {
+          "name": "TLS_DH_RSA_WITH_3DES_EDE_CBC_SHA",
+          "value": 16
+        },
+        {
+          "name": "TLS_DHE_DSS_EXPORT_WITH_DES40_CBC_SHA",
+          "value": 17
+        },
+        {
+          "name": "TLS_DHE_DSS_WITH_DES_CBC_SHA",
+          "value": 18
+        },
+        {
+          "name": "TLS_DHE_DSS_WITH_3DES_EDE_CBC_SHA",
+          "value": 19
+        },
+        {
+          "name": "TLS_DHE_RSA_EXPORT_WITH_DES40_CBC_SHA",
+          "value": 20
+        },
+        {
+          "name": "TLS_DHE_RSA_WITH_DES_CBC_SHA",
+          "value": 21
+        },
+        {
+          "name": "TLS_DHE_RSA_WITH_3DES_EDE_CBC_SHA",
+          "value": 22
+        },
+        {
+          "name": "TLS_DH_anon_EXPORT_WITH_RC4_40_MD5",
+          "value": 23
+        },
+        {
+          "name": "TLS_DH_anon_WITH_RC4_128_MD5",
+          "value": 24
+        },
+        {
+          "name": "TLS_DH_anon_EXPORT_WITH_DES40_CBC_SHA",
+          "value": 25
+        },
+        {
+          "name": "TLS_DH_anon_WITH_DES_CBC_SHA",
+          "value": 26
+        },
+        {
+          "name": "TLS_DH_anon_WITH_3DES_EDE_CBC_SHA",
+          "value": 27
+        },
+        {
+          "name": "TLS_RSA_WITH_AES_128_CBC_SHA",
+          "value": 47
+        },
+        {
+          "name": "TLS_DH_DSS_WITH_AES_128_CBC_SHA",
+          "value": 48
+        },
+        {
+          "name": "TLS_DH_RSA_WITH_AES_128_CBC_SHA",
+          "value": 49
+        },
+        {
+          "name": "TLS_DHE_DSS_WITH_AES_128_CBC_SHA",
+          "value": 50
+        },
+        {
+          "name": "TLS_DHE_RSA_WITH_AES_128_CBC_SHA",
+          "value": 51
+        },
+        {
+          "name": "TLS_DH_anon_WITH_AES_128_CBC_SHA",
+          "value": 52
+        },
+        {
+          "name": "TLS_RSA_WITH_AES_256_CBC_SHA",
+          "value": 53
+        },
+        {
+          "name": "TLS_DH_DSS_WITH_AES_256_CBC_SHA",
+          "value": 54
+        },
+        {
+          "name": "TLS_DH_RSA_WITH_AES_256_CBC_SHA",
+          "value": 55
+        },
+        {
+          "name": "TLS_DHE_DSS_WITH_AES_256_CBC_SHA",
+          "value": 56
+        },
+        {
+          "name": "TLS_DHE_RSA_WITH_AES_256_CBC_SHA",
+          "value": 57
+        },
+        {
+          "name": "TLS_DH_anon_WITH_AES_256_CBC_SHA",
+          "value": 58
+        },
+        {
+          "name": "TLS_PSK_WITH_RC4_128_SHA",
+          "value": 138
+        },
+        {
+          "name": "TLS_PSK_WITH_3DES_EDE_CBC_SHA",
+          "value": 139
+        },
+        {
+          "name": "TLS_PSK_WITH_AES_128_CBC_SHA",
+          "value": 140
+        },
+        {
+          "name": "TLS_PSK_WITH_AES_256_CBC_SHA",
+          "value": 141
+        },
+        {
+          "name": "TLS_DHE_PSK_WITH_RC4_128_SHA",
+          "value": 142
+        },
+        {
+          "name": "TLS_DHE_PSK_WITH_3DES_EDE_CBC_SHA",
+          "value": 143
+        },
+        {
+          "name": "TLS_DHE_PSK_WITH_AES_128_CBC_SHA",
+          "value": 144
+        },
+        {
+          "name": "TLS_DHE_PSK_WITH_AES_256_CBC_SHA",
+          "value": 145
+        },
+        {
+          "name": "TLS_RSA_PSK_WITH_RC4_128_SHA",
+          "value": 146
+        },
+        {
+          "name": "TLS_RSA_PSK_WITH_3DES_EDE_CBC_SHA",
+          "value": 147
+        },
+        {
+          "name": "TLS_RSA_PSK_WITH_AES_128_CBC_SHA",
+          "value": 148
+        },
+        {
+          "name": "TLS_RSA_PSK_WITH_AES_256_CBC_SHA",
+          "value": 149
+        },
+        {
+          "name": "TLS_ECDH_ECDSA_WITH_NULL_SHA",
+          "value": 49153
+        },
+        {
+          "name": "TLS_ECDH_ECDSA_WITH_RC4_128_SHA",
+          "value": 49154
+        },
+        {
+          "name": "TLS_ECDH_ECDSA_WITH_3DES_EDE_CBC_SHA",
+          "value": 49155
+        },
+        {
+          "name": "TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA",
+          "value": 49156
+        },
+        {
+          "name": "TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA",
+          "value": 49157
+        },
+        {
+          "name": "TLS_ECDHE_ECDSA_WITH_NULL_SHA",
+          "value": 49158
+        },
+        {
+          "name": "TLS_ECDHE_ECDSA_WITH_RC4_128_SHA",
+          "value": 49159
+        },
+        {
+          "name": "TLS_ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA",
+          "value": 49160
+        },
+        {
+          "name": "TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA",
+          "value": 49161
+        },
+        {
+          "name": "TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA",
+          "value": 49162
+        },
+        {
+          "name": "TLS_ECDH_RSA_WITH_NULL_SHA",
+          "value": 49163
+        },
+        {
+          "name": "TLS_ECDH_RSA_WITH_RC4_128_SHA",
+          "value": 49164
+        },
+        {
+          "name": "TLS_ECDH_RSA_WITH_3DES_EDE_CBC_SHA",
+          "value": 49165
+        },
+        {
+          "name": "TLS_ECDH_RSA_WITH_AES_128_CBC_SHA",
+          "value": 49166
+        },
+        {
+          "name": "TLS_ECDH_RSA_WITH_AES_256_CBC_SHA",
+          "value": 49167
+        },
+        {
+          "name": "TLS_ECDHE_RSA_WITH_NULL_SHA",
+          "value": 49168
+        },
+        {
+          "name": "TLS_ECDHE_RSA_WITH_RC4_128_SHA",
+          "value": 49169
+        },
+        {
+          "name": "TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA",
+          "value": 49170
+        },
+        {
+          "name": "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA",
+          "value": 49171
+        },
+        {
+          "name": "TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA",
+          "value": 49172
+        },
+        {
+          "name": "TLS_ECDH_anon_WITH_NULL_SHA",
+          "value": 49173
+        },
+        {
+          "name": "TLS_ECDH_anon_WITH_RC4_128_SHA",
+          "value": 49174
+        },
+        {
+          "name": "TLS_ECDH_anon_WITH_3DES_EDE_CBC_SHA",
+          "value": 49175
+        },
+        {
+          "name": "TLS_ECDH_anon_WITH_AES_128_CBC_SHA",
+          "value": 49176
+        },
+        {
+          "name": "TLS_ECDH_anon_WITH_AES_256_CBC_SHA",
+          "value": 49177
+        },
+        {
+          "name": "TLS_SRP_SHA_WITH_3DES_EDE_CBC_SHA",
+          "value": 49178
+        },
+        {
+          "name": "TLS_SRP_SHA_RSA_WITH_3DES_EDE_CBC_SHA",
+          "value": 49179
+        },
+        {
+          "name": "TLS_SRP_SHA_DSS_WITH_3DES_EDE_CBC_SHA",
+          "value": 49180
+        },
+        {
+          "name": "TLS_SRP_SHA_WITH_AES_128_CBC_SHA",
+          "value": 49181
+        },
+        {
+          "name": "TLS_SRP_SHA_RSA_WITH_AES_128_CBC_SHA",
+          "value": 49182
+        },
+        {
+          "name": "TLS_SRP_SHA_DSS_WITH_AES_128_CBC_SHA",
+          "value": 49183
+        },
+        {
+          "name": "TLS_SRP_SHA_WITH_AES_256_CBC_SHA",
+          "value": 49184
+        },
+        {
+          "name": "TLS_SRP_SHA_RSA_WITH_AES_256_CBC_SHA",
+          "value": 49185
+        },
+        {
+          "name": "TLS_SRP_SHA_DSS_WITH_AES_256_CBC_SHA",
+          "value": 49186
+        },
+        {
+          "name": "TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256",
+          "value": 49187
+        },
+        {
+          "name": "TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384",
+          "value": 49188
+        },
+        {
+          "name": "TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA256",
+          "value": 49189
+        },
+        {
+          "name": "TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA384",
+          "value": 49190
+        },
+        {
+          "name": "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256",
+          "value": 49191
+        },
+        {
+          "name": "TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384",
+          "value": 49192
+        },
+        {
+          "name": "TLS_ECDH_RSA_WITH_AES_128_CBC_SHA256",
+          "value": 49193
+        },
+        {
+          "name": "TLS_ECDH_RSA_WITH_AES_256_CBC_SHA384",
+          "value": 49194
+        },
+        {
+          "name": "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256",
+          "value": 49195
+        },
+        {
+          "name": "TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384",
+          "value": 49196
+        },
+        {
+          "name": "TLS_ECDH_ECDSA_WITH_AES_128_GCM_SHA256",
+          "value": 49197
+        },
+        {
+          "name": "TLS_ECDH_ECDSA_WITH_AES_256_GCM_SHA384",
+          "value": 49198
+        },
+        {
+          "name": "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256",
+          "value": 49199
+        },
+        {
+          "name": "TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384",
+          "value": 49200
+        },
+        {
+          "name": "TLS_ECDH_RSA_WITH_AES_128_GCM_SHA256",
+          "value": 49201
+        },
+        {
+          "name": "TLS_ECDH_RSA_WITH_AES_256_GCM_SHA384",
+          "value": 49202
+        },
+        {
+          "name": "TLS_EMPTY_RENEGOTIATION_INFO_SCSV",
+          "value": 255
+        }
+      ]
+    },
+    {
+      "fullName": "Org.BouncyCastle.Bcpg.HashAlgorithmTag",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "MD5",
+          "value": 1
+        },
+        {
+          "name": "Sha1",
+          "value": 2
+        },
+        {
+          "name": "RipeMD160",
+          "value": 3
+        },
+        {
+          "name": "DoubleSha",
+          "value": 4
+        },
+        {
+          "name": "MD2",
+          "value": 5
+        },
+        {
+          "name": "Tiger192",
+          "value": 6
+        },
+        {
+          "name": "Haval5pass160",
+          "value": 7
+        },
+        {
+          "name": "Sha256",
+          "value": 8
+        },
+        {
+          "name": "Sha384",
+          "value": 9
+        },
+        {
+          "name": "Sha512",
+          "value": 10
+        },
+        {
+          "name": "Sha224",
+          "value": 11
+        }
+      ]
+    },
+    {
+      "fullName": "Org.BouncyCastle.Crypto.Tls.ECPointFormat",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "uncompressed",
+          "value": 0
+        },
+        {
+          "name": "ansiX962_compressed_prime",
+          "value": 1
+        },
+        {
+          "name": "ansiX962_compressed_char2",
+          "value": 2
+        }
+      ]
+    }
+  ],
+  "namespaceMappings": []
+}

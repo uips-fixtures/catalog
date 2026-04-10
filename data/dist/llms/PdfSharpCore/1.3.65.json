@@ -1,0 +1,2519 @@
+{
+  "schema": {
+    "id": "activity-catalog",
+    "version": "v0.3"
+  },
+  "source": {
+    "kind": "nuget-package",
+    "id": "PdfSharpCore",
+    "version": "1.3.65",
+    "feedUrl": null,
+    "authors": "Stefan Steiger and Contributors",
+    "projectUrl": "https://github.com/ststeiger/PdfSharpCore",
+    "description": "PdfSharp for .NET Core\n\nPdfSharpCore is a partial port of PdfSharp.Xamarin for .NET Core Additionally MigraDoc has been ported as well (from version 1.32). Images have been implemented with ImageSharp from https://www.nuget.org/packages/SixLabors.ImageSharp",
+    "license": "LICENSE.md",
+    "tags": "PdfSharp .NETCore 49db5401df717ff880cbbf78c73aa7bd5d4886ef",
+    "packageTypes": []
+  },
+  "generatedAt": "2026-04-10T09:21:16Z",
+  "activities": [],
+  "enums": [
+    {
+      "fullName": "PdfSharpCore.PageOrientation",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Portrait",
+          "value": 0
+        },
+        {
+          "name": "Landscape",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "PdfSharpCore.PageSize",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "A0",
+          "value": 1
+        },
+        {
+          "name": "A1",
+          "value": 2
+        },
+        {
+          "name": "A2",
+          "value": 3
+        },
+        {
+          "name": "A3",
+          "value": 4
+        },
+        {
+          "name": "A4",
+          "value": 5
+        },
+        {
+          "name": "A5",
+          "value": 6
+        },
+        {
+          "name": "RA0",
+          "value": 7
+        },
+        {
+          "name": "RA1",
+          "value": 8
+        },
+        {
+          "name": "RA2",
+          "value": 9
+        },
+        {
+          "name": "RA3",
+          "value": 10
+        },
+        {
+          "name": "RA4",
+          "value": 11
+        },
+        {
+          "name": "RA5",
+          "value": 12
+        },
+        {
+          "name": "B0",
+          "value": 13
+        },
+        {
+          "name": "B1",
+          "value": 14
+        },
+        {
+          "name": "B2",
+          "value": 15
+        },
+        {
+          "name": "B3",
+          "value": 16
+        },
+        {
+          "name": "B4",
+          "value": 17
+        },
+        {
+          "name": "B5",
+          "value": 18
+        },
+        {
+          "name": "A6",
+          "value": 19
+        },
+        {
+          "name": "Quarto",
+          "value": 100
+        },
+        {
+          "name": "Foolscap",
+          "value": 101
+        },
+        {
+          "name": "Executive",
+          "value": 102
+        },
+        {
+          "name": "GovernmentLetter",
+          "value": 103
+        },
+        {
+          "name": "Letter",
+          "value": 104
+        },
+        {
+          "name": "Legal",
+          "value": 105
+        },
+        {
+          "name": "Ledger",
+          "value": 106
+        },
+        {
+          "name": "Tabloid",
+          "value": 107
+        },
+        {
+          "name": "Post",
+          "value": 108
+        },
+        {
+          "name": "Crown",
+          "value": 109
+        },
+        {
+          "name": "LargePost",
+          "value": 110
+        },
+        {
+          "name": "Demy",
+          "value": 111
+        },
+        {
+          "name": "Medium",
+          "value": 112
+        },
+        {
+          "name": "Royal",
+          "value": 113
+        },
+        {
+          "name": "Elephant",
+          "value": 114
+        },
+        {
+          "name": "DoubleDemy",
+          "value": 115
+        },
+        {
+          "name": "QuadDemy",
+          "value": 116
+        },
+        {
+          "name": "STMT",
+          "value": 117
+        },
+        {
+          "name": "Folio",
+          "value": 120
+        },
+        {
+          "name": "Statement",
+          "value": 121
+        },
+        {
+          "name": "Size10x14",
+          "value": 122
+        }
+      ]
+    },
+    {
+      "fullName": "PdfSharpCore.Pdf.AnnotationCopyingType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DoNotCopy",
+          "value": 0
+        },
+        {
+          "name": "ShallowCopy",
+          "value": 1
+        },
+        {
+          "name": "DeepCopy",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "PdfSharpCore.Pdf.PdfColorMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "Rgb",
+          "value": 1
+        },
+        {
+          "name": "Cmyk",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "PdfSharpCore.Pdf.PdfCustomValueCompressionMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "Uncompressed",
+          "value": 1
+        },
+        {
+          "name": "Compressed",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "PdfSharpCore.Pdf.PdfFlateEncodeMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "BestSpeed",
+          "value": 1
+        },
+        {
+          "name": "BestCompression",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "PdfSharpCore.Pdf.PdfFontEncoding",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "WinAnsi",
+          "value": 0
+        },
+        {
+          "name": "Unicode",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "PdfSharpCore.Pdf.PdfOutlineStyle",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Regular",
+          "value": 0
+        },
+        {
+          "name": "Italic",
+          "value": 1
+        },
+        {
+          "name": "Bold",
+          "value": 2
+        },
+        {
+          "name": "BoldItalic",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "PdfSharpCore.Pdf.PdfPageDestinationType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Xyz",
+          "value": 0
+        },
+        {
+          "name": "Fit",
+          "value": 1
+        },
+        {
+          "name": "FitH",
+          "value": 2
+        },
+        {
+          "name": "FitV",
+          "value": 3
+        },
+        {
+          "name": "FitR",
+          "value": 4
+        },
+        {
+          "name": "FitB",
+          "value": 5
+        },
+        {
+          "name": "FitBH",
+          "value": 6
+        },
+        {
+          "name": "FitBV",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "PdfSharpCore.Pdf.PdfPageLayout",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "SinglePage",
+          "value": 0
+        },
+        {
+          "name": "OneColumn",
+          "value": 1
+        },
+        {
+          "name": "TwoColumnLeft",
+          "value": 2
+        },
+        {
+          "name": "TwoColumnRight",
+          "value": 3
+        },
+        {
+          "name": "TwoPageLeft",
+          "value": 4
+        },
+        {
+          "name": "TwoPageRight",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "PdfSharpCore.Pdf.PdfPageMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "UseNone",
+          "value": 0
+        },
+        {
+          "name": "UseOutlines",
+          "value": 1
+        },
+        {
+          "name": "UseThumbs",
+          "value": 2
+        },
+        {
+          "name": "FullScreen",
+          "value": 3
+        },
+        {
+          "name": "UseOC",
+          "value": 4
+        },
+        {
+          "name": "UseAttachments",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "PdfSharpCore.Pdf.PdfReadingDirection",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "LeftToRight",
+          "value": 0
+        },
+        {
+          "name": "RightToLeft",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "PdfSharpCore.Pdf.PdfTextStringEncoding",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "PDFDocEncoding",
+          "value": 0
+        },
+        {
+          "name": "Unicode",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "PdfSharpCore.Pdf.PdfUseFlateDecoderForJpegImages",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Automatic",
+          "value": 0
+        },
+        {
+          "name": "Never",
+          "value": 1
+        },
+        {
+          "name": "Always",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "PdfSharpCore.Pdf.VCF",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Create",
+          "value": 1
+        },
+        {
+          "name": "CreateIndirect",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "PdfSharpCore.Pdf.PdfStringEncoding",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "RawEncoding",
+          "value": 0
+        },
+        {
+          "name": "StandardEncoding",
+          "value": 1
+        },
+        {
+          "name": "PDFDocEncoding",
+          "value": 2
+        },
+        {
+          "name": "WinAnsiEncoding",
+          "value": 3
+        },
+        {
+          "name": "MacRomanEncoding",
+          "value": 5
+        },
+        {
+          "name": "MacExpertEncoding",
+          "value": 5
+        },
+        {
+          "name": "Unicode",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "PdfSharpCore.Pdf.Security.PdfDocumentSecurityLevel",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Encrypted40Bit",
+          "value": 1
+        },
+        {
+          "name": "Encrypted128Bit",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "PdfSharpCore.Pdf.IO.PasswordValidity",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Invalid",
+          "value": 0
+        },
+        {
+          "name": "UserPassword",
+          "value": 1
+        },
+        {
+          "name": "OwnerPassword",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "PdfSharpCore.Pdf.IO.PdfDocumentOpenMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Modify",
+          "value": 0
+        },
+        {
+          "name": "Import",
+          "value": 1
+        },
+        {
+          "name": "ReadOnly",
+          "value": 2
+        },
+        {
+          "name": "InformationOnly",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "PdfSharpCore.Pdf.IO.PdfWriterLayout",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Compact",
+          "value": 0
+        },
+        {
+          "name": "Standard",
+          "value": 1
+        },
+        {
+          "name": "Indented",
+          "value": 2
+        },
+        {
+          "name": "Verbose",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "PdfSharpCore.Pdf.IO.Symbol",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Comment",
+          "value": 1
+        },
+        {
+          "name": "Null",
+          "value": 2
+        },
+        {
+          "name": "Integer",
+          "value": 3
+        },
+        {
+          "name": "UInteger",
+          "value": 4
+        },
+        {
+          "name": "Real",
+          "value": 5
+        },
+        {
+          "name": "Boolean",
+          "value": 6
+        },
+        {
+          "name": "String",
+          "value": 7
+        },
+        {
+          "name": "HexString",
+          "value": 8
+        },
+        {
+          "name": "UnicodeString",
+          "value": 9
+        },
+        {
+          "name": "UnicodeHexString",
+          "value": 10
+        },
+        {
+          "name": "Name",
+          "value": 11
+        },
+        {
+          "name": "Keyword",
+          "value": 12
+        },
+        {
+          "name": "BeginStream",
+          "value": 13
+        },
+        {
+          "name": "EndStream",
+          "value": 14
+        },
+        {
+          "name": "BeginArray",
+          "value": 15
+        },
+        {
+          "name": "EndArray",
+          "value": 16
+        },
+        {
+          "name": "BeginDictionary",
+          "value": 17
+        },
+        {
+          "name": "EndDictionary",
+          "value": 18
+        },
+        {
+          "name": "Obj",
+          "value": 19
+        },
+        {
+          "name": "EndObj",
+          "value": 20
+        },
+        {
+          "name": "R",
+          "value": 21
+        },
+        {
+          "name": "XRef",
+          "value": 22
+        },
+        {
+          "name": "Trailer",
+          "value": 23
+        },
+        {
+          "name": "StartXRef",
+          "value": 24
+        },
+        {
+          "name": "Eof",
+          "value": 25
+        },
+        {
+          "name": "Long",
+          "value": 26
+        }
+      ]
+    },
+    {
+      "fullName": "PdfSharpCore.Pdf.IO.enums.PdfReadAccuracy",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Strict",
+          "value": 0
+        },
+        {
+          "name": "Moderate",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "PdfSharpCore.Pdf.Content.CSymbol",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Comment",
+          "value": 1
+        },
+        {
+          "name": "Integer",
+          "value": 2
+        },
+        {
+          "name": "Real",
+          "value": 3
+        },
+        {
+          "name": "String",
+          "value": 4
+        },
+        {
+          "name": "HexString",
+          "value": 5
+        },
+        {
+          "name": "UnicodeString",
+          "value": 6
+        },
+        {
+          "name": "UnicodeHexString",
+          "value": 7
+        },
+        {
+          "name": "Name",
+          "value": 8
+        },
+        {
+          "name": "Operator",
+          "value": 9
+        },
+        {
+          "name": "BeginArray",
+          "value": 10
+        },
+        {
+          "name": "EndArray",
+          "value": 11
+        },
+        {
+          "name": "Dictionary",
+          "value": 12
+        },
+        {
+          "name": "Eof",
+          "value": 13
+        },
+        {
+          "name": "Error",
+          "value": -1
+        }
+      ]
+    },
+    {
+      "fullName": "PdfSharpCore.Pdf.Content.Objects.CStringType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "String",
+          "value": 0
+        },
+        {
+          "name": "HexString",
+          "value": 1
+        },
+        {
+          "name": "UnicodeString",
+          "value": 2
+        },
+        {
+          "name": "UnicodeHexString",
+          "value": 3
+        },
+        {
+          "name": "Dictionary",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "PdfSharpCore.Pdf.Content.Objects.OpCodeFlags",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "TextOut",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "PdfSharpCore.Pdf.Content.Objects.OpCodeName",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Dictionary",
+          "value": 0
+        },
+        {
+          "name": "b",
+          "value": 1
+        },
+        {
+          "name": "B",
+          "value": 2
+        },
+        {
+          "name": "bx",
+          "value": 3
+        },
+        {
+          "name": "Bx",
+          "value": 4
+        },
+        {
+          "name": "BDC",
+          "value": 5
+        },
+        {
+          "name": "BI",
+          "value": 6
+        },
+        {
+          "name": "BMC",
+          "value": 7
+        },
+        {
+          "name": "BT",
+          "value": 8
+        },
+        {
+          "name": "BX",
+          "value": 9
+        },
+        {
+          "name": "c",
+          "value": 10
+        },
+        {
+          "name": "cm",
+          "value": 11
+        },
+        {
+          "name": "CS",
+          "value": 12
+        },
+        {
+          "name": "cs",
+          "value": 13
+        },
+        {
+          "name": "d",
+          "value": 14
+        },
+        {
+          "name": "d0",
+          "value": 15
+        },
+        {
+          "name": "d1",
+          "value": 16
+        },
+        {
+          "name": "Do",
+          "value": 17
+        },
+        {
+          "name": "DP",
+          "value": 18
+        },
+        {
+          "name": "EI",
+          "value": 19
+        },
+        {
+          "name": "EMC",
+          "value": 20
+        },
+        {
+          "name": "ET",
+          "value": 21
+        },
+        {
+          "name": "EX",
+          "value": 22
+        },
+        {
+          "name": "f",
+          "value": 23
+        },
+        {
+          "name": "F",
+          "value": 24
+        },
+        {
+          "name": "fx",
+          "value": 25
+        },
+        {
+          "name": "G",
+          "value": 26
+        },
+        {
+          "name": "g",
+          "value": 27
+        },
+        {
+          "name": "gs",
+          "value": 28
+        },
+        {
+          "name": "h",
+          "value": 29
+        },
+        {
+          "name": "i",
+          "value": 30
+        },
+        {
+          "name": "ID",
+          "value": 31
+        },
+        {
+          "name": "j",
+          "value": 32
+        },
+        {
+          "name": "J",
+          "value": 33
+        },
+        {
+          "name": "K",
+          "value": 34
+        },
+        {
+          "name": "k",
+          "value": 35
+        },
+        {
+          "name": "l",
+          "value": 36
+        },
+        {
+          "name": "m",
+          "value": 37
+        },
+        {
+          "name": "M",
+          "value": 38
+        },
+        {
+          "name": "MP",
+          "value": 39
+        },
+        {
+          "name": "n",
+          "value": 40
+        },
+        {
+          "name": "q",
+          "value": 41
+        },
+        {
+          "name": "Q",
+          "value": 42
+        },
+        {
+          "name": "re",
+          "value": 43
+        },
+        {
+          "name": "RG",
+          "value": 44
+        },
+        {
+          "name": "rg",
+          "value": 45
+        },
+        {
+          "name": "ri",
+          "value": 46
+        },
+        {
+          "name": "s",
+          "value": 47
+        },
+        {
+          "name": "S",
+          "value": 48
+        },
+        {
+          "name": "SC",
+          "value": 49
+        },
+        {
+          "name": "sc",
+          "value": 50
+        },
+        {
+          "name": "SCN",
+          "value": 51
+        },
+        {
+          "name": "scn",
+          "value": 52
+        },
+        {
+          "name": "sh",
+          "value": 53
+        },
+        {
+          "name": "Tx",
+          "value": 54
+        },
+        {
+          "name": "Tc",
+          "value": 55
+        },
+        {
+          "name": "Td",
+          "value": 56
+        },
+        {
+          "name": "TD",
+          "value": 57
+        },
+        {
+          "name": "Tf",
+          "value": 58
+        },
+        {
+          "name": "Tj",
+          "value": 59
+        },
+        {
+          "name": "TJ",
+          "value": 60
+        },
+        {
+          "name": "TL",
+          "value": 61
+        },
+        {
+          "name": "Tm",
+          "value": 62
+        },
+        {
+          "name": "Tr",
+          "value": 63
+        },
+        {
+          "name": "Ts",
+          "value": 64
+        },
+        {
+          "name": "Tw",
+          "value": 65
+        },
+        {
+          "name": "Tz",
+          "value": 66
+        },
+        {
+          "name": "v",
+          "value": 67
+        },
+        {
+          "name": "w",
+          "value": 68
+        },
+        {
+          "name": "W",
+          "value": 69
+        },
+        {
+          "name": "Wx",
+          "value": 70
+        },
+        {
+          "name": "y",
+          "value": 71
+        },
+        {
+          "name": "QuoteSingle",
+          "value": 72
+        },
+        {
+          "name": "QuoteDbl",
+          "value": 73
+        }
+      ]
+    },
+    {
+      "fullName": "PdfSharpCore.Pdf.Annotations.PdfAnnotationFlags",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Invisible",
+          "value": 1
+        },
+        {
+          "name": "Hidden",
+          "value": 2
+        },
+        {
+          "name": "Print",
+          "value": 4
+        },
+        {
+          "name": "NoZoom",
+          "value": 8
+        },
+        {
+          "name": "NoRotate",
+          "value": 16
+        },
+        {
+          "name": "NoView",
+          "value": 32
+        },
+        {
+          "name": "ReadOnly",
+          "value": 64
+        },
+        {
+          "name": "Locked",
+          "value": 128
+        },
+        {
+          "name": "ToggleNoView",
+          "value": 256
+        }
+      ]
+    },
+    {
+      "fullName": "PdfSharpCore.Pdf.Annotations.PdfRubberStampAnnotationIcon",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NoIcon",
+          "value": 0
+        },
+        {
+          "name": "Approved",
+          "value": 1
+        },
+        {
+          "name": "AsIs",
+          "value": 2
+        },
+        {
+          "name": "Confidential",
+          "value": 3
+        },
+        {
+          "name": "Departmental",
+          "value": 4
+        },
+        {
+          "name": "Draft",
+          "value": 5
+        },
+        {
+          "name": "Experimental",
+          "value": 6
+        },
+        {
+          "name": "Expired",
+          "value": 7
+        },
+        {
+          "name": "Final",
+          "value": 8
+        },
+        {
+          "name": "ForComment",
+          "value": 9
+        },
+        {
+          "name": "ForPublicRelease",
+          "value": 10
+        },
+        {
+          "name": "NotApproved",
+          "value": 11
+        },
+        {
+          "name": "NotForPublicRelease",
+          "value": 12
+        },
+        {
+          "name": "Sold",
+          "value": 13
+        },
+        {
+          "name": "TopSecret",
+          "value": 14
+        }
+      ]
+    },
+    {
+      "fullName": "PdfSharpCore.Pdf.Annotations.PdfTextAnnotationIcon",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NoIcon",
+          "value": 0
+        },
+        {
+          "name": "Comment",
+          "value": 1
+        },
+        {
+          "name": "Help",
+          "value": 2
+        },
+        {
+          "name": "Insert",
+          "value": 3
+        },
+        {
+          "name": "Key",
+          "value": 4
+        },
+        {
+          "name": "NewParagraph",
+          "value": 5
+        },
+        {
+          "name": "Note",
+          "value": 6
+        },
+        {
+          "name": "Paragraph",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "PdfSharpCore.Pdf.Annotations.PdfFileAttachmentAnnotation.IconType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Graph",
+          "value": 0
+        },
+        {
+          "name": "PushPin",
+          "value": 1
+        },
+        {
+          "name": "Paperclip",
+          "value": 2
+        },
+        {
+          "name": "Tag",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "PdfSharpCore.Pdf.Actions.PdfNamedActionNames",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NextPage",
+          "value": 0
+        },
+        {
+          "name": "PrevPage",
+          "value": 1
+        },
+        {
+          "name": "FirstPage",
+          "value": 2
+        },
+        {
+          "name": "LastPage",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "PdfSharpCore.Pdf.AcroForms.PdfAcroFieldFlags",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ReadOnly",
+          "value": 1
+        },
+        {
+          "name": "Required",
+          "value": 2
+        },
+        {
+          "name": "NoExport",
+          "value": 4
+        },
+        {
+          "name": "Pushbutton",
+          "value": 65536
+        },
+        {
+          "name": "Radio",
+          "value": 32768
+        },
+        {
+          "name": "NoToggleToOff",
+          "value": 16384
+        },
+        {
+          "name": "Multiline",
+          "value": 4096
+        },
+        {
+          "name": "Password",
+          "value": 8192
+        },
+        {
+          "name": "FileSelect",
+          "value": 1048576
+        },
+        {
+          "name": "DoNotSpellCheckTextField",
+          "value": 4194304
+        },
+        {
+          "name": "DoNotScroll",
+          "value": 8388608
+        },
+        {
+          "name": "Combo",
+          "value": 131072
+        },
+        {
+          "name": "Edit",
+          "value": 262144
+        },
+        {
+          "name": "Sort",
+          "value": 524288
+        },
+        {
+          "name": "MultiSelect",
+          "value": 2097152
+        },
+        {
+          "name": "DoNotSpellCheckChoiseField",
+          "value": 4194304
+        }
+      ]
+    },
+    {
+      "fullName": "PdfSharpCore.Fonts.OpenType.OS2Table.FontSelectionFlags",
+      "underlyingType": "System.UInt16",
+      "members": [
+        {
+          "name": "Italic",
+          "value": 1
+        },
+        {
+          "name": "Bold",
+          "value": 32
+        },
+        {
+          "name": "Regular",
+          "value": 64
+        }
+      ]
+    },
+    {
+      "fullName": "PdfSharpCore.Drawing.XColorSpace",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Rgb",
+          "value": 0
+        },
+        {
+          "name": "Cmyk",
+          "value": 1
+        },
+        {
+          "name": "GrayScale",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "PdfSharpCore.Drawing.XCombineMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Replace",
+          "value": 0
+        },
+        {
+          "name": "Intersect",
+          "value": 1
+        },
+        {
+          "name": "Union",
+          "value": 2
+        },
+        {
+          "name": "Xor",
+          "value": 3
+        },
+        {
+          "name": "Exclude",
+          "value": 4
+        },
+        {
+          "name": "Complement",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "PdfSharpCore.Drawing.XDashStyle",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Solid",
+          "value": 0
+        },
+        {
+          "name": "Dash",
+          "value": 1
+        },
+        {
+          "name": "Dot",
+          "value": 2
+        },
+        {
+          "name": "DashDot",
+          "value": 3
+        },
+        {
+          "name": "DashDotDot",
+          "value": 4
+        },
+        {
+          "name": "Custom",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "PdfSharpCore.Drawing.XFillMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Alternate",
+          "value": 0
+        },
+        {
+          "name": "Winding",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "PdfSharpCore.Drawing.XFontStyle",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Regular",
+          "value": 0
+        },
+        {
+          "name": "Bold",
+          "value": 1
+        },
+        {
+          "name": "Italic",
+          "value": 2
+        },
+        {
+          "name": "BoldItalic",
+          "value": 3
+        },
+        {
+          "name": "Underline",
+          "value": 4
+        },
+        {
+          "name": "Strikeout",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "PdfSharpCore.Drawing.XGraphicsPdfPageOptions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Append",
+          "value": 0
+        },
+        {
+          "name": "Prepend",
+          "value": 1
+        },
+        {
+          "name": "Replace",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "PdfSharpCore.Drawing.XGraphicsUnit",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Point",
+          "value": 0
+        },
+        {
+          "name": "Inch",
+          "value": 1
+        },
+        {
+          "name": "Millimeter",
+          "value": 2
+        },
+        {
+          "name": "Centimeter",
+          "value": 3
+        },
+        {
+          "name": "Presentation",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "PdfSharpCore.Drawing.XKnownColor",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AliceBlue",
+          "value": 0
+        },
+        {
+          "name": "AntiqueWhite",
+          "value": 1
+        },
+        {
+          "name": "Aqua",
+          "value": 2
+        },
+        {
+          "name": "Aquamarine",
+          "value": 3
+        },
+        {
+          "name": "Azure",
+          "value": 4
+        },
+        {
+          "name": "Beige",
+          "value": 5
+        },
+        {
+          "name": "Bisque",
+          "value": 6
+        },
+        {
+          "name": "Black",
+          "value": 7
+        },
+        {
+          "name": "BlanchedAlmond",
+          "value": 8
+        },
+        {
+          "name": "Blue",
+          "value": 9
+        },
+        {
+          "name": "BlueViolet",
+          "value": 10
+        },
+        {
+          "name": "Brown",
+          "value": 11
+        },
+        {
+          "name": "BurlyWood",
+          "value": 12
+        },
+        {
+          "name": "CadetBlue",
+          "value": 13
+        },
+        {
+          "name": "Chartreuse",
+          "value": 14
+        },
+        {
+          "name": "Chocolate",
+          "value": 15
+        },
+        {
+          "name": "Coral",
+          "value": 16
+        },
+        {
+          "name": "CornflowerBlue",
+          "value": 17
+        },
+        {
+          "name": "Cornsilk",
+          "value": 18
+        },
+        {
+          "name": "Crimson",
+          "value": 19
+        },
+        {
+          "name": "Cyan",
+          "value": 20
+        },
+        {
+          "name": "DarkBlue",
+          "value": 21
+        },
+        {
+          "name": "DarkCyan",
+          "value": 22
+        },
+        {
+          "name": "DarkGoldenrod",
+          "value": 23
+        },
+        {
+          "name": "DarkGray",
+          "value": 24
+        },
+        {
+          "name": "DarkGreen",
+          "value": 25
+        },
+        {
+          "name": "DarkKhaki",
+          "value": 26
+        },
+        {
+          "name": "DarkMagenta",
+          "value": 27
+        },
+        {
+          "name": "DarkOliveGreen",
+          "value": 28
+        },
+        {
+          "name": "DarkOrange",
+          "value": 29
+        },
+        {
+          "name": "DarkOrchid",
+          "value": 30
+        },
+        {
+          "name": "DarkRed",
+          "value": 31
+        },
+        {
+          "name": "DarkSalmon",
+          "value": 32
+        },
+        {
+          "name": "DarkSeaGreen",
+          "value": 33
+        },
+        {
+          "name": "DarkSlateBlue",
+          "value": 34
+        },
+        {
+          "name": "DarkSlateGray",
+          "value": 35
+        },
+        {
+          "name": "DarkTurquoise",
+          "value": 36
+        },
+        {
+          "name": "DarkViolet",
+          "value": 37
+        },
+        {
+          "name": "DeepPink",
+          "value": 38
+        },
+        {
+          "name": "DeepSkyBlue",
+          "value": 39
+        },
+        {
+          "name": "DimGray",
+          "value": 40
+        },
+        {
+          "name": "DodgerBlue",
+          "value": 41
+        },
+        {
+          "name": "Firebrick",
+          "value": 42
+        },
+        {
+          "name": "FloralWhite",
+          "value": 43
+        },
+        {
+          "name": "ForestGreen",
+          "value": 44
+        },
+        {
+          "name": "Fuchsia",
+          "value": 45
+        },
+        {
+          "name": "Gainsboro",
+          "value": 46
+        },
+        {
+          "name": "GhostWhite",
+          "value": 47
+        },
+        {
+          "name": "Gold",
+          "value": 48
+        },
+        {
+          "name": "Goldenrod",
+          "value": 49
+        },
+        {
+          "name": "Gray",
+          "value": 50
+        },
+        {
+          "name": "Green",
+          "value": 51
+        },
+        {
+          "name": "GreenYellow",
+          "value": 52
+        },
+        {
+          "name": "Honeydew",
+          "value": 53
+        },
+        {
+          "name": "HotPink",
+          "value": 54
+        },
+        {
+          "name": "IndianRed",
+          "value": 55
+        },
+        {
+          "name": "Indigo",
+          "value": 56
+        },
+        {
+          "name": "Ivory",
+          "value": 57
+        },
+        {
+          "name": "Khaki",
+          "value": 58
+        },
+        {
+          "name": "Lavender",
+          "value": 59
+        },
+        {
+          "name": "LavenderBlush",
+          "value": 60
+        },
+        {
+          "name": "LawnGreen",
+          "value": 61
+        },
+        {
+          "name": "LemonChiffon",
+          "value": 62
+        },
+        {
+          "name": "LightBlue",
+          "value": 63
+        },
+        {
+          "name": "LightCoral",
+          "value": 64
+        },
+        {
+          "name": "LightCyan",
+          "value": 65
+        },
+        {
+          "name": "LightGoldenrodYellow",
+          "value": 66
+        },
+        {
+          "name": "LightGray",
+          "value": 67
+        },
+        {
+          "name": "LightGreen",
+          "value": 68
+        },
+        {
+          "name": "LightPink",
+          "value": 69
+        },
+        {
+          "name": "LightSalmon",
+          "value": 70
+        },
+        {
+          "name": "LightSeaGreen",
+          "value": 71
+        },
+        {
+          "name": "LightSkyBlue",
+          "value": 72
+        },
+        {
+          "name": "LightSlateGray",
+          "value": 73
+        },
+        {
+          "name": "LightSteelBlue",
+          "value": 74
+        },
+        {
+          "name": "LightYellow",
+          "value": 75
+        },
+        {
+          "name": "Lime",
+          "value": 76
+        },
+        {
+          "name": "LimeGreen",
+          "value": 77
+        },
+        {
+          "name": "Linen",
+          "value": 78
+        },
+        {
+          "name": "Magenta",
+          "value": 79
+        },
+        {
+          "name": "Maroon",
+          "value": 80
+        },
+        {
+          "name": "MediumAquamarine",
+          "value": 81
+        },
+        {
+          "name": "MediumBlue",
+          "value": 82
+        },
+        {
+          "name": "MediumOrchid",
+          "value": 83
+        },
+        {
+          "name": "MediumPurple",
+          "value": 84
+        },
+        {
+          "name": "MediumSeaGreen",
+          "value": 85
+        },
+        {
+          "name": "MediumSlateBlue",
+          "value": 86
+        },
+        {
+          "name": "MediumSpringGreen",
+          "value": 87
+        },
+        {
+          "name": "MediumTurquoise",
+          "value": 88
+        },
+        {
+          "name": "MediumVioletRed",
+          "value": 89
+        },
+        {
+          "name": "MidnightBlue",
+          "value": 90
+        },
+        {
+          "name": "MintCream",
+          "value": 91
+        },
+        {
+          "name": "MistyRose",
+          "value": 92
+        },
+        {
+          "name": "Moccasin",
+          "value": 93
+        },
+        {
+          "name": "NavajoWhite",
+          "value": 94
+        },
+        {
+          "name": "Navy",
+          "value": 95
+        },
+        {
+          "name": "OldLace",
+          "value": 96
+        },
+        {
+          "name": "Olive",
+          "value": 97
+        },
+        {
+          "name": "OliveDrab",
+          "value": 98
+        },
+        {
+          "name": "Orange",
+          "value": 99
+        },
+        {
+          "name": "OrangeRed",
+          "value": 100
+        },
+        {
+          "name": "Orchid",
+          "value": 101
+        },
+        {
+          "name": "PaleGoldenrod",
+          "value": 102
+        },
+        {
+          "name": "PaleGreen",
+          "value": 103
+        },
+        {
+          "name": "PaleTurquoise",
+          "value": 104
+        },
+        {
+          "name": "PaleVioletRed",
+          "value": 105
+        },
+        {
+          "name": "PapayaWhip",
+          "value": 106
+        },
+        {
+          "name": "PeachPuff",
+          "value": 107
+        },
+        {
+          "name": "Peru",
+          "value": 108
+        },
+        {
+          "name": "Pink",
+          "value": 109
+        },
+        {
+          "name": "Plum",
+          "value": 110
+        },
+        {
+          "name": "PowderBlue",
+          "value": 111
+        },
+        {
+          "name": "Purple",
+          "value": 112
+        },
+        {
+          "name": "Red",
+          "value": 113
+        },
+        {
+          "name": "RosyBrown",
+          "value": 114
+        },
+        {
+          "name": "RoyalBlue",
+          "value": 115
+        },
+        {
+          "name": "SaddleBrown",
+          "value": 116
+        },
+        {
+          "name": "Salmon",
+          "value": 117
+        },
+        {
+          "name": "SandyBrown",
+          "value": 118
+        },
+        {
+          "name": "SeaGreen",
+          "value": 119
+        },
+        {
+          "name": "SeaShell",
+          "value": 120
+        },
+        {
+          "name": "Sienna",
+          "value": 121
+        },
+        {
+          "name": "Silver",
+          "value": 122
+        },
+        {
+          "name": "SkyBlue",
+          "value": 123
+        },
+        {
+          "name": "SlateBlue",
+          "value": 124
+        },
+        {
+          "name": "SlateGray",
+          "value": 125
+        },
+        {
+          "name": "Snow",
+          "value": 126
+        },
+        {
+          "name": "SpringGreen",
+          "value": 127
+        },
+        {
+          "name": "SteelBlue",
+          "value": 128
+        },
+        {
+          "name": "Tan",
+          "value": 129
+        },
+        {
+          "name": "Teal",
+          "value": 130
+        },
+        {
+          "name": "Thistle",
+          "value": 131
+        },
+        {
+          "name": "Tomato",
+          "value": 132
+        },
+        {
+          "name": "Transparent",
+          "value": 133
+        },
+        {
+          "name": "Turquoise",
+          "value": 134
+        },
+        {
+          "name": "Violet",
+          "value": 135
+        },
+        {
+          "name": "Wheat",
+          "value": 136
+        },
+        {
+          "name": "White",
+          "value": 137
+        },
+        {
+          "name": "WhiteSmoke",
+          "value": 138
+        },
+        {
+          "name": "Yellow",
+          "value": 139
+        },
+        {
+          "name": "YellowGreen",
+          "value": 140
+        }
+      ]
+    },
+    {
+      "fullName": "PdfSharpCore.Drawing.XLineAlignment",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Near",
+          "value": 0
+        },
+        {
+          "name": "Center",
+          "value": 1
+        },
+        {
+          "name": "Far",
+          "value": 2
+        },
+        {
+          "name": "BaseLine",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "PdfSharpCore.Drawing.XLinearGradientMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Horizontal",
+          "value": 0
+        },
+        {
+          "name": "Vertical",
+          "value": 1
+        },
+        {
+          "name": "ForwardDiagonal",
+          "value": 2
+        },
+        {
+          "name": "BackwardDiagonal",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "PdfSharpCore.Drawing.XLineCap",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Flat",
+          "value": 0
+        },
+        {
+          "name": "Round",
+          "value": 1
+        },
+        {
+          "name": "Square",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "PdfSharpCore.Drawing.XLineJoin",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Miter",
+          "value": 0
+        },
+        {
+          "name": "Round",
+          "value": 1
+        },
+        {
+          "name": "Bevel",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "PdfSharpCore.Drawing.XMatrixOrder",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Prepend",
+          "value": 0
+        },
+        {
+          "name": "Append",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "PdfSharpCore.Drawing.XPageDirection",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Downwards",
+          "value": 0
+        },
+        {
+          "name": "Upwards",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "PdfSharpCore.Drawing.XSmoothingMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Invalid",
+          "value": -1
+        },
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "HighSpeed",
+          "value": 1
+        },
+        {
+          "name": "HighQuality",
+          "value": 2
+        },
+        {
+          "name": "None",
+          "value": 3
+        },
+        {
+          "name": "AntiAlias",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "PdfSharpCore.Drawing.XStringAlignment",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Near",
+          "value": 0
+        },
+        {
+          "name": "Center",
+          "value": 1
+        },
+        {
+          "name": "Far",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "PdfSharpCore.Drawing.XStyleSimulations",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "BoldSimulation",
+          "value": 1
+        },
+        {
+          "name": "ItalicSimulation",
+          "value": 2
+        },
+        {
+          "name": "BoldItalicSimulation",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "PdfSharpCore.Drawing.XSweepDirection",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Counterclockwise",
+          "value": 0
+        },
+        {
+          "name": "Clockwise",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "PdfSharpCore.Drawing.Layout.XParagraphAlignment",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "Left",
+          "value": 1
+        },
+        {
+          "name": "Center",
+          "value": 2
+        },
+        {
+          "name": "Right",
+          "value": 3
+        },
+        {
+          "name": "Justify",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "PdfSharpCore.Drawing.Layout.enums.XVerticalAlignment",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Top",
+          "value": 0
+        },
+        {
+          "name": "Middle",
+          "value": 1
+        },
+        {
+          "name": "Bottom",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "PdfSharpCore.Drawing.BarCodes.AnchorType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "TopLeft",
+          "value": 0
+        },
+        {
+          "name": "TopCenter",
+          "value": 1
+        },
+        {
+          "name": "TopRight",
+          "value": 2
+        },
+        {
+          "name": "MiddleLeft",
+          "value": 3
+        },
+        {
+          "name": "MiddleCenter",
+          "value": 4
+        },
+        {
+          "name": "MiddleRight",
+          "value": 5
+        },
+        {
+          "name": "BottomLeft",
+          "value": 6
+        },
+        {
+          "name": "BottomCenter",
+          "value": 7
+        },
+        {
+          "name": "BottomRight",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "PdfSharpCore.Drawing.BarCodes.CodeDirection",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "LeftToRight",
+          "value": 0
+        },
+        {
+          "name": "BottomToTop",
+          "value": 1
+        },
+        {
+          "name": "RightToLeft",
+          "value": 2
+        },
+        {
+          "name": "TopToBottom",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "PdfSharpCore.Drawing.BarCodes.CodeType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Code2of5Interleaved",
+          "value": 0
+        },
+        {
+          "name": "Code3of9Standard",
+          "value": 1
+        },
+        {
+          "name": "Omr",
+          "value": 2
+        },
+        {
+          "name": "DataMatrix",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "PdfSharpCore.Drawing.BarCodes.DataMatrixEncoding",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Ascii",
+          "value": 0
+        },
+        {
+          "name": "C40",
+          "value": 1
+        },
+        {
+          "name": "Text",
+          "value": 2
+        },
+        {
+          "name": "X12",
+          "value": 3
+        },
+        {
+          "name": "EDIFACT",
+          "value": 4
+        },
+        {
+          "name": "Base256",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "PdfSharpCore.Drawing.BarCodes.TextLocation",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Above",
+          "value": 1
+        },
+        {
+          "name": "Below",
+          "value": 2
+        },
+        {
+          "name": "AboveEmbedded",
+          "value": 3
+        },
+        {
+          "name": "BelowEmbedded",
+          "value": 4
+        }
+      ]
+    }
+  ],
+  "namespaceMappings": []
+}

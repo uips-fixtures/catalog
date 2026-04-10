@@ -1,0 +1,5623 @@
+{
+  "schema": {
+    "id": "activity-catalog",
+    "version": "v0.3"
+  },
+  "source": {
+    "kind": "nuget-package",
+    "id": "Magick.NET.Core",
+    "version": "13.6.0",
+    "feedUrl": null,
+    "authors": "Dirk Lemstra",
+    "projectUrl": "https://github.com/dlemstra/Magick.NET",
+    "description": "ImageMagick is a powerful image manipulation library that supports over 100 major file formats (not including sub-formats). With Magick.NET you can use ImageMagick without having to install ImageMagick on your server or desktop. Visit https://github.com/dlemstra/Magick.NET/tree/main/docs before installing to help you decide the best version.",
+    "license": "Apache-2.0",
+    "tags": "ImageMagick Magick.NET Image Convert Resize Draw Effects",
+    "packageTypes": []
+  },
+  "generatedAt": "2026-04-10T09:21:13Z",
+  "activities": [],
+  "enums": [
+    {
+      "fullName": "ImageMagick.AlphaOption",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "Activate",
+          "value": 1
+        },
+        {
+          "name": "Associate",
+          "value": 2
+        },
+        {
+          "name": "Background",
+          "value": 3
+        },
+        {
+          "name": "Copy",
+          "value": 4
+        },
+        {
+          "name": "Deactivate",
+          "value": 5
+        },
+        {
+          "name": "Discrete",
+          "value": 6
+        },
+        {
+          "name": "Disassociate",
+          "value": 7
+        },
+        {
+          "name": "Extract",
+          "value": 8
+        },
+        {
+          "name": "Off",
+          "value": 9
+        },
+        {
+          "name": "On",
+          "value": 10
+        },
+        {
+          "name": "Opaque",
+          "value": 11
+        },
+        {
+          "name": "Remove",
+          "value": 12
+        },
+        {
+          "name": "Set",
+          "value": 13
+        },
+        {
+          "name": "Shape",
+          "value": 14
+        },
+        {
+          "name": "Transparent",
+          "value": 15
+        }
+      ]
+    },
+    {
+      "fullName": "ImageMagick.AutoThresholdMethod",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "Kapur",
+          "value": 1
+        },
+        {
+          "name": "OTSU",
+          "value": 2
+        },
+        {
+          "name": "Triangle",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "ImageMagick.Channels",
+      "underlyingType": "System.UInt64",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "Red",
+          "value": 1
+        },
+        {
+          "name": "Gray",
+          "value": 1
+        },
+        {
+          "name": "Cyan",
+          "value": 1
+        },
+        {
+          "name": "Green",
+          "value": 2
+        },
+        {
+          "name": "Magenta",
+          "value": 2
+        },
+        {
+          "name": "Blue",
+          "value": 4
+        },
+        {
+          "name": "Yellow",
+          "value": 4
+        },
+        {
+          "name": "Black",
+          "value": 8
+        },
+        {
+          "name": "Alpha",
+          "value": 16
+        },
+        {
+          "name": "Opacity",
+          "value": 16
+        },
+        {
+          "name": "Index",
+          "value": 32
+        },
+        {
+          "name": "Composite",
+          "value": 31
+        },
+        {
+          "name": "TrueAlpha",
+          "value": 256
+        },
+        {
+          "name": "RGB",
+          "value": 7
+        },
+        {
+          "name": "RGBA",
+          "value": 23
+        },
+        {
+          "name": "CMYK",
+          "value": 15
+        },
+        {
+          "name": "CMYKA",
+          "value": 31
+        },
+        {
+          "name": "Meta0",
+          "value": 1024
+        },
+        {
+          "name": "Meta1",
+          "value": 2048
+        },
+        {
+          "name": "Meta2",
+          "value": 4096
+        },
+        {
+          "name": "Meta3",
+          "value": 8192
+        },
+        {
+          "name": "Meta4",
+          "value": 16384
+        },
+        {
+          "name": "Meta5",
+          "value": 32768
+        },
+        {
+          "name": "Meta6",
+          "value": 65536
+        },
+        {
+          "name": "Meta7",
+          "value": 131072
+        },
+        {
+          "name": "Meta8",
+          "value": 262144
+        },
+        {
+          "name": "Meta9",
+          "value": 524288
+        },
+        {
+          "name": "Meta10",
+          "value": 1048576
+        },
+        {
+          "name": "Meta11",
+          "value": 2097152
+        },
+        {
+          "name": "Meta12",
+          "value": 4194304
+        },
+        {
+          "name": "Meta13",
+          "value": 8388608
+        },
+        {
+          "name": "Meta14",
+          "value": 16777216
+        },
+        {
+          "name": "Meta15",
+          "value": 33554432
+        },
+        {
+          "name": "Meta16",
+          "value": 67108864
+        },
+        {
+          "name": "Meta17",
+          "value": 134217728
+        },
+        {
+          "name": "Meta18",
+          "value": 268435456
+        },
+        {
+          "name": "Meta19",
+          "value": 536870912
+        },
+        {
+          "name": "Meta20",
+          "value": 1073741824
+        },
+        {
+          "name": "Meta21",
+          "value": 2147483648
+        },
+        {
+          "name": "Meta22",
+          "value": 4294967296
+        },
+        {
+          "name": "Meta23",
+          "value": 8589934592
+        },
+        {
+          "name": "Meta24",
+          "value": 17179869184
+        },
+        {
+          "name": "Meta25",
+          "value": 34359738368
+        },
+        {
+          "name": "Meta26",
+          "value": 68719476736
+        },
+        {
+          "name": "Meta27",
+          "value": 137438953472
+        },
+        {
+          "name": "Meta28",
+          "value": 274877906944
+        },
+        {
+          "name": "Meta29",
+          "value": 549755813888
+        },
+        {
+          "name": "Meta30",
+          "value": 1099511627776
+        },
+        {
+          "name": "Meta31",
+          "value": 2199023255552
+        },
+        {
+          "name": "Meta32",
+          "value": 4398046511104
+        },
+        {
+          "name": "Meta33",
+          "value": 8796093022208
+        },
+        {
+          "name": "Meta34",
+          "value": 17592186044416
+        },
+        {
+          "name": "Meta35",
+          "value": 35184372088832
+        },
+        {
+          "name": "Meta36",
+          "value": 70368744177664
+        },
+        {
+          "name": "Meta37",
+          "value": 140737488355328
+        },
+        {
+          "name": "Meta38",
+          "value": 281474976710656
+        },
+        {
+          "name": "Meta39",
+          "value": 562949953421312
+        },
+        {
+          "name": "Meta40",
+          "value": 1125899906842624
+        },
+        {
+          "name": "Meta41",
+          "value": 2251799813685248
+        },
+        {
+          "name": "Meta42",
+          "value": 4503599627370496
+        },
+        {
+          "name": "Meta43",
+          "value": 9007199254740992
+        },
+        {
+          "name": "Meta44",
+          "value": 18014398509481984
+        },
+        {
+          "name": "Meta45",
+          "value": 36028797018963968
+        },
+        {
+          "name": "Meta46",
+          "value": 72057594037927936
+        },
+        {
+          "name": "Meta47",
+          "value": 144115188075855872
+        },
+        {
+          "name": "Meta48",
+          "value": 288230376151711744
+        },
+        {
+          "name": "Meta49",
+          "value": 576460752303423488
+        },
+        {
+          "name": "Meta50",
+          "value": 1152921504606846976
+        },
+        {
+          "name": "Meta51",
+          "value": 2305843009213693952
+        },
+        {
+          "name": "Meta52",
+          "value": 4611686018427387904
+        },
+        {
+          "name": "All",
+          "value": 9223372036854775807
+        },
+        {
+          "name": "Grays",
+          "value": 1024
+        },
+        {
+          "name": "Sync",
+          "value": 131072
+        },
+        {
+          "name": "Default",
+          "value": 9223372036854775807
+        }
+      ]
+    },
+    {
+      "fullName": "ImageMagick.ClassType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "Direct",
+          "value": 1
+        },
+        {
+          "name": "Pseudo",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "ImageMagick.ClipPathUnit",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "UserSpace",
+          "value": 1
+        },
+        {
+          "name": "UserSpaceOnUse",
+          "value": 2
+        },
+        {
+          "name": "ObjectBoundingBox",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "ImageMagick.ColorSpace",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "CMY",
+          "value": 1
+        },
+        {
+          "name": "CMYK",
+          "value": 2
+        },
+        {
+          "name": "Gray",
+          "value": 3
+        },
+        {
+          "name": "HCL",
+          "value": 4
+        },
+        {
+          "name": "HCLp",
+          "value": 5
+        },
+        {
+          "name": "HSB",
+          "value": 6
+        },
+        {
+          "name": "HSI",
+          "value": 7
+        },
+        {
+          "name": "HSL",
+          "value": 8
+        },
+        {
+          "name": "HSV",
+          "value": 9
+        },
+        {
+          "name": "HWB",
+          "value": 10
+        },
+        {
+          "name": "Lab",
+          "value": 11
+        },
+        {
+          "name": "LCH",
+          "value": 12
+        },
+        {
+          "name": "LCHab",
+          "value": 13
+        },
+        {
+          "name": "LCHuv",
+          "value": 14
+        },
+        {
+          "name": "Log",
+          "value": 15
+        },
+        {
+          "name": "LMS",
+          "value": 16
+        },
+        {
+          "name": "Luv",
+          "value": 17
+        },
+        {
+          "name": "OHTA",
+          "value": 18
+        },
+        {
+          "name": "Rec601YCbCr",
+          "value": 19
+        },
+        {
+          "name": "Rec709YCbCr",
+          "value": 20
+        },
+        {
+          "name": "RGB",
+          "value": 21
+        },
+        {
+          "name": "scRGB",
+          "value": 22
+        },
+        {
+          "name": "sRGB",
+          "value": 23
+        },
+        {
+          "name": "Transparent",
+          "value": 24
+        },
+        {
+          "name": "XyY",
+          "value": 25
+        },
+        {
+          "name": "XYZ",
+          "value": 26
+        },
+        {
+          "name": "YCbCr",
+          "value": 27
+        },
+        {
+          "name": "YCC",
+          "value": 28
+        },
+        {
+          "name": "YDbDr",
+          "value": 29
+        },
+        {
+          "name": "YIQ",
+          "value": 30
+        },
+        {
+          "name": "YPbPr",
+          "value": 31
+        },
+        {
+          "name": "YUV",
+          "value": 32
+        },
+        {
+          "name": "LinearGray",
+          "value": 33
+        },
+        {
+          "name": "Jzazbz",
+          "value": 34
+        }
+      ]
+    },
+    {
+      "fullName": "ImageMagick.ColorTransformMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "HighRes",
+          "value": 0
+        },
+        {
+          "name": "Quantum",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "ImageMagick.ColorType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "Bilevel",
+          "value": 1
+        },
+        {
+          "name": "Grayscale",
+          "value": 2
+        },
+        {
+          "name": "GrayscaleAlpha",
+          "value": 3
+        },
+        {
+          "name": "Palette",
+          "value": 4
+        },
+        {
+          "name": "PaletteAlpha",
+          "value": 5
+        },
+        {
+          "name": "TrueColor",
+          "value": 6
+        },
+        {
+          "name": "TrueColorAlpha",
+          "value": 7
+        },
+        {
+          "name": "ColorSeparation",
+          "value": 8
+        },
+        {
+          "name": "ColorSeparationAlpha",
+          "value": 9
+        },
+        {
+          "name": "Optimize",
+          "value": 10
+        },
+        {
+          "name": "PaletteBilevelAlpha",
+          "value": 11
+        }
+      ]
+    },
+    {
+      "fullName": "ImageMagick.ComplexOperator",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "Add",
+          "value": 1
+        },
+        {
+          "name": "Conjugate",
+          "value": 2
+        },
+        {
+          "name": "Divide",
+          "value": 3
+        },
+        {
+          "name": "MagnitudePhase",
+          "value": 4
+        },
+        {
+          "name": "Multiply",
+          "value": 5
+        },
+        {
+          "name": "RealImaginary",
+          "value": 6
+        },
+        {
+          "name": "Subtract",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "ImageMagick.CompositeOperator",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "Alpha",
+          "value": 1
+        },
+        {
+          "name": "Atop",
+          "value": 2
+        },
+        {
+          "name": "Blend",
+          "value": 3
+        },
+        {
+          "name": "Blur",
+          "value": 4
+        },
+        {
+          "name": "Bumpmap",
+          "value": 5
+        },
+        {
+          "name": "ChangeMask",
+          "value": 6
+        },
+        {
+          "name": "Clear",
+          "value": 7
+        },
+        {
+          "name": "ColorBurn",
+          "value": 8
+        },
+        {
+          "name": "ColorDodge",
+          "value": 9
+        },
+        {
+          "name": "Colorize",
+          "value": 10
+        },
+        {
+          "name": "CopyBlack",
+          "value": 11
+        },
+        {
+          "name": "CopyBlue",
+          "value": 12
+        },
+        {
+          "name": "Copy",
+          "value": 13
+        },
+        {
+          "name": "CopyCyan",
+          "value": 14
+        },
+        {
+          "name": "CopyGreen",
+          "value": 15
+        },
+        {
+          "name": "CopyMagenta",
+          "value": 16
+        },
+        {
+          "name": "CopyAlpha",
+          "value": 17
+        },
+        {
+          "name": "CopyRed",
+          "value": 18
+        },
+        {
+          "name": "CopyYellow",
+          "value": 19
+        },
+        {
+          "name": "Darken",
+          "value": 20
+        },
+        {
+          "name": "DarkenIntensity",
+          "value": 21
+        },
+        {
+          "name": "Difference",
+          "value": 22
+        },
+        {
+          "name": "Displace",
+          "value": 23
+        },
+        {
+          "name": "Dissolve",
+          "value": 24
+        },
+        {
+          "name": "Distort",
+          "value": 25
+        },
+        {
+          "name": "DivideDst",
+          "value": 26
+        },
+        {
+          "name": "DivideSrc",
+          "value": 27
+        },
+        {
+          "name": "DstAtop",
+          "value": 28
+        },
+        {
+          "name": "Dst",
+          "value": 29
+        },
+        {
+          "name": "DstIn",
+          "value": 30
+        },
+        {
+          "name": "DstOut",
+          "value": 31
+        },
+        {
+          "name": "DstOver",
+          "value": 32
+        },
+        {
+          "name": "Exclusion",
+          "value": 33
+        },
+        {
+          "name": "HardLight",
+          "value": 34
+        },
+        {
+          "name": "HardMix",
+          "value": 35
+        },
+        {
+          "name": "Hue",
+          "value": 36
+        },
+        {
+          "name": "In",
+          "value": 37
+        },
+        {
+          "name": "Intensity",
+          "value": 38
+        },
+        {
+          "name": "Lighten",
+          "value": 39
+        },
+        {
+          "name": "LightenIntensity",
+          "value": 40
+        },
+        {
+          "name": "LinearBurn",
+          "value": 41
+        },
+        {
+          "name": "LinearDodge",
+          "value": 42
+        },
+        {
+          "name": "LinearLight",
+          "value": 43
+        },
+        {
+          "name": "Luminize",
+          "value": 44
+        },
+        {
+          "name": "Mathematics",
+          "value": 45
+        },
+        {
+          "name": "MinusDst",
+          "value": 46
+        },
+        {
+          "name": "MinusSrc",
+          "value": 47
+        },
+        {
+          "name": "Modulate",
+          "value": 48
+        },
+        {
+          "name": "ModulusAdd",
+          "value": 49
+        },
+        {
+          "name": "ModulusSubtract",
+          "value": 50
+        },
+        {
+          "name": "Multiply",
+          "value": 51
+        },
+        {
+          "name": "No",
+          "value": 52
+        },
+        {
+          "name": "Out",
+          "value": 53
+        },
+        {
+          "name": "Over",
+          "value": 54
+        },
+        {
+          "name": "Overlay",
+          "value": 55
+        },
+        {
+          "name": "PegtopLight",
+          "value": 56
+        },
+        {
+          "name": "PinLight",
+          "value": 57
+        },
+        {
+          "name": "Plus",
+          "value": 58
+        },
+        {
+          "name": "Replace",
+          "value": 59
+        },
+        {
+          "name": "Saturate",
+          "value": 60
+        },
+        {
+          "name": "Screen",
+          "value": 61
+        },
+        {
+          "name": "SoftLight",
+          "value": 62
+        },
+        {
+          "name": "SrcAtop",
+          "value": 63
+        },
+        {
+          "name": "Src",
+          "value": 64
+        },
+        {
+          "name": "SrcIn",
+          "value": 65
+        },
+        {
+          "name": "SrcOut",
+          "value": 66
+        },
+        {
+          "name": "SrcOver",
+          "value": 67
+        },
+        {
+          "name": "Threshold",
+          "value": 68
+        },
+        {
+          "name": "VividLight",
+          "value": 69
+        },
+        {
+          "name": "Xor",
+          "value": 70
+        },
+        {
+          "name": "Stereo",
+          "value": 71
+        },
+        {
+          "name": "Freeze",
+          "value": 72
+        },
+        {
+          "name": "Interpolate",
+          "value": 73
+        },
+        {
+          "name": "Negate",
+          "value": 74
+        },
+        {
+          "name": "Reflect",
+          "value": 75
+        },
+        {
+          "name": "SoftBurn",
+          "value": 76
+        },
+        {
+          "name": "SoftDodge",
+          "value": 77
+        },
+        {
+          "name": "Stamp",
+          "value": 78
+        },
+        {
+          "name": "RMSE",
+          "value": 79
+        },
+        {
+          "name": "SaliencyBlend",
+          "value": 80
+        },
+        {
+          "name": "SeamlessBlend",
+          "value": 81
+        }
+      ]
+    },
+    {
+      "fullName": "ImageMagick.CompressionMethod",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "B44A",
+          "value": 1
+        },
+        {
+          "name": "B44",
+          "value": 2
+        },
+        {
+          "name": "BZip",
+          "value": 3
+        },
+        {
+          "name": "DXT1",
+          "value": 4
+        },
+        {
+          "name": "DXT3",
+          "value": 5
+        },
+        {
+          "name": "DXT5",
+          "value": 6
+        },
+        {
+          "name": "Fax",
+          "value": 7
+        },
+        {
+          "name": "Group4",
+          "value": 8
+        },
+        {
+          "name": "JBIG1",
+          "value": 9
+        },
+        {
+          "name": "JBIG2",
+          "value": 10
+        },
+        {
+          "name": "JPEG2000",
+          "value": 11
+        },
+        {
+          "name": "JPEG",
+          "value": 12
+        },
+        {
+          "name": "LosslessJPEG",
+          "value": 13
+        },
+        {
+          "name": "LZMA",
+          "value": 14
+        },
+        {
+          "name": "LZW",
+          "value": 15
+        },
+        {
+          "name": "NoCompression",
+          "value": 16
+        },
+        {
+          "name": "Piz",
+          "value": 17
+        },
+        {
+          "name": "Pxr24",
+          "value": 18
+        },
+        {
+          "name": "RLE",
+          "value": 19
+        },
+        {
+          "name": "Zip",
+          "value": 20
+        },
+        {
+          "name": "ZipS",
+          "value": 21
+        },
+        {
+          "name": "Zstd",
+          "value": 22
+        },
+        {
+          "name": "WebP",
+          "value": 23
+        },
+        {
+          "name": "DWAA",
+          "value": 24
+        },
+        {
+          "name": "DWAB",
+          "value": 25
+        },
+        {
+          "name": "BC7",
+          "value": 26
+        },
+        {
+          "name": "BC5",
+          "value": 27
+        },
+        {
+          "name": "LERC",
+          "value": 28
+        }
+      ]
+    },
+    {
+      "fullName": "ImageMagick.DensityUnit",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "PixelsPerInch",
+          "value": 1
+        },
+        {
+          "name": "PixelsPerCentimeter",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "ImageMagick.DistortMethod",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "Affine",
+          "value": 1
+        },
+        {
+          "name": "AffineProjection",
+          "value": 2
+        },
+        {
+          "name": "ScaleRotateTranslate",
+          "value": 3
+        },
+        {
+          "name": "Perspective",
+          "value": 4
+        },
+        {
+          "name": "PerspectiveProjection",
+          "value": 5
+        },
+        {
+          "name": "BilinearForward",
+          "value": 6
+        },
+        {
+          "name": "BilinearReverse",
+          "value": 7
+        },
+        {
+          "name": "Polynomial",
+          "value": 8
+        },
+        {
+          "name": "Arc",
+          "value": 9
+        },
+        {
+          "name": "Polar",
+          "value": 10
+        },
+        {
+          "name": "DePolar",
+          "value": 11
+        },
+        {
+          "name": "Cylinder2Plane",
+          "value": 12
+        },
+        {
+          "name": "Plane2Cylinder",
+          "value": 13
+        },
+        {
+          "name": "Barrel",
+          "value": 14
+        },
+        {
+          "name": "BarrelInverse",
+          "value": 15
+        },
+        {
+          "name": "Shepards",
+          "value": 16
+        },
+        {
+          "name": "Resize",
+          "value": 17
+        },
+        {
+          "name": "Sentinel",
+          "value": 18
+        },
+        {
+          "name": "RigidAffine",
+          "value": 19
+        }
+      ]
+    },
+    {
+      "fullName": "ImageMagick.DitherMethod",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "No",
+          "value": 1
+        },
+        {
+          "name": "Riemersma",
+          "value": 2
+        },
+        {
+          "name": "FloydSteinberg",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "ImageMagick.Endian",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "LSB",
+          "value": 1
+        },
+        {
+          "name": "MSB",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "ImageMagick.ErrorMetric",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "Absolute",
+          "value": 1
+        },
+        {
+          "name": "Fuzz",
+          "value": 2
+        },
+        {
+          "name": "MeanAbsolute",
+          "value": 3
+        },
+        {
+          "name": "MeanErrorPerPixel",
+          "value": 4
+        },
+        {
+          "name": "MeanSquared",
+          "value": 5
+        },
+        {
+          "name": "NormalizedCrossCorrelation",
+          "value": 6
+        },
+        {
+          "name": "PeakAbsolute",
+          "value": 7
+        },
+        {
+          "name": "PeakSignalToNoiseRatio",
+          "value": 8
+        },
+        {
+          "name": "PerceptualHash",
+          "value": 9
+        },
+        {
+          "name": "RootMeanSquared",
+          "value": 10
+        },
+        {
+          "name": "StructuralSimilarity",
+          "value": 11
+        },
+        {
+          "name": "StructuralDissimilarity",
+          "value": 12
+        }
+      ]
+    },
+    {
+      "fullName": "ImageMagick.EvaluateFunction",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "Arcsin",
+          "value": 1
+        },
+        {
+          "name": "Arctan",
+          "value": 2
+        },
+        {
+          "name": "Polynomial",
+          "value": 3
+        },
+        {
+          "name": "Sinusoid",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "ImageMagick.EvaluateOperator",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "Abs",
+          "value": 1
+        },
+        {
+          "name": "Add",
+          "value": 2
+        },
+        {
+          "name": "AddModulus",
+          "value": 3
+        },
+        {
+          "name": "And",
+          "value": 4
+        },
+        {
+          "name": "Cosine",
+          "value": 5
+        },
+        {
+          "name": "Divide",
+          "value": 6
+        },
+        {
+          "name": "Exponential",
+          "value": 7
+        },
+        {
+          "name": "GaussianNoise",
+          "value": 8
+        },
+        {
+          "name": "ImpulseNoise",
+          "value": 9
+        },
+        {
+          "name": "LaplacianNoise",
+          "value": 10
+        },
+        {
+          "name": "LeftShift",
+          "value": 11
+        },
+        {
+          "name": "Log",
+          "value": 12
+        },
+        {
+          "name": "Max",
+          "value": 13
+        },
+        {
+          "name": "Mean",
+          "value": 14
+        },
+        {
+          "name": "Median",
+          "value": 15
+        },
+        {
+          "name": "Min",
+          "value": 16
+        },
+        {
+          "name": "MultiplicativeNoise",
+          "value": 17
+        },
+        {
+          "name": "Multiply",
+          "value": 18
+        },
+        {
+          "name": "Or",
+          "value": 19
+        },
+        {
+          "name": "PoissonNoise",
+          "value": 20
+        },
+        {
+          "name": "Pow",
+          "value": 21
+        },
+        {
+          "name": "RightShift",
+          "value": 22
+        },
+        {
+          "name": "RootMeanSquare",
+          "value": 23
+        },
+        {
+          "name": "Set",
+          "value": 24
+        },
+        {
+          "name": "Sine",
+          "value": 25
+        },
+        {
+          "name": "Subtract",
+          "value": 26
+        },
+        {
+          "name": "Sum",
+          "value": 27
+        },
+        {
+          "name": "ThresholdBlack",
+          "value": 28
+        },
+        {
+          "name": "Threshold",
+          "value": 29
+        },
+        {
+          "name": "ThresholdWhite",
+          "value": 30
+        },
+        {
+          "name": "UniformNoise",
+          "value": 31
+        },
+        {
+          "name": "Xor",
+          "value": 32
+        },
+        {
+          "name": "InverseLog",
+          "value": 33
+        }
+      ]
+    },
+    {
+      "fullName": "ImageMagick.FillRule",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "EvenOdd",
+          "value": 1
+        },
+        {
+          "name": "Nonzero",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "ImageMagick.FilterType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "Point",
+          "value": 1
+        },
+        {
+          "name": "Box",
+          "value": 2
+        },
+        {
+          "name": "Triangle",
+          "value": 3
+        },
+        {
+          "name": "Hermite",
+          "value": 4
+        },
+        {
+          "name": "Hann",
+          "value": 5
+        },
+        {
+          "name": "Hamming",
+          "value": 6
+        },
+        {
+          "name": "Blackman",
+          "value": 7
+        },
+        {
+          "name": "Gaussian",
+          "value": 8
+        },
+        {
+          "name": "Quadratic",
+          "value": 9
+        },
+        {
+          "name": "Cubic",
+          "value": 10
+        },
+        {
+          "name": "Catrom",
+          "value": 11
+        },
+        {
+          "name": "Mitchell",
+          "value": 12
+        },
+        {
+          "name": "Jinc",
+          "value": 13
+        },
+        {
+          "name": "Sinc",
+          "value": 14
+        },
+        {
+          "name": "SincFast",
+          "value": 15
+        },
+        {
+          "name": "Kaiser",
+          "value": 16
+        },
+        {
+          "name": "Welch",
+          "value": 17
+        },
+        {
+          "name": "Parzen",
+          "value": 18
+        },
+        {
+          "name": "Bohman",
+          "value": 19
+        },
+        {
+          "name": "Bartlett",
+          "value": 20
+        },
+        {
+          "name": "Lagrange",
+          "value": 21
+        },
+        {
+          "name": "Lanczos",
+          "value": 22
+        },
+        {
+          "name": "LanczosSharp",
+          "value": 23
+        },
+        {
+          "name": "Lanczos2",
+          "value": 24
+        },
+        {
+          "name": "Lanczos2Sharp",
+          "value": 25
+        },
+        {
+          "name": "Robidoux",
+          "value": 26
+        },
+        {
+          "name": "RobidouxSharp",
+          "value": 27
+        },
+        {
+          "name": "Cosine",
+          "value": 28
+        },
+        {
+          "name": "Spline",
+          "value": 29
+        },
+        {
+          "name": "LanczosRadius",
+          "value": 30
+        },
+        {
+          "name": "CubicSpline",
+          "value": 31
+        }
+      ]
+    },
+    {
+      "fullName": "ImageMagick.FontStretch",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "Normal",
+          "value": 1
+        },
+        {
+          "name": "UltraCondensed",
+          "value": 2
+        },
+        {
+          "name": "ExtraCondensed",
+          "value": 3
+        },
+        {
+          "name": "Condensed",
+          "value": 4
+        },
+        {
+          "name": "SemiCondensed",
+          "value": 5
+        },
+        {
+          "name": "SemiExpanded",
+          "value": 6
+        },
+        {
+          "name": "Expanded",
+          "value": 7
+        },
+        {
+          "name": "ExtraExpanded",
+          "value": 8
+        },
+        {
+          "name": "UltraExpanded",
+          "value": 9
+        },
+        {
+          "name": "Any",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "fullName": "ImageMagick.FontStyleType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "Normal",
+          "value": 1
+        },
+        {
+          "name": "Italic",
+          "value": 2
+        },
+        {
+          "name": "Oblique",
+          "value": 3
+        },
+        {
+          "name": "Any",
+          "value": 4
+        },
+        {
+          "name": "Bold",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "ImageMagick.FontWeight",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "Thin",
+          "value": 100
+        },
+        {
+          "name": "ExtraLight",
+          "value": 200
+        },
+        {
+          "name": "UltraLight",
+          "value": 200
+        },
+        {
+          "name": "Light",
+          "value": 300
+        },
+        {
+          "name": "Normal",
+          "value": 400
+        },
+        {
+          "name": "Regular",
+          "value": 400
+        },
+        {
+          "name": "Medium",
+          "value": 500
+        },
+        {
+          "name": "DemiBold",
+          "value": 600
+        },
+        {
+          "name": "SemiBold",
+          "value": 600
+        },
+        {
+          "name": "Bold",
+          "value": 700
+        },
+        {
+          "name": "ExtraBold",
+          "value": 800
+        },
+        {
+          "name": "UltraBold",
+          "value": 800
+        },
+        {
+          "name": "Heavy",
+          "value": 900
+        },
+        {
+          "name": "Black",
+          "value": 900
+        }
+      ]
+    },
+    {
+      "fullName": "ImageMagick.GifDisposeMethod",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "None",
+          "value": 1
+        },
+        {
+          "name": "Background",
+          "value": 2
+        },
+        {
+          "name": "Previous",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "ImageMagick.Gravity",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "Forget",
+          "value": 0
+        },
+        {
+          "name": "Northwest",
+          "value": 1
+        },
+        {
+          "name": "North",
+          "value": 2
+        },
+        {
+          "name": "Northeast",
+          "value": 3
+        },
+        {
+          "name": "West",
+          "value": 4
+        },
+        {
+          "name": "Center",
+          "value": 5
+        },
+        {
+          "name": "East",
+          "value": 6
+        },
+        {
+          "name": "Southwest",
+          "value": 7
+        },
+        {
+          "name": "South",
+          "value": 8
+        },
+        {
+          "name": "Southeast",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "fullName": "ImageMagick.Interlace",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "NoInterlace",
+          "value": 1
+        },
+        {
+          "name": "Line",
+          "value": 2
+        },
+        {
+          "name": "Plane",
+          "value": 3
+        },
+        {
+          "name": "Partition",
+          "value": 4
+        },
+        {
+          "name": "Gif",
+          "value": 5
+        },
+        {
+          "name": "Jpeg",
+          "value": 6
+        },
+        {
+          "name": "Png",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "ImageMagick.Kernel",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "Unity",
+          "value": 1
+        },
+        {
+          "name": "Gaussian",
+          "value": 2
+        },
+        {
+          "name": "DoG",
+          "value": 3
+        },
+        {
+          "name": "LoG",
+          "value": 4
+        },
+        {
+          "name": "Blur",
+          "value": 5
+        },
+        {
+          "name": "Comet",
+          "value": 6
+        },
+        {
+          "name": "Binomial",
+          "value": 7
+        },
+        {
+          "name": "Laplacian",
+          "value": 8
+        },
+        {
+          "name": "Sobel",
+          "value": 9
+        },
+        {
+          "name": "FreiChen",
+          "value": 10
+        },
+        {
+          "name": "Roberts",
+          "value": 11
+        },
+        {
+          "name": "Prewitt",
+          "value": 12
+        },
+        {
+          "name": "Compass",
+          "value": 13
+        },
+        {
+          "name": "Kirsch",
+          "value": 14
+        },
+        {
+          "name": "Diamond",
+          "value": 15
+        },
+        {
+          "name": "Square",
+          "value": 16
+        },
+        {
+          "name": "Rectangle",
+          "value": 17
+        },
+        {
+          "name": "Octagon",
+          "value": 18
+        },
+        {
+          "name": "Disk",
+          "value": 19
+        },
+        {
+          "name": "Plus",
+          "value": 20
+        },
+        {
+          "name": "Cross",
+          "value": 21
+        },
+        {
+          "name": "Ring",
+          "value": 22
+        },
+        {
+          "name": "Peaks",
+          "value": 23
+        },
+        {
+          "name": "Edges",
+          "value": 24
+        },
+        {
+          "name": "Corners",
+          "value": 25
+        },
+        {
+          "name": "Diagonals",
+          "value": 26
+        },
+        {
+          "name": "LineEnds",
+          "value": 27
+        },
+        {
+          "name": "LineJunctions",
+          "value": 28
+        },
+        {
+          "name": "Ridges",
+          "value": 29
+        },
+        {
+          "name": "ConvexHull",
+          "value": 30
+        },
+        {
+          "name": "ThinSE",
+          "value": 31
+        },
+        {
+          "name": "Skeleton",
+          "value": 32
+        },
+        {
+          "name": "Chebyshev",
+          "value": 33
+        },
+        {
+          "name": "Manhattan",
+          "value": 34
+        },
+        {
+          "name": "Octagonal",
+          "value": 35
+        },
+        {
+          "name": "Euclidean",
+          "value": 36
+        },
+        {
+          "name": "UserDefined",
+          "value": 37
+        }
+      ]
+    },
+    {
+      "fullName": "ImageMagick.LineCap",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "Butt",
+          "value": 1
+        },
+        {
+          "name": "Round",
+          "value": 2
+        },
+        {
+          "name": "Square",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "ImageMagick.LineJoin",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "Miter",
+          "value": 1
+        },
+        {
+          "name": "Round",
+          "value": 2
+        },
+        {
+          "name": "Bevel",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "ImageMagick.LogEvents",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Accelerate",
+          "value": 1
+        },
+        {
+          "name": "Annotate",
+          "value": 2
+        },
+        {
+          "name": "Blob",
+          "value": 4
+        },
+        {
+          "name": "Cache",
+          "value": 8
+        },
+        {
+          "name": "Coder",
+          "value": 16
+        },
+        {
+          "name": "Configure",
+          "value": 32
+        },
+        {
+          "name": "Deprecate",
+          "value": 64
+        },
+        {
+          "name": "Draw",
+          "value": 128
+        },
+        {
+          "name": "Exception",
+          "value": 256
+        },
+        {
+          "name": "Image",
+          "value": 512
+        },
+        {
+          "name": "Locale",
+          "value": 1024
+        },
+        {
+          "name": "Module",
+          "value": 2048
+        },
+        {
+          "name": "Pixel",
+          "value": 4096
+        },
+        {
+          "name": "Policy",
+          "value": 8192
+        },
+        {
+          "name": "Resource",
+          "value": 16384
+        },
+        {
+          "name": "Trace",
+          "value": 32768
+        },
+        {
+          "name": "Transform",
+          "value": 65536
+        },
+        {
+          "name": "User",
+          "value": 131072
+        },
+        {
+          "name": "Wand",
+          "value": 262144
+        },
+        {
+          "name": "Detailed",
+          "value": 2147450879
+        },
+        {
+          "name": "All",
+          "value": 2147483647
+        }
+      ]
+    },
+    {
+      "fullName": "ImageMagick.MagickFormat",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "ThreeFr",
+          "value": 1
+        },
+        {
+          "name": "ThreeG2",
+          "value": 2
+        },
+        {
+          "name": "ThreeGp",
+          "value": 3
+        },
+        {
+          "name": "A",
+          "value": 4
+        },
+        {
+          "name": "Aai",
+          "value": 5
+        },
+        {
+          "name": "Ai",
+          "value": 6
+        },
+        {
+          "name": "APng",
+          "value": 7
+        },
+        {
+          "name": "Art",
+          "value": 8
+        },
+        {
+          "name": "Arw",
+          "value": 9
+        },
+        {
+          "name": "Ashlar",
+          "value": 10
+        },
+        {
+          "name": "Avi",
+          "value": 11
+        },
+        {
+          "name": "Avif",
+          "value": 12
+        },
+        {
+          "name": "Avs",
+          "value": 13
+        },
+        {
+          "name": "B",
+          "value": 14
+        },
+        {
+          "name": "Bayer",
+          "value": 15
+        },
+        {
+          "name": "Bayera",
+          "value": 16
+        },
+        {
+          "name": "Bgr",
+          "value": 17
+        },
+        {
+          "name": "Bgra",
+          "value": 18
+        },
+        {
+          "name": "Bgro",
+          "value": 19
+        },
+        {
+          "name": "Bmp",
+          "value": 20
+        },
+        {
+          "name": "Bmp2",
+          "value": 21
+        },
+        {
+          "name": "Bmp3",
+          "value": 22
+        },
+        {
+          "name": "Brf",
+          "value": 23
+        },
+        {
+          "name": "C",
+          "value": 24
+        },
+        {
+          "name": "Cal",
+          "value": 25
+        },
+        {
+          "name": "Cals",
+          "value": 26
+        },
+        {
+          "name": "Canvas",
+          "value": 27
+        },
+        {
+          "name": "Caption",
+          "value": 28
+        },
+        {
+          "name": "Cin",
+          "value": 29
+        },
+        {
+          "name": "Cip",
+          "value": 30
+        },
+        {
+          "name": "Clip",
+          "value": 31
+        },
+        {
+          "name": "Clipboard",
+          "value": 32
+        },
+        {
+          "name": "Cmyk",
+          "value": 33
+        },
+        {
+          "name": "Cmyka",
+          "value": 34
+        },
+        {
+          "name": "Cr2",
+          "value": 35
+        },
+        {
+          "name": "Cr3",
+          "value": 36
+        },
+        {
+          "name": "Crw",
+          "value": 37
+        },
+        {
+          "name": "Cube",
+          "value": 38
+        },
+        {
+          "name": "Cur",
+          "value": 39
+        },
+        {
+          "name": "Cut",
+          "value": 40
+        },
+        {
+          "name": "Data",
+          "value": 41
+        },
+        {
+          "name": "Dcm",
+          "value": 42
+        },
+        {
+          "name": "Dcr",
+          "value": 43
+        },
+        {
+          "name": "Dcraw",
+          "value": 44
+        },
+        {
+          "name": "Dcx",
+          "value": 45
+        },
+        {
+          "name": "Dds",
+          "value": 46
+        },
+        {
+          "name": "Dfont",
+          "value": 47
+        },
+        {
+          "name": "Dib",
+          "value": 48
+        },
+        {
+          "name": "Dng",
+          "value": 49
+        },
+        {
+          "name": "Dpx",
+          "value": 50
+        },
+        {
+          "name": "Dxt1",
+          "value": 51
+        },
+        {
+          "name": "Dxt5",
+          "value": 52
+        },
+        {
+          "name": "Emf",
+          "value": 53
+        },
+        {
+          "name": "Epdf",
+          "value": 54
+        },
+        {
+          "name": "Epi",
+          "value": 55
+        },
+        {
+          "name": "Eps",
+          "value": 56
+        },
+        {
+          "name": "Eps2",
+          "value": 57
+        },
+        {
+          "name": "Eps3",
+          "value": 58
+        },
+        {
+          "name": "Epsf",
+          "value": 59
+        },
+        {
+          "name": "Epsi",
+          "value": 60
+        },
+        {
+          "name": "Ept",
+          "value": 61
+        },
+        {
+          "name": "Ept2",
+          "value": 62
+        },
+        {
+          "name": "Ept3",
+          "value": 63
+        },
+        {
+          "name": "Erf",
+          "value": 64
+        },
+        {
+          "name": "Exr",
+          "value": 65
+        },
+        {
+          "name": "Farbfeld",
+          "value": 66
+        },
+        {
+          "name": "Fax",
+          "value": 67
+        },
+        {
+          "name": "Ff",
+          "value": 68
+        },
+        {
+          "name": "File",
+          "value": 69
+        },
+        {
+          "name": "Fits",
+          "value": 70
+        },
+        {
+          "name": "Fl32",
+          "value": 71
+        },
+        {
+          "name": "Flv",
+          "value": 72
+        },
+        {
+          "name": "Fractal",
+          "value": 73
+        },
+        {
+          "name": "Ftp",
+          "value": 74
+        },
+        {
+          "name": "Fts",
+          "value": 75
+        },
+        {
+          "name": "Ftxt",
+          "value": 76
+        },
+        {
+          "name": "G",
+          "value": 77
+        },
+        {
+          "name": "G3",
+          "value": 78
+        },
+        {
+          "name": "G4",
+          "value": 79
+        },
+        {
+          "name": "Gif",
+          "value": 80
+        },
+        {
+          "name": "Gif87",
+          "value": 81
+        },
+        {
+          "name": "Gradient",
+          "value": 82
+        },
+        {
+          "name": "Gray",
+          "value": 83
+        },
+        {
+          "name": "Graya",
+          "value": 84
+        },
+        {
+          "name": "Group4",
+          "value": 85
+        },
+        {
+          "name": "Hald",
+          "value": 86
+        },
+        {
+          "name": "Hdr",
+          "value": 87
+        },
+        {
+          "name": "Heic",
+          "value": 88
+        },
+        {
+          "name": "Heif",
+          "value": 89
+        },
+        {
+          "name": "Histogram",
+          "value": 90
+        },
+        {
+          "name": "Hrz",
+          "value": 91
+        },
+        {
+          "name": "Htm",
+          "value": 92
+        },
+        {
+          "name": "Html",
+          "value": 93
+        },
+        {
+          "name": "Http",
+          "value": 94
+        },
+        {
+          "name": "Https",
+          "value": 95
+        },
+        {
+          "name": "Icb",
+          "value": 96
+        },
+        {
+          "name": "Ico",
+          "value": 97
+        },
+        {
+          "name": "Icon",
+          "value": 98
+        },
+        {
+          "name": "Iiq",
+          "value": 99
+        },
+        {
+          "name": "Info",
+          "value": 100
+        },
+        {
+          "name": "Inline",
+          "value": 101
+        },
+        {
+          "name": "Ipl",
+          "value": 102
+        },
+        {
+          "name": "Isobrl",
+          "value": 103
+        },
+        {
+          "name": "Isobrl6",
+          "value": 104
+        },
+        {
+          "name": "J2c",
+          "value": 105
+        },
+        {
+          "name": "J2k",
+          "value": 106
+        },
+        {
+          "name": "Jng",
+          "value": 107
+        },
+        {
+          "name": "Jnx",
+          "value": 108
+        },
+        {
+          "name": "Jp2",
+          "value": 109
+        },
+        {
+          "name": "Jpc",
+          "value": 110
+        },
+        {
+          "name": "Jpe",
+          "value": 111
+        },
+        {
+          "name": "Jpeg",
+          "value": 112
+        },
+        {
+          "name": "Jpg",
+          "value": 113
+        },
+        {
+          "name": "Jpm",
+          "value": 114
+        },
+        {
+          "name": "Jps",
+          "value": 115
+        },
+        {
+          "name": "Jpt",
+          "value": 116
+        },
+        {
+          "name": "Json",
+          "value": 117
+        },
+        {
+          "name": "Jxl",
+          "value": 118
+        },
+        {
+          "name": "K",
+          "value": 119
+        },
+        {
+          "name": "K25",
+          "value": 120
+        },
+        {
+          "name": "Kdc",
+          "value": 121
+        },
+        {
+          "name": "Label",
+          "value": 122
+        },
+        {
+          "name": "M",
+          "value": 123
+        },
+        {
+          "name": "M2v",
+          "value": 124
+        },
+        {
+          "name": "M4v",
+          "value": 125
+        },
+        {
+          "name": "Mac",
+          "value": 126
+        },
+        {
+          "name": "Map",
+          "value": 127
+        },
+        {
+          "name": "Mask",
+          "value": 128
+        },
+        {
+          "name": "Mat",
+          "value": 129
+        },
+        {
+          "name": "Matte",
+          "value": 130
+        },
+        {
+          "name": "Mef",
+          "value": 131
+        },
+        {
+          "name": "Miff",
+          "value": 132
+        },
+        {
+          "name": "Mkv",
+          "value": 133
+        },
+        {
+          "name": "Mng",
+          "value": 134
+        },
+        {
+          "name": "Mono",
+          "value": 135
+        },
+        {
+          "name": "Mov",
+          "value": 136
+        },
+        {
+          "name": "Mp4",
+          "value": 137
+        },
+        {
+          "name": "Mpc",
+          "value": 138
+        },
+        {
+          "name": "Mpeg",
+          "value": 139
+        },
+        {
+          "name": "Mpg",
+          "value": 140
+        },
+        {
+          "name": "Mpo",
+          "value": 141
+        },
+        {
+          "name": "Mrw",
+          "value": 142
+        },
+        {
+          "name": "Msl",
+          "value": 143
+        },
+        {
+          "name": "Msvg",
+          "value": 144
+        },
+        {
+          "name": "Mtv",
+          "value": 145
+        },
+        {
+          "name": "Mvg",
+          "value": 146
+        },
+        {
+          "name": "Nef",
+          "value": 147
+        },
+        {
+          "name": "Nrw",
+          "value": 148
+        },
+        {
+          "name": "Null",
+          "value": 149
+        },
+        {
+          "name": "O",
+          "value": 150
+        },
+        {
+          "name": "Ora",
+          "value": 151
+        },
+        {
+          "name": "Orf",
+          "value": 152
+        },
+        {
+          "name": "Otb",
+          "value": 153
+        },
+        {
+          "name": "Otf",
+          "value": 154
+        },
+        {
+          "name": "Pal",
+          "value": 155
+        },
+        {
+          "name": "Palm",
+          "value": 156
+        },
+        {
+          "name": "Pam",
+          "value": 157
+        },
+        {
+          "name": "Pango",
+          "value": 158
+        },
+        {
+          "name": "Pattern",
+          "value": 159
+        },
+        {
+          "name": "Pbm",
+          "value": 160
+        },
+        {
+          "name": "Pcd",
+          "value": 161
+        },
+        {
+          "name": "Pcds",
+          "value": 162
+        },
+        {
+          "name": "Pcl",
+          "value": 163
+        },
+        {
+          "name": "Pct",
+          "value": 164
+        },
+        {
+          "name": "Pcx",
+          "value": 165
+        },
+        {
+          "name": "Pdb",
+          "value": 166
+        },
+        {
+          "name": "Pdf",
+          "value": 167
+        },
+        {
+          "name": "Pdfa",
+          "value": 168
+        },
+        {
+          "name": "Pef",
+          "value": 169
+        },
+        {
+          "name": "Pes",
+          "value": 170
+        },
+        {
+          "name": "Pfa",
+          "value": 171
+        },
+        {
+          "name": "Pfb",
+          "value": 172
+        },
+        {
+          "name": "Pfm",
+          "value": 173
+        },
+        {
+          "name": "Pgm",
+          "value": 174
+        },
+        {
+          "name": "Phm",
+          "value": 175
+        },
+        {
+          "name": "Pgx",
+          "value": 176
+        },
+        {
+          "name": "Picon",
+          "value": 177
+        },
+        {
+          "name": "Pict",
+          "value": 178
+        },
+        {
+          "name": "Pix",
+          "value": 179
+        },
+        {
+          "name": "Pjpeg",
+          "value": 180
+        },
+        {
+          "name": "Plasma",
+          "value": 181
+        },
+        {
+          "name": "Png",
+          "value": 182
+        },
+        {
+          "name": "Png00",
+          "value": 183
+        },
+        {
+          "name": "Png24",
+          "value": 184
+        },
+        {
+          "name": "Png32",
+          "value": 185
+        },
+        {
+          "name": "Png48",
+          "value": 186
+        },
+        {
+          "name": "Png64",
+          "value": 187
+        },
+        {
+          "name": "Png8",
+          "value": 188
+        },
+        {
+          "name": "Pnm",
+          "value": 189
+        },
+        {
+          "name": "Pocketmod",
+          "value": 190
+        },
+        {
+          "name": "Ppm",
+          "value": 191
+        },
+        {
+          "name": "Ps",
+          "value": 192
+        },
+        {
+          "name": "Ps2",
+          "value": 193
+        },
+        {
+          "name": "Ps3",
+          "value": 194
+        },
+        {
+          "name": "Psb",
+          "value": 195
+        },
+        {
+          "name": "Psd",
+          "value": 196
+        },
+        {
+          "name": "Ptif",
+          "value": 197
+        },
+        {
+          "name": "Pwp",
+          "value": 198
+        },
+        {
+          "name": "Qoi",
+          "value": 199
+        },
+        {
+          "name": "R",
+          "value": 200
+        },
+        {
+          "name": "RadialGradient",
+          "value": 201
+        },
+        {
+          "name": "Raf",
+          "value": 202
+        },
+        {
+          "name": "Ras",
+          "value": 203
+        },
+        {
+          "name": "Raw",
+          "value": 204
+        },
+        {
+          "name": "Rgb",
+          "value": 205
+        },
+        {
+          "name": "Rgb565",
+          "value": 206
+        },
+        {
+          "name": "Rgba",
+          "value": 207
+        },
+        {
+          "name": "Rgbo",
+          "value": 208
+        },
+        {
+          "name": "Rgf",
+          "value": 209
+        },
+        {
+          "name": "Rla",
+          "value": 210
+        },
+        {
+          "name": "Rle",
+          "value": 211
+        },
+        {
+          "name": "Rmf",
+          "value": 212
+        },
+        {
+          "name": "Rsvg",
+          "value": 213
+        },
+        {
+          "name": "Rw2",
+          "value": 214
+        },
+        {
+          "name": "Scr",
+          "value": 215
+        },
+        {
+          "name": "Screenshot",
+          "value": 216
+        },
+        {
+          "name": "Sct",
+          "value": 217
+        },
+        {
+          "name": "Sfw",
+          "value": 218
+        },
+        {
+          "name": "Sgi",
+          "value": 219
+        },
+        {
+          "name": "Shtml",
+          "value": 220
+        },
+        {
+          "name": "Six",
+          "value": 221
+        },
+        {
+          "name": "Sixel",
+          "value": 222
+        },
+        {
+          "name": "SparseColor",
+          "value": 223
+        },
+        {
+          "name": "Sr2",
+          "value": 224
+        },
+        {
+          "name": "Srf",
+          "value": 225
+        },
+        {
+          "name": "Stegano",
+          "value": 226
+        },
+        {
+          "name": "StrImg",
+          "value": 227
+        },
+        {
+          "name": "Sun",
+          "value": 228
+        },
+        {
+          "name": "Svg",
+          "value": 229
+        },
+        {
+          "name": "Svgz",
+          "value": 230
+        },
+        {
+          "name": "Text",
+          "value": 231
+        },
+        {
+          "name": "Tga",
+          "value": 232
+        },
+        {
+          "name": "Thumbnail",
+          "value": 233
+        },
+        {
+          "name": "Tif",
+          "value": 234
+        },
+        {
+          "name": "Tiff",
+          "value": 235
+        },
+        {
+          "name": "Tiff64",
+          "value": 236
+        },
+        {
+          "name": "Tile",
+          "value": 237
+        },
+        {
+          "name": "Tim",
+          "value": 238
+        },
+        {
+          "name": "Tm2",
+          "value": 239
+        },
+        {
+          "name": "Ttc",
+          "value": 240
+        },
+        {
+          "name": "Ttf",
+          "value": 241
+        },
+        {
+          "name": "Txt",
+          "value": 242
+        },
+        {
+          "name": "Ubrl",
+          "value": 243
+        },
+        {
+          "name": "Ubrl6",
+          "value": 244
+        },
+        {
+          "name": "Uil",
+          "value": 245
+        },
+        {
+          "name": "Uyvy",
+          "value": 246
+        },
+        {
+          "name": "Vda",
+          "value": 247
+        },
+        {
+          "name": "Vicar",
+          "value": 248
+        },
+        {
+          "name": "Vid",
+          "value": 249
+        },
+        {
+          "name": "WebM",
+          "value": 250
+        },
+        {
+          "name": "Viff",
+          "value": 251
+        },
+        {
+          "name": "Vips",
+          "value": 252
+        },
+        {
+          "name": "Vst",
+          "value": 253
+        },
+        {
+          "name": "WebP",
+          "value": 254
+        },
+        {
+          "name": "Wbmp",
+          "value": 255
+        },
+        {
+          "name": "Wmf",
+          "value": 256
+        },
+        {
+          "name": "Wmv",
+          "value": 257
+        },
+        {
+          "name": "Wpg",
+          "value": 258
+        },
+        {
+          "name": "X3f",
+          "value": 259
+        },
+        {
+          "name": "Xbm",
+          "value": 260
+        },
+        {
+          "name": "Xc",
+          "value": 261
+        },
+        {
+          "name": "Xcf",
+          "value": 262
+        },
+        {
+          "name": "Xpm",
+          "value": 263
+        },
+        {
+          "name": "Xps",
+          "value": 264
+        },
+        {
+          "name": "Xv",
+          "value": 265
+        },
+        {
+          "name": "Y",
+          "value": 266
+        },
+        {
+          "name": "Yaml",
+          "value": 267
+        },
+        {
+          "name": "Ycbcr",
+          "value": 268
+        },
+        {
+          "name": "Ycbcra",
+          "value": 269
+        },
+        {
+          "name": "Yuv",
+          "value": 270
+        }
+      ]
+    },
+    {
+      "fullName": "ImageMagick.MorphologyMethod",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "Convolve",
+          "value": 1
+        },
+        {
+          "name": "Correlate",
+          "value": 2
+        },
+        {
+          "name": "Erode",
+          "value": 3
+        },
+        {
+          "name": "Dilate",
+          "value": 4
+        },
+        {
+          "name": "ErodeIntensity",
+          "value": 5
+        },
+        {
+          "name": "DilateIntensity",
+          "value": 6
+        },
+        {
+          "name": "IterativeDistance",
+          "value": 7
+        },
+        {
+          "name": "Open",
+          "value": 8
+        },
+        {
+          "name": "Close",
+          "value": 9
+        },
+        {
+          "name": "OpenIntensity",
+          "value": 10
+        },
+        {
+          "name": "CloseIntensity",
+          "value": 11
+        },
+        {
+          "name": "Smooth",
+          "value": 12
+        },
+        {
+          "name": "EdgeIn",
+          "value": 13
+        },
+        {
+          "name": "EdgeOut",
+          "value": 14
+        },
+        {
+          "name": "Edge",
+          "value": 15
+        },
+        {
+          "name": "TopHat",
+          "value": 16
+        },
+        {
+          "name": "BottomHat",
+          "value": 17
+        },
+        {
+          "name": "HitAndMiss",
+          "value": 18
+        },
+        {
+          "name": "Thinning",
+          "value": 19
+        },
+        {
+          "name": "Thicken",
+          "value": 20
+        },
+        {
+          "name": "Distance",
+          "value": 21
+        },
+        {
+          "name": "Voronoi",
+          "value": 22
+        }
+      ]
+    },
+    {
+      "fullName": "ImageMagick.NoiseType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "Uniform",
+          "value": 1
+        },
+        {
+          "name": "Gaussian",
+          "value": 2
+        },
+        {
+          "name": "MultiplicativeGaussian",
+          "value": 3
+        },
+        {
+          "name": "Impulse",
+          "value": 4
+        },
+        {
+          "name": "Laplacian",
+          "value": 5
+        },
+        {
+          "name": "Poisson",
+          "value": 6
+        },
+        {
+          "name": "Random",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "ImageMagick.OpenCLDeviceType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "Cpu",
+          "value": 1
+        },
+        {
+          "name": "Gpu",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "ImageMagick.OrientationType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "TopLeft",
+          "value": 1
+        },
+        {
+          "name": "TopRight",
+          "value": 2
+        },
+        {
+          "name": "BottomRight",
+          "value": 3
+        },
+        {
+          "name": "BottomLeft",
+          "value": 4
+        },
+        {
+          "name": "LeftTop",
+          "value": 5
+        },
+        {
+          "name": "RightTop",
+          "value": 6
+        },
+        {
+          "name": "RightBottom",
+          "value": 7
+        },
+        {
+          "name": "LeftBottom",
+          "value": 8
+        },
+        {
+          "name": "LeftBotom",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "ImageMagick.PaintMethod",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "Point",
+          "value": 1
+        },
+        {
+          "name": "Replace",
+          "value": 2
+        },
+        {
+          "name": "Floodfill",
+          "value": 3
+        },
+        {
+          "name": "FillToBorder",
+          "value": 4
+        },
+        {
+          "name": "Reset",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "ImageMagick.PixelChannel",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Red",
+          "value": 0
+        },
+        {
+          "name": "Cyan",
+          "value": 0
+        },
+        {
+          "name": "Gray",
+          "value": 0
+        },
+        {
+          "name": "Green",
+          "value": 1
+        },
+        {
+          "name": "Magenta",
+          "value": 1
+        },
+        {
+          "name": "Blue",
+          "value": 2
+        },
+        {
+          "name": "Yellow",
+          "value": 2
+        },
+        {
+          "name": "Black",
+          "value": 3
+        },
+        {
+          "name": "Alpha",
+          "value": 4
+        },
+        {
+          "name": "Index",
+          "value": 5
+        },
+        {
+          "name": "Meta0",
+          "value": 10
+        },
+        {
+          "name": "Meta1",
+          "value": 11
+        },
+        {
+          "name": "Meta2",
+          "value": 12
+        },
+        {
+          "name": "Meta3",
+          "value": 13
+        },
+        {
+          "name": "Meta4",
+          "value": 14
+        },
+        {
+          "name": "Meta5",
+          "value": 15
+        },
+        {
+          "name": "Meta6",
+          "value": 16
+        },
+        {
+          "name": "Meta7",
+          "value": 17
+        },
+        {
+          "name": "Meta8",
+          "value": 18
+        },
+        {
+          "name": "Meta9",
+          "value": 19
+        },
+        {
+          "name": "Meta10",
+          "value": 20
+        },
+        {
+          "name": "Meta11",
+          "value": 21
+        },
+        {
+          "name": "Meta12",
+          "value": 22
+        },
+        {
+          "name": "Meta13",
+          "value": 23
+        },
+        {
+          "name": "Meta14",
+          "value": 24
+        },
+        {
+          "name": "Meta15",
+          "value": 25
+        },
+        {
+          "name": "Meta16",
+          "value": 26
+        },
+        {
+          "name": "Meta17",
+          "value": 27
+        },
+        {
+          "name": "Meta18",
+          "value": 28
+        },
+        {
+          "name": "Meta19",
+          "value": 29
+        },
+        {
+          "name": "Meta20",
+          "value": 30
+        },
+        {
+          "name": "Meta21",
+          "value": 31
+        },
+        {
+          "name": "Meta22",
+          "value": 32
+        },
+        {
+          "name": "Meta23",
+          "value": 33
+        },
+        {
+          "name": "Meta24",
+          "value": 34
+        },
+        {
+          "name": "Meta25",
+          "value": 35
+        },
+        {
+          "name": "Meta26",
+          "value": 36
+        },
+        {
+          "name": "Meta27",
+          "value": 37
+        },
+        {
+          "name": "Meta28",
+          "value": 38
+        },
+        {
+          "name": "Meta29",
+          "value": 39
+        },
+        {
+          "name": "Meta30",
+          "value": 40
+        },
+        {
+          "name": "Meta31",
+          "value": 41
+        },
+        {
+          "name": "Meta32",
+          "value": 42
+        },
+        {
+          "name": "Meta33",
+          "value": 43
+        },
+        {
+          "name": "Meta34",
+          "value": 44
+        },
+        {
+          "name": "Meta35",
+          "value": 45
+        },
+        {
+          "name": "Meta36",
+          "value": 46
+        },
+        {
+          "name": "Meta37",
+          "value": 47
+        },
+        {
+          "name": "Meta38",
+          "value": 48
+        },
+        {
+          "name": "Meta39",
+          "value": 49
+        },
+        {
+          "name": "Meta40",
+          "value": 50
+        },
+        {
+          "name": "Meta41",
+          "value": 51
+        },
+        {
+          "name": "Meta42",
+          "value": 52
+        },
+        {
+          "name": "Meta43",
+          "value": 53
+        },
+        {
+          "name": "Meta44",
+          "value": 54
+        },
+        {
+          "name": "Meta45",
+          "value": 55
+        },
+        {
+          "name": "Meta46",
+          "value": 56
+        },
+        {
+          "name": "Meta47",
+          "value": 57
+        },
+        {
+          "name": "Meta48",
+          "value": 58
+        },
+        {
+          "name": "Meta49",
+          "value": 59
+        },
+        {
+          "name": "Meta50",
+          "value": 60
+        },
+        {
+          "name": "Meta51",
+          "value": 61
+        },
+        {
+          "name": "Meta52",
+          "value": 62
+        },
+        {
+          "name": "Composite",
+          "value": 64
+        }
+      ]
+    },
+    {
+      "fullName": "ImageMagick.PixelIntensityMethod",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "Average",
+          "value": 1
+        },
+        {
+          "name": "Brightness",
+          "value": 2
+        },
+        {
+          "name": "Lightness",
+          "value": 3
+        },
+        {
+          "name": "MS",
+          "value": 4
+        },
+        {
+          "name": "Rec601Luma",
+          "value": 5
+        },
+        {
+          "name": "Rec601Luminance",
+          "value": 6
+        },
+        {
+          "name": "Rec709Luma",
+          "value": 7
+        },
+        {
+          "name": "Rec709Luminance",
+          "value": 8
+        },
+        {
+          "name": "RMS",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "fullName": "ImageMagick.PixelInterpolateMethod",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "Average",
+          "value": 1
+        },
+        {
+          "name": "Average9",
+          "value": 2
+        },
+        {
+          "name": "Average16",
+          "value": 3
+        },
+        {
+          "name": "Background",
+          "value": 4
+        },
+        {
+          "name": "Bilinear",
+          "value": 5
+        },
+        {
+          "name": "Blend",
+          "value": 6
+        },
+        {
+          "name": "Catrom",
+          "value": 7
+        },
+        {
+          "name": "Integer",
+          "value": 8
+        },
+        {
+          "name": "Mesh",
+          "value": 9
+        },
+        {
+          "name": "Nearest",
+          "value": 10
+        },
+        {
+          "name": "Spline",
+          "value": 11
+        }
+      ]
+    },
+    {
+      "fullName": "ImageMagick.PixelMapping",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "RGB",
+          "value": 0
+        },
+        {
+          "name": "BGR",
+          "value": 1
+        },
+        {
+          "name": "RGBA",
+          "value": 2
+        },
+        {
+          "name": "ABGR",
+          "value": 3
+        },
+        {
+          "name": "CMYK",
+          "value": 4
+        },
+        {
+          "name": "BGRA",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "ImageMagick.RenderingIntent",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "Saturation",
+          "value": 1
+        },
+        {
+          "name": "Perceptual",
+          "value": 2
+        },
+        {
+          "name": "Absolute",
+          "value": 3
+        },
+        {
+          "name": "Relative",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "ImageMagick.SparseColorMethod",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "Barycentric",
+          "value": 1
+        },
+        {
+          "name": "Bilinear",
+          "value": 7
+        },
+        {
+          "name": "Polynomial",
+          "value": 8
+        },
+        {
+          "name": "Shepards",
+          "value": 16
+        },
+        {
+          "name": "Voronoi",
+          "value": 18
+        },
+        {
+          "name": "Inverse",
+          "value": 19
+        },
+        {
+          "name": "Manhattan",
+          "value": 20
+        }
+      ]
+    },
+    {
+      "fullName": "ImageMagick.StatisticType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "Gradient",
+          "value": 1
+        },
+        {
+          "name": "Maximum",
+          "value": 2
+        },
+        {
+          "name": "Mean",
+          "value": 3
+        },
+        {
+          "name": "Median",
+          "value": 4
+        },
+        {
+          "name": "Minimum",
+          "value": 5
+        },
+        {
+          "name": "Mode",
+          "value": 6
+        },
+        {
+          "name": "Nonpeak",
+          "value": 7
+        },
+        {
+          "name": "RootMeanSquare",
+          "value": 8
+        },
+        {
+          "name": "StandardDeviation",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "fullName": "ImageMagick.StorageType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "Char",
+          "value": 1
+        },
+        {
+          "name": "Double",
+          "value": 2
+        },
+        {
+          "name": "Float",
+          "value": 3
+        },
+        {
+          "name": "Int32",
+          "value": 4
+        },
+        {
+          "name": "Int64",
+          "value": 5
+        },
+        {
+          "name": "Quantum",
+          "value": 6
+        },
+        {
+          "name": "Short",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "ImageMagick.TextAlignment",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "Left",
+          "value": 1
+        },
+        {
+          "name": "Center",
+          "value": 2
+        },
+        {
+          "name": "Right",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "ImageMagick.TextDecoration",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "None",
+          "value": 1
+        },
+        {
+          "name": "Underline",
+          "value": 2
+        },
+        {
+          "name": "Overline",
+          "value": 3
+        },
+        {
+          "name": "LineThrough",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "ImageMagick.TextDirection",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "RightToLeft",
+          "value": 1
+        },
+        {
+          "name": "LeftToRight",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "ImageMagick.VirtualPixelMethod",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "Background",
+          "value": 1
+        },
+        {
+          "name": "Dither",
+          "value": 2
+        },
+        {
+          "name": "Edge",
+          "value": 3
+        },
+        {
+          "name": "Mirror",
+          "value": 4
+        },
+        {
+          "name": "Random",
+          "value": 5
+        },
+        {
+          "name": "Tile",
+          "value": 6
+        },
+        {
+          "name": "Transparent",
+          "value": 7
+        },
+        {
+          "name": "Mask",
+          "value": 8
+        },
+        {
+          "name": "Black",
+          "value": 9
+        },
+        {
+          "name": "Gray",
+          "value": 10
+        },
+        {
+          "name": "White",
+          "value": 11
+        },
+        {
+          "name": "HorizontalTile",
+          "value": 12
+        },
+        {
+          "name": "VerticalTile",
+          "value": 13
+        },
+        {
+          "name": "HorizontalTileEdge",
+          "value": 14
+        },
+        {
+          "name": "VerticalTileEdge",
+          "value": 15
+        },
+        {
+          "name": "CheckerTile",
+          "value": 16
+        }
+      ]
+    },
+    {
+      "fullName": "ImageMagick.ExifDataType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "Byte",
+          "value": 1
+        },
+        {
+          "name": "String",
+          "value": 2
+        },
+        {
+          "name": "Short",
+          "value": 3
+        },
+        {
+          "name": "Long",
+          "value": 4
+        },
+        {
+          "name": "Rational",
+          "value": 5
+        },
+        {
+          "name": "SignedByte",
+          "value": 6
+        },
+        {
+          "name": "Undefined",
+          "value": 7
+        },
+        {
+          "name": "SignedShort",
+          "value": 8
+        },
+        {
+          "name": "SignedLong",
+          "value": 9
+        },
+        {
+          "name": "SignedRational",
+          "value": 10
+        },
+        {
+          "name": "Float",
+          "value": 11
+        },
+        {
+          "name": "Double",
+          "value": 12
+        }
+      ]
+    },
+    {
+      "fullName": "ImageMagick.ExifParts",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "IfdTags",
+          "value": 1
+        },
+        {
+          "name": "ExifTags",
+          "value": 4
+        },
+        {
+          "name": "GpsTags",
+          "value": 8
+        },
+        {
+          "name": "All",
+          "value": 13
+        }
+      ]
+    },
+    {
+      "fullName": "ImageMagick.ExifTagValue",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 65535
+        },
+        {
+          "name": "SubIFDOffset",
+          "value": 34665
+        },
+        {
+          "name": "GPSIFDOffset",
+          "value": 34853
+        },
+        {
+          "name": "SubfileType",
+          "value": 254
+        },
+        {
+          "name": "OldSubfileType",
+          "value": 255
+        },
+        {
+          "name": "ImageWidth",
+          "value": 256
+        },
+        {
+          "name": "ImageLength",
+          "value": 257
+        },
+        {
+          "name": "BitsPerSample",
+          "value": 258
+        },
+        {
+          "name": "Compression",
+          "value": 259
+        },
+        {
+          "name": "PhotometricInterpretation",
+          "value": 262
+        },
+        {
+          "name": "Thresholding",
+          "value": 263
+        },
+        {
+          "name": "CellWidth",
+          "value": 264
+        },
+        {
+          "name": "CellLength",
+          "value": 265
+        },
+        {
+          "name": "FillOrder",
+          "value": 266
+        },
+        {
+          "name": "DocumentName",
+          "value": 269
+        },
+        {
+          "name": "ImageDescription",
+          "value": 270
+        },
+        {
+          "name": "Make",
+          "value": 271
+        },
+        {
+          "name": "Model",
+          "value": 272
+        },
+        {
+          "name": "StripOffsets",
+          "value": 273
+        },
+        {
+          "name": "Orientation",
+          "value": 274
+        },
+        {
+          "name": "SamplesPerPixel",
+          "value": 277
+        },
+        {
+          "name": "RowsPerStrip",
+          "value": 278
+        },
+        {
+          "name": "StripByteCounts",
+          "value": 279
+        },
+        {
+          "name": "MinSampleValue",
+          "value": 280
+        },
+        {
+          "name": "MaxSampleValue",
+          "value": 281
+        },
+        {
+          "name": "XResolution",
+          "value": 282
+        },
+        {
+          "name": "YResolution",
+          "value": 283
+        },
+        {
+          "name": "PlanarConfiguration",
+          "value": 284
+        },
+        {
+          "name": "PageName",
+          "value": 285
+        },
+        {
+          "name": "XPosition",
+          "value": 286
+        },
+        {
+          "name": "YPosition",
+          "value": 287
+        },
+        {
+          "name": "FreeOffsets",
+          "value": 288
+        },
+        {
+          "name": "FreeByteCounts",
+          "value": 289
+        },
+        {
+          "name": "GrayResponseUnit",
+          "value": 290
+        },
+        {
+          "name": "GrayResponseCurve",
+          "value": 291
+        },
+        {
+          "name": "T4Options",
+          "value": 292
+        },
+        {
+          "name": "T6Options",
+          "value": 293
+        },
+        {
+          "name": "ResolutionUnit",
+          "value": 296
+        },
+        {
+          "name": "PageNumber",
+          "value": 297
+        },
+        {
+          "name": "ColorResponseUnit",
+          "value": 300
+        },
+        {
+          "name": "TransferFunction",
+          "value": 301
+        },
+        {
+          "name": "Software",
+          "value": 305
+        },
+        {
+          "name": "DateTime",
+          "value": 306
+        },
+        {
+          "name": "Artist",
+          "value": 315
+        },
+        {
+          "name": "HostComputer",
+          "value": 316
+        },
+        {
+          "name": "Predictor",
+          "value": 317
+        },
+        {
+          "name": "WhitePoint",
+          "value": 318
+        },
+        {
+          "name": "PrimaryChromaticities",
+          "value": 319
+        },
+        {
+          "name": "ColorMap",
+          "value": 320
+        },
+        {
+          "name": "HalftoneHints",
+          "value": 321
+        },
+        {
+          "name": "TileWidth",
+          "value": 322
+        },
+        {
+          "name": "TileLength",
+          "value": 323
+        },
+        {
+          "name": "TileOffsets",
+          "value": 324
+        },
+        {
+          "name": "TileByteCounts",
+          "value": 325
+        },
+        {
+          "name": "BadFaxLines",
+          "value": 326
+        },
+        {
+          "name": "CleanFaxData",
+          "value": 327
+        },
+        {
+          "name": "ConsecutiveBadFaxLines",
+          "value": 328
+        },
+        {
+          "name": "InkSet",
+          "value": 332
+        },
+        {
+          "name": "InkNames",
+          "value": 333
+        },
+        {
+          "name": "NumberOfInks",
+          "value": 334
+        },
+        {
+          "name": "DotRange",
+          "value": 336
+        },
+        {
+          "name": "TargetPrinter",
+          "value": 337
+        },
+        {
+          "name": "ExtraSamples",
+          "value": 338
+        },
+        {
+          "name": "SampleFormat",
+          "value": 339
+        },
+        {
+          "name": "SMinSampleValue",
+          "value": 340
+        },
+        {
+          "name": "SMaxSampleValue",
+          "value": 341
+        },
+        {
+          "name": "TransferRange",
+          "value": 342
+        },
+        {
+          "name": "ClipPath",
+          "value": 343
+        },
+        {
+          "name": "XClipPathUnits",
+          "value": 344
+        },
+        {
+          "name": "YClipPathUnits",
+          "value": 345
+        },
+        {
+          "name": "Indexed",
+          "value": 346
+        },
+        {
+          "name": "JPEGTables",
+          "value": 347
+        },
+        {
+          "name": "OPIProxy",
+          "value": 351
+        },
+        {
+          "name": "ProfileType",
+          "value": 401
+        },
+        {
+          "name": "FaxProfile",
+          "value": 402
+        },
+        {
+          "name": "CodingMethods",
+          "value": 403
+        },
+        {
+          "name": "VersionYear",
+          "value": 404
+        },
+        {
+          "name": "ModeNumber",
+          "value": 405
+        },
+        {
+          "name": "Decode",
+          "value": 433
+        },
+        {
+          "name": "DefaultImageColor",
+          "value": 434
+        },
+        {
+          "name": "T82ptions",
+          "value": 435
+        },
+        {
+          "name": "JPEGProc",
+          "value": 512
+        },
+        {
+          "name": "JPEGInterchangeFormat",
+          "value": 513
+        },
+        {
+          "name": "JPEGInterchangeFormatLength",
+          "value": 514
+        },
+        {
+          "name": "JPEGRestartInterval",
+          "value": 515
+        },
+        {
+          "name": "JPEGLosslessPredictors",
+          "value": 517
+        },
+        {
+          "name": "JPEGPointTransforms",
+          "value": 518
+        },
+        {
+          "name": "JPEGQTables",
+          "value": 519
+        },
+        {
+          "name": "JPEGDCTables",
+          "value": 520
+        },
+        {
+          "name": "JPEGACTables",
+          "value": 521
+        },
+        {
+          "name": "YCbCrCoefficients",
+          "value": 529
+        },
+        {
+          "name": "YCbCrSubsampling",
+          "value": 530
+        },
+        {
+          "name": "YCbCrPositioning",
+          "value": 531
+        },
+        {
+          "name": "ReferenceBlackWhite",
+          "value": 532
+        },
+        {
+          "name": "StripRowCounts",
+          "value": 559
+        },
+        {
+          "name": "XMP",
+          "value": 700
+        },
+        {
+          "name": "Rating",
+          "value": 18246
+        },
+        {
+          "name": "RatingPercent",
+          "value": 18249
+        },
+        {
+          "name": "ImageID",
+          "value": 32781
+        },
+        {
+          "name": "CFARepeatPatternDim",
+          "value": 33421
+        },
+        {
+          "name": "CFAPattern2",
+          "value": 33422
+        },
+        {
+          "name": "BatteryLevel",
+          "value": 33423
+        },
+        {
+          "name": "Copyright",
+          "value": 33432
+        },
+        {
+          "name": "ExposureTime",
+          "value": 33434
+        },
+        {
+          "name": "FNumber",
+          "value": 33437
+        },
+        {
+          "name": "MDFileTag",
+          "value": 33445
+        },
+        {
+          "name": "MDScalePixel",
+          "value": 33446
+        },
+        {
+          "name": "MDLabName",
+          "value": 33448
+        },
+        {
+          "name": "MDSampleInfo",
+          "value": 33449
+        },
+        {
+          "name": "MDPrepDate",
+          "value": 33450
+        },
+        {
+          "name": "MDPrepTime",
+          "value": 33451
+        },
+        {
+          "name": "MDFileUnits",
+          "value": 33452
+        },
+        {
+          "name": "PixelScale",
+          "value": 33550
+        },
+        {
+          "name": "IntergraphPacketData",
+          "value": 33918
+        },
+        {
+          "name": "IntergraphRegisters",
+          "value": 33919
+        },
+        {
+          "name": "IntergraphMatrix",
+          "value": 33920
+        },
+        {
+          "name": "ModelTiePoint",
+          "value": 33922
+        },
+        {
+          "name": "SEMInfo",
+          "value": 34118
+        },
+        {
+          "name": "ModelTransform",
+          "value": 34264
+        },
+        {
+          "name": "ImageLayer",
+          "value": 34732
+        },
+        {
+          "name": "ExposureProgram",
+          "value": 34850
+        },
+        {
+          "name": "SpectralSensitivity",
+          "value": 34852
+        },
+        {
+          "name": "ISOSpeedRatings",
+          "value": 34855
+        },
+        {
+          "name": "OECF",
+          "value": 34856
+        },
+        {
+          "name": "Interlace",
+          "value": 34857
+        },
+        {
+          "name": "TimeZoneOffset",
+          "value": 34858
+        },
+        {
+          "name": "SelfTimerMode",
+          "value": 34859
+        },
+        {
+          "name": "SensitivityType",
+          "value": 34864
+        },
+        {
+          "name": "StandardOutputSensitivity",
+          "value": 34865
+        },
+        {
+          "name": "RecommendedExposureIndex",
+          "value": 34866
+        },
+        {
+          "name": "ISOSpeed",
+          "value": 34867
+        },
+        {
+          "name": "ISOSpeedLatitudeyyy",
+          "value": 34868
+        },
+        {
+          "name": "ISOSpeedLatitudezzz",
+          "value": 34869
+        },
+        {
+          "name": "FaxRecvParams",
+          "value": 34908
+        },
+        {
+          "name": "FaxSubaddress",
+          "value": 34909
+        },
+        {
+          "name": "FaxRecvTime",
+          "value": 34910
+        },
+        {
+          "name": "ExifVersion",
+          "value": 36864
+        },
+        {
+          "name": "DateTimeOriginal",
+          "value": 36867
+        },
+        {
+          "name": "DateTimeDigitized",
+          "value": 36868
+        },
+        {
+          "name": "OffsetTime",
+          "value": 36880
+        },
+        {
+          "name": "OffsetTimeOriginal",
+          "value": 36881
+        },
+        {
+          "name": "OffsetTimeDigitized",
+          "value": 36882
+        },
+        {
+          "name": "ComponentsConfiguration",
+          "value": 37121
+        },
+        {
+          "name": "CompressedBitsPerPixel",
+          "value": 37122
+        },
+        {
+          "name": "ShutterSpeedValue",
+          "value": 37377
+        },
+        {
+          "name": "ApertureValue",
+          "value": 37378
+        },
+        {
+          "name": "BrightnessValue",
+          "value": 37379
+        },
+        {
+          "name": "ExposureBiasValue",
+          "value": 37380
+        },
+        {
+          "name": "MaxApertureValue",
+          "value": 37381
+        },
+        {
+          "name": "SubjectDistance",
+          "value": 37382
+        },
+        {
+          "name": "MeteringMode",
+          "value": 37383
+        },
+        {
+          "name": "LightSource",
+          "value": 37384
+        },
+        {
+          "name": "Flash",
+          "value": 37385
+        },
+        {
+          "name": "FocalLength",
+          "value": 37386
+        },
+        {
+          "name": "FlashEnergy2",
+          "value": 37387
+        },
+        {
+          "name": "SpatialFrequencyResponse2",
+          "value": 37388
+        },
+        {
+          "name": "Noise",
+          "value": 37389
+        },
+        {
+          "name": "FocalPlaneXResolution2",
+          "value": 37390
+        },
+        {
+          "name": "FocalPlaneYResolution2",
+          "value": 37391
+        },
+        {
+          "name": "FocalPlaneResolutionUnit2",
+          "value": 37392
+        },
+        {
+          "name": "ImageNumber",
+          "value": 37393
+        },
+        {
+          "name": "SecurityClassification",
+          "value": 37394
+        },
+        {
+          "name": "ImageHistory",
+          "value": 37395
+        },
+        {
+          "name": "SubjectArea",
+          "value": 37396
+        },
+        {
+          "name": "ExposureIndex2",
+          "value": 37397
+        },
+        {
+          "name": "TIFFEPStandardID",
+          "value": 37398
+        },
+        {
+          "name": "SensingMethod2",
+          "value": 37399
+        },
+        {
+          "name": "MakerNote",
+          "value": 37500
+        },
+        {
+          "name": "UserComment",
+          "value": 37510
+        },
+        {
+          "name": "SubsecTime",
+          "value": 37520
+        },
+        {
+          "name": "SubsecTimeOriginal",
+          "value": 37521
+        },
+        {
+          "name": "SubsecTimeDigitized",
+          "value": 37522
+        },
+        {
+          "name": "ImageSourceData",
+          "value": 37724
+        },
+        {
+          "name": "AmbientTemperature",
+          "value": 37888
+        },
+        {
+          "name": "Humidity",
+          "value": 37889
+        },
+        {
+          "name": "Pressure",
+          "value": 37890
+        },
+        {
+          "name": "WaterDepth",
+          "value": 37891
+        },
+        {
+          "name": "Acceleration",
+          "value": 37892
+        },
+        {
+          "name": "CameraElevationAngle",
+          "value": 37893
+        },
+        {
+          "name": "XPTitle",
+          "value": 40091
+        },
+        {
+          "name": "XPComment",
+          "value": 40092
+        },
+        {
+          "name": "XPAuthor",
+          "value": 40093
+        },
+        {
+          "name": "XPKeywords",
+          "value": 40094
+        },
+        {
+          "name": "XPSubject",
+          "value": 40095
+        },
+        {
+          "name": "FlashpixVersion",
+          "value": 40960
+        },
+        {
+          "name": "ColorSpace",
+          "value": 40961
+        },
+        {
+          "name": "PixelXDimension",
+          "value": 40962
+        },
+        {
+          "name": "PixelYDimension",
+          "value": 40963
+        },
+        {
+          "name": "RelatedSoundFile",
+          "value": 40964
+        },
+        {
+          "name": "FlashEnergy",
+          "value": 41483
+        },
+        {
+          "name": "SpatialFrequencyResponse",
+          "value": 41484
+        },
+        {
+          "name": "FocalPlaneXResolution",
+          "value": 41486
+        },
+        {
+          "name": "FocalPlaneYResolution",
+          "value": 41487
+        },
+        {
+          "name": "FocalPlaneResolutionUnit",
+          "value": 41488
+        },
+        {
+          "name": "SubjectLocation",
+          "value": 41492
+        },
+        {
+          "name": "ExposureIndex",
+          "value": 41493
+        },
+        {
+          "name": "SensingMethod",
+          "value": 41495
+        },
+        {
+          "name": "FileSource",
+          "value": 41728
+        },
+        {
+          "name": "SceneType",
+          "value": 41729
+        },
+        {
+          "name": "CFAPattern",
+          "value": 41730
+        },
+        {
+          "name": "CustomRendered",
+          "value": 41985
+        },
+        {
+          "name": "ExposureMode",
+          "value": 41986
+        },
+        {
+          "name": "WhiteBalance",
+          "value": 41987
+        },
+        {
+          "name": "DigitalZoomRatio",
+          "value": 41988
+        },
+        {
+          "name": "FocalLengthIn35mmFilm",
+          "value": 41989
+        },
+        {
+          "name": "SceneCaptureType",
+          "value": 41990
+        },
+        {
+          "name": "GainControl",
+          "value": 41991
+        },
+        {
+          "name": "Contrast",
+          "value": 41992
+        },
+        {
+          "name": "Saturation",
+          "value": 41993
+        },
+        {
+          "name": "Sharpness",
+          "value": 41994
+        },
+        {
+          "name": "DeviceSettingDescription",
+          "value": 41995
+        },
+        {
+          "name": "SubjectDistanceRange",
+          "value": 41996
+        },
+        {
+          "name": "ImageUniqueID",
+          "value": 42016
+        },
+        {
+          "name": "OwnerName",
+          "value": 42032
+        },
+        {
+          "name": "SerialNumber",
+          "value": 42033
+        },
+        {
+          "name": "LensInfo",
+          "value": 42034
+        },
+        {
+          "name": "LensMake",
+          "value": 42035
+        },
+        {
+          "name": "LensModel",
+          "value": 42036
+        },
+        {
+          "name": "LensSerialNumber",
+          "value": 42037
+        },
+        {
+          "name": "GDALMetadata",
+          "value": 42112
+        },
+        {
+          "name": "GDALNoData",
+          "value": 42113
+        },
+        {
+          "name": "GPSVersionID",
+          "value": 0
+        },
+        {
+          "name": "GPSLatitudeRef",
+          "value": 1
+        },
+        {
+          "name": "GPSLatitude",
+          "value": 2
+        },
+        {
+          "name": "GPSLongitudeRef",
+          "value": 3
+        },
+        {
+          "name": "GPSLongitude",
+          "value": 4
+        },
+        {
+          "name": "GPSAltitudeRef",
+          "value": 5
+        },
+        {
+          "name": "GPSAltitude",
+          "value": 6
+        },
+        {
+          "name": "GPSTimestamp",
+          "value": 7
+        },
+        {
+          "name": "GPSSatellites",
+          "value": 8
+        },
+        {
+          "name": "GPSStatus",
+          "value": 9
+        },
+        {
+          "name": "GPSMeasureMode",
+          "value": 10
+        },
+        {
+          "name": "GPSDOP",
+          "value": 11
+        },
+        {
+          "name": "GPSSpeedRef",
+          "value": 12
+        },
+        {
+          "name": "GPSSpeed",
+          "value": 13
+        },
+        {
+          "name": "GPSTrackRef",
+          "value": 14
+        },
+        {
+          "name": "GPSTrack",
+          "value": 15
+        },
+        {
+          "name": "GPSImgDirectionRef",
+          "value": 16
+        },
+        {
+          "name": "GPSImgDirection",
+          "value": 17
+        },
+        {
+          "name": "GPSMapDatum",
+          "value": 18
+        },
+        {
+          "name": "GPSDestLatitudeRef",
+          "value": 19
+        },
+        {
+          "name": "GPSDestLatitude",
+          "value": 20
+        },
+        {
+          "name": "GPSDestLongitudeRef",
+          "value": 21
+        },
+        {
+          "name": "GPSDestLongitude",
+          "value": 22
+        },
+        {
+          "name": "GPSDestBearingRef",
+          "value": 23
+        },
+        {
+          "name": "GPSDestBearing",
+          "value": 24
+        },
+        {
+          "name": "GPSDestDistanceRef",
+          "value": 25
+        },
+        {
+          "name": "GPSDestDistance",
+          "value": 26
+        },
+        {
+          "name": "GPSProcessingMethod",
+          "value": 27
+        },
+        {
+          "name": "GPSAreaInformation",
+          "value": 28
+        },
+        {
+          "name": "GPSDateStamp",
+          "value": 29
+        },
+        {
+          "name": "GPSDifferential",
+          "value": 30
+        }
+      ]
+    },
+    {
+      "fullName": "ImageMagick.IptcTag",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": -1
+        },
+        {
+          "name": "RecordVersion",
+          "value": 0
+        },
+        {
+          "name": "ObjectType",
+          "value": 3
+        },
+        {
+          "name": "ObjectAttribute",
+          "value": 4
+        },
+        {
+          "name": "Title",
+          "value": 5
+        },
+        {
+          "name": "EditStatus",
+          "value": 7
+        },
+        {
+          "name": "EditorialUpdate",
+          "value": 8
+        },
+        {
+          "name": "Priority",
+          "value": 10
+        },
+        {
+          "name": "SubjectReference",
+          "value": 12
+        },
+        {
+          "name": "Category",
+          "value": 15
+        },
+        {
+          "name": "SupplementalCategories",
+          "value": 20
+        },
+        {
+          "name": "FixtureIdentifier",
+          "value": 22
+        },
+        {
+          "name": "Keyword",
+          "value": 25
+        },
+        {
+          "name": "LocationCode",
+          "value": 26
+        },
+        {
+          "name": "LocationName",
+          "value": 27
+        },
+        {
+          "name": "ReleaseDate",
+          "value": 30
+        },
+        {
+          "name": "ReleaseTime",
+          "value": 35
+        },
+        {
+          "name": "ExpirationDate",
+          "value": 37
+        },
+        {
+          "name": "ExpirationTime",
+          "value": 38
+        },
+        {
+          "name": "SpecialInstructions",
+          "value": 40
+        },
+        {
+          "name": "ActionAdvised",
+          "value": 42
+        },
+        {
+          "name": "ReferenceService",
+          "value": 45
+        },
+        {
+          "name": "ReferenceDate",
+          "value": 47
+        },
+        {
+          "name": "ReferenceNumber",
+          "value": 50
+        },
+        {
+          "name": "CreatedDate",
+          "value": 55
+        },
+        {
+          "name": "CreatedTime",
+          "value": 60
+        },
+        {
+          "name": "DigitalCreationDate",
+          "value": 62
+        },
+        {
+          "name": "DigitalCreationTime",
+          "value": 63
+        },
+        {
+          "name": "OriginatingProgram",
+          "value": 65
+        },
+        {
+          "name": "ProgramVersion",
+          "value": 70
+        },
+        {
+          "name": "ObjectCycle",
+          "value": 75
+        },
+        {
+          "name": "Byline",
+          "value": 80
+        },
+        {
+          "name": "BylineTitle",
+          "value": 85
+        },
+        {
+          "name": "City",
+          "value": 90
+        },
+        {
+          "name": "SubLocation",
+          "value": 92
+        },
+        {
+          "name": "ProvinceState",
+          "value": 95
+        },
+        {
+          "name": "CountryCode",
+          "value": 100
+        },
+        {
+          "name": "Country",
+          "value": 101
+        },
+        {
+          "name": "OriginalTransmissionReference",
+          "value": 103
+        },
+        {
+          "name": "Headline",
+          "value": 105
+        },
+        {
+          "name": "Credit",
+          "value": 110
+        },
+        {
+          "name": "Source",
+          "value": 115
+        },
+        {
+          "name": "CopyrightNotice",
+          "value": 116
+        },
+        {
+          "name": "Contact",
+          "value": 118
+        },
+        {
+          "name": "Caption",
+          "value": 120
+        },
+        {
+          "name": "LocalCaption",
+          "value": 121
+        },
+        {
+          "name": "CaptionWriter",
+          "value": 122
+        },
+        {
+          "name": "ImageType",
+          "value": 130
+        },
+        {
+          "name": "ImageOrientation",
+          "value": 131
+        },
+        {
+          "name": "CustomField1",
+          "value": 200
+        },
+        {
+          "name": "CustomField2",
+          "value": 201
+        },
+        {
+          "name": "CustomField3",
+          "value": 202
+        },
+        {
+          "name": "CustomField4",
+          "value": 203
+        },
+        {
+          "name": "CustomField5",
+          "value": 204
+        },
+        {
+          "name": "CustomField6",
+          "value": 205
+        },
+        {
+          "name": "CustomField7",
+          "value": 206
+        },
+        {
+          "name": "CustomField8",
+          "value": 207
+        },
+        {
+          "name": "CustomField9",
+          "value": 208
+        },
+        {
+          "name": "CustomField10",
+          "value": 209
+        },
+        {
+          "name": "CustomField11",
+          "value": 210
+        },
+        {
+          "name": "CustomField12",
+          "value": 211
+        },
+        {
+          "name": "CustomField13",
+          "value": 212
+        },
+        {
+          "name": "CustomField14",
+          "value": 213
+        },
+        {
+          "name": "CustomField15",
+          "value": 214
+        },
+        {
+          "name": "CustomField16",
+          "value": 215
+        },
+        {
+          "name": "CustomField17",
+          "value": 216
+        },
+        {
+          "name": "CustomField18",
+          "value": 217
+        },
+        {
+          "name": "CustomField19",
+          "value": 218
+        },
+        {
+          "name": "CustomField20",
+          "value": 219
+        }
+      ]
+    }
+  ],
+  "namespaceMappings": []
+}

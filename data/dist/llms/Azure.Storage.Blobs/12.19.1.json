@@ -1,0 +1,779 @@
+{
+  "schema": {
+    "id": "activity-catalog",
+    "version": "v0.3"
+  },
+  "source": {
+    "kind": "nuget-package",
+    "id": "Azure.Storage.Blobs",
+    "version": "12.19.1",
+    "feedUrl": null,
+    "authors": "Microsoft",
+    "projectUrl": "https://github.com/Azure/azure-sdk-for-net/blob/Azure.Storage.Blobs_12.19.1/sdk/storage/Azure.Storage.Blobs/README.md",
+    "description": "This client library enables working with the Microsoft Azure Storage Blob service for storing binary and text data.\n      For this release see notes - https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/storage/Azure.Storage.Blobs/README.md and https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/storage/Azure.Storage.Blobs/CHANGELOG.md\n      in addition to the breaking changes https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/storage/Azure.Storage.Blobs/BreakingChanges.txt\n      Microsoft Azure Storage quickstarts and tutorials - https://docs.microsoft.com/en-us/azure/storage/\n      Microsoft Azure Storage REST API Reference - https://docs.microsoft.com/en-us/rest/api/storageservices/\n      REST API Reference for Blob Service - https://docs.microsoft.com/en-us/rest/api/storageservices/blob-service-rest-api",
+    "license": "MIT",
+    "tags": "Microsoft Azure Storage Blobs Microsoft Azure Blobs Blob Storage StorageScalable windowsazureofficial azureofficial",
+    "packageTypes": []
+  },
+  "generatedAt": "2026-04-10T09:21:12Z",
+  "activities": [],
+  "enums": [
+    {
+      "fullName": "Azure.Storage.Sas.BlobAccountSasPermissions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Read",
+          "value": 1
+        },
+        {
+          "name": "Add",
+          "value": 2
+        },
+        {
+          "name": "Create",
+          "value": 4
+        },
+        {
+          "name": "Write",
+          "value": 8
+        },
+        {
+          "name": "Delete",
+          "value": 16
+        },
+        {
+          "name": "List",
+          "value": 32
+        },
+        {
+          "name": "All",
+          "value": -1
+        }
+      ]
+    },
+    {
+      "fullName": "Azure.Storage.Sas.BlobContainerSasPermissions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Read",
+          "value": 1
+        },
+        {
+          "name": "Add",
+          "value": 2
+        },
+        {
+          "name": "Create",
+          "value": 4
+        },
+        {
+          "name": "Write",
+          "value": 8
+        },
+        {
+          "name": "Delete",
+          "value": 16
+        },
+        {
+          "name": "List",
+          "value": 32
+        },
+        {
+          "name": "Tag",
+          "value": 64
+        },
+        {
+          "name": "DeleteBlobVersion",
+          "value": 128
+        },
+        {
+          "name": "Move",
+          "value": 256
+        },
+        {
+          "name": "Execute",
+          "value": 512
+        },
+        {
+          "name": "SetImmutabilityPolicy",
+          "value": 1024
+        },
+        {
+          "name": "Filter",
+          "value": 2048
+        },
+        {
+          "name": "All",
+          "value": -1
+        }
+      ]
+    },
+    {
+      "fullName": "Azure.Storage.Sas.BlobSasPermissions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Read",
+          "value": 1
+        },
+        {
+          "name": "Add",
+          "value": 2
+        },
+        {
+          "name": "Create",
+          "value": 4
+        },
+        {
+          "name": "Write",
+          "value": 8
+        },
+        {
+          "name": "Delete",
+          "value": 16
+        },
+        {
+          "name": "Tag",
+          "value": 32
+        },
+        {
+          "name": "DeleteBlobVersion",
+          "value": 64
+        },
+        {
+          "name": "List",
+          "value": 128
+        },
+        {
+          "name": "Move",
+          "value": 256
+        },
+        {
+          "name": "Execute",
+          "value": 512
+        },
+        {
+          "name": "SetImmutabilityPolicy",
+          "value": 1024
+        },
+        {
+          "name": "PermanentDelete",
+          "value": 2048
+        },
+        {
+          "name": "All",
+          "value": -1
+        }
+      ]
+    },
+    {
+      "fullName": "Azure.Storage.Sas.BlobVersionSasPermissions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Delete",
+          "value": 1
+        },
+        {
+          "name": "SetImmutabilityPolicy",
+          "value": 2
+        },
+        {
+          "name": "PermanentDelete",
+          "value": 4
+        },
+        {
+          "name": "All",
+          "value": -1
+        }
+      ]
+    },
+    {
+      "fullName": "Azure.Storage.Sas.SnapshotSasPermissions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Read",
+          "value": 1
+        },
+        {
+          "name": "Write",
+          "value": 2
+        },
+        {
+          "name": "Delete",
+          "value": 4
+        },
+        {
+          "name": "SetImmutabilityPolicy",
+          "value": 8
+        },
+        {
+          "name": "PermanentDelete",
+          "value": 16
+        },
+        {
+          "name": "All",
+          "value": -1
+        }
+      ]
+    },
+    {
+      "fullName": "Azure.Storage.Blobs.BlobClientOptions.ServiceVersion",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "V2019_02_02",
+          "value": 1
+        },
+        {
+          "name": "V2019_07_07",
+          "value": 2
+        },
+        {
+          "name": "V2019_12_12",
+          "value": 3
+        },
+        {
+          "name": "V2020_02_10",
+          "value": 4
+        },
+        {
+          "name": "V2020_04_08",
+          "value": 5
+        },
+        {
+          "name": "V2020_06_12",
+          "value": 6
+        },
+        {
+          "name": "V2020_08_04",
+          "value": 7
+        },
+        {
+          "name": "V2020_10_02",
+          "value": 8
+        },
+        {
+          "name": "V2020_12_06",
+          "value": 9
+        },
+        {
+          "name": "V2021_02_12",
+          "value": 10
+        },
+        {
+          "name": "V2021_04_10",
+          "value": 11
+        },
+        {
+          "name": "V2021_06_08",
+          "value": 12
+        },
+        {
+          "name": "V2021_08_06",
+          "value": 13
+        },
+        {
+          "name": "V2021_10_04",
+          "value": 14
+        },
+        {
+          "name": "V2021_12_02",
+          "value": 15
+        },
+        {
+          "name": "V2022_11_02",
+          "value": 16
+        },
+        {
+          "name": "V2023_01_03",
+          "value": 17
+        },
+        {
+          "name": "V2023_05_03",
+          "value": 18
+        },
+        {
+          "name": "V2023_08_03",
+          "value": 19
+        },
+        {
+          "name": "V2023_11_03",
+          "value": 20
+        }
+      ]
+    },
+    {
+      "fullName": "Azure.Storage.Blobs.Models.BlobGeoReplicationStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Live",
+          "value": 0
+        },
+        {
+          "name": "Bootstrap",
+          "value": 1
+        },
+        {
+          "name": "Unavailable",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Azure.Storage.Blobs.Models.RehydratePriority",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "High",
+          "value": 0
+        },
+        {
+          "name": "Standard",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Azure.Storage.Blobs.Models.AccountKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Storage",
+          "value": 0
+        },
+        {
+          "name": "BlobStorage",
+          "value": 1
+        },
+        {
+          "name": "StorageV2",
+          "value": 2
+        },
+        {
+          "name": "FileStorage",
+          "value": 3
+        },
+        {
+          "name": "BlockBlobStorage",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Azure.Storage.Blobs.Models.ArchiveStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "RehydratePendingToHot",
+          "value": 0
+        },
+        {
+          "name": "RehydratePendingToCool",
+          "value": 1
+        },
+        {
+          "name": "RehydratePendingToCold",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Azure.Storage.Blobs.Models.BlobContainerStates",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Deleted",
+          "value": 1
+        },
+        {
+          "name": "System",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Azure.Storage.Blobs.Models.BlobContainerTraits",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Metadata",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Azure.Storage.Blobs.Models.BlobCopySourceTagsMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Replace",
+          "value": 0
+        },
+        {
+          "name": "Copy",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Azure.Storage.Blobs.Models.BlobImmutabilityPolicyMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Mutable",
+          "value": 0
+        },
+        {
+          "name": "Unlocked",
+          "value": 1
+        },
+        {
+          "name": "Locked",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Azure.Storage.Blobs.Models.BlobQueryArrowFieldType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Int64",
+          "value": 0
+        },
+        {
+          "name": "Bool",
+          "value": 1
+        },
+        {
+          "name": "Timestamp",
+          "value": 2
+        },
+        {
+          "name": "String",
+          "value": 3
+        },
+        {
+          "name": "Double",
+          "value": 4
+        },
+        {
+          "name": "Decimal",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Azure.Storage.Blobs.Models.BlobStates",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Snapshots",
+          "value": 1
+        },
+        {
+          "name": "Uncommitted",
+          "value": 2
+        },
+        {
+          "name": "Deleted",
+          "value": 4
+        },
+        {
+          "name": "Version",
+          "value": 8
+        },
+        {
+          "name": "DeletedWithVersions",
+          "value": 16
+        },
+        {
+          "name": "All",
+          "value": -1
+        }
+      ]
+    },
+    {
+      "fullName": "Azure.Storage.Blobs.Models.BlobTraits",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "CopyStatus",
+          "value": 1
+        },
+        {
+          "name": "Metadata",
+          "value": 2
+        },
+        {
+          "name": "Tags",
+          "value": 4
+        },
+        {
+          "name": "ImmutabilityPolicy",
+          "value": 8
+        },
+        {
+          "name": "LegalHold",
+          "value": 16
+        },
+        {
+          "name": "All",
+          "value": -1
+        }
+      ]
+    },
+    {
+      "fullName": "Azure.Storage.Blobs.Models.BlobType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Block",
+          "value": 0
+        },
+        {
+          "name": "Page",
+          "value": 1
+        },
+        {
+          "name": "Append",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Azure.Storage.Blobs.Models.BlockListTypes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "All",
+          "value": 3
+        },
+        {
+          "name": "Committed",
+          "value": 1
+        },
+        {
+          "name": "Uncommitted",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Azure.Storage.Blobs.Models.CopyStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Pending",
+          "value": 0
+        },
+        {
+          "name": "Success",
+          "value": 1
+        },
+        {
+          "name": "Aborted",
+          "value": 2
+        },
+        {
+          "name": "Failed",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Azure.Storage.Blobs.Models.DeleteSnapshotsOption",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "IncludeSnapshots",
+          "value": 1
+        },
+        {
+          "name": "OnlySnapshots",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Azure.Storage.Blobs.Models.EncryptionAlgorithmType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Aes256",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "fullName": "Azure.Storage.Blobs.Models.LeaseDurationType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Infinite",
+          "value": 0
+        },
+        {
+          "name": "Fixed",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Azure.Storage.Blobs.Models.LeaseState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Available",
+          "value": 0
+        },
+        {
+          "name": "Leased",
+          "value": 1
+        },
+        {
+          "name": "Expired",
+          "value": 2
+        },
+        {
+          "name": "Breaking",
+          "value": 3
+        },
+        {
+          "name": "Broken",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Azure.Storage.Blobs.Models.LeaseStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Locked",
+          "value": 0
+        },
+        {
+          "name": "Unlocked",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Azure.Storage.Blobs.Models.ObjectReplicationStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Complete",
+          "value": 0
+        },
+        {
+          "name": "Failed",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Azure.Storage.Blobs.Models.PathRenameMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Legacy",
+          "value": 0
+        },
+        {
+          "name": "Posix",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Azure.Storage.Blobs.Models.PublicAccessType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "BlobContainer",
+          "value": 1
+        },
+        {
+          "name": "Blob",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Azure.Storage.Blobs.Models.SequenceNumberAction",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Max",
+          "value": 0
+        },
+        {
+          "name": "Update",
+          "value": 1
+        },
+        {
+          "name": "Increment",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Azure.Storage.Blobs.Models.SkuName",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "StandardLrs",
+          "value": 0
+        },
+        {
+          "name": "StandardGrs",
+          "value": 1
+        },
+        {
+          "name": "StandardRagrs",
+          "value": 2
+        },
+        {
+          "name": "StandardZrs",
+          "value": 3
+        },
+        {
+          "name": "PremiumLrs",
+          "value": 4
+        }
+      ]
+    }
+  ],
+  "namespaceMappings": []
+}

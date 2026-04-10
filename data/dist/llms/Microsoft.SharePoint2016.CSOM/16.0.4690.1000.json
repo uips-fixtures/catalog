@@ -1,0 +1,5433 @@
+{
+  "schema": {
+    "id": "activity-catalog",
+    "version": "v0.3"
+  },
+  "source": {
+    "kind": "nuget-package",
+    "id": "Microsoft.SharePoint2016.CSOM",
+    "version": "16.0.4690.1000",
+    "feedUrl": null,
+    "authors": "Microsoft",
+    "projectUrl": "http://go.microsoft.com/fwlink/?LinkId=531344",
+    "description": "This package contains SharePoint Client Object Model libraries for SharePoint 2016 - May 2018 CU version",
+    "license": "http://go.microsoft.com/fwlink/?LinkId=280198",
+    "tags": "Microsoft Office API SharePoint Client Object Model CSOM Windows",
+    "packageTypes": []
+  },
+  "generatedAt": "2026-04-10T09:21:15Z",
+  "activities": [],
+  "enums": [
+    {
+      "fullName": "Microsoft.SharePoint.Client.Discovery.ExportStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NotStarted",
+          "value": 0
+        },
+        {
+          "name": "Started",
+          "value": 1
+        },
+        {
+          "name": "Complete",
+          "value": 2
+        },
+        {
+          "name": "Failed",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Office.Client.TranslationServices.ItemTypes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Succeeded",
+          "value": 1
+        },
+        {
+          "name": "InProgress",
+          "value": 2
+        },
+        {
+          "name": "NotStarted",
+          "value": 4
+        },
+        {
+          "name": "Failed",
+          "value": 8
+        },
+        {
+          "name": "Canceled",
+          "value": 16
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Office.Client.TranslationServices.SaveBehavior",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AppendIfPossible",
+          "value": 0
+        },
+        {
+          "name": "AlwaysOverwrite",
+          "value": 1
+        },
+        {
+          "name": "AppendOnly",
+          "value": 2
+        },
+        {
+          "name": "NeverOverwrite",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Office.Client.TranslationServices.TranslationResult",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "UnknownFailure",
+          "value": -1
+        },
+        {
+          "name": "Succeeded",
+          "value": 0
+        },
+        {
+          "name": "InputFileNotFound",
+          "value": 1
+        },
+        {
+          "name": "UnauthorizedAccessToInputFile",
+          "value": 2
+        },
+        {
+          "name": "InputFileUserTokenExpired",
+          "value": 3
+        },
+        {
+          "name": "UnauthorizedAccessToOutputFile",
+          "value": 4
+        },
+        {
+          "name": "OutputFileUserTokenExpired",
+          "value": 5
+        },
+        {
+          "name": "InputFileReadError",
+          "value": 6
+        },
+        {
+          "name": "OutputFileWriteError",
+          "value": 7
+        },
+        {
+          "name": "NotAssignedToWorker",
+          "value": 8
+        },
+        {
+          "name": "WorkerFailed",
+          "value": 9
+        },
+        {
+          "name": "Timeout",
+          "value": 10
+        },
+        {
+          "name": "SyncTranslationLimitExceeded",
+          "value": 11
+        },
+        {
+          "name": "SyncTranslationDisabled",
+          "value": 12
+        },
+        {
+          "name": "OutputFileReadOnly",
+          "value": 13
+        },
+        {
+          "name": "InputFileTooLarge",
+          "value": 14
+        },
+        {
+          "name": "InputFileTooLong",
+          "value": 15
+        },
+        {
+          "name": "InputFileCorrupt",
+          "value": 16
+        },
+        {
+          "name": "InputFileIRMProtected",
+          "value": 17
+        },
+        {
+          "name": "InputFileEncrypted",
+          "value": 18
+        },
+        {
+          "name": "InputFileTypeBlocked",
+          "value": 19
+        },
+        {
+          "name": "InputFileTypeNotSupported",
+          "value": 20
+        },
+        {
+          "name": "InputFileHasActiveXControls",
+          "value": 21
+        },
+        {
+          "name": "InputFileCannotBeTranslated",
+          "value": 22
+        },
+        {
+          "name": "TranslationServiceUnavailable",
+          "value": 23
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Online.SharePoint.TenantAdministration.AppErrorType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "InstallError",
+          "value": 2
+        },
+        {
+          "name": "UpgradeError",
+          "value": 3
+        },
+        {
+          "name": "RuntimeError",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Online.SharePoint.TenantAdministration.AppSource",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "CorporateGallery",
+          "value": 0
+        },
+        {
+          "name": "MarketPlace",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Online.SharePoint.TenantAdministration.DenyAddAndCustomizePagesStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "Disabled",
+          "value": 1
+        },
+        {
+          "name": "Enabled",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Online.SharePoint.TenantManagement.SharingCapabilities",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Disabled",
+          "value": 0
+        },
+        {
+          "name": "ExternalUserSharingOnly",
+          "value": 1
+        },
+        {
+          "name": "ExternalUserAndGuestSharing",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Online.SharePoint.TenantManagement.SortOrder",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Ascending",
+          "value": 0
+        },
+        {
+          "name": "Descending",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.EventReceivers.SPRemoteEventType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ItemAdding",
+          "value": 1
+        },
+        {
+          "name": "ItemUpdating",
+          "value": 2
+        },
+        {
+          "name": "ItemDeleting",
+          "value": 3
+        },
+        {
+          "name": "ItemCheckingIn",
+          "value": 4
+        },
+        {
+          "name": "ItemCheckingOut",
+          "value": 5
+        },
+        {
+          "name": "ItemUncheckingOut",
+          "value": 6
+        },
+        {
+          "name": "ItemAttachmentAdding",
+          "value": 7
+        },
+        {
+          "name": "ItemAttachmentDeleting",
+          "value": 8
+        },
+        {
+          "name": "ItemFileMoving",
+          "value": 9
+        },
+        {
+          "name": "ItemVersionDeleting",
+          "value": 11
+        },
+        {
+          "name": "FieldAdding",
+          "value": 101
+        },
+        {
+          "name": "FieldUpdating",
+          "value": 102
+        },
+        {
+          "name": "FieldDeleting",
+          "value": 103
+        },
+        {
+          "name": "ListAdding",
+          "value": 104
+        },
+        {
+          "name": "ListDeleting",
+          "value": 105
+        },
+        {
+          "name": "SiteDeleting",
+          "value": 201
+        },
+        {
+          "name": "WebDeleting",
+          "value": 202
+        },
+        {
+          "name": "WebMoving",
+          "value": 203
+        },
+        {
+          "name": "WebAdding",
+          "value": 204
+        },
+        {
+          "name": "GroupAdding",
+          "value": 301
+        },
+        {
+          "name": "GroupUpdating",
+          "value": 302
+        },
+        {
+          "name": "GroupDeleting",
+          "value": 303
+        },
+        {
+          "name": "GroupUserAdding",
+          "value": 304
+        },
+        {
+          "name": "GroupUserDeleting",
+          "value": 305
+        },
+        {
+          "name": "RoleDefinitionAdding",
+          "value": 306
+        },
+        {
+          "name": "RoleDefinitionUpdating",
+          "value": 307
+        },
+        {
+          "name": "RoleDefinitionDeleting",
+          "value": 308
+        },
+        {
+          "name": "RoleAssignmentAdding",
+          "value": 309
+        },
+        {
+          "name": "RoleAssignmentDeleting",
+          "value": 310
+        },
+        {
+          "name": "InheritanceBreaking",
+          "value": 311
+        },
+        {
+          "name": "InheritanceResetting",
+          "value": 312
+        },
+        {
+          "name": "ItemAdded",
+          "value": 10001
+        },
+        {
+          "name": "ItemUpdated",
+          "value": 10002
+        },
+        {
+          "name": "ItemDeleted",
+          "value": 10003
+        },
+        {
+          "name": "ItemCheckedIn",
+          "value": 10004
+        },
+        {
+          "name": "ItemCheckedOut",
+          "value": 10005
+        },
+        {
+          "name": "ItemUncheckedOut",
+          "value": 10006
+        },
+        {
+          "name": "ItemAttachmentAdded",
+          "value": 10007
+        },
+        {
+          "name": "ItemAttachmentDeleted",
+          "value": 10008
+        },
+        {
+          "name": "ItemFileMoved",
+          "value": 10009
+        },
+        {
+          "name": "ItemFileConverted",
+          "value": 10010
+        },
+        {
+          "name": "ItemVersionDeleted",
+          "value": 10011
+        },
+        {
+          "name": "FieldAdded",
+          "value": 10101
+        },
+        {
+          "name": "FieldUpdated",
+          "value": 10102
+        },
+        {
+          "name": "FieldDeleted",
+          "value": 10103
+        },
+        {
+          "name": "ListAdded",
+          "value": 10104
+        },
+        {
+          "name": "ListDeleted",
+          "value": 10105
+        },
+        {
+          "name": "SiteDeleted",
+          "value": 10201
+        },
+        {
+          "name": "WebDeleted",
+          "value": 10202
+        },
+        {
+          "name": "WebMoved",
+          "value": 10203
+        },
+        {
+          "name": "WebProvisioned",
+          "value": 10204
+        },
+        {
+          "name": "WebRestored",
+          "value": 10205
+        },
+        {
+          "name": "GroupAdded",
+          "value": 10301
+        },
+        {
+          "name": "GroupUpdated",
+          "value": 10302
+        },
+        {
+          "name": "GroupDeleted",
+          "value": 10303
+        },
+        {
+          "name": "GroupUserAdded",
+          "value": 10304
+        },
+        {
+          "name": "GroupUserDeleted",
+          "value": 10305
+        },
+        {
+          "name": "RoleDefinitionAdded",
+          "value": 10306
+        },
+        {
+          "name": "RoleDefinitionUpdated",
+          "value": 10307
+        },
+        {
+          "name": "RoleDefinitionDeleted",
+          "value": 10308
+        },
+        {
+          "name": "RoleAssignmentAdded",
+          "value": 10309
+        },
+        {
+          "name": "RoleAssignmentDeleted",
+          "value": 10310
+        },
+        {
+          "name": "InheritanceBroken",
+          "value": 10311
+        },
+        {
+          "name": "InheritanceReset",
+          "value": 10312
+        },
+        {
+          "name": "EntityInstanceAdded",
+          "value": 10601
+        },
+        {
+          "name": "EntityInstanceUpdated",
+          "value": 10602
+        },
+        {
+          "name": "EntityInstanceDeleted",
+          "value": 10603
+        },
+        {
+          "name": "AppInstalled",
+          "value": 10701
+        },
+        {
+          "name": "AppUpgraded",
+          "value": 10702
+        },
+        {
+          "name": "AppUninstalling",
+          "value": 10703
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.EventReceivers.SPRemoteEventServiceStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Continue",
+          "value": 0
+        },
+        {
+          "name": "CancelNoError",
+          "value": 1
+        },
+        {
+          "name": "CancelWithError",
+          "value": 2
+        },
+        {
+          "name": "CancelWithRedirectUrl",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.PermissionKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "EmptyMask",
+          "value": 0
+        },
+        {
+          "name": "ViewListItems",
+          "value": 1
+        },
+        {
+          "name": "AddListItems",
+          "value": 2
+        },
+        {
+          "name": "EditListItems",
+          "value": 3
+        },
+        {
+          "name": "DeleteListItems",
+          "value": 4
+        },
+        {
+          "name": "ApproveItems",
+          "value": 5
+        },
+        {
+          "name": "OpenItems",
+          "value": 6
+        },
+        {
+          "name": "ViewVersions",
+          "value": 7
+        },
+        {
+          "name": "DeleteVersions",
+          "value": 8
+        },
+        {
+          "name": "CancelCheckout",
+          "value": 9
+        },
+        {
+          "name": "ManagePersonalViews",
+          "value": 10
+        },
+        {
+          "name": "ManageLists",
+          "value": 12
+        },
+        {
+          "name": "ViewFormPages",
+          "value": 13
+        },
+        {
+          "name": "AnonymousSearchAccessList",
+          "value": 14
+        },
+        {
+          "name": "Open",
+          "value": 17
+        },
+        {
+          "name": "ViewPages",
+          "value": 18
+        },
+        {
+          "name": "AddAndCustomizePages",
+          "value": 19
+        },
+        {
+          "name": "ApplyThemeAndBorder",
+          "value": 20
+        },
+        {
+          "name": "ApplyStyleSheets",
+          "value": 21
+        },
+        {
+          "name": "ViewUsageData",
+          "value": 22
+        },
+        {
+          "name": "CreateSSCSite",
+          "value": 23
+        },
+        {
+          "name": "ManageSubwebs",
+          "value": 24
+        },
+        {
+          "name": "CreateGroups",
+          "value": 25
+        },
+        {
+          "name": "ManagePermissions",
+          "value": 26
+        },
+        {
+          "name": "BrowseDirectories",
+          "value": 27
+        },
+        {
+          "name": "BrowseUserInfo",
+          "value": 28
+        },
+        {
+          "name": "AddDelPrivateWebParts",
+          "value": 29
+        },
+        {
+          "name": "UpdatePersonalWebParts",
+          "value": 30
+        },
+        {
+          "name": "ManageWeb",
+          "value": 31
+        },
+        {
+          "name": "AnonymousSearchAccessWebLists",
+          "value": 32
+        },
+        {
+          "name": "UseClientIntegration",
+          "value": 37
+        },
+        {
+          "name": "UseRemoteAPIs",
+          "value": 38
+        },
+        {
+          "name": "ManageAlerts",
+          "value": 39
+        },
+        {
+          "name": "CreateAlerts",
+          "value": 40
+        },
+        {
+          "name": "EditMyUserInfo",
+          "value": 41
+        },
+        {
+          "name": "EnumeratePermissions",
+          "value": 63
+        },
+        {
+          "name": "FullMask",
+          "value": 65
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.BusinessData.Runtime.EntityEventType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "ItemAdded",
+          "value": 1
+        },
+        {
+          "name": "ItemUpdated",
+          "value": 2
+        },
+        {
+          "name": "ItemDeleted",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.AddFieldOptions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DefaultValue",
+          "value": 0
+        },
+        {
+          "name": "AddToDefaultContentType",
+          "value": 1
+        },
+        {
+          "name": "AddToNoContentType",
+          "value": 2
+        },
+        {
+          "name": "AddToAllContentTypes",
+          "value": 4
+        },
+        {
+          "name": "AddFieldInternalNameHint",
+          "value": 8
+        },
+        {
+          "name": "AddFieldToDefaultView",
+          "value": 16
+        },
+        {
+          "name": "AddFieldCheckDisplayName",
+          "value": 32
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.Analytics.EventTypeId",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "First",
+          "value": 1
+        },
+        {
+          "name": "View",
+          "value": 1
+        },
+        {
+          "name": "RecommendationView",
+          "value": 2
+        },
+        {
+          "name": "RecommendationClick",
+          "value": 3
+        },
+        {
+          "name": "Last",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.AppInstanceErrorSource",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Common",
+          "value": 0
+        },
+        {
+          "name": "AppWeb",
+          "value": 1
+        },
+        {
+          "name": "ParentWeb",
+          "value": 2
+        },
+        {
+          "name": "RemoteWebSite",
+          "value": 3
+        },
+        {
+          "name": "Database",
+          "value": 4
+        },
+        {
+          "name": "OfficeExtension",
+          "value": 5
+        },
+        {
+          "name": "EventCallouts",
+          "value": 6
+        },
+        {
+          "name": "Finalization",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.AppInstanceErrorType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Transient",
+          "value": 0
+        },
+        {
+          "name": "Configuration",
+          "value": 1
+        },
+        {
+          "name": "App",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.AppInstanceStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "InvalidStatus",
+          "value": 0
+        },
+        {
+          "name": "Installing",
+          "value": 1
+        },
+        {
+          "name": "Canceling",
+          "value": 7
+        },
+        {
+          "name": "Uninstalling",
+          "value": 4
+        },
+        {
+          "name": "Installed",
+          "value": 5
+        },
+        {
+          "name": "Upgrading",
+          "value": 8
+        },
+        {
+          "name": "Initialized",
+          "value": 9
+        },
+        {
+          "name": "UpgradeCanceling",
+          "value": 10
+        },
+        {
+          "name": "Disabling",
+          "value": 11
+        },
+        {
+          "name": "Disabled",
+          "value": 12
+        },
+        {
+          "name": "SecretRolling",
+          "value": 13
+        },
+        {
+          "name": "Recycling",
+          "value": 14
+        },
+        {
+          "name": "Recycled",
+          "value": 15
+        },
+        {
+          "name": "Restoring",
+          "value": 16
+        },
+        {
+          "name": "RestoreCanceling",
+          "value": 17
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.AppLicenseType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "PerpetualMultiUser",
+          "value": 0
+        },
+        {
+          "name": "PerpetualAllUsers",
+          "value": 1
+        },
+        {
+          "name": "TrialMultiUser",
+          "value": 2
+        },
+        {
+          "name": "TrialAllUsers",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.AppType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Doclib",
+          "value": 0
+        },
+        {
+          "name": "List",
+          "value": 1
+        },
+        {
+          "name": "Tenant",
+          "value": 2
+        },
+        {
+          "name": "Instance",
+          "value": 3
+        },
+        {
+          "name": "Feature",
+          "value": 4
+        },
+        {
+          "name": "CommonList",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.AuditMaskType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "CheckOut",
+          "value": 1
+        },
+        {
+          "name": "CheckIn",
+          "value": 2
+        },
+        {
+          "name": "View",
+          "value": 4
+        },
+        {
+          "name": "ObjectDelete",
+          "value": 8
+        },
+        {
+          "name": "Update",
+          "value": 16
+        },
+        {
+          "name": "ProfileChange",
+          "value": 32
+        },
+        {
+          "name": "ChildDelete",
+          "value": 64
+        },
+        {
+          "name": "SchemaChange",
+          "value": 128
+        },
+        {
+          "name": "SecurityChange",
+          "value": 256
+        },
+        {
+          "name": "Undelete",
+          "value": 512
+        },
+        {
+          "name": "Workflow",
+          "value": 1024
+        },
+        {
+          "name": "Copy",
+          "value": 2048
+        },
+        {
+          "name": "Move",
+          "value": 4096
+        },
+        {
+          "name": "Search",
+          "value": 8192
+        },
+        {
+          "name": "All",
+          "value": -1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.BaseType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": -1
+        },
+        {
+          "name": "GenericList",
+          "value": 0
+        },
+        {
+          "name": "DocumentLibrary",
+          "value": 1
+        },
+        {
+          "name": "Unused",
+          "value": 2
+        },
+        {
+          "name": "DiscussionBoard",
+          "value": 3
+        },
+        {
+          "name": "Survey",
+          "value": 4
+        },
+        {
+          "name": "Issue",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.BrowserFileHandling",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Permissive",
+          "value": 0
+        },
+        {
+          "name": "Strict",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.CalendarType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Gregorian",
+          "value": 1
+        },
+        {
+          "name": "Japan",
+          "value": 3
+        },
+        {
+          "name": "Taiwan",
+          "value": 4
+        },
+        {
+          "name": "Korea",
+          "value": 5
+        },
+        {
+          "name": "Hijri",
+          "value": 6
+        },
+        {
+          "name": "Thai",
+          "value": 7
+        },
+        {
+          "name": "Hebrew",
+          "value": 8
+        },
+        {
+          "name": "GregorianMEFrench",
+          "value": 9
+        },
+        {
+          "name": "GregorianArabic",
+          "value": 10
+        },
+        {
+          "name": "GregorianXLITEnglish",
+          "value": 11
+        },
+        {
+          "name": "GregorianXLITFrench",
+          "value": 12
+        },
+        {
+          "name": "KoreaJapanLunar",
+          "value": 14
+        },
+        {
+          "name": "ChineseLunar",
+          "value": 15
+        },
+        {
+          "name": "SakaEra",
+          "value": 16
+        },
+        {
+          "name": "UmAlQura",
+          "value": 23
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.ChangeType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NoChange",
+          "value": 0
+        },
+        {
+          "name": "Add",
+          "value": 1
+        },
+        {
+          "name": "Update",
+          "value": 2
+        },
+        {
+          "name": "DeleteObject",
+          "value": 3
+        },
+        {
+          "name": "Rename",
+          "value": 4
+        },
+        {
+          "name": "MoveAway",
+          "value": 5
+        },
+        {
+          "name": "MoveInto",
+          "value": 6
+        },
+        {
+          "name": "Restore",
+          "value": 7
+        },
+        {
+          "name": "RoleAdd",
+          "value": 8
+        },
+        {
+          "name": "RoleDelete",
+          "value": 9
+        },
+        {
+          "name": "RoleUpdate",
+          "value": 10
+        },
+        {
+          "name": "AssignmentAdd",
+          "value": 11
+        },
+        {
+          "name": "AssignmentDelete",
+          "value": 12
+        },
+        {
+          "name": "MemberAdd",
+          "value": 13
+        },
+        {
+          "name": "MemberDelete",
+          "value": 14
+        },
+        {
+          "name": "SystemUpdate",
+          "value": 15
+        },
+        {
+          "name": "Navigation",
+          "value": 16
+        },
+        {
+          "name": "ScopeAdd",
+          "value": 17
+        },
+        {
+          "name": "ScopeDelete",
+          "value": 18
+        },
+        {
+          "name": "ListContentTypeAdd",
+          "value": 19
+        },
+        {
+          "name": "ListContentTypeDelete",
+          "value": 20
+        },
+        {
+          "name": "Dirty",
+          "value": 21
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.CheckinType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "MinorCheckIn",
+          "value": 0
+        },
+        {
+          "name": "MajorCheckIn",
+          "value": 1
+        },
+        {
+          "name": "OverwriteCheckIn",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.CheckOutType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Online",
+          "value": 0
+        },
+        {
+          "name": "Offline",
+          "value": 1
+        },
+        {
+          "name": "None",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.ChoiceFormatType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Dropdown",
+          "value": 0
+        },
+        {
+          "name": "RadioButtons",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.CustomizedPageStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Uncustomized",
+          "value": 1
+        },
+        {
+          "name": "Customized",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.DateTimeFieldFormatType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DateOnly",
+          "value": 0
+        },
+        {
+          "name": "DateTime",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.DateTimeFieldFriendlyFormatType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unspecified",
+          "value": 0
+        },
+        {
+          "name": "Disabled",
+          "value": 1
+        },
+        {
+          "name": "Relative",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.DocumentTemplateType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Invalid",
+          "value": 0
+        },
+        {
+          "name": "Word",
+          "value": 1
+        },
+        {
+          "name": "Excel",
+          "value": 2
+        },
+        {
+          "name": "PowerPoint",
+          "value": 3
+        },
+        {
+          "name": "OneNote",
+          "value": 4
+        },
+        {
+          "name": "ExcelForm",
+          "value": 5
+        },
+        {
+          "name": "Max",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.DraftVisibilityType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Reader",
+          "value": 0
+        },
+        {
+          "name": "Author",
+          "value": 1
+        },
+        {
+          "name": "Approver",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.EventReceiverSynchronization",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DefaultSynchronization",
+          "value": 0
+        },
+        {
+          "name": "Synchronous",
+          "value": 1
+        },
+        {
+          "name": "Asynchronous",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.EventReceiverType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "InvalidReceiver",
+          "value": -1
+        },
+        {
+          "name": "ItemAdding",
+          "value": 1
+        },
+        {
+          "name": "ItemUpdating",
+          "value": 2
+        },
+        {
+          "name": "ItemDeleting",
+          "value": 3
+        },
+        {
+          "name": "ItemCheckingIn",
+          "value": 4
+        },
+        {
+          "name": "ItemCheckingOut",
+          "value": 5
+        },
+        {
+          "name": "ItemUncheckingOut",
+          "value": 6
+        },
+        {
+          "name": "ItemAttachmentAdding",
+          "value": 7
+        },
+        {
+          "name": "ItemAttachmentDeleting",
+          "value": 8
+        },
+        {
+          "name": "ItemFileMoving",
+          "value": 9
+        },
+        {
+          "name": "ItemVersionDeleting",
+          "value": 11
+        },
+        {
+          "name": "FieldAdding",
+          "value": 101
+        },
+        {
+          "name": "FieldUpdating",
+          "value": 102
+        },
+        {
+          "name": "FieldDeleting",
+          "value": 103
+        },
+        {
+          "name": "ListAdding",
+          "value": 104
+        },
+        {
+          "name": "ListDeleting",
+          "value": 105
+        },
+        {
+          "name": "SiteDeleting",
+          "value": 201
+        },
+        {
+          "name": "WebDeleting",
+          "value": 202
+        },
+        {
+          "name": "WebMoving",
+          "value": 203
+        },
+        {
+          "name": "WebAdding",
+          "value": 204
+        },
+        {
+          "name": "GroupAdding",
+          "value": 301
+        },
+        {
+          "name": "GroupUpdating",
+          "value": 302
+        },
+        {
+          "name": "GroupDeleting",
+          "value": 303
+        },
+        {
+          "name": "GroupUserAdding",
+          "value": 304
+        },
+        {
+          "name": "GroupUserDeleting",
+          "value": 305
+        },
+        {
+          "name": "RoleDefinitionAdding",
+          "value": 306
+        },
+        {
+          "name": "RoleDefinitionUpdating",
+          "value": 307
+        },
+        {
+          "name": "RoleDefinitionDeleting",
+          "value": 308
+        },
+        {
+          "name": "RoleAssignmentAdding",
+          "value": 309
+        },
+        {
+          "name": "RoleAssignmentDeleting",
+          "value": 310
+        },
+        {
+          "name": "InheritanceBreaking",
+          "value": 311
+        },
+        {
+          "name": "InheritanceResetting",
+          "value": 312
+        },
+        {
+          "name": "WorkflowStarting",
+          "value": 501
+        },
+        {
+          "name": "ItemAdded",
+          "value": 10001
+        },
+        {
+          "name": "ItemUpdated",
+          "value": 10002
+        },
+        {
+          "name": "ItemDeleted",
+          "value": 10003
+        },
+        {
+          "name": "ItemCheckedIn",
+          "value": 10004
+        },
+        {
+          "name": "ItemCheckedOut",
+          "value": 10005
+        },
+        {
+          "name": "ItemUncheckedOut",
+          "value": 10006
+        },
+        {
+          "name": "ItemAttachmentAdded",
+          "value": 10007
+        },
+        {
+          "name": "ItemAttachmentDeleted",
+          "value": 10008
+        },
+        {
+          "name": "ItemFileMoved",
+          "value": 10009
+        },
+        {
+          "name": "ItemFileConverted",
+          "value": 10010
+        },
+        {
+          "name": "ItemVersionDeleted",
+          "value": 10011
+        },
+        {
+          "name": "FieldAdded",
+          "value": 10101
+        },
+        {
+          "name": "FieldUpdated",
+          "value": 10102
+        },
+        {
+          "name": "FieldDeleted",
+          "value": 10103
+        },
+        {
+          "name": "ListAdded",
+          "value": 10104
+        },
+        {
+          "name": "ListDeleted",
+          "value": 10105
+        },
+        {
+          "name": "SiteDeleted",
+          "value": 10201
+        },
+        {
+          "name": "WebDeleted",
+          "value": 10202
+        },
+        {
+          "name": "WebRestored",
+          "value": 10205
+        },
+        {
+          "name": "WebMoved",
+          "value": 10203
+        },
+        {
+          "name": "WebProvisioned",
+          "value": 10204
+        },
+        {
+          "name": "GroupAdded",
+          "value": 10301
+        },
+        {
+          "name": "GroupUpdated",
+          "value": 10302
+        },
+        {
+          "name": "GroupDeleted",
+          "value": 10303
+        },
+        {
+          "name": "GroupUserAdded",
+          "value": 10304
+        },
+        {
+          "name": "GroupUserDeleted",
+          "value": 10305
+        },
+        {
+          "name": "RoleDefinitionAdded",
+          "value": 10306
+        },
+        {
+          "name": "RoleDefinitionUpdated",
+          "value": 10307
+        },
+        {
+          "name": "RoleDefinitionDeleted",
+          "value": 10308
+        },
+        {
+          "name": "RoleAssignmentAdded",
+          "value": 10309
+        },
+        {
+          "name": "RoleAssignmentDeleted",
+          "value": 10310
+        },
+        {
+          "name": "InheritanceBroken",
+          "value": 10311
+        },
+        {
+          "name": "InheritanceReset",
+          "value": 10312
+        },
+        {
+          "name": "WorkflowStarted",
+          "value": 10501
+        },
+        {
+          "name": "WorkflowPostponed",
+          "value": 10502
+        },
+        {
+          "name": "WorkflowCompleted",
+          "value": 10503
+        },
+        {
+          "name": "EntityInstanceAdded",
+          "value": 10601
+        },
+        {
+          "name": "EntityInstanceUpdated",
+          "value": 10602
+        },
+        {
+          "name": "EntityInstanceDeleted",
+          "value": 10603
+        },
+        {
+          "name": "AppInstalled",
+          "value": 10701
+        },
+        {
+          "name": "AppUpgraded",
+          "value": 10702
+        },
+        {
+          "name": "AppUninstalling",
+          "value": 10703
+        },
+        {
+          "name": "EmailReceived",
+          "value": 20000
+        },
+        {
+          "name": "ContextEvent",
+          "value": 32766
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.FeatureDefinitionScope",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Farm",
+          "value": 1
+        },
+        {
+          "name": "Site",
+          "value": 2
+        },
+        {
+          "name": "Web",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.FieldType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Invalid",
+          "value": 0
+        },
+        {
+          "name": "Integer",
+          "value": 1
+        },
+        {
+          "name": "Text",
+          "value": 2
+        },
+        {
+          "name": "Note",
+          "value": 3
+        },
+        {
+          "name": "DateTime",
+          "value": 4
+        },
+        {
+          "name": "Counter",
+          "value": 5
+        },
+        {
+          "name": "Choice",
+          "value": 6
+        },
+        {
+          "name": "Lookup",
+          "value": 7
+        },
+        {
+          "name": "Boolean",
+          "value": 8
+        },
+        {
+          "name": "Number",
+          "value": 9
+        },
+        {
+          "name": "Currency",
+          "value": 10
+        },
+        {
+          "name": "URL",
+          "value": 11
+        },
+        {
+          "name": "Computed",
+          "value": 12
+        },
+        {
+          "name": "Threading",
+          "value": 13
+        },
+        {
+          "name": "Guid",
+          "value": 14
+        },
+        {
+          "name": "MultiChoice",
+          "value": 15
+        },
+        {
+          "name": "GridChoice",
+          "value": 16
+        },
+        {
+          "name": "Calculated",
+          "value": 17
+        },
+        {
+          "name": "File",
+          "value": 18
+        },
+        {
+          "name": "Attachments",
+          "value": 19
+        },
+        {
+          "name": "User",
+          "value": 20
+        },
+        {
+          "name": "Recurrence",
+          "value": 21
+        },
+        {
+          "name": "CrossProjectLink",
+          "value": 22
+        },
+        {
+          "name": "ModStat",
+          "value": 23
+        },
+        {
+          "name": "Error",
+          "value": 24
+        },
+        {
+          "name": "ContentTypeId",
+          "value": 25
+        },
+        {
+          "name": "PageSeparator",
+          "value": 26
+        },
+        {
+          "name": "ThreadIndex",
+          "value": 27
+        },
+        {
+          "name": "WorkflowStatus",
+          "value": 28
+        },
+        {
+          "name": "AllDayEvent",
+          "value": 29
+        },
+        {
+          "name": "WorkflowEventType",
+          "value": 30
+        },
+        {
+          "name": "Geolocation",
+          "value": 31
+        },
+        {
+          "name": "OutcomeChoice",
+          "value": 32
+        },
+        {
+          "name": "MaxItems",
+          "value": 33
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.FieldUserSelectionMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "PeopleOnly",
+          "value": 0
+        },
+        {
+          "name": "PeopleAndGroups",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.FileLevel",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Published",
+          "value": 1
+        },
+        {
+          "name": "Draft",
+          "value": 2
+        },
+        {
+          "name": "Checkout",
+          "value": 255
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.FileSystemObjectType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Invalid",
+          "value": -1
+        },
+        {
+          "name": "File",
+          "value": 0
+        },
+        {
+          "name": "Folder",
+          "value": 1
+        },
+        {
+          "name": "Web",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.ListDataValidationFailureReason",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DataFailure",
+          "value": 0
+        },
+        {
+          "name": "FormulaError",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.ListDataValidationType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "UserFormulaField",
+          "value": 0
+        },
+        {
+          "name": "UserFormulaItem",
+          "value": 1
+        },
+        {
+          "name": "RequiredField",
+          "value": 2
+        },
+        {
+          "name": "ChoiceField",
+          "value": 3
+        },
+        {
+          "name": "MinMaxField",
+          "value": 4
+        },
+        {
+          "name": "TextField",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.ListTemplateType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "InvalidType",
+          "value": -1
+        },
+        {
+          "name": "NoListTemplate",
+          "value": 0
+        },
+        {
+          "name": "GenericList",
+          "value": 100
+        },
+        {
+          "name": "DocumentLibrary",
+          "value": 101
+        },
+        {
+          "name": "Survey",
+          "value": 102
+        },
+        {
+          "name": "Links",
+          "value": 103
+        },
+        {
+          "name": "Announcements",
+          "value": 104
+        },
+        {
+          "name": "Contacts",
+          "value": 105
+        },
+        {
+          "name": "Events",
+          "value": 106
+        },
+        {
+          "name": "Tasks",
+          "value": 107
+        },
+        {
+          "name": "DiscussionBoard",
+          "value": 108
+        },
+        {
+          "name": "PictureLibrary",
+          "value": 109
+        },
+        {
+          "name": "DataSources",
+          "value": 110
+        },
+        {
+          "name": "WebTemplateCatalog",
+          "value": 111
+        },
+        {
+          "name": "UserInformation",
+          "value": 112
+        },
+        {
+          "name": "WebPartCatalog",
+          "value": 113
+        },
+        {
+          "name": "ListTemplateCatalog",
+          "value": 114
+        },
+        {
+          "name": "XMLForm",
+          "value": 115
+        },
+        {
+          "name": "MasterPageCatalog",
+          "value": 116
+        },
+        {
+          "name": "NoCodeWorkflows",
+          "value": 117
+        },
+        {
+          "name": "WorkflowProcess",
+          "value": 118
+        },
+        {
+          "name": "WebPageLibrary",
+          "value": 119
+        },
+        {
+          "name": "CustomGrid",
+          "value": 120
+        },
+        {
+          "name": "SolutionCatalog",
+          "value": 121
+        },
+        {
+          "name": "NoCodePublic",
+          "value": 122
+        },
+        {
+          "name": "ThemeCatalog",
+          "value": 123
+        },
+        {
+          "name": "DesignCatalog",
+          "value": 124
+        },
+        {
+          "name": "AppDataCatalog",
+          "value": 125
+        },
+        {
+          "name": "DataConnectionLibrary",
+          "value": 130
+        },
+        {
+          "name": "WorkflowHistory",
+          "value": 140
+        },
+        {
+          "name": "GanttTasks",
+          "value": 150
+        },
+        {
+          "name": "HelpLibrary",
+          "value": 151
+        },
+        {
+          "name": "AccessRequest",
+          "value": 160
+        },
+        {
+          "name": "TasksWithTimelineAndHierarchy",
+          "value": 171
+        },
+        {
+          "name": "MaintenanceLogs",
+          "value": 175
+        },
+        {
+          "name": "Meetings",
+          "value": 200
+        },
+        {
+          "name": "Agenda",
+          "value": 201
+        },
+        {
+          "name": "MeetingUser",
+          "value": 202
+        },
+        {
+          "name": "Decision",
+          "value": 204
+        },
+        {
+          "name": "MeetingObjective",
+          "value": 207
+        },
+        {
+          "name": "TextBox",
+          "value": 210
+        },
+        {
+          "name": "ThingsToBring",
+          "value": 211
+        },
+        {
+          "name": "HomePageLibrary",
+          "value": 212
+        },
+        {
+          "name": "Posts",
+          "value": 301
+        },
+        {
+          "name": "Comments",
+          "value": 302
+        },
+        {
+          "name": "Categories",
+          "value": 303
+        },
+        {
+          "name": "Facility",
+          "value": 402
+        },
+        {
+          "name": "Whereabouts",
+          "value": 403
+        },
+        {
+          "name": "CallTrack",
+          "value": 404
+        },
+        {
+          "name": "Circulation",
+          "value": 405
+        },
+        {
+          "name": "Timecard",
+          "value": 420
+        },
+        {
+          "name": "Holidays",
+          "value": 421
+        },
+        {
+          "name": "IMEDic",
+          "value": 499
+        },
+        {
+          "name": "ExternalList",
+          "value": 600
+        },
+        {
+          "name": "MySiteDocumentLibrary",
+          "value": 700
+        },
+        {
+          "name": "IssueTracking",
+          "value": 1100
+        },
+        {
+          "name": "AdminTasks",
+          "value": 1200
+        },
+        {
+          "name": "HealthRules",
+          "value": 1220
+        },
+        {
+          "name": "HealthReports",
+          "value": 1221
+        },
+        {
+          "name": "DeveloperSiteDraftApps",
+          "value": 1230
+        },
+        {
+          "name": "AccessApp",
+          "value": 3100
+        },
+        {
+          "name": "AlchemyMobileForm",
+          "value": 3101
+        },
+        {
+          "name": "AlchemyApprovalWorkflow",
+          "value": 3102
+        },
+        {
+          "name": "SharingLinks",
+          "value": 3300
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.MigrationJobState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Queued",
+          "value": 2
+        },
+        {
+          "name": "Processing",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.MoveOperations",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Overwrite",
+          "value": 1
+        },
+        {
+          "name": "AllowBrokenThickets",
+          "value": 8
+        },
+        {
+          "name": "BypassApprovePermission",
+          "value": 64
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.OpenWebOptions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "InitNavigationCache",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.PageType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Invalid",
+          "value": -1
+        },
+        {
+          "name": "DefaultView",
+          "value": 0
+        },
+        {
+          "name": "NormalView",
+          "value": 1
+        },
+        {
+          "name": "DialogView",
+          "value": 2
+        },
+        {
+          "name": "View",
+          "value": 3
+        },
+        {
+          "name": "DisplayForm",
+          "value": 4
+        },
+        {
+          "name": "DisplayFormDialog",
+          "value": 5
+        },
+        {
+          "name": "EditForm",
+          "value": 6
+        },
+        {
+          "name": "EditFormDialog",
+          "value": 7
+        },
+        {
+          "name": "NewForm",
+          "value": 8
+        },
+        {
+          "name": "NewFormDialog",
+          "value": 9
+        },
+        {
+          "name": "SolutionForm",
+          "value": 10
+        },
+        {
+          "name": "PAGE_MAXITEMS",
+          "value": 11
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.PolicyTipUserAction",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Override",
+          "value": 0
+        },
+        {
+          "name": "ReportFalsePositive",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.PolicyTipUserActionResult",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "FalsePositiveReported",
+          "value": 1
+        },
+        {
+          "name": "Overridden",
+          "value": 2
+        },
+        {
+          "name": "FalsePositiveReportedAndOverridden",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.QuickLaunchOptions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Off",
+          "value": 0
+        },
+        {
+          "name": "On",
+          "value": 1
+        },
+        {
+          "name": "DefaultValue",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.RecycleBinItemState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "FirstStageRecycleBin",
+          "value": 1
+        },
+        {
+          "name": "SecondStageRecycleBin",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.RecycleBinItemType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "File",
+          "value": 1
+        },
+        {
+          "name": "FileVersion",
+          "value": 2
+        },
+        {
+          "name": "ListItem",
+          "value": 3
+        },
+        {
+          "name": "List",
+          "value": 4
+        },
+        {
+          "name": "Folder",
+          "value": 5
+        },
+        {
+          "name": "FolderWithLists",
+          "value": 6
+        },
+        {
+          "name": "Attachment",
+          "value": 7
+        },
+        {
+          "name": "ListItemVersion",
+          "value": 8
+        },
+        {
+          "name": "CascadeParent",
+          "value": 9
+        },
+        {
+          "name": "Web",
+          "value": 10
+        },
+        {
+          "name": "App",
+          "value": 11
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.RecycleBinOrderBy",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Min",
+          "value": 0
+        },
+        {
+          "name": "DefaultOrderBy",
+          "value": 0
+        },
+        {
+          "name": "Title",
+          "value": 0
+        },
+        {
+          "name": "DirName",
+          "value": 1
+        },
+        {
+          "name": "Author",
+          "value": 2
+        },
+        {
+          "name": "DeletedDate",
+          "value": 3
+        },
+        {
+          "name": "Size",
+          "value": 4
+        },
+        {
+          "name": "DeletedBy",
+          "value": 5
+        },
+        {
+          "name": "None",
+          "value": 6
+        },
+        {
+          "name": "Max",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.RelationshipDeleteBehaviorType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Cascade",
+          "value": 1
+        },
+        {
+          "name": "Restrict",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.RenderListDataOptions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "ContextInfo",
+          "value": 1
+        },
+        {
+          "name": "ListData",
+          "value": 2
+        },
+        {
+          "name": "ListSchema",
+          "value": 4
+        },
+        {
+          "name": "MenuView",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.RoleType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Guest",
+          "value": 1
+        },
+        {
+          "name": "Reader",
+          "value": 2
+        },
+        {
+          "name": "Contributor",
+          "value": 3
+        },
+        {
+          "name": "WebDesigner",
+          "value": 4
+        },
+        {
+          "name": "Administrator",
+          "value": 5
+        },
+        {
+          "name": "Editor",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.RuleOverrideOptions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Allow",
+          "value": 1
+        },
+        {
+          "name": "AllowWithJustification",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.SandboxedCodeActivationCapabilities",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Check",
+          "value": 1
+        },
+        {
+          "name": "Disabled",
+          "value": 2
+        },
+        {
+          "name": "Enabled",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.Sharing.RemoveItemsFromSharedWithMeViewErrorCode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Success",
+          "value": 0
+        },
+        {
+          "name": "InvalidListItem",
+          "value": -1
+        },
+        {
+          "name": "InvalidItemSharing",
+          "value": -2
+        },
+        {
+          "name": "UnableToRemoveItem",
+          "value": -3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.Sharing.Role",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "View",
+          "value": 1
+        },
+        {
+          "name": "Edit",
+          "value": 2
+        },
+        {
+          "name": "Owner",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.SharingLinkKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Uninitialized",
+          "value": 0
+        },
+        {
+          "name": "Direct",
+          "value": 1
+        },
+        {
+          "name": "OrganizationView",
+          "value": 2
+        },
+        {
+          "name": "OrganizationEdit",
+          "value": 3
+        },
+        {
+          "name": "AnonymousView",
+          "value": 4
+        },
+        {
+          "name": "AnonymousEdit",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.SharingOperationStatusCode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "CompletedSuccessfully",
+          "value": 0
+        },
+        {
+          "name": "AccessRequestsQueued",
+          "value": 1
+        },
+        {
+          "name": "NoResolvedUsers",
+          "value": -1
+        },
+        {
+          "name": "AccessDenied",
+          "value": -2
+        },
+        {
+          "name": "CrossSiteRequestNotSupported",
+          "value": -3
+        },
+        {
+          "name": "UnknowError",
+          "value": -4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.SharingPermissionKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Group",
+          "value": 0
+        },
+        {
+          "name": "Role",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.SiteHealth.SiteHealthStatusType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Passed",
+          "value": 0
+        },
+        {
+          "name": "FailedWarning",
+          "value": 1
+        },
+        {
+          "name": "FailedError",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.SpecialFolderType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Attachment",
+          "value": 0
+        },
+        {
+          "name": "Photos",
+          "value": 1
+        },
+        {
+          "name": "CameraRoll",
+          "value": 2
+        },
+        {
+          "name": "Music",
+          "value": 3
+        },
+        {
+          "name": "Apps",
+          "value": 4
+        },
+        {
+          "name": "AppRoot",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.SPEffectiveInformationRightsManagementSettingsSource",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "File",
+          "value": 1
+        },
+        {
+          "name": "List",
+          "value": 2
+        },
+        {
+          "name": "Rule",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.TemplateFileType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "StandardPage",
+          "value": 0
+        },
+        {
+          "name": "WikiPage",
+          "value": 1
+        },
+        {
+          "name": "FormPage",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.UpgradeStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "InProgress",
+          "value": 1
+        },
+        {
+          "name": "Failed",
+          "value": 2
+        },
+        {
+          "name": "Completed",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.UpgradeType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "BuildUpgrade",
+          "value": 0
+        },
+        {
+          "name": "VersionUpgrade",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.UrlFieldFormatType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Hyperlink",
+          "value": 0
+        },
+        {
+          "name": "Image",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.UrlZone",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DefaultZone",
+          "value": 0
+        },
+        {
+          "name": "Intranet",
+          "value": 1
+        },
+        {
+          "name": "Internet",
+          "value": 2
+        },
+        {
+          "name": "Custom",
+          "value": 3
+        },
+        {
+          "name": "Extranet",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.UserCustomActionRegistrationType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "List",
+          "value": 1
+        },
+        {
+          "name": "ContentType",
+          "value": 2
+        },
+        {
+          "name": "ProgId",
+          "value": 3
+        },
+        {
+          "name": "FileType",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.UserCustomActionScope",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "Site",
+          "value": 2
+        },
+        {
+          "name": "Web",
+          "value": 3
+        },
+        {
+          "name": "List",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.UserResourceScope",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Web",
+          "value": 0
+        },
+        {
+          "name": "List",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.UserResourceType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "SingleLine",
+          "value": 0
+        },
+        {
+          "name": "MultiLine",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.UserSharingCapabilities",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "CanShareInternally",
+          "value": 1
+        },
+        {
+          "name": "CanShareExternally",
+          "value": 2
+        },
+        {
+          "name": "CanUseReadonlyLink",
+          "value": 4
+        },
+        {
+          "name": "CanManageReadonlyLink",
+          "value": 8
+        },
+        {
+          "name": "CanUseReadWriteLink",
+          "value": 16
+        },
+        {
+          "name": "CanManageReadWriteLink",
+          "value": 32
+        },
+        {
+          "name": "CanUseOrganizationReadonlyLink",
+          "value": 64
+        },
+        {
+          "name": "CanManageOrganizationReadonlyLink",
+          "value": 128
+        },
+        {
+          "name": "CanUseOrganizationReadWriteLink",
+          "value": 256
+        },
+        {
+          "name": "CanManageOrganizationReadWriteLink",
+          "value": 512
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.Utilities.DateTimeFormat",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DateTime",
+          "value": 0
+        },
+        {
+          "name": "DateOnly",
+          "value": 1
+        },
+        {
+          "name": "TimeOnly",
+          "value": 2
+        },
+        {
+          "name": "ISO8601",
+          "value": 3
+        },
+        {
+          "name": "MonthDayOnly",
+          "value": 4
+        },
+        {
+          "name": "MonthYearOnly",
+          "value": 5
+        },
+        {
+          "name": "LongDate",
+          "value": 6
+        },
+        {
+          "name": "UnknownFormat",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.Utilities.IconSize",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Size16",
+          "value": 0
+        },
+        {
+          "name": "Size32",
+          "value": 1
+        },
+        {
+          "name": "Size256",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.Utilities.LogAppErrorResult",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Success",
+          "value": 0
+        },
+        {
+          "name": "ErrorsThrottled",
+          "value": -1
+        },
+        {
+          "name": "AccessDenied",
+          "value": -2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.Utilities.PrincipalSource",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "UserInfoList",
+          "value": 1
+        },
+        {
+          "name": "Windows",
+          "value": 2
+        },
+        {
+          "name": "MembershipProvider",
+          "value": 4
+        },
+        {
+          "name": "RoleProvider",
+          "value": 8
+        },
+        {
+          "name": "All",
+          "value": 15
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.Utilities.PrincipalType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "User",
+          "value": 1
+        },
+        {
+          "name": "DistributionList",
+          "value": 2
+        },
+        {
+          "name": "SecurityGroup",
+          "value": 4
+        },
+        {
+          "name": "SharePointGroup",
+          "value": 8
+        },
+        {
+          "name": "All",
+          "value": 15
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.Utilities.SPWOPIFrameAction",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "View",
+          "value": 0
+        },
+        {
+          "name": "Edit",
+          "value": 1
+        },
+        {
+          "name": "MobileView",
+          "value": 2
+        },
+        {
+          "name": "InteractivePreview",
+          "value": 3
+        },
+        {
+          "name": "Syndicate",
+          "value": 4
+        },
+        {
+          "name": "LegacyWebService",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.ViewScope",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DefaultValue",
+          "value": 0
+        },
+        {
+          "name": "Recursive",
+          "value": 1
+        },
+        {
+          "name": "RecursiveAll",
+          "value": 2
+        },
+        {
+          "name": "FilesOnly",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.ViewType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Html",
+          "value": 1
+        },
+        {
+          "name": "Grid",
+          "value": 2048
+        },
+        {
+          "name": "Calendar",
+          "value": 524288
+        },
+        {
+          "name": "Recurrence",
+          "value": 8193
+        },
+        {
+          "name": "Chart",
+          "value": 131072
+        },
+        {
+          "name": "Gantt",
+          "value": 67108864
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.WebParts.PersonalizationScope",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "User",
+          "value": 0
+        },
+        {
+          "name": "Shared",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.Publishing.Navigation.NavigationLinkType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Root",
+          "value": 0
+        },
+        {
+          "name": "FriendlyUrl",
+          "value": 1
+        },
+        {
+          "name": "SimpleLink",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.Publishing.Navigation.StandardNavigationSource",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "PortalProvider",
+          "value": 1
+        },
+        {
+          "name": "TaxonomyProvider",
+          "value": 2
+        },
+        {
+          "name": "InheritFromParentWeb",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.Application.LoginErrorCode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NoError",
+          "value": 0
+        },
+        {
+          "name": "NotInFormsAuthenticationMode",
+          "value": 1
+        },
+        {
+          "name": "PasswordNotMatch",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.Application.AuthenticationMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Windows",
+          "value": 1
+        },
+        {
+          "name": "Passport",
+          "value": 2
+        },
+        {
+          "name": "Forms",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.ClientAuthenticationMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "FormsAuthentication",
+          "value": 1
+        },
+        {
+          "name": "Anonymous",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.ClientRequestStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Active",
+          "value": 0
+        },
+        {
+          "name": "InProgress",
+          "value": 1
+        },
+        {
+          "name": "CompletedSuccess",
+          "value": 2
+        },
+        {
+          "name": "CompletedException",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.JsonTokenType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ObjectStart",
+          "value": 0
+        },
+        {
+          "name": "ObjectEnd",
+          "value": 1
+        },
+        {
+          "name": "ArrayStart",
+          "value": 2
+        },
+        {
+          "name": "ArrayEnd",
+          "value": 3
+        },
+        {
+          "name": "String",
+          "value": 4
+        },
+        {
+          "name": "Long",
+          "value": 5
+        },
+        {
+          "name": "ULong",
+          "value": 6
+        },
+        {
+          "name": "Double",
+          "value": 7
+        },
+        {
+          "name": "Boolean",
+          "value": 8
+        },
+        {
+          "name": "DateTime",
+          "value": 9
+        },
+        {
+          "name": "Guid",
+          "value": 10
+        },
+        {
+          "name": "Null",
+          "value": 11
+        },
+        {
+          "name": "Name",
+          "value": 12
+        },
+        {
+          "name": "ByteArray",
+          "value": 13
+        },
+        {
+          "name": "StreamLink",
+          "value": 14
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.ClientTraceCategory",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "General",
+          "value": 0
+        },
+        {
+          "name": "Request",
+          "value": 1
+        },
+        {
+          "name": "Authentication",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.ClientTraceLevel",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Verbose",
+          "value": 0
+        },
+        {
+          "name": "Medium",
+          "value": 1
+        },
+        {
+          "name": "High",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.Search.Query.QueryPropertyValueType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "StringType",
+          "value": 1
+        },
+        {
+          "name": "Int32TYpe",
+          "value": 2
+        },
+        {
+          "name": "BooleanType",
+          "value": 3
+        },
+        {
+          "name": "StringArrayType",
+          "value": 4
+        },
+        {
+          "name": "UnSupportedType",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Office.Server.Search.WebControls.MessageLevel",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Information",
+          "value": 0
+        },
+        {
+          "name": "Warning",
+          "value": 1
+        },
+        {
+          "name": "Error",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.Search.Administration.SearchObjectLevel",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "SPWeb",
+          "value": 0
+        },
+        {
+          "name": "SPSite",
+          "value": 1
+        },
+        {
+          "name": "SPSiteSubscription",
+          "value": 2
+        },
+        {
+          "name": "Ssa",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.Search.Query.ReorderingRuleMatchType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ResultContainsKeyword",
+          "value": 0
+        },
+        {
+          "name": "TitleContainsKeyword",
+          "value": 1
+        },
+        {
+          "name": "TitleMatchesKeyword",
+          "value": 2
+        },
+        {
+          "name": "UrlStartsWith",
+          "value": 3
+        },
+        {
+          "name": "UrlExactlyMatches",
+          "value": 4
+        },
+        {
+          "name": "ContentTypeIs",
+          "value": 5
+        },
+        {
+          "name": "FileExtensionMatches",
+          "value": 6
+        },
+        {
+          "name": "ResultHasTag",
+          "value": 7
+        },
+        {
+          "name": "ManualCondition",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.Search.Query.SortDirection",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Ascending",
+          "value": 0
+        },
+        {
+          "name": "Descending",
+          "value": 1
+        },
+        {
+          "name": "FQLFormula",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.Taxonomy.ChangedItemType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "Term",
+          "value": 1
+        },
+        {
+          "name": "TermSet",
+          "value": 2
+        },
+        {
+          "name": "Group",
+          "value": 3
+        },
+        {
+          "name": "TermStore",
+          "value": 4
+        },
+        {
+          "name": "Site",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.Taxonomy.ChangedOperationType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "Add",
+          "value": 1
+        },
+        {
+          "name": "Edit",
+          "value": 2
+        },
+        {
+          "name": "DeleteObject",
+          "value": 3
+        },
+        {
+          "name": "Move",
+          "value": 4
+        },
+        {
+          "name": "Copy",
+          "value": 5
+        },
+        {
+          "name": "PathChange",
+          "value": 6
+        },
+        {
+          "name": "Merge",
+          "value": 7
+        },
+        {
+          "name": "ImportObject",
+          "value": 8
+        },
+        {
+          "name": "Restore",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.Taxonomy.StringMatchOption",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "StartsWith",
+          "value": 0
+        },
+        {
+          "name": "ExactMatch",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.Microfeed.IdentifierEncoding",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "CacheEncoding",
+          "value": 0
+        },
+        {
+          "name": "UserEncoding",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.Microfeed.MicroBlogEntityType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "User",
+          "value": 1
+        },
+        {
+          "name": "Document",
+          "value": 2
+        },
+        {
+          "name": "Site",
+          "value": 8
+        },
+        {
+          "name": "Tag",
+          "value": 16
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.Microfeed.MicroBlogType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "MBEProfile",
+          "value": 1
+        },
+        {
+          "name": "RootPost",
+          "value": 2
+        },
+        {
+          "name": "ReplyPost",
+          "value": 4
+        },
+        {
+          "name": "RefLike",
+          "value": 8
+        },
+        {
+          "name": "RefMention",
+          "value": 16
+        },
+        {
+          "name": "RefReply",
+          "value": 32
+        },
+        {
+          "name": "ActivityEventRootPost",
+          "value": 64
+        },
+        {
+          "name": "RefTag",
+          "value": 128
+        },
+        {
+          "name": "Reference",
+          "value": 256
+        },
+        {
+          "name": "NonRefPosts",
+          "value": 70
+        },
+        {
+          "name": "RefPosts",
+          "value": 440
+        },
+        {
+          "name": "MyRootPosts",
+          "value": 506
+        },
+        {
+          "name": "MyAllPosts",
+          "value": 510
+        },
+        {
+          "name": "TheirRootPosts",
+          "value": 490
+        },
+        {
+          "name": "TheirAllPosts",
+          "value": 494
+        },
+        {
+          "name": "All",
+          "value": 510
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.Microfeed.MicrofeedContentFormattingOptions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ReplaceTemplateVariablesWithPlaceHolders",
+          "value": 0
+        },
+        {
+          "name": "None",
+          "value": 1
+        },
+        {
+          "name": "ReplaceTemplateVariablesWithValues",
+          "value": 2
+        },
+        {
+          "name": "ReplaceTemplateVariablesWithValues_NoHrefs",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.Microfeed.MicrofeedDataLinkType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Uri",
+          "value": 1
+        },
+        {
+          "name": "String",
+          "value": 2
+        },
+        {
+          "name": "DocumentLibrary",
+          "value": 4
+        },
+        {
+          "name": "FollowedContentUri",
+          "value": 8
+        },
+        {
+          "name": "DateTime",
+          "value": 32
+        },
+        {
+          "name": "NumericString",
+          "value": 64
+        },
+        {
+          "name": "Document",
+          "value": 128
+        },
+        {
+          "name": "Tag",
+          "value": 256
+        },
+        {
+          "name": "Interest",
+          "value": 512
+        },
+        {
+          "name": "User",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.Microfeed.MicrofeedLinkActionKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Navigate",
+          "value": 0
+        },
+        {
+          "name": "AdHocAction",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.Microfeed.MicrofeedLinkType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Image",
+          "value": 1
+        },
+        {
+          "name": "Webpage",
+          "value": 2
+        },
+        {
+          "name": "Movie",
+          "value": 3
+        },
+        {
+          "name": "Audio",
+          "value": 4
+        },
+        {
+          "name": "CustomAction",
+          "value": 5
+        },
+        {
+          "name": "Document",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.Microfeed.MicrofeedPostAttributes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "IsPrivate",
+          "value": 1
+        },
+        {
+          "name": "IsDefault",
+          "value": 2
+        },
+        {
+          "name": "IsEnabled",
+          "value": 4
+        },
+        {
+          "name": "IsUserPost",
+          "value": 8
+        },
+        {
+          "name": "CanReply",
+          "value": 16
+        },
+        {
+          "name": "CanDelete",
+          "value": 32
+        },
+        {
+          "name": "CanLike",
+          "value": 64
+        },
+        {
+          "name": "EnablePeopleList",
+          "value": 128
+        },
+        {
+          "name": "CanLock",
+          "value": 256
+        },
+        {
+          "name": "CanHaveAttachments",
+          "value": 512
+        },
+        {
+          "name": "RenderPostAuthorImage",
+          "value": 1024
+        },
+        {
+          "name": "SmallImageSizePreferred",
+          "value": 2048
+        },
+        {
+          "name": "PersistToPublishedFeed",
+          "value": 4096
+        },
+        {
+          "name": "PersistToCache",
+          "value": 8192
+        },
+        {
+          "name": "IsNotification",
+          "value": 16384
+        },
+        {
+          "name": "CanFollowUp",
+          "value": 32768
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.Microfeed.MicrofeedPostSecurityAttributes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "PersistToPrivateFolder",
+          "value": 1
+        },
+        {
+          "name": "SecurityTrimContentUrl",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.Microfeed.MicrofeedPublishedFeedType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Recent",
+          "value": 0
+        },
+        {
+          "name": "Full",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.Microfeed.MicrofeedSortOrder",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ModifiedTime",
+          "value": 0
+        },
+        {
+          "name": "CreatedTime",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.Microfeed.MicrofeedStatusCode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Success",
+          "value": 0
+        },
+        {
+          "name": "ServerError",
+          "value": 1
+        },
+        {
+          "name": "InsufficientPermissions",
+          "value": 2
+        },
+        {
+          "name": "InterimPlaceholderEntity",
+          "value": 3
+        },
+        {
+          "name": "InvalidItemId",
+          "value": 4
+        },
+        {
+          "name": "InvalidThreadId",
+          "value": 5
+        },
+        {
+          "name": "InvalidUriInPostOptions",
+          "value": 6
+        },
+        {
+          "name": "InvalidMediaLinkName",
+          "value": 7
+        },
+        {
+          "name": "InvalidMediaLinkURI",
+          "value": 8
+        },
+        {
+          "name": "InvalidMediaLinkSnippetURI",
+          "value": 9
+        },
+        {
+          "name": "MediaLinkAddFailure",
+          "value": 10
+        },
+        {
+          "name": "NoServiceContext",
+          "value": 11
+        },
+        {
+          "name": "Invalid_MicroBlogType_Requested",
+          "value": 12
+        },
+        {
+          "name": "Only_One_ContentUri_Allowed_Per_Post",
+          "value": 13
+        },
+        {
+          "name": "Invalid_Content_Null_Or_Empty",
+          "value": 14
+        },
+        {
+          "name": "Invalid_Content_Length_Greater_Than_512_Chars",
+          "value": 15
+        },
+        {
+          "name": "Invalid_KeyWord_Found_In_Content",
+          "value": 16
+        },
+        {
+          "name": "Invalid_MediaLinks_SerializedString",
+          "value": 17
+        },
+        {
+          "name": "Invalid_MicroBlogPost_SerializedString",
+          "value": 18
+        },
+        {
+          "name": "MicroBlogEntity_Error_PublishedFeedList_NotFound",
+          "value": 19
+        },
+        {
+          "name": "MicroBlogEntity_Invalid_GetPublishedFeed",
+          "value": 20
+        },
+        {
+          "name": "MicroBlogPost_Error_SavingToPublishedFeed",
+          "value": 21
+        },
+        {
+          "name": "MicroBlogPost_Error_PublishingToCache",
+          "value": 22
+        },
+        {
+          "name": "MicroBlogPost_Error_DeletingFromCache",
+          "value": 23
+        },
+        {
+          "name": "MicroBLogList_Error_FetchingList",
+          "value": 24
+        },
+        {
+          "name": "MicroBlogList_Error_ExecutingQuery",
+          "value": 25
+        },
+        {
+          "name": "MicroBlogList_Error_FetchingItem",
+          "value": 26
+        },
+        {
+          "name": "MicroBlogList_Error_AddingItem",
+          "value": 27
+        },
+        {
+          "name": "MicroBlogList_Error_Updating_Item",
+          "value": 28
+        },
+        {
+          "name": "MicroBlogList_Error_FetchMBProfileItem",
+          "value": 29
+        },
+        {
+          "name": "MicroBlogList_Error_AccessingProperty",
+          "value": 30
+        },
+        {
+          "name": "InvalidRequest",
+          "value": 31
+        },
+        {
+          "name": "InvalidLikeRequest",
+          "value": 32
+        },
+        {
+          "name": "InvalidLockRequest",
+          "value": 33
+        },
+        {
+          "name": "InvalidRootPost",
+          "value": 34
+        },
+        {
+          "name": "InvalidReplyRequest",
+          "value": 35
+        },
+        {
+          "name": "InvalidReplyRequest_MaxRepliesPerRootPost_LimitReached",
+          "value": 36
+        },
+        {
+          "name": "InvalidLikeRequest_AlreadyMarkedAsLiked",
+          "value": 37
+        },
+        {
+          "name": "InvalidUnLikeRequest_AlreadyMarkedAsUnLike",
+          "value": 38
+        },
+        {
+          "name": "InvalidEMailSubscriptionRequest_AlreadyUnsubscribed",
+          "value": 39
+        },
+        {
+          "name": "InvalidEMailSubscriptionRequest_AlreadySubscribed",
+          "value": 40
+        },
+        {
+          "name": "InvalidEMailSubscriptionRequest_NotThread",
+          "value": 41
+        },
+        {
+          "name": "InvalidLockRequest_AlreadyMarkedAsLocked",
+          "value": 42
+        },
+        {
+          "name": "InvalidUnLockRequest_AlreadyMarkedAsUnLocked",
+          "value": 43
+        },
+        {
+          "name": "InvalidLockRequest_LockingNonRootPost",
+          "value": 44
+        },
+        {
+          "name": "ServerErrorCanReplyIsFalse",
+          "value": 45
+        },
+        {
+          "name": "ServerErrorFeatureDisabled",
+          "value": 46
+        },
+        {
+          "name": "ServerErrorSiteNotFound",
+          "value": 47
+        },
+        {
+          "name": "ServerErrorMicroBlogListNotFound",
+          "value": 48
+        },
+        {
+          "name": "ServerErrorRootPostNotFound",
+          "value": 49
+        },
+        {
+          "name": "ServerErrorPublishedFeedListNotFound",
+          "value": 50
+        },
+        {
+          "name": "ServerErrorPublishedFeedListItemNotFound",
+          "value": 51
+        },
+        {
+          "name": "ServerErrorSavingListItemField",
+          "value": 52
+        },
+        {
+          "name": "ServerErrorInvalidFeedRequest",
+          "value": 53
+        },
+        {
+          "name": "ServerErrorFetchingPublishedFeed",
+          "value": 54
+        },
+        {
+          "name": "ServerErrorFetchingConsolidatedFeed",
+          "value": 55
+        },
+        {
+          "name": "ServerErrorFetchingCategoricalFeed",
+          "value": 56
+        },
+        {
+          "name": "ServerErrorFetchingActivityFeed",
+          "value": 57
+        },
+        {
+          "name": "ServerErrorSecurityTrimmer",
+          "value": 58
+        },
+        {
+          "name": "ServerErrorDuplicateMessageId",
+          "value": 59
+        },
+        {
+          "name": "ServerErrorOpeningPersonalSite",
+          "value": 60
+        },
+        {
+          "name": "ServerError_Initialization",
+          "value": 61
+        },
+        {
+          "name": "ServerErrorInvalidContentURI",
+          "value": 62
+        },
+        {
+          "name": "ServerErrorInvalidFollowedItemType",
+          "value": 63
+        },
+        {
+          "name": "ServerErrorPublishingToList",
+          "value": 64
+        },
+        {
+          "name": "ServerErrorPublishingToCache",
+          "value": 65
+        },
+        {
+          "name": "MicroBlogDeletionError_NotOwner",
+          "value": 66
+        },
+        {
+          "name": "ServerCacheError_CacheNotFound",
+          "value": 67
+        },
+        {
+          "name": "ServerCacheError_NotAuthorized",
+          "value": 68
+        },
+        {
+          "name": "ServerCacheError_ThreadNotFound",
+          "value": 69
+        },
+        {
+          "name": "IncorrectTenantPartition",
+          "value": 70
+        },
+        {
+          "name": "InvalidUserAccount",
+          "value": 71
+        },
+        {
+          "name": "InvalidKeywordTag",
+          "value": 72
+        },
+        {
+          "name": "Taxonomy_TagNotAvailabelForTagging",
+          "value": 73
+        },
+        {
+          "name": "Taxonomy_TermStoreNotFound",
+          "value": 74
+        },
+        {
+          "name": "InvalidEntityIdentifier",
+          "value": 75
+        },
+        {
+          "name": "UnexpectedEntityType",
+          "value": 76
+        },
+        {
+          "name": "WarningPersonalSiteNotFoundCannotCreate",
+          "value": 77
+        },
+        {
+          "name": "WarningPersonalSiteNotFoundCanCreate",
+          "value": 78
+        },
+        {
+          "name": "WarningPersonalSiteNotFoundCanCreateNoPermissions",
+          "value": 79
+        },
+        {
+          "name": "WarningPersonalSiteNotFoundCanCreateError",
+          "value": 80
+        },
+        {
+          "name": "ErrorPersonalSiteNotFound",
+          "value": 81
+        },
+        {
+          "name": "GuidStringConversionError",
+          "value": 82
+        },
+        {
+          "name": "ServerErrorUnableToFetchUserProfile",
+          "value": 83
+        },
+        {
+          "name": "SP_MFPD_DataBase_Exception",
+          "value": 84
+        },
+        {
+          "name": "SP_MFPD_DataBase_DefinitionNotFound",
+          "value": 85
+        },
+        {
+          "name": "SP_MFPD_Invalid_Operation",
+          "value": 86
+        },
+        {
+          "name": "SP_MFPD_Invalid_Value",
+          "value": 87
+        },
+        {
+          "name": "SP_MFPD_Partition_Mismatch",
+          "value": 88
+        },
+        {
+          "name": "SP_MFPD_Definition_Disabled",
+          "value": 89
+        },
+        {
+          "name": "Invalid_MicroBlogPost_DefinitionNameIsRequired",
+          "value": 90
+        },
+        {
+          "name": "Invalid_MicroBlogPost_InvalidDefinitionName",
+          "value": 91
+        },
+        {
+          "name": "InvalidRequest_PostIsLocked",
+          "value": 92
+        },
+        {
+          "name": "ServerErrorUnableToAttachPicture",
+          "value": 93
+        },
+        {
+          "name": "InvalidFeedCacheEntity_UserMissingURI",
+          "value": 94
+        },
+        {
+          "name": "InvalidFeedCacheEntity_DocMissingURI",
+          "value": 95
+        },
+        {
+          "name": "RestrictedListStorageCompromised",
+          "value": 96
+        },
+        {
+          "name": "InvalidPostTarget",
+          "value": 97
+        },
+        {
+          "name": "WarningSiteStorageQuotaExceeded",
+          "value": 98
+        },
+        {
+          "name": "ServerErrorCannotAccessDatabase",
+          "value": 99
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.Social.SocialActorType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "User",
+          "value": 0
+        },
+        {
+          "name": "Document",
+          "value": 1
+        },
+        {
+          "name": "Site",
+          "value": 2
+        },
+        {
+          "name": "Tag",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.Social.SocialActorTypes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Users",
+          "value": 1
+        },
+        {
+          "name": "Documents",
+          "value": 2
+        },
+        {
+          "name": "Sites",
+          "value": 4
+        },
+        {
+          "name": "Tags",
+          "value": 8
+        },
+        {
+          "name": "ExcludeContentWithoutFeeds",
+          "value": 268435456
+        },
+        {
+          "name": "All",
+          "value": 15
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.Social.SocialAttachmentActionKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Navigate",
+          "value": 0
+        },
+        {
+          "name": "AdHocAction",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.Social.SocialAttachmentKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Image",
+          "value": 0
+        },
+        {
+          "name": "Video",
+          "value": 1
+        },
+        {
+          "name": "Document",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.Social.SocialDataItemType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "User",
+          "value": 0
+        },
+        {
+          "name": "Document",
+          "value": 1
+        },
+        {
+          "name": "Site",
+          "value": 2
+        },
+        {
+          "name": "Tag",
+          "value": 3
+        },
+        {
+          "name": "Link",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.Social.SocialDataOverlayType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Link",
+          "value": 0
+        },
+        {
+          "name": "Actors",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.Social.SocialFeedAttributes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "MoreThreadsAvailable",
+          "value": 1
+        },
+        {
+          "name": "ValidTimeRange",
+          "value": 2
+        },
+        {
+          "name": "MovedToYammer",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.Social.SocialFeedSortOrder",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ByModifiedTime",
+          "value": 0
+        },
+        {
+          "name": "ByCreatedTime",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.Social.SocialFeedType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Personal",
+          "value": 0
+        },
+        {
+          "name": "News",
+          "value": 1
+        },
+        {
+          "name": "Timeline",
+          "value": 2
+        },
+        {
+          "name": "Likes",
+          "value": 3
+        },
+        {
+          "name": "Everyone",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.Social.SocialFollowResult",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "OK",
+          "value": 0
+        },
+        {
+          "name": "AlreadyFollowing",
+          "value": 1
+        },
+        {
+          "name": "LimitReached",
+          "value": 2
+        },
+        {
+          "name": "InternalError",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.Social.SocialPostAttributes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "CanLike",
+          "value": 1
+        },
+        {
+          "name": "CanDelete",
+          "value": 2
+        },
+        {
+          "name": "UseAuthorImage",
+          "value": 4
+        },
+        {
+          "name": "UseSmallImage",
+          "value": 8
+        },
+        {
+          "name": "CanFollowUp",
+          "value": 16
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.Social.SocialPostDefinitionDataItemType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Text",
+          "value": 0
+        },
+        {
+          "name": "User",
+          "value": 1
+        },
+        {
+          "name": "Document",
+          "value": 2
+        },
+        {
+          "name": "Site",
+          "value": 3
+        },
+        {
+          "name": "Tag",
+          "value": 4
+        },
+        {
+          "name": "Link",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.Social.SocialPostType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Root",
+          "value": 0
+        },
+        {
+          "name": "Reply",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.Social.SocialStatusCode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "OK",
+          "value": 0
+        },
+        {
+          "name": "InvalidRequest",
+          "value": 1
+        },
+        {
+          "name": "AccessDenied",
+          "value": 2
+        },
+        {
+          "name": "ItemNotFound",
+          "value": 3
+        },
+        {
+          "name": "InvalidOperation",
+          "value": 4
+        },
+        {
+          "name": "ItemNotModified",
+          "value": 5
+        },
+        {
+          "name": "InternalError",
+          "value": 6
+        },
+        {
+          "name": "CacheReadError",
+          "value": 7
+        },
+        {
+          "name": "CacheUpdateError",
+          "value": 8
+        },
+        {
+          "name": "PersonalSiteNotFound",
+          "value": 9
+        },
+        {
+          "name": "FailedToCreatePersonalSite",
+          "value": 10
+        },
+        {
+          "name": "NotAuthorizedToCreatePersonalSite",
+          "value": 11
+        },
+        {
+          "name": "CannotCreatePersonalSite",
+          "value": 12
+        },
+        {
+          "name": "LimitReached",
+          "value": 13
+        },
+        {
+          "name": "AttachmentError",
+          "value": 14
+        },
+        {
+          "name": "PartialData",
+          "value": 15
+        },
+        {
+          "name": "FeatureDisabled",
+          "value": 16
+        },
+        {
+          "name": "StorageQuotaExceeded",
+          "value": 17
+        },
+        {
+          "name": "DatabaseError",
+          "value": 18
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.Social.SocialThreadAttributes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "IsDigest",
+          "value": 1
+        },
+        {
+          "name": "CanReply",
+          "value": 2
+        },
+        {
+          "name": "CanLock",
+          "value": 4
+        },
+        {
+          "name": "IsLocked",
+          "value": 8
+        },
+        {
+          "name": "ReplyLimitReached",
+          "value": 16
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.Social.SocialThreadType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Normal",
+          "value": 0
+        },
+        {
+          "name": "LikeReference",
+          "value": 1
+        },
+        {
+          "name": "ReplyReference",
+          "value": 2
+        },
+        {
+          "name": "MentionReference",
+          "value": 3
+        },
+        {
+          "name": "TagReference",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.UserProfiles.ChangeTypes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Add",
+          "value": 1
+        },
+        {
+          "name": "Modify",
+          "value": 2
+        },
+        {
+          "name": "Remove",
+          "value": 4
+        },
+        {
+          "name": "Metadata",
+          "value": 8
+        },
+        {
+          "name": "All",
+          "value": 15
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.UserProfiles.FollowedContentExceptionCode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ItemAlreadyExists",
+          "value": 3
+        },
+        {
+          "name": "ItemDoesNotExist",
+          "value": 4
+        },
+        {
+          "name": "InvalidQueryString",
+          "value": 5
+        },
+        {
+          "name": "InvalidSubtypeValue",
+          "value": 6
+        },
+        {
+          "name": "UnsupportedItemType",
+          "value": 7
+        },
+        {
+          "name": "FollowLimitReached",
+          "value": 8
+        },
+        {
+          "name": "UntrustedSource",
+          "value": 9
+        },
+        {
+          "name": "UnsupportedSite",
+          "value": 10
+        },
+        {
+          "name": "InternalError",
+          "value": 11
+        },
+        {
+          "name": "ItemNotFound",
+          "value": 12
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.UserProfiles.FollowedContentQueryOptions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unset",
+          "value": 0
+        },
+        {
+          "name": "Sites",
+          "value": 1
+        },
+        {
+          "name": "Documents",
+          "value": 2
+        },
+        {
+          "name": "Hidden",
+          "value": 4
+        },
+        {
+          "name": "NonFeed",
+          "value": 8
+        },
+        {
+          "name": "DefaultOptions",
+          "value": 15
+        },
+        {
+          "name": "All",
+          "value": 255
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.UserProfiles.FollowedItemType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "Document",
+          "value": 1
+        },
+        {
+          "name": "Site",
+          "value": 2
+        },
+        {
+          "name": "All",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.UserProfiles.FollowedStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Followed",
+          "value": 0
+        },
+        {
+          "name": "NotFollowed",
+          "value": 1
+        },
+        {
+          "name": "NotFollowable",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.UserProfiles.FollowResultType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "Followed",
+          "value": 1
+        },
+        {
+          "name": "Refollowed",
+          "value": 2
+        },
+        {
+          "name": "HitFollowLimit",
+          "value": 3
+        },
+        {
+          "name": "Failed",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.UserProfiles.ObjectTypes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "SingleValueProperty",
+          "value": 1
+        },
+        {
+          "name": "MultiValueProperty",
+          "value": 2
+        },
+        {
+          "name": "Anniversary",
+          "value": 4
+        },
+        {
+          "name": "DLMembership",
+          "value": 8
+        },
+        {
+          "name": "SiteMembership",
+          "value": 16
+        },
+        {
+          "name": "QuickLink",
+          "value": 32
+        },
+        {
+          "name": "Colleague",
+          "value": 64
+        },
+        {
+          "name": "PersonalizationSite",
+          "value": 128
+        },
+        {
+          "name": "UserProfile",
+          "value": 256
+        },
+        {
+          "name": "WebLog",
+          "value": 512
+        },
+        {
+          "name": "Custom",
+          "value": 1024
+        },
+        {
+          "name": "OrganizationProfile",
+          "value": 2048
+        },
+        {
+          "name": "OrganizationMembership",
+          "value": 4096
+        },
+        {
+          "name": "All",
+          "value": 8191
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.UserProfiles.PersonalSiteCapabilities",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Profile",
+          "value": 1
+        },
+        {
+          "name": "Social",
+          "value": 2
+        },
+        {
+          "name": "Storage",
+          "value": 4
+        },
+        {
+          "name": "MyTasksDashboard",
+          "value": 8
+        },
+        {
+          "name": "Education",
+          "value": 16
+        },
+        {
+          "name": "Guest",
+          "value": 32
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.UserProfiles.PersonalSiteCreationPriority",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Low",
+          "value": 0
+        },
+        {
+          "name": "Medium",
+          "value": 1
+        },
+        {
+          "name": "High",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.UserProfiles.PersonalSiteInstantiationState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Uninitialized",
+          "value": 0
+        },
+        {
+          "name": "Enqueued",
+          "value": 1
+        },
+        {
+          "name": "Created",
+          "value": 2
+        },
+        {
+          "name": "Deleted",
+          "value": 3
+        },
+        {
+          "name": "PermissionsGeneralFailure",
+          "value": 4096
+        },
+        {
+          "name": "PermissionsUPANotGranted",
+          "value": 4097
+        },
+        {
+          "name": "PermissionsUserNotLicensed",
+          "value": 4098
+        },
+        {
+          "name": "PermissionsSelfServiceSiteCreationDisabled",
+          "value": 4099
+        },
+        {
+          "name": "PermissionsNoMySitesInPeopleLight",
+          "value": 4100
+        },
+        {
+          "name": "PermissionsEmptyHostUrl",
+          "value": 4101
+        },
+        {
+          "name": "PermissionsHostFailedToInitializePersonalSiteContext",
+          "value": 4102
+        },
+        {
+          "name": "ErrorGeneralFailure",
+          "value": 8192
+        },
+        {
+          "name": "ErrorManagedPathDoesNotExist",
+          "value": 8193
+        },
+        {
+          "name": "ErrorLanguageNotInstalled",
+          "value": 8194
+        },
+        {
+          "name": "ErrorPartialCreate",
+          "value": 8195
+        },
+        {
+          "name": "ErrorPersonalSiteAlreadyExists",
+          "value": 8196
+        },
+        {
+          "name": "ErrorRootSiteNotPresent",
+          "value": 8197
+        },
+        {
+          "name": "ErrorSelfServiceSiteCreateCallFailed",
+          "value": 8198
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.UserProfiles.SocialDataStoreExceptionCode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "SocialListNotFound",
+          "value": 0
+        },
+        {
+          "name": "PersonalSiteNotFound",
+          "value": 1
+        },
+        {
+          "name": "CannotCreatePersonalSite",
+          "value": 2
+        },
+        {
+          "name": "NoSocialFeatures",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.WorkflowServices.WorkflowServiceHealthStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Active",
+          "value": 0
+        },
+        {
+          "name": "NoScope",
+          "value": 1
+        },
+        {
+          "name": "NotConnected",
+          "value": 2
+        },
+        {
+          "name": "Suspended",
+          "value": 3
+        },
+        {
+          "name": "Throttled",
+          "value": 4
+        },
+        {
+          "name": "Unknown",
+          "value": 5
+        },
+        {
+          "name": "Unregistered",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.SharePoint.Client.WorkflowServices.WorkflowStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NotStarted",
+          "value": 0
+        },
+        {
+          "name": "Started",
+          "value": 1
+        },
+        {
+          "name": "Suspended",
+          "value": 2
+        },
+        {
+          "name": "Canceling",
+          "value": 3
+        },
+        {
+          "name": "Canceled",
+          "value": 4
+        },
+        {
+          "name": "Terminated",
+          "value": 5
+        },
+        {
+          "name": "Completed",
+          "value": 6
+        },
+        {
+          "name": "NotSpecified",
+          "value": 7
+        },
+        {
+          "name": "Invalid",
+          "value": 8
+        }
+      ]
+    }
+  ],
+  "namespaceMappings": []
+}

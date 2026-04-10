@@ -1,0 +1,993 @@
+{
+  "schema": {
+    "id": "activity-catalog",
+    "version": "v0.3"
+  },
+  "source": {
+    "kind": "nuget-package",
+    "id": "UiPath.OCR.Activities",
+    "version": "3.24.0",
+    "feedUrl": null,
+    "authors": "UiPath",
+    "projectUrl": "https://docs.uipath.com/activities/docs/about-the-uipath-ocr-activities-pack",
+    "description": "IMPORTANT: Installing this package version requires upgrading all the other Document Understanding packages to their latest version. (in case any are installed).\n\nThis includes the following packages: IntelligentOCR (>= 6.20.0), DocumentUnderstanding.ML (>= 1.29.0), PDF (>= 3.20.0), OCR.Activities (>= 3.21.0), OmniPage (>= 1.21.0) and Vision (>= 3.14.0). On lower versions, some functionality may be missing or unexpected errors might occur.\n\nThe UiPath.OCR.Activities package contains the \"UiPath Screen OCR\" and \"UiPath Document OCR\" activities, that use UiPath's OCR engines.",
+    "license": "https://www.uipath.com/hubfs/legalspot/UiPath_MSSA.pdf",
+    "tags": "UiPathActivities",
+    "packageTypes": []
+  },
+  "generatedAt": "2026-04-10T09:21:23Z",
+  "activities": [
+    {
+      "id": "UiPath.OCR.Activities.UiPathDocumentOCR@UiPath.OCR.Activities/3.24.0",
+      "fullName": "UiPath.OCR.Activities.UiPathDocumentOCR",
+      "displayName": "UiPath Document OCR",
+      "description": "Extracts a string containing all the text from the input image, along with all word positions.  This OCR engine is optimized for processing document images.",
+      "category": null,
+      "visibility": "legacy",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "isObsolete": false,
+      "obsoleteMessage": null,
+      "xmlNamespace": null,
+      "xmlPrefix": null,
+      "members": [
+        {
+          "name": "Endpoint",
+          "displayName": "Endpoint",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ApiKey",
+          "displayName": "ApiKey",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "UseLocalServer",
+          "displayName": "UseLocalServer",
+          "dataType": "System.Activities.InArgument<System.Boolean>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "UseSeparateOcrProcess",
+          "displayName": "UseSeparateOcrProcess",
+          "dataType": "System.Activities.InArgument<System.Boolean>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "Image",
+          "displayName": "Image",
+          "dataType": "System.Activities.InArgument<System.Drawing.Image>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "Timeout",
+          "displayName": "Timeout",
+          "dataType": "System.Activities.InArgument<System.Int32>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "Text",
+          "displayName": "Text",
+          "dataType": "System.Activities.OutArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "out",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        }
+      ]
+    },
+    {
+      "id": "UiPath.OCR.Activities.UiPathScreenOCR@UiPath.OCR.Activities/3.24.0",
+      "fullName": "UiPath.OCR.Activities.UiPathScreenOCR",
+      "displayName": "UiPath Screen OCR",
+      "description": "Extracts a string and its information from an indicated UI element using the UiPath Screen OCR engine.",
+      "category": null,
+      "visibility": "legacy",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "isObsolete": false,
+      "obsoleteMessage": null,
+      "xmlNamespace": null,
+      "xmlPrefix": null,
+      "members": [
+        {
+          "name": "Endpoint",
+          "displayName": "Endpoint",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ApiKey",
+          "displayName": "ApiKey",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "UseAccents",
+          "displayName": "UseAccents",
+          "dataType": "System.Activities.InArgument<System.Boolean>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "UseLocalServer",
+          "displayName": "UseLocalServer",
+          "dataType": "System.Activities.InArgument<System.Boolean>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "UseSeparateOcrProcess",
+          "displayName": "UseSeparateOcrProcess",
+          "dataType": "System.Activities.InArgument<System.Boolean>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "Image",
+          "displayName": "Image",
+          "dataType": "System.Activities.InArgument<System.Drawing.Image>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "Timeout",
+          "displayName": "Timeout",
+          "dataType": "System.Activities.InArgument<System.Int32>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "Text",
+          "displayName": "Text",
+          "dataType": "System.Activities.OutArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "out",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        }
+      ]
+    }
+  ],
+  "enums": [
+    {
+      "fullName": "UiPath.DU.Shared.DuAppClient.ApplyOcrOnPdfs",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "YES",
+          "value": 0
+        },
+        {
+          "name": "NO",
+          "value": 1
+        },
+        {
+          "name": "AUTO",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Shared.Activities.Services.Language",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "VisualBasic",
+          "value": 0
+        },
+        {
+          "name": "CSharp",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Shared.Activities.Performance.ApplicationType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "API",
+          "value": 1
+        },
+        {
+          "name": "WindowsApplication",
+          "value": 2
+        },
+        {
+          "name": "Chrome",
+          "value": 3
+        },
+        {
+          "name": "Default",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Shared.Activities.Performance.PerfCommandType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "Start",
+          "value": 1
+        },
+        {
+          "name": "Stop",
+          "value": 2
+        },
+        {
+          "name": "Alive",
+          "value": 3
+        },
+        {
+          "name": "Data",
+          "value": 4
+        },
+        {
+          "name": "Error",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Shared.JobWrapper.JobObjectInfoType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AssociateCompletionPortInformation",
+          "value": 7
+        },
+        {
+          "name": "BasicLimitInformation",
+          "value": 2
+        },
+        {
+          "name": "BasicUIRestrictions",
+          "value": 4
+        },
+        {
+          "name": "EndOfJobTimeInformation",
+          "value": 6
+        },
+        {
+          "name": "ExtendedLimitInformation",
+          "value": 9
+        },
+        {
+          "name": "SecurityLimitInformation",
+          "value": 5
+        },
+        {
+          "name": "GroupInformation",
+          "value": 11
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Shared.NativeMessageBox.MessageBoxOptions",
+      "underlyingType": "System.UInt32",
+      "members": [
+        {
+          "name": "OkOnly",
+          "value": 0
+        },
+        {
+          "name": "OkCancel",
+          "value": 1
+        },
+        {
+          "name": "AbortRetryIgnore",
+          "value": 2
+        },
+        {
+          "name": "YesNoCancel",
+          "value": 3
+        },
+        {
+          "name": "YesNo",
+          "value": 4
+        },
+        {
+          "name": "RetryCancel",
+          "value": 5
+        },
+        {
+          "name": "CancelTryContinue",
+          "value": 6
+        },
+        {
+          "name": "IconHand",
+          "value": 16
+        },
+        {
+          "name": "IconQuestion",
+          "value": 32
+        },
+        {
+          "name": "IconExclamation",
+          "value": 48
+        },
+        {
+          "name": "IconAsterisk",
+          "value": 64
+        },
+        {
+          "name": "UserIcon",
+          "value": 128
+        },
+        {
+          "name": "IconWarning",
+          "value": 48
+        },
+        {
+          "name": "IconError",
+          "value": 16
+        },
+        {
+          "name": "IconInformation",
+          "value": 64
+        },
+        {
+          "name": "IconStop",
+          "value": 16
+        },
+        {
+          "name": "DefButton1",
+          "value": 0
+        },
+        {
+          "name": "DefButton2",
+          "value": 256
+        },
+        {
+          "name": "DefButton3",
+          "value": 512
+        },
+        {
+          "name": "DefButton4",
+          "value": 768
+        },
+        {
+          "name": "ApplicationModal",
+          "value": 0
+        },
+        {
+          "name": "SystemModal",
+          "value": 4096
+        },
+        {
+          "name": "TaskModal",
+          "value": 8192
+        },
+        {
+          "name": "Help",
+          "value": 16384
+        },
+        {
+          "name": "NoFocus",
+          "value": 32768
+        },
+        {
+          "name": "SetForeground",
+          "value": 65536
+        },
+        {
+          "name": "DefaultDesktopOnly",
+          "value": 131072
+        },
+        {
+          "name": "Topmost",
+          "value": 262144
+        },
+        {
+          "name": "Right",
+          "value": 524288
+        },
+        {
+          "name": "RTLReading",
+          "value": 1048576
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Shared.NativeMessageBox.MessageBoxResult",
+      "underlyingType": "System.UInt32",
+      "members": [
+        {
+          "name": "Error",
+          "value": 0
+        },
+        {
+          "name": "Ok",
+          "value": 1
+        },
+        {
+          "name": "Cancel",
+          "value": 2
+        },
+        {
+          "name": "Abort",
+          "value": 3
+        },
+        {
+          "name": "Retry",
+          "value": 4
+        },
+        {
+          "name": "Ignore",
+          "value": 5
+        },
+        {
+          "name": "Yes",
+          "value": 6
+        },
+        {
+          "name": "No",
+          "value": 7
+        },
+        {
+          "name": "Close",
+          "value": 8
+        },
+        {
+          "name": "Help",
+          "value": 9
+        },
+        {
+          "name": "TryAgain",
+          "value": 10
+        },
+        {
+          "name": "Continue",
+          "value": 11
+        },
+        {
+          "name": "Timeout",
+          "value": 32000
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Vision.MicrosoftAzure.Models.ReadApiV3.OperationStatusCodesV3",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NotStarted",
+          "value": 0
+        },
+        {
+          "name": "Running",
+          "value": 1
+        },
+        {
+          "name": "Failed",
+          "value": 2
+        },
+        {
+          "name": "Succeeded",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Vision.MicrosoftAzure.Models.ReadApiV3.TextRecognitionResultDimensionUnitV3",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Pixel",
+          "value": 0
+        },
+        {
+          "name": "Inch",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Vision.Core.OCR.MicrosoftAzureDetectionMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Azure",
+          "value": 0
+        },
+        {
+          "name": "DocumentUnderstanding",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Vision.Core.Shared.VisionImageFormat",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Jpeg",
+          "value": 0
+        },
+        {
+          "name": "Tiff",
+          "value": 1
+        },
+        {
+          "name": "Png",
+          "value": 2
+        },
+        {
+          "name": "Bmp",
+          "value": 3
+        },
+        {
+          "name": "Gif",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Vision.OCR.OCRResultCode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Success",
+          "value": 0
+        },
+        {
+          "name": "ServiceNotAvailable",
+          "value": 1
+        },
+        {
+          "name": "EngineError",
+          "value": 2
+        },
+        {
+          "name": "OperationCancelled",
+          "value": 3
+        },
+        {
+          "name": "InvalidEngine",
+          "value": 100
+        },
+        {
+          "name": "InvalidInputImage",
+          "value": 101
+        },
+        {
+          "name": "InvalidInputLanguage",
+          "value": 102
+        },
+        {
+          "name": "MicrosoftAzureComputerVisionErrorProcessing",
+          "value": 750
+        },
+        {
+          "name": "MicrosoftAzureComputerVisionErrorRunEngine",
+          "value": 751
+        },
+        {
+          "name": "MicrosoftAzureComputerVisionErrorInitEngine",
+          "value": 752
+        },
+        {
+          "name": "UiPathOCRErrorLoadEngine",
+          "value": 99900
+        },
+        {
+          "name": "UiPathOCRErrorInitEngine",
+          "value": 99901
+        },
+        {
+          "name": "UiPathOCRInvalidApiKey",
+          "value": 99902
+        },
+        {
+          "name": "UiPathOCRErrorRunningEngine",
+          "value": 99903
+        },
+        {
+          "name": "UiPathOCRErrorInvalidResponse",
+          "value": 99904
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Vision.OCR.ProfileActions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Grayscale",
+          "value": 1
+        },
+        {
+          "name": "Deskew",
+          "value": 2
+        },
+        {
+          "name": "Sharpen",
+          "value": 4
+        },
+        {
+          "name": "Scale",
+          "value": 8
+        },
+        {
+          "name": "Binarize",
+          "value": 16
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Vision.OCR.OCRProfile",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Screen",
+          "value": 1
+        },
+        {
+          "name": "Scan",
+          "value": 2
+        },
+        {
+          "name": "Legacy",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Vision.OCR.Preprocess.AlgorithmType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Invert",
+          "value": 1
+        },
+        {
+          "name": "Grayscale",
+          "value": 2
+        },
+        {
+          "name": "Deskew",
+          "value": 4
+        },
+        {
+          "name": "Sharpen",
+          "value": 8
+        },
+        {
+          "name": "Scale",
+          "value": 16
+        },
+        {
+          "name": "Binarize",
+          "value": 32
+        },
+        {
+          "name": "RemoveLines",
+          "value": 64
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Vision.OCR.Preprocess.ImageEngine",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Emgu",
+          "value": 0
+        },
+        {
+          "name": "OpenCV",
+          "value": 1
+        },
+        {
+          "name": "Legacy",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Vision.OCR.Engine.FontStyles",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Normal",
+          "value": 1
+        },
+        {
+          "name": "Bold",
+          "value": 2
+        },
+        {
+          "name": "Italic",
+          "value": 4
+        },
+        {
+          "name": "Underlined",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Vision.OCR.Engine.OCRRotation",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Rotated90",
+          "value": 90
+        },
+        {
+          "name": "Rotated180",
+          "value": 180
+        },
+        {
+          "name": "Rotated270",
+          "value": 270
+        },
+        {
+          "name": "Other",
+          "value": 1000
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Vision.OCR.Engine.MicrosoftAzureActivityContext",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DU",
+          "value": 0
+        },
+        {
+          "name": "CV",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.OCR.Core.Model.Type",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Text",
+          "value": 0
+        },
+        {
+          "name": "Handwriting",
+          "value": 1
+        },
+        {
+          "name": "Signature",
+          "value": 2
+        },
+        {
+          "name": "Barcode",
+          "value": 3
+        },
+        {
+          "name": "Checkbox",
+          "value": 4
+        },
+        {
+          "name": "Circle",
+          "value": 5
+        },
+        {
+          "name": "Underline",
+          "value": 6
+        },
+        {
+          "name": "Cut",
+          "value": 7
+        },
+        {
+          "name": "Stamp",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.OCR.Core.Core.Engines",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ScreenOcr",
+          "value": 0
+        },
+        {
+          "name": "DocumentOcr",
+          "value": 1
+        },
+        {
+          "name": "Cjk",
+          "value": 2
+        }
+      ]
+    }
+  ],
+  "namespaceMappings": []
+}

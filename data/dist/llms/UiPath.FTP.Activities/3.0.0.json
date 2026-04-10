@@ -1,0 +1,1149 @@
+{
+  "schema": {
+    "id": "activity-catalog",
+    "version": "v0.3"
+  },
+  "source": {
+    "kind": "nuget-package",
+    "id": "UiPath.FTP.Activities",
+    "version": "3.0.0",
+    "feedUrl": null,
+    "authors": "UiPath",
+    "projectUrl": null,
+    "description": "UiPath FTP Activities Pack",
+    "license": "https://docs.uipath.com/activities/docs/about-the-ftp-activities-pack",
+    "tags": "UiPathActivities",
+    "packageTypes": []
+  },
+  "generatedAt": "2026-04-10T09:21:23Z",
+  "activities": [
+    {
+      "id": "UiPath.FTP.Activities.Delete@UiPath.FTP.Activities/3.0.0",
+      "fullName": "UiPath.FTP.Activities.Delete",
+      "displayName": "Delete File or Folder",
+      "description": "Removes a specified file from an FTP server. This activity only works if it is placed inside a With FTP Session scope activity.",
+      "category": null,
+      "visibility": "browsable",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "isObsolete": false,
+      "obsoleteMessage": null,
+      "xmlNamespace": null,
+      "xmlPrefix": null,
+      "members": [
+        {
+          "name": "RemotePath",
+          "displayName": "RemotePath",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ContinueOnError",
+          "displayName": "ContinueOnError",
+          "dataType": "System.Activities.InArgument<System.Boolean>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        }
+      ]
+    },
+    {
+      "id": "UiPath.FTP.Activities.DirectoryExists@UiPath.FTP.Activities/3.0.0",
+      "fullName": "UiPath.FTP.Activities.DirectoryExists",
+      "displayName": "Directory Exists",
+      "description": "Checks whether a certain directory exists on an FTP server. This activity only works if it is placed inside a With FTP Session scope activity.",
+      "category": null,
+      "visibility": "browsable",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "isObsolete": false,
+      "obsoleteMessage": null,
+      "xmlNamespace": null,
+      "xmlPrefix": null,
+      "members": [
+        {
+          "name": "RemotePath",
+          "displayName": "RemotePath",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "Exists",
+          "displayName": "Exists",
+          "dataType": "System.Activities.OutArgument<System.Boolean>",
+          "memberKind": "argument",
+          "argumentDirection": "out",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ContinueOnError",
+          "displayName": "ContinueOnError",
+          "dataType": "System.Activities.InArgument<System.Boolean>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        }
+      ]
+    },
+    {
+      "id": "UiPath.FTP.Activities.DownloadFiles@UiPath.FTP.Activities/3.0.0",
+      "fullName": "UiPath.FTP.Activities.DownloadFiles",
+      "displayName": "Download Files",
+      "description": "Downloads the specified files from an FTP server to the specified local folder. This activity only works if it is placed inside a With FTP Session scope activity.",
+      "category": null,
+      "visibility": "browsable",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "isObsolete": false,
+      "obsoleteMessage": null,
+      "xmlNamespace": null,
+      "xmlPrefix": null,
+      "members": [
+        {
+          "name": "RemotePath",
+          "displayName": "RemotePath",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "LocalPath",
+          "displayName": "LocalPath",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "Recursive",
+          "displayName": "Recursive",
+          "dataType": "System.Boolean",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "Create",
+          "displayName": "Create",
+          "dataType": "System.Boolean",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "Overwrite",
+          "displayName": "Overwrite",
+          "dataType": "System.Boolean",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ContinueOnError",
+          "displayName": "ContinueOnError",
+          "dataType": "System.Activities.InArgument<System.Boolean>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        }
+      ]
+    },
+    {
+      "id": "UiPath.FTP.Activities.EnumerateObjects@UiPath.FTP.Activities/3.0.0",
+      "fullName": "UiPath.FTP.Activities.EnumerateObjects",
+      "displayName": "Enumerate Objects",
+      "description": "Generates a collection of files that have been found on the FTP server. Subfolders can also be included in the search by checking the Includes subfolders box. This activity only works if it is placed inside a With FTP Session scope activity.",
+      "category": null,
+      "visibility": "browsable",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "isObsolete": false,
+      "obsoleteMessage": null,
+      "xmlNamespace": null,
+      "xmlPrefix": null,
+      "members": [
+        {
+          "name": "RemotePath",
+          "displayName": "RemotePath",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "Recursive",
+          "displayName": "Recursive",
+          "dataType": "System.Boolean",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "Filter",
+          "displayName": "Filter",
+          "dataType": "UiPath.FTP.FtpFilterObjectType",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": "Mono.Cecil.CustomAttributeArgument",
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "Files",
+          "displayName": "Files",
+          "dataType": "System.Activities.OutArgument<System.Collections.Generic.IEnumerable<UiPath.FTP.FtpObjectInfo>>",
+          "memberKind": "argument",
+          "argumentDirection": "out",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ContinueOnError",
+          "displayName": "ContinueOnError",
+          "dataType": "System.Activities.InArgument<System.Boolean>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        }
+      ]
+    },
+    {
+      "id": "UiPath.FTP.Activities.FileExists@UiPath.FTP.Activities/3.0.0",
+      "fullName": "UiPath.FTP.Activities.FileExists",
+      "displayName": "File Exists",
+      "description": "Checks whether a certain file exists in the specified FTP directory. This activity only works if it is placed inside a With FTP Session scope activity.",
+      "category": null,
+      "visibility": "browsable",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "isObsolete": false,
+      "obsoleteMessage": null,
+      "xmlNamespace": null,
+      "xmlPrefix": null,
+      "members": [
+        {
+          "name": "RemotePath",
+          "displayName": "RemotePath",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "Exists",
+          "displayName": "Exists",
+          "dataType": "System.Activities.OutArgument<System.Boolean>",
+          "memberKind": "argument",
+          "argumentDirection": "out",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ContinueOnError",
+          "displayName": "ContinueOnError",
+          "dataType": "System.Activities.InArgument<System.Boolean>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        }
+      ]
+    },
+    {
+      "id": "UiPath.FTP.Activities.MoveItem@UiPath.FTP.Activities/3.0.0",
+      "fullName": "UiPath.FTP.Activities.MoveItem",
+      "displayName": "Move File or Folder",
+      "description": "Moves an item on an FTP server to a different remote path. This activity only works if it is placed inside a With FTP",
+      "category": null,
+      "visibility": "browsable",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "isObsolete": false,
+      "obsoleteMessage": null,
+      "xmlNamespace": null,
+      "xmlPrefix": null,
+      "members": [
+        {
+          "name": "RemotePath",
+          "displayName": "RemotePath",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "NewPath",
+          "displayName": "NewPath",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "Overwrite",
+          "displayName": "Overwrite",
+          "dataType": "System.Boolean",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ContinueOnError",
+          "displayName": "ContinueOnError",
+          "dataType": "System.Activities.InArgument<System.Boolean>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        }
+      ]
+    },
+    {
+      "id": "UiPath.FTP.Activities.UploadFiles@UiPath.FTP.Activities/3.0.0",
+      "fullName": "UiPath.FTP.Activities.UploadFiles",
+      "displayName": "Upload Files",
+      "description": "Uploads a file to an FTP server. This activity only works if it is placed inside a With FTP Session scope activity.",
+      "category": null,
+      "visibility": "browsable",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "isObsolete": false,
+      "obsoleteMessage": null,
+      "xmlNamespace": null,
+      "xmlPrefix": null,
+      "members": [
+        {
+          "name": "LocalPath",
+          "displayName": "LocalPath",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "RemotePath",
+          "displayName": "RemotePath",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "Recursive",
+          "displayName": "Recursive",
+          "dataType": "System.Boolean",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "Create",
+          "displayName": "Create",
+          "dataType": "System.Boolean",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "Overwrite",
+          "displayName": "Overwrite",
+          "dataType": "System.Boolean",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ContinueOnError",
+          "displayName": "ContinueOnError",
+          "dataType": "System.Activities.InArgument<System.Boolean>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        }
+      ]
+    },
+    {
+      "id": "UiPath.FTP.Activities.WithFtpSession@UiPath.FTP.Activities/3.0.0",
+      "fullName": "UiPath.FTP.Activities.WithFtpSession",
+      "displayName": "Use FTP Connection",
+      "description": "Connects to FTP server and provides a scope for other FTP activities.",
+      "category": null,
+      "visibility": "browsable",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "isObsolete": false,
+      "obsoleteMessage": null,
+      "xmlNamespace": null,
+      "xmlPrefix": null,
+      "members": [
+        {
+          "name": "Host",
+          "displayName": "Host",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "Port",
+          "displayName": "Port",
+          "dataType": "System.Activities.InArgument<System.Int32>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "Username",
+          "displayName": "Username",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "Password",
+          "displayName": "Password",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "SecurePassword",
+          "displayName": "SecurePassword",
+          "dataType": "System.Activities.InArgument<System.Security.SecureString>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "UseAnonymousLogin",
+          "displayName": "UseAnonymousLogin",
+          "dataType": "System.Boolean",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": "False",
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "FtpsMode",
+          "displayName": "FtpsMode",
+          "dataType": "UiPath.FTP.FtpsMode",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": "Mono.Cecil.CustomAttributeArgument",
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "SslProtocols",
+          "displayName": "SslProtocols",
+          "dataType": "UiPath.FTP.FtpSslProtocols",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": "Mono.Cecil.CustomAttributeArgument",
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "UseSftp",
+          "displayName": "UseSftp",
+          "dataType": "System.Boolean",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": "False",
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ClientCertificatePath",
+          "displayName": "ClientCertificatePath",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ClientCertificatePassword",
+          "displayName": "ClientCertificatePassword",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ClientCertificateSecurePassword",
+          "displayName": "ClientCertificateSecurePassword",
+          "dataType": "System.Activities.InArgument<System.Security.SecureString>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "AcceptAllCertificates",
+          "displayName": "AcceptAllCertificates",
+          "dataType": "System.Boolean",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": "False",
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ContinueOnError",
+          "displayName": "ContinueOnError",
+          "dataType": "System.Activities.InArgument<System.Boolean>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ProxyServer",
+          "displayName": "ProxyServer",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ProxyPort",
+          "displayName": "ProxyPort",
+          "dataType": "System.Activities.InArgument<System.Int32>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ProxyUser",
+          "displayName": "ProxyUser",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ProxyPassword",
+          "displayName": "ProxyPassword",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ProxySecurePassword",
+          "displayName": "ProxySecurePassword",
+          "dataType": "System.Activities.InArgument<System.Security.SecureString>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ProxyType",
+          "displayName": "ProxyType",
+          "dataType": "UiPath.FTP.FtpProxyType",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": "Mono.Cecil.CustomAttributeArgument",
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        }
+      ]
+    }
+  ],
+  "enums": [
+    {
+      "fullName": "UiPath.Shared.Activities.Services.Language",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "VisualBasic",
+          "value": 0
+        },
+        {
+          "name": "CSharp",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.FTP.FtpObjectType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Directory",
+          "value": 0
+        },
+        {
+          "name": "File",
+          "value": 1
+        },
+        {
+          "name": "Link",
+          "value": 2
+        },
+        {
+          "name": "Other",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.FTP.FtpFilterObjectType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Directory",
+          "value": 1
+        },
+        {
+          "name": "File",
+          "value": 2
+        },
+        {
+          "name": "Link",
+          "value": 4
+        },
+        {
+          "name": "Other",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.FTP.FtpPermissions",
+      "underlyingType": "System.UInt32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Execute",
+          "value": 1
+        },
+        {
+          "name": "Write",
+          "value": 2
+        },
+        {
+          "name": "Read",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.FTP.FtpProxyType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Socks4",
+          "value": 1
+        },
+        {
+          "name": "Socks5",
+          "value": 2
+        },
+        {
+          "name": "Http",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.FTP.FtpsMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Explicit",
+          "value": 1
+        },
+        {
+          "name": "Implicit",
+          "value": 2
+        },
+        {
+          "name": "None",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.FTP.FtpSslProtocols",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Auto",
+          "value": 0
+        },
+        {
+          "name": "Default",
+          "value": 240
+        },
+        {
+          "name": "TLS_1_0",
+          "value": 192
+        },
+        {
+          "name": "TLS_1_1",
+          "value": 768
+        },
+        {
+          "name": "TLS_1_2",
+          "value": 3072
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.FTP.Enums.PasswordInputMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Password",
+          "value": 0
+        },
+        {
+          "name": "SecurePassword",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "namespaceMappings": []
+}

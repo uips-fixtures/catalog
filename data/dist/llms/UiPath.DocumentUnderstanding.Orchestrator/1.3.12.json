@@ -1,0 +1,449 @@
+{
+  "schema": {
+    "id": "activity-catalog",
+    "version": "v0.3"
+  },
+  "source": {
+    "kind": "nuget-package",
+    "id": "UiPath.DocumentUnderstanding.Orchestrator",
+    "version": "1.3.12",
+    "feedUrl": null,
+    "authors": "UiPath",
+    "projectUrl": null,
+    "description": "A bundle of APIs needed for integrating Document Understanding in Orchestrator",
+    "license": "https://www.uipath.com/hubfs/legalspot/UiPath_MSSA.pdf",
+    "tags": null,
+    "packageTypes": []
+  },
+  "generatedAt": "2026-04-10T09:21:23Z",
+  "activities": [],
+  "enums": [
+    {
+      "fullName": "UiPath.DocumentProcessing.Contracts.Taxonomy.ComparisonOperator",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Equals",
+          "value": 1
+        },
+        {
+          "name": "NotEquals",
+          "value": 2
+        },
+        {
+          "name": "Greater",
+          "value": 3
+        },
+        {
+          "name": "Less",
+          "value": 4
+        },
+        {
+          "name": "GreaterOrEqual",
+          "value": 5
+        },
+        {
+          "name": "LessOrEqual",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DocumentProcessing.Contracts.Taxonomy.Criticality",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Must",
+          "value": 1
+        },
+        {
+          "name": "Should",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DocumentProcessing.Contracts.Taxonomy.FieldType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Text",
+          "value": 0
+        },
+        {
+          "name": "Number",
+          "value": 1
+        },
+        {
+          "name": "Date",
+          "value": 2
+        },
+        {
+          "name": "Name",
+          "value": 3
+        },
+        {
+          "name": "Address",
+          "value": 4
+        },
+        {
+          "name": "Keyword",
+          "value": 5
+        },
+        {
+          "name": "Set",
+          "value": 6
+        },
+        {
+          "name": "Boolean",
+          "value": 7
+        },
+        {
+          "name": "Table",
+          "value": 9
+        },
+        {
+          "name": "Internal",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DocumentProcessing.Contracts.Taxonomy.LogicalOperator",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AND",
+          "value": 1
+        },
+        {
+          "name": "OR",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DocumentProcessing.Contracts.Taxonomy.RuleType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Mandatory",
+          "value": 10
+        },
+        {
+          "name": "PossibleValues",
+          "value": 20
+        },
+        {
+          "name": "Regex",
+          "value": 30
+        },
+        {
+          "name": "StartsWith",
+          "value": 31
+        },
+        {
+          "name": "EndsWith",
+          "value": 32
+        },
+        {
+          "name": "FixedLength",
+          "value": 33
+        },
+        {
+          "name": "IsNumeric",
+          "value": 34
+        },
+        {
+          "name": "IsDate",
+          "value": 35
+        },
+        {
+          "name": "IsEmail",
+          "value": 36
+        },
+        {
+          "name": "Contains",
+          "value": 37
+        },
+        {
+          "name": "Expression",
+          "value": 50
+        },
+        {
+          "name": "TableExpression",
+          "value": 60
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DocumentProcessing.Contracts.Results.ResultsDataSource",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Automatic",
+          "value": 0
+        },
+        {
+          "name": "Manual",
+          "value": 1
+        },
+        {
+          "name": "ManuallyChanged",
+          "value": 2
+        },
+        {
+          "name": "Defaulted",
+          "value": 3
+        },
+        {
+          "name": "External",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DocumentProcessing.Contracts.Dom.ProcessingSource",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "Ocr",
+          "value": 1
+        },
+        {
+          "name": "Pdf",
+          "value": 2
+        },
+        {
+          "name": "PlainText",
+          "value": 3
+        },
+        {
+          "name": "PdfAndOcr",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DocumentProcessing.Contracts.Dom.Rotation",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Rotated90",
+          "value": 1
+        },
+        {
+          "name": "Rotated180",
+          "value": 2
+        },
+        {
+          "name": "Rotated270",
+          "value": 3
+        },
+        {
+          "name": "Other",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DocumentProcessing.Contracts.Dom.SectionType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Vertical",
+          "value": 0
+        },
+        {
+          "name": "Paragraph",
+          "value": 1
+        },
+        {
+          "name": "Header",
+          "value": 2
+        },
+        {
+          "name": "Footer",
+          "value": 3
+        },
+        {
+          "name": "Table",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DocumentProcessing.Contracts.Dom.TextType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "Text",
+          "value": 1
+        },
+        {
+          "name": "Checkbox",
+          "value": 2
+        },
+        {
+          "name": "Handwriting",
+          "value": 3
+        },
+        {
+          "name": "Barcode",
+          "value": 4
+        },
+        {
+          "name": "QRcode",
+          "value": 5
+        },
+        {
+          "name": "Stamp",
+          "value": 6
+        },
+        {
+          "name": "Logo",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DocumentProcessing.Contracts.Dom.WordGroupType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Sentence",
+          "value": 0
+        },
+        {
+          "name": "TableCell",
+          "value": 1
+        },
+        {
+          "name": "TableRowEnd",
+          "value": 2
+        },
+        {
+          "name": "Heading",
+          "value": 3
+        },
+        {
+          "name": "Other",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DocumentProcessing.Contracts.Actions.DocumentActionPriority",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Low",
+          "value": 0
+        },
+        {
+          "name": "Medium",
+          "value": 1
+        },
+        {
+          "name": "High",
+          "value": 2
+        },
+        {
+          "name": "Critical",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DocumentProcessing.Contracts.Actions.DocumentActionStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unassigned",
+          "value": 0
+        },
+        {
+          "name": "Pending",
+          "value": 1
+        },
+        {
+          "name": "Completed",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DocumentProcessing.Contracts.Actions.DocumentActionType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Validation",
+          "value": 2
+        },
+        {
+          "name": "Classification",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.SmartData.BusinessRules.Rules.Aggregate",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Addition",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.SmartData.Utils.ApplyOcrOnPdf",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Auto",
+          "value": 0
+        },
+        {
+          "name": "Yes",
+          "value": 1
+        },
+        {
+          "name": "No",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.SmartData.ValidationStation.DTO.Customization.SelectionMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Tokens",
+          "value": 1
+        },
+        {
+          "name": "Area",
+          "value": 2
+        },
+        {
+          "name": "UserChoice",
+          "value": 3
+        }
+      ]
+    }
+  ],
+  "namespaceMappings": []
+}

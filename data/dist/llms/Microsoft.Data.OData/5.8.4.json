@@ -1,0 +1,563 @@
+{
+  "schema": {
+    "id": "activity-catalog",
+    "version": "v0.3"
+  },
+  "source": {
+    "kind": "nuget-package",
+    "id": "Microsoft.Data.OData",
+    "version": "5.8.4",
+    "feedUrl": null,
+    "authors": "Microsoft Corporation",
+    "projectUrl": "http://odata.github.io/",
+    "description": "This version of the library supports earlier versions of the Microsoft OData (V1-V3) protocol only and is not under active development. OData V1-V3 has been superseded by OData V4, which is an industry standard published by OASIS and ratified by ISO. OData V4 is supported through the OData V4 compliant core libraries available at: https://www.nuget.org/packages/Microsoft.OData.Core/ with support documentation available at: https://odata.github.io/odata.net. Note that Asp.Net developers can build OData V4 services using the higher-level OData V4 WebAPI libraries available at: https://www.nuget.org/packages/Microsoft.AspNet.OData/ with support documentation available at: https://odata.github.io/WebApi/.\n\n\t Classes to serialize, deserialize and validate OData payloads. Enables construction of OData producers and consumers. Targets .NET 4.0, Silverlight 4.0 or .NET Portable Lib with support for .NET 4.0, SL 5.0, Win Phone 8, Win Phone 8.1, and Win 8. Localized for CHS, CHT, DEU, ESN, FRA, ITA, JPN, KOR and RUS.",
+    "license": "http://go.microsoft.com/fwlink/?linkid=833178",
+    "tags": "wcf data services odata odatalib edmlib spatial ado.net ef entity framework open protocol wcfds wcfdataservices dataservices",
+    "packageTypes": []
+  },
+  "generatedAt": "2026-04-10T09:21:14Z",
+  "activities": [],
+  "enums": [
+    {
+      "fullName": "Microsoft.Data.OData.Query.BinaryOperatorKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Or",
+          "value": 0
+        },
+        {
+          "name": "And",
+          "value": 1
+        },
+        {
+          "name": "Equal",
+          "value": 2
+        },
+        {
+          "name": "NotEqual",
+          "value": 3
+        },
+        {
+          "name": "GreaterThan",
+          "value": 4
+        },
+        {
+          "name": "GreaterThanOrEqual",
+          "value": 5
+        },
+        {
+          "name": "LessThan",
+          "value": 6
+        },
+        {
+          "name": "LessThanOrEqual",
+          "value": 7
+        },
+        {
+          "name": "Add",
+          "value": 8
+        },
+        {
+          "name": "Subtract",
+          "value": 9
+        },
+        {
+          "name": "Multiply",
+          "value": 10
+        },
+        {
+          "name": "Divide",
+          "value": 11
+        },
+        {
+          "name": "Modulo",
+          "value": 12
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Data.OData.Query.OrderByDirection",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Ascending",
+          "value": 0
+        },
+        {
+          "name": "Descending",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Data.OData.Query.QueryNodeKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Constant",
+          "value": 1
+        },
+        {
+          "name": "Convert",
+          "value": 2
+        },
+        {
+          "name": "NonentityRangeVariableReference",
+          "value": 3
+        },
+        {
+          "name": "BinaryOperator",
+          "value": 4
+        },
+        {
+          "name": "UnaryOperator",
+          "value": 5
+        },
+        {
+          "name": "SingleValuePropertyAccess",
+          "value": 6
+        },
+        {
+          "name": "CollectionPropertyAccess",
+          "value": 7
+        },
+        {
+          "name": "SingleValueFunctionCall",
+          "value": 8
+        },
+        {
+          "name": "Any",
+          "value": 9
+        },
+        {
+          "name": "CollectionNavigationNode",
+          "value": 10
+        },
+        {
+          "name": "SingleNavigationNode",
+          "value": 11
+        },
+        {
+          "name": "SingleValueOpenPropertyAccess",
+          "value": 12
+        },
+        {
+          "name": "SingleEntityCast",
+          "value": 13
+        },
+        {
+          "name": "All",
+          "value": 14
+        },
+        {
+          "name": "EntityCollectionCast",
+          "value": 15
+        },
+        {
+          "name": "EntityRangeVariableReference",
+          "value": 16
+        },
+        {
+          "name": "SingleEntityFunctionCall",
+          "value": 17
+        },
+        {
+          "name": "CollectionFunctionCall",
+          "value": 18
+        },
+        {
+          "name": "EntityCollectionFunctionCall",
+          "value": 19
+        },
+        {
+          "name": "NamedFunctionParameter",
+          "value": 20
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Data.OData.Query.UnaryOperatorKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Negate",
+          "value": 0
+        },
+        {
+          "name": "Not",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Data.OData.ODataPropertyKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unspecified",
+          "value": 0
+        },
+        {
+          "name": "Key",
+          "value": 1
+        },
+        {
+          "name": "ETag",
+          "value": 2
+        },
+        {
+          "name": "Open",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Data.OData.Metadata.ODataNullValueBehaviorKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "IgnoreValue",
+          "value": 1
+        },
+        {
+          "name": "DisableValidation",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Data.OData.ODataUndeclaredPropertyBehaviorKinds",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "IgnoreUndeclaredValueProperty",
+          "value": 1
+        },
+        {
+          "name": "ReportUndeclaredLinkProperty",
+          "value": 2
+        },
+        {
+          "name": "SupportUndeclaredValueProperty",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Data.OData.ODataBatchReaderState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Initial",
+          "value": 0
+        },
+        {
+          "name": "Operation",
+          "value": 1
+        },
+        {
+          "name": "ChangesetStart",
+          "value": 2
+        },
+        {
+          "name": "ChangesetEnd",
+          "value": 3
+        },
+        {
+          "name": "Completed",
+          "value": 4
+        },
+        {
+          "name": "Exception",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Data.OData.ODataParameterReaderState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Start",
+          "value": 0
+        },
+        {
+          "name": "Value",
+          "value": 1
+        },
+        {
+          "name": "Collection",
+          "value": 2
+        },
+        {
+          "name": "Exception",
+          "value": 3
+        },
+        {
+          "name": "Completed",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "System.Data.Services.Common.SyndicationTextContentKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Plaintext",
+          "value": 0
+        },
+        {
+          "name": "Html",
+          "value": 1
+        },
+        {
+          "name": "Xhtml",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "System.Data.Services.Common.SyndicationItemProperty",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "CustomProperty",
+          "value": 0
+        },
+        {
+          "name": "AuthorEmail",
+          "value": 1
+        },
+        {
+          "name": "AuthorName",
+          "value": 2
+        },
+        {
+          "name": "AuthorUri",
+          "value": 3
+        },
+        {
+          "name": "ContributorEmail",
+          "value": 4
+        },
+        {
+          "name": "ContributorName",
+          "value": 5
+        },
+        {
+          "name": "ContributorUri",
+          "value": 6
+        },
+        {
+          "name": "Updated",
+          "value": 7
+        },
+        {
+          "name": "Published",
+          "value": 8
+        },
+        {
+          "name": "Rights",
+          "value": 9
+        },
+        {
+          "name": "Summary",
+          "value": 10
+        },
+        {
+          "name": "Title",
+          "value": 11
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Data.OData.Atom.AtomTextConstructKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Text",
+          "value": 0
+        },
+        {
+          "name": "Html",
+          "value": 1
+        },
+        {
+          "name": "Xhtml",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Data.OData.ODataCollectionReaderState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Start",
+          "value": 0
+        },
+        {
+          "name": "CollectionStart",
+          "value": 1
+        },
+        {
+          "name": "Value",
+          "value": 2
+        },
+        {
+          "name": "CollectionEnd",
+          "value": 3
+        },
+        {
+          "name": "Exception",
+          "value": 4
+        },
+        {
+          "name": "Completed",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Data.OData.ODataReaderState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Start",
+          "value": 0
+        },
+        {
+          "name": "FeedStart",
+          "value": 1
+        },
+        {
+          "name": "FeedEnd",
+          "value": 2
+        },
+        {
+          "name": "EntryStart",
+          "value": 3
+        },
+        {
+          "name": "EntryEnd",
+          "value": 4
+        },
+        {
+          "name": "NavigationLinkStart",
+          "value": 5
+        },
+        {
+          "name": "NavigationLinkEnd",
+          "value": 6
+        },
+        {
+          "name": "EntityReferenceLink",
+          "value": 7
+        },
+        {
+          "name": "Exception",
+          "value": 8
+        },
+        {
+          "name": "Completed",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Data.OData.ODataPayloadKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Feed",
+          "value": 0
+        },
+        {
+          "name": "Entry",
+          "value": 1
+        },
+        {
+          "name": "Property",
+          "value": 2
+        },
+        {
+          "name": "EntityReferenceLink",
+          "value": 3
+        },
+        {
+          "name": "EntityReferenceLinks",
+          "value": 4
+        },
+        {
+          "name": "Value",
+          "value": 5
+        },
+        {
+          "name": "BinaryValue",
+          "value": 6
+        },
+        {
+          "name": "Collection",
+          "value": 7
+        },
+        {
+          "name": "ServiceDocument",
+          "value": 8
+        },
+        {
+          "name": "MetadataDocument",
+          "value": 9
+        },
+        {
+          "name": "Error",
+          "value": 10
+        },
+        {
+          "name": "Batch",
+          "value": 11
+        },
+        {
+          "name": "Parameter",
+          "value": 12
+        },
+        {
+          "name": "Unsupported",
+          "value": 2147483647
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Data.OData.ODataVersion",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "V1",
+          "value": 0
+        },
+        {
+          "name": "V2",
+          "value": 1
+        },
+        {
+          "name": "V3",
+          "value": 2
+        }
+      ]
+    }
+  ],
+  "namespaceMappings": []
+}

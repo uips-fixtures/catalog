@@ -1,0 +1,475 @@
+{
+  "schema": {
+    "id": "activity-catalog",
+    "version": "v0.3"
+  },
+  "source": {
+    "kind": "nuget-package",
+    "id": "UiPath.Workflow.Runtime",
+    "version": "6.0.0-20240401-07",
+    "feedUrl": null,
+    "authors": "System.Activities",
+    "projectUrl": null,
+    "description": "Package Description",
+    "license": "MIT",
+    "tags": null,
+    "packageTypes": []
+  },
+  "generatedAt": "2026-04-10T09:21:25Z",
+  "activities": [],
+  "enums": [
+    {
+      "fullName": "System.Activities.ActivityInstanceState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Executing",
+          "value": 0
+        },
+        {
+          "name": "Closed",
+          "value": 1
+        },
+        {
+          "name": "Canceled",
+          "value": 2
+        },
+        {
+          "name": "Faulted",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "System.Activities.ArgumentDirection",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "In",
+          "value": 0
+        },
+        {
+          "name": "Out",
+          "value": 1
+        },
+        {
+          "name": "InOut",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "System.Activities.BookmarkOptions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "MultipleResume",
+          "value": 1
+        },
+        {
+          "name": "NonBlocking",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "System.Activities.BookmarkResumptionResult",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Success",
+          "value": 0
+        },
+        {
+          "name": "NotFound",
+          "value": 1
+        },
+        {
+          "name": "NotReady",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "System.Activities.PersistableIdleAction",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Unload",
+          "value": 1
+        },
+        {
+          "name": "Persist",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "System.Activities.UnhandledExceptionAction",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Abort",
+          "value": 0
+        },
+        {
+          "name": "Cancel",
+          "value": 1
+        },
+        {
+          "name": "Terminate",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "System.Activities.VariableModifiers",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "ReadOnly",
+          "value": 1
+        },
+        {
+          "name": "Mapped",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "System.Activities.WorkflowIdentityFilter",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Exact",
+          "value": 0
+        },
+        {
+          "name": "Any",
+          "value": 1
+        },
+        {
+          "name": "AnyRevision",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "System.Activities.Tracking.ImplementationVisibility",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "RootScope",
+          "value": 0
+        },
+        {
+          "name": "All",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "System.Activities.Runtime.Fx.Tag.CacheAttrition",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "ElementOnTimer",
+          "value": 1
+        },
+        {
+          "name": "ElementOnGC",
+          "value": 2
+        },
+        {
+          "name": "ElementOnCallback",
+          "value": 3
+        },
+        {
+          "name": "FullPurgeOnTimer",
+          "value": 4
+        },
+        {
+          "name": "FullPurgeOnEachAccess",
+          "value": 5
+        },
+        {
+          "name": "PartialPurgeOnTimer",
+          "value": 6
+        },
+        {
+          "name": "PartialPurgeOnEachAccess",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "System.Activities.Runtime.Fx.Tag.ThrottleAction",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Reject",
+          "value": 0
+        },
+        {
+          "name": "Pause",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "System.Activities.Runtime.Fx.Tag.ThrottleMetric",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Count",
+          "value": 0
+        },
+        {
+          "name": "Rate",
+          "value": 1
+        },
+        {
+          "name": "Other",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "System.Activities.Runtime.Fx.Tag.Location",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "InProcess",
+          "value": 0
+        },
+        {
+          "name": "OutOfProcess",
+          "value": 1
+        },
+        {
+          "name": "LocalSystem",
+          "value": 2
+        },
+        {
+          "name": "LocalOrRemoteSystem",
+          "value": 3
+        },
+        {
+          "name": "RemoteSystem",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "System.Activities.Runtime.Fx.Tag.SynchronizationKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "LockStatement",
+          "value": 0
+        },
+        {
+          "name": "MonitorWait",
+          "value": 1
+        },
+        {
+          "name": "MonitorExplicit",
+          "value": 2
+        },
+        {
+          "name": "InterlockedNoSpin",
+          "value": 3
+        },
+        {
+          "name": "InterlockedWithSpin",
+          "value": 4
+        },
+        {
+          "name": "FromFieldType",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "System.Activities.Runtime.Fx.Tag.BlocksUsing",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "MonitorEnter",
+          "value": 0
+        },
+        {
+          "name": "MonitorWait",
+          "value": 1
+        },
+        {
+          "name": "ManualResetEvent",
+          "value": 2
+        },
+        {
+          "name": "AutoResetEvent",
+          "value": 3
+        },
+        {
+          "name": "AsyncResult",
+          "value": 4
+        },
+        {
+          "name": "IAsyncResult",
+          "value": 5
+        },
+        {
+          "name": "PInvoke",
+          "value": 6
+        },
+        {
+          "name": "InputQueue",
+          "value": 7
+        },
+        {
+          "name": "ThreadNeutralSemaphore",
+          "value": 8
+        },
+        {
+          "name": "PrivatePrimitive",
+          "value": 9
+        },
+        {
+          "name": "OtherInternalPrimitive",
+          "value": 10
+        },
+        {
+          "name": "OtherFrameworkPrimitive",
+          "value": 11
+        },
+        {
+          "name": "OtherInterop",
+          "value": 12
+        },
+        {
+          "name": "Other",
+          "value": 13
+        },
+        {
+          "name": "NonBlocking",
+          "value": 14
+        }
+      ]
+    },
+    {
+      "fullName": "System.Activities.Runtime.DurableInstancing.InstanceKeyState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "Associated",
+          "value": 1
+        },
+        {
+          "name": "Completed",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "System.Activities.Runtime.DurableInstancing.InstanceState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "Uninitialized",
+          "value": 1
+        },
+        {
+          "name": "Initialized",
+          "value": 2
+        },
+        {
+          "name": "Completed",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "System.Activities.Runtime.DurableInstancing.InstanceValueConsistency",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "InDoubt",
+          "value": 1
+        },
+        {
+          "name": "Partial",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "System.Activities.Runtime.DurableInstancing.InstanceValueOptions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Optional",
+          "value": 1
+        },
+        {
+          "name": "WriteOnly",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "System.Activities.Hosting.WorkflowInstanceState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Idle",
+          "value": 0
+        },
+        {
+          "name": "Runnable",
+          "value": 1
+        },
+        {
+          "name": "Complete",
+          "value": 2
+        },
+        {
+          "name": "Aborted",
+          "value": 3
+        }
+      ]
+    }
+  ],
+  "namespaceMappings": []
+}

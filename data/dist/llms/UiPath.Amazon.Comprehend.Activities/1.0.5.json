@@ -1,0 +1,2111 @@
+{
+  "schema": {
+    "id": "activity-catalog",
+    "version": "v0.3"
+  },
+  "source": {
+    "kind": "nuget-package",
+    "id": "UiPath.Amazon.Comprehend.Activities",
+    "version": "1.0.5",
+    "feedUrl": null,
+    "authors": "UiPath",
+    "projectUrl": "https://docs.uipath.com/integrations/docs/amazon-comprehend-about",
+    "description": "Automation activities for AmazonComprehend.",
+    "license": "https://www.uipath.com/hubfs/legalspot/UiPath_MSSA.pdf",
+    "tags": "UiPathActivities",
+    "packageTypes": []
+  },
+  "generatedAt": "2026-04-10T09:21:19Z",
+  "activities": [],
+  "enums": [
+    {
+      "fullName": "ActiproSoftware.Products.ActiproLicenseSourceLocation",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Fixed",
+          "value": 1
+        },
+        {
+          "name": "Registry",
+          "value": 2
+        },
+        {
+          "name": "AssemblySavedContext",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "ActiproSoftware.Products.AssemblyLicenseType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Invalid",
+          "value": 0
+        },
+        {
+          "name": "Beta",
+          "value": 1
+        },
+        {
+          "name": "Prerelease",
+          "value": 2
+        },
+        {
+          "name": "Evaluation",
+          "value": 3
+        },
+        {
+          "name": "Full",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "ActiproSoftware.Products.AssemblyPlatform",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Invalid",
+          "value": 0
+        },
+        {
+          "name": "WindowsForms",
+          "value": 1
+        },
+        {
+          "name": "AspNet",
+          "value": 2
+        },
+        {
+          "name": "Wpf",
+          "value": 3
+        },
+        {
+          "name": "Silverlight",
+          "value": 4
+        },
+        {
+          "name": "Universal",
+          "value": 5
+        },
+        {
+          "name": "Independent",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "ActiproSoftware.Products.Shared.SRName",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ExNotSupportedReadOnlyCollection",
+          "value": 0
+        },
+        {
+          "name": "UICommandCloseWindowText",
+          "value": 1
+        },
+        {
+          "name": "UICommandMaximizeWindowText",
+          "value": 2
+        },
+        {
+          "name": "UICommandMinimizeWindowText",
+          "value": 3
+        },
+        {
+          "name": "UICommandRestoreWindowText",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "ActiproSoftware.Products.Shared.ImageResource",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ActiproIcon",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "fullName": "ActiproSoftware.Windows.DateTimeFormatPattern",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ShortDateTime",
+          "value": 0
+        },
+        {
+          "name": "FullDateTime",
+          "value": 1
+        },
+        {
+          "name": "LongDate",
+          "value": 2
+        },
+        {
+          "name": "LongTime",
+          "value": 3
+        },
+        {
+          "name": "MonthDay",
+          "value": 4
+        },
+        {
+          "name": "Rfc1123",
+          "value": 5
+        },
+        {
+          "name": "ShortDate",
+          "value": 6
+        },
+        {
+          "name": "ShortTime",
+          "value": 7
+        },
+        {
+          "name": "SortableDateTime",
+          "value": 8
+        },
+        {
+          "name": "UniversalSortableDateTime",
+          "value": 9
+        },
+        {
+          "name": "YearMonth",
+          "value": 10
+        },
+        {
+          "name": "YearMonthNoDelimiter",
+          "value": 11
+        }
+      ]
+    },
+    {
+      "fullName": "ActiproSoftware.Windows.DayOfWeekFormatPattern",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "SingleLetter",
+          "value": 0
+        },
+        {
+          "name": "Shortest",
+          "value": 1
+        },
+        {
+          "name": "ShortestUppercase",
+          "value": 2
+        },
+        {
+          "name": "Abbreviated",
+          "value": 3
+        },
+        {
+          "name": "AbbreviatedUppercase",
+          "value": 4
+        },
+        {
+          "name": "Full",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "ActiproSoftware.Windows.UnitType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Pixel",
+          "value": 1
+        },
+        {
+          "name": "Percentage",
+          "value": 2
+        },
+        {
+          "name": "Inch",
+          "value": 3
+        },
+        {
+          "name": "Centimeter",
+          "value": 4
+        },
+        {
+          "name": "Point",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "#Ci.#Bi.#Hwg",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "#E2j",
+          "value": -1
+        },
+        {
+          "name": "#6pb",
+          "value": 1
+        },
+        {
+          "name": "#in",
+          "value": 2
+        },
+        {
+          "name": "#7pb",
+          "value": 3
+        },
+        {
+          "name": "#8pb",
+          "value": 8
+        },
+        {
+          "name": "#9pb",
+          "value": 8
+        },
+        {
+          "name": "#aqb",
+          "value": 9
+        },
+        {
+          "name": "#bqb",
+          "value": 10
+        },
+        {
+          "name": "#cqb",
+          "value": 11
+        },
+        {
+          "name": "#dqb",
+          "value": 12
+        },
+        {
+          "name": "#eqb",
+          "value": 13
+        },
+        {
+          "name": "#fqb",
+          "value": 14
+        },
+        {
+          "name": "#gqb",
+          "value": 15
+        },
+        {
+          "name": "#hqb",
+          "value": 16
+        },
+        {
+          "name": "#iqb",
+          "value": 17
+        },
+        {
+          "name": "#jqb",
+          "value": 20
+        },
+        {
+          "name": "#kqb",
+          "value": 21
+        }
+      ]
+    },
+    {
+      "fullName": "ActiproSoftware.Windows.Themes.ThemeName",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Generic",
+          "value": 0
+        },
+        {
+          "name": "Classic",
+          "value": 1
+        },
+        {
+          "name": "HighContrast",
+          "value": 2
+        },
+        {
+          "name": "AeroNormalColor",
+          "value": 3
+        },
+        {
+          "name": "LunaNormalColor",
+          "value": 4
+        },
+        {
+          "name": "LunaHomestead",
+          "value": 5
+        },
+        {
+          "name": "LunaMetallic",
+          "value": 6
+        },
+        {
+          "name": "MetroDark",
+          "value": 7
+        },
+        {
+          "name": "MetroLight",
+          "value": 8
+        },
+        {
+          "name": "MetroLightBlue",
+          "value": 9
+        },
+        {
+          "name": "MetroLightCyan",
+          "value": 10
+        },
+        {
+          "name": "MetroLightGreen",
+          "value": 11
+        },
+        {
+          "name": "MetroLightOrange",
+          "value": 12
+        },
+        {
+          "name": "MetroLightPurple",
+          "value": 13
+        },
+        {
+          "name": "MetroLightRed",
+          "value": 14
+        },
+        {
+          "name": "MetroLightRoyal",
+          "value": 15
+        },
+        {
+          "name": "MetroWhite",
+          "value": 16
+        },
+        {
+          "name": "MetroWhiteBlue",
+          "value": 17
+        },
+        {
+          "name": "MetroWhiteCyan",
+          "value": 18
+        },
+        {
+          "name": "MetroWhiteGreen",
+          "value": 19
+        },
+        {
+          "name": "MetroWhiteOrange",
+          "value": 20
+        },
+        {
+          "name": "MetroWhitePurple",
+          "value": 21
+        },
+        {
+          "name": "MetroWhiteRed",
+          "value": 22
+        },
+        {
+          "name": "MetroWhiteRoyal",
+          "value": 23
+        },
+        {
+          "name": "OfficeBlue",
+          "value": 24
+        },
+        {
+          "name": "OfficeBlack",
+          "value": 25
+        },
+        {
+          "name": "OfficeSilver",
+          "value": 26
+        },
+        {
+          "name": "RoyaleNormalColor",
+          "value": 27
+        },
+        {
+          "name": "Custom",
+          "value": 28
+        }
+      ]
+    },
+    {
+      "fullName": "ActiproSoftware.Windows.Themes.WindowChromeElementKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "NonClientArea",
+          "value": 1
+        },
+        {
+          "name": "ClientArea",
+          "value": 2
+        },
+        {
+          "name": "TitleBar",
+          "value": 3
+        },
+        {
+          "name": "TitleBarButton",
+          "value": 4
+        },
+        {
+          "name": "SystemMenu",
+          "value": 5
+        },
+        {
+          "name": "ResizeGrip",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "ActiproSoftware.Windows.Input.InputAdapterEventKinds",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "PointerCaptureLost",
+          "value": 1
+        },
+        {
+          "name": "PointerEntered",
+          "value": 2
+        },
+        {
+          "name": "PointerExited",
+          "value": 4
+        },
+        {
+          "name": "PointerMoved",
+          "value": 8
+        },
+        {
+          "name": "PointerPressed",
+          "value": 16
+        },
+        {
+          "name": "PointerReleased",
+          "value": 32
+        },
+        {
+          "name": "PointerWheelChanged",
+          "value": 64
+        },
+        {
+          "name": "Tapped",
+          "value": 128
+        },
+        {
+          "name": "DoubleTapped",
+          "value": 256
+        },
+        {
+          "name": "KeyDown",
+          "value": 512
+        },
+        {
+          "name": "KeyUp",
+          "value": 1024
+        },
+        {
+          "name": "All",
+          "value": 2047
+        }
+      ]
+    },
+    {
+      "fullName": "ActiproSoftware.Windows.Input.InputPointerButtonKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Primary",
+          "value": 0
+        },
+        {
+          "name": "Secondary",
+          "value": 1
+        },
+        {
+          "name": "Middle",
+          "value": 2
+        },
+        {
+          "name": "Extended1",
+          "value": 3
+        },
+        {
+          "name": "Extended2",
+          "value": 4
+        },
+        {
+          "name": "Other",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "ActiproSoftware.Windows.Input.InputDeviceKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Mouse",
+          "value": 0
+        },
+        {
+          "name": "Stylus",
+          "value": 1
+        },
+        {
+          "name": "Touch",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "ActiproSoftware.Windows.Input.MouseWheelAction",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "PositiveDelta",
+          "value": 1
+        },
+        {
+          "name": "NegativeDelta",
+          "value": 2
+        },
+        {
+          "name": "AnyDelta",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "ActiproSoftware.Windows.Media.ImageSourceContentConversionMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Grayscale",
+          "value": 0
+        },
+        {
+          "name": "Monochrome",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "ActiproSoftware.Windows.Media.VisualDescendantFilterBehavior",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ContinueSkipSelfAndChildren",
+          "value": 0
+        },
+        {
+          "name": "ContinueSkipChildren",
+          "value": 1
+        },
+        {
+          "name": "ContinueSkipSelf",
+          "value": 2
+        },
+        {
+          "name": "Continue",
+          "value": 3
+        },
+        {
+          "name": "Stop",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "ActiproSoftware.Windows.Media.VisualResultBehavior",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Stop",
+          "value": 0
+        },
+        {
+          "name": "Continue",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "ActiproSoftware.Windows.Media.LinearGradientType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "CustomAngle",
+          "value": 0
+        },
+        {
+          "name": "LeftToRight",
+          "value": 1
+        },
+        {
+          "name": "RightToLeft",
+          "value": 2
+        },
+        {
+          "name": "TopToBottom",
+          "value": 3
+        },
+        {
+          "name": "BottomToTop",
+          "value": 4
+        },
+        {
+          "name": "TopLeftToBottomRight",
+          "value": 5
+        },
+        {
+          "name": "BottomRightToTopLeft",
+          "value": 6
+        },
+        {
+          "name": "BottomLeftToTopRight",
+          "value": 7
+        },
+        {
+          "name": "TopRightToBottomLeft",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "ActiproSoftware.Windows.Media.Animation.TransitionMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "In",
+          "value": 0
+        },
+        {
+          "name": "Out",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "ActiproSoftware.Windows.Media.Animation.TransitionDirection",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "Down",
+          "value": 1
+        },
+        {
+          "name": "Up",
+          "value": 2
+        },
+        {
+          "name": "Forward",
+          "value": 3
+        },
+        {
+          "name": "Backward",
+          "value": 4
+        },
+        {
+          "name": "ForwardDown",
+          "value": 5
+        },
+        {
+          "name": "ForwardUp",
+          "value": 6
+        },
+        {
+          "name": "BackwardDown",
+          "value": 7
+        },
+        {
+          "name": "BackwardUp",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "ActiproSoftware.Windows.Data.Filtering.BooleanFilterOperation",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Equals",
+          "value": 0
+        },
+        {
+          "name": "NotEquals",
+          "value": 1
+        },
+        {
+          "name": "And",
+          "value": 2
+        },
+        {
+          "name": "Or",
+          "value": 3
+        },
+        {
+          "name": "Xor",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "ActiproSoftware.Windows.Data.Filtering.DataFilterGroupOperation",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "And",
+          "value": 0
+        },
+        {
+          "name": "Or",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "ActiproSoftware.Windows.Data.Filtering.DataFilterResult",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Included",
+          "value": 0
+        },
+        {
+          "name": "IncludedWithDescendants",
+          "value": 1
+        },
+        {
+          "name": "IncludedByDescendants",
+          "value": 2
+        },
+        {
+          "name": "Excluded",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "ActiproSoftware.Windows.Data.Filtering.StringFilterOperation",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Contains",
+          "value": 0
+        },
+        {
+          "name": "NotContains",
+          "value": 1
+        },
+        {
+          "name": "StartsWith",
+          "value": 2
+        },
+        {
+          "name": "NotStartsWith",
+          "value": 3
+        },
+        {
+          "name": "EndsWith",
+          "value": 4
+        },
+        {
+          "name": "NotEndsWith",
+          "value": 5
+        },
+        {
+          "name": "Equals",
+          "value": 6
+        },
+        {
+          "name": "NotEquals",
+          "value": 7
+        },
+        {
+          "name": "RegexMatch",
+          "value": 8
+        },
+        {
+          "name": "NotRegexMatch",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "fullName": "ActiproSoftware.Windows.Controls.ControlUsageContext",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "ToolBar",
+          "value": 1
+        },
+        {
+          "name": "Menu",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "ActiproSoftware.Windows.Controls.Corner",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "TopLeft",
+          "value": 1
+        },
+        {
+          "name": "TopRight",
+          "value": 2
+        },
+        {
+          "name": "BottomRight",
+          "value": 4
+        },
+        {
+          "name": "BottomLeft",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "ActiproSoftware.Windows.Controls.ResizeOperation",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 61440
+        },
+        {
+          "name": "West",
+          "value": 61441
+        },
+        {
+          "name": "East",
+          "value": 61442
+        },
+        {
+          "name": "North",
+          "value": 61443
+        },
+        {
+          "name": "NorthWest",
+          "value": 61444
+        },
+        {
+          "name": "NorthEast",
+          "value": 61445
+        },
+        {
+          "name": "South",
+          "value": 61446
+        },
+        {
+          "name": "SouthWest",
+          "value": 61447
+        },
+        {
+          "name": "SouthEast",
+          "value": 61448
+        }
+      ]
+    },
+    {
+      "fullName": "ActiproSoftware.Windows.Controls.OperationState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Normal",
+          "value": 0
+        },
+        {
+          "name": "Paused",
+          "value": 1
+        },
+        {
+          "name": "Error",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "ActiproSoftware.Windows.Controls.Side",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Left",
+          "value": 0
+        },
+        {
+          "name": "Top",
+          "value": 1
+        },
+        {
+          "name": "Right",
+          "value": 2
+        },
+        {
+          "name": "Bottom",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "ActiproSoftware.Windows.Controls.ControlResizeMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Horizontal",
+          "value": 1
+        },
+        {
+          "name": "Vertical",
+          "value": 2
+        },
+        {
+          "name": "Both",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "ActiproSoftware.Windows.Controls.Corners",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "TopLeft",
+          "value": 1
+        },
+        {
+          "name": "TopRight",
+          "value": 2
+        },
+        {
+          "name": "BottomRight",
+          "value": 4
+        },
+        {
+          "name": "BottomLeft",
+          "value": 8
+        },
+        {
+          "name": "Left",
+          "value": 9
+        },
+        {
+          "name": "Top",
+          "value": 3
+        },
+        {
+          "name": "Right",
+          "value": 6
+        },
+        {
+          "name": "Bottom",
+          "value": 12
+        },
+        {
+          "name": "All",
+          "value": 15
+        }
+      ]
+    },
+    {
+      "fullName": "ActiproSoftware.Windows.Controls.PopupButtonDisplayMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Split",
+          "value": 0
+        },
+        {
+          "name": "Merged",
+          "value": 1
+        },
+        {
+          "name": "ButtonOnly",
+          "value": 2
+        },
+        {
+          "name": "PopupOnly",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "ActiproSoftware.Windows.Controls.Sides",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Left",
+          "value": 1
+        },
+        {
+          "name": "Top",
+          "value": 2
+        },
+        {
+          "name": "Right",
+          "value": 4
+        },
+        {
+          "name": "Bottom",
+          "value": 8
+        },
+        {
+          "name": "All",
+          "value": 15
+        }
+      ]
+    },
+    {
+      "fullName": "ActiproSoftware.Windows.Controls.RoundMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Floor",
+          "value": 1
+        },
+        {
+          "name": "FloorToEven",
+          "value": 2
+        },
+        {
+          "name": "FloorToOdd",
+          "value": 3
+        },
+        {
+          "name": "Ceiling",
+          "value": 4
+        },
+        {
+          "name": "CeilingToEven",
+          "value": 5
+        },
+        {
+          "name": "CeilingToOdd",
+          "value": 6
+        },
+        {
+          "name": "Round",
+          "value": 7
+        },
+        {
+          "name": "RoundToEven",
+          "value": 8
+        },
+        {
+          "name": "RoundToOdd",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "fullName": "ActiproSoftware.Windows.Controls.ColorSelection.ColorComponent",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Alpha",
+          "value": 0
+        },
+        {
+          "name": "Red",
+          "value": 1
+        },
+        {
+          "name": "Green",
+          "value": 2
+        },
+        {
+          "name": "Blue",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "ActiproSoftware.Windows.Controls.Primitives.BulletChromeState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Normal",
+          "value": 0
+        },
+        {
+          "name": "Disabled",
+          "value": 1
+        },
+        {
+          "name": "Hover",
+          "value": 2
+        },
+        {
+          "name": "Pressed",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "ActiproSoftware.Windows.Controls.Primitives.BulletChromeBorderStyle",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Default",
+          "value": 1
+        },
+        {
+          "name": "Sunken",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "ActiproSoftware.Windows.Controls.Primitives.ScrollChromeGlyph",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "DownArrow",
+          "value": 1
+        },
+        {
+          "name": "LeftArrow",
+          "value": 2
+        },
+        {
+          "name": "RightArrow",
+          "value": 3
+        },
+        {
+          "name": "UpArrow",
+          "value": 4
+        },
+        {
+          "name": "HorizontalGripper",
+          "value": 5
+        },
+        {
+          "name": "VerticalGripper",
+          "value": 6
+        },
+        {
+          "name": "DropDownArrow",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "ActiproSoftware.Windows.Controls.Primitives.ElementChromeBorderStyle",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Default",
+          "value": 1
+        },
+        {
+          "name": "Etched",
+          "value": 2
+        },
+        {
+          "name": "Raised",
+          "value": 3
+        },
+        {
+          "name": "Sunken",
+          "value": 4
+        },
+        {
+          "name": "AlternateRaised",
+          "value": 5
+        },
+        {
+          "name": "ThinRaised",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "ActiproSoftware.Windows.Controls.Primitives.ElementChromeState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Normal",
+          "value": 0
+        },
+        {
+          "name": "Defaulted",
+          "value": 1
+        },
+        {
+          "name": "Disabled",
+          "value": 2
+        },
+        {
+          "name": "Hover",
+          "value": 3
+        },
+        {
+          "name": "Focused",
+          "value": 4
+        },
+        {
+          "name": "Pressed",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Activities.Design.View.Enums.FlatviewFilter",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ShowValued",
+          "value": 0
+        },
+        {
+          "name": "Contains",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Activities.Design.View.Enums.HierarchicalViewState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NotSet",
+          "value": 0
+        },
+        {
+          "name": "TreeView",
+          "value": 1
+        },
+        {
+          "name": "FlatView",
+          "value": 2
+        },
+        {
+          "name": "FlatViewAllChildren",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Activities.Design.View.Enums.WindowScreenState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "MandatoryParametersState",
+          "value": 0
+        },
+        {
+          "name": "OptionalParametersState",
+          "value": 1
+        },
+        {
+          "name": "MultiInputState",
+          "value": 2
+        },
+        {
+          "name": "PreviewResultsState",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Activities.Design.LangInvariant.Language",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "VisualBasic",
+          "value": 0
+        },
+        {
+          "name": "CSharp",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Activities.Design.Common.Model.CommandResultState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Valid",
+          "value": 0
+        },
+        {
+          "name": "Invalid",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Activities.Design.Common.Model.MessageBoxSelection",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Cancel",
+          "value": 0
+        },
+        {
+          "name": "Yes",
+          "value": 1
+        },
+        {
+          "name": "No",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "HttpClientFramework.Apis.Logging.LogLevel",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "All",
+          "value": 0
+        },
+        {
+          "name": "Debug",
+          "value": 100
+        },
+        {
+          "name": "Info",
+          "value": 200
+        },
+        {
+          "name": "Warning",
+          "value": 300
+        },
+        {
+          "name": "Error",
+          "value": 400
+        },
+        {
+          "name": "None",
+          "value": 1000
+        }
+      ]
+    },
+    {
+      "fullName": "HttpClientFramework.Apis.Http.ConfigurableMessageHandler.LogEventType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "RequestUri",
+          "value": 1
+        },
+        {
+          "name": "RequestHeaders",
+          "value": 2
+        },
+        {
+          "name": "RequestBody",
+          "value": 4
+        },
+        {
+          "name": "ResponseStatus",
+          "value": 8
+        },
+        {
+          "name": "ResponseHeaders",
+          "value": 16
+        },
+        {
+          "name": "ResponseBody",
+          "value": 32
+        },
+        {
+          "name": "ResponseAbnormal",
+          "value": 64
+        }
+      ]
+    },
+    {
+      "fullName": "HttpClientFramework.Apis.Http.ExponentialBackOffPolicy",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Exception",
+          "value": 1
+        },
+        {
+          "name": "UnsuccessfulResponse503",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "HttpClientFramework.Apis.Discovery.DiscoveryVersion",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Version_1_0",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "fullName": "HttpClientFramework.Apis.Discovery.Features",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "LegacyDataResponse",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "fullName": "HttpClientFramework.Apis.Util.RequestParameterType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Path",
+          "value": 0
+        },
+        {
+          "name": "Query",
+          "value": 1
+        },
+        {
+          "name": "UserDefinedQueries",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "HttpClientFramework.Apis.Upload.UploadStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NotStarted",
+          "value": 0
+        },
+        {
+          "name": "Starting",
+          "value": 1
+        },
+        {
+          "name": "Uploading",
+          "value": 2
+        },
+        {
+          "name": "Completed",
+          "value": 3
+        },
+        {
+          "name": "Failed",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "HttpClientFramework.Apis.Download.DownloadStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NotStarted",
+          "value": 0
+        },
+        {
+          "name": "Downloading",
+          "value": 1
+        },
+        {
+          "name": "Completed",
+          "value": 2
+        },
+        {
+          "name": "Failed",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Swagger.Utilities.SwaggerEventCodes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "RestRequestFailed",
+          "value": 202
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Swagger.Enums.ApiKeyLocation",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "Query",
+          "value": 1
+        },
+        {
+          "name": "Header",
+          "value": 2
+        },
+        {
+          "name": "Cookie",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Swagger.Enums.AuthType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "BasicAuth",
+          "value": 10
+        },
+        {
+          "name": "BearerAuth",
+          "value": 20
+        },
+        {
+          "name": "ApiKey",
+          "value": 30
+        },
+        {
+          "name": "ApiToken",
+          "value": 31
+        },
+        {
+          "name": "OAuth1",
+          "value": 35
+        },
+        {
+          "name": "OAuth2AuthorizationCode",
+          "value": 37
+        },
+        {
+          "name": "OAuth2ClientCredentials",
+          "value": 40
+        },
+        {
+          "name": "OAuth2Implicit",
+          "value": 45
+        },
+        {
+          "name": "OAuth2Password",
+          "value": 50
+        },
+        {
+          "name": "OpenIdConnect",
+          "value": 55
+        },
+        {
+          "name": "ExistingConnection",
+          "value": 60
+        },
+        {
+          "name": "OAuthJWT",
+          "value": 65
+        },
+        {
+          "name": "OAuthPassthrough",
+          "value": 67
+        },
+        {
+          "name": "AWS",
+          "value": 68
+        },
+        {
+          "name": "None",
+          "value": 69
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Models.OperationParameterKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "Body",
+          "value": 1
+        },
+        {
+          "name": "Query",
+          "value": 2
+        },
+        {
+          "name": "Path",
+          "value": 3
+        },
+        {
+          "name": "Header",
+          "value": 4
+        },
+        {
+          "name": "FormData",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Models.CrudOperation.CrudOperations",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Create",
+          "value": 1
+        },
+        {
+          "name": "Get",
+          "value": 2
+        },
+        {
+          "name": "Update",
+          "value": 4
+        },
+        {
+          "name": "Delete",
+          "value": 8
+        },
+        {
+          "name": "Function",
+          "value": 16
+        },
+        {
+          "name": "Action",
+          "value": 32
+        },
+        {
+          "name": "Search",
+          "value": 64
+        },
+        {
+          "name": "Upsert",
+          "value": 128
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Models.Connection.Authentication.Enums.AccessTokenKeyLocation",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Header",
+          "value": 0
+        },
+        {
+          "name": "Query",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Models.Annotations.OperationState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Preview",
+          "value": 1
+        },
+        {
+          "name": "Warning",
+          "value": 2
+        },
+        {
+          "name": "Info",
+          "value": 3
+        },
+        {
+          "name": "Hide",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Utilities.EventCodes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ArgumentNullException",
+          "value": 101
+        },
+        {
+          "name": "ArgumentConverterError",
+          "value": 102
+        },
+        {
+          "name": "BackgroundWorkCompletedUnsuccessfully",
+          "value": 103
+        },
+        {
+          "name": "AutocompleteBoxError",
+          "value": 104
+        },
+        {
+          "name": "ConnectionFailed",
+          "value": 105
+        },
+        {
+          "name": "DisconnectionFailed",
+          "value": 106
+        },
+        {
+          "name": "ScopeExecutionFailed",
+          "value": 107
+        },
+        {
+          "name": "GetEntityFieldsFailed",
+          "value": 108
+        },
+        {
+          "name": "RestRequestError",
+          "value": 109
+        },
+        {
+          "name": "FetchSampleDataFailed",
+          "value": 110
+        },
+        {
+          "name": "TestWithSampleDataFailed",
+          "value": 111
+        },
+        {
+          "name": "OutsideScopeError",
+          "value": 112
+        },
+        {
+          "name": "ConnectionClosedSuccessfully",
+          "value": 201
+        },
+        {
+          "name": "AutocompleteBoxResultSet",
+          "value": 202
+        },
+        {
+          "name": "ConnectionSuccessful",
+          "value": 201
+        },
+        {
+          "name": "RestRequestResponseReceived",
+          "value": 203
+        },
+        {
+          "name": "EncryptionFailure",
+          "value": 204
+        },
+        {
+          "name": "DecryptionFailure",
+          "value": 205
+        },
+        {
+          "name": "RestRequestFailed",
+          "value": 206
+        },
+        {
+          "name": "RestRequestArgumentException",
+          "value": 207
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Utilities.FormDataType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ComboBox",
+          "value": 0
+        },
+        {
+          "name": "FilePicker",
+          "value": 1
+        },
+        {
+          "name": "FolderPicker",
+          "value": 2
+        },
+        {
+          "name": "ExpressionTextBox",
+          "value": 3
+        },
+        {
+          "name": "MultiSelect",
+          "value": 4
+        },
+        {
+          "name": "TextBoxWithButton",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Utilities.OAuthBase.SignatureTypes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "HMACSHA1",
+          "value": 0
+        },
+        {
+          "name": "PLAINTEXT",
+          "value": 1
+        },
+        {
+          "name": "RSASHA1",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Telemetry.TelemetryGroup",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "PreAPIOperation",
+          "value": 0
+        },
+        {
+          "name": "PostAPIOperation",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Enums.ProjectType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Swagger",
+          "value": 0
+        },
+        {
+          "name": "SDK",
+          "value": 1
+        },
+        {
+          "name": "OData",
+          "value": 2
+        },
+        {
+          "name": "HttpClient",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Enums.WindowType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "FindObject",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Enums.ApiKeyLocation",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "Query",
+          "value": 1
+        },
+        {
+          "name": "Header",
+          "value": 2
+        },
+        {
+          "name": "Cookie",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Enums.AuthType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "BasicAuth",
+          "value": 10
+        },
+        {
+          "name": "BearerAuth",
+          "value": 20
+        },
+        {
+          "name": "ApiKey",
+          "value": 30
+        },
+        {
+          "name": "ApiToken",
+          "value": 31
+        },
+        {
+          "name": "OAuth1",
+          "value": 35
+        },
+        {
+          "name": "OAuth2AuthorizationCode",
+          "value": 37
+        },
+        {
+          "name": "OAuth2ClientCredentials",
+          "value": 40
+        },
+        {
+          "name": "OAuth2Implicit",
+          "value": 45
+        },
+        {
+          "name": "OAuth2Password",
+          "value": 50
+        },
+        {
+          "name": "OpenIdConnect",
+          "value": 55
+        },
+        {
+          "name": "ExistingConnection",
+          "value": 60
+        },
+        {
+          "name": "OAuthJWT",
+          "value": 65
+        },
+        {
+          "name": "JWT",
+          "value": 66
+        },
+        {
+          "name": "OAuthPassthrough",
+          "value": 67
+        },
+        {
+          "name": "AWS",
+          "value": 68
+        },
+        {
+          "name": "None",
+          "value": 69
+        }
+      ]
+    }
+  ],
+  "namespaceMappings": [
+    {
+      "xmlNamespace": "http://schemas.actiprosoftware.com/winfx/xaml/shared",
+      "prefix": "shared",
+      "clrNamespaces": [
+        "ActiproSoftware.Products.Shared",
+        "ActiproSoftware.Windows",
+        "ActiproSoftware.Windows.Controls",
+        "ActiproSoftware.Windows.Controls.ColorSelection",
+        "ActiproSoftware.Windows.Controls.Primitives",
+        "ActiproSoftware.Windows.Data",
+        "ActiproSoftware.Windows.Data.Filtering",
+        "ActiproSoftware.Windows.Input",
+        "ActiproSoftware.Windows.DocumentManagement",
+        "ActiproSoftware.Windows.Media",
+        "ActiproSoftware.Windows.Media.Animation",
+        "ActiproSoftware.Windows.Shapes"
+      ],
+      "sourceAssembly": "ActiproSoftware.Shared.Wpf"
+    },
+    {
+      "xmlNamespace": "http://schemas.actiprosoftware.com/winfx/xaml/themes",
+      "prefix": "themes",
+      "clrNamespaces": [
+        "ActiproSoftware.Windows.Themes"
+      ],
+      "sourceAssembly": "ActiproSoftware.Shared.Wpf"
+    }
+  ]
+}

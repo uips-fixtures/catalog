@@ -1,0 +1,927 @@
+{
+  "schema": {
+    "id": "activity-catalog",
+    "version": "v0.3"
+  },
+  "source": {
+    "kind": "nuget-package",
+    "id": "UiPath.AzureWindowsVirtualDesktop.Activities",
+    "version": "1.0.0",
+    "feedUrl": null,
+    "authors": "UiPath",
+    "projectUrl": "https://docs.uipath.com/activities/docs/about-the-azure-windows-virtual-desktop-activities-pack",
+    "description": "Microsoft Windows Virtual Desktop Activities Pack",
+    "license": "https://www.uipath.com/hubfs/legalspot/UiPath_MSSA.pdf",
+    "tags": "UiPathActivities Azure WVD WindowsVirtualDesktop VDI VirtualDesktop",
+    "packageTypes": []
+  },
+  "generatedAt": "2026-04-10T09:21:20Z",
+  "activities": [],
+  "enums": [
+    {
+      "fullName": "UiPath.Shared.Activities.LangInvariant.Language",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "VisualBasic",
+          "value": 0
+        },
+        {
+          "name": "CSharp",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.ApplicationGroupType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "RemoteApp",
+          "value": 0
+        },
+        {
+          "name": "Desktop",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.ApplicationType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "RemoteApp",
+          "value": 0
+        },
+        {
+          "name": "Desktop",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.AzureWVDEnvironment",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Global",
+          "value": 0
+        },
+        {
+          "name": "China",
+          "value": 2
+        },
+        {
+          "name": "Germany",
+          "value": 1
+        },
+        {
+          "name": "USGovernment",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.HostPoolType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Personal",
+          "value": 0
+        },
+        {
+          "name": "Pooled",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.LoadBalancerType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "BreadthFirst",
+          "value": 0
+        },
+        {
+          "name": "DepthFirst",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.PersonalDesktopAssignmentType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Automatic",
+          "value": 0
+        },
+        {
+          "name": "Direct",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.PreferredAppGroupType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Desktop",
+          "value": 1
+        },
+        {
+          "name": "RailApplications",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.SessionHostStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Available",
+          "value": 0
+        },
+        {
+          "name": "Unavailable",
+          "value": 1
+        },
+        {
+          "name": "Shutdown",
+          "value": 2
+        },
+        {
+          "name": "Disconnected",
+          "value": 3
+        },
+        {
+          "name": "Upgrading",
+          "value": 4
+        },
+        {
+          "name": "UpgradeFailed",
+          "value": 5
+        },
+        {
+          "name": "NoHeartbeat",
+          "value": 6
+        },
+        {
+          "name": "NotJoinedToDomain",
+          "value": 7
+        },
+        {
+          "name": "DomainTrustRelationshipLost",
+          "value": 8
+        },
+        {
+          "name": "SxSStackListenerNotReady",
+          "value": 9
+        },
+        {
+          "name": "FSLogixNotHealthy",
+          "value": 10
+        },
+        {
+          "name": "NeedsAssistance",
+          "value": 11
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.SessionHostUpdateState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Failed",
+          "value": 0
+        },
+        {
+          "name": "Initial",
+          "value": 1
+        },
+        {
+          "name": "Pending",
+          "value": 2
+        },
+        {
+          "name": "Started",
+          "value": 3
+        },
+        {
+          "name": "Succeeded",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.SessionState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Active",
+          "value": 0
+        },
+        {
+          "name": "Disconnected",
+          "value": 1
+        },
+        {
+          "name": "LogOff",
+          "value": 2
+        },
+        {
+          "name": "Pending",
+          "value": 3
+        },
+        {
+          "name": "Unknown",
+          "value": 4
+        },
+        {
+          "name": "UserProfileDiskMounted",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureWVD.Clients.ApplicationGroupPropertiesApplicationGroupType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "RemoteApp",
+          "value": 0
+        },
+        {
+          "name": "Desktop",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureWVD.Clients.HostPoolPropertiesHostPoolType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Personal",
+          "value": 0
+        },
+        {
+          "name": "Pooled",
+          "value": 1
+        },
+        {
+          "name": "BYODesktop",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureWVD.Clients.HostPoolPropertiesPersonalDesktopAssignmentType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Automatic",
+          "value": 0
+        },
+        {
+          "name": "Direct",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureWVD.Clients.HostPoolPropertiesLoadBalancerType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "BreadthFirst",
+          "value": 0
+        },
+        {
+          "name": "DepthFirst",
+          "value": 1
+        },
+        {
+          "name": "Persistent",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureWVD.Clients.HostPoolPropertiesSsoSecretType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "SharedKey",
+          "value": 0
+        },
+        {
+          "name": "Certificate",
+          "value": 1
+        },
+        {
+          "name": "SharedKeyInKeyVault",
+          "value": 2
+        },
+        {
+          "name": "CertificateInKeyVault",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureWVD.Clients.HostPoolPropertiesPreferredAppGroupType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Desktop",
+          "value": 1
+        },
+        {
+          "name": "RailApplications",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureWVD.Clients.HostPoolPatchPropertiesPersonalDesktopAssignmentType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Automatic",
+          "value": 0
+        },
+        {
+          "name": "Direct",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureWVD.Clients.HostPoolPatchPropertiesLoadBalancerType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "BreadthFirst",
+          "value": 0
+        },
+        {
+          "name": "DepthFirst",
+          "value": 1
+        },
+        {
+          "name": "Persistent",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureWVD.Clients.HostPoolPatchPropertiesSsoSecretType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "SharedKey",
+          "value": 0
+        },
+        {
+          "name": "Certificate",
+          "value": 1
+        },
+        {
+          "name": "SharedKeyInKeyVault",
+          "value": 2
+        },
+        {
+          "name": "CertificateInKeyVault",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureWVD.Clients.HostPoolPatchPropertiesPreferredAppGroupType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Desktop",
+          "value": 1
+        },
+        {
+          "name": "RailApplications",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureWVD.Clients.RegistrationInfoRegistrationTokenOperation",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Delete",
+          "value": 0
+        },
+        {
+          "name": "None",
+          "value": 1
+        },
+        {
+          "name": "Update",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureWVD.Clients.RegistrationInfoPatchRegistrationTokenOperation",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Delete",
+          "value": 0
+        },
+        {
+          "name": "None",
+          "value": 1
+        },
+        {
+          "name": "Update",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureWVD.Clients.ApplicationPropertiesApplicationType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "InBuilt",
+          "value": 0
+        },
+        {
+          "name": "MsixApplication",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureWVD.Clients.ApplicationPropertiesCommandLineSetting",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DoNotAllow",
+          "value": 0
+        },
+        {
+          "name": "Allow",
+          "value": 1
+        },
+        {
+          "name": "Require",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureWVD.Clients.ApplicationPatchPropertiesCommandLineSetting",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DoNotAllow",
+          "value": 0
+        },
+        {
+          "name": "Allow",
+          "value": 1
+        },
+        {
+          "name": "Require",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureWVD.Clients.ApplicationPatchPropertiesApplicationType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "InBuilt",
+          "value": 0
+        },
+        {
+          "name": "MsixApplication",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureWVD.Clients.SessionHostPropertiesStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Available",
+          "value": 0
+        },
+        {
+          "name": "Unavailable",
+          "value": 1
+        },
+        {
+          "name": "Shutdown",
+          "value": 2
+        },
+        {
+          "name": "Disconnected",
+          "value": 3
+        },
+        {
+          "name": "Upgrading",
+          "value": 4
+        },
+        {
+          "name": "UpgradeFailed",
+          "value": 5
+        },
+        {
+          "name": "NoHeartbeat",
+          "value": 6
+        },
+        {
+          "name": "NotJoinedToDomain",
+          "value": 7
+        },
+        {
+          "name": "DomainTrustRelationshipLost",
+          "value": 8
+        },
+        {
+          "name": "SxSStackListenerNotReady",
+          "value": 9
+        },
+        {
+          "name": "FSLogixNotHealthy",
+          "value": 10
+        },
+        {
+          "name": "NeedsAssistance",
+          "value": 11
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureWVD.Clients.SessionHostPropertiesUpdateState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Initial",
+          "value": 0
+        },
+        {
+          "name": "Pending",
+          "value": 1
+        },
+        {
+          "name": "Started",
+          "value": 2
+        },
+        {
+          "name": "Succeeded",
+          "value": 3
+        },
+        {
+          "name": "Failed",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureWVD.Clients.SessionHostHealthCheckReportHealthCheckName",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DomainJoinedCheck",
+          "value": 0
+        },
+        {
+          "name": "DomainTrustCheck",
+          "value": 1
+        },
+        {
+          "name": "FSLogixHealthCheck",
+          "value": 2
+        },
+        {
+          "name": "SxSStackListenerCheck",
+          "value": 3
+        },
+        {
+          "name": "UrlsAccessibleCheck",
+          "value": 4
+        },
+        {
+          "name": "MonitoringAgentCheck",
+          "value": 5
+        },
+        {
+          "name": "DomainReachable",
+          "value": 6
+        },
+        {
+          "name": "WebRTCRedirectorCheck",
+          "value": 7
+        },
+        {
+          "name": "SupportedEncryptionCheck",
+          "value": 8
+        },
+        {
+          "name": "MetaDataServiceCheck",
+          "value": 9
+        },
+        {
+          "name": "AppAttachHealthCheck",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureWVD.Clients.SessionHostHealthCheckReportHealthCheckResult",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "HealthCheckSucceeded",
+          "value": 1
+        },
+        {
+          "name": "HealthCheckFailed",
+          "value": 2
+        },
+        {
+          "name": "SessionHostShutdown",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureWVD.Clients.UserSessionPropertiesApplicationType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "RemoteApp",
+          "value": 0
+        },
+        {
+          "name": "Desktop",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureWVD.Clients.UserSessionPropertiesSessionState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "Active",
+          "value": 1
+        },
+        {
+          "name": "Disconnected",
+          "value": 2
+        },
+        {
+          "name": "Pending",
+          "value": 3
+        },
+        {
+          "name": "LogOff",
+          "value": 4
+        },
+        {
+          "name": "UserProfileDiskMounted",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureWVD.Clients.ScalingPlanPropertiesHostPoolType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Personal",
+          "value": 0
+        },
+        {
+          "name": "Pooled",
+          "value": 1
+        },
+        {
+          "name": "BYODesktop",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureWVD.Clients.DaysOfWeek",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Sunday",
+          "value": 0
+        },
+        {
+          "name": "Monday",
+          "value": 1
+        },
+        {
+          "name": "Tuesday",
+          "value": 2
+        },
+        {
+          "name": "Wednesday",
+          "value": 3
+        },
+        {
+          "name": "Thursday",
+          "value": 4
+        },
+        {
+          "name": "Friday",
+          "value": 5
+        },
+        {
+          "name": "Saturday",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureWVD.Clients.ScalingScheduleRampUpLoadBalancingAlgorithm",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "BreadthFirst",
+          "value": 0
+        },
+        {
+          "name": "DepthFirst",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureWVD.Clients.ScalingSchedulePeakLoadBalancingAlgorithm",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "BreadthFirst",
+          "value": 0
+        },
+        {
+          "name": "DepthFirst",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureWVD.Clients.ScalingScheduleRampDownLoadBalancingAlgorithm",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "BreadthFirst",
+          "value": 0
+        },
+        {
+          "name": "DepthFirst",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureWVD.Clients.ScalingScheduleRampDownStopHostsWhen",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ZeroSessions",
+          "value": 0
+        },
+        {
+          "name": "ZeroActiveSessions",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureWVD.Clients.ScalingScheduleOffPeakLoadBalancingAlgorithm",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "BreadthFirst",
+          "value": 0
+        },
+        {
+          "name": "DepthFirst",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureWVD.Clients.ScalingPlanPatchPropertiesHostPoolType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Personal",
+          "value": 0
+        },
+        {
+          "name": "Pooled",
+          "value": 1
+        },
+        {
+          "name": "BYODesktop",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureWVD.Clients.MigrationRequestPropertiesOperation",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Start",
+          "value": 0
+        },
+        {
+          "name": "Revoke",
+          "value": 1
+        },
+        {
+          "name": "Complete",
+          "value": 2
+        },
+        {
+          "name": "Hide",
+          "value": 3
+        },
+        {
+          "name": "Unhide",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureWVD.Clients.IdentityType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "SystemAssigned",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureWVD.Clients.SkuTier",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Free",
+          "value": 0
+        },
+        {
+          "name": "Basic",
+          "value": 1
+        },
+        {
+          "name": "Standard",
+          "value": 2
+        },
+        {
+          "name": "Premium",
+          "value": 3
+        }
+      ]
+    }
+  ],
+  "namespaceMappings": []
+}

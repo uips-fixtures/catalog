@@ -1,0 +1,4028 @@
+{
+  "schema": {
+    "id": "activity-catalog",
+    "version": "v0.3"
+  },
+  "source": {
+    "kind": "nuget-package",
+    "id": "UiPath.UIAutomation.Activities.Runtime.Portable",
+    "version": "25.10.29",
+    "feedUrl": null,
+    "authors": "UiPath",
+    "projectUrl": "https://activities.uipath.com/docs/about-the-ui-automation-activities-pack",
+    "description": "IMPORTANT: Package contains core activities which enable the automation of desktop applications, browsers, and virtual machines. Please check the documentation for more details.",
+    "license": "https://www.uipath.com/hubfs/legalspot/UiPath_MSSA.pdf",
+    "tags": null,
+    "packageTypes": []
+  },
+  "generatedAt": "2026-04-10T09:21:25Z",
+  "activities": [],
+  "enums": [
+    {
+      "fullName": "UiPath.Semantic.Activities.Shared.Patterns.Contracts.IAttributeComparer.Condition",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Equals",
+          "value": 1
+        },
+        {
+          "name": "ClassContains",
+          "value": 2
+        },
+        {
+          "name": "Contains",
+          "value": 3
+        },
+        {
+          "name": "Exists",
+          "value": 4
+        },
+        {
+          "name": "EndsWith",
+          "value": 5
+        },
+        {
+          "name": "StartsWith",
+          "value": 6
+        },
+        {
+          "name": "AnyOfClass",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Semantic.Activities.Shared.Patterns.Contracts.IAttributeComparer.Type",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Generic",
+          "value": 0
+        },
+        {
+          "name": "Driver",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Semantic.Activities.Shared.Patterns.Contracts.IAttributeComparer.CompareStrategy",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Strict",
+          "value": 0
+        },
+        {
+          "name": "IgnoreMissingAttributes",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Semantic.Activities.Models.ElementTypeSource",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "DOM",
+          "value": 1
+        },
+        {
+          "name": "DOMLabelFor",
+          "value": 2
+        },
+        {
+          "name": "DOMParent",
+          "value": 3
+        },
+        {
+          "name": "DOMLabelParent",
+          "value": 4
+        },
+        {
+          "name": "DOMSibling",
+          "value": 5
+        },
+        {
+          "name": "DOMFeatures",
+          "value": 6
+        },
+        {
+          "name": "CV",
+          "value": 7
+        },
+        {
+          "name": "ElementDefinition",
+          "value": 8
+        },
+        {
+          "name": "Framework",
+          "value": 9
+        },
+        {
+          "name": "Pattern",
+          "value": 10
+        },
+        {
+          "name": "Hierarchy",
+          "value": 11
+        },
+        {
+          "name": "DOMChild",
+          "value": 12
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Semantic.Activities.Models.NetSuiteInputType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Simple",
+          "value": 1
+        },
+        {
+          "name": "RichText",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Semantic.Activities.Models.NetSuiteSelectType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Select",
+          "value": 1
+        },
+        {
+          "name": "PopupSelect",
+          "value": 2
+        },
+        {
+          "name": "MultiSelect",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Semantic.Activities.Models.WorkdaySelectType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "MultiSelect",
+          "value": 1
+        },
+        {
+          "name": "Select",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Semantic.Activities.Enums.ExtractUnstructuredDataInputType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Text",
+          "value": 0
+        },
+        {
+          "name": "File",
+          "value": 1
+        },
+        {
+          "name": "UIElement",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Semantic.Activities.Enums.WebEditableElementType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Invalid",
+          "value": 0
+        },
+        {
+          "name": "TextArea",
+          "value": 1
+        },
+        {
+          "name": "Input",
+          "value": 2
+        },
+        {
+          "name": "ContentEditable",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Semantic.Activities.Contracts.Models.PromptActionType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Click",
+          "value": 1
+        },
+        {
+          "name": "DoubleClick",
+          "value": 2
+        },
+        {
+          "name": "TypeInto",
+          "value": 3
+        },
+        {
+          "name": "SelectItem",
+          "value": 4
+        },
+        {
+          "name": "SetValue",
+          "value": 5
+        },
+        {
+          "name": "Check",
+          "value": 6
+        },
+        {
+          "name": "Highlight",
+          "value": 7
+        },
+        {
+          "name": "Hover",
+          "value": 8
+        },
+        {
+          "name": "GetText",
+          "value": 9
+        },
+        {
+          "name": "Wait",
+          "value": 10
+        },
+        {
+          "name": "TakeScreenshot",
+          "value": 11
+        },
+        {
+          "name": "NavigateBrowser",
+          "value": 12
+        },
+        {
+          "name": "GoToUrl",
+          "value": 13
+        },
+        {
+          "name": "MouseScroll",
+          "value": 14
+        },
+        {
+          "name": "Finish",
+          "value": 15
+        },
+        {
+          "name": "KeyboardShortcut",
+          "value": 16
+        },
+        {
+          "name": "ExtractInfoFromScreen",
+          "value": 17
+        },
+        {
+          "name": "UserQuestion",
+          "value": 18
+        },
+        {
+          "name": "MouseDrag",
+          "value": 19
+        },
+        {
+          "name": "GetClipboardText",
+          "value": 20
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Semantic.Activities.Contracts.Models.PromptExecutionStatusType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "Success",
+          "value": 1
+        },
+        {
+          "name": "Failed",
+          "value": 2
+        },
+        {
+          "name": "FailedWithServerError",
+          "value": 3
+        },
+        {
+          "name": "FailedWithMaxNoOfStepsReached",
+          "value": 4
+        },
+        {
+          "name": "FailedWithUserQuestion",
+          "value": 5
+        },
+        {
+          "name": "FailedWithException",
+          "value": 6
+        },
+        {
+          "name": "FailedWithGovernanceException",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationCore.ProjectTargetFramework",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Legacy",
+          "value": 0
+        },
+        {
+          "name": "Windows",
+          "value": 1
+        },
+        {
+          "name": "Portable",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Shared.JobWrapper.JobObjectInfoType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AssociateCompletionPortInformation",
+          "value": 7
+        },
+        {
+          "name": "BasicLimitInformation",
+          "value": 2
+        },
+        {
+          "name": "BasicUIRestrictions",
+          "value": 4
+        },
+        {
+          "name": "EndOfJobTimeInformation",
+          "value": 6
+        },
+        {
+          "name": "ExtendedLimitInformation",
+          "value": 9
+        },
+        {
+          "name": "SecurityLimitInformation",
+          "value": 5
+        },
+        {
+          "name": "GroupInformation",
+          "value": 11
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Shared.NativeMessageBox.MessageBoxOptions",
+      "underlyingType": "System.UInt32",
+      "members": [
+        {
+          "name": "OkOnly",
+          "value": 0
+        },
+        {
+          "name": "OkCancel",
+          "value": 1
+        },
+        {
+          "name": "AbortRetryIgnore",
+          "value": 2
+        },
+        {
+          "name": "YesNoCancel",
+          "value": 3
+        },
+        {
+          "name": "YesNo",
+          "value": 4
+        },
+        {
+          "name": "RetryCancel",
+          "value": 5
+        },
+        {
+          "name": "CancelTryContinue",
+          "value": 6
+        },
+        {
+          "name": "IconHand",
+          "value": 16
+        },
+        {
+          "name": "IconQuestion",
+          "value": 32
+        },
+        {
+          "name": "IconExclamation",
+          "value": 48
+        },
+        {
+          "name": "IconAsterisk",
+          "value": 64
+        },
+        {
+          "name": "UserIcon",
+          "value": 128
+        },
+        {
+          "name": "IconWarning",
+          "value": 48
+        },
+        {
+          "name": "IconError",
+          "value": 16
+        },
+        {
+          "name": "IconInformation",
+          "value": 64
+        },
+        {
+          "name": "IconStop",
+          "value": 16
+        },
+        {
+          "name": "DefButton1",
+          "value": 0
+        },
+        {
+          "name": "DefButton2",
+          "value": 256
+        },
+        {
+          "name": "DefButton3",
+          "value": 512
+        },
+        {
+          "name": "DefButton4",
+          "value": 768
+        },
+        {
+          "name": "ApplicationModal",
+          "value": 0
+        },
+        {
+          "name": "SystemModal",
+          "value": 4096
+        },
+        {
+          "name": "TaskModal",
+          "value": 8192
+        },
+        {
+          "name": "Help",
+          "value": 16384
+        },
+        {
+          "name": "NoFocus",
+          "value": 32768
+        },
+        {
+          "name": "SetForeground",
+          "value": 65536
+        },
+        {
+          "name": "DefaultDesktopOnly",
+          "value": 131072
+        },
+        {
+          "name": "Topmost",
+          "value": 262144
+        },
+        {
+          "name": "Right",
+          "value": 524288
+        },
+        {
+          "name": "RTLReading",
+          "value": 1048576
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Shared.NativeMessageBox.MessageBoxResult",
+      "underlyingType": "System.UInt32",
+      "members": [
+        {
+          "name": "Error",
+          "value": 0
+        },
+        {
+          "name": "Ok",
+          "value": 1
+        },
+        {
+          "name": "Cancel",
+          "value": 2
+        },
+        {
+          "name": "Abort",
+          "value": 3
+        },
+        {
+          "name": "Retry",
+          "value": 4
+        },
+        {
+          "name": "Ignore",
+          "value": 5
+        },
+        {
+          "name": "Yes",
+          "value": 6
+        },
+        {
+          "name": "No",
+          "value": 7
+        },
+        {
+          "name": "Close",
+          "value": 8
+        },
+        {
+          "name": "Help",
+          "value": 9
+        },
+        {
+          "name": "TryAgain",
+          "value": 10
+        },
+        {
+          "name": "Continue",
+          "value": 11
+        },
+        {
+          "name": "Timeout",
+          "value": 32000
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Shared.ImageComparison.ImageComparisonType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ContourBasedWithLocation",
+          "value": 0
+        },
+        {
+          "name": "ContourBasedWithNearestDiagonalDistance",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Shared.Anchor2.Anchor2Version",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "V1",
+          "value": 0
+        },
+        {
+          "name": "V2",
+          "value": 1
+        },
+        {
+          "name": "V3",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Shared.Anchor2.AutoAnchor.AutoAnchorSearchType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Left",
+          "value": 1
+        },
+        {
+          "name": "Right",
+          "value": 2
+        },
+        {
+          "name": "Top",
+          "value": 4
+        },
+        {
+          "name": "Bottom",
+          "value": 8
+        },
+        {
+          "name": "Inner",
+          "value": 16
+        },
+        {
+          "name": "ContainedBy",
+          "value": 32
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Shared.Anchor2.AutoAnchor.Contracts.AutoAnchorElementType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "AnyText",
+          "value": 1
+        },
+        {
+          "name": "AnyWordGroup",
+          "value": 2
+        },
+        {
+          "name": "ArrowButton",
+          "value": 3
+        },
+        {
+          "name": "Button",
+          "value": 4
+        },
+        {
+          "name": "CheckBox",
+          "value": 5
+        },
+        {
+          "name": "Icon",
+          "value": 6
+        },
+        {
+          "name": "InputBox",
+          "value": 7
+        },
+        {
+          "name": "RadioButton",
+          "value": 8
+        },
+        {
+          "name": "Text",
+          "value": 9
+        },
+        {
+          "name": "Cell",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Shared.Activities.Services.Language",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "VisualBasic",
+          "value": 0
+        },
+        {
+          "name": "CSharp",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Triggers.NNativeEventType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "ElementAppeared",
+          "value": 1
+        },
+        {
+          "name": "ElementDisappeared",
+          "value": 2
+        },
+        {
+          "name": "KeyPress",
+          "value": 3
+        },
+        {
+          "name": "MouseClick",
+          "value": 4
+        },
+        {
+          "name": "JavaTextChange",
+          "value": 5
+        },
+        {
+          "name": "JavaKeyPress",
+          "value": 6
+        },
+        {
+          "name": "JavaMouseClick",
+          "value": 7
+        },
+        {
+          "name": "JavaMouseMove",
+          "value": 8
+        },
+        {
+          "name": "JavaFocusGained",
+          "value": 9
+        },
+        {
+          "name": "JavaFocusLost",
+          "value": 10
+        },
+        {
+          "name": "JavaEnabled",
+          "value": 11
+        },
+        {
+          "name": "JavaDisabled",
+          "value": 12
+        },
+        {
+          "name": "JavaSelectionChanged",
+          "value": 13
+        },
+        {
+          "name": "JavaMouseEntered",
+          "value": 14
+        },
+        {
+          "name": "JavaMouseExited",
+          "value": 15
+        },
+        {
+          "name": "JavaCellSelected",
+          "value": 16
+        },
+        {
+          "name": "JavaCellValueChanged",
+          "value": 17
+        },
+        {
+          "name": "JavaMousePressed",
+          "value": 18
+        },
+        {
+          "name": "JavaMouseReleased",
+          "value": 19
+        },
+        {
+          "name": "JavaMenuSelected",
+          "value": 20
+        },
+        {
+          "name": "JavaMenuDeselected",
+          "value": 21
+        },
+        {
+          "name": "JavaMenuCanceled",
+          "value": 22
+        },
+        {
+          "name": "JavaPopupMenuVisible",
+          "value": 23
+        },
+        {
+          "name": "JavaPopupMenuInvisible",
+          "value": 24
+        },
+        {
+          "name": "JavaPopupMenuCanceled",
+          "value": 25
+        },
+        {
+          "name": "CtrlTextChange",
+          "value": 26
+        },
+        {
+          "name": "CtrlTitleChange",
+          "value": 27
+        },
+        {
+          "name": "CtrlFocusGained",
+          "value": 28
+        },
+        {
+          "name": "CtrlFocusLost",
+          "value": 29
+        },
+        {
+          "name": "CtrlStateChanged",
+          "value": 30
+        },
+        {
+          "name": "CtrlSelectionChanged",
+          "value": 31
+        },
+        {
+          "name": "CtrlLocationChanged",
+          "value": 32
+        },
+        {
+          "name": "ForegroundGained",
+          "value": 33
+        },
+        {
+          "name": "ForegroundLost",
+          "value": 34
+        },
+        {
+          "name": "WndMinimized",
+          "value": 35
+        },
+        {
+          "name": "WndRestored",
+          "value": 36
+        },
+        {
+          "name": "WebctrlTextChange",
+          "value": 37
+        },
+        {
+          "name": "WebctrlTextSelectionChanged",
+          "value": 38
+        },
+        {
+          "name": "WebctrlKeyPress",
+          "value": 39
+        },
+        {
+          "name": "WebctrlMouseClick",
+          "value": 40
+        },
+        {
+          "name": "WebctrlMouseDoubleClick",
+          "value": 41
+        },
+        {
+          "name": "WebctrlMouseRightClick",
+          "value": 42
+        },
+        {
+          "name": "WebctrlMouseMove",
+          "value": 43
+        },
+        {
+          "name": "WebctrlMousePressed",
+          "value": 44
+        },
+        {
+          "name": "WebctrlMouseReleased",
+          "value": 45
+        },
+        {
+          "name": "WebctrlMouseEntered",
+          "value": 46
+        },
+        {
+          "name": "WebctrlMouseExited",
+          "value": 47
+        },
+        {
+          "name": "WebctrlFocusGained",
+          "value": 48
+        },
+        {
+          "name": "WebctrlFocusLost",
+          "value": 49
+        },
+        {
+          "name": "WebctrlDownloadChanged",
+          "value": 50
+        },
+        {
+          "name": "WebctrlTabActivated",
+          "value": 51
+        },
+        {
+          "name": "WebctrlTabCreated",
+          "value": 52
+        },
+        {
+          "name": "WebctrlTabRemoved",
+          "value": 53
+        },
+        {
+          "name": "WebctrlTabUpdated",
+          "value": 54
+        },
+        {
+          "name": "WebctrlTabDialogOpening",
+          "value": 55
+        },
+        {
+          "name": "WebctrlTabDialogClosed",
+          "value": 56
+        },
+        {
+          "name": "WebctrlTabNavigationStarted",
+          "value": 57
+        },
+        {
+          "name": "WebctrlTabNavigationCompleted",
+          "value": 58
+        },
+        {
+          "name": "WebctrlWindowFocusChanged",
+          "value": 59
+        },
+        {
+          "name": "WebctrlWindowBoundsChanged",
+          "value": 60
+        },
+        {
+          "name": "WebctrlWindowCreated",
+          "value": 61
+        },
+        {
+          "name": "WebctrlWindowRemoved",
+          "value": 62
+        },
+        {
+          "name": "WebctrlWebRequestBeforeRedirect",
+          "value": 63
+        },
+        {
+          "name": "WebctrlWebRequestBeforeRequest",
+          "value": 64
+        },
+        {
+          "name": "WebctrlWebRequestBeforeSendHeaders",
+          "value": 65
+        },
+        {
+          "name": "WebctrlWebRequestCompleted",
+          "value": 66
+        },
+        {
+          "name": "WebctrlWebRequestErrorOccurred",
+          "value": 67
+        },
+        {
+          "name": "WebctrlWebRequestHeadersReceived",
+          "value": 68
+        },
+        {
+          "name": "WebctrlWebRequestResponseStarted",
+          "value": 69
+        },
+        {
+          "name": "WebctrlWebRequestSendHeaders",
+          "value": 70
+        },
+        {
+          "name": "SapWebPageMonitor",
+          "value": 71
+        },
+        {
+          "name": "UiaFocusGained",
+          "value": 72
+        },
+        {
+          "name": "UiaFocusLost",
+          "value": 73
+        },
+        {
+          "name": "UiaInvoked",
+          "value": 74
+        },
+        {
+          "name": "UiaTextChanged",
+          "value": 75
+        },
+        {
+          "name": "UiaTextSelectionChanged",
+          "value": 76
+        },
+        {
+          "name": "UiaSelected",
+          "value": 77
+        },
+        {
+          "name": "UiaDeselected",
+          "value": 78
+        },
+        {
+          "name": "UiaToggled",
+          "value": 79
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Triggers.NClickTriggerMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Down",
+          "value": 1
+        },
+        {
+          "name": "Up",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Triggers.NKeyTriggerMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Down",
+          "value": 1
+        },
+        {
+          "name": "Up",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Models.SpecialKey",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Add",
+          "value": 85
+        },
+        {
+          "name": "Alt",
+          "value": 120
+        },
+        {
+          "name": "LAlt",
+          "value": 120
+        },
+        {
+          "name": "RAlt",
+          "value": 121
+        },
+        {
+          "name": "Back",
+          "value": 2
+        },
+        {
+          "name": "Break",
+          "value": 7
+        },
+        {
+          "name": "Caps",
+          "value": 8
+        },
+        {
+          "name": "Comma",
+          "value": 142
+        },
+        {
+          "name": "Ctrl",
+          "value": 118
+        },
+        {
+          "name": "LCtrl",
+          "value": 118
+        },
+        {
+          "name": "RCtrl",
+          "value": 119
+        },
+        {
+          "name": "Decimal",
+          "value": 88
+        },
+        {
+          "name": "Del",
+          "value": 32
+        },
+        {
+          "name": "Div",
+          "value": 89
+        },
+        {
+          "name": "Down",
+          "value": 26
+        },
+        {
+          "name": "End",
+          "value": 21
+        },
+        {
+          "name": "Enter",
+          "value": 6
+        },
+        {
+          "name": "NumEnter",
+          "value": 6
+        },
+        {
+          "name": "Esc",
+          "value": 13
+        },
+        {
+          "name": "F1",
+          "value": 90
+        },
+        {
+          "name": "F2",
+          "value": 91
+        },
+        {
+          "name": "F3",
+          "value": 92
+        },
+        {
+          "name": "F4",
+          "value": 93
+        },
+        {
+          "name": "F5",
+          "value": 94
+        },
+        {
+          "name": "F6",
+          "value": 95
+        },
+        {
+          "name": "F7",
+          "value": 96
+        },
+        {
+          "name": "F8",
+          "value": 97
+        },
+        {
+          "name": "F9",
+          "value": 98
+        },
+        {
+          "name": "F10",
+          "value": 99
+        },
+        {
+          "name": "F11",
+          "value": 100
+        },
+        {
+          "name": "F12",
+          "value": 101
+        },
+        {
+          "name": "Home",
+          "value": 22
+        },
+        {
+          "name": "Ins",
+          "value": 31
+        },
+        {
+          "name": "Left",
+          "value": 23
+        },
+        {
+          "name": "Minus",
+          "value": 143
+        },
+        {
+          "name": "Mul",
+          "value": 84
+        },
+        {
+          "name": "Num",
+          "value": 114
+        },
+        {
+          "name": "Num0",
+          "value": 74
+        },
+        {
+          "name": "Num1",
+          "value": 75
+        },
+        {
+          "name": "Num2",
+          "value": 76
+        },
+        {
+          "name": "Num3",
+          "value": 77
+        },
+        {
+          "name": "Num4",
+          "value": 78
+        },
+        {
+          "name": "Num5",
+          "value": 79
+        },
+        {
+          "name": "Num6",
+          "value": 80
+        },
+        {
+          "name": "Num7",
+          "value": 81
+        },
+        {
+          "name": "Num8",
+          "value": 82
+        },
+        {
+          "name": "Num9",
+          "value": 83
+        },
+        {
+          "name": "Oem1",
+          "value": 140
+        },
+        {
+          "name": "Oem2",
+          "value": 145
+        },
+        {
+          "name": "Oem3",
+          "value": 146
+        },
+        {
+          "name": "Oem4",
+          "value": 149
+        },
+        {
+          "name": "Oem5",
+          "value": 150
+        },
+        {
+          "name": "Oem6",
+          "value": 151
+        },
+        {
+          "name": "Oem7",
+          "value": 152
+        },
+        {
+          "name": "Oem8",
+          "value": 153
+        },
+        {
+          "name": "Pause",
+          "value": 7
+        },
+        {
+          "name": "PgUp",
+          "value": 19
+        },
+        {
+          "name": "PgDn",
+          "value": 20
+        },
+        {
+          "name": "Right",
+          "value": 25
+        },
+        {
+          "name": "Scroll",
+          "value": 115
+        },
+        {
+          "name": "Shift",
+          "value": 116
+        },
+        {
+          "name": "LShift",
+          "value": 116
+        },
+        {
+          "name": "RShift",
+          "value": 117
+        },
+        {
+          "name": "Sleep",
+          "value": 73
+        },
+        {
+          "name": "Sub",
+          "value": 87
+        },
+        {
+          "name": "Tab",
+          "value": 3
+        },
+        {
+          "name": "Up",
+          "value": 24
+        },
+        {
+          "name": "LWin",
+          "value": 70
+        },
+        {
+          "name": "RWin",
+          "value": 71
+        },
+        {
+          "name": "Command",
+          "value": -55
+        },
+        {
+          "name": "Option",
+          "value": -58
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Models.ExtractData.ColumnSort",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Asc",
+          "value": 1
+        },
+        {
+          "name": "Desc",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Models.ExtractData.ColumnFormatType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Text",
+          "value": 0
+        },
+        {
+          "name": "Date",
+          "value": 1
+        },
+        {
+          "name": "Number",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Models.ExtractData.ExtractType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Table",
+          "value": 1
+        },
+        {
+          "name": "Structured",
+          "value": 2
+        },
+        {
+          "name": "CV",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Models.ExtractData.LimitType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Rows",
+          "value": 0
+        },
+        {
+          "name": "None",
+          "value": 1
+        },
+        {
+          "name": "Page",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Models.CV.CvAnalysisType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Controls",
+          "value": 1
+        },
+        {
+          "name": "Cells",
+          "value": 2
+        },
+        {
+          "name": "Tables",
+          "value": 4
+        },
+        {
+          "name": "IncludeOCR",
+          "value": 8
+        },
+        {
+          "name": "Anchors",
+          "value": 16
+        },
+        {
+          "name": "LegacyTableDetection",
+          "value": 32
+        },
+        {
+          "name": "ClassifyContent",
+          "value": 64
+        },
+        {
+          "name": "EnableAccents",
+          "value": 128
+        },
+        {
+          "name": "Descriptions",
+          "value": 256
+        },
+        {
+          "name": "All",
+          "value": 279
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Models.CV.CvFlagType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "CheckboxIsChecked",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Models.CV.UIVisionCategoryType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Button",
+          "value": 1
+        },
+        {
+          "name": "InputBox",
+          "value": 2
+        },
+        {
+          "name": "CheckBox",
+          "value": 3
+        },
+        {
+          "name": "RadioButton",
+          "value": 4
+        },
+        {
+          "name": "CloseButton",
+          "value": 5
+        },
+        {
+          "name": "MaximizeButton",
+          "value": 6
+        },
+        {
+          "name": "MinimizeButton",
+          "value": 7
+        },
+        {
+          "name": "Icon",
+          "value": 8
+        },
+        {
+          "name": "ArrowButton",
+          "value": 9
+        },
+        {
+          "name": "Cell",
+          "value": 10
+        },
+        {
+          "name": "Text",
+          "value": 11
+        },
+        {
+          "name": "Image",
+          "value": 12
+        },
+        {
+          "name": "Area",
+          "value": 13
+        },
+        {
+          "name": "AnyText",
+          "value": 14
+        },
+        {
+          "name": "AnyWordGroup",
+          "value": 15
+        },
+        {
+          "name": "AnyIcon",
+          "value": 16
+        },
+        {
+          "name": "Table",
+          "value": 17
+        },
+        {
+          "name": "TableCell",
+          "value": 18
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Models.CV.VisionCategoryType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Others",
+          "value": 0
+        },
+        {
+          "name": "CheckBox",
+          "value": 1
+        },
+        {
+          "name": "RadioButton",
+          "value": 2
+        },
+        {
+          "name": "Button",
+          "value": 3
+        },
+        {
+          "name": "InputBox",
+          "value": 4
+        },
+        {
+          "name": "CloseButton",
+          "value": 5
+        },
+        {
+          "name": "MaximizeButton",
+          "value": 6
+        },
+        {
+          "name": "Icon",
+          "value": 7
+        },
+        {
+          "name": "ArrowButton",
+          "value": 8
+        },
+        {
+          "name": "MinimizeButton",
+          "value": 9
+        },
+        {
+          "name": "Cell",
+          "value": 10
+        },
+        {
+          "name": "Table",
+          "value": 11
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Models.CV.VisionConfidenceType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Ignore",
+          "value": 0
+        },
+        {
+          "name": "Runtime",
+          "value": 1
+        },
+        {
+          "name": "DesignTime",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Enums.AttachToActiveTabMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Disabled",
+          "value": 0
+        },
+        {
+          "name": "ByURLScore",
+          "value": 1
+        },
+        {
+          "name": "Any",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Enums.BrowserCommunicationMethod",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Native",
+          "value": 0
+        },
+        {
+          "name": "WebDriver",
+          "value": 64
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Enums.BrowserUserDataFolderMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Automatic",
+          "value": 0
+        },
+        {
+          "name": "DefaultFolder",
+          "value": 1
+        },
+        {
+          "name": "CustomFolder",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Enums.CursorMotionType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Instant",
+          "value": 0
+        },
+        {
+          "name": "Smooth",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Enums.ExtensionType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "JavaBridge",
+          "value": 1
+        },
+        {
+          "name": "Chrome",
+          "value": 2
+        },
+        {
+          "name": "Firefox",
+          "value": 3
+        },
+        {
+          "name": "Edge",
+          "value": 4
+        },
+        {
+          "name": "EdgeChromium",
+          "value": 5
+        },
+        {
+          "name": "Citrix",
+          "value": 6
+        },
+        {
+          "name": "WindowsRdp",
+          "value": 7
+        },
+        {
+          "name": "VMwareHorizon",
+          "value": 8
+        },
+        {
+          "name": "AmazonWorkspaces",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Enums.GetTextMethod",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "AttributeText",
+          "value": 1
+        },
+        {
+          "name": "AttributeAAName",
+          "value": 2
+        },
+        {
+          "name": "AttributeHtmlInnerText",
+          "value": 3
+        },
+        {
+          "name": "FullTextScrapping",
+          "value": 4
+        },
+        {
+          "name": "NativeScrapping",
+          "value": 5
+        },
+        {
+          "name": "OCR",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Enums.NActivityVersion",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "V1",
+          "value": 1
+        },
+        {
+          "name": "V2",
+          "value": 2
+        },
+        {
+          "name": "V3",
+          "value": 3
+        },
+        {
+          "name": "V4",
+          "value": 4
+        },
+        {
+          "name": "V5",
+          "value": 5
+        },
+        {
+          "name": "Latest",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Enums.NAppAttachMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ByProcessName",
+          "value": 0
+        },
+        {
+          "name": "ByInstance",
+          "value": 1
+        },
+        {
+          "name": "SingleWindow",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Enums.NAppCloseMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Never",
+          "value": 0
+        },
+        {
+          "name": "IfOpenedByAppBrowser",
+          "value": 1
+        },
+        {
+          "name": "Always",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Enums.NApplicationCardVersion",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "V1",
+          "value": 1
+        },
+        {
+          "name": "V2",
+          "value": 2
+        },
+        {
+          "name": "Latest",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Enums.NAppOpenMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Never",
+          "value": 0
+        },
+        {
+          "name": "IfNotOpen",
+          "value": 1
+        },
+        {
+          "name": "Always",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Enums.NBrowserDialogResponse",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Cancel",
+          "value": 0
+        },
+        {
+          "name": "OK",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Enums.NBrowserDialogScopeType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AlertSingle",
+          "value": 0
+        },
+        {
+          "name": "ConfirmSingle",
+          "value": 1
+        },
+        {
+          "name": "PromptSingle",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Enums.NBrowserFilePickerScopeMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "SingleFile",
+          "value": 0
+        },
+        {
+          "name": "MultipleFiles",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Enums.NBrowserType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": -1
+        },
+        {
+          "name": "IE",
+          "value": 0
+        },
+        {
+          "name": "Firefox",
+          "value": 1
+        },
+        {
+          "name": "Chrome",
+          "value": 2
+        },
+        {
+          "name": "Edge",
+          "value": 6
+        },
+        {
+          "name": "Custom",
+          "value": 8
+        },
+        {
+          "name": "WebWidgetNative",
+          "value": 10
+        },
+        {
+          "name": "Safari",
+          "value": 11
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Enums.NCheckStateMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "WaitAppear",
+          "value": 0
+        },
+        {
+          "name": "WaitDisappear",
+          "value": 1
+        },
+        {
+          "name": "WindowNotActive",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Enums.NCheckType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Check",
+          "value": 0
+        },
+        {
+          "name": "Uncheck",
+          "value": 1
+        },
+        {
+          "name": "Toggle",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Enums.NClickMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Single",
+          "value": 1
+        },
+        {
+          "name": "Double",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Enums.NClickType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Single",
+          "value": 0
+        },
+        {
+          "name": "Double",
+          "value": 1
+        },
+        {
+          "name": "Down",
+          "value": 2
+        },
+        {
+          "name": "Up",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Enums.NDateSelectionType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Date",
+          "value": 0
+        },
+        {
+          "name": "Range",
+          "value": 1
+        },
+        {
+          "name": "Week",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Enums.NElementVisibility",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Interactive",
+          "value": 1
+        },
+        {
+          "name": "Visible",
+          "value": 2
+        },
+        {
+          "name": "Legacy",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Enums.NEmptyFieldMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "SingleLine",
+          "value": 1
+        },
+        {
+          "name": "MultiLine",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Enums.NTypeByClipboardMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Never",
+          "value": 0
+        },
+        {
+          "name": "Always",
+          "value": 1
+        },
+        {
+          "name": "WhenPossible",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Enums.NTraceAttachMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "OnFailure",
+          "value": 0
+        },
+        {
+          "name": "Always",
+          "value": 1
+        },
+        {
+          "name": "Never",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Enums.NFileNameMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Index",
+          "value": 1
+        },
+        {
+          "name": "DateTime",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Enums.NExecutionWorld",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Isolated",
+          "value": 0
+        },
+        {
+          "name": "Page",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Enums.NGoToUrlMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "OpenInSameTab",
+          "value": 0
+        },
+        {
+          "name": "OpenInNewTab",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Enums.NHealingAgentBehavior",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Job",
+          "value": 0
+        },
+        {
+          "name": "Disabled",
+          "value": 1
+        },
+        {
+          "name": "RecommendationOnly",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Enums.NChildHealingAgentBehavior",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "SameAsCard",
+          "value": 0
+        },
+        {
+          "name": "Job",
+          "value": 1
+        },
+        {
+          "name": "Disabled",
+          "value": 2
+        },
+        {
+          "name": "RecommendationOnly",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Enums.NInteractionMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "HardwareEvents",
+          "value": 0
+        },
+        {
+          "name": "Simulate",
+          "value": 1
+        },
+        {
+          "name": "DebuggerApi",
+          "value": 2
+        },
+        {
+          "name": "WindowMessages",
+          "value": 3
+        },
+        {
+          "name": "Background",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Enums.NChildInteractionMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "SameAsCard",
+          "value": 0
+        },
+        {
+          "name": "HardwareEvents",
+          "value": 1
+        },
+        {
+          "name": "Simulate",
+          "value": 2
+        },
+        {
+          "name": "DebuggerApi",
+          "value": 3
+        },
+        {
+          "name": "WindowMessages",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Enums.NKeyModifiers",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Alt",
+          "value": 1
+        },
+        {
+          "name": "Ctrl",
+          "value": 2
+        },
+        {
+          "name": "Shift",
+          "value": 4
+        },
+        {
+          "name": "Win",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Enums.NMouseButton",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Left",
+          "value": 0
+        },
+        {
+          "name": "Right",
+          "value": 1
+        },
+        {
+          "name": "Middle",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Enums.NMultiLogonOption",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Single",
+          "value": 0
+        },
+        {
+          "name": "Multiple",
+          "value": 1
+        },
+        {
+          "name": "Terminate",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Enums.NNavigateBrowserAction",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "GoBack",
+          "value": 0
+        },
+        {
+          "name": "GoForward",
+          "value": 1
+        },
+        {
+          "name": "GoHome",
+          "value": 2
+        },
+        {
+          "name": "Refresh",
+          "value": 3
+        },
+        {
+          "name": "CloseTab",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Enums.NPopupHandleState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NotFound",
+          "value": 0
+        },
+        {
+          "name": "Handled",
+          "value": 1
+        },
+        {
+          "name": "NotHandled",
+          "value": 2
+        },
+        {
+          "name": "NotMatched",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Enums.NPosition",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "TopLeft",
+          "value": 0
+        },
+        {
+          "name": "TopRight",
+          "value": 1
+        },
+        {
+          "name": "BottomLeft",
+          "value": 2
+        },
+        {
+          "name": "BottomRight",
+          "value": 3
+        },
+        {
+          "name": "Center",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Enums.NPositioningMatchType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "Closest",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Enums.NSAPSupportedFramework",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "WinGui",
+          "value": 1
+        },
+        {
+          "name": "WebGui",
+          "value": 2
+        },
+        {
+          "name": "Fiori",
+          "value": 4
+        },
+        {
+          "name": "Ariba",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Enums.NSAPTableCellScopeRowType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "SelectorFilter",
+          "value": 0
+        },
+        {
+          "name": "Index",
+          "value": 1
+        },
+        {
+          "name": "FirstEmptyRow",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Enums.NSAPVKey",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Enter",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Enums.NSaveScreenshotTo",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "File",
+          "value": 0
+        },
+        {
+          "name": "Image",
+          "value": 1
+        },
+        {
+          "name": "Clipboard",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Enums.NScrapingMethod",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "TextAttribute",
+          "value": 1
+        },
+        {
+          "name": "Native",
+          "value": 5
+        },
+        {
+          "name": "Fulltext",
+          "value": 4
+        },
+        {
+          "name": "OCR",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Enums.NScrapingOptions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "AllowFormatting",
+          "value": 1
+        },
+        {
+          "name": "IgnoreHiddenText",
+          "value": 2
+        },
+        {
+          "name": "GetWordsCoordinates",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Enums.NScrollDirection",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Up",
+          "value": 1
+        },
+        {
+          "name": "Down",
+          "value": 3
+        },
+        {
+          "name": "Left",
+          "value": 0
+        },
+        {
+          "name": "Right",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Enums.NScrollType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Distance",
+          "value": 0
+        },
+        {
+          "name": "ToElement",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Enums.NSemanticElementType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Icon",
+          "value": 1
+        },
+        {
+          "name": "Button",
+          "value": 2
+        },
+        {
+          "name": "CheckBox",
+          "value": 3
+        },
+        {
+          "name": "DropDown",
+          "value": 4
+        },
+        {
+          "name": "InputBox",
+          "value": 5
+        },
+        {
+          "name": "InputBoxPassword",
+          "value": 6
+        },
+        {
+          "name": "RadioButton",
+          "value": 7
+        },
+        {
+          "name": "Text",
+          "value": 8
+        },
+        {
+          "name": "DatePicker",
+          "value": 9
+        },
+        {
+          "name": "RadioGroup",
+          "value": 10
+        },
+        {
+          "name": "DateGroup",
+          "value": 11
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Enums.NTargetAppVersion",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "V1",
+          "value": 1
+        },
+        {
+          "name": "V2",
+          "value": 2
+        },
+        {
+          "name": "Latest",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Enums.NTargetVersion",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "V1",
+          "value": 1
+        },
+        {
+          "name": "V2",
+          "value": 2
+        },
+        {
+          "name": "V3",
+          "value": 3
+        },
+        {
+          "name": "V4",
+          "value": 4
+        },
+        {
+          "name": "V5",
+          "value": 5
+        },
+        {
+          "name": "V6",
+          "value": 6
+        },
+        {
+          "name": "Latest",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Enums.NVerifyMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Appears",
+          "value": 0
+        },
+        {
+          "name": "Disappears",
+          "value": 1
+        },
+        {
+          "name": "TextChanges",
+          "value": 2
+        },
+        {
+          "name": "AspectChanges",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Enums.NVisibilityLevel",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Visible",
+          "value": 0
+        },
+        {
+          "name": "Hidden",
+          "value": 1
+        },
+        {
+          "name": "Offscreen",
+          "value": 2
+        },
+        {
+          "name": "Partial",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Enums.NWaitForReady",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Interactive",
+          "value": 1
+        },
+        {
+          "name": "Complete",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Enums.NWebDriverMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Disabled",
+          "value": 0
+        },
+        {
+          "name": "WithGUI",
+          "value": 1
+        },
+        {
+          "name": "Headless",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Enums.NWindowResize",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Maximize",
+          "value": 1
+        },
+        {
+          "name": "Restore",
+          "value": 2
+        },
+        {
+          "name": "Minimize",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Enums.SelectionActivityType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "AutopilotGenerate",
+          "value": 1
+        },
+        {
+          "name": "Check",
+          "value": 2
+        },
+        {
+          "name": "CheckState",
+          "value": 3
+        },
+        {
+          "name": "FindElements",
+          "value": 4
+        },
+        {
+          "name": "Click",
+          "value": 5
+        },
+        {
+          "name": "ExtractData",
+          "value": 6
+        },
+        {
+          "name": "ExtractDataGeneric",
+          "value": 7
+        },
+        {
+          "name": "ForEachUiElement",
+          "value": 8
+        },
+        {
+          "name": "GetText",
+          "value": 9
+        },
+        {
+          "name": "SetText",
+          "value": 10
+        },
+        {
+          "name": "GoToUrl",
+          "value": 11
+        },
+        {
+          "name": "GetUrl",
+          "value": 12
+        },
+        {
+          "name": "Highlight",
+          "value": 13
+        },
+        {
+          "name": "Hover",
+          "value": 14
+        },
+        {
+          "name": "KeyboardShortcut",
+          "value": 15
+        },
+        {
+          "name": "NavigateBrowser",
+          "value": 16
+        },
+        {
+          "name": "SelectItem",
+          "value": 17
+        },
+        {
+          "name": "TypeInto",
+          "value": 18
+        },
+        {
+          "name": "TakeScreenshot",
+          "value": 19
+        },
+        {
+          "name": "VerifyTypeIntoExecution",
+          "value": 20
+        },
+        {
+          "name": "ExtractDataCell",
+          "value": 21
+        },
+        {
+          "name": "GetAttribute",
+          "value": 22
+        },
+        {
+          "name": "GetAttributeGeneric",
+          "value": 23
+        },
+        {
+          "name": "MouseScroll",
+          "value": 24
+        },
+        {
+          "name": "MouseScrollSearchedElement",
+          "value": 25
+        },
+        {
+          "name": "DragAndDrop",
+          "value": 26
+        },
+        {
+          "name": "InjectJsScript",
+          "value": 27
+        },
+        {
+          "name": "BrowserDialogScope",
+          "value": 28
+        },
+        {
+          "name": "BrowserFilePickerScope",
+          "value": 29
+        },
+        {
+          "name": "NativeTrigger",
+          "value": 30
+        },
+        {
+          "name": "KeyboardTrigger",
+          "value": 31
+        },
+        {
+          "name": "ClickTrigger",
+          "value": 32
+        },
+        {
+          "name": "CheckElement",
+          "value": 33
+        },
+        {
+          "name": "ExtractFormData",
+          "value": 34
+        },
+        {
+          "name": "FillForm",
+          "value": 35
+        },
+        {
+          "name": "SetValue",
+          "value": 36
+        },
+        {
+          "name": "ClosePopup",
+          "value": 37
+        },
+        {
+          "name": "GetBrowserData",
+          "value": 38
+        },
+        {
+          "name": "SetBrowserData",
+          "value": 39
+        },
+        {
+          "name": "SetRuntimeBrowser",
+          "value": 40
+        },
+        {
+          "name": "GetClipboard",
+          "value": 41
+        },
+        {
+          "name": "SetClipboard",
+          "value": 42
+        },
+        {
+          "name": "SAPSelectDatesInCalendar",
+          "value": 43
+        },
+        {
+          "name": "SAPClickPictureOnScreen",
+          "value": 44
+        },
+        {
+          "name": "SAPCallTransaction",
+          "value": 45
+        },
+        {
+          "name": "SAPReadStatusbar",
+          "value": 46
+        },
+        {
+          "name": "SAPSelectMenuItem",
+          "value": 47
+        },
+        {
+          "name": "SAPClickToolbarButton",
+          "value": 48
+        },
+        {
+          "name": "SAPLogin",
+          "value": 49
+        },
+        {
+          "name": "SAPLogon",
+          "value": 50
+        },
+        {
+          "name": "SAPExpandALVTree",
+          "value": 51
+        },
+        {
+          "name": "SAPExpandALVHierarchicalTable",
+          "value": 52
+        },
+        {
+          "name": "SAPExpandTree",
+          "value": 53
+        },
+        {
+          "name": "SAPTableCellScope",
+          "value": 54
+        },
+        {
+          "name": "UITask",
+          "value": 55
+        },
+        {
+          "name": "WindowOperations",
+          "value": 56
+        },
+        {
+          "name": "SetFocus",
+          "value": 57
+        },
+        {
+          "name": "BlockUserInput",
+          "value": 58
+        },
+        {
+          "name": "UnblockUserInput",
+          "value": 59
+        },
+        {
+          "name": "ElementScope",
+          "value": 60
+        },
+        {
+          "name": "ApplicationCard",
+          "value": 61
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Enums.SelectorStrategy",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "AA",
+          "value": 1
+        },
+        {
+          "name": "UIA",
+          "value": 3
+        },
+        {
+          "name": "Java",
+          "value": 5
+        },
+        {
+          "name": "AX",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Enums.TargetSearchSteps",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Selector",
+          "value": 1
+        },
+        {
+          "name": "FuzzySelector",
+          "value": 2
+        },
+        {
+          "name": "Image",
+          "value": 4
+        },
+        {
+          "name": "TextFindAll",
+          "value": 8
+        },
+        {
+          "name": "TextOcr",
+          "value": 16
+        },
+        {
+          "name": "TextNative",
+          "value": 32
+        },
+        {
+          "name": "CV",
+          "value": 64
+        },
+        {
+          "name": "Semantic",
+          "value": 128
+        },
+        {
+          "name": "SemanticSelector",
+          "value": 256
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Enums.TargetType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "SelectorBased",
+          "value": 0
+        },
+        {
+          "name": "ImageBased",
+          "value": 1
+        },
+        {
+          "name": "NativeTextBased",
+          "value": 2
+        },
+        {
+          "name": "ComputerVisionBased",
+          "value": 3
+        },
+        {
+          "name": "SemanticBased",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Enums.UIElementType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Icon",
+          "value": 1
+        },
+        {
+          "name": "ArrowButton",
+          "value": 2
+        },
+        {
+          "name": "Button",
+          "value": 3
+        },
+        {
+          "name": "CheckBox",
+          "value": 4
+        },
+        {
+          "name": "DropDown",
+          "value": 5
+        },
+        {
+          "name": "InputBox",
+          "value": 6
+        },
+        {
+          "name": "InputBoxPassword",
+          "value": 7
+        },
+        {
+          "name": "RadioButton",
+          "value": 8
+        },
+        {
+          "name": "Text",
+          "value": 9
+        },
+        {
+          "name": "Cell",
+          "value": 10
+        },
+        {
+          "name": "TabPage",
+          "value": 11
+        },
+        {
+          "name": "TabPageContainer",
+          "value": 12
+        },
+        {
+          "name": "Container",
+          "value": 13
+        },
+        {
+          "name": "List",
+          "value": 14
+        },
+        {
+          "name": "ListItem",
+          "value": 15
+        },
+        {
+          "name": "Toolbar",
+          "value": 16
+        },
+        {
+          "name": "Table",
+          "value": 17
+        },
+        {
+          "name": "TableRow",
+          "value": 18
+        },
+        {
+          "name": "TableHeader",
+          "value": 19
+        },
+        {
+          "name": "Element",
+          "value": 20
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Enums.NBlockInputType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Both",
+          "value": 0
+        },
+        {
+          "name": "Keyboard",
+          "value": 1
+        },
+        {
+          "name": "Mouse",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Enums.NDriverWebFramework",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Default",
+          "value": 1
+        },
+        {
+          "name": "SapFiori",
+          "value": 2
+        },
+        {
+          "name": "Salesforce",
+          "value": 3
+        },
+        {
+          "name": "SapWebGui",
+          "value": 4
+        },
+        {
+          "name": "SapAriba",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Enums.NFindMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "FindChildren",
+          "value": 0
+        },
+        {
+          "name": "FindDescendants",
+          "value": 1
+        },
+        {
+          "name": "FindTopLevels",
+          "value": 2
+        },
+        {
+          "name": "FindProcess",
+          "value": 3
+        },
+        {
+          "name": "FindThread",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Enums.NImageFindMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "LegacyEnhanced",
+          "value": 1
+        },
+        {
+          "name": "LegacyBasic",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Enums.NUITaskAgentType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DOMBased",
+          "value": 0
+        },
+        {
+          "name": "GeminiFlash25",
+          "value": 1
+        },
+        {
+          "name": "DOMBasedGPT41",
+          "value": 2
+        },
+        {
+          "name": "DOMBasedGPT41Mini",
+          "value": 3
+        },
+        {
+          "name": "GPT5",
+          "value": 4
+        },
+        {
+          "name": "GPT5Mini",
+          "value": 5
+        },
+        {
+          "name": "OpenAIOperator",
+          "value": 6
+        },
+        {
+          "name": "AnthropicClaudeCU",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Enums.NWindowOperationType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Show",
+          "value": 0
+        },
+        {
+          "name": "Hide",
+          "value": 1
+        },
+        {
+          "name": "ToForeground",
+          "value": 2
+        },
+        {
+          "name": "Maximize",
+          "value": 3
+        },
+        {
+          "name": "Minimize",
+          "value": 4
+        },
+        {
+          "name": "Restore",
+          "value": 5
+        },
+        {
+          "name": "Close",
+          "value": 6
+        },
+        {
+          "name": "Move",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Enums.VariableType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Variable",
+          "value": 0
+        },
+        {
+          "name": "Argument",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Enums.NUICoreColor",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": -1
+        },
+        {
+          "name": "Black",
+          "value": 0
+        },
+        {
+          "name": "White",
+          "value": 16777215
+        },
+        {
+          "name": "Red",
+          "value": 16711680
+        },
+        {
+          "name": "Green",
+          "value": 32768
+        },
+        {
+          "name": "Blue",
+          "value": 255
+        },
+        {
+          "name": "Yellow",
+          "value": 16776960
+        },
+        {
+          "name": "Cyan",
+          "value": 65535
+        },
+        {
+          "name": "Magenta",
+          "value": 16711935
+        },
+        {
+          "name": "Gray",
+          "value": 8421504
+        },
+        {
+          "name": "Orange",
+          "value": 16753920
+        },
+        {
+          "name": "Brown",
+          "value": 10824234
+        },
+        {
+          "name": "Pink",
+          "value": 16761035
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.API.Models.ScreenshotStorageType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "StudioProcess",
+          "value": 0
+        },
+        {
+          "name": "LocalDisk",
+          "value": 1
+        },
+        {
+          "name": "RemoteUpload",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.API.Enums.PasteOperationMapperBehavior",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "Disabled",
+          "value": 1
+        },
+        {
+          "name": "Enforced",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.API.Enums.PasteOperationStatusCode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Success",
+          "value": 0
+        },
+        {
+          "name": "Cancelled",
+          "value": 1
+        },
+        {
+          "name": "Unexpected",
+          "value": 2
+        },
+        {
+          "name": "ApplicationNotFound",
+          "value": 3
+        },
+        {
+          "name": "InvalidSource",
+          "value": 4
+        },
+        {
+          "name": "InvalidDestination",
+          "value": 5
+        },
+        {
+          "name": "InvalidRowIndex",
+          "value": 6
+        },
+        {
+          "name": "UserConsumptionLimitExceeded",
+          "value": 7
+        },
+        {
+          "name": "PrerequisitesNotMet",
+          "value": 8
+        },
+        {
+          "name": "DetectionFailed",
+          "value": 9
+        },
+        {
+          "name": "ExecutionFailed",
+          "value": 10
+        },
+        {
+          "name": "MatchingFailed",
+          "value": 11
+        },
+        {
+          "name": "ApplicationValidationFailed",
+          "value": 12
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.API.Enums.ExtractOperationStatusCode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Success",
+          "value": 0
+        },
+        {
+          "name": "Cancelled",
+          "value": 1
+        },
+        {
+          "name": "Unexpected",
+          "value": 2
+        },
+        {
+          "name": "Exception",
+          "value": 3
+        },
+        {
+          "name": "SourceNotFound",
+          "value": 4
+        },
+        {
+          "name": "PrerequisitesNotMet",
+          "value": 5
+        },
+        {
+          "name": "DetectionFailed",
+          "value": 6
+        },
+        {
+          "name": "InvalidRange",
+          "value": 7
+        },
+        {
+          "name": "NotSupported",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.API.Enums.ExtractionMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "Full",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.API.Enums.FileType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Text",
+          "value": 0
+        },
+        {
+          "name": "Json",
+          "value": 1
+        },
+        {
+          "name": "Image",
+          "value": 2
+        },
+        {
+          "name": "Csv",
+          "value": 3
+        },
+        {
+          "name": "Excel",
+          "value": 4
+        },
+        {
+          "name": "Pdf",
+          "value": 5
+        },
+        {
+          "name": "Word",
+          "value": 6
+        },
+        {
+          "name": "Ppt",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.API.Enums.OpenOperationStatusCode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Success",
+          "value": 0
+        },
+        {
+          "name": "InvalidSource",
+          "value": 1
+        },
+        {
+          "name": "Unexpected",
+          "value": 2
+        },
+        {
+          "name": "Exception",
+          "value": 3
+        },
+        {
+          "name": "Cancelled",
+          "value": 4
+        },
+        {
+          "name": "UserConsumptionLimitExceeded",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.API.Enums.AskAtRuntimeOption",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Continue",
+          "value": 1
+        },
+        {
+          "name": "Retry",
+          "value": 2
+        },
+        {
+          "name": "Indicate",
+          "value": 3
+        },
+        {
+          "name": "AiRobot",
+          "value": 4
+        },
+        {
+          "name": "Ignore",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.API.Enums.SelectionCloseReason",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "Confirmed",
+          "value": 1
+        },
+        {
+          "name": "Canceled",
+          "value": 2
+        },
+        {
+          "name": "MissingApplication",
+          "value": 3
+        },
+        {
+          "name": "MissingTarget",
+          "value": 4
+        },
+        {
+          "name": "MissingExtension",
+          "value": 5
+        },
+        {
+          "name": "MissingAssistant",
+          "value": 6
+        },
+        {
+          "name": "IncompatibleAssistant",
+          "value": 7
+        },
+        {
+          "name": "PermissionsUncertain",
+          "value": 8
+        },
+        {
+          "name": "MissingAccessibilityPermissions",
+          "value": 9
+        },
+        {
+          "name": "MissingRecordingPermissions",
+          "value": 10
+        },
+        {
+          "name": "WindowsRequired",
+          "value": 11
+        },
+        {
+          "name": "Busy",
+          "value": 12
+        },
+        {
+          "name": "AssistantClosed",
+          "value": 13
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.API.Enums.TargetingSettingsType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Web",
+          "value": 0
+        },
+        {
+          "name": "Desktop",
+          "value": 1
+        },
+        {
+          "name": "Sap",
+          "value": 2
+        },
+        {
+          "name": "Java",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Activities.Models.LogicalOperator",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "And",
+          "value": 0
+        },
+        {
+          "name": "Or",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Activities.Models.StringFilterOperator",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Contains",
+          "value": 0
+        },
+        {
+          "name": "DoesNotContain",
+          "value": 1
+        },
+        {
+          "name": "Equals",
+          "value": 2
+        },
+        {
+          "name": "DoesNotEqual",
+          "value": 3
+        },
+        {
+          "name": "StartsWith",
+          "value": 4
+        },
+        {
+          "name": "EndsWith",
+          "value": 5
+        },
+        {
+          "name": "IsEmpty",
+          "value": 6
+        },
+        {
+          "name": "IsNotEmpty",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UIAutomationNext.Services.BaseChromiumLikeDriverHandler.VersionMatch",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "LatestPatch",
+          "value": 0
+        },
+        {
+          "name": "Exact",
+          "value": 1
+        },
+        {
+          "name": "LatestWithSameMajor",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.Activities.Anchor2.Relation.Direction",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Top",
+          "value": 0
+        },
+        {
+          "name": "TopLeft",
+          "value": 1
+        },
+        {
+          "name": "Left",
+          "value": 2
+        },
+        {
+          "name": "BottomLeft",
+          "value": 3
+        },
+        {
+          "name": "Bottom",
+          "value": 4
+        },
+        {
+          "name": "BottomRight",
+          "value": 5
+        },
+        {
+          "name": "Right",
+          "value": 6
+        },
+        {
+          "name": "TopRight",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.Activities.Anchor2.Relation.DirectionCase",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Straight",
+          "value": 0
+        },
+        {
+          "name": "Aligned",
+          "value": 1
+        },
+        {
+          "name": "Diagonal",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.Activities.Anchor2.Relation.OverlapPercentage",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Small",
+          "value": 0
+        },
+        {
+          "name": "Mid",
+          "value": 1
+        },
+        {
+          "name": "Big",
+          "value": 2
+        }
+      ]
+    }
+  ],
+  "namespaceMappings": [
+    {
+      "xmlNamespace": "http://schemas.uipath.com/workflow/activities/uix",
+      "prefix": "uix",
+      "clrNamespaces": [
+        "UiPath.UIAutomationNext",
+        "UiPath.UIAutomationNext.Activities",
+        "UiPath.UIAutomationNext.Contracts",
+        "UiPath.UIAutomationNext.Contracts.Target",
+        "UiPath.UIAutomationNext.Enums",
+        "UiPath.UIAutomationNext.Models",
+        "UiPath.UIAutomationNext.Triggers",
+        "UiPath.UIAutomationNext.Activities.Triggers"
+      ],
+      "sourceAssembly": "UiPath.UIAutomationNext.Activities"
+    },
+    {
+      "xmlNamespace": "http://schemas.uipath.com/workflow/activities",
+      "prefix": "ui",
+      "clrNamespaces": [
+        "UiPath.Core.Activities",
+        "UiPath.Core"
+      ],
+      "sourceAssembly": "UiPath.UIAutomationNext.Activities"
+    }
+  ]
+}

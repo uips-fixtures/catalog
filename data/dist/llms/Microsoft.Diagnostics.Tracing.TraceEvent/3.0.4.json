@@ -1,0 +1,6231 @@
+{
+  "schema": {
+    "id": "activity-catalog",
+    "version": "v0.3"
+  },
+  "source": {
+    "kind": "nuget-package",
+    "id": "Microsoft.Diagnostics.Tracing.TraceEvent",
+    "version": "3.0.4",
+    "feedUrl": null,
+    "authors": "Microsoft",
+    "projectUrl": "https://github.com/Microsoft/perfview",
+    "description": "Event Tracing for Windows (ETW) is a powerful logging mechanism built into the Windows OS and is used extensively in Windows. \n      You can also log ETW events yourself code using the System.Diagnostics.Tracing.EventSource class.\n\n      The TraceEvent library conains the classes needed to control ETW providers (including .NET EventSources) \n      and parse the events they emit.\n\n      The library includes\n      -- TraceEventSession which can enable ETW providers,\n      -- EtwTraceEventSource which lets you read the stream of ETW events, and\n      -- TraceLog which is is digested form of ETW events which include decoded stack traces associated with the events.\n    \n      See https://github.com/Microsoft/perfview/blob/master/documentation/TraceEvent/TraceEventLibrary.md for more.",
+    "license": "MIT",
+    "tags": "TraceEvent EventSource Microsoft ETW Event Tracing for Windows",
+    "packageTypes": []
+  },
+  "generatedAt": "2026-04-10T09:21:14Z",
+  "activities": [],
+  "enums": [
+    {
+      "fullName": "Dia2Lib.CV_CPU_TYPE_e",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "CV_CFL_8080",
+          "value": 0
+        },
+        {
+          "name": "CV_CFL_8086",
+          "value": 1
+        },
+        {
+          "name": "CV_CFL_80286",
+          "value": 2
+        },
+        {
+          "name": "CV_CFL_80386",
+          "value": 3
+        },
+        {
+          "name": "CV_CFL_80486",
+          "value": 4
+        },
+        {
+          "name": "CV_CFL_PENTIUM",
+          "value": 5
+        },
+        {
+          "name": "CV_CFL_PENTIUMII",
+          "value": 6
+        },
+        {
+          "name": "CV_CFL_PENTIUMPRO",
+          "value": 6
+        },
+        {
+          "name": "CV_CFL_PENTIUMIII",
+          "value": 7
+        },
+        {
+          "name": "CV_CFL_MIPS",
+          "value": 16
+        },
+        {
+          "name": "CV_CFL_MIPSR4000",
+          "value": 16
+        },
+        {
+          "name": "CV_CFL_MIPS16",
+          "value": 17
+        },
+        {
+          "name": "CV_CFL_MIPS32",
+          "value": 18
+        },
+        {
+          "name": "CV_CFL_MIPS64",
+          "value": 19
+        },
+        {
+          "name": "CV_CFL_MIPSI",
+          "value": 20
+        },
+        {
+          "name": "CV_CFL_MIPSII",
+          "value": 21
+        },
+        {
+          "name": "CV_CFL_MIPSIII",
+          "value": 22
+        },
+        {
+          "name": "CV_CFL_MIPSIV",
+          "value": 23
+        },
+        {
+          "name": "CV_CFL_MIPSV",
+          "value": 24
+        },
+        {
+          "name": "CV_CFL_M68000",
+          "value": 32
+        },
+        {
+          "name": "CV_CFL_M68010",
+          "value": 33
+        },
+        {
+          "name": "CV_CFL_M68020",
+          "value": 34
+        },
+        {
+          "name": "CV_CFL_M68030",
+          "value": 35
+        },
+        {
+          "name": "CV_CFL_M68040",
+          "value": 36
+        },
+        {
+          "name": "CV_CFL_ALPHA",
+          "value": 48
+        },
+        {
+          "name": "CV_CFL_ALPHA_21064",
+          "value": 48
+        },
+        {
+          "name": "CV_CFL_ALPHA_21164",
+          "value": 49
+        },
+        {
+          "name": "CV_CFL_ALPHA_21164A",
+          "value": 50
+        },
+        {
+          "name": "CV_CFL_ALPHA_21264",
+          "value": 51
+        },
+        {
+          "name": "CV_CFL_ALPHA_21364",
+          "value": 52
+        },
+        {
+          "name": "CV_CFL_PPC601",
+          "value": 64
+        },
+        {
+          "name": "CV_CFL_PPC603",
+          "value": 65
+        },
+        {
+          "name": "CV_CFL_PPC604",
+          "value": 66
+        },
+        {
+          "name": "CV_CFL_PPC620",
+          "value": 67
+        },
+        {
+          "name": "CV_CFL_PPCFP",
+          "value": 68
+        },
+        {
+          "name": "CV_CFL_PPCBE",
+          "value": 69
+        },
+        {
+          "name": "CV_CFL_SH3",
+          "value": 80
+        },
+        {
+          "name": "CV_CFL_SH3E",
+          "value": 81
+        },
+        {
+          "name": "CV_CFL_SH3DSP",
+          "value": 82
+        },
+        {
+          "name": "CV_CFL_SH4",
+          "value": 83
+        },
+        {
+          "name": "CV_CFL_SHMEDIA",
+          "value": 84
+        },
+        {
+          "name": "CV_CFL_ARM3",
+          "value": 96
+        },
+        {
+          "name": "CV_CFL_ARM4",
+          "value": 97
+        },
+        {
+          "name": "CV_CFL_ARM4T",
+          "value": 98
+        },
+        {
+          "name": "CV_CFL_ARM5",
+          "value": 99
+        },
+        {
+          "name": "CV_CFL_ARM5T",
+          "value": 100
+        },
+        {
+          "name": "CV_CFL_ARM6",
+          "value": 101
+        },
+        {
+          "name": "CV_CFL_ARM_XMAC",
+          "value": 102
+        },
+        {
+          "name": "CV_CFL_ARM_WMMX",
+          "value": 103
+        },
+        {
+          "name": "CV_CFL_ARM7",
+          "value": 104
+        },
+        {
+          "name": "CV_CFL_OMNI",
+          "value": 112
+        },
+        {
+          "name": "CV_CFL_IA64",
+          "value": 128
+        },
+        {
+          "name": "CV_CFL_IA64_1",
+          "value": 128
+        },
+        {
+          "name": "CV_CFL_IA64_2",
+          "value": 129
+        },
+        {
+          "name": "CV_CFL_CEE",
+          "value": 144
+        },
+        {
+          "name": "CV_CFL_AM33",
+          "value": 160
+        },
+        {
+          "name": "CV_CFL_M32R",
+          "value": 176
+        },
+        {
+          "name": "CV_CFL_TRICORE",
+          "value": 192
+        },
+        {
+          "name": "CV_CFL_X64",
+          "value": 208
+        },
+        {
+          "name": "CV_CFL_AMD64",
+          "value": 208
+        },
+        {
+          "name": "CV_CFL_EBC",
+          "value": 224
+        },
+        {
+          "name": "CV_CFL_THUMB",
+          "value": 240
+        },
+        {
+          "name": "CV_CFL_ARMNT",
+          "value": 244
+        },
+        {
+          "name": "CV_CFL_ARM64",
+          "value": 246
+        },
+        {
+          "name": "CV_CFL_D3D11_SHADER",
+          "value": 256
+        }
+      ]
+    },
+    {
+      "fullName": "Dia2Lib.SymTagEnum",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "SymTagNull",
+          "value": 0
+        },
+        {
+          "name": "SymTagExe",
+          "value": 1
+        },
+        {
+          "name": "SymTagCompiland",
+          "value": 2
+        },
+        {
+          "name": "SymTagCompilandDetails",
+          "value": 3
+        },
+        {
+          "name": "SymTagCompilandEnv",
+          "value": 4
+        },
+        {
+          "name": "SymTagFunction",
+          "value": 5
+        },
+        {
+          "name": "SymTagBlock",
+          "value": 6
+        },
+        {
+          "name": "SymTagData",
+          "value": 7
+        },
+        {
+          "name": "SymTagAnnotation",
+          "value": 8
+        },
+        {
+          "name": "SymTagLabel",
+          "value": 9
+        },
+        {
+          "name": "SymTagPublicSymbol",
+          "value": 10
+        },
+        {
+          "name": "SymTagUDT",
+          "value": 11
+        },
+        {
+          "name": "SymTagEnum",
+          "value": 12
+        },
+        {
+          "name": "SymTagFunctionType",
+          "value": 13
+        },
+        {
+          "name": "SymTagPointerType",
+          "value": 14
+        },
+        {
+          "name": "SymTagArrayType",
+          "value": 15
+        },
+        {
+          "name": "SymTagBaseType",
+          "value": 16
+        },
+        {
+          "name": "SymTagTypedef",
+          "value": 17
+        },
+        {
+          "name": "SymTagBaseClass",
+          "value": 18
+        },
+        {
+          "name": "SymTagFriend",
+          "value": 19
+        },
+        {
+          "name": "SymTagFunctionArgType",
+          "value": 20
+        },
+        {
+          "name": "SymTagFuncDebugStart",
+          "value": 21
+        },
+        {
+          "name": "SymTagFuncDebugEnd",
+          "value": 22
+        },
+        {
+          "name": "SymTagUsingNamespace",
+          "value": 23
+        },
+        {
+          "name": "SymTagVTableShape",
+          "value": 24
+        },
+        {
+          "name": "SymTagVTable",
+          "value": 25
+        },
+        {
+          "name": "SymTagCustom",
+          "value": 26
+        },
+        {
+          "name": "SymTagThunk",
+          "value": 27
+        },
+        {
+          "name": "SymTagCustomType",
+          "value": 28
+        },
+        {
+          "name": "SymTagManagedType",
+          "value": 29
+        },
+        {
+          "name": "SymTagDimension",
+          "value": 30
+        },
+        {
+          "name": "SymTagCallSite",
+          "value": 31
+        },
+        {
+          "name": "SymTagInlineSite",
+          "value": 32
+        },
+        {
+          "name": "SymTagBaseInterface",
+          "value": 33
+        },
+        {
+          "name": "SymTagVectorType",
+          "value": 34
+        },
+        {
+          "name": "SymTagMatrixType",
+          "value": 35
+        },
+        {
+          "name": "SymTagHLSLType",
+          "value": 36
+        },
+        {
+          "name": "SymTagCaller",
+          "value": 37
+        },
+        {
+          "name": "SymTagCallee",
+          "value": 38
+        },
+        {
+          "name": "SymTagExport",
+          "value": 39
+        },
+        {
+          "name": "SymTagHeapAllocationSite",
+          "value": 40
+        },
+        {
+          "name": "SymTagCoffGroup",
+          "value": 41
+        },
+        {
+          "name": "SymTagMax",
+          "value": 42
+        }
+      ]
+    },
+    {
+      "fullName": "Dia2Lib.MemoryTypeEnum",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "MemTypeCode",
+          "value": 0
+        },
+        {
+          "name": "MemTypeData",
+          "value": 1
+        },
+        {
+          "name": "MemTypeStack",
+          "value": 2
+        },
+        {
+          "name": "MemTypeCodeOnHeap",
+          "value": 3
+        },
+        {
+          "name": "MemTypeAny",
+          "value": -1
+        }
+      ]
+    },
+    {
+      "fullName": "FastSerialization.StreamLabelWidth",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "FourBytes",
+          "value": 0
+        },
+        {
+          "name": "EightBytes",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "FastSerialization.StreamReaderAlignment",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "OneByte",
+          "value": 1
+        },
+        {
+          "name": "FourBytes",
+          "value": 4
+        },
+        {
+          "name": "EightBytes",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "FastSerialization.StreamLabel",
+      "underlyingType": "System.Int64",
+      "members": [
+        {
+          "name": "Invalid",
+          "value": -1
+        }
+      ]
+    },
+    {
+      "fullName": "FastSerialization.ForwardReference",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Invalid",
+          "value": -1
+        }
+      ]
+    },
+    {
+      "fullName": "PEFile.MachineType",
+      "underlyingType": "System.UInt16",
+      "members": [
+        {
+          "name": "Native",
+          "value": 0
+        },
+        {
+          "name": "X86",
+          "value": 332
+        },
+        {
+          "name": "ia64",
+          "value": 512
+        },
+        {
+          "name": "ARM",
+          "value": 448
+        },
+        {
+          "name": "Amd64",
+          "value": 34404
+        }
+      ]
+    },
+    {
+      "fullName": "System.Diagnostics.Tracing.ManifestEnvelope.ManifestFormats",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "SimpleXmlFormat",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Symbols.SymbolReaderOptions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "CacheOnly",
+          "value": 1
+        },
+        {
+          "name": "NoNGenSymbolCreation",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.GCReferenceID",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Dead",
+          "value": -1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.StartStopActivityIndex",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Illegal",
+          "value": -1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.ETWTraceEventSource.ModuleSymbolOptions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "OnlyNGENImages",
+          "value": 0
+        },
+        {
+          "name": "IncludeUnmanagedModules",
+          "value": 1
+        },
+        {
+          "name": "IncludeModulesWithOutSamples",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.TraceEventSourceType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "MergeAll",
+          "value": 0
+        },
+        {
+          "name": "FileOnly",
+          "value": 1
+        },
+        {
+          "name": "Session",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.TraceEventID",
+      "underlyingType": "System.UInt16",
+      "members": [
+        {
+          "name": "Illegal",
+          "value": 65535
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.TraceEventChannel",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.TraceEventOpcode",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Info",
+          "value": 0
+        },
+        {
+          "name": "Start",
+          "value": 1
+        },
+        {
+          "name": "Stop",
+          "value": 2
+        },
+        {
+          "name": "DataCollectionStart",
+          "value": 3
+        },
+        {
+          "name": "DataCollectionStop",
+          "value": 4
+        },
+        {
+          "name": "Extension",
+          "value": 5
+        },
+        {
+          "name": "Reply",
+          "value": 6
+        },
+        {
+          "name": "Resume",
+          "value": 7
+        },
+        {
+          "name": "Suspend",
+          "value": 8
+        },
+        {
+          "name": "Transfer",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.TraceEventLevel",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Always",
+          "value": 0
+        },
+        {
+          "name": "Critical",
+          "value": 1
+        },
+        {
+          "name": "Error",
+          "value": 2
+        },
+        {
+          "name": "Warning",
+          "value": 3
+        },
+        {
+          "name": "Informational",
+          "value": 4
+        },
+        {
+          "name": "Verbose",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.TraceEventKeyword",
+      "underlyingType": "System.Int64",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "All",
+          "value": -1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.TraceEventTask",
+      "underlyingType": "System.UInt16",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.EventIndex",
+      "underlyingType": "System.UInt32",
+      "members": [
+        {
+          "name": "Invalid",
+          "value": 4294967295
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.EventFilterResponse",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "RejectEvent",
+          "value": 0
+        },
+        {
+          "name": "RejectProvider",
+          "value": 1
+        },
+        {
+          "name": "AcceptEvent",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Etlx.ProcessIndex",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Invalid",
+          "value": -1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Etlx.ThreadIndex",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Invalid",
+          "value": -1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Etlx.CallStackIndex",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Invalid",
+          "value": -1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Etlx.CodeAddressIndex",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Invalid",
+          "value": -1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Etlx.MethodIndex",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Invalid",
+          "value": -1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Etlx.ModuleFileIndex",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Invalid",
+          "value": -1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Etlx.ActivityIndex",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Invalid",
+          "value": -1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Session.TraceEventMergeOptions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Compress",
+          "value": 1
+        },
+        {
+          "name": "ImageIDsOnly",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Session.TraceEventSessionOptions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Create",
+          "value": 1
+        },
+        {
+          "name": "Attach",
+          "value": 2
+        },
+        {
+          "name": "NoRestartOnCreate",
+          "value": 4
+        },
+        {
+          "name": "NoPerProcessorBuffering",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Session.TraceEventOptions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Stacks",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.StackSources.EventKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Cpu",
+          "value": 0
+        },
+        {
+          "name": "Scheduler",
+          "value": 1
+        },
+        {
+          "name": "ThreadExit",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.StackSources.FrameKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "StackFrame",
+          "value": 0
+        },
+        {
+          "name": "ProcessFrame",
+          "value": 1
+        },
+        {
+          "name": "ThreadFrame",
+          "value": 2
+        },
+        {
+          "name": "BlockedCPUFrame",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.StackSources.LinuxThreadState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "BLOCKED_TIME",
+          "value": 0
+        },
+        {
+          "name": "CPU_TIME",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Stacks.ScalingPolicyKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ScaleToData",
+          "value": 0
+        },
+        {
+          "name": "TimeMetric",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Stacks.CallTreeNodeIndex",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Invalid",
+          "value": -1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Stacks.HistogramCharacterIndex",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Invalid",
+          "value": -1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Stacks.RefDirection",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "From",
+          "value": 0
+        },
+        {
+          "name": "To",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Stacks.StackSourceSampleIndex",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Invalid",
+          "value": -1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Stacks.StackSourceCallStackIndex",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Start",
+          "value": 0
+        },
+        {
+          "name": "Invalid",
+          "value": -1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Stacks.StackSourceFrameIndex",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Root",
+          "value": 0
+        },
+        {
+          "name": "Broken",
+          "value": 1
+        },
+        {
+          "name": "Unknown",
+          "value": 2
+        },
+        {
+          "name": "Overhead",
+          "value": 3
+        },
+        {
+          "name": "Start",
+          "value": 4
+        },
+        {
+          "name": "Invalid",
+          "value": -1
+        },
+        {
+          "name": "Discard",
+          "value": -2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Stacks.StackSourceModuleIndex",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Start",
+          "value": 0
+        },
+        {
+          "name": "Invalid",
+          "value": -1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.EventPipe.ClrThreadSampleType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Error",
+          "value": 0
+        },
+        {
+          "name": "External",
+          "value": 1
+        },
+        {
+          "name": "Managed",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.MicrosoftAntimalwareAMFilterTraceEventParser.Keywords",
+      "underlyingType": "System.Int64",
+      "members": []
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.MicrosoftAntimalwareEngineTraceEventParser.Keywords",
+      "underlyingType": "System.Int64",
+      "members": []
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.ApplicationServerTraceEventParser.Keywords",
+      "underlyingType": "System.Int64",
+      "members": [
+        {
+          "name": "ServiceHost",
+          "value": 1
+        },
+        {
+          "name": "Serialization",
+          "value": 2
+        },
+        {
+          "name": "ServiceModel",
+          "value": 4
+        },
+        {
+          "name": "Transaction",
+          "value": 8
+        },
+        {
+          "name": "Security",
+          "value": 16
+        },
+        {
+          "name": "WCFMessageLogging",
+          "value": 32
+        },
+        {
+          "name": "WFTracking",
+          "value": 64
+        },
+        {
+          "name": "WebHost",
+          "value": 128
+        },
+        {
+          "name": "HTTPTransport",
+          "value": 256
+        },
+        {
+          "name": "TCPTransport",
+          "value": 512
+        },
+        {
+          "name": "TransportGeneral",
+          "value": 1024
+        },
+        {
+          "name": "ActivationServices",
+          "value": 2048
+        },
+        {
+          "name": "Channel",
+          "value": 4096
+        },
+        {
+          "name": "WebHTTP",
+          "value": 8192
+        },
+        {
+          "name": "Discovery",
+          "value": 16384
+        },
+        {
+          "name": "RoutingServices",
+          "value": 32768
+        },
+        {
+          "name": "Infrastructure",
+          "value": 65536
+        },
+        {
+          "name": "EndtoEndMonitoring",
+          "value": 131072
+        },
+        {
+          "name": "HealthMonitoring",
+          "value": 262144
+        },
+        {
+          "name": "Troubleshooting",
+          "value": 524288
+        },
+        {
+          "name": "UserEvents",
+          "value": 1048576
+        },
+        {
+          "name": "Threading",
+          "value": 2097152
+        },
+        {
+          "name": "Quota",
+          "value": 4194304
+        },
+        {
+          "name": "WorkflowRuntime",
+          "value": 16777216
+        },
+        {
+          "name": "WorkflowActivities",
+          "value": 33554432
+        },
+        {
+          "name": "WorkflowServiceHost",
+          "value": 67108864
+        },
+        {
+          "name": "WorkflowInstanceStore",
+          "value": 134217728
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.ClrPrivateTraceEventParser.Keywords",
+      "underlyingType": "System.Int64",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "GC",
+          "value": 1
+        },
+        {
+          "name": "Binding",
+          "value": 2
+        },
+        {
+          "name": "NGenForceRestore",
+          "value": 4
+        },
+        {
+          "name": "Fusion",
+          "value": 8
+        },
+        {
+          "name": "LoaderHeap",
+          "value": 16
+        },
+        {
+          "name": "Security",
+          "value": 1024
+        },
+        {
+          "name": "Threading",
+          "value": 65536
+        },
+        {
+          "name": "MulticoreJit",
+          "value": 131072
+        },
+        {
+          "name": "Stack",
+          "value": 1073741824
+        },
+        {
+          "name": "Startup",
+          "value": 2147483648
+        },
+        {
+          "name": "PerfTrack",
+          "value": 536870912
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.ClrTraceEventParser.Keywords",
+      "underlyingType": "System.Int64",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "All",
+          "value": -65
+        },
+        {
+          "name": "GC",
+          "value": 1
+        },
+        {
+          "name": "GCHandle",
+          "value": 2
+        },
+        {
+          "name": "Binder",
+          "value": 4
+        },
+        {
+          "name": "Loader",
+          "value": 8
+        },
+        {
+          "name": "Jit",
+          "value": 16
+        },
+        {
+          "name": "NGen",
+          "value": 32
+        },
+        {
+          "name": "StartEnumeration",
+          "value": 64
+        },
+        {
+          "name": "StopEnumeration",
+          "value": 128
+        },
+        {
+          "name": "Security",
+          "value": 1024
+        },
+        {
+          "name": "AppDomainResourceManagement",
+          "value": 2048
+        },
+        {
+          "name": "JitTracing",
+          "value": 4096
+        },
+        {
+          "name": "Interop",
+          "value": 8192
+        },
+        {
+          "name": "Contention",
+          "value": 16384
+        },
+        {
+          "name": "Exception",
+          "value": 32768
+        },
+        {
+          "name": "Threading",
+          "value": 65536
+        },
+        {
+          "name": "JittedMethodILToNativeMap",
+          "value": 131072
+        },
+        {
+          "name": "OverrideAndSuppressNGenEvents",
+          "value": 262144
+        },
+        {
+          "name": "Type",
+          "value": 524288
+        },
+        {
+          "name": "GCHeapDump",
+          "value": 1048576
+        },
+        {
+          "name": "GCSampledObjectAllocationHigh",
+          "value": 2097152
+        },
+        {
+          "name": "GCHeapSurvivalAndMovement",
+          "value": 4194304
+        },
+        {
+          "name": "GCHeapCollect",
+          "value": 8388608
+        },
+        {
+          "name": "GCHeapAndTypeNames",
+          "value": 16777216
+        },
+        {
+          "name": "GCSampledObjectAllocationLow",
+          "value": 33554432
+        },
+        {
+          "name": "GCAllObjectAllocation",
+          "value": 35651584
+        },
+        {
+          "name": "SupressNGen",
+          "value": 262144
+        },
+        {
+          "name": "PerfTrack",
+          "value": 536870912
+        },
+        {
+          "name": "Stack",
+          "value": 1073741824
+        },
+        {
+          "name": "ThreadTransfer",
+          "value": 2147483648
+        },
+        {
+          "name": "Debugger",
+          "value": 4294967296
+        },
+        {
+          "name": "Monitoring",
+          "value": 8589934592
+        },
+        {
+          "name": "Codesymbols",
+          "value": 17179869184
+        },
+        {
+          "name": "Compilation",
+          "value": 68719476736
+        },
+        {
+          "name": "CompilationDiagnostic",
+          "value": 137438953472
+        },
+        {
+          "name": "MethodDiagnostic",
+          "value": 274877906944
+        },
+        {
+          "name": "TypeDiagnostic",
+          "value": 549755813888
+        },
+        {
+          "name": "Default",
+          "value": 89142578365
+        },
+        {
+          "name": "JITSymbols",
+          "value": 393368
+        },
+        {
+          "name": "GCHeapSnapshot",
+          "value": 26738689
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.FrameworkEventSourceTraceEventParser.Keywords",
+      "underlyingType": "System.Int64",
+      "members": [
+        {
+          "name": "Loader",
+          "value": 1
+        },
+        {
+          "name": "ThreadPool",
+          "value": 2
+        },
+        {
+          "name": "NetClient",
+          "value": 4
+        },
+        {
+          "name": "DynamicTypeUsage",
+          "value": 8
+        },
+        {
+          "name": "ThreadTransfer",
+          "value": 16
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.RequestNotification",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AcquireRequestState",
+          "value": 32
+        },
+        {
+          "name": "AuthenticateRequest",
+          "value": 2
+        },
+        {
+          "name": "AuthorizeRequest",
+          "value": 4
+        },
+        {
+          "name": "BeginRequest",
+          "value": 1
+        },
+        {
+          "name": "EndRequest",
+          "value": 2048
+        },
+        {
+          "name": "ExecuteRequestHandler",
+          "value": 128
+        },
+        {
+          "name": "LogRequest",
+          "value": 1024
+        },
+        {
+          "name": "MapRequestHandler",
+          "value": 16
+        },
+        {
+          "name": "PreExecuteRequestHandler",
+          "value": 64
+        },
+        {
+          "name": "ReleaseRequestState",
+          "value": 256
+        },
+        {
+          "name": "ResolveRequestCache",
+          "value": 8
+        },
+        {
+          "name": "SendResponse",
+          "value": 536870912
+        },
+        {
+          "name": "UpdateRequestCache",
+          "value": 512
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.IisTraceEventParser.Keywords",
+      "underlyingType": "System.Int64",
+      "members": [
+        {
+          "name": "IISGeneral",
+          "value": 0
+        },
+        {
+          "name": "UseUrlFilter",
+          "value": 1
+        },
+        {
+          "name": "IISAuthentication",
+          "value": 2
+        },
+        {
+          "name": "IISSecurity",
+          "value": 4
+        },
+        {
+          "name": "IISFilter",
+          "value": 8
+        },
+        {
+          "name": "IISStaticFile",
+          "value": 16
+        },
+        {
+          "name": "IISCGI",
+          "value": 32
+        },
+        {
+          "name": "IISCompression",
+          "value": 64
+        },
+        {
+          "name": "IISCache",
+          "value": 128
+        },
+        {
+          "name": "IISRequestNotification",
+          "value": 256
+        },
+        {
+          "name": "IISModule",
+          "value": 512
+        },
+        {
+          "name": "IISFastCGI",
+          "value": 4096
+        },
+        {
+          "name": "IISISAPI",
+          "value": 8192
+        },
+        {
+          "name": "IISWebSocket",
+          "value": 16384
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.JScriptTraceEventParser.Keywords",
+      "underlyingType": "System.Int64",
+      "members": [
+        {
+          "name": "JScriptRuntime",
+          "value": 1
+        },
+        {
+          "name": "JScriptStartRundown",
+          "value": 2
+        },
+        {
+          "name": "JScriptEndRundown",
+          "value": 4
+        },
+        {
+          "name": "JScriptProjection",
+          "value": 16
+        },
+        {
+          "name": "JScriptFrontend",
+          "value": 32
+        },
+        {
+          "name": "JScriptGarbageCollection",
+          "value": 64
+        },
+        {
+          "name": "JScriptProfile",
+          "value": 128
+        },
+        {
+          "name": "JscriptBackend",
+          "value": 256
+        },
+        {
+          "name": "JscriptJit",
+          "value": 512
+        },
+        {
+          "name": "JScriptMemoryTracing",
+          "value": 1024
+        },
+        {
+          "name": "JScriptObjectAllocation",
+          "value": 2048
+        },
+        {
+          "name": "JScriptExternalReference",
+          "value": 4096
+        },
+        {
+          "name": "JScriptObjectCleanup",
+          "value": 8192
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.JSDumpHeapTraceEventParser.Keywords",
+      "underlyingType": "System.Int64",
+      "members": [
+        {
+          "name": "jsdumpheap",
+          "value": 32
+        },
+        {
+          "name": "jsdumpheapEnvelopeOnly",
+          "value": 2147483648
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.KernelTraceEventParser.Keywords",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "DiskFileIO",
+          "value": 512
+        },
+        {
+          "name": "DiskIO",
+          "value": 256
+        },
+        {
+          "name": "ImageLoad",
+          "value": 4
+        },
+        {
+          "name": "MemoryHardFaults",
+          "value": 8192
+        },
+        {
+          "name": "NetworkTCPIP",
+          "value": 65536
+        },
+        {
+          "name": "Process",
+          "value": 1
+        },
+        {
+          "name": "ProcessCounters",
+          "value": 8
+        },
+        {
+          "name": "Profile",
+          "value": 16777216
+        },
+        {
+          "name": "Thread",
+          "value": 2
+        },
+        {
+          "name": "ContextSwitch",
+          "value": 16
+        },
+        {
+          "name": "DiskIOInit",
+          "value": 1024
+        },
+        {
+          "name": "Dispatcher",
+          "value": 2048
+        },
+        {
+          "name": "FileIO",
+          "value": 33554432
+        },
+        {
+          "name": "FileIOInit",
+          "value": 67108864
+        },
+        {
+          "name": "Memory",
+          "value": 4096
+        },
+        {
+          "name": "Registry",
+          "value": 131072
+        },
+        {
+          "name": "SystemCall",
+          "value": 128
+        },
+        {
+          "name": "VirtualAlloc",
+          "value": 16384
+        },
+        {
+          "name": "VAMap",
+          "value": 32768
+        },
+        {
+          "name": "AdvancedLocalProcedureCalls",
+          "value": 1048576
+        },
+        {
+          "name": "DeferedProcedureCalls",
+          "value": 32
+        },
+        {
+          "name": "Driver",
+          "value": 8388608
+        },
+        {
+          "name": "Interrupt",
+          "value": 64
+        },
+        {
+          "name": "SplitIO",
+          "value": 2097152
+        },
+        {
+          "name": "Default",
+          "value": 16852751
+        },
+        {
+          "name": "Verbose",
+          "value": 117702431
+        },
+        {
+          "name": "ThreadTime",
+          "value": 16854815
+        },
+        {
+          "name": "OS",
+          "value": 11534432
+        },
+        {
+          "name": "All",
+          "value": 129236991
+        },
+        {
+          "name": "NonContainer",
+          "value": -16777248
+        },
+        {
+          "name": "PMCProfile",
+          "value": -2147483648
+        },
+        {
+          "name": "ReferenceSet",
+          "value": 1073741824
+        },
+        {
+          "name": "ThreadPriority",
+          "value": 536870912
+        },
+        {
+          "name": "IOQueue",
+          "value": 268435456
+        },
+        {
+          "name": "Handle",
+          "value": 4194304
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.KernelTraceEventParser.ParserTrackingOptions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "ThreadToProcess",
+          "value": 1
+        },
+        {
+          "name": "FileNameToObject",
+          "value": 2
+        },
+        {
+          "name": "RegistryNameToObject",
+          "value": 4
+        },
+        {
+          "name": "DiskIOServiceTime",
+          "value": 8
+        },
+        {
+          "name": "VolumeMapping",
+          "value": 16
+        },
+        {
+          "name": "ObjectNameToObject",
+          "value": 32
+        },
+        {
+          "name": "Default",
+          "value": 63
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.LinuxKernelEventParser.Keywords",
+      "underlyingType": "System.Int64",
+      "members": [
+        {
+          "name": "Process",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.MicrosoftWindowsKernelFileTraceEventParser.Keywords",
+      "underlyingType": "System.Int64",
+      "members": [
+        {
+          "name": "Filename",
+          "value": 16
+        },
+        {
+          "name": "Fileio",
+          "value": 32
+        },
+        {
+          "name": "Opend",
+          "value": 64
+        },
+        {
+          "name": "Create",
+          "value": 128
+        },
+        {
+          "name": "Read",
+          "value": 256
+        },
+        {
+          "name": "Write",
+          "value": 512
+        },
+        {
+          "name": "Deletepath",
+          "value": 1024
+        },
+        {
+          "name": "Renamesetlinkpath",
+          "value": 2048
+        },
+        {
+          "name": "Createnewfile",
+          "value": 4096
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.MicrosoftWindowsNDISPacketCaptureTraceEventParser.Keywords",
+      "underlyingType": "System.Int64",
+      "members": [
+        {
+          "name": "Ethernet8023",
+          "value": 1
+        },
+        {
+          "name": "Wirelesswan",
+          "value": 512
+        },
+        {
+          "name": "Tunnel",
+          "value": 32768
+        },
+        {
+          "name": "StringkeywordNative80211",
+          "value": 65536
+        },
+        {
+          "name": "Vmswitch",
+          "value": 16777216
+        },
+        {
+          "name": "Packettruncated",
+          "value": 33554432
+        },
+        {
+          "name": "Packetstart",
+          "value": 1073741824
+        },
+        {
+          "name": "Packetend",
+          "value": 2147483648
+        },
+        {
+          "name": "Utsendpath",
+          "value": 4294967296
+        },
+        {
+          "name": "Utreceivepath",
+          "value": 8589934592
+        },
+        {
+          "name": "Utl3connectpath",
+          "value": 17179869184
+        },
+        {
+          "name": "Utl2connectpath",
+          "value": 34359738368
+        },
+        {
+          "name": "Utclosepath",
+          "value": 68719476736
+        },
+        {
+          "name": "Utauthentication",
+          "value": 137438953472
+        },
+        {
+          "name": "Utconfiguration",
+          "value": 274877906944
+        },
+        {
+          "name": "Utglobal",
+          "value": 549755813888
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.MicrosoftWindowsTCPIPTraceEventParser.Keywords",
+      "underlyingType": "System.Int64",
+      "members": [
+        {
+          "name": "Uttcpipendpoint",
+          "value": 1
+        },
+        {
+          "name": "Uttcpiplistener",
+          "value": 2
+        },
+        {
+          "name": "Uttcpiptcb",
+          "value": 4
+        },
+        {
+          "name": "Uttcpipbind",
+          "value": 8
+        },
+        {
+          "name": "Uttcpipinterface",
+          "value": 16
+        },
+        {
+          "name": "Uttcpiproute",
+          "value": 32
+        },
+        {
+          "name": "Uttcpipctcp",
+          "value": 64
+        },
+        {
+          "name": "Uttcpipdiagnosis",
+          "value": 128
+        },
+        {
+          "name": "Uttransfer",
+          "value": 256
+        },
+        {
+          "name": "Utprocessidhint",
+          "value": 512
+        },
+        {
+          "name": "Utendpoint",
+          "value": 1024
+        },
+        {
+          "name": "Utrss",
+          "value": 2048
+        },
+        {
+          "name": "Uttcpipndkpi",
+          "value": 4096
+        },
+        {
+          "name": "Uttcpipcsdiag",
+          "value": 8192
+        },
+        {
+          "name": "Utsendpath",
+          "value": 4294967296
+        },
+        {
+          "name": "Utreceivepath",
+          "value": 8589934592
+        },
+        {
+          "name": "Utconnectpath",
+          "value": 17179869184
+        },
+        {
+          "name": "Utclosepath",
+          "value": 68719476736
+        },
+        {
+          "name": "Utauthentication",
+          "value": 137438953472
+        },
+        {
+          "name": "Utconfiguration",
+          "value": 274877906944
+        },
+        {
+          "name": "Utglobal",
+          "value": 549755813888
+        },
+        {
+          "name": "Keyword10000000000",
+          "value": 1099511627776
+        },
+        {
+          "name": "Keyword80000000000",
+          "value": 8796093022208
+        },
+        {
+          "name": "Keyword200000000000",
+          "value": 35184372088832
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.TplEtwProviderTraceEventParser.Keywords",
+      "underlyingType": "System.Int64",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Tasktransfer",
+          "value": 1
+        },
+        {
+          "name": "Tasks",
+          "value": 2
+        },
+        {
+          "name": "Parallel",
+          "value": 4
+        },
+        {
+          "name": "Asynccausalityoperation",
+          "value": 8
+        },
+        {
+          "name": "Asynccausalityrelation",
+          "value": 16
+        },
+        {
+          "name": "Asynccausalitysynchronouswork",
+          "value": 32
+        },
+        {
+          "name": "Taskstops",
+          "value": 64
+        },
+        {
+          "name": "TasksFlowActivityIds",
+          "value": 128
+        },
+        {
+          "name": "AsyncMethod",
+          "value": 256
+        },
+        {
+          "name": "Default",
+          "value": 511
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.WpfTraceEventParser.Keywords",
+      "underlyingType": "System.Int64",
+      "members": [
+        {
+          "name": "General",
+          "value": 1
+        },
+        {
+          "name": "Perf",
+          "value": 2
+        },
+        {
+          "name": "Test",
+          "value": 4
+        },
+        {
+          "name": "Input",
+          "value": 8
+        },
+        {
+          "name": "Annotation",
+          "value": 16
+        },
+        {
+          "name": "XamlBaml",
+          "value": 32
+        },
+        {
+          "name": "Xps",
+          "value": 64
+        },
+        {
+          "name": "Animation",
+          "value": 128
+        },
+        {
+          "name": "Layout",
+          "value": 256
+        },
+        {
+          "name": "Hosting",
+          "value": 1024
+        },
+        {
+          "name": "HeapMeter",
+          "value": 2048
+        },
+        {
+          "name": "Graphics",
+          "value": 4096
+        },
+        {
+          "name": "Dispatcher",
+          "value": 8192
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.MicrosoftWindowsWPF.DispatcherPriority",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Inactive",
+          "value": 0
+        },
+        {
+          "name": "SystemIdle",
+          "value": 1
+        },
+        {
+          "name": "ApplicationIdle",
+          "value": 2
+        },
+        {
+          "name": "ContextIdle",
+          "value": 3
+        },
+        {
+          "name": "Background",
+          "value": 4
+        },
+        {
+          "name": "Input",
+          "value": 5
+        },
+        {
+          "name": "Loaded",
+          "value": 6
+        },
+        {
+          "name": "Render",
+          "value": 7
+        },
+        {
+          "name": "DataBind",
+          "value": 8
+        },
+        {
+          "name": "Normal",
+          "value": 9
+        },
+        {
+          "name": "Send",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.MicrosoftWindowsWPF.IntermediateRenderTargetReason",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Clip",
+          "value": 0
+        },
+        {
+          "name": "Clip_and_Opacity",
+          "value": 1
+        },
+        {
+          "name": "Effect",
+          "value": 2
+        },
+        {
+          "name": "Opacity",
+          "value": 3
+        },
+        {
+          "name": "OpacityMask",
+          "value": 4
+        },
+        {
+          "name": "OpacityMask_Brush_Realization",
+          "value": 5
+        },
+        {
+          "name": "ShaderEffect_Input",
+          "value": 6
+        },
+        {
+          "name": "Software_Only_Effects",
+          "value": 7
+        },
+        {
+          "name": "TileBrush",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.MicrosoftWindowsWPF.LayoutSource",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "LayoutManager",
+          "value": 0
+        },
+        {
+          "name": "HwndSource_SetLayoutSize",
+          "value": 1
+        },
+        {
+          "name": "HwndSource_WM_SIZE",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.MicrosoftWindowsWPF.UnexptectedSWFallbackReason",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NoHardwareAvailable",
+          "value": 0
+        },
+        {
+          "name": "ResizeFailed",
+          "value": 1
+        },
+        {
+          "name": "OutOfVideoMemory",
+          "value": 2
+        },
+        {
+          "name": "UnexpectedPrimitiveFallback",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.Tpl.AsyncCausalityStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Started",
+          "value": 0
+        },
+        {
+          "name": "Completed",
+          "value": 1
+        },
+        {
+          "name": "Canceled",
+          "value": 2
+        },
+        {
+          "name": "Error",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.Tpl.CausalityRelation",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AssignDelegate",
+          "value": 0
+        },
+        {
+          "name": "Join",
+          "value": 1
+        },
+        {
+          "name": "Choice",
+          "value": 2
+        },
+        {
+          "name": "Cancel",
+          "value": 3
+        },
+        {
+          "name": "Error",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.Tpl.CausalitySynchronousWork",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "CompletionNotification",
+          "value": 0
+        },
+        {
+          "name": "ProgressNotification",
+          "value": 1
+        },
+        {
+          "name": "Execution",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.Tpl.ForkJoinOperationType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ParallelInvoke",
+          "value": 1
+        },
+        {
+          "name": "ParallelFor",
+          "value": 2
+        },
+        {
+          "name": "ParallelForEach",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.Tpl.TaskWaitBehavior",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Synchronous",
+          "value": 1
+        },
+        {
+          "name": "Asynchronous",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.MicrosoftWindowsTCPIP.TCP_CONGESTION_ALGORITHM",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "NewReno",
+          "value": 1
+        },
+        {
+          "name": "CcmCtcp",
+          "value": 2
+        },
+        {
+          "name": "CcmDctcp",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.MicrosoftWindowsTCPIP.TCP_CONNECTION_STATE",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ClosedState",
+          "value": 0
+        },
+        {
+          "name": "ListenState",
+          "value": 1
+        },
+        {
+          "name": "SynSentState",
+          "value": 2
+        },
+        {
+          "name": "SynRcvdState",
+          "value": 3
+        },
+        {
+          "name": "EstablishedState",
+          "value": 4
+        },
+        {
+          "name": "FinWait1State",
+          "value": 5
+        },
+        {
+          "name": "FinWait2State",
+          "value": 6
+        },
+        {
+          "name": "CloseWaitState",
+          "value": 7
+        },
+        {
+          "name": "ClosingState",
+          "value": 8
+        },
+        {
+          "name": "LastAckState",
+          "value": 9
+        },
+        {
+          "name": "TimeWaitState",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.MicrosoftWindowsTCPIP.TCP_NOTIFICATION_CHANNEL_STATUS",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Invalid",
+          "value": 0
+        },
+        {
+          "name": "SoftwareSlotAllocated",
+          "value": 1
+        },
+        {
+          "name": "HardwareSlotAllocated",
+          "value": 2
+        },
+        {
+          "name": "PolicyError",
+          "value": 3
+        },
+        {
+          "name": "systemError",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.MicrosoftWindowsTCPIP.TCP_OPTION_TYPE",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "TCP_OFFLOAD_NO_PREFERENCE",
+          "value": 0
+        },
+        {
+          "name": "TCP_OFFLOAD_NOT_PREFERRED",
+          "value": 1
+        },
+        {
+          "name": "TCP_OFFLOAD_PREFERRED",
+          "value": 2
+        },
+        {
+          "name": "TCP_KEEPALIVE",
+          "value": 3
+        },
+        {
+          "name": "TCP_MAXSEG",
+          "value": 4
+        },
+        {
+          "name": "TCP_MAXRT",
+          "value": 5
+        },
+        {
+          "name": "TCP_STDURG",
+          "value": 6
+        },
+        {
+          "name": "TCP_NOURG",
+          "value": 7
+        },
+        {
+          "name": "TCP_ATMARK",
+          "value": 8
+        },
+        {
+          "name": "TCP_NOSYNRETRIES",
+          "value": 9
+        },
+        {
+          "name": "TCP_TIMESTAMPS",
+          "value": 10
+        },
+        {
+          "name": "TCP_OFFLOAD_PREFERENCE",
+          "value": 11
+        },
+        {
+          "name": "TCP_CONGESTION_ALGORITHM",
+          "value": 12
+        },
+        {
+          "name": "TCP_DELAY_FIN_ACK",
+          "value": 13
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.MicrosoftWindowsTCPIP.TCP_REPARTITION_EVENT_TYPE",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ProcessorAdd",
+          "value": 0
+        },
+        {
+          "name": "PowerSourceChange",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.MicrosoftWindowsTCPIP.TCP_TIMER_TYPE",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "RetransmitTimer",
+          "value": 0
+        },
+        {
+          "name": "ConnectTimer",
+          "value": 1
+        },
+        {
+          "name": "DelAckTimer",
+          "value": 2
+        },
+        {
+          "name": "PushTimer",
+          "value": 3
+        },
+        {
+          "name": "KeepAliveTimer",
+          "value": 4
+        },
+        {
+          "name": "DisconnectTimer",
+          "value": 5
+        },
+        {
+          "name": "SwsTimer",
+          "value": 6
+        },
+        {
+          "name": "ReassemblyRateTimer",
+          "value": 7
+        },
+        {
+          "name": "SynOrRstValidationTimer",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.MicrosoftWindowsTCPIP.TCP_WSD_CACHE_ENTRY_STATE",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Idle",
+          "value": 0
+        },
+        {
+          "name": "ProbingWs",
+          "value": 1
+        },
+        {
+          "name": "ProbeWait",
+          "value": 2
+        },
+        {
+          "name": "ProbingWithoutWs",
+          "value": 3
+        },
+        {
+          "name": "RecordWait",
+          "value": 4
+        },
+        {
+          "name": "EreQualified",
+          "value": 5
+        },
+        {
+          "name": "Qualified",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.MicrosoftWindowsTCPIP.TCP_WSD",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "FailedToAllocateTheWSDCache",
+          "value": 0
+        },
+        {
+          "name": "FailureInitializingPnPWorkQueue",
+          "value": 1
+        },
+        {
+          "name": "FailedToGetPersistentParameters",
+          "value": 2
+        },
+        {
+          "name": "RejectedPersistentParameters",
+          "value": 3
+        },
+        {
+          "name": "qualifiedProfile",
+          "value": 4
+        },
+        {
+          "name": "qualifiedDestination",
+          "value": 5
+        },
+        {
+          "name": "sampleCollectionCompletion",
+          "value": 6
+        },
+        {
+          "name": "idleTimeExpiration",
+          "value": 7
+        },
+        {
+          "name": "allocation",
+          "value": 8
+        },
+        {
+          "name": "newSampleRequest",
+          "value": 9
+        },
+        {
+          "name": "configurationChange",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.MicrosoftWindowsTCPIP.TCPIP_ADDRESS_FAMILY_TYPE",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "IPV4",
+          "value": 2
+        },
+        {
+          "name": "IPV6",
+          "value": 23
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.MicrosoftWindowsTCPIP.TCPIP_AF",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "IPv4",
+          "value": 2
+        },
+        {
+          "name": "IPv6",
+          "value": 23
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.MicrosoftWindowsTCPIP.TCPIP_BOOLEAN",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "FALSE",
+          "value": 0
+        },
+        {
+          "name": "TRUE",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.MicrosoftWindowsTCPIP.TCPIP_COMPONENT",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "IP",
+          "value": 0
+        },
+        {
+          "name": "TCP",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.MicrosoftWindowsTCPIP.TCPIP_IP_DAD_STATE",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NldsInvalid",
+          "value": 0
+        },
+        {
+          "name": "NldsTentative",
+          "value": 1
+        },
+        {
+          "name": "NldsDuplicate",
+          "value": 2
+        },
+        {
+          "name": "NldsDeprecated",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.MicrosoftWindowsTCPIP.TCPIP_IP_PHYSICALMEDIUM_TYPE",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NdisPhysicalMediumUnspecified",
+          "value": 0
+        },
+        {
+          "name": "NdisPhysicalMediumWirelessLan",
+          "value": 1
+        },
+        {
+          "name": "NdisPhysicalMediumCableModem",
+          "value": 2
+        },
+        {
+          "name": "NdisPhysicalMediumPhoneLine",
+          "value": 3
+        },
+        {
+          "name": "NdisPhysicalMediumDSL",
+          "value": 5
+        },
+        {
+          "name": "NdisPhysicalMedium1394",
+          "value": 7
+        },
+        {
+          "name": "NdisPhysicalMediumWirelessWan",
+          "value": 8
+        },
+        {
+          "name": "NdisPhysicalMediumNative802_11",
+          "value": 9
+        },
+        {
+          "name": "NdisPhysicalMediumBluetooth",
+          "value": 10
+        },
+        {
+          "name": "NdisPhysicalMediumInfiniband",
+          "value": 11
+        },
+        {
+          "name": "NdisPhysicalMediumWiMax",
+          "value": 12
+        },
+        {
+          "name": "NdisPhysicalMedium802_3",
+          "value": 14
+        },
+        {
+          "name": "NdisPhysicalMedium802_5",
+          "value": 15
+        },
+        {
+          "name": "NdisPhysicalMediumIrda",
+          "value": 16
+        },
+        {
+          "name": "NdisPhysicalMediumWiredWAN",
+          "value": 17
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.MicrosoftWindowsTCPIP.TCPIP_LOOPBACK_FASTPATH_FAIL_REASON",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "LoopbackFastPathSocketOptionNotSetOnBothEnds",
+          "value": 0
+        },
+        {
+          "name": "FilterPolicyExistedForTheLoopbackConnection",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.MicrosoftWindowsTCPIP.TCPIP_NDKPI_COMPLETION_TYPE",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Async",
+          "value": 0
+        },
+        {
+          "name": "Inline",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.MicrosoftWindowsTCPIP.TCPIP_NDKPI_CQ_ARM_TYPE",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NotifyErrors",
+          "value": 0
+        },
+        {
+          "name": "NotifyAny",
+          "value": 1
+        },
+        {
+          "name": "NotifySolicited",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.MicrosoftWindowsTCPIP.TCPIP_NDKPI_OBJECT_TYPE",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "Adapter",
+          "value": 1
+        },
+        {
+          "name": "QP",
+          "value": 2
+        },
+        {
+          "name": "CQ",
+          "value": 3
+        },
+        {
+          "name": "MR",
+          "value": 4
+        },
+        {
+          "name": "MW",
+          "value": 5
+        },
+        {
+          "name": "PD",
+          "value": 6
+        },
+        {
+          "name": "SharedEndpoint",
+          "value": 7
+        },
+        {
+          "name": "Connector",
+          "value": 8
+        },
+        {
+          "name": "Listener",
+          "value": 9
+        },
+        {
+          "name": "SRQ",
+          "value": 10
+        },
+        {
+          "name": "Max",
+          "value": 11
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.MicrosoftWindowsTCPIP.TCPIP_NDKPI_OPERATION_TYPE",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Receive",
+          "value": 1
+        },
+        {
+          "name": "Send",
+          "value": 2
+        },
+        {
+          "name": "FastRegister",
+          "value": 4
+        },
+        {
+          "name": "Bind",
+          "value": 8
+        },
+        {
+          "name": "Invalidate",
+          "value": 16
+        },
+        {
+          "name": "Read",
+          "value": 32
+        },
+        {
+          "name": "Write",
+          "value": 64
+        },
+        {
+          "name": "ReceiveAndInvalidate",
+          "value": 32769
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.MicrosoftWindowsTCPIP.TCPIP_NDKPI_SOCKADDR_TYPE",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Local",
+          "value": 0
+        },
+        {
+          "name": "Remote",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.MicrosoftWindowsTCPIP.TCPIP_NDKPI_TOKEN_TYPE",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Local",
+          "value": 0
+        },
+        {
+          "name": "Remote",
+          "value": 1
+        },
+        {
+          "name": "Privileged",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.MicrosoftWindowsTCPIP.TCPIP_NEIGHBOR_EVENT",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Map",
+          "value": 0
+        },
+        {
+          "name": "Configure",
+          "value": 1
+        },
+        {
+          "name": "TlSuspectsReachability",
+          "value": 2
+        },
+        {
+          "name": "TlConfirmsReachability",
+          "value": 3
+        },
+        {
+          "name": "NaConfirmsReachability",
+          "value": 4
+        },
+        {
+          "name": "ProbeReachability",
+          "value": 5
+        },
+        {
+          "name": "DadSolicitation",
+          "value": 6
+        },
+        {
+          "name": "NewDlAddress",
+          "value": 7
+        },
+        {
+          "name": "TriggerNud",
+          "value": 8
+        },
+        {
+          "name": "Resolve",
+          "value": 9
+        },
+        {
+          "name": "Timeout",
+          "value": 10
+        },
+        {
+          "name": "SendingNeighborSolicitation",
+          "value": 11
+        },
+        {
+          "name": "ReceivedNeighborSolicitation",
+          "value": 12
+        },
+        {
+          "name": "SendingNeighborAdvertisement",
+          "value": 13
+        },
+        {
+          "name": "ReceivedNeighborAdvertisement",
+          "value": 14
+        },
+        {
+          "name": "SendingRouterSolicitation",
+          "value": 15
+        },
+        {
+          "name": "ReceivedRouterSolicitation",
+          "value": 16
+        },
+        {
+          "name": "SendingRouterAdvertisement",
+          "value": 17
+        },
+        {
+          "name": "ReceivedRouterAdvertisement",
+          "value": 18
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.MicrosoftWindowsTCPIP.TCPIP_NEIGHBOR_STATE",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unreachable",
+          "value": 0
+        },
+        {
+          "name": "Incomplete",
+          "value": 1
+        },
+        {
+          "name": "Probe",
+          "value": 2
+        },
+        {
+          "name": "Delay",
+          "value": 3
+        },
+        {
+          "name": "Stale",
+          "value": 4
+        },
+        {
+          "name": "Reachable",
+          "value": 5
+        },
+        {
+          "name": "Permanent",
+          "value": 6
+        },
+        {
+          "name": "Maximum",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.MicrosoftWindowsTCPIP.TCPIP_OFFLOAD_FAILURE_REASON",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NoFailure",
+          "value": 0
+        },
+        {
+          "name": "Unknown",
+          "value": 1
+        },
+        {
+          "name": "SystemPolicy",
+          "value": 2
+        },
+        {
+          "name": "NICCapacityReached",
+          "value": 3
+        },
+        {
+          "name": "SystemLowOnMemory",
+          "value": 4
+        },
+        {
+          "name": "WFPDriverStreamInspection",
+          "value": 5
+        },
+        {
+          "name": "WeakHostModelEnabled",
+          "value": 6
+        },
+        {
+          "name": "ForwardingEnabled",
+          "value": 7
+        },
+        {
+          "name": "HardwareCapability",
+          "value": 8
+        },
+        {
+          "name": "NDISFilterNICProperty",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.MicrosoftWindowsTCPIP.TCPIP_PROPERTY",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Disabled",
+          "value": 0
+        },
+        {
+          "name": "Enabled",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.MicrosoftWindowsTCPIP.TCPIP_Protocol",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "IPv4",
+          "value": 4
+        },
+        {
+          "name": "IPv6",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.MicrosoftWindowsTCPIP.TCPIP_RSS_ADDING",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "removing",
+          "value": 0
+        },
+        {
+          "name": "adding",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.MicrosoftWindowsTCPIP.TCPIP_RSS_BINDING_CAPABILITY",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "notAvailable",
+          "value": 0
+        },
+        {
+          "name": "available",
+          "value": 1
+        },
+        {
+          "name": "availableOnPorts",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.MicrosoftWindowsTCPIP.TCPIP_RSS_BINDING_NOTIFICATION",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "unbind",
+          "value": 0
+        },
+        {
+          "name": "bind",
+          "value": 1
+        },
+        {
+          "name": "portChange",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.MicrosoftWindowsTCPIP.TCPIP_RSS_SETTING_VALUE",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "none",
+          "value": 1000
+        },
+        {
+          "name": "receiveHash",
+          "value": 1001
+        },
+        {
+          "name": "receiveScale",
+          "value": 1002
+        },
+        {
+          "name": "enabled",
+          "value": 1003
+        },
+        {
+          "name": "disabled",
+          "value": 1004
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.MicrosoftWindowsTCPIP.TCPIP_SILENT_MODE_EVENT",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Enabled",
+          "value": 0
+        },
+        {
+          "name": "SendRequestDropped",
+          "value": 1
+        },
+        {
+          "name": "ReceiveDropped",
+          "value": 2
+        },
+        {
+          "name": "DisconnectRequestDropped",
+          "value": 3
+        },
+        {
+          "name": "ResetDropped",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.MicrosoftWindowsTCPIP.TCPIP_SLOW_PATH_REASON",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "IPChecksumOffloadNotComputed",
+          "value": 0
+        },
+        {
+          "name": "TCPChecksumOffloadNotComputed",
+          "value": 1
+        },
+        {
+          "name": "UDPChecksumOffloadNotComputed",
+          "value": 2
+        },
+        {
+          "name": "HeaderNotAlignedOn4byteBoundary",
+          "value": 3
+        },
+        {
+          "name": "IPFragmentation",
+          "value": 4
+        },
+        {
+          "name": "SourceAddressIsNotUnicast",
+          "value": 5
+        },
+        {
+          "name": "DestinationAddressIsNotUnicast",
+          "value": 6
+        },
+        {
+          "name": "EthernetAndIPHeaderNotContiguous",
+          "value": 7
+        },
+        {
+          "name": "IPOptionsPresent",
+          "value": 8
+        },
+        {
+          "name": "ESPOverUDP",
+          "value": 9
+        },
+        {
+          "name": "LackContiguousSpaceForUpperLayerHeaders",
+          "value": 10
+        },
+        {
+          "name": "WFPFiltersPresent",
+          "value": 11
+        },
+        {
+          "name": "NexthopIsUnavailable",
+          "value": 12
+        },
+        {
+          "name": "PathHasBeenInvalidatedDueToPolicyChange",
+          "value": 13
+        },
+        {
+          "name": "DHCPAssignedIPAddressPromiscuousCountIsNonzero",
+          "value": 14
+        },
+        {
+          "name": "ECNCodepointHasNotBeenNegotiatedForThisTraffic",
+          "value": 15
+        },
+        {
+          "name": "SessionStateIsNotCompatible",
+          "value": 16
+        },
+        {
+          "name": "TCPOptionsPresent",
+          "value": 17
+        },
+        {
+          "name": "UDPIPv6ChecksumAbsentInPacket",
+          "value": 18
+        },
+        {
+          "name": "PacketIsForALoopbackInterface",
+          "value": 19
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.MicrosoftWindowsTCPIP.TCPIP_TCP_DELIVERY_STATE",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Indicate",
+          "value": 0
+        },
+        {
+          "name": "Pend",
+          "value": 1
+        },
+        {
+          "name": "Satisfy",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.MicrosoftWindowsTCPIP.TCPIP_TEMPLATE_TYPE",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "TcpTemplateTypeInternet",
+          "value": 0
+        },
+        {
+          "name": "TcpTemplateTypeDatacenter",
+          "value": 1
+        },
+        {
+          "name": "TcpTemplateTypeCompat",
+          "value": 2
+        },
+        {
+          "name": "TcpTemplateTypeDatacenterCustom",
+          "value": 3
+        },
+        {
+          "name": "TcpTemplateTypeInternetCustom",
+          "value": 4
+        },
+        {
+          "name": "TcpTemplateTypeDefault",
+          "value": 6
+        },
+        {
+          "name": "TcpTemplateTypeAutomatic",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.MicrosoftWindowsTCPIP.TCPIP_Transport_Protocol",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "UnknownHeaderCorruptNotParsed",
+          "value": 0
+        },
+        {
+          "name": "ICMP",
+          "value": 1
+        },
+        {
+          "name": "IGMP",
+          "value": 2
+        },
+        {
+          "name": "TCP",
+          "value": 6
+        },
+        {
+          "name": "UDP",
+          "value": 17
+        },
+        {
+          "name": "ROUTING",
+          "value": 43
+        },
+        {
+          "name": "FRAGMENT",
+          "value": 44
+        },
+        {
+          "name": "GRE",
+          "value": 47
+        },
+        {
+          "name": "ESP",
+          "value": 50
+        },
+        {
+          "name": "AH",
+          "value": 51
+        },
+        {
+          "name": "ICMPV6",
+          "value": 58
+        },
+        {
+          "name": "Unknown",
+          "value": 256
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.MicrosoftWindowsTCPIP.UDP_ENDPOINT_STATE",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NotActivated",
+          "value": 0
+        },
+        {
+          "name": "Activated",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.Kernel.ProcessFlags",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "PackageFullName",
+          "value": 1
+        },
+        {
+          "name": "Wow64",
+          "value": 2
+        },
+        {
+          "name": "Protected",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.Kernel.CSwitchTraceData.ThreadWaitMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NonSwap",
+          "value": 0
+        },
+        {
+          "name": "Swappable",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.Kernel.IOPriority",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Notset",
+          "value": 0
+        },
+        {
+          "name": "Verylow",
+          "value": 1
+        },
+        {
+          "name": "Low",
+          "value": 2
+        },
+        {
+          "name": "Normal",
+          "value": 3
+        },
+        {
+          "name": "High",
+          "value": 4
+        },
+        {
+          "name": "Critical",
+          "value": 5
+        },
+        {
+          "name": "Reserved0",
+          "value": 6
+        },
+        {
+          "name": "Reserved1",
+          "value": 7
+        },
+        {
+          "name": "Max",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.Kernel.IrpFlags",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Nocache",
+          "value": 1
+        },
+        {
+          "name": "PagingIo",
+          "value": 2
+        },
+        {
+          "name": "MountCompletion",
+          "value": 2
+        },
+        {
+          "name": "SynchronousApi",
+          "value": 4
+        },
+        {
+          "name": "AssociatedIrp",
+          "value": 8
+        },
+        {
+          "name": "BufferedIO",
+          "value": 16
+        },
+        {
+          "name": "DeallocateBuffer",
+          "value": 32
+        },
+        {
+          "name": "InputOperation",
+          "value": 64
+        },
+        {
+          "name": "SynchronousPagingIO",
+          "value": 64
+        },
+        {
+          "name": "Create",
+          "value": 128
+        },
+        {
+          "name": "Read",
+          "value": 256
+        },
+        {
+          "name": "Write",
+          "value": 512
+        },
+        {
+          "name": "Close",
+          "value": 1024
+        },
+        {
+          "name": "DeferIOCompletion",
+          "value": 2048
+        },
+        {
+          "name": "ObQueryName",
+          "value": 4096
+        },
+        {
+          "name": "HoldDeviceQueue",
+          "value": 8192
+        },
+        {
+          "name": "PriorityMask",
+          "value": 917504
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.Kernel.CreateDisposition",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "SUPERSEDE",
+          "value": 0
+        },
+        {
+          "name": "CREATE_NEW",
+          "value": 2
+        },
+        {
+          "name": "CREATE_ALWAYS",
+          "value": 5
+        },
+        {
+          "name": "OPEN_EXISTING",
+          "value": 1
+        },
+        {
+          "name": "OPEN_ALWAYS",
+          "value": 3
+        },
+        {
+          "name": "TRUNCATE_EXISTING",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.Kernel.CreateOptions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NONE",
+          "value": 0
+        },
+        {
+          "name": "FILE_ATTRIBUTE_ARCHIVE",
+          "value": 32
+        },
+        {
+          "name": "FILE_ATTRIBUTE_COMPRESSED",
+          "value": 2048
+        },
+        {
+          "name": "FILE_ATTRIBUTE_DEVICE",
+          "value": 64
+        },
+        {
+          "name": "FILE_ATTRIBUTE_DIRECTORY",
+          "value": 16
+        },
+        {
+          "name": "FILE_ATTRIBUTE_ENCRYPTED",
+          "value": 16384
+        },
+        {
+          "name": "FILE_ATTRIBUTE_HIDDEN",
+          "value": 2
+        },
+        {
+          "name": "FILE_ATTRIBUTE_INTEGRITY_STREAM",
+          "value": 32768
+        },
+        {
+          "name": "FILE_ATTRIBUTE_NORMAL",
+          "value": 128
+        },
+        {
+          "name": "FILE_ATTRIBUTE_NOT_CONTENT_INDEXED",
+          "value": 8192
+        },
+        {
+          "name": "FILE_ATTRIBUTE_NO_SCRUB_DATA",
+          "value": 131072
+        },
+        {
+          "name": "FILE_ATTRIBUTE_OFFLINE",
+          "value": 4096
+        },
+        {
+          "name": "FILE_ATTRIBUTE_READONLY",
+          "value": 1
+        },
+        {
+          "name": "FILE_ATTRIBUTE_REPARSE_POINT",
+          "value": 1024
+        },
+        {
+          "name": "FILE_ATTRIBUTE_SPARSE_FILE",
+          "value": 512
+        },
+        {
+          "name": "FILE_ATTRIBUTE_SYSTEM",
+          "value": 4
+        },
+        {
+          "name": "FILE_ATTRIBUTE_TEMPORARY",
+          "value": 256
+        },
+        {
+          "name": "FILE_ATTRIBUTE_VIRTUAL",
+          "value": 65536
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.Kernel.PageKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ProcessPrivate",
+          "value": 0
+        },
+        {
+          "name": "File",
+          "value": 1
+        },
+        {
+          "name": "PageFileMapped",
+          "value": 2
+        },
+        {
+          "name": "PageTable",
+          "value": 3
+        },
+        {
+          "name": "PagedPool",
+          "value": 4
+        },
+        {
+          "name": "NonPagedPool",
+          "value": 5
+        },
+        {
+          "name": "SystemPTE",
+          "value": 6
+        },
+        {
+          "name": "SessionPrivate",
+          "value": 7
+        },
+        {
+          "name": "MetaFile",
+          "value": 8
+        },
+        {
+          "name": "AwePage",
+          "value": 9
+        },
+        {
+          "name": "DriverLockPage",
+          "value": 10
+        },
+        {
+          "name": "KernelStack",
+          "value": 11
+        },
+        {
+          "name": "WSMetaData",
+          "value": 12
+        },
+        {
+          "name": "LargePage",
+          "value": 13
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.Kernel.PageList",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Zero",
+          "value": 0
+        },
+        {
+          "name": "Free",
+          "value": 1
+        },
+        {
+          "name": "Standby",
+          "value": 2
+        },
+        {
+          "name": "Modified",
+          "value": 3
+        },
+        {
+          "name": "ModifiedNoWrite",
+          "value": 4
+        },
+        {
+          "name": "Bad",
+          "value": 5
+        },
+        {
+          "name": "Active",
+          "value": 6
+        },
+        {
+          "name": "Transition",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.Kernel.VirtualAllocTraceData.VirtualAllocFlags",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "MEM_COMMIT",
+          "value": 4096
+        },
+        {
+          "name": "MEM_RESERVE",
+          "value": 8192
+        },
+        {
+          "name": "MEM_DECOMMIT",
+          "value": 16384
+        },
+        {
+          "name": "MEM_RELEASE",
+          "value": 32768
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.Kernel.DispatcherReadyThreadTraceData.AdjustReasonEnum",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Unwait",
+          "value": 1
+        },
+        {
+          "name": "Boost",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.Kernel.DispatcherReadyThreadTraceData.ReadyThreadFlags",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "ReadiedFromDPC",
+          "value": 1
+        },
+        {
+          "name": "KernelSwappedOut",
+          "value": 2
+        },
+        {
+          "name": "ProcessSwappedOut",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.JSDumpHeap.ObjectFlags",
+      "underlyingType": "System.UInt32",
+      "members": [
+        {
+          "name": "NEW_OBJECT",
+          "value": 1
+        },
+        {
+          "name": "IS_ROOT",
+          "value": 2
+        },
+        {
+          "name": "SITE_CLOSED",
+          "value": 4
+        },
+        {
+          "name": "EXTERNAL",
+          "value": 8
+        },
+        {
+          "name": "EXTERNAL_UNKNOWN",
+          "value": 16
+        },
+        {
+          "name": "EXTERNAL_DISPATCH",
+          "value": 32
+        },
+        {
+          "name": "SIZE_APPROXIMATE",
+          "value": 64
+        },
+        {
+          "name": "SIZE_UNAVAILABLE",
+          "value": 128
+        },
+        {
+          "name": "NEW_STATE_UNAVAILABLE",
+          "value": 256
+        },
+        {
+          "name": "WINRT_INSTANCE",
+          "value": 512
+        },
+        {
+          "name": "WINRT_RUNTIMECLASS",
+          "value": 1024
+        },
+        {
+          "name": "WINRT_DELEGATE",
+          "value": 2048
+        },
+        {
+          "name": "WINRT_NAMESPACE",
+          "value": 4096
+        },
+        {
+          "name": "WINRT",
+          "value": 7680
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.JSDumpHeap.AttributeType",
+      "underlyingType": "System.UInt16",
+      "members": [
+        {
+          "name": "DOMTagName",
+          "value": 0
+        },
+        {
+          "name": "DOMId",
+          "value": 1
+        },
+        {
+          "name": "DOMClass",
+          "value": 2
+        },
+        {
+          "name": "DOMSrc",
+          "value": 3
+        },
+        {
+          "name": "ElementAttributesSize",
+          "value": 4
+        },
+        {
+          "name": "Scope",
+          "value": 5
+        },
+        {
+          "name": "Prototype",
+          "value": 6
+        },
+        {
+          "name": "FunctionName",
+          "value": 7
+        },
+        {
+          "name": "TextChildrenSize",
+          "value": 8
+        },
+        {
+          "name": "Max",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.JSDumpHeap.EdgeRelationshipType",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Prototype",
+          "value": 0
+        },
+        {
+          "name": "Scope",
+          "value": 1
+        },
+        {
+          "name": "InternalProperty",
+          "value": 2
+        },
+        {
+          "name": "NamedProperty",
+          "value": 3
+        },
+        {
+          "name": "IndexedProperty",
+          "value": 4
+        },
+        {
+          "name": "Event",
+          "value": 5
+        },
+        {
+          "name": "RelationShip",
+          "value": 6
+        },
+        {
+          "name": "Max",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.JSDumpHeap.EdgeTargetType",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Number",
+          "value": 0
+        },
+        {
+          "name": "String",
+          "value": 1
+        },
+        {
+          "name": "BSTR",
+          "value": 2
+        },
+        {
+          "name": "Object",
+          "value": 3
+        },
+        {
+          "name": "External",
+          "value": 4
+        },
+        {
+          "name": "Max",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.JScript.MethodAddressRange",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Interpreted",
+          "value": 1
+        },
+        {
+          "name": "JIT",
+          "value": 2
+        },
+        {
+          "name": "JITLoopBody",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.FrameworkEventSource.ThreadTransferKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "ManagedTimers",
+          "value": 1
+        },
+        {
+          "name": "ManagedAsync",
+          "value": 2
+        },
+        {
+          "name": "WinRT",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.Clr.MarkRootType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "MarkStack",
+          "value": 0
+        },
+        {
+          "name": "MarkFQ",
+          "value": 1
+        },
+        {
+          "name": "MarkHandles",
+          "value": 2
+        },
+        {
+          "name": "MarkOlder",
+          "value": 3
+        },
+        {
+          "name": "MarkSizedRef",
+          "value": 4
+        },
+        {
+          "name": "MarkOverflow",
+          "value": 5
+        },
+        {
+          "name": "MarkDependentHandles",
+          "value": 6
+        },
+        {
+          "name": "MarkNewFQ",
+          "value": 7
+        },
+        {
+          "name": "MarkSteal",
+          "value": 8
+        },
+        {
+          "name": "MarkBGCRoots",
+          "value": 9
+        },
+        {
+          "name": "MarkMax",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.Clr.Gens",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Gen0",
+          "value": 0
+        },
+        {
+          "name": "Gen1",
+          "value": 1
+        },
+        {
+          "name": "Gen2",
+          "value": 2
+        },
+        {
+          "name": "GenLargeObj",
+          "value": 3
+        },
+        {
+          "name": "GenPinObj",
+          "value": 4
+        },
+        {
+          "name": "MaxGenCount",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.Clr.gc_heap_expand_mechanism",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "expand_reuse_normal",
+          "value": 0
+        },
+        {
+          "name": "expand_reuse_bestfit",
+          "value": 1
+        },
+        {
+          "name": "expand_new_seg_ep",
+          "value": 2
+        },
+        {
+          "name": "expand_new_seg",
+          "value": 3
+        },
+        {
+          "name": "expand_no_memory",
+          "value": 4
+        },
+        {
+          "name": "expand_next_full_gc",
+          "value": 5
+        },
+        {
+          "name": "max_expand_mechanisms_count",
+          "value": 6
+        },
+        {
+          "name": "not_specified",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.Clr.gc_heap_compact_reason",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "compact_low_ephemeral",
+          "value": 0
+        },
+        {
+          "name": "compact_high_frag",
+          "value": 1
+        },
+        {
+          "name": "compact_no_gaps",
+          "value": 2
+        },
+        {
+          "name": "compact_loh_forced",
+          "value": 3
+        },
+        {
+          "name": "compact_last_gc",
+          "value": 4
+        },
+        {
+          "name": "compact_induced_compacting",
+          "value": 5
+        },
+        {
+          "name": "compact_fragmented_gen0",
+          "value": 6
+        },
+        {
+          "name": "compact_high_mem_load",
+          "value": 7
+        },
+        {
+          "name": "compact_high_mem_frag",
+          "value": 8
+        },
+        {
+          "name": "compact_vhigh_mem_frag",
+          "value": 9
+        },
+        {
+          "name": "compact_no_gc_mode",
+          "value": 10
+        },
+        {
+          "name": "max_compact_reasons_count",
+          "value": 11
+        },
+        {
+          "name": "not_specified",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.Clr.gc_concurrent_compact_reason",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "concurrent_compact_high_frag",
+          "value": 0
+        },
+        {
+          "name": "concurrent_compact_c_mark",
+          "value": 1
+        },
+        {
+          "name": "max_concurrent_compat_reason",
+          "value": 2
+        },
+        {
+          "name": "not_specified",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.Clr.GCExpandMechanism",
+      "underlyingType": "System.UInt32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "ReuseNormal",
+          "value": 2147483648
+        },
+        {
+          "name": "ReuseBestFit",
+          "value": 2147483649
+        },
+        {
+          "name": "NewSegEphemeralPromotion",
+          "value": 2147483650
+        },
+        {
+          "name": "NewSeg",
+          "value": 2147483651
+        },
+        {
+          "name": "NoMemory",
+          "value": 2147483652
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.Clr.GcJoinType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "LastJoin",
+          "value": 0
+        },
+        {
+          "name": "Join",
+          "value": 1
+        },
+        {
+          "name": "Restart",
+          "value": 2
+        },
+        {
+          "name": "FirstJoin",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.Clr.GcJoinTime",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Start",
+          "value": 0
+        },
+        {
+          "name": "End",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.Clr.GcJoinID",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Restart",
+          "value": -1
+        },
+        {
+          "name": "Invalid",
+          "value": -256
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.Clr.AppDomainFlags",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Default",
+          "value": 1
+        },
+        {
+          "name": "Executable",
+          "value": 2
+        },
+        {
+          "name": "Shared",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.Clr.AssemblyFlags",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "DomainNeutral",
+          "value": 1
+        },
+        {
+          "name": "Dynamic",
+          "value": 2
+        },
+        {
+          "name": "Native",
+          "value": 4
+        },
+        {
+          "name": "Collectible",
+          "value": 8
+        },
+        {
+          "name": "ReadyToRun",
+          "value": 16
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.Clr.ModuleFlags",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "DomainNeutral",
+          "value": 1
+        },
+        {
+          "name": "Native",
+          "value": 2
+        },
+        {
+          "name": "Dynamic",
+          "value": 4
+        },
+        {
+          "name": "Manifest",
+          "value": 8
+        },
+        {
+          "name": "IbcOptimized",
+          "value": 16
+        },
+        {
+          "name": "ReadyToRunModule",
+          "value": 32
+        },
+        {
+          "name": "PartialReadyToRunModule",
+          "value": 64
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.Clr.MethodFlags",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Dynamic",
+          "value": 1
+        },
+        {
+          "name": "Generic",
+          "value": 2
+        },
+        {
+          "name": "HasSharedGenericCode",
+          "value": 4
+        },
+        {
+          "name": "Jitted",
+          "value": 8
+        },
+        {
+          "name": "JitHelper",
+          "value": 16
+        },
+        {
+          "name": "ProfilerRejectedPrecompiledCode",
+          "value": 32
+        },
+        {
+          "name": "ReadyToRunRejectedPrecompiledCode",
+          "value": 64
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.Clr.OptimizationTier",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "MinOptJitted",
+          "value": 1
+        },
+        {
+          "name": "Optimized",
+          "value": 2
+        },
+        {
+          "name": "QuickJitted",
+          "value": 3
+        },
+        {
+          "name": "OptimizedTier1",
+          "value": 4
+        },
+        {
+          "name": "OptimizedTier1OSR",
+          "value": 5
+        },
+        {
+          "name": "ReadyToRun",
+          "value": 6
+        },
+        {
+          "name": "PreJIT",
+          "value": 255
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.Clr.StartupMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "ManagedExe",
+          "value": 1
+        },
+        {
+          "name": "HostedClr",
+          "value": 2
+        },
+        {
+          "name": "IjwDll",
+          "value": 4
+        },
+        {
+          "name": "ComActivated",
+          "value": 8
+        },
+        {
+          "name": "Other",
+          "value": 16
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.Clr.RuntimeSku",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "DesktopClr",
+          "value": 1
+        },
+        {
+          "name": "CoreClr",
+          "value": 2
+        },
+        {
+          "name": "Mono",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.Clr.ExceptionThrownFlags",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "HasInnerException",
+          "value": 1
+        },
+        {
+          "name": "Nested",
+          "value": 2
+        },
+        {
+          "name": "ReThrown",
+          "value": 4
+        },
+        {
+          "name": "CorruptedState",
+          "value": 8
+        },
+        {
+          "name": "CLSCompliant",
+          "value": 16
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.Clr.ILStubGeneratedFlags",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "ReverseInterop",
+          "value": 1
+        },
+        {
+          "name": "ComInterop",
+          "value": 2
+        },
+        {
+          "name": "NGenedStub",
+          "value": 4
+        },
+        {
+          "name": "Delegate",
+          "value": 8
+        },
+        {
+          "name": "VarArg",
+          "value": 16
+        },
+        {
+          "name": "UnmanagedCallee",
+          "value": 32
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.Clr.StartupFlags",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "CONCURRENT_GC",
+          "value": 1
+        },
+        {
+          "name": "LOADER_OPTIMIZATION_SINGLE_DOMAIN",
+          "value": 2
+        },
+        {
+          "name": "LOADER_OPTIMIZATION_MULTI_DOMAIN",
+          "value": 4
+        },
+        {
+          "name": "LOADER_SAFEMODE",
+          "value": 16
+        },
+        {
+          "name": "LOADER_SETPREFERENCE",
+          "value": 256
+        },
+        {
+          "name": "SERVER_GC",
+          "value": 4096
+        },
+        {
+          "name": "HOARD_GC_VM",
+          "value": 8192
+        },
+        {
+          "name": "SINGLE_VERSION_HOSTING_INTERFACE",
+          "value": 16384
+        },
+        {
+          "name": "LEGACY_IMPERSONATION",
+          "value": 65536
+        },
+        {
+          "name": "DISABLE_COMMITTHREADSTACK",
+          "value": 131072
+        },
+        {
+          "name": "ALWAYSFLOW_IMPERSONATION",
+          "value": 262144
+        },
+        {
+          "name": "TRIM_GC_COMMIT",
+          "value": 524288
+        },
+        {
+          "name": "ETW",
+          "value": 1048576
+        },
+        {
+          "name": "SERVER_BUILD",
+          "value": 2097152
+        },
+        {
+          "name": "ARM",
+          "value": 4194304
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.Clr.TypeFlags",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Delegate",
+          "value": 1
+        },
+        {
+          "name": "Finalizable",
+          "value": 2
+        },
+        {
+          "name": "ExternallyImplementedCOMObject",
+          "value": 4
+        },
+        {
+          "name": "Array",
+          "value": 8
+        },
+        {
+          "name": "ModuleBaseAddress",
+          "value": 16
+        },
+        {
+          "name": "ArrayRankBit0",
+          "value": 256
+        },
+        {
+          "name": "ArrayRankBit1",
+          "value": 512
+        },
+        {
+          "name": "ArrayRankBit2",
+          "value": 1024
+        },
+        {
+          "name": "ArrayRankBit3",
+          "value": 2048
+        },
+        {
+          "name": "ArrayRankBit4",
+          "value": 4096
+        },
+        {
+          "name": "ArrayRankBit5",
+          "value": 8192
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.Clr.GCRootFlags",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Pinning",
+          "value": 1
+        },
+        {
+          "name": "WeakRef",
+          "value": 2
+        },
+        {
+          "name": "Interior",
+          "value": 4
+        },
+        {
+          "name": "RefCounted",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.Clr.GCRootStaticVarFlags",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "ThreadLocal",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.Clr.ThreadFlags",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "GCSpecial",
+          "value": 1
+        },
+        {
+          "name": "Finalizer",
+          "value": 2
+        },
+        {
+          "name": "ThreadPoolWorker",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.Clr.GCSegmentType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "SmallObjectHeap",
+          "value": 0
+        },
+        {
+          "name": "LargeObjectHeap",
+          "value": 1
+        },
+        {
+          "name": "ReadOnlyHeap",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.Clr.GCAllocationKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Small",
+          "value": 0
+        },
+        {
+          "name": "Large",
+          "value": 1
+        },
+        {
+          "name": "Pinned",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.Clr.GCType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NonConcurrentGC",
+          "value": 0
+        },
+        {
+          "name": "BackgroundGC",
+          "value": 1
+        },
+        {
+          "name": "ForegroundGC",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.Clr.GCReason",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AllocSmall",
+          "value": 0
+        },
+        {
+          "name": "Induced",
+          "value": 1
+        },
+        {
+          "name": "LowMemory",
+          "value": 2
+        },
+        {
+          "name": "Empty",
+          "value": 3
+        },
+        {
+          "name": "AllocLarge",
+          "value": 4
+        },
+        {
+          "name": "OutOfSpaceSOH",
+          "value": 5
+        },
+        {
+          "name": "OutOfSpaceLOH",
+          "value": 6
+        },
+        {
+          "name": "InducedNotForced",
+          "value": 7
+        },
+        {
+          "name": "Internal",
+          "value": 8
+        },
+        {
+          "name": "InducedLowMemory",
+          "value": 9
+        },
+        {
+          "name": "InducedCompacting",
+          "value": 10
+        },
+        {
+          "name": "LowMemoryHost",
+          "value": 11
+        },
+        {
+          "name": "PMFullGC",
+          "value": 12
+        },
+        {
+          "name": "LowMemoryHostBlocking",
+          "value": 13
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.Clr.GCSuspendEEReason",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "SuspendOther",
+          "value": 0
+        },
+        {
+          "name": "SuspendForGC",
+          "value": 1
+        },
+        {
+          "name": "SuspendForAppDomainShutdown",
+          "value": 2
+        },
+        {
+          "name": "SuspendForCodePitching",
+          "value": 3
+        },
+        {
+          "name": "SuspendForShutdown",
+          "value": 4
+        },
+        {
+          "name": "SuspendForDebugger",
+          "value": 5
+        },
+        {
+          "name": "SuspendForGCPrep",
+          "value": 6
+        },
+        {
+          "name": "SuspendForDebuggerSweep",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.Clr.GCPauseMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Invalid",
+          "value": -1
+        },
+        {
+          "name": "Batch",
+          "value": 0
+        },
+        {
+          "name": "Interactive",
+          "value": 1
+        },
+        {
+          "name": "LowLatency",
+          "value": 2
+        },
+        {
+          "name": "SustainedLowLatency",
+          "value": 3
+        },
+        {
+          "name": "NoGC",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.Clr.ContentionFlags",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Managed",
+          "value": 0
+        },
+        {
+          "name": "Native",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.Clr.TailCallType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": -1
+        },
+        {
+          "name": "OptimizedTailCall",
+          "value": 0
+        },
+        {
+          "name": "RecursiveLoop",
+          "value": 1
+        },
+        {
+          "name": "HelperAssistedTailCall",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.Clr.ThreadAdjustmentReason",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Warmup",
+          "value": 0
+        },
+        {
+          "name": "Initializing",
+          "value": 1
+        },
+        {
+          "name": "RandomMove",
+          "value": 2
+        },
+        {
+          "name": "ClimbingMove",
+          "value": 3
+        },
+        {
+          "name": "ChangePoint",
+          "value": 4
+        },
+        {
+          "name": "Stabilizing",
+          "value": 5
+        },
+        {
+          "name": "Starvation",
+          "value": 6
+        },
+        {
+          "name": "ThreadTimedOut",
+          "value": 7
+        },
+        {
+          "name": "CooperativeBlocking",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.Clr.GCRootRCWFlags",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Duplicate",
+          "value": 1
+        },
+        {
+          "name": "XAMLObject",
+          "value": 2
+        },
+        {
+          "name": "ExtendsComObject",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.Clr.GCRootCCWFlags",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Strong",
+          "value": 1
+        },
+        {
+          "name": "XAMLObject",
+          "value": 2
+        },
+        {
+          "name": "ExtendsComObject",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.Clr.GCRootKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Stack",
+          "value": 0
+        },
+        {
+          "name": "Finalizer",
+          "value": 1
+        },
+        {
+          "name": "Handle",
+          "value": 2
+        },
+        {
+          "name": "Older",
+          "value": 3
+        },
+        {
+          "name": "SizedRef",
+          "value": 4
+        },
+        {
+          "name": "Overflow",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.Clr.GCHandleKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "WeakShort",
+          "value": 0
+        },
+        {
+          "name": "WeakLong",
+          "value": 1
+        },
+        {
+          "name": "Strong",
+          "value": 2
+        },
+        {
+          "name": "Pinned",
+          "value": 3
+        },
+        {
+          "name": "Variable",
+          "value": 4
+        },
+        {
+          "name": "RefCounted",
+          "value": 5
+        },
+        {
+          "name": "Dependent",
+          "value": 6
+        },
+        {
+          "name": "AsyncPinned",
+          "value": 7
+        },
+        {
+          "name": "SizedRef",
+          "value": 8
+        },
+        {
+          "name": "DependendAsyncPinned",
+          "value": -7
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.Clr.KnownPathSource",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ApplicationAssemblies",
+          "value": 0
+        },
+        {
+          "name": "AppNativeImagePaths",
+          "value": 1
+        },
+        {
+          "name": "AppPaths",
+          "value": 2
+        },
+        {
+          "name": "PlatformResourceRoots",
+          "value": 3
+        },
+        {
+          "name": "SatelliteSubdirectory",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.Clr.ResolutionAttemptedResult",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Success",
+          "value": 0
+        },
+        {
+          "name": "AssemblyNotFound",
+          "value": 1
+        },
+        {
+          "name": "MismatchedAssemblyName",
+          "value": 2
+        },
+        {
+          "name": "IncompatibleVersion",
+          "value": 3
+        },
+        {
+          "name": "Failure",
+          "value": 4
+        },
+        {
+          "name": "Exception",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.Clr.ResolutionAttemptedStage",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "FindInLoadContext",
+          "value": 0
+        },
+        {
+          "name": "AssemblyLoadContextLoad",
+          "value": 1
+        },
+        {
+          "name": "ApplicationAssemblies",
+          "value": 2
+        },
+        {
+          "name": "DefaultAssemblyLoadContextFallback",
+          "value": 3
+        },
+        {
+          "name": "ResolveSatelliteAssembly",
+          "value": 4
+        },
+        {
+          "name": "AssemblyLoadContextResolvingEvent",
+          "value": 5
+        },
+        {
+          "name": "AppDomainAssemblyResolveEvent",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.Clr.TieredCompilationSettingsFlags",
+      "underlyingType": "System.UInt32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "QuickJit",
+          "value": 1
+        },
+        {
+          "name": "QuickJitForLoops",
+          "value": 2
+        },
+        {
+          "name": "TieredPGO",
+          "value": 4
+        },
+        {
+          "name": "ReadyToRun",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.Clr.ClrRundownTraceEventParser.Keywords",
+      "underlyingType": "System.Int64",
+      "members": [
+        {
+          "name": "Loader",
+          "value": 8
+        },
+        {
+          "name": "Jit",
+          "value": 16
+        },
+        {
+          "name": "NGen",
+          "value": 32
+        },
+        {
+          "name": "StartEnumeration",
+          "value": 64
+        },
+        {
+          "name": "StopEnumeration",
+          "value": 128
+        },
+        {
+          "name": "ForceEndRundown",
+          "value": 256
+        },
+        {
+          "name": "AppDomainResourceManagement",
+          "value": 2048
+        },
+        {
+          "name": "Threading",
+          "value": 65536
+        },
+        {
+          "name": "JittedMethodILToNativeMap",
+          "value": 131072
+        },
+        {
+          "name": "SupressNGen",
+          "value": 262144
+        },
+        {
+          "name": "PerfTrack",
+          "value": 536870912
+        },
+        {
+          "name": "Stack",
+          "value": 1073741824
+        },
+        {
+          "name": "CodeSymbolsRundown",
+          "value": 2147483648
+        },
+        {
+          "name": "Compilation",
+          "value": 68719476736
+        },
+        {
+          "name": "Default",
+          "value": 70867353912
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.Clr.ClrStressTraceEventParser.Keywords",
+      "underlyingType": "System.Int64",
+      "members": [
+        {
+          "name": "Stack",
+          "value": 1073741824
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.Clr.GCGlobalMechanisms",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Concurrent",
+          "value": 1
+        },
+        {
+          "name": "Compaction",
+          "value": 2
+        },
+        {
+          "name": "Promotion",
+          "value": 4
+        },
+        {
+          "name": "Demotion",
+          "value": 8
+        },
+        {
+          "name": "CardBundles",
+          "value": 16
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.ClrPrivate.NGenBind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "START_BIND",
+          "value": 0
+        },
+        {
+          "name": "NO_INDEX",
+          "value": 1
+        },
+        {
+          "name": "SYSTEM_ASSEMBLY_NOT_AVAILABLE",
+          "value": 2
+        },
+        {
+          "name": "NO_NATIVE_IMAGE",
+          "value": 3
+        },
+        {
+          "name": "REJECT_CONFIG_MASK",
+          "value": 4
+        },
+        {
+          "name": "FAIL",
+          "value": 5
+        },
+        {
+          "name": "INDEX_CORRUPTION",
+          "value": 6
+        },
+        {
+          "name": "REJECT_TIMESTAMP",
+          "value": 7
+        },
+        {
+          "name": "REJECT_NATIVEIMAGE_NOT_FOUND",
+          "value": 8
+        },
+        {
+          "name": "REJECT_IL_SIG",
+          "value": 9
+        },
+        {
+          "name": "REJECT_LOADER_EVAL_FAIL",
+          "value": 10
+        },
+        {
+          "name": "MISSING_FOUND",
+          "value": 11
+        },
+        {
+          "name": "REJECT_HOSTASM",
+          "value": 12
+        },
+        {
+          "name": "REJECT_IL_NOT_FOUND",
+          "value": 13
+        },
+        {
+          "name": "REJECT_APPBASE_NOT_FILE",
+          "value": 14
+        },
+        {
+          "name": "BIND_DEPEND_REJECT_REF_DEF_MISMATCH",
+          "value": 15
+        },
+        {
+          "name": "BIND_DEPEND_REJECT_NGEN_SIG",
+          "value": 16
+        },
+        {
+          "name": "APPLY_EXTERNAL_RELOCS_FAILED",
+          "value": 17
+        },
+        {
+          "name": "SYSTEM_ASSEMBLY_NATIVEIMAGE_NOT_AVAILABLE",
+          "value": 18
+        },
+        {
+          "name": "ASSEMBLY_HAS_DIFFERENT_GRANT",
+          "value": 19
+        },
+        {
+          "name": "ASSEMBLY_NOT_DOMAIN_NEUTRAL",
+          "value": 20
+        },
+        {
+          "name": "NATIVEIMAGE_VERSION_MISMATCH",
+          "value": 21
+        },
+        {
+          "name": "LOADFROM_NOT_ALLOWED",
+          "value": 22
+        },
+        {
+          "name": "DEPENDENCY_HAS_DIFFERENT_IDENTITY",
+          "value": 23
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.ClrPrivate.ModuleRangeIBCType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "IBCUnprofiledSection",
+          "value": 1
+        },
+        {
+          "name": "IBCProfiledSection",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.ClrPrivate.ModuleRangeType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "HotRange",
+          "value": 1
+        },
+        {
+          "name": "WarmRange",
+          "value": 2
+        },
+        {
+          "name": "ColdRange",
+          "value": 4
+        },
+        {
+          "name": "HotColdSortedRange",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.ClrPrivate.BGCAllocWaitReason",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "GetLOHSeg",
+          "value": 9
+        },
+        {
+          "name": "AllocDuringSweep",
+          "value": 10
+        },
+        {
+          "name": "AllocDuringBGC",
+          "value": 11
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.ClrPrivate.BGCPhase",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "BGC1stNonConcurrent",
+          "value": 0
+        },
+        {
+          "name": "BGC1stConcurrent",
+          "value": 1
+        },
+        {
+          "name": "BGC2ndNonConcurrent",
+          "value": 2
+        },
+        {
+          "name": "BGC2ndConcurrent",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.ClrPrivate.ModuleRangeSectionType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ModuleSection",
+          "value": 1
+        },
+        {
+          "name": "EETableSection",
+          "value": 2
+        },
+        {
+          "name": "WriteDataSection",
+          "value": 3
+        },
+        {
+          "name": "WriteableDataSection",
+          "value": 4
+        },
+        {
+          "name": "DataSection",
+          "value": 5
+        },
+        {
+          "name": "RVAStaticsSection",
+          "value": 6
+        },
+        {
+          "name": "EEDataSection",
+          "value": 7
+        },
+        {
+          "name": "DelayLoadInfoTableEagerSection",
+          "value": 8
+        },
+        {
+          "name": "DelayLoadInfoTableSection",
+          "value": 9
+        },
+        {
+          "name": "EEReadonlyData",
+          "value": 10
+        },
+        {
+          "name": "ReadonlyData",
+          "value": 11
+        },
+        {
+          "name": "ClassSection",
+          "value": 12
+        },
+        {
+          "name": "CrossDomainInfoSection",
+          "value": 13
+        },
+        {
+          "name": "MethodDescSection",
+          "value": 14
+        },
+        {
+          "name": "MethodDescWriteableSection",
+          "value": 15
+        },
+        {
+          "name": "ExceptionSection",
+          "value": 16
+        },
+        {
+          "name": "InstrumentSection",
+          "value": 17
+        },
+        {
+          "name": "VirtualImportThunkSection",
+          "value": 18
+        },
+        {
+          "name": "ExternalMethodThunkSection",
+          "value": 19
+        },
+        {
+          "name": "HelperTableSection",
+          "value": 20
+        },
+        {
+          "name": "MethodPrecodeWriteableSection",
+          "value": 21
+        },
+        {
+          "name": "MethodPrecodeWriteSection",
+          "value": 22
+        },
+        {
+          "name": "MethodPrecodeSection",
+          "value": 23
+        },
+        {
+          "name": "Win32ResourcesSection",
+          "value": 24
+        },
+        {
+          "name": "HeaderSection",
+          "value": 25
+        },
+        {
+          "name": "MetadataSection",
+          "value": 26
+        },
+        {
+          "name": "DelayLoadInfoSection",
+          "value": 27
+        },
+        {
+          "name": "ImportTableSection",
+          "value": 28
+        },
+        {
+          "name": "CodeSection",
+          "value": 29
+        },
+        {
+          "name": "CodeHeaderSection",
+          "value": 30
+        },
+        {
+          "name": "CodeManagerSection",
+          "value": 31
+        },
+        {
+          "name": "UnwindDataSection",
+          "value": 32
+        },
+        {
+          "name": "RuntimeFunctionSection",
+          "value": 33
+        },
+        {
+          "name": "StubsSection",
+          "value": 34
+        },
+        {
+          "name": "StubDispatchDataSection",
+          "value": 35
+        },
+        {
+          "name": "ExternalMethodDataSection",
+          "value": 36
+        },
+        {
+          "name": "DelayLoadInfoDelayListSection",
+          "value": 37
+        },
+        {
+          "name": "ReadonlySharedSection",
+          "value": 38
+        },
+        {
+          "name": "ReadonlySection",
+          "value": 39
+        },
+        {
+          "name": "ILSection",
+          "value": 40
+        },
+        {
+          "name": "GCInfoSection",
+          "value": 41
+        },
+        {
+          "name": "ILMetadataSection",
+          "value": 42
+        },
+        {
+          "name": "ResourcesSection",
+          "value": 43
+        },
+        {
+          "name": "CompressedMapsSection",
+          "value": 44
+        },
+        {
+          "name": "DebugSection",
+          "value": 45
+        },
+        {
+          "name": "BaseRelocsSection",
+          "value": 46
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Parsers.AspNet.AspNetTraceEventParser.Keywords",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Infrastructure",
+          "value": 1
+        },
+        {
+          "name": "Module",
+          "value": 2
+        },
+        {
+          "name": "Page",
+          "value": 4
+        },
+        {
+          "name": "AppSvc",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Analysis.ProcessIndex",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Invalid",
+          "value": -1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Analysis.JIT.CompilationThreadKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Foreground",
+          "value": 0
+        },
+        {
+          "name": "MulticoreJitBackground",
+          "value": 1
+        },
+        {
+          "name": "TieredCompilationBackground",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Analysis.GC.TraceGC.BGCRevisitState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Concurrent",
+          "value": 0
+        },
+        {
+          "name": "NonConcurrent",
+          "value": 1
+        },
+        {
+          "name": "MaxState",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Analysis.GC.TraceGC.HeapType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "SOH",
+          "value": 0
+        },
+        {
+          "name": "LOH",
+          "value": 1
+        },
+        {
+          "name": "MaxType",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Analysis.GC.CondemnedReasonGroup",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Initial_Generation",
+          "value": 0
+        },
+        {
+          "name": "Final_Generation",
+          "value": 1
+        },
+        {
+          "name": "Alloc_Exceeded",
+          "value": 2
+        },
+        {
+          "name": "Time_Tuning",
+          "value": 3
+        },
+        {
+          "name": "Induced",
+          "value": 4
+        },
+        {
+          "name": "Low_Ephemeral",
+          "value": 5
+        },
+        {
+          "name": "Expand_Heap",
+          "value": 6
+        },
+        {
+          "name": "Fragmented_Ephemeral",
+          "value": 7
+        },
+        {
+          "name": "Fragmented_Gen1_To_Gen2",
+          "value": 8
+        },
+        {
+          "name": "Fragmented_Gen2",
+          "value": 9
+        },
+        {
+          "name": "Fragmented_Gen2_High_Mem",
+          "value": 10
+        },
+        {
+          "name": "GC_Before_OOM",
+          "value": 11
+        },
+        {
+          "name": "Too_Small_For_BGC",
+          "value": 12
+        },
+        {
+          "name": "Ephemeral_Before_BGC",
+          "value": 13
+        },
+        {
+          "name": "Internal_Tuning",
+          "value": 14
+        },
+        {
+          "name": "Almost_Max_Alloc",
+          "value": 15
+        },
+        {
+          "name": "Avoid_Unproductive",
+          "value": 16
+        },
+        {
+          "name": "Pm_Induced_Fullgc_p",
+          "value": 17
+        },
+        {
+          "name": "Pm_Alloc_LOH",
+          "value": 18
+        },
+        {
+          "name": "Gen1_In_Pm",
+          "value": 19
+        },
+        {
+          "name": "Limit_Before_OOM",
+          "value": 20
+        },
+        {
+          "name": "Limit_LOH_Frag",
+          "value": 21
+        },
+        {
+          "name": "Limit_LOH_Reclaim",
+          "value": 22
+        },
+        {
+          "name": "Servo_Initial",
+          "value": 23
+        },
+        {
+          "name": "Servo_NGC",
+          "value": 24
+        },
+        {
+          "name": "Servo_BGC",
+          "value": 25
+        },
+        {
+          "name": "Servo_Postpone",
+          "value": 26
+        },
+        {
+          "name": "Stress_Mix",
+          "value": 27
+        },
+        {
+          "name": "Stress",
+          "value": 28
+        },
+        {
+          "name": "Max",
+          "value": 29
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Analysis.GC.InducedType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Blocking",
+          "value": 1
+        },
+        {
+          "name": "NotForced",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Analysis.GC.WorkSpanType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "GcThread",
+          "value": 0
+        },
+        {
+          "name": "RivalThread",
+          "value": 1
+        },
+        {
+          "name": "LowPriThread",
+          "value": 2
+        },
+        {
+          "name": "Idle",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.AutomatedAnalysis.AnalyzerExecutionResult",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Success",
+          "value": 0
+        },
+        {
+          "name": "Fail",
+          "value": 1
+        },
+        {
+          "name": "Skip",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.Extensions.EVENT_TRACE_MERGE_EXTENDED_DATA",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NONE",
+          "value": 0
+        },
+        {
+          "name": "IMAGEID",
+          "value": 1
+        },
+        {
+          "name": "BUILDINFO",
+          "value": 2
+        },
+        {
+          "name": "VOLUME_MAPPING",
+          "value": 4
+        },
+        {
+          "name": "WINSAT",
+          "value": 8
+        },
+        {
+          "name": "EVENT_METADATA",
+          "value": 16
+        },
+        {
+          "name": "PERFTRACK_METADATA",
+          "value": 32
+        },
+        {
+          "name": "NETWORK_INTERFACE",
+          "value": 64
+        },
+        {
+          "name": "NGEN_PDB",
+          "value": 128
+        },
+        {
+          "name": "COMPRESS_TRACE",
+          "value": 268435456
+        }
+      ]
+    }
+  ],
+  "namespaceMappings": []
+}

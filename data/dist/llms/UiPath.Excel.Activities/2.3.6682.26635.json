@@ -1,0 +1,566 @@
+{
+  "schema": {
+    "id": "activity-catalog",
+    "version": "v0.3"
+  },
+  "source": {
+    "kind": "nuget-package",
+    "id": "UiPath.Excel.Activities",
+    "version": "2.3.6682.26635",
+    "feedUrl": null,
+    "authors": "UiPath",
+    "projectUrl": "https://activities.uipath.com/docs/excel",
+    "description": "Execute Excel related operations using the Open Office XML format (XLSX) or Excel.Interop",
+    "license": null,
+    "tags": null,
+    "packageTypes": []
+  },
+  "generatedAt": "2026-04-10T09:21:23Z",
+  "activities": [],
+  "enums": [
+    {
+      "fullName": "UiPath.Excel.OrderType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Ascending",
+          "value": 0
+        },
+        {
+          "name": "Descending",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.CSV.DelimitatorOptions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Comma",
+          "value": 44
+        },
+        {
+          "name": "Semicolon",
+          "value": 59
+        },
+        {
+          "name": "Pipe",
+          "value": 124
+        },
+        {
+          "name": "Caret",
+          "value": 94
+        },
+        {
+          "name": "Tab",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Office.Interop.Excel.XlAutoFilterOperator",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "xlAnd",
+          "value": 1
+        },
+        {
+          "name": "xlBottom10Items",
+          "value": 4
+        },
+        {
+          "name": "xlBottom10Percent",
+          "value": 6
+        },
+        {
+          "name": "xlOr",
+          "value": 2
+        },
+        {
+          "name": "xlTop10Items",
+          "value": 3
+        },
+        {
+          "name": "xlTop10Percent",
+          "value": 5
+        },
+        {
+          "name": "xlFilterValues",
+          "value": 7
+        },
+        {
+          "name": "xlFilterCellColor",
+          "value": 8
+        },
+        {
+          "name": "xlFilterFontColor",
+          "value": 9
+        },
+        {
+          "name": "xlFilterIcon",
+          "value": 10
+        },
+        {
+          "name": "xlFilterDynamic",
+          "value": 11
+        },
+        {
+          "name": "xlFilterNoFill",
+          "value": 12
+        },
+        {
+          "name": "xlFilterAutomaticFontColor",
+          "value": 13
+        },
+        {
+          "name": "xlFilterNoIcon",
+          "value": 14
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Office.Interop.Excel.XlCellType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "xlCellTypeBlanks",
+          "value": 4
+        },
+        {
+          "name": "xlCellTypeConstants",
+          "value": 2
+        },
+        {
+          "name": "xlCellTypeFormulas",
+          "value": -4123
+        },
+        {
+          "name": "xlCellTypeLastCell",
+          "value": 11
+        },
+        {
+          "name": "xlCellTypeComments",
+          "value": -4144
+        },
+        {
+          "name": "xlCellTypeVisible",
+          "value": 12
+        },
+        {
+          "name": "xlCellTypeAllFormatConditions",
+          "value": -4172
+        },
+        {
+          "name": "xlCellTypeSameFormatConditions",
+          "value": -4173
+        },
+        {
+          "name": "xlCellTypeAllValidation",
+          "value": -4174
+        },
+        {
+          "name": "xlCellTypeSameValidation",
+          "value": -4175
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Office.Interop.Excel.XlDirection",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "xlDown",
+          "value": -4121
+        },
+        {
+          "name": "xlToLeft",
+          "value": -4159
+        },
+        {
+          "name": "xlToRight",
+          "value": -4161
+        },
+        {
+          "name": "xlUp",
+          "value": -4162
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Office.Interop.Excel.XlFileFormat",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "xlAddIn",
+          "value": 18
+        },
+        {
+          "name": "xlCSV",
+          "value": 6
+        },
+        {
+          "name": "xlCSVMac",
+          "value": 22
+        },
+        {
+          "name": "xlCSVMSDOS",
+          "value": 24
+        },
+        {
+          "name": "xlCSVWindows",
+          "value": 23
+        },
+        {
+          "name": "xlDBF2",
+          "value": 7
+        },
+        {
+          "name": "xlDBF3",
+          "value": 8
+        },
+        {
+          "name": "xlDBF4",
+          "value": 11
+        },
+        {
+          "name": "xlDIF",
+          "value": 9
+        },
+        {
+          "name": "xlExcel2",
+          "value": 16
+        },
+        {
+          "name": "xlExcel2FarEast",
+          "value": 27
+        },
+        {
+          "name": "xlExcel3",
+          "value": 29
+        },
+        {
+          "name": "xlExcel4",
+          "value": 33
+        },
+        {
+          "name": "xlExcel5",
+          "value": 39
+        },
+        {
+          "name": "xlExcel7",
+          "value": 39
+        },
+        {
+          "name": "xlExcel9795",
+          "value": 43
+        },
+        {
+          "name": "xlExcel4Workbook",
+          "value": 35
+        },
+        {
+          "name": "xlIntlAddIn",
+          "value": 26
+        },
+        {
+          "name": "xlIntlMacro",
+          "value": 25
+        },
+        {
+          "name": "xlWorkbookNormal",
+          "value": -4143
+        },
+        {
+          "name": "xlSYLK",
+          "value": 2
+        },
+        {
+          "name": "xlTemplate",
+          "value": 17
+        },
+        {
+          "name": "xlCurrentPlatformText",
+          "value": -4158
+        },
+        {
+          "name": "xlTextMac",
+          "value": 19
+        },
+        {
+          "name": "xlTextMSDOS",
+          "value": 21
+        },
+        {
+          "name": "xlTextPrinter",
+          "value": 36
+        },
+        {
+          "name": "xlTextWindows",
+          "value": 20
+        },
+        {
+          "name": "xlWJ2WD1",
+          "value": 14
+        },
+        {
+          "name": "xlWK1",
+          "value": 5
+        },
+        {
+          "name": "xlWK1ALL",
+          "value": 31
+        },
+        {
+          "name": "xlWK1FMT",
+          "value": 30
+        },
+        {
+          "name": "xlWK3",
+          "value": 15
+        },
+        {
+          "name": "xlWK4",
+          "value": 38
+        },
+        {
+          "name": "xlWK3FM3",
+          "value": 32
+        },
+        {
+          "name": "xlWKS",
+          "value": 4
+        },
+        {
+          "name": "xlWorks2FarEast",
+          "value": 28
+        },
+        {
+          "name": "xlWQ1",
+          "value": 34
+        },
+        {
+          "name": "xlWJ3",
+          "value": 40
+        },
+        {
+          "name": "xlWJ3FJ3",
+          "value": 41
+        },
+        {
+          "name": "xlUnicodeText",
+          "value": 42
+        },
+        {
+          "name": "xlHtml",
+          "value": 44
+        },
+        {
+          "name": "xlWebArchive",
+          "value": 45
+        },
+        {
+          "name": "xlXMLSpreadsheet",
+          "value": 46
+        },
+        {
+          "name": "xlExcel12",
+          "value": 50
+        },
+        {
+          "name": "xlOpenXMLWorkbook",
+          "value": 51
+        },
+        {
+          "name": "xlOpenXMLWorkbookMacroEnabled",
+          "value": 52
+        },
+        {
+          "name": "xlOpenXMLTemplateMacroEnabled",
+          "value": 53
+        },
+        {
+          "name": "xlTemplate8",
+          "value": 17
+        },
+        {
+          "name": "xlOpenXMLTemplate",
+          "value": 54
+        },
+        {
+          "name": "xlAddIn8",
+          "value": 18
+        },
+        {
+          "name": "xlOpenXMLAddIn",
+          "value": 55
+        },
+        {
+          "name": "xlExcel8",
+          "value": 56
+        },
+        {
+          "name": "xlOpenDocumentSpreadsheet",
+          "value": 60
+        },
+        {
+          "name": "xlWorkbookDefault",
+          "value": 51
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Office.Interop.Excel.XlReferenceStyle",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "xlA1",
+          "value": 1
+        },
+        {
+          "name": "xlR1C1",
+          "value": -4150
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Office.Interop.Excel.XlSaveAsAccessMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "xlExclusive",
+          "value": 3
+        },
+        {
+          "name": "xlNoChange",
+          "value": 1
+        },
+        {
+          "name": "xlShared",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Office.Interop.Excel.XlSortDataOption",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "xlSortNormal",
+          "value": 0
+        },
+        {
+          "name": "xlSortTextAsNumbers",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Office.Interop.Excel.XlSortMethod",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "xlPinYin",
+          "value": 1
+        },
+        {
+          "name": "xlStroke",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Office.Interop.Excel.XlSortOrder",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "xlAscending",
+          "value": 1
+        },
+        {
+          "name": "xlDescending",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Office.Interop.Excel.XlSortOrientation",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "xlSortRows",
+          "value": 2
+        },
+        {
+          "name": "xlSortColumns",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Office.Interop.Excel.XlYesNoGuess",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "xlGuess",
+          "value": 0
+        },
+        {
+          "name": "xlNo",
+          "value": 2
+        },
+        {
+          "name": "xlYes",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Vbe.Interop.vbext_ComponentType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "vbext_ct_StdModule",
+          "value": 1
+        },
+        {
+          "name": "vbext_ct_ClassModule",
+          "value": 2
+        },
+        {
+          "name": "vbext_ct_MSForm",
+          "value": 3
+        },
+        {
+          "name": "vbext_ct_ActiveXDesigner",
+          "value": 11
+        },
+        {
+          "name": "vbext_ct_Document",
+          "value": 100
+        }
+      ]
+    }
+  ],
+  "namespaceMappings": [
+    {
+      "xmlNamespace": "http://schemas.uipath.com/workflow/activities",
+      "prefix": "ui",
+      "clrNamespaces": [
+        "UiPath.Excel.Activities",
+        "UiPath.CSV.Activities"
+      ],
+      "sourceAssembly": "UiPath.Excel.Activities"
+    },
+    {
+      "xmlNamespace": "http://schemas.uipath.com/workflow/activities",
+      "prefix": "ui",
+      "clrNamespaces": [
+        "UiPath.Excel",
+        "UiPath.CSV"
+      ],
+      "sourceAssembly": "UiPath.Excel"
+    }
+  ]
+}

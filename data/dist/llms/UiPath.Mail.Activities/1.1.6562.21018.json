@@ -1,0 +1,6183 @@
+{
+  "schema": {
+    "id": "activity-catalog",
+    "version": "v0.3"
+  },
+  "source": {
+    "kind": "nuget-package",
+    "id": "UiPath.Mail.Activities",
+    "version": "1.1.6562.21018",
+    "feedUrl": null,
+    "authors": "UiPath",
+    "projectUrl": "https://activities.uipath.com/docs/mail",
+    "description": "Retrieve and send mail using POP3, IMAP, SMTP and Exchange protocols",
+    "license": null,
+    "tags": null,
+    "packageTypes": []
+  },
+  "generatedAt": "2026-04-10T09:21:23Z",
+  "activities": [],
+  "enums": [
+    {
+      "fullName": "MailKit.DeliveryStatusNotification",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Never",
+          "value": 0
+        },
+        {
+          "name": "Success",
+          "value": 1
+        },
+        {
+          "name": "Failure",
+          "value": 2
+        },
+        {
+          "name": "Delay",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "MailKit.FolderAccess",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "ReadOnly",
+          "value": 1
+        },
+        {
+          "name": "ReadWrite",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "MailKit.FolderAttributes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "NoInferiors",
+          "value": 1
+        },
+        {
+          "name": "NoSelect",
+          "value": 2
+        },
+        {
+          "name": "Marked",
+          "value": 4
+        },
+        {
+          "name": "Unmarked",
+          "value": 8
+        },
+        {
+          "name": "NonExistent",
+          "value": 16
+        },
+        {
+          "name": "Subscribed",
+          "value": 32
+        },
+        {
+          "name": "Remote",
+          "value": 64
+        },
+        {
+          "name": "HasChildren",
+          "value": 128
+        },
+        {
+          "name": "HasNoChildren",
+          "value": 256
+        },
+        {
+          "name": "All",
+          "value": 512
+        },
+        {
+          "name": "Archive",
+          "value": 1024
+        },
+        {
+          "name": "Drafts",
+          "value": 2048
+        },
+        {
+          "name": "Flagged",
+          "value": 4096
+        },
+        {
+          "name": "Inbox",
+          "value": 8192
+        },
+        {
+          "name": "Junk",
+          "value": 16384
+        },
+        {
+          "name": "Sent",
+          "value": 32768
+        },
+        {
+          "name": "Trash",
+          "value": 65536
+        }
+      ]
+    },
+    {
+      "fullName": "MailKit.MessageFlags",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Seen",
+          "value": 1
+        },
+        {
+          "name": "Answered",
+          "value": 2
+        },
+        {
+          "name": "Flagged",
+          "value": 4
+        },
+        {
+          "name": "Deleted",
+          "value": 8
+        },
+        {
+          "name": "Draft",
+          "value": 16
+        },
+        {
+          "name": "Recent",
+          "value": 32
+        },
+        {
+          "name": "UserDefined",
+          "value": 64
+        }
+      ]
+    },
+    {
+      "fullName": "MailKit.MessageSummaryItems",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Body",
+          "value": 1
+        },
+        {
+          "name": "BodyStructure",
+          "value": 4
+        },
+        {
+          "name": "Envelope",
+          "value": 8
+        },
+        {
+          "name": "Flags",
+          "value": 16
+        },
+        {
+          "name": "InternalDate",
+          "value": 32
+        },
+        {
+          "name": "Size",
+          "value": 64
+        },
+        {
+          "name": "MessageSize",
+          "value": 64
+        },
+        {
+          "name": "ModSeq",
+          "value": 128
+        },
+        {
+          "name": "References",
+          "value": 256
+        },
+        {
+          "name": "UniqueId",
+          "value": 512
+        },
+        {
+          "name": "GMailMessageId",
+          "value": 1024
+        },
+        {
+          "name": "GMailThreadId",
+          "value": 2048
+        },
+        {
+          "name": "GMailLabels",
+          "value": 4096
+        },
+        {
+          "name": "All",
+          "value": 120
+        },
+        {
+          "name": "Fast",
+          "value": 112
+        },
+        {
+          "name": "Full",
+          "value": 121
+        }
+      ]
+    },
+    {
+      "fullName": "MailKit.SpecialFolder",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "All",
+          "value": 0
+        },
+        {
+          "name": "Archive",
+          "value": 1
+        },
+        {
+          "name": "Drafts",
+          "value": 2
+        },
+        {
+          "name": "Flagged",
+          "value": 3
+        },
+        {
+          "name": "Junk",
+          "value": 4
+        },
+        {
+          "name": "Sent",
+          "value": 5
+        },
+        {
+          "name": "Trash",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "MailKit.StatusItems",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Count",
+          "value": 1
+        },
+        {
+          "name": "Recent",
+          "value": 2
+        },
+        {
+          "name": "UidNext",
+          "value": 4
+        },
+        {
+          "name": "UidValidity",
+          "value": 8
+        },
+        {
+          "name": "Unread",
+          "value": 16
+        },
+        {
+          "name": "HighestModSeq",
+          "value": 32
+        },
+        {
+          "name": "AppendLimit",
+          "value": 64
+        }
+      ]
+    },
+    {
+      "fullName": "MailKit.ThreadingAlgorithm",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "OrderedSubject",
+          "value": 0
+        },
+        {
+          "name": "References",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "MailKit.Security.SaslErrorCode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ChallengeTooLong",
+          "value": 0
+        },
+        {
+          "name": "IncompleteChallenge",
+          "value": 1
+        },
+        {
+          "name": "InvalidChallenge",
+          "value": 2
+        },
+        {
+          "name": "MissingChallenge",
+          "value": 3
+        },
+        {
+          "name": "IncorrectHash",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "MailKit.Security.SecureSocketOptions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Auto",
+          "value": 1
+        },
+        {
+          "name": "SslOnConnect",
+          "value": 2
+        },
+        {
+          "name": "StartTls",
+          "value": 3
+        },
+        {
+          "name": "StartTlsWhenAvailable",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "MailKit.Search.OrderByType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Arrival",
+          "value": 0
+        },
+        {
+          "name": "Cc",
+          "value": 1
+        },
+        {
+          "name": "Date",
+          "value": 2
+        },
+        {
+          "name": "DisplayFrom",
+          "value": 3
+        },
+        {
+          "name": "DisplayTo",
+          "value": 4
+        },
+        {
+          "name": "From",
+          "value": 5
+        },
+        {
+          "name": "ModSeq",
+          "value": 6
+        },
+        {
+          "name": "Size",
+          "value": 7
+        },
+        {
+          "name": "Subject",
+          "value": 8
+        },
+        {
+          "name": "To",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "fullName": "MailKit.Search.SearchOptions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "All",
+          "value": 1
+        },
+        {
+          "name": "Count",
+          "value": 2
+        },
+        {
+          "name": "Min",
+          "value": 4
+        },
+        {
+          "name": "Max",
+          "value": 8
+        },
+        {
+          "name": "Relevancy",
+          "value": 16
+        }
+      ]
+    },
+    {
+      "fullName": "MailKit.Search.SearchTerm",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "All",
+          "value": 0
+        },
+        {
+          "name": "And",
+          "value": 1
+        },
+        {
+          "name": "Answered",
+          "value": 2
+        },
+        {
+          "name": "BccContains",
+          "value": 3
+        },
+        {
+          "name": "BodyContains",
+          "value": 4
+        },
+        {
+          "name": "CcContains",
+          "value": 5
+        },
+        {
+          "name": "Deleted",
+          "value": 6
+        },
+        {
+          "name": "DeliveredAfter",
+          "value": 7
+        },
+        {
+          "name": "DeliveredBefore",
+          "value": 8
+        },
+        {
+          "name": "DeliveredOn",
+          "value": 9
+        },
+        {
+          "name": "Draft",
+          "value": 10
+        },
+        {
+          "name": "Filter",
+          "value": 11
+        },
+        {
+          "name": "Flagged",
+          "value": 12
+        },
+        {
+          "name": "FromContains",
+          "value": 13
+        },
+        {
+          "name": "Fuzzy",
+          "value": 14
+        },
+        {
+          "name": "HeaderContains",
+          "value": 15
+        },
+        {
+          "name": "Keyword",
+          "value": 16
+        },
+        {
+          "name": "LargerThan",
+          "value": 17
+        },
+        {
+          "name": "MessageContains",
+          "value": 18
+        },
+        {
+          "name": "ModSeq",
+          "value": 19
+        },
+        {
+          "name": "New",
+          "value": 20
+        },
+        {
+          "name": "Not",
+          "value": 21
+        },
+        {
+          "name": "NotAnswered",
+          "value": 22
+        },
+        {
+          "name": "NotDeleted",
+          "value": 23
+        },
+        {
+          "name": "NotDraft",
+          "value": 24
+        },
+        {
+          "name": "NotFlagged",
+          "value": 25
+        },
+        {
+          "name": "NotKeyword",
+          "value": 26
+        },
+        {
+          "name": "NotRecent",
+          "value": 27
+        },
+        {
+          "name": "NotSeen",
+          "value": 28
+        },
+        {
+          "name": "Older",
+          "value": 29
+        },
+        {
+          "name": "Or",
+          "value": 30
+        },
+        {
+          "name": "Recent",
+          "value": 31
+        },
+        {
+          "name": "Seen",
+          "value": 32
+        },
+        {
+          "name": "SentAfter",
+          "value": 33
+        },
+        {
+          "name": "SentBefore",
+          "value": 34
+        },
+        {
+          "name": "SentOn",
+          "value": 35
+        },
+        {
+          "name": "SmallerThan",
+          "value": 36
+        },
+        {
+          "name": "SubjectContains",
+          "value": 37
+        },
+        {
+          "name": "ToContains",
+          "value": 38
+        },
+        {
+          "name": "Uid",
+          "value": 39
+        },
+        {
+          "name": "Younger",
+          "value": 40
+        },
+        {
+          "name": "GMailMessageId",
+          "value": 41
+        },
+        {
+          "name": "GMailThreadId",
+          "value": 42
+        },
+        {
+          "name": "GMailLabels",
+          "value": 43
+        },
+        {
+          "name": "GMailRaw",
+          "value": 44
+        }
+      ]
+    },
+    {
+      "fullName": "MailKit.Search.SortOrder",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Ascending",
+          "value": 1
+        },
+        {
+          "name": "Descending",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "MailKit.Net.Smtp.SmtpCapabilities",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Size",
+          "value": 1
+        },
+        {
+          "name": "Dsn",
+          "value": 2
+        },
+        {
+          "name": "EnhancedStatusCodes",
+          "value": 4
+        },
+        {
+          "name": "Authentication",
+          "value": 8
+        },
+        {
+          "name": "EightBitMime",
+          "value": 16
+        },
+        {
+          "name": "Pipelining",
+          "value": 32
+        },
+        {
+          "name": "BinaryMime",
+          "value": 64
+        },
+        {
+          "name": "Chunking",
+          "value": 128
+        },
+        {
+          "name": "StartTLS",
+          "value": 256
+        },
+        {
+          "name": "UTF8",
+          "value": 512
+        }
+      ]
+    },
+    {
+      "fullName": "MailKit.Net.Smtp.SmtpErrorCode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "MessageNotAccepted",
+          "value": 0
+        },
+        {
+          "name": "SenderNotAccepted",
+          "value": 1
+        },
+        {
+          "name": "RecipientNotAccepted",
+          "value": 2
+        },
+        {
+          "name": "UnexpectedStatusCode",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "MailKit.Net.Smtp.SmtpStatusCode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "SystemStatus",
+          "value": 211
+        },
+        {
+          "name": "HelpMessage",
+          "value": 214
+        },
+        {
+          "name": "ServiceReady",
+          "value": 220
+        },
+        {
+          "name": "ServiceClosingTransmissionChannel",
+          "value": 221
+        },
+        {
+          "name": "AuthenticationSuccessful",
+          "value": 235
+        },
+        {
+          "name": "Ok",
+          "value": 250
+        },
+        {
+          "name": "UserNotLocalWillForward",
+          "value": 251
+        },
+        {
+          "name": "CannotVerifyUserWillAttemptDelivery",
+          "value": 252
+        },
+        {
+          "name": "AuthenticationChallenge",
+          "value": 334
+        },
+        {
+          "name": "StartMailInput",
+          "value": 354
+        },
+        {
+          "name": "ServiceNotAvailable",
+          "value": 421
+        },
+        {
+          "name": "PasswordTransitionNeeded",
+          "value": 432
+        },
+        {
+          "name": "MailboxBusy",
+          "value": 450
+        },
+        {
+          "name": "ErrorInProcessing",
+          "value": 451
+        },
+        {
+          "name": "InsufficientStorage",
+          "value": 452
+        },
+        {
+          "name": "TemporaryAuthenticationFailure",
+          "value": 454
+        },
+        {
+          "name": "CommandUnrecognized",
+          "value": 500
+        },
+        {
+          "name": "SyntaxError",
+          "value": 501
+        },
+        {
+          "name": "CommandNotImplemented",
+          "value": 502
+        },
+        {
+          "name": "BadCommandSequence",
+          "value": 503
+        },
+        {
+          "name": "CommandParameterNotImplemented",
+          "value": 504
+        },
+        {
+          "name": "AuthenticationRequired",
+          "value": 530
+        },
+        {
+          "name": "AuthenticationMechanismTooWeak",
+          "value": 534
+        },
+        {
+          "name": "AuthenticationInvalidCredentials",
+          "value": 535
+        },
+        {
+          "name": "EncryptionRequiredForAuthenticationMechanism",
+          "value": 538
+        },
+        {
+          "name": "MailboxUnavailable",
+          "value": 550
+        },
+        {
+          "name": "UserNotLocalTryAlternatePath",
+          "value": 551
+        },
+        {
+          "name": "ExceededStorageAllocation",
+          "value": 552
+        },
+        {
+          "name": "MailboxNameNotAllowed",
+          "value": 553
+        },
+        {
+          "name": "TransactionFailed",
+          "value": 554
+        },
+        {
+          "name": "MailFromOrRcptToParametersNotRecognizedOrNotImplemented",
+          "value": 555
+        }
+      ]
+    },
+    {
+      "fullName": "MailKit.Net.Pop3.Pop3Capabilities",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Apop",
+          "value": 1
+        },
+        {
+          "name": "Expire",
+          "value": 2
+        },
+        {
+          "name": "LoginDelay",
+          "value": 4
+        },
+        {
+          "name": "Pipelining",
+          "value": 8
+        },
+        {
+          "name": "ResponseCodes",
+          "value": 16
+        },
+        {
+          "name": "Sasl",
+          "value": 32
+        },
+        {
+          "name": "StartTLS",
+          "value": 64
+        },
+        {
+          "name": "Top",
+          "value": 128
+        },
+        {
+          "name": "UIDL",
+          "value": 256
+        },
+        {
+          "name": "User",
+          "value": 512
+        },
+        {
+          "name": "UTF8",
+          "value": 1024
+        },
+        {
+          "name": "UTF8User",
+          "value": 2048
+        },
+        {
+          "name": "Lang",
+          "value": 4096
+        }
+      ]
+    },
+    {
+      "fullName": "MailKit.Net.Imap.ImapCapabilities",
+      "underlyingType": "System.Int64",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "IMAP4",
+          "value": 1
+        },
+        {
+          "name": "IMAP4rev1",
+          "value": 2
+        },
+        {
+          "name": "Status",
+          "value": 4
+        },
+        {
+          "name": "Acl",
+          "value": 8
+        },
+        {
+          "name": "Quota",
+          "value": 16
+        },
+        {
+          "name": "LiteralPlus",
+          "value": 32
+        },
+        {
+          "name": "Idle",
+          "value": 64
+        },
+        {
+          "name": "MailboxReferrals",
+          "value": 128
+        },
+        {
+          "name": "LoginReferrals",
+          "value": 256
+        },
+        {
+          "name": "Namespace",
+          "value": 512
+        },
+        {
+          "name": "Id",
+          "value": 1024
+        },
+        {
+          "name": "Children",
+          "value": 2048
+        },
+        {
+          "name": "LoginDisabled",
+          "value": 4096
+        },
+        {
+          "name": "StartTLS",
+          "value": 8192
+        },
+        {
+          "name": "MultiAppend",
+          "value": 16384
+        },
+        {
+          "name": "Binary",
+          "value": 32768
+        },
+        {
+          "name": "Unselect",
+          "value": 65536
+        },
+        {
+          "name": "UidPlus",
+          "value": 131072
+        },
+        {
+          "name": "Catenate",
+          "value": 262144
+        },
+        {
+          "name": "CondStore",
+          "value": 524288
+        },
+        {
+          "name": "ESearch",
+          "value": 1048576
+        },
+        {
+          "name": "SaslIR",
+          "value": 2097152
+        },
+        {
+          "name": "Compress",
+          "value": 4194304
+        },
+        {
+          "name": "Within",
+          "value": 8388608
+        },
+        {
+          "name": "Enable",
+          "value": 16777216
+        },
+        {
+          "name": "QuickResync",
+          "value": 33554432
+        },
+        {
+          "name": "SearchResults",
+          "value": 67108864
+        },
+        {
+          "name": "Sort",
+          "value": 134217728
+        },
+        {
+          "name": "Thread",
+          "value": 268435456
+        },
+        {
+          "name": "ListExtended",
+          "value": 536870912
+        },
+        {
+          "name": "Convert",
+          "value": 1073741824
+        },
+        {
+          "name": "Language",
+          "value": 2147483648
+        },
+        {
+          "name": "I18NLevel",
+          "value": 4294967296
+        },
+        {
+          "name": "ESort",
+          "value": 8589934592
+        },
+        {
+          "name": "Context",
+          "value": 17179869184
+        },
+        {
+          "name": "Metadata",
+          "value": 34359738368
+        },
+        {
+          "name": "Notify",
+          "value": 68719476736
+        },
+        {
+          "name": "Filters",
+          "value": 137438953472
+        },
+        {
+          "name": "ListStatus",
+          "value": 274877906944
+        },
+        {
+          "name": "SortDisplay",
+          "value": 549755813888
+        },
+        {
+          "name": "CreateSpecialUse",
+          "value": 1099511627776
+        },
+        {
+          "name": "SpecialUse",
+          "value": 2199023255552
+        },
+        {
+          "name": "FuzzySearch",
+          "value": 4398046511104
+        },
+        {
+          "name": "MultiSearch",
+          "value": 8796093022208
+        },
+        {
+          "name": "Move",
+          "value": 17592186044416
+        },
+        {
+          "name": "UTF8Accept",
+          "value": 35184372088832
+        },
+        {
+          "name": "UTF8Only",
+          "value": 70368744177664
+        },
+        {
+          "name": "LiteralMinus",
+          "value": 140737488355328
+        },
+        {
+          "name": "AppendLimit",
+          "value": 281474976710656
+        },
+        {
+          "name": "XList",
+          "value": 1125899906842624
+        },
+        {
+          "name": "GMailExt1",
+          "value": 2251799813685248
+        }
+      ]
+    },
+    {
+      "fullName": "MailKit.Net.Imap.ImapCommandResponse",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Ok",
+          "value": 1
+        },
+        {
+          "name": "No",
+          "value": 2
+        },
+        {
+          "name": "Bad",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "MimeKit.ContentEncoding",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "SevenBit",
+          "value": 1
+        },
+        {
+          "name": "EightBit",
+          "value": 2
+        },
+        {
+          "name": "Binary",
+          "value": 3
+        },
+        {
+          "name": "Base64",
+          "value": 4
+        },
+        {
+          "name": "QuotedPrintable",
+          "value": 5
+        },
+        {
+          "name": "UUEncode",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "MimeKit.EncodingConstraint",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "EightBit",
+          "value": 1
+        },
+        {
+          "name": "SevenBit",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "MimeKit.NewLineFormat",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Unix",
+          "value": 0
+        },
+        {
+          "name": "Dos",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "MimeKit.HeaderId",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AdHoc",
+          "value": 0
+        },
+        {
+          "name": "ApparentlyTo",
+          "value": 1
+        },
+        {
+          "name": "Approved",
+          "value": 2
+        },
+        {
+          "name": "Article",
+          "value": 3
+        },
+        {
+          "name": "Bcc",
+          "value": 4
+        },
+        {
+          "name": "Bytes",
+          "value": 5
+        },
+        {
+          "name": "Cc",
+          "value": 6
+        },
+        {
+          "name": "Comments",
+          "value": 7
+        },
+        {
+          "name": "ContentBase",
+          "value": 8
+        },
+        {
+          "name": "ContentClass",
+          "value": 9
+        },
+        {
+          "name": "ContentDescription",
+          "value": 10
+        },
+        {
+          "name": "ContentDisposition",
+          "value": 11
+        },
+        {
+          "name": "ContentDuration",
+          "value": 12
+        },
+        {
+          "name": "ContentId",
+          "value": 13
+        },
+        {
+          "name": "ContentLanguage",
+          "value": 14
+        },
+        {
+          "name": "ContentLength",
+          "value": 15
+        },
+        {
+          "name": "ContentLocation",
+          "value": 16
+        },
+        {
+          "name": "ContentMd5",
+          "value": 17
+        },
+        {
+          "name": "ContentTransferEncoding",
+          "value": 18
+        },
+        {
+          "name": "ContentType",
+          "value": 19
+        },
+        {
+          "name": "Control",
+          "value": 20
+        },
+        {
+          "name": "Date",
+          "value": 21
+        },
+        {
+          "name": "DeferredDelivery",
+          "value": 22
+        },
+        {
+          "name": "DispositionNotificationOptions",
+          "value": 23
+        },
+        {
+          "name": "DispositionNotificationTo",
+          "value": 24
+        },
+        {
+          "name": "Distribution",
+          "value": 25
+        },
+        {
+          "name": "DkimSignature",
+          "value": 26
+        },
+        {
+          "name": "DomainKeySignature",
+          "value": 27
+        },
+        {
+          "name": "Encoding",
+          "value": 28
+        },
+        {
+          "name": "Encrypted",
+          "value": 29
+        },
+        {
+          "name": "Expires",
+          "value": 30
+        },
+        {
+          "name": "ExpiryDate",
+          "value": 31
+        },
+        {
+          "name": "FollowupTo",
+          "value": 32
+        },
+        {
+          "name": "From",
+          "value": 33
+        },
+        {
+          "name": "Importance",
+          "value": 34
+        },
+        {
+          "name": "InReplyTo",
+          "value": 35
+        },
+        {
+          "name": "Keywords",
+          "value": 36
+        },
+        {
+          "name": "Lines",
+          "value": 37
+        },
+        {
+          "name": "ListHelp",
+          "value": 38
+        },
+        {
+          "name": "ListSubscribe",
+          "value": 39
+        },
+        {
+          "name": "ListUnsubscribe",
+          "value": 40
+        },
+        {
+          "name": "MessageId",
+          "value": 41
+        },
+        {
+          "name": "MimeVersion",
+          "value": 42
+        },
+        {
+          "name": "Newsgroups",
+          "value": 43
+        },
+        {
+          "name": "NntpPostingHost",
+          "value": 44
+        },
+        {
+          "name": "Organization",
+          "value": 45
+        },
+        {
+          "name": "OriginalRecipient",
+          "value": 46
+        },
+        {
+          "name": "Path",
+          "value": 47
+        },
+        {
+          "name": "Precedence",
+          "value": 48
+        },
+        {
+          "name": "Priority",
+          "value": 49
+        },
+        {
+          "name": "Received",
+          "value": 50
+        },
+        {
+          "name": "References",
+          "value": 51
+        },
+        {
+          "name": "ReplyBy",
+          "value": 52
+        },
+        {
+          "name": "ReplyTo",
+          "value": 53
+        },
+        {
+          "name": "ResentBcc",
+          "value": 54
+        },
+        {
+          "name": "ResentCc",
+          "value": 55
+        },
+        {
+          "name": "ResentDate",
+          "value": 56
+        },
+        {
+          "name": "ResentFrom",
+          "value": 57
+        },
+        {
+          "name": "ResentMessageId",
+          "value": 58
+        },
+        {
+          "name": "ResentReplyTo",
+          "value": 59
+        },
+        {
+          "name": "ResentSender",
+          "value": 60
+        },
+        {
+          "name": "ResentTo",
+          "value": 61
+        },
+        {
+          "name": "ReturnPath",
+          "value": 62
+        },
+        {
+          "name": "ReturnReceiptTo",
+          "value": 63
+        },
+        {
+          "name": "Sender",
+          "value": 64
+        },
+        {
+          "name": "Sensitivity",
+          "value": 65
+        },
+        {
+          "name": "Status",
+          "value": 66
+        },
+        {
+          "name": "Subject",
+          "value": 67
+        },
+        {
+          "name": "Summary",
+          "value": 68
+        },
+        {
+          "name": "Supersedes",
+          "value": 69
+        },
+        {
+          "name": "To",
+          "value": 70
+        },
+        {
+          "name": "UserAgent",
+          "value": 71
+        },
+        {
+          "name": "XMailer",
+          "value": 72
+        },
+        {
+          "name": "XMSMailPriority",
+          "value": 73
+        },
+        {
+          "name": "XPriority",
+          "value": 74
+        },
+        {
+          "name": "XStatus",
+          "value": 75
+        },
+        {
+          "name": "Unknown",
+          "value": -1
+        }
+      ]
+    },
+    {
+      "fullName": "MimeKit.HeaderListChangedAction",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Added",
+          "value": 0
+        },
+        {
+          "name": "Changed",
+          "value": 1
+        },
+        {
+          "name": "Removed",
+          "value": 2
+        },
+        {
+          "name": "Cleared",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "MimeKit.MessageImportance",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Low",
+          "value": 0
+        },
+        {
+          "name": "Normal",
+          "value": 1
+        },
+        {
+          "name": "High",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "MimeKit.MessagePriority",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NonUrgent",
+          "value": 0
+        },
+        {
+          "name": "Normal",
+          "value": 1
+        },
+        {
+          "name": "Urgent",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "MimeKit.MimeFormat",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Entity",
+          "value": 0
+        },
+        {
+          "name": "Mbox",
+          "value": 1
+        },
+        {
+          "name": "Default",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "fullName": "MimeKit.ParameterEncodingMethod",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "Rfc2231",
+          "value": 1
+        },
+        {
+          "name": "Rfc2047",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "MimeKit.RfcComplianceMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Loose",
+          "value": 0
+        },
+        {
+          "name": "Strict",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "MimeKit.XMessagePriority",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Highest",
+          "value": 1
+        },
+        {
+          "name": "High",
+          "value": 2
+        },
+        {
+          "name": "Normal",
+          "value": 3
+        },
+        {
+          "name": "Low",
+          "value": 4
+        },
+        {
+          "name": "Lowest",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "MimeKit.Tnef.RtfCompressionMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "Uncompressed",
+          "value": 1095517517
+        },
+        {
+          "name": "Compressed",
+          "value": 1967544908
+        }
+      ]
+    },
+    {
+      "fullName": "MimeKit.Tnef.TnefAttachFlags",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "InvisibleInHtml",
+          "value": 1
+        },
+        {
+          "name": "InvisibleInRtf",
+          "value": 2
+        },
+        {
+          "name": "RenderedInBody",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "MimeKit.Tnef.TnefAttachMethod",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "ByValue",
+          "value": 1
+        },
+        {
+          "name": "EmbeddedMessage",
+          "value": 5
+        },
+        {
+          "name": "Ole",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "MimeKit.Tnef.TnefAttributeLevel",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Message",
+          "value": 1
+        },
+        {
+          "name": "Attachment",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "MimeKit.Tnef.TnefAttributeTag",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Null",
+          "value": 0
+        },
+        {
+          "name": "Owner",
+          "value": 393216
+        },
+        {
+          "name": "SentFor",
+          "value": 393217
+        },
+        {
+          "name": "Delegate",
+          "value": 393218
+        },
+        {
+          "name": "OriginalMessageClass",
+          "value": 458758
+        },
+        {
+          "name": "DateStart",
+          "value": 196614
+        },
+        {
+          "name": "DateEnd",
+          "value": 196615
+        },
+        {
+          "name": "AidOwner",
+          "value": 327688
+        },
+        {
+          "name": "RequestResponse",
+          "value": 262153
+        },
+        {
+          "name": "From",
+          "value": 32768
+        },
+        {
+          "name": "Subject",
+          "value": 98308
+        },
+        {
+          "name": "DateSent",
+          "value": 229381
+        },
+        {
+          "name": "DateReceived",
+          "value": 229382
+        },
+        {
+          "name": "MessageStatus",
+          "value": 425991
+        },
+        {
+          "name": "MessageClass",
+          "value": 491528
+        },
+        {
+          "name": "MessageId",
+          "value": 98313
+        },
+        {
+          "name": "ParentId",
+          "value": 98314
+        },
+        {
+          "name": "ConversationId",
+          "value": 98315
+        },
+        {
+          "name": "Body",
+          "value": 163852
+        },
+        {
+          "name": "Priority",
+          "value": 294925
+        },
+        {
+          "name": "AttachData",
+          "value": 425999
+        },
+        {
+          "name": "AttachTitle",
+          "value": 98320
+        },
+        {
+          "name": "AttachMetaFile",
+          "value": 426001
+        },
+        {
+          "name": "AttachCreateDate",
+          "value": 229394
+        },
+        {
+          "name": "AttachModifyDate",
+          "value": 229395
+        },
+        {
+          "name": "DateModified",
+          "value": 229408
+        },
+        {
+          "name": "AttachTransportFilename",
+          "value": 430081
+        },
+        {
+          "name": "AttachRenderData",
+          "value": 430082
+        },
+        {
+          "name": "MapiProperties",
+          "value": 430083
+        },
+        {
+          "name": "RecipientTable",
+          "value": 430084
+        },
+        {
+          "name": "Attachment",
+          "value": 430085
+        },
+        {
+          "name": "TnefVersion",
+          "value": 561158
+        },
+        {
+          "name": "OemCodepage",
+          "value": 430087
+        }
+      ]
+    },
+    {
+      "fullName": "MimeKit.Tnef.TnefComplianceMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Loose",
+          "value": 0
+        },
+        {
+          "name": "Strict",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "MimeKit.Tnef.TnefComplianceStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Compliant",
+          "value": 0
+        },
+        {
+          "name": "AttributeOverflow",
+          "value": 1
+        },
+        {
+          "name": "InvalidAttribute",
+          "value": 2
+        },
+        {
+          "name": "InvalidAttributeChecksum",
+          "value": 4
+        },
+        {
+          "name": "InvalidAttributeLength",
+          "value": 8
+        },
+        {
+          "name": "InvalidAttributeLevel",
+          "value": 16
+        },
+        {
+          "name": "InvalidAttributeValue",
+          "value": 32
+        },
+        {
+          "name": "InvalidDate",
+          "value": 64
+        },
+        {
+          "name": "InvalidMessageClass",
+          "value": 128
+        },
+        {
+          "name": "InvalidMessageCodepage",
+          "value": 256
+        },
+        {
+          "name": "InvalidPropertyLength",
+          "value": 512
+        },
+        {
+          "name": "InvalidRowCount",
+          "value": 1024
+        },
+        {
+          "name": "InvalidTnefSignature",
+          "value": 2048
+        },
+        {
+          "name": "InvalidTnefVersion",
+          "value": 4096
+        },
+        {
+          "name": "NestingTooDeep",
+          "value": 8192
+        },
+        {
+          "name": "StreamTruncated",
+          "value": 16384
+        },
+        {
+          "name": "UnsupportedPropertyType",
+          "value": 32768
+        }
+      ]
+    },
+    {
+      "fullName": "MimeKit.Tnef.TnefNameIdKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Id",
+          "value": 0
+        },
+        {
+          "name": "Name",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "MimeKit.Tnef.TnefPropertyId",
+      "underlyingType": "System.Int16",
+      "members": [
+        {
+          "name": "AbDefaultDir",
+          "value": 15622
+        },
+        {
+          "name": "AbDefaultPab",
+          "value": 15623
+        },
+        {
+          "name": "AbProviderId",
+          "value": 13845
+        },
+        {
+          "name": "AbProviders",
+          "value": 15617
+        },
+        {
+          "name": "AbSearchPath",
+          "value": 15621
+        },
+        {
+          "name": "AbSearchPathUpdate",
+          "value": 15633
+        },
+        {
+          "name": "Access",
+          "value": 4084
+        },
+        {
+          "name": "AccessLevel",
+          "value": 4087
+        },
+        {
+          "name": "Account",
+          "value": 14848
+        },
+        {
+          "name": "AcknowledgementMode",
+          "value": 1
+        },
+        {
+          "name": "Addrtype",
+          "value": 12290
+        },
+        {
+          "name": "AlternateRecipient",
+          "value": 14849
+        },
+        {
+          "name": "AlternateRecipientAllowed",
+          "value": 2
+        },
+        {
+          "name": "Anr",
+          "value": 13836
+        },
+        {
+          "name": "Assistant",
+          "value": 14896
+        },
+        {
+          "name": "AssistantTelephoneNumber",
+          "value": 14894
+        },
+        {
+          "name": "AssocContentCount",
+          "value": 13847
+        },
+        {
+          "name": "AttachAdditionalInfo",
+          "value": 14095
+        },
+        {
+          "name": "AttachContentBase",
+          "value": 14097
+        },
+        {
+          "name": "AttachContentId",
+          "value": 14098
+        },
+        {
+          "name": "AttachContentLocation",
+          "value": 14099
+        },
+        {
+          "name": "AttachData",
+          "value": 14081
+        },
+        {
+          "name": "AttachDisposition",
+          "value": 14102
+        },
+        {
+          "name": "AttachEncoding",
+          "value": 14082
+        },
+        {
+          "name": "AttachExtension",
+          "value": 14083
+        },
+        {
+          "name": "AttachFilename",
+          "value": 14084
+        },
+        {
+          "name": "AttachFlags",
+          "value": 14100
+        },
+        {
+          "name": "AttachLongFilename",
+          "value": 14087
+        },
+        {
+          "name": "AttachLongPathname",
+          "value": 14093
+        },
+        {
+          "name": "AttachmentX400Parameters",
+          "value": 14080
+        },
+        {
+          "name": "AttachMethod",
+          "value": 14085
+        },
+        {
+          "name": "AttachMimeSequence",
+          "value": 14096
+        },
+        {
+          "name": "AttachMimeTag",
+          "value": 14094
+        },
+        {
+          "name": "AttachNetscapeMacInfo",
+          "value": 14101
+        },
+        {
+          "name": "AttachNum",
+          "value": 3617
+        },
+        {
+          "name": "AttachPathname",
+          "value": 14088
+        },
+        {
+          "name": "AttachRendering",
+          "value": 14089
+        },
+        {
+          "name": "AttachSize",
+          "value": 3616
+        },
+        {
+          "name": "AttachTag",
+          "value": 14090
+        },
+        {
+          "name": "AttachTransportName",
+          "value": 14092
+        },
+        {
+          "name": "AuthorizingUsers",
+          "value": 3
+        },
+        {
+          "name": "AutoForwarded",
+          "value": 5
+        },
+        {
+          "name": "AutoForwardingComment",
+          "value": 4
+        },
+        {
+          "name": "AutoResponseSuppress",
+          "value": 16351
+        },
+        {
+          "name": "BeeperTelephoneNumber",
+          "value": 14881
+        },
+        {
+          "name": "Birthday",
+          "value": 14914
+        },
+        {
+          "name": "Body",
+          "value": 4096
+        },
+        {
+          "name": "BodyContentId",
+          "value": 4117
+        },
+        {
+          "name": "BodyContentLocation",
+          "value": 4116
+        },
+        {
+          "name": "BodyCrc",
+          "value": 3612
+        },
+        {
+          "name": "BodyHtml",
+          "value": 4115
+        },
+        {
+          "name": "Business2TelephoneNumber",
+          "value": 14875
+        },
+        {
+          "name": "BusinessAddressCity",
+          "value": 14887
+        },
+        {
+          "name": "BusinessAddressCountry",
+          "value": 14886
+        },
+        {
+          "name": "BusinessAddressPostalCode",
+          "value": 14890
+        },
+        {
+          "name": "BusinessAddressPostOfficeBox",
+          "value": 14891
+        },
+        {
+          "name": "BusinessAddressStateOrProvince",
+          "value": 14888
+        },
+        {
+          "name": "BusinessAddressStreet",
+          "value": 14889
+        },
+        {
+          "name": "BusinessFaxNumber",
+          "value": 14884
+        },
+        {
+          "name": "BusinessHomePage",
+          "value": 14929
+        },
+        {
+          "name": "CallbackTelephoneNumber",
+          "value": 14850
+        },
+        {
+          "name": "CarTelephoneNumber",
+          "value": 14878
+        },
+        {
+          "name": "CellularTelephoneNumber",
+          "value": 14876
+        },
+        {
+          "name": "ChildrensNames",
+          "value": 14936
+        },
+        {
+          "name": "ClientSubmitTime",
+          "value": 57
+        },
+        {
+          "name": "Comment",
+          "value": 12292
+        },
+        {
+          "name": "CommonViewsEntryId",
+          "value": 13798
+        },
+        {
+          "name": "CompanyMainPhoneNumber",
+          "value": 14935
+        },
+        {
+          "name": "CompanyName",
+          "value": 14870
+        },
+        {
+          "name": "ComputerNetworkName",
+          "value": 14921
+        },
+        {
+          "name": "ContactAddrtypes",
+          "value": 14932
+        },
+        {
+          "name": "ContactDefaultAddressIndex",
+          "value": 14933
+        },
+        {
+          "name": "ContactEmailAddresses",
+          "value": 14934
+        },
+        {
+          "name": "ContactEntryIds",
+          "value": 14931
+        },
+        {
+          "name": "ContactVersion",
+          "value": 14930
+        },
+        {
+          "name": "ContainerClass",
+          "value": 13843
+        },
+        {
+          "name": "ContainerContents",
+          "value": 13839
+        },
+        {
+          "name": "ContainerFlags",
+          "value": 13824
+        },
+        {
+          "name": "ContainerHierarchy",
+          "value": 13838
+        },
+        {
+          "name": "ContainerModifyVersion",
+          "value": 13844
+        },
+        {
+          "name": "ContentConfidentialityAlgorithmId",
+          "value": 6
+        },
+        {
+          "name": "ContentCorrelator",
+          "value": 7
+        },
+        {
+          "name": "ContentCount",
+          "value": 13826
+        },
+        {
+          "name": "ContentIdentifier",
+          "value": 8
+        },
+        {
+          "name": "ContentIntegrityCheck",
+          "value": 3072
+        },
+        {
+          "name": "ContentLength",
+          "value": 9
+        },
+        {
+          "name": "ContentReturnRequested",
+          "value": 10
+        },
+        {
+          "name": "ContentsSortOrder",
+          "value": 13837
+        },
+        {
+          "name": "ContentUnread",
+          "value": 13827
+        },
+        {
+          "name": "ControlFlags",
+          "value": 16128
+        },
+        {
+          "name": "ControlId",
+          "value": 16135
+        },
+        {
+          "name": "ControlStructure",
+          "value": 16129
+        },
+        {
+          "name": "ControlType",
+          "value": 16130
+        },
+        {
+          "name": "ConversationIndex",
+          "value": 113
+        },
+        {
+          "name": "ConversationKey",
+          "value": 11
+        },
+        {
+          "name": "ConversationTopic",
+          "value": 112
+        },
+        {
+          "name": "ConversionEits",
+          "value": 12
+        },
+        {
+          "name": "ConversionProhibited",
+          "value": 14851
+        },
+        {
+          "name": "ConversionWithLossProhibited",
+          "value": 13
+        },
+        {
+          "name": "ConvertedEits",
+          "value": 14
+        },
+        {
+          "name": "Correlate",
+          "value": 3596
+        },
+        {
+          "name": "CorrelateMtsid",
+          "value": 3597
+        },
+        {
+          "name": "Country",
+          "value": 14886
+        },
+        {
+          "name": "CreateTemplates",
+          "value": 13828
+        },
+        {
+          "name": "CreationTime",
+          "value": 12295
+        },
+        {
+          "name": "CreationVersion",
+          "value": 3609
+        },
+        {
+          "name": "CurrentVersion",
+          "value": 3584
+        },
+        {
+          "name": "CustomerId",
+          "value": 14922
+        },
+        {
+          "name": "DefaultProfile",
+          "value": 15620
+        },
+        {
+          "name": "DefaultStore",
+          "value": 13312
+        },
+        {
+          "name": "DefaultViewEntryId",
+          "value": 13846
+        },
+        {
+          "name": "DefCreateDl",
+          "value": 13841
+        },
+        {
+          "name": "DefCreateMailuser",
+          "value": 13842
+        },
+        {
+          "name": "DeferredDeliveryTime",
+          "value": 15
+        },
+        {
+          "name": "Delegation",
+          "value": 126
+        },
+        {
+          "name": "DeleteAfterSubmit",
+          "value": 3585
+        },
+        {
+          "name": "DeliverTime",
+          "value": 16
+        },
+        {
+          "name": "DeliveryPoint",
+          "value": 3079
+        },
+        {
+          "name": "Deltax",
+          "value": 16131
+        },
+        {
+          "name": "Deltay",
+          "value": 16132
+        },
+        {
+          "name": "DepartmentName",
+          "value": 14872
+        },
+        {
+          "name": "Depth",
+          "value": 12293
+        },
+        {
+          "name": "DetailsTable",
+          "value": 13829
+        },
+        {
+          "name": "DiscardReason",
+          "value": 17
+        },
+        {
+          "name": "DiscloseRecipients",
+          "value": 14852
+        },
+        {
+          "name": "DisclosureOfRecipients",
+          "value": 18
+        },
+        {
+          "name": "DiscreteValues",
+          "value": 3598
+        },
+        {
+          "name": "DiscVal",
+          "value": 74
+        },
+        {
+          "name": "DisplayBcc",
+          "value": 3586
+        },
+        {
+          "name": "DisplayCc",
+          "value": 3587
+        },
+        {
+          "name": "DisplayName",
+          "value": 12289
+        },
+        {
+          "name": "DisplayNamePrefix",
+          "value": 14917
+        },
+        {
+          "name": "DisplayTo",
+          "value": 3588
+        },
+        {
+          "name": "DisplayType",
+          "value": 14592
+        },
+        {
+          "name": "DlExpansionHistory",
+          "value": 19
+        },
+        {
+          "name": "DlExpansionProhibited",
+          "value": 20
+        },
+        {
+          "name": "EmailAddress",
+          "value": 12291
+        },
+        {
+          "name": "EndDate",
+          "value": 97
+        },
+        {
+          "name": "EntryId",
+          "value": 4095
+        },
+        {
+          "name": "ExpandBeginTime",
+          "value": 13848
+        },
+        {
+          "name": "ExpandedBeginTime",
+          "value": 13850
+        },
+        {
+          "name": "ExpandedEndTime",
+          "value": 13851
+        },
+        {
+          "name": "ExpandEndTime",
+          "value": 13849
+        },
+        {
+          "name": "ExpiryTime",
+          "value": 21
+        },
+        {
+          "name": "ExplicitConversion",
+          "value": 3073
+        },
+        {
+          "name": "FilteringHooks",
+          "value": 15624
+        },
+        {
+          "name": "FinderEntryId",
+          "value": 13799
+        },
+        {
+          "name": "FolderAssociatedContents",
+          "value": 13840
+        },
+        {
+          "name": "FolderType",
+          "value": 13825
+        },
+        {
+          "name": "FormCategory",
+          "value": 13060
+        },
+        {
+          "name": "FormCategorySub",
+          "value": 13061
+        },
+        {
+          "name": "FormClsid",
+          "value": 13058
+        },
+        {
+          "name": "FormContactName",
+          "value": 13059
+        },
+        {
+          "name": "FormDesignerGuid",
+          "value": 13065
+        },
+        {
+          "name": "FormDesignerName",
+          "value": 13064
+        },
+        {
+          "name": "FormHidden",
+          "value": 13063
+        },
+        {
+          "name": "FormHostMap",
+          "value": 13062
+        },
+        {
+          "name": "FormMessageBehavior",
+          "value": 13066
+        },
+        {
+          "name": "FormVersion",
+          "value": 13057
+        },
+        {
+          "name": "FtpSite",
+          "value": 14924
+        },
+        {
+          "name": "Gender",
+          "value": 14925
+        },
+        {
+          "name": "Generation",
+          "value": 14853
+        },
+        {
+          "name": "GivenName",
+          "value": 14854
+        },
+        {
+          "name": "GovernmentIdNumber",
+          "value": 14855
+        },
+        {
+          "name": "Hasattach",
+          "value": 3611
+        },
+        {
+          "name": "HeaderFolderEntryId",
+          "value": 15882
+        },
+        {
+          "name": "Hobbies",
+          "value": 14915
+        },
+        {
+          "name": "Home2TelephoneNumber",
+          "value": 14895
+        },
+        {
+          "name": "HomeAddressCity",
+          "value": 14937
+        },
+        {
+          "name": "HomeAddressCountry",
+          "value": 14938
+        },
+        {
+          "name": "HomeAddressPostalCode",
+          "value": 14939
+        },
+        {
+          "name": "HomeAddressPostOfficeBox",
+          "value": 14942
+        },
+        {
+          "name": "HomeAddressStateOrProvince",
+          "value": 14940
+        },
+        {
+          "name": "HomeAddressStreet",
+          "value": 14941
+        },
+        {
+          "name": "HomeFaxNumber",
+          "value": 14885
+        },
+        {
+          "name": "HomeTelephoneNumber",
+          "value": 14857
+        },
+        {
+          "name": "Icon",
+          "value": 4093
+        },
+        {
+          "name": "IdentityDisplay",
+          "value": 15872
+        },
+        {
+          "name": "IdentityEntryId",
+          "value": 15873
+        },
+        {
+          "name": "IdentitySearchKey",
+          "value": 15877
+        },
+        {
+          "name": "ImplicitConversionProhibited",
+          "value": 22
+        },
+        {
+          "name": "Importance",
+          "value": 23
+        },
+        {
+          "name": "IncompleteCopy",
+          "value": 53
+        },
+        {
+          "name": "INetMailOverrideCharset",
+          "value": 22787
+        },
+        {
+          "name": "INetMailOverrideFormat",
+          "value": 22786
+        },
+        {
+          "name": "InitialDetailsPane",
+          "value": 16136
+        },
+        {
+          "name": "Initials",
+          "value": 14858
+        },
+        {
+          "name": "InReplyToId",
+          "value": 4162
+        },
+        {
+          "name": "InstanceKey",
+          "value": 4086
+        },
+        {
+          "name": "InternetApproved",
+          "value": 4144
+        },
+        {
+          "name": "InternetArticleNumber",
+          "value": 3619
+        },
+        {
+          "name": "InternetControl",
+          "value": 4145
+        },
+        {
+          "name": "InternetCPID",
+          "value": 16350
+        },
+        {
+          "name": "InternetDistribution",
+          "value": 4146
+        },
+        {
+          "name": "InternetFollowupTo",
+          "value": 4147
+        },
+        {
+          "name": "InternetLines",
+          "value": 4148
+        },
+        {
+          "name": "InternetMessageId",
+          "value": 4149
+        },
+        {
+          "name": "InternetNewsgroups",
+          "value": 4150
+        },
+        {
+          "name": "InternetNntpPath",
+          "value": 4152
+        },
+        {
+          "name": "InternetOrganization",
+          "value": 4151
+        },
+        {
+          "name": "InternetPrecedence",
+          "value": 4161
+        },
+        {
+          "name": "InternetReferences",
+          "value": 4153
+        },
+        {
+          "name": "IpmId",
+          "value": 24
+        },
+        {
+          "name": "IpmOutboxEntryId",
+          "value": 13794
+        },
+        {
+          "name": "IpmOutboxSearchKey",
+          "value": 13329
+        },
+        {
+          "name": "IpmReturnRequested",
+          "value": 3074
+        },
+        {
+          "name": "IpmSentmailEntryId",
+          "value": 13796
+        },
+        {
+          "name": "IpmSentmailSearchKey",
+          "value": 13331
+        },
+        {
+          "name": "IpmSubtreeEntryId",
+          "value": 13792
+        },
+        {
+          "name": "IpmSubtreeSearchKey",
+          "value": 13328
+        },
+        {
+          "name": "IpmWastebasketEntryId",
+          "value": 13795
+        },
+        {
+          "name": "IpmWastebasketSearchKey",
+          "value": 13330
+        },
+        {
+          "name": "IsdnNumber",
+          "value": 14893
+        },
+        {
+          "name": "Keyword",
+          "value": 14859
+        },
+        {
+          "name": "Language",
+          "value": 14860
+        },
+        {
+          "name": "Languages",
+          "value": 47
+        },
+        {
+          "name": "LastModificationTime",
+          "value": 12296
+        },
+        {
+          "name": "LatestDeliveryTime",
+          "value": 25
+        },
+        {
+          "name": "ListHelp",
+          "value": 4163
+        },
+        {
+          "name": "ListSubscribe",
+          "value": 4164
+        },
+        {
+          "name": "ListUnsubscribe",
+          "value": 4165
+        },
+        {
+          "name": "Locality",
+          "value": 14887
+        },
+        {
+          "name": "LocallyDelivered",
+          "value": 26437
+        },
+        {
+          "name": "Location",
+          "value": 14861
+        },
+        {
+          "name": "LockBranchId",
+          "value": 14336
+        },
+        {
+          "name": "LockDepth",
+          "value": 14344
+        },
+        {
+          "name": "LockEnlistmentContext",
+          "value": 14340
+        },
+        {
+          "name": "LockExpiryTime",
+          "value": 14346
+        },
+        {
+          "name": "LockPersistent",
+          "value": 14343
+        },
+        {
+          "name": "LockResourceDid",
+          "value": 14338
+        },
+        {
+          "name": "LockResourceFid",
+          "value": 14337
+        },
+        {
+          "name": "LockResourceMid",
+          "value": 14339
+        },
+        {
+          "name": "LockScope",
+          "value": 14342
+        },
+        {
+          "name": "LockTimeout",
+          "value": 14345
+        },
+        {
+          "name": "LockType",
+          "value": 14341
+        },
+        {
+          "name": "MailPermission",
+          "value": 14862
+        },
+        {
+          "name": "ManagerName",
+          "value": 14926
+        },
+        {
+          "name": "MappingSignature",
+          "value": 4088
+        },
+        {
+          "name": "MdbProvider",
+          "value": 13332
+        },
+        {
+          "name": "MessageAttachments",
+          "value": 3603
+        },
+        {
+          "name": "MessageCcMe",
+          "value": 88
+        },
+        {
+          "name": "MessageClass",
+          "value": 26
+        },
+        {
+          "name": "MessageCodepage",
+          "value": 16381
+        },
+        {
+          "name": "MessageDeliveryId",
+          "value": 27
+        },
+        {
+          "name": "MessageDeliveryTime",
+          "value": 3590
+        },
+        {
+          "name": "MessageDownloadTime",
+          "value": 3608
+        },
+        {
+          "name": "MessageFlags",
+          "value": 3591
+        },
+        {
+          "name": "MessageRecipients",
+          "value": 3602
+        },
+        {
+          "name": "MessageRecipMe",
+          "value": 89
+        },
+        {
+          "name": "MessageSecurityLabel",
+          "value": 30
+        },
+        {
+          "name": "MessageSize",
+          "value": 3592
+        },
+        {
+          "name": "MessageSubmissionId",
+          "value": 71
+        },
+        {
+          "name": "MessageToken",
+          "value": 3075
+        },
+        {
+          "name": "MessageToMe",
+          "value": 87
+        },
+        {
+          "name": "MhsCommonName",
+          "value": 14863
+        },
+        {
+          "name": "MiddleName",
+          "value": 14916
+        },
+        {
+          "name": "MiniIcon",
+          "value": 4092
+        },
+        {
+          "name": "MobileTelephoneNumber",
+          "value": 14876
+        },
+        {
+          "name": "ModifyVersion",
+          "value": 3610
+        },
+        {
+          "name": "MsgStatus",
+          "value": 3607
+        },
+        {
+          "name": "NdrDiagCode",
+          "value": 3077
+        },
+        {
+          "name": "NdrReasonCode",
+          "value": 3076
+        },
+        {
+          "name": "NdrStatusCode",
+          "value": 3104
+        },
+        {
+          "name": "NewsgroupName",
+          "value": 3620
+        },
+        {
+          "name": "Nickname",
+          "value": 14927
+        },
+        {
+          "name": "NntpXref",
+          "value": 4160
+        },
+        {
+          "name": "NonReceiptNotificationRequested",
+          "value": 3078
+        },
+        {
+          "name": "NonReceiptReason",
+          "value": 62
+        },
+        {
+          "name": "NormalizedSubject",
+          "value": 3613
+        },
+        {
+          "name": "NtSecurityDescriptor",
+          "value": 3623
+        },
+        {
+          "name": "Null",
+          "value": 0
+        },
+        {
+          "name": "ObjectType",
+          "value": 4094
+        },
+        {
+          "name": "ObsoletedIpms",
+          "value": 31
+        },
+        {
+          "name": "Office2TelephoneNumber",
+          "value": 14875
+        },
+        {
+          "name": "OfficeLocation",
+          "value": 14873
+        },
+        {
+          "name": "OfficeTelephoneNumber",
+          "value": 14856
+        },
+        {
+          "name": "OofReplyType",
+          "value": 16512
+        },
+        {
+          "name": "OrganizationalIdNumber",
+          "value": 14864
+        },
+        {
+          "name": "OrigEntryId",
+          "value": 12303
+        },
+        {
+          "name": "OriginalAuthorAddrtype",
+          "value": 121
+        },
+        {
+          "name": "OriginalAuthorEmailAddress",
+          "value": 122
+        },
+        {
+          "name": "OriginalAuthorEntryId",
+          "value": 76
+        },
+        {
+          "name": "OriginalAuthorName",
+          "value": 77
+        },
+        {
+          "name": "OriginalAuthorSearchKey",
+          "value": 86
+        },
+        {
+          "name": "OriginalDeliveryTime",
+          "value": 85
+        },
+        {
+          "name": "OriginalDisplayBcc",
+          "value": 114
+        },
+        {
+          "name": "OriginalDisplayCc",
+          "value": 115
+        },
+        {
+          "name": "OriginalDisplayName",
+          "value": 14867
+        },
+        {
+          "name": "OriginalDisplayTo",
+          "value": 116
+        },
+        {
+          "name": "OriginalEits",
+          "value": 33
+        },
+        {
+          "name": "OriginalEntryId",
+          "value": 14866
+        },
+        {
+          "name": "OriginallyIntendedRecipAddrtype",
+          "value": 123
+        },
+        {
+          "name": "OriginallyIntendedRecipEmailAddress",
+          "value": 124
+        },
+        {
+          "name": "OriginallyIntendedRecipEntryId",
+          "value": 4114
+        },
+        {
+          "name": "OriginallyIntendedRecipientName",
+          "value": 32
+        },
+        {
+          "name": "OriginalSearchKey",
+          "value": 14868
+        },
+        {
+          "name": "OriginalSenderAddrtype",
+          "value": 102
+        },
+        {
+          "name": "OriginalSenderEmailAddress",
+          "value": 103
+        },
+        {
+          "name": "OriginalSenderEntryId",
+          "value": 91
+        },
+        {
+          "name": "OriginalSenderName",
+          "value": 90
+        },
+        {
+          "name": "OriginalSenderSearchKey",
+          "value": 92
+        },
+        {
+          "name": "OriginalSensitivity",
+          "value": 46
+        },
+        {
+          "name": "OriginalSentRepresentingAddrtype",
+          "value": 104
+        },
+        {
+          "name": "OriginalSentRepresentingEmailAddress",
+          "value": 105
+        },
+        {
+          "name": "OriginalSentRepresentingEntryId",
+          "value": 94
+        },
+        {
+          "name": "OriginalSentRepresentingName",
+          "value": 93
+        },
+        {
+          "name": "OriginalSentRepresentingSearchKey",
+          "value": 95
+        },
+        {
+          "name": "OriginalSubject",
+          "value": 73
+        },
+        {
+          "name": "OriginalSubmitTime",
+          "value": 78
+        },
+        {
+          "name": "OriginatingMtaCertificate",
+          "value": 3621
+        },
+        {
+          "name": "OriginatorAndDlExpansionHistory",
+          "value": 4098
+        },
+        {
+          "name": "OriginatorCertificate",
+          "value": 34
+        },
+        {
+          "name": "OriginatorDeliveryReportRequested",
+          "value": 35
+        },
+        {
+          "name": "OriginatorNonDeliveryReportRequested",
+          "value": 3080
+        },
+        {
+          "name": "OriginatorRequestedAlternateRecipient",
+          "value": 3081
+        },
+        {
+          "name": "OriginatorReturnAddress",
+          "value": 36
+        },
+        {
+          "name": "OriginCheck",
+          "value": 39
+        },
+        {
+          "name": "OrigMessageClass",
+          "value": 75
+        },
+        {
+          "name": "OtherAddressCity",
+          "value": 14943
+        },
+        {
+          "name": "OtherAddressCountry",
+          "value": 14944
+        },
+        {
+          "name": "OtherAddressPostalCode",
+          "value": 14945
+        },
+        {
+          "name": "OtherAddressPostOfficeBox",
+          "value": 14948
+        },
+        {
+          "name": "OtherAddressStateOrProvince",
+          "value": 14946
+        },
+        {
+          "name": "OtherAddressStreet",
+          "value": 14947
+        },
+        {
+          "name": "OtherTelephoneNumber",
+          "value": 14879
+        },
+        {
+          "name": "OwnerApptId",
+          "value": 98
+        },
+        {
+          "name": "OwnStoreEntryId",
+          "value": 15878
+        },
+        {
+          "name": "PagerTelephoneNumber",
+          "value": 14881
+        },
+        {
+          "name": "ParentDisplay",
+          "value": 3589
+        },
+        {
+          "name": "ParentEntryId",
+          "value": 3593
+        },
+        {
+          "name": "ParentKey",
+          "value": 37
+        },
+        {
+          "name": "PersonalHomePage",
+          "value": 14928
+        },
+        {
+          "name": "PhysicalDeliveryBureauFaxDelivery",
+          "value": 3082
+        },
+        {
+          "name": "PhysicalDeliveryMode",
+          "value": 3083
+        },
+        {
+          "name": "PhysicalDeliveryReportRequest",
+          "value": 3084
+        },
+        {
+          "name": "PhysicalForwardingAddress",
+          "value": 3085
+        },
+        {
+          "name": "PhysicalForwardingAddressRequested",
+          "value": 3086
+        },
+        {
+          "name": "PhysicalForwardingProhibited",
+          "value": 3087
+        },
+        {
+          "name": "PhysicalRenditionAttributes",
+          "value": 3088
+        },
+        {
+          "name": "PostalAddress",
+          "value": 14869
+        },
+        {
+          "name": "PostalCode",
+          "value": 14890
+        },
+        {
+          "name": "PostFolderEntries",
+          "value": 4155
+        },
+        {
+          "name": "PostFolderNames",
+          "value": 4156
+        },
+        {
+          "name": "PostOfficeBox",
+          "value": 14891
+        },
+        {
+          "name": "PostReplyDenied",
+          "value": 4159
+        },
+        {
+          "name": "PostReplyFolderEntries",
+          "value": 4157
+        },
+        {
+          "name": "PostReplyFolderNames",
+          "value": 4158
+        },
+        {
+          "name": "PreferredByName",
+          "value": 14919
+        },
+        {
+          "name": "Preprocess",
+          "value": 3618
+        },
+        {
+          "name": "PrimaryCapability",
+          "value": 14596
+        },
+        {
+          "name": "PrimaryFaxNumber",
+          "value": 14883
+        },
+        {
+          "name": "PrimaryTelephoneNumber",
+          "value": 14874
+        },
+        {
+          "name": "Priority",
+          "value": 38
+        },
+        {
+          "name": "Profession",
+          "value": 14918
+        },
+        {
+          "name": "ProfileName",
+          "value": 15634
+        },
+        {
+          "name": "ProofOfDelivery",
+          "value": 3089
+        },
+        {
+          "name": "ProofOfDeliveryRequested",
+          "value": 3090
+        },
+        {
+          "name": "ProofOfSubmission",
+          "value": 3622
+        },
+        {
+          "name": "ProofOfSubmissionRequested",
+          "value": 40
+        },
+        {
+          "name": "PropIdSecureMax",
+          "value": 26623
+        },
+        {
+          "name": "PropIdSecureMin",
+          "value": 26608
+        },
+        {
+          "name": "ProviderDisplay",
+          "value": 12294
+        },
+        {
+          "name": "ProviderDllName",
+          "value": 12298
+        },
+        {
+          "name": "ProviderOrdinal",
+          "value": 12301
+        },
+        {
+          "name": "ProviderSubmitTime",
+          "value": 72
+        },
+        {
+          "name": "ProviderUid",
+          "value": 12300
+        },
+        {
+          "name": "Puid",
+          "value": 12302
+        },
+        {
+          "name": "RadioTelephoneNumber",
+          "value": 14877
+        },
+        {
+          "name": "RcvdRepresentingAddrtype",
+          "value": 119
+        },
+        {
+          "name": "RcvdRepresentingEmailAddress",
+          "value": 120
+        },
+        {
+          "name": "RcvdRepresentingEntryId",
+          "value": 67
+        },
+        {
+          "name": "RcvdRepresentingName",
+          "value": 68
+        },
+        {
+          "name": "RcvdRepresentingSearchKey",
+          "value": 82
+        },
+        {
+          "name": "ReadReceiptEntryId",
+          "value": 70
+        },
+        {
+          "name": "ReadReceiptRequested",
+          "value": 41
+        },
+        {
+          "name": "ReadReceiptSearchKey",
+          "value": 83
+        },
+        {
+          "name": "ReceiptTime",
+          "value": 42
+        },
+        {
+          "name": "ReceivedByAddrtype",
+          "value": 117
+        },
+        {
+          "name": "ReceivedByEmailAddress",
+          "value": 118
+        },
+        {
+          "name": "ReceivedByEntryId",
+          "value": 63
+        },
+        {
+          "name": "ReceivedByName",
+          "value": 64
+        },
+        {
+          "name": "ReceivedBySearchKey",
+          "value": 81
+        },
+        {
+          "name": "ReceiveFolderSettings",
+          "value": 13333
+        },
+        {
+          "name": "RecipientCertificate",
+          "value": 3091
+        },
+        {
+          "name": "RecipientNumberForAdvice",
+          "value": 3092
+        },
+        {
+          "name": "RecipientReassignmentProhibited",
+          "value": 43
+        },
+        {
+          "name": "RecipientStatus",
+          "value": 3605
+        },
+        {
+          "name": "RecipientType",
+          "value": 3093
+        },
+        {
+          "name": "RecordKey",
+          "value": 4089
+        },
+        {
+          "name": "RedirectionHistory",
+          "value": 44
+        },
+        {
+          "name": "ReferredByName",
+          "value": 14919
+        },
+        {
+          "name": "RegisteredMailType",
+          "value": 3094
+        },
+        {
+          "name": "RelatedIpms",
+          "value": 45
+        },
+        {
+          "name": "RemoteProgress",
+          "value": 15883
+        },
+        {
+          "name": "RemoteProgressText",
+          "value": 15884
+        },
+        {
+          "name": "RemoteValidateOk",
+          "value": 15885
+        },
+        {
+          "name": "RenderingPosition",
+          "value": 14091
+        },
+        {
+          "name": "ReplyRecipientEntries",
+          "value": 79
+        },
+        {
+          "name": "ReplyRecipientNames",
+          "value": 80
+        },
+        {
+          "name": "ReplyRequested",
+          "value": 3095
+        },
+        {
+          "name": "ReplyTime",
+          "value": 48
+        },
+        {
+          "name": "ReportEntryId",
+          "value": 69
+        },
+        {
+          "name": "ReportingDlName",
+          "value": 4099
+        },
+        {
+          "name": "ReportingMtaCertificate",
+          "value": 4100
+        },
+        {
+          "name": "ReportName",
+          "value": 58
+        },
+        {
+          "name": "ReportSearchKey",
+          "value": 84
+        },
+        {
+          "name": "ReportTag",
+          "value": 49
+        },
+        {
+          "name": "ReportText",
+          "value": 4097
+        },
+        {
+          "name": "ReportTime",
+          "value": 50
+        },
+        {
+          "name": "RequestedDeliveryMethod",
+          "value": 3096
+        },
+        {
+          "name": "ResourceFlags",
+          "value": 12297
+        },
+        {
+          "name": "ResourceMethods",
+          "value": 15874
+        },
+        {
+          "name": "ResourcePath",
+          "value": 15879
+        },
+        {
+          "name": "ResourceType",
+          "value": 15875
+        },
+        {
+          "name": "ResponseRequested",
+          "value": 99
+        },
+        {
+          "name": "Responsibility",
+          "value": 3599
+        },
+        {
+          "name": "ReturnedIpm",
+          "value": 51
+        },
+        {
+          "name": "Rowid",
+          "value": 12288
+        },
+        {
+          "name": "RowType",
+          "value": 4085
+        },
+        {
+          "name": "RtfCompressed",
+          "value": 4105
+        },
+        {
+          "name": "RtfInSync",
+          "value": 3615
+        },
+        {
+          "name": "RtfSyncBodyCount",
+          "value": 4103
+        },
+        {
+          "name": "RtfSyncBodyCrc",
+          "value": 4102
+        },
+        {
+          "name": "RtfSyncBodyTag",
+          "value": 4104
+        },
+        {
+          "name": "RtfSyncPrefixCount",
+          "value": 4112
+        },
+        {
+          "name": "RtfSyncTrailingCount",
+          "value": 4113
+        },
+        {
+          "name": "Search",
+          "value": 13831
+        },
+        {
+          "name": "SearchKey",
+          "value": 12299
+        },
+        {
+          "name": "Security",
+          "value": 52
+        },
+        {
+          "name": "Selectable",
+          "value": 13833
+        },
+        {
+          "name": "SenderAddrtype",
+          "value": 3102
+        },
+        {
+          "name": "SenderEmailAddress",
+          "value": 3103
+        },
+        {
+          "name": "SenderEntryId",
+          "value": 3097
+        },
+        {
+          "name": "SenderName",
+          "value": 3098
+        },
+        {
+          "name": "SenderSearchKey",
+          "value": 3101
+        },
+        {
+          "name": "SendInternetEncoding",
+          "value": 14961
+        },
+        {
+          "name": "SendRecallReport",
+          "value": 26627
+        },
+        {
+          "name": "SendRichInfo",
+          "value": 14912
+        },
+        {
+          "name": "Sensitivity",
+          "value": 54
+        },
+        {
+          "name": "SentmailEntryId",
+          "value": 3594
+        },
+        {
+          "name": "SentRepresentingAddrtype",
+          "value": 100
+        },
+        {
+          "name": "SentRepresentingEmailAddress",
+          "value": 101
+        },
+        {
+          "name": "SentRepresentingEntryId",
+          "value": 65
+        },
+        {
+          "name": "SentRepresentingName",
+          "value": 66
+        },
+        {
+          "name": "SentRepresentingSearchKey",
+          "value": 59
+        },
+        {
+          "name": "ServiceDeleteFiles",
+          "value": 15632
+        },
+        {
+          "name": "ServiceDllName",
+          "value": 15626
+        },
+        {
+          "name": "ServiceEntryName",
+          "value": 15627
+        },
+        {
+          "name": "ServiceExtraUids",
+          "value": 15629
+        },
+        {
+          "name": "ServiceName",
+          "value": 15625
+        },
+        {
+          "name": "Services",
+          "value": 15630
+        },
+        {
+          "name": "ServiceSupportFiles",
+          "value": 15631
+        },
+        {
+          "name": "ServiceUid",
+          "value": 15628
+        },
+        {
+          "name": "SevenBitDisplayName",
+          "value": 14847
+        },
+        {
+          "name": "SmtpAddress",
+          "value": 14846
+        },
+        {
+          "name": "SpoolerStatus",
+          "value": 3600
+        },
+        {
+          "name": "SpouseName",
+          "value": 14920
+        },
+        {
+          "name": "StartDate",
+          "value": 96
+        },
+        {
+          "name": "StateOrProvince",
+          "value": 14888
+        },
+        {
+          "name": "Status",
+          "value": 13835
+        },
+        {
+          "name": "StatusCode",
+          "value": 15876
+        },
+        {
+          "name": "StatusString",
+          "value": 15880
+        },
+        {
+          "name": "StoreEntryId",
+          "value": 4091
+        },
+        {
+          "name": "StoreProviders",
+          "value": 15616
+        },
+        {
+          "name": "StoreRecordKey",
+          "value": 4090
+        },
+        {
+          "name": "StoreState",
+          "value": 13326
+        },
+        {
+          "name": "StoreSupportMask",
+          "value": 13325
+        },
+        {
+          "name": "StreetAddress",
+          "value": 14889
+        },
+        {
+          "name": "Subfolders",
+          "value": 13834
+        },
+        {
+          "name": "Subject",
+          "value": 55
+        },
+        {
+          "name": "SubjectIpm",
+          "value": 56
+        },
+        {
+          "name": "SubjectPrefix",
+          "value": 61
+        },
+        {
+          "name": "SubmitFlags",
+          "value": 3604
+        },
+        {
+          "name": "Supersedes",
+          "value": 4154
+        },
+        {
+          "name": "SupplementaryInfo",
+          "value": 3099
+        },
+        {
+          "name": "Surname",
+          "value": 14865
+        },
+        {
+          "name": "TelexNumber",
+          "value": 14892
+        },
+        {
+          "name": "Templateid",
+          "value": 14594
+        },
+        {
+          "name": "Title",
+          "value": 14871
+        },
+        {
+          "name": "TnefCorrelationKey",
+          "value": 127
+        },
+        {
+          "name": "TransmitableDisplayName",
+          "value": 14880
+        },
+        {
+          "name": "TransportKey",
+          "value": 3606
+        },
+        {
+          "name": "TransportMessageHeaders",
+          "value": 125
+        },
+        {
+          "name": "TransportProviders",
+          "value": 15618
+        },
+        {
+          "name": "TransportStatus",
+          "value": 3601
+        },
+        {
+          "name": "TtytddPhoneNumber",
+          "value": 14923
+        },
+        {
+          "name": "TypeOfMtsUser",
+          "value": 3100
+        },
+        {
+          "name": "UserCertificate",
+          "value": 14882
+        },
+        {
+          "name": "UserX509Certificate",
+          "value": 14960
+        },
+        {
+          "name": "ValidFolderMask",
+          "value": 13791
+        },
+        {
+          "name": "ViewsEntryId",
+          "value": 13797
+        },
+        {
+          "name": "WeddingAnniversary",
+          "value": 14913
+        },
+        {
+          "name": "X400ContentType",
+          "value": 60
+        },
+        {
+          "name": "X400DeferredDeliveryCancel",
+          "value": 15881
+        },
+        {
+          "name": "Xpos",
+          "value": 16133
+        },
+        {
+          "name": "Ypos",
+          "value": 16134
+        }
+      ]
+    },
+    {
+      "fullName": "MimeKit.Tnef.TnefPropertyType",
+      "underlyingType": "System.Int16",
+      "members": [
+        {
+          "name": "Unspecified",
+          "value": 0
+        },
+        {
+          "name": "Null",
+          "value": 1
+        },
+        {
+          "name": "I2",
+          "value": 2
+        },
+        {
+          "name": "Long",
+          "value": 3
+        },
+        {
+          "name": "R4",
+          "value": 4
+        },
+        {
+          "name": "Double",
+          "value": 5
+        },
+        {
+          "name": "Currency",
+          "value": 6
+        },
+        {
+          "name": "AppTime",
+          "value": 7
+        },
+        {
+          "name": "Error",
+          "value": 10
+        },
+        {
+          "name": "Boolean",
+          "value": 11
+        },
+        {
+          "name": "Object",
+          "value": 13
+        },
+        {
+          "name": "I8",
+          "value": 20
+        },
+        {
+          "name": "String8",
+          "value": 30
+        },
+        {
+          "name": "Unicode",
+          "value": 31
+        },
+        {
+          "name": "SysTime",
+          "value": 64
+        },
+        {
+          "name": "ClassId",
+          "value": 72
+        },
+        {
+          "name": "Binary",
+          "value": 258
+        },
+        {
+          "name": "MultiValued",
+          "value": 4096
+        }
+      ]
+    },
+    {
+      "fullName": "MimeKit.Text.HeaderFooterFormat",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Text",
+          "value": 0
+        },
+        {
+          "name": "Html",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "MimeKit.Text.HtmlAttributeId",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "Abbr",
+          "value": 1
+        },
+        {
+          "name": "Accept",
+          "value": 2
+        },
+        {
+          "name": "AcceptCharset",
+          "value": 3
+        },
+        {
+          "name": "AccessKey",
+          "value": 4
+        },
+        {
+          "name": "Action",
+          "value": 5
+        },
+        {
+          "name": "Align",
+          "value": 6
+        },
+        {
+          "name": "Alink",
+          "value": 7
+        },
+        {
+          "name": "Alt",
+          "value": 8
+        },
+        {
+          "name": "Archive",
+          "value": 9
+        },
+        {
+          "name": "Axis",
+          "value": 10
+        },
+        {
+          "name": "Background",
+          "value": 11
+        },
+        {
+          "name": "BGColor",
+          "value": 12
+        },
+        {
+          "name": "Border",
+          "value": 13
+        },
+        {
+          "name": "CellPadding",
+          "value": 14
+        },
+        {
+          "name": "CellSpacing",
+          "value": 15
+        },
+        {
+          "name": "Char",
+          "value": 16
+        },
+        {
+          "name": "CharOff",
+          "value": 17
+        },
+        {
+          "name": "Charset",
+          "value": 18
+        },
+        {
+          "name": "Checked",
+          "value": 19
+        },
+        {
+          "name": "Cite",
+          "value": 20
+        },
+        {
+          "name": "Class",
+          "value": 21
+        },
+        {
+          "name": "ClassId",
+          "value": 22
+        },
+        {
+          "name": "Clear",
+          "value": 23
+        },
+        {
+          "name": "Code",
+          "value": 24
+        },
+        {
+          "name": "CodeBase",
+          "value": 25
+        },
+        {
+          "name": "CodeType",
+          "value": 26
+        },
+        {
+          "name": "Color",
+          "value": 27
+        },
+        {
+          "name": "Cols",
+          "value": 28
+        },
+        {
+          "name": "ColSpan",
+          "value": 29
+        },
+        {
+          "name": "Compact",
+          "value": 30
+        },
+        {
+          "name": "Content",
+          "value": 31
+        },
+        {
+          "name": "Coords",
+          "value": 32
+        },
+        {
+          "name": "Data",
+          "value": 33
+        },
+        {
+          "name": "DateTime",
+          "value": 34
+        },
+        {
+          "name": "Declare",
+          "value": 35
+        },
+        {
+          "name": "Defer",
+          "value": 36
+        },
+        {
+          "name": "Dir",
+          "value": 37
+        },
+        {
+          "name": "Disabled",
+          "value": 38
+        },
+        {
+          "name": "DynSrc",
+          "value": 39
+        },
+        {
+          "name": "EncType",
+          "value": 40
+        },
+        {
+          "name": "Face",
+          "value": 41
+        },
+        {
+          "name": "For",
+          "value": 42
+        },
+        {
+          "name": "Frame",
+          "value": 43
+        },
+        {
+          "name": "FrameBorder",
+          "value": 44
+        },
+        {
+          "name": "Headers",
+          "value": 45
+        },
+        {
+          "name": "Height",
+          "value": 46
+        },
+        {
+          "name": "Href",
+          "value": 47
+        },
+        {
+          "name": "HrefLang",
+          "value": 48
+        },
+        {
+          "name": "Hspace",
+          "value": 49
+        },
+        {
+          "name": "HttpEquiv",
+          "value": 50
+        },
+        {
+          "name": "Id",
+          "value": 51
+        },
+        {
+          "name": "IsMap",
+          "value": 52
+        },
+        {
+          "name": "Label",
+          "value": 53
+        },
+        {
+          "name": "Lang",
+          "value": 54
+        },
+        {
+          "name": "Language",
+          "value": 55
+        },
+        {
+          "name": "LeftMargin",
+          "value": 56
+        },
+        {
+          "name": "Link",
+          "value": 57
+        },
+        {
+          "name": "LongDesc",
+          "value": 58
+        },
+        {
+          "name": "LowSrc",
+          "value": 59
+        },
+        {
+          "name": "MarginHeight",
+          "value": 60
+        },
+        {
+          "name": "MarginWidth",
+          "value": 61
+        },
+        {
+          "name": "MaxLength",
+          "value": 62
+        },
+        {
+          "name": "Media",
+          "value": 63
+        },
+        {
+          "name": "Method",
+          "value": 64
+        },
+        {
+          "name": "Multiple",
+          "value": 65
+        },
+        {
+          "name": "Name",
+          "value": 66
+        },
+        {
+          "name": "NoHref",
+          "value": 67
+        },
+        {
+          "name": "NoResize",
+          "value": 68
+        },
+        {
+          "name": "NoShade",
+          "value": 69
+        },
+        {
+          "name": "NoWrap",
+          "value": 70
+        },
+        {
+          "name": "Object",
+          "value": 71
+        },
+        {
+          "name": "Profile",
+          "value": 72
+        },
+        {
+          "name": "Prompt",
+          "value": 73
+        },
+        {
+          "name": "ReadOnly",
+          "value": 74
+        },
+        {
+          "name": "Rel",
+          "value": 75
+        },
+        {
+          "name": "Rev",
+          "value": 76
+        },
+        {
+          "name": "Rows",
+          "value": 77
+        },
+        {
+          "name": "RowSpan",
+          "value": 78
+        },
+        {
+          "name": "Rules",
+          "value": 79
+        },
+        {
+          "name": "Scheme",
+          "value": 80
+        },
+        {
+          "name": "Scope",
+          "value": 81
+        },
+        {
+          "name": "Scrolling",
+          "value": 82
+        },
+        {
+          "name": "Selected",
+          "value": 83
+        },
+        {
+          "name": "Shape",
+          "value": 84
+        },
+        {
+          "name": "Size",
+          "value": 85
+        },
+        {
+          "name": "Span",
+          "value": 86
+        },
+        {
+          "name": "Src",
+          "value": 87
+        },
+        {
+          "name": "StandBy",
+          "value": 88
+        },
+        {
+          "name": "Start",
+          "value": 89
+        },
+        {
+          "name": "Style",
+          "value": 90
+        },
+        {
+          "name": "Summary",
+          "value": 91
+        },
+        {
+          "name": "TabIndex",
+          "value": 92
+        },
+        {
+          "name": "Target",
+          "value": 93
+        },
+        {
+          "name": "Text",
+          "value": 94
+        },
+        {
+          "name": "Title",
+          "value": 95
+        },
+        {
+          "name": "TopMargin",
+          "value": 96
+        },
+        {
+          "name": "Type",
+          "value": 97
+        },
+        {
+          "name": "UseMap",
+          "value": 98
+        },
+        {
+          "name": "Valign",
+          "value": 99
+        },
+        {
+          "name": "Value",
+          "value": 100
+        },
+        {
+          "name": "ValueType",
+          "value": 101
+        },
+        {
+          "name": "Version",
+          "value": 102
+        },
+        {
+          "name": "Vlink",
+          "value": 103
+        },
+        {
+          "name": "Vspace",
+          "value": 104
+        },
+        {
+          "name": "Width",
+          "value": 105
+        },
+        {
+          "name": "XmlNS",
+          "value": 106
+        }
+      ]
+    },
+    {
+      "fullName": "MimeKit.Text.HtmlNamespace",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Html",
+          "value": 0
+        },
+        {
+          "name": "MathML",
+          "value": 1
+        },
+        {
+          "name": "Svg",
+          "value": 2
+        },
+        {
+          "name": "XLink",
+          "value": 3
+        },
+        {
+          "name": "Xml",
+          "value": 4
+        },
+        {
+          "name": "XmlNS",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "MimeKit.Text.HtmlTagId",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "A",
+          "value": 1
+        },
+        {
+          "name": "Abbr",
+          "value": 2
+        },
+        {
+          "name": "Acronym",
+          "value": 3
+        },
+        {
+          "name": "Address",
+          "value": 4
+        },
+        {
+          "name": "Applet",
+          "value": 5
+        },
+        {
+          "name": "Area",
+          "value": 6
+        },
+        {
+          "name": "Article",
+          "value": 7
+        },
+        {
+          "name": "Aside",
+          "value": 8
+        },
+        {
+          "name": "Audio",
+          "value": 9
+        },
+        {
+          "name": "B",
+          "value": 10
+        },
+        {
+          "name": "Base",
+          "value": 11
+        },
+        {
+          "name": "BaseFont",
+          "value": 12
+        },
+        {
+          "name": "Bdi",
+          "value": 13
+        },
+        {
+          "name": "Bdo",
+          "value": 14
+        },
+        {
+          "name": "BGSound",
+          "value": 15
+        },
+        {
+          "name": "Big",
+          "value": 16
+        },
+        {
+          "name": "Blink",
+          "value": 17
+        },
+        {
+          "name": "BlockQuote",
+          "value": 18
+        },
+        {
+          "name": "Body",
+          "value": 19
+        },
+        {
+          "name": "Br",
+          "value": 20
+        },
+        {
+          "name": "Button",
+          "value": 21
+        },
+        {
+          "name": "Canvas",
+          "value": 22
+        },
+        {
+          "name": "Caption",
+          "value": 23
+        },
+        {
+          "name": "Center",
+          "value": 24
+        },
+        {
+          "name": "Cite",
+          "value": 25
+        },
+        {
+          "name": "Code",
+          "value": 26
+        },
+        {
+          "name": "Col",
+          "value": 27
+        },
+        {
+          "name": "ColGroup",
+          "value": 28
+        },
+        {
+          "name": "Command",
+          "value": 29
+        },
+        {
+          "name": "Comment",
+          "value": 30
+        },
+        {
+          "name": "DataList",
+          "value": 31
+        },
+        {
+          "name": "DD",
+          "value": 32
+        },
+        {
+          "name": "Del",
+          "value": 33
+        },
+        {
+          "name": "Details",
+          "value": 34
+        },
+        {
+          "name": "Dfn",
+          "value": 35
+        },
+        {
+          "name": "Dialog",
+          "value": 36
+        },
+        {
+          "name": "Dir",
+          "value": 37
+        },
+        {
+          "name": "Div",
+          "value": 38
+        },
+        {
+          "name": "DL",
+          "value": 39
+        },
+        {
+          "name": "DT",
+          "value": 40
+        },
+        {
+          "name": "EM",
+          "value": 41
+        },
+        {
+          "name": "Embed",
+          "value": 42
+        },
+        {
+          "name": "FieldSet",
+          "value": 43
+        },
+        {
+          "name": "FigCaption",
+          "value": 44
+        },
+        {
+          "name": "Figure",
+          "value": 45
+        },
+        {
+          "name": "Font",
+          "value": 46
+        },
+        {
+          "name": "Footer",
+          "value": 47
+        },
+        {
+          "name": "Form",
+          "value": 48
+        },
+        {
+          "name": "Frame",
+          "value": 49
+        },
+        {
+          "name": "FrameSet",
+          "value": 50
+        },
+        {
+          "name": "H1",
+          "value": 51
+        },
+        {
+          "name": "H2",
+          "value": 52
+        },
+        {
+          "name": "H3",
+          "value": 53
+        },
+        {
+          "name": "H4",
+          "value": 54
+        },
+        {
+          "name": "H5",
+          "value": 55
+        },
+        {
+          "name": "H6",
+          "value": 56
+        },
+        {
+          "name": "Head",
+          "value": 57
+        },
+        {
+          "name": "Header",
+          "value": 58
+        },
+        {
+          "name": "HR",
+          "value": 59
+        },
+        {
+          "name": "Html",
+          "value": 60
+        },
+        {
+          "name": "I",
+          "value": 61
+        },
+        {
+          "name": "IFrame",
+          "value": 62
+        },
+        {
+          "name": "Image",
+          "value": 63
+        },
+        {
+          "name": "Input",
+          "value": 64
+        },
+        {
+          "name": "Ins",
+          "value": 65
+        },
+        {
+          "name": "IsIndex",
+          "value": 66
+        },
+        {
+          "name": "Kbd",
+          "value": 67
+        },
+        {
+          "name": "Keygen",
+          "value": 68
+        },
+        {
+          "name": "Label",
+          "value": 69
+        },
+        {
+          "name": "Legend",
+          "value": 70
+        },
+        {
+          "name": "LI",
+          "value": 71
+        },
+        {
+          "name": "Link",
+          "value": 72
+        },
+        {
+          "name": "Listing",
+          "value": 73
+        },
+        {
+          "name": "Main",
+          "value": 74
+        },
+        {
+          "name": "Map",
+          "value": 75
+        },
+        {
+          "name": "Mark",
+          "value": 76
+        },
+        {
+          "name": "Marquee",
+          "value": 77
+        },
+        {
+          "name": "Menu",
+          "value": 78
+        },
+        {
+          "name": "MenuItem",
+          "value": 79
+        },
+        {
+          "name": "Meta",
+          "value": 80
+        },
+        {
+          "name": "Meter",
+          "value": 81
+        },
+        {
+          "name": "Nav",
+          "value": 82
+        },
+        {
+          "name": "NextId",
+          "value": 83
+        },
+        {
+          "name": "NoBR",
+          "value": 84
+        },
+        {
+          "name": "NoEmbed",
+          "value": 85
+        },
+        {
+          "name": "NoFrames",
+          "value": 86
+        },
+        {
+          "name": "NoScript",
+          "value": 87
+        },
+        {
+          "name": "Object",
+          "value": 88
+        },
+        {
+          "name": "OL",
+          "value": 89
+        },
+        {
+          "name": "OptGroup",
+          "value": 90
+        },
+        {
+          "name": "Option",
+          "value": 91
+        },
+        {
+          "name": "Output",
+          "value": 92
+        },
+        {
+          "name": "P",
+          "value": 93
+        },
+        {
+          "name": "Param",
+          "value": 94
+        },
+        {
+          "name": "PlainText",
+          "value": 95
+        },
+        {
+          "name": "Pre",
+          "value": 96
+        },
+        {
+          "name": "Progress",
+          "value": 97
+        },
+        {
+          "name": "Q",
+          "value": 98
+        },
+        {
+          "name": "RP",
+          "value": 99
+        },
+        {
+          "name": "RT",
+          "value": 100
+        },
+        {
+          "name": "Ruby",
+          "value": 101
+        },
+        {
+          "name": "S",
+          "value": 102
+        },
+        {
+          "name": "Samp",
+          "value": 103
+        },
+        {
+          "name": "Script",
+          "value": 104
+        },
+        {
+          "name": "Section",
+          "value": 105
+        },
+        {
+          "name": "Select",
+          "value": 106
+        },
+        {
+          "name": "Small",
+          "value": 107
+        },
+        {
+          "name": "Source",
+          "value": 108
+        },
+        {
+          "name": "Span",
+          "value": 109
+        },
+        {
+          "name": "Strike",
+          "value": 110
+        },
+        {
+          "name": "Strong",
+          "value": 111
+        },
+        {
+          "name": "Style",
+          "value": 112
+        },
+        {
+          "name": "Sub",
+          "value": 113
+        },
+        {
+          "name": "Summary",
+          "value": 114
+        },
+        {
+          "name": "Sup",
+          "value": 115
+        },
+        {
+          "name": "Table",
+          "value": 116
+        },
+        {
+          "name": "TBody",
+          "value": 117
+        },
+        {
+          "name": "TD",
+          "value": 118
+        },
+        {
+          "name": "TextArea",
+          "value": 119
+        },
+        {
+          "name": "Tfoot",
+          "value": 120
+        },
+        {
+          "name": "TH",
+          "value": 121
+        },
+        {
+          "name": "Thread",
+          "value": 122
+        },
+        {
+          "name": "Time",
+          "value": 123
+        },
+        {
+          "name": "Title",
+          "value": 124
+        },
+        {
+          "name": "TR",
+          "value": 125
+        },
+        {
+          "name": "Track",
+          "value": 126
+        },
+        {
+          "name": "TT",
+          "value": 127
+        },
+        {
+          "name": "U",
+          "value": 128
+        },
+        {
+          "name": "UL",
+          "value": 129
+        },
+        {
+          "name": "Var",
+          "value": 130
+        },
+        {
+          "name": "Video",
+          "value": 131
+        },
+        {
+          "name": "Wbr",
+          "value": 132
+        },
+        {
+          "name": "Xml",
+          "value": 133
+        },
+        {
+          "name": "Xmp",
+          "value": 134
+        }
+      ]
+    },
+    {
+      "fullName": "MimeKit.Text.HtmlTokenizerState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Data",
+          "value": 0
+        },
+        {
+          "name": "CharacterReferenceInData",
+          "value": 1
+        },
+        {
+          "name": "RcData",
+          "value": 2
+        },
+        {
+          "name": "CharacterReferenceInRcData",
+          "value": 3
+        },
+        {
+          "name": "RawText",
+          "value": 4
+        },
+        {
+          "name": "ScriptData",
+          "value": 5
+        },
+        {
+          "name": "PlainText",
+          "value": 6
+        },
+        {
+          "name": "TagOpen",
+          "value": 7
+        },
+        {
+          "name": "EndTagOpen",
+          "value": 8
+        },
+        {
+          "name": "TagName",
+          "value": 9
+        },
+        {
+          "name": "RcDataLessThan",
+          "value": 10
+        },
+        {
+          "name": "RcDataEndTagOpen",
+          "value": 11
+        },
+        {
+          "name": "RcDataEndTagName",
+          "value": 12
+        },
+        {
+          "name": "RawTextLessThan",
+          "value": 13
+        },
+        {
+          "name": "RawTextEndTagOpen",
+          "value": 14
+        },
+        {
+          "name": "RawTextEndTagName",
+          "value": 15
+        },
+        {
+          "name": "ScriptDataLessThan",
+          "value": 16
+        },
+        {
+          "name": "ScriptDataEndTagOpen",
+          "value": 17
+        },
+        {
+          "name": "ScriptDataEndTagName",
+          "value": 18
+        },
+        {
+          "name": "ScriptDataEscapeStart",
+          "value": 19
+        },
+        {
+          "name": "ScriptDataEscapeStartDash",
+          "value": 20
+        },
+        {
+          "name": "ScriptDataEscaped",
+          "value": 21
+        },
+        {
+          "name": "ScriptDataEscapedDash",
+          "value": 22
+        },
+        {
+          "name": "ScriptDataEscapedDashDash",
+          "value": 23
+        },
+        {
+          "name": "ScriptDataEscapedLessThan",
+          "value": 24
+        },
+        {
+          "name": "ScriptDataEscapedEndTagOpen",
+          "value": 25
+        },
+        {
+          "name": "ScriptDataEscapedEndTagName",
+          "value": 26
+        },
+        {
+          "name": "ScriptDataDoubleEscapeStart",
+          "value": 27
+        },
+        {
+          "name": "ScriptDataDoubleEscaped",
+          "value": 28
+        },
+        {
+          "name": "ScriptDataDoubleEscapedDash",
+          "value": 29
+        },
+        {
+          "name": "ScriptDataDoubleEscapedDashDash",
+          "value": 30
+        },
+        {
+          "name": "ScriptDataDoubleEscapedLessThan",
+          "value": 31
+        },
+        {
+          "name": "ScriptDataDoubleEscapeEnd",
+          "value": 32
+        },
+        {
+          "name": "BeforeAttributeName",
+          "value": 33
+        },
+        {
+          "name": "AttributeName",
+          "value": 34
+        },
+        {
+          "name": "AfterAttributeName",
+          "value": 35
+        },
+        {
+          "name": "BeforeAttributeValue",
+          "value": 36
+        },
+        {
+          "name": "AttributeValueQuoted",
+          "value": 37
+        },
+        {
+          "name": "AttributeValueUnquoted",
+          "value": 38
+        },
+        {
+          "name": "CharacterReferenceInAttributeValue",
+          "value": 39
+        },
+        {
+          "name": "AfterAttributeValueQuoted",
+          "value": 40
+        },
+        {
+          "name": "SelfClosingStartTag",
+          "value": 41
+        },
+        {
+          "name": "BogusComment",
+          "value": 42
+        },
+        {
+          "name": "MarkupDeclarationOpen",
+          "value": 43
+        },
+        {
+          "name": "CommentStart",
+          "value": 44
+        },
+        {
+          "name": "CommentStartDash",
+          "value": 45
+        },
+        {
+          "name": "Comment",
+          "value": 46
+        },
+        {
+          "name": "CommentEndDash",
+          "value": 47
+        },
+        {
+          "name": "CommentEnd",
+          "value": 48
+        },
+        {
+          "name": "CommentEndBang",
+          "value": 49
+        },
+        {
+          "name": "DocType",
+          "value": 50
+        },
+        {
+          "name": "BeforeDocTypeName",
+          "value": 51
+        },
+        {
+          "name": "DocTypeName",
+          "value": 52
+        },
+        {
+          "name": "AfterDocTypeName",
+          "value": 53
+        },
+        {
+          "name": "AfterDocTypePublicKeyword",
+          "value": 54
+        },
+        {
+          "name": "BeforeDocTypePublicIdentifier",
+          "value": 55
+        },
+        {
+          "name": "DocTypePublicIdentifierQuoted",
+          "value": 56
+        },
+        {
+          "name": "AfterDocTypePublicIdentifier",
+          "value": 57
+        },
+        {
+          "name": "BetweenDocTypePublicAndSystemIdentifiers",
+          "value": 58
+        },
+        {
+          "name": "AfterDocTypeSystemKeyword",
+          "value": 59
+        },
+        {
+          "name": "BeforeDocTypeSystemIdentifier",
+          "value": 60
+        },
+        {
+          "name": "DocTypeSystemIdentifierQuoted",
+          "value": 61
+        },
+        {
+          "name": "AfterDocTypeSystemIdentifier",
+          "value": 62
+        },
+        {
+          "name": "BogusDocType",
+          "value": 63
+        },
+        {
+          "name": "CDataSection",
+          "value": 64
+        },
+        {
+          "name": "EndOfFile",
+          "value": 65
+        }
+      ]
+    },
+    {
+      "fullName": "MimeKit.Text.HtmlTokenKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "CData",
+          "value": 0
+        },
+        {
+          "name": "Comment",
+          "value": 1
+        },
+        {
+          "name": "Data",
+          "value": 2
+        },
+        {
+          "name": "DocType",
+          "value": 3
+        },
+        {
+          "name": "ScriptData",
+          "value": 4
+        },
+        {
+          "name": "Tag",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "MimeKit.Text.HtmlWriterState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "Tag",
+          "value": 1
+        },
+        {
+          "name": "Attribute",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "MimeKit.Text.TextFormat",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Plain",
+          "value": 0
+        },
+        {
+          "name": "Text",
+          "value": 0
+        },
+        {
+          "name": "Flowed",
+          "value": 1
+        },
+        {
+          "name": "Html",
+          "value": 2
+        },
+        {
+          "name": "Enriched",
+          "value": 3
+        },
+        {
+          "name": "CompressedRichText",
+          "value": 4
+        },
+        {
+          "name": "RichText",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "MimeKit.Encodings.QEncodeMode",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Phrase",
+          "value": 0
+        },
+        {
+          "name": "Text",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "MimeKit.Cryptography.DigestAlgorithm",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "MD5",
+          "value": 1
+        },
+        {
+          "name": "Sha1",
+          "value": 2
+        },
+        {
+          "name": "RipeMD160",
+          "value": 3
+        },
+        {
+          "name": "DoubleSha",
+          "value": 4
+        },
+        {
+          "name": "MD2",
+          "value": 5
+        },
+        {
+          "name": "Tiger192",
+          "value": 6
+        },
+        {
+          "name": "Haval5160",
+          "value": 7
+        },
+        {
+          "name": "Sha256",
+          "value": 8
+        },
+        {
+          "name": "Sha384",
+          "value": 9
+        },
+        {
+          "name": "Sha512",
+          "value": 10
+        },
+        {
+          "name": "Sha224",
+          "value": 11
+        },
+        {
+          "name": "MD4",
+          "value": 301
+        }
+      ]
+    },
+    {
+      "fullName": "MimeKit.Cryptography.DkimCanonicalizationAlgorithm",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Simple",
+          "value": 0
+        },
+        {
+          "name": "Relaxed",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "MimeKit.Cryptography.DkimSignatureAlgorithm",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "RsaSha1",
+          "value": 0
+        },
+        {
+          "name": "RsaSha256",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "MimeKit.Cryptography.EncryptionAlgorithm",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Aes128",
+          "value": 0
+        },
+        {
+          "name": "Aes192",
+          "value": 1
+        },
+        {
+          "name": "Aes256",
+          "value": 2
+        },
+        {
+          "name": "Camellia128",
+          "value": 3
+        },
+        {
+          "name": "Camellia192",
+          "value": 4
+        },
+        {
+          "name": "Camellia256",
+          "value": 5
+        },
+        {
+          "name": "Cast5",
+          "value": 6
+        },
+        {
+          "name": "Des",
+          "value": 7
+        },
+        {
+          "name": "TripleDes",
+          "value": 8
+        },
+        {
+          "name": "Idea",
+          "value": 9
+        },
+        {
+          "name": "Blowfish",
+          "value": 10
+        },
+        {
+          "name": "Twofish",
+          "value": 11
+        },
+        {
+          "name": "RC240",
+          "value": 12
+        },
+        {
+          "name": "RC264",
+          "value": 13
+        },
+        {
+          "name": "RC2128",
+          "value": 14
+        }
+      ]
+    },
+    {
+      "fullName": "MimeKit.Cryptography.OpenPgpDataType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "SignedMessage",
+          "value": 1
+        },
+        {
+          "name": "EncryptedMessage",
+          "value": 2
+        },
+        {
+          "name": "PublicKey",
+          "value": 3
+        },
+        {
+          "name": "PrivateKey",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "MimeKit.Cryptography.OpenPgpKeyCertification",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "GenericCertification",
+          "value": 16
+        },
+        {
+          "name": "PersonaCertification",
+          "value": 17
+        },
+        {
+          "name": "CasualCertification",
+          "value": 18
+        },
+        {
+          "name": "PositiveCertification",
+          "value": 19
+        }
+      ]
+    },
+    {
+      "fullName": "MimeKit.Cryptography.PublicKeyAlgorithm",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "RsaGeneral",
+          "value": 1
+        },
+        {
+          "name": "RsaEncrypt",
+          "value": 2
+        },
+        {
+          "name": "RsaSign",
+          "value": 3
+        },
+        {
+          "name": "ElGamalEncrypt",
+          "value": 16
+        },
+        {
+          "name": "Dsa",
+          "value": 17
+        },
+        {
+          "name": "EllipticCurve",
+          "value": 18
+        },
+        {
+          "name": "EllipticCurveDsa",
+          "value": 19
+        },
+        {
+          "name": "ElGamalGeneral",
+          "value": 20
+        },
+        {
+          "name": "DiffieHellman",
+          "value": 21
+        },
+        {
+          "name": "EdwardsCurveDsa",
+          "value": 22
+        }
+      ]
+    },
+    {
+      "fullName": "MimeKit.Cryptography.SecureMimeType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "CompressedData",
+          "value": 0
+        },
+        {
+          "name": "EnvelopedData",
+          "value": 1
+        },
+        {
+          "name": "SignedData",
+          "value": 2
+        },
+        {
+          "name": "CertsOnly",
+          "value": 3
+        },
+        {
+          "name": "Unknown",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "MimeKit.Cryptography.SubjectIdentifierType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "IssuerAndSerialNumber",
+          "value": 1
+        },
+        {
+          "name": "SubjectKeyIdentifier",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "MimeKit.Cryptography.X509CertificateRecordFields",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Id",
+          "value": 1
+        },
+        {
+          "name": "Trusted",
+          "value": 2
+        },
+        {
+          "name": "Algorithms",
+          "value": 8
+        },
+        {
+          "name": "AlgorithmsUpdated",
+          "value": 16
+        },
+        {
+          "name": "Certificate",
+          "value": 32
+        },
+        {
+          "name": "PrivateKey",
+          "value": 64
+        }
+      ]
+    },
+    {
+      "fullName": "MimeKit.Cryptography.X509CrlRecordFields",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Id",
+          "value": 1
+        },
+        {
+          "name": "IsDelta",
+          "value": 2
+        },
+        {
+          "name": "IssuerName",
+          "value": 4
+        },
+        {
+          "name": "ThisUpdate",
+          "value": 8
+        },
+        {
+          "name": "NextUpdate",
+          "value": 16
+        },
+        {
+          "name": "Crl",
+          "value": 32
+        }
+      ]
+    },
+    {
+      "fullName": "MimeKit.Cryptography.X509KeyUsageFlags",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "EncipherOnly",
+          "value": 1
+        },
+        {
+          "name": "CrlSign",
+          "value": 2
+        },
+        {
+          "name": "KeyCertSign",
+          "value": 4
+        },
+        {
+          "name": "KeyAgreement",
+          "value": 8
+        },
+        {
+          "name": "DataEncipherment",
+          "value": 16
+        },
+        {
+          "name": "KeyEncipherment",
+          "value": 32
+        },
+        {
+          "name": "NonRepudiation",
+          "value": 64
+        },
+        {
+          "name": "DigitalSignature",
+          "value": 128
+        },
+        {
+          "name": "DecipherOnly",
+          "value": 32768
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Mail.SecureSocketEncryption",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Auto",
+          "value": 1
+        },
+        {
+          "name": "SslOnConnect",
+          "value": 2
+        },
+        {
+          "name": "StartTls",
+          "value": 3
+        },
+        {
+          "name": "StartTlsWhenAvailable",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Mail.MailServiceFactory.EmailProtocol",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "POP3",
+          "value": 0
+        },
+        {
+          "name": "IMAP",
+          "value": 1
+        },
+        {
+          "name": "SMTP",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Mail.KnownFolders",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Inbox",
+          "value": 6
+        },
+        {
+          "name": "SentMail",
+          "value": 5
+        },
+        {
+          "name": "Outbox",
+          "value": 4
+        },
+        {
+          "name": "Junk",
+          "value": 23
+        },
+        {
+          "name": "Drafts",
+          "value": 16
+        },
+        {
+          "name": "DeletedItems",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Office.Interop.Outlook.OlAddressEntryUserType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "olExchangeUserAddressEntry",
+          "value": 0
+        },
+        {
+          "name": "olExchangeDistributionListAddressEntry",
+          "value": 1
+        },
+        {
+          "name": "olExchangePublicFolderAddressEntry",
+          "value": 2
+        },
+        {
+          "name": "olExchangeAgentAddressEntry",
+          "value": 3
+        },
+        {
+          "name": "olExchangeOrganizationAddressEntry",
+          "value": 4
+        },
+        {
+          "name": "olExchangeRemoteUserAddressEntry",
+          "value": 5
+        },
+        {
+          "name": "olOutlookContactAddressEntry",
+          "value": 10
+        },
+        {
+          "name": "olOutlookDistributionListAddressEntry",
+          "value": 11
+        },
+        {
+          "name": "olLdapAddressEntry",
+          "value": 20
+        },
+        {
+          "name": "olSmtpAddressEntry",
+          "value": 30
+        },
+        {
+          "name": "olOtherAddressEntry",
+          "value": 40
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Office.Interop.Outlook.OlBodyFormat",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "olFormatUnspecified",
+          "value": 0
+        },
+        {
+          "name": "olFormatPlain",
+          "value": 1
+        },
+        {
+          "name": "olFormatHTML",
+          "value": 2
+        },
+        {
+          "name": "olFormatRichText",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Office.Interop.Outlook.OlDefaultFolders",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "olFolderDeletedItems",
+          "value": 3
+        },
+        {
+          "name": "olFolderOutbox",
+          "value": 4
+        },
+        {
+          "name": "olFolderSentMail",
+          "value": 5
+        },
+        {
+          "name": "olFolderInbox",
+          "value": 6
+        },
+        {
+          "name": "olFolderCalendar",
+          "value": 9
+        },
+        {
+          "name": "olFolderContacts",
+          "value": 10
+        },
+        {
+          "name": "olFolderJournal",
+          "value": 11
+        },
+        {
+          "name": "olFolderNotes",
+          "value": 12
+        },
+        {
+          "name": "olFolderTasks",
+          "value": 13
+        },
+        {
+          "name": "olFolderDrafts",
+          "value": 16
+        },
+        {
+          "name": "olPublicFoldersAllPublicFolders",
+          "value": 18
+        },
+        {
+          "name": "olFolderConflicts",
+          "value": 19
+        },
+        {
+          "name": "olFolderSyncIssues",
+          "value": 20
+        },
+        {
+          "name": "olFolderLocalFailures",
+          "value": 21
+        },
+        {
+          "name": "olFolderServerFailures",
+          "value": 22
+        },
+        {
+          "name": "olFolderJunk",
+          "value": 23
+        },
+        {
+          "name": "olFolderRssFeeds",
+          "value": 25
+        },
+        {
+          "name": "olFolderToDo",
+          "value": 28
+        },
+        {
+          "name": "olFolderManagedEmail",
+          "value": 29
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Office.Interop.Outlook.OlImportance",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "olImportanceLow",
+          "value": 0
+        },
+        {
+          "name": "olImportanceNormal",
+          "value": 1
+        },
+        {
+          "name": "olImportanceHigh",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Office.Interop.Outlook.OlItemType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "olMailItem",
+          "value": 0
+        },
+        {
+          "name": "olAppointmentItem",
+          "value": 1
+        },
+        {
+          "name": "olContactItem",
+          "value": 2
+        },
+        {
+          "name": "olTaskItem",
+          "value": 3
+        },
+        {
+          "name": "olJournalItem",
+          "value": 4
+        },
+        {
+          "name": "olNoteItem",
+          "value": 5
+        },
+        {
+          "name": "olPostItem",
+          "value": 6
+        },
+        {
+          "name": "olDistributionListItem",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Office.Interop.Outlook.OlMailRecipientType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "olOriginator",
+          "value": 0
+        },
+        {
+          "name": "olTo",
+          "value": 1
+        },
+        {
+          "name": "olCC",
+          "value": 2
+        },
+        {
+          "name": "olBCC",
+          "value": 3
+        }
+      ]
+    }
+  ],
+  "namespaceMappings": [
+    {
+      "xmlNamespace": "http://schemas.uipath.com/workflow/activities",
+      "prefix": "ui",
+      "clrNamespaces": [
+        "UiPath.Mail.Activities",
+        "UiPath.Mail.Exchange.Activities",
+        "UiPath.Mail.IMAP.Activities",
+        "UiPath.Mail.Outlook.Activities",
+        "UiPath.Mail.POP3.Activities",
+        "UiPath.Mail.SMTP.Activities"
+      ],
+      "sourceAssembly": "UiPath.Mail.Activities"
+    }
+  ]
+}

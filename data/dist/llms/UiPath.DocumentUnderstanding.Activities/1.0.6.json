@@ -1,0 +1,829 @@
+{
+  "schema": {
+    "id": "activity-catalog",
+    "version": "v0.3"
+  },
+  "source": {
+    "kind": "nuget-package",
+    "id": "UiPath.DocumentUnderstanding.Activities",
+    "version": "1.0.6",
+    "feedUrl": null,
+    "authors": "UiPath",
+    "projectUrl": "https://activities.uipath.com/docs/about-the-intelligent-ocr-activities-pack",
+    "description": "Core activities that enable the usage of a complete document processing framework, from taxonomy definition, digitization, document classification, data extraction, data validation and classifier / extractor training.",
+    "license": "https://www.uipath.com/hubfs/legalspot/UiPath_MSSA.pdf",
+    "tags": "UiPathActivities",
+    "packageTypes": []
+  },
+  "generatedAt": "2026-04-10T09:21:22Z",
+  "activities": [
+    {
+      "id": "UiPath.IntelligentOCR.StudioWeb.Activities.ExtractDocumentData@UiPath.DocumentUnderstanding.Activities/1.0.6",
+      "fullName": "UiPath.IntelligentOCR.StudioWeb.Activities.ExtractDocumentData",
+      "displayName": "Extract Document Data",
+      "description": "Extracts data from a document and stores the results into automatically generated variables.",
+      "category": "Document Understanding",
+      "visibility": "browsable",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "isObsolete": false,
+      "obsoleteMessage": null,
+      "xmlNamespace": null,
+      "xmlPrefix": null,
+      "members": [
+        {
+          "name": "ProjectId",
+          "displayName": "ProjectId",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "DocType",
+          "displayName": "DocType",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "FileInput",
+          "displayName": "FileInput",
+          "dataType": "System.Activities.InArgument<UiPath.Platform.ResourceHandling.IResource>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "Outputs",
+          "displayName": "Outputs",
+          "dataType": "System.Collections.Generic.Dictionary<System.String, System.Activities.OutArgument<System.String>>",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ExtractionResults",
+          "displayName": "ExtractionResults",
+          "dataType": "System.Activities.OutArgument<System.Collections.Generic.IDictionary<System.String, System.Object>>",
+          "memberKind": "argument",
+          "argumentDirection": "out",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        }
+      ]
+    }
+  ],
+  "enums": [
+    {
+      "fullName": "UiPath.DU.Integration.AccessProviderScope",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "OrchestratorScope",
+          "value": 0
+        },
+        {
+          "name": "AiFabricScope",
+          "value": 1
+        },
+        {
+          "name": "AiFabricPublicScope",
+          "value": 2
+        },
+        {
+          "name": "OrchestratorAndAIFabricScope",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DU.AiFabricClient.AuditLogSeverity",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "INFO",
+          "value": 0
+        },
+        {
+          "name": "SUCCESS",
+          "value": 1
+        },
+        {
+          "name": "WARN",
+          "value": 2
+        },
+        {
+          "name": "ERROR",
+          "value": 3
+        },
+        {
+          "name": "FATAL",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.ConfigurationEntryValueType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "String",
+          "value": 0
+        },
+        {
+          "name": "Number",
+          "value": 1
+        },
+        {
+          "name": "Choice",
+          "value": 2
+        },
+        {
+          "name": "Boolean",
+          "value": 3
+        },
+        {
+          "name": "Section",
+          "value": 4
+        },
+        {
+          "name": "Secret",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.ExecutionSettingsConfigurationScope",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Global",
+          "value": 0
+        },
+        {
+          "name": "Robot",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Orchestrator.Client.Models.SettingsDtoScope",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Application",
+          "value": 0
+        },
+        {
+          "name": "Tenant",
+          "value": 1
+        },
+        {
+          "name": "User",
+          "value": 2
+        },
+        {
+          "name": "All",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.IntelligentOCR.Activities.Digitization.ApplyOcrOnPdfArgument",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Auto",
+          "value": 0
+        },
+        {
+          "name": "Yes",
+          "value": 1
+        },
+        {
+          "name": "No",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.IntelligentOCR.Activities.Actions.Model.DocumentActionPriority",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Low",
+          "value": 0
+        },
+        {
+          "name": "Medium",
+          "value": 1
+        },
+        {
+          "name": "High",
+          "value": 2
+        },
+        {
+          "name": "Critical",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.IntelligentOCR.Activities.Actions.Model.DocumentActionStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unassigned",
+          "value": 0
+        },
+        {
+          "name": "Pending",
+          "value": 1
+        },
+        {
+          "name": "Completed",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.IntelligentOCR.Activities.Actions.Model.DocumentActionType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Validation",
+          "value": 2
+        },
+        {
+          "name": "Classification",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Shared.JobWrapper.JobObjectInfoType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AssociateCompletionPortInformation",
+          "value": 7
+        },
+        {
+          "name": "BasicLimitInformation",
+          "value": 2
+        },
+        {
+          "name": "BasicUIRestrictions",
+          "value": 4
+        },
+        {
+          "name": "EndOfJobTimeInformation",
+          "value": 6
+        },
+        {
+          "name": "ExtendedLimitInformation",
+          "value": 9
+        },
+        {
+          "name": "SecurityLimitInformation",
+          "value": 5
+        },
+        {
+          "name": "GroupInformation",
+          "value": 11
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Shared.NativeMessageBox.MessageBoxOptions",
+      "underlyingType": "System.UInt32",
+      "members": [
+        {
+          "name": "OkOnly",
+          "value": 0
+        },
+        {
+          "name": "OkCancel",
+          "value": 1
+        },
+        {
+          "name": "AbortRetryIgnore",
+          "value": 2
+        },
+        {
+          "name": "YesNoCancel",
+          "value": 3
+        },
+        {
+          "name": "YesNo",
+          "value": 4
+        },
+        {
+          "name": "RetryCancel",
+          "value": 5
+        },
+        {
+          "name": "CancelTryContinue",
+          "value": 6
+        },
+        {
+          "name": "IconHand",
+          "value": 16
+        },
+        {
+          "name": "IconQuestion",
+          "value": 32
+        },
+        {
+          "name": "IconExclamation",
+          "value": 48
+        },
+        {
+          "name": "IconAsterisk",
+          "value": 64
+        },
+        {
+          "name": "UserIcon",
+          "value": 128
+        },
+        {
+          "name": "IconWarning",
+          "value": 48
+        },
+        {
+          "name": "IconError",
+          "value": 16
+        },
+        {
+          "name": "IconInformation",
+          "value": 64
+        },
+        {
+          "name": "IconStop",
+          "value": 16
+        },
+        {
+          "name": "DefButton1",
+          "value": 0
+        },
+        {
+          "name": "DefButton2",
+          "value": 256
+        },
+        {
+          "name": "DefButton3",
+          "value": 512
+        },
+        {
+          "name": "DefButton4",
+          "value": 768
+        },
+        {
+          "name": "ApplicationModal",
+          "value": 0
+        },
+        {
+          "name": "SystemModal",
+          "value": 4096
+        },
+        {
+          "name": "TaskModal",
+          "value": 8192
+        },
+        {
+          "name": "Help",
+          "value": 16384
+        },
+        {
+          "name": "NoFocus",
+          "value": 32768
+        },
+        {
+          "name": "SetForeground",
+          "value": 65536
+        },
+        {
+          "name": "DefaultDesktopOnly",
+          "value": 131072
+        },
+        {
+          "name": "Topmost",
+          "value": 262144
+        },
+        {
+          "name": "Right",
+          "value": 524288
+        },
+        {
+          "name": "RTLReading",
+          "value": 1048576
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Shared.NativeMessageBox.MessageBoxResult",
+      "underlyingType": "System.UInt32",
+      "members": [
+        {
+          "name": "Error",
+          "value": 0
+        },
+        {
+          "name": "Ok",
+          "value": 1
+        },
+        {
+          "name": "Cancel",
+          "value": 2
+        },
+        {
+          "name": "Abort",
+          "value": 3
+        },
+        {
+          "name": "Retry",
+          "value": 4
+        },
+        {
+          "name": "Ignore",
+          "value": 5
+        },
+        {
+          "name": "Yes",
+          "value": 6
+        },
+        {
+          "name": "No",
+          "value": 7
+        },
+        {
+          "name": "Close",
+          "value": 8
+        },
+        {
+          "name": "Help",
+          "value": 9
+        },
+        {
+          "name": "TryAgain",
+          "value": 10
+        },
+        {
+          "name": "Continue",
+          "value": 11
+        },
+        {
+          "name": "Timeout",
+          "value": 32000
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.SmartData.ImageProcessing.Blobs.PolygonType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "Trapezoid",
+          "value": 1
+        },
+        {
+          "name": "RightAngledTrapezoid",
+          "value": 2
+        },
+        {
+          "name": "Parallelogram",
+          "value": 3
+        },
+        {
+          "name": "Rectangle",
+          "value": 4
+        },
+        {
+          "name": "Rhombus",
+          "value": 5
+        },
+        {
+          "name": "Square",
+          "value": 6
+        },
+        {
+          "name": "Triangle",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.SmartData.ImageProcessing.Blobs.InternalShapeType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "Circle",
+          "value": 1
+        },
+        {
+          "name": "Triangle",
+          "value": 2
+        },
+        {
+          "name": "Quadrilateral",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.Activities.Anchor2.Relation.Direction",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Top",
+          "value": 0
+        },
+        {
+          "name": "TopLeft",
+          "value": 1
+        },
+        {
+          "name": "Left",
+          "value": 2
+        },
+        {
+          "name": "BottomLeft",
+          "value": 3
+        },
+        {
+          "name": "Bottom",
+          "value": 4
+        },
+        {
+          "name": "BottomRight",
+          "value": 5
+        },
+        {
+          "name": "Right",
+          "value": 6
+        },
+        {
+          "name": "TopRight",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.Activities.Anchor2.Relation.DirectionCase",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Straight",
+          "value": 0
+        },
+        {
+          "name": "Aligned",
+          "value": 1
+        },
+        {
+          "name": "Diagonal",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.Activities.Anchor2.Relation.OverlapPercentage",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Small",
+          "value": 0
+        },
+        {
+          "name": "Mid",
+          "value": 1
+        },
+        {
+          "name": "Big",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Shared.Anchor2.Anchor2Version",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "V1",
+          "value": 0
+        },
+        {
+          "name": "V2",
+          "value": 1
+        },
+        {
+          "name": "V3",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Shared.Anchor2.AutoAnchor.AutoAnchorSearchType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Left",
+          "value": 1
+        },
+        {
+          "name": "Right",
+          "value": 2
+        },
+        {
+          "name": "Top",
+          "value": 4
+        },
+        {
+          "name": "Bottom",
+          "value": 8
+        },
+        {
+          "name": "Inner",
+          "value": 16
+        },
+        {
+          "name": "ContainedBy",
+          "value": 32
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Shared.Anchor2.AutoAnchor.Contracts.AutoAnchorElementType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "AnyText",
+          "value": 1
+        },
+        {
+          "name": "AnyWordGroup",
+          "value": 2
+        },
+        {
+          "name": "ArrowButton",
+          "value": 3
+        },
+        {
+          "name": "Button",
+          "value": 4
+        },
+        {
+          "name": "CheckBox",
+          "value": 5
+        },
+        {
+          "name": "Icon",
+          "value": 6
+        },
+        {
+          "name": "InputBox",
+          "value": 7
+        },
+        {
+          "name": "RadioButton",
+          "value": 8
+        },
+        {
+          "name": "Text",
+          "value": 9
+        },
+        {
+          "name": "Cell",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.SmartData.Utils.ApplyOcrOnPdf",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Auto",
+          "value": 0
+        },
+        {
+          "name": "Yes",
+          "value": 1
+        },
+        {
+          "name": "No",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.SmartData.ValidationStation.DTO.Customization.SelectionMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Tokens",
+          "value": 1
+        },
+        {
+          "name": "Area",
+          "value": 2
+        },
+        {
+          "name": "UserChoice",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.SmartData.WPF.Theme.ApplicationTheme",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Light",
+          "value": 0
+        },
+        {
+          "name": "Dark",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.SmartData.WPF.Dialog.FileFilter",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Json",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "namespaceMappings": []
+}

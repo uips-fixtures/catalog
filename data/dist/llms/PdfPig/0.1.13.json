@@ -1,0 +1,4783 @@
+{
+  "schema": {
+    "id": "activity-catalog",
+    "version": "v0.3"
+  },
+  "source": {
+    "kind": "nuget-package",
+    "id": "PdfPig",
+    "version": "0.1.13",
+    "feedUrl": null,
+    "authors": "UglyToad",
+    "projectUrl": "https://github.com/UglyToad/PdfPig",
+    "description": "Reads text content from PDF documents and supports document creation. Apache 2.0 licensed.",
+    "license": "Apache-2.0",
+    "tags": "PDF Reader Document Adobe PDFBox PdfPig pdf-extract pdf-to-text pdf file text C# dotnet .NET",
+    "packageTypes": []
+  },
+  "generatedAt": "2026-04-10T09:21:16Z",
+  "activities": [],
+  "enums": [
+    {
+      "fullName": "UglyToad.PdfPig.Core.FillingRule",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "EvenOdd",
+          "value": 1
+        },
+        {
+          "name": "NonZeroWinding",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.Core.TextRenderingMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Fill",
+          "value": 0
+        },
+        {
+          "name": "Stroke",
+          "value": 1
+        },
+        {
+          "name": "FillThenStroke",
+          "value": 2
+        },
+        {
+          "name": "Neither",
+          "value": 3
+        },
+        {
+          "name": "FillClip",
+          "value": 4
+        },
+        {
+          "name": "StrokeClip",
+          "value": 5
+        },
+        {
+          "name": "FillThenStrokeClip",
+          "value": 6
+        },
+        {
+          "name": "NeitherClip",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.XObjects.XObjectType",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Image",
+          "value": 0
+        },
+        {
+          "name": "Form",
+          "value": 1
+        },
+        {
+          "name": "PostScript",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.Writer.PdfAStandard",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "A1B",
+          "value": 1
+        },
+        {
+          "name": "A1A",
+          "value": 2
+        },
+        {
+          "name": "A2B",
+          "value": 3
+        },
+        {
+          "name": "A2A",
+          "value": 4
+        },
+        {
+          "name": "A3B",
+          "value": 5
+        },
+        {
+          "name": "A3A",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.Writer.PdfWriterType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "ObjectInMemoryDedup",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.Rendering.PdfRendererImageFormat",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Bmp",
+          "value": 0
+        },
+        {
+          "name": "Jpeg",
+          "value": 1
+        },
+        {
+          "name": "Png",
+          "value": 2
+        },
+        {
+          "name": "Tiff",
+          "value": 3
+        },
+        {
+          "name": "Gif",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.PdfFonts.DescriptorFontFile.FontFileType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Type1",
+          "value": 0
+        },
+        {
+          "name": "TrueType",
+          "value": 1
+        },
+        {
+          "name": "FromSubtype",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.PdfFonts.FontDescriptorFlags",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "FixedPitch",
+          "value": 1
+        },
+        {
+          "name": "Serif",
+          "value": 2
+        },
+        {
+          "name": "Symbolic",
+          "value": 4
+        },
+        {
+          "name": "Script",
+          "value": 8
+        },
+        {
+          "name": "NonSymbolic",
+          "value": 32
+        },
+        {
+          "name": "Italic",
+          "value": 64
+        },
+        {
+          "name": "AllCap",
+          "value": 65536
+        },
+        {
+          "name": "SmallCap",
+          "value": 131072
+        },
+        {
+          "name": "ForceBold",
+          "value": 262144
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.PdfFonts.FontStretch",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": -1
+        },
+        {
+          "name": "UltraCondensed",
+          "value": 0
+        },
+        {
+          "name": "ExtraCondensed",
+          "value": 1
+        },
+        {
+          "name": "Condensed",
+          "value": 2
+        },
+        {
+          "name": "SemiCondensed",
+          "value": 3
+        },
+        {
+          "name": "Normal",
+          "value": 4
+        },
+        {
+          "name": "SemiExpanded",
+          "value": 5
+        },
+        {
+          "name": "Expanded",
+          "value": 6
+        },
+        {
+          "name": "ExtraExpanded",
+          "value": 7
+        },
+        {
+          "name": "UltraExpanded",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.Outline.Destinations.ExplicitDestinationType",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "XyzCoordinates",
+          "value": 0
+        },
+        {
+          "name": "FitPage",
+          "value": 1
+        },
+        {
+          "name": "FitHorizontally",
+          "value": 2
+        },
+        {
+          "name": "FitVertically",
+          "value": 3
+        },
+        {
+          "name": "FitRectangle",
+          "value": 4
+        },
+        {
+          "name": "FitBoundingBox",
+          "value": 5
+        },
+        {
+          "name": "FitBoundingBoxHorizontally",
+          "value": 6
+        },
+        {
+          "name": "FitBoundingBoxVertically",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.Graphics.SoftMaskType",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Alpha",
+          "value": 0
+        },
+        {
+          "name": "Luminosity",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.Graphics.Core.BlendMode",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Normal",
+          "value": 0
+        },
+        {
+          "name": "Multiply",
+          "value": 1
+        },
+        {
+          "name": "Screen",
+          "value": 2
+        },
+        {
+          "name": "Darken",
+          "value": 3
+        },
+        {
+          "name": "Lighten",
+          "value": 4
+        },
+        {
+          "name": "ColorDodge",
+          "value": 5
+        },
+        {
+          "name": "ColorBurn",
+          "value": 6
+        },
+        {
+          "name": "HardLight",
+          "value": 7
+        },
+        {
+          "name": "SoftLight",
+          "value": 8
+        },
+        {
+          "name": "Overlay",
+          "value": 9
+        },
+        {
+          "name": "Difference",
+          "value": 10
+        },
+        {
+          "name": "Exclusion",
+          "value": 11
+        },
+        {
+          "name": "Hue",
+          "value": 12
+        },
+        {
+          "name": "Saturation",
+          "value": 13
+        },
+        {
+          "name": "Color",
+          "value": 14
+        },
+        {
+          "name": "Luminosity",
+          "value": 15
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.Graphics.Core.LineCapStyle",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Butt",
+          "value": 0
+        },
+        {
+          "name": "Round",
+          "value": 1
+        },
+        {
+          "name": "ProjectingSquare",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.Graphics.Core.LineJoinStyle",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Miter",
+          "value": 0
+        },
+        {
+          "name": "Round",
+          "value": 1
+        },
+        {
+          "name": "Bevel",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.Graphics.Core.RenderingIntent",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AbsoluteColorimetric",
+          "value": 0
+        },
+        {
+          "name": "RelativeColorimetric",
+          "value": 1
+        },
+        {
+          "name": "Saturation",
+          "value": 2
+        },
+        {
+          "name": "Perceptual",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.Graphics.Colors.ChromaticAdaptation.Method",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "XYZScaling",
+          "value": 0
+        },
+        {
+          "name": "Bradford",
+          "value": 1
+        },
+        {
+          "name": "VonKries",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.Graphics.Colors.ColorSpace",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DeviceGray",
+          "value": 0
+        },
+        {
+          "name": "DeviceRGB",
+          "value": 1
+        },
+        {
+          "name": "DeviceCMYK",
+          "value": 2
+        },
+        {
+          "name": "CalGray",
+          "value": 3
+        },
+        {
+          "name": "CalRGB",
+          "value": 4
+        },
+        {
+          "name": "Lab",
+          "value": 5
+        },
+        {
+          "name": "ICCBased",
+          "value": 6
+        },
+        {
+          "name": "Indexed",
+          "value": 7
+        },
+        {
+          "name": "Pattern",
+          "value": 8
+        },
+        {
+          "name": "Separation",
+          "value": 9
+        },
+        {
+          "name": "DeviceN",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.Graphics.Colors.ColorSpaceFamily",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Device",
+          "value": 0
+        },
+        {
+          "name": "CIEBased",
+          "value": 1
+        },
+        {
+          "name": "Special",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.Graphics.Colors.PatternType",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Tiling",
+          "value": 1
+        },
+        {
+          "name": "Shading",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.Graphics.Colors.PatternPaintType",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Coloured",
+          "value": 1
+        },
+        {
+          "name": "Uncoloured",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.Graphics.Colors.PatternTilingType",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "ConstantSpacing",
+          "value": 1
+        },
+        {
+          "name": "NoDistortion",
+          "value": 2
+        },
+        {
+          "name": "ConstantSpacingFasterTiling",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.Graphics.Colors.ShadingType",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "FunctionBased",
+          "value": 1
+        },
+        {
+          "name": "Axial",
+          "value": 2
+        },
+        {
+          "name": "Radial",
+          "value": 3
+        },
+        {
+          "name": "FreeFormGouraud",
+          "value": 4
+        },
+        {
+          "name": "LatticeFormGouraud",
+          "value": 5
+        },
+        {
+          "name": "CoonsPatch",
+          "value": 6
+        },
+        {
+          "name": "TensorProductPatch",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.Functions.FunctionTypes",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Sampled",
+          "value": 0
+        },
+        {
+          "name": "Exponential",
+          "value": 2
+        },
+        {
+          "name": "Stitching",
+          "value": 3
+        },
+        {
+          "name": "PostScript",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.Encryption.CryptDictionary.Method",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "V2",
+          "value": 1
+        },
+        {
+          "name": "AesV2",
+          "value": 2
+        },
+        {
+          "name": "AesV3",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.Encryption.CryptDictionary.TriggerEvent",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DocumentOpen",
+          "value": 0
+        },
+        {
+          "name": "EmbeddedFileOpen",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.CrossReference.CrossReferenceType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Table",
+          "value": 0
+        },
+        {
+          "name": "Stream",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.Content.ArtifactMarkedContentElement.ArtifactType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "Pagination",
+          "value": 1
+        },
+        {
+          "name": "Layout",
+          "value": 2
+        },
+        {
+          "name": "Page",
+          "value": 3
+        },
+        {
+          "name": "Background",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.Content.PageSize",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Custom",
+          "value": 0
+        },
+        {
+          "name": "A0",
+          "value": 3
+        },
+        {
+          "name": "A1",
+          "value": 4
+        },
+        {
+          "name": "A2",
+          "value": 5
+        },
+        {
+          "name": "A3",
+          "value": 6
+        },
+        {
+          "name": "A4",
+          "value": 7
+        },
+        {
+          "name": "A5",
+          "value": 8
+        },
+        {
+          "name": "A6",
+          "value": 9
+        },
+        {
+          "name": "A7",
+          "value": 10
+        },
+        {
+          "name": "A8",
+          "value": 11
+        },
+        {
+          "name": "A9",
+          "value": 12
+        },
+        {
+          "name": "A10",
+          "value": 13
+        },
+        {
+          "name": "Letter",
+          "value": 14
+        },
+        {
+          "name": "Legal",
+          "value": 15
+        },
+        {
+          "name": "Ledger",
+          "value": 16
+        },
+        {
+          "name": "Tabloid",
+          "value": 17
+        },
+        {
+          "name": "Executive",
+          "value": 18
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.Content.TextOrientation",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Other",
+          "value": 0
+        },
+        {
+          "name": "Horizontal",
+          "value": 1
+        },
+        {
+          "name": "Rotate180",
+          "value": 2
+        },
+        {
+          "name": "Rotate90",
+          "value": 3
+        },
+        {
+          "name": "Rotate270",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.Annotations.AnnotationFlags",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Invisible",
+          "value": 1
+        },
+        {
+          "name": "Hidden",
+          "value": 2
+        },
+        {
+          "name": "Print",
+          "value": 4
+        },
+        {
+          "name": "NoZoom",
+          "value": 8
+        },
+        {
+          "name": "NoRotate",
+          "value": 16
+        },
+        {
+          "name": "NoView",
+          "value": 32
+        },
+        {
+          "name": "ReadOnly",
+          "value": 64
+        },
+        {
+          "name": "Locked",
+          "value": 128
+        },
+        {
+          "name": "ToggleNoView",
+          "value": 256
+        },
+        {
+          "name": "LockedContents",
+          "value": 512
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.Annotations.AnnotationType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Text",
+          "value": 0
+        },
+        {
+          "name": "Link",
+          "value": 1
+        },
+        {
+          "name": "FreeText",
+          "value": 2
+        },
+        {
+          "name": "Line",
+          "value": 3
+        },
+        {
+          "name": "Square",
+          "value": 4
+        },
+        {
+          "name": "Circle",
+          "value": 5
+        },
+        {
+          "name": "Polygon",
+          "value": 6
+        },
+        {
+          "name": "PolyLine",
+          "value": 7
+        },
+        {
+          "name": "Highlight",
+          "value": 8
+        },
+        {
+          "name": "Underline",
+          "value": 9
+        },
+        {
+          "name": "Squiggly",
+          "value": 10
+        },
+        {
+          "name": "StrikeOut",
+          "value": 11
+        },
+        {
+          "name": "Stamp",
+          "value": 12
+        },
+        {
+          "name": "Caret",
+          "value": 13
+        },
+        {
+          "name": "Ink",
+          "value": 14
+        },
+        {
+          "name": "Popup",
+          "value": 15
+        },
+        {
+          "name": "FileAttachment",
+          "value": 16
+        },
+        {
+          "name": "Sound",
+          "value": 17
+        },
+        {
+          "name": "Movie",
+          "value": 18
+        },
+        {
+          "name": "Widget",
+          "value": 19
+        },
+        {
+          "name": "Screen",
+          "value": 20
+        },
+        {
+          "name": "PrinterMark",
+          "value": 21
+        },
+        {
+          "name": "TrapNet",
+          "value": 22
+        },
+        {
+          "name": "Watermark",
+          "value": 23
+        },
+        {
+          "name": "Artwork3D",
+          "value": 24
+        },
+        {
+          "name": "Other",
+          "value": 25
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.Actions.ActionType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "GoTo",
+          "value": 0
+        },
+        {
+          "name": "GoToR",
+          "value": 1
+        },
+        {
+          "name": "GoToE",
+          "value": 2
+        },
+        {
+          "name": "Launch",
+          "value": 3
+        },
+        {
+          "name": "Thread",
+          "value": 4
+        },
+        {
+          "name": "URI",
+          "value": 5
+        },
+        {
+          "name": "Sound",
+          "value": 6
+        },
+        {
+          "name": "Movie",
+          "value": 7
+        },
+        {
+          "name": "Hide",
+          "value": 8
+        },
+        {
+          "name": "Named",
+          "value": 9
+        },
+        {
+          "name": "SubmitForm",
+          "value": 10
+        },
+        {
+          "name": "ResetForm",
+          "value": 11
+        },
+        {
+          "name": "ImportData",
+          "value": 12
+        },
+        {
+          "name": "JavaScript",
+          "value": 13
+        },
+        {
+          "name": "SetOCGState",
+          "value": 14
+        },
+        {
+          "name": "Rendition",
+          "value": 15
+        },
+        {
+          "name": "Trans",
+          "value": 16
+        },
+        {
+          "name": "GoTo3DView",
+          "value": 17
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.AcroForms.SignatureFlags",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "SignaturesExist",
+          "value": 1
+        },
+        {
+          "name": "AppendOnly",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.AcroForms.Fields.AcroButtonFieldFlags",
+      "underlyingType": "System.UInt32",
+      "members": [
+        {
+          "name": "ReadOnly",
+          "value": 1
+        },
+        {
+          "name": "Required",
+          "value": 2
+        },
+        {
+          "name": "NoExport",
+          "value": 4
+        },
+        {
+          "name": "NoToggleToOff",
+          "value": 16384
+        },
+        {
+          "name": "Radio",
+          "value": 32768
+        },
+        {
+          "name": "PushButton",
+          "value": 65536
+        },
+        {
+          "name": "RadiosInUnison",
+          "value": 33554432
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.AcroForms.Fields.AcroChoiceFieldFlags",
+      "underlyingType": "System.UInt32",
+      "members": [
+        {
+          "name": "ReadOnly",
+          "value": 1
+        },
+        {
+          "name": "Required",
+          "value": 2
+        },
+        {
+          "name": "NoExport",
+          "value": 4
+        },
+        {
+          "name": "Combo",
+          "value": 131072
+        },
+        {
+          "name": "Edit",
+          "value": 262144
+        },
+        {
+          "name": "Sort",
+          "value": 524288
+        },
+        {
+          "name": "MultiSelect",
+          "value": 2097152
+        },
+        {
+          "name": "DoNotSpellCheck",
+          "value": 4194304
+        },
+        {
+          "name": "CommitOnSelectionChange",
+          "value": 67108864
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.AcroForms.Fields.AcroFieldType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "PushButton",
+          "value": 0
+        },
+        {
+          "name": "Checkboxes",
+          "value": 1
+        },
+        {
+          "name": "Checkbox",
+          "value": 2
+        },
+        {
+          "name": "RadioButtons",
+          "value": 3
+        },
+        {
+          "name": "RadioButton",
+          "value": 4
+        },
+        {
+          "name": "Text",
+          "value": 5
+        },
+        {
+          "name": "ComboBox",
+          "value": 6
+        },
+        {
+          "name": "ListBox",
+          "value": 7
+        },
+        {
+          "name": "Signature",
+          "value": 8
+        },
+        {
+          "name": "Unknown",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.AcroForms.Fields.AcroTextFieldFlags",
+      "underlyingType": "System.UInt32",
+      "members": [
+        {
+          "name": "ReadOnly",
+          "value": 1
+        },
+        {
+          "name": "Required",
+          "value": 2
+        },
+        {
+          "name": "NoExport",
+          "value": 4
+        },
+        {
+          "name": "Multiline",
+          "value": 4096
+        },
+        {
+          "name": "Password",
+          "value": 8192
+        },
+        {
+          "name": "FileSelect",
+          "value": 1048576
+        },
+        {
+          "name": "DoNotSpellCheck",
+          "value": 4194304
+        },
+        {
+          "name": "DoNotScroll",
+          "value": 8388608
+        },
+        {
+          "name": "Comb",
+          "value": 16777216
+        },
+        {
+          "name": "RichText",
+          "value": 33554432
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.DocumentLayoutAnalysis.EdgeType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Left",
+          "value": 0
+        },
+        {
+          "name": "Mid",
+          "value": 1
+        },
+        {
+          "name": "Right",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.DocumentLayoutAnalysis.ReadingOrderDetector.IntervalRelations",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "Precedes",
+          "value": 1
+        },
+        {
+          "name": "Meets",
+          "value": 2
+        },
+        {
+          "name": "Overlaps",
+          "value": 3
+        },
+        {
+          "name": "Starts",
+          "value": 4
+        },
+        {
+          "name": "During",
+          "value": 5
+        },
+        {
+          "name": "Finishes",
+          "value": 6
+        },
+        {
+          "name": "PrecedesI",
+          "value": 7
+        },
+        {
+          "name": "MeetsI",
+          "value": 8
+        },
+        {
+          "name": "OverlapsI",
+          "value": 9
+        },
+        {
+          "name": "StartsI",
+          "value": 10
+        },
+        {
+          "name": "DuringI",
+          "value": 11
+        },
+        {
+          "name": "FinishesI",
+          "value": 12
+        },
+        {
+          "name": "Equals",
+          "value": 13
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.DocumentLayoutAnalysis.ReadingOrderDetector.UnsupervisedReadingOrderDetector.SpatialReasoningRules",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Basic",
+          "value": 0
+        },
+        {
+          "name": "RowWise",
+          "value": 1
+        },
+        {
+          "name": "ColumnWise",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.DocumentLayoutAnalysis.Export.InvalidCharStrategy",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Custom",
+          "value": 0
+        },
+        {
+          "name": "DoNotCheck",
+          "value": 1
+        },
+        {
+          "name": "Remove",
+          "value": 2
+        },
+        {
+          "name": "ConvertToHexadecimal",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.DocumentLayoutAnalysis.Export.PAGE.PageXmlDocument.PageXmlAlignSimpleType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Left",
+          "value": 0
+        },
+        {
+          "name": "Centre",
+          "value": 1
+        },
+        {
+          "name": "Right",
+          "value": 2
+        },
+        {
+          "name": "Justify",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.DocumentLayoutAnalysis.Export.PAGE.PageXmlDocument.PageXmlChartSimpleType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Bar",
+          "value": 0
+        },
+        {
+          "name": "Line",
+          "value": 1
+        },
+        {
+          "name": "Pie",
+          "value": 2
+        },
+        {
+          "name": "Scatter",
+          "value": 3
+        },
+        {
+          "name": "Surface",
+          "value": 4
+        },
+        {
+          "name": "Other",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.DocumentLayoutAnalysis.Export.PAGE.PageXmlDocument.PageXmlColourDepthSimpleType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "BiLevel",
+          "value": 0
+        },
+        {
+          "name": "GreyScale",
+          "value": 1
+        },
+        {
+          "name": "Colour",
+          "value": 2
+        },
+        {
+          "name": "Other",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.DocumentLayoutAnalysis.Export.PAGE.PageXmlDocument.PageXmlColourSimpleType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Black",
+          "value": 0
+        },
+        {
+          "name": "Blue",
+          "value": 1
+        },
+        {
+          "name": "Brown",
+          "value": 2
+        },
+        {
+          "name": "Cyan",
+          "value": 3
+        },
+        {
+          "name": "Green",
+          "value": 4
+        },
+        {
+          "name": "Grey",
+          "value": 5
+        },
+        {
+          "name": "Indigo",
+          "value": 6
+        },
+        {
+          "name": "Magenta",
+          "value": 7
+        },
+        {
+          "name": "Orange",
+          "value": 8
+        },
+        {
+          "name": "Pink",
+          "value": 9
+        },
+        {
+          "name": "Red",
+          "value": 10
+        },
+        {
+          "name": "Turquoise",
+          "value": 11
+        },
+        {
+          "name": "Violet",
+          "value": 12
+        },
+        {
+          "name": "White",
+          "value": 13
+        },
+        {
+          "name": "Yellow",
+          "value": 14
+        },
+        {
+          "name": "Other",
+          "value": 15
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.DocumentLayoutAnalysis.Export.PAGE.PageXmlDocument.PageXmlGraphemeBaseCharType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Base",
+          "value": 0
+        },
+        {
+          "name": "Combining",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.DocumentLayoutAnalysis.Export.PAGE.PageXmlDocument.PageXmlGraphicsSimpleType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Logo",
+          "value": 0
+        },
+        {
+          "name": "Letterhead",
+          "value": 1
+        },
+        {
+          "name": "Decoration",
+          "value": 2
+        },
+        {
+          "name": "Frame",
+          "value": 3
+        },
+        {
+          "name": "HandwrittenAnnotation",
+          "value": 4
+        },
+        {
+          "name": "Stamp",
+          "value": 5
+        },
+        {
+          "name": "Signature",
+          "value": 6
+        },
+        {
+          "name": "Barcode",
+          "value": 7
+        },
+        {
+          "name": "PaperGrow",
+          "value": 8
+        },
+        {
+          "name": "PunchHole",
+          "value": 9
+        },
+        {
+          "name": "Other",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.DocumentLayoutAnalysis.Export.PAGE.PageXmlDocument.PageXmlGroupSimpleType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Paragraph",
+          "value": 0
+        },
+        {
+          "name": "List",
+          "value": 1
+        },
+        {
+          "name": "ListItem",
+          "value": 2
+        },
+        {
+          "name": "Figure",
+          "value": 3
+        },
+        {
+          "name": "Article",
+          "value": 4
+        },
+        {
+          "name": "Div",
+          "value": 5
+        },
+        {
+          "name": "Other",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.DocumentLayoutAnalysis.Export.PAGE.PageXmlDocument.PageXmlLanguageSimpleType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Abkhaz",
+          "value": 0
+        },
+        {
+          "name": "Afar",
+          "value": 1
+        },
+        {
+          "name": "Afrikaans",
+          "value": 2
+        },
+        {
+          "name": "Akan",
+          "value": 3
+        },
+        {
+          "name": "Albanian",
+          "value": 4
+        },
+        {
+          "name": "Amharic",
+          "value": 5
+        },
+        {
+          "name": "Arabic",
+          "value": 6
+        },
+        {
+          "name": "Aragonese",
+          "value": 7
+        },
+        {
+          "name": "Armenian",
+          "value": 8
+        },
+        {
+          "name": "Assamese",
+          "value": 9
+        },
+        {
+          "name": "Avaric",
+          "value": 10
+        },
+        {
+          "name": "Avestan",
+          "value": 11
+        },
+        {
+          "name": "Aymara",
+          "value": 12
+        },
+        {
+          "name": "Azerbaijani",
+          "value": 13
+        },
+        {
+          "name": "Bambara",
+          "value": 14
+        },
+        {
+          "name": "Bashkir",
+          "value": 15
+        },
+        {
+          "name": "Basque",
+          "value": 16
+        },
+        {
+          "name": "Belarusian",
+          "value": 17
+        },
+        {
+          "name": "Bengali",
+          "value": 18
+        },
+        {
+          "name": "Bihari",
+          "value": 19
+        },
+        {
+          "name": "Bislama",
+          "value": 20
+        },
+        {
+          "name": "Bosnian",
+          "value": 21
+        },
+        {
+          "name": "Breton",
+          "value": 22
+        },
+        {
+          "name": "Bulgarian",
+          "value": 23
+        },
+        {
+          "name": "Burmese",
+          "value": 24
+        },
+        {
+          "name": "Cambodian",
+          "value": 25
+        },
+        {
+          "name": "Cantonese",
+          "value": 26
+        },
+        {
+          "name": "Catalan",
+          "value": 27
+        },
+        {
+          "name": "Chamorro",
+          "value": 28
+        },
+        {
+          "name": "Chechen",
+          "value": 29
+        },
+        {
+          "name": "Chichewa",
+          "value": 30
+        },
+        {
+          "name": "Chinese",
+          "value": 31
+        },
+        {
+          "name": "Chuvash",
+          "value": 32
+        },
+        {
+          "name": "Cornish",
+          "value": 33
+        },
+        {
+          "name": "Corsican",
+          "value": 34
+        },
+        {
+          "name": "Cree",
+          "value": 35
+        },
+        {
+          "name": "Croatian",
+          "value": 36
+        },
+        {
+          "name": "Czech",
+          "value": 37
+        },
+        {
+          "name": "Danish",
+          "value": 38
+        },
+        {
+          "name": "Divehi",
+          "value": 39
+        },
+        {
+          "name": "Dutch",
+          "value": 40
+        },
+        {
+          "name": "Dzongkha",
+          "value": 41
+        },
+        {
+          "name": "English",
+          "value": 42
+        },
+        {
+          "name": "Esperanto",
+          "value": 43
+        },
+        {
+          "name": "Estonian",
+          "value": 44
+        },
+        {
+          "name": "Ewe",
+          "value": 45
+        },
+        {
+          "name": "Faroese",
+          "value": 46
+        },
+        {
+          "name": "Fijian",
+          "value": 47
+        },
+        {
+          "name": "Finnish",
+          "value": 48
+        },
+        {
+          "name": "French",
+          "value": 49
+        },
+        {
+          "name": "Fula",
+          "value": 50
+        },
+        {
+          "name": "Gaelic",
+          "value": 51
+        },
+        {
+          "name": "Galician",
+          "value": 52
+        },
+        {
+          "name": "Ganda",
+          "value": 53
+        },
+        {
+          "name": "Georgian",
+          "value": 54
+        },
+        {
+          "name": "German",
+          "value": 55
+        },
+        {
+          "name": "Greek",
+          "value": 56
+        },
+        {
+          "name": "Guaraní",
+          "value": 57
+        },
+        {
+          "name": "Gujarati",
+          "value": 58
+        },
+        {
+          "name": "Haitian",
+          "value": 59
+        },
+        {
+          "name": "Hausa",
+          "value": 60
+        },
+        {
+          "name": "Hebrew",
+          "value": 61
+        },
+        {
+          "name": "Herero",
+          "value": 62
+        },
+        {
+          "name": "Hindi",
+          "value": 63
+        },
+        {
+          "name": "HiriMotu",
+          "value": 64
+        },
+        {
+          "name": "Hungarian",
+          "value": 65
+        },
+        {
+          "name": "Icelandic",
+          "value": 66
+        },
+        {
+          "name": "Ido",
+          "value": 67
+        },
+        {
+          "name": "Igbo",
+          "value": 68
+        },
+        {
+          "name": "Indonesian",
+          "value": 69
+        },
+        {
+          "name": "Interlingua",
+          "value": 70
+        },
+        {
+          "name": "Interlingue",
+          "value": 71
+        },
+        {
+          "name": "Inuktitut",
+          "value": 72
+        },
+        {
+          "name": "Inupiaq",
+          "value": 73
+        },
+        {
+          "name": "Irish",
+          "value": 74
+        },
+        {
+          "name": "Italian",
+          "value": 75
+        },
+        {
+          "name": "Japanese",
+          "value": 76
+        },
+        {
+          "name": "Javanese",
+          "value": 77
+        },
+        {
+          "name": "Kalaallisut",
+          "value": 78
+        },
+        {
+          "name": "Kannada",
+          "value": 79
+        },
+        {
+          "name": "Kanuri",
+          "value": 80
+        },
+        {
+          "name": "Kashmiri",
+          "value": 81
+        },
+        {
+          "name": "Kazakh",
+          "value": 82
+        },
+        {
+          "name": "Khmer",
+          "value": 83
+        },
+        {
+          "name": "Kikuyu",
+          "value": 84
+        },
+        {
+          "name": "Kinyarwanda",
+          "value": 85
+        },
+        {
+          "name": "Kirundi",
+          "value": 86
+        },
+        {
+          "name": "Komi",
+          "value": 87
+        },
+        {
+          "name": "Kongo",
+          "value": 88
+        },
+        {
+          "name": "Korean",
+          "value": 89
+        },
+        {
+          "name": "Kurdish",
+          "value": 90
+        },
+        {
+          "name": "Kwanyama",
+          "value": 91
+        },
+        {
+          "name": "Kyrgyz",
+          "value": 92
+        },
+        {
+          "name": "Lao",
+          "value": 93
+        },
+        {
+          "name": "Latin",
+          "value": 94
+        },
+        {
+          "name": "Latvian",
+          "value": 95
+        },
+        {
+          "name": "Limburgish",
+          "value": 96
+        },
+        {
+          "name": "Lingala",
+          "value": 97
+        },
+        {
+          "name": "Lithuanian",
+          "value": 98
+        },
+        {
+          "name": "LubaKatanga",
+          "value": 99
+        },
+        {
+          "name": "Luxembourgish",
+          "value": 100
+        },
+        {
+          "name": "Macedonian",
+          "value": 101
+        },
+        {
+          "name": "Malagasy",
+          "value": 102
+        },
+        {
+          "name": "Malay",
+          "value": 103
+        },
+        {
+          "name": "Malayalam",
+          "value": 104
+        },
+        {
+          "name": "Maltese",
+          "value": 105
+        },
+        {
+          "name": "Manx",
+          "value": 106
+        },
+        {
+          "name": "Māori",
+          "value": 107
+        },
+        {
+          "name": "Marathi",
+          "value": 108
+        },
+        {
+          "name": "Marshallese",
+          "value": 109
+        },
+        {
+          "name": "Mongolian",
+          "value": 110
+        },
+        {
+          "name": "Nauru",
+          "value": 111
+        },
+        {
+          "name": "Navajo",
+          "value": 112
+        },
+        {
+          "name": "Ndonga",
+          "value": 113
+        },
+        {
+          "name": "Nepali",
+          "value": 114
+        },
+        {
+          "name": "NorthNdebele",
+          "value": 115
+        },
+        {
+          "name": "NorthernSami",
+          "value": 116
+        },
+        {
+          "name": "Norwegian",
+          "value": 117
+        },
+        {
+          "name": "NorwegianBokmål",
+          "value": 118
+        },
+        {
+          "name": "NorwegianNynorsk",
+          "value": 119
+        },
+        {
+          "name": "Nuosu",
+          "value": 120
+        },
+        {
+          "name": "Occitan",
+          "value": 121
+        },
+        {
+          "name": "Ojibwe",
+          "value": 122
+        },
+        {
+          "name": "OldChurchSlavonic",
+          "value": 123
+        },
+        {
+          "name": "Oriya",
+          "value": 124
+        },
+        {
+          "name": "Oromo",
+          "value": 125
+        },
+        {
+          "name": "Ossetian",
+          "value": 126
+        },
+        {
+          "name": "Pāli",
+          "value": 127
+        },
+        {
+          "name": "Panjabi",
+          "value": 128
+        },
+        {
+          "name": "Pashto",
+          "value": 129
+        },
+        {
+          "name": "Persian",
+          "value": 130
+        },
+        {
+          "name": "Polish",
+          "value": 131
+        },
+        {
+          "name": "Portuguese",
+          "value": 132
+        },
+        {
+          "name": "Punjabi",
+          "value": 133
+        },
+        {
+          "name": "Quechua",
+          "value": 134
+        },
+        {
+          "name": "Romanian",
+          "value": 135
+        },
+        {
+          "name": "Romansh",
+          "value": 136
+        },
+        {
+          "name": "Russian",
+          "value": 137
+        },
+        {
+          "name": "Samoan",
+          "value": 138
+        },
+        {
+          "name": "Sango",
+          "value": 139
+        },
+        {
+          "name": "Sanskrit",
+          "value": 140
+        },
+        {
+          "name": "Sardinian",
+          "value": 141
+        },
+        {
+          "name": "Serbian",
+          "value": 142
+        },
+        {
+          "name": "Shona",
+          "value": 143
+        },
+        {
+          "name": "Sindhi",
+          "value": 144
+        },
+        {
+          "name": "Sinhala",
+          "value": 145
+        },
+        {
+          "name": "Slovak",
+          "value": 146
+        },
+        {
+          "name": "Slovene",
+          "value": 147
+        },
+        {
+          "name": "Somali",
+          "value": 148
+        },
+        {
+          "name": "SouthNdebele",
+          "value": 149
+        },
+        {
+          "name": "SouthernSotho",
+          "value": 150
+        },
+        {
+          "name": "Spanish",
+          "value": 151
+        },
+        {
+          "name": "Sundanese",
+          "value": 152
+        },
+        {
+          "name": "Swahili",
+          "value": 153
+        },
+        {
+          "name": "Swati",
+          "value": 154
+        },
+        {
+          "name": "Swedish",
+          "value": 155
+        },
+        {
+          "name": "Tagalog",
+          "value": 156
+        },
+        {
+          "name": "Tahitian",
+          "value": 157
+        },
+        {
+          "name": "Tajik",
+          "value": 158
+        },
+        {
+          "name": "Tamil",
+          "value": 159
+        },
+        {
+          "name": "Tatar",
+          "value": 160
+        },
+        {
+          "name": "Telugu",
+          "value": 161
+        },
+        {
+          "name": "Thai",
+          "value": 162
+        },
+        {
+          "name": "Tibetan",
+          "value": 163
+        },
+        {
+          "name": "Tigrinya",
+          "value": 164
+        },
+        {
+          "name": "Tonga",
+          "value": 165
+        },
+        {
+          "name": "Tsonga",
+          "value": 166
+        },
+        {
+          "name": "Tswana",
+          "value": 167
+        },
+        {
+          "name": "Turkish",
+          "value": 168
+        },
+        {
+          "name": "Turkmen",
+          "value": 169
+        },
+        {
+          "name": "Twi",
+          "value": 170
+        },
+        {
+          "name": "Uighur",
+          "value": 171
+        },
+        {
+          "name": "Ukrainian",
+          "value": 172
+        },
+        {
+          "name": "Urdu",
+          "value": 173
+        },
+        {
+          "name": "Uzbek",
+          "value": 174
+        },
+        {
+          "name": "Venda",
+          "value": 175
+        },
+        {
+          "name": "Vietnamese",
+          "value": 176
+        },
+        {
+          "name": "Volapük",
+          "value": 177
+        },
+        {
+          "name": "Walloon",
+          "value": 178
+        },
+        {
+          "name": "Welsh",
+          "value": 179
+        },
+        {
+          "name": "WesternFrisian",
+          "value": 180
+        },
+        {
+          "name": "Wolof",
+          "value": 181
+        },
+        {
+          "name": "Xhosa",
+          "value": 182
+        },
+        {
+          "name": "Yiddish",
+          "value": 183
+        },
+        {
+          "name": "Yoruba",
+          "value": 184
+        },
+        {
+          "name": "Zhuang",
+          "value": 185
+        },
+        {
+          "name": "Zulu",
+          "value": 186
+        },
+        {
+          "name": "Other",
+          "value": 187
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.DocumentLayoutAnalysis.Export.PAGE.PageXmlDocument.PageXmlMetadataItemType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Author",
+          "value": 0
+        },
+        {
+          "name": "ImageProperties",
+          "value": 1
+        },
+        {
+          "name": "ProcessingStep",
+          "value": 2
+        },
+        {
+          "name": "Other",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.DocumentLayoutAnalysis.Export.PAGE.PageXmlDocument.PageXmlPageImageResolutionUnit",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "PPI",
+          "value": 0
+        },
+        {
+          "name": "PPCM",
+          "value": 1
+        },
+        {
+          "name": "other",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.DocumentLayoutAnalysis.Export.PAGE.PageXmlDocument.PageXmlPageSimpleType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "FrontCover",
+          "value": 0
+        },
+        {
+          "name": "BackCover",
+          "value": 1
+        },
+        {
+          "name": "Title",
+          "value": 2
+        },
+        {
+          "name": "TableOfContents",
+          "value": 3
+        },
+        {
+          "name": "Index",
+          "value": 4
+        },
+        {
+          "name": "Content",
+          "value": 5
+        },
+        {
+          "name": "Blank",
+          "value": 6
+        },
+        {
+          "name": "Other",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.DocumentLayoutAnalysis.Export.PAGE.PageXmlDocument.PageXmlProductionSimpleType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Printed",
+          "value": 0
+        },
+        {
+          "name": "Typewritten",
+          "value": 1
+        },
+        {
+          "name": "HandwrittenCursive",
+          "value": 2
+        },
+        {
+          "name": "HandwrittenPrintscript",
+          "value": 3
+        },
+        {
+          "name": "MedievalManuscript",
+          "value": 4
+        },
+        {
+          "name": "Other",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.DocumentLayoutAnalysis.Export.PAGE.PageXmlDocument.PageXmlReadingDirectionSimpleType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "LeftToRight",
+          "value": 0
+        },
+        {
+          "name": "RightToLeft",
+          "value": 1
+        },
+        {
+          "name": "TopToBottom",
+          "value": 2
+        },
+        {
+          "name": "BottomToTop",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.DocumentLayoutAnalysis.Export.PAGE.PageXmlDocument.PageXmlRelationType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Link",
+          "value": 0
+        },
+        {
+          "name": "Join",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.DocumentLayoutAnalysis.Export.PAGE.PageXmlDocument.PageXmlScriptSimpleType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AdlmAdlam",
+          "value": 0
+        },
+        {
+          "name": "AfakAfaka",
+          "value": 1
+        },
+        {
+          "name": "AghbCaucasianAlbanian",
+          "value": 2
+        },
+        {
+          "name": "AhomAhomTaiAhom",
+          "value": 3
+        },
+        {
+          "name": "ArabArabic",
+          "value": 4
+        },
+        {
+          "name": "AranArabicNastaliqVariant",
+          "value": 5
+        },
+        {
+          "name": "ArmiImperialAramaic",
+          "value": 6
+        },
+        {
+          "name": "ArmnArmenian",
+          "value": 7
+        },
+        {
+          "name": "AvstAvestan",
+          "value": 8
+        },
+        {
+          "name": "BaliBalinese",
+          "value": 9
+        },
+        {
+          "name": "BamuBamum",
+          "value": 10
+        },
+        {
+          "name": "BassBassaVah",
+          "value": 11
+        },
+        {
+          "name": "BatkBatak",
+          "value": 12
+        },
+        {
+          "name": "BengBengali",
+          "value": 13
+        },
+        {
+          "name": "BhksBhaiksuki",
+          "value": 14
+        },
+        {
+          "name": "BlisBlissymbols",
+          "value": 15
+        },
+        {
+          "name": "BopoBopomofo",
+          "value": 16
+        },
+        {
+          "name": "BrahBrahmi",
+          "value": 17
+        },
+        {
+          "name": "BraiBraille",
+          "value": 18
+        },
+        {
+          "name": "BugiBuginese",
+          "value": 19
+        },
+        {
+          "name": "BuhdBuhid",
+          "value": 20
+        },
+        {
+          "name": "CakmChakma",
+          "value": 21
+        },
+        {
+          "name": "CansUnifiedCanadianAboriginalSyllabics",
+          "value": 22
+        },
+        {
+          "name": "CariCarian",
+          "value": 23
+        },
+        {
+          "name": "ChamCham",
+          "value": 24
+        },
+        {
+          "name": "CherCherokee",
+          "value": 25
+        },
+        {
+          "name": "CirtCirth",
+          "value": 26
+        },
+        {
+          "name": "CoptCoptic",
+          "value": 27
+        },
+        {
+          "name": "CprtCypriot",
+          "value": 28
+        },
+        {
+          "name": "CyrlCyrillic",
+          "value": 29
+        },
+        {
+          "name": "CyrsCyrillicOldChurchSlavonicVariant",
+          "value": 30
+        },
+        {
+          "name": "DevaDevanagariNagari",
+          "value": 31
+        },
+        {
+          "name": "DsrtDeseretMormon",
+          "value": 32
+        },
+        {
+          "name": "DuplDuployanShorthandDuployanStenography",
+          "value": 33
+        },
+        {
+          "name": "EgydEgyptianDemotic",
+          "value": 34
+        },
+        {
+          "name": "EgyhEgyptianHieratic",
+          "value": 35
+        },
+        {
+          "name": "EgypEgyptianHieroglyphs",
+          "value": 36
+        },
+        {
+          "name": "ElbaElbasan",
+          "value": 37
+        },
+        {
+          "name": "EthiEthiopic",
+          "value": 38
+        },
+        {
+          "name": "GeokKhutsuriAsomtavruliAndNuskhuri",
+          "value": 39
+        },
+        {
+          "name": "GeorGeorgianMkhedruli",
+          "value": 40
+        },
+        {
+          "name": "GlagGlagolitic",
+          "value": 41
+        },
+        {
+          "name": "GothGothic",
+          "value": 42
+        },
+        {
+          "name": "GranGrantha",
+          "value": 43
+        },
+        {
+          "name": "GrekGreek",
+          "value": 44
+        },
+        {
+          "name": "GujrGujarati",
+          "value": 45
+        },
+        {
+          "name": "GuruGurmukhi",
+          "value": 46
+        },
+        {
+          "name": "HanbHanwithBopomofo",
+          "value": 47
+        },
+        {
+          "name": "HangHangul",
+          "value": 48
+        },
+        {
+          "name": "HaniHanHanziKanjiHanja",
+          "value": 49
+        },
+        {
+          "name": "HanoHanunooHanunóo",
+          "value": 50
+        },
+        {
+          "name": "HansHanSimplifiedVariant",
+          "value": 51
+        },
+        {
+          "name": "HantHanTraditionalVariant",
+          "value": 52
+        },
+        {
+          "name": "HatrHatran",
+          "value": 53
+        },
+        {
+          "name": "HebrHebrew",
+          "value": 54
+        },
+        {
+          "name": "HiraHiragana",
+          "value": 55
+        },
+        {
+          "name": "HluwAnatolianHieroglyphs",
+          "value": 56
+        },
+        {
+          "name": "HmngPahawhHmong",
+          "value": 57
+        },
+        {
+          "name": "HrktJapaneseSyllabaries",
+          "value": 58
+        },
+        {
+          "name": "HungOldHungarianHungarianRunic",
+          "value": 59
+        },
+        {
+          "name": "IndsIndusHarappan",
+          "value": 60
+        },
+        {
+          "name": "ItalOldItalicEtruscanOscanEtc",
+          "value": 61
+        },
+        {
+          "name": "JamoJamo",
+          "value": 62
+        },
+        {
+          "name": "JavaJavanese",
+          "value": 63
+        },
+        {
+          "name": "JpanJapanese",
+          "value": 64
+        },
+        {
+          "name": "JurcJurchen",
+          "value": 65
+        },
+        {
+          "name": "KaliKayahLi",
+          "value": 66
+        },
+        {
+          "name": "KanaKatakana",
+          "value": 67
+        },
+        {
+          "name": "KharKharoshthi",
+          "value": 68
+        },
+        {
+          "name": "KhmrKhmer",
+          "value": 69
+        },
+        {
+          "name": "KhojKhojki",
+          "value": 70
+        },
+        {
+          "name": "KitlKhitanlargescript",
+          "value": 71
+        },
+        {
+          "name": "KitsKhitansmallscript",
+          "value": 72
+        },
+        {
+          "name": "KndaKannada",
+          "value": 73
+        },
+        {
+          "name": "KoreKoreanaliasforHangulHan",
+          "value": 74
+        },
+        {
+          "name": "KpelKpelle",
+          "value": 75
+        },
+        {
+          "name": "KthiKaithi",
+          "value": 76
+        },
+        {
+          "name": "LanaTaiThamLanna",
+          "value": 77
+        },
+        {
+          "name": "LaooLao",
+          "value": 78
+        },
+        {
+          "name": "LatfLatinFrakturvariant",
+          "value": 79
+        },
+        {
+          "name": "LatgLatinGaelicvariant",
+          "value": 80
+        },
+        {
+          "name": "LatnLatin",
+          "value": 81
+        },
+        {
+          "name": "LekeLeke",
+          "value": 82
+        },
+        {
+          "name": "LepcLepchaRóng",
+          "value": 83
+        },
+        {
+          "name": "LimbLimbu",
+          "value": 84
+        },
+        {
+          "name": "LinaLinearA",
+          "value": 85
+        },
+        {
+          "name": "LinbLinearB",
+          "value": 86
+        },
+        {
+          "name": "LisuLisuFraser",
+          "value": 87
+        },
+        {
+          "name": "LomaLoma",
+          "value": 88
+        },
+        {
+          "name": "LyciLycian",
+          "value": 89
+        },
+        {
+          "name": "LydiLydian",
+          "value": 90
+        },
+        {
+          "name": "MahjMahajani",
+          "value": 91
+        },
+        {
+          "name": "MandMandaicMandaean",
+          "value": 92
+        },
+        {
+          "name": "ManiManichaean",
+          "value": 93
+        },
+        {
+          "name": "MarcMarchen",
+          "value": 94
+        },
+        {
+          "name": "MayaMayanhieroglyphs",
+          "value": 95
+        },
+        {
+          "name": "MendMendeKikakui",
+          "value": 96
+        },
+        {
+          "name": "MercMeroiticCursive",
+          "value": 97
+        },
+        {
+          "name": "MeroMeroiticHieroglyphs",
+          "value": 98
+        },
+        {
+          "name": "MlymMalayalam",
+          "value": 99
+        },
+        {
+          "name": "ModiModiMoḍī",
+          "value": 100
+        },
+        {
+          "name": "MongMongolian",
+          "value": 101
+        },
+        {
+          "name": "MoonMoonMooncodeMoonscriptMoontype",
+          "value": 102
+        },
+        {
+          "name": "MrooMroMru",
+          "value": 103
+        },
+        {
+          "name": "MteiMeiteiMayekMeitheiMeetei",
+          "value": 104
+        },
+        {
+          "name": "MultMultani",
+          "value": 105
+        },
+        {
+          "name": "MymrMyanmarBurmese",
+          "value": 106
+        },
+        {
+          "name": "NarbOldNorthArabianAncientNorthArabian",
+          "value": 107
+        },
+        {
+          "name": "NbatNabataean",
+          "value": 108
+        },
+        {
+          "name": "NewaNewaNewarNewari",
+          "value": 109
+        },
+        {
+          "name": "NkgbNakhiGeba",
+          "value": 110
+        },
+        {
+          "name": "NkooNKo",
+          "value": 111
+        },
+        {
+          "name": "NshuNüshu",
+          "value": 112
+        },
+        {
+          "name": "OgamOgham",
+          "value": 113
+        },
+        {
+          "name": "OlckOlChikiOlCemetOlSantali",
+          "value": 114
+        },
+        {
+          "name": "OrkhOldTurkicOrkhonRunic",
+          "value": 115
+        },
+        {
+          "name": "OryaOriya",
+          "value": 116
+        },
+        {
+          "name": "OsgeOsage",
+          "value": 117
+        },
+        {
+          "name": "OsmaOsmanya",
+          "value": 118
+        },
+        {
+          "name": "PalmPalmyrene",
+          "value": 119
+        },
+        {
+          "name": "PaucPauCinHau",
+          "value": 120
+        },
+        {
+          "name": "PermOldPermic",
+          "value": 121
+        },
+        {
+          "name": "PhagPhagspa",
+          "value": 122
+        },
+        {
+          "name": "PhliInscriptionalPahlavi",
+          "value": 123
+        },
+        {
+          "name": "PhlpPsalterPahlavi",
+          "value": 124
+        },
+        {
+          "name": "PhlvBookPahlavi",
+          "value": 125
+        },
+        {
+          "name": "PhnxPhoenician",
+          "value": 126
+        },
+        {
+          "name": "PiqdKlingonKLIpIqaD",
+          "value": 127
+        },
+        {
+          "name": "PlrdMiaoPollard",
+          "value": 128
+        },
+        {
+          "name": "PrtiInscriptionalParthian",
+          "value": 129
+        },
+        {
+          "name": "RjngRejangRedjangKaganga",
+          "value": 130
+        },
+        {
+          "name": "RoroRongorongo",
+          "value": 131
+        },
+        {
+          "name": "RunrRunic",
+          "value": 132
+        },
+        {
+          "name": "SamrSamaritan",
+          "value": 133
+        },
+        {
+          "name": "SaraSarati",
+          "value": 134
+        },
+        {
+          "name": "SarbOldSouthArabian",
+          "value": 135
+        },
+        {
+          "name": "SaurSaurashtra",
+          "value": 136
+        },
+        {
+          "name": "SgnwSignWriting",
+          "value": 137
+        },
+        {
+          "name": "ShawShavianShaw",
+          "value": 138
+        },
+        {
+          "name": "ShrdSharadaŚāradā",
+          "value": 139
+        },
+        {
+          "name": "SiddSiddham",
+          "value": 140
+        },
+        {
+          "name": "SindKhudawadiSindhi",
+          "value": 141
+        },
+        {
+          "name": "SinhSinhala",
+          "value": 142
+        },
+        {
+          "name": "SoraSoraSompeng",
+          "value": 143
+        },
+        {
+          "name": "SundSundanese",
+          "value": 144
+        },
+        {
+          "name": "SyloSylotiNagri",
+          "value": 145
+        },
+        {
+          "name": "SyrcSyriac",
+          "value": 146
+        },
+        {
+          "name": "SyreSyriacEstrangeloVariant",
+          "value": 147
+        },
+        {
+          "name": "SyrjSyriacWesternVariant",
+          "value": 148
+        },
+        {
+          "name": "SyrnSyriacEasternVariant",
+          "value": 149
+        },
+        {
+          "name": "TagbTagbanwa",
+          "value": 150
+        },
+        {
+          "name": "TakrTakri",
+          "value": 151
+        },
+        {
+          "name": "TaleTaiLe",
+          "value": 152
+        },
+        {
+          "name": "TaluNewTaiLue",
+          "value": 153
+        },
+        {
+          "name": "TamlTamil",
+          "value": 154
+        },
+        {
+          "name": "TangTangut",
+          "value": 155
+        },
+        {
+          "name": "TavtTaiViet",
+          "value": 156
+        },
+        {
+          "name": "TeluTelugu",
+          "value": 157
+        },
+        {
+          "name": "TengTengwar",
+          "value": 158
+        },
+        {
+          "name": "TfngTifinaghBerber",
+          "value": 159
+        },
+        {
+          "name": "TglgTagalogBaybayinAlibata",
+          "value": 160
+        },
+        {
+          "name": "ThaaThaana",
+          "value": 161
+        },
+        {
+          "name": "ThaiThai",
+          "value": 162
+        },
+        {
+          "name": "TibtTibetan",
+          "value": 163
+        },
+        {
+          "name": "TirhTirhuta",
+          "value": 164
+        },
+        {
+          "name": "UgarUgaritic",
+          "value": 165
+        },
+        {
+          "name": "VaiiVai",
+          "value": 166
+        },
+        {
+          "name": "VispVisibleSpeech",
+          "value": 167
+        },
+        {
+          "name": "WaraWarangCitiVarangKshiti",
+          "value": 168
+        },
+        {
+          "name": "WoleWoleai",
+          "value": 169
+        },
+        {
+          "name": "XpeoOldPersian",
+          "value": 170
+        },
+        {
+          "name": "XsuxCuneiformSumeroAkkadian",
+          "value": 171
+        },
+        {
+          "name": "YiiiYi",
+          "value": 172
+        },
+        {
+          "name": "ZinhCodeForInheritedScript",
+          "value": 173
+        },
+        {
+          "name": "ZmthMathematicalNotation",
+          "value": 174
+        },
+        {
+          "name": "ZsyeSymbolsEmojiVariant",
+          "value": 175
+        },
+        {
+          "name": "ZsymSymbols",
+          "value": 176
+        },
+        {
+          "name": "ZxxxCodeForUnwrittenDocuments",
+          "value": 177
+        },
+        {
+          "name": "ZyyyCodeForUndeterminedScript",
+          "value": 178
+        },
+        {
+          "name": "ZzzzCodeForUncodedScript",
+          "value": 179
+        },
+        {
+          "name": "Other",
+          "value": 180
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.DocumentLayoutAnalysis.Export.PAGE.PageXmlDocument.PageXmlTextDataSimpleType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Xsddouble",
+          "value": 0
+        },
+        {
+          "name": "XsdFloat",
+          "value": 1
+        },
+        {
+          "name": "XsdInteger",
+          "value": 2
+        },
+        {
+          "name": "XsdBoolean",
+          "value": 3
+        },
+        {
+          "name": "XsdDate",
+          "value": 4
+        },
+        {
+          "name": "XsdTime",
+          "value": 5
+        },
+        {
+          "name": "XsdDateTime",
+          "value": 6
+        },
+        {
+          "name": "XsdString",
+          "value": 7
+        },
+        {
+          "name": "Other",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.DocumentLayoutAnalysis.Export.PAGE.PageXmlDocument.PageXmlTextLineOrderSimpleType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "TopToBottom",
+          "value": 0
+        },
+        {
+          "name": "BottomToTop",
+          "value": 1
+        },
+        {
+          "name": "LeftToRight",
+          "value": 2
+        },
+        {
+          "name": "RightToLeft",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.DocumentLayoutAnalysis.Export.PAGE.PageXmlDocument.PageXmlTextSimpleType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Paragraph",
+          "value": 0
+        },
+        {
+          "name": "Heading",
+          "value": 1
+        },
+        {
+          "name": "Caption",
+          "value": 2
+        },
+        {
+          "name": "Header",
+          "value": 3
+        },
+        {
+          "name": "Footer",
+          "value": 4
+        },
+        {
+          "name": "PageNumber",
+          "value": 5
+        },
+        {
+          "name": "DropCapital",
+          "value": 6
+        },
+        {
+          "name": "Credit",
+          "value": 7
+        },
+        {
+          "name": "Floating",
+          "value": 8
+        },
+        {
+          "name": "SignatureMark",
+          "value": 9
+        },
+        {
+          "name": "CatchWord",
+          "value": 10
+        },
+        {
+          "name": "Marginalia",
+          "value": 11
+        },
+        {
+          "name": "FootNote",
+          "value": 12
+        },
+        {
+          "name": "FootNoteContinued",
+          "value": 13
+        },
+        {
+          "name": "EndNote",
+          "value": 14
+        },
+        {
+          "name": "TocEntry",
+          "value": 15
+        },
+        {
+          "name": "LisLabel",
+          "value": 16
+        },
+        {
+          "name": "Other",
+          "value": 17
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.DocumentLayoutAnalysis.Export.PAGE.PageXmlDocument.PageXmlUnderlineStyleSimpleType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "SingleLine",
+          "value": 0
+        },
+        {
+          "name": "DoubleLine",
+          "value": 1
+        },
+        {
+          "name": "Other",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.DocumentLayoutAnalysis.Export.PAGE.PageXmlDocument.PageXmlUserAttributeType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "XsdString",
+          "value": 0
+        },
+        {
+          "name": "XsdInteger",
+          "value": 1
+        },
+        {
+          "name": "XsdBoolean",
+          "value": 2
+        },
+        {
+          "name": "XsdFloat",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.DocumentLayoutAnalysis.Export.Alto.AltoDocument.AltoBlockTypeActuate",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "OnLoad",
+          "value": 0
+        },
+        {
+          "name": "OnRequest",
+          "value": 1
+        },
+        {
+          "name": "Other",
+          "value": 2
+        },
+        {
+          "name": "None",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.DocumentLayoutAnalysis.Export.Alto.AltoDocument.AltoBlockTypeShow",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "New",
+          "value": 0
+        },
+        {
+          "name": "Replace",
+          "value": 1
+        },
+        {
+          "name": "Embed",
+          "value": 2
+        },
+        {
+          "name": "Other",
+          "value": 3
+        },
+        {
+          "name": "None",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.DocumentLayoutAnalysis.Export.Alto.AltoDocument.AltoFontStyles",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Bold",
+          "value": 1
+        },
+        {
+          "name": "Italics",
+          "value": 2
+        },
+        {
+          "name": "Subscript",
+          "value": 4
+        },
+        {
+          "name": "Superscript",
+          "value": 8
+        },
+        {
+          "name": "SmallCaps",
+          "value": 16
+        },
+        {
+          "name": "Underline",
+          "value": 32
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.DocumentLayoutAnalysis.Export.Alto.AltoDocument.AltoFontType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Serif",
+          "value": 0
+        },
+        {
+          "name": "SansSerif",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.DocumentLayoutAnalysis.Export.Alto.AltoDocument.AltoFontWidth",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Proportional",
+          "value": 0
+        },
+        {
+          "name": "Fixed",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.DocumentLayoutAnalysis.Export.Alto.AltoDocument.AltoItemsChoice",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "LayoutTag",
+          "value": 0
+        },
+        {
+          "name": "NamedEntityTag",
+          "value": 1
+        },
+        {
+          "name": "OtherTag",
+          "value": 2
+        },
+        {
+          "name": "RoleTag",
+          "value": 3
+        },
+        {
+          "name": "StructureTag",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.DocumentLayoutAnalysis.Export.Alto.AltoDocument.AltoMeasurementUnit",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Pixel",
+          "value": 0
+        },
+        {
+          "name": "Mm10",
+          "value": 1
+        },
+        {
+          "name": "Inch1200",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.DocumentLayoutAnalysis.Export.Alto.AltoDocument.AltoParagraphStyleAlign",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Left",
+          "value": 0
+        },
+        {
+          "name": "Right",
+          "value": 1
+        },
+        {
+          "name": "Center",
+          "value": 2
+        },
+        {
+          "name": "Block",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.DocumentLayoutAnalysis.Export.Alto.AltoDocument.AltoPosition",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Left",
+          "value": 0
+        },
+        {
+          "name": "Right",
+          "value": 1
+        },
+        {
+          "name": "Foldout",
+          "value": 2
+        },
+        {
+          "name": "Single",
+          "value": 3
+        },
+        {
+          "name": "Cover",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.DocumentLayoutAnalysis.Export.Alto.AltoDocument.AltoProcessingCategory",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ContentGeneration",
+          "value": 1
+        },
+        {
+          "name": "ContentModification",
+          "value": 2
+        },
+        {
+          "name": "PreOperation",
+          "value": 4
+        },
+        {
+          "name": "PostOperation",
+          "value": 8
+        },
+        {
+          "name": "Other",
+          "value": 16
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.DocumentLayoutAnalysis.Export.Alto.AltoDocument.AltoQuality",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "OK",
+          "value": 0
+        },
+        {
+          "name": "Missing",
+          "value": 1
+        },
+        {
+          "name": "MissingInOriginal",
+          "value": 2
+        },
+        {
+          "name": "Damaged",
+          "value": 3
+        },
+        {
+          "name": "Retained",
+          "value": 4
+        },
+        {
+          "name": "Target",
+          "value": 5
+        },
+        {
+          "name": "AsInOriginal",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.DocumentLayoutAnalysis.Export.Alto.AltoDocument.AltoSubsType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "HypPart1",
+          "value": 0
+        },
+        {
+          "name": "HypPart2",
+          "value": 1
+        },
+        {
+          "name": "Abbreviation",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.Fonts.Type1.Parser.Type1Token.TokenType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "String",
+          "value": 1
+        },
+        {
+          "name": "Name",
+          "value": 2
+        },
+        {
+          "name": "Literal",
+          "value": 3
+        },
+        {
+          "name": "Real",
+          "value": 4
+        },
+        {
+          "name": "Integer",
+          "value": 5
+        },
+        {
+          "name": "StartArray",
+          "value": 6
+        },
+        {
+          "name": "EndArray",
+          "value": 7
+        },
+        {
+          "name": "StartProc",
+          "value": 8
+        },
+        {
+          "name": "EndProc",
+          "value": 9
+        },
+        {
+          "name": "StartDict",
+          "value": 10
+        },
+        {
+          "name": "EndDict",
+          "value": 11
+        },
+        {
+          "name": "Charstring",
+          "value": 12
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.Fonts.Type1.CharStrings.Type1CharstringDecryptedBytes.SourceType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Subroutine",
+          "value": 0
+        },
+        {
+          "name": "Charstring",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.Fonts.TrueType.Tables.HeaderTable.FontDirection",
+      "underlyingType": "System.Int16",
+      "members": [
+        {
+          "name": "StronglyRightToLeftWithNeutrals",
+          "value": -2
+        },
+        {
+          "name": "StronglyRightToLeft",
+          "value": -1
+        },
+        {
+          "name": "FullyMixedDirectional",
+          "value": 0
+        },
+        {
+          "name": "StronglyLeftToRight",
+          "value": 1
+        },
+        {
+          "name": "StronglyLeftToRightWithNeutrals",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.Fonts.TrueType.Tables.HeaderTable.HeaderMacStyle",
+      "underlyingType": "System.UInt16",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Bold",
+          "value": 1
+        },
+        {
+          "name": "Italic",
+          "value": 2
+        },
+        {
+          "name": "Underline",
+          "value": 4
+        },
+        {
+          "name": "Outline",
+          "value": 8
+        },
+        {
+          "name": "Shadow",
+          "value": 16
+        },
+        {
+          "name": "Condensed",
+          "value": 32
+        },
+        {
+          "name": "Extended",
+          "value": 64
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.Fonts.TrueType.Tables.IndexToLocationTable.EntryFormat",
+      "underlyingType": "System.Int16",
+      "members": [
+        {
+          "name": "Short",
+          "value": 0
+        },
+        {
+          "name": "Long",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.Fonts.TrueType.Tables.CMapSubTables.TrueTypeCMapPlatform",
+      "underlyingType": "System.UInt16",
+      "members": [
+        {
+          "name": "Unicode",
+          "value": 0
+        },
+        {
+          "name": "Macintosh",
+          "value": 1
+        },
+        {
+          "name": "Reserved2",
+          "value": 2
+        },
+        {
+          "name": "Windows",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.Fonts.TrueType.Names.TrueTypeMacintoshEncodingIdentifier",
+      "underlyingType": "System.UInt16",
+      "members": [
+        {
+          "name": "Roman",
+          "value": 0
+        },
+        {
+          "name": "Japanese",
+          "value": 1
+        },
+        {
+          "name": "ChineseTraditional",
+          "value": 2
+        },
+        {
+          "name": "Korean",
+          "value": 3
+        },
+        {
+          "name": "Arabic",
+          "value": 5
+        },
+        {
+          "name": "Hebrew",
+          "value": 5
+        },
+        {
+          "name": "Greek",
+          "value": 6
+        },
+        {
+          "name": "Russian",
+          "value": 7
+        },
+        {
+          "name": "RSymbol",
+          "value": 8
+        },
+        {
+          "name": "Devanagari",
+          "value": 9
+        },
+        {
+          "name": "Gurmukhi",
+          "value": 10
+        },
+        {
+          "name": "Gujarati",
+          "value": 11
+        },
+        {
+          "name": "Oriya",
+          "value": 12
+        },
+        {
+          "name": "Bengali",
+          "value": 13
+        },
+        {
+          "name": "Tamil",
+          "value": 14
+        },
+        {
+          "name": "Telugu",
+          "value": 15
+        },
+        {
+          "name": "Kannada",
+          "value": 16
+        },
+        {
+          "name": "Malayalam",
+          "value": 17
+        },
+        {
+          "name": "Sinhalese",
+          "value": 18
+        },
+        {
+          "name": "Burmese",
+          "value": 19
+        },
+        {
+          "name": "Khmer",
+          "value": 20
+        },
+        {
+          "name": "Thai",
+          "value": 21
+        },
+        {
+          "name": "Laotian",
+          "value": 22
+        },
+        {
+          "name": "Georgian",
+          "value": 23
+        },
+        {
+          "name": "Armenian",
+          "value": 24
+        },
+        {
+          "name": "ChineseSimplified",
+          "value": 25
+        },
+        {
+          "name": "Tibetan",
+          "value": 26
+        },
+        {
+          "name": "Mongolian",
+          "value": 27
+        },
+        {
+          "name": "Geez",
+          "value": 28
+        },
+        {
+          "name": "Slavic",
+          "value": 29
+        },
+        {
+          "name": "Vietnamese",
+          "value": 30
+        },
+        {
+          "name": "Sindhi",
+          "value": 31
+        },
+        {
+          "name": "Uninterpreted",
+          "value": 32
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.Fonts.TrueType.Names.TrueTypeMacintoshLanguageIdentifier",
+      "underlyingType": "System.UInt16",
+      "members": [
+        {
+          "name": "English",
+          "value": 0
+        },
+        {
+          "name": "French",
+          "value": 1
+        },
+        {
+          "name": "German",
+          "value": 2
+        },
+        {
+          "name": "Italian",
+          "value": 3
+        },
+        {
+          "name": "Dutch",
+          "value": 4
+        },
+        {
+          "name": "Swedish",
+          "value": 5
+        },
+        {
+          "name": "Spanish",
+          "value": 6
+        },
+        {
+          "name": "Danish",
+          "value": 7
+        },
+        {
+          "name": "Portuguese",
+          "value": 8
+        },
+        {
+          "name": "Norwegian",
+          "value": 9
+        },
+        {
+          "name": "Hebrew",
+          "value": 10
+        },
+        {
+          "name": "Japanese",
+          "value": 11
+        },
+        {
+          "name": "Arabic",
+          "value": 12
+        },
+        {
+          "name": "Finnish",
+          "value": 13
+        },
+        {
+          "name": "Greek",
+          "value": 14
+        },
+        {
+          "name": "Icelandic",
+          "value": 15
+        },
+        {
+          "name": "Maltese",
+          "value": 16
+        },
+        {
+          "name": "Turkish",
+          "value": 17
+        },
+        {
+          "name": "Croatian",
+          "value": 18
+        },
+        {
+          "name": "ChineseTraditional",
+          "value": 19
+        },
+        {
+          "name": "Urdu",
+          "value": 20
+        },
+        {
+          "name": "Hindi",
+          "value": 21
+        },
+        {
+          "name": "Thai",
+          "value": 22
+        },
+        {
+          "name": "Korean",
+          "value": 23
+        },
+        {
+          "name": "Lithuanian",
+          "value": 24
+        },
+        {
+          "name": "Polish",
+          "value": 25
+        },
+        {
+          "name": "Hungarian",
+          "value": 26
+        },
+        {
+          "name": "Estonian",
+          "value": 27
+        },
+        {
+          "name": "Latvian",
+          "value": 28
+        },
+        {
+          "name": "Sami",
+          "value": 29
+        },
+        {
+          "name": "Faroese",
+          "value": 30
+        },
+        {
+          "name": "FarsiPersian",
+          "value": 31
+        },
+        {
+          "name": "Russian",
+          "value": 32
+        },
+        {
+          "name": "ChineseSimplified",
+          "value": 33
+        },
+        {
+          "name": "Flemish",
+          "value": 34
+        },
+        {
+          "name": "IrishGaelic",
+          "value": 35
+        },
+        {
+          "name": "Albanian",
+          "value": 36
+        },
+        {
+          "name": "Romanian",
+          "value": 37
+        },
+        {
+          "name": "Czech",
+          "value": 38
+        },
+        {
+          "name": "Slovak",
+          "value": 39
+        },
+        {
+          "name": "Slovenian",
+          "value": 40
+        },
+        {
+          "name": "Yiddish",
+          "value": 41
+        },
+        {
+          "name": "Serbian",
+          "value": 42
+        },
+        {
+          "name": "Macedonian",
+          "value": 43
+        },
+        {
+          "name": "Bulgarian",
+          "value": 44
+        },
+        {
+          "name": "Ukrainian",
+          "value": 45
+        },
+        {
+          "name": "Byelorussian",
+          "value": 46
+        },
+        {
+          "name": "Uzbek",
+          "value": 47
+        },
+        {
+          "name": "Kazakh",
+          "value": 48
+        },
+        {
+          "name": "AzerbaijaniCyrillic",
+          "value": 49
+        },
+        {
+          "name": "AzerbaijaniArabic",
+          "value": 50
+        },
+        {
+          "name": "Armenian",
+          "value": 51
+        },
+        {
+          "name": "Georgian",
+          "value": 52
+        },
+        {
+          "name": "Moldavian",
+          "value": 53
+        },
+        {
+          "name": "Kirghiz",
+          "value": 54
+        },
+        {
+          "name": "Tajiki",
+          "value": 55
+        },
+        {
+          "name": "Turkmen",
+          "value": 56
+        },
+        {
+          "name": "Mongolian",
+          "value": 57
+        },
+        {
+          "name": "MongolianCyrillic",
+          "value": 58
+        },
+        {
+          "name": "Pashto",
+          "value": 59
+        },
+        {
+          "name": "Kurdish",
+          "value": 60
+        },
+        {
+          "name": "Kashmiri",
+          "value": 61
+        },
+        {
+          "name": "Sindhi",
+          "value": 62
+        },
+        {
+          "name": "Tibetan",
+          "value": 63
+        },
+        {
+          "name": "Nepali",
+          "value": 64
+        },
+        {
+          "name": "Sanskrit",
+          "value": 65
+        },
+        {
+          "name": "Marathi",
+          "value": 66
+        },
+        {
+          "name": "Bengali",
+          "value": 67
+        },
+        {
+          "name": "Assamese",
+          "value": 68
+        },
+        {
+          "name": "Gujarati",
+          "value": 69
+        },
+        {
+          "name": "Punjabi",
+          "value": 70
+        },
+        {
+          "name": "Oriya",
+          "value": 71
+        },
+        {
+          "name": "Malayalam",
+          "value": 72
+        },
+        {
+          "name": "Kannada",
+          "value": 73
+        },
+        {
+          "name": "Tamil",
+          "value": 74
+        },
+        {
+          "name": "Telugu",
+          "value": 75
+        },
+        {
+          "name": "Sinhalese",
+          "value": 76
+        },
+        {
+          "name": "Burmese",
+          "value": 77
+        },
+        {
+          "name": "Khmer",
+          "value": 78
+        },
+        {
+          "name": "Lao",
+          "value": 79
+        },
+        {
+          "name": "Vietnamese",
+          "value": 80
+        },
+        {
+          "name": "Indonesian",
+          "value": 81
+        },
+        {
+          "name": "Tagalog",
+          "value": 82
+        },
+        {
+          "name": "MalayRoman",
+          "value": 83
+        },
+        {
+          "name": "MalayArabic",
+          "value": 84
+        },
+        {
+          "name": "Amharic",
+          "value": 85
+        },
+        {
+          "name": "Tigrinya",
+          "value": 86
+        },
+        {
+          "name": "Galla",
+          "value": 87
+        },
+        {
+          "name": "Somali",
+          "value": 88
+        },
+        {
+          "name": "Swahili",
+          "value": 89
+        },
+        {
+          "name": "KinyarwandaRuanda",
+          "value": 90
+        },
+        {
+          "name": "Rundi",
+          "value": 91
+        },
+        {
+          "name": "NyanjaChewa",
+          "value": 92
+        },
+        {
+          "name": "Malagasy",
+          "value": 93
+        },
+        {
+          "name": "Esperanto",
+          "value": 94
+        },
+        {
+          "name": "Welsh",
+          "value": 128
+        },
+        {
+          "name": "Basque",
+          "value": 129
+        },
+        {
+          "name": "Catalan",
+          "value": 130
+        },
+        {
+          "name": "Latin",
+          "value": 131
+        },
+        {
+          "name": "Quechua",
+          "value": 132
+        },
+        {
+          "name": "Guarani",
+          "value": 133
+        },
+        {
+          "name": "Aymara",
+          "value": 134
+        },
+        {
+          "name": "Tatar",
+          "value": 135
+        },
+        {
+          "name": "Uighur",
+          "value": 136
+        },
+        {
+          "name": "Dzongkha",
+          "value": 137
+        },
+        {
+          "name": "JavaneseRoman",
+          "value": 138
+        },
+        {
+          "name": "SundaneseRoman",
+          "value": 139
+        },
+        {
+          "name": "Galician",
+          "value": 140
+        },
+        {
+          "name": "Afrikaans",
+          "value": 141
+        },
+        {
+          "name": "Breton",
+          "value": 142
+        },
+        {
+          "name": "Inuktitut",
+          "value": 143
+        },
+        {
+          "name": "ScottishGaelic",
+          "value": 144
+        },
+        {
+          "name": "ManxGaelic",
+          "value": 145
+        },
+        {
+          "name": "IrishGaelicWithDotAbove",
+          "value": 146
+        },
+        {
+          "name": "Tongan",
+          "value": 147
+        },
+        {
+          "name": "GreekPolytonic",
+          "value": 148
+        },
+        {
+          "name": "Greenlandic",
+          "value": 149
+        },
+        {
+          "name": "AzerbaijaniRoman",
+          "value": 150
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.Fonts.TrueType.Names.TrueTypePlatformIdentifier",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unicode",
+          "value": 0
+        },
+        {
+          "name": "Macintosh",
+          "value": 1
+        },
+        {
+          "name": "Iso",
+          "value": 2
+        },
+        {
+          "name": "Windows",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.Fonts.TrueType.Names.TrueTypeUnicodeEncodingIndentifier",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "Version1Point1",
+          "value": 1
+        },
+        {
+          "name": "Iso10646",
+          "value": 2
+        },
+        {
+          "name": "Unicode2BmpOnly",
+          "value": 3
+        },
+        {
+          "name": "Unicode2NonBmpAllowed",
+          "value": 4
+        },
+        {
+          "name": "UnicodeVariationSequences",
+          "value": 5
+        },
+        {
+          "name": "FullUnicode",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.Fonts.TrueType.Names.TrueTypeWindowsEncodingIdentifier",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Symbol",
+          "value": 0
+        },
+        {
+          "name": "UnicodeBmp",
+          "value": 1
+        },
+        {
+          "name": "ShiftJis",
+          "value": 2
+        },
+        {
+          "name": "Prc",
+          "value": 3
+        },
+        {
+          "name": "Big5",
+          "value": 4
+        },
+        {
+          "name": "Wansung",
+          "value": 5
+        },
+        {
+          "name": "Johab",
+          "value": 6
+        },
+        {
+          "name": "Reserved7",
+          "value": 7
+        },
+        {
+          "name": "Reserved8",
+          "value": 8
+        },
+        {
+          "name": "Reserved9",
+          "value": 9
+        },
+        {
+          "name": "FullUnicode",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.Fonts.TrueType.Glyphs.CompositeGlyphFlags",
+      "underlyingType": "System.UInt16",
+      "members": [
+        {
+          "name": "Args1And2AreWords",
+          "value": 1
+        },
+        {
+          "name": "ArgsAreXAndYValues",
+          "value": 2
+        },
+        {
+          "name": "RoundXAndYToGrid",
+          "value": 4
+        },
+        {
+          "name": "WeHaveAScale",
+          "value": 8
+        },
+        {
+          "name": "Reserved",
+          "value": 16
+        },
+        {
+          "name": "MoreComponents",
+          "value": 32
+        },
+        {
+          "name": "WeHaveAnXAndYScale",
+          "value": 64
+        },
+        {
+          "name": "WeHaveATwoByTwo",
+          "value": 128
+        },
+        {
+          "name": "WeHaveInstructions",
+          "value": 256
+        },
+        {
+          "name": "UseMyMetrics",
+          "value": 512
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.Fonts.TrueType.Glyphs.SimpleGlyphFlags",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "OnCurve",
+          "value": 1
+        },
+        {
+          "name": "XSingleByte",
+          "value": 2
+        },
+        {
+          "name": "YSingleByte",
+          "value": 4
+        },
+        {
+          "name": "Repeat",
+          "value": 8
+        },
+        {
+          "name": "ThisXIsTheSame",
+          "value": 16
+        },
+        {
+          "name": "ThisYIsTheSame",
+          "value": 32
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.Fonts.Standard14Fonts.Standard14Font",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "TimesRoman",
+          "value": 0
+        },
+        {
+          "name": "TimesBold",
+          "value": 1
+        },
+        {
+          "name": "TimesItalic",
+          "value": 2
+        },
+        {
+          "name": "TimesBoldItalic",
+          "value": 3
+        },
+        {
+          "name": "Helvetica",
+          "value": 4
+        },
+        {
+          "name": "HelveticaBold",
+          "value": 5
+        },
+        {
+          "name": "HelveticaOblique",
+          "value": 6
+        },
+        {
+          "name": "HelveticaBoldOblique",
+          "value": 7
+        },
+        {
+          "name": "Courier",
+          "value": 8
+        },
+        {
+          "name": "CourierBold",
+          "value": 9
+        },
+        {
+          "name": "CourierOblique",
+          "value": 10
+        },
+        {
+          "name": "CourierBoldOblique",
+          "value": 11
+        },
+        {
+          "name": "Symbol",
+          "value": 12
+        },
+        {
+          "name": "ZapfDingbats",
+          "value": 13
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.Fonts.AdobeFontMetrics.AdobeFontMetricsWritingDirections",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Direction0Only",
+          "value": 0
+        },
+        {
+          "name": "Direction1Only",
+          "value": 1
+        },
+        {
+          "name": "Direction0And1",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.Tokenization.Scanner.ScannerScope",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Array",
+          "value": 1
+        },
+        {
+          "name": "Dictionary",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UglyToad.PdfPig.Tokens.StringToken.Encoding",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Iso88591",
+          "value": 0
+        },
+        {
+          "name": "Utf16",
+          "value": 1
+        },
+        {
+          "name": "Utf16BE",
+          "value": 2
+        },
+        {
+          "name": "PdfDocEncoding",
+          "value": 3
+        }
+      ]
+    }
+  ],
+  "namespaceMappings": []
+}

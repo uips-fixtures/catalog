@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UiPath.DocumentUnderstanding.Activities 2.17.4 — Activity Reference</title>
+  <style>
+    :root {
+      --base3:  #fdf6e3; --base2: #eee8d5; --base1: #93a1a1;
+      --base00: #657b83; --base01: #586e75;
+      --orange: #cb4b16; --blue: #268bd2; --cyan: #2aa198;
+      --green:  #859900;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: var(--base3); color: var(--base00);
+      line-height: 1.55; padding: 0 0 4rem;
+    }
+    .topbar {
+      background: var(--orange); color: #fff;
+      padding: 0 2rem; height: 50px;
+      display: flex; align-items: center; gap: 1rem;
+      font-weight: 700; font-size: 1rem;
+    }
+    .topbar a { color: #fff; text-decoration: none; }
+    .topbar-sub { font-weight: 400; font-size: 0.82rem; opacity: 0.82; }
+    .content { max-width: 960px; margin: 0 auto; padding: 2rem 1.5rem 0; }
+    .gen-meta {
+      font-size: 0.78rem; color: var(--base1);
+      border-bottom: 1px solid var(--base2);
+      padding-bottom: 0.75rem; margin-bottom: 2rem;
+    }
+    .pkg-section { margin-bottom: 3rem; }
+    .pkg-heading {
+      font-size: 1.05rem; font-weight: 700;
+      color: var(--base01); border-bottom: 2px solid var(--orange);
+      padding-bottom: 0.3rem; margin-bottom: 1.25rem;
+    }
+    .activity {
+      background: #fff; border: 1px solid var(--base2);
+      border-radius: 4px; padding: 1rem 1.25rem; margin-bottom: 1rem;
+    }
+    .activity-name { font-size: 1rem; font-weight: 700; color: var(--base01); margin-bottom: 0.15rem; }
+    .activity-full { font-family: ui-monospace, monospace; font-size: 0.78rem; color: var(--base1); margin-bottom: 0.5rem; }
+    .activity-desc { font-size: 0.875rem; margin-bottom: 0.75rem; }
+    .badge {
+      display: inline-block; font-size: 0.72rem; padding: 0.1em 0.5em;
+      border-radius: 3px; margin-right: 0.35rem; margin-bottom: 0.5rem;
+      background: var(--base2); color: var(--base01);
+    }
+    .badge-cat { background: #d4edda; color: #155724; }
+    .members-heading {
+      font-size: 0.72rem; text-transform: uppercase;
+      letter-spacing: 0.07em; color: var(--base1);
+      margin: 0.75rem 0 0.35rem;
+    }
+    table { border-collapse: collapse; width: 100%; font-size: 0.82rem; }
+    th, td { text-align: left; padding: 0.3rem 0.6rem; border-bottom: 1px solid var(--base2); }
+    th { background: var(--base2); color: var(--base01); font-size: 0.75rem; font-weight: 600; }
+    tr:last-child td { border-bottom: none; }
+    .dir-in    { color: var(--green);  font-weight: 600; }
+    .dir-out   { color: var(--blue);   font-weight: 600; }
+    .dir-inout { color: var(--cyan);   font-weight: 600; }
+    .req       { color: var(--orange); font-weight: 700; }
+    code { background: var(--base2); padding: 0.1em 0.35em; border-radius: 3px;
+           font-size: 0.85em; font-family: ui-monospace, monospace; }
+    .no-members { font-size: 0.8rem; color: var(--base1); font-style: italic; }
+    .pkg-list { list-style: none; columns: 2; }
+    .pkg-list li { padding: 0.2rem 0; }
+    .pkg-list a { color: var(--blue); text-decoration: none; }
+    .pkg-list a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a href="../../index.html">uips-fixtures</a>
+    <span class="topbar-sub">UiPath.DocumentUnderstanding.Activities 2.17.4</span>
+  </header>
+  <div class="content">
+    <p class="gen-meta">
+      17 activities &middot;
+      uips-fixtures catalog v0.3 &middot; generated 2026-04-10T09:21:43Z
+    </p>
+    <div class="activity" id="UiPath-IntelligentOCR-StudioWeb-Activities-ExtractDocumentDataWithDocumentData">
+      <div class="activity-name">Extract Document Data</div>
+      <div class="activity-full">UiPath.IntelligentOCR.StudioWeb.Activities.ExtractDocumentDataWithDocumentData</div>
+<span class="badge badge-cat">Document Understanding</span><p class="activity-desc">Extracts data from a document and stores the results into automatically generated variables</p>      <p class="no-members">No members extracted.</p>
+    </div>
+    <div class="activity" id="UiPath-IntelligentOCR-StudioWeb-Activities-ClassifyDocument">
+      <div class="activity-name">Classify Document</div>
+      <div class="activity-full">UiPath.IntelligentOCR.StudioWeb.Activities.ClassifyDocument</div>
+<span class="badge badge-cat">Document Understanding</span><p class="activity-desc">Classifies a document according to the configured Classifier</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>ProjectId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ClassifierId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ProjectVersionNumber</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Int32&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ProjectTag</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>FileInput</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;UiPath.Platform.ResourceHandling.IResource&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>TimeoutInSeconds</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Int32&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>MinimumConfidence</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Single&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ClassificationResults</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;UiPath.IntelligentOCR.StudioWeb.Activities.DocumentClassification.DocumentData&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>RuntimeAssetPath</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>RuntimeTenantUrl</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>GptPromptWithVariables</td>
+          <td>property</td>
+          <td><code>Dictionary&lt;String, InArgument&lt;String&gt;&gt;</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-IntelligentOCR-StudioWeb-Activities-PDF-SetPDFPassword-SetPDFPassword">
+      <div class="activity-name">Set PDF Password</div>
+      <div class="activity-full">UiPath.IntelligentOCR.StudioWeb.Activities.PDF.SetPDFPassword.SetPDFPassword</div>
+<span class="badge badge-cat">Document Understanding</span><p class="activity-desc">Activity used to add or remove a password from a PDF file. We recommend creating a password with 10-14 characters, including uppercase, lowercase, numbers, and symbols. Ensure that your new password is not the same as your old password.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>PdfFile</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;UiPath.Platform.ResourceHandling.IResource&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ResultFileName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>NewManagePassword</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>NewOpenPassword</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>CurrentManagePassword</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>CurrentOpenPassword</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ExportedPdf</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;UiPath.Platform.ResourceHandling.ILocalResource&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-IntelligentOCR-StudioWeb-Activities-PDF-MergePDFs-MergePDFs">
+      <div class="activity-name">Merge PDFs</div>
+      <div class="activity-full">UiPath.IntelligentOCR.StudioWeb.Activities.PDF.MergePDFs.MergePDFs</div>
+<span class="badge badge-cat">Document Understanding</span><p class="activity-desc">Merge multiple PDF files</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>CollectionPdfFiles</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;IEnumerable&lt;UiPath.Platform.ResourceHandling.IResource&gt;&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ResultFileName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ExportedPdf</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;UiPath.Platform.ResourceHandling.ILocalResource&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>IndividualPdfFiles</td>
+          <td>property</td>
+          <td><code>IEnumerable&lt;InArgument&lt;UiPath.Platform.ResourceHandling.IResource&gt;&gt;</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-IntelligentOCR-StudioWeb-Activities-PDF-GetPDFPageCount-GetPDFPageCount">
+      <div class="activity-name">Get PDF Page Count</div>
+      <div class="activity-full">UiPath.IntelligentOCR.StudioWeb.Activities.PDF.GetPDFPageCount.GetPDFPageCount</div>
+<span class="badge badge-cat">Document Understanding</span><p class="activity-desc">Get the PDF file page count</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>PdfFile</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;UiPath.Platform.ResourceHandling.IResource&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>FilePassword</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>PageCount</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;Int32&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-IntelligentOCR-StudioWeb-Activities-PDF-ExtractPDFText-ExtractPDFText">
+      <div class="activity-name">Extract PDF Text</div>
+      <div class="activity-full">UiPath.IntelligentOCR.StudioWeb.Activities.PDF.ExtractPDFText.ExtractPDFText</div>
+<span class="badge badge-cat">Document Understanding</span><p class="activity-desc">Extracts all characters from a specified PDF file and stores it in a string variable</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>PdfFile</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;UiPath.Platform.ResourceHandling.IResource&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>FilePassword</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ApplyOcr</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Boolean&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>OcrEngine</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Text</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-IntelligentOCR-StudioWeb-Activities-PDF-ExtractPDFPageRange-ExtractPDFPageRange">
+      <div class="activity-name">Extract PDF Page Range</div>
+      <div class="activity-full">UiPath.IntelligentOCR.StudioWeb.Activities.PDF.ExtractPDFPageRange.ExtractPDFPageRange</div>
+<span class="badge badge-cat">Document Understanding</span><p class="activity-desc">Extracts a range of pages from a PDF file</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>PdfFile</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;UiPath.Platform.ResourceHandling.IResource&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>PageRange</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ResultFileName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>FilePassword</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ExportedPdf</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;UiPath.Platform.ResourceHandling.ILocalResource&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-IntelligentOCR-StudioWeb-Activities-PDF-ExtractPDFImages-ExtractPDFImages">
+      <div class="activity-name">Extract PDF Images</div>
+      <div class="activity-full">UiPath.IntelligentOCR.StudioWeb.Activities.PDF.ExtractPDFImages.ExtractPDFImages</div>
+<span class="badge badge-cat">Document Understanding</span><p class="activity-desc">Extract all image assests from a PDF file</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>PdfFile</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;UiPath.Platform.ResourceHandling.IResource&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ImageExtension</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>FilePassword</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ExtractedImages</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;IEnumerable&lt;UiPath.Platform.ResourceHandling.ILocalResource&gt;&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-IntelligentOCR-StudioWeb-Activities-DataValidation-CreateClassificationValidationAction">
+      <div class="activity-name">Create Classification Validation Task</div>
+      <div class="activity-full">UiPath.IntelligentOCR.StudioWeb.Activities.DataValidation.CreateClassificationValidationAction</div>
+<span class="badge badge-cat">Document Understanding</span><p class="activity-desc">Verify the classified Document Data by creating a Classification Validation Task in Action Center, without waiting for its completion. Use “Wait for Classification Validation Task &amp; Resume” to wait for task completion and resuming the workflow only afterwards.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>AutomaticClassificationResults</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;UiPath.IntelligentOCR.StudioWeb.Activities.DocumentClassification.DocumentData&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ActionTitle</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ActionPriority</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ActionCatalogue</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BucketId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Int64&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BucketName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>OrchestratorFolderName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>OrchestratorBucketName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>EnablePageReordering</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Boolean&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>CreatedClassificationValidationAction</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;UiPath.IntelligentOCR.StudioWeb.Activities.DataValidation.CreatedClassificationValidationAction&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>ActionCenterServiceFactory</td>
+          <td>property</td>
+          <td><code>UiPath.IntelligentOCR.Actions.Abstractions.IActionCenterServiceFactory</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-IntelligentOCR-StudioWeb-Activities-DataValidation-CreateClassificationValidationActionAndWait">
+      <div class="activity-name">Create Classification Validation Task and Wait</div>
+      <div class="activity-full">UiPath.IntelligentOCR.StudioWeb.Activities.DataValidation.CreateClassificationValidationActionAndWait</div>
+<span class="badge badge-cat">Document Understanding</span><p class="activity-desc">Verify the classified Document Data by creating a Classification Validation Task in Action Center and waiting for its completion. After completion, the workflow can be resumed.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>AutomaticClassificationResults</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;UiPath.IntelligentOCR.StudioWeb.Activities.DocumentClassification.DocumentData&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ActionTitle</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ActionPriority</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ActionCatalogue</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BucketId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Int64&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BucketName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>OrchestratorFolderName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>OrchestratorBucketName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>EnablePageReordering</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Boolean&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ValidatedClassificationResults</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;UiPath.IntelligentOCR.StudioWeb.Activities.DocumentClassification.DocumentData&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>ActionCenterServiceFactory</td>
+          <td>property</td>
+          <td><code>UiPath.IntelligentOCR.Actions.Abstractions.IActionCenterServiceFactory</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-IntelligentOCR-StudioWeb-Activities-DataValidation-CreateValidationAction">
+      <div class="activity-name">Create Validation Task</div>
+      <div class="activity-full">UiPath.IntelligentOCR.StudioWeb.Activities.DataValidation.CreateValidationAction</div>
+<span class="badge badge-cat">Document Understanding</span><p class="activity-desc">Verify the extracted Document Data by creating a Document Validation Task in Action Center, without waiting for its completion. Use “Wait for Validation Task and Resume” to wait for task completion and resuming the workflow only afterwards.</p>      <p class="no-members">No members extracted.</p>
+    </div>
+    <div class="activity" id="UiPath-IntelligentOCR-StudioWeb-Activities-DataValidation-ValidateDocumentData">
+      <div class="activity-name">Create Validation Task and Wait</div>
+      <div class="activity-full">UiPath.IntelligentOCR.StudioWeb.Activities.DataValidation.ValidateDocumentData</div>
+<span class="badge badge-cat">Document Understanding</span><p class="activity-desc">Verify the extracted Document Data by creating a Document Validation Task in Action Center and waiting for its completion. After completion, the workflow can be resumed.</p>      <p class="no-members">No members extracted.</p>
+    </div>
+    <div class="activity" id="UiPath-IntelligentOCR-StudioWeb-Activities-DataValidation-ValidateDocumentDataWithDocumentData">
+      <div class="activity-name">Create Validation Task and Wait</div>
+      <div class="activity-full">UiPath.IntelligentOCR.StudioWeb.Activities.DataValidation.ValidateDocumentDataWithDocumentData</div>
+<span class="badge badge-cat">Document Understanding</span><p class="activity-desc">Verify the extracted Document Data by creating a Document Validation Task in Action Center and waiting for its completion. After completion, the workflow can be resumed.</p>      <p class="no-members">No members extracted.</p>
+    </div>
+    <div class="activity" id="UiPath-IntelligentOCR-StudioWeb-Activities-DataValidation-WaitForClassificationValidationAction">
+      <div class="activity-name">Wait for Classification Validation Task &amp; Resume</div>
+      <div class="activity-full">UiPath.IntelligentOCR.StudioWeb.Activities.DataValidation.WaitForClassificationValidationAction</div>
+<span class="badge badge-cat">Document Understanding</span><p class="activity-desc">Wait for the completion of a Classification Validation Task (created by the “Create Classification Validation Task“ activity) and resume the workflow afterwards.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>CreatedClassificationValidationAction</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;UiPath.IntelligentOCR.StudioWeb.Activities.DataValidation.CreatedClassificationValidationAction&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ValidatedClassificationResults</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;UiPath.IntelligentOCR.StudioWeb.Activities.DocumentClassification.DocumentData&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>ActionCenterServiceFactory</td>
+          <td>property</td>
+          <td><code>UiPath.IntelligentOCR.Actions.Abstractions.IActionCenterServiceFactory</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-IntelligentOCR-StudioWeb-Activities-DataValidation-WaitForValidationAction">
+      <div class="activity-name">Wait for Validation Task and Resume</div>
+      <div class="activity-full">UiPath.IntelligentOCR.StudioWeb.Activities.DataValidation.WaitForValidationAction</div>
+<span class="badge badge-cat">Document Understanding</span><p class="activity-desc">Wait for the completion of a Document Validation Task (created by the “Create Validation Task“ Activity) and resume the workflow afterwards</p>      <p class="no-members">No members extracted.</p>
+    </div>
+    <div class="activity" id="UiPath-IntelligentOCR-StudioWeb-Activities-DataValidation-Artifacts-CreateDocumentValidationArtifacts">
+      <div class="activity-name">Create Document Validation Artifacts</div>
+      <div class="activity-full">UiPath.IntelligentOCR.StudioWeb.Activities.DataValidation.Artifacts.CreateDocumentValidationArtifacts</div>
+<span class="badge badge-cat">Document Understanding</span><p class="activity-desc">Creare Document Validation Artifacts</p>      <p class="no-members">No members extracted.</p>
+    </div>
+    <div class="activity" id="UiPath-IntelligentOCR-StudioWeb-Activities-DataValidation-Artifacts-RetrieveDocumentValidationArtifacts">
+      <div class="activity-name">Retrieve Document Validation Artifacts</div>
+      <div class="activity-full">UiPath.IntelligentOCR.StudioWeb.Activities.DataValidation.Artifacts.RetrieveDocumentValidationArtifacts</div>
+<span class="badge badge-cat">Document Understanding</span><p class="activity-desc">Retrieve Document Validation Artifacts</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>ContentValidationData</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;UiPath.DocumentProcessing.Contracts.Actions.ContentValidationData&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>CompletedAppAction</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Object&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>RemoveDataFromStorage</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Boolean&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ReturnAutomaticExtractionResults</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Boolean&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ValidatedExtractionResults</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;UiPath.IntelligentOCR.StudioWeb.Activities.DataExtraction.IDocumentData&lt;UiPath.IntelligentOCR.StudioWeb.Activities.DataExtraction.DictionaryData&gt;&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>ActionCenterServiceFactory</td>
+          <td>property</td>
+          <td><code>UiPath.IntelligentOCR.Actions.Abstractions.IActionCenterServiceFactory</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</body>
+</html>

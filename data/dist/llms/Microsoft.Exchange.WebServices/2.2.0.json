@@ -1,0 +1,6599 @@
+{
+  "schema": {
+    "id": "activity-catalog",
+    "version": "v0.3"
+  },
+  "source": {
+    "kind": "nuget-package",
+    "id": "Microsoft.Exchange.WebServices",
+    "version": "2.2.0",
+    "feedUrl": null,
+    "authors": "Microsoft",
+    "projectUrl": "http://msdn.microsoft.com/en-us/library/dd877012(v=exchg.150).aspx",
+    "description": "The Exchange Web Services (EWS) Managed API provides a .NET Framework interface to EWS in Exchange Online, Exchange Online as part of Office 365, and versions of Exchange starting with Exchange Server 2007 Service Pack 1 (SP1). \n\nYou can use this version of the EWS Managed API to evaluate the library for your application needs, to compare it to directly using XML or the auto generated proxy library, and to create production-ready applications.",
+    "license": "https://github.com/OfficeDev/ews-managed-api/blob/master/license.txt",
+    "tags": "Microsoft Exchange Web Services EWS Managed API Email Client Library C#",
+    "packageTypes": []
+  },
+  "generatedAt": "2026-04-10T09:21:14Z",
+  "activities": [],
+  "enums": [
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Auth.Strings.IDs",
+      "underlyingType": "System.UInt32",
+      "members": [
+        {
+          "name": "MalformedUrlBadHost",
+          "value": 193401915
+        },
+        {
+          "name": "RequiresValidation",
+          "value": 711036561
+        },
+        {
+          "name": "MalformedUrl",
+          "value": 4250276236
+        },
+        {
+          "name": "InvalidSet",
+          "value": 2165814571
+        },
+        {
+          "name": "MetadataAccessFailure",
+          "value": 1062848825
+        },
+        {
+          "name": "NotASet",
+          "value": 3807455230
+        },
+        {
+          "name": "MissingUrl",
+          "value": 3054857199
+        },
+        {
+          "name": "MalformedJson",
+          "value": 701752783
+        },
+        {
+          "name": "MissingField",
+          "value": 1504189790
+        },
+        {
+          "name": "MalformedUrlBadScheme",
+          "value": 3569083868
+        },
+        {
+          "name": "InvalidTokenSignatureException",
+          "value": 826933093
+        },
+        {
+          "name": "InvalidToken",
+          "value": 3606802482
+        },
+        {
+          "name": "MalformedField",
+          "value": 2654541921
+        },
+        {
+          "name": "InvalidTokenVersion",
+          "value": 411469874
+        },
+        {
+          "name": "InvalidTokenFieldCount",
+          "value": 1746620359
+        },
+        {
+          "name": "NoMatchingKey",
+          "value": 3100120053
+        },
+        {
+          "name": "MissingTokenVersion",
+          "value": 229815769
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.LobbyBypass",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Disabled",
+          "value": 0
+        },
+        {
+          "name": "EnabledForGatewayParticipants",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.OnlineMeetingAccessLevel",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Locked",
+          "value": 0
+        },
+        {
+          "name": "Invited",
+          "value": 1
+        },
+        {
+          "name": "Internal",
+          "value": 2
+        },
+        {
+          "name": "Everyone",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.Presenters",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Disabled",
+          "value": 0
+        },
+        {
+          "name": "Internal",
+          "value": 1
+        },
+        {
+          "name": "Everyone",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.ExchangeService.RenderingMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Xml",
+          "value": 0
+        },
+        {
+          "name": "JSON",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.DisableReasonType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NoReason",
+          "value": 0
+        },
+        {
+          "name": "OutlookClientPerformance",
+          "value": 1
+        },
+        {
+          "name": "OWAClientPerformance",
+          "value": 2
+        },
+        {
+          "name": "MobileClientPerformance",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.AffectedTaskOccurrence",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AllOccurrences",
+          "value": 0
+        },
+        {
+          "name": "SpecifiedOccurrenceOnly",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.AggregateType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Minimum",
+          "value": 0
+        },
+        {
+          "name": "Maximum",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.AppointmentType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Single",
+          "value": 0
+        },
+        {
+          "name": "Occurrence",
+          "value": 1
+        },
+        {
+          "name": "Exception",
+          "value": 2
+        },
+        {
+          "name": "RecurringMaster",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Autodiscover.AutodiscoverErrorCode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NoError",
+          "value": 0
+        },
+        {
+          "name": "RedirectAddress",
+          "value": 1
+        },
+        {
+          "name": "RedirectUrl",
+          "value": 2
+        },
+        {
+          "name": "InvalidUser",
+          "value": 3
+        },
+        {
+          "name": "InvalidRequest",
+          "value": 4
+        },
+        {
+          "name": "InvalidSetting",
+          "value": 5
+        },
+        {
+          "name": "SettingIsNotAvailable",
+          "value": 6
+        },
+        {
+          "name": "ServerBusy",
+          "value": 7
+        },
+        {
+          "name": "InvalidDomain",
+          "value": 8
+        },
+        {
+          "name": "NotFederated",
+          "value": 9
+        },
+        {
+          "name": "InternalServerError",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.AvailabilityData",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "FreeBusy",
+          "value": 0
+        },
+        {
+          "name": "Suggestions",
+          "value": 1
+        },
+        {
+          "name": "FreeBusyAndSuggestions",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.BasePropertySet",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "IdOnly",
+          "value": 0
+        },
+        {
+          "name": "FirstClassProperties",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.BodyType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "HTML",
+          "value": 0
+        },
+        {
+          "name": "Text",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.ChangeType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Create",
+          "value": 0
+        },
+        {
+          "name": "Update",
+          "value": 1
+        },
+        {
+          "name": "Delete",
+          "value": 2
+        },
+        {
+          "name": "ReadFlagChange",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.ClientAccessTokenType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "CallerIdentity",
+          "value": 0
+        },
+        {
+          "name": "ExtensionCallback",
+          "value": 1
+        },
+        {
+          "name": "ScopedToken",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.EmailPosition",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "LatestReply",
+          "value": 0
+        },
+        {
+          "name": "Other",
+          "value": 1
+        },
+        {
+          "name": "Subject",
+          "value": 2
+        },
+        {
+          "name": "Signature",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.ClientExtensionProvidedTo",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Everyone",
+          "value": 0
+        },
+        {
+          "name": "SpecificUsers",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.ComparisonMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Exact",
+          "value": 0
+        },
+        {
+          "name": "IgnoreCase",
+          "value": 1
+        },
+        {
+          "name": "IgnoreNonSpacingCharacters",
+          "value": 2
+        },
+        {
+          "name": "IgnoreCaseAndNonSpacingCharacters",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.ConflictResolutionMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NeverOverwrite",
+          "value": 0
+        },
+        {
+          "name": "AutoResolve",
+          "value": 1
+        },
+        {
+          "name": "AlwaysOverwrite",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.ConflictType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "IndividualAttendeeConflict",
+          "value": 0
+        },
+        {
+          "name": "GroupConflict",
+          "value": 1
+        },
+        {
+          "name": "GroupTooBigConflict",
+          "value": 2
+        },
+        {
+          "name": "UnknownAttendeeConflict",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.ConnectingIdType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "PrincipalName",
+          "value": 0
+        },
+        {
+          "name": "SID",
+          "value": 1
+        },
+        {
+          "name": "SmtpAddress",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.ConnectionFailureCause",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "UserBusy",
+          "value": 1
+        },
+        {
+          "name": "NoAnswer",
+          "value": 2
+        },
+        {
+          "name": "Unavailable",
+          "value": 3
+        },
+        {
+          "name": "Other",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.ContactSource",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ActiveDirectory",
+          "value": 0
+        },
+        {
+          "name": "Store",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.ContainmentMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "FullString",
+          "value": 0
+        },
+        {
+          "name": "Prefixed",
+          "value": 1
+        },
+        {
+          "name": "Substring",
+          "value": 2
+        },
+        {
+          "name": "PrefixOnWords",
+          "value": 3
+        },
+        {
+          "name": "ExactPhrase",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.ConversationFlagStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NotFlagged",
+          "value": 0
+        },
+        {
+          "name": "Flagged",
+          "value": 1
+        },
+        {
+          "name": "Complete",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.ConversationQueryTraversal",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Shallow",
+          "value": 0
+        },
+        {
+          "name": "Deep",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.ConversationSortOrder",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "TreeOrderAscending",
+          "value": 0
+        },
+        {
+          "name": "TreeOrderDescending",
+          "value": 1
+        },
+        {
+          "name": "DateOrderAscending",
+          "value": 2
+        },
+        {
+          "name": "DateOrderDescending",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.DateTimePrecision",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "Seconds",
+          "value": 1
+        },
+        {
+          "name": "Milliseconds",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.DayOfTheWeekIndex",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "First",
+          "value": 0
+        },
+        {
+          "name": "Second",
+          "value": 1
+        },
+        {
+          "name": "Third",
+          "value": 2
+        },
+        {
+          "name": "Fourth",
+          "value": 3
+        },
+        {
+          "name": "Last",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.DayOfTheWeek",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Sunday",
+          "value": 0
+        },
+        {
+          "name": "Monday",
+          "value": 1
+        },
+        {
+          "name": "Tuesday",
+          "value": 2
+        },
+        {
+          "name": "Wednesday",
+          "value": 3
+        },
+        {
+          "name": "Thursday",
+          "value": 4
+        },
+        {
+          "name": "Friday",
+          "value": 5
+        },
+        {
+          "name": "Saturday",
+          "value": 6
+        },
+        {
+          "name": "Day",
+          "value": 7
+        },
+        {
+          "name": "Weekday",
+          "value": 8
+        },
+        {
+          "name": "WeekendDay",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.DefaultExtendedPropertySet",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Meeting",
+          "value": 0
+        },
+        {
+          "name": "Appointment",
+          "value": 1
+        },
+        {
+          "name": "Common",
+          "value": 2
+        },
+        {
+          "name": "PublicStrings",
+          "value": 3
+        },
+        {
+          "name": "Address",
+          "value": 4
+        },
+        {
+          "name": "InternetHeaders",
+          "value": 5
+        },
+        {
+          "name": "CalendarAssistant",
+          "value": 6
+        },
+        {
+          "name": "UnifiedMessaging",
+          "value": 7
+        },
+        {
+          "name": "Task",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.DelegateFolderPermissionLevel",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Editor",
+          "value": 1
+        },
+        {
+          "name": "Reviewer",
+          "value": 2
+        },
+        {
+          "name": "Author",
+          "value": 3
+        },
+        {
+          "name": "Custom",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.DeleteMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "HardDelete",
+          "value": 0
+        },
+        {
+          "name": "SoftDelete",
+          "value": 1
+        },
+        {
+          "name": "MoveToDeletedItems",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Autodiscover.DomainSettingName",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ExternalEwsUrl",
+          "value": 0
+        },
+        {
+          "name": "ExternalEwsVersion",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.EffectiveRights",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "CreateAssociated",
+          "value": 1
+        },
+        {
+          "name": "CreateContents",
+          "value": 2
+        },
+        {
+          "name": "CreateHierarchy",
+          "value": 4
+        },
+        {
+          "name": "Delete",
+          "value": 8
+        },
+        {
+          "name": "Modify",
+          "value": 16
+        },
+        {
+          "name": "Read",
+          "value": 32
+        },
+        {
+          "name": "ViewPrivateItems",
+          "value": 64
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.ElcFolderType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Calendar",
+          "value": 1
+        },
+        {
+          "name": "Contacts",
+          "value": 2
+        },
+        {
+          "name": "DeletedItems",
+          "value": 3
+        },
+        {
+          "name": "Drafts",
+          "value": 4
+        },
+        {
+          "name": "Inbox",
+          "value": 5
+        },
+        {
+          "name": "JunkEmail",
+          "value": 6
+        },
+        {
+          "name": "Journal",
+          "value": 7
+        },
+        {
+          "name": "Notes",
+          "value": 8
+        },
+        {
+          "name": "Outbox",
+          "value": 9
+        },
+        {
+          "name": "SentItems",
+          "value": 10
+        },
+        {
+          "name": "Tasks",
+          "value": 11
+        },
+        {
+          "name": "All",
+          "value": 12
+        },
+        {
+          "name": "ManagedCustomFolder",
+          "value": 13
+        },
+        {
+          "name": "RssSubscriptions",
+          "value": 14
+        },
+        {
+          "name": "SyncIssues",
+          "value": 15
+        },
+        {
+          "name": "ConversationHistory",
+          "value": 16
+        },
+        {
+          "name": "Personal",
+          "value": 17
+        },
+        {
+          "name": "RecoverableItems",
+          "value": 18
+        },
+        {
+          "name": "NonIpmRoot",
+          "value": 19
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.EmailAddressKey",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "EmailAddress1",
+          "value": 0
+        },
+        {
+          "name": "EmailAddress2",
+          "value": 1
+        },
+        {
+          "name": "EmailAddress3",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.EventType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Status",
+          "value": 0
+        },
+        {
+          "name": "NewMail",
+          "value": 1
+        },
+        {
+          "name": "Deleted",
+          "value": 2
+        },
+        {
+          "name": "Modified",
+          "value": 3
+        },
+        {
+          "name": "Moved",
+          "value": 4
+        },
+        {
+          "name": "Copied",
+          "value": 5
+        },
+        {
+          "name": "Created",
+          "value": 6
+        },
+        {
+          "name": "FreeBusyChanged",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.ExchangeVersion",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Exchange2007_SP1",
+          "value": 0
+        },
+        {
+          "name": "Exchange2010",
+          "value": 1
+        },
+        {
+          "name": "Exchange2010_SP1",
+          "value": 2
+        },
+        {
+          "name": "Exchange2010_SP2",
+          "value": 3
+        },
+        {
+          "name": "Exchange2013",
+          "value": 4
+        },
+        {
+          "name": "Exchange2013_SP1",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.ExtensionInstallScope",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "User",
+          "value": 1
+        },
+        {
+          "name": "Organization",
+          "value": 2
+        },
+        {
+          "name": "Default",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.ExtensionType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "Private",
+          "value": 1
+        },
+        {
+          "name": "MarketPlace",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.FileAsMapping",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "SurnameCommaGivenName",
+          "value": 1
+        },
+        {
+          "name": "GivenNameSpaceSurname",
+          "value": 2
+        },
+        {
+          "name": "Company",
+          "value": 3
+        },
+        {
+          "name": "SurnameCommaGivenNameCompany",
+          "value": 4
+        },
+        {
+          "name": "CompanySurnameGivenName",
+          "value": 5
+        },
+        {
+          "name": "SurnameGivenName",
+          "value": 6
+        },
+        {
+          "name": "SurnameGivenNameCompany",
+          "value": 7
+        },
+        {
+          "name": "CompanySurnameCommaGivenName",
+          "value": 8
+        },
+        {
+          "name": "SurnameGivenNameSuffix",
+          "value": 9
+        },
+        {
+          "name": "SurnameSpaceGivenNameCompany",
+          "value": 10
+        },
+        {
+          "name": "CompanySurnameSpaceGivenName",
+          "value": 11
+        },
+        {
+          "name": "SurnameSpaceGivenName",
+          "value": 12
+        },
+        {
+          "name": "DisplayName",
+          "value": 13
+        },
+        {
+          "name": "GivenName",
+          "value": 14
+        },
+        {
+          "name": "SurnameGivenNameMiddleSuffix",
+          "value": 15
+        },
+        {
+          "name": "Surname",
+          "value": 16
+        },
+        {
+          "name": "Empty",
+          "value": 17
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.FlaggedForAction",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Any",
+          "value": 0
+        },
+        {
+          "name": "Call",
+          "value": 1
+        },
+        {
+          "name": "DoNotForward",
+          "value": 2
+        },
+        {
+          "name": "FollowUp",
+          "value": 3
+        },
+        {
+          "name": "FYI",
+          "value": 4
+        },
+        {
+          "name": "Forward",
+          "value": 5
+        },
+        {
+          "name": "NoResponseNecessary",
+          "value": 6
+        },
+        {
+          "name": "Read",
+          "value": 7
+        },
+        {
+          "name": "Reply",
+          "value": 8
+        },
+        {
+          "name": "ReplyToAll",
+          "value": 9
+        },
+        {
+          "name": "Review",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.FolderPermissionLevel",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Owner",
+          "value": 1
+        },
+        {
+          "name": "PublishingEditor",
+          "value": 2
+        },
+        {
+          "name": "Editor",
+          "value": 3
+        },
+        {
+          "name": "PublishingAuthor",
+          "value": 4
+        },
+        {
+          "name": "Author",
+          "value": 5
+        },
+        {
+          "name": "NoneditingAuthor",
+          "value": 6
+        },
+        {
+          "name": "Reviewer",
+          "value": 7
+        },
+        {
+          "name": "Contributor",
+          "value": 8
+        },
+        {
+          "name": "FreeBusyTimeOnly",
+          "value": 9
+        },
+        {
+          "name": "FreeBusyTimeAndSubjectAndLocation",
+          "value": 10
+        },
+        {
+          "name": "Custom",
+          "value": 11
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.FolderPermissionReadAccess",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "TimeOnly",
+          "value": 1
+        },
+        {
+          "name": "TimeAndSubjectAndLocation",
+          "value": 2
+        },
+        {
+          "name": "FullDetails",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.FolderTraversal",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Shallow",
+          "value": 0
+        },
+        {
+          "name": "Deep",
+          "value": 1
+        },
+        {
+          "name": "SoftDeleted",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.FreeBusyViewType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "MergedOnly",
+          "value": 1
+        },
+        {
+          "name": "FreeBusy",
+          "value": 2
+        },
+        {
+          "name": "FreeBusyMerged",
+          "value": 3
+        },
+        {
+          "name": "Detailed",
+          "value": 4
+        },
+        {
+          "name": "DetailedMerged",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.HoldAction",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Create",
+          "value": 0
+        },
+        {
+          "name": "Update",
+          "value": 1
+        },
+        {
+          "name": "Remove",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.HoldStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NotOnHold",
+          "value": 0
+        },
+        {
+          "name": "Pending",
+          "value": 1
+        },
+        {
+          "name": "OnHold",
+          "value": 2
+        },
+        {
+          "name": "PartialHold",
+          "value": 3
+        },
+        {
+          "name": "Failed",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.IconIndex",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "PostItem",
+          "value": 1
+        },
+        {
+          "name": "MailRead",
+          "value": 2
+        },
+        {
+          "name": "MailUnread",
+          "value": 3
+        },
+        {
+          "name": "MailReplied",
+          "value": 4
+        },
+        {
+          "name": "MailForwarded",
+          "value": 5
+        },
+        {
+          "name": "MailEncrypted",
+          "value": 6
+        },
+        {
+          "name": "MailSmimeSigned",
+          "value": 7
+        },
+        {
+          "name": "MailEncryptedReplied",
+          "value": 8
+        },
+        {
+          "name": "MailSmimeSignedReplied",
+          "value": 9
+        },
+        {
+          "name": "MailEncryptedForwarded",
+          "value": 10
+        },
+        {
+          "name": "MailSmimeSignedForwarded",
+          "value": 11
+        },
+        {
+          "name": "MailEncryptedRead",
+          "value": 12
+        },
+        {
+          "name": "MailSmimeSignedRead",
+          "value": 13
+        },
+        {
+          "name": "MailIrm",
+          "value": 14
+        },
+        {
+          "name": "MailIrmForwarded",
+          "value": 15
+        },
+        {
+          "name": "MailIrmReplied",
+          "value": 16
+        },
+        {
+          "name": "SmsSubmitted",
+          "value": 17
+        },
+        {
+          "name": "SmsRoutedToDeliveryPoint",
+          "value": 18
+        },
+        {
+          "name": "SmsRoutedToExternalMessagingSystem",
+          "value": 19
+        },
+        {
+          "name": "SmsDelivered",
+          "value": 20
+        },
+        {
+          "name": "OutlookDefaultForContacts",
+          "value": 21
+        },
+        {
+          "name": "AppointmentItem",
+          "value": 22
+        },
+        {
+          "name": "AppointmentRecur",
+          "value": 23
+        },
+        {
+          "name": "AppointmentMeet",
+          "value": 24
+        },
+        {
+          "name": "AppointmentMeetRecur",
+          "value": 25
+        },
+        {
+          "name": "AppointmentMeetNY",
+          "value": 26
+        },
+        {
+          "name": "AppointmentMeetYes",
+          "value": 27
+        },
+        {
+          "name": "AppointmentMeetNo",
+          "value": 28
+        },
+        {
+          "name": "AppointmentMeetMaybe",
+          "value": 29
+        },
+        {
+          "name": "AppointmentMeetCancel",
+          "value": 30
+        },
+        {
+          "name": "AppointmentMeetInfo",
+          "value": 31
+        },
+        {
+          "name": "TaskItem",
+          "value": 32
+        },
+        {
+          "name": "TaskRecur",
+          "value": 33
+        },
+        {
+          "name": "TaskOwned",
+          "value": 34
+        },
+        {
+          "name": "TaskDelegated",
+          "value": 35
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.IdFormat",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "EwsLegacyId",
+          "value": 0
+        },
+        {
+          "name": "EwsId",
+          "value": 1
+        },
+        {
+          "name": "EntryId",
+          "value": 2
+        },
+        {
+          "name": "HexEntryId",
+          "value": 3
+        },
+        {
+          "name": "StoreId",
+          "value": 4
+        },
+        {
+          "name": "OwaId",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.ImAddressKey",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ImAddress1",
+          "value": 0
+        },
+        {
+          "name": "ImAddress2",
+          "value": 1
+        },
+        {
+          "name": "ImAddress3",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.Importance",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Low",
+          "value": 0
+        },
+        {
+          "name": "Normal",
+          "value": 1
+        },
+        {
+          "name": "High",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.ItemFlagStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NotFlagged",
+          "value": 0
+        },
+        {
+          "name": "Flagged",
+          "value": 1
+        },
+        {
+          "name": "Complete",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.ItemTraversal",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Shallow",
+          "value": 0
+        },
+        {
+          "name": "SoftDeleted",
+          "value": 1
+        },
+        {
+          "name": "Associated",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.LegacyFreeBusyStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Free",
+          "value": 0
+        },
+        {
+          "name": "Tentative",
+          "value": 1
+        },
+        {
+          "name": "Busy",
+          "value": 2
+        },
+        {
+          "name": "OOF",
+          "value": 3
+        },
+        {
+          "name": "WorkingElsewhere",
+          "value": 4
+        },
+        {
+          "name": "NoData",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.LocationSource",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "LocationServices",
+          "value": 1
+        },
+        {
+          "name": "PhonebookServices",
+          "value": 2
+        },
+        {
+          "name": "Device",
+          "value": 3
+        },
+        {
+          "name": "Contact",
+          "value": 4
+        },
+        {
+          "name": "Resource",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.LogicalOperator",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "And",
+          "value": 0
+        },
+        {
+          "name": "Or",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.MailboxSearchLocation",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "PrimaryOnly",
+          "value": 0
+        },
+        {
+          "name": "ArchiveOnly",
+          "value": 1
+        },
+        {
+          "name": "All",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.MailboxType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "OneOff",
+          "value": 1
+        },
+        {
+          "name": "Mailbox",
+          "value": 2
+        },
+        {
+          "name": "PublicFolder",
+          "value": 3
+        },
+        {
+          "name": "PublicGroup",
+          "value": 4
+        },
+        {
+          "name": "ContactGroup",
+          "value": 5
+        },
+        {
+          "name": "Contact",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.MapiPropertyType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ApplicationTime",
+          "value": 0
+        },
+        {
+          "name": "ApplicationTimeArray",
+          "value": 1
+        },
+        {
+          "name": "Binary",
+          "value": 2
+        },
+        {
+          "name": "BinaryArray",
+          "value": 3
+        },
+        {
+          "name": "Boolean",
+          "value": 4
+        },
+        {
+          "name": "CLSID",
+          "value": 5
+        },
+        {
+          "name": "CLSIDArray",
+          "value": 6
+        },
+        {
+          "name": "Currency",
+          "value": 7
+        },
+        {
+          "name": "CurrencyArray",
+          "value": 8
+        },
+        {
+          "name": "Double",
+          "value": 9
+        },
+        {
+          "name": "DoubleArray",
+          "value": 10
+        },
+        {
+          "name": "Error",
+          "value": 11
+        },
+        {
+          "name": "Float",
+          "value": 12
+        },
+        {
+          "name": "FloatArray",
+          "value": 13
+        },
+        {
+          "name": "Integer",
+          "value": 14
+        },
+        {
+          "name": "IntegerArray",
+          "value": 15
+        },
+        {
+          "name": "Long",
+          "value": 16
+        },
+        {
+          "name": "LongArray",
+          "value": 17
+        },
+        {
+          "name": "Null",
+          "value": 18
+        },
+        {
+          "name": "Object",
+          "value": 19
+        },
+        {
+          "name": "ObjectArray",
+          "value": 20
+        },
+        {
+          "name": "Short",
+          "value": 21
+        },
+        {
+          "name": "ShortArray",
+          "value": 22
+        },
+        {
+          "name": "SystemTime",
+          "value": 23
+        },
+        {
+          "name": "SystemTimeArray",
+          "value": 24
+        },
+        {
+          "name": "String",
+          "value": 25
+        },
+        {
+          "name": "StringArray",
+          "value": 26
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.MemberStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unrecognized",
+          "value": 0
+        },
+        {
+          "name": "Normal",
+          "value": 1
+        },
+        {
+          "name": "Demoted",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.MeetingAttendeeType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Organizer",
+          "value": 0
+        },
+        {
+          "name": "Required",
+          "value": 1
+        },
+        {
+          "name": "Optional",
+          "value": 2
+        },
+        {
+          "name": "Room",
+          "value": 3
+        },
+        {
+          "name": "Resource",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.MeetingRequestsDeliveryScope",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DelegatesOnly",
+          "value": 0
+        },
+        {
+          "name": "DelegatesAndMe",
+          "value": 1
+        },
+        {
+          "name": "DelegatesAndSendInformationToMe",
+          "value": 2
+        },
+        {
+          "name": "NoForward",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.MeetingRequestType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "FullUpdate",
+          "value": 1
+        },
+        {
+          "name": "InformationalUpdate",
+          "value": 2
+        },
+        {
+          "name": "NewMeetingRequest",
+          "value": 3
+        },
+        {
+          "name": "Outdated",
+          "value": 4
+        },
+        {
+          "name": "SilentUpdate",
+          "value": 5
+        },
+        {
+          "name": "PrincipalWantsCopy",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.MessageDisposition",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "SaveOnly",
+          "value": 0
+        },
+        {
+          "name": "SendAndSaveCopy",
+          "value": 1
+        },
+        {
+          "name": "SendOnly",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.Month",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "January",
+          "value": 1
+        },
+        {
+          "name": "February",
+          "value": 2
+        },
+        {
+          "name": "March",
+          "value": 3
+        },
+        {
+          "name": "April",
+          "value": 4
+        },
+        {
+          "name": "May",
+          "value": 5
+        },
+        {
+          "name": "June",
+          "value": 6
+        },
+        {
+          "name": "July",
+          "value": 7
+        },
+        {
+          "name": "August",
+          "value": 8
+        },
+        {
+          "name": "September",
+          "value": 9
+        },
+        {
+          "name": "October",
+          "value": 10
+        },
+        {
+          "name": "November",
+          "value": 11
+        },
+        {
+          "name": "December",
+          "value": 12
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.OffsetBasePoint",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Beginning",
+          "value": 0
+        },
+        {
+          "name": "End",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.OofExternalAudience",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Known",
+          "value": 1
+        },
+        {
+          "name": "All",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.OofState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Disabled",
+          "value": 0
+        },
+        {
+          "name": "Enabled",
+          "value": 1
+        },
+        {
+          "name": "Scheduled",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.PermissionScope",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Owned",
+          "value": 1
+        },
+        {
+          "name": "All",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.PhoneCallState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Idle",
+          "value": 0
+        },
+        {
+          "name": "Connecting",
+          "value": 1
+        },
+        {
+          "name": "Alerted",
+          "value": 2
+        },
+        {
+          "name": "Connected",
+          "value": 3
+        },
+        {
+          "name": "Disconnected",
+          "value": 4
+        },
+        {
+          "name": "Incoming",
+          "value": 5
+        },
+        {
+          "name": "Transferring",
+          "value": 6
+        },
+        {
+          "name": "Forwarding",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.PhoneNumberKey",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AssistantPhone",
+          "value": 0
+        },
+        {
+          "name": "BusinessFax",
+          "value": 1
+        },
+        {
+          "name": "BusinessPhone",
+          "value": 2
+        },
+        {
+          "name": "BusinessPhone2",
+          "value": 3
+        },
+        {
+          "name": "Callback",
+          "value": 4
+        },
+        {
+          "name": "CarPhone",
+          "value": 5
+        },
+        {
+          "name": "CompanyMainPhone",
+          "value": 6
+        },
+        {
+          "name": "HomeFax",
+          "value": 7
+        },
+        {
+          "name": "HomePhone",
+          "value": 8
+        },
+        {
+          "name": "HomePhone2",
+          "value": 9
+        },
+        {
+          "name": "Isdn",
+          "value": 10
+        },
+        {
+          "name": "MobilePhone",
+          "value": 11
+        },
+        {
+          "name": "OtherFax",
+          "value": 12
+        },
+        {
+          "name": "OtherTelephone",
+          "value": 13
+        },
+        {
+          "name": "Pager",
+          "value": 14
+        },
+        {
+          "name": "PrimaryPhone",
+          "value": 15
+        },
+        {
+          "name": "RadioPhone",
+          "value": 16
+        },
+        {
+          "name": "Telex",
+          "value": 17
+        },
+        {
+          "name": "TtyTddPhone",
+          "value": 18
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.PhysicalAddressIndex",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Business",
+          "value": 1
+        },
+        {
+          "name": "Home",
+          "value": 2
+        },
+        {
+          "name": "Other",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.PhysicalAddressKey",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Business",
+          "value": 0
+        },
+        {
+          "name": "Home",
+          "value": 1
+        },
+        {
+          "name": "Other",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.PreviewItemBaseShape",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "Compact",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.ResolveNameSearchLocation",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DirectoryOnly",
+          "value": 0
+        },
+        {
+          "name": "DirectoryThenContacts",
+          "value": 1
+        },
+        {
+          "name": "ContactsOnly",
+          "value": 2
+        },
+        {
+          "name": "ContactsThenDirectory",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.ResponseActions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Accept",
+          "value": 1
+        },
+        {
+          "name": "TentativelyAccept",
+          "value": 2
+        },
+        {
+          "name": "Decline",
+          "value": 4
+        },
+        {
+          "name": "Reply",
+          "value": 8
+        },
+        {
+          "name": "ReplyAll",
+          "value": 16
+        },
+        {
+          "name": "Forward",
+          "value": 32
+        },
+        {
+          "name": "Cancel",
+          "value": 64
+        },
+        {
+          "name": "RemoveFromCalendar",
+          "value": 128
+        },
+        {
+          "name": "SuppressReadReceipt",
+          "value": 256
+        },
+        {
+          "name": "PostReply",
+          "value": 512
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.ResponseMessageType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Reply",
+          "value": 0
+        },
+        {
+          "name": "ReplyAll",
+          "value": 1
+        },
+        {
+          "name": "Forward",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.MeetingResponseType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "Organizer",
+          "value": 1
+        },
+        {
+          "name": "Tentative",
+          "value": 2
+        },
+        {
+          "name": "Accept",
+          "value": 3
+        },
+        {
+          "name": "Decline",
+          "value": 4
+        },
+        {
+          "name": "NoResponseReceived",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.RetentionActionType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "MoveToDeletedItems",
+          "value": 1
+        },
+        {
+          "name": "MoveToFolder",
+          "value": 2
+        },
+        {
+          "name": "DeleteAndAllowRecovery",
+          "value": 3
+        },
+        {
+          "name": "PermanentlyDelete",
+          "value": 4
+        },
+        {
+          "name": "MarkAsPastRetentionLimit",
+          "value": 5
+        },
+        {
+          "name": "MoveToArchive",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.RetentionType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Delete",
+          "value": 0
+        },
+        {
+          "name": "Archive",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.RuleProperty",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "RuleId",
+          "value": 0
+        },
+        {
+          "name": "DisplayName",
+          "value": 1
+        },
+        {
+          "name": "Priority",
+          "value": 2
+        },
+        {
+          "name": "IsNotSupported",
+          "value": 3
+        },
+        {
+          "name": "Actions",
+          "value": 4
+        },
+        {
+          "name": "ConditionCategories",
+          "value": 5
+        },
+        {
+          "name": "ConditionContainsBodyStrings",
+          "value": 6
+        },
+        {
+          "name": "ConditionContainsHeaderStrings",
+          "value": 7
+        },
+        {
+          "name": "ConditionContainsRecipientStrings",
+          "value": 8
+        },
+        {
+          "name": "ConditionContainsSenderStrings",
+          "value": 9
+        },
+        {
+          "name": "ConditionContainsSubjectOrBodyStrings",
+          "value": 10
+        },
+        {
+          "name": "ConditionContainsSubjectStrings",
+          "value": 11
+        },
+        {
+          "name": "ConditionFlaggedForAction",
+          "value": 12
+        },
+        {
+          "name": "ConditionFromAddresses",
+          "value": 13
+        },
+        {
+          "name": "ConditionFromConnectedAccounts",
+          "value": 14
+        },
+        {
+          "name": "ConditionHasAttachments",
+          "value": 15
+        },
+        {
+          "name": "ConditionImportance",
+          "value": 16
+        },
+        {
+          "name": "ConditionIsApprovalRequest",
+          "value": 17
+        },
+        {
+          "name": "ConditionIsAutomaticForward",
+          "value": 18
+        },
+        {
+          "name": "ConditionIsAutomaticReply",
+          "value": 19
+        },
+        {
+          "name": "ConditionIsEncrypted",
+          "value": 20
+        },
+        {
+          "name": "ConditionIsMeetingRequest",
+          "value": 21
+        },
+        {
+          "name": "ConditionIsMeetingResponse",
+          "value": 22
+        },
+        {
+          "name": "ConditionIsNonDeliveryReport",
+          "value": 23
+        },
+        {
+          "name": "ConditionIsPermissionControlled",
+          "value": 24
+        },
+        {
+          "name": "ConditionIsRead",
+          "value": 25
+        },
+        {
+          "name": "ConditionIsSigned",
+          "value": 26
+        },
+        {
+          "name": "ConditionIsVoicemail",
+          "value": 27
+        },
+        {
+          "name": "ConditionIsReadReceipt",
+          "value": 28
+        },
+        {
+          "name": "ConditionItemClasses",
+          "value": 29
+        },
+        {
+          "name": "ConditionMessageClassifications",
+          "value": 30
+        },
+        {
+          "name": "ConditionNotSentToMe",
+          "value": 31
+        },
+        {
+          "name": "ConditionSentCcMe",
+          "value": 32
+        },
+        {
+          "name": "ConditionSentOnlyToMe",
+          "value": 33
+        },
+        {
+          "name": "ConditionSentToAddresses",
+          "value": 34
+        },
+        {
+          "name": "ConditionSentToMe",
+          "value": 35
+        },
+        {
+          "name": "ConditionSentToOrCcMe",
+          "value": 36
+        },
+        {
+          "name": "ConditionSensitivity",
+          "value": 37
+        },
+        {
+          "name": "ConditionWithinDateRange",
+          "value": 38
+        },
+        {
+          "name": "ConditionWithinSizeRange",
+          "value": 39
+        },
+        {
+          "name": "ExceptionCategories",
+          "value": 40
+        },
+        {
+          "name": "ExceptionContainsBodyStrings",
+          "value": 41
+        },
+        {
+          "name": "ExceptionContainsHeaderStrings",
+          "value": 42
+        },
+        {
+          "name": "ExceptionContainsRecipientStrings",
+          "value": 43
+        },
+        {
+          "name": "ExceptionContainsSenderStrings",
+          "value": 44
+        },
+        {
+          "name": "ExceptionContainsSubjectOrBodyStrings",
+          "value": 45
+        },
+        {
+          "name": "ExceptionContainsSubjectStrings",
+          "value": 46
+        },
+        {
+          "name": "ExceptionFlaggedForAction",
+          "value": 47
+        },
+        {
+          "name": "ExceptionFromAddresses",
+          "value": 48
+        },
+        {
+          "name": "ExceptionFromConnectedAccounts",
+          "value": 49
+        },
+        {
+          "name": "ExceptionHasAttachments",
+          "value": 50
+        },
+        {
+          "name": "ExceptionImportance",
+          "value": 51
+        },
+        {
+          "name": "ExceptionIsApprovalRequest",
+          "value": 52
+        },
+        {
+          "name": "ExceptionIsAutomaticForward",
+          "value": 53
+        },
+        {
+          "name": "ExceptionIsAutomaticReply",
+          "value": 54
+        },
+        {
+          "name": "ExceptionIsEncrypted",
+          "value": 55
+        },
+        {
+          "name": "ExceptionIsMeetingRequest",
+          "value": 56
+        },
+        {
+          "name": "ExceptionIsMeetingResponse",
+          "value": 57
+        },
+        {
+          "name": "ExceptionIsNonDeliveryReport",
+          "value": 58
+        },
+        {
+          "name": "ExceptionIsPermissionControlled",
+          "value": 59
+        },
+        {
+          "name": "ExceptionIsRead",
+          "value": 60
+        },
+        {
+          "name": "ExceptionIsSigned",
+          "value": 61
+        },
+        {
+          "name": "ExceptionIsVoicemail",
+          "value": 62
+        },
+        {
+          "name": "ExceptionItemClasses",
+          "value": 63
+        },
+        {
+          "name": "ExceptionMessageClassifications",
+          "value": 64
+        },
+        {
+          "name": "ExceptionNotSentToMe",
+          "value": 65
+        },
+        {
+          "name": "ExceptionSentCcMe",
+          "value": 66
+        },
+        {
+          "name": "ExceptionSentOnlyToMe",
+          "value": 67
+        },
+        {
+          "name": "ExceptionSentToAddresses",
+          "value": 68
+        },
+        {
+          "name": "ExceptionSentToMe",
+          "value": 69
+        },
+        {
+          "name": "ExceptionSentToOrCcMe",
+          "value": 70
+        },
+        {
+          "name": "ExceptionSensitivity",
+          "value": 71
+        },
+        {
+          "name": "ExceptionWithinDateRange",
+          "value": 72
+        },
+        {
+          "name": "ExceptionWithinSizeRange",
+          "value": 73
+        },
+        {
+          "name": "ActionCategories",
+          "value": 74
+        },
+        {
+          "name": "ActionCopyToFolder",
+          "value": 75
+        },
+        {
+          "name": "ActionDelete",
+          "value": 76
+        },
+        {
+          "name": "ActionForwardAsAttachmentToRecipients",
+          "value": 77
+        },
+        {
+          "name": "ActionForwardToRecipients",
+          "value": 78
+        },
+        {
+          "name": "ActionImportance",
+          "value": 79
+        },
+        {
+          "name": "ActionMarkAsRead",
+          "value": 80
+        },
+        {
+          "name": "ActionMoveToFolder",
+          "value": 81
+        },
+        {
+          "name": "ActionPermanentDelete",
+          "value": 82
+        },
+        {
+          "name": "ActionRedirectToRecipients",
+          "value": 83
+        },
+        {
+          "name": "ActionSendSMSAlertToRecipients",
+          "value": 84
+        },
+        {
+          "name": "ActionServerReplyWithMessage",
+          "value": 85
+        },
+        {
+          "name": "ActionStopProcessingRules",
+          "value": 86
+        },
+        {
+          "name": "IsEnabled",
+          "value": 87
+        },
+        {
+          "name": "IsInError",
+          "value": 88
+        },
+        {
+          "name": "Conditions",
+          "value": 89
+        },
+        {
+          "name": "Exceptions",
+          "value": 90
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.RuleErrorCode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ADOperationFailure",
+          "value": 0
+        },
+        {
+          "name": "ConnectedAccountNotFound",
+          "value": 1
+        },
+        {
+          "name": "CreateWithRuleId",
+          "value": 2
+        },
+        {
+          "name": "EmptyValueFound",
+          "value": 3
+        },
+        {
+          "name": "DuplicatedPriority",
+          "value": 4
+        },
+        {
+          "name": "DuplicatedOperationOnTheSameRule",
+          "value": 5
+        },
+        {
+          "name": "FolderDoesNotExist",
+          "value": 6
+        },
+        {
+          "name": "InvalidAddress",
+          "value": 7
+        },
+        {
+          "name": "InvalidDateRange",
+          "value": 8
+        },
+        {
+          "name": "InvalidFolderId",
+          "value": 9
+        },
+        {
+          "name": "InvalidSizeRange",
+          "value": 10
+        },
+        {
+          "name": "InvalidValue",
+          "value": 11
+        },
+        {
+          "name": "MessageClassificationNotFound",
+          "value": 12
+        },
+        {
+          "name": "MissingAction",
+          "value": 13
+        },
+        {
+          "name": "MissingParameter",
+          "value": 14
+        },
+        {
+          "name": "MissingRangeValue",
+          "value": 15
+        },
+        {
+          "name": "NotSettable",
+          "value": 16
+        },
+        {
+          "name": "RecipientDoesNotExist",
+          "value": 17
+        },
+        {
+          "name": "RuleNotFound",
+          "value": 18
+        },
+        {
+          "name": "SizeLessThanZero",
+          "value": 19
+        },
+        {
+          "name": "StringValueTooBig",
+          "value": 20
+        },
+        {
+          "name": "UnsupportedAddress",
+          "value": 21
+        },
+        {
+          "name": "UnexpectedError",
+          "value": 22
+        },
+        {
+          "name": "UnsupportedRule",
+          "value": 23
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.SearchFolderTraversal",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Shallow",
+          "value": 0
+        },
+        {
+          "name": "Deep",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.SearchPageDirection",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Next",
+          "value": 0
+        },
+        {
+          "name": "Previous",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.SearchResultType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "StatisticsOnly",
+          "value": 0
+        },
+        {
+          "name": "PreviewOnly",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.SendCancellationsMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "SendToNone",
+          "value": 0
+        },
+        {
+          "name": "SendOnlyToAll",
+          "value": 1
+        },
+        {
+          "name": "SendToAllAndSaveCopy",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.SendInvitationsMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "SendToNone",
+          "value": 0
+        },
+        {
+          "name": "SendOnlyToAll",
+          "value": 1
+        },
+        {
+          "name": "SendToAllAndSaveCopy",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.SendInvitationsOrCancellationsMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "SendToNone",
+          "value": 0
+        },
+        {
+          "name": "SendOnlyToAll",
+          "value": 1
+        },
+        {
+          "name": "SendOnlyToChanged",
+          "value": 2
+        },
+        {
+          "name": "SendToAllAndSaveCopy",
+          "value": 3
+        },
+        {
+          "name": "SendToChangedAndSaveCopy",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.SendPrompt",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Send",
+          "value": 1
+        },
+        {
+          "name": "VotingOption",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.Sensitivity",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Normal",
+          "value": 0
+        },
+        {
+          "name": "Personal",
+          "value": 1
+        },
+        {
+          "name": "Private",
+          "value": 2
+        },
+        {
+          "name": "Confidential",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.ServiceError",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NoError",
+          "value": 0
+        },
+        {
+          "name": "ErrorAccessDenied",
+          "value": 1
+        },
+        {
+          "name": "ErrorAccessModeSpecified",
+          "value": 2
+        },
+        {
+          "name": "ErrorAccountDisabled",
+          "value": 3
+        },
+        {
+          "name": "ErrorAddDelegatesFailed",
+          "value": 4
+        },
+        {
+          "name": "ErrorAddressSpaceNotFound",
+          "value": 5
+        },
+        {
+          "name": "ErrorADOperation",
+          "value": 6
+        },
+        {
+          "name": "ErrorADSessionFilter",
+          "value": 7
+        },
+        {
+          "name": "ErrorADUnavailable",
+          "value": 8
+        },
+        {
+          "name": "ErrorAffectedTaskOccurrencesRequired",
+          "value": 9
+        },
+        {
+          "name": "ErrorApplyConversationActionFailed",
+          "value": 10
+        },
+        {
+          "name": "ErrorArchiveMailboxNotEnabled",
+          "value": 11
+        },
+        {
+          "name": "ErrorArchiveFolderPathCreation",
+          "value": 12
+        },
+        {
+          "name": "ErrorArchiveMailboxServiceDiscoveryFailed",
+          "value": 13
+        },
+        {
+          "name": "ErrorAttachmentNestLevelLimitExceeded",
+          "value": 14
+        },
+        {
+          "name": "ErrorAttachmentSizeLimitExceeded",
+          "value": 15
+        },
+        {
+          "name": "ErrorAutoDiscoverFailed",
+          "value": 16
+        },
+        {
+          "name": "ErrorAvailabilityConfigNotFound",
+          "value": 17
+        },
+        {
+          "name": "ErrorBatchProcessingStopped",
+          "value": 18
+        },
+        {
+          "name": "ErrorCalendarCannotMoveOrCopyOccurrence",
+          "value": 19
+        },
+        {
+          "name": "ErrorCalendarCannotUpdateDeletedItem",
+          "value": 20
+        },
+        {
+          "name": "ErrorCalendarCannotUseIdForOccurrenceId",
+          "value": 21
+        },
+        {
+          "name": "ErrorCalendarCannotUseIdForRecurringMasterId",
+          "value": 22
+        },
+        {
+          "name": "ErrorCalendarDurationIsTooLong",
+          "value": 23
+        },
+        {
+          "name": "ErrorCalendarEndDateIsEarlierThanStartDate",
+          "value": 24
+        },
+        {
+          "name": "ErrorCalendarFolderIsInvalidForCalendarView",
+          "value": 25
+        },
+        {
+          "name": "ErrorCalendarInvalidAttributeValue",
+          "value": 26
+        },
+        {
+          "name": "ErrorCalendarInvalidDayForTimeChangePattern",
+          "value": 27
+        },
+        {
+          "name": "ErrorCalendarInvalidDayForWeeklyRecurrence",
+          "value": 28
+        },
+        {
+          "name": "ErrorCalendarInvalidPropertyState",
+          "value": 29
+        },
+        {
+          "name": "ErrorCalendarInvalidPropertyValue",
+          "value": 30
+        },
+        {
+          "name": "ErrorCalendarInvalidRecurrence",
+          "value": 31
+        },
+        {
+          "name": "ErrorCalendarInvalidTimeZone",
+          "value": 32
+        },
+        {
+          "name": "ErrorCalendarIsCancelledForAccept",
+          "value": 33
+        },
+        {
+          "name": "ErrorCalendarIsCancelledForDecline",
+          "value": 34
+        },
+        {
+          "name": "ErrorCalendarIsCancelledForRemove",
+          "value": 35
+        },
+        {
+          "name": "ErrorCalendarIsCancelledForTentative",
+          "value": 36
+        },
+        {
+          "name": "ErrorCalendarIsDelegatedForAccept",
+          "value": 37
+        },
+        {
+          "name": "ErrorCalendarIsDelegatedForDecline",
+          "value": 38
+        },
+        {
+          "name": "ErrorCalendarIsDelegatedForRemove",
+          "value": 39
+        },
+        {
+          "name": "ErrorCalendarIsDelegatedForTentative",
+          "value": 40
+        },
+        {
+          "name": "ErrorCalendarIsNotOrganizer",
+          "value": 41
+        },
+        {
+          "name": "ErrorCalendarIsOrganizerForAccept",
+          "value": 42
+        },
+        {
+          "name": "ErrorCalendarIsOrganizerForDecline",
+          "value": 43
+        },
+        {
+          "name": "ErrorCalendarIsOrganizerForRemove",
+          "value": 44
+        },
+        {
+          "name": "ErrorCalendarIsOrganizerForTentative",
+          "value": 45
+        },
+        {
+          "name": "ErrorCalendarMeetingRequestIsOutOfDate",
+          "value": 46
+        },
+        {
+          "name": "ErrorCalendarOccurrenceIndexIsOutOfRecurrenceRange",
+          "value": 47
+        },
+        {
+          "name": "ErrorCalendarOccurrenceIsDeletedFromRecurrence",
+          "value": 48
+        },
+        {
+          "name": "ErrorCalendarOutOfRange",
+          "value": 49
+        },
+        {
+          "name": "ErrorCalendarViewRangeTooBig",
+          "value": 50
+        },
+        {
+          "name": "ErrorCallerIsInvalidADAccount",
+          "value": 51
+        },
+        {
+          "name": "ErrorCannotArchiveCalendarContactTaskFolderException",
+          "value": 52
+        },
+        {
+          "name": "ErrorCannotArchiveItemsInArchiveMailbox",
+          "value": 53
+        },
+        {
+          "name": "ErrorCannotArchiveItemsInPublicFolders",
+          "value": 54
+        },
+        {
+          "name": "ErrorCannotCreateCalendarItemInNonCalendarFolder",
+          "value": 55
+        },
+        {
+          "name": "ErrorCannotCreateContactInNonContactFolder",
+          "value": 56
+        },
+        {
+          "name": "ErrorCannotCreatePostItemInNonMailFolder",
+          "value": 57
+        },
+        {
+          "name": "ErrorCannotCreateTaskInNonTaskFolder",
+          "value": 58
+        },
+        {
+          "name": "ErrorCannotDeleteObject",
+          "value": 59
+        },
+        {
+          "name": "ErrorCannotDeleteTaskOccurrence",
+          "value": 60
+        },
+        {
+          "name": "ErrorCannotDisableMandatoryExtension",
+          "value": 61
+        },
+        {
+          "name": "ErrorCannotEmptyFolder",
+          "value": 62
+        },
+        {
+          "name": "ErrorCannotGetExternalEcpUrl",
+          "value": 63
+        },
+        {
+          "name": "ErrorCannotGetSourceFolderPath",
+          "value": 64
+        },
+        {
+          "name": "ErrorCannotOpenFileAttachment",
+          "value": 65
+        },
+        {
+          "name": "ErrorCannotSetCalendarPermissionOnNonCalendarFolder",
+          "value": 66
+        },
+        {
+          "name": "ErrorCannotSetNonCalendarPermissionOnCalendarFolder",
+          "value": 67
+        },
+        {
+          "name": "ErrorCannotSetPermissionUnknownEntries",
+          "value": 68
+        },
+        {
+          "name": "ErrorCannotSpecifySearchFolderAsSourceFolder",
+          "value": 69
+        },
+        {
+          "name": "ErrorCannotUseFolderIdForItemId",
+          "value": 70
+        },
+        {
+          "name": "ErrorCannotUseItemIdForFolderId",
+          "value": 71
+        },
+        {
+          "name": "ErrorChangeKeyRequired",
+          "value": 72
+        },
+        {
+          "name": "ErrorChangeKeyRequiredForWriteOperations",
+          "value": 73
+        },
+        {
+          "name": "ErrorClientDisconnected",
+          "value": 74
+        },
+        {
+          "name": "ErrorConnectionFailed",
+          "value": 75
+        },
+        {
+          "name": "ErrorContainsFilterWrongType",
+          "value": 76
+        },
+        {
+          "name": "ErrorContentConversionFailed",
+          "value": 77
+        },
+        {
+          "name": "ErrorCorruptData",
+          "value": 78
+        },
+        {
+          "name": "ErrorCreateItemAccessDenied",
+          "value": 79
+        },
+        {
+          "name": "ErrorCreateManagedFolderPartialCompletion",
+          "value": 80
+        },
+        {
+          "name": "ErrorCreateSubfolderAccessDenied",
+          "value": 81
+        },
+        {
+          "name": "ErrorCrossMailboxMoveCopy",
+          "value": 82
+        },
+        {
+          "name": "ErrorCrossSiteRequest",
+          "value": 83
+        },
+        {
+          "name": "ErrorDataSizeLimitExceeded",
+          "value": 84
+        },
+        {
+          "name": "ErrorDataSourceOperation",
+          "value": 85
+        },
+        {
+          "name": "ErrorDelegateAlreadyExists",
+          "value": 86
+        },
+        {
+          "name": "ErrorDelegateCannotAddOwner",
+          "value": 87
+        },
+        {
+          "name": "ErrorDelegateMissingConfiguration",
+          "value": 88
+        },
+        {
+          "name": "ErrorDelegateNoUser",
+          "value": 89
+        },
+        {
+          "name": "ErrorDelegateValidationFailed",
+          "value": 90
+        },
+        {
+          "name": "ErrorDeleteDistinguishedFolder",
+          "value": 91
+        },
+        {
+          "name": "ErrorDeleteItemsFailed",
+          "value": 92
+        },
+        {
+          "name": "ErrorDistinguishedUserNotSupported",
+          "value": 93
+        },
+        {
+          "name": "ErrorDistributionListMemberNotExist",
+          "value": 94
+        },
+        {
+          "name": "ErrorDuplicateInputFolderNames",
+          "value": 95
+        },
+        {
+          "name": "ErrorDuplicateLegacyDistinguishedName",
+          "value": 96
+        },
+        {
+          "name": "ErrorDuplicateSOAPHeader",
+          "value": 97
+        },
+        {
+          "name": "ErrorDuplicateUserIdsSpecified",
+          "value": 98
+        },
+        {
+          "name": "ErrorEmailAddressMismatch",
+          "value": 99
+        },
+        {
+          "name": "ErrorEventNotFound",
+          "value": 100
+        },
+        {
+          "name": "ErrorExceededConnectionCount",
+          "value": 101
+        },
+        {
+          "name": "ErrorExceededFindCountLimit",
+          "value": 102
+        },
+        {
+          "name": "ErrorExceededSubscriptionCount",
+          "value": 103
+        },
+        {
+          "name": "ErrorExpiredSubscription",
+          "value": 104
+        },
+        {
+          "name": "ErrorExtensionNotFound",
+          "value": 105
+        },
+        {
+          "name": "ErrorFolderCorrupt",
+          "value": 106
+        },
+        {
+          "name": "ErrorFolderExists",
+          "value": 107
+        },
+        {
+          "name": "ErrorFolderNotFound",
+          "value": 108
+        },
+        {
+          "name": "ErrorFolderPropertRequestFailed",
+          "value": 109
+        },
+        {
+          "name": "ErrorFolderSave",
+          "value": 110
+        },
+        {
+          "name": "ErrorFolderSaveFailed",
+          "value": 111
+        },
+        {
+          "name": "ErrorFolderSavePropertyError",
+          "value": 112
+        },
+        {
+          "name": "ErrorFreeBusyDLLimitReached",
+          "value": 113
+        },
+        {
+          "name": "ErrorFreeBusyGenerationFailed",
+          "value": 114
+        },
+        {
+          "name": "ErrorGetServerSecurityDescriptorFailed",
+          "value": 115
+        },
+        {
+          "name": "ErrorImContactLimitReached",
+          "value": 116
+        },
+        {
+          "name": "ErrorImGroupDisplayNameAlreadyExists",
+          "value": 117
+        },
+        {
+          "name": "ErrorImGroupLimitReached",
+          "value": 118
+        },
+        {
+          "name": "ErrorImpersonateUserDenied",
+          "value": 119
+        },
+        {
+          "name": "ErrorImpersonationDenied",
+          "value": 120
+        },
+        {
+          "name": "ErrorImpersonationFailed",
+          "value": 121
+        },
+        {
+          "name": "ErrorInboxRulesValidationError",
+          "value": 122
+        },
+        {
+          "name": "ErrorIncorrectSchemaVersion",
+          "value": 123
+        },
+        {
+          "name": "ErrorIncorrectUpdatePropertyCount",
+          "value": 124
+        },
+        {
+          "name": "ErrorIndividualMailboxLimitReached",
+          "value": 125
+        },
+        {
+          "name": "ErrorInsufficientResources",
+          "value": 126
+        },
+        {
+          "name": "ErrorInternalServerError",
+          "value": 127
+        },
+        {
+          "name": "ErrorInternalServerTransientError",
+          "value": 128
+        },
+        {
+          "name": "ErrorInvalidAccessLevel",
+          "value": 129
+        },
+        {
+          "name": "ErrorInvalidArgument",
+          "value": 130
+        },
+        {
+          "name": "ErrorInvalidAttachmentId",
+          "value": 131
+        },
+        {
+          "name": "ErrorInvalidAttachmentSubfilter",
+          "value": 132
+        },
+        {
+          "name": "ErrorInvalidAttachmentSubfilterTextFilter",
+          "value": 133
+        },
+        {
+          "name": "ErrorInvalidAuthorizationContext",
+          "value": 134
+        },
+        {
+          "name": "ErrorInvalidChangeKey",
+          "value": 135
+        },
+        {
+          "name": "ErrorInvalidClientSecurityContext",
+          "value": 136
+        },
+        {
+          "name": "ErrorInvalidCompleteDate",
+          "value": 137
+        },
+        {
+          "name": "ErrorInvalidContactEmailAddress",
+          "value": 138
+        },
+        {
+          "name": "ErrorInvalidContactEmailIndex",
+          "value": 139
+        },
+        {
+          "name": "ErrorInvalidCrossForestCredentials",
+          "value": 140
+        },
+        {
+          "name": "ErrorInvalidDelegatePermission",
+          "value": 141
+        },
+        {
+          "name": "ErrorInvalidDelegateUserId",
+          "value": 142
+        },
+        {
+          "name": "ErrorInvalidExchangeImpersonationHeaderData",
+          "value": 143
+        },
+        {
+          "name": "ErrorInvalidExcludesRestriction",
+          "value": 144
+        },
+        {
+          "name": "ErrorInvalidExpressionTypeForSubFilter",
+          "value": 145
+        },
+        {
+          "name": "ErrorInvalidExtendedProperty",
+          "value": 146
+        },
+        {
+          "name": "ErrorInvalidExtendedPropertyValue",
+          "value": 147
+        },
+        {
+          "name": "ErrorInvalidExternalSharingInitiator",
+          "value": 148
+        },
+        {
+          "name": "ErrorInvalidExternalSharingSubscriber",
+          "value": 149
+        },
+        {
+          "name": "ErrorInvalidFederatedOrganizationId",
+          "value": 150
+        },
+        {
+          "name": "ErrorInvalidFolderId",
+          "value": 151
+        },
+        {
+          "name": "ErrorInvalidFolderTypeForOperation",
+          "value": 152
+        },
+        {
+          "name": "ErrorInvalidFractionalPagingParameters",
+          "value": 153
+        },
+        {
+          "name": "ErrorInvalidFreeBusyViewType",
+          "value": 154
+        },
+        {
+          "name": "ErrorInvalidGetSharingFolderRequest",
+          "value": 155
+        },
+        {
+          "name": "ErrorInvalidId",
+          "value": 156
+        },
+        {
+          "name": "ErrorInvalidImContactId",
+          "value": 157
+        },
+        {
+          "name": "ErrorInvalidImDistributionGroupSmtpAddress",
+          "value": 158
+        },
+        {
+          "name": "ErrorInvalidImGroupId",
+          "value": 159
+        },
+        {
+          "name": "ErrorInvalidIdEmpty",
+          "value": 160
+        },
+        {
+          "name": "ErrorInvalidIdMalformed",
+          "value": 161
+        },
+        {
+          "name": "ErrorInvalidIdMalformedEwsLegacyIdFormat",
+          "value": 162
+        },
+        {
+          "name": "ErrorInvalidIdMonikerTooLong",
+          "value": 163
+        },
+        {
+          "name": "ErrorInvalidIdNotAnItemAttachmentId",
+          "value": 164
+        },
+        {
+          "name": "ErrorInvalidIdReturnedByResolveNames",
+          "value": 165
+        },
+        {
+          "name": "ErrorInvalidIdStoreObjectIdTooLong",
+          "value": 166
+        },
+        {
+          "name": "ErrorInvalidIdTooManyAttachmentLevels",
+          "value": 167
+        },
+        {
+          "name": "ErrorInvalidIdXml",
+          "value": 168
+        },
+        {
+          "name": "ErrorInvalidIndexedPagingParameters",
+          "value": 169
+        },
+        {
+          "name": "ErrorInvalidInternetHeaderChildNodes",
+          "value": 170
+        },
+        {
+          "name": "ErrorInvalidItemForOperationAcceptItem",
+          "value": 171
+        },
+        {
+          "name": "ErrorInvalidItemForOperationArchiveItem",
+          "value": 172
+        },
+        {
+          "name": "ErrorInvalidItemForOperationCancelItem",
+          "value": 173
+        },
+        {
+          "name": "ErrorInvalidItemForOperationCreateItem",
+          "value": 174
+        },
+        {
+          "name": "ErrorInvalidItemForOperationCreateItemAttachment",
+          "value": 175
+        },
+        {
+          "name": "ErrorInvalidItemForOperationDeclineItem",
+          "value": 176
+        },
+        {
+          "name": "ErrorInvalidItemForOperationExpandDL",
+          "value": 177
+        },
+        {
+          "name": "ErrorInvalidItemForOperationRemoveItem",
+          "value": 178
+        },
+        {
+          "name": "ErrorInvalidItemForOperationSendItem",
+          "value": 179
+        },
+        {
+          "name": "ErrorInvalidItemForOperationTentative",
+          "value": 180
+        },
+        {
+          "name": "ErrorInvalidLogonType",
+          "value": 181
+        },
+        {
+          "name": "ErrorInvalidMailbox",
+          "value": 182
+        },
+        {
+          "name": "ErrorInvalidManagedFolderProperty",
+          "value": 183
+        },
+        {
+          "name": "ErrorInvalidManagedFolderQuota",
+          "value": 184
+        },
+        {
+          "name": "ErrorInvalidManagedFolderSize",
+          "value": 185
+        },
+        {
+          "name": "ErrorInvalidMergedFreeBusyInterval",
+          "value": 186
+        },
+        {
+          "name": "ErrorInvalidNameForNameResolution",
+          "value": 187
+        },
+        {
+          "name": "ErrorInvalidNetworkServiceContext",
+          "value": 188
+        },
+        {
+          "name": "ErrorInvalidOofParameter",
+          "value": 189
+        },
+        {
+          "name": "ErrorInvalidOperation",
+          "value": 190
+        },
+        {
+          "name": "ErrorInvalidOrganizationRelationshipForFreeBusy",
+          "value": 191
+        },
+        {
+          "name": "ErrorInvalidPagingMaxRows",
+          "value": 192
+        },
+        {
+          "name": "ErrorInvalidParentFolder",
+          "value": 193
+        },
+        {
+          "name": "ErrorInvalidPercentCompleteValue",
+          "value": 194
+        },
+        {
+          "name": "ErrorInvalidPermissionSettings",
+          "value": 195
+        },
+        {
+          "name": "ErrorInvalidPhoneCallId",
+          "value": 196
+        },
+        {
+          "name": "ErrorInvalidPhoneNumber",
+          "value": 197
+        },
+        {
+          "name": "ErrorInvalidPropertyAppend",
+          "value": 198
+        },
+        {
+          "name": "ErrorInvalidPropertyDelete",
+          "value": 199
+        },
+        {
+          "name": "ErrorInvalidPropertyForExists",
+          "value": 200
+        },
+        {
+          "name": "ErrorInvalidPropertyForOperation",
+          "value": 201
+        },
+        {
+          "name": "ErrorInvalidPropertyRequest",
+          "value": 202
+        },
+        {
+          "name": "ErrorInvalidPropertySet",
+          "value": 203
+        },
+        {
+          "name": "ErrorInvalidPropertyUpdateSentMessage",
+          "value": 204
+        },
+        {
+          "name": "ErrorInvalidProxySecurityContext",
+          "value": 205
+        },
+        {
+          "name": "ErrorInvalidPullSubscriptionId",
+          "value": 206
+        },
+        {
+          "name": "ErrorInvalidPushSubscriptionUrl",
+          "value": 207
+        },
+        {
+          "name": "ErrorInvalidRecipients",
+          "value": 208
+        },
+        {
+          "name": "ErrorInvalidRecipientSubfilter",
+          "value": 209
+        },
+        {
+          "name": "ErrorInvalidRecipientSubfilterComparison",
+          "value": 210
+        },
+        {
+          "name": "ErrorInvalidRecipientSubfilterOrder",
+          "value": 211
+        },
+        {
+          "name": "ErrorInvalidRecipientSubfilterTextFilter",
+          "value": 212
+        },
+        {
+          "name": "ErrorInvalidReferenceItem",
+          "value": 213
+        },
+        {
+          "name": "ErrorInvalidRequest",
+          "value": 214
+        },
+        {
+          "name": "ErrorInvalidRestriction",
+          "value": 215
+        },
+        {
+          "name": "ErrorInvalidRetentionTagTypeMismatch",
+          "value": 216
+        },
+        {
+          "name": "ErrorInvalidRetentionTagInvisible",
+          "value": 217
+        },
+        {
+          "name": "ErrorInvalidRetentionTagInheritance",
+          "value": 218
+        },
+        {
+          "name": "ErrorInvalidRetentionTagIdGuid",
+          "value": 219
+        },
+        {
+          "name": "ErrorInvalidRoutingType",
+          "value": 220
+        },
+        {
+          "name": "ErrorInvalidScheduledOofDuration",
+          "value": 221
+        },
+        {
+          "name": "ErrorInvalidSchemaVersionForMailboxVersion",
+          "value": 222
+        },
+        {
+          "name": "ErrorInvalidSecurityDescriptor",
+          "value": 223
+        },
+        {
+          "name": "ErrorInvalidSendItemSaveSettings",
+          "value": 224
+        },
+        {
+          "name": "ErrorInvalidSerializedAccessToken",
+          "value": 225
+        },
+        {
+          "name": "ErrorInvalidServerVersion",
+          "value": 226
+        },
+        {
+          "name": "ErrorInvalidSharingData",
+          "value": 227
+        },
+        {
+          "name": "ErrorInvalidSharingMessage",
+          "value": 228
+        },
+        {
+          "name": "ErrorInvalidSid",
+          "value": 229
+        },
+        {
+          "name": "ErrorInvalidSIPUri",
+          "value": 230
+        },
+        {
+          "name": "ErrorInvalidSmtpAddress",
+          "value": 231
+        },
+        {
+          "name": "ErrorInvalidSubfilterType",
+          "value": 232
+        },
+        {
+          "name": "ErrorInvalidSubfilterTypeNotAttendeeType",
+          "value": 233
+        },
+        {
+          "name": "ErrorInvalidSubfilterTypeNotRecipientType",
+          "value": 234
+        },
+        {
+          "name": "ErrorInvalidSubscription",
+          "value": 235
+        },
+        {
+          "name": "ErrorInvalidSubscriptionRequest",
+          "value": 236
+        },
+        {
+          "name": "ErrorInvalidSyncStateData",
+          "value": 237
+        },
+        {
+          "name": "ErrorInvalidTimeInterval",
+          "value": 238
+        },
+        {
+          "name": "ErrorInvalidUserInfo",
+          "value": 239
+        },
+        {
+          "name": "ErrorInvalidUserOofSettings",
+          "value": 240
+        },
+        {
+          "name": "ErrorInvalidUserPrincipalName",
+          "value": 241
+        },
+        {
+          "name": "ErrorInvalidUserSid",
+          "value": 242
+        },
+        {
+          "name": "ErrorInvalidUserSidMissingUPN",
+          "value": 243
+        },
+        {
+          "name": "ErrorInvalidValueForProperty",
+          "value": 244
+        },
+        {
+          "name": "ErrorInvalidWatermark",
+          "value": 245
+        },
+        {
+          "name": "ErrorIPGatewayNotFound",
+          "value": 246
+        },
+        {
+          "name": "ErrorIrresolvableConflict",
+          "value": 247
+        },
+        {
+          "name": "ErrorItemCorrupt",
+          "value": 248
+        },
+        {
+          "name": "ErrorItemNotFound",
+          "value": 249
+        },
+        {
+          "name": "ErrorItemPropertyRequestFailed",
+          "value": 250
+        },
+        {
+          "name": "ErrorItemSave",
+          "value": 251
+        },
+        {
+          "name": "ErrorItemSavePropertyError",
+          "value": 252
+        },
+        {
+          "name": "ErrorLegacyMailboxFreeBusyViewTypeNotMerged",
+          "value": 253
+        },
+        {
+          "name": "ErrorLocalServerObjectNotFound",
+          "value": 254
+        },
+        {
+          "name": "ErrorLogonAsNetworkServiceFailed",
+          "value": 255
+        },
+        {
+          "name": "ErrorMailboxConfiguration",
+          "value": 256
+        },
+        {
+          "name": "ErrorMailboxDataArrayEmpty",
+          "value": 257
+        },
+        {
+          "name": "ErrorMailboxDataArrayTooBig",
+          "value": 258
+        },
+        {
+          "name": "ErrorMailboxFailover",
+          "value": 259
+        },
+        {
+          "name": "ErrorMailboxHoldNotFound",
+          "value": 260
+        },
+        {
+          "name": "ErrorMailboxLogonFailed",
+          "value": 261
+        },
+        {
+          "name": "ErrorMailboxMoveInProgress",
+          "value": 262
+        },
+        {
+          "name": "ErrorMailboxStoreUnavailable",
+          "value": 263
+        },
+        {
+          "name": "ErrorMailRecipientNotFound",
+          "value": 264
+        },
+        {
+          "name": "ErrorMailTipsDisabled",
+          "value": 265
+        },
+        {
+          "name": "ErrorManagedFolderAlreadyExists",
+          "value": 266
+        },
+        {
+          "name": "ErrorManagedFolderNotFound",
+          "value": 267
+        },
+        {
+          "name": "ErrorManagedFoldersRootFailure",
+          "value": 268
+        },
+        {
+          "name": "ErrorMeetingSuggestionGenerationFailed",
+          "value": 269
+        },
+        {
+          "name": "ErrorMessageDispositionRequired",
+          "value": 270
+        },
+        {
+          "name": "ErrorMessageSizeExceeded",
+          "value": 271
+        },
+        {
+          "name": "ErrorMessageTrackingNoSuchDomain",
+          "value": 272
+        },
+        {
+          "name": "ErrorMessageTrackingPermanentError",
+          "value": 273
+        },
+        {
+          "name": "ErrorMessageTrackingTransientError",
+          "value": 274
+        },
+        {
+          "name": "ErrorMimeContentConversionFailed",
+          "value": 275
+        },
+        {
+          "name": "ErrorMimeContentInvalid",
+          "value": 276
+        },
+        {
+          "name": "ErrorMimeContentInvalidBase64String",
+          "value": 277
+        },
+        {
+          "name": "ErrorMissedNotificationEvents",
+          "value": 278
+        },
+        {
+          "name": "ErrorMissingArgument",
+          "value": 279
+        },
+        {
+          "name": "ErrorMissingEmailAddress",
+          "value": 280
+        },
+        {
+          "name": "ErrorMissingEmailAddressForManagedFolder",
+          "value": 281
+        },
+        {
+          "name": "ErrorMissingInformationEmailAddress",
+          "value": 282
+        },
+        {
+          "name": "ErrorMissingInformationReferenceItemId",
+          "value": 283
+        },
+        {
+          "name": "ErrorMissingInformationSharingFolderId",
+          "value": 284
+        },
+        {
+          "name": "ErrorMissingItemForCreateItemAttachment",
+          "value": 285
+        },
+        {
+          "name": "ErrorMissingManagedFolderId",
+          "value": 286
+        },
+        {
+          "name": "ErrorMissingRecipients",
+          "value": 287
+        },
+        {
+          "name": "ErrorMissingUserIdInformation",
+          "value": 288
+        },
+        {
+          "name": "ErrorMoreThanOneAccessModeSpecified",
+          "value": 289
+        },
+        {
+          "name": "ErrorMoveCopyFailed",
+          "value": 290
+        },
+        {
+          "name": "ErrorMoveDistinguishedFolder",
+          "value": 291
+        },
+        {
+          "name": "ErrorMultiLegacyMailboxAccess",
+          "value": 292
+        },
+        {
+          "name": "ErrorNameResolutionMultipleResults",
+          "value": 293
+        },
+        {
+          "name": "ErrorNameResolutionNoMailbox",
+          "value": 294
+        },
+        {
+          "name": "ErrorNameResolutionNoResults",
+          "value": 295
+        },
+        {
+          "name": "ErrorNewEventStreamConnectionOpened",
+          "value": 296
+        },
+        {
+          "name": "ErrorNoApplicableProxyCASServersAvailable",
+          "value": 297
+        },
+        {
+          "name": "ErrorNoCalendar",
+          "value": 298
+        },
+        {
+          "name": "ErrorNoDestinationCASDueToKerberosRequirements",
+          "value": 299
+        },
+        {
+          "name": "ErrorNoDestinationCASDueToSSLRequirements",
+          "value": 300
+        },
+        {
+          "name": "ErrorNoDestinationCASDueToVersionMismatch",
+          "value": 301
+        },
+        {
+          "name": "ErrorNoFolderClassOverride",
+          "value": 302
+        },
+        {
+          "name": "ErrorNoFreeBusyAccess",
+          "value": 303
+        },
+        {
+          "name": "ErrorNonExistentMailbox",
+          "value": 304
+        },
+        {
+          "name": "ErrorNonPrimarySmtpAddress",
+          "value": 305
+        },
+        {
+          "name": "ErrorNoPropertyTagForCustomProperties",
+          "value": 306
+        },
+        {
+          "name": "ErrorNoPublicFolderReplicaAvailable",
+          "value": 307
+        },
+        {
+          "name": "ErrorNoPublicFolderServerAvailable",
+          "value": 308
+        },
+        {
+          "name": "ErrorNoRespondingCASInDestinationSite",
+          "value": 309
+        },
+        {
+          "name": "ErrorNotAllowedExternalSharingByPolicy",
+          "value": 310
+        },
+        {
+          "name": "ErrorNotDelegate",
+          "value": 311
+        },
+        {
+          "name": "ErrorNotEnoughMemory",
+          "value": 312
+        },
+        {
+          "name": "ErrorNotSupportedSharingMessage",
+          "value": 313
+        },
+        {
+          "name": "ErrorObjectTypeChanged",
+          "value": 314
+        },
+        {
+          "name": "ErrorOccurrenceCrossingBoundary",
+          "value": 315
+        },
+        {
+          "name": "ErrorOccurrenceTimeSpanTooBig",
+          "value": 316
+        },
+        {
+          "name": "ErrorOperationNotAllowedWithPublicFolderRoot",
+          "value": 317
+        },
+        {
+          "name": "ErrorOrganizationNotFederated",
+          "value": 318
+        },
+        {
+          "name": "ErrorOutlookRuleBlobExists",
+          "value": 319
+        },
+        {
+          "name": "ErrorParentFolderIdRequired",
+          "value": 320
+        },
+        {
+          "name": "ErrorParentFolderNotFound",
+          "value": 321
+        },
+        {
+          "name": "ErrorPasswordChangeRequired",
+          "value": 322
+        },
+        {
+          "name": "ErrorPasswordExpired",
+          "value": 323
+        },
+        {
+          "name": "ErrorPermissionNotAllowedByPolicy",
+          "value": 324
+        },
+        {
+          "name": "ErrorPhoneNumberNotDialable",
+          "value": 325
+        },
+        {
+          "name": "ErrorPropertyUpdate",
+          "value": 326
+        },
+        {
+          "name": "ErrorPropertyValidationFailure",
+          "value": 327
+        },
+        {
+          "name": "ErrorProxiedSubscriptionCallFailure",
+          "value": 328
+        },
+        {
+          "name": "ErrorProxyCallFailed",
+          "value": 329
+        },
+        {
+          "name": "ErrorProxyGroupSidLimitExceeded",
+          "value": 330
+        },
+        {
+          "name": "ErrorProxyRequestNotAllowed",
+          "value": 331
+        },
+        {
+          "name": "ErrorProxyRequestProcessingFailed",
+          "value": 332
+        },
+        {
+          "name": "ErrorProxyServiceDiscoveryFailed",
+          "value": 333
+        },
+        {
+          "name": "ErrorProxyTokenExpired",
+          "value": 334
+        },
+        {
+          "name": "ErrorPublicFolderRequestProcessingFailed",
+          "value": 335
+        },
+        {
+          "name": "ErrorPublicFolderServerNotFound",
+          "value": 336
+        },
+        {
+          "name": "ErrorQueryFilterTooLong",
+          "value": 337
+        },
+        {
+          "name": "ErrorQuotaExceeded",
+          "value": 338
+        },
+        {
+          "name": "ErrorReadEventsFailed",
+          "value": 339
+        },
+        {
+          "name": "ErrorReadReceiptNotPending",
+          "value": 340
+        },
+        {
+          "name": "ErrorRecurrenceEndDateTooBig",
+          "value": 341
+        },
+        {
+          "name": "ErrorRecurrenceHasNoOccurrence",
+          "value": 342
+        },
+        {
+          "name": "ErrorRemoveDelegatesFailed",
+          "value": 343
+        },
+        {
+          "name": "ErrorRequestAborted",
+          "value": 344
+        },
+        {
+          "name": "ErrorRequestStreamTooBig",
+          "value": 345
+        },
+        {
+          "name": "ErrorRequiredPropertyMissing",
+          "value": 346
+        },
+        {
+          "name": "ErrorResolveNamesInvalidFolderType",
+          "value": 347
+        },
+        {
+          "name": "ErrorResolveNamesOnlyOneContactsFolderAllowed",
+          "value": 348
+        },
+        {
+          "name": "ErrorResponseSchemaValidation",
+          "value": 349
+        },
+        {
+          "name": "ErrorRestrictionTooComplex",
+          "value": 350
+        },
+        {
+          "name": "ErrorRestrictionTooLong",
+          "value": 351
+        },
+        {
+          "name": "ErrorResultSetTooBig",
+          "value": 352
+        },
+        {
+          "name": "ErrorRulesOverQuota",
+          "value": 353
+        },
+        {
+          "name": "ErrorSavedItemFolderNotFound",
+          "value": 354
+        },
+        {
+          "name": "ErrorSchemaValidation",
+          "value": 355
+        },
+        {
+          "name": "ErrorSearchFolderNotInitialized",
+          "value": 356
+        },
+        {
+          "name": "ErrorSendAsDenied",
+          "value": 357
+        },
+        {
+          "name": "ErrorSendMeetingCancellationsRequired",
+          "value": 358
+        },
+        {
+          "name": "ErrorSendMeetingInvitationsOrCancellationsRequired",
+          "value": 359
+        },
+        {
+          "name": "ErrorSendMeetingInvitationsRequired",
+          "value": 360
+        },
+        {
+          "name": "ErrorSentMeetingRequestUpdate",
+          "value": 361
+        },
+        {
+          "name": "ErrorSentTaskRequestUpdate",
+          "value": 362
+        },
+        {
+          "name": "ErrorServerBusy",
+          "value": 363
+        },
+        {
+          "name": "ErrorServiceDiscoveryFailed",
+          "value": 364
+        },
+        {
+          "name": "ErrorSharingNoExternalEwsAvailable",
+          "value": 365
+        },
+        {
+          "name": "ErrorSharingSynchronizationFailed",
+          "value": 366
+        },
+        {
+          "name": "ErrorStaleObject",
+          "value": 367
+        },
+        {
+          "name": "ErrorSubmissionQuotaExceeded",
+          "value": 368
+        },
+        {
+          "name": "ErrorSubscriptionAccessDenied",
+          "value": 369
+        },
+        {
+          "name": "ErrorSubscriptionDelegateAccessNotSupported",
+          "value": 370
+        },
+        {
+          "name": "ErrorSubscriptionNotFound",
+          "value": 371
+        },
+        {
+          "name": "ErrorSubscriptionUnsubscribed",
+          "value": 372
+        },
+        {
+          "name": "ErrorSyncFolderNotFound",
+          "value": 373
+        },
+        {
+          "name": "ErrorTeamMailboxNotFound",
+          "value": 374
+        },
+        {
+          "name": "ErrorTeamMailboxNotLinkedToSharePoint",
+          "value": 375
+        },
+        {
+          "name": "ErrorTeamMailboxUrlValidationFailed",
+          "value": 376
+        },
+        {
+          "name": "ErrorTeamMailboxNotAuthorizedOwner",
+          "value": 377
+        },
+        {
+          "name": "ErrorTeamMailboxActiveToPendingDelete",
+          "value": 378
+        },
+        {
+          "name": "ErrorTeamMailboxFailedSendingNotifications",
+          "value": 379
+        },
+        {
+          "name": "ErrorTeamMailboxErrorUnknown",
+          "value": 380
+        },
+        {
+          "name": "ErrorTimeIntervalTooBig",
+          "value": 381
+        },
+        {
+          "name": "ErrorTimeoutExpired",
+          "value": 382
+        },
+        {
+          "name": "ErrorTimeZone",
+          "value": 383
+        },
+        {
+          "name": "ErrorToFolderNotFound",
+          "value": 384
+        },
+        {
+          "name": "ErrorTokenSerializationDenied",
+          "value": 385
+        },
+        {
+          "name": "ErrorUnableToGetUserOofSettings",
+          "value": 386
+        },
+        {
+          "name": "ErrorUnableToRemoveImContactFromGroup",
+          "value": 387
+        },
+        {
+          "name": "ErrorUnifiedMessagingDialPlanNotFound",
+          "value": 388
+        },
+        {
+          "name": "ErrorUnifiedMessagingRequestFailed",
+          "value": 389
+        },
+        {
+          "name": "ErrorUnifiedMessagingServerNotFound",
+          "value": 390
+        },
+        {
+          "name": "ErrorUnsupportedCulture",
+          "value": 391
+        },
+        {
+          "name": "ErrorUnsupportedMapiPropertyType",
+          "value": 392
+        },
+        {
+          "name": "ErrorUnsupportedMimeConversion",
+          "value": 393
+        },
+        {
+          "name": "ErrorUnsupportedPathForQuery",
+          "value": 394
+        },
+        {
+          "name": "ErrorUnsupportedPathForSortGroup",
+          "value": 395
+        },
+        {
+          "name": "ErrorUnsupportedPropertyDefinition",
+          "value": 396
+        },
+        {
+          "name": "ErrorUnsupportedQueryFilter",
+          "value": 397
+        },
+        {
+          "name": "ErrorUnsupportedRecurrence",
+          "value": 398
+        },
+        {
+          "name": "ErrorUnsupportedSubFilter",
+          "value": 399
+        },
+        {
+          "name": "ErrorUnsupportedTypeForConversion",
+          "value": 400
+        },
+        {
+          "name": "ErrorUpdateDelegatesFailed",
+          "value": 401
+        },
+        {
+          "name": "ErrorUpdatePropertyMismatch",
+          "value": 402
+        },
+        {
+          "name": "ErrorUserNotAllowedByPolicy",
+          "value": 403
+        },
+        {
+          "name": "ErrorUserNotUnifiedMessagingEnabled",
+          "value": 404
+        },
+        {
+          "name": "ErrorUserWithoutFederatedProxyAddress",
+          "value": 405
+        },
+        {
+          "name": "ErrorValueOutOfRange",
+          "value": 406
+        },
+        {
+          "name": "ErrorVirusDetected",
+          "value": 407
+        },
+        {
+          "name": "ErrorVirusMessageDeleted",
+          "value": 408
+        },
+        {
+          "name": "ErrorVoiceMailNotImplemented",
+          "value": 409
+        },
+        {
+          "name": "ErrorWebRequestInInvalidState",
+          "value": 410
+        },
+        {
+          "name": "ErrorWin32InteropError",
+          "value": 411
+        },
+        {
+          "name": "ErrorWorkingHoursSaveFailed",
+          "value": 412
+        },
+        {
+          "name": "ErrorWorkingHoursXmlMalformed",
+          "value": 413
+        },
+        {
+          "name": "ErrorWrongServerVersion",
+          "value": 414
+        },
+        {
+          "name": "ErrorWrongServerVersionDelegate",
+          "value": 415
+        },
+        {
+          "name": "ErrorInvalidClientAccessTokenRequest",
+          "value": 416
+        },
+        {
+          "name": "ErrorInvalidManagementRoleHeader",
+          "value": 417
+        },
+        {
+          "name": "ErrorSearchQueryHasTooManyKeywords",
+          "value": 418
+        },
+        {
+          "name": "ErrorSearchTooManyMailboxes",
+          "value": 419
+        },
+        {
+          "name": "ErrorInvalidRetentionTagNone",
+          "value": 420
+        },
+        {
+          "name": "ErrorDiscoverySearchesDisabled",
+          "value": 421
+        },
+        {
+          "name": "ErrorCalendarSeekToConditionNotSupported",
+          "value": 422
+        },
+        {
+          "name": "ErrorArchiveMailboxSearchFailed",
+          "value": 423
+        },
+        {
+          "name": "ErrorGetRemoteArchiveFolderFailed",
+          "value": 424
+        },
+        {
+          "name": "ErrorFindRemoteArchiveFolderFailed",
+          "value": 425
+        },
+        {
+          "name": "ErrorGetRemoteArchiveItemFailed",
+          "value": 426
+        },
+        {
+          "name": "ErrorExportRemoteArchiveItemsFailed",
+          "value": 427
+        },
+        {
+          "name": "ErrorClientIntentInvalidStateDefinition",
+          "value": 428
+        },
+        {
+          "name": "ErrorClientIntentNotFound",
+          "value": 429
+        },
+        {
+          "name": "ErrorContentIndexingNotEnabled",
+          "value": 430
+        },
+        {
+          "name": "ErrorDeleteUnifiedMessagingPromptFailed",
+          "value": 431
+        },
+        {
+          "name": "ErrorLocationServicesDisabled",
+          "value": 432
+        },
+        {
+          "name": "ErrorLocationServicesInvalidRequest",
+          "value": 433
+        },
+        {
+          "name": "ErrorLocationServicesRequestFailed",
+          "value": 434
+        },
+        {
+          "name": "ErrorLocationServicesRequestTimedOut",
+          "value": 435
+        },
+        {
+          "name": "ErrorWeatherServiceDisabled",
+          "value": 436
+        },
+        {
+          "name": "ErrorMailboxScopeNotAllowedWithoutQueryString",
+          "value": 437
+        },
+        {
+          "name": "ErrorNoSpeechDetected",
+          "value": 438
+        },
+        {
+          "name": "ErrorPromptPublishingOperationFailed",
+          "value": 439
+        },
+        {
+          "name": "ErrorPublicFolderMailboxDiscoveryFailed",
+          "value": 440
+        },
+        {
+          "name": "ErrorPublicFolderOperationFailed",
+          "value": 441
+        },
+        {
+          "name": "ErrorPublicFolderSyncException",
+          "value": 442
+        },
+        {
+          "name": "ErrorRecipientNotFound",
+          "value": 443
+        },
+        {
+          "name": "ErrorRecognizerNotInstalled",
+          "value": 444
+        },
+        {
+          "name": "ErrorSpeechGrammarError",
+          "value": 445
+        },
+        {
+          "name": "ErrorTooManyObjectsOpened",
+          "value": 446
+        },
+        {
+          "name": "ErrorUMServerUnavailable",
+          "value": 447
+        },
+        {
+          "name": "ErrorUnifiedMessagingPromptNotFound",
+          "value": 448
+        },
+        {
+          "name": "ErrorUnifiedMessagingReportDataNotFound",
+          "value": 449
+        },
+        {
+          "name": "ErrorInvalidPhotoSize",
+          "value": 450
+        },
+        {
+          "name": "ErrorCalendarIsGroupMailboxForAccept",
+          "value": 451
+        },
+        {
+          "name": "ErrorCalendarIsGroupMailboxForDecline",
+          "value": 452
+        },
+        {
+          "name": "ErrorCalendarIsGroupMailboxForTentative",
+          "value": 453
+        },
+        {
+          "name": "ErrorCalendarIsGroupMailboxForSuppressReadReceipt",
+          "value": 454
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.ServiceObjectType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Folder",
+          "value": 0
+        },
+        {
+          "name": "Item",
+          "value": 1
+        },
+        {
+          "name": "Conversation",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.ServiceResult",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Success",
+          "value": 0
+        },
+        {
+          "name": "Warning",
+          "value": 1
+        },
+        {
+          "name": "Error",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.SetClientExtensionActionId",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Install",
+          "value": 0
+        },
+        {
+          "name": "Uninstall",
+          "value": 1
+        },
+        {
+          "name": "Configure",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.SortDirection",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Ascending",
+          "value": 0
+        },
+        {
+          "name": "Descending",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.StandardUser",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "Anonymous",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.SuggestionQuality",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Excellent",
+          "value": 0
+        },
+        {
+          "name": "Good",
+          "value": 1
+        },
+        {
+          "name": "Fair",
+          "value": 2
+        },
+        {
+          "name": "Poor",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.SyncFolderItemsScope",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NormalItems",
+          "value": 0
+        },
+        {
+          "name": "NormalAndAssociatedItems",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.TaskDelegationState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NoDelegation",
+          "value": 0
+        },
+        {
+          "name": "Unknown",
+          "value": 1
+        },
+        {
+          "name": "Accepted",
+          "value": 2
+        },
+        {
+          "name": "Declined",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.TaskMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Normal",
+          "value": 0
+        },
+        {
+          "name": "Request",
+          "value": 1
+        },
+        {
+          "name": "RequestAccepted",
+          "value": 2
+        },
+        {
+          "name": "RequestDeclined",
+          "value": 3
+        },
+        {
+          "name": "Update",
+          "value": 4
+        },
+        {
+          "name": "SelfDelegated",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.TaskStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NotStarted",
+          "value": 0
+        },
+        {
+          "name": "InProgress",
+          "value": 1
+        },
+        {
+          "name": "Completed",
+          "value": 2
+        },
+        {
+          "name": "WaitingOnOthers",
+          "value": 3
+        },
+        {
+          "name": "Deferred",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.TeamMailboxLifecycleState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Active",
+          "value": 0
+        },
+        {
+          "name": "Closed",
+          "value": 1
+        },
+        {
+          "name": "Unlinked",
+          "value": 2
+        },
+        {
+          "name": "PendingDelete",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.TraceFlags",
+      "underlyingType": "System.Int64",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "EwsRequest",
+          "value": 1
+        },
+        {
+          "name": "EwsResponse",
+          "value": 2
+        },
+        {
+          "name": "EwsResponseHttpHeaders",
+          "value": 4
+        },
+        {
+          "name": "AutodiscoverRequest",
+          "value": 8
+        },
+        {
+          "name": "AutodiscoverResponse",
+          "value": 16
+        },
+        {
+          "name": "AutodiscoverResponseHttpHeaders",
+          "value": 32
+        },
+        {
+          "name": "AutodiscoverConfiguration",
+          "value": 64
+        },
+        {
+          "name": "DebugMessage",
+          "value": 128
+        },
+        {
+          "name": "EwsRequestHttpHeaders",
+          "value": 256
+        },
+        {
+          "name": "AutodiscoverRequestHttpHeaders",
+          "value": 512
+        },
+        {
+          "name": "All",
+          "value": 9223372036854775807
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.UserConfigurationProperties",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Id",
+          "value": 1
+        },
+        {
+          "name": "Dictionary",
+          "value": 2
+        },
+        {
+          "name": "XmlData",
+          "value": 4
+        },
+        {
+          "name": "BinaryData",
+          "value": 8
+        },
+        {
+          "name": "All",
+          "value": 15
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.UserConfigurationDictionaryObjectType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DateTime",
+          "value": 0
+        },
+        {
+          "name": "Boolean",
+          "value": 1
+        },
+        {
+          "name": "Byte",
+          "value": 2
+        },
+        {
+          "name": "String",
+          "value": 3
+        },
+        {
+          "name": "Integer32",
+          "value": 4
+        },
+        {
+          "name": "UnsignedInteger32",
+          "value": 5
+        },
+        {
+          "name": "Integer64",
+          "value": 6
+        },
+        {
+          "name": "UnsignedInteger64",
+          "value": 7
+        },
+        {
+          "name": "StringArray",
+          "value": 8
+        },
+        {
+          "name": "ByteArray",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Autodiscover.UserSettingName",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "UserDisplayName",
+          "value": 0
+        },
+        {
+          "name": "UserDN",
+          "value": 1
+        },
+        {
+          "name": "UserDeploymentId",
+          "value": 2
+        },
+        {
+          "name": "InternalMailboxServer",
+          "value": 3
+        },
+        {
+          "name": "InternalRpcClientServer",
+          "value": 4
+        },
+        {
+          "name": "InternalMailboxServerDN",
+          "value": 5
+        },
+        {
+          "name": "InternalEcpUrl",
+          "value": 6
+        },
+        {
+          "name": "InternalEcpVoicemailUrl",
+          "value": 7
+        },
+        {
+          "name": "InternalEcpEmailSubscriptionsUrl",
+          "value": 8
+        },
+        {
+          "name": "InternalEcpTextMessagingUrl",
+          "value": 9
+        },
+        {
+          "name": "InternalEcpDeliveryReportUrl",
+          "value": 10
+        },
+        {
+          "name": "InternalEcpRetentionPolicyTagsUrl",
+          "value": 11
+        },
+        {
+          "name": "InternalEcpPublishingUrl",
+          "value": 12
+        },
+        {
+          "name": "InternalEcpPhotoUrl",
+          "value": 13
+        },
+        {
+          "name": "InternalEcpConnectUrl",
+          "value": 14
+        },
+        {
+          "name": "InternalEcpTeamMailboxUrl",
+          "value": 15
+        },
+        {
+          "name": "InternalEcpTeamMailboxCreatingUrl",
+          "value": 16
+        },
+        {
+          "name": "InternalEcpTeamMailboxEditingUrl",
+          "value": 17
+        },
+        {
+          "name": "InternalEcpTeamMailboxHidingUrl",
+          "value": 18
+        },
+        {
+          "name": "InternalEcpExtensionInstallationUrl",
+          "value": 19
+        },
+        {
+          "name": "InternalEwsUrl",
+          "value": 20
+        },
+        {
+          "name": "InternalEmwsUrl",
+          "value": 21
+        },
+        {
+          "name": "InternalOABUrl",
+          "value": 22
+        },
+        {
+          "name": "InternalPhotosUrl",
+          "value": 23
+        },
+        {
+          "name": "InternalUMUrl",
+          "value": 24
+        },
+        {
+          "name": "InternalWebClientUrls",
+          "value": 25
+        },
+        {
+          "name": "MailboxDN",
+          "value": 26
+        },
+        {
+          "name": "PublicFolderServer",
+          "value": 27
+        },
+        {
+          "name": "ActiveDirectoryServer",
+          "value": 28
+        },
+        {
+          "name": "ExternalMailboxServer",
+          "value": 29
+        },
+        {
+          "name": "ExternalMailboxServerRequiresSSL",
+          "value": 30
+        },
+        {
+          "name": "ExternalMailboxServerAuthenticationMethods",
+          "value": 31
+        },
+        {
+          "name": "EcpVoicemailUrlFragment",
+          "value": 32
+        },
+        {
+          "name": "EcpEmailSubscriptionsUrlFragment",
+          "value": 33
+        },
+        {
+          "name": "EcpTextMessagingUrlFragment",
+          "value": 34
+        },
+        {
+          "name": "EcpDeliveryReportUrlFragment",
+          "value": 35
+        },
+        {
+          "name": "EcpRetentionPolicyTagsUrlFragment",
+          "value": 36
+        },
+        {
+          "name": "EcpPublishingUrlFragment",
+          "value": 37
+        },
+        {
+          "name": "EcpPhotoUrlFragment",
+          "value": 38
+        },
+        {
+          "name": "EcpConnectUrlFragment",
+          "value": 39
+        },
+        {
+          "name": "EcpTeamMailboxUrlFragment",
+          "value": 40
+        },
+        {
+          "name": "EcpTeamMailboxCreatingUrlFragment",
+          "value": 41
+        },
+        {
+          "name": "EcpTeamMailboxEditingUrlFragment",
+          "value": 42
+        },
+        {
+          "name": "EcpExtensionInstallationUrlFragment",
+          "value": 43
+        },
+        {
+          "name": "ExternalEcpUrl",
+          "value": 44
+        },
+        {
+          "name": "ExternalEcpVoicemailUrl",
+          "value": 45
+        },
+        {
+          "name": "ExternalEcpEmailSubscriptionsUrl",
+          "value": 46
+        },
+        {
+          "name": "ExternalEcpTextMessagingUrl",
+          "value": 47
+        },
+        {
+          "name": "ExternalEcpDeliveryReportUrl",
+          "value": 48
+        },
+        {
+          "name": "ExternalEcpRetentionPolicyTagsUrl",
+          "value": 49
+        },
+        {
+          "name": "ExternalEcpPublishingUrl",
+          "value": 50
+        },
+        {
+          "name": "ExternalEcpPhotoUrl",
+          "value": 51
+        },
+        {
+          "name": "ExternalEcpConnectUrl",
+          "value": 52
+        },
+        {
+          "name": "ExternalEcpTeamMailboxUrl",
+          "value": 53
+        },
+        {
+          "name": "ExternalEcpTeamMailboxCreatingUrl",
+          "value": 54
+        },
+        {
+          "name": "ExternalEcpTeamMailboxEditingUrl",
+          "value": 55
+        },
+        {
+          "name": "ExternalEcpTeamMailboxHidingUrl",
+          "value": 56
+        },
+        {
+          "name": "ExternalEcpExtensionInstallationUrl",
+          "value": 57
+        },
+        {
+          "name": "ExternalEwsUrl",
+          "value": 58
+        },
+        {
+          "name": "ExternalEmwsUrl",
+          "value": 59
+        },
+        {
+          "name": "ExternalOABUrl",
+          "value": 60
+        },
+        {
+          "name": "ExternalPhotosUrl",
+          "value": 61
+        },
+        {
+          "name": "ExternalUMUrl",
+          "value": 62
+        },
+        {
+          "name": "ExternalWebClientUrls",
+          "value": 63
+        },
+        {
+          "name": "CrossOrganizationSharingEnabled",
+          "value": 64
+        },
+        {
+          "name": "AlternateMailboxes",
+          "value": 65
+        },
+        {
+          "name": "CasVersion",
+          "value": 66
+        },
+        {
+          "name": "EwsSupportedSchemas",
+          "value": 67
+        },
+        {
+          "name": "InternalPop3Connections",
+          "value": 68
+        },
+        {
+          "name": "ExternalPop3Connections",
+          "value": 69
+        },
+        {
+          "name": "InternalImap4Connections",
+          "value": 70
+        },
+        {
+          "name": "ExternalImap4Connections",
+          "value": 71
+        },
+        {
+          "name": "InternalSmtpConnections",
+          "value": 72
+        },
+        {
+          "name": "ExternalSmtpConnections",
+          "value": 73
+        },
+        {
+          "name": "InternalServerExclusiveConnect",
+          "value": 74
+        },
+        {
+          "name": "ExternalEwsVersion",
+          "value": 75
+        },
+        {
+          "name": "MobileMailboxPolicy",
+          "value": 76
+        },
+        {
+          "name": "DocumentSharingLocations",
+          "value": 77
+        },
+        {
+          "name": "UserMSOnline",
+          "value": 78
+        },
+        {
+          "name": "InternalMailboxServerAuthenticationMethods",
+          "value": 79
+        },
+        {
+          "name": "MailboxVersion",
+          "value": 80
+        },
+        {
+          "name": "SPMySiteHostURL",
+          "value": 81
+        },
+        {
+          "name": "SiteMailboxCreationURL",
+          "value": 82
+        },
+        {
+          "name": "InternalRpcHttpServer",
+          "value": 83
+        },
+        {
+          "name": "InternalRpcHttpConnectivityRequiresSsl",
+          "value": 84
+        },
+        {
+          "name": "InternalRpcHttpAuthenticationMethod",
+          "value": 85
+        },
+        {
+          "name": "ExternalServerExclusiveConnect",
+          "value": 86
+        },
+        {
+          "name": "ExchangeRpcUrl",
+          "value": 87
+        },
+        {
+          "name": "ShowGalAsDefaultView",
+          "value": 88
+        },
+        {
+          "name": "AutoDiscoverSMTPAddress",
+          "value": 89
+        },
+        {
+          "name": "InteropExternalEwsUrl",
+          "value": 90
+        },
+        {
+          "name": "InteropExternalEwsVersion",
+          "value": 91
+        },
+        {
+          "name": "PublicFolderInformation",
+          "value": 92
+        },
+        {
+          "name": "RedirectUrl",
+          "value": 93
+        },
+        {
+          "name": "EwsPartnerUrl",
+          "value": 94
+        },
+        {
+          "name": "CertPrincipalName",
+          "value": 95
+        },
+        {
+          "name": "GroupingInformation",
+          "value": 96
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.ViewFilter",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "All",
+          "value": 0
+        },
+        {
+          "name": "Flagged",
+          "value": 1
+        },
+        {
+          "name": "HasAttachment",
+          "value": 2
+        },
+        {
+          "name": "ToOrCcMe",
+          "value": 3
+        },
+        {
+          "name": "Unread",
+          "value": 4
+        },
+        {
+          "name": "TaskActive",
+          "value": 5
+        },
+        {
+          "name": "TaskOverdue",
+          "value": 6
+        },
+        {
+          "name": "TaskCompleted",
+          "value": 7
+        },
+        {
+          "name": "Suggestions",
+          "value": 8
+        },
+        {
+          "name": "SuggestionsRespond",
+          "value": 9
+        },
+        {
+          "name": "SuggestionsDelete",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.WellKnownFolderName",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Calendar",
+          "value": 0
+        },
+        {
+          "name": "Contacts",
+          "value": 1
+        },
+        {
+          "name": "DeletedItems",
+          "value": 2
+        },
+        {
+          "name": "Drafts",
+          "value": 3
+        },
+        {
+          "name": "Inbox",
+          "value": 4
+        },
+        {
+          "name": "Journal",
+          "value": 5
+        },
+        {
+          "name": "Notes",
+          "value": 6
+        },
+        {
+          "name": "Outbox",
+          "value": 7
+        },
+        {
+          "name": "SentItems",
+          "value": 8
+        },
+        {
+          "name": "Tasks",
+          "value": 9
+        },
+        {
+          "name": "MsgFolderRoot",
+          "value": 10
+        },
+        {
+          "name": "PublicFoldersRoot",
+          "value": 11
+        },
+        {
+          "name": "Root",
+          "value": 12
+        },
+        {
+          "name": "JunkEmail",
+          "value": 13
+        },
+        {
+          "name": "SearchFolders",
+          "value": 14
+        },
+        {
+          "name": "VoiceMail",
+          "value": 15
+        },
+        {
+          "name": "RecoverableItemsRoot",
+          "value": 16
+        },
+        {
+          "name": "RecoverableItemsDeletions",
+          "value": 17
+        },
+        {
+          "name": "RecoverableItemsVersions",
+          "value": 18
+        },
+        {
+          "name": "RecoverableItemsPurges",
+          "value": 19
+        },
+        {
+          "name": "ArchiveRoot",
+          "value": 20
+        },
+        {
+          "name": "ArchiveMsgFolderRoot",
+          "value": 21
+        },
+        {
+          "name": "ArchiveDeletedItems",
+          "value": 22
+        },
+        {
+          "name": "ArchiveRecoverableItemsRoot",
+          "value": 23
+        },
+        {
+          "name": "ArchiveRecoverableItemsDeletions",
+          "value": 24
+        },
+        {
+          "name": "ArchiveRecoverableItemsVersions",
+          "value": 25
+        },
+        {
+          "name": "ArchiveRecoverableItemsPurges",
+          "value": 26
+        },
+        {
+          "name": "SyncIssues",
+          "value": 27
+        },
+        {
+          "name": "Conflicts",
+          "value": 28
+        },
+        {
+          "name": "LocalFailures",
+          "value": 29
+        },
+        {
+          "name": "ServerFailures",
+          "value": 30
+        },
+        {
+          "name": "RecipientCache",
+          "value": 31
+        },
+        {
+          "name": "QuickContacts",
+          "value": 32
+        },
+        {
+          "name": "ConversationHistory",
+          "value": 33
+        },
+        {
+          "name": "ToDoSearch",
+          "value": 34
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Data.ItemIndexError",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "GenericError",
+          "value": 1
+        },
+        {
+          "name": "Timeout",
+          "value": 2
+        },
+        {
+          "name": "StaleEvent",
+          "value": 3
+        },
+        {
+          "name": "MailboxOffline",
+          "value": 4
+        },
+        {
+          "name": "AttachmentLimitReached",
+          "value": 5
+        },
+        {
+          "name": "MarsWriterTruncation",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Exchange.WebServices.Strings.IDs",
+      "underlyingType": "System.UInt32",
+      "members": [
+        {
+          "name": "CannotRemoveSubscriptionFromLiveConnection",
+          "value": 1631423810
+        },
+        {
+          "name": "ReadAccessInvalidForNonCalendarFolder",
+          "value": 3355844483
+        },
+        {
+          "name": "PropertyDefinitionPropertyMustBeSet",
+          "value": 1413133863
+        },
+        {
+          "name": "ArgumentIsBlankString",
+          "value": 2808916828
+        },
+        {
+          "name": "InvalidAutodiscoverDomainsCount",
+          "value": 2110564001
+        },
+        {
+          "name": "MinutesMustBeBetween0And1439",
+          "value": 3846446647
+        },
+        {
+          "name": "DeleteInvalidForUnsavedUserConfiguration",
+          "value": 3725066606
+        },
+        {
+          "name": "PeriodNotFound",
+          "value": 732877372
+        },
+        {
+          "name": "InvalidAutodiscoverSmtpAddress",
+          "value": 742945049
+        },
+        {
+          "name": "InvalidOAuthToken",
+          "value": 2371807741
+        },
+        {
+          "name": "MaxScpHopsExceeded",
+          "value": 540781291
+        },
+        {
+          "name": "ContactGroupMemberCannotBeUpdatedWithoutBeingLoadedFirst",
+          "value": 412932664
+        },
+        {
+          "name": "CurrentPositionNotElementStart",
+          "value": 3932722495
+        },
+        {
+          "name": "CannotConvertBetweenTimeZones",
+          "value": 1762296216
+        },
+        {
+          "name": "FrequencyMustBeBetween1And1440",
+          "value": 2947629837
+        },
+        {
+          "name": "CannotSetDelegateFolderPermissionLevelToCustom",
+          "value": 4255072555
+        },
+        {
+          "name": "PartnerTokenIncompatibleWithRequestVersion",
+          "value": 231532733
+        },
+        {
+          "name": "InvalidAutodiscoverRequest",
+          "value": 216906786
+        },
+        {
+          "name": "InvalidAsyncResult",
+          "value": 2795977038
+        },
+        {
+          "name": "InvalidMailboxType",
+          "value": 1875536889
+        },
+        {
+          "name": "AttachmentCollectionNotLoaded",
+          "value": 368467777
+        },
+        {
+          "name": "ParameterIncompatibleWithRequestVersion",
+          "value": 1937216341
+        },
+        {
+          "name": "DayOfWeekIndexMustBeSpecifiedForRecurrencePattern",
+          "value": 814325722
+        },
+        {
+          "name": "WLIDCredentialsCannotBeUsedWithLegacyAutodiscover",
+          "value": 365885070
+        },
+        {
+          "name": "PropertyCannotBeUpdated",
+          "value": 2534953608
+        },
+        {
+          "name": "IncompatibleTypeForArray",
+          "value": 3820761979
+        },
+        {
+          "name": "PercentCompleteMustBeBetween0And100",
+          "value": 3936886128
+        },
+        {
+          "name": "AutodiscoverServiceIncompatibleWithRequestVersion",
+          "value": 460414997
+        },
+        {
+          "name": "InvalidAutodiscoverSmtpAddressesCount",
+          "value": 1774410042
+        },
+        {
+          "name": "ServiceUrlMustBeSet",
+          "value": 1922401890
+        },
+        {
+          "name": "ItemTypeNotCompatible",
+          "value": 4181025268
+        },
+        {
+          "name": "AttachmentItemTypeMismatch",
+          "value": 1516841384
+        },
+        {
+          "name": "UnsupportedWebProtocol",
+          "value": 3620572079
+        },
+        {
+          "name": "EnumValueIncompatibleWithRequestVersion",
+          "value": 777131942
+        },
+        {
+          "name": "UnexpectedElement",
+          "value": 2080190431
+        },
+        {
+          "name": "InvalidOrderBy",
+          "value": 162617974
+        },
+        {
+          "name": "NoAppropriateConstructorForItemClass",
+          "value": 3730786468
+        },
+        {
+          "name": "SearchFilterAtIndexIsInvalid",
+          "value": 1334400254
+        },
+        {
+          "name": "DeletingThisObjectTypeNotAuthorized",
+          "value": 3957228737
+        },
+        {
+          "name": "PropertyCannotBeDeleted",
+          "value": 2011990502
+        },
+        {
+          "name": "ValuePropertyMustBeSet",
+          "value": 49538054
+        },
+        {
+          "name": "TagValueIsOutOfRange",
+          "value": 4177209255
+        },
+        {
+          "name": "ItemToUpdateCannotBeNullOrNew",
+          "value": 893972063
+        },
+        {
+          "name": "SearchParametersRootFolderIdsEmpty",
+          "value": 2492696699
+        },
+        {
+          "name": "MailboxQueriesParameterIsNotSpecified",
+          "value": 2182404464
+        },
+        {
+          "name": "FolderPermissionHasInvalidUserId",
+          "value": 3079787672
+        },
+        {
+          "name": "InvalidAutodiscoverDomain",
+          "value": 95137117
+        },
+        {
+          "name": "MailboxesParameterIsNotSpecified",
+          "value": 1274908260
+        },
+        {
+          "name": "ParentFolderDoesNotHaveId",
+          "value": 3207115397
+        },
+        {
+          "name": "DayOfMonthMustBeSpecifiedForRecurrencePattern",
+          "value": 190140884
+        },
+        {
+          "name": "ClassIncompatibleWithRequestVersion",
+          "value": 886236812
+        },
+        {
+          "name": "CertificateHasNoPrivateKey",
+          "value": 956539910
+        },
+        {
+          "name": "InvalidOrUnsupportedTimeZoneDefinition",
+          "value": 2660350763
+        },
+        {
+          "name": "HourMustBeBetween0And23",
+          "value": 980862610
+        },
+        {
+          "name": "TimeoutMustBeBetween1And1440",
+          "value": 1864811546
+        },
+        {
+          "name": "CredentialsRequired",
+          "value": 107509017
+        },
+        {
+          "name": "MustLoadOrAssignPropertyBeforeAccess",
+          "value": 1301287431
+        },
+        {
+          "name": "InvalidAutodiscoverServiceResponse",
+          "value": 2421645987
+        },
+        {
+          "name": "CannotCallConnectDuringLiveConnection",
+          "value": 3637880390
+        },
+        {
+          "name": "ObjectDoesNotHaveId",
+          "value": 1990317298
+        },
+        {
+          "name": "CannotAddSubscriptionToLiveConnection",
+          "value": 2374077290
+        },
+        {
+          "name": "MaxChangesMustBeBetween1And512",
+          "value": 3989266019
+        },
+        {
+          "name": "AttributeValueCannotBeSerialized",
+          "value": 3745271395
+        },
+        {
+          "name": "SearchFilterMustBeSet",
+          "value": 2182989540
+        },
+        {
+          "name": "EndDateMustBeGreaterThanStartDate",
+          "value": 2696927076
+        },
+        {
+          "name": "InvalidDateTime",
+          "value": 3410810540
+        },
+        {
+          "name": "UpdateItemsDoesNotAllowAttachments",
+          "value": 2505974152
+        },
+        {
+          "name": "TimeoutMustBeGreaterThanZero",
+          "value": 3210574608
+        },
+        {
+          "name": "AutodiscoverInvalidSettingForOutlookProvider",
+          "value": 81925120
+        },
+        {
+          "name": "InvalidRedirectionResponseReturned",
+          "value": 706868687
+        },
+        {
+          "name": "ExpectedStartElement",
+          "value": 3728006586
+        },
+        {
+          "name": "DaysOfTheWeekNotSpecified",
+          "value": 2925351706
+        },
+        {
+          "name": "FolderToUpdateCannotBeNullOrNew",
+          "value": 2887145506
+        },
+        {
+          "name": "PartnerTokenRequestRequiresUrl",
+          "value": 1709653493
+        },
+        {
+          "name": "NumberOfOccurrencesMustBeGreaterThanZero",
+          "value": 4020293177
+        },
+        {
+          "name": "JsonSerializationNotImplemented",
+          "value": 537341821
+        },
+        {
+          "name": "StartTimeZoneRequired",
+          "value": 263088904
+        },
+        {
+          "name": "PropertyAlreadyExistsInOrderByCollection",
+          "value": 2291792901
+        },
+        {
+          "name": "ItemAttachmentMustBeNamed",
+          "value": 2209938519
+        },
+        {
+          "name": "InvalidAutodiscoverSettingsCount",
+          "value": 2688936715
+        },
+        {
+          "name": "LoadingThisObjectTypeNotSupported",
+          "value": 1313605428
+        },
+        {
+          "name": "UserIdForDelegateUserNotSpecified",
+          "value": 3460610998
+        },
+        {
+          "name": "PhoneCallAlreadyDisconnected",
+          "value": 2720737469
+        },
+        {
+          "name": "OperationDoesNotSupportAttachments",
+          "value": 1464025756
+        },
+        {
+          "name": "UnsupportedTimeZonePeriodTransitionTarget",
+          "value": 98512741
+        },
+        {
+          "name": "IEnumerableDoesNotContainThatManyObject",
+          "value": 474853648
+        },
+        {
+          "name": "UpdateItemsDoesNotSupportNewOrUnchangedItems",
+          "value": 953072612
+        },
+        {
+          "name": "ValidationFailed",
+          "value": 1341796948
+        },
+        {
+          "name": "InvalidRecurrencePattern",
+          "value": 3636462697
+        },
+        {
+          "name": "TimeWindowStartTimeMustBeGreaterThanEndTime",
+          "value": 4170253059
+        },
+        {
+          "name": "InvalidAttributeValue",
+          "value": 369811396
+        },
+        {
+          "name": "FileAttachmentContentIsNotSet",
+          "value": 2449142619
+        },
+        {
+          "name": "AutodiscoverDidNotReturnEwsUrl",
+          "value": 628121484
+        },
+        {
+          "name": "RecurrencePatternMustHaveStartDate",
+          "value": 423461609
+        },
+        {
+          "name": "OccurrenceIndexMustBeGreaterThanZero",
+          "value": 1396112272
+        },
+        {
+          "name": "ServiceResponseDoesNotContainXml",
+          "value": 1981959699
+        },
+        {
+          "name": "ItemIsOutOfDate",
+          "value": 2560682386
+        },
+        {
+          "name": "MinuteMustBeBetween0And59",
+          "value": 3637133283
+        },
+        {
+          "name": "NoSoapOrWsSecurityEndpointAvailable",
+          "value": 3954825173
+        },
+        {
+          "name": "ElementNotFound",
+          "value": 3189440097
+        },
+        {
+          "name": "IndexIsOutOfRange",
+          "value": 4223767916
+        },
+        {
+          "name": "PropertyIsReadOnly",
+          "value": 869119007
+        },
+        {
+          "name": "AttachmentCreationFailed",
+          "value": 2817837707
+        },
+        {
+          "name": "DayOfMonthMustBeBetween1And31",
+          "value": 3133762315
+        },
+        {
+          "name": "ServiceRequestFailed",
+          "value": 2091738407
+        },
+        {
+          "name": "DelegateUserHasInvalidUserId",
+          "value": 129422921
+        },
+        {
+          "name": "SearchFilterComparisonValueTypeIsNotSupported",
+          "value": 1069581653
+        },
+        {
+          "name": "ElementValueCannotBeSerialized",
+          "value": 4258284629
+        },
+        {
+          "name": "PropertyValueMustBeSpecifiedForRecurrencePattern",
+          "value": 2924950297
+        },
+        {
+          "name": "NonSummaryPropertyCannotBeUsed",
+          "value": 2436895661
+        },
+        {
+          "name": "HoldIdParameterIsNotSpecified",
+          "value": 134310332
+        },
+        {
+          "name": "TransitionGroupNotFound",
+          "value": 21384399
+        },
+        {
+          "name": "ObjectTypeNotSupported",
+          "value": 4144876524
+        },
+        {
+          "name": "InvalidTimeoutValue",
+          "value": 3454211069
+        },
+        {
+          "name": "AutodiscoverRedirectBlocked",
+          "value": 3339063014
+        },
+        {
+          "name": "PropertySetCannotBeModified",
+          "value": 3717641032
+        },
+        {
+          "name": "DayOfTheWeekMustBeSpecifiedForRecurrencePattern",
+          "value": 3877446129
+        },
+        {
+          "name": "ServiceObjectAlreadyHasId",
+          "value": 3918321785
+        },
+        {
+          "name": "MethodIncompatibleWithRequestVersion",
+          "value": 4274338115
+        },
+        {
+          "name": "OperationNotSupportedForPropertyDefinitionType",
+          "value": 2727810523
+        },
+        {
+          "name": "InvalidElementStringValue",
+          "value": 3934659801
+        },
+        {
+          "name": "CollectionIsEmpty",
+          "value": 500353177
+        },
+        {
+          "name": "InvalidFrequencyValue",
+          "value": 885177846
+        },
+        {
+          "name": "UnexpectedEndOfXmlDocument",
+          "value": 546825189
+        },
+        {
+          "name": "FolderTypeNotCompatible",
+          "value": 3578997681
+        },
+        {
+          "name": "RequestIncompatibleWithRequestVersion",
+          "value": 3451337077
+        },
+        {
+          "name": "PropertyTypeIncompatibleWhenUpdatingCollection",
+          "value": 4148083232
+        },
+        {
+          "name": "ServerVersionNotSupported",
+          "value": 603284986
+        },
+        {
+          "name": "DurationMustBeSpecifiedWhenScheduled",
+          "value": 666454105
+        },
+        {
+          "name": "NoError",
+          "value": 1005127777
+        },
+        {
+          "name": "CannotUpdateNewUserConfiguration",
+          "value": 3972010693
+        },
+        {
+          "name": "ObjectTypeIncompatibleWithRequestVersion",
+          "value": 2438108153
+        },
+        {
+          "name": "NullStringArrayElementInvalid",
+          "value": 3604837092
+        },
+        {
+          "name": "HttpsIsRequired",
+          "value": 333950754
+        },
+        {
+          "name": "MergedFreeBusyIntervalMustBeSmallerThanTimeWindow",
+          "value": 2480357954
+        },
+        {
+          "name": "SecondMustBeBetween0And59",
+          "value": 328519365
+        },
+        {
+          "name": "AtLeastOneAttachmentCouldNotBeDeleted",
+          "value": 3596957401
+        },
+        {
+          "name": "IdAlreadyInList",
+          "value": 1233804470
+        },
+        {
+          "name": "BothSearchFilterAndQueryStringCannotBeSpecified",
+          "value": 3295662635
+        },
+        {
+          "name": "AdditionalPropertyIsNull",
+          "value": 3383788511
+        },
+        {
+          "name": "InvalidEmailAddress",
+          "value": 2316486059
+        },
+        {
+          "name": "MaximumRedirectionHopsExceeded",
+          "value": 1588497945
+        },
+        {
+          "name": "AutodiscoverCouldNotBeLocated",
+          "value": 3097538091
+        },
+        {
+          "name": "NoSubscriptionsOnConnection",
+          "value": 2715578908
+        },
+        {
+          "name": "PermissionLevelInvalidForNonCalendarFolder",
+          "value": 1063351272
+        },
+        {
+          "name": "InvalidAuthScheme",
+          "value": 2845550636
+        },
+        {
+          "name": "JsonDeserializationNotImplemented",
+          "value": 311071154
+        },
+        {
+          "name": "ValuePropertyNotLoaded",
+          "value": 2743202310
+        },
+        {
+          "name": "PropertyIncompatibleWithRequestVersion",
+          "value": 843308875
+        },
+        {
+          "name": "OffsetMustBeGreaterThanZero",
+          "value": 2437116628
+        },
+        {
+          "name": "CreateItemsDoesNotAllowAttachments",
+          "value": 690508625
+        },
+        {
+          "name": "PropertyDefinitionTypeMismatch",
+          "value": 2445370550
+        },
+        {
+          "name": "IntervalMustBeGreaterOrEqualToOne",
+          "value": 2129318611
+        },
+        {
+          "name": "CannotSetPermissionLevelToCustom",
+          "value": 961741172
+        },
+        {
+          "name": "CannotAddRequestHeader",
+          "value": 2921139860
+        },
+        {
+          "name": "ArrayMustHaveAtLeastOneElement",
+          "value": 4264880578
+        },
+        {
+          "name": "MonthMustBeSpecifiedForRecurrencePattern",
+          "value": 567828041
+        },
+        {
+          "name": "ValueOfTypeCannotBeConverted",
+          "value": 3869807514
+        },
+        {
+          "name": "ValueCannotBeConverted",
+          "value": 788051255
+        },
+        {
+          "name": "ServerErrorAndStackTraceDetails",
+          "value": 1481761255
+        },
+        {
+          "name": "FolderPermissionLevelMustBeSet",
+          "value": 2586079185
+        },
+        {
+          "name": "AutodiscoverError",
+          "value": 4003396996
+        },
+        {
+          "name": "ArrayMustHaveSingleDimension",
+          "value": 3066801652
+        },
+        {
+          "name": "InvalidPropertyValueNotInRange",
+          "value": 2233059550
+        },
+        {
+          "name": "RegenerationPatternsOnlyValidForTasks",
+          "value": 1453973661
+        },
+        {
+          "name": "ItemAttachmentCannotBeUpdated",
+          "value": 914733855
+        },
+        {
+          "name": "EqualityComparisonFilterIsInvalid",
+          "value": 1467147488
+        },
+        {
+          "name": "AutodiscoverServiceRequestRequiresDomainOrUrl",
+          "value": 2950491364
+        },
+        {
+          "name": "InvalidUser",
+          "value": 3929050450
+        },
+        {
+          "name": "AccountIsLocked",
+          "value": 2901788841
+        },
+        {
+          "name": "InvalidDomainName",
+          "value": 2762661174
+        },
+        {
+          "name": "TooFewServiceReponsesReturned",
+          "value": 710118117
+        },
+        {
+          "name": "CannotSubscribeToStatusEvents",
+          "value": 463464377
+        },
+        {
+          "name": "InvalidSortByPropertyForMailboxSearch",
+          "value": 1066736932
+        },
+        {
+          "name": "UnexpectedElementType",
+          "value": 2100812591
+        },
+        {
+          "name": "ValueMustBeGreaterThanZero",
+          "value": 691200302
+        },
+        {
+          "name": "AttachmentCannotBeUpdated",
+          "value": 2292458752
+        },
+        {
+          "name": "CreateItemsDoesNotHandleExistingItems",
+          "value": 3912371609
+        },
+        {
+          "name": "MultipleContactPhotosInAttachment",
+          "value": 2967125165
+        },
+        {
+          "name": "InvalidRecurrenceRange",
+          "value": 3387532664
+        },
+        {
+          "name": "CannotSetBothImpersonatedAndPrivilegedUser",
+          "value": 4210899574
+        },
+        {
+          "name": "NewMessagesWithAttachmentsCannotBeSentDirectly",
+          "value": 1565629292
+        },
+        {
+          "name": "CannotCallDisconnectWithNoLiveConnection",
+          "value": 3633425214
+        },
+        {
+          "name": "IdPropertyMustBeSet",
+          "value": 3940556486
+        },
+        {
+          "name": "ValuePropertyNotAssigned",
+          "value": 1562822901
+        },
+        {
+          "name": "ZeroLengthArrayInvalid",
+          "value": 4061174908
+        },
+        {
+          "name": "HoldMailboxesParameterIsNotSpecified",
+          "value": 3345946933
+        },
+        {
+          "name": "CannotSaveNotNewUserConfiguration",
+          "value": 2270311116
+        },
+        {
+          "name": "ServiceObjectDoesNotHaveId",
+          "value": 2111195463
+        },
+        {
+          "name": "PropertyCollectionSizeMismatch",
+          "value": 491519754
+        },
+        {
+          "name": "XsDurationCouldNotBeParsed",
+          "value": 2861470707
+        },
+        {
+          "name": "UnknownTimeZonePeriodTransitionType",
+          "value": 2279096081
+        }
+      ]
+    }
+  ],
+  "namespaceMappings": []
+}

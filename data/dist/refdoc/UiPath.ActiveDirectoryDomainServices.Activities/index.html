@@ -1,0 +1,3239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UiPath.ActiveDirectoryDomainServices.Activities 1.7.1 — Activity Reference</title>
+  <style>
+    :root {
+      --base3:  #fdf6e3; --base2: #eee8d5; --base1: #93a1a1;
+      --base00: #657b83; --base01: #586e75;
+      --orange: #cb4b16; --blue: #268bd2; --cyan: #2aa198;
+      --green:  #859900;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: var(--base3); color: var(--base00);
+      line-height: 1.55; padding: 0 0 4rem;
+    }
+    .topbar {
+      background: var(--orange); color: #fff;
+      padding: 0 2rem; height: 50px;
+      display: flex; align-items: center; gap: 1rem;
+      font-weight: 700; font-size: 1rem;
+    }
+    .topbar a { color: #fff; text-decoration: none; }
+    .topbar-sub { font-weight: 400; font-size: 0.82rem; opacity: 0.82; }
+    .content { max-width: 960px; margin: 0 auto; padding: 2rem 1.5rem 0; }
+    .gen-meta {
+      font-size: 0.78rem; color: var(--base1);
+      border-bottom: 1px solid var(--base2);
+      padding-bottom: 0.75rem; margin-bottom: 2rem;
+    }
+    .pkg-section { margin-bottom: 3rem; }
+    .pkg-heading {
+      font-size: 1.05rem; font-weight: 700;
+      color: var(--base01); border-bottom: 2px solid var(--orange);
+      padding-bottom: 0.3rem; margin-bottom: 1.25rem;
+    }
+    .activity {
+      background: #fff; border: 1px solid var(--base2);
+      border-radius: 4px; padding: 1rem 1.25rem; margin-bottom: 1rem;
+    }
+    .activity-name { font-size: 1rem; font-weight: 700; color: var(--base01); margin-bottom: 0.15rem; }
+    .activity-full { font-family: ui-monospace, monospace; font-size: 0.78rem; color: var(--base1); margin-bottom: 0.5rem; }
+    .activity-desc { font-size: 0.875rem; margin-bottom: 0.75rem; }
+    .badge {
+      display: inline-block; font-size: 0.72rem; padding: 0.1em 0.5em;
+      border-radius: 3px; margin-right: 0.35rem; margin-bottom: 0.5rem;
+      background: var(--base2); color: var(--base01);
+    }
+    .badge-cat { background: #d4edda; color: #155724; }
+    .members-heading {
+      font-size: 0.72rem; text-transform: uppercase;
+      letter-spacing: 0.07em; color: var(--base1);
+      margin: 0.75rem 0 0.35rem;
+    }
+    table { border-collapse: collapse; width: 100%; font-size: 0.82rem; }
+    th, td { text-align: left; padding: 0.3rem 0.6rem; border-bottom: 1px solid var(--base2); }
+    th { background: var(--base2); color: var(--base01); font-size: 0.75rem; font-weight: 600; }
+    tr:last-child td { border-bottom: none; }
+    .dir-in    { color: var(--green);  font-weight: 600; }
+    .dir-out   { color: var(--blue);   font-weight: 600; }
+    .dir-inout { color: var(--cyan);   font-weight: 600; }
+    .req       { color: var(--orange); font-weight: 700; }
+    code { background: var(--base2); padding: 0.1em 0.35em; border-radius: 3px;
+           font-size: 0.85em; font-family: ui-monospace, monospace; }
+    .no-members { font-size: 0.8rem; color: var(--base1); font-style: italic; }
+    .pkg-list { list-style: none; columns: 2; }
+    .pkg-list li { padding: 0.2rem 0; }
+    .pkg-list a { color: var(--blue); text-decoration: none; }
+    .pkg-list a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a href="../../index.html">uips-fixtures</a>
+    <span class="topbar-sub">UiPath.ActiveDirectoryDomainServices.Activities 1.7.1</span>
+  </header>
+  <div class="content">
+    <p class="gen-meta">
+      39 activities &middot;
+      uips-fixtures catalog v0.3 &middot; generated 2026-04-10T09:21:43Z
+    </p>
+    <div class="activity" id="UiPath-ActiveDirectoryDomainServices-Activities-ActiveDirectoryScope">
+      <div class="activity-name">Active Directory Scope</div>
+      <div class="activity-full">UiPath.ActiveDirectoryDomainServices.Activities.ActiveDirectoryScope</div>
+<p class="activity-desc">Connects to Active Directory and provides a scope for other Active Directory activities.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>Username</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Password</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Security.SecureString&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ActiveDirectoryServer</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Port</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Int32&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>SecondaryUsername</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>SecondaryPassword</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Security.SecureString&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>SecondaryActiveDirectoryServer</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>SecondaryPort</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Int32&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>ConnectionType</td>
+          <td>property</td>
+          <td><code>UiPath.ActiveDirectoryDomainServices.Core.ConnectionType</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>SecondaryConnectionType</td>
+          <td>property</td>
+          <td><code>UiPath.ActiveDirectoryDomainServices.Core.ConnectionType</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-ActiveDirectoryDomainServices-Activities-GetObjectDistinguishedName">
+      <div class="activity-name">Get Object Distinguished Name</div>
+      <div class="activity-full">UiPath.ActiveDirectoryDomainServices.Activities.GetObjectDistinguishedName</div>
+<p class="activity-desc">Retrieves the distinguished name of a given Active Directory object.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>SAMAccountName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>DistinguishedName</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Connection</td>
+          <td>property</td>
+          <td><code>UiPath.ActiveDirectoryDomainServices.Core.ConnectionWithoutAuto</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ScopeTag</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-ActiveDirectoryDomainServices-Activities-GetObjectProperties">
+      <div class="activity-name">Get Object Properties</div>
+      <div class="activity-full">UiPath.ActiveDirectoryDomainServices.Activities.GetObjectProperties</div>
+<p class="activity-desc">Retrieves all properties and their values for the specified object if SingleProperty is empty or only the value for a single property if SingleProperty parameter is set.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>DistinguishedName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>SingleProperty</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>SinglePropertyValue</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;Object&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>AllProperties</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;Dictionary&lt;String, Object&gt;&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Connection</td>
+          <td>property</td>
+          <td><code>UiPath.ActiveDirectoryDomainServices.Core.Connection</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ScopeTag</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-ActiveDirectoryDomainServices-Activities-GetObjectsByFilter">
+      <div class="activity-name">Get Objects by Filter</div>
+      <div class="activity-full">UiPath.ActiveDirectoryDomainServices.Activities.GetObjectsByFilter</div>
+<p class="activity-desc">Retrieves the list of Active Directory objects based on an input filter.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>PropertyToFilterBy</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>PropertyValue</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ObjectClass</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ObjectCategory</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Location</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Objects</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;String[]&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Relation</td>
+          <td>property</td>
+          <td><code>UiPath.ActiveDirectoryDomainServices.Core.Relation</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Connection</td>
+          <td>property</td>
+          <td><code>UiPath.ActiveDirectoryDomainServices.Core.ConnectionWithoutAuto</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ScopeTag</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-ActiveDirectoryDomainServices-Activities-GetObjectsByLDAPFilter">
+      <div class="activity-name">Get Objects by LDAP Filter</div>
+      <div class="activity-full">UiPath.ActiveDirectoryDomainServices.Activities.GetObjectsByLDAPFilter</div>
+<p class="activity-desc">Retrieves the list of Active Directory objects matching an LDAP (Lightweight Directory Access Protocol) filter.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>LDAPFilter</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Location</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Objects</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;String[]&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Connection</td>
+          <td>property</td>
+          <td><code>UiPath.ActiveDirectoryDomainServices.Core.ConnectionWithoutAuto</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ScopeTag</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-ActiveDirectoryDomainServices-Activities-IsObjectMemberOfGroup">
+      <div class="activity-name">Is Object Member of Group</div>
+      <div class="activity-full">UiPath.ActiveDirectoryDomainServices.Activities.IsObjectMemberOfGroup</div>
+<p class="activity-desc">Checks whether a given object belongs to a group.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>ObjectDistinguishedName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>GroupDistinguishedName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>IsMember</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;Boolean&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>RecurseIntoChildGroups</td>
+          <td>property</td>
+          <td><code>Boolean</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Connection</td>
+          <td>property</td>
+          <td><code>UiPath.ActiveDirectoryDomainServices.Core.Connection</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>SecondConnection</td>
+          <td>property</td>
+          <td><code>UiPath.ActiveDirectoryDomainServices.Core.Connection</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ScopeTag</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-ActiveDirectoryDomainServices-Activities-MoveObject">
+      <div class="activity-name">Move Object</div>
+      <div class="activity-full">UiPath.ActiveDirectoryDomainServices.Activities.MoveObject</div>
+<p class="activity-desc">Moves an object to a new location in Active Directory.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>ObjectDistinguishedName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>NewParentDistinguishedName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Connection</td>
+          <td>property</td>
+          <td><code>UiPath.ActiveDirectoryDomainServices.Core.Connection</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ScopeTag</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-ActiveDirectoryDomainServices-Activities-RenameObject">
+      <div class="activity-name">Rename Object</div>
+      <div class="activity-full">UiPath.ActiveDirectoryDomainServices.Activities.RenameObject</div>
+<p class="activity-desc">Renames an Active Directory object.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>ObjectDistinguishedName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>NewCommonName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Connection</td>
+          <td>property</td>
+          <td><code>UiPath.ActiveDirectoryDomainServices.Core.Connection</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ScopeTag</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-ActiveDirectoryDomainServices-Activities-UpdateObjectProperties">
+      <div class="activity-name">Update Object Properties</div>
+      <div class="activity-full">UiPath.ActiveDirectoryDomainServices.Activities.UpdateObjectProperties</div>
+<p class="activity-desc">Updates the specified properties of an object.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>DistinguishedName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>SingleProperty</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>SinglePropertyValue</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Object&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Properties</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Data.DataTable&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Connection</td>
+          <td>property</td>
+          <td><code>UiPath.ActiveDirectoryDomainServices.Core.Connection</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ScopeTag</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-ActiveDirectoryDomainServices-Activities-AddComputerToGroup">
+      <div class="activity-name">Add Computer to Group</div>
+      <div class="activity-full">UiPath.ActiveDirectoryDomainServices.Activities.AddComputerToGroup</div>
+<p class="activity-desc">Adds a computer to a group.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>ComputerDistinguishedName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>GroupDistinguishedName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Connection</td>
+          <td>property</td>
+          <td><code>UiPath.ActiveDirectoryDomainServices.Core.Connection</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>SecondConnection</td>
+          <td>property</td>
+          <td><code>UiPath.ActiveDirectoryDomainServices.Core.Connection</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ScopeTag</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-ActiveDirectoryDomainServices-Activities-ComputerExists">
+      <div class="activity-name">Computer Exists</div>
+      <div class="activity-full">UiPath.ActiveDirectoryDomainServices.Activities.ComputerExists</div>
+<p class="activity-desc">Checks if a computer exists in Active Directory.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>Location</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Exists</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;Boolean&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Value</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>CheckComputerBy</td>
+          <td>property</td>
+          <td><code>UiPath.ActiveDirectoryDomainServices.Core.ObjectPropertyFilter</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Connection</td>
+          <td>property</td>
+          <td><code>UiPath.ActiveDirectoryDomainServices.Core.ConnectionWithoutAuto</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ScopeTag</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-ActiveDirectoryDomainServices-Activities-CreateComputer">
+      <div class="activity-name">Create Computer</div>
+      <div class="activity-full">UiPath.ActiveDirectoryDomainServices.Activities.CreateComputer</div>
+<p class="activity-desc">Creates a new computer in Active Directory</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>CommonName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>SAMAccountName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Properties</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Data.DataTable&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Location</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>DistinguishedName</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Enabled</td>
+          <td>property</td>
+          <td><code>Boolean</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Connection</td>
+          <td>property</td>
+          <td><code>UiPath.ActiveDirectoryDomainServices.Core.Connection</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ScopeTag</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-ActiveDirectoryDomainServices-Activities-DeleteComputer">
+      <div class="activity-name">Delete Computer</div>
+      <div class="activity-full">UiPath.ActiveDirectoryDomainServices.Activities.DeleteComputer</div>
+<p class="activity-desc">Deletes a computer from Active Directory</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>DistinguishedName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Recursive</td>
+          <td>property</td>
+          <td><code>Boolean</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Connection</td>
+          <td>property</td>
+          <td><code>UiPath.ActiveDirectoryDomainServices.Core.Connection</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ScopeTag</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-ActiveDirectoryDomainServices-Activities-GetComputerStatus">
+      <div class="activity-name">Get Computer Status</div>
+      <div class="activity-full">UiPath.ActiveDirectoryDomainServices.Activities.GetComputerStatus</div>
+<p class="activity-desc">Retrieves the active status of a computer.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>DistinguishedName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ActiveStatus</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;UiPath.ActiveDirectoryDomainServices.Core.ActiveStatus&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Connection</td>
+          <td>property</td>
+          <td><code>UiPath.ActiveDirectoryDomainServices.Core.Connection</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ScopeTag</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-ActiveDirectoryDomainServices-Activities-JoinComputerToDomain">
+      <div class="activity-name">Join Computer to Domain</div>
+      <div class="activity-full">UiPath.ActiveDirectoryDomainServices.Activities.JoinComputerToDomain</div>
+<p class="activity-desc">Adds a computer to the domain.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>ComputerName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Location</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>LocalComputerAccount</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>LocalComputerAccountPassword</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Security.SecureString&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>CreateComputerAccount</td>
+          <td>property</td>
+          <td><code>Boolean</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Rejoin</td>
+          <td>property</td>
+          <td><code>Boolean</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Connection</td>
+          <td>property</td>
+          <td><code>UiPath.ActiveDirectoryDomainServices.Core.ConnectionWithoutAuto</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ScopeTag</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-ActiveDirectoryDomainServices-Activities-RemoveComputerFromGroup">
+      <div class="activity-name">Remove Computer from Group</div>
+      <div class="activity-full">UiPath.ActiveDirectoryDomainServices.Activities.RemoveComputerFromGroup</div>
+<p class="activity-desc">Removes a computer from a group.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>ComputerDistinguishedName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>GroupDistinguishedName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Connection</td>
+          <td>property</td>
+          <td><code>UiPath.ActiveDirectoryDomainServices.Core.Connection</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>SecondConnection</td>
+          <td>property</td>
+          <td><code>UiPath.ActiveDirectoryDomainServices.Core.Connection</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ScopeTag</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-ActiveDirectoryDomainServices-Activities-SetComputerStatus">
+      <div class="activity-name">Set Computer Status</div>
+      <div class="activity-full">UiPath.ActiveDirectoryDomainServices.Activities.SetComputerStatus</div>
+<p class="activity-desc">Sets the active status of a computer.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>DistinguishedName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Status</td>
+          <td>property</td>
+          <td><code>UiPath.ActiveDirectoryDomainServices.Core.ActiveStatus</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Connection</td>
+          <td>property</td>
+          <td><code>UiPath.ActiveDirectoryDomainServices.Core.Connection</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ScopeTag</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-ActiveDirectoryDomainServices-Activities-UnjoinComputerFromDomain">
+      <div class="activity-name">Unjoin Computer from Domain</div>
+      <div class="activity-full">UiPath.ActiveDirectoryDomainServices.Activities.UnjoinComputerFromDomain</div>
+<p class="activity-desc">Removes a computer from the domain.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>ComputerName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>LocalComputerAccount</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>LocalComputerAccountPassword</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Security.SecureString&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>DisableComputerAccount</td>
+          <td>property</td>
+          <td><code>Boolean</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Connection</td>
+          <td>property</td>
+          <td><code>UiPath.ActiveDirectoryDomainServices.Core.ConnectionWithoutAuto</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ScopeTag</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-ActiveDirectoryDomainServices-Activities-AddGroupToGroup">
+      <div class="activity-name">Add Group to Group</div>
+      <div class="activity-full">UiPath.ActiveDirectoryDomainServices.Activities.AddGroupToGroup</div>
+<p class="activity-desc">Adds a group to another group.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>GroupDistinguishedName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ParentGroupDistinguishedName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Connection</td>
+          <td>property</td>
+          <td><code>UiPath.ActiveDirectoryDomainServices.Core.Connection</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>SecondConnection</td>
+          <td>property</td>
+          <td><code>UiPath.ActiveDirectoryDomainServices.Core.Connection</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ScopeTag</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-ActiveDirectoryDomainServices-Activities-CreateGroup">
+      <div class="activity-name">Create Group</div>
+      <div class="activity-full">UiPath.ActiveDirectoryDomainServices.Activities.CreateGroup</div>
+<p class="activity-desc">Creates a new group in Active Directory.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>CommonName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>SAMAccountName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Properties</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Data.DataTable&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Location</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>DistinguishedName</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Type</td>
+          <td>property</td>
+          <td><code>UiPath.ActiveDirectoryDomainServices.Core.GroupType</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Connection</td>
+          <td>property</td>
+          <td><code>UiPath.ActiveDirectoryDomainServices.Core.Connection</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ScopeTag</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-ActiveDirectoryDomainServices-Activities-DeleteGroup">
+      <div class="activity-name">Delete Group</div>
+      <div class="activity-full">UiPath.ActiveDirectoryDomainServices.Activities.DeleteGroup</div>
+<p class="activity-desc">Deletes a group from Active Directory.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>DistinguishedName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Recursive</td>
+          <td>property</td>
+          <td><code>Boolean</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Connection</td>
+          <td>property</td>
+          <td><code>UiPath.ActiveDirectoryDomainServices.Core.Connection</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ScopeTag</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-ActiveDirectoryDomainServices-Activities-GetComputersInGroup">
+      <div class="activity-name">Get Computers in Group</div>
+      <div class="activity-full">UiPath.ActiveDirectoryDomainServices.Activities.GetComputersInGroup</div>
+<p class="activity-desc">Retrieves the list of computers belonging to the specified group.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>GroupDistinguishedName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Computers</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;String[]&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Connection</td>
+          <td>property</td>
+          <td><code>UiPath.ActiveDirectoryDomainServices.Core.Connection</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ScopeTag</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-ActiveDirectoryDomainServices-Activities-GetUsersInGroup">
+      <div class="activity-name">Get Users in Group</div>
+      <div class="activity-full">UiPath.ActiveDirectoryDomainServices.Activities.GetUsersInGroup</div>
+<p class="activity-desc">Retrieves the list of user accounts belonging to the specified group.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>GroupDistinguishedName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Users</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;String[]&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Connection</td>
+          <td>property</td>
+          <td><code>UiPath.ActiveDirectoryDomainServices.Core.Connection</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ScopeTag</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-ActiveDirectoryDomainServices-Activities-GroupExists">
+      <div class="activity-name">Group Exists</div>
+      <div class="activity-full">UiPath.ActiveDirectoryDomainServices.Activities.GroupExists</div>
+<p class="activity-desc">Checks if a group exists in Active Directory.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>Location</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Exists</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;Boolean&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Value</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>CheckGroupBy</td>
+          <td>property</td>
+          <td><code>UiPath.ActiveDirectoryDomainServices.Core.ObjectPropertyFilter</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Connection</td>
+          <td>property</td>
+          <td><code>UiPath.ActiveDirectoryDomainServices.Core.ConnectionWithoutAuto</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ScopeTag</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-ActiveDirectoryDomainServices-Activities-RemoveGroupFromGroup">
+      <div class="activity-name">Remove Group from Group</div>
+      <div class="activity-full">UiPath.ActiveDirectoryDomainServices.Activities.RemoveGroupFromGroup</div>
+<p class="activity-desc">Removes a group from another group.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>GroupDistinguishedName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ParentGroupDistinguishedName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Connection</td>
+          <td>property</td>
+          <td><code>UiPath.ActiveDirectoryDomainServices.Core.Connection</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>SecondConnection</td>
+          <td>property</td>
+          <td><code>UiPath.ActiveDirectoryDomainServices.Core.Connection</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ScopeTag</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-ActiveDirectoryDomainServices-Activities-AddUserToGroup">
+      <div class="activity-name">Add User to Group</div>
+      <div class="activity-full">UiPath.ActiveDirectoryDomainServices.Activities.AddUserToGroup</div>
+<p class="activity-desc">Adds an user account to a group.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>UserDistinguishedName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>GroupDistinguishedName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Connection</td>
+          <td>property</td>
+          <td><code>UiPath.ActiveDirectoryDomainServices.Core.Connection</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>SecondConnection</td>
+          <td>property</td>
+          <td><code>UiPath.ActiveDirectoryDomainServices.Core.Connection</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ScopeTag</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-ActiveDirectoryDomainServices-Activities-ChangeUserPassword">
+      <div class="activity-name">Change User Password</div>
+      <div class="activity-full">UiPath.ActiveDirectoryDomainServices.Activities.ChangeUserPassword</div>
+<p class="activity-desc">Changes the password of an user account.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>DistinguishedName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Password</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Connection</td>
+          <td>property</td>
+          <td><code>UiPath.ActiveDirectoryDomainServices.Core.Connection</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ScopeTag</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-ActiveDirectoryDomainServices-Activities-CreateUser">
+      <div class="activity-name">Create User</div>
+      <div class="activity-full">UiPath.ActiveDirectoryDomainServices.Activities.CreateUser</div>
+<p class="activity-desc">Create a new user account in Active Directory.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>CommonName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Location</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>SAMAccountName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Password</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Properties</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Data.DataTable&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>DistinguishedName</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Enabled</td>
+          <td>property</td>
+          <td><code>Boolean</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Connection</td>
+          <td>property</td>
+          <td><code>UiPath.ActiveDirectoryDomainServices.Core.Connection</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ScopeTag</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-ActiveDirectoryDomainServices-Activities-DeleteUser">
+      <div class="activity-name">Delete User</div>
+      <div class="activity-full">UiPath.ActiveDirectoryDomainServices.Activities.DeleteUser</div>
+<p class="activity-desc">Permanently deletes a user account from Active Directory.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>DistinguishedName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Recursive</td>
+          <td>property</td>
+          <td><code>Boolean</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Connection</td>
+          <td>property</td>
+          <td><code>UiPath.ActiveDirectoryDomainServices.Core.Connection</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ScopeTag</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-ActiveDirectoryDomainServices-Activities-ForcePasswordChange">
+      <div class="activity-name">Force Password Change</div>
+      <div class="activity-full">UiPath.ActiveDirectoryDomainServices.Activities.ForcePasswordChange</div>
+<p class="activity-desc">Forces the user to change password at the next login.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>DistinguishedName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Connection</td>
+          <td>property</td>
+          <td><code>UiPath.ActiveDirectoryDomainServices.Core.Connection</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ScopeTag</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-ActiveDirectoryDomainServices-Activities-GetPasswordExpirationDate">
+      <div class="activity-name">Get Password Expiration Date</div>
+      <div class="activity-full">UiPath.ActiveDirectoryDomainServices.Activities.GetPasswordExpirationDate</div>
+<p class="activity-desc">Retrieves the password expiration date for the specified user.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>DistinguishedName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ExpirationDate</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;Nullable&lt;DateTime&gt;&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Connection</td>
+          <td>property</td>
+          <td><code>UiPath.ActiveDirectoryDomainServices.Core.Connection</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ScopeTag</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-ActiveDirectoryDomainServices-Activities-GetUserExpirationDate">
+      <div class="activity-name">Get User Expiration Date</div>
+      <div class="activity-full">UiPath.ActiveDirectoryDomainServices.Activities.GetUserExpirationDate</div>
+<p class="activity-desc">Retrieves the expiration date for a given user account.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>DistinguishedName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ExpirationDate</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;Nullable&lt;DateTime&gt;&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Connection</td>
+          <td>property</td>
+          <td><code>UiPath.ActiveDirectoryDomainServices.Core.Connection</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ScopeTag</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-ActiveDirectoryDomainServices-Activities-GetUserGroups">
+      <div class="activity-name">Get User Groups</div>
+      <div class="activity-full">UiPath.ActiveDirectoryDomainServices.Activities.GetUserGroups</div>
+<p class="activity-desc">Retrieves the list of groups a user account is a member of.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>UserDistinguishedName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Groups</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;String[]&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Connection</td>
+          <td>property</td>
+          <td><code>UiPath.ActiveDirectoryDomainServices.Core.Connection</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ScopeTag</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-ActiveDirectoryDomainServices-Activities-GetUserStatus">
+      <div class="activity-name">Get User Status</div>
+      <div class="activity-full">UiPath.ActiveDirectoryDomainServices.Activities.GetUserStatus</div>
+<p class="activity-desc">Retrieves the lock and active status of an user account.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>DistinguishedName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>LockStatus</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;UiPath.ActiveDirectoryDomainServices.Core.LockStatus&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ActiveStatus</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;UiPath.ActiveDirectoryDomainServices.Core.ActiveStatus&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Connection</td>
+          <td>property</td>
+          <td><code>UiPath.ActiveDirectoryDomainServices.Core.Connection</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ScopeTag</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-ActiveDirectoryDomainServices-Activities-RemoveUserFromGroup">
+      <div class="activity-name">Remove User from Group</div>
+      <div class="activity-full">UiPath.ActiveDirectoryDomainServices.Activities.RemoveUserFromGroup</div>
+<p class="activity-desc">Removes a user account from a group.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>UserDistinguishedName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>GroupDistinguishedName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Connection</td>
+          <td>property</td>
+          <td><code>UiPath.ActiveDirectoryDomainServices.Core.Connection</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>SecondConnection</td>
+          <td>property</td>
+          <td><code>UiPath.ActiveDirectoryDomainServices.Core.Connection</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ScopeTag</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-ActiveDirectoryDomainServices-Activities-SetUserExpirationDate">
+      <div class="activity-name">Set User Expiration Date</div>
+      <div class="activity-full">UiPath.ActiveDirectoryDomainServices.Activities.SetUserExpirationDate</div>
+<p class="activity-desc">Sets the expiration date for a given user account.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>DistinguishedName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ExpirationDate</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;DateTime&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Connection</td>
+          <td>property</td>
+          <td><code>UiPath.ActiveDirectoryDomainServices.Core.Connection</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ScopeTag</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-ActiveDirectoryDomainServices-Activities-SetUserStatus">
+      <div class="activity-name">Set User Status</div>
+      <div class="activity-full">UiPath.ActiveDirectoryDomainServices.Activities.SetUserStatus</div>
+<p class="activity-desc">Set the status of a user account.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>DistinguishedName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Status</td>
+          <td>property</td>
+          <td><code>UiPath.ActiveDirectoryDomainServices.Core.UserStatus</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Connection</td>
+          <td>property</td>
+          <td><code>UiPath.ActiveDirectoryDomainServices.Core.Connection</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ScopeTag</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-ActiveDirectoryDomainServices-Activities-UserExists">
+      <div class="activity-name">User Exists</div>
+      <div class="activity-full">UiPath.ActiveDirectoryDomainServices.Activities.UserExists</div>
+<p class="activity-desc">Checks if an user account exists in Active Directory</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>Location</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Exists</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;Boolean&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Value</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>CheckUserBy</td>
+          <td>property</td>
+          <td><code>UiPath.ActiveDirectoryDomainServices.Core.UserPropertyFilter</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Connection</td>
+          <td>property</td>
+          <td><code>UiPath.ActiveDirectoryDomainServices.Core.ConnectionWithoutAuto</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ScopeTag</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-ActiveDirectoryDomainServices-Activities-ValidateUserCredentials">
+      <div class="activity-name">Validate User Credentials</div>
+      <div class="activity-full">UiPath.ActiveDirectoryDomainServices.Activities.ValidateUserCredentials</div>
+<p class="activity-desc">Validates a user credentials against the current Active Directory.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>Value</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Password</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>SecurePassword</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Security.SecureString&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>IsValid</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;Boolean&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>User</td>
+          <td>property</td>
+          <td><code>UiPath.ActiveDirectoryDomainServices.Core.ValidateCredentialsUserFilter</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Connection</td>
+          <td>property</td>
+          <td><code>UiPath.ActiveDirectoryDomainServices.Core.ConnectionWithoutAuto</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ScopeTag</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</body>
+</html>

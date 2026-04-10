@@ -1,0 +1,2917 @@
+{
+  "schema": {
+    "id": "activity-catalog",
+    "version": "v0.3"
+  },
+  "source": {
+    "kind": "nuget-package",
+    "id": "AngleSharp",
+    "version": "0.9.9",
+    "feedUrl": null,
+    "authors": "AngleSharp",
+    "projectUrl": "https://anglesharp.github.io/",
+    "description": "AngleSharp is the ultimate angle brackets parser library. It parses HTML5, CSS3, and XML to construct a DOM based on the official W3C specification.",
+    "license": "https://github.com/AngleSharp/AngleSharp/blob/master/LICENSE",
+    "tags": "html html5 css css3 xml dom dom4 parser engine hypertext markup language query selector attributes linq angle bracket web internet text headless browser",
+    "packageTypes": []
+  },
+  "generatedAt": "2026-04-10T09:21:12Z",
+  "activities": [],
+  "enums": [
+    {
+      "fullName": "AngleSharp.TaskPriority",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Normal",
+          "value": 1
+        },
+        {
+          "name": "Microtask",
+          "value": 2
+        },
+        {
+          "name": "Critical",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Parser.Html.HtmlParseError",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "EOF",
+          "value": 0
+        },
+        {
+          "name": "Null",
+          "value": 1
+        },
+        {
+          "name": "BogusComment",
+          "value": 26
+        },
+        {
+          "name": "AmbiguousOpenTag",
+          "value": 27
+        },
+        {
+          "name": "TagClosedWrong",
+          "value": 28
+        },
+        {
+          "name": "ClosingSlashMisplaced",
+          "value": 29
+        },
+        {
+          "name": "UndefinedMarkupDeclaration",
+          "value": 30
+        },
+        {
+          "name": "CommentEndedWithEM",
+          "value": 31
+        },
+        {
+          "name": "CommentEndedWithDash",
+          "value": 32
+        },
+        {
+          "name": "CommentEndedUnexpected",
+          "value": 33
+        },
+        {
+          "name": "TagCannotBeSelfClosed",
+          "value": 34
+        },
+        {
+          "name": "EndTagCannotBeSelfClosed",
+          "value": 35
+        },
+        {
+          "name": "EndTagCannotHaveAttributes",
+          "value": 36
+        },
+        {
+          "name": "CaptionNotInScope",
+          "value": 37
+        },
+        {
+          "name": "SelectNotInScope",
+          "value": 38
+        },
+        {
+          "name": "TableRowNotInScope",
+          "value": 39
+        },
+        {
+          "name": "TableNotInScope",
+          "value": 40
+        },
+        {
+          "name": "ParagraphNotInScope",
+          "value": 41
+        },
+        {
+          "name": "BodyNotInScope",
+          "value": 42
+        },
+        {
+          "name": "BlockNotInScope",
+          "value": 43
+        },
+        {
+          "name": "TableCellNotInScope",
+          "value": 44
+        },
+        {
+          "name": "TableSectionNotInScope",
+          "value": 45
+        },
+        {
+          "name": "ObjectNotInScope",
+          "value": 46
+        },
+        {
+          "name": "HeadingNotInScope",
+          "value": 47
+        },
+        {
+          "name": "ListItemNotInScope",
+          "value": 48
+        },
+        {
+          "name": "FormNotInScope",
+          "value": 49
+        },
+        {
+          "name": "ButtonInScope",
+          "value": 50
+        },
+        {
+          "name": "NobrInScope",
+          "value": 51
+        },
+        {
+          "name": "ElementNotInScope",
+          "value": 52
+        },
+        {
+          "name": "CharacterReferenceWrongNumber",
+          "value": 53
+        },
+        {
+          "name": "CharacterReferenceSemicolonMissing",
+          "value": 54
+        },
+        {
+          "name": "CharacterReferenceInvalidRange",
+          "value": 55
+        },
+        {
+          "name": "CharacterReferenceInvalidNumber",
+          "value": 56
+        },
+        {
+          "name": "CharacterReferenceInvalidCode",
+          "value": 57
+        },
+        {
+          "name": "CharacterReferenceNotTerminated",
+          "value": 58
+        },
+        {
+          "name": "CharacterReferenceAttributeEqualsFound",
+          "value": 59
+        },
+        {
+          "name": "ItemNotFound",
+          "value": 60
+        },
+        {
+          "name": "EncodingError",
+          "value": 61
+        },
+        {
+          "name": "DoctypeUnexpectedAfterName",
+          "value": 64
+        },
+        {
+          "name": "DoctypePublicInvalid",
+          "value": 65
+        },
+        {
+          "name": "DoctypeInvalidCharacter",
+          "value": 66
+        },
+        {
+          "name": "DoctypeSystemInvalid",
+          "value": 67
+        },
+        {
+          "name": "DoctypeTagInappropriate",
+          "value": 68
+        },
+        {
+          "name": "DoctypeInvalid",
+          "value": 69
+        },
+        {
+          "name": "DoctypeUnexpected",
+          "value": 70
+        },
+        {
+          "name": "DoctypeMissing",
+          "value": 71
+        },
+        {
+          "name": "NotationPublicInvalid",
+          "value": 72
+        },
+        {
+          "name": "NotationSystemInvalid",
+          "value": 73
+        },
+        {
+          "name": "TypeDeclarationUndefined",
+          "value": 74
+        },
+        {
+          "name": "QuantifierMissing",
+          "value": 75
+        },
+        {
+          "name": "DoubleQuotationMarkUnexpected",
+          "value": 80
+        },
+        {
+          "name": "SingleQuotationMarkUnexpected",
+          "value": 81
+        },
+        {
+          "name": "AttributeNameInvalid",
+          "value": 96
+        },
+        {
+          "name": "AttributeValueInvalid",
+          "value": 97
+        },
+        {
+          "name": "AttributeNameExpected",
+          "value": 98
+        },
+        {
+          "name": "AttributeDuplicateOmitted",
+          "value": 99
+        },
+        {
+          "name": "TagMustBeInHead",
+          "value": 112
+        },
+        {
+          "name": "TagInappropriate",
+          "value": 113
+        },
+        {
+          "name": "TagCannotEndHere",
+          "value": 114
+        },
+        {
+          "name": "TagCannotStartHere",
+          "value": 115
+        },
+        {
+          "name": "FormInappropriate",
+          "value": 116
+        },
+        {
+          "name": "InputUnexpected",
+          "value": 117
+        },
+        {
+          "name": "TagClosingMismatch",
+          "value": 118
+        },
+        {
+          "name": "TagDoesNotMatchCurrentNode",
+          "value": 119
+        },
+        {
+          "name": "LineBreakUnexpected",
+          "value": 120
+        },
+        {
+          "name": "HeadTagMisplaced",
+          "value": 128
+        },
+        {
+          "name": "HtmlTagMisplaced",
+          "value": 129
+        },
+        {
+          "name": "BodyTagMisplaced",
+          "value": 130
+        },
+        {
+          "name": "ImageTagNamedWrong",
+          "value": 131
+        },
+        {
+          "name": "TableNesting",
+          "value": 132
+        },
+        {
+          "name": "IllegalElementInTableDetected",
+          "value": 133
+        },
+        {
+          "name": "SelectNesting",
+          "value": 134
+        },
+        {
+          "name": "IllegalElementInSelectDetected",
+          "value": 135
+        },
+        {
+          "name": "FramesetMisplaced",
+          "value": 136
+        },
+        {
+          "name": "HeadingNested",
+          "value": 137
+        },
+        {
+          "name": "AnchorNested",
+          "value": 138
+        },
+        {
+          "name": "TokenNotPossible",
+          "value": 144
+        },
+        {
+          "name": "CurrentNodeIsNotRoot",
+          "value": 145
+        },
+        {
+          "name": "CurrentNodeIsRoot",
+          "value": 146
+        },
+        {
+          "name": "TagInvalidInFragmentMode",
+          "value": 147
+        },
+        {
+          "name": "FormAlreadyOpen",
+          "value": 148
+        },
+        {
+          "name": "FormClosedWrong",
+          "value": 149
+        },
+        {
+          "name": "BodyClosedWrong",
+          "value": 150
+        },
+        {
+          "name": "FormattingElementNotFound",
+          "value": 151
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Parser.Css.CssParseError",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "EOF",
+          "value": 0
+        },
+        {
+          "name": "InvalidCharacter",
+          "value": 16
+        },
+        {
+          "name": "InvalidBlockStart",
+          "value": 17
+        },
+        {
+          "name": "InvalidToken",
+          "value": 18
+        },
+        {
+          "name": "ColonMissing",
+          "value": 19
+        },
+        {
+          "name": "IdentExpected",
+          "value": 20
+        },
+        {
+          "name": "InputUnexpected",
+          "value": 21
+        },
+        {
+          "name": "LineBreakUnexpected",
+          "value": 22
+        },
+        {
+          "name": "UnknownAtRule",
+          "value": 32
+        },
+        {
+          "name": "InvalidSelector",
+          "value": 48
+        },
+        {
+          "name": "InvalidKeyframe",
+          "value": 49
+        },
+        {
+          "name": "ValueMissing",
+          "value": 64
+        },
+        {
+          "name": "InvalidValue",
+          "value": 65
+        },
+        {
+          "name": "UnknownDeclarationName",
+          "value": 80
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Network.CorsSetting",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Anonymous",
+          "value": 1
+        },
+        {
+          "name": "UseCredentials",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Network.HttpMethod",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Get",
+          "value": 0
+        },
+        {
+          "name": "Post",
+          "value": 1
+        },
+        {
+          "name": "Put",
+          "value": 2
+        },
+        {
+          "name": "Delete",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Network.OriginBehavior",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Taint",
+          "value": 0
+        },
+        {
+          "name": "Fail",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Dom.AdjacentPosition",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "BeforeBegin",
+          "value": 0
+        },
+        {
+          "name": "AfterBegin",
+          "value": 1
+        },
+        {
+          "name": "BeforeEnd",
+          "value": 2
+        },
+        {
+          "name": "AfterEnd",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Dom.CacheStatus",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Uncached",
+          "value": 0
+        },
+        {
+          "name": "Idle",
+          "value": 1
+        },
+        {
+          "name": "Checking",
+          "value": 2
+        },
+        {
+          "name": "Downloading",
+          "value": 3
+        },
+        {
+          "name": "UpdateReady",
+          "value": 4
+        },
+        {
+          "name": "Obsolete",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Dom.DirectionMode",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Ltr",
+          "value": 0
+        },
+        {
+          "name": "Rtl",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Dom.DocumentPositions",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Same",
+          "value": 0
+        },
+        {
+          "name": "Disconnected",
+          "value": 1
+        },
+        {
+          "name": "Preceding",
+          "value": 2
+        },
+        {
+          "name": "Following",
+          "value": 4
+        },
+        {
+          "name": "Contains",
+          "value": 8
+        },
+        {
+          "name": "ContainedBy",
+          "value": 16
+        },
+        {
+          "name": "ImplementationSpecific",
+          "value": 32
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Dom.DocumentReadyState",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Loading",
+          "value": 0
+        },
+        {
+          "name": "Interactive",
+          "value": 1
+        },
+        {
+          "name": "Complete",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Dom.DomError",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "IndexSizeError",
+          "value": 1
+        },
+        {
+          "name": "DomStringSize",
+          "value": 2
+        },
+        {
+          "name": "HierarchyRequest",
+          "value": 3
+        },
+        {
+          "name": "WrongDocument",
+          "value": 4
+        },
+        {
+          "name": "InvalidCharacter",
+          "value": 5
+        },
+        {
+          "name": "NoDataAllowed",
+          "value": 6
+        },
+        {
+          "name": "NoModificationAllowed",
+          "value": 7
+        },
+        {
+          "name": "NotFound",
+          "value": 8
+        },
+        {
+          "name": "NotSupported",
+          "value": 9
+        },
+        {
+          "name": "InUse",
+          "value": 10
+        },
+        {
+          "name": "InvalidState",
+          "value": 11
+        },
+        {
+          "name": "Syntax",
+          "value": 12
+        },
+        {
+          "name": "InvalidModification",
+          "value": 13
+        },
+        {
+          "name": "Namespace",
+          "value": 14
+        },
+        {
+          "name": "InvalidAccess",
+          "value": 15
+        },
+        {
+          "name": "Validation",
+          "value": 15
+        },
+        {
+          "name": "TypeMismatch",
+          "value": 17
+        },
+        {
+          "name": "Security",
+          "value": 18
+        },
+        {
+          "name": "Network",
+          "value": 19
+        },
+        {
+          "name": "Abort",
+          "value": 20
+        },
+        {
+          "name": "UrlMismatch",
+          "value": 21
+        },
+        {
+          "name": "QuotaExceeded",
+          "value": 22
+        },
+        {
+          "name": "Timeout",
+          "value": 23
+        },
+        {
+          "name": "InvalidNodeType",
+          "value": 24
+        },
+        {
+          "name": "DataClone",
+          "value": 25
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Dom.FilterResult",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Accept",
+          "value": 1
+        },
+        {
+          "name": "Reject",
+          "value": 2
+        },
+        {
+          "name": "Skip",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Dom.FilterSettings",
+      "underlyingType": "System.UInt64",
+      "members": [
+        {
+          "name": "All",
+          "value": 4294967295
+        },
+        {
+          "name": "Element",
+          "value": 1
+        },
+        {
+          "name": "Attribute",
+          "value": 2
+        },
+        {
+          "name": "Text",
+          "value": 4
+        },
+        {
+          "name": "CharacterData",
+          "value": 8
+        },
+        {
+          "name": "EntityReference",
+          "value": 16
+        },
+        {
+          "name": "Entity",
+          "value": 32
+        },
+        {
+          "name": "ProcessingInstruction",
+          "value": 64
+        },
+        {
+          "name": "Comment",
+          "value": 128
+        },
+        {
+          "name": "Document",
+          "value": 256
+        },
+        {
+          "name": "DocumentType",
+          "value": 512
+        },
+        {
+          "name": "DocumentFragment",
+          "value": 1024
+        },
+        {
+          "name": "Notation",
+          "value": 2048
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Dom.HorizontalAlignment",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Left",
+          "value": 0
+        },
+        {
+          "name": "Center",
+          "value": 1
+        },
+        {
+          "name": "Right",
+          "value": 2
+        },
+        {
+          "name": "Justify",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Dom.NodeType",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Element",
+          "value": 1
+        },
+        {
+          "name": "Attribute",
+          "value": 2
+        },
+        {
+          "name": "Text",
+          "value": 3
+        },
+        {
+          "name": "CharacterData",
+          "value": 4
+        },
+        {
+          "name": "EntityReference",
+          "value": 5
+        },
+        {
+          "name": "Entity",
+          "value": 6
+        },
+        {
+          "name": "ProcessingInstruction",
+          "value": 7
+        },
+        {
+          "name": "Comment",
+          "value": 8
+        },
+        {
+          "name": "Document",
+          "value": 9
+        },
+        {
+          "name": "DocumentType",
+          "value": 10
+        },
+        {
+          "name": "DocumentFragment",
+          "value": 11
+        },
+        {
+          "name": "Notation",
+          "value": 12
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Dom.RangePosition",
+      "underlyingType": "System.Int16",
+      "members": [
+        {
+          "name": "Before",
+          "value": -1
+        },
+        {
+          "name": "Equal",
+          "value": 0
+        },
+        {
+          "name": "After",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Dom.RangeType",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "StartToStart",
+          "value": 0
+        },
+        {
+          "name": "StartToEnd",
+          "value": 1
+        },
+        {
+          "name": "EndToEnd",
+          "value": 2
+        },
+        {
+          "name": "EndToStart",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Dom.Sandboxes",
+      "underlyingType": "System.UInt16",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Navigation",
+          "value": 1
+        },
+        {
+          "name": "AuxiliaryNavigation",
+          "value": 2
+        },
+        {
+          "name": "TopLevelNavigation",
+          "value": 4
+        },
+        {
+          "name": "Plugins",
+          "value": 8
+        },
+        {
+          "name": "Origin",
+          "value": 16
+        },
+        {
+          "name": "Forms",
+          "value": 32
+        },
+        {
+          "name": "PointerLock",
+          "value": 64
+        },
+        {
+          "name": "Scripts",
+          "value": 128
+        },
+        {
+          "name": "AutomaticFeatures",
+          "value": 256
+        },
+        {
+          "name": "Fullscreen",
+          "value": 512
+        },
+        {
+          "name": "DocumentDomain",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Dom.ShadowRootMode",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Open",
+          "value": 0
+        },
+        {
+          "name": "Closed",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Dom.VerticalAlignment",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Baseline",
+          "value": 0
+        },
+        {
+          "name": "Sub",
+          "value": 1
+        },
+        {
+          "name": "Super",
+          "value": 2
+        },
+        {
+          "name": "TextTop",
+          "value": 3
+        },
+        {
+          "name": "TextBottom",
+          "value": 4
+        },
+        {
+          "name": "Middle",
+          "value": 5
+        },
+        {
+          "name": "Top",
+          "value": 6
+        },
+        {
+          "name": "Bottom",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Dom.Visibility",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Visible",
+          "value": 0
+        },
+        {
+          "name": "Hidden",
+          "value": 1
+        },
+        {
+          "name": "Collapse",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Dom.WordBreak",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Normal",
+          "value": 0
+        },
+        {
+          "name": "BreakAll",
+          "value": 1
+        },
+        {
+          "name": "KeepAll",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Dom.Media.MediaControllerPlaybackState",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Waiting",
+          "value": 0
+        },
+        {
+          "name": "Playing",
+          "value": 1
+        },
+        {
+          "name": "Ended",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Dom.Media.MediaErrorCode",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Aborted",
+          "value": 1
+        },
+        {
+          "name": "Network",
+          "value": 2
+        },
+        {
+          "name": "Decode",
+          "value": 3
+        },
+        {
+          "name": "SourceNotSupported",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Dom.Media.MediaNetworkState",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Empty",
+          "value": 0
+        },
+        {
+          "name": "Idle",
+          "value": 1
+        },
+        {
+          "name": "Loading",
+          "value": 2
+        },
+        {
+          "name": "NoSource",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Dom.Media.MediaReadyState",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Nothing",
+          "value": 0
+        },
+        {
+          "name": "Metadata",
+          "value": 1
+        },
+        {
+          "name": "CurrentData",
+          "value": 2
+        },
+        {
+          "name": "FutureData",
+          "value": 3
+        },
+        {
+          "name": "EnoughData",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Dom.Media.TextTrackMode",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Disabled",
+          "value": 0
+        },
+        {
+          "name": "Hidden",
+          "value": 1
+        },
+        {
+          "name": "Showing",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Dom.Events.EventPhase",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Capturing",
+          "value": 1
+        },
+        {
+          "name": "AtTarget",
+          "value": 2
+        },
+        {
+          "name": "Bubbling",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Dom.Events.KeyboardLocation",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Standard",
+          "value": 0
+        },
+        {
+          "name": "Left",
+          "value": 1
+        },
+        {
+          "name": "Right",
+          "value": 2
+        },
+        {
+          "name": "NumPad",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Dom.Events.MouseButton",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Primary",
+          "value": 0
+        },
+        {
+          "name": "Auxiliary",
+          "value": 1
+        },
+        {
+          "name": "Secondary",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Dom.Events.MouseButtons",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Primary",
+          "value": 0
+        },
+        {
+          "name": "Secondary",
+          "value": 2
+        },
+        {
+          "name": "Auxiliary",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Dom.Events.WheelMode",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Pixel",
+          "value": 0
+        },
+        {
+          "name": "Line",
+          "value": 1
+        },
+        {
+          "name": "Page",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Dom.Css.CssRuleType",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "Style",
+          "value": 1
+        },
+        {
+          "name": "Charset",
+          "value": 2
+        },
+        {
+          "name": "Import",
+          "value": 3
+        },
+        {
+          "name": "Media",
+          "value": 4
+        },
+        {
+          "name": "FontFace",
+          "value": 5
+        },
+        {
+          "name": "Page",
+          "value": 6
+        },
+        {
+          "name": "Keyframes",
+          "value": 7
+        },
+        {
+          "name": "Keyframe",
+          "value": 8
+        },
+        {
+          "name": "Namespace",
+          "value": 10
+        },
+        {
+          "name": "CounterStyle",
+          "value": 11
+        },
+        {
+          "name": "Supports",
+          "value": 12
+        },
+        {
+          "name": "Document",
+          "value": 13
+        },
+        {
+          "name": "FontFeatureValues",
+          "value": 14
+        },
+        {
+          "name": "Viewport",
+          "value": 15
+        },
+        {
+          "name": "RegionStyle",
+          "value": 16
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Dom.Css.AnimationDirection",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Normal",
+          "value": 0
+        },
+        {
+          "name": "Alternate",
+          "value": 1
+        },
+        {
+          "name": "Reverse",
+          "value": 2
+        },
+        {
+          "name": "AlternateReverse",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Dom.Css.AnimationFillStyle",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Forwards",
+          "value": 1
+        },
+        {
+          "name": "Backwards",
+          "value": 2
+        },
+        {
+          "name": "Both",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Dom.Css.BackgroundAttachment",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Fixed",
+          "value": 0
+        },
+        {
+          "name": "Local",
+          "value": 1
+        },
+        {
+          "name": "Scroll",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Dom.Css.BackgroundRepeat",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Repeat",
+          "value": 0
+        },
+        {
+          "name": "Space",
+          "value": 1
+        },
+        {
+          "name": "Round",
+          "value": 2
+        },
+        {
+          "name": "NoRepeat",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Dom.Css.BlendMode",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Normal",
+          "value": 0
+        },
+        {
+          "name": "Multiply",
+          "value": 1
+        },
+        {
+          "name": "Screen",
+          "value": 2
+        },
+        {
+          "name": "Overlay",
+          "value": 3
+        },
+        {
+          "name": "Darken",
+          "value": 4
+        },
+        {
+          "name": "Lighten",
+          "value": 5
+        },
+        {
+          "name": "ColorDodge",
+          "value": 6
+        },
+        {
+          "name": "ColorBurn",
+          "value": 7
+        },
+        {
+          "name": "HardLight",
+          "value": 8
+        },
+        {
+          "name": "SoftLight",
+          "value": 9
+        },
+        {
+          "name": "Difference",
+          "value": 10
+        },
+        {
+          "name": "Exclusion",
+          "value": 11
+        },
+        {
+          "name": "Hue",
+          "value": 12
+        },
+        {
+          "name": "Saturation",
+          "value": 13
+        },
+        {
+          "name": "Color",
+          "value": 14
+        },
+        {
+          "name": "Luminosity",
+          "value": 15
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Dom.Css.BorderRepeat",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Stretch",
+          "value": 0
+        },
+        {
+          "name": "Repeat",
+          "value": 1
+        },
+        {
+          "name": "Round",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Dom.Css.BoxModel",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "BorderBox",
+          "value": 0
+        },
+        {
+          "name": "PaddingBox",
+          "value": 1
+        },
+        {
+          "name": "ContentBox",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Dom.Css.BreakMode",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Auto",
+          "value": 0
+        },
+        {
+          "name": "Always",
+          "value": 1
+        },
+        {
+          "name": "Avoid",
+          "value": 2
+        },
+        {
+          "name": "Left",
+          "value": 3
+        },
+        {
+          "name": "Right",
+          "value": 4
+        },
+        {
+          "name": "Page",
+          "value": 5
+        },
+        {
+          "name": "Column",
+          "value": 6
+        },
+        {
+          "name": "AvoidPage",
+          "value": 7
+        },
+        {
+          "name": "AvoidColumn",
+          "value": 8
+        },
+        {
+          "name": "AvoidRegion",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Dom.Css.ClearMode",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Left",
+          "value": 1
+        },
+        {
+          "name": "Right",
+          "value": 2
+        },
+        {
+          "name": "Both",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Dom.Css.DisplayMode",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Inline",
+          "value": 1
+        },
+        {
+          "name": "Block",
+          "value": 2
+        },
+        {
+          "name": "ListItem",
+          "value": 3
+        },
+        {
+          "name": "InlineBlock",
+          "value": 4
+        },
+        {
+          "name": "InlineTable",
+          "value": 5
+        },
+        {
+          "name": "Table",
+          "value": 6
+        },
+        {
+          "name": "TableCaption",
+          "value": 7
+        },
+        {
+          "name": "TableCell",
+          "value": 8
+        },
+        {
+          "name": "TableColumn",
+          "value": 9
+        },
+        {
+          "name": "TableColumnGroup",
+          "value": 10
+        },
+        {
+          "name": "TableFooterGroup",
+          "value": 11
+        },
+        {
+          "name": "TableHeaderGroup",
+          "value": 12
+        },
+        {
+          "name": "TableRow",
+          "value": 13
+        },
+        {
+          "name": "TableRowGroup",
+          "value": 14
+        },
+        {
+          "name": "Flex",
+          "value": 15
+        },
+        {
+          "name": "InlineFlex",
+          "value": 16
+        },
+        {
+          "name": "Grid",
+          "value": 17
+        },
+        {
+          "name": "InlineGrid",
+          "value": 18
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Dom.Css.Floating",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Left",
+          "value": 1
+        },
+        {
+          "name": "Right",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Dom.Css.FontSize",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Custom",
+          "value": 0
+        },
+        {
+          "name": "Tiny",
+          "value": 1
+        },
+        {
+          "name": "Little",
+          "value": 2
+        },
+        {
+          "name": "Smaller",
+          "value": 3
+        },
+        {
+          "name": "Small",
+          "value": 4
+        },
+        {
+          "name": "Medium",
+          "value": 5
+        },
+        {
+          "name": "Large",
+          "value": 6
+        },
+        {
+          "name": "Larger",
+          "value": 7
+        },
+        {
+          "name": "Big",
+          "value": 8
+        },
+        {
+          "name": "Huge",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Dom.Css.FontStretch",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Normal",
+          "value": 0
+        },
+        {
+          "name": "UltraCondensed",
+          "value": 1
+        },
+        {
+          "name": "ExtraCondensed",
+          "value": 2
+        },
+        {
+          "name": "Condensed",
+          "value": 3
+        },
+        {
+          "name": "SemiCondensed",
+          "value": 4
+        },
+        {
+          "name": "SemiExpanded",
+          "value": 5
+        },
+        {
+          "name": "Expanded",
+          "value": 6
+        },
+        {
+          "name": "ExtraExpanded",
+          "value": 7
+        },
+        {
+          "name": "UltraExpanded",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Dom.Css.FontStyle",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Normal",
+          "value": 0
+        },
+        {
+          "name": "Italic",
+          "value": 1
+        },
+        {
+          "name": "Oblique",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Dom.Css.FontVariant",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Normal",
+          "value": 0
+        },
+        {
+          "name": "SmallCaps",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Dom.Css.FontWeight",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Normal",
+          "value": 0
+        },
+        {
+          "name": "Bold",
+          "value": 1
+        },
+        {
+          "name": "Bolder",
+          "value": 2
+        },
+        {
+          "name": "Lighter",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Dom.Css.HoverAbility",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "OnDemand",
+          "value": 1
+        },
+        {
+          "name": "Hover",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Dom.Css.LineStyle",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Hidden",
+          "value": 1
+        },
+        {
+          "name": "Dotted",
+          "value": 2
+        },
+        {
+          "name": "Dashed",
+          "value": 3
+        },
+        {
+          "name": "Solid",
+          "value": 4
+        },
+        {
+          "name": "Double",
+          "value": 5
+        },
+        {
+          "name": "Groove",
+          "value": 6
+        },
+        {
+          "name": "Ridge",
+          "value": 7
+        },
+        {
+          "name": "Inset",
+          "value": 8
+        },
+        {
+          "name": "Outset",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Dom.Css.ListPosition",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Inside",
+          "value": 0
+        },
+        {
+          "name": "Outside",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Dom.Css.ListStyle",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Disc",
+          "value": 1
+        },
+        {
+          "name": "Circle",
+          "value": 2
+        },
+        {
+          "name": "Square",
+          "value": 3
+        },
+        {
+          "name": "Decimal",
+          "value": 4
+        },
+        {
+          "name": "DecimalLeadingZero",
+          "value": 5
+        },
+        {
+          "name": "LowerRoman",
+          "value": 6
+        },
+        {
+          "name": "UpperRoman",
+          "value": 7
+        },
+        {
+          "name": "LowerGreek",
+          "value": 8
+        },
+        {
+          "name": "LowerLatin",
+          "value": 9
+        },
+        {
+          "name": "UpperLatin",
+          "value": 10
+        },
+        {
+          "name": "Armenian",
+          "value": 11
+        },
+        {
+          "name": "Georgian",
+          "value": 12
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Dom.Css.ObjectFitting",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Fill",
+          "value": 1
+        },
+        {
+          "name": "Contain",
+          "value": 2
+        },
+        {
+          "name": "Cover",
+          "value": 3
+        },
+        {
+          "name": "ScaleDown",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Dom.Css.OverflowMode",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Auto",
+          "value": 0
+        },
+        {
+          "name": "Visible",
+          "value": 1
+        },
+        {
+          "name": "Hidden",
+          "value": 2
+        },
+        {
+          "name": "Scroll",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Dom.Css.OverflowWrap",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Normal",
+          "value": 0
+        },
+        {
+          "name": "BreakWord",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Dom.Css.PlayState",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Running",
+          "value": 0
+        },
+        {
+          "name": "Paused",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Dom.Css.PointerAccuracy",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Coarse",
+          "value": 1
+        },
+        {
+          "name": "Fine",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Dom.Css.PositionMode",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Static",
+          "value": 0
+        },
+        {
+          "name": "Relative",
+          "value": 1
+        },
+        {
+          "name": "Absolute",
+          "value": 2
+        },
+        {
+          "name": "Fixed",
+          "value": 3
+        },
+        {
+          "name": "Sticky",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Dom.Css.ScriptingState",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "InitialOnly",
+          "value": 1
+        },
+        {
+          "name": "Enabled",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Dom.Css.StrokeLinecap",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Butt",
+          "value": 0
+        },
+        {
+          "name": "Round",
+          "value": 1
+        },
+        {
+          "name": "Square",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Dom.Css.StrokeLinejoin",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Miter",
+          "value": 0
+        },
+        {
+          "name": "Round",
+          "value": 1
+        },
+        {
+          "name": "Bevel",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Dom.Css.SystemCursor",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Auto",
+          "value": 0
+        },
+        {
+          "name": "Default",
+          "value": 1
+        },
+        {
+          "name": "None",
+          "value": 2
+        },
+        {
+          "name": "ContextMenu",
+          "value": 3
+        },
+        {
+          "name": "Help",
+          "value": 4
+        },
+        {
+          "name": "Pointer",
+          "value": 5
+        },
+        {
+          "name": "Progress",
+          "value": 6
+        },
+        {
+          "name": "Wait",
+          "value": 7
+        },
+        {
+          "name": "Cell",
+          "value": 8
+        },
+        {
+          "name": "Crosshair",
+          "value": 9
+        },
+        {
+          "name": "Text",
+          "value": 10
+        },
+        {
+          "name": "VerticalText",
+          "value": 11
+        },
+        {
+          "name": "Alias",
+          "value": 12
+        },
+        {
+          "name": "Copy",
+          "value": 13
+        },
+        {
+          "name": "Move",
+          "value": 14
+        },
+        {
+          "name": "NoDrop",
+          "value": 15
+        },
+        {
+          "name": "NotAllowed",
+          "value": 16
+        },
+        {
+          "name": "EResize",
+          "value": 17
+        },
+        {
+          "name": "NResize",
+          "value": 18
+        },
+        {
+          "name": "NeResize",
+          "value": 19
+        },
+        {
+          "name": "NwResize",
+          "value": 20
+        },
+        {
+          "name": "SResize",
+          "value": 21
+        },
+        {
+          "name": "SeResize",
+          "value": 22
+        },
+        {
+          "name": "SwResize",
+          "value": 23
+        },
+        {
+          "name": "WResize",
+          "value": 24
+        },
+        {
+          "name": "EwResize",
+          "value": 25
+        },
+        {
+          "name": "NsResize",
+          "value": 26
+        },
+        {
+          "name": "NeswResize",
+          "value": 27
+        },
+        {
+          "name": "NwseResize",
+          "value": 28
+        },
+        {
+          "name": "ColResize",
+          "value": 29
+        },
+        {
+          "name": "RowResize",
+          "value": 30
+        },
+        {
+          "name": "AllScroll",
+          "value": 31
+        },
+        {
+          "name": "ZoomIn",
+          "value": 32
+        },
+        {
+          "name": "ZoomOut",
+          "value": 33
+        },
+        {
+          "name": "Grab",
+          "value": 34
+        },
+        {
+          "name": "Grabbing",
+          "value": 35
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Dom.Css.SystemFont",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Caption",
+          "value": 0
+        },
+        {
+          "name": "Icon",
+          "value": 1
+        },
+        {
+          "name": "Menu",
+          "value": 2
+        },
+        {
+          "name": "MessageBox",
+          "value": 3
+        },
+        {
+          "name": "SmallCaption",
+          "value": 4
+        },
+        {
+          "name": "StatusBar",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Dom.Css.TextAlignLast",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Auto",
+          "value": 0
+        },
+        {
+          "name": "Start",
+          "value": 1
+        },
+        {
+          "name": "End",
+          "value": 2
+        },
+        {
+          "name": "Left",
+          "value": 3
+        },
+        {
+          "name": "Right",
+          "value": 4
+        },
+        {
+          "name": "Center",
+          "value": 5
+        },
+        {
+          "name": "Justify",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Dom.Css.TextAnchor",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Start",
+          "value": 0
+        },
+        {
+          "name": "Middle",
+          "value": 1
+        },
+        {
+          "name": "End",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Dom.Css.TextDecorationLine",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Underline",
+          "value": 0
+        },
+        {
+          "name": "Overline",
+          "value": 1
+        },
+        {
+          "name": "LineThrough",
+          "value": 2
+        },
+        {
+          "name": "Blink",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Dom.Css.TextDecorationStyle",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Solid",
+          "value": 0
+        },
+        {
+          "name": "Double",
+          "value": 1
+        },
+        {
+          "name": "Dotted",
+          "value": 2
+        },
+        {
+          "name": "Dashed",
+          "value": 3
+        },
+        {
+          "name": "Wavy",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Dom.Css.TextJustify",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Auto",
+          "value": 0
+        },
+        {
+          "name": "InterWord",
+          "value": 1
+        },
+        {
+          "name": "InterIdeograph",
+          "value": 2
+        },
+        {
+          "name": "InterCluster",
+          "value": 3
+        },
+        {
+          "name": "Distribute",
+          "value": 4
+        },
+        {
+          "name": "DistributeAllLines",
+          "value": 5
+        },
+        {
+          "name": "DistributeCenterLast",
+          "value": 6
+        },
+        {
+          "name": "Kashida",
+          "value": 7
+        },
+        {
+          "name": "Newspaper",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Dom.Css.TextTransform",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Capitalize",
+          "value": 1
+        },
+        {
+          "name": "Uppercase",
+          "value": 2
+        },
+        {
+          "name": "Lowercase",
+          "value": 3
+        },
+        {
+          "name": "FullWidth",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Dom.Css.UnicodeMode",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Normal",
+          "value": 0
+        },
+        {
+          "name": "Embed",
+          "value": 1
+        },
+        {
+          "name": "Isolate",
+          "value": 2
+        },
+        {
+          "name": "BidiOverride",
+          "value": 3
+        },
+        {
+          "name": "IsolateOverride",
+          "value": 4
+        },
+        {
+          "name": "Plaintext",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Dom.Css.UpdateFrequency",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Slow",
+          "value": 1
+        },
+        {
+          "name": "Normal",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Dom.Css.Whitespace",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Normal",
+          "value": 0
+        },
+        {
+          "name": "Pre",
+          "value": 1
+        },
+        {
+          "name": "NoWrap",
+          "value": 2
+        },
+        {
+          "name": "PreWrap",
+          "value": 3
+        },
+        {
+          "name": "PreLine",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Dom.Html.TableFrames",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Void",
+          "value": 0
+        },
+        {
+          "name": "Box",
+          "value": 1
+        },
+        {
+          "name": "Above",
+          "value": 2
+        },
+        {
+          "name": "Below",
+          "value": 3
+        },
+        {
+          "name": "HSides",
+          "value": 4
+        },
+        {
+          "name": "VSides",
+          "value": 5
+        },
+        {
+          "name": "LHS",
+          "value": 6
+        },
+        {
+          "name": "RHS",
+          "value": 7
+        },
+        {
+          "name": "Border",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Dom.Html.TableRules",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Rows",
+          "value": 1
+        },
+        {
+          "name": "Cols",
+          "value": 2
+        },
+        {
+          "name": "Groups",
+          "value": 3
+        },
+        {
+          "name": "All",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Dom.Html.TrackReadyState",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Loading",
+          "value": 1
+        },
+        {
+          "name": "Loaded",
+          "value": 2
+        },
+        {
+          "name": "Error",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Dom.Html.HtmlTextFormControlElement.SelectionType",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Forward",
+          "value": 1
+        },
+        {
+          "name": "Backward",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Css.RenderDevice.Kind",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Screen",
+          "value": 0
+        },
+        {
+          "name": "Printer",
+          "value": 1
+        },
+        {
+          "name": "Speech",
+          "value": 2
+        },
+        {
+          "name": "Other",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Css.Values.Angle.Unit",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Deg",
+          "value": 1
+        },
+        {
+          "name": "Rad",
+          "value": 2
+        },
+        {
+          "name": "Grad",
+          "value": 3
+        },
+        {
+          "name": "Turn",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Css.Values.Frequency.Unit",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Hz",
+          "value": 1
+        },
+        {
+          "name": "Khz",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Css.Values.Length.Unit",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Px",
+          "value": 1
+        },
+        {
+          "name": "Em",
+          "value": 2
+        },
+        {
+          "name": "Ex",
+          "value": 3
+        },
+        {
+          "name": "Cm",
+          "value": 4
+        },
+        {
+          "name": "Mm",
+          "value": 5
+        },
+        {
+          "name": "In",
+          "value": 6
+        },
+        {
+          "name": "Pt",
+          "value": 7
+        },
+        {
+          "name": "Pc",
+          "value": 8
+        },
+        {
+          "name": "Ch",
+          "value": 9
+        },
+        {
+          "name": "Rem",
+          "value": 10
+        },
+        {
+          "name": "Vw",
+          "value": 11
+        },
+        {
+          "name": "Vh",
+          "value": 12
+        },
+        {
+          "name": "Vmin",
+          "value": 13
+        },
+        {
+          "name": "Vmax",
+          "value": 14
+        },
+        {
+          "name": "Percent",
+          "value": 15
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Css.Values.Number.Unit",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Integer",
+          "value": 0
+        },
+        {
+          "name": "Float",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Css.Values.RadialGradient.SizeMode",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "ClosestCorner",
+          "value": 1
+        },
+        {
+          "name": "ClosestSide",
+          "value": 2
+        },
+        {
+          "name": "FarthestCorner",
+          "value": 3
+        },
+        {
+          "name": "FarthestSide",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Css.Values.Resolution.Unit",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Dpi",
+          "value": 1
+        },
+        {
+          "name": "Dpcm",
+          "value": 2
+        },
+        {
+          "name": "Dppx",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Css.Values.Time.Unit",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Ms",
+          "value": 1
+        },
+        {
+          "name": "S",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "AngleSharp.Attributes.Accessors",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Getter",
+          "value": 1
+        },
+        {
+          "name": "Setter",
+          "value": 2
+        },
+        {
+          "name": "Deleter",
+          "value": 4
+        }
+      ]
+    }
+  ],
+  "namespaceMappings": []
+}

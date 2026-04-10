@@ -1,0 +1,3425 @@
+{
+  "schema": {
+    "id": "activity-catalog",
+    "version": "v0.3"
+  },
+  "source": {
+    "kind": "nuget-package",
+    "id": "ClosedXML",
+    "version": "0.95.4",
+    "feedUrl": null,
+    "authors": "Francois Botha,Aleksei Pankratev,Manuel de Leon,Amir Ghezelbash",
+    "projectUrl": "https://github.com/ClosedXML/ClosedXML",
+    "description": "ClosedXML is a .NET library for reading, manipulating and writing Excel 2007+ (.xlsx, .xlsm) files. It aims to provide an intuitive and user-friendly interface to dealing with the underlying OpenXML API.",
+    "license": "MIT",
+    "tags": null,
+    "packageTypes": []
+  },
+  "generatedAt": "2026-04-10T09:21:12Z",
+  "activities": [],
+  "enums": [
+    {
+      "fullName": "ClosedXML.PathHelper.PathTypes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Absolute",
+          "value": 1
+        },
+        {
+          "name": "Relative",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLFilterDynamicType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AboveAverage",
+          "value": 0
+        },
+        {
+          "name": "BelowAverage",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLFilterType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Regular",
+          "value": 0
+        },
+        {
+          "name": "Custom",
+          "value": 1
+        },
+        {
+          "name": "TopBottom",
+          "value": 2
+        },
+        {
+          "name": "Dynamic",
+          "value": 3
+        },
+        {
+          "name": "DateTimeGrouping",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLTopBottomPart",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Top",
+          "value": 0
+        },
+        {
+          "name": "Bottom",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLTopBottomType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Items",
+          "value": 0
+        },
+        {
+          "name": "Percent",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLDateTimeGrouping",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Year",
+          "value": 0
+        },
+        {
+          "name": "Month",
+          "value": 1
+        },
+        {
+          "name": "Day",
+          "value": 2
+        },
+        {
+          "name": "Hour",
+          "value": 3
+        },
+        {
+          "name": "Minute",
+          "value": 4
+        },
+        {
+          "name": "Second",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLDataType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Text",
+          "value": 0
+        },
+        {
+          "name": "Number",
+          "value": 1
+        },
+        {
+          "name": "Boolean",
+          "value": 2
+        },
+        {
+          "name": "DateTime",
+          "value": 3
+        },
+        {
+          "name": "TimeSpan",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLTableCellType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Header",
+          "value": 1
+        },
+        {
+          "name": "Data",
+          "value": 2
+        },
+        {
+          "name": "Total",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLChartType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Area",
+          "value": 0
+        },
+        {
+          "name": "Area3D",
+          "value": 1
+        },
+        {
+          "name": "AreaStacked",
+          "value": 2
+        },
+        {
+          "name": "AreaStacked100Percent",
+          "value": 3
+        },
+        {
+          "name": "AreaStacked100Percent3D",
+          "value": 4
+        },
+        {
+          "name": "AreaStacked3D",
+          "value": 5
+        },
+        {
+          "name": "BarClustered",
+          "value": 6
+        },
+        {
+          "name": "BarClustered3D",
+          "value": 7
+        },
+        {
+          "name": "BarStacked",
+          "value": 8
+        },
+        {
+          "name": "BarStacked100Percent",
+          "value": 9
+        },
+        {
+          "name": "BarStacked100Percent3D",
+          "value": 10
+        },
+        {
+          "name": "BarStacked3D",
+          "value": 11
+        },
+        {
+          "name": "Bubble",
+          "value": 12
+        },
+        {
+          "name": "Bubble3D",
+          "value": 13
+        },
+        {
+          "name": "Column3D",
+          "value": 14
+        },
+        {
+          "name": "ColumnClustered",
+          "value": 15
+        },
+        {
+          "name": "ColumnClustered3D",
+          "value": 16
+        },
+        {
+          "name": "ColumnStacked",
+          "value": 17
+        },
+        {
+          "name": "ColumnStacked100Percent",
+          "value": 18
+        },
+        {
+          "name": "ColumnStacked100Percent3D",
+          "value": 19
+        },
+        {
+          "name": "ColumnStacked3D",
+          "value": 20
+        },
+        {
+          "name": "Cone",
+          "value": 21
+        },
+        {
+          "name": "ConeClustered",
+          "value": 22
+        },
+        {
+          "name": "ConeHorizontalClustered",
+          "value": 23
+        },
+        {
+          "name": "ConeHorizontalStacked",
+          "value": 24
+        },
+        {
+          "name": "ConeHorizontalStacked100Percent",
+          "value": 25
+        },
+        {
+          "name": "ConeStacked",
+          "value": 26
+        },
+        {
+          "name": "ConeStacked100Percent",
+          "value": 27
+        },
+        {
+          "name": "Cylinder",
+          "value": 28
+        },
+        {
+          "name": "CylinderClustered",
+          "value": 29
+        },
+        {
+          "name": "CylinderHorizontalClustered",
+          "value": 30
+        },
+        {
+          "name": "CylinderHorizontalStacked",
+          "value": 31
+        },
+        {
+          "name": "CylinderHorizontalStacked100Percent",
+          "value": 32
+        },
+        {
+          "name": "CylinderStacked",
+          "value": 33
+        },
+        {
+          "name": "CylinderStacked100Percent",
+          "value": 34
+        },
+        {
+          "name": "Doughnut",
+          "value": 35
+        },
+        {
+          "name": "DoughnutExploded",
+          "value": 36
+        },
+        {
+          "name": "Line",
+          "value": 37
+        },
+        {
+          "name": "Line3D",
+          "value": 38
+        },
+        {
+          "name": "LineStacked",
+          "value": 39
+        },
+        {
+          "name": "LineStacked100Percent",
+          "value": 40
+        },
+        {
+          "name": "LineWithMarkers",
+          "value": 41
+        },
+        {
+          "name": "LineWithMarkersStacked",
+          "value": 42
+        },
+        {
+          "name": "LineWithMarkersStacked100Percent",
+          "value": 43
+        },
+        {
+          "name": "Pie",
+          "value": 44
+        },
+        {
+          "name": "Pie3D",
+          "value": 45
+        },
+        {
+          "name": "PieExploded",
+          "value": 46
+        },
+        {
+          "name": "PieExploded3D",
+          "value": 47
+        },
+        {
+          "name": "PieToBar",
+          "value": 48
+        },
+        {
+          "name": "PieToPie",
+          "value": 49
+        },
+        {
+          "name": "Pyramid",
+          "value": 50
+        },
+        {
+          "name": "PyramidClustered",
+          "value": 51
+        },
+        {
+          "name": "PyramidHorizontalClustered",
+          "value": 52
+        },
+        {
+          "name": "PyramidHorizontalStacked",
+          "value": 53
+        },
+        {
+          "name": "PyramidHorizontalStacked100Percent",
+          "value": 54
+        },
+        {
+          "name": "PyramidStacked",
+          "value": 55
+        },
+        {
+          "name": "PyramidStacked100Percent",
+          "value": 56
+        },
+        {
+          "name": "Radar",
+          "value": 57
+        },
+        {
+          "name": "RadarFilled",
+          "value": 58
+        },
+        {
+          "name": "RadarWithMarkers",
+          "value": 59
+        },
+        {
+          "name": "StockHighLowClose",
+          "value": 60
+        },
+        {
+          "name": "StockOpenHighLowClose",
+          "value": 61
+        },
+        {
+          "name": "StockVolumeHighLowClose",
+          "value": 62
+        },
+        {
+          "name": "StockVolumeOpenHighLowClose",
+          "value": 63
+        },
+        {
+          "name": "Surface",
+          "value": 64
+        },
+        {
+          "name": "SurfaceContour",
+          "value": 65
+        },
+        {
+          "name": "SurfaceContourWireframe",
+          "value": 66
+        },
+        {
+          "name": "SurfaceWireframe",
+          "value": 67
+        },
+        {
+          "name": "XYScatterMarkers",
+          "value": 68
+        },
+        {
+          "name": "XYScatterSmoothLinesNoMarkers",
+          "value": 69
+        },
+        {
+          "name": "XYScatterSmoothLinesWithMarkers",
+          "value": 70
+        },
+        {
+          "name": "XYScatterStraightLinesNoMarkers",
+          "value": 71
+        },
+        {
+          "name": "XYScatterStraightLinesWithMarkers",
+          "value": 72
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLCFContentType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Number",
+          "value": 0
+        },
+        {
+          "name": "Percent",
+          "value": 1
+        },
+        {
+          "name": "Formula",
+          "value": 2
+        },
+        {
+          "name": "Percentile",
+          "value": 3
+        },
+        {
+          "name": "Minimum",
+          "value": 4
+        },
+        {
+          "name": "Maximum",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLCFIconSetOperator",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "GreaterThan",
+          "value": 0
+        },
+        {
+          "name": "EqualOrGreaterThan",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLTimePeriod",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Yesterday",
+          "value": 0
+        },
+        {
+          "name": "Today",
+          "value": 1
+        },
+        {
+          "name": "Tomorrow",
+          "value": 2
+        },
+        {
+          "name": "InTheLast7Days",
+          "value": 3
+        },
+        {
+          "name": "LastWeek",
+          "value": 4
+        },
+        {
+          "name": "ThisWeek",
+          "value": 5
+        },
+        {
+          "name": "NextWeek",
+          "value": 6
+        },
+        {
+          "name": "LastMonth",
+          "value": 7
+        },
+        {
+          "name": "ThisMonth",
+          "value": 8
+        },
+        {
+          "name": "NextMonth",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLIconSetStyle",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ThreeArrows",
+          "value": 0
+        },
+        {
+          "name": "ThreeArrowsGray",
+          "value": 1
+        },
+        {
+          "name": "ThreeFlags",
+          "value": 2
+        },
+        {
+          "name": "ThreeTrafficLights1",
+          "value": 3
+        },
+        {
+          "name": "ThreeTrafficLights2",
+          "value": 4
+        },
+        {
+          "name": "ThreeSigns",
+          "value": 5
+        },
+        {
+          "name": "ThreeSymbols",
+          "value": 6
+        },
+        {
+          "name": "ThreeSymbols2",
+          "value": 7
+        },
+        {
+          "name": "FourArrows",
+          "value": 8
+        },
+        {
+          "name": "FourArrowsGray",
+          "value": 9
+        },
+        {
+          "name": "FourRedToBlack",
+          "value": 10
+        },
+        {
+          "name": "FourRating",
+          "value": 11
+        },
+        {
+          "name": "FourTrafficLights",
+          "value": 12
+        },
+        {
+          "name": "FiveArrows",
+          "value": 13
+        },
+        {
+          "name": "FiveArrowsGray",
+          "value": 14
+        },
+        {
+          "name": "FiveRating",
+          "value": 15
+        },
+        {
+          "name": "FiveQuarters",
+          "value": 16
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLConditionalFormatType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Expression",
+          "value": 0
+        },
+        {
+          "name": "CellIs",
+          "value": 1
+        },
+        {
+          "name": "ColorScale",
+          "value": 2
+        },
+        {
+          "name": "DataBar",
+          "value": 3
+        },
+        {
+          "name": "IconSet",
+          "value": 4
+        },
+        {
+          "name": "Top10",
+          "value": 5
+        },
+        {
+          "name": "IsUnique",
+          "value": 6
+        },
+        {
+          "name": "IsDuplicate",
+          "value": 7
+        },
+        {
+          "name": "ContainsText",
+          "value": 8
+        },
+        {
+          "name": "NotContainsText",
+          "value": 9
+        },
+        {
+          "name": "StartsWith",
+          "value": 10
+        },
+        {
+          "name": "EndsWith",
+          "value": 11
+        },
+        {
+          "name": "IsBlank",
+          "value": 12
+        },
+        {
+          "name": "NotBlank",
+          "value": 13
+        },
+        {
+          "name": "IsError",
+          "value": 14
+        },
+        {
+          "name": "NotError",
+          "value": 15
+        },
+        {
+          "name": "TimePeriod",
+          "value": 16
+        },
+        {
+          "name": "AboveAverage",
+          "value": 17
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLCFOperator",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Equal",
+          "value": 0
+        },
+        {
+          "name": "NotEqual",
+          "value": 1
+        },
+        {
+          "name": "GreaterThan",
+          "value": 2
+        },
+        {
+          "name": "LessThan",
+          "value": 3
+        },
+        {
+          "name": "EqualOrGreaterThan",
+          "value": 4
+        },
+        {
+          "name": "EqualOrLessThan",
+          "value": 5
+        },
+        {
+          "name": "Between",
+          "value": 6
+        },
+        {
+          "name": "NotBetween",
+          "value": 7
+        },
+        {
+          "name": "Contains",
+          "value": 8
+        },
+        {
+          "name": "NotContains",
+          "value": 9
+        },
+        {
+          "name": "StartsWith",
+          "value": 10
+        },
+        {
+          "name": "EndsWith",
+          "value": 11
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLCustomPropertyType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Text",
+          "value": 0
+        },
+        {
+          "name": "Number",
+          "value": 1
+        },
+        {
+          "name": "Date",
+          "value": 2
+        },
+        {
+          "name": "Boolean",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLErrorStyle",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Stop",
+          "value": 0
+        },
+        {
+          "name": "Warning",
+          "value": 1
+        },
+        {
+          "name": "Information",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLAllowedValues",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AnyValue",
+          "value": 0
+        },
+        {
+          "name": "WholeNumber",
+          "value": 1
+        },
+        {
+          "name": "Decimal",
+          "value": 2
+        },
+        {
+          "name": "Date",
+          "value": 3
+        },
+        {
+          "name": "Time",
+          "value": 4
+        },
+        {
+          "name": "TextLength",
+          "value": 5
+        },
+        {
+          "name": "List",
+          "value": 6
+        },
+        {
+          "name": "Custom",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLOperator",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "EqualTo",
+          "value": 0
+        },
+        {
+          "name": "NotEqualTo",
+          "value": 1
+        },
+        {
+          "name": "GreaterThan",
+          "value": 2
+        },
+        {
+          "name": "LessThan",
+          "value": 3
+        },
+        {
+          "name": "EqualOrGreaterThan",
+          "value": 4
+        },
+        {
+          "name": "EqualOrLessThan",
+          "value": 5
+        },
+        {
+          "name": "Between",
+          "value": 6
+        },
+        {
+          "name": "NotBetween",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLDrawingAnchor",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "MoveAndSizeWithCells",
+          "value": 0
+        },
+        {
+          "name": "MoveWithCells",
+          "value": 1
+        },
+        {
+          "name": "Absolute",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLDrawingTextDirection",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Context",
+          "value": 0
+        },
+        {
+          "name": "LeftToRight",
+          "value": 1
+        },
+        {
+          "name": "RightToLeft",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLDrawingTextOrientation",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "LeftToRight",
+          "value": 0
+        },
+        {
+          "name": "Vertical",
+          "value": 1
+        },
+        {
+          "name": "BottomToTop",
+          "value": 2
+        },
+        {
+          "name": "TopToBottom",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLDrawingHorizontalAlignment",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Left",
+          "value": 0
+        },
+        {
+          "name": "Justify",
+          "value": 1
+        },
+        {
+          "name": "Center",
+          "value": 2
+        },
+        {
+          "name": "Right",
+          "value": 3
+        },
+        {
+          "name": "Distributed",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLDrawingVerticalAlignment",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Top",
+          "value": 0
+        },
+        {
+          "name": "Justify",
+          "value": 1
+        },
+        {
+          "name": "Center",
+          "value": 2
+        },
+        {
+          "name": "Bottom",
+          "value": 3
+        },
+        {
+          "name": "Distributed",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLDashStyle",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Solid",
+          "value": 0
+        },
+        {
+          "name": "RoundDot",
+          "value": 1
+        },
+        {
+          "name": "SquareDot",
+          "value": 2
+        },
+        {
+          "name": "Dash",
+          "value": 3
+        },
+        {
+          "name": "DashDot",
+          "value": 4
+        },
+        {
+          "name": "LongDash",
+          "value": 5
+        },
+        {
+          "name": "LongDashDot",
+          "value": 6
+        },
+        {
+          "name": "LongDashDotDot",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLLineStyle",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Single",
+          "value": 0
+        },
+        {
+          "name": "ThinThin",
+          "value": 1
+        },
+        {
+          "name": "ThinThick",
+          "value": 2
+        },
+        {
+          "name": "ThickThin",
+          "value": 3
+        },
+        {
+          "name": "ThickBetweenThin",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLOutlineSummaryVLocation",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Top",
+          "value": 0
+        },
+        {
+          "name": "Bottom",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLOutlineSummaryHLocation",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Left",
+          "value": 0
+        },
+        {
+          "name": "Right",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLSheetViewOptions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Normal",
+          "value": 0
+        },
+        {
+          "name": "PageBreakPreview",
+          "value": 1
+        },
+        {
+          "name": "PageLayout",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLWorksheetVisibility",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Visible",
+          "value": 0
+        },
+        {
+          "name": "Hidden",
+          "value": 1
+        },
+        {
+          "name": "VeryHidden",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLNamedRangeScope",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Worksheet",
+          "value": 0
+        },
+        {
+          "name": "Workbook",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLHFMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "OddPagesOnly",
+          "value": 0
+        },
+        {
+          "name": "OddAndEvenPages",
+          "value": 1
+        },
+        {
+          "name": "Odd",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLHFPredefinedText",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "PageNumber",
+          "value": 0
+        },
+        {
+          "name": "NumberOfPages",
+          "value": 1
+        },
+        {
+          "name": "Date",
+          "value": 2
+        },
+        {
+          "name": "Time",
+          "value": 3
+        },
+        {
+          "name": "FullPath",
+          "value": 4
+        },
+        {
+          "name": "Path",
+          "value": 5
+        },
+        {
+          "name": "File",
+          "value": 6
+        },
+        {
+          "name": "SheetName",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLHFOccurrence",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AllPages",
+          "value": 0
+        },
+        {
+          "name": "OddPages",
+          "value": 1
+        },
+        {
+          "name": "EvenPages",
+          "value": 2
+        },
+        {
+          "name": "FirstPage",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLPageOrientation",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "Portrait",
+          "value": 1
+        },
+        {
+          "name": "Landscape",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLPaperSize",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "LetterPaper",
+          "value": 1
+        },
+        {
+          "name": "LetterSmallPaper",
+          "value": 2
+        },
+        {
+          "name": "TabloidPaper",
+          "value": 3
+        },
+        {
+          "name": "LedgerPaper",
+          "value": 4
+        },
+        {
+          "name": "LegalPaper",
+          "value": 5
+        },
+        {
+          "name": "StatementPaper",
+          "value": 6
+        },
+        {
+          "name": "ExecutivePaper",
+          "value": 7
+        },
+        {
+          "name": "A3Paper",
+          "value": 8
+        },
+        {
+          "name": "A4Paper",
+          "value": 9
+        },
+        {
+          "name": "A4SmallPaper",
+          "value": 10
+        },
+        {
+          "name": "A5Paper",
+          "value": 11
+        },
+        {
+          "name": "B4Paper",
+          "value": 12
+        },
+        {
+          "name": "B5Paper",
+          "value": 13
+        },
+        {
+          "name": "FolioPaper",
+          "value": 14
+        },
+        {
+          "name": "QuartoPaper",
+          "value": 15
+        },
+        {
+          "name": "StandardPaper",
+          "value": 16
+        },
+        {
+          "name": "StandardPaper1",
+          "value": 17
+        },
+        {
+          "name": "NotePaper",
+          "value": 18
+        },
+        {
+          "name": "No9Envelope",
+          "value": 19
+        },
+        {
+          "name": "No10Envelope",
+          "value": 20
+        },
+        {
+          "name": "No11Envelope",
+          "value": 21
+        },
+        {
+          "name": "No12Envelope",
+          "value": 22
+        },
+        {
+          "name": "No14Envelope",
+          "value": 23
+        },
+        {
+          "name": "CPaper",
+          "value": 24
+        },
+        {
+          "name": "DPaper",
+          "value": 25
+        },
+        {
+          "name": "EPaper",
+          "value": 26
+        },
+        {
+          "name": "DlEnvelope",
+          "value": 27
+        },
+        {
+          "name": "C5Envelope",
+          "value": 28
+        },
+        {
+          "name": "C3Envelope",
+          "value": 29
+        },
+        {
+          "name": "C4Envelope",
+          "value": 30
+        },
+        {
+          "name": "C6Envelope",
+          "value": 31
+        },
+        {
+          "name": "C65Envelope",
+          "value": 32
+        },
+        {
+          "name": "B4Envelope",
+          "value": 33
+        },
+        {
+          "name": "B5Envelope",
+          "value": 34
+        },
+        {
+          "name": "B6Envelope",
+          "value": 35
+        },
+        {
+          "name": "ItalyEnvelope",
+          "value": 36
+        },
+        {
+          "name": "MonarchEnvelope",
+          "value": 37
+        },
+        {
+          "name": "No634Envelope",
+          "value": 38
+        },
+        {
+          "name": "UsStandardFanfold",
+          "value": 39
+        },
+        {
+          "name": "GermanStandardFanfold",
+          "value": 40
+        },
+        {
+          "name": "GermanLegalFanfold",
+          "value": 41
+        },
+        {
+          "name": "IsoB4",
+          "value": 42
+        },
+        {
+          "name": "JapaneseDoublePostcard",
+          "value": 43
+        },
+        {
+          "name": "StandardPaper2",
+          "value": 44
+        },
+        {
+          "name": "StandardPaper3",
+          "value": 45
+        },
+        {
+          "name": "StandardPaper4",
+          "value": 46
+        },
+        {
+          "name": "InviteEnvelope",
+          "value": 47
+        },
+        {
+          "name": "LetterExtraPaper",
+          "value": 50
+        },
+        {
+          "name": "LegalExtraPaper",
+          "value": 51
+        },
+        {
+          "name": "TabloidExtraPaper",
+          "value": 52
+        },
+        {
+          "name": "A4ExtraPaper",
+          "value": 53
+        },
+        {
+          "name": "LetterTransversePaper",
+          "value": 54
+        },
+        {
+          "name": "A4TransversePaper",
+          "value": 55
+        },
+        {
+          "name": "LetterExtraTransversePaper",
+          "value": 56
+        },
+        {
+          "name": "SuperaSuperaA4Paper",
+          "value": 57
+        },
+        {
+          "name": "SuperbSuperbA3Paper",
+          "value": 58
+        },
+        {
+          "name": "LetterPlusPaper",
+          "value": 59
+        },
+        {
+          "name": "A4PlusPaper",
+          "value": 60
+        },
+        {
+          "name": "A5TransversePaper",
+          "value": 61
+        },
+        {
+          "name": "JisB5TransversePaper",
+          "value": 62
+        },
+        {
+          "name": "A3ExtraPaper",
+          "value": 63
+        },
+        {
+          "name": "A5ExtraPaper",
+          "value": 64
+        },
+        {
+          "name": "IsoB5ExtraPaper",
+          "value": 65
+        },
+        {
+          "name": "A2Paper",
+          "value": 66
+        },
+        {
+          "name": "A3TransversePaper",
+          "value": 67
+        },
+        {
+          "name": "A3ExtraTransversePaper",
+          "value": 68
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLPageOrderValues",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DownThenOver",
+          "value": 0
+        },
+        {
+          "name": "OverThenDown",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLShowCommentsValues",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "AtEnd",
+          "value": 1
+        },
+        {
+          "name": "AsDisplayed",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLPrintErrorValues",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Blank",
+          "value": 0
+        },
+        {
+          "name": "Dash",
+          "value": 1
+        },
+        {
+          "name": "Displayed",
+          "value": 2
+        },
+        {
+          "name": "NA",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLSubtotalFunction",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Automatic",
+          "value": 0
+        },
+        {
+          "name": "None",
+          "value": 1
+        },
+        {
+          "name": "Sum",
+          "value": 2
+        },
+        {
+          "name": "Count",
+          "value": 3
+        },
+        {
+          "name": "Average",
+          "value": 4
+        },
+        {
+          "name": "Minimum",
+          "value": 5
+        },
+        {
+          "name": "Maximum",
+          "value": 6
+        },
+        {
+          "name": "Product",
+          "value": 7
+        },
+        {
+          "name": "CountNumbers",
+          "value": 8
+        },
+        {
+          "name": "StandardDeviation",
+          "value": 9
+        },
+        {
+          "name": "PopulationStandardDeviation",
+          "value": 10
+        },
+        {
+          "name": "Variance",
+          "value": 11
+        },
+        {
+          "name": "PopulationVariance",
+          "value": 12
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLPivotLayout",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Outline",
+          "value": 0
+        },
+        {
+          "name": "Tabular",
+          "value": 1
+        },
+        {
+          "name": "Compact",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLPivotTableTheme",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "PivotStyleDark1",
+          "value": 1
+        },
+        {
+          "name": "PivotStyleDark10",
+          "value": 2
+        },
+        {
+          "name": "PivotStyleDark11",
+          "value": 3
+        },
+        {
+          "name": "PivotStyleDark12",
+          "value": 4
+        },
+        {
+          "name": "PivotStyleDark13",
+          "value": 5
+        },
+        {
+          "name": "PivotStyleDark14",
+          "value": 6
+        },
+        {
+          "name": "PivotStyleDark15",
+          "value": 7
+        },
+        {
+          "name": "PivotStyleDark16",
+          "value": 8
+        },
+        {
+          "name": "PivotStyleDark17",
+          "value": 9
+        },
+        {
+          "name": "PivotStyleDark18",
+          "value": 10
+        },
+        {
+          "name": "PivotStyleDark19",
+          "value": 11
+        },
+        {
+          "name": "PivotStyleDark2",
+          "value": 12
+        },
+        {
+          "name": "PivotStyleDark20",
+          "value": 13
+        },
+        {
+          "name": "PivotStyleDark21",
+          "value": 14
+        },
+        {
+          "name": "PivotStyleDark22",
+          "value": 15
+        },
+        {
+          "name": "PivotStyleDark23",
+          "value": 16
+        },
+        {
+          "name": "PivotStyleDark24",
+          "value": 17
+        },
+        {
+          "name": "PivotStyleDark25",
+          "value": 18
+        },
+        {
+          "name": "PivotStyleDark26",
+          "value": 19
+        },
+        {
+          "name": "PivotStyleDark27",
+          "value": 20
+        },
+        {
+          "name": "PivotStyleDark28",
+          "value": 21
+        },
+        {
+          "name": "PivotStyleDark3",
+          "value": 22
+        },
+        {
+          "name": "PivotStyleDark4",
+          "value": 23
+        },
+        {
+          "name": "PivotStyleDark5",
+          "value": 24
+        },
+        {
+          "name": "PivotStyleDark6",
+          "value": 25
+        },
+        {
+          "name": "PivotStyleDark7",
+          "value": 26
+        },
+        {
+          "name": "PivotStyleDark8",
+          "value": 27
+        },
+        {
+          "name": "PivotStyleDark9",
+          "value": 28
+        },
+        {
+          "name": "PivotStyleLight1",
+          "value": 29
+        },
+        {
+          "name": "PivotStyleLight10",
+          "value": 30
+        },
+        {
+          "name": "PivotStyleLight11",
+          "value": 31
+        },
+        {
+          "name": "PivotStyleLight12",
+          "value": 32
+        },
+        {
+          "name": "PivotStyleLight13",
+          "value": 33
+        },
+        {
+          "name": "PivotStyleLight14",
+          "value": 34
+        },
+        {
+          "name": "PivotStyleLight15",
+          "value": 35
+        },
+        {
+          "name": "PivotStyleLight16",
+          "value": 36
+        },
+        {
+          "name": "PivotStyleLight17",
+          "value": 37
+        },
+        {
+          "name": "PivotStyleLight18",
+          "value": 38
+        },
+        {
+          "name": "PivotStyleLight19",
+          "value": 39
+        },
+        {
+          "name": "PivotStyleLight2",
+          "value": 40
+        },
+        {
+          "name": "PivotStyleLight20",
+          "value": 41
+        },
+        {
+          "name": "PivotStyleLight21",
+          "value": 42
+        },
+        {
+          "name": "PivotStyleLight22",
+          "value": 43
+        },
+        {
+          "name": "PivotStyleLight23",
+          "value": 44
+        },
+        {
+          "name": "PivotStyleLight24",
+          "value": 45
+        },
+        {
+          "name": "PivotStyleLight25",
+          "value": 46
+        },
+        {
+          "name": "PivotStyleLight26",
+          "value": 47
+        },
+        {
+          "name": "PivotStyleLight27",
+          "value": 48
+        },
+        {
+          "name": "PivotStyleLight28",
+          "value": 49
+        },
+        {
+          "name": "PivotStyleLight3",
+          "value": 50
+        },
+        {
+          "name": "PivotStyleLight4",
+          "value": 51
+        },
+        {
+          "name": "PivotStyleLight5",
+          "value": 52
+        },
+        {
+          "name": "PivotStyleLight6",
+          "value": 53
+        },
+        {
+          "name": "PivotStyleLight7",
+          "value": 54
+        },
+        {
+          "name": "PivotStyleLight8",
+          "value": 55
+        },
+        {
+          "name": "PivotStyleLight9",
+          "value": 56
+        },
+        {
+          "name": "PivotStyleMedium1",
+          "value": 57
+        },
+        {
+          "name": "PivotStyleMedium10",
+          "value": 58
+        },
+        {
+          "name": "PivotStyleMedium11",
+          "value": 59
+        },
+        {
+          "name": "PivotStyleMedium12",
+          "value": 60
+        },
+        {
+          "name": "PivotStyleMedium13",
+          "value": 61
+        },
+        {
+          "name": "PivotStyleMedium14",
+          "value": 62
+        },
+        {
+          "name": "PivotStyleMedium15",
+          "value": 63
+        },
+        {
+          "name": "PivotStyleMedium16",
+          "value": 64
+        },
+        {
+          "name": "PivotStyleMedium17",
+          "value": 65
+        },
+        {
+          "name": "PivotStyleMedium18",
+          "value": 66
+        },
+        {
+          "name": "PivotStyleMedium19",
+          "value": 67
+        },
+        {
+          "name": "PivotStyleMedium2",
+          "value": 68
+        },
+        {
+          "name": "PivotStyleMedium20",
+          "value": 69
+        },
+        {
+          "name": "PivotStyleMedium21",
+          "value": 70
+        },
+        {
+          "name": "PivotStyleMedium22",
+          "value": 71
+        },
+        {
+          "name": "PivotStyleMedium23",
+          "value": 72
+        },
+        {
+          "name": "PivotStyleMedium24",
+          "value": 73
+        },
+        {
+          "name": "PivotStyleMedium25",
+          "value": 74
+        },
+        {
+          "name": "PivotStyleMedium26",
+          "value": 75
+        },
+        {
+          "name": "PivotStyleMedium27",
+          "value": 76
+        },
+        {
+          "name": "PivotStyleMedium28",
+          "value": 77
+        },
+        {
+          "name": "PivotStyleMedium3",
+          "value": 78
+        },
+        {
+          "name": "PivotStyleMedium4",
+          "value": 79
+        },
+        {
+          "name": "PivotStyleMedium5",
+          "value": 80
+        },
+        {
+          "name": "PivotStyleMedium6",
+          "value": 81
+        },
+        {
+          "name": "PivotStyleMedium7",
+          "value": 82
+        },
+        {
+          "name": "PivotStyleMedium8",
+          "value": 83
+        },
+        {
+          "name": "PivotStyleMedium9",
+          "value": 84
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLPivotSortType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "Ascending",
+          "value": 1
+        },
+        {
+          "name": "Descending",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLPivotSubtotals",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DoNotShow",
+          "value": 0
+        },
+        {
+          "name": "AtTop",
+          "value": 1
+        },
+        {
+          "name": "AtBottom",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLFilterAreaOrder",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DownThenOver",
+          "value": 0
+        },
+        {
+          "name": "OverThenDown",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLItemsToRetain",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Automatic",
+          "value": 0
+        },
+        {
+          "name": "None",
+          "value": 1
+        },
+        {
+          "name": "Max",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLPivotTableSourceType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Range",
+          "value": 0
+        },
+        {
+          "name": "Table",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLPivotStyleFormatElement",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Label",
+          "value": 2
+        },
+        {
+          "name": "Data",
+          "value": 4
+        },
+        {
+          "name": "All",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLPivotSummary",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Sum",
+          "value": 0
+        },
+        {
+          "name": "Count",
+          "value": 1
+        },
+        {
+          "name": "Average",
+          "value": 2
+        },
+        {
+          "name": "Minimum",
+          "value": 3
+        },
+        {
+          "name": "Maximum",
+          "value": 4
+        },
+        {
+          "name": "Product",
+          "value": 5
+        },
+        {
+          "name": "CountNumbers",
+          "value": 6
+        },
+        {
+          "name": "StandardDeviation",
+          "value": 7
+        },
+        {
+          "name": "PopulationStandardDeviation",
+          "value": 8
+        },
+        {
+          "name": "Variance",
+          "value": 9
+        },
+        {
+          "name": "PopulationVariance",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLPivotCalculation",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Normal",
+          "value": 0
+        },
+        {
+          "name": "DifferenceFrom",
+          "value": 1
+        },
+        {
+          "name": "PercentageOf",
+          "value": 2
+        },
+        {
+          "name": "PercentageDifferenceFrom",
+          "value": 3
+        },
+        {
+          "name": "RunningTotal",
+          "value": 4
+        },
+        {
+          "name": "PercentageOfRow",
+          "value": 5
+        },
+        {
+          "name": "PercentageOfColumn",
+          "value": 6
+        },
+        {
+          "name": "PercentageOfTotal",
+          "value": 7
+        },
+        {
+          "name": "Index",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLPivotCalculationItem",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Value",
+          "value": 0
+        },
+        {
+          "name": "Previous",
+          "value": 1
+        },
+        {
+          "name": "Next",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLProtectionAlgorithm.Algorithm",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "SimpleHash",
+          "value": 0
+        },
+        {
+          "name": "SHA512",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLSheetProtectionElements",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "AutoFilter",
+          "value": 2
+        },
+        {
+          "name": "DeleteColumns",
+          "value": 4
+        },
+        {
+          "name": "DeleteRows",
+          "value": 8
+        },
+        {
+          "name": "EditObjects",
+          "value": 16
+        },
+        {
+          "name": "EditScenarios",
+          "value": 32
+        },
+        {
+          "name": "FormatCells",
+          "value": 64
+        },
+        {
+          "name": "FormatColumns",
+          "value": 128
+        },
+        {
+          "name": "FormatRows",
+          "value": 256
+        },
+        {
+          "name": "InsertColumns",
+          "value": 512
+        },
+        {
+          "name": "InsertHyperlinks",
+          "value": 1024
+        },
+        {
+          "name": "InsertRows",
+          "value": 2048
+        },
+        {
+          "name": "PivotTables",
+          "value": 4096
+        },
+        {
+          "name": "SelectLockedCells",
+          "value": 8192
+        },
+        {
+          "name": "SelectUnlockedCells",
+          "value": 16384
+        },
+        {
+          "name": "Sort",
+          "value": 32768
+        },
+        {
+          "name": "DeleteEverything",
+          "value": 12
+        },
+        {
+          "name": "FormatEverything",
+          "value": 448
+        },
+        {
+          "name": "InsertEverything",
+          "value": 3584
+        },
+        {
+          "name": "SelectEverything",
+          "value": 24576
+        },
+        {
+          "name": "Everything",
+          "value": 65534
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLWorkbookProtectionElements",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Structure",
+          "value": 1
+        },
+        {
+          "name": "Windows",
+          "value": 2
+        },
+        {
+          "name": "Everything",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLShiftDeletedCells",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ShiftCellsUp",
+          "value": 0
+        },
+        {
+          "name": "ShiftCellsLeft",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLTransposeOptions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "MoveCells",
+          "value": 0
+        },
+        {
+          "name": "ReplaceCells",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLSearchContents",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Values",
+          "value": 0
+        },
+        {
+          "name": "Formulas",
+          "value": 1
+        },
+        {
+          "name": "ValuesAndFormulas",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLScope",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Workbook",
+          "value": 0
+        },
+        {
+          "name": "Worksheet",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLSortOrder",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Ascending",
+          "value": 0
+        },
+        {
+          "name": "Descending",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLSortOrientation",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "TopToBottom",
+          "value": 0
+        },
+        {
+          "name": "LeftToRight",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLPhoneticAlignment",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Center",
+          "value": 0
+        },
+        {
+          "name": "Distributed",
+          "value": 1
+        },
+        {
+          "name": "Left",
+          "value": 2
+        },
+        {
+          "name": "NoControl",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLPhoneticType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "FullWidthKatakana",
+          "value": 0
+        },
+        {
+          "name": "HalfWidthKatakana",
+          "value": 1
+        },
+        {
+          "name": "Hiragana",
+          "value": 2
+        },
+        {
+          "name": "NoConversion",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLDisplayBlanksAsValues",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Interpolate",
+          "value": 0
+        },
+        {
+          "name": "NotPlotted",
+          "value": 1
+        },
+        {
+          "name": "Zero",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLSparklineAxisMinMax",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Automatic",
+          "value": 0
+        },
+        {
+          "name": "SameForAll",
+          "value": 1
+        },
+        {
+          "name": "Custom",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLSparklineMarkers",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "HighPoint",
+          "value": 2
+        },
+        {
+          "name": "LowPoint",
+          "value": 4
+        },
+        {
+          "name": "FirstPoint",
+          "value": 8
+        },
+        {
+          "name": "LastPoint",
+          "value": 16
+        },
+        {
+          "name": "NegativePoints",
+          "value": 32
+        },
+        {
+          "name": "Markers",
+          "value": 64
+        },
+        {
+          "name": "All",
+          "value": 126
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLSparklineType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Line",
+          "value": 0
+        },
+        {
+          "name": "Column",
+          "value": 1
+        },
+        {
+          "name": "Stacked",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLColorType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Color",
+          "value": 0
+        },
+        {
+          "name": "Theme",
+          "value": 1
+        },
+        {
+          "name": "Indexed",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLThemeColor",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Background1",
+          "value": 0
+        },
+        {
+          "name": "Text1",
+          "value": 1
+        },
+        {
+          "name": "Background2",
+          "value": 2
+        },
+        {
+          "name": "Text2",
+          "value": 3
+        },
+        {
+          "name": "Accent1",
+          "value": 4
+        },
+        {
+          "name": "Accent2",
+          "value": 5
+        },
+        {
+          "name": "Accent3",
+          "value": 6
+        },
+        {
+          "name": "Accent4",
+          "value": 7
+        },
+        {
+          "name": "Accent5",
+          "value": 8
+        },
+        {
+          "name": "Accent6",
+          "value": 9
+        },
+        {
+          "name": "Hyperlink",
+          "value": 10
+        },
+        {
+          "name": "FollowedHyperlink",
+          "value": 11
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLAlignmentReadingOrderValues",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ContextDependent",
+          "value": 0
+        },
+        {
+          "name": "LeftToRight",
+          "value": 1
+        },
+        {
+          "name": "RightToLeft",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLAlignmentHorizontalValues",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Center",
+          "value": 0
+        },
+        {
+          "name": "CenterContinuous",
+          "value": 1
+        },
+        {
+          "name": "Distributed",
+          "value": 2
+        },
+        {
+          "name": "Fill",
+          "value": 3
+        },
+        {
+          "name": "General",
+          "value": 4
+        },
+        {
+          "name": "Justify",
+          "value": 5
+        },
+        {
+          "name": "Left",
+          "value": 6
+        },
+        {
+          "name": "Right",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLAlignmentVerticalValues",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Bottom",
+          "value": 0
+        },
+        {
+          "name": "Center",
+          "value": 1
+        },
+        {
+          "name": "Distributed",
+          "value": 2
+        },
+        {
+          "name": "Justify",
+          "value": 3
+        },
+        {
+          "name": "Top",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLBorderStyleValues",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DashDot",
+          "value": 0
+        },
+        {
+          "name": "DashDotDot",
+          "value": 1
+        },
+        {
+          "name": "Dashed",
+          "value": 2
+        },
+        {
+          "name": "Dotted",
+          "value": 3
+        },
+        {
+          "name": "Double",
+          "value": 4
+        },
+        {
+          "name": "Hair",
+          "value": 5
+        },
+        {
+          "name": "Medium",
+          "value": 6
+        },
+        {
+          "name": "MediumDashDot",
+          "value": 7
+        },
+        {
+          "name": "MediumDashDotDot",
+          "value": 8
+        },
+        {
+          "name": "MediumDashed",
+          "value": 9
+        },
+        {
+          "name": "None",
+          "value": 10
+        },
+        {
+          "name": "SlantDashDot",
+          "value": 11
+        },
+        {
+          "name": "Thick",
+          "value": 12
+        },
+        {
+          "name": "Thin",
+          "value": 13
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLFillPatternValues",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DarkDown",
+          "value": 0
+        },
+        {
+          "name": "DarkGray",
+          "value": 1
+        },
+        {
+          "name": "DarkGrid",
+          "value": 2
+        },
+        {
+          "name": "DarkHorizontal",
+          "value": 3
+        },
+        {
+          "name": "DarkTrellis",
+          "value": 4
+        },
+        {
+          "name": "DarkUp",
+          "value": 5
+        },
+        {
+          "name": "DarkVertical",
+          "value": 6
+        },
+        {
+          "name": "Gray0625",
+          "value": 7
+        },
+        {
+          "name": "Gray125",
+          "value": 8
+        },
+        {
+          "name": "LightDown",
+          "value": 9
+        },
+        {
+          "name": "LightGray",
+          "value": 10
+        },
+        {
+          "name": "LightGrid",
+          "value": 11
+        },
+        {
+          "name": "LightHorizontal",
+          "value": 12
+        },
+        {
+          "name": "LightTrellis",
+          "value": 13
+        },
+        {
+          "name": "LightUp",
+          "value": 14
+        },
+        {
+          "name": "LightVertical",
+          "value": 15
+        },
+        {
+          "name": "MediumGray",
+          "value": 16
+        },
+        {
+          "name": "None",
+          "value": 17
+        },
+        {
+          "name": "Solid",
+          "value": 18
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLFontUnderlineValues",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Double",
+          "value": 0
+        },
+        {
+          "name": "DoubleAccounting",
+          "value": 1
+        },
+        {
+          "name": "None",
+          "value": 2
+        },
+        {
+          "name": "Single",
+          "value": 3
+        },
+        {
+          "name": "SingleAccounting",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLFontVerticalTextAlignmentValues",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Baseline",
+          "value": 0
+        },
+        {
+          "name": "Subscript",
+          "value": 1
+        },
+        {
+          "name": "Superscript",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLFontFamilyNumberingValues",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NotApplicable",
+          "value": 0
+        },
+        {
+          "name": "Roman",
+          "value": 1
+        },
+        {
+          "name": "Swiss",
+          "value": 2
+        },
+        {
+          "name": "Modern",
+          "value": 3
+        },
+        {
+          "name": "Script",
+          "value": 4
+        },
+        {
+          "name": "Decorative",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLFontCharSet",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Ansi",
+          "value": 0
+        },
+        {
+          "name": "Default",
+          "value": 1
+        },
+        {
+          "name": "Symbol",
+          "value": 2
+        },
+        {
+          "name": "Mac",
+          "value": 77
+        },
+        {
+          "name": "ShiftJIS",
+          "value": 128
+        },
+        {
+          "name": "Hangul",
+          "value": 129
+        },
+        {
+          "name": "Hangeul",
+          "value": 129
+        },
+        {
+          "name": "Johab",
+          "value": 130
+        },
+        {
+          "name": "GB2312",
+          "value": 134
+        },
+        {
+          "name": "ChineseBig5",
+          "value": 136
+        },
+        {
+          "name": "Greek",
+          "value": 161
+        },
+        {
+          "name": "Turkish",
+          "value": 162
+        },
+        {
+          "name": "Vietnamese",
+          "value": 163
+        },
+        {
+          "name": "Hebrew",
+          "value": 177
+        },
+        {
+          "name": "Arabic",
+          "value": 178
+        },
+        {
+          "name": "Baltic",
+          "value": 186
+        },
+        {
+          "name": "Russian",
+          "value": 204
+        },
+        {
+          "name": "Thai",
+          "value": 222
+        },
+        {
+          "name": "EastEurope",
+          "value": 238
+        },
+        {
+          "name": "Oem",
+          "value": 255
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLPredefinedFormat.Number",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "General",
+          "value": 0
+        },
+        {
+          "name": "Integer",
+          "value": 1
+        },
+        {
+          "name": "Precision2",
+          "value": 2
+        },
+        {
+          "name": "IntegerWithSeparator",
+          "value": 3
+        },
+        {
+          "name": "Precision2WithSeparator",
+          "value": 4
+        },
+        {
+          "name": "PercentInteger",
+          "value": 9
+        },
+        {
+          "name": "PercentPrecision2",
+          "value": 10
+        },
+        {
+          "name": "ScientificPrecision2",
+          "value": 11
+        },
+        {
+          "name": "FractionPrecision1",
+          "value": 12
+        },
+        {
+          "name": "FractionPrecision2",
+          "value": 13
+        },
+        {
+          "name": "IntegerWithSeparatorAndParens",
+          "value": 37
+        },
+        {
+          "name": "IntegerWithSeparatorAndParensRed",
+          "value": 38
+        },
+        {
+          "name": "Precision2WithSeparatorAndParens",
+          "value": 39
+        },
+        {
+          "name": "Precision2WithSeparatorAndParensRed",
+          "value": 40
+        },
+        {
+          "name": "ScientificUpToHundredsAndPrecision1",
+          "value": 48
+        },
+        {
+          "name": "Text",
+          "value": 49
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLPredefinedFormat.DateTime",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "General",
+          "value": 0
+        },
+        {
+          "name": "DayMonthYear4WithSlashes",
+          "value": 14
+        },
+        {
+          "name": "DayMonthAbbrYear2WithDashes",
+          "value": 15
+        },
+        {
+          "name": "DayMonthAbbrWithDash",
+          "value": 16
+        },
+        {
+          "name": "MonthAbbrYear2WithDash",
+          "value": 17
+        },
+        {
+          "name": "Hour12MinutesAmPm",
+          "value": 18
+        },
+        {
+          "name": "Hour12MinutesSecondsAmPm",
+          "value": 19
+        },
+        {
+          "name": "Hour24Minutes",
+          "value": 20
+        },
+        {
+          "name": "Hour24MinutesSeconds",
+          "value": 21
+        },
+        {
+          "name": "MonthDayYear4WithDashesHour24Minutes",
+          "value": 22
+        },
+        {
+          "name": "MinutesSeconds",
+          "value": 45
+        },
+        {
+          "name": "Hour12MinutesSeconds",
+          "value": 46
+        },
+        {
+          "name": "MinutesSecondsMillis1",
+          "value": 47
+        },
+        {
+          "name": "Text",
+          "value": 49
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLTotalsRowFunction",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Sum",
+          "value": 1
+        },
+        {
+          "name": "Minimum",
+          "value": 2
+        },
+        {
+          "name": "Maximum",
+          "value": 3
+        },
+        {
+          "name": "Average",
+          "value": 4
+        },
+        {
+          "name": "Count",
+          "value": 5
+        },
+        {
+          "name": "CountNumbers",
+          "value": 6
+        },
+        {
+          "name": "StandardDeviation",
+          "value": 7
+        },
+        {
+          "name": "Variance",
+          "value": 8
+        },
+        {
+          "name": "Custom",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLCellsUsedOptions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Contents",
+          "value": 1
+        },
+        {
+          "name": "DataType",
+          "value": 2
+        },
+        {
+          "name": "NormalFormats",
+          "value": 4
+        },
+        {
+          "name": "ConditionalFormats",
+          "value": 8
+        },
+        {
+          "name": "Comments",
+          "value": 16
+        },
+        {
+          "name": "DataValidation",
+          "value": 32
+        },
+        {
+          "name": "MergedRanges",
+          "value": 64
+        },
+        {
+          "name": "Sparklines",
+          "value": 128
+        },
+        {
+          "name": "AllFormats",
+          "value": 12
+        },
+        {
+          "name": "AllContents",
+          "value": 19
+        },
+        {
+          "name": "All",
+          "value": 255
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLClearOptions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Contents",
+          "value": 1
+        },
+        {
+          "name": "DataType",
+          "value": 2
+        },
+        {
+          "name": "NormalFormats",
+          "value": 4
+        },
+        {
+          "name": "ConditionalFormats",
+          "value": 8
+        },
+        {
+          "name": "Comments",
+          "value": 16
+        },
+        {
+          "name": "DataValidation",
+          "value": 32
+        },
+        {
+          "name": "MergedRanges",
+          "value": 64
+        },
+        {
+          "name": "Sparklines",
+          "value": 128
+        },
+        {
+          "name": "AllFormats",
+          "value": 12
+        },
+        {
+          "name": "AllContents",
+          "value": 19
+        },
+        {
+          "name": "All",
+          "value": 255
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLEventTracking",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Enabled",
+          "value": 0
+        },
+        {
+          "name": "Disabled",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLCalculateMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Auto",
+          "value": 0
+        },
+        {
+          "name": "AutoNoTable",
+          "value": 1
+        },
+        {
+          "name": "Manual",
+          "value": 2
+        },
+        {
+          "name": "Default",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLReferenceStyle",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "R1C1",
+          "value": 0
+        },
+        {
+          "name": "A1",
+          "value": 1
+        },
+        {
+          "name": "Default",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.XLCellSetValueBehavior",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Smart",
+          "value": 0
+        },
+        {
+          "name": "Simple",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.Drawings.XLMarkerPosition",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "TopLeft",
+          "value": 0
+        },
+        {
+          "name": "BottomRight",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.Drawings.XLPictureFormat",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Bmp",
+          "value": 0
+        },
+        {
+          "name": "Gif",
+          "value": 1
+        },
+        {
+          "name": "Png",
+          "value": 2
+        },
+        {
+          "name": "Tiff",
+          "value": 3
+        },
+        {
+          "name": "Icon",
+          "value": 4
+        },
+        {
+          "name": "Pcx",
+          "value": 5
+        },
+        {
+          "name": "Jpeg",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "ClosedXML.Excel.Drawings.XLPicturePlacement",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "MoveAndSize",
+          "value": 0
+        },
+        {
+          "name": "Move",
+          "value": 1
+        },
+        {
+          "name": "FreeFloating",
+          "value": 2
+        }
+      ]
+    }
+  ],
+  "namespaceMappings": []
+}

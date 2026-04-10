@@ -1,0 +1,7875 @@
+{
+  "schema": {
+    "id": "activity-catalog",
+    "version": "v0.3"
+  },
+  "source": {
+    "kind": "nuget-package",
+    "id": "UiPath.EmguCVBundle",
+    "version": "1.3.0",
+    "feedUrl": null,
+    "authors": "UiPath",
+    "projectUrl": "https://activities.uipath.com/docs/about-the-intelligent-ocr-activities-pack",
+    "description": "Cross platform .net wrapper over OpenCV (see https://www.emgu.com/wiki/index.php/Main_Page and https://github.com/emgucv/emgucv).",
+    "license": "https://www.uipath.com/hubfs/legalspot/UiPath_MSSA.pdf",
+    "tags": "UiPathActivities",
+    "packageTypes": []
+  },
+  "generatedAt": "2026-04-10T09:21:23Z",
+  "activities": [],
+  "enums": [
+    {
+      "fullName": "Emgu.Util.Platform.OS",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "Windows",
+          "value": 1
+        },
+        {
+          "name": "Linux",
+          "value": 2
+        },
+        {
+          "name": "MacOS",
+          "value": 3
+        },
+        {
+          "name": "IOS",
+          "value": 4
+        },
+        {
+          "name": "Android",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.Util.Platform.Clr",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "DotNet",
+          "value": 1
+        },
+        {
+          "name": "DotNetNative",
+          "value": 2
+        },
+        {
+          "name": "Mono",
+          "value": 3
+        },
+        {
+          "name": "Unity",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.Util.TypeEnum.ProgrammingLanguage",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "CSharp",
+          "value": 0
+        },
+        {
+          "name": "CPlusPlus",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.FileNode.Type",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Int",
+          "value": 1
+        },
+        {
+          "name": "Real",
+          "value": 2
+        },
+        {
+          "name": "Float",
+          "value": 2
+        },
+        {
+          "name": "Str",
+          "value": 3
+        },
+        {
+          "name": "String",
+          "value": 3
+        },
+        {
+          "name": "Seq",
+          "value": 4
+        },
+        {
+          "name": "Map",
+          "value": 5
+        },
+        {
+          "name": "TypeMask",
+          "value": 7
+        },
+        {
+          "name": "Flow",
+          "value": 8
+        },
+        {
+          "name": "Uniform",
+          "value": 8
+        },
+        {
+          "name": "Empty",
+          "value": 16
+        },
+        {
+          "name": "Named",
+          "value": 32
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.FileStorage.Mode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Read",
+          "value": 0
+        },
+        {
+          "name": "Write",
+          "value": 1
+        },
+        {
+          "name": "Append",
+          "value": 2
+        },
+        {
+          "name": "Memory",
+          "value": 4
+        },
+        {
+          "name": "FormatMask",
+          "value": 56
+        },
+        {
+          "name": "FormatAuto",
+          "value": 0
+        },
+        {
+          "name": "FormatXml",
+          "value": 8
+        },
+        {
+          "name": "FormatYaml",
+          "value": 16
+        },
+        {
+          "name": "FormatJson",
+          "value": 24
+        },
+        {
+          "name": "Base64",
+          "value": 64
+        },
+        {
+          "name": "WriteBase64",
+          "value": 65
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.InputArray.Type",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "KindShift",
+          "value": 16
+        },
+        {
+          "name": "FixedType",
+          "value": -2147483648
+        },
+        {
+          "name": "FixedSize",
+          "value": 1073741824
+        },
+        {
+          "name": "KindMask",
+          "value": 2031616
+        },
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Mat",
+          "value": 65536
+        },
+        {
+          "name": "Matx",
+          "value": 131072
+        },
+        {
+          "name": "StdVector",
+          "value": 196608
+        },
+        {
+          "name": "StdVectorVector",
+          "value": 262144
+        },
+        {
+          "name": "StdVectorMat",
+          "value": 327680
+        },
+        {
+          "name": "Expr",
+          "value": 393216
+        },
+        {
+          "name": "OpenglBuffer",
+          "value": 458752
+        },
+        {
+          "name": "CudaHostMem",
+          "value": 524288
+        },
+        {
+          "name": "CudaGpuMat",
+          "value": 589824
+        },
+        {
+          "name": "UMat",
+          "value": 655360
+        },
+        {
+          "name": "StdVectorUMat",
+          "value": 720896
+        },
+        {
+          "name": "StdBoolVector",
+          "value": 786432
+        },
+        {
+          "name": "StdVectorCudaGpuMat",
+          "value": 851968
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.RNG.DistType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Uniform",
+          "value": 0
+        },
+        {
+          "name": "Normal",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.UMat.Usage",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "AllocateHostMemory",
+          "value": 1
+        },
+        {
+          "name": "AllocateDeviceMemory",
+          "value": 2
+        },
+        {
+          "name": "AllocateSharedMemory",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.VideoCapture.API",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Any",
+          "value": 0
+        },
+        {
+          "name": "Vfw",
+          "value": 200
+        },
+        {
+          "name": "V4L",
+          "value": 200
+        },
+        {
+          "name": "V4L2",
+          "value": 200
+        },
+        {
+          "name": "Firewire",
+          "value": 300
+        },
+        {
+          "name": "IEEE1394",
+          "value": 300
+        },
+        {
+          "name": "DC1394",
+          "value": 300
+        },
+        {
+          "name": "CMU1394",
+          "value": 300
+        },
+        {
+          "name": "QT",
+          "value": 500
+        },
+        {
+          "name": "Unicap",
+          "value": 600
+        },
+        {
+          "name": "DShow",
+          "value": 700
+        },
+        {
+          "name": "Pvapi",
+          "value": 800
+        },
+        {
+          "name": "OpenNI",
+          "value": 900
+        },
+        {
+          "name": "OpenNIAsus",
+          "value": 910
+        },
+        {
+          "name": "Android",
+          "value": 1000
+        },
+        {
+          "name": "XiApi",
+          "value": 1100
+        },
+        {
+          "name": "AVFoundation",
+          "value": 1200
+        },
+        {
+          "name": "Giganetix",
+          "value": 1300
+        },
+        {
+          "name": "Msmf",
+          "value": 1400
+        },
+        {
+          "name": "Winrt",
+          "value": 1410
+        },
+        {
+          "name": "IntelPerc",
+          "value": 1500
+        },
+        {
+          "name": "Openni2",
+          "value": 1600
+        },
+        {
+          "name": "Openni2Asus",
+          "value": 1610
+        },
+        {
+          "name": "Gphoto2",
+          "value": 1700
+        },
+        {
+          "name": "Gstreamer",
+          "value": 1800
+        },
+        {
+          "name": "Ffmpeg",
+          "value": 1900
+        },
+        {
+          "name": "Images",
+          "value": 2000
+        },
+        {
+          "name": "Aravis",
+          "value": 2100
+        },
+        {
+          "name": "OpencvMjpeg",
+          "value": 2200
+        },
+        {
+          "name": "IntelMfx",
+          "value": 2300
+        },
+        {
+          "name": "Xine",
+          "value": 2400
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.VideoCapture.CaptureModuleType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Camera",
+          "value": 0
+        },
+        {
+          "name": "Highgui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.VideoWriter.WriterProperty",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Quality",
+          "value": 1
+        },
+        {
+          "name": "Framebytes",
+          "value": 2
+        },
+        {
+          "name": "NStripes",
+          "value": 3
+        },
+        {
+          "name": "IsColor",
+          "value": 4
+        },
+        {
+          "name": "Depth",
+          "value": 5
+        },
+        {
+          "name": "HwAcceleration",
+          "value": 6
+        },
+        {
+          "name": "HwDevice",
+          "value": 7
+        },
+        {
+          "name": "HwAccelerationUseOpencl",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.DISOpticalFlow.Preset",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "UltraFast",
+          "value": 0
+        },
+        {
+          "name": "Fast",
+          "value": 1
+        },
+        {
+          "name": "Medium",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.DenseRLOFOpticalFlow.InterpolationType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Geo",
+          "value": 0
+        },
+        {
+          "name": "Epic",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.RLOFOpticalFlowParameter.SolverType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Standard",
+          "value": 0
+        },
+        {
+          "name": "Bilinear",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.RLOFOpticalFlowParameter.SupportRegionType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Fixed",
+          "value": 0
+        },
+        {
+          "name": "Cross",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.FaceRecognizerSF.DisType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Cosine",
+          "value": 0
+        },
+        {
+          "name": "NormL2",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.Fisheye.CalibrationFlag",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "UseIntrinsicGuess",
+          "value": 1
+        },
+        {
+          "name": "RecomputeExtrinsic",
+          "value": 2
+        },
+        {
+          "name": "CheckCond",
+          "value": 4
+        },
+        {
+          "name": "FixSkew",
+          "value": 8
+        },
+        {
+          "name": "FixK1",
+          "value": 16
+        },
+        {
+          "name": "FixK2",
+          "value": 32
+        },
+        {
+          "name": "FixK3",
+          "value": 64
+        },
+        {
+          "name": "FixK4",
+          "value": 128
+        },
+        {
+          "name": "FixIntrinsic",
+          "value": 256
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.StereoSGBM.Mode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "SGBM",
+          "value": 0
+        },
+        {
+          "name": "HH",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.TrackerKCF.Mode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Gray",
+          "value": 1
+        },
+        {
+          "name": "Cn",
+          "value": 2
+        },
+        {
+          "name": "Custom",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.Rgbd.RgbdNormals.Method",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Fals",
+          "value": 0
+        },
+        {
+          "name": "Linemod",
+          "value": 1
+        },
+        {
+          "name": "Sri",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.StructuredLight.SinusoidalPattern.Method",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "FTP",
+          "value": 0
+        },
+        {
+          "name": "PSP",
+          "value": 1
+        },
+        {
+          "name": "FAPS",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.StructuredLight.DecodeFlag",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Decode3dUnderworld",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.Dai.CameraBoardSocket",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AUTO",
+          "value": -1
+        },
+        {
+          "name": "RGB",
+          "value": 0
+        },
+        {
+          "name": "LEFT",
+          "value": 1
+        },
+        {
+          "name": "RIGHT",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.Dai.CameraImageOrientation",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Auto",
+          "value": -1
+        },
+        {
+          "name": "Normal",
+          "value": 0
+        },
+        {
+          "name": "HorizontalMirror",
+          "value": 1
+        },
+        {
+          "name": "VerticalFlip",
+          "value": 2
+        },
+        {
+          "name": "Rotate180Deg",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.Dai.MonoCamera.SensorResolution",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "The720P",
+          "value": 0
+        },
+        {
+          "name": "The800P",
+          "value": 1
+        },
+        {
+          "name": "The400P",
+          "value": 2
+        },
+        {
+          "name": "The480P",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.Dai.OpenVino.Version",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "VERSION_2020_3",
+          "value": 0
+        },
+        {
+          "name": "VERSION_2020_4",
+          "value": 1
+        },
+        {
+          "name": "VERSION_2021_1",
+          "value": 2
+        },
+        {
+          "name": "VERSION_2021_2",
+          "value": 3
+        },
+        {
+          "name": "VERSION_2021_3",
+          "value": 4
+        },
+        {
+          "name": "VERSION_2021_4",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.Ccm.ColorCorrectionModel.ColorChecker",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Macbeth",
+          "value": 0
+        },
+        {
+          "name": "Vinyl",
+          "value": 1
+        },
+        {
+          "name": "DigitalSG",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.Ccm.ColorCorrectionModel.CcmType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Ccm3x3",
+          "value": 0
+        },
+        {
+          "name": "Ccm4x3",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.Ccm.ColorCorrectionModel.DistanceType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Cie76",
+          "value": 0
+        },
+        {
+          "name": "Cie94GraphicArts",
+          "value": 1
+        },
+        {
+          "name": "Cie94Textiles",
+          "value": 2
+        },
+        {
+          "name": "Cie2000",
+          "value": 3
+        },
+        {
+          "name": "Cmc1To1",
+          "value": 4
+        },
+        {
+          "name": "Cmc2To1",
+          "value": 5
+        },
+        {
+          "name": "Rgb",
+          "value": 6
+        },
+        {
+          "name": "Rgbl",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.Ccm.ColorCorrectionModel.LinearType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Identity",
+          "value": 0
+        },
+        {
+          "name": "Gamma",
+          "value": 1
+        },
+        {
+          "name": "ColorPolyFit",
+          "value": 2
+        },
+        {
+          "name": "ColorLogPolyFit",
+          "value": 3
+        },
+        {
+          "name": "GrayPolyFit",
+          "value": 4
+        },
+        {
+          "name": "GrayLogPolyFit",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.Ccm.ColorCorrectionModel.ColorSpace",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "SRgb",
+          "value": 0
+        },
+        {
+          "name": "SRgbL",
+          "value": 1
+        },
+        {
+          "name": "AdobeRGB",
+          "value": 2
+        },
+        {
+          "name": "AdobeRGBL",
+          "value": 3
+        },
+        {
+          "name": "WideGamutRGB",
+          "value": 4
+        },
+        {
+          "name": "WideGamutRGBL",
+          "value": 5
+        },
+        {
+          "name": "ProPhotoRGB",
+          "value": 6
+        },
+        {
+          "name": "ProPhotoRGBL",
+          "value": 7
+        },
+        {
+          "name": "DciP3Rgb",
+          "value": 8
+        },
+        {
+          "name": "DciP3RgbL",
+          "value": 9
+        },
+        {
+          "name": "AppleRGB",
+          "value": 10
+        },
+        {
+          "name": "AppleRGBL",
+          "value": 11
+        },
+        {
+          "name": "Rec709Rgb",
+          "value": 12
+        },
+        {
+          "name": "Rec709RgbL",
+          "value": 13
+        },
+        {
+          "name": "Rec2020Rgb",
+          "value": 14
+        },
+        {
+          "name": "Rec2020RgbL",
+          "value": 15
+        },
+        {
+          "name": "XyzD65_2",
+          "value": 16
+        },
+        {
+          "name": "XyzD65_10",
+          "value": 17
+        },
+        {
+          "name": "XyzD50_2",
+          "value": 18
+        },
+        {
+          "name": "XyzD50_10",
+          "value": 19
+        },
+        {
+          "name": "XyzA2",
+          "value": 20
+        },
+        {
+          "name": "XyzA10",
+          "value": 21
+        },
+        {
+          "name": "XyzD55_2",
+          "value": 22
+        },
+        {
+          "name": "XyzD55_10",
+          "value": 23
+        },
+        {
+          "name": "XyzD75_2",
+          "value": 24
+        },
+        {
+          "name": "XyzD75_10",
+          "value": 25
+        },
+        {
+          "name": "XyzE_2",
+          "value": 26
+        },
+        {
+          "name": "XyzE_10",
+          "value": 27
+        },
+        {
+          "name": "LabD65_2",
+          "value": 28
+        },
+        {
+          "name": "LabD65_10",
+          "value": 29
+        },
+        {
+          "name": "LabD50_2",
+          "value": 30
+        },
+        {
+          "name": "LabD50_10",
+          "value": 31
+        },
+        {
+          "name": "LabA_2",
+          "value": 32
+        },
+        {
+          "name": "LabA_10",
+          "value": 33
+        },
+        {
+          "name": "LabD55_2",
+          "value": 34
+        },
+        {
+          "name": "LabD55_10",
+          "value": 35
+        },
+        {
+          "name": "LabD75_2",
+          "value": 36
+        },
+        {
+          "name": "LabD75_10",
+          "value": 37
+        },
+        {
+          "name": "LabE_2",
+          "value": 38
+        },
+        {
+          "name": "LabE_10",
+          "value": 39
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.Mcc.CChecker.TypeChart",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "MCC24",
+          "value": 0
+        },
+        {
+          "name": "SG140",
+          "value": 1
+        },
+        {
+          "name": "Vinyl18",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.PpfMatch3d.ICP.SamplingType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Uniform",
+          "value": 0
+        },
+        {
+          "name": "Gelfand",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.ImgHash.BlockMeanHash.Mode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "HashMode0",
+          "value": 0
+        },
+        {
+          "name": "HashMode1",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.Bioinspired.Retina.ColorSamplingMethod",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ColorRandom",
+          "value": 0
+        },
+        {
+          "name": "ColorDiagonal",
+          "value": 1
+        },
+        {
+          "name": "ColorBayer",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.Fuzzy.FuzzyInvoke.Function",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Linear",
+          "value": 1
+        },
+        {
+          "name": "Sinus",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.Fuzzy.FuzzyInvoke.InpaintAlgorithm",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "OneStep",
+          "value": 1
+        },
+        {
+          "name": "MultiStep",
+          "value": 2
+        },
+        {
+          "name": "Iterative",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.Aruco.DetectorParameters.RefinementMethod",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Subpix",
+          "value": 1
+        },
+        {
+          "name": "Contour",
+          "value": 2
+        },
+        {
+          "name": "AprilTag",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.Aruco.Dictionary.PredefinedDictionaryName",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Dict4X4_50",
+          "value": 0
+        },
+        {
+          "name": "Dict4X4_100",
+          "value": 1
+        },
+        {
+          "name": "Dict4X4_250",
+          "value": 2
+        },
+        {
+          "name": "Dict4X4_1000",
+          "value": 3
+        },
+        {
+          "name": "Dict5X5_50",
+          "value": 4
+        },
+        {
+          "name": "Dict5X5_100",
+          "value": 5
+        },
+        {
+          "name": "Dict5X5_250",
+          "value": 6
+        },
+        {
+          "name": "Dict5X5_1000",
+          "value": 7
+        },
+        {
+          "name": "Dict6X6_50",
+          "value": 8
+        },
+        {
+          "name": "Dict6X6_100",
+          "value": 9
+        },
+        {
+          "name": "Dict6X6_250",
+          "value": 10
+        },
+        {
+          "name": "Dict6X6_1000",
+          "value": 11
+        },
+        {
+          "name": "Dict7X7_50",
+          "value": 12
+        },
+        {
+          "name": "Dict7X7_100",
+          "value": 13
+        },
+        {
+          "name": "Dict7X7_250",
+          "value": 14
+        },
+        {
+          "name": "Dict7X7_1000",
+          "value": 15
+        },
+        {
+          "name": "DictArucoOriginal",
+          "value": 16
+        },
+        {
+          "name": "DictAprilTag16h5",
+          "value": 17
+        },
+        {
+          "name": "DictAprilTag25h9",
+          "value": 18
+        },
+        {
+          "name": "DictAprilTag36h10",
+          "value": 19
+        },
+        {
+          "name": "DictAprilTag36h11",
+          "value": 20
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.XPhoto.XPhotoInvoke.InpaintType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Shiftmap",
+          "value": 0
+        },
+        {
+          "name": "FsrBest",
+          "value": 1
+        },
+        {
+          "name": "FsrFast",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.XPhoto.TransformTypes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Haar",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.XPhoto.Bm3dSteps",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "All",
+          "value": 0
+        },
+        {
+          "name": "Step1",
+          "value": 1
+        },
+        {
+          "name": "Step2",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.XImgproc.DTFilter.Mode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NC",
+          "value": 0
+        },
+        {
+          "name": "IC",
+          "value": 1
+        },
+        {
+          "name": "RF",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.XImgproc.DtFilterType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NC",
+          "value": 0
+        },
+        {
+          "name": "IC",
+          "value": 1
+        },
+        {
+          "name": "RF",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.XImgproc.LocalBinarizationMethods",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Niblack",
+          "value": 0
+        },
+        {
+          "name": "Sauvola",
+          "value": 1
+        },
+        {
+          "name": "Wolf",
+          "value": 2
+        },
+        {
+          "name": "NICK",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.XImgproc.SupperpixelSLIC.Algorithm",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "SLIC",
+          "value": 100
+        },
+        {
+          "name": "SLICO",
+          "value": 101
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.XImgproc.ThinningTypes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ZhangSuen",
+          "value": 0
+        },
+        {
+          "name": "GuoHall",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.XImgproc.WMFWeightType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Exp",
+          "value": 0
+        },
+        {
+          "name": "Iv1",
+          "value": 1
+        },
+        {
+          "name": "Iv2",
+          "value": 2
+        },
+        {
+          "name": "Cos",
+          "value": 3
+        },
+        {
+          "name": "Jac",
+          "value": 4
+        },
+        {
+          "name": "Off",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.BgSegm.BackgroundSubtractorLSBP.CameraMotionCompensation",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "LK",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.Text.ERFilter.GroupingMethod",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "OrientationHoriz",
+          "value": 0
+        },
+        {
+          "name": "OrientationAny",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.Text.ERFilterNMMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "RGBLGrad",
+          "value": 0
+        },
+        {
+          "name": "IHSGrad",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.XFeatures2D.BEBLID.BeblidSize",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "BitSize512",
+          "value": 100
+        },
+        {
+          "name": "BitSize256",
+          "value": 101
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.XFeatures2D.BoostDesc.DescriptorType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Bgm",
+          "value": 100
+        },
+        {
+          "name": "BgmHard",
+          "value": 101
+        },
+        {
+          "name": "BgmBilinear",
+          "value": 102
+        },
+        {
+          "name": "Lbgm",
+          "value": 200
+        },
+        {
+          "name": "Binboost64",
+          "value": 300
+        },
+        {
+          "name": "Binboost128",
+          "value": 301
+        },
+        {
+          "name": "Binboost256",
+          "value": 302
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.XFeatures2D.DAISY.NormalizationType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 100
+        },
+        {
+          "name": "Partial",
+          "value": 101
+        },
+        {
+          "name": "Full",
+          "value": 102
+        },
+        {
+          "name": "SIFT",
+          "value": 103
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.XFeatures2D.PCTSignatures.PointDistributionType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Uniform",
+          "value": 0
+        },
+        {
+          "name": "Regular",
+          "value": 1
+        },
+        {
+          "name": "Normal",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.XFeatures2D.PCTSignaturesSQFD.DistanceFunction",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "L0_25",
+          "value": 0
+        },
+        {
+          "name": "L0_5",
+          "value": 1
+        },
+        {
+          "name": "L1",
+          "value": 2
+        },
+        {
+          "name": "L2",
+          "value": 3
+        },
+        {
+          "name": "L2Squared",
+          "value": 4
+        },
+        {
+          "name": "L5",
+          "value": 5
+        },
+        {
+          "name": "LInfinity",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.XFeatures2D.PCTSignaturesSQFD.SimilarityFunction",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Minus",
+          "value": 0
+        },
+        {
+          "name": "Gaussian",
+          "value": 1
+        },
+        {
+          "name": "Heuristic",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.XFeatures2D.VGG.DescriptorType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Vgg120",
+          "value": 100
+        },
+        {
+          "name": "Vgg80",
+          "value": 101
+        },
+        {
+          "name": "Vgg64",
+          "value": 102
+        },
+        {
+          "name": "Vgg48",
+          "value": 103
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.Cuda.CudaDeviceInfo.GpuFeature",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Compute10",
+          "value": 10
+        },
+        {
+          "name": "Compute11",
+          "value": 11
+        },
+        {
+          "name": "Compute12",
+          "value": 12
+        },
+        {
+          "name": "Compute13",
+          "value": 13
+        },
+        {
+          "name": "Compute20",
+          "value": 20
+        },
+        {
+          "name": "Compute21",
+          "value": 21
+        },
+        {
+          "name": "Compute30",
+          "value": 30
+        },
+        {
+          "name": "Compute32",
+          "value": 32
+        },
+        {
+          "name": "Compute35",
+          "value": 35
+        },
+        {
+          "name": "Compute50",
+          "value": 50
+        },
+        {
+          "name": "GlobalAtomics",
+          "value": 11
+        },
+        {
+          "name": "SharedAtomics",
+          "value": 12
+        },
+        {
+          "name": "NativeDouble",
+          "value": 13
+        },
+        {
+          "name": "WarpShuffleFunctions",
+          "value": 30
+        },
+        {
+          "name": "DynamicParallelism",
+          "value": 35
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.Cuda.DemosaicTypes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "BayerBG2BGR_MHT",
+          "value": 256
+        },
+        {
+          "name": "BayerGB2BGR_MHT",
+          "value": 257
+        },
+        {
+          "name": "BayerRG2BGR_MHT",
+          "value": 258
+        },
+        {
+          "name": "BayerGR2BGR_MHT",
+          "value": 259
+        },
+        {
+          "name": "BayerBG2RGB_MHT",
+          "value": 258
+        },
+        {
+          "name": "BayerGB2RGB_MHT",
+          "value": 259
+        },
+        {
+          "name": "BayerRG2RGB_MHT",
+          "value": 256
+        },
+        {
+          "name": "BayerGR2RGB_MHT",
+          "value": 257
+        },
+        {
+          "name": "BayerBG2GRAY_MHT",
+          "value": 260
+        },
+        {
+          "name": "BayerGB2GRAY_MHT",
+          "value": 261
+        },
+        {
+          "name": "BayerRG2GRAY_MHT",
+          "value": 262
+        },
+        {
+          "name": "BayerGR2GRAY_MHT",
+          "value": 263
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.Cuda.AlphaCompTypes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Over",
+          "value": 0
+        },
+        {
+          "name": "In",
+          "value": 1
+        },
+        {
+          "name": "Out",
+          "value": 2
+        },
+        {
+          "name": "Atop",
+          "value": 3
+        },
+        {
+          "name": "Xor",
+          "value": 4
+        },
+        {
+          "name": "Plus",
+          "value": 5
+        },
+        {
+          "name": "OverPremul",
+          "value": 6
+        },
+        {
+          "name": "InPremul",
+          "value": 7
+        },
+        {
+          "name": "OutPremul",
+          "value": 8
+        },
+        {
+          "name": "AtopPremul",
+          "value": 9
+        },
+        {
+          "name": "XorPremul",
+          "value": 10
+        },
+        {
+          "name": "PlusPremul",
+          "value": 11
+        },
+        {
+          "name": "Premul",
+          "value": 12
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.Cuda.NvidiaOpticalFlow_1_0.PerfLevel",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "Slow",
+          "value": 5
+        },
+        {
+          "name": "Medium",
+          "value": 10
+        },
+        {
+          "name": "Fast",
+          "value": 20
+        },
+        {
+          "name": "Max",
+          "value": 21
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.Cuda.NvidiaOpticalFlow_2_0.PerfLevel",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "Slow",
+          "value": 5
+        },
+        {
+          "name": "Medium",
+          "value": 10
+        },
+        {
+          "name": "Fast",
+          "value": 20
+        },
+        {
+          "name": "Max",
+          "value": 21
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.Cuda.NvidiaOpticalFlow_2_0.OutputVectorGridSize",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "Size1",
+          "value": 1
+        },
+        {
+          "name": "Size2",
+          "value": 2
+        },
+        {
+          "name": "Size4",
+          "value": 4
+        },
+        {
+          "name": "Max",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.Cuda.NvidiaOpticalFlow_2_0.HintVectorGridSize",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "Size1",
+          "value": 1
+        },
+        {
+          "name": "Size2",
+          "value": 2
+        },
+        {
+          "name": "Size4",
+          "value": 4
+        },
+        {
+          "name": "Size8",
+          "value": 8
+        },
+        {
+          "name": "Max",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.Cuda.CudaHOG.DescrFormat",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "RowByRow",
+          "value": 0
+        },
+        {
+          "name": "ColByCol",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.Cuda.CudaCodec",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "MPEG1",
+          "value": 0
+        },
+        {
+          "name": "MPEG2",
+          "value": 1
+        },
+        {
+          "name": "MPEG4",
+          "value": 2
+        },
+        {
+          "name": "VC1",
+          "value": 3
+        },
+        {
+          "name": "H264",
+          "value": 4
+        },
+        {
+          "name": "JPEG",
+          "value": 5
+        },
+        {
+          "name": "H264_SVC",
+          "value": 6
+        },
+        {
+          "name": "H264_MVC",
+          "value": 7
+        },
+        {
+          "name": "HEVC",
+          "value": 8
+        },
+        {
+          "name": "VP8",
+          "value": 9
+        },
+        {
+          "name": "VP9",
+          "value": 10
+        },
+        {
+          "name": "NumCodecs",
+          "value": 11
+        },
+        {
+          "name": "Uncompressed_YUV420",
+          "value": 1230591318
+        },
+        {
+          "name": "Uncompressed_YV12",
+          "value": 1498820914
+        },
+        {
+          "name": "Uncompressed_NV12",
+          "value": 1314271538
+        },
+        {
+          "name": "Uncompressed_YUYV",
+          "value": 1498765654
+        },
+        {
+          "name": "Uncompressed_UYVY",
+          "value": 1431918169
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.Cuda.CudaVideoReader.ChromaFormat",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Monochrome",
+          "value": 0
+        },
+        {
+          "name": "YUV420",
+          "value": 1
+        },
+        {
+          "name": "YUV422",
+          "value": 2
+        },
+        {
+          "name": "YUV444",
+          "value": 3
+        },
+        {
+          "name": "NumFormats",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.Cuda.CudaVideoReader.DeinterlaceMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Weave",
+          "value": 0
+        },
+        {
+          "name": "Bob",
+          "value": 1
+        },
+        {
+          "name": "Adaptive",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.Cuda.CudaVideoWriter.ColorFormat",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "Bgra",
+          "value": 1
+        },
+        {
+          "name": "Bgr",
+          "value": 2
+        },
+        {
+          "name": "Gray",
+          "value": 3
+        },
+        {
+          "name": "NvNv12",
+          "value": 4
+        },
+        {
+          "name": "Rgb",
+          "value": 5
+        },
+        {
+          "name": "Rgba",
+          "value": 6
+        },
+        {
+          "name": "NvYv12",
+          "value": 8
+        },
+        {
+          "name": "NvIyuv",
+          "value": 9
+        },
+        {
+          "name": "NvYuv444",
+          "value": 10
+        },
+        {
+          "name": "NvAyuv",
+          "value": 11
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.OCR.LocaleGuard.LocaleCategory",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "All",
+          "value": 0
+        },
+        {
+          "name": "Collate",
+          "value": 1
+        },
+        {
+          "name": "Ctype",
+          "value": 2
+        },
+        {
+          "name": "Monetary",
+          "value": 3
+        },
+        {
+          "name": "Numeric",
+          "value": 4
+        },
+        {
+          "name": "Time",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.OCR.OcrEngineMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "TesseractOnly",
+          "value": 0
+        },
+        {
+          "name": "LstmOnly",
+          "value": 1
+        },
+        {
+          "name": "TesseractLstmCombined",
+          "value": 2
+        },
+        {
+          "name": "Default",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.OCR.PageOrientation",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Up",
+          "value": 0
+        },
+        {
+          "name": "Right",
+          "value": 1
+        },
+        {
+          "name": "Down",
+          "value": 2
+        },
+        {
+          "name": "Left",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.OCR.WritingDirection",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "LeftToRight",
+          "value": 0
+        },
+        {
+          "name": "RightToLeft",
+          "value": 1
+        },
+        {
+          "name": "TopToBottom",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.OCR.TextlineOrder",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "LeftToRight",
+          "value": 0
+        },
+        {
+          "name": "RightToLeft",
+          "value": 1
+        },
+        {
+          "name": "TopToBottom",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.OCR.PageIteratorLevel",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Block",
+          "value": 0
+        },
+        {
+          "name": "Para",
+          "value": 1
+        },
+        {
+          "name": "Textline",
+          "value": 2
+        },
+        {
+          "name": "Word",
+          "value": 3
+        },
+        {
+          "name": "Symbol",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.OCR.PageSegMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "OsdOnly",
+          "value": 0
+        },
+        {
+          "name": "AutoOsd",
+          "value": 1
+        },
+        {
+          "name": "AutoOnly",
+          "value": 2
+        },
+        {
+          "name": "Auto",
+          "value": 3
+        },
+        {
+          "name": "SingleColumn",
+          "value": 4
+        },
+        {
+          "name": "SingleBlockVertText",
+          "value": 5
+        },
+        {
+          "name": "SingleBlock",
+          "value": 6
+        },
+        {
+          "name": "SingleLine",
+          "value": 7
+        },
+        {
+          "name": "SingleWord",
+          "value": 8
+        },
+        {
+          "name": "CircleWord",
+          "value": 9
+        },
+        {
+          "name": "SingleChar",
+          "value": 10
+        },
+        {
+          "name": "SparseText",
+          "value": 11
+        },
+        {
+          "name": "SparseTextOsd",
+          "value": 12
+        },
+        {
+          "name": "RawLine",
+          "value": 13
+        },
+        {
+          "name": "Count",
+          "value": 14
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.AccessType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Read",
+          "value": 16777216
+        },
+        {
+          "name": "Write",
+          "value": 33554432
+        },
+        {
+          "name": "ReadWrite",
+          "value": 50331648
+        },
+        {
+          "name": "Mask",
+          "value": 50331648
+        },
+        {
+          "name": "Fast",
+          "value": 67108864
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.AdaptiveThresholdType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "MeanC",
+          "value": 0
+        },
+        {
+          "name": "GaussianC",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.BackOrFront",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Back",
+          "value": 0
+        },
+        {
+          "name": "Front",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.BorderType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NegativeOne",
+          "value": -1
+        },
+        {
+          "name": "Constant",
+          "value": 0
+        },
+        {
+          "name": "Replicate",
+          "value": 1
+        },
+        {
+          "name": "Reflect",
+          "value": 2
+        },
+        {
+          "name": "Wrap",
+          "value": 3
+        },
+        {
+          "name": "Reflect101",
+          "value": 4
+        },
+        {
+          "name": "Transparent",
+          "value": 5
+        },
+        {
+          "name": "Default",
+          "value": 4
+        },
+        {
+          "name": "Isolated",
+          "value": 16
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.CalibCbType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "AdaptiveThresh",
+          "value": 1
+        },
+        {
+          "name": "NormalizeImage",
+          "value": 2
+        },
+        {
+          "name": "FilterQuads",
+          "value": 4
+        },
+        {
+          "name": "FastCheck",
+          "value": 8
+        },
+        {
+          "name": "Exhaustive",
+          "value": 16
+        },
+        {
+          "name": "Accuracy",
+          "value": 32
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.CalibCgType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "SymmetricGrid",
+          "value": 1
+        },
+        {
+          "name": "AsymmetricGrid",
+          "value": 2
+        },
+        {
+          "name": "Clustering",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.CalibType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "UseIntrinsicGuess",
+          "value": 1
+        },
+        {
+          "name": "FixAspectRatio",
+          "value": 2
+        },
+        {
+          "name": "FixPrincipalPoint",
+          "value": 4
+        },
+        {
+          "name": "ZeroTangentDist",
+          "value": 8
+        },
+        {
+          "name": "FixFocalLength",
+          "value": 16
+        },
+        {
+          "name": "FixK1",
+          "value": 32
+        },
+        {
+          "name": "FixK2",
+          "value": 64
+        },
+        {
+          "name": "FixK3",
+          "value": 128
+        },
+        {
+          "name": "FixK4",
+          "value": 2048
+        },
+        {
+          "name": "FixK5",
+          "value": 4096
+        },
+        {
+          "name": "FixK6",
+          "value": 8192
+        },
+        {
+          "name": "RationalModel",
+          "value": 16384
+        },
+        {
+          "name": "ThinPrismModel",
+          "value": 32768
+        },
+        {
+          "name": "FixS1S2S3S4",
+          "value": 65536
+        },
+        {
+          "name": "TiltedModel",
+          "value": 262144
+        },
+        {
+          "name": "FixTauxTauy",
+          "value": 524288
+        },
+        {
+          "name": "UseQR",
+          "value": 1048576
+        },
+        {
+          "name": "FixTangentDist",
+          "value": 2097152
+        },
+        {
+          "name": "FixIntrinsic",
+          "value": 256
+        },
+        {
+          "name": "SameFocalLength",
+          "value": 512
+        },
+        {
+          "name": "ZeroDisparity",
+          "value": 1024
+        },
+        {
+          "name": "UseLU",
+          "value": 131072
+        },
+        {
+          "name": "UseExtrinsicGuess",
+          "value": 4194304
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.CapProp",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DC1394Off",
+          "value": -4
+        },
+        {
+          "name": "DC1394ModeManual",
+          "value": -3
+        },
+        {
+          "name": "DC1394ModeAuto",
+          "value": -2
+        },
+        {
+          "name": "DC1394ModeOnePushAuto",
+          "value": -1
+        },
+        {
+          "name": "PosMsec",
+          "value": 0
+        },
+        {
+          "name": "PosFrames",
+          "value": 1
+        },
+        {
+          "name": "PosAviRatio",
+          "value": 2
+        },
+        {
+          "name": "FrameWidth",
+          "value": 3
+        },
+        {
+          "name": "FrameHeight",
+          "value": 4
+        },
+        {
+          "name": "Fps",
+          "value": 5
+        },
+        {
+          "name": "FourCC",
+          "value": 6
+        },
+        {
+          "name": "FrameCount",
+          "value": 7
+        },
+        {
+          "name": "Format",
+          "value": 8
+        },
+        {
+          "name": "Mode",
+          "value": 9
+        },
+        {
+          "name": "Brightness",
+          "value": 10
+        },
+        {
+          "name": "Contrast",
+          "value": 11
+        },
+        {
+          "name": "Saturation",
+          "value": 12
+        },
+        {
+          "name": "Hue",
+          "value": 13
+        },
+        {
+          "name": "Gain",
+          "value": 14
+        },
+        {
+          "name": "Exposure",
+          "value": 15
+        },
+        {
+          "name": "ConvertRgb",
+          "value": 16
+        },
+        {
+          "name": "WhiteBalanceBlueU",
+          "value": 17
+        },
+        {
+          "name": "Rectification",
+          "value": 18
+        },
+        {
+          "name": "Monochrome",
+          "value": 19
+        },
+        {
+          "name": "Sharpness",
+          "value": 20
+        },
+        {
+          "name": "AutoExposure",
+          "value": 21
+        },
+        {
+          "name": "Gamma",
+          "value": 22
+        },
+        {
+          "name": "Temperature",
+          "value": 23
+        },
+        {
+          "name": "Trigger",
+          "value": 24
+        },
+        {
+          "name": "TriggerDelay",
+          "value": 25
+        },
+        {
+          "name": "WhiteBalanceRedV",
+          "value": 26
+        },
+        {
+          "name": "Zoom",
+          "value": 27
+        },
+        {
+          "name": "Focus",
+          "value": 28
+        },
+        {
+          "name": "Guid",
+          "value": 29
+        },
+        {
+          "name": "IsoSpeed",
+          "value": 30
+        },
+        {
+          "name": "MaxDC1394",
+          "value": 31
+        },
+        {
+          "name": "Backlight",
+          "value": 32
+        },
+        {
+          "name": "Pan",
+          "value": 33
+        },
+        {
+          "name": "Tilt",
+          "value": 34
+        },
+        {
+          "name": "Roll",
+          "value": 35
+        },
+        {
+          "name": "Iris",
+          "value": 36
+        },
+        {
+          "name": "Settings",
+          "value": 37
+        },
+        {
+          "name": "Buffersize",
+          "value": 38
+        },
+        {
+          "name": "Autofocus",
+          "value": 39
+        },
+        {
+          "name": "SarNum",
+          "value": 40
+        },
+        {
+          "name": "SarDen",
+          "value": 41
+        },
+        {
+          "name": "Backend",
+          "value": 42
+        },
+        {
+          "name": "Channel",
+          "value": 43
+        },
+        {
+          "name": "AutoWb",
+          "value": 44
+        },
+        {
+          "name": "WbTemperature",
+          "value": 45
+        },
+        {
+          "name": "CodecPixelFormat",
+          "value": 46
+        },
+        {
+          "name": "Bitrate",
+          "value": 47
+        },
+        {
+          "name": "OrientationMeta",
+          "value": 48
+        },
+        {
+          "name": "OrientationAuto",
+          "value": 49
+        },
+        {
+          "name": "HwAcceleration",
+          "value": 50
+        },
+        {
+          "name": "HwDevice",
+          "value": 51
+        },
+        {
+          "name": "HwAccelerationUseOpencl",
+          "value": 52
+        },
+        {
+          "name": "OpenTimeoutMsec",
+          "value": 53
+        },
+        {
+          "name": "ReadTimeoutMsec",
+          "value": 54
+        },
+        {
+          "name": "StreamOpenTimeUsec",
+          "value": 55
+        },
+        {
+          "name": "VideoTotalChannels",
+          "value": 56
+        },
+        {
+          "name": "VideoStream",
+          "value": 57
+        },
+        {
+          "name": "AudioStream",
+          "value": 58
+        },
+        {
+          "name": "AudioPos",
+          "value": 59
+        },
+        {
+          "name": "AudioShiftNsec",
+          "value": 60
+        },
+        {
+          "name": "AudioDataDepth",
+          "value": 61
+        },
+        {
+          "name": "AudioSamplesPerSecond",
+          "value": 62
+        },
+        {
+          "name": "AudioBaseIndex",
+          "value": 63
+        },
+        {
+          "name": "AudioTotalChannels",
+          "value": 64
+        },
+        {
+          "name": "AudioTotalStreams",
+          "value": 65
+        },
+        {
+          "name": "AudioSynchronize",
+          "value": 66
+        },
+        {
+          "name": "LrfHasKeyFrame",
+          "value": 67
+        },
+        {
+          "name": "CodecExtradataIndex",
+          "value": 68
+        },
+        {
+          "name": "Autograb",
+          "value": 1024
+        },
+        {
+          "name": "SupportedPreviewSizesString",
+          "value": 1025
+        },
+        {
+          "name": "PreviewFormat",
+          "value": 1026
+        },
+        {
+          "name": "OpenniDepthGenerator",
+          "value": -2147483648
+        },
+        {
+          "name": "OpenniImageGenerator",
+          "value": 1073741824
+        },
+        {
+          "name": "OpenniIRGenerator",
+          "value": 536870912
+        },
+        {
+          "name": "OpenniGeneratorsMask",
+          "value": -536870912
+        },
+        {
+          "name": "OpenniOutputMode",
+          "value": 100
+        },
+        {
+          "name": "OpenniFrameMaxDepth",
+          "value": 101
+        },
+        {
+          "name": "OpenniBaseline",
+          "value": 102
+        },
+        {
+          "name": "OpenniFocalLength",
+          "value": 103
+        },
+        {
+          "name": "OpenniRegistration",
+          "value": 104
+        },
+        {
+          "name": "OpenniRegistrationOn",
+          "value": 104
+        },
+        {
+          "name": "OpenniApproxFrameSync",
+          "value": 105
+        },
+        {
+          "name": "OpenniMaxBufferSize",
+          "value": 106
+        },
+        {
+          "name": "OpenniCircleBuffer",
+          "value": 107
+        },
+        {
+          "name": "OpenniMaxTimeDuration",
+          "value": 108
+        },
+        {
+          "name": "OpenniGeneratorPresent",
+          "value": 109
+        },
+        {
+          "name": "Openni2Sync",
+          "value": 110
+        },
+        {
+          "name": "Openni2Mirror",
+          "value": 111
+        },
+        {
+          "name": "OpenniImageGeneratorPresent",
+          "value": 1073741933
+        },
+        {
+          "name": "OpenniImageGeneratorOutputMode",
+          "value": 1073741924
+        },
+        {
+          "name": "OpenniDepthGeneratorPresent",
+          "value": -2147483539
+        },
+        {
+          "name": "OpenniDepthGeneratorBaseline",
+          "value": -2147483546
+        },
+        {
+          "name": "OpenniDepthGeneratorFocalLength",
+          "value": -2147483545
+        },
+        {
+          "name": "OpenniDepthGeneratorRegistration",
+          "value": -2147483544
+        },
+        {
+          "name": "OpenniDepthGeneratorRegistrationOn",
+          "value": -2147483544
+        },
+        {
+          "name": "OpenniIRGeneratorPresent",
+          "value": 536871021
+        },
+        {
+          "name": "GstreamerQueueLength",
+          "value": 200
+        },
+        {
+          "name": "PvapiMulticastip",
+          "value": 300
+        },
+        {
+          "name": "PvapiFrameStartTriggerMode",
+          "value": 301
+        },
+        {
+          "name": "PvapiDecimationHorizontal",
+          "value": 302
+        },
+        {
+          "name": "PvapiDecimationVertical",
+          "value": 303
+        },
+        {
+          "name": "PvapiBinningX",
+          "value": 304
+        },
+        {
+          "name": "PvapiBinningY",
+          "value": 305
+        },
+        {
+          "name": "PvapiPixelFormat",
+          "value": 306
+        },
+        {
+          "name": "XiDownsampling",
+          "value": 400
+        },
+        {
+          "name": "XiDataFormat",
+          "value": 401
+        },
+        {
+          "name": "XiOffsetX",
+          "value": 402
+        },
+        {
+          "name": "XiOffsetY",
+          "value": 403
+        },
+        {
+          "name": "XiTrgSource",
+          "value": 404
+        },
+        {
+          "name": "XiTrgSoftware",
+          "value": 405
+        },
+        {
+          "name": "XiGpiSelector",
+          "value": 406
+        },
+        {
+          "name": "XiGpiMode",
+          "value": 407
+        },
+        {
+          "name": "XiGpiLevel",
+          "value": 408
+        },
+        {
+          "name": "XiGpoSelector",
+          "value": 409
+        },
+        {
+          "name": "XiGpoMode",
+          "value": 410
+        },
+        {
+          "name": "XiLedSelector",
+          "value": 411
+        },
+        {
+          "name": "XiLedMode",
+          "value": 412
+        },
+        {
+          "name": "XiManualWb",
+          "value": 413
+        },
+        {
+          "name": "XiAutoWb",
+          "value": 414
+        },
+        {
+          "name": "XiAeag",
+          "value": 415
+        },
+        {
+          "name": "XiExpPriority",
+          "value": 416
+        },
+        {
+          "name": "XiAeMaxLimit",
+          "value": 417
+        },
+        {
+          "name": "XiAgMaxLimit",
+          "value": 418
+        },
+        {
+          "name": "XiAeagLevel",
+          "value": 419
+        },
+        {
+          "name": "XiTimeout",
+          "value": 420
+        },
+        {
+          "name": "XiExposure",
+          "value": 421
+        },
+        {
+          "name": "XiExposureBurstCount",
+          "value": 422
+        },
+        {
+          "name": "XiGainSelector",
+          "value": 423
+        },
+        {
+          "name": "XiGain",
+          "value": 424
+        },
+        {
+          "name": "XiDownsamplingType",
+          "value": 426
+        },
+        {
+          "name": "XiBinningSelector",
+          "value": 427
+        },
+        {
+          "name": "XiBinningVertical",
+          "value": 428
+        },
+        {
+          "name": "XiBinningHorizontal",
+          "value": 429
+        },
+        {
+          "name": "XiBinningPattern",
+          "value": 430
+        },
+        {
+          "name": "XiDecimationSelector",
+          "value": 431
+        },
+        {
+          "name": "XiDecimationVertical",
+          "value": 432
+        },
+        {
+          "name": "XiDecimationHorizontal",
+          "value": 433
+        },
+        {
+          "name": "XiDecimationPattern",
+          "value": 434
+        },
+        {
+          "name": "XiTestPatternGeneratorSelector",
+          "value": 587
+        },
+        {
+          "name": "XiTestPattern",
+          "value": 588
+        },
+        {
+          "name": "XiImageDataFormat",
+          "value": 435
+        },
+        {
+          "name": "XiShutterType",
+          "value": 436
+        },
+        {
+          "name": "XiSensorTaps",
+          "value": 437
+        },
+        {
+          "name": "XiAeagRoiOffsetX",
+          "value": 439
+        },
+        {
+          "name": "XiAeagRoiOffsetY",
+          "value": 440
+        },
+        {
+          "name": "XiAeagRoiWidth",
+          "value": 441
+        },
+        {
+          "name": "XiAeagRoiHeight",
+          "value": 442
+        },
+        {
+          "name": "XiBpc",
+          "value": 445
+        },
+        {
+          "name": "XiWbKr",
+          "value": 448
+        },
+        {
+          "name": "XiWbKg",
+          "value": 449
+        },
+        {
+          "name": "XiWbKb",
+          "value": 450
+        },
+        {
+          "name": "XiWidth",
+          "value": 451
+        },
+        {
+          "name": "XiHeight",
+          "value": 452
+        },
+        {
+          "name": "XiRegionSelector",
+          "value": 589
+        },
+        {
+          "name": "XiRegionMode",
+          "value": 595
+        },
+        {
+          "name": "XiLimitBandwidth",
+          "value": 459
+        },
+        {
+          "name": "XiSensorDataBitDepth",
+          "value": 460
+        },
+        {
+          "name": "XiOutputDataBitDepth",
+          "value": 461
+        },
+        {
+          "name": "XiImageDataBitDepth",
+          "value": 462
+        },
+        {
+          "name": "XiOutputDataPacking",
+          "value": 463
+        },
+        {
+          "name": "XiOutputDataPackingType",
+          "value": 464
+        },
+        {
+          "name": "XiIsCooled",
+          "value": 465
+        },
+        {
+          "name": "XiCooling",
+          "value": 466
+        },
+        {
+          "name": "XiTargetTemp",
+          "value": 467
+        },
+        {
+          "name": "XiChipTemp",
+          "value": 468
+        },
+        {
+          "name": "XiHousTemp",
+          "value": 469
+        },
+        {
+          "name": "XiHousBackSideTemp",
+          "value": 590
+        },
+        {
+          "name": "XiSensorBoardTemp",
+          "value": 596
+        },
+        {
+          "name": "XiCms",
+          "value": 470
+        },
+        {
+          "name": "XiApplyCms",
+          "value": 471
+        },
+        {
+          "name": "XiImageIsColor",
+          "value": 474
+        },
+        {
+          "name": "XiColorFilterArray",
+          "value": 475
+        },
+        {
+          "name": "XiGammay",
+          "value": 476
+        },
+        {
+          "name": "XiGammac",
+          "value": 477
+        },
+        {
+          "name": "XiSharpness",
+          "value": 478
+        },
+        {
+          "name": "XiCcMatrix00",
+          "value": 479
+        },
+        {
+          "name": "XiCcMatrix01",
+          "value": 480
+        },
+        {
+          "name": "XiCcMatrix02",
+          "value": 481
+        },
+        {
+          "name": "XiCcMatrix03",
+          "value": 482
+        },
+        {
+          "name": "XiCcMatrix10",
+          "value": 483
+        },
+        {
+          "name": "XiCcMatrix11",
+          "value": 484
+        },
+        {
+          "name": "XiCcMatrix12",
+          "value": 485
+        },
+        {
+          "name": "XiCcMatrix13",
+          "value": 486
+        },
+        {
+          "name": "XiCcMatrix20",
+          "value": 487
+        },
+        {
+          "name": "XiCcMatrix21",
+          "value": 488
+        },
+        {
+          "name": "XiCcMatrix22",
+          "value": 489
+        },
+        {
+          "name": "XiCcMatrix23",
+          "value": 490
+        },
+        {
+          "name": "XiCcMatrix30",
+          "value": 491
+        },
+        {
+          "name": "XiCcMatrix31",
+          "value": 492
+        },
+        {
+          "name": "XiCcMatrix32",
+          "value": 493
+        },
+        {
+          "name": "XiCcMatrix33",
+          "value": 494
+        },
+        {
+          "name": "XiDefaultCcMatrix",
+          "value": 495
+        },
+        {
+          "name": "XiTrgSelector",
+          "value": 498
+        },
+        {
+          "name": "XiAcqFrameBurstCount",
+          "value": 499
+        },
+        {
+          "name": "XiDebounceEn",
+          "value": 507
+        },
+        {
+          "name": "XiDebounceT0",
+          "value": 508
+        },
+        {
+          "name": "XiDebounceT1",
+          "value": 509
+        },
+        {
+          "name": "XiDebouncePol",
+          "value": 510
+        },
+        {
+          "name": "XiLensMode",
+          "value": 511
+        },
+        {
+          "name": "XiLensApertureValue",
+          "value": 512
+        },
+        {
+          "name": "XiLensFocusMovementValue",
+          "value": 513
+        },
+        {
+          "name": "XiLensFocusMove",
+          "value": 514
+        },
+        {
+          "name": "XiLensFocusDistance",
+          "value": 515
+        },
+        {
+          "name": "XiLensFocalLength",
+          "value": 516
+        },
+        {
+          "name": "XiLensFeatureSelector",
+          "value": 517
+        },
+        {
+          "name": "XiLensFeature",
+          "value": 518
+        },
+        {
+          "name": "XiDeviceModelId",
+          "value": 521
+        },
+        {
+          "name": "XiDeviceSn",
+          "value": 522
+        },
+        {
+          "name": "XiImageDataFormatRgb32Alpha",
+          "value": 529
+        },
+        {
+          "name": "XiImagePayloadSize",
+          "value": 530
+        },
+        {
+          "name": "XiTransportPixelFormat",
+          "value": 531
+        },
+        {
+          "name": "XiSensorClockFreqHz",
+          "value": 532
+        },
+        {
+          "name": "XiSensorClockFreqIndex",
+          "value": 533
+        },
+        {
+          "name": "XiSensorOutputChannelCount",
+          "value": 534
+        },
+        {
+          "name": "XiFramerate",
+          "value": 535
+        },
+        {
+          "name": "XiCounterSelector",
+          "value": 536
+        },
+        {
+          "name": "XiCounterValue",
+          "value": 537
+        },
+        {
+          "name": "XiAcqTimingMode",
+          "value": 538
+        },
+        {
+          "name": "XiAvailableBandwidth",
+          "value": 539
+        },
+        {
+          "name": "XiBufferPolicy",
+          "value": 540
+        },
+        {
+          "name": "XiLutEn",
+          "value": 541
+        },
+        {
+          "name": "XiLutIndex",
+          "value": 542
+        },
+        {
+          "name": "XiLutValue",
+          "value": 543
+        },
+        {
+          "name": "XiTrgDelay",
+          "value": 544
+        },
+        {
+          "name": "XiTsRstMode",
+          "value": 545
+        },
+        {
+          "name": "XiTsRstSource",
+          "value": 546
+        },
+        {
+          "name": "XiIsDeviceExist",
+          "value": 547
+        },
+        {
+          "name": "XiAcqBufferSize",
+          "value": 548
+        },
+        {
+          "name": "XiAcqBufferSizeUnit",
+          "value": 549
+        },
+        {
+          "name": "XiAcqTransportBufferSize",
+          "value": 550
+        },
+        {
+          "name": "XiBuffersQueueSize",
+          "value": 551
+        },
+        {
+          "name": "XiAcqTransportBufferCommit",
+          "value": 552
+        },
+        {
+          "name": "XiRecentFrame",
+          "value": 553
+        },
+        {
+          "name": "XiDeviceReset",
+          "value": 554
+        },
+        {
+          "name": "XiColumnFpnCorrection",
+          "value": 555
+        },
+        {
+          "name": "XiRowFpnCorrection",
+          "value": 591
+        },
+        {
+          "name": "XiSensorMode",
+          "value": 558
+        },
+        {
+          "name": "XiHdr",
+          "value": 559
+        },
+        {
+          "name": "XiHdrKneepointCount",
+          "value": 560
+        },
+        {
+          "name": "XiHdrT1",
+          "value": 561
+        },
+        {
+          "name": "XiHdrT2",
+          "value": 562
+        },
+        {
+          "name": "XiKneepoint1",
+          "value": 563
+        },
+        {
+          "name": "XiKneepoint2",
+          "value": 564
+        },
+        {
+          "name": "XiImageBlackLevel",
+          "value": 565
+        },
+        {
+          "name": "XiHwRevision",
+          "value": 571
+        },
+        {
+          "name": "XiDebugLevel",
+          "value": 572
+        },
+        {
+          "name": "XiAutoBandwidthCalculation",
+          "value": 573
+        },
+        {
+          "name": "XiFfsFileId",
+          "value": 594
+        },
+        {
+          "name": "XiFfsFileSize",
+          "value": 580
+        },
+        {
+          "name": "XiFreeFfsSize",
+          "value": 581
+        },
+        {
+          "name": "XiUsedFfsSize",
+          "value": 582
+        },
+        {
+          "name": "XiFfsAccessKey",
+          "value": 583
+        },
+        {
+          "name": "XiSensorFeatureSelector",
+          "value": 585
+        },
+        {
+          "name": "XiSensorFeatureValue",
+          "value": 586
+        },
+        {
+          "name": "AndroidFlashMode",
+          "value": 8001
+        },
+        {
+          "name": "AndroidFocusMode",
+          "value": 8002
+        },
+        {
+          "name": "AndroidWhiteBalance",
+          "value": 8003
+        },
+        {
+          "name": "AndroidAntibanding",
+          "value": 8004
+        },
+        {
+          "name": "AndroidFocalLength",
+          "value": 8005
+        },
+        {
+          "name": "AndroidFocusDistanceNear",
+          "value": 8006
+        },
+        {
+          "name": "AndroidFocusDistanceOptimal",
+          "value": 8007
+        },
+        {
+          "name": "AndroidFocusDistanceFar",
+          "value": 8008
+        },
+        {
+          "name": "AndroidExposeLock",
+          "value": 8009
+        },
+        {
+          "name": "AndroidWhitebalanceLock",
+          "value": 8010
+        },
+        {
+          "name": "IOSDeviceFocus",
+          "value": 9001
+        },
+        {
+          "name": "IOSDeviceExposure",
+          "value": 9002
+        },
+        {
+          "name": "IOSDeviceFlash",
+          "value": 9003
+        },
+        {
+          "name": "IOSDeviceWhitebalance",
+          "value": 9004
+        },
+        {
+          "name": "IOSDeviceTorch",
+          "value": 9005
+        },
+        {
+          "name": "GigaFrameOffsetX",
+          "value": 10001
+        },
+        {
+          "name": "GigaFrameOffsetY",
+          "value": 10002
+        },
+        {
+          "name": "GigaFrameWidthMax",
+          "value": 10003
+        },
+        {
+          "name": "GigaFrameHeighMax",
+          "value": 10004
+        },
+        {
+          "name": "GigaFrameSensWidth",
+          "value": 10005
+        },
+        {
+          "name": "GigaFrameSensHeigh",
+          "value": 10006
+        },
+        {
+          "name": "IntelpercProfileCount",
+          "value": 11001
+        },
+        {
+          "name": "IntelpercProfileIdx",
+          "value": 11002
+        },
+        {
+          "name": "IntelpercDepthLowConfidenceValue",
+          "value": 11003
+        },
+        {
+          "name": "IntelpercDepthSaturationValue",
+          "value": 11004
+        },
+        {
+          "name": "IntelpercDepthConfidenceThreshold",
+          "value": 11005
+        },
+        {
+          "name": "IntelpercDepthFocalLengthHorz",
+          "value": 11006
+        },
+        {
+          "name": "IntelpercDepthFocalLengthVert",
+          "value": 11007
+        },
+        {
+          "name": "IntelpercDepthGenerator",
+          "value": 536870912
+        },
+        {
+          "name": "IntelpercImageGenerator",
+          "value": 268435456
+        },
+        {
+          "name": "IntelpercGeneratorsMask",
+          "value": 805306368
+        },
+        {
+          "name": "Gphoto2Preview",
+          "value": 17001
+        },
+        {
+          "name": "Gphoto2WidgetEnumerate",
+          "value": 17002
+        },
+        {
+          "name": "Gphoto2ReloadConfig",
+          "value": 17003
+        },
+        {
+          "name": "Gphoto2ReloadOnChange",
+          "value": 17004
+        },
+        {
+          "name": "Gphoto2CollectMsgs",
+          "value": 17005
+        },
+        {
+          "name": "Gphoto2FlushMsgs",
+          "value": 17006
+        },
+        {
+          "name": "Gphoto2Speed",
+          "value": 17007
+        },
+        {
+          "name": "Gphoto2Aperture",
+          "value": 17008
+        },
+        {
+          "name": "Gphoto2Exposureprogram",
+          "value": 17009
+        },
+        {
+          "name": "Gphoto2Viewfinder",
+          "value": 17010
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.ChainApproxMethod",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ChainCode",
+          "value": 0
+        },
+        {
+          "name": "ChainApproxNone",
+          "value": 1
+        },
+        {
+          "name": "ChainApproxSimple",
+          "value": 2
+        },
+        {
+          "name": "ChainApproxTc89L1",
+          "value": 3
+        },
+        {
+          "name": "ChainApproxTc89Kcos",
+          "value": 4
+        },
+        {
+          "name": "LinkRuns",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.CheckType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NanInfinity",
+          "value": 0
+        },
+        {
+          "name": "Range",
+          "value": 1
+        },
+        {
+          "name": "Quite",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.CloningMethod",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Normal",
+          "value": 1
+        },
+        {
+          "name": "Mixed",
+          "value": 2
+        },
+        {
+          "name": "MonochromeTransfer",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.CmpType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Equal",
+          "value": 0
+        },
+        {
+          "name": "GreaterThan",
+          "value": 1
+        },
+        {
+          "name": "GreaterEqual",
+          "value": 2
+        },
+        {
+          "name": "LessThan",
+          "value": 3
+        },
+        {
+          "name": "LessEqual",
+          "value": 4
+        },
+        {
+          "name": "NotEqual",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.ColorConversion",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Bgr2Bgra",
+          "value": 0
+        },
+        {
+          "name": "Rgb2Rgba",
+          "value": 0
+        },
+        {
+          "name": "Bgra2Bgr",
+          "value": 1
+        },
+        {
+          "name": "Rgba2Rgb",
+          "value": 1
+        },
+        {
+          "name": "Bgr2Rgba",
+          "value": 2
+        },
+        {
+          "name": "Rgb2Bgra",
+          "value": 2
+        },
+        {
+          "name": "Rgba2Bgr",
+          "value": 3
+        },
+        {
+          "name": "Bgra2Rgb",
+          "value": 3
+        },
+        {
+          "name": "Bgr2Rgb",
+          "value": 4
+        },
+        {
+          "name": "Rgb2Bgr",
+          "value": 4
+        },
+        {
+          "name": "Bgra2Rgba",
+          "value": 5
+        },
+        {
+          "name": "Rgba2Bgra",
+          "value": 5
+        },
+        {
+          "name": "Bgr2Gray",
+          "value": 6
+        },
+        {
+          "name": "Rgb2Gray",
+          "value": 7
+        },
+        {
+          "name": "Gray2Bgr",
+          "value": 8
+        },
+        {
+          "name": "Gray2Rgb",
+          "value": 8
+        },
+        {
+          "name": "Gray2Bgra",
+          "value": 9
+        },
+        {
+          "name": "Gray2Rgba",
+          "value": 9
+        },
+        {
+          "name": "Bgra2Gray",
+          "value": 10
+        },
+        {
+          "name": "Rgba2Gray",
+          "value": 11
+        },
+        {
+          "name": "Bgr2Bgr565",
+          "value": 12
+        },
+        {
+          "name": "Rgb2Bgr565",
+          "value": 13
+        },
+        {
+          "name": "Bgr5652Bgr",
+          "value": 14
+        },
+        {
+          "name": "Bgr5652Rgb",
+          "value": 15
+        },
+        {
+          "name": "Bgra2Bgr565",
+          "value": 16
+        },
+        {
+          "name": "Rgba2Bgr565",
+          "value": 17
+        },
+        {
+          "name": "Bgr5652Bgra",
+          "value": 18
+        },
+        {
+          "name": "Bgr5652Rgba",
+          "value": 19
+        },
+        {
+          "name": "Gray2Bgr565",
+          "value": 20
+        },
+        {
+          "name": "Bgr5652Gray",
+          "value": 21
+        },
+        {
+          "name": "Bgr2Bgr555",
+          "value": 22
+        },
+        {
+          "name": "Rgb2Bgr555",
+          "value": 23
+        },
+        {
+          "name": "Bgr5552Bgr",
+          "value": 24
+        },
+        {
+          "name": "Bgr5552Rgb",
+          "value": 25
+        },
+        {
+          "name": "Bgra2Bgr555",
+          "value": 26
+        },
+        {
+          "name": "Rgba2Bgr555",
+          "value": 27
+        },
+        {
+          "name": "Bgr5552Bgra",
+          "value": 28
+        },
+        {
+          "name": "Bgr5552Rgba",
+          "value": 29
+        },
+        {
+          "name": "Gray2Bgr555",
+          "value": 30
+        },
+        {
+          "name": "Bgr5552Gray",
+          "value": 31
+        },
+        {
+          "name": "Bgr2Xyz",
+          "value": 32
+        },
+        {
+          "name": "Rgb2Xyz",
+          "value": 33
+        },
+        {
+          "name": "Xyz2Bgr",
+          "value": 34
+        },
+        {
+          "name": "Xyz2Rgb",
+          "value": 35
+        },
+        {
+          "name": "Bgr2YCrCb",
+          "value": 36
+        },
+        {
+          "name": "Rgb2YCrCb",
+          "value": 37
+        },
+        {
+          "name": "YCrCb2Bgr",
+          "value": 38
+        },
+        {
+          "name": "YCrCb2Rgb",
+          "value": 39
+        },
+        {
+          "name": "Bgr2Hsv",
+          "value": 40
+        },
+        {
+          "name": "Rgb2Hsv",
+          "value": 41
+        },
+        {
+          "name": "Bgr2Lab",
+          "value": 44
+        },
+        {
+          "name": "Rgb2Lab",
+          "value": 45
+        },
+        {
+          "name": "BayerBg2Bgr",
+          "value": 46
+        },
+        {
+          "name": "BayerGb2Bgr",
+          "value": 47
+        },
+        {
+          "name": "BayerRg2Bgr",
+          "value": 48
+        },
+        {
+          "name": "BayerGr2Bgr",
+          "value": 49
+        },
+        {
+          "name": "BayerBg2Rgb",
+          "value": 48
+        },
+        {
+          "name": "BayerGb2Rgb",
+          "value": 49
+        },
+        {
+          "name": "BayerRg2Rgb",
+          "value": 46
+        },
+        {
+          "name": "BayerGr2Rgb",
+          "value": 47
+        },
+        {
+          "name": "BayerRggb2Bgr",
+          "value": 46
+        },
+        {
+          "name": "BayerGrbg2Bgr",
+          "value": 47
+        },
+        {
+          "name": "BayerBggr2Bgr",
+          "value": 48
+        },
+        {
+          "name": "BayerGbrg2Bgr",
+          "value": 49
+        },
+        {
+          "name": "BayerRggb2Rgb",
+          "value": 48
+        },
+        {
+          "name": "BayerGrbg2Rgb",
+          "value": 49
+        },
+        {
+          "name": "BayerBggr2Rgb",
+          "value": 46
+        },
+        {
+          "name": "BayerGbrg2Rgb",
+          "value": 47
+        },
+        {
+          "name": "Bgr2Luv",
+          "value": 50
+        },
+        {
+          "name": "Rgb2Luv",
+          "value": 51
+        },
+        {
+          "name": "Bgr2Hls",
+          "value": 52
+        },
+        {
+          "name": "Rgb2Hls",
+          "value": 53
+        },
+        {
+          "name": "Hsv2Bgr",
+          "value": 54
+        },
+        {
+          "name": "Hsv2Rgb",
+          "value": 55
+        },
+        {
+          "name": "Lab2Bgr",
+          "value": 56
+        },
+        {
+          "name": "Lab2Rgb",
+          "value": 57
+        },
+        {
+          "name": "Luv2Bgr",
+          "value": 58
+        },
+        {
+          "name": "Luv2Rgb",
+          "value": 59
+        },
+        {
+          "name": "Hls2Bgr",
+          "value": 60
+        },
+        {
+          "name": "Hls2Rgb",
+          "value": 61
+        },
+        {
+          "name": "BayerBg2BgrVng",
+          "value": 62
+        },
+        {
+          "name": "BayerGb2BgrVng",
+          "value": 63
+        },
+        {
+          "name": "BayerRg2BgrVng",
+          "value": 64
+        },
+        {
+          "name": "BayerGr2BgrVng",
+          "value": 65
+        },
+        {
+          "name": "BayerBg2RgbVng",
+          "value": 64
+        },
+        {
+          "name": "BayerGb2RgbVng",
+          "value": 65
+        },
+        {
+          "name": "BayerRg2RgbVng",
+          "value": 62
+        },
+        {
+          "name": "BayerGr2RgbVng",
+          "value": 63
+        },
+        {
+          "name": "BayerRggb2BgrVng",
+          "value": 62
+        },
+        {
+          "name": "BayerGrbg2BgrVng",
+          "value": 63
+        },
+        {
+          "name": "BayerBggr2BgrVng",
+          "value": 64
+        },
+        {
+          "name": "BayerGbrg2BgrVng",
+          "value": 65
+        },
+        {
+          "name": "BayerRggb2RgbVng",
+          "value": 64
+        },
+        {
+          "name": "BayerGrbg2RgbVng",
+          "value": 65
+        },
+        {
+          "name": "BayerBggr2RgbVng",
+          "value": 62
+        },
+        {
+          "name": "BayerGbrg2RgbVng",
+          "value": 63
+        },
+        {
+          "name": "Bgr2HsvFull",
+          "value": 66
+        },
+        {
+          "name": "Rgb2HsvFull",
+          "value": 67
+        },
+        {
+          "name": "Bgr2HlsFull",
+          "value": 68
+        },
+        {
+          "name": "Rgb2HlsFull",
+          "value": 69
+        },
+        {
+          "name": "Hsv2BgrFull",
+          "value": 70
+        },
+        {
+          "name": "Hsv2RgbFull",
+          "value": 71
+        },
+        {
+          "name": "Hls2BgrFull",
+          "value": 72
+        },
+        {
+          "name": "Hls2RgbFull",
+          "value": 73
+        },
+        {
+          "name": "Lbgr2Lab",
+          "value": 74
+        },
+        {
+          "name": "Lrgb2Lab",
+          "value": 75
+        },
+        {
+          "name": "Lbgr2Luv",
+          "value": 76
+        },
+        {
+          "name": "Lrgb2Luv",
+          "value": 77
+        },
+        {
+          "name": "Lab2Lbgr",
+          "value": 78
+        },
+        {
+          "name": "Lab2Lrgb",
+          "value": 79
+        },
+        {
+          "name": "Luv2Lbgr",
+          "value": 80
+        },
+        {
+          "name": "Luv2Lrgb",
+          "value": 81
+        },
+        {
+          "name": "Bgr2Yuv",
+          "value": 82
+        },
+        {
+          "name": "Rgb2Yuv",
+          "value": 83
+        },
+        {
+          "name": "Yuv2Bgr",
+          "value": 84
+        },
+        {
+          "name": "Yuv2Rgb",
+          "value": 85
+        },
+        {
+          "name": "BayerBg2Gray",
+          "value": 86
+        },
+        {
+          "name": "BayerGb2Gray",
+          "value": 87
+        },
+        {
+          "name": "BayerRg2Gray",
+          "value": 88
+        },
+        {
+          "name": "BayerGr2Gray",
+          "value": 89
+        },
+        {
+          "name": "BayerRggb2Gray",
+          "value": 86
+        },
+        {
+          "name": "BayerGrbg2Gray",
+          "value": 87
+        },
+        {
+          "name": "BayerBggr2Gray",
+          "value": 88
+        },
+        {
+          "name": "BayerGbrg2Gray",
+          "value": 89
+        },
+        {
+          "name": "Yuv2RgbNv12",
+          "value": 90
+        },
+        {
+          "name": "Yuv2BgrNv12",
+          "value": 91
+        },
+        {
+          "name": "Yuv2RgbNv21",
+          "value": 92
+        },
+        {
+          "name": "Yuv2BgrNv21",
+          "value": 93
+        },
+        {
+          "name": "Yuv420sp2Rgb",
+          "value": 92
+        },
+        {
+          "name": "Yuv420sp2Bgr",
+          "value": 93
+        },
+        {
+          "name": "Yuv2RgbaNv12",
+          "value": 94
+        },
+        {
+          "name": "Yuv2BgraNv12",
+          "value": 95
+        },
+        {
+          "name": "Yuv2RgbaNv21",
+          "value": 96
+        },
+        {
+          "name": "Yuv2BgraNv21",
+          "value": 97
+        },
+        {
+          "name": "Yuv420sp2Rgba",
+          "value": 96
+        },
+        {
+          "name": "Yuv420sp2Bgra",
+          "value": 97
+        },
+        {
+          "name": "Yuv2RgbYv12",
+          "value": 98
+        },
+        {
+          "name": "Yuv2BgrYv12",
+          "value": 99
+        },
+        {
+          "name": "Yuv2RgbIyuv",
+          "value": 100
+        },
+        {
+          "name": "Yuv2BgrIyuv",
+          "value": 101
+        },
+        {
+          "name": "Yuv2RgbI420",
+          "value": 100
+        },
+        {
+          "name": "Yuv2BgrI420",
+          "value": 101
+        },
+        {
+          "name": "Yuv420P2Rgb",
+          "value": 98
+        },
+        {
+          "name": "Yuv420P2Bgr",
+          "value": 99
+        },
+        {
+          "name": "Yuv2RgbaYv12",
+          "value": 102
+        },
+        {
+          "name": "Yuv2BgraYv12",
+          "value": 103
+        },
+        {
+          "name": "Yuv2RgbaIyuv",
+          "value": 104
+        },
+        {
+          "name": "Yuv2BgraIyuv",
+          "value": 105
+        },
+        {
+          "name": "Yuv2RgbaI420",
+          "value": 104
+        },
+        {
+          "name": "Yuv2BgraI420",
+          "value": 105
+        },
+        {
+          "name": "Yuv420P2Rgba",
+          "value": 102
+        },
+        {
+          "name": "Yuv420P2Bgra",
+          "value": 103
+        },
+        {
+          "name": "Yuv2Gray420",
+          "value": 106
+        },
+        {
+          "name": "Yuv2GrayNv21",
+          "value": 106
+        },
+        {
+          "name": "Yuv2GrayNv12",
+          "value": 106
+        },
+        {
+          "name": "Yuv2GrayYv12",
+          "value": 106
+        },
+        {
+          "name": "Yuv2GrayIyuv",
+          "value": 106
+        },
+        {
+          "name": "Yuv2GrayI420",
+          "value": 106
+        },
+        {
+          "name": "Yuv420Sp2Gray",
+          "value": 106
+        },
+        {
+          "name": "Yuv420P2Gray",
+          "value": 106
+        },
+        {
+          "name": "Yuv2RgbUyvy",
+          "value": 107
+        },
+        {
+          "name": "Yuv2BgrUyvy",
+          "value": 108
+        },
+        {
+          "name": "Yuv2RgbY422",
+          "value": 107
+        },
+        {
+          "name": "Yuv2BgrY422",
+          "value": 108
+        },
+        {
+          "name": "Yuv2RgbUynv",
+          "value": 107
+        },
+        {
+          "name": "Yuv2BgrUynv",
+          "value": 108
+        },
+        {
+          "name": "Yuv2RgbaUyvy",
+          "value": 111
+        },
+        {
+          "name": "Yuv2BgraUyvy",
+          "value": 112
+        },
+        {
+          "name": "Yuv2RgbaY422",
+          "value": 111
+        },
+        {
+          "name": "Yuv2BgraY422",
+          "value": 112
+        },
+        {
+          "name": "Yuv2RgbaUynv",
+          "value": 111
+        },
+        {
+          "name": "Yuv2BgraUynv",
+          "value": 112
+        },
+        {
+          "name": "Yuv2RgbYuy2",
+          "value": 115
+        },
+        {
+          "name": "Yuv2BgrYuy2",
+          "value": 116
+        },
+        {
+          "name": "Yuv2RgbYvyu",
+          "value": 117
+        },
+        {
+          "name": "Yuv2BgrYvyu",
+          "value": 118
+        },
+        {
+          "name": "Yuv2RgbYuyv",
+          "value": 115
+        },
+        {
+          "name": "Yuv2BgrYuyv",
+          "value": 116
+        },
+        {
+          "name": "Yuv2RgbYunv",
+          "value": 115
+        },
+        {
+          "name": "Yuv2BgrYunv",
+          "value": 116
+        },
+        {
+          "name": "Yuv2RgbaYuy2",
+          "value": 119
+        },
+        {
+          "name": "Yuv2BgraYuy2",
+          "value": 120
+        },
+        {
+          "name": "Yuv2RgbaYvyu",
+          "value": 121
+        },
+        {
+          "name": "Yuv2BgraYvyu",
+          "value": 122
+        },
+        {
+          "name": "Yuv2RgbaYuyv",
+          "value": 119
+        },
+        {
+          "name": "Yuv2BgraYuyv",
+          "value": 120
+        },
+        {
+          "name": "Yuv2RgbaYunv",
+          "value": 119
+        },
+        {
+          "name": "Yuv2BgraYunv",
+          "value": 120
+        },
+        {
+          "name": "Yuv2GrayUyvy",
+          "value": 123
+        },
+        {
+          "name": "Yuv2GrayYuy2",
+          "value": 124
+        },
+        {
+          "name": "Yuv2GrayY422",
+          "value": 123
+        },
+        {
+          "name": "Yuv2GrayUynv",
+          "value": 123
+        },
+        {
+          "name": "Yuv2GrayYvyu",
+          "value": 124
+        },
+        {
+          "name": "Yuv2GrayYuyv",
+          "value": 124
+        },
+        {
+          "name": "Yuv2GrayYunv",
+          "value": 124
+        },
+        {
+          "name": "Rgba2MRgba",
+          "value": 125
+        },
+        {
+          "name": "MRgba2Rgba",
+          "value": 126
+        },
+        {
+          "name": "Rgb2YuvI420",
+          "value": 127
+        },
+        {
+          "name": "Bgr2YuvI420",
+          "value": 128
+        },
+        {
+          "name": "Rgb2YuvIyuv",
+          "value": 127
+        },
+        {
+          "name": "Bgr2YuvIyuv",
+          "value": 128
+        },
+        {
+          "name": "Rgba2YuvI420",
+          "value": 129
+        },
+        {
+          "name": "Bgra2YuvI420",
+          "value": 130
+        },
+        {
+          "name": "Rgba2YuvIyuv",
+          "value": 129
+        },
+        {
+          "name": "Bgra2YuvIyuv",
+          "value": 130
+        },
+        {
+          "name": "Rgb2YuvYv12",
+          "value": 131
+        },
+        {
+          "name": "Bgr2YuvYv12",
+          "value": 132
+        },
+        {
+          "name": "Rgba2YuvYv12",
+          "value": 133
+        },
+        {
+          "name": "Bgra2YuvYv12",
+          "value": 134
+        },
+        {
+          "name": "BayerBg2BgrEa",
+          "value": 135
+        },
+        {
+          "name": "BayerGb2BgrEa",
+          "value": 136
+        },
+        {
+          "name": "BayerRg2BgrEa",
+          "value": 137
+        },
+        {
+          "name": "BayerGr2BgrEa",
+          "value": 138
+        },
+        {
+          "name": "BayerBg2RgbEa",
+          "value": 137
+        },
+        {
+          "name": "BayerGb2RgbEa",
+          "value": 138
+        },
+        {
+          "name": "BayerRg2RgbEa",
+          "value": 135
+        },
+        {
+          "name": "BayerGr2RgbEa",
+          "value": 136
+        },
+        {
+          "name": "BayerRggb2BgrEa",
+          "value": 135
+        },
+        {
+          "name": "BayerGrbg2BgrEa",
+          "value": 136
+        },
+        {
+          "name": "BayerBggr2BgrEa",
+          "value": 137
+        },
+        {
+          "name": "BayerGbrg2BgrEa",
+          "value": 138
+        },
+        {
+          "name": "BayerRggb2RgbEa",
+          "value": 137
+        },
+        {
+          "name": "BayerGrbg2RgbEa",
+          "value": 138
+        },
+        {
+          "name": "BayerBggr2RgbEa",
+          "value": 135
+        },
+        {
+          "name": "BayerGbrg2RgbEa",
+          "value": 136
+        },
+        {
+          "name": "BayerBg2Bgra",
+          "value": 139
+        },
+        {
+          "name": "BayerGb2Bgra",
+          "value": 140
+        },
+        {
+          "name": "BayerRg2Bgra",
+          "value": 141
+        },
+        {
+          "name": "BayerGr2Bgra",
+          "value": 142
+        },
+        {
+          "name": "BayerRggb2Bgra",
+          "value": 139
+        },
+        {
+          "name": "BayerGrbg2Bgra",
+          "value": 140
+        },
+        {
+          "name": "BayerBggr2Bgra",
+          "value": 141
+        },
+        {
+          "name": "BayerGbrg2Bgra",
+          "value": 142
+        },
+        {
+          "name": "BayerRggb2Rgba",
+          "value": 141
+        },
+        {
+          "name": "BayerGrbg2Rgba",
+          "value": 142
+        },
+        {
+          "name": "BayerBggr2Rgba",
+          "value": 139
+        },
+        {
+          "name": "BayerGbrg2Rgba",
+          "value": 140
+        },
+        {
+          "name": "BayerBg2Rgba",
+          "value": 141
+        },
+        {
+          "name": "BayerGb2Rgba",
+          "value": 142
+        },
+        {
+          "name": "BayerRg2Rgba",
+          "value": 139
+        },
+        {
+          "name": "BayerGr2Rgba",
+          "value": 140
+        },
+        {
+          "name": "ColorCvtMax",
+          "value": 143
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.ColorMapType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Autumn",
+          "value": 0
+        },
+        {
+          "name": "Bone",
+          "value": 1
+        },
+        {
+          "name": "Jet",
+          "value": 2
+        },
+        {
+          "name": "Winter",
+          "value": 3
+        },
+        {
+          "name": "Rainbow",
+          "value": 4
+        },
+        {
+          "name": "Ocean",
+          "value": 5
+        },
+        {
+          "name": "Summer",
+          "value": 6
+        },
+        {
+          "name": "Spring",
+          "value": 7
+        },
+        {
+          "name": "Cool",
+          "value": 8
+        },
+        {
+          "name": "Hsv",
+          "value": 9
+        },
+        {
+          "name": "Pink",
+          "value": 10
+        },
+        {
+          "name": "Hot",
+          "value": 11
+        },
+        {
+          "name": "Parula",
+          "value": 12
+        },
+        {
+          "name": "Magma",
+          "value": 13
+        },
+        {
+          "name": "Inferno",
+          "value": 14
+        },
+        {
+          "name": "Plasma",
+          "value": 15
+        },
+        {
+          "name": "Viridis",
+          "value": 16
+        },
+        {
+          "name": "Cividis",
+          "value": 17
+        },
+        {
+          "name": "Twilight",
+          "value": 18
+        },
+        {
+          "name": "TwilightShifted",
+          "value": 19
+        },
+        {
+          "name": "Turbo",
+          "value": 20
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.ConnectedComponentsAlgorithmsTypes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": -1
+        },
+        {
+          "name": "Wu",
+          "value": 0
+        },
+        {
+          "name": "Grana",
+          "value": 1
+        },
+        {
+          "name": "Bolelli",
+          "value": 2
+        },
+        {
+          "name": "Sauf",
+          "value": 3
+        },
+        {
+          "name": "Bbdt",
+          "value": 4
+        },
+        {
+          "name": "Spaghetti",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.ConnectedComponentsTypes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Left",
+          "value": 0
+        },
+        {
+          "name": "Top",
+          "value": 1
+        },
+        {
+          "name": "Width",
+          "value": 2
+        },
+        {
+          "name": "Height",
+          "value": 3
+        },
+        {
+          "name": "Area",
+          "value": 4
+        },
+        {
+          "name": "Max",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.Connectivity",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "EightConnected",
+          "value": 8
+        },
+        {
+          "name": "FourConnected",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.ContoursMatchType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "I1",
+          "value": 1
+        },
+        {
+          "name": "I2",
+          "value": 2
+        },
+        {
+          "name": "I3",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.CovarMethod",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Scrambled",
+          "value": 0
+        },
+        {
+          "name": "Normal",
+          "value": 1
+        },
+        {
+          "name": "UseAvg",
+          "value": 2
+        },
+        {
+          "name": "Scale",
+          "value": 4
+        },
+        {
+          "name": "Rows",
+          "value": 8
+        },
+        {
+          "name": "Cols",
+          "value": 16
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.DctType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Forward",
+          "value": 0
+        },
+        {
+          "name": "Inverse",
+          "value": 1
+        },
+        {
+          "name": "Rows",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.DecompMethod",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "LU",
+          "value": 0
+        },
+        {
+          "name": "Svd",
+          "value": 1
+        },
+        {
+          "name": "Eig",
+          "value": 2
+        },
+        {
+          "name": "Cholesky",
+          "value": 3
+        },
+        {
+          "name": "QR",
+          "value": 4
+        },
+        {
+          "name": "Normal",
+          "value": 16
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.DepthType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": -1
+        },
+        {
+          "name": "Cv8U",
+          "value": 0
+        },
+        {
+          "name": "Cv8S",
+          "value": 1
+        },
+        {
+          "name": "Cv16U",
+          "value": 2
+        },
+        {
+          "name": "Cv16S",
+          "value": 3
+        },
+        {
+          "name": "Cv32S",
+          "value": 4
+        },
+        {
+          "name": "Cv32F",
+          "value": 5
+        },
+        {
+          "name": "Cv64F",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.DistLabelType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "CComp",
+          "value": 0
+        },
+        {
+          "name": "Pixel",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.DistType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "User",
+          "value": -1
+        },
+        {
+          "name": "L1",
+          "value": 1
+        },
+        {
+          "name": "L2",
+          "value": 2
+        },
+        {
+          "name": "C",
+          "value": 3
+        },
+        {
+          "name": "L12",
+          "value": 4
+        },
+        {
+          "name": "Fair",
+          "value": 5
+        },
+        {
+          "name": "Welsch",
+          "value": 6
+        },
+        {
+          "name": "Huber",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.DxtType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Forward",
+          "value": 0
+        },
+        {
+          "name": "Inverse",
+          "value": 1
+        },
+        {
+          "name": "Scale",
+          "value": 2
+        },
+        {
+          "name": "Rows",
+          "value": 4
+        },
+        {
+          "name": "InvScale",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.EdgePreservingFilterFlag",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "RecursFilter",
+          "value": 1
+        },
+        {
+          "name": "NormconvFilter",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.EigobjType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NoCallback",
+          "value": 0
+        },
+        {
+          "name": "InputCallback",
+          "value": 1
+        },
+        {
+          "name": "OutputCallback",
+          "value": 2
+        },
+        {
+          "name": "BothCallback",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.ElementShape",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Rectangle",
+          "value": 0
+        },
+        {
+          "name": "Cross",
+          "value": 1
+        },
+        {
+          "name": "Ellipse",
+          "value": 2
+        },
+        {
+          "name": "Custom",
+          "value": 100
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.ErrorCodes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "StsOk",
+          "value": 0
+        },
+        {
+          "name": "StsBacktrace",
+          "value": -1
+        },
+        {
+          "name": "StsError",
+          "value": -2
+        },
+        {
+          "name": "StsInternal",
+          "value": -3
+        },
+        {
+          "name": "StsNoMem",
+          "value": -4
+        },
+        {
+          "name": "StsBadArg",
+          "value": -5
+        },
+        {
+          "name": "StsBadFunc",
+          "value": -6
+        },
+        {
+          "name": "StsNoConv",
+          "value": -7
+        },
+        {
+          "name": "StsAutoTrace",
+          "value": -8
+        },
+        {
+          "name": "HeaderIsNull",
+          "value": -9
+        },
+        {
+          "name": "BadImageSize",
+          "value": -10
+        },
+        {
+          "name": "BadOffset",
+          "value": -11
+        },
+        {
+          "name": "BadDataPtr",
+          "value": -12
+        },
+        {
+          "name": "Badstep",
+          "value": -13
+        },
+        {
+          "name": "BadModelOrChseq",
+          "value": -14
+        },
+        {
+          "name": "BadNumChannels",
+          "value": -15
+        },
+        {
+          "name": "BadNumChannel1U",
+          "value": -16
+        },
+        {
+          "name": "BadDepth",
+          "value": -17
+        },
+        {
+          "name": "BadAlphaChannel",
+          "value": -18
+        },
+        {
+          "name": "BadOrder",
+          "value": -19
+        },
+        {
+          "name": "BadOrigin",
+          "value": -20
+        },
+        {
+          "name": "BadAlign",
+          "value": -21
+        },
+        {
+          "name": "BadCallback",
+          "value": -22
+        },
+        {
+          "name": "BadTileSize",
+          "value": -23
+        },
+        {
+          "name": "BadCoi",
+          "value": -24
+        },
+        {
+          "name": "BadRoiSize",
+          "value": -25
+        },
+        {
+          "name": "MaskIsTiled",
+          "value": -26
+        },
+        {
+          "name": "StsNullPtr",
+          "value": -27
+        },
+        {
+          "name": "StsVecLengthErr",
+          "value": -28
+        },
+        {
+          "name": "StsFilterStructContenterr",
+          "value": -29
+        },
+        {
+          "name": "StsKernelStructContenterr",
+          "value": -30
+        },
+        {
+          "name": "StsFilterOffSetErr",
+          "value": -31
+        },
+        {
+          "name": "StsBadSize",
+          "value": -201
+        },
+        {
+          "name": "StsDivByZero",
+          "value": -202
+        },
+        {
+          "name": "StsInplaceNotSupported",
+          "value": -203
+        },
+        {
+          "name": "StsObjectNotFound",
+          "value": -204
+        },
+        {
+          "name": "StsUnmatchedFormats",
+          "value": -205
+        },
+        {
+          "name": "StsBadFlag",
+          "value": -206
+        },
+        {
+          "name": "StsBadPoint",
+          "value": -207
+        },
+        {
+          "name": "StsBadMask",
+          "value": -208
+        },
+        {
+          "name": "StsUnmatchedSizes",
+          "value": -209
+        },
+        {
+          "name": "StsUnsupportedFormat",
+          "value": -210
+        },
+        {
+          "name": "StsOutOfRange",
+          "value": -211
+        },
+        {
+          "name": "StsParseError",
+          "value": -212
+        },
+        {
+          "name": "StsNotImplemented",
+          "value": -213
+        },
+        {
+          "name": "StsBadMemBlock",
+          "value": -214
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.FlipType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Vertical",
+          "value": 0
+        },
+        {
+          "name": "Horizontal",
+          "value": 1
+        },
+        {
+          "name": "Both",
+          "value": -1
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.FloodFillType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "FixedRange",
+          "value": 65536
+        },
+        {
+          "name": "MaskOnly",
+          "value": 131072
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.FmType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "SevenPoint",
+          "value": 1
+        },
+        {
+          "name": "EightPoint",
+          "value": 2
+        },
+        {
+          "name": "LMedsOnly",
+          "value": 4
+        },
+        {
+          "name": "RansacOnly",
+          "value": 8
+        },
+        {
+          "name": "LMeds",
+          "value": 6
+        },
+        {
+          "name": "Ransac",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.FontFace",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "HersheySimplex",
+          "value": 0
+        },
+        {
+          "name": "HersheyPlain",
+          "value": 1
+        },
+        {
+          "name": "HersheyDuplex",
+          "value": 2
+        },
+        {
+          "name": "HersheyComplex",
+          "value": 3
+        },
+        {
+          "name": "HersheyTriplex",
+          "value": 4
+        },
+        {
+          "name": "HersheyComplexSmall",
+          "value": 5
+        },
+        {
+          "name": "HersheyScriptSimplex",
+          "value": 6
+        },
+        {
+          "name": "HersheyScriptComplex",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.GemmType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "Src1Transpose",
+          "value": 1
+        },
+        {
+          "name": "Src2Transpose",
+          "value": 2
+        },
+        {
+          "name": "Src3Transpose",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.General",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "MaxDim",
+          "value": 32
+        },
+        {
+          "name": "SeqMagicVal",
+          "value": 1117323264
+        },
+        {
+          "name": "SetMagicVal",
+          "value": 1117257728
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.GrabcutInitType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "InitWithRect",
+          "value": 0
+        },
+        {
+          "name": "InitWithMask",
+          "value": 1
+        },
+        {
+          "name": "Eval",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.HaarDetectionType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "DoCannyPruning",
+          "value": 1
+        },
+        {
+          "name": "ScaleImage",
+          "value": 2
+        },
+        {
+          "name": "FindBiggestObject",
+          "value": 4
+        },
+        {
+          "name": "DoRoughSearch",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.HandEyeCalibrationMethod",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Tsai",
+          "value": 0
+        },
+        {
+          "name": "Park",
+          "value": 1
+        },
+        {
+          "name": "Horaud",
+          "value": 2
+        },
+        {
+          "name": "Andreff",
+          "value": 3
+        },
+        {
+          "name": "Daniilidis",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.HistogramCompMethod",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Correl",
+          "value": 0
+        },
+        {
+          "name": "Chisqr",
+          "value": 1
+        },
+        {
+          "name": "Intersect",
+          "value": 2
+        },
+        {
+          "name": "Bhattacharyya",
+          "value": 3
+        },
+        {
+          "name": "Hellinger",
+          "value": 3
+        },
+        {
+          "name": "ChisqrAlt",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.HoughModes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Standard",
+          "value": 0
+        },
+        {
+          "name": "Probabilistic",
+          "value": 1
+        },
+        {
+          "name": "MultiScale",
+          "value": 2
+        },
+        {
+          "name": "Gradient",
+          "value": 3
+        },
+        {
+          "name": "GradientAlt",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.ImreadModes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unchanged",
+          "value": -1
+        },
+        {
+          "name": "Grayscale",
+          "value": 0
+        },
+        {
+          "name": "Color",
+          "value": 1
+        },
+        {
+          "name": "AnyDepth",
+          "value": 2
+        },
+        {
+          "name": "AnyColor",
+          "value": 4
+        },
+        {
+          "name": "LoadGdal",
+          "value": 8
+        },
+        {
+          "name": "ReducedGrayscale2",
+          "value": 16
+        },
+        {
+          "name": "ReducedColor2",
+          "value": 17
+        },
+        {
+          "name": "ReducedGrayscale4",
+          "value": 32
+        },
+        {
+          "name": "ReducedColor4",
+          "value": 33
+        },
+        {
+          "name": "ReducedGrayscale8",
+          "value": 64
+        },
+        {
+          "name": "ReducedColor8",
+          "value": 65
+        },
+        {
+          "name": "IgnoreOrientation",
+          "value": 128
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.ImwriteFlags",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "JpegQuality",
+          "value": 1
+        },
+        {
+          "name": "JpegProgressive",
+          "value": 2
+        },
+        {
+          "name": "JpegOptimize",
+          "value": 3
+        },
+        {
+          "name": "JpegRstInterval",
+          "value": 4
+        },
+        {
+          "name": "JpegLumaQuality",
+          "value": 5
+        },
+        {
+          "name": "JpegChromaQuality",
+          "value": 6
+        },
+        {
+          "name": "PngCompression",
+          "value": 16
+        },
+        {
+          "name": "PngStrategy",
+          "value": 17
+        },
+        {
+          "name": "PngBilevel",
+          "value": 18
+        },
+        {
+          "name": "PxmBinary",
+          "value": 32
+        },
+        {
+          "name": "ExrType",
+          "value": 48
+        },
+        {
+          "name": "ExrCompression",
+          "value": 49
+        },
+        {
+          "name": "WebpQuality",
+          "value": 64
+        },
+        {
+          "name": "PamTupletype",
+          "value": 128
+        },
+        {
+          "name": "TiffResunit",
+          "value": 256
+        },
+        {
+          "name": "TiffXdpi",
+          "value": 257
+        },
+        {
+          "name": "TiffYdpi",
+          "value": 258
+        },
+        {
+          "name": "TiffCompression",
+          "value": 259
+        },
+        {
+          "name": "Jpeg2000CompressionX1000",
+          "value": 272
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.InpaintType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NS",
+          "value": 0
+        },
+        {
+          "name": "Telea",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.Inter",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Nearest",
+          "value": 0
+        },
+        {
+          "name": "Linear",
+          "value": 1
+        },
+        {
+          "name": "Cubic",
+          "value": 2
+        },
+        {
+          "name": "Area",
+          "value": 3
+        },
+        {
+          "name": "Lanczos4",
+          "value": 4
+        },
+        {
+          "name": "LinearExact",
+          "value": 5
+        },
+        {
+          "name": "NearestExact",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.IplDepth",
+      "underlyingType": "System.UInt32",
+      "members": [
+        {
+          "name": "IplDepthSign",
+          "value": 2147483648
+        },
+        {
+          "name": "IplDepth_1U",
+          "value": 1
+        },
+        {
+          "name": "IplDepth_8U",
+          "value": 8
+        },
+        {
+          "name": "IplDepth16U",
+          "value": 16
+        },
+        {
+          "name": "IplDepth32F",
+          "value": 32
+        },
+        {
+          "name": "IplDepth_8S",
+          "value": 2147483656
+        },
+        {
+          "name": "IplDepth16S",
+          "value": 2147483664
+        },
+        {
+          "name": "IplDepth32S",
+          "value": 2147483680
+        },
+        {
+          "name": "IplDepth64F",
+          "value": 64
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.KMeansInitType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "RandomCenters",
+          "value": 0
+        },
+        {
+          "name": "UseInitialLabels",
+          "value": 1
+        },
+        {
+          "name": "PPCenters",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.LineType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Filled",
+          "value": -1
+        },
+        {
+          "name": "EightConnected",
+          "value": 8
+        },
+        {
+          "name": "FourConnected",
+          "value": 4
+        },
+        {
+          "name": "AntiAlias",
+          "value": 16
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.LKFlowFlag",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "UserInitialFlow",
+          "value": 4
+        },
+        {
+          "name": "LKGetMinEigenvals",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.LogLevel",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Silent",
+          "value": 0
+        },
+        {
+          "name": "Fatal",
+          "value": 1
+        },
+        {
+          "name": "Error",
+          "value": 2
+        },
+        {
+          "name": "Warning",
+          "value": 3
+        },
+        {
+          "name": "Info",
+          "value": 4
+        },
+        {
+          "name": "Debug",
+          "value": 5
+        },
+        {
+          "name": "Verbose",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.MarkerTypes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Cross",
+          "value": 0
+        },
+        {
+          "name": "TiltedCross",
+          "value": 1
+        },
+        {
+          "name": "Star",
+          "value": 2
+        },
+        {
+          "name": "Diamond",
+          "value": 3
+        },
+        {
+          "name": "Square",
+          "value": 4
+        },
+        {
+          "name": "TriangleUp",
+          "value": 5
+        },
+        {
+          "name": "TriangleDown",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.MorphOp",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Erode",
+          "value": 0
+        },
+        {
+          "name": "Dilate",
+          "value": 1
+        },
+        {
+          "name": "Open",
+          "value": 2
+        },
+        {
+          "name": "Close",
+          "value": 3
+        },
+        {
+          "name": "Gradient",
+          "value": 4
+        },
+        {
+          "name": "Tophat",
+          "value": 5
+        },
+        {
+          "name": "Blackhat",
+          "value": 6
+        },
+        {
+          "name": "HitMiss",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.MotionType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Translation",
+          "value": 0
+        },
+        {
+          "name": "Euclidean",
+          "value": 1
+        },
+        {
+          "name": "Affine",
+          "value": 2
+        },
+        {
+          "name": "Homography",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.MulSpectrumsType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "DxtRows",
+          "value": 4
+        },
+        {
+          "name": "DxtMulConj",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.NormType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "C",
+          "value": 1
+        },
+        {
+          "name": "L1",
+          "value": 2
+        },
+        {
+          "name": "L2",
+          "value": 4
+        },
+        {
+          "name": "NormMask",
+          "value": 7
+        },
+        {
+          "name": "Relative",
+          "value": 8
+        },
+        {
+          "name": "Diff",
+          "value": 16
+        },
+        {
+          "name": "MinMax",
+          "value": 32
+        },
+        {
+          "name": "DiffC",
+          "value": 17
+        },
+        {
+          "name": "DiffL1",
+          "value": 18
+        },
+        {
+          "name": "DiffL2",
+          "value": 20
+        },
+        {
+          "name": "RelativeC",
+          "value": 9
+        },
+        {
+          "name": "RelativeL1",
+          "value": 10
+        },
+        {
+          "name": "RelativeL2",
+          "value": 12
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.OpticalflowFarnebackFlag",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "UseInitialFlow",
+          "value": 4
+        },
+        {
+          "name": "FarnebackGaussian",
+          "value": 256
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.Orientation",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Clockwise",
+          "value": 1
+        },
+        {
+          "name": "CounterClockwise",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.PcaType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DataAsRow",
+          "value": 0
+        },
+        {
+          "name": "DataAsCol",
+          "value": 1
+        },
+        {
+          "name": "UseAvg",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.RectIntersectType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Partial",
+          "value": 1
+        },
+        {
+          "name": "Full",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.ReduceDimension",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "SingleRow",
+          "value": 0
+        },
+        {
+          "name": "SingleCol",
+          "value": 1
+        },
+        {
+          "name": "Auto",
+          "value": -1
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.ReduceType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ReduceSum",
+          "value": 0
+        },
+        {
+          "name": "ReduceAvg",
+          "value": 1
+        },
+        {
+          "name": "ReduceMax",
+          "value": 2
+        },
+        {
+          "name": "ReduceMin",
+          "value": 3
+        },
+        {
+          "name": "ReduceSum2",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.RetrType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "External",
+          "value": 0
+        },
+        {
+          "name": "List",
+          "value": 1
+        },
+        {
+          "name": "Ccomp",
+          "value": 2
+        },
+        {
+          "name": "Tree",
+          "value": 3
+        },
+        {
+          "name": "Floodfill",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.RobustEstimationAlgorithm",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AllPoints",
+          "value": 0
+        },
+        {
+          "name": "LMEDS",
+          "value": 4
+        },
+        {
+          "name": "Ransac",
+          "value": 8
+        },
+        {
+          "name": "RHO",
+          "value": 16
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.RotateFlags",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Rotate90Clockwise",
+          "value": 0
+        },
+        {
+          "name": "Rotate180",
+          "value": 1
+        },
+        {
+          "name": "Rotate90CounterClockwise",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.SeqEltype",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Point",
+          "value": 12
+        },
+        {
+          "name": "Code",
+          "value": 0
+        },
+        {
+          "name": "Generic",
+          "value": 0
+        },
+        {
+          "name": "Ptr",
+          "value": 7
+        },
+        {
+          "name": "Ppoint",
+          "value": 7
+        },
+        {
+          "name": "Index",
+          "value": 4
+        },
+        {
+          "name": "GraphEdge",
+          "value": 0
+        },
+        {
+          "name": "GraphVertex",
+          "value": 0
+        },
+        {
+          "name": "TrainAtr",
+          "value": 0
+        },
+        {
+          "name": "ConnectedComp",
+          "value": 0
+        },
+        {
+          "name": "Point3D",
+          "value": 56
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.SeqFlag",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Closed",
+          "value": 16384
+        },
+        {
+          "name": "Simple",
+          "value": 32768
+        },
+        {
+          "name": "Convex",
+          "value": 65536
+        },
+        {
+          "name": "Hole",
+          "value": 131072
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.SeqKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Generic",
+          "value": 0
+        },
+        {
+          "name": "Curve",
+          "value": 4096
+        },
+        {
+          "name": "BinTree",
+          "value": 8192
+        },
+        {
+          "name": "Graph",
+          "value": 4096
+        },
+        {
+          "name": "Subdiv2D",
+          "value": 8192
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.SeqType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "PointSet",
+          "value": 12
+        },
+        {
+          "name": "Point3DSet",
+          "value": 56
+        },
+        {
+          "name": "Polyline",
+          "value": 4108
+        },
+        {
+          "name": "Polygon",
+          "value": 20492
+        },
+        {
+          "name": "SimplePolygon",
+          "value": 53260
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.SmoothType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "BlurNoScale",
+          "value": 0
+        },
+        {
+          "name": "Blur",
+          "value": 1
+        },
+        {
+          "name": "Gaussian",
+          "value": 2
+        },
+        {
+          "name": "Median",
+          "value": 3
+        },
+        {
+          "name": "Bilateral",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.SoftNMSMethod",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Linear",
+          "value": 1
+        },
+        {
+          "name": "Gaussian",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.SolveLPResult",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unbounded",
+          "value": -2
+        },
+        {
+          "name": "Unfeasible",
+          "value": -1
+        },
+        {
+          "name": "Single",
+          "value": 0
+        },
+        {
+          "name": "Multi",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.SolvePnpMethod",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Iterative",
+          "value": 0
+        },
+        {
+          "name": "EPnP",
+          "value": 1
+        },
+        {
+          "name": "P3P",
+          "value": 2
+        },
+        {
+          "name": "Dls",
+          "value": 3
+        },
+        {
+          "name": "UPnP",
+          "value": 4
+        },
+        {
+          "name": "AP3P",
+          "value": 5
+        },
+        {
+          "name": "IPPE",
+          "value": 6
+        },
+        {
+          "name": "IPPESquare",
+          "value": 7
+        },
+        {
+          "name": "SQPNP",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.SortFlags",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "SortEveryRow",
+          "value": 0
+        },
+        {
+          "name": "SortEveryColumn",
+          "value": 1
+        },
+        {
+          "name": "SortAscending",
+          "value": 0
+        },
+        {
+          "name": "SortDescending",
+          "value": 16
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.StereoBmPrefilter",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NormalizedResponse",
+          "value": 0
+        },
+        {
+          "name": "XSobel",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.StereoRectifyType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "CalibZeroDisparity",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.StorageOp",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Read",
+          "value": 0
+        },
+        {
+          "name": "Write",
+          "value": 1
+        },
+        {
+          "name": "Append",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.Subdiv2DPointLocationType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Error",
+          "value": -2
+        },
+        {
+          "name": "OutsideRect",
+          "value": -1
+        },
+        {
+          "name": "Inside",
+          "value": 0
+        },
+        {
+          "name": "Vertex",
+          "value": 1
+        },
+        {
+          "name": "OnEdge",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.SvdFlag",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "ModifyA",
+          "value": 1
+        },
+        {
+          "name": "NoUV",
+          "value": 2
+        },
+        {
+          "name": "FullUV",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.TemplateMatchingType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Sqdiff",
+          "value": 0
+        },
+        {
+          "name": "SqdiffNormed",
+          "value": 1
+        },
+        {
+          "name": "Ccorr",
+          "value": 2
+        },
+        {
+          "name": "CcorrNormed",
+          "value": 3
+        },
+        {
+          "name": "Ccoeff",
+          "value": 4
+        },
+        {
+          "name": "CcoeffNormed",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.TermCritType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Count",
+          "value": 1
+        },
+        {
+          "name": "MaxIter",
+          "value": 1
+        },
+        {
+          "name": "Eps",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.ThresholdType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Binary",
+          "value": 0
+        },
+        {
+          "name": "BinaryInv",
+          "value": 1
+        },
+        {
+          "name": "Trunc",
+          "value": 2
+        },
+        {
+          "name": "ToZero",
+          "value": 3
+        },
+        {
+          "name": "ToZeroInv",
+          "value": 4
+        },
+        {
+          "name": "Mask",
+          "value": 7
+        },
+        {
+          "name": "Otsu",
+          "value": 8
+        },
+        {
+          "name": "Triangle",
+          "value": 16
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.VideoAccelerationType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Any",
+          "value": 1
+        },
+        {
+          "name": "D3D11",
+          "value": 2
+        },
+        {
+          "name": "VaAPI",
+          "value": 3
+        },
+        {
+          "name": "Mfx",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.Warp",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "FillOutliers",
+          "value": 8
+        },
+        {
+          "name": "InverseMap",
+          "value": 16
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.WindowFlags",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Normal",
+          "value": 0
+        },
+        {
+          "name": "AutoSize",
+          "value": 1
+        },
+        {
+          "name": "Opengl",
+          "value": 4096
+        },
+        {
+          "name": "Fullscreen",
+          "value": 1
+        },
+        {
+          "name": "FreeRatio",
+          "value": 256
+        },
+        {
+          "name": "KeepRatio",
+          "value": 0
+        },
+        {
+          "name": "GuiExpanded",
+          "value": 0
+        },
+        {
+          "name": "GuiNormal",
+          "value": 16
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.WindowPropertyFlags",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "FullScreen",
+          "value": 0
+        },
+        {
+          "name": "AutoSize",
+          "value": 1
+        },
+        {
+          "name": "AspectRatio",
+          "value": 2
+        },
+        {
+          "name": "Opengl",
+          "value": 3
+        },
+        {
+          "name": "Visible",
+          "value": 4
+        },
+        {
+          "name": "TopMost",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.CvEnum.StereoOutputFormat",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DepthFloat16",
+          "value": 0
+        },
+        {
+          "name": "DepthFloat32",
+          "value": 1
+        },
+        {
+          "name": "DisparityFixed_16_11_5",
+          "value": 2
+        },
+        {
+          "name": "DisparityFixed16_12_4",
+          "value": 3
+        },
+        {
+          "name": "Depth16F",
+          "value": 0
+        },
+        {
+          "name": "Depth32F",
+          "value": 1
+        },
+        {
+          "name": "Disparity_16Q_10_5",
+          "value": 2
+        },
+        {
+          "name": "Disparity_16Q_11_4",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.Dnn.Backend",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "Halide",
+          "value": 1
+        },
+        {
+          "name": "InferenceEngine",
+          "value": 2
+        },
+        {
+          "name": "OpenCV",
+          "value": 3
+        },
+        {
+          "name": "VkCom",
+          "value": 4
+        },
+        {
+          "name": "Cuda",
+          "value": 5
+        },
+        {
+          "name": "Webnn",
+          "value": 6
+        },
+        {
+          "name": "Timvx",
+          "value": 7
+        },
+        {
+          "name": "Cann",
+          "value": 8
+        },
+        {
+          "name": "InferenceEngineNgraph",
+          "value": 1000000
+        },
+        {
+          "name": "InferenceEngineNnBuilder2019",
+          "value": 1000001
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.Dnn.Target",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Cpu",
+          "value": 0
+        },
+        {
+          "name": "OpenCL",
+          "value": 1
+        },
+        {
+          "name": "OpenCLFp16",
+          "value": 2
+        },
+        {
+          "name": "Myriad",
+          "value": 3
+        },
+        {
+          "name": "Vulkan",
+          "value": 4
+        },
+        {
+          "name": "FPGA",
+          "value": 5
+        },
+        {
+          "name": "Cuda",
+          "value": 6
+        },
+        {
+          "name": "CudaFp16",
+          "value": 7
+        },
+        {
+          "name": "HDDL",
+          "value": 8
+        },
+        {
+          "name": "Npu",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.ML.ANN_MLP.AnnMlpActivationFunction",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Identity",
+          "value": 0
+        },
+        {
+          "name": "SigmoidSym",
+          "value": 1
+        },
+        {
+          "name": "Gaussian",
+          "value": 2
+        },
+        {
+          "name": "Relu",
+          "value": 3
+        },
+        {
+          "name": "LeakyRelu",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.ML.ANN_MLP.AnnMlpTrainMethod",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Backprop",
+          "value": 0
+        },
+        {
+          "name": "Rprop",
+          "value": 1
+        },
+        {
+          "name": "Anneal",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.ML.Boost.Type",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Discrete",
+          "value": 0
+        },
+        {
+          "name": "Real",
+          "value": 1
+        },
+        {
+          "name": "Logit",
+          "value": 2
+        },
+        {
+          "name": "Gentle",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.ML.DTrees.Flags",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "PredictAuto",
+          "value": 0
+        },
+        {
+          "name": "PredictSum",
+          "value": 256
+        },
+        {
+          "name": "PredictMaxVote",
+          "value": 512
+        },
+        {
+          "name": "PredictMask",
+          "value": 768
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.ML.EM.CovarianMatrixType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Spherical",
+          "value": 0
+        },
+        {
+          "name": "Diagonal",
+          "value": 1
+        },
+        {
+          "name": "Generic",
+          "value": 2
+        },
+        {
+          "name": "Default",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.ML.KNearest.Types",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "BruteForce",
+          "value": 1
+        },
+        {
+          "name": "KdTree",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.ML.LogisticRegression.TrainType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Batch",
+          "value": 0
+        },
+        {
+          "name": "MiniBatch",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.ML.LogisticRegression.RegularizationMethod",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Disable",
+          "value": -1
+        },
+        {
+          "name": "L1",
+          "value": 0
+        },
+        {
+          "name": "L2",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.ML.SVM.SvmType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "CSvc",
+          "value": 100
+        },
+        {
+          "name": "NuSvc",
+          "value": 101
+        },
+        {
+          "name": "OneClass",
+          "value": 102
+        },
+        {
+          "name": "EpsSvr",
+          "value": 103
+        },
+        {
+          "name": "NuSvr",
+          "value": 104
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.ML.SVM.SvmKernelType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Custom",
+          "value": -1
+        },
+        {
+          "name": "Linear",
+          "value": 0
+        },
+        {
+          "name": "Poly",
+          "value": 1
+        },
+        {
+          "name": "Rbf",
+          "value": 2
+        },
+        {
+          "name": "Sigmoid",
+          "value": 3
+        },
+        {
+          "name": "Chi2",
+          "value": 4
+        },
+        {
+          "name": "Inter",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.ML.SVM.ParamType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "C",
+          "value": 0
+        },
+        {
+          "name": "Gamma",
+          "value": 1
+        },
+        {
+          "name": "P",
+          "value": 2
+        },
+        {
+          "name": "Nu",
+          "value": 3
+        },
+        {
+          "name": "Coef",
+          "value": 4
+        },
+        {
+          "name": "Degree",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.ML.SVMSGD.SvmsgdType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Sgd",
+          "value": 0
+        },
+        {
+          "name": "Asgd",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.ML.SVMSGD.MarginType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "SoftMargin",
+          "value": 0
+        },
+        {
+          "name": "HardMargin",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.ML.MlEnum.AnnMlpTrainingFlag",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "UpdateWeights",
+          "value": 1
+        },
+        {
+          "name": "NoInputScale",
+          "value": 2
+        },
+        {
+          "name": "NoOutputScale",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.ML.MlEnum.BoostSplitCreiteria",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "Gini",
+          "value": 1
+        },
+        {
+          "name": "Misclass",
+          "value": 3
+        },
+        {
+          "name": "Sqerr",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.ML.MlEnum.BoostType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Discrete",
+          "value": 0
+        },
+        {
+          "name": "Real",
+          "value": 1
+        },
+        {
+          "name": "Logit",
+          "value": 2
+        },
+        {
+          "name": "Gentle",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.ML.MlEnum.DataLayoutType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ColSample",
+          "value": 1
+        },
+        {
+          "name": "RowSample",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.ML.MlEnum.VarType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Numerical",
+          "value": 0
+        },
+        {
+          "name": "Categorical",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.Superres.SuperResolution.OpticalFlowType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Btvl",
+          "value": 0
+        },
+        {
+          "name": "Btvl1Gpu",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.Stitching.DpSeamFinder.CostFunction",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Color",
+          "value": 0
+        },
+        {
+          "name": "ColorGrad",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.Stitching.GraphCutSeamFinder.CostFunction",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Color",
+          "value": 0
+        },
+        {
+          "name": "ColorGrad",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.Stitching.Stitcher.Status",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Ok",
+          "value": 0
+        },
+        {
+          "name": "ErrNeedMoreImgs",
+          "value": 1
+        },
+        {
+          "name": "ErrHomographyEstFail",
+          "value": 2
+        },
+        {
+          "name": "ErrCameraParamsAdjustFail",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.Stitching.Stitcher.WaveCorrectionType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Horiz",
+          "value": 0
+        },
+        {
+          "name": "Vert",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.Stitching.Stitcher.Mode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Panorama",
+          "value": 0
+        },
+        {
+          "name": "Scans",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.Ocl.DeviceType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 1
+        },
+        {
+          "name": "Cpu",
+          "value": 2
+        },
+        {
+          "name": "Gpu",
+          "value": 4
+        },
+        {
+          "name": "Accelerator",
+          "value": 8
+        },
+        {
+          "name": "DGpu",
+          "value": 65540
+        },
+        {
+          "name": "IGpu",
+          "value": 131076
+        },
+        {
+          "name": "All",
+          "value": -1
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.Ocl.FpConfig",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Denorm",
+          "value": 1
+        },
+        {
+          "name": "InfNan",
+          "value": 2
+        },
+        {
+          "name": "RoundToNearest",
+          "value": 4
+        },
+        {
+          "name": "RoundToZero",
+          "value": 8
+        },
+        {
+          "name": "RoundToInf",
+          "value": 16
+        },
+        {
+          "name": "Fma",
+          "value": 32
+        },
+        {
+          "name": "SoftFloat",
+          "value": 64
+        },
+        {
+          "name": "CorrectlyRoundedDivideSqrt",
+          "value": 128
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.Ocl.KernelArg.Flags",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Local",
+          "value": 1
+        },
+        {
+          "name": "ReadOnly",
+          "value": 2
+        },
+        {
+          "name": "WriteOnly",
+          "value": 4
+        },
+        {
+          "name": "ReadWrite",
+          "value": 6
+        },
+        {
+          "name": "Constant",
+          "value": 8
+        },
+        {
+          "name": "PtrOnly",
+          "value": 16
+        },
+        {
+          "name": "NoSize",
+          "value": 256
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.Flann.CenterInitType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Random",
+          "value": 0
+        },
+        {
+          "name": "Gonzales",
+          "value": 1
+        },
+        {
+          "name": "Kmeanspp",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.Flann.DistType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Euclidean",
+          "value": 1
+        },
+        {
+          "name": "L2",
+          "value": 1
+        },
+        {
+          "name": "Manhattan",
+          "value": 2
+        },
+        {
+          "name": "L1",
+          "value": 2
+        },
+        {
+          "name": "Minkowski",
+          "value": 3
+        },
+        {
+          "name": "Max",
+          "value": 4
+        },
+        {
+          "name": "HistIntersect",
+          "value": 5
+        },
+        {
+          "name": "Hellinger",
+          "value": 6
+        },
+        {
+          "name": "ChiSquare",
+          "value": 7
+        },
+        {
+          "name": "CS",
+          "value": 7
+        },
+        {
+          "name": "KullbackLeibler",
+          "value": 8
+        },
+        {
+          "name": "KL",
+          "value": 8
+        },
+        {
+          "name": "Hamming",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.Features2D.AgastFeatureDetector.Type",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AGAST_5_8",
+          "value": 0
+        },
+        {
+          "name": "AGAST_7_12d",
+          "value": 1
+        },
+        {
+          "name": "AGAST_7_12s",
+          "value": 2
+        },
+        {
+          "name": "OAST_9_16",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.Features2D.AKAZE.DescriptorType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "KazeUpright",
+          "value": 2
+        },
+        {
+          "name": "Kaze",
+          "value": 3
+        },
+        {
+          "name": "MldbUpright",
+          "value": 4
+        },
+        {
+          "name": "Mldb",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.Features2D.DistanceType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Inf",
+          "value": 1
+        },
+        {
+          "name": "L1",
+          "value": 2
+        },
+        {
+          "name": "L2",
+          "value": 4
+        },
+        {
+          "name": "L2Sqr",
+          "value": 5
+        },
+        {
+          "name": "Hamming",
+          "value": 6
+        },
+        {
+          "name": "Hamming2",
+          "value": 7
+        },
+        {
+          "name": "TypeMask",
+          "value": 7
+        },
+        {
+          "name": "Relative",
+          "value": 8
+        },
+        {
+          "name": "MinMax",
+          "value": 32
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.Features2D.FastFeatureDetector.DetectorType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Type5_8",
+          "value": 0
+        },
+        {
+          "name": "Type7_12",
+          "value": 1
+        },
+        {
+          "name": "Type9_16",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.Features2D.Features2DToolbox.KeypointDrawType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "NotDrawSinglePoints",
+          "value": 2
+        },
+        {
+          "name": "DrawRichKeypoints",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.Features2D.KAZE.Diffusivity",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "PmG1",
+          "value": 0
+        },
+        {
+          "name": "PmG2",
+          "value": 1
+        },
+        {
+          "name": "Weickert",
+          "value": 2
+        },
+        {
+          "name": "Charbonnier",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Emgu.CV.Features2D.ORB.ScoreType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Harris",
+          "value": 0
+        },
+        {
+          "name": "Fast",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "namespaceMappings": []
+}

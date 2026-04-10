@@ -1,0 +1,977 @@
+{
+  "schema": {
+    "id": "activity-catalog",
+    "version": "v0.3"
+  },
+  "source": {
+    "kind": "nuget-package",
+    "id": "Microsoft.OData.Core",
+    "version": "7.9.3",
+    "feedUrl": null,
+    "authors": "Microsoft",
+    "projectUrl": "http://odata.github.io/",
+    "description": "Classes to serialize, deserialize and validate OData JSON payloads. Supports OData v4. Enables construction of OData services and clients. Targets .NET Platform Standard 1.1.\nOData .NET library is open source at http://github.com/OData/odata.net. Documentation for the library can be found at https://docs.microsoft.com/en-us/odata/.",
+    "license": "http://go.microsoft.com/fwlink/?linkid=833178",
+    "tags": "wcf data services odata odatalib edmlib spatial ado.net ef entity framework open protocol wcfds wcfdataservices dataservices",
+    "packageTypes": []
+  },
+  "generatedAt": "2026-04-10T09:21:15Z",
+  "activities": [],
+  "enums": [
+    {
+      "fullName": "Microsoft.OData.BatchPayloadUriOption",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AbsoluteUri",
+          "value": 0
+        },
+        {
+          "name": "AbsoluteUriUsingHostHeader",
+          "value": 1
+        },
+        {
+          "name": "RelativeUri",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.OData.ODataBatchReaderState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Initial",
+          "value": 0
+        },
+        {
+          "name": "Operation",
+          "value": 1
+        },
+        {
+          "name": "ChangesetStart",
+          "value": 2
+        },
+        {
+          "name": "ChangesetEnd",
+          "value": 3
+        },
+        {
+          "name": "Completed",
+          "value": 4
+        },
+        {
+          "name": "Exception",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.OData.ODataCollectionReaderState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Start",
+          "value": 0
+        },
+        {
+          "name": "CollectionStart",
+          "value": 1
+        },
+        {
+          "name": "Value",
+          "value": 2
+        },
+        {
+          "name": "CollectionEnd",
+          "value": 3
+        },
+        {
+          "name": "Exception",
+          "value": 4
+        },
+        {
+          "name": "Completed",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.OData.DeltaDeletedEntryReason",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Deleted",
+          "value": 0
+        },
+        {
+          "name": "Changed",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.OData.ODataDeltaReaderState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Start",
+          "value": 0
+        },
+        {
+          "name": "DeltaResourceSetStart",
+          "value": 1
+        },
+        {
+          "name": "DeltaResourceSetEnd",
+          "value": 2
+        },
+        {
+          "name": "DeltaResourceStart",
+          "value": 3
+        },
+        {
+          "name": "DeltaResourceEnd",
+          "value": 4
+        },
+        {
+          "name": "DeltaDeletedEntry",
+          "value": 5
+        },
+        {
+          "name": "DeltaLink",
+          "value": 6
+        },
+        {
+          "name": "DeltaDeletedLink",
+          "value": 7
+        },
+        {
+          "name": "Exception",
+          "value": 8
+        },
+        {
+          "name": "Completed",
+          "value": 9
+        },
+        {
+          "name": "NestedResource",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.OData.ODataLibraryCompatibility",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Version6",
+          "value": 60000
+        },
+        {
+          "name": "Version7",
+          "value": 70000
+        },
+        {
+          "name": "Latest",
+          "value": 2147483647
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.OData.ODataNullValueBehaviorKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "IgnoreValue",
+          "value": 1
+        },
+        {
+          "name": "DisableValidation",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.OData.ODataParameterReaderState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Start",
+          "value": 0
+        },
+        {
+          "name": "Value",
+          "value": 1
+        },
+        {
+          "name": "Collection",
+          "value": 2
+        },
+        {
+          "name": "Exception",
+          "value": 3
+        },
+        {
+          "name": "Completed",
+          "value": 4
+        },
+        {
+          "name": "Resource",
+          "value": 5
+        },
+        {
+          "name": "ResourceSet",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.OData.ODataPayloadKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ResourceSet",
+          "value": 0
+        },
+        {
+          "name": "Resource",
+          "value": 1
+        },
+        {
+          "name": "Property",
+          "value": 2
+        },
+        {
+          "name": "EntityReferenceLink",
+          "value": 3
+        },
+        {
+          "name": "EntityReferenceLinks",
+          "value": 4
+        },
+        {
+          "name": "Value",
+          "value": 5
+        },
+        {
+          "name": "BinaryValue",
+          "value": 6
+        },
+        {
+          "name": "Collection",
+          "value": 7
+        },
+        {
+          "name": "ServiceDocument",
+          "value": 8
+        },
+        {
+          "name": "MetadataDocument",
+          "value": 9
+        },
+        {
+          "name": "Error",
+          "value": 10
+        },
+        {
+          "name": "Batch",
+          "value": 11
+        },
+        {
+          "name": "Parameter",
+          "value": 12
+        },
+        {
+          "name": "IndividualProperty",
+          "value": 13
+        },
+        {
+          "name": "Delta",
+          "value": 14
+        },
+        {
+          "name": "Asynchronous",
+          "value": 15
+        },
+        {
+          "name": "Unsupported",
+          "value": 2147483647
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.OData.ODataPropertyKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unspecified",
+          "value": 0
+        },
+        {
+          "name": "Key",
+          "value": 1
+        },
+        {
+          "name": "ETag",
+          "value": 2
+        },
+        {
+          "name": "Open",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.OData.ODataReaderState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Start",
+          "value": 0
+        },
+        {
+          "name": "ResourceSetStart",
+          "value": 1
+        },
+        {
+          "name": "ResourceSetEnd",
+          "value": 2
+        },
+        {
+          "name": "ResourceStart",
+          "value": 3
+        },
+        {
+          "name": "ResourceEnd",
+          "value": 4
+        },
+        {
+          "name": "NestedResourceInfoStart",
+          "value": 5
+        },
+        {
+          "name": "NestedResourceInfoEnd",
+          "value": 6
+        },
+        {
+          "name": "EntityReferenceLink",
+          "value": 7
+        },
+        {
+          "name": "Exception",
+          "value": 8
+        },
+        {
+          "name": "Completed",
+          "value": 9
+        },
+        {
+          "name": "Primitive",
+          "value": 10
+        },
+        {
+          "name": "DeltaResourceSetStart",
+          "value": 11
+        },
+        {
+          "name": "DeltaResourceSetEnd",
+          "value": 12
+        },
+        {
+          "name": "DeletedResourceStart",
+          "value": 13
+        },
+        {
+          "name": "DeletedResourceEnd",
+          "value": 14
+        },
+        {
+          "name": "DeltaLink",
+          "value": 15
+        },
+        {
+          "name": "DeltaDeletedLink",
+          "value": 16
+        },
+        {
+          "name": "NestedProperty",
+          "value": 17
+        },
+        {
+          "name": "Stream",
+          "value": 18
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.OData.ODataVersion",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "V4",
+          "value": 0
+        },
+        {
+          "name": "V401",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.OData.ServiceLifetime",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Singleton",
+          "value": 0
+        },
+        {
+          "name": "Scoped",
+          "value": 1
+        },
+        {
+          "name": "Transient",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.OData.ValidationKinds",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "ThrowOnDuplicatePropertyNames",
+          "value": 1
+        },
+        {
+          "name": "ThrowOnUndeclaredPropertyForNonOpenType",
+          "value": 2
+        },
+        {
+          "name": "ThrowIfTypeConflictsWithMetadata",
+          "value": 4
+        },
+        {
+          "name": "All",
+          "value": -1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.OData.UriParser.OrderByDirection",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Ascending",
+          "value": 0
+        },
+        {
+          "name": "Descending",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.OData.UriParser.QueryTokenKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "BinaryOperator",
+          "value": 3
+        },
+        {
+          "name": "UnaryOperator",
+          "value": 4
+        },
+        {
+          "name": "Literal",
+          "value": 5
+        },
+        {
+          "name": "FunctionCall",
+          "value": 6
+        },
+        {
+          "name": "EndPath",
+          "value": 7
+        },
+        {
+          "name": "OrderBy",
+          "value": 8
+        },
+        {
+          "name": "CustomQueryOption",
+          "value": 9
+        },
+        {
+          "name": "Select",
+          "value": 10
+        },
+        {
+          "name": "Star",
+          "value": 11
+        },
+        {
+          "name": "Expand",
+          "value": 13
+        },
+        {
+          "name": "TypeSegment",
+          "value": 14
+        },
+        {
+          "name": "Any",
+          "value": 15
+        },
+        {
+          "name": "InnerPath",
+          "value": 16
+        },
+        {
+          "name": "DottedIdentifier",
+          "value": 17
+        },
+        {
+          "name": "RangeVariable",
+          "value": 18
+        },
+        {
+          "name": "All",
+          "value": 19
+        },
+        {
+          "name": "ExpandTerm",
+          "value": 20
+        },
+        {
+          "name": "FunctionParameter",
+          "value": 21
+        },
+        {
+          "name": "FunctionParameterAlias",
+          "value": 22
+        },
+        {
+          "name": "StringLiteral",
+          "value": 23
+        },
+        {
+          "name": "Aggregate",
+          "value": 24
+        },
+        {
+          "name": "AggregateExpression",
+          "value": 25
+        },
+        {
+          "name": "AggregateGroupBy",
+          "value": 26
+        },
+        {
+          "name": "Compute",
+          "value": 27
+        },
+        {
+          "name": "ComputeExpression",
+          "value": 28
+        },
+        {
+          "name": "EntitySetAggregateExpression",
+          "value": 29
+        },
+        {
+          "name": "In",
+          "value": 30
+        },
+        {
+          "name": "SelectTerm",
+          "value": 31
+        },
+        {
+          "name": "CountSegment",
+          "value": 32
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.OData.UriParser.BinaryOperatorKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Or",
+          "value": 0
+        },
+        {
+          "name": "And",
+          "value": 1
+        },
+        {
+          "name": "Equal",
+          "value": 2
+        },
+        {
+          "name": "NotEqual",
+          "value": 3
+        },
+        {
+          "name": "GreaterThan",
+          "value": 4
+        },
+        {
+          "name": "GreaterThanOrEqual",
+          "value": 5
+        },
+        {
+          "name": "LessThan",
+          "value": 6
+        },
+        {
+          "name": "LessThanOrEqual",
+          "value": 7
+        },
+        {
+          "name": "Add",
+          "value": 8
+        },
+        {
+          "name": "Subtract",
+          "value": 9
+        },
+        {
+          "name": "Multiply",
+          "value": 10
+        },
+        {
+          "name": "Divide",
+          "value": 11
+        },
+        {
+          "name": "Modulo",
+          "value": 12
+        },
+        {
+          "name": "Has",
+          "value": 13
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.OData.UriParser.QueryNodeKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Constant",
+          "value": 1
+        },
+        {
+          "name": "Convert",
+          "value": 2
+        },
+        {
+          "name": "NonResourceRangeVariableReference",
+          "value": 3
+        },
+        {
+          "name": "BinaryOperator",
+          "value": 4
+        },
+        {
+          "name": "UnaryOperator",
+          "value": 5
+        },
+        {
+          "name": "SingleValuePropertyAccess",
+          "value": 6
+        },
+        {
+          "name": "CollectionPropertyAccess",
+          "value": 7
+        },
+        {
+          "name": "SingleValueFunctionCall",
+          "value": 8
+        },
+        {
+          "name": "Any",
+          "value": 9
+        },
+        {
+          "name": "CollectionNavigationNode",
+          "value": 10
+        },
+        {
+          "name": "SingleNavigationNode",
+          "value": 11
+        },
+        {
+          "name": "SingleValueOpenPropertyAccess",
+          "value": 12
+        },
+        {
+          "name": "SingleResourceCast",
+          "value": 13
+        },
+        {
+          "name": "All",
+          "value": 14
+        },
+        {
+          "name": "CollectionResourceCast",
+          "value": 15
+        },
+        {
+          "name": "ResourceRangeVariableReference",
+          "value": 16
+        },
+        {
+          "name": "SingleResourceFunctionCall",
+          "value": 17
+        },
+        {
+          "name": "CollectionFunctionCall",
+          "value": 18
+        },
+        {
+          "name": "CollectionResourceFunctionCall",
+          "value": 19
+        },
+        {
+          "name": "NamedFunctionParameter",
+          "value": 20
+        },
+        {
+          "name": "ParameterAlias",
+          "value": 21
+        },
+        {
+          "name": "EntitySet",
+          "value": 22
+        },
+        {
+          "name": "KeyLookup",
+          "value": 23
+        },
+        {
+          "name": "SearchTerm",
+          "value": 24
+        },
+        {
+          "name": "CollectionOpenPropertyAccess",
+          "value": 25
+        },
+        {
+          "name": "CollectionComplexNode",
+          "value": 26
+        },
+        {
+          "name": "SingleComplexNode",
+          "value": 27
+        },
+        {
+          "name": "Count",
+          "value": 28
+        },
+        {
+          "name": "SingleValueCast",
+          "value": 29
+        },
+        {
+          "name": "CollectionPropertyNode",
+          "value": 30
+        },
+        {
+          "name": "AggregatedCollectionPropertyNode",
+          "value": 31
+        },
+        {
+          "name": "In",
+          "value": 32
+        },
+        {
+          "name": "CollectionConstant",
+          "value": 33
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.OData.UriParser.UnaryOperatorKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Negate",
+          "value": 0
+        },
+        {
+          "name": "Not",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.OData.UriParser.Validation.Severity",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "Info",
+          "value": 1
+        },
+        {
+          "name": "Warning",
+          "value": 2
+        },
+        {
+          "name": "Error",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.OData.UriParser.Aggregation.AggregateExpressionKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "PropertyAggregate",
+          "value": 1
+        },
+        {
+          "name": "EntitySetAggregate",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.OData.UriParser.Aggregation.AggregationMethod",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Sum",
+          "value": 0
+        },
+        {
+          "name": "Min",
+          "value": 1
+        },
+        {
+          "name": "Max",
+          "value": 2
+        },
+        {
+          "name": "Average",
+          "value": 3
+        },
+        {
+          "name": "CountDistinct",
+          "value": 4
+        },
+        {
+          "name": "VirtualPropertyCount",
+          "value": 5
+        },
+        {
+          "name": "Custom",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.OData.UriParser.Aggregation.TransformationNodeKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Aggregate",
+          "value": 0
+        },
+        {
+          "name": "GroupBy",
+          "value": 1
+        },
+        {
+          "name": "Filter",
+          "value": 2
+        },
+        {
+          "name": "Compute",
+          "value": 3
+        },
+        {
+          "name": "Expand",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.OData.Json.JsonNodeType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "StartObject",
+          "value": 1
+        },
+        {
+          "name": "EndObject",
+          "value": 2
+        },
+        {
+          "name": "StartArray",
+          "value": 3
+        },
+        {
+          "name": "EndArray",
+          "value": 4
+        },
+        {
+          "name": "Property",
+          "value": 5
+        },
+        {
+          "name": "PrimitiveValue",
+          "value": 6
+        },
+        {
+          "name": "EndOfInput",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.OData.Json.ODataStringEscapeOption",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "EscapeNonAscii",
+          "value": 0
+        },
+        {
+          "name": "EscapeOnlyControls",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "namespaceMappings": []
+}

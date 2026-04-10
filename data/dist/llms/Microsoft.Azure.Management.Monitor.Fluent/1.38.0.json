@@ -1,0 +1,447 @@
+{
+  "schema": {
+    "id": "activity-catalog",
+    "version": "v0.3"
+  },
+  "source": {
+    "kind": "nuget-package",
+    "id": "Microsoft.Azure.Management.Monitor.Fluent",
+    "version": "1.38.0",
+    "feedUrl": null,
+    "authors": "Microsoft",
+    "projectUrl": "https://github.com/Azure/azure-libraries-for-net",
+    "description": "Provides Monitor service management (Fluent) capabilities for Microsoft Azure.\n    This package is in low maintenance mode and being phased out. To use the latest Azure SDK for resource management, please see https://aka.ms/azsdk/dotnet/mgmt",
+    "license": "https://raw.githubusercontent.com/Microsoft/dotnet/master/LICENSE",
+    "tags": "Microsoft Azure Monitor management monitor Fluent",
+    "packageTypes": []
+  },
+  "generatedAt": "2026-04-10T09:21:13Z",
+  "activities": [],
+  "enums": [
+    {
+      "fullName": "Microsoft.Azure.Management.Monitor.Fluent.Models.DayOfWeek",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Monday",
+          "value": 0
+        },
+        {
+          "name": "Tuesday",
+          "value": 1
+        },
+        {
+          "name": "Wednesday",
+          "value": 2
+        },
+        {
+          "name": "Thursday",
+          "value": 3
+        },
+        {
+          "name": "Friday",
+          "value": 4
+        },
+        {
+          "name": "Saturday",
+          "value": 5
+        },
+        {
+          "name": "Sunday",
+          "value": 6
+        },
+        {
+          "name": "Everyday",
+          "value": 7
+        },
+        {
+          "name": "Weekend",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.Monitor.Fluent.Models.AggregationType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Average",
+          "value": 1
+        },
+        {
+          "name": "Count",
+          "value": 2
+        },
+        {
+          "name": "Minimum",
+          "value": 3
+        },
+        {
+          "name": "Maximum",
+          "value": 4
+        },
+        {
+          "name": "Total",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.Monitor.Fluent.Models.CategoryType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Metrics",
+          "value": 0
+        },
+        {
+          "name": "Logs",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.Monitor.Fluent.Models.ComparisonOperationType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Equals",
+          "value": 0
+        },
+        {
+          "name": "NotEquals",
+          "value": 1
+        },
+        {
+          "name": "GreaterThan",
+          "value": 2
+        },
+        {
+          "name": "GreaterThanOrEqual",
+          "value": 3
+        },
+        {
+          "name": "LessThan",
+          "value": 4
+        },
+        {
+          "name": "LessThanOrEqual",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.Monitor.Fluent.Models.ConditionOperator",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "GreaterThan",
+          "value": 0
+        },
+        {
+          "name": "GreaterThanOrEqual",
+          "value": 1
+        },
+        {
+          "name": "LessThan",
+          "value": 2
+        },
+        {
+          "name": "LessThanOrEqual",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.Monitor.Fluent.Models.EventLevel",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Critical",
+          "value": 0
+        },
+        {
+          "name": "Error",
+          "value": 1
+        },
+        {
+          "name": "Warning",
+          "value": 2
+        },
+        {
+          "name": "Informational",
+          "value": 3
+        },
+        {
+          "name": "Verbose",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.Monitor.Fluent.Models.MetricStatisticType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Average",
+          "value": 0
+        },
+        {
+          "name": "Min",
+          "value": 1
+        },
+        {
+          "name": "Max",
+          "value": 2
+        },
+        {
+          "name": "Sum",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.Monitor.Fluent.Models.ReceiverStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NotSpecified",
+          "value": 0
+        },
+        {
+          "name": "Enabled",
+          "value": 1
+        },
+        {
+          "name": "Disabled",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.Monitor.Fluent.Models.RecurrenceFrequency",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Second",
+          "value": 1
+        },
+        {
+          "name": "Minute",
+          "value": 2
+        },
+        {
+          "name": "Hour",
+          "value": 3
+        },
+        {
+          "name": "Day",
+          "value": 4
+        },
+        {
+          "name": "Week",
+          "value": 5
+        },
+        {
+          "name": "Month",
+          "value": 6
+        },
+        {
+          "name": "Year",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.Monitor.Fluent.Models.ResultType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Data",
+          "value": 0
+        },
+        {
+          "name": "Metadata",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.Monitor.Fluent.Models.ScaleDirection",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Increase",
+          "value": 1
+        },
+        {
+          "name": "Decrease",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.Monitor.Fluent.Models.ScaleType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ChangeCount",
+          "value": 0
+        },
+        {
+          "name": "PercentChangeCount",
+          "value": 1
+        },
+        {
+          "name": "ExactCount",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.Monitor.Fluent.Models.Sensitivity",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Low",
+          "value": 0
+        },
+        {
+          "name": "Medium",
+          "value": 1
+        },
+        {
+          "name": "High",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.Monitor.Fluent.Models.TimeAggregationOperator",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Average",
+          "value": 0
+        },
+        {
+          "name": "Minimum",
+          "value": 1
+        },
+        {
+          "name": "Maximum",
+          "value": 2
+        },
+        {
+          "name": "Total",
+          "value": 3
+        },
+        {
+          "name": "Last",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.Monitor.Fluent.Models.TimeAggregationType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Average",
+          "value": 0
+        },
+        {
+          "name": "Minimum",
+          "value": 1
+        },
+        {
+          "name": "Maximum",
+          "value": 2
+        },
+        {
+          "name": "Total",
+          "value": 3
+        },
+        {
+          "name": "Count",
+          "value": 4
+        },
+        {
+          "name": "Last",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.Monitor.Fluent.Models.Unit",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Count",
+          "value": 0
+        },
+        {
+          "name": "Bytes",
+          "value": 1
+        },
+        {
+          "name": "Seconds",
+          "value": 2
+        },
+        {
+          "name": "CountPerSecond",
+          "value": 3
+        },
+        {
+          "name": "BytesPerSecond",
+          "value": 4
+        },
+        {
+          "name": "Percent",
+          "value": 5
+        },
+        {
+          "name": "MilliSeconds",
+          "value": 6
+        },
+        {
+          "name": "ByteSeconds",
+          "value": 7
+        },
+        {
+          "name": "Unspecified",
+          "value": 8
+        },
+        {
+          "name": "Cores",
+          "value": 9
+        },
+        {
+          "name": "MilliCores",
+          "value": 10
+        },
+        {
+          "name": "NanoCores",
+          "value": 11
+        },
+        {
+          "name": "BitsPerSecond",
+          "value": 12
+        }
+      ]
+    }
+  ],
+  "namespaceMappings": []
+}

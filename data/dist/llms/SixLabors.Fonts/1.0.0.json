@@ -1,0 +1,2809 @@
+{
+  "schema": {
+    "id": "activity-catalog",
+    "version": "v0.3"
+  },
+  "source": {
+    "kind": "nuget-package",
+    "id": "SixLabors.Fonts",
+    "version": "1.0.0",
+    "feedUrl": null,
+    "authors": "Six Labors and contributors",
+    "projectUrl": "https://github.com/SixLabors/Fonts",
+    "description": "A cross-platform library for loading and laying out fonts for processing and measuring; written in C#",
+    "license": "Apache-2.0",
+    "tags": "font truetype opentype woff woff2",
+    "packageTypes": []
+  },
+  "generatedAt": "2026-04-10T09:21:16Z",
+  "activities": [],
+  "enums": [
+    {
+      "fullName": "SixLabors.Fonts.ColorFontSupport",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "MicrosoftColrFormat",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "SixLabors.Fonts.FontStyle",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Regular",
+          "value": 0
+        },
+        {
+          "name": "Bold",
+          "value": 1
+        },
+        {
+          "name": "Italic",
+          "value": 2
+        },
+        {
+          "name": "BoldItalic",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "SixLabors.Fonts.GlyphLayoutMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Horizontal",
+          "value": 0
+        },
+        {
+          "name": "Vertical",
+          "value": 1
+        },
+        {
+          "name": "VerticalRotated",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "SixLabors.Fonts.GlyphType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Fallback",
+          "value": 0
+        },
+        {
+          "name": "Standard",
+          "value": 1
+        },
+        {
+          "name": "ColrLayer",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "SixLabors.Fonts.HintingMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Standard",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "SixLabors.Fonts.HorizontalAlignment",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Left",
+          "value": 0
+        },
+        {
+          "name": "Right",
+          "value": 1
+        },
+        {
+          "name": "Center",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "SixLabors.Fonts.KerningMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Standard",
+          "value": 0
+        },
+        {
+          "name": "None",
+          "value": 1
+        },
+        {
+          "name": "Auto",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "SixLabors.Fonts.LayoutMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "HorizontalTopBottom",
+          "value": 0
+        },
+        {
+          "name": "HorizontalBottomTop",
+          "value": 1
+        },
+        {
+          "name": "VerticalLeftRight",
+          "value": 2
+        },
+        {
+          "name": "VerticalRightLeft",
+          "value": 4
+        },
+        {
+          "name": "VerticalMixedLeftRight",
+          "value": 8
+        },
+        {
+          "name": "VerticalMixedRightLeft",
+          "value": 16
+        }
+      ]
+    },
+    {
+      "fullName": "SixLabors.Fonts.TextAlignment",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Start",
+          "value": 0
+        },
+        {
+          "name": "End",
+          "value": 1
+        },
+        {
+          "name": "Center",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "SixLabors.Fonts.TextAttributes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Subscript",
+          "value": 1
+        },
+        {
+          "name": "Superscript",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "SixLabors.Fonts.TextDecorations",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Underline",
+          "value": 1
+        },
+        {
+          "name": "Strikeout",
+          "value": 2
+        },
+        {
+          "name": "Overline",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "SixLabors.Fonts.TextDirection",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "LeftToRight",
+          "value": 0
+        },
+        {
+          "name": "RightToLeft",
+          "value": 1
+        },
+        {
+          "name": "Auto",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "SixLabors.Fonts.TextJustification",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "InterWord",
+          "value": 1
+        },
+        {
+          "name": "InterCharacter",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "SixLabors.Fonts.VerticalAlignment",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Top",
+          "value": 0
+        },
+        {
+          "name": "Center",
+          "value": 1
+        },
+        {
+          "name": "Bottom",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "SixLabors.Fonts.WordBreaking",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Standard",
+          "value": 0
+        },
+        {
+          "name": "BreakAll",
+          "value": 1
+        },
+        {
+          "name": "KeepAll",
+          "value": 2
+        },
+        {
+          "name": "BreakWord",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "SixLabors.Fonts.WellKnownIds.KnownNameIds",
+      "underlyingType": "System.UInt16",
+      "members": [
+        {
+          "name": "CopyrightNotice",
+          "value": 0
+        },
+        {
+          "name": "FontFamilyName",
+          "value": 1
+        },
+        {
+          "name": "FontSubfamilyName",
+          "value": 2
+        },
+        {
+          "name": "UniqueFontID",
+          "value": 3
+        },
+        {
+          "name": "FullFontName",
+          "value": 4
+        },
+        {
+          "name": "Version",
+          "value": 5
+        },
+        {
+          "name": "PostscriptName",
+          "value": 6
+        },
+        {
+          "name": "Trademark",
+          "value": 7
+        },
+        {
+          "name": "Manufacturer",
+          "value": 8
+        },
+        {
+          "name": "Designer",
+          "value": 9
+        },
+        {
+          "name": "Description",
+          "value": 10
+        },
+        {
+          "name": "VendorUrl",
+          "value": 11
+        },
+        {
+          "name": "DesignerUrl",
+          "value": 12
+        },
+        {
+          "name": "LicenseDescription",
+          "value": 13
+        },
+        {
+          "name": "LicenseInfoUrl",
+          "value": 14
+        },
+        {
+          "name": "TypographicFamilyName",
+          "value": 16
+        },
+        {
+          "name": "TypographicSubfamilyName",
+          "value": 17
+        },
+        {
+          "name": "SampleText",
+          "value": 19
+        }
+      ]
+    },
+    {
+      "fullName": "SixLabors.Fonts.Unicode.ArabicJoiningGroup",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AfricanFeh",
+          "value": 0
+        },
+        {
+          "name": "AfricanNoon",
+          "value": 1
+        },
+        {
+          "name": "AfricanQaf",
+          "value": 2
+        },
+        {
+          "name": "Ain",
+          "value": 3
+        },
+        {
+          "name": "Alaph",
+          "value": 4
+        },
+        {
+          "name": "Alef",
+          "value": 5
+        },
+        {
+          "name": "Beh",
+          "value": 6
+        },
+        {
+          "name": "Beth",
+          "value": 7
+        },
+        {
+          "name": "BurushaskiYehBarree",
+          "value": 8
+        },
+        {
+          "name": "Dal",
+          "value": 9
+        },
+        {
+          "name": "DalathRish",
+          "value": 10
+        },
+        {
+          "name": "E",
+          "value": 11
+        },
+        {
+          "name": "FarsiYeh",
+          "value": 12
+        },
+        {
+          "name": "Fe",
+          "value": 13
+        },
+        {
+          "name": "Feh",
+          "value": 14
+        },
+        {
+          "name": "FinalSemkath",
+          "value": 15
+        },
+        {
+          "name": "Gaf",
+          "value": 16
+        },
+        {
+          "name": "Gamal",
+          "value": 17
+        },
+        {
+          "name": "Hah",
+          "value": 18
+        },
+        {
+          "name": "HanifiRohingyaKinnaYa",
+          "value": 19
+        },
+        {
+          "name": "HanifiRohingyaPa",
+          "value": 20
+        },
+        {
+          "name": "He",
+          "value": 21
+        },
+        {
+          "name": "Heh",
+          "value": 22
+        },
+        {
+          "name": "HehGoal",
+          "value": 23
+        },
+        {
+          "name": "Heth",
+          "value": 24
+        },
+        {
+          "name": "Kaf",
+          "value": 25
+        },
+        {
+          "name": "Kaph",
+          "value": 26
+        },
+        {
+          "name": "Khaph",
+          "value": 27
+        },
+        {
+          "name": "KnottedHeh",
+          "value": 28
+        },
+        {
+          "name": "Lam",
+          "value": 29
+        },
+        {
+          "name": "Lamadh",
+          "value": 30
+        },
+        {
+          "name": "MalayalamBha",
+          "value": 31
+        },
+        {
+          "name": "MalayalamJa",
+          "value": 32
+        },
+        {
+          "name": "MalayalamLla",
+          "value": 33
+        },
+        {
+          "name": "MalayalamLlla",
+          "value": 34
+        },
+        {
+          "name": "MalayalamNga",
+          "value": 35
+        },
+        {
+          "name": "MalayalamNna",
+          "value": 36
+        },
+        {
+          "name": "MalayalamNnna",
+          "value": 37
+        },
+        {
+          "name": "MalayalamNya",
+          "value": 38
+        },
+        {
+          "name": "MalayalamRa",
+          "value": 39
+        },
+        {
+          "name": "MalayalamSsa",
+          "value": 40
+        },
+        {
+          "name": "MalayalamTta",
+          "value": 41
+        },
+        {
+          "name": "ManichaeanAleph",
+          "value": 42
+        },
+        {
+          "name": "ManichaeanAyin",
+          "value": 43
+        },
+        {
+          "name": "ManichaeanBeth",
+          "value": 44
+        },
+        {
+          "name": "ManichaeanDaleth",
+          "value": 45
+        },
+        {
+          "name": "ManichaeanDhamedh",
+          "value": 46
+        },
+        {
+          "name": "ManichaeanFive",
+          "value": 47
+        },
+        {
+          "name": "ManichaeanGimel",
+          "value": 48
+        },
+        {
+          "name": "ManichaeanHeth",
+          "value": 49
+        },
+        {
+          "name": "ManichaeanHundred",
+          "value": 50
+        },
+        {
+          "name": "ManichaeanKaph",
+          "value": 51
+        },
+        {
+          "name": "ManichaeanLamedh",
+          "value": 52
+        },
+        {
+          "name": "ManichaeanMem",
+          "value": 53
+        },
+        {
+          "name": "ManichaeanNun",
+          "value": 54
+        },
+        {
+          "name": "ManichaeanOne",
+          "value": 55
+        },
+        {
+          "name": "ManichaeanPe",
+          "value": 56
+        },
+        {
+          "name": "ManichaeanQoph",
+          "value": 57
+        },
+        {
+          "name": "ManichaeanResh",
+          "value": 58
+        },
+        {
+          "name": "ManichaeanSadhe",
+          "value": 59
+        },
+        {
+          "name": "ManichaeanSamekh",
+          "value": 60
+        },
+        {
+          "name": "ManichaeanTaw",
+          "value": 61
+        },
+        {
+          "name": "ManichaeanTen",
+          "value": 62
+        },
+        {
+          "name": "ManichaeanTeth",
+          "value": 63
+        },
+        {
+          "name": "ManichaeanThamedh",
+          "value": 64
+        },
+        {
+          "name": "ManichaeanTwenty",
+          "value": 65
+        },
+        {
+          "name": "ManichaeanWaw",
+          "value": 66
+        },
+        {
+          "name": "ManichaeanYodh",
+          "value": 67
+        },
+        {
+          "name": "ManichaeanZayin",
+          "value": 68
+        },
+        {
+          "name": "Meem",
+          "value": 69
+        },
+        {
+          "name": "Mim",
+          "value": 70
+        },
+        {
+          "name": "NoJoiningGroup",
+          "value": 71
+        },
+        {
+          "name": "Noon",
+          "value": 72
+        },
+        {
+          "name": "Nun",
+          "value": 73
+        },
+        {
+          "name": "Nya",
+          "value": 74
+        },
+        {
+          "name": "Pe",
+          "value": 75
+        },
+        {
+          "name": "Qaf",
+          "value": 76
+        },
+        {
+          "name": "Qaph",
+          "value": 77
+        },
+        {
+          "name": "Reh",
+          "value": 78
+        },
+        {
+          "name": "ReversedPe",
+          "value": 79
+        },
+        {
+          "name": "RohingyaYeh",
+          "value": 80
+        },
+        {
+          "name": "Sad",
+          "value": 81
+        },
+        {
+          "name": "Sadhe",
+          "value": 82
+        },
+        {
+          "name": "Seen",
+          "value": 83
+        },
+        {
+          "name": "Semkath",
+          "value": 84
+        },
+        {
+          "name": "Shin",
+          "value": 85
+        },
+        {
+          "name": "StraightWaw",
+          "value": 86
+        },
+        {
+          "name": "SwashKaf",
+          "value": 87
+        },
+        {
+          "name": "SyriacWaw",
+          "value": 88
+        },
+        {
+          "name": "Tah",
+          "value": 89
+        },
+        {
+          "name": "Taw",
+          "value": 90
+        },
+        {
+          "name": "TehMarbuta",
+          "value": 91
+        },
+        {
+          "name": "TehMarbutaGoal",
+          "value": 92
+        },
+        {
+          "name": "Teth",
+          "value": 93
+        },
+        {
+          "name": "ThinYeh",
+          "value": 94
+        },
+        {
+          "name": "VerticalTail",
+          "value": 95
+        },
+        {
+          "name": "Waw",
+          "value": 96
+        },
+        {
+          "name": "Yeh",
+          "value": 97
+        },
+        {
+          "name": "YehBarree",
+          "value": 98
+        },
+        {
+          "name": "YehWithTail",
+          "value": 99
+        },
+        {
+          "name": "Yudh",
+          "value": 100
+        },
+        {
+          "name": "YudhHe",
+          "value": 101
+        },
+        {
+          "name": "Zain",
+          "value": 102
+        },
+        {
+          "name": "Zhain",
+          "value": 103
+        }
+      ]
+    },
+    {
+      "fullName": "SixLabors.Fonts.Unicode.ArabicJoiningType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "RightJoining",
+          "value": 0
+        },
+        {
+          "name": "LeftJoining",
+          "value": 1
+        },
+        {
+          "name": "DualJoining",
+          "value": 2
+        },
+        {
+          "name": "JoinCausing",
+          "value": 3
+        },
+        {
+          "name": "NonJoining",
+          "value": 4
+        },
+        {
+          "name": "Transparent",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "SixLabors.Fonts.Unicode.BidiCharacterType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "LeftToRight",
+          "value": 0
+        },
+        {
+          "name": "RightToLeft",
+          "value": 1
+        },
+        {
+          "name": "ArabicLetter",
+          "value": 2
+        },
+        {
+          "name": "EuropeanNumber",
+          "value": 3
+        },
+        {
+          "name": "EuropeanSeparator",
+          "value": 4
+        },
+        {
+          "name": "EuropeanTerminator",
+          "value": 5
+        },
+        {
+          "name": "ArabicNumber",
+          "value": 6
+        },
+        {
+          "name": "CommonSeparator",
+          "value": 7
+        },
+        {
+          "name": "NonspacingMark",
+          "value": 8
+        },
+        {
+          "name": "BoundaryNeutral",
+          "value": 9
+        },
+        {
+          "name": "ParagraphSeparator",
+          "value": 10
+        },
+        {
+          "name": "SegmentSeparator",
+          "value": 11
+        },
+        {
+          "name": "Whitespace",
+          "value": 12
+        },
+        {
+          "name": "OtherNeutral",
+          "value": 13
+        },
+        {
+          "name": "LeftToRightEmbedding",
+          "value": 14
+        },
+        {
+          "name": "LeftToRightOverride",
+          "value": 15
+        },
+        {
+          "name": "RightToLeftEmbedding",
+          "value": 16
+        },
+        {
+          "name": "RightToLeftOverride",
+          "value": 17
+        },
+        {
+          "name": "PopDirectionalFormat",
+          "value": 18
+        },
+        {
+          "name": "LeftToRightIsolate",
+          "value": 19
+        },
+        {
+          "name": "RightToLeftIsolate",
+          "value": 20
+        },
+        {
+          "name": "FirstStrongIsolate",
+          "value": 21
+        },
+        {
+          "name": "PopDirectionalIsolate",
+          "value": 22
+        }
+      ]
+    },
+    {
+      "fullName": "SixLabors.Fonts.Unicode.BidiPairedBracketType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Open",
+          "value": 1
+        },
+        {
+          "name": "Close",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "SixLabors.Fonts.Unicode.GraphemeClusterClass",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Any",
+          "value": 0
+        },
+        {
+          "name": "CarriageReturn",
+          "value": 1
+        },
+        {
+          "name": "LineFeed",
+          "value": 2
+        },
+        {
+          "name": "Control",
+          "value": 3
+        },
+        {
+          "name": "Extend",
+          "value": 4
+        },
+        {
+          "name": "RegionalIndicator",
+          "value": 5
+        },
+        {
+          "name": "Prepend",
+          "value": 6
+        },
+        {
+          "name": "SpacingMark",
+          "value": 7
+        },
+        {
+          "name": "HangulLead",
+          "value": 8
+        },
+        {
+          "name": "HangulVowel",
+          "value": 9
+        },
+        {
+          "name": "HangulTail",
+          "value": 10
+        },
+        {
+          "name": "HangulLeadVowel",
+          "value": 11
+        },
+        {
+          "name": "HangulLeadVowelTail",
+          "value": 12
+        },
+        {
+          "name": "ExtendedPictographic",
+          "value": 13
+        },
+        {
+          "name": "ZeroWidthJoiner",
+          "value": 14
+        }
+      ]
+    },
+    {
+      "fullName": "SixLabors.Fonts.Unicode.IndicPositionalCategory",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Bottom",
+          "value": 0
+        },
+        {
+          "name": "BottomAndLeft",
+          "value": 1
+        },
+        {
+          "name": "BottomAndRight",
+          "value": 2
+        },
+        {
+          "name": "Left",
+          "value": 3
+        },
+        {
+          "name": "LeftAndRight",
+          "value": 4
+        },
+        {
+          "name": "NA",
+          "value": 5
+        },
+        {
+          "name": "Overstruck",
+          "value": 6
+        },
+        {
+          "name": "Right",
+          "value": 7
+        },
+        {
+          "name": "Top",
+          "value": 8
+        },
+        {
+          "name": "TopAndBottom",
+          "value": 9
+        },
+        {
+          "name": "TopAndBottomAndLeft",
+          "value": 10
+        },
+        {
+          "name": "TopAndBottomAndRight",
+          "value": 11
+        },
+        {
+          "name": "TopAndLeft",
+          "value": 12
+        },
+        {
+          "name": "TopAndLeftAndRight",
+          "value": 13
+        },
+        {
+          "name": "TopAndRight",
+          "value": 14
+        },
+        {
+          "name": "VisualOrderLeft",
+          "value": 15
+        }
+      ]
+    },
+    {
+      "fullName": "SixLabors.Fonts.Unicode.IndicSyllabicCategory",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Avagraha",
+          "value": 0
+        },
+        {
+          "name": "Bindu",
+          "value": 1
+        },
+        {
+          "name": "BrahmiJoiningNumber",
+          "value": 2
+        },
+        {
+          "name": "CantillationMark",
+          "value": 3
+        },
+        {
+          "name": "Consonant",
+          "value": 4
+        },
+        {
+          "name": "ConsonantDead",
+          "value": 5
+        },
+        {
+          "name": "ConsonantFinal",
+          "value": 6
+        },
+        {
+          "name": "ConsonantHeadLetter",
+          "value": 7
+        },
+        {
+          "name": "ConsonantInitialPostfixed",
+          "value": 8
+        },
+        {
+          "name": "ConsonantKiller",
+          "value": 9
+        },
+        {
+          "name": "ConsonantMedial",
+          "value": 10
+        },
+        {
+          "name": "ConsonantPlaceholder",
+          "value": 11
+        },
+        {
+          "name": "ConsonantPrecedingRepha",
+          "value": 12
+        },
+        {
+          "name": "ConsonantPrefixed",
+          "value": 13
+        },
+        {
+          "name": "ConsonantSubjoined",
+          "value": 14
+        },
+        {
+          "name": "ConsonantSucceedingRepha",
+          "value": 15
+        },
+        {
+          "name": "ConsonantWithStacker",
+          "value": 16
+        },
+        {
+          "name": "GeminationMark",
+          "value": 17
+        },
+        {
+          "name": "InvisibleStacker",
+          "value": 18
+        },
+        {
+          "name": "Joiner",
+          "value": 19
+        },
+        {
+          "name": "ModifyingLetter",
+          "value": 20
+        },
+        {
+          "name": "NonJoiner",
+          "value": 21
+        },
+        {
+          "name": "Nukta",
+          "value": 22
+        },
+        {
+          "name": "Number",
+          "value": 23
+        },
+        {
+          "name": "NumberJoiner",
+          "value": 24
+        },
+        {
+          "name": "Other",
+          "value": 25
+        },
+        {
+          "name": "PureKiller",
+          "value": 26
+        },
+        {
+          "name": "RegisterShifter",
+          "value": 27
+        },
+        {
+          "name": "SyllableModifier",
+          "value": 28
+        },
+        {
+          "name": "ToneLetter",
+          "value": 29
+        },
+        {
+          "name": "ToneMark",
+          "value": 30
+        },
+        {
+          "name": "Virama",
+          "value": 31
+        },
+        {
+          "name": "Visarga",
+          "value": 32
+        },
+        {
+          "name": "Vowel",
+          "value": 33
+        },
+        {
+          "name": "VowelDependent",
+          "value": 34
+        },
+        {
+          "name": "VowelIndependent",
+          "value": 35
+        }
+      ]
+    },
+    {
+      "fullName": "SixLabors.Fonts.Unicode.LineBreakClass",
+      "underlyingType": "System.UInt32",
+      "members": [
+        {
+          "name": "OP",
+          "value": 0
+        },
+        {
+          "name": "CL",
+          "value": 1
+        },
+        {
+          "name": "CP",
+          "value": 2
+        },
+        {
+          "name": "QU",
+          "value": 3
+        },
+        {
+          "name": "GL",
+          "value": 4
+        },
+        {
+          "name": "NS",
+          "value": 5
+        },
+        {
+          "name": "EX",
+          "value": 6
+        },
+        {
+          "name": "SY",
+          "value": 7
+        },
+        {
+          "name": "IS",
+          "value": 8
+        },
+        {
+          "name": "PR",
+          "value": 9
+        },
+        {
+          "name": "PO",
+          "value": 10
+        },
+        {
+          "name": "NU",
+          "value": 11
+        },
+        {
+          "name": "AL",
+          "value": 12
+        },
+        {
+          "name": "HL",
+          "value": 13
+        },
+        {
+          "name": "ID",
+          "value": 14
+        },
+        {
+          "name": "IN",
+          "value": 15
+        },
+        {
+          "name": "HY",
+          "value": 16
+        },
+        {
+          "name": "BA",
+          "value": 17
+        },
+        {
+          "name": "BB",
+          "value": 18
+        },
+        {
+          "name": "B2",
+          "value": 19
+        },
+        {
+          "name": "ZW",
+          "value": 20
+        },
+        {
+          "name": "CM",
+          "value": 21
+        },
+        {
+          "name": "WJ",
+          "value": 22
+        },
+        {
+          "name": "H2",
+          "value": 23
+        },
+        {
+          "name": "H3",
+          "value": 24
+        },
+        {
+          "name": "JL",
+          "value": 25
+        },
+        {
+          "name": "JV",
+          "value": 26
+        },
+        {
+          "name": "JT",
+          "value": 27
+        },
+        {
+          "name": "RI",
+          "value": 28
+        },
+        {
+          "name": "EB",
+          "value": 29
+        },
+        {
+          "name": "EM",
+          "value": 30
+        },
+        {
+          "name": "ZWJ",
+          "value": 31
+        },
+        {
+          "name": "CB",
+          "value": 32
+        },
+        {
+          "name": "AI",
+          "value": 33
+        },
+        {
+          "name": "BK",
+          "value": 34
+        },
+        {
+          "name": "CJ",
+          "value": 35
+        },
+        {
+          "name": "CR",
+          "value": 36
+        },
+        {
+          "name": "LF",
+          "value": 37
+        },
+        {
+          "name": "NL",
+          "value": 38
+        },
+        {
+          "name": "SA",
+          "value": 39
+        },
+        {
+          "name": "SG",
+          "value": 40
+        },
+        {
+          "name": "SP",
+          "value": 41
+        },
+        {
+          "name": "XX",
+          "value": 42
+        }
+      ]
+    },
+    {
+      "fullName": "SixLabors.Fonts.Unicode.ScriptClass",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "Common",
+          "value": 1
+        },
+        {
+          "name": "Inherited",
+          "value": 2
+        },
+        {
+          "name": "Adlam",
+          "value": 3
+        },
+        {
+          "name": "CaucasianAlbanian",
+          "value": 4
+        },
+        {
+          "name": "Ahom",
+          "value": 5
+        },
+        {
+          "name": "Arabic",
+          "value": 6
+        },
+        {
+          "name": "ImperialAramaic",
+          "value": 7
+        },
+        {
+          "name": "Armenian",
+          "value": 8
+        },
+        {
+          "name": "Avestan",
+          "value": 9
+        },
+        {
+          "name": "Balinese",
+          "value": 10
+        },
+        {
+          "name": "Bamum",
+          "value": 11
+        },
+        {
+          "name": "BassaVah",
+          "value": 12
+        },
+        {
+          "name": "Batak",
+          "value": 13
+        },
+        {
+          "name": "Bengali",
+          "value": 14
+        },
+        {
+          "name": "Bhaiksuki",
+          "value": 15
+        },
+        {
+          "name": "Bopomofo",
+          "value": 16
+        },
+        {
+          "name": "Brahmi",
+          "value": 17
+        },
+        {
+          "name": "Braille",
+          "value": 18
+        },
+        {
+          "name": "Buginese",
+          "value": 19
+        },
+        {
+          "name": "Buhid",
+          "value": 20
+        },
+        {
+          "name": "Chakma",
+          "value": 21
+        },
+        {
+          "name": "CanadianAboriginal",
+          "value": 22
+        },
+        {
+          "name": "Carian",
+          "value": 23
+        },
+        {
+          "name": "Cham",
+          "value": 24
+        },
+        {
+          "name": "Cherokee",
+          "value": 25
+        },
+        {
+          "name": "Chorasmian",
+          "value": 26
+        },
+        {
+          "name": "Coptic",
+          "value": 27
+        },
+        {
+          "name": "CyproMinoan",
+          "value": 28
+        },
+        {
+          "name": "Cypriot",
+          "value": 29
+        },
+        {
+          "name": "Cyrillic",
+          "value": 30
+        },
+        {
+          "name": "Devanagari",
+          "value": 31
+        },
+        {
+          "name": "DivesAkuru",
+          "value": 32
+        },
+        {
+          "name": "Dogra",
+          "value": 33
+        },
+        {
+          "name": "Deseret",
+          "value": 34
+        },
+        {
+          "name": "Duployan",
+          "value": 35
+        },
+        {
+          "name": "EgyptianHieroglyphs",
+          "value": 36
+        },
+        {
+          "name": "Elbasan",
+          "value": 37
+        },
+        {
+          "name": "Elymaic",
+          "value": 38
+        },
+        {
+          "name": "Ethiopic",
+          "value": 39
+        },
+        {
+          "name": "Georgian",
+          "value": 40
+        },
+        {
+          "name": "Glagolitic",
+          "value": 41
+        },
+        {
+          "name": "GunjalaGondi",
+          "value": 42
+        },
+        {
+          "name": "MasaramGondi",
+          "value": 43
+        },
+        {
+          "name": "Gothic",
+          "value": 44
+        },
+        {
+          "name": "Grantha",
+          "value": 45
+        },
+        {
+          "name": "Greek",
+          "value": 46
+        },
+        {
+          "name": "Gujarati",
+          "value": 47
+        },
+        {
+          "name": "Gurmukhi",
+          "value": 48
+        },
+        {
+          "name": "Hangul",
+          "value": 49
+        },
+        {
+          "name": "Han",
+          "value": 50
+        },
+        {
+          "name": "Hanunoo",
+          "value": 51
+        },
+        {
+          "name": "Hatran",
+          "value": 52
+        },
+        {
+          "name": "Hebrew",
+          "value": 53
+        },
+        {
+          "name": "Hiragana",
+          "value": 54
+        },
+        {
+          "name": "AnatolianHieroglyphs",
+          "value": 55
+        },
+        {
+          "name": "PahawhHmong",
+          "value": 56
+        },
+        {
+          "name": "NyiakengPuachueHmong",
+          "value": 57
+        },
+        {
+          "name": "KatakanaOrHiragana",
+          "value": 58
+        },
+        {
+          "name": "OldHungarian",
+          "value": 59
+        },
+        {
+          "name": "OldItalic",
+          "value": 60
+        },
+        {
+          "name": "Javanese",
+          "value": 61
+        },
+        {
+          "name": "KayahLi",
+          "value": 62
+        },
+        {
+          "name": "Katakana",
+          "value": 63
+        },
+        {
+          "name": "Kharoshthi",
+          "value": 64
+        },
+        {
+          "name": "Khmer",
+          "value": 65
+        },
+        {
+          "name": "Khojki",
+          "value": 66
+        },
+        {
+          "name": "KhitanSmallScript",
+          "value": 67
+        },
+        {
+          "name": "Kannada",
+          "value": 68
+        },
+        {
+          "name": "Kaithi",
+          "value": 69
+        },
+        {
+          "name": "TaiTham",
+          "value": 70
+        },
+        {
+          "name": "Lao",
+          "value": 71
+        },
+        {
+          "name": "Latin",
+          "value": 72
+        },
+        {
+          "name": "Lepcha",
+          "value": 73
+        },
+        {
+          "name": "Limbu",
+          "value": 74
+        },
+        {
+          "name": "LinearA",
+          "value": 75
+        },
+        {
+          "name": "LinearB",
+          "value": 76
+        },
+        {
+          "name": "Lisu",
+          "value": 77
+        },
+        {
+          "name": "Lycian",
+          "value": 78
+        },
+        {
+          "name": "Lydian",
+          "value": 79
+        },
+        {
+          "name": "Mahajani",
+          "value": 80
+        },
+        {
+          "name": "Makasar",
+          "value": 81
+        },
+        {
+          "name": "Mandaic",
+          "value": 82
+        },
+        {
+          "name": "Manichaean",
+          "value": 83
+        },
+        {
+          "name": "Marchen",
+          "value": 84
+        },
+        {
+          "name": "Medefaidrin",
+          "value": 85
+        },
+        {
+          "name": "MendeKikakui",
+          "value": 86
+        },
+        {
+          "name": "MeroiticCursive",
+          "value": 87
+        },
+        {
+          "name": "MeroiticHieroglyphs",
+          "value": 88
+        },
+        {
+          "name": "Malayalam",
+          "value": 89
+        },
+        {
+          "name": "Modi",
+          "value": 90
+        },
+        {
+          "name": "Mongolian",
+          "value": 91
+        },
+        {
+          "name": "Mro",
+          "value": 92
+        },
+        {
+          "name": "MeeteiMayek",
+          "value": 93
+        },
+        {
+          "name": "Multani",
+          "value": 94
+        },
+        {
+          "name": "Myanmar",
+          "value": 95
+        },
+        {
+          "name": "Nandinagari",
+          "value": 96
+        },
+        {
+          "name": "OldNorthArabian",
+          "value": 97
+        },
+        {
+          "name": "Nabataean",
+          "value": 98
+        },
+        {
+          "name": "Newa",
+          "value": 99
+        },
+        {
+          "name": "Nko",
+          "value": 100
+        },
+        {
+          "name": "Nushu",
+          "value": 101
+        },
+        {
+          "name": "Ogham",
+          "value": 102
+        },
+        {
+          "name": "OlChiki",
+          "value": 103
+        },
+        {
+          "name": "OldTurkic",
+          "value": 104
+        },
+        {
+          "name": "Oriya",
+          "value": 105
+        },
+        {
+          "name": "Osage",
+          "value": 106
+        },
+        {
+          "name": "Osmanya",
+          "value": 107
+        },
+        {
+          "name": "OldUyghur",
+          "value": 108
+        },
+        {
+          "name": "Palmyrene",
+          "value": 109
+        },
+        {
+          "name": "PauCinHau",
+          "value": 110
+        },
+        {
+          "name": "OldPermic",
+          "value": 111
+        },
+        {
+          "name": "PhagsPa",
+          "value": 112
+        },
+        {
+          "name": "InscriptionalPahlavi",
+          "value": 113
+        },
+        {
+          "name": "PsalterPahlavi",
+          "value": 114
+        },
+        {
+          "name": "Phoenician",
+          "value": 115
+        },
+        {
+          "name": "Miao",
+          "value": 116
+        },
+        {
+          "name": "InscriptionalParthian",
+          "value": 117
+        },
+        {
+          "name": "Rejang",
+          "value": 118
+        },
+        {
+          "name": "HanifiRohingya",
+          "value": 119
+        },
+        {
+          "name": "Runic",
+          "value": 120
+        },
+        {
+          "name": "Samaritan",
+          "value": 121
+        },
+        {
+          "name": "OldSouthArabian",
+          "value": 122
+        },
+        {
+          "name": "Saurashtra",
+          "value": 123
+        },
+        {
+          "name": "SignWriting",
+          "value": 124
+        },
+        {
+          "name": "Shavian",
+          "value": 125
+        },
+        {
+          "name": "Sharada",
+          "value": 126
+        },
+        {
+          "name": "Siddham",
+          "value": 127
+        },
+        {
+          "name": "Khudawadi",
+          "value": 128
+        },
+        {
+          "name": "Sinhala",
+          "value": 129
+        },
+        {
+          "name": "Sogdian",
+          "value": 130
+        },
+        {
+          "name": "OldSogdian",
+          "value": 131
+        },
+        {
+          "name": "SoraSompeng",
+          "value": 132
+        },
+        {
+          "name": "Soyombo",
+          "value": 133
+        },
+        {
+          "name": "Sundanese",
+          "value": 134
+        },
+        {
+          "name": "SylotiNagri",
+          "value": 135
+        },
+        {
+          "name": "Syriac",
+          "value": 136
+        },
+        {
+          "name": "Tagbanwa",
+          "value": 137
+        },
+        {
+          "name": "Takri",
+          "value": 138
+        },
+        {
+          "name": "TaiLe",
+          "value": 139
+        },
+        {
+          "name": "NewTaiLue",
+          "value": 140
+        },
+        {
+          "name": "Tamil",
+          "value": 141
+        },
+        {
+          "name": "Tangut",
+          "value": 142
+        },
+        {
+          "name": "TaiViet",
+          "value": 143
+        },
+        {
+          "name": "Telugu",
+          "value": 144
+        },
+        {
+          "name": "Tifinagh",
+          "value": 145
+        },
+        {
+          "name": "Tagalog",
+          "value": 146
+        },
+        {
+          "name": "Thaana",
+          "value": 147
+        },
+        {
+          "name": "Thai",
+          "value": 148
+        },
+        {
+          "name": "Tibetan",
+          "value": 149
+        },
+        {
+          "name": "Tirhuta",
+          "value": 150
+        },
+        {
+          "name": "Tangsa",
+          "value": 151
+        },
+        {
+          "name": "Toto",
+          "value": 152
+        },
+        {
+          "name": "Ugaritic",
+          "value": 153
+        },
+        {
+          "name": "Vai",
+          "value": 154
+        },
+        {
+          "name": "Vithkuqi",
+          "value": 155
+        },
+        {
+          "name": "WarangCiti",
+          "value": 156
+        },
+        {
+          "name": "Wancho",
+          "value": 157
+        },
+        {
+          "name": "OldPersian",
+          "value": 158
+        },
+        {
+          "name": "Cuneiform",
+          "value": 159
+        },
+        {
+          "name": "Yezidi",
+          "value": 160
+        },
+        {
+          "name": "Yi",
+          "value": 161
+        },
+        {
+          "name": "ZanabazarSquare",
+          "value": 162
+        }
+      ]
+    },
+    {
+      "fullName": "SixLabors.Fonts.Unicode.VerticalOrientationType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Upright",
+          "value": 0
+        },
+        {
+          "name": "Rotate",
+          "value": 1
+        },
+        {
+          "name": "TransformUpright",
+          "value": 2
+        },
+        {
+          "name": "TransformRotate",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "SixLabors.Fonts.Unicode.Resources.IndicShapingData.Categories",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "X",
+          "value": 1
+        },
+        {
+          "name": "C",
+          "value": 2
+        },
+        {
+          "name": "V",
+          "value": 4
+        },
+        {
+          "name": "N",
+          "value": 8
+        },
+        {
+          "name": "H",
+          "value": 16
+        },
+        {
+          "name": "ZWNJ",
+          "value": 32
+        },
+        {
+          "name": "ZWJ",
+          "value": 64
+        },
+        {
+          "name": "M",
+          "value": 128
+        },
+        {
+          "name": "SM",
+          "value": 256
+        },
+        {
+          "name": "VD",
+          "value": 512
+        },
+        {
+          "name": "A",
+          "value": 1024
+        },
+        {
+          "name": "Placeholder",
+          "value": 2048
+        },
+        {
+          "name": "Dotted_Circle",
+          "value": 4096
+        },
+        {
+          "name": "RS",
+          "value": 8192
+        },
+        {
+          "name": "Coeng",
+          "value": 16384
+        },
+        {
+          "name": "Repha",
+          "value": 32768
+        },
+        {
+          "name": "Ra",
+          "value": 65536
+        },
+        {
+          "name": "CM",
+          "value": 131072
+        },
+        {
+          "name": "Symbol",
+          "value": 262144
+        }
+      ]
+    },
+    {
+      "fullName": "SixLabors.Fonts.Unicode.Resources.IndicShapingData.Positions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Start",
+          "value": 1
+        },
+        {
+          "name": "Ra_To_Become_Reph",
+          "value": 2
+        },
+        {
+          "name": "Pre_M",
+          "value": 4
+        },
+        {
+          "name": "Pre_C",
+          "value": 8
+        },
+        {
+          "name": "Base_C",
+          "value": 16
+        },
+        {
+          "name": "After_Main",
+          "value": 32
+        },
+        {
+          "name": "Above_C",
+          "value": 64
+        },
+        {
+          "name": "Before_Sub",
+          "value": 128
+        },
+        {
+          "name": "Below_C",
+          "value": 256
+        },
+        {
+          "name": "After_Sub",
+          "value": 512
+        },
+        {
+          "name": "Before_Post",
+          "value": 1024
+        },
+        {
+          "name": "Post_C",
+          "value": 2048
+        },
+        {
+          "name": "After_Post",
+          "value": 4096
+        },
+        {
+          "name": "Final_C",
+          "value": 8192
+        },
+        {
+          "name": "SMVD",
+          "value": 16384
+        },
+        {
+          "name": "End",
+          "value": 32768
+        }
+      ]
+    },
+    {
+      "fullName": "SixLabors.Fonts.Unicode.Resources.IndicShapingData.BasePosition",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "First",
+          "value": 0
+        },
+        {
+          "name": "Last",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "SixLabors.Fonts.Unicode.Resources.IndicShapingData.RephMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Implicit",
+          "value": 0
+        },
+        {
+          "name": "Explicit",
+          "value": 1
+        },
+        {
+          "name": "Vis_Repha",
+          "value": 2
+        },
+        {
+          "name": "Log_Repha",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "SixLabors.Fonts.Unicode.Resources.IndicShapingData.BlwfMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Pre_And_Post",
+          "value": 0
+        },
+        {
+          "name": "Post_Only",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "SixLabors.Fonts.Tables.AdvancedTypographic.FeatureTags",
+      "underlyingType": "System.UInt32",
+      "members": [
+        {
+          "name": "AccessAllAlternates",
+          "value": 1633774708
+        },
+        {
+          "name": "AboveBaseForms",
+          "value": 1633842790
+        },
+        {
+          "name": "AboveBaseMarkPositioning",
+          "value": 1633842797
+        },
+        {
+          "name": "AboveBaseSubstitutions",
+          "value": 1633842803
+        },
+        {
+          "name": "AlternativeFractions",
+          "value": 1634103907
+        },
+        {
+          "name": "Akhand",
+          "value": 1634429038
+        },
+        {
+          "name": "BelowBaseForms",
+          "value": 1651275622
+        },
+        {
+          "name": "BelowBaseMarkPositioning",
+          "value": 1651275629
+        },
+        {
+          "name": "BelowBaseSubstitutions",
+          "value": 1651275635
+        },
+        {
+          "name": "ContextualAlternates",
+          "value": 1667329140
+        },
+        {
+          "name": "CaseSensitiveForms",
+          "value": 1667330917
+        },
+        {
+          "name": "GlyphCompositionDecomposition",
+          "value": 1667460464
+        },
+        {
+          "name": "ConjunctFormAfterRo",
+          "value": 1667654002
+        },
+        {
+          "name": "ConjunctForms",
+          "value": 1667916660
+        },
+        {
+          "name": "ContextualLigatures",
+          "value": 1668049255
+        },
+        {
+          "name": "CenteredCjkPunctuation",
+          "value": 1668309876
+        },
+        {
+          "name": "CapitalSpacing",
+          "value": 1668313968
+        },
+        {
+          "name": "ContextualSwash",
+          "value": 1668511592
+        },
+        {
+          "name": "CursivePositioning",
+          "value": 1668641395
+        },
+        {
+          "name": "PetiteCapitalsFromCapitals",
+          "value": 1664249955
+        },
+        {
+          "name": "SmallCapitalsFromCapitals",
+          "value": 1664250723
+        },
+        {
+          "name": "Distances",
+          "value": 1684632436
+        },
+        {
+          "name": "DiscretionaryLigatures",
+          "value": 1684826471
+        },
+        {
+          "name": "Denominators",
+          "value": 1684959085
+        },
+        {
+          "name": "DotlessForms",
+          "value": 1685351539
+        },
+        {
+          "name": "ExpertForms",
+          "value": 1702391924
+        },
+        {
+          "name": "FinalGlyphOnLineAlternates",
+          "value": 1717660788
+        },
+        {
+          "name": "TerminalForm2",
+          "value": 1718185522
+        },
+        {
+          "name": "TerminalForm3",
+          "value": 1718185523
+        },
+        {
+          "name": "TerminalForms",
+          "value": 1718185569
+        },
+        {
+          "name": "FlattenedAscentForms",
+          "value": 1718378851
+        },
+        {
+          "name": "Fractions",
+          "value": 1718772067
+        },
+        {
+          "name": "FullWidths",
+          "value": 1719101796
+        },
+        {
+          "name": "HalfForms",
+          "value": 1751215206
+        },
+        {
+          "name": "HalantForms",
+          "value": 1751215214
+        },
+        {
+          "name": "AlternateHalfWidths",
+          "value": 1751215220
+        },
+        {
+          "name": "HistoricalForms",
+          "value": 1751741300
+        },
+        {
+          "name": "HorizontalKanaAlternates",
+          "value": 1751871073
+        },
+        {
+          "name": "HistoricalLigatures",
+          "value": 1751935335
+        },
+        {
+          "name": "Hangul",
+          "value": 1752065900
+        },
+        {
+          "name": "HojoKanjiForms",
+          "value": 1752132207
+        },
+        {
+          "name": "HalfWidths",
+          "value": 1752656228
+        },
+        {
+          "name": "InitialForms",
+          "value": 1768843636
+        },
+        {
+          "name": "IsolatedForms",
+          "value": 1769172844
+        },
+        {
+          "name": "Italics",
+          "value": 1769234796
+        },
+        {
+          "name": "JustificationAlternates",
+          "value": 1784769652
+        },
+        {
+          "name": "Jis78Forms",
+          "value": 1785739064
+        },
+        {
+          "name": "Jis83Forms",
+          "value": 1785739315
+        },
+        {
+          "name": "Jis90Forms",
+          "value": 1785739568
+        },
+        {
+          "name": "Jis2004",
+          "value": 1785737268
+        },
+        {
+          "name": "Kerning",
+          "value": 1801810542
+        },
+        {
+          "name": "LeftBounds",
+          "value": 1818649188
+        },
+        {
+          "name": "Ligatures",
+          "value": 1818847073
+        },
+        {
+          "name": "LeadingJamoForms",
+          "value": 1818914159
+        },
+        {
+          "name": "LiningFigures",
+          "value": 1819178349
+        },
+        {
+          "name": "LocalizedForms",
+          "value": 1819239276
+        },
+        {
+          "name": "LeftToRightGlyphAlternates",
+          "value": 1819570785
+        },
+        {
+          "name": "LeftToRightMirroredForms",
+          "value": 1819570797
+        },
+        {
+          "name": "MarkPositioning",
+          "value": 1835102827
+        },
+        {
+          "name": "MedialForms2",
+          "value": 1835361330
+        },
+        {
+          "name": "MedialForms",
+          "value": 1835361385
+        },
+        {
+          "name": "MathematicalGreek",
+          "value": 1835496043
+        },
+        {
+          "name": "MarkToMarkPositioning",
+          "value": 1835756907
+        },
+        {
+          "name": "Mset",
+          "value": 1836279156
+        },
+        {
+          "name": "AlternateAnnotationForms",
+          "value": 1851878516
+        },
+        {
+          "name": "NlcKanjiForms",
+          "value": 1852597099
+        },
+        {
+          "name": "NuktaForms",
+          "value": 1853188980
+        },
+        {
+          "name": "Numerators",
+          "value": 1853189490
+        },
+        {
+          "name": "OldstyleFigures",
+          "value": 1869509997
+        },
+        {
+          "name": "OpticalBounds",
+          "value": 1869636196
+        },
+        {
+          "name": "Ordinals",
+          "value": 1869767790
+        },
+        {
+          "name": "Ornaments",
+          "value": 1869770349
+        },
+        {
+          "name": "ProportionalAlternateWidths",
+          "value": 1885432948
+        },
+        {
+          "name": "PetiteCapitals",
+          "value": 1885561200
+        },
+        {
+          "name": "ProportionalKana",
+          "value": 1886088801
+        },
+        {
+          "name": "ProportionalFigures",
+          "value": 1886287213
+        },
+        {
+          "name": "PreBaseForms",
+          "value": 1886545254
+        },
+        {
+          "name": "PreBaseSubstitutions",
+          "value": 1886545267
+        },
+        {
+          "name": "PostBaseForms",
+          "value": 1886614630
+        },
+        {
+          "name": "PostBaseSubstitutions",
+          "value": 1886614643
+        },
+        {
+          "name": "ProportionalWidths",
+          "value": 1886873956
+        },
+        {
+          "name": "QuarterWidths",
+          "value": 1903651172
+        },
+        {
+          "name": "Randomize",
+          "value": 1918987876
+        },
+        {
+          "name": "RequiredContextualAlternates",
+          "value": 1919118452
+        },
+        {
+          "name": "RequiredLigatures",
+          "value": 1919707495
+        },
+        {
+          "name": "RakarForms",
+          "value": 1919644262
+        },
+        {
+          "name": "RephForm",
+          "value": 1919969382
+        },
+        {
+          "name": "RightBounds",
+          "value": 1920229988
+        },
+        {
+          "name": "RightToLeftAlternates",
+          "value": 1920232545
+        },
+        {
+          "name": "RightToLeftMirroredForms",
+          "value": 1920232557
+        },
+        {
+          "name": "RubyNotationForms",
+          "value": 1920295545
+        },
+        {
+          "name": "RequiredVariationAlternates",
+          "value": 1920365166
+        },
+        {
+          "name": "StylisticAlternates",
+          "value": 1935764596
+        },
+        {
+          "name": "ScientificInferiors",
+          "value": 1936289382
+        },
+        {
+          "name": "OpticalSize",
+          "value": 1936292453
+        },
+        {
+          "name": "SmallCapitals",
+          "value": 1936548720
+        },
+        {
+          "name": "SimplifiedForms",
+          "value": 1936552044
+        },
+        {
+          "name": "MathScriptStyleAlternates",
+          "value": 1936946297
+        },
+        {
+          "name": "StretchingGlyphDecomposition",
+          "value": 1937007464
+        },
+        {
+          "name": "Subscript",
+          "value": 1937072755
+        },
+        {
+          "name": "Superscript",
+          "value": 1937076339
+        },
+        {
+          "name": "Swash",
+          "value": 1937208168
+        },
+        {
+          "name": "Titling",
+          "value": 1953068140
+        },
+        {
+          "name": "TrailingJamoForms",
+          "value": 1953131887
+        },
+        {
+          "name": "TraditionalNameForms",
+          "value": 1953390957
+        },
+        {
+          "name": "TabularFigures",
+          "value": 1953396077
+        },
+        {
+          "name": "TraditionalForms",
+          "value": 1953653092
+        },
+        {
+          "name": "ThirdWidths",
+          "value": 1953982820
+        },
+        {
+          "name": "Unicase",
+          "value": 1970170211
+        },
+        {
+          "name": "AlternateVerticalMetrics",
+          "value": 1986096244
+        },
+        {
+          "name": "VattuVariants",
+          "value": 1986098293
+        },
+        {
+          "name": "VerticalAlternates",
+          "value": 1986359924
+        },
+        {
+          "name": "AlternateVerticalHalfMetrics",
+          "value": 1986552172
+        },
+        {
+          "name": "VowelJamoForms",
+          "value": 1986686319
+        },
+        {
+          "name": "VerticalKanaAlternates",
+          "value": 1986752097
+        },
+        {
+          "name": "VerticalKerning",
+          "value": 1986753134
+        },
+        {
+          "name": "ProportionalAlternateVerticalMetrics",
+          "value": 1987076460
+        },
+        {
+          "name": "VerticalAlternatesAndRotation",
+          "value": 1987212338
+        },
+        {
+          "name": "VerticalAlternatesForRotation",
+          "value": 1987212402
+        },
+        {
+          "name": "SlashedZero",
+          "value": 2053468783
+        }
+      ]
+    },
+    {
+      "fullName": "SixLabors.Fonts.Tables.AdvancedTypographic.GlyphClassDef",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "BaseGlyph",
+          "value": 1
+        },
+        {
+          "name": "LigatureGlyph",
+          "value": 2
+        },
+        {
+          "name": "MarkGlyph",
+          "value": 3
+        },
+        {
+          "name": "ComponentGlyph",
+          "value": 4
+        }
+      ]
+    }
+  ],
+  "namespaceMappings": []
+}

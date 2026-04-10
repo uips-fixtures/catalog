@@ -1,0 +1,5699 @@
+{
+  "schema": {
+    "id": "activity-catalog",
+    "version": "v0.3"
+  },
+  "source": {
+    "kind": "nuget-package",
+    "id": "UiPath.Adobe.AdobeSign.Activities",
+    "version": "3.0.0",
+    "feedUrl": null,
+    "authors": "UiPath",
+    "projectUrl": null,
+    "description": "Automation activities for Adobe Sign using the Adobe Sign API.",
+    "license": "https://docs.uipath.com/integrations/docs/AdobeSign-about",
+    "tags": "UiPathActivities",
+    "packageTypes": []
+  },
+  "generatedAt": "2026-04-10T09:21:19Z",
+  "activities": [],
+  "enums": [
+    {
+      "fullName": "UiPath.BAF.Activities.Design.View.Enums.FlatviewFilter",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ShowValued",
+          "value": 0
+        },
+        {
+          "name": "Contains",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Activities.Design.View.Enums.HierarchicalViewState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NotSet",
+          "value": 0
+        },
+        {
+          "name": "TreeView",
+          "value": 1
+        },
+        {
+          "name": "FlatView",
+          "value": 2
+        },
+        {
+          "name": "FlatViewAllChildren",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Activities.Design.View.Enums.WindowScreenState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "MandatoryParametersState",
+          "value": 0
+        },
+        {
+          "name": "OptionalParametersState",
+          "value": 1
+        },
+        {
+          "name": "MultiInputState",
+          "value": 2
+        },
+        {
+          "name": "PreviewResultsState",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Activities.Design.LangInvariant.Language",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "VisualBasic",
+          "value": 0
+        },
+        {
+          "name": "CSharp",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Activities.Design.Common.Model.CommandResultState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Valid",
+          "value": 0
+        },
+        {
+          "name": "Invalid",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Activities.Design.Common.Model.MessageBoxSelection",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Cancel",
+          "value": 0
+        },
+        {
+          "name": "Yes",
+          "value": 1
+        },
+        {
+          "name": "No",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "HttpClientFramework.Apis.Logging.LogLevel",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "All",
+          "value": 0
+        },
+        {
+          "name": "Debug",
+          "value": 100
+        },
+        {
+          "name": "Info",
+          "value": 200
+        },
+        {
+          "name": "Warning",
+          "value": 300
+        },
+        {
+          "name": "Error",
+          "value": 400
+        },
+        {
+          "name": "None",
+          "value": 1000
+        }
+      ]
+    },
+    {
+      "fullName": "HttpClientFramework.Apis.Http.ConfigurableMessageHandler.LogEventType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "RequestUri",
+          "value": 1
+        },
+        {
+          "name": "RequestHeaders",
+          "value": 2
+        },
+        {
+          "name": "RequestBody",
+          "value": 4
+        },
+        {
+          "name": "ResponseStatus",
+          "value": 8
+        },
+        {
+          "name": "ResponseHeaders",
+          "value": 16
+        },
+        {
+          "name": "ResponseBody",
+          "value": 32
+        },
+        {
+          "name": "ResponseAbnormal",
+          "value": 64
+        }
+      ]
+    },
+    {
+      "fullName": "HttpClientFramework.Apis.Http.ExponentialBackOffPolicy",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Exception",
+          "value": 1
+        },
+        {
+          "name": "UnsuccessfulResponse503",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "HttpClientFramework.Apis.Discovery.DiscoveryVersion",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Version_1_0",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "fullName": "HttpClientFramework.Apis.Discovery.Features",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "LegacyDataResponse",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "fullName": "HttpClientFramework.Apis.Util.RequestParameterType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Path",
+          "value": 0
+        },
+        {
+          "name": "Query",
+          "value": 1
+        },
+        {
+          "name": "UserDefinedQueries",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "HttpClientFramework.Apis.Upload.UploadStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NotStarted",
+          "value": 0
+        },
+        {
+          "name": "Starting",
+          "value": 1
+        },
+        {
+          "name": "Uploading",
+          "value": 2
+        },
+        {
+          "name": "Completed",
+          "value": 3
+        },
+        {
+          "name": "Failed",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "HttpClientFramework.Apis.Download.DownloadStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NotStarted",
+          "value": 0
+        },
+        {
+          "name": "Downloading",
+          "value": 1
+        },
+        {
+          "name": "Completed",
+          "value": 2
+        },
+        {
+          "name": "Failed",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Swagger.Utilities.SwaggerEventCodes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "RestRequestFailed",
+          "value": 202
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Swagger.Enums.ApiKeyLocation",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "Query",
+          "value": 1
+        },
+        {
+          "name": "Header",
+          "value": 2
+        },
+        {
+          "name": "Cookie",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Swagger.Enums.AuthType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "BasicAuth",
+          "value": 10
+        },
+        {
+          "name": "BearerAuth",
+          "value": 20
+        },
+        {
+          "name": "ApiKey",
+          "value": 30
+        },
+        {
+          "name": "ApiToken",
+          "value": 31
+        },
+        {
+          "name": "OAuth1",
+          "value": 35
+        },
+        {
+          "name": "OAuth2AuthorizationCode",
+          "value": 37
+        },
+        {
+          "name": "OAuth2ClientCredentials",
+          "value": 40
+        },
+        {
+          "name": "OAuth2Implicit",
+          "value": 45
+        },
+        {
+          "name": "OAuth2Password",
+          "value": 50
+        },
+        {
+          "name": "OpenIdConnect",
+          "value": 55
+        },
+        {
+          "name": "ExistingConnection",
+          "value": 60
+        },
+        {
+          "name": "OAuthJWT",
+          "value": 65
+        },
+        {
+          "name": "OAuthPassthrough",
+          "value": 67
+        },
+        {
+          "name": "AWS",
+          "value": 68
+        },
+        {
+          "name": "None",
+          "value": 69
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Models.OperationParameterKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "Body",
+          "value": 1
+        },
+        {
+          "name": "Query",
+          "value": 2
+        },
+        {
+          "name": "Path",
+          "value": 3
+        },
+        {
+          "name": "Header",
+          "value": 4
+        },
+        {
+          "name": "FormData",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Models.CrudOperation.CrudOperations",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Create",
+          "value": 1
+        },
+        {
+          "name": "Get",
+          "value": 2
+        },
+        {
+          "name": "Update",
+          "value": 4
+        },
+        {
+          "name": "Delete",
+          "value": 8
+        },
+        {
+          "name": "Function",
+          "value": 16
+        },
+        {
+          "name": "Action",
+          "value": 32
+        },
+        {
+          "name": "Search",
+          "value": 64
+        },
+        {
+          "name": "Upsert",
+          "value": 128
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Models.Connection.Authentication.Enums.AccessTokenKeyLocation",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Header",
+          "value": 0
+        },
+        {
+          "name": "Query",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Models.Annotations.OperationState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Preview",
+          "value": 1
+        },
+        {
+          "name": "Warning",
+          "value": 2
+        },
+        {
+          "name": "Info",
+          "value": 3
+        },
+        {
+          "name": "Hide",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Utilities.EventCodes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ArgumentNullException",
+          "value": 101
+        },
+        {
+          "name": "ArgumentConverterError",
+          "value": 102
+        },
+        {
+          "name": "BackgroundWorkCompletedUnsuccessfully",
+          "value": 103
+        },
+        {
+          "name": "AutocompleteBoxError",
+          "value": 104
+        },
+        {
+          "name": "ConnectionFailed",
+          "value": 105
+        },
+        {
+          "name": "DisconnectionFailed",
+          "value": 106
+        },
+        {
+          "name": "ScopeExecutionFailed",
+          "value": 107
+        },
+        {
+          "name": "GetEntityFieldsFailed",
+          "value": 108
+        },
+        {
+          "name": "RestRequestError",
+          "value": 109
+        },
+        {
+          "name": "FetchSampleDataFailed",
+          "value": 110
+        },
+        {
+          "name": "TestWithSampleDataFailed",
+          "value": 111
+        },
+        {
+          "name": "OutsideScopeError",
+          "value": 112
+        },
+        {
+          "name": "ConnectionClosedSuccessfully",
+          "value": 201
+        },
+        {
+          "name": "AutocompleteBoxResultSet",
+          "value": 202
+        },
+        {
+          "name": "ConnectionSuccessful",
+          "value": 201
+        },
+        {
+          "name": "RestRequestResponseReceived",
+          "value": 203
+        },
+        {
+          "name": "EncryptionFailure",
+          "value": 204
+        },
+        {
+          "name": "DecryptionFailure",
+          "value": 205
+        },
+        {
+          "name": "RestRequestFailed",
+          "value": 206
+        },
+        {
+          "name": "RestRequestArgumentException",
+          "value": 207
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Utilities.FormDataType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ComboBox",
+          "value": 0
+        },
+        {
+          "name": "FilePicker",
+          "value": 1
+        },
+        {
+          "name": "FolderPicker",
+          "value": 2
+        },
+        {
+          "name": "ExpressionTextBox",
+          "value": 3
+        },
+        {
+          "name": "MultiSelect",
+          "value": 4
+        },
+        {
+          "name": "TextBoxWithButton",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Utilities.OAuthBase.SignatureTypes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "HMACSHA1",
+          "value": 0
+        },
+        {
+          "name": "PLAINTEXT",
+          "value": 1
+        },
+        {
+          "name": "RSASHA1",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Telemetry.TelemetryGroup",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "PreAPIOperation",
+          "value": 0
+        },
+        {
+          "name": "PostAPIOperation",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Enums.ProjectType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Swagger",
+          "value": 0
+        },
+        {
+          "name": "SDK",
+          "value": 1
+        },
+        {
+          "name": "OData",
+          "value": 2
+        },
+        {
+          "name": "HttpClient",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Enums.WindowType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "FindObject",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Enums.ApiKeyLocation",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "Query",
+          "value": 1
+        },
+        {
+          "name": "Header",
+          "value": 2
+        },
+        {
+          "name": "Cookie",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Enums.AuthType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "BasicAuth",
+          "value": 10
+        },
+        {
+          "name": "BearerAuth",
+          "value": 20
+        },
+        {
+          "name": "ApiKey",
+          "value": 30
+        },
+        {
+          "name": "ApiToken",
+          "value": 31
+        },
+        {
+          "name": "OAuth1",
+          "value": 35
+        },
+        {
+          "name": "OAuth2AuthorizationCode",
+          "value": 37
+        },
+        {
+          "name": "OAuth2ClientCredentials",
+          "value": 40
+        },
+        {
+          "name": "OAuth2Implicit",
+          "value": 45
+        },
+        {
+          "name": "OAuth2Password",
+          "value": 50
+        },
+        {
+          "name": "OpenIdConnect",
+          "value": 55
+        },
+        {
+          "name": "ExistingConnection",
+          "value": 60
+        },
+        {
+          "name": "OAuthJWT",
+          "value": 65
+        },
+        {
+          "name": "JWT",
+          "value": 66
+        },
+        {
+          "name": "OAuthPassthrough",
+          "value": 67
+        },
+        {
+          "name": "AWS",
+          "value": 68
+        },
+        {
+          "name": "None",
+          "value": 69
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Enuns.EnvironmentType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Development",
+          "value": 0
+        },
+        {
+          "name": "Production",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Workflows.RecipientsListInfoDescriptionAuthenticationMethod",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NONE",
+          "value": 0
+        },
+        {
+          "name": "KBA",
+          "value": 1
+        },
+        {
+          "name": "PASSWORD",
+          "value": 2
+        },
+        {
+          "name": "WEB_IDENTITY",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Workflows.UserWorkflowScope",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ACCOUNT",
+          "value": 0
+        },
+        {
+          "name": "GROUP",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Workflows.UserWorkflowStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ACTIVE",
+          "value": 0
+        },
+        {
+          "name": "DRAFT",
+          "value": 1
+        },
+        {
+          "name": "HIDDEN",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Workflows.WorkflowDescriptionScope",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ACCOUNT",
+          "value": 0
+        },
+        {
+          "name": "GROUP",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Workflows.WorkflowDescriptionStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ACTIVE",
+          "value": 0
+        },
+        {
+          "name": "DRAFT",
+          "value": 1
+        },
+        {
+          "name": "HIDDEN",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Workflows.WorkflowLibraryDocumentSharingMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "USER",
+          "value": 0
+        },
+        {
+          "name": "GROUP",
+          "value": 1
+        },
+        {
+          "name": "ACCOUNT",
+          "value": 2
+        },
+        {
+          "name": "GLOBAL",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Workflows.TemplateTypes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DOCUMENT",
+          "value": 0
+        },
+        {
+          "name": "FORM_FIELD_LAYER",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Widgets.Permissions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "VIEW",
+          "value": 0
+        },
+        {
+          "name": "SEND",
+          "value": 1
+        },
+        {
+          "name": "MODIFY",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Widgets.DetailedWidgetParticipantSetInfoRole",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "SIGNER",
+          "value": 0
+        },
+        {
+          "name": "SENDER",
+          "value": 1
+        },
+        {
+          "name": "APPROVER",
+          "value": 2
+        },
+        {
+          "name": "ACCEPTOR",
+          "value": 3
+        },
+        {
+          "name": "CERTIFIED_RECIPIENT",
+          "value": 4
+        },
+        {
+          "name": "FORM_FILLER",
+          "value": 5
+        },
+        {
+          "name": "DELEGATE_TO_SIGNER",
+          "value": 6
+        },
+        {
+          "name": "DELEGATE_TO_APPROVER",
+          "value": 7
+        },
+        {
+          "name": "DELEGATE_TO_ACCEPTOR",
+          "value": 8
+        },
+        {
+          "name": "DELEGATE_TO_CERTIFIED_RECIPIENT",
+          "value": 9
+        },
+        {
+          "name": "DELEGATE_TO_FORM_FILLER",
+          "value": 10
+        },
+        {
+          "name": "SHARE",
+          "value": 11
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Widgets.DocumentImageUrlsImageSize",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "FIXED_WIDTH_50px",
+          "value": 0
+        },
+        {
+          "name": "FIXED_WIDTH_250px",
+          "value": 1
+        },
+        {
+          "name": "FIXED_WIDTH_675px",
+          "value": 2
+        },
+        {
+          "name": "ZOOM_50_PERCENT",
+          "value": 3
+        },
+        {
+          "name": "ZOOM_75_PERCENT",
+          "value": 4
+        },
+        {
+          "name": "ZOOM_100_PERCENT",
+          "value": 5
+        },
+        {
+          "name": "ZOOM_125_PERCENT",
+          "value": 6
+        },
+        {
+          "name": "ZOOM_150_PERCENT",
+          "value": 7
+        },
+        {
+          "name": "ZOOM_200_PERCENT",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Widgets.FetchedWidgetInfoState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DRAFT",
+          "value": 0
+        },
+        {
+          "name": "ACTIVE",
+          "value": 1
+        },
+        {
+          "name": "AUTHORING",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Widgets.FetchedWidgetInfoStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DRAFT",
+          "value": 0
+        },
+        {
+          "name": "AUTHORING",
+          "value": 1
+        },
+        {
+          "name": "ACTIVE",
+          "value": 2
+        },
+        {
+          "name": "DOCUMENTS_NOT_YET_PROCESSED",
+          "value": 3
+        },
+        {
+          "name": "DISABLED",
+          "value": 4
+        },
+        {
+          "name": "DISCARDED",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Widgets.ParticipantSecurityOptionAuthenticationMethod",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NONE",
+          "value": 0
+        },
+        {
+          "name": "PASSWORD",
+          "value": 1
+        },
+        {
+          "name": "PHONE",
+          "value": 2
+        },
+        {
+          "name": "KBA",
+          "value": 3
+        },
+        {
+          "name": "WEB_IDENTITY",
+          "value": 4
+        },
+        {
+          "name": "ADOBE_SIGN",
+          "value": 5
+        },
+        {
+          "name": "GOV_ID",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Widgets.UserWidgetStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AUTHORING",
+          "value": 0
+        },
+        {
+          "name": "ACTIVE",
+          "value": 1
+        },
+        {
+          "name": "DRAFT",
+          "value": 2
+        },
+        {
+          "name": "DISABLED",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Widgets.VisibilityInfoVisibility",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "SHOW",
+          "value": 0
+        },
+        {
+          "name": "HIDE",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Widgets.WidgetAdditionalParticipationSetInfoRole",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "SIGNER",
+          "value": 0
+        },
+        {
+          "name": "DELEGATE_TO_SIGNER",
+          "value": 1
+        },
+        {
+          "name": "APPROVER",
+          "value": 2
+        },
+        {
+          "name": "DELEGATE_TO_APPROVER",
+          "value": 3
+        },
+        {
+          "name": "ACCEPTOR",
+          "value": 4
+        },
+        {
+          "name": "DELEGATE_TO_ACCEPTOR",
+          "value": 5
+        },
+        {
+          "name": "FORM_FILLER",
+          "value": 6
+        },
+        {
+          "name": "DELEGATE_TO_FORM_FILLER",
+          "value": 7
+        },
+        {
+          "name": "CERTIFIED_RECIPIENT",
+          "value": 8
+        },
+        {
+          "name": "DELEGATE_TO_CERTIFIED_RECIPIENT",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Widgets.WidgetAgreementStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "WAITING_FOR_MY_SIGNATURE",
+          "value": 0
+        },
+        {
+          "name": "WAITING_FOR_MY_APPROVAL",
+          "value": 1
+        },
+        {
+          "name": "WAITING_FOR_MY_DELEGATION",
+          "value": 2
+        },
+        {
+          "name": "WAITING_FOR_MY_ACKNOWLEDGEMENT",
+          "value": 3
+        },
+        {
+          "name": "WAITING_FOR_MY_ACCEPTANCE",
+          "value": 4
+        },
+        {
+          "name": "WAITING_FOR_MY_FORM_FILLING",
+          "value": 5
+        },
+        {
+          "name": "OUT_FOR_SIGNATURE",
+          "value": 6
+        },
+        {
+          "name": "OUT_FOR_APPROVAL",
+          "value": 7
+        },
+        {
+          "name": "OUT_FOR_DELIVERY",
+          "value": 8
+        },
+        {
+          "name": "OUT_FOR_ACCEPTANCE",
+          "value": 9
+        },
+        {
+          "name": "OUT_FOR_FORM_FILLING",
+          "value": 10
+        },
+        {
+          "name": "SIGNED",
+          "value": 11
+        },
+        {
+          "name": "APPROVED",
+          "value": 12
+        },
+        {
+          "name": "FORM_FILLED",
+          "value": 13
+        },
+        {
+          "name": "DELIVERED",
+          "value": 14
+        },
+        {
+          "name": "ACCEPTED",
+          "value": 15
+        },
+        {
+          "name": "ARCHIVED",
+          "value": 16
+        },
+        {
+          "name": "CANCELLED",
+          "value": 17
+        },
+        {
+          "name": "EXPIRED",
+          "value": 18
+        },
+        {
+          "name": "WAITING_FOR_PREFILL",
+          "value": 19
+        },
+        {
+          "name": "DOCUMENTS_NOT_YET_PROCESSED",
+          "value": 20
+        },
+        {
+          "name": "WAITING_FOR_MY_VERIFICATION",
+          "value": 21
+        },
+        {
+          "name": "WAITING_FOR_VERIFICATION",
+          "value": 22
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Widgets.WidgetAgreementType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AGREEMENT",
+          "value": 0
+        },
+        {
+          "name": "MEGASIGN_CHILD",
+          "value": 1
+        },
+        {
+          "name": "WIDGET_INSTANCE",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Widgets.WidgetCreationInfoV6State",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DRAFT",
+          "value": 0
+        },
+        {
+          "name": "ACTIVE",
+          "value": 1
+        },
+        {
+          "name": "AUTHORING",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Widgets.WidgetCreationInfoV6Status",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DRAFT",
+          "value": 0
+        },
+        {
+          "name": "AUTHORING",
+          "value": 1
+        },
+        {
+          "name": "ACTIVE",
+          "value": 2
+        },
+        {
+          "name": "DOCUMENTS_NOT_YET_PROCESSED",
+          "value": 3
+        },
+        {
+          "name": "DISABLED",
+          "value": 4
+        },
+        {
+          "name": "DISCARDED",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Widgets.WidgetEventParticipantRole",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "SIGNER",
+          "value": 0
+        },
+        {
+          "name": "DELEGATE_TO_SIGNER",
+          "value": 1
+        },
+        {
+          "name": "APPROVER",
+          "value": 2
+        },
+        {
+          "name": "DELEGATE_TO_APPROVER",
+          "value": 3
+        },
+        {
+          "name": "ACCEPTOR",
+          "value": 4
+        },
+        {
+          "name": "DELEGATE_TO_ACCEPTOR",
+          "value": 5
+        },
+        {
+          "name": "FORM_FILLER",
+          "value": 6
+        },
+        {
+          "name": "DELEGATE_TO_FORM_FILLER",
+          "value": 7
+        },
+        {
+          "name": "CERTIFIED_RECIPIENT",
+          "value": 8
+        },
+        {
+          "name": "DELEGATE_TO_CERTIFIED_RECIPIENT",
+          "value": 9
+        },
+        {
+          "name": "SHARE",
+          "value": 10
+        },
+        {
+          "name": "SENDER",
+          "value": 11
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Widgets.WidgetEventType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AUTO_CANCELLED_CONVERSION_PROBLEM",
+          "value": 0
+        },
+        {
+          "name": "ACTIVATED",
+          "value": 1
+        },
+        {
+          "name": "CREATED",
+          "value": 2
+        },
+        {
+          "name": "DEACTIVATED",
+          "value": 3
+        },
+        {
+          "name": "MODIFIED",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Widgets.WidgetInfoState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DRAFT",
+          "value": 0
+        },
+        {
+          "name": "ACTIVE",
+          "value": 1
+        },
+        {
+          "name": "AUTHORING",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Widgets.WidgetInfoStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DRAFT",
+          "value": 0
+        },
+        {
+          "name": "AUTHORING",
+          "value": 1
+        },
+        {
+          "name": "ACTIVE",
+          "value": 2
+        },
+        {
+          "name": "DOCUMENTS_NOT_YET_PROCESSED",
+          "value": 3
+        },
+        {
+          "name": "DISABLED",
+          "value": 4
+        },
+        {
+          "name": "DISCARDED",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Widgets.WidgetParticipantSetInfoRole",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "SIGNER",
+          "value": 0
+        },
+        {
+          "name": "DELEGATE_TO_SIGNER",
+          "value": 1
+        },
+        {
+          "name": "APPROVER",
+          "value": 2
+        },
+        {
+          "name": "DELEGATE_TO_APPROVER",
+          "value": 3
+        },
+        {
+          "name": "ACCEPTOR",
+          "value": 4
+        },
+        {
+          "name": "DELEGATE_TO_ACCEPTOR",
+          "value": 5
+        },
+        {
+          "name": "FORM_FILLER",
+          "value": 6
+        },
+        {
+          "name": "DELEGATE_TO_FORM_FILLER",
+          "value": 7
+        },
+        {
+          "name": "CERTIFIED_RECIPIENT",
+          "value": 8
+        },
+        {
+          "name": "DELEGATE_TO_CERTIFIED_RECIPIENT",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Widgets.WidgetStateInfoState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ACTIVE",
+          "value": 0
+        },
+        {
+          "name": "INACTIVE",
+          "value": 1
+        },
+        {
+          "name": "AUTHORING",
+          "value": 2
+        },
+        {
+          "name": "CANCELLED",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Widgets.WidgetViewName",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AUTHORING",
+          "value": 0
+        },
+        {
+          "name": "DOCUMENT",
+          "value": 1
+        },
+        {
+          "name": "MANAGE",
+          "value": 2
+        },
+        {
+          "name": "POST_CREATE",
+          "value": 3
+        },
+        {
+          "name": "SIGNING",
+          "value": 4
+        },
+        {
+          "name": "ALL",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Widgets.WidgetViewInfoName",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AUTHORING",
+          "value": 0
+        },
+        {
+          "name": "DOCUMENT",
+          "value": 1
+        },
+        {
+          "name": "MANAGE",
+          "value": 2
+        },
+        {
+          "name": "POST_CREATE",
+          "value": 3
+        },
+        {
+          "name": "SIGNING",
+          "value": 4
+        },
+        {
+          "name": "ALL",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Webhooks.Scope",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ACCOUNT",
+          "value": 0
+        },
+        {
+          "name": "GROUP",
+          "value": 1
+        },
+        {
+          "name": "USER",
+          "value": 2
+        },
+        {
+          "name": "RESOURCE",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Webhooks.ResourceType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AGREEMENT",
+          "value": 0
+        },
+        {
+          "name": "WIDGET",
+          "value": 1
+        },
+        {
+          "name": "MEGASIGN",
+          "value": 2
+        },
+        {
+          "name": "LIBRARY_DOCUMENT",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Webhooks.UserWebhookResourceType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AGREEMENT",
+          "value": 0
+        },
+        {
+          "name": "WIDGET",
+          "value": 1
+        },
+        {
+          "name": "MEGASIGN",
+          "value": 2
+        },
+        {
+          "name": "LIBRARY_DOCUMENT",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Webhooks.UserWebhookScope",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ACCOUNT",
+          "value": 0
+        },
+        {
+          "name": "GROUP",
+          "value": 1
+        },
+        {
+          "name": "USER",
+          "value": 2
+        },
+        {
+          "name": "RESOURCE",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Webhooks.UserWebhookStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ACTIVE",
+          "value": 0
+        },
+        {
+          "name": "INACTIVE",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Webhooks.WebhookSubscriptionEvents",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AGREEMENT_CREATED",
+          "value": 0
+        },
+        {
+          "name": "AGREEMENT_ACTION_DELEGATED",
+          "value": 1
+        },
+        {
+          "name": "AGREEMENT_RECALLED",
+          "value": 2
+        },
+        {
+          "name": "AGREEMENT_REJECTED",
+          "value": 3
+        },
+        {
+          "name": "AGREEMENT_EXPIRED",
+          "value": 4
+        },
+        {
+          "name": "AGREEMENT_ACTION_COMPLETED",
+          "value": 5
+        },
+        {
+          "name": "AGREEMENT_WORKFLOW_COMPLETED",
+          "value": 6
+        },
+        {
+          "name": "AGREEMENT_EMAIL_VIEWED",
+          "value": 7
+        },
+        {
+          "name": "AGREEMENT_MODIFIED",
+          "value": 8
+        },
+        {
+          "name": "AGREEMENT_SHARED",
+          "value": 9
+        },
+        {
+          "name": "AGREEMENT_READY_TO_VAULT",
+          "value": 10
+        },
+        {
+          "name": "AGREEMENT_VAULTED",
+          "value": 11
+        },
+        {
+          "name": "AGREEMENT_ACTION_REQUESTED",
+          "value": 12
+        },
+        {
+          "name": "AGREEMENT_ACTION_REPLACED_SIGNER",
+          "value": 13
+        },
+        {
+          "name": "AGREEMENT_AUTO_CANCELLED_CONVERSION_PROBLEM",
+          "value": 14
+        },
+        {
+          "name": "AGREEMENT_DOCUMENTS_DELETED",
+          "value": 15
+        },
+        {
+          "name": "AGREEMENT_EMAIL_BOUNCED",
+          "value": 16
+        },
+        {
+          "name": "AGREEMENT_KBA_AUTHENTICATED",
+          "value": 17
+        },
+        {
+          "name": "AGREEMENT_OFFLINE_SYNC",
+          "value": 18
+        },
+        {
+          "name": "AGREEMENT_USER_ACK_AGREEMENT_MODIFIED",
+          "value": 19
+        },
+        {
+          "name": "AGREEMENT_UPLOADED_BY_SENDER",
+          "value": 20
+        },
+        {
+          "name": "AGREEMENT_WEB_IDENTITY_AUTHENTICATED",
+          "value": 21
+        },
+        {
+          "name": "AGREEMENT_ALL",
+          "value": 22
+        },
+        {
+          "name": "MEGASIGN_CREATED",
+          "value": 23
+        },
+        {
+          "name": "MEGASIGN_RECALLED",
+          "value": 24
+        },
+        {
+          "name": "MEGASIGN_SHARED",
+          "value": 25
+        },
+        {
+          "name": "MEGASIGN_ALL",
+          "value": 26
+        },
+        {
+          "name": "WIDGET_CREATED",
+          "value": 27
+        },
+        {
+          "name": "WIDGET_MODIFIED",
+          "value": 28
+        },
+        {
+          "name": "WIDGET_SHARED",
+          "value": 29
+        },
+        {
+          "name": "WIDGET_ENABLED",
+          "value": 30
+        },
+        {
+          "name": "WIDGET_DISABLED",
+          "value": 31
+        },
+        {
+          "name": "WIDGET_AUTO_CANCELLED_CONVERSION_PROBLEM",
+          "value": 32
+        },
+        {
+          "name": "WIDGET_ALL",
+          "value": 33
+        },
+        {
+          "name": "LIBRARY_DOCUMENT_CREATED",
+          "value": 34
+        },
+        {
+          "name": "LIBRARY_DOCUMENT_AUTO_CANCELLED_CONVERSION_PROBLEM",
+          "value": 35
+        },
+        {
+          "name": "LIBRARY_DOCUMENT_MODIFIED",
+          "value": 36
+        },
+        {
+          "name": "LIBRARY_DOCUMENT_ALL",
+          "value": 37
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Webhooks.WebhookInfoResourceType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AGREEMENT",
+          "value": 0
+        },
+        {
+          "name": "WIDGET",
+          "value": 1
+        },
+        {
+          "name": "MEGASIGN",
+          "value": 2
+        },
+        {
+          "name": "LIBRARY_DOCUMENT",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Webhooks.WebhookInfoScope",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ACCOUNT",
+          "value": 0
+        },
+        {
+          "name": "GROUP",
+          "value": 1
+        },
+        {
+          "name": "USER",
+          "value": 2
+        },
+        {
+          "name": "RESOURCE",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Webhooks.WebhookInfoState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ACTIVE",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Webhooks.WebhookInfoStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ACTIVE",
+          "value": 0
+        },
+        {
+          "name": "INACTIVE",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Webhooks.WebhookSubscriptionEvents2",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AGREEMENT_CREATED",
+          "value": 0
+        },
+        {
+          "name": "AGREEMENT_ACTION_DELEGATED",
+          "value": 1
+        },
+        {
+          "name": "AGREEMENT_RECALLED",
+          "value": 2
+        },
+        {
+          "name": "AGREEMENT_REJECTED",
+          "value": 3
+        },
+        {
+          "name": "AGREEMENT_EXPIRED",
+          "value": 4
+        },
+        {
+          "name": "AGREEMENT_ACTION_COMPLETED",
+          "value": 5
+        },
+        {
+          "name": "AGREEMENT_WORKFLOW_COMPLETED",
+          "value": 6
+        },
+        {
+          "name": "AGREEMENT_EMAIL_VIEWED",
+          "value": 7
+        },
+        {
+          "name": "AGREEMENT_MODIFIED",
+          "value": 8
+        },
+        {
+          "name": "AGREEMENT_SHARED",
+          "value": 9
+        },
+        {
+          "name": "AGREEMENT_READY_TO_VAULT",
+          "value": 10
+        },
+        {
+          "name": "AGREEMENT_VAULTED",
+          "value": 11
+        },
+        {
+          "name": "AGREEMENT_ACTION_REQUESTED",
+          "value": 12
+        },
+        {
+          "name": "AGREEMENT_ACTION_REPLACED_SIGNER",
+          "value": 13
+        },
+        {
+          "name": "AGREEMENT_AUTO_CANCELLED_CONVERSION_PROBLEM",
+          "value": 14
+        },
+        {
+          "name": "AGREEMENT_DOCUMENTS_DELETED",
+          "value": 15
+        },
+        {
+          "name": "AGREEMENT_EMAIL_BOUNCED",
+          "value": 16
+        },
+        {
+          "name": "AGREEMENT_KBA_AUTHENTICATED",
+          "value": 17
+        },
+        {
+          "name": "AGREEMENT_OFFLINE_SYNC",
+          "value": 18
+        },
+        {
+          "name": "AGREEMENT_USER_ACK_AGREEMENT_MODIFIED",
+          "value": 19
+        },
+        {
+          "name": "AGREEMENT_UPLOADED_BY_SENDER",
+          "value": 20
+        },
+        {
+          "name": "AGREEMENT_WEB_IDENTITY_AUTHENTICATED",
+          "value": 21
+        },
+        {
+          "name": "AGREEMENT_ALL",
+          "value": 22
+        },
+        {
+          "name": "MEGASIGN_CREATED",
+          "value": 23
+        },
+        {
+          "name": "MEGASIGN_RECALLED",
+          "value": 24
+        },
+        {
+          "name": "MEGASIGN_SHARED",
+          "value": 25
+        },
+        {
+          "name": "MEGASIGN_ALL",
+          "value": 26
+        },
+        {
+          "name": "WIDGET_CREATED",
+          "value": 27
+        },
+        {
+          "name": "WIDGET_MODIFIED",
+          "value": 28
+        },
+        {
+          "name": "WIDGET_SHARED",
+          "value": 29
+        },
+        {
+          "name": "WIDGET_ENABLED",
+          "value": 30
+        },
+        {
+          "name": "WIDGET_DISABLED",
+          "value": 31
+        },
+        {
+          "name": "WIDGET_AUTO_CANCELLED_CONVERSION_PROBLEM",
+          "value": 32
+        },
+        {
+          "name": "WIDGET_ALL",
+          "value": 33
+        },
+        {
+          "name": "LIBRARY_DOCUMENT_CREATED",
+          "value": 34
+        },
+        {
+          "name": "LIBRARY_DOCUMENT_AUTO_CANCELLED_CONVERSION_PROBLEM",
+          "value": 35
+        },
+        {
+          "name": "LIBRARY_DOCUMENT_MODIFIED",
+          "value": 36
+        },
+        {
+          "name": "LIBRARY_DOCUMENT_ALL",
+          "value": 37
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Webhooks.WebhookStateInfoState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ACTIVE",
+          "value": 0
+        },
+        {
+          "name": "INACTIVE",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Users.DetailedUserInfoAccountType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "FREE",
+          "value": 0
+        },
+        {
+          "name": "PRO",
+          "value": 1
+        },
+        {
+          "name": "TEAM",
+          "value": 2
+        },
+        {
+          "name": "TEAM_TRIAL",
+          "value": 3
+        },
+        {
+          "name": "ENTERPRISE",
+          "value": 4
+        },
+        {
+          "name": "ENTERPRISE_TRIAL",
+          "value": 5
+        },
+        {
+          "name": "GLOBAL",
+          "value": 6
+        },
+        {
+          "name": "GLOBAL_TRIAL",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Users.DetailedUserInfoStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ACTIVE",
+          "value": 0
+        },
+        {
+          "name": "INACTIVE",
+          "value": 1
+        },
+        {
+          "name": "CREATED",
+          "value": 2
+        },
+        {
+          "name": "UNVERIFIED",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Users.UserGroupInfoStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ACTIVE",
+          "value": 0
+        },
+        {
+          "name": "DELETED",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Users.UserStateInfoState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ACTIVE",
+          "value": 0
+        },
+        {
+          "name": "INACTIVE",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Users.UserStatusUpdateResponseCode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ALREADY_ACTIVE",
+          "value": 0
+        },
+        {
+          "name": "ALREADY_INACTIVE",
+          "value": 1
+        },
+        {
+          "name": "OK",
+          "value": 2
+        },
+        {
+          "name": "RESET_PASSWORD_WORKFLOW_INITIATED",
+          "value": 3
+        },
+        {
+          "name": "SET_PASSWORD_WORKFLOW_INITIATED",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Users.UserStatusUpdateResponseState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ACTIVE",
+          "value": 0
+        },
+        {
+          "name": "INACTIVE",
+          "value": 1
+        },
+        {
+          "name": "CREATED",
+          "value": 2
+        },
+        {
+          "name": "PENDING",
+          "value": 3
+        },
+        {
+          "name": "UNVERIFIED",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Users.UserViewName",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "MANAGE",
+          "value": 0
+        },
+        {
+          "name": "ACCOUNT_SETTINGS",
+          "value": 1
+        },
+        {
+          "name": "USER_PROFILE",
+          "value": 2
+        },
+        {
+          "name": "ALL",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Users.UserViewInfoName",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "MANAGE",
+          "value": 0
+        },
+        {
+          "name": "ACCOUNT_SETTINGS",
+          "value": 1
+        },
+        {
+          "name": "USER_PROFILE",
+          "value": 2
+        },
+        {
+          "name": "ALL",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.MegaSigns.Permissions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "VIEW",
+          "value": 0
+        },
+        {
+          "name": "SEND",
+          "value": 1
+        },
+        {
+          "name": "MODIFY",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.MegaSigns.DetailedParticipantInfoStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "REPLACED",
+          "value": 0
+        },
+        {
+          "name": "ACTIVE",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.MegaSigns.DetailedParticipantSetInfoRole",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "SIGNER",
+          "value": 0
+        },
+        {
+          "name": "SENDER",
+          "value": 1
+        },
+        {
+          "name": "APPROVER",
+          "value": 2
+        },
+        {
+          "name": "ACCEPTOR",
+          "value": 3
+        },
+        {
+          "name": "CERTIFIED_RECIPIENT",
+          "value": 4
+        },
+        {
+          "name": "FORM_FILLER",
+          "value": 5
+        },
+        {
+          "name": "DELEGATE_TO_SIGNER",
+          "value": 6
+        },
+        {
+          "name": "DELEGATE_TO_APPROVER",
+          "value": 7
+        },
+        {
+          "name": "DELEGATE_TO_ACCEPTOR",
+          "value": 8
+        },
+        {
+          "name": "DELEGATE_TO_CERTIFIED_RECIPIENT",
+          "value": 9
+        },
+        {
+          "name": "DELEGATE_TO_FORM_FILLER",
+          "value": 10
+        },
+        {
+          "name": "SHARE",
+          "value": 11
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.MegaSigns.DetailedParticipantSetInfoStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "CANCELLED",
+          "value": 0
+        },
+        {
+          "name": "COMPLETED",
+          "value": 1
+        },
+        {
+          "name": "EXPIRED",
+          "value": 2
+        },
+        {
+          "name": "NOT_YET_VISIBLE",
+          "value": 3
+        },
+        {
+          "name": "WAITING_FOR_OTHERS",
+          "value": 4
+        },
+        {
+          "name": "WAITING_FOR_MY_APPROVAL",
+          "value": 5
+        },
+        {
+          "name": "WAITING_FOR_AUTHORING",
+          "value": 6
+        },
+        {
+          "name": "WAITING_FOR_MY_ACKNOWLEDGEMENT",
+          "value": 7
+        },
+        {
+          "name": "WAITING_FOR_MY_ACCEPTANCE",
+          "value": 8
+        },
+        {
+          "name": "WAITING_FOR_MY_FORM_FILLING",
+          "value": 9
+        },
+        {
+          "name": "WAITING_FOR_MY_DELEGATION",
+          "value": 10
+        },
+        {
+          "name": "WAITING_FOR_MY_SIGNATURE",
+          "value": 11
+        },
+        {
+          "name": "WAITING_FOR_MY_VERIFICATION",
+          "value": 12
+        },
+        {
+          "name": "WAITING_FOR_PREFILL",
+          "value": 13
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.MegaSigns.DocumentImageUrlsImageSize",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "FIXED_WIDTH_50px",
+          "value": 0
+        },
+        {
+          "name": "FIXED_WIDTH_250px",
+          "value": 1
+        },
+        {
+          "name": "FIXED_WIDTH_675px",
+          "value": 2
+        },
+        {
+          "name": "ZOOM_50_PERCENT",
+          "value": 3
+        },
+        {
+          "name": "ZOOM_75_PERCENT",
+          "value": 4
+        },
+        {
+          "name": "ZOOM_100_PERCENT",
+          "value": 5
+        },
+        {
+          "name": "ZOOM_125_PERCENT",
+          "value": 6
+        },
+        {
+          "name": "ZOOM_150_PERCENT",
+          "value": 7
+        },
+        {
+          "name": "ZOOM_200_PERCENT",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.MegaSigns.FetchedMegaSignInfoReminderFrequency",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DAILY_UNTIL_SIGNED",
+          "value": 0
+        },
+        {
+          "name": "WEEKDAILY_UNTIL_SIGNED",
+          "value": 1
+        },
+        {
+          "name": "EVERY_OTHER_DAY_UNTIL_SIGNED",
+          "value": 2
+        },
+        {
+          "name": "EVERY_THIRD_DAY_UNTIL_SIGNED",
+          "value": 3
+        },
+        {
+          "name": "EVERY_FIFTH_DAY_UNTIL_SIGNED",
+          "value": 4
+        },
+        {
+          "name": "WEEKLY_UNTIL_SIGNED",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.MegaSigns.FetchedMegaSignInfoSignatureType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ESIGN",
+          "value": 0
+        },
+        {
+          "name": "WRITTEN",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.MegaSigns.FetchedMegaSignInfoState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "IN_PROCESS",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.MegaSigns.FetchedMegaSignInfoStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AUTHORING",
+          "value": 0
+        },
+        {
+          "name": "IN_PROCESS",
+          "value": 1
+        },
+        {
+          "name": "CANCELLED",
+          "value": 2
+        },
+        {
+          "name": "COMPLETED",
+          "value": 3
+        },
+        {
+          "name": "EXPIRED",
+          "value": 4
+        },
+        {
+          "name": "PREFILL",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.MegaSigns.MegaSignStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "WAITING_FOR_MY_SIGNATURE",
+          "value": 0
+        },
+        {
+          "name": "IN_PROCESS",
+          "value": 1
+        },
+        {
+          "name": "CANCELLED",
+          "value": 2
+        },
+        {
+          "name": "ARCHIVED",
+          "value": 3
+        },
+        {
+          "name": "COMPLETED",
+          "value": 4
+        },
+        {
+          "name": "WAITING_FOR_AUTHORING",
+          "value": 5
+        },
+        {
+          "name": "WAITING_FOR_PREFILL",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.MegaSigns.MegaSignChildAgreementStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "WAITING_FOR_MY_SIGNATURE",
+          "value": 0
+        },
+        {
+          "name": "WAITING_FOR_MY_APPROVAL",
+          "value": 1
+        },
+        {
+          "name": "WAITING_FOR_MY_DELEGATION",
+          "value": 2
+        },
+        {
+          "name": "WAITING_FOR_MY_ACKNOWLEDGEMENT",
+          "value": 3
+        },
+        {
+          "name": "WAITING_FOR_MY_ACCEPTANCE",
+          "value": 4
+        },
+        {
+          "name": "WAITING_FOR_MY_FORM_FILLING",
+          "value": 5
+        },
+        {
+          "name": "OUT_FOR_SIGNATURE",
+          "value": 6
+        },
+        {
+          "name": "OUT_FOR_APPROVAL",
+          "value": 7
+        },
+        {
+          "name": "OUT_FOR_DELIVERY",
+          "value": 8
+        },
+        {
+          "name": "OUT_FOR_ACCEPTANCE",
+          "value": 9
+        },
+        {
+          "name": "OUT_FOR_FORM_FILLING",
+          "value": 10
+        },
+        {
+          "name": "SIGNED",
+          "value": 11
+        },
+        {
+          "name": "APPROVED",
+          "value": 12
+        },
+        {
+          "name": "FORM_FILLED",
+          "value": 13
+        },
+        {
+          "name": "DELIVERED",
+          "value": 14
+        },
+        {
+          "name": "ACCEPTED",
+          "value": 15
+        },
+        {
+          "name": "ARCHIVED",
+          "value": 16
+        },
+        {
+          "name": "CANCELLED",
+          "value": 17
+        },
+        {
+          "name": "EXPIRED",
+          "value": 18
+        },
+        {
+          "name": "WAITING_FOR_AUTHORING",
+          "value": 19
+        },
+        {
+          "name": "WAITING_FOR_PREFILL",
+          "value": 20
+        },
+        {
+          "name": "DRAFT",
+          "value": 21
+        },
+        {
+          "name": "DOCUMENTS_NOT_YET_PROCESSED",
+          "value": 22
+        },
+        {
+          "name": "WAITING_FOR_MY_VERIFICATION",
+          "value": 23
+        },
+        {
+          "name": "WAITING_FOR_VERIFICATION",
+          "value": 24
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.MegaSigns.MegaSignChildAgreementType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AGREEMENT",
+          "value": 0
+        },
+        {
+          "name": "MEGASIGN_CHILD",
+          "value": 1
+        },
+        {
+          "name": "WIDGET_INSTANCE",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.MegaSigns.MegaSignChildAgreementsFileInfoFileType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "CSV",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.MegaSigns.MegaSignCreationInfoReminderFrequency",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DAILY_UNTIL_SIGNED",
+          "value": 0
+        },
+        {
+          "name": "WEEKDAILY_UNTIL_SIGNED",
+          "value": 1
+        },
+        {
+          "name": "EVERY_OTHER_DAY_UNTIL_SIGNED",
+          "value": 2
+        },
+        {
+          "name": "EVERY_THIRD_DAY_UNTIL_SIGNED",
+          "value": 3
+        },
+        {
+          "name": "EVERY_FIFTH_DAY_UNTIL_SIGNED",
+          "value": 4
+        },
+        {
+          "name": "WEEKLY_UNTIL_SIGNED",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.MegaSigns.MegaSignCreationInfoSignatureType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ESIGN",
+          "value": 0
+        },
+        {
+          "name": "WRITTEN",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.MegaSigns.MegaSignCreationInfoState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "IN_PROCESS",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.MegaSigns.MegaSignCreationInfoStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AUTHORING",
+          "value": 0
+        },
+        {
+          "name": "IN_PROCESS",
+          "value": 1
+        },
+        {
+          "name": "CANCELLED",
+          "value": 2
+        },
+        {
+          "name": "COMPLETED",
+          "value": 3
+        },
+        {
+          "name": "EXPIRED",
+          "value": 4
+        },
+        {
+          "name": "PREFILL",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.MegaSigns.MegaSignInfoReminderFrequency",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DAILY_UNTIL_SIGNED",
+          "value": 0
+        },
+        {
+          "name": "WEEKDAILY_UNTIL_SIGNED",
+          "value": 1
+        },
+        {
+          "name": "EVERY_OTHER_DAY_UNTIL_SIGNED",
+          "value": 2
+        },
+        {
+          "name": "EVERY_THIRD_DAY_UNTIL_SIGNED",
+          "value": 3
+        },
+        {
+          "name": "EVERY_FIFTH_DAY_UNTIL_SIGNED",
+          "value": 4
+        },
+        {
+          "name": "WEEKLY_UNTIL_SIGNED",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.MegaSigns.MegaSignInfoSignatureType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ESIGN",
+          "value": 0
+        },
+        {
+          "name": "WRITTEN",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.MegaSigns.MegaSignInfoState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "IN_PROCESS",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.MegaSigns.MegaSignInfoStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AUTHORING",
+          "value": 0
+        },
+        {
+          "name": "IN_PROCESS",
+          "value": 1
+        },
+        {
+          "name": "CANCELLED",
+          "value": 2
+        },
+        {
+          "name": "COMPLETED",
+          "value": 3
+        },
+        {
+          "name": "EXPIRED",
+          "value": 4
+        },
+        {
+          "name": "PREFILL",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.MegaSigns.MegaSignSecurityOptionExternalAuthenticationMethod",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NONE",
+          "value": 0
+        },
+        {
+          "name": "WEB_IDENTITY",
+          "value": 1
+        },
+        {
+          "name": "KBA",
+          "value": 2
+        },
+        {
+          "name": "PASSWORD",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.MegaSigns.MegaSignSecurityOptionInternalAuthenticationMethod",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NONE",
+          "value": 0
+        },
+        {
+          "name": "WEB_IDENTITY",
+          "value": 1
+        },
+        {
+          "name": "KBA",
+          "value": 2
+        },
+        {
+          "name": "PASSWORD",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.MegaSigns.MegaSignStateInfoState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "CANCELLED",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.MegaSigns.MegaSignViewName",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ACTIVITY_REPORT",
+          "value": 0
+        },
+        {
+          "name": "AUTHORING",
+          "value": 1
+        },
+        {
+          "name": "DOCUMENT",
+          "value": 2
+        },
+        {
+          "name": "MANAGE",
+          "value": 3
+        },
+        {
+          "name": "POST_CREATE",
+          "value": 4
+        },
+        {
+          "name": "PREFILL",
+          "value": 5
+        },
+        {
+          "name": "SIGNING",
+          "value": 6
+        },
+        {
+          "name": "ALL",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.MegaSigns.MegaSignViewInfoName",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ACTIVITY_REPORT",
+          "value": 0
+        },
+        {
+          "name": "AUTHORING",
+          "value": 1
+        },
+        {
+          "name": "DOCUMENT",
+          "value": 2
+        },
+        {
+          "name": "MANAGE",
+          "value": 3
+        },
+        {
+          "name": "POST_CREATE",
+          "value": 4
+        },
+        {
+          "name": "PREFILL",
+          "value": 5
+        },
+        {
+          "name": "SIGNING",
+          "value": 6
+        },
+        {
+          "name": "ALL",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.MegaSigns.MegasignEventParticipantRole",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "SIGNER",
+          "value": 0
+        },
+        {
+          "name": "DELEGATE_TO_SIGNER",
+          "value": 1
+        },
+        {
+          "name": "APPROVER",
+          "value": 2
+        },
+        {
+          "name": "DELEGATE_TO_APPROVER",
+          "value": 3
+        },
+        {
+          "name": "ACCEPTOR",
+          "value": 4
+        },
+        {
+          "name": "DELEGATE_TO_ACCEPTOR",
+          "value": 5
+        },
+        {
+          "name": "FORM_FILLER",
+          "value": 6
+        },
+        {
+          "name": "DELEGATE_TO_FORM_FILLER",
+          "value": 7
+        },
+        {
+          "name": "CERTIFIED_RECIPIENT",
+          "value": 8
+        },
+        {
+          "name": "DELEGATE_TO_CERTIFIED_RECIPIENT",
+          "value": 9
+        },
+        {
+          "name": "SHARE",
+          "value": 10
+        },
+        {
+          "name": "SENDER",
+          "value": 11
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.MegaSigns.MegasignEventType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AUTO_CANCELLED_CONVERSION_PROBLEM",
+          "value": 0
+        },
+        {
+          "name": "CREATED",
+          "value": 1
+        },
+        {
+          "name": "EXPIRED",
+          "value": 2
+        },
+        {
+          "name": "EMAIL_BOUNCED",
+          "value": 3
+        },
+        {
+          "name": "RECALLED",
+          "value": 4
+        },
+        {
+          "name": "SHARED",
+          "value": 5
+        },
+        {
+          "name": "READY_TO_VAULT",
+          "value": 6
+        },
+        {
+          "name": "VAULTED",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.MegaSigns.ParticipantSecurityOptionAuthenticationMethod",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NONE",
+          "value": 0
+        },
+        {
+          "name": "PASSWORD",
+          "value": 1
+        },
+        {
+          "name": "PHONE",
+          "value": 2
+        },
+        {
+          "name": "KBA",
+          "value": 3
+        },
+        {
+          "name": "WEB_IDENTITY",
+          "value": 4
+        },
+        {
+          "name": "ADOBE_SIGN",
+          "value": 5
+        },
+        {
+          "name": "GOV_ID",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.MegaSigns.ReminderInfoFrequency",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DAILY_UNTIL_SIGNED",
+          "value": 0
+        },
+        {
+          "name": "WEEKDAILY_UNTIL_SIGNED",
+          "value": 1
+        },
+        {
+          "name": "EVERY_OTHER_DAY_UNTIL_SIGNED",
+          "value": 2
+        },
+        {
+          "name": "EVERY_THIRD_DAY_UNTIL_SIGNED",
+          "value": 3
+        },
+        {
+          "name": "EVERY_FIFTH_DAY_UNTIL_SIGNED",
+          "value": 4
+        },
+        {
+          "name": "WEEKLY_UNTIL_SIGNED",
+          "value": 5
+        },
+        {
+          "name": "ONCE",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.MegaSigns.ReminderInfoStartReminderCounterFrom",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AGREEMENT_AVAILABILITY",
+          "value": 0
+        },
+        {
+          "name": "REMINDER_CREATION",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.MegaSigns.ReminderInfoStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ACTIVE",
+          "value": 0
+        },
+        {
+          "name": "CANCELED",
+          "value": 1
+        },
+        {
+          "name": "COMPLETE",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.MegaSigns.SenderInfoStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "CANCELLED",
+          "value": 0
+        },
+        {
+          "name": "COMPLETED",
+          "value": 1
+        },
+        {
+          "name": "EXPIRED",
+          "value": 2
+        },
+        {
+          "name": "NOT_YET_VISIBLE",
+          "value": 3
+        },
+        {
+          "name": "WAITING_FOR_AUTHORING",
+          "value": 4
+        },
+        {
+          "name": "WAITING_FOR_MY_DELEGATION",
+          "value": 5
+        },
+        {
+          "name": "WAITING_FOR_MY_ACCEPTANCE",
+          "value": 6
+        },
+        {
+          "name": "WAITING_FOR_MY_ACKNOWLEDGEMENT",
+          "value": 7
+        },
+        {
+          "name": "WAITING_FOR_MY_APPROVAL",
+          "value": 8
+        },
+        {
+          "name": "WAITING_FOR_MY_FORM_FILLING",
+          "value": 9
+        },
+        {
+          "name": "WAITING_FOR_MY_SIGNATURE",
+          "value": 10
+        },
+        {
+          "name": "WAITING_FOR_OTHERS",
+          "value": 11
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.MegaSigns.VisibilityInfoVisibility",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "SHOW",
+          "value": 0
+        },
+        {
+          "name": "HIDE",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.LibraryDocuments.Permissions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "VIEW",
+          "value": 0
+        },
+        {
+          "name": "SEND",
+          "value": 1
+        },
+        {
+          "name": "MODIFY",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.LibraryDocuments.DocumentImageUrlsImageSize",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "FIXED_WIDTH_50px",
+          "value": 0
+        },
+        {
+          "name": "FIXED_WIDTH_250px",
+          "value": 1
+        },
+        {
+          "name": "FIXED_WIDTH_675px",
+          "value": 2
+        },
+        {
+          "name": "ZOOM_50_PERCENT",
+          "value": 3
+        },
+        {
+          "name": "ZOOM_75_PERCENT",
+          "value": 4
+        },
+        {
+          "name": "ZOOM_100_PERCENT",
+          "value": 5
+        },
+        {
+          "name": "ZOOM_125_PERCENT",
+          "value": 6
+        },
+        {
+          "name": "ZOOM_150_PERCENT",
+          "value": 7
+        },
+        {
+          "name": "ZOOM_200_PERCENT",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.LibraryDocuments.LibraryDocumentSharingMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "USER",
+          "value": 0
+        },
+        {
+          "name": "GROUP",
+          "value": 1
+        },
+        {
+          "name": "ACCOUNT",
+          "value": 2
+        },
+        {
+          "name": "GLOBAL",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.LibraryDocuments.LibraryDocumentStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AUTHORING",
+          "value": 0
+        },
+        {
+          "name": "ACTIVE",
+          "value": 1
+        },
+        {
+          "name": "REMOVED",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.LibraryDocuments.TemplateTypes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DOCUMENT",
+          "value": 0
+        },
+        {
+          "name": "FORM_FIELD_LAYER",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.LibraryDocuments.LibraryDocumentCreationInfoV6SharingMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "USER",
+          "value": 0
+        },
+        {
+          "name": "GROUP",
+          "value": 1
+        },
+        {
+          "name": "ACCOUNT",
+          "value": 2
+        },
+        {
+          "name": "GLOBAL",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.LibraryDocuments.LibraryDocumentCreationInfoV6State",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AUTHORING",
+          "value": 0
+        },
+        {
+          "name": "ACTIVE",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.LibraryDocuments.LibraryDocumentCreationInfoV6Status",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AUTHORING",
+          "value": 0
+        },
+        {
+          "name": "ACTIVE",
+          "value": 1
+        },
+        {
+          "name": "REMOVED",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.LibraryDocuments.TemplateTypes2",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DOCUMENT",
+          "value": 0
+        },
+        {
+          "name": "FORM_FIELD_LAYER",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.LibraryDocuments.LibraryDocumentEventParticipantRole",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "SIGNER",
+          "value": 0
+        },
+        {
+          "name": "DELEGATE_TO_SIGNER",
+          "value": 1
+        },
+        {
+          "name": "APPROVER",
+          "value": 2
+        },
+        {
+          "name": "DELEGATE_TO_APPROVER",
+          "value": 3
+        },
+        {
+          "name": "ACCEPTOR",
+          "value": 4
+        },
+        {
+          "name": "DELEGATE_TO_ACCEPTOR",
+          "value": 5
+        },
+        {
+          "name": "FORM_FILLER",
+          "value": 6
+        },
+        {
+          "name": "DELEGATE_TO_FORM_FILLER",
+          "value": 7
+        },
+        {
+          "name": "CERTIFIED_RECIPIENT",
+          "value": 8
+        },
+        {
+          "name": "DELEGATE_TO_CERTIFIED_RECIPIENT",
+          "value": 9
+        },
+        {
+          "name": "SHARE",
+          "value": 10
+        },
+        {
+          "name": "SENDER",
+          "value": 11
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.LibraryDocuments.LibraryDocumentEventType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AUTO_CANCELLED_CONVERSION_PROBLEM",
+          "value": 0
+        },
+        {
+          "name": "CREATED",
+          "value": 1
+        },
+        {
+          "name": "MODIFIED",
+          "value": 2
+        },
+        {
+          "name": "DOCUMENTS_DELETED",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.LibraryDocuments.LibraryDocumentInfoSharingMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "USER",
+          "value": 0
+        },
+        {
+          "name": "GROUP",
+          "value": 1
+        },
+        {
+          "name": "ACCOUNT",
+          "value": 2
+        },
+        {
+          "name": "GLOBAL",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.LibraryDocuments.LibraryDocumentInfoState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AUTHORING",
+          "value": 0
+        },
+        {
+          "name": "ACTIVE",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.LibraryDocuments.LibraryDocumentInfoStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AUTHORING",
+          "value": 0
+        },
+        {
+          "name": "ACTIVE",
+          "value": 1
+        },
+        {
+          "name": "REMOVED",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.LibraryDocuments.TemplateTypes3",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DOCUMENT",
+          "value": 0
+        },
+        {
+          "name": "FORM_FIELD_LAYER",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.LibraryDocuments.LibraryDocumentStateInfoState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AUTHORING",
+          "value": 0
+        },
+        {
+          "name": "ACTIVE",
+          "value": 1
+        },
+        {
+          "name": "REMOVED",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.LibraryDocuments.LibraryViewName",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "EDIT",
+          "value": 0
+        },
+        {
+          "name": "DOCUMENT",
+          "value": 1
+        },
+        {
+          "name": "MANAGE",
+          "value": 2
+        },
+        {
+          "name": "SEND",
+          "value": 3
+        },
+        {
+          "name": "ALL",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.LibraryDocuments.LibraryViewInfoName",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "EDIT",
+          "value": 0
+        },
+        {
+          "name": "DOCUMENT",
+          "value": 1
+        },
+        {
+          "name": "MANAGE",
+          "value": 2
+        },
+        {
+          "name": "SEND",
+          "value": 3
+        },
+        {
+          "name": "ALL",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.LibraryDocuments.VisibilityInfoVisibility",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "SHOW",
+          "value": 0
+        },
+        {
+          "name": "HIDE",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Agreements.SupportingDocumentContentFormat",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ORIGINAL",
+          "value": 0
+        },
+        {
+          "name": "CONVERTED_PDF",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Agreements.Permissions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "VIEW",
+          "value": 0
+        },
+        {
+          "name": "SEND",
+          "value": 1
+        },
+        {
+          "name": "MODIFY",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Agreements.AgreementCreationInfoReminderFrequency",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DAILY_UNTIL_SIGNED",
+          "value": 0
+        },
+        {
+          "name": "WEEKDAILY_UNTIL_SIGNED",
+          "value": 1
+        },
+        {
+          "name": "EVERY_OTHER_DAY_UNTIL_SIGNED",
+          "value": 2
+        },
+        {
+          "name": "EVERY_THIRD_DAY_UNTIL_SIGNED",
+          "value": 3
+        },
+        {
+          "name": "EVERY_FIFTH_DAY_UNTIL_SIGNED",
+          "value": 4
+        },
+        {
+          "name": "WEEKLY_UNTIL_SIGNED",
+          "value": 5
+        },
+        {
+          "name": "ONCE",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Agreements.AgreementCreationInfoSignatureType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ESIGN",
+          "value": 0
+        },
+        {
+          "name": "WRITTEN",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Agreements.AgreementCreationInfoState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AUTHORING",
+          "value": 0
+        },
+        {
+          "name": "DRAFT",
+          "value": 1
+        },
+        {
+          "name": "IN_PROCESS",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Agreements.AgreementCreationInfoStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "OUT_FOR_SIGNATURE",
+          "value": 0
+        },
+        {
+          "name": "OUT_FOR_DELIVERY",
+          "value": 1
+        },
+        {
+          "name": "OUT_FOR_ACCEPTANCE",
+          "value": 2
+        },
+        {
+          "name": "OUT_FOR_FORM_FILLING",
+          "value": 3
+        },
+        {
+          "name": "OUT_FOR_APPROVAL",
+          "value": 4
+        },
+        {
+          "name": "AUTHORING",
+          "value": 5
+        },
+        {
+          "name": "CANCELLED",
+          "value": 6
+        },
+        {
+          "name": "SIGNED",
+          "value": 7
+        },
+        {
+          "name": "APPROVED",
+          "value": 8
+        },
+        {
+          "name": "DELIVERED",
+          "value": 9
+        },
+        {
+          "name": "ACCEPTED",
+          "value": 10
+        },
+        {
+          "name": "FORM_FILLED",
+          "value": 11
+        },
+        {
+          "name": "EXPIRED",
+          "value": 12
+        },
+        {
+          "name": "ARCHIVED",
+          "value": 13
+        },
+        {
+          "name": "PREFILL",
+          "value": 14
+        },
+        {
+          "name": "WIDGET_WAITING_FOR_VERIFICATION",
+          "value": 15
+        },
+        {
+          "name": "DRAFT",
+          "value": 16
+        },
+        {
+          "name": "DOCUMENTS_NOT_YET_PROCESSED",
+          "value": 17
+        },
+        {
+          "name": "WAITING_FOR_FAXIN",
+          "value": 18
+        },
+        {
+          "name": "WAITING_FOR_VERIFICATION",
+          "value": 19
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Agreements.AgreementCreationInfoType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AGREEMENT",
+          "value": 0
+        },
+        {
+          "name": "MEGASIGN_CHILD",
+          "value": 1
+        },
+        {
+          "name": "WIDGET_INSTANCE",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Agreements.AgreementEventParticipantRole",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "SIGNER",
+          "value": 0
+        },
+        {
+          "name": "DELEGATE_TO_SIGNER",
+          "value": 1
+        },
+        {
+          "name": "APPROVER",
+          "value": 2
+        },
+        {
+          "name": "DELEGATE_TO_APPROVER",
+          "value": 3
+        },
+        {
+          "name": "ACCEPTOR",
+          "value": 4
+        },
+        {
+          "name": "DELEGATE_TO_ACCEPTOR",
+          "value": 5
+        },
+        {
+          "name": "FORM_FILLER",
+          "value": 6
+        },
+        {
+          "name": "DELEGATE_TO_FORM_FILLER",
+          "value": 7
+        },
+        {
+          "name": "CERTIFIED_RECIPIENT",
+          "value": 8
+        },
+        {
+          "name": "DELEGATE_TO_CERTIFIED_RECIPIENT",
+          "value": 9
+        },
+        {
+          "name": "SHARE",
+          "value": 10
+        },
+        {
+          "name": "SENDER",
+          "value": 11
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Agreements.AgreementEventType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ACCESS_CODE_GENERATED",
+          "value": 0
+        },
+        {
+          "name": "ACCESS_CODE_CONSUMED",
+          "value": 1
+        },
+        {
+          "name": "AUTO_CANCELLED_CONVERSION_PROBLEM",
+          "value": 2
+        },
+        {
+          "name": "ACTION_AUTO_DELEGATED",
+          "value": 3
+        },
+        {
+          "name": "ACTION_COMPLETED",
+          "value": 4
+        },
+        {
+          "name": "ACTION_COMPLETED_HOSTED",
+          "value": 5
+        },
+        {
+          "name": "ACTION_COMPLETED_OFFLINE",
+          "value": 6
+        },
+        {
+          "name": "ACTION_COMPLETED_OFFLINE_HOSTED",
+          "value": 7
+        },
+        {
+          "name": "ACTION_COMPLETED_WIDGET_VERIFIED",
+          "value": 8
+        },
+        {
+          "name": "ACTION_COMPLETED_WIDGET_VERIFIED_API_TOKEN",
+          "value": 9
+        },
+        {
+          "name": "ACTION_COMPLETED_WIDGET_VERIFICATION_WAIVED",
+          "value": 10
+        },
+        {
+          "name": "ACTION_DELEGATED",
+          "value": 11
+        },
+        {
+          "name": "ACTION_REPLACED_SIGNER",
+          "value": 12
+        },
+        {
+          "name": "ACTION_REQUESTED",
+          "value": 13
+        },
+        {
+          "name": "CREATED",
+          "value": 14
+        },
+        {
+          "name": "CREATED_FROM_WIDGET",
+          "value": 15
+        },
+        {
+          "name": "CREATED_OFFLINE",
+          "value": 16
+        },
+        {
+          "name": "CREATED_VIA_UPLOAD",
+          "value": 17
+        },
+        {
+          "name": "CREATED_VIA_ACROBAT",
+          "value": 18
+        },
+        {
+          "name": "CREATED_VIA_READER",
+          "value": 19
+        },
+        {
+          "name": "ACTIVATED",
+          "value": 20
+        },
+        {
+          "name": "DIGITAL_SIGN_UIDAI_SIGNER_CONSENT",
+          "value": 21
+        },
+        {
+          "name": "DIGSIGNED",
+          "value": 22
+        },
+        {
+          "name": "DEACTIVATED",
+          "value": 23
+        },
+        {
+          "name": "DOCUMENTS_DELETED",
+          "value": 24
+        },
+        {
+          "name": "DOWNLOADED",
+          "value": 25
+        },
+        {
+          "name": "EMAIL_BOUNCED",
+          "value": 26
+        },
+        {
+          "name": "EMAIL_VIEWED",
+          "value": 27
+        },
+        {
+          "name": "EXPIRED",
+          "value": 28
+        },
+        {
+          "name": "EXPIRED_AUTOMATICALLY",
+          "value": 29
+        },
+        {
+          "name": "FAXED_BY_SENDER",
+          "value": 30
+        },
+        {
+          "name": "FAXIN_RECEIVED",
+          "value": 31
+        },
+        {
+          "name": "KBA_AUTHENTICATED",
+          "value": 32
+        },
+        {
+          "name": "MODIFIED",
+          "value": 33
+        },
+        {
+          "name": "OFFLINE_SYNC",
+          "value": 34
+        },
+        {
+          "name": "OTHER",
+          "value": 35
+        },
+        {
+          "name": "PAID",
+          "value": 36
+        },
+        {
+          "name": "PRESIGNED",
+          "value": 37
+        },
+        {
+          "name": "RECALLED",
+          "value": 38
+        },
+        {
+          "name": "RECALLED_MAX_SIGNING_KBA_ATTEMPTS",
+          "value": 39
+        },
+        {
+          "name": "RECALLED_MAX_SIGNING_PASSWORD_ATTEMPTS",
+          "value": 40
+        },
+        {
+          "name": "RECALLED_MAX_SIGNING_PHONE_ATTEMPTS",
+          "value": 41
+        },
+        {
+          "name": "REJECTED",
+          "value": 42
+        },
+        {
+          "name": "SENDER_CREATED_NEW_REVISION",
+          "value": 43
+        },
+        {
+          "name": "SHARED",
+          "value": 44
+        },
+        {
+          "name": "SIGNED",
+          "value": 45
+        },
+        {
+          "name": "SIGNING_URL_REQUESTED",
+          "value": 46
+        },
+        {
+          "name": "UPLOADED_BY_SENDER",
+          "value": 47
+        },
+        {
+          "name": "USER_ACK_AGREEMENT_MODIFIED",
+          "value": 48
+        },
+        {
+          "name": "READY_TO_VAULT",
+          "value": 49
+        },
+        {
+          "name": "VAULTED",
+          "value": 50
+        },
+        {
+          "name": "WEB_IDENTITY_AUTHENTICATED",
+          "value": 51
+        },
+        {
+          "name": "WEB_IDENTITY_SPECIFIED",
+          "value": 52
+        },
+        {
+          "name": "WRITTEN_DOWNLOAD",
+          "value": 53
+        },
+        {
+          "name": "WRITTEN_SIGNED",
+          "value": 54
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Agreements.AgreementInfoReminderFrequency",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DAILY_UNTIL_SIGNED",
+          "value": 0
+        },
+        {
+          "name": "WEEKDAILY_UNTIL_SIGNED",
+          "value": 1
+        },
+        {
+          "name": "EVERY_OTHER_DAY_UNTIL_SIGNED",
+          "value": 2
+        },
+        {
+          "name": "EVERY_THIRD_DAY_UNTIL_SIGNED",
+          "value": 3
+        },
+        {
+          "name": "EVERY_FIFTH_DAY_UNTIL_SIGNED",
+          "value": 4
+        },
+        {
+          "name": "WEEKLY_UNTIL_SIGNED",
+          "value": 5
+        },
+        {
+          "name": "ONCE",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Agreements.AgreementInfoSignatureType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ESIGN",
+          "value": 0
+        },
+        {
+          "name": "WRITTEN",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Agreements.AgreementInfoState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AUTHORING",
+          "value": 0
+        },
+        {
+          "name": "DRAFT",
+          "value": 1
+        },
+        {
+          "name": "IN_PROCESS",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Agreements.AgreementInfoStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "OUT_FOR_SIGNATURE",
+          "value": 0
+        },
+        {
+          "name": "OUT_FOR_DELIVERY",
+          "value": 1
+        },
+        {
+          "name": "OUT_FOR_ACCEPTANCE",
+          "value": 2
+        },
+        {
+          "name": "OUT_FOR_FORM_FILLING",
+          "value": 3
+        },
+        {
+          "name": "OUT_FOR_APPROVAL",
+          "value": 4
+        },
+        {
+          "name": "AUTHORING",
+          "value": 5
+        },
+        {
+          "name": "CANCELLED",
+          "value": 6
+        },
+        {
+          "name": "SIGNED",
+          "value": 7
+        },
+        {
+          "name": "APPROVED",
+          "value": 8
+        },
+        {
+          "name": "DELIVERED",
+          "value": 9
+        },
+        {
+          "name": "ACCEPTED",
+          "value": 10
+        },
+        {
+          "name": "FORM_FILLED",
+          "value": 11
+        },
+        {
+          "name": "EXPIRED",
+          "value": 12
+        },
+        {
+          "name": "ARCHIVED",
+          "value": 13
+        },
+        {
+          "name": "PREFILL",
+          "value": 14
+        },
+        {
+          "name": "WIDGET_WAITING_FOR_VERIFICATION",
+          "value": 15
+        },
+        {
+          "name": "DRAFT",
+          "value": 16
+        },
+        {
+          "name": "DOCUMENTS_NOT_YET_PROCESSED",
+          "value": 17
+        },
+        {
+          "name": "WAITING_FOR_FAXIN",
+          "value": 18
+        },
+        {
+          "name": "WAITING_FOR_VERIFICATION",
+          "value": 19
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Agreements.AgreementInfoType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AGREEMENT",
+          "value": 0
+        },
+        {
+          "name": "MEGASIGN_CHILD",
+          "value": 1
+        },
+        {
+          "name": "WIDGET_INSTANCE",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Agreements.AgreementStateInfoState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AUTHORING",
+          "value": 0
+        },
+        {
+          "name": "CANCELLED",
+          "value": 1
+        },
+        {
+          "name": "IN_PROCESS",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Agreements.AgreementViewName",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "COMPOSE",
+          "value": 0
+        },
+        {
+          "name": "MODIFY",
+          "value": 1
+        },
+        {
+          "name": "PREFILL",
+          "value": 2
+        },
+        {
+          "name": "AUTHORING",
+          "value": 3
+        },
+        {
+          "name": "SEND_PROGRESS",
+          "value": 4
+        },
+        {
+          "name": "POST_CREATE",
+          "value": 5
+        },
+        {
+          "name": "DOCUMENT",
+          "value": 6
+        },
+        {
+          "name": "MANAGE",
+          "value": 7
+        },
+        {
+          "name": "SIGNING",
+          "value": 8
+        },
+        {
+          "name": "ALL",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Agreements.AgreementViewInfoName",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "COMPOSE",
+          "value": 0
+        },
+        {
+          "name": "MODIFY",
+          "value": 1
+        },
+        {
+          "name": "PREFILL",
+          "value": 2
+        },
+        {
+          "name": "AUTHORING",
+          "value": 3
+        },
+        {
+          "name": "SEND_PROGRESS",
+          "value": 4
+        },
+        {
+          "name": "POST_CREATE",
+          "value": 5
+        },
+        {
+          "name": "DOCUMENT",
+          "value": 6
+        },
+        {
+          "name": "MANAGE",
+          "value": 7
+        },
+        {
+          "name": "SIGNING",
+          "value": 8
+        },
+        {
+          "name": "ALL",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Agreements.DetailedParticipantInfoStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "REPLACED",
+          "value": 0
+        },
+        {
+          "name": "ACTIVE",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Agreements.DetailedParticipantSetInfoRole",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "SIGNER",
+          "value": 0
+        },
+        {
+          "name": "SENDER",
+          "value": 1
+        },
+        {
+          "name": "APPROVER",
+          "value": 2
+        },
+        {
+          "name": "ACCEPTOR",
+          "value": 3
+        },
+        {
+          "name": "CERTIFIED_RECIPIENT",
+          "value": 4
+        },
+        {
+          "name": "FORM_FILLER",
+          "value": 5
+        },
+        {
+          "name": "DELEGATE_TO_SIGNER",
+          "value": 6
+        },
+        {
+          "name": "DELEGATE_TO_APPROVER",
+          "value": 7
+        },
+        {
+          "name": "DELEGATE_TO_ACCEPTOR",
+          "value": 8
+        },
+        {
+          "name": "DELEGATE_TO_CERTIFIED_RECIPIENT",
+          "value": 9
+        },
+        {
+          "name": "DELEGATE_TO_FORM_FILLER",
+          "value": 10
+        },
+        {
+          "name": "SHARE",
+          "value": 11
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Agreements.DetailedParticipantSetInfoStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "CANCELLED",
+          "value": 0
+        },
+        {
+          "name": "COMPLETED",
+          "value": 1
+        },
+        {
+          "name": "EXPIRED",
+          "value": 2
+        },
+        {
+          "name": "NOT_YET_VISIBLE",
+          "value": 3
+        },
+        {
+          "name": "WAITING_FOR_OTHERS",
+          "value": 4
+        },
+        {
+          "name": "WAITING_FOR_MY_APPROVAL",
+          "value": 5
+        },
+        {
+          "name": "WAITING_FOR_AUTHORING",
+          "value": 6
+        },
+        {
+          "name": "WAITING_FOR_MY_ACKNOWLEDGEMENT",
+          "value": 7
+        },
+        {
+          "name": "WAITING_FOR_MY_ACCEPTANCE",
+          "value": 8
+        },
+        {
+          "name": "WAITING_FOR_MY_FORM_FILLING",
+          "value": 9
+        },
+        {
+          "name": "WAITING_FOR_MY_DELEGATION",
+          "value": 10
+        },
+        {
+          "name": "WAITING_FOR_MY_SIGNATURE",
+          "value": 11
+        },
+        {
+          "name": "WAITING_FOR_MY_VERIFICATION",
+          "value": 12
+        },
+        {
+          "name": "WAITING_FOR_PREFILL",
+          "value": 13
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Agreements.DocumentImageUrlsImageSize",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "FIXED_WIDTH_50px",
+          "value": 0
+        },
+        {
+          "name": "FIXED_WIDTH_250px",
+          "value": 1
+        },
+        {
+          "name": "FIXED_WIDTH_675px",
+          "value": 2
+        },
+        {
+          "name": "ZOOM_50_PERCENT",
+          "value": 3
+        },
+        {
+          "name": "ZOOM_75_PERCENT",
+          "value": 4
+        },
+        {
+          "name": "ZOOM_100_PERCENT",
+          "value": 5
+        },
+        {
+          "name": "ZOOM_125_PERCENT",
+          "value": 6
+        },
+        {
+          "name": "ZOOM_150_PERCENT",
+          "value": 7
+        },
+        {
+          "name": "ZOOM_200_PERCENT",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Agreements.FetchedAgreementInfoReminderFrequency",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DAILY_UNTIL_SIGNED",
+          "value": 0
+        },
+        {
+          "name": "WEEKDAILY_UNTIL_SIGNED",
+          "value": 1
+        },
+        {
+          "name": "EVERY_OTHER_DAY_UNTIL_SIGNED",
+          "value": 2
+        },
+        {
+          "name": "EVERY_THIRD_DAY_UNTIL_SIGNED",
+          "value": 3
+        },
+        {
+          "name": "EVERY_FIFTH_DAY_UNTIL_SIGNED",
+          "value": 4
+        },
+        {
+          "name": "WEEKLY_UNTIL_SIGNED",
+          "value": 5
+        },
+        {
+          "name": "ONCE",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Agreements.FetchedAgreementInfoSignatureType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ESIGN",
+          "value": 0
+        },
+        {
+          "name": "WRITTEN",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Agreements.FetchedAgreementInfoState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AUTHORING",
+          "value": 0
+        },
+        {
+          "name": "DRAFT",
+          "value": 1
+        },
+        {
+          "name": "IN_PROCESS",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Agreements.FetchedAgreementInfoStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "OUT_FOR_SIGNATURE",
+          "value": 0
+        },
+        {
+          "name": "OUT_FOR_DELIVERY",
+          "value": 1
+        },
+        {
+          "name": "OUT_FOR_ACCEPTANCE",
+          "value": 2
+        },
+        {
+          "name": "OUT_FOR_FORM_FILLING",
+          "value": 3
+        },
+        {
+          "name": "OUT_FOR_APPROVAL",
+          "value": 4
+        },
+        {
+          "name": "AUTHORING",
+          "value": 5
+        },
+        {
+          "name": "CANCELLED",
+          "value": 6
+        },
+        {
+          "name": "SIGNED",
+          "value": 7
+        },
+        {
+          "name": "APPROVED",
+          "value": 8
+        },
+        {
+          "name": "DELIVERED",
+          "value": 9
+        },
+        {
+          "name": "ACCEPTED",
+          "value": 10
+        },
+        {
+          "name": "FORM_FILLED",
+          "value": 11
+        },
+        {
+          "name": "EXPIRED",
+          "value": 12
+        },
+        {
+          "name": "ARCHIVED",
+          "value": 13
+        },
+        {
+          "name": "PREFILL",
+          "value": 14
+        },
+        {
+          "name": "WIDGET_WAITING_FOR_VERIFICATION",
+          "value": 15
+        },
+        {
+          "name": "DRAFT",
+          "value": 16
+        },
+        {
+          "name": "DOCUMENTS_NOT_YET_PROCESSED",
+          "value": 17
+        },
+        {
+          "name": "WAITING_FOR_FAXIN",
+          "value": 18
+        },
+        {
+          "name": "WAITING_FOR_VERIFICATION",
+          "value": 19
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Agreements.FetchedAgreementInfoType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AGREEMENT",
+          "value": 0
+        },
+        {
+          "name": "MEGASIGN_CHILD",
+          "value": 1
+        },
+        {
+          "name": "WIDGET_INSTANCE",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Agreements.FormFieldAlignment",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "LEFT",
+          "value": 0
+        },
+        {
+          "name": "RIGHT",
+          "value": 1
+        },
+        {
+          "name": "CENTER",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Agreements.FormFieldBorderStyle",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "SOLID",
+          "value": 0
+        },
+        {
+          "name": "DASHED",
+          "value": 1
+        },
+        {
+          "name": "BEVELED",
+          "value": 2
+        },
+        {
+          "name": "INSET",
+          "value": 3
+        },
+        {
+          "name": "UNDERLINE",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Agreements.FormFieldContentType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DATA",
+          "value": 0
+        },
+        {
+          "name": "SIGNATURE_BLOCK",
+          "value": 1
+        },
+        {
+          "name": "SIGNATURE",
+          "value": 2
+        },
+        {
+          "name": "SIGNER_NAME",
+          "value": 3
+        },
+        {
+          "name": "SIGNER_FIRST_NAME",
+          "value": 4
+        },
+        {
+          "name": "SIGNER_LAST_NAME",
+          "value": 5
+        },
+        {
+          "name": "SIGNER_INITIALS",
+          "value": 6
+        },
+        {
+          "name": "SIGNER_EMAIL",
+          "value": 7
+        },
+        {
+          "name": "SIGNER_TITLE",
+          "value": 8
+        },
+        {
+          "name": "SIGNER_COMPANY",
+          "value": 9
+        },
+        {
+          "name": "SIGNATURE_DATE",
+          "value": 10
+        },
+        {
+          "name": "AGREEMENT_NAME",
+          "value": 11
+        },
+        {
+          "name": "AGREEMENT_MESSAGE",
+          "value": 12
+        },
+        {
+          "name": "TRANSACTION_ID",
+          "value": 13
+        },
+        {
+          "name": "SIGNATURE_STAMP",
+          "value": 14
+        },
+        {
+          "name": "PAYMENT",
+          "value": 15
+        },
+        {
+          "name": "DIGITAL_SIGNATURE",
+          "value": 16
+        },
+        {
+          "name": "CALC",
+          "value": 17
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Agreements.FormFieldDisplayFormatType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DEFAULT",
+          "value": 0
+        },
+        {
+          "name": "DATE",
+          "value": 1
+        },
+        {
+          "name": "NUMBER",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Agreements.FormFieldInputType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "TEXT_FIELD",
+          "value": 0
+        },
+        {
+          "name": "MULTILINE",
+          "value": 1
+        },
+        {
+          "name": "PASSWORD",
+          "value": 2
+        },
+        {
+          "name": "RADIO",
+          "value": 3
+        },
+        {
+          "name": "CHECKBOX",
+          "value": 4
+        },
+        {
+          "name": "DROP_DOWN",
+          "value": 5
+        },
+        {
+          "name": "LISTBOX",
+          "value": 6
+        },
+        {
+          "name": "SIGNATURE",
+          "value": 7
+        },
+        {
+          "name": "PDF_SIGNATURE",
+          "value": 8
+        },
+        {
+          "name": "BUTTON",
+          "value": 9
+        },
+        {
+          "name": "BLOCK",
+          "value": 10
+        },
+        {
+          "name": "FILE_CHOOSER",
+          "value": 11
+        },
+        {
+          "name": "COMB",
+          "value": 12
+        },
+        {
+          "name": "INLINE_IMAGE",
+          "value": 13
+        },
+        {
+          "name": "UNSUPPORTED",
+          "value": 14
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Agreements.FormFieldOrigin",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AUTHORED",
+          "value": 0
+        },
+        {
+          "name": "GENERATED",
+          "value": 1
+        },
+        {
+          "name": "IMPORTED",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Agreements.FormFieldRadioCheckType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "CIRCLE",
+          "value": 0
+        },
+        {
+          "name": "CHECK",
+          "value": 1
+        },
+        {
+          "name": "CROSS",
+          "value": 2
+        },
+        {
+          "name": "DIAMOND",
+          "value": 3
+        },
+        {
+          "name": "SQUARE",
+          "value": 4
+        },
+        {
+          "name": "STAR",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Agreements.FormFieldValidation",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NONE",
+          "value": 0
+        },
+        {
+          "name": "STRING",
+          "value": 1
+        },
+        {
+          "name": "NUMBER",
+          "value": 2
+        },
+        {
+          "name": "DATE",
+          "value": 3
+        },
+        {
+          "name": "DATE_CUSTOM",
+          "value": 4
+        },
+        {
+          "name": "TIME",
+          "value": 5
+        },
+        {
+          "name": "ZIP",
+          "value": 6
+        },
+        {
+          "name": "PHONE",
+          "value": 7
+        },
+        {
+          "name": "SOCIAL_SEC",
+          "value": 8
+        },
+        {
+          "name": "EMAIL",
+          "value": 9
+        },
+        {
+          "name": "CURRENCY",
+          "value": 10
+        },
+        {
+          "name": "PERCENT",
+          "value": 11
+        },
+        {
+          "name": "FORMULA",
+          "value": 12
+        },
+        {
+          "name": "CUSTOM",
+          "value": 13
+        },
+        {
+          "name": "XFA_PICTURE",
+          "value": 14
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Agreements.FormFieldConditionPredicateOperator",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "EQUALS",
+          "value": 0
+        },
+        {
+          "name": "NOT_EQUALS",
+          "value": 1
+        },
+        {
+          "name": "LESS_THAN",
+          "value": 2
+        },
+        {
+          "name": "LESS_THAN_EQUALS",
+          "value": 3
+        },
+        {
+          "name": "GREATER_THAN",
+          "value": 4
+        },
+        {
+          "name": "GREATER_THAN_EQUALS",
+          "value": 5
+        },
+        {
+          "name": "IN",
+          "value": 6
+        },
+        {
+          "name": "NOT_IN",
+          "value": 7
+        },
+        {
+          "name": "CONTAINS",
+          "value": 8
+        },
+        {
+          "name": "NOT_CONTAINS",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Agreements.FormFieldConditionalActionAction",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "SHOW",
+          "value": 0
+        },
+        {
+          "name": "HIDE",
+          "value": 1
+        },
+        {
+          "name": "DISABLE",
+          "value": 2
+        },
+        {
+          "name": "ENABLE",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Agreements.FormFieldConditionalActionAnyOrAll",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ALL",
+          "value": 0
+        },
+        {
+          "name": "ANY",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Agreements.FormFieldHyperlinkLinkType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "INTERNAL",
+          "value": 0
+        },
+        {
+          "name": "EXTERNAL",
+          "value": 1
+        },
+        {
+          "name": "FROM_TEXT",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Agreements.ParticipantSecurityOptionAuthenticationMethod",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NONE",
+          "value": 0
+        },
+        {
+          "name": "PASSWORD",
+          "value": 1
+        },
+        {
+          "name": "PHONE",
+          "value": 2
+        },
+        {
+          "name": "KBA",
+          "value": 3
+        },
+        {
+          "name": "WEB_IDENTITY",
+          "value": 4
+        },
+        {
+          "name": "ADOBE_SIGN",
+          "value": 5
+        },
+        {
+          "name": "GOV_ID",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Agreements.ParticipantSetInfoRole",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "SIGNER",
+          "value": 0
+        },
+        {
+          "name": "APPROVER",
+          "value": 1
+        },
+        {
+          "name": "ACCEPTOR",
+          "value": 2
+        },
+        {
+          "name": "CERTIFIED_RECIPIENT",
+          "value": 3
+        },
+        {
+          "name": "FORM_FILLER",
+          "value": 4
+        },
+        {
+          "name": "DELEGATE_TO_SIGNER",
+          "value": 5
+        },
+        {
+          "name": "DELEGATE_TO_APPROVER",
+          "value": 6
+        },
+        {
+          "name": "DELEGATE_TO_ACCEPTOR",
+          "value": 7
+        },
+        {
+          "name": "DELEGATE_TO_CERTIFIED_RECIPIENT",
+          "value": 8
+        },
+        {
+          "name": "DELEGATE_TO_FORM_FILLER",
+          "value": 9
+        },
+        {
+          "name": "SHARE",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Agreements.ReminderInfoFrequency",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DAILY_UNTIL_SIGNED",
+          "value": 0
+        },
+        {
+          "name": "WEEKDAILY_UNTIL_SIGNED",
+          "value": 1
+        },
+        {
+          "name": "EVERY_OTHER_DAY_UNTIL_SIGNED",
+          "value": 2
+        },
+        {
+          "name": "EVERY_THIRD_DAY_UNTIL_SIGNED",
+          "value": 3
+        },
+        {
+          "name": "EVERY_FIFTH_DAY_UNTIL_SIGNED",
+          "value": 4
+        },
+        {
+          "name": "WEEKLY_UNTIL_SIGNED",
+          "value": 5
+        },
+        {
+          "name": "ONCE",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Agreements.ReminderInfoStartReminderCounterFrom",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AGREEMENT_AVAILABILITY",
+          "value": 0
+        },
+        {
+          "name": "REMINDER_CREATION",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Agreements.ReminderInfoStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ACTIVE",
+          "value": 0
+        },
+        {
+          "name": "CANCELED",
+          "value": 1
+        },
+        {
+          "name": "COMPLETE",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Agreements.SendOptionsCompletionEmails",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ALL",
+          "value": 0
+        },
+        {
+          "name": "NONE",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Agreements.SendOptionsInFlightEmails",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ALL",
+          "value": 0
+        },
+        {
+          "name": "NONE",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Agreements.SendOptionsInitEmails",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ALL",
+          "value": 0
+        },
+        {
+          "name": "NONE",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Agreements.SenderInfoStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "CANCELLED",
+          "value": 0
+        },
+        {
+          "name": "COMPLETED",
+          "value": 1
+        },
+        {
+          "name": "EXPIRED",
+          "value": 2
+        },
+        {
+          "name": "NOT_YET_VISIBLE",
+          "value": 3
+        },
+        {
+          "name": "WAITING_FOR_AUTHORING",
+          "value": 4
+        },
+        {
+          "name": "WAITING_FOR_MY_DELEGATION",
+          "value": 5
+        },
+        {
+          "name": "WAITING_FOR_MY_ACCEPTANCE",
+          "value": 6
+        },
+        {
+          "name": "WAITING_FOR_MY_ACKNOWLEDGEMENT",
+          "value": 7
+        },
+        {
+          "name": "WAITING_FOR_MY_APPROVAL",
+          "value": 8
+        },
+        {
+          "name": "WAITING_FOR_MY_FORM_FILLING",
+          "value": 9
+        },
+        {
+          "name": "WAITING_FOR_MY_SIGNATURE",
+          "value": 10
+        },
+        {
+          "name": "WAITING_FOR_OTHERS",
+          "value": 11
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Agreements.UserAgreementStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "WAITING_FOR_MY_SIGNATURE",
+          "value": 0
+        },
+        {
+          "name": "WAITING_FOR_MY_APPROVAL",
+          "value": 1
+        },
+        {
+          "name": "WAITING_FOR_MY_DELEGATION",
+          "value": 2
+        },
+        {
+          "name": "WAITING_FOR_MY_ACKNOWLEDGEMENT",
+          "value": 3
+        },
+        {
+          "name": "WAITING_FOR_MY_ACCEPTANCE",
+          "value": 4
+        },
+        {
+          "name": "WAITING_FOR_MY_FORM_FILLING",
+          "value": 5
+        },
+        {
+          "name": "OUT_FOR_SIGNATURE",
+          "value": 6
+        },
+        {
+          "name": "OUT_FOR_APPROVAL",
+          "value": 7
+        },
+        {
+          "name": "OUT_FOR_DELIVERY",
+          "value": 8
+        },
+        {
+          "name": "OUT_FOR_ACCEPTANCE",
+          "value": 9
+        },
+        {
+          "name": "OUT_FOR_FORM_FILLING",
+          "value": 10
+        },
+        {
+          "name": "SIGNED",
+          "value": 11
+        },
+        {
+          "name": "APPROVED",
+          "value": 12
+        },
+        {
+          "name": "FORM_FILLED",
+          "value": 13
+        },
+        {
+          "name": "DELIVERED",
+          "value": 14
+        },
+        {
+          "name": "ACCEPTED",
+          "value": 15
+        },
+        {
+          "name": "ARCHIVED",
+          "value": 16
+        },
+        {
+          "name": "CANCELLED",
+          "value": 17
+        },
+        {
+          "name": "EXPIRED",
+          "value": 18
+        },
+        {
+          "name": "WAITING_FOR_AUTHORING",
+          "value": 19
+        },
+        {
+          "name": "WAITING_FOR_PREFILL",
+          "value": 20
+        },
+        {
+          "name": "DRAFT",
+          "value": 21
+        },
+        {
+          "name": "DOCUMENTS_NOT_YET_PROCESSED",
+          "value": 22
+        },
+        {
+          "name": "WAITING_FOR_MY_VERIFICATION",
+          "value": 23
+        },
+        {
+          "name": "WAITING_FOR_VERIFICATION",
+          "value": 24
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Agreements.UserAgreementType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AGREEMENT",
+          "value": 0
+        },
+        {
+          "name": "MEGASIGN_CHILD",
+          "value": 1
+        },
+        {
+          "name": "WIDGET_INSTANCE",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Agreements.VisibilityInfoVisibility",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "SHOW",
+          "value": 0
+        },
+        {
+          "name": "HIDE",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Adobe.AdobeSign.Clients.Accounts.AccountType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "FREE",
+          "value": 0
+        },
+        {
+          "name": "FREE_LEGACY",
+          "value": 1
+        },
+        {
+          "name": "TEAM_TRIAL",
+          "value": 2
+        },
+        {
+          "name": "TEAM",
+          "value": 3
+        },
+        {
+          "name": "TEAM_LEGACY",
+          "value": 4
+        },
+        {
+          "name": "ENTERPRISE_TRIAL",
+          "value": 5
+        },
+        {
+          "name": "ENTERPRISE",
+          "value": 6
+        },
+        {
+          "name": "ENTERPRISE_LEGACY",
+          "value": 7
+        },
+        {
+          "name": "GLOBAL_TRIAL",
+          "value": 8
+        },
+        {
+          "name": "GLOBAL",
+          "value": 9
+        },
+        {
+          "name": "DEVELOPER",
+          "value": 10
+        },
+        {
+          "name": "PRO_DOC_CLOUD",
+          "value": 11
+        },
+        {
+          "name": "TEAM_DOC_CLOUD",
+          "value": 12
+        },
+        {
+          "name": "TRIAL_EXPIRED",
+          "value": 13
+        },
+        {
+          "name": "ANONYMOUS",
+          "value": 14
+        },
+        {
+          "name": "PRO_DOC_CLOUD_MULTI",
+          "value": 15
+        },
+        {
+          "name": "PRO_PLUS_DOC_CLOUD",
+          "value": 16
+        },
+        {
+          "name": "PRO_PLUS_DOC_CLOUD_MULTI",
+          "value": 17
+        }
+      ]
+    }
+  ],
+  "namespaceMappings": []
+}

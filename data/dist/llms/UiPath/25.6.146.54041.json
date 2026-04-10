@@ -1,0 +1,1911 @@
+{
+  "schema": {
+    "id": "activity-catalog",
+    "version": "v0.3"
+  },
+  "source": {
+    "kind": "nuget-package",
+    "id": "UiPath",
+    "version": "25.6.146.54041",
+    "feedUrl": null,
+    "authors": "UiPath",
+    "projectUrl": "http://uipath.com/",
+    "description": "SDK for UI automation and text capture featured in UiPath Studio",
+    "license": "https://www.uipath.com/hubfs/legalspot/UiPath_EULA.pdf",
+    "tags": "UI Automation Screen Scraper Scraping Text Capture Extract Automate",
+    "packageTypes": []
+  },
+  "generatedAt": "2026-04-10T09:21:18Z",
+  "activities": [],
+  "enums": [
+    {
+      "fullName": "Sap.SapTechnology",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "SapWinGui",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "fullName": "Sap.ErrorCode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ERR_UNKNOWN",
+          "value": 1001
+        },
+        {
+          "name": "ERR_NOT_SUPPORTED",
+          "value": 1002
+        },
+        {
+          "name": "ERR_INVALID_ARGUMENT",
+          "value": 1003
+        }
+      ]
+    },
+    {
+      "fullName": "Sap.LogType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Trace",
+          "value": 0
+        },
+        {
+          "name": "Info",
+          "value": 1
+        },
+        {
+          "name": "Warning",
+          "value": 2
+        },
+        {
+          "name": "Error",
+          "value": 3
+        },
+        {
+          "name": "IndirectAccessLog",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Sap.RunMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DesignTime",
+          "value": 0
+        },
+        {
+          "name": "AttendedRun",
+          "value": 1
+        },
+        {
+          "name": "UnattendedRun",
+          "value": 2
+        },
+        {
+          "name": "RunFromStudio",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UiBrowserDriverRequestsExecutor.ExecuteScriptRetCode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Failed",
+          "value": 0
+        },
+        {
+          "name": "CouldNotFindScriptId",
+          "value": 1
+        },
+        {
+          "name": "Success",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UiBrowserDialogScopeRetCode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "BrowserDialogScopeRetCodeSetupFailure",
+          "value": 0
+        },
+        {
+          "name": "BrowserDialogScopeRetCodeCheckFailure",
+          "value": 1
+        },
+        {
+          "name": "BrowserDialogScopeRetCodeTeardownFailure",
+          "value": 2
+        },
+        {
+          "name": "BrowserDialogScopeRetCodeSuccess",
+          "value": 3
+        },
+        {
+          "name": "BrowserDialogScopeRetCodeNotImplemented",
+          "value": 4
+        },
+        {
+          "name": "BrowserDialogScopeRetCodeDebuggerAttachFailed",
+          "value": 5
+        },
+        {
+          "name": "BrowserDialogScopeRetCodeTabBlockedByDialog",
+          "value": 6
+        },
+        {
+          "name": "BrowserDialogScopeRetCodeTabLoading",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UiBrowserDialogScopeDialogTypes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Alerts",
+          "value": 1
+        },
+        {
+          "name": "Confirms",
+          "value": 2
+        },
+        {
+          "name": "Prompts",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UiBrowserDialogResponse",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Cancel",
+          "value": 0
+        },
+        {
+          "name": "OK",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UiBrowserFilePickerScopeRetCode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "BrowserFilePickerScopeRetCodeSetupFailure",
+          "value": 0
+        },
+        {
+          "name": "BrowserFilePickerScopeRetCodeCheckFailure",
+          "value": 1
+        },
+        {
+          "name": "BrowserFilePickerScopeRetCodeTeardownFailure",
+          "value": 2
+        },
+        {
+          "name": "BrowserFilePickerScopeRetCodeSuccess",
+          "value": 3
+        },
+        {
+          "name": "BrowserFilePickerScopeRetCodeNotImplemented",
+          "value": 4
+        },
+        {
+          "name": "BrowserFilePickerScopeRetCodeDebuggerAttachFailed",
+          "value": 5
+        },
+        {
+          "name": "BrowserFilePickerScopeRetCodeFileURLsAccessRequired",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UiDotNetArgumentDirection",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DNAD_IN",
+          "value": 0
+        },
+        {
+          "name": "DNAD_OUT",
+          "value": 1
+        },
+        {
+          "name": "DNAD_IN_OUT",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UiKeyModifier",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "UI_KEY_None",
+          "value": 0
+        },
+        {
+          "name": "UI_KEY_Alt",
+          "value": 1
+        },
+        {
+          "name": "UI_KEY_Ctrl",
+          "value": 2
+        },
+        {
+          "name": "UI_KEY_AltCtrl",
+          "value": 3
+        },
+        {
+          "name": "UI_KEY_Shift",
+          "value": 4
+        },
+        {
+          "name": "UI_KEY_ShiftAlt",
+          "value": 5
+        },
+        {
+          "name": "UI_KEY_ShiftCtrl",
+          "value": 6
+        },
+        {
+          "name": "UI_KEY_ShiftAltCtrl",
+          "value": 7
+        },
+        {
+          "name": "UI_KEY_Win",
+          "value": 8
+        },
+        {
+          "name": "UI_KEY_WinAlt",
+          "value": 9
+        },
+        {
+          "name": "UI_KEY_WinCtrl",
+          "value": 10
+        },
+        {
+          "name": "UI_KEY_WinAltCtrl",
+          "value": 11
+        },
+        {
+          "name": "UI_KEY_WinShift",
+          "value": 12
+        },
+        {
+          "name": "UI_KEY_WinShiftAlt",
+          "value": 13
+        },
+        {
+          "name": "UI_KEY_WinShiftCtrl",
+          "value": 14
+        },
+        {
+          "name": "UI_KEY_WinShiftAltCtrl",
+          "value": 15
+        },
+        {
+          "name": "UI_KEY_Any",
+          "value": 65535
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UiMouseButton",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "UI_BTN_LEFT",
+          "value": 0
+        },
+        {
+          "name": "UI_BTN_RIGHT",
+          "value": 1
+        },
+        {
+          "name": "UI_BTN_MIDDLE",
+          "value": 2
+        },
+        {
+          "name": "UI_BTN_ANY",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UiScreenshotFormat",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ScreenshotFormatPng",
+          "value": 0
+        },
+        {
+          "name": "ScreenshotFormatJpeg",
+          "value": 1
+        },
+        {
+          "name": "ScreenshotFormatScreenShotFormatsCount",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UiScreenshotCaptureMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ScreenshotCaptureModeWindow",
+          "value": 0
+        },
+        {
+          "name": "ScreenshotCaptureModeScreenArea",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UiAncestryInfoFlags",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "EmptyAncestryFlags",
+          "value": 0
+        },
+        {
+          "name": "GetAllAncestors",
+          "value": 1
+        },
+        {
+          "name": "GetAllAttributes",
+          "value": 2
+        },
+        {
+          "name": "GetSiblings",
+          "value": 4
+        },
+        {
+          "name": "GetSelectorIndex",
+          "value": 8
+        },
+        {
+          "name": "IsRemoteDesktopElement",
+          "value": 16
+        },
+        {
+          "name": "IsCitrixAppWindowedModeElement",
+          "value": 32
+        },
+        {
+          "name": "AllowTopHtml",
+          "value": 64
+        },
+        {
+          "name": "UseOnlyAA",
+          "value": 128
+        },
+        {
+          "name": "UseDomAriaMethods",
+          "value": 256
+        },
+        {
+          "name": "GetTopLevelSiblings",
+          "value": 512
+        },
+        {
+          "name": "EnsureUniqueMatchSelectorIndex",
+          "value": 1024
+        },
+        {
+          "name": "UseChromiumTweaks",
+          "value": 2048
+        },
+        {
+          "name": "GetLiveAttributeValuesForConstraints",
+          "value": 4096
+        },
+        {
+          "name": "SkipDefaultSelectorPolicy",
+          "value": 8192
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UiMyEnum",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "One",
+          "value": 0
+        },
+        {
+          "name": "Two",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UiSapSdkEventType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "UI_SAP_SDK_EVENT_TYPE_INVALID",
+          "value": 0
+        },
+        {
+          "name": "UI_SAP_SDK_EVENT_TYPE_FORWARD_LOGS",
+          "value": 1
+        },
+        {
+          "name": "UI_SAP_SDK_EVENT_TYPE_NOTIFY_ACCESS",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UiSapSdkTechnology",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "UI_SAP_SDK_TECHNOLOGY_INVALID",
+          "value": -1
+        },
+        {
+          "name": "UI_SAP_SDK_TECHNOLOGY_SAPWINGUI",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UiFindScope",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "UI_FIND_SCOPE_FIRST",
+          "value": 0
+        },
+        {
+          "name": "UI_FIND_CHILDREN",
+          "value": 0
+        },
+        {
+          "name": "UI_FIND_DESCENDANTS",
+          "value": 1
+        },
+        {
+          "name": "UI_FIND_TOP_LEVELS",
+          "value": 2
+        },
+        {
+          "name": "UI_FIND_PROCESS",
+          "value": 3
+        },
+        {
+          "name": "UI_FIND_THREAD",
+          "value": 4
+        },
+        {
+          "name": "UI_FIND_PROCESS_GROUP",
+          "value": 5
+        },
+        {
+          "name": "UI_FIND_SCOPE_LAST",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UiInputMethod",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "UI_HARDWARE_EVENTS",
+          "value": 0
+        },
+        {
+          "name": "UI_WIN32_MSG",
+          "value": 1
+        },
+        {
+          "name": "UI_CONTROL_API",
+          "value": 2
+        },
+        {
+          "name": "UI_DEBUGGER",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UiCursorMotionType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "UI_CURSOR_MOTION_INSTANT",
+          "value": 0
+        },
+        {
+          "name": "UI_CURSOR_MOTION_SMOOTH",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UiHighlightMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "UI_HIGHLIGHT_NODE",
+          "value": 1
+        },
+        {
+          "name": "UI_HIGHLIGHT_CLIPPING",
+          "value": 2
+        },
+        {
+          "name": "UI_HIGHLIGHT_NODE_AND_CLIPPING",
+          "value": 3
+        },
+        {
+          "name": "UI_HIGHLIGHT_PREFER_CLIPPING",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UiWaitForReadyLevels",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "UI_WFR_NONE",
+          "value": 0
+        },
+        {
+          "name": "UI_WFR_INTERACTIVE",
+          "value": 1
+        },
+        {
+          "name": "UI_WFR_COMPLETE",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UiDirection",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "UI_LEFT",
+          "value": 0
+        },
+        {
+          "name": "UI_TOP",
+          "value": 1
+        },
+        {
+          "name": "UI_RIGHT",
+          "value": 2
+        },
+        {
+          "name": "UI_BOTTOM",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UiVisibilityLevel",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "UI_VISIBILITY_VISIBLE",
+          "value": 0
+        },
+        {
+          "name": "UI_VISIBILITY_HIDDEN",
+          "value": 1
+        },
+        {
+          "name": "UI_VISIBILITY_OFFSCREEN",
+          "value": 2
+        },
+        {
+          "name": "UI_VISIBILITY_PARTIAL",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UiInjectJsExecutionWorld",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ExtensionWorld",
+          "value": 0
+        },
+        {
+          "name": "PageWorld",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UiRelativeTo",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "UI_REL_TO_TOPLEFT",
+          "value": 0
+        },
+        {
+          "name": "UI_REL_TO_TOPRIGHT",
+          "value": 1
+        },
+        {
+          "name": "UI_REL_TO_BOTTOM_LEFT",
+          "value": 2
+        },
+        {
+          "name": "UI_REL_TO_BOTTOM_RIGHT",
+          "value": 3
+        },
+        {
+          "name": "UI_REL_TO_CENTER",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UiElementPurpose",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "UI_PURPOSE_DEFAULT",
+          "value": 0
+        },
+        {
+          "name": "UI_PURPOSE_GET_TEXT",
+          "value": 1
+        },
+        {
+          "name": "UI_PURPOSE_WINDOW_ONLY",
+          "value": 2
+        },
+        {
+          "name": "UI_PURPOSE_SELECT_ITEM",
+          "value": 3
+        },
+        {
+          "name": "UI_PURPOSE_ACTIVEX",
+          "value": 4
+        },
+        {
+          "name": "UI_PURPOSE_CHECK",
+          "value": 5
+        },
+        {
+          "name": "UI_PURPOSE_CLICK",
+          "value": 6
+        },
+        {
+          "name": "UI_PURPOSE_DATA_SCRAPE",
+          "value": 7
+        },
+        {
+          "name": "UI_PURPOSE_WRITE_TEXT",
+          "value": 8
+        },
+        {
+          "name": "UI_PURPOSE_CLICK_TRIGGER",
+          "value": 9
+        },
+        {
+          "name": "UI_PURPOSE_KEY_PRESS_TRIGGER",
+          "value": 10
+        },
+        {
+          "name": "UI_PURPOSE_NATIVE_TRIGGER",
+          "value": 11
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UiSelectorStrategy",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "USS_DEFAULT",
+          "value": 0
+        },
+        {
+          "name": "USS_AA_ONLY",
+          "value": 1
+        },
+        {
+          "name": "USS_WND_ONLY",
+          "value": 2
+        },
+        {
+          "name": "USS_UIA_ONLY",
+          "value": 3
+        },
+        {
+          "name": "USS_AUTO",
+          "value": 4
+        },
+        {
+          "name": "USS_JAVA_ONLY",
+          "value": 5
+        },
+        {
+          "name": "USS_LAST_VALUE",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UiSelectorOptions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "USO_DEFAULT",
+          "value": 0
+        },
+        {
+          "name": "USO_NO_INDEX",
+          "value": 1
+        },
+        {
+          "name": "USO_FOR_MONITORING",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UiScrollType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Line",
+          "value": 0
+        },
+        {
+          "name": "Page",
+          "value": 1
+        },
+        {
+          "name": "Complete",
+          "value": 2
+        },
+        {
+          "name": "Percentage",
+          "value": 3
+        },
+        {
+          "name": "IntoView",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.ActiveXInvokeMethod",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AIM_FUNC",
+          "value": 1
+        },
+        {
+          "name": "AIM_PROPGET",
+          "value": 2
+        },
+        {
+          "name": "AIM_PROPPUT",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UiSimulateEventType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "UI_EVENT",
+          "value": 0
+        },
+        {
+          "name": "UI_MOUSE_EVENT",
+          "value": 1
+        },
+        {
+          "name": "UI_KEYBOARD_EVENT",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UiRemoteExtension",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "UI_REMOTE_EXTENSION_INVALID",
+          "value": 0
+        },
+        {
+          "name": "UI_REMOTE_EXTENSION_CITRIX",
+          "value": 1
+        },
+        {
+          "name": "UI_REMOTE_EXTENSION_RDP",
+          "value": 2
+        },
+        {
+          "name": "UI_REMOTE_EXTENSION_VMWARE",
+          "value": 3
+        },
+        {
+          "name": "UI_REMOTE_EXTENSION_AMAZON",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UiWndState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "UI_WND_INVALID_STATE",
+          "value": -1
+        },
+        {
+          "name": "UI_WND_NORMAL",
+          "value": 0
+        },
+        {
+          "name": "UI_WND_MINIMIZED",
+          "value": 1
+        },
+        {
+          "name": "UI_WND_MAXIMIZED",
+          "value": 2
+        },
+        {
+          "name": "Count",
+          "value": 3
+        },
+        {
+          "name": "First",
+          "value": -1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UiBrowserDriverRequest",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ToggleBlurEventsInTab",
+          "value": 0
+        },
+        {
+          "name": "RouteEventsToMainFrame",
+          "value": 1
+        },
+        {
+          "name": "ReplayEventInMainFrame",
+          "value": 2
+        },
+        {
+          "name": "IsCoveredByPopup",
+          "value": 3
+        },
+        {
+          "name": "GetReliableElement",
+          "value": 4
+        },
+        {
+          "name": "LoadScript",
+          "value": 5
+        },
+        {
+          "name": "ExecuteScript",
+          "value": 6
+        },
+        {
+          "name": "DetachBrowserExtensionDebugger",
+          "value": 7
+        },
+        {
+          "name": "ForceDetachBrowserExtensionDebugger",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.ActionType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Check",
+          "value": 0
+        },
+        {
+          "name": "Click",
+          "value": 1
+        },
+        {
+          "name": "ExtractData",
+          "value": 2
+        },
+        {
+          "name": "GetText",
+          "value": 3
+        },
+        {
+          "name": "Hover",
+          "value": 4
+        },
+        {
+          "name": "Highlight",
+          "value": 5
+        },
+        {
+          "name": "SelectItem",
+          "value": 6
+        },
+        {
+          "name": "TypeInto",
+          "value": 7
+        },
+        {
+          "name": "TakeScreenshot",
+          "value": 8
+        },
+        {
+          "name": "CallTransaction",
+          "value": 9
+        },
+        {
+          "name": "SelectMenuItem",
+          "value": 10
+        },
+        {
+          "name": "ClickToolbarButton",
+          "value": 11
+        },
+        {
+          "name": "ReadStatusBar",
+          "value": 12
+        },
+        {
+          "name": "ExpandTree",
+          "value": 13
+        },
+        {
+          "name": "ExpandALVTree",
+          "value": 14
+        },
+        {
+          "name": "ExpandALVHierarchicalTable",
+          "value": 15
+        },
+        {
+          "name": "SelectDate",
+          "value": 16
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UiDomStrategy",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "UiAutomation",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UiSelectionType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "UI_SELECT_NODE",
+          "value": 0
+        },
+        {
+          "name": "UI_SELECT_REGION",
+          "value": 1
+        },
+        {
+          "name": "UI_SELECT_WINDOW",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UiSelectionResultCode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "UI_SELECTION_INTERNAL_ERROR",
+          "value": 0
+        },
+        {
+          "name": "UI_SELECTION_SUCCESS",
+          "value": 1
+        },
+        {
+          "name": "UI_SELECTION_CANCELED",
+          "value": 2
+        },
+        {
+          "name": "UI_SELECTION_BROWSER_ERROR",
+          "value": 3
+        },
+        {
+          "name": "UI_SELECTION_RDP_ERROR",
+          "value": 4
+        },
+        {
+          "name": "UI_SELECTION_ELEVATED_ERROR",
+          "value": 5
+        },
+        {
+          "name": "UI_SELECTION_SILVERLIGHT_ERROR",
+          "value": 6
+        },
+        {
+          "name": "UI_SELECTION_JAVA_ERROR",
+          "value": 7
+        },
+        {
+          "name": "UI_SELECTION_SAP_ERROR",
+          "value": 8
+        },
+        {
+          "name": "UI_SELECTION_WPF_ERROR",
+          "value": 9
+        },
+        {
+          "name": "UI_SELECTION_AX_ERROR",
+          "value": 10
+        },
+        {
+          "name": "UI_SELECTION_CURL_ERROR",
+          "value": 11
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UiEventType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "UI_EVENT_ASYNCHRONOUS",
+          "value": 0
+        },
+        {
+          "name": "UI_EVENT_SYNCHRONOUS",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UiTriggerMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "UiTriggerDown",
+          "value": 1
+        },
+        {
+          "name": "UiTriggerUp",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UiBrowserName",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "UI_BROWSER_NAME_IE",
+          "value": 0
+        },
+        {
+          "name": "UI_BROWSER_NAME_FF",
+          "value": 1
+        },
+        {
+          "name": "UI_BROWSER_NAME_CHROME",
+          "value": 2
+        },
+        {
+          "name": "UI_BROWSER_NAME_CHROMIUM_EDGE",
+          "value": 3
+        },
+        {
+          "name": "UI_BROWSER_NAME_CHROMIUM_BRAVE",
+          "value": 4
+        },
+        {
+          "name": "UI_BROWSER_NAME_CHROMIUM_VIVALDI",
+          "value": 5
+        },
+        {
+          "name": "UI_BROWSER_NAME_EDGE",
+          "value": 6
+        },
+        {
+          "name": "UI_BROWSER_NAME_UIPATH_MOBILE_BROWSER",
+          "value": 7
+        },
+        {
+          "name": "UI_BROWSER_NAME_CUSTOM",
+          "value": 8
+        },
+        {
+          "name": "UI_BROWSER_NAME_CEF_SHARP_EMBEDDED",
+          "value": 9
+        },
+        {
+          "name": "UI_BROWSER_NAME_WEB_WIDGET_NATIVE",
+          "value": 10
+        },
+        {
+          "name": "UI_BROWSER_NAME_SAFARI",
+          "value": 11
+        },
+        {
+          "name": "UI_BROWSER_NAME_INVALID",
+          "value": 12
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UiOCREngine",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "UI_OCR_TESSERACT",
+          "value": 0
+        },
+        {
+          "name": "UI_OCR_MODI",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UiEventMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "UI_EVENT_FORWARD",
+          "value": 0
+        },
+        {
+          "name": "UI_EVENT_BLOCK",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.StartApplicationFlags",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "START_APPLICATION_NO_FLAGS",
+          "value": 0
+        },
+        {
+          "name": "START_APPLICATION_PRESERVE_ARGUMENTS",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UiBrowserFlags",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "UI_BROWSER_NO_FLAGS",
+          "value": 0
+        },
+        {
+          "name": "UI_BROWSER_DEFAULT_SESSION",
+          "value": 1
+        },
+        {
+          "name": "UI_BROWSER_PRIVATE",
+          "value": 2
+        },
+        {
+          "name": "UI_BROWSER_HEADLESS",
+          "value": 4
+        },
+        {
+          "name": "UI_BROWSER_NEW_WINDOW",
+          "value": 8
+        },
+        {
+          "name": "UI_BROWSER_NEW_BACKGROUND_TAB",
+          "value": 16
+        },
+        {
+          "name": "UI_BROWSER_NEW_FOREGROUND_TAB",
+          "value": 32
+        },
+        {
+          "name": "UI_BROWSER_USE_WEBDRIVER",
+          "value": 64
+        },
+        {
+          "name": "UI_BROWSER_USE_DEVTOOLS",
+          "value": 128
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UiLogLevel",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "UI_LOG_VERBOSE",
+          "value": 0
+        },
+        {
+          "name": "UI_LOG_INFO",
+          "value": 1
+        },
+        {
+          "name": "UI_LOG_WARNING",
+          "value": 2
+        },
+        {
+          "name": "UI_LOG_ERROR",
+          "value": 3
+        },
+        {
+          "name": "UI_LOG_FATAL",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UiDriverDependency",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AppSignatures",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.OptionKey",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "TS_CONNECT_PREFERRED_WIDTH",
+          "value": 1
+        },
+        {
+          "name": "TS_CONNECT_PREFERRED_HEIGHT",
+          "value": 2
+        },
+        {
+          "name": "TS_CONNECT_PREFERRED_DEPTH",
+          "value": 3
+        },
+        {
+          "name": "TS_CONNECT_FONT_SMOOTHING",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UiSelectionFlags",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "UiSelectionNone",
+          "value": 0
+        },
+        {
+          "name": "UiSelectionAllowAltTab",
+          "value": 1
+        },
+        {
+          "name": "UiSelectionAllowCtrlTab",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UiSearchResultCode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "UI_SEARCH_SUCCESS",
+          "value": 0
+        },
+        {
+          "name": "UI_SEARCH_INVALID_PARAMS",
+          "value": 1
+        },
+        {
+          "name": "UI_SEARCH_CANNOT_ACCESS_TARGET_APP",
+          "value": 2
+        },
+        {
+          "name": "UI_SEARCH_START_ELEMENT_HAS_BECOME_INVALID",
+          "value": 3
+        },
+        {
+          "name": "UI_SEARCH_CANCELED",
+          "value": 4
+        },
+        {
+          "name": "UI_SEARCH_ELEMENT_NOT_FOUND",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UiSearchType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "FindFirst",
+          "value": 0
+        },
+        {
+          "name": "FindAll",
+          "value": 1
+        },
+        {
+          "name": "FindSimilar",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UiClickType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "UI_CLICK_SINGLE",
+          "value": 0
+        },
+        {
+          "name": "UI_CLICK_DOUBLE",
+          "value": 1
+        },
+        {
+          "name": "UI_CLICK_DOWN",
+          "value": 2
+        },
+        {
+          "name": "UI_CLICK_UP",
+          "value": 3
+        },
+        {
+          "name": "UI_HOVER",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UiTaskMiningFlags",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "TaskMiningFlag_None",
+          "value": 0
+        },
+        {
+          "name": "TaskMiningFlag_GetHwndsOnly",
+          "value": 0
+        },
+        {
+          "name": "TaskMiningFlag_UseBrowserExtensions",
+          "value": 1
+        },
+        {
+          "name": "TaskMiningFlag_UseJavaExtension",
+          "value": 2
+        },
+        {
+          "name": "TaskMiningFlag_UseRemoteExtension",
+          "value": 4
+        },
+        {
+          "name": "TaskMiningFlag_GetHwndAttributes",
+          "value": 8
+        },
+        {
+          "name": "TaskMiningFlag_GetScreenRectangle",
+          "value": 16
+        },
+        {
+          "name": "TaskMiningFlag_GetPageUrl",
+          "value": 32
+        },
+        {
+          "name": "TaskMiningFlag_GetSelector",
+          "value": 64
+        },
+        {
+          "name": "TaskMiningFlag_GetSelectorIndex_Ie",
+          "value": 128
+        },
+        {
+          "name": "TaskMiningFlag_GetSelectorIndex_BrowserExt",
+          "value": 256
+        },
+        {
+          "name": "TaskMiningFlag_GetSelectorIndex_Java",
+          "value": 512
+        },
+        {
+          "name": "TaskMiningFlag_GetSelectorIndex_Sap",
+          "value": 1024
+        },
+        {
+          "name": "TaskMiningFlag_GetSelectorIndex_Remote",
+          "value": 2048
+        },
+        {
+          "name": "TaskMiningFlag_GetSubsystemSpecificAttributes_Uia",
+          "value": 4096
+        },
+        {
+          "name": "TaskMiningFlag_GetSubsystemSpecificAttributes_Ie",
+          "value": 8192
+        },
+        {
+          "name": "TaskMiningFlag_GetSubsystemSpecificAttributes_BrowserExt",
+          "value": 16384
+        },
+        {
+          "name": "TaskMiningFlag_GetSubsystemSpecificAttributes_Java",
+          "value": 32768
+        },
+        {
+          "name": "TaskMiningFlag_GetSubsystemSpecificAttributes_Sap",
+          "value": 65536
+        },
+        {
+          "name": "TaskMiningFlag_GetAnySubsystemSpecificAttribute",
+          "value": 126976
+        },
+        {
+          "name": "TaskMiningFlag_UseUiaFallbackForBrowsers",
+          "value": 131072
+        },
+        {
+          "name": "TaskMiningFlag_GetInterestingAncestorAttributes",
+          "value": 262144
+        },
+        {
+          "name": "TaskMiningFlag_GetAnySpecificAttribute",
+          "value": 389232
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UiSiebelSetValueFlags",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "UiSiebelEmptyFlags",
+          "value": 0
+        },
+        {
+          "name": "UiSendFinalEnterKey",
+          "value": 1
+        },
+        {
+          "name": "UiSendFinalTabKey",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UiTechnology",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "UI_WIN32",
+          "value": 0
+        },
+        {
+          "name": "UI_AA",
+          "value": 1
+        },
+        {
+          "name": "UI_JAVA",
+          "value": 2
+        },
+        {
+          "name": "UI_HTML",
+          "value": 3
+        },
+        {
+          "name": "UI_UIAUTO",
+          "value": 4
+        },
+        {
+          "name": "UI_OTHER",
+          "value": 5
+        },
+        {
+          "name": "UI_SILVERLIGHT",
+          "value": 6
+        },
+        {
+          "name": "UI_SAP",
+          "value": 7
+        },
+        {
+          "name": "UI_RDP",
+          "value": 8
+        },
+        {
+          "name": "UI_MACOSWND",
+          "value": 9
+        },
+        {
+          "name": "UI_AX",
+          "value": 10
+        },
+        {
+          "name": "UI_WPF",
+          "value": 11
+        },
+        {
+          "name": "UI_QT",
+          "value": 12
+        },
+        {
+          "name": "UI_CURL",
+          "value": 13
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UiScrapingMethod",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "UI_AUTOMATIC",
+          "value": 0
+        },
+        {
+          "name": "UI_NATIVE",
+          "value": 1
+        },
+        {
+          "name": "UI_FULLTEXT",
+          "value": 2
+        },
+        {
+          "name": "UI_OCR",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UiSapVKey",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "UI_SAP_VKEY_ENTER",
+          "value": 0
+        },
+        {
+          "name": "UI_SAP_VKEY_F1",
+          "value": 1
+        },
+        {
+          "name": "UI_SAP_VKEY_F2",
+          "value": 2
+        },
+        {
+          "name": "UI_SAP_VKEY_F3",
+          "value": 3
+        },
+        {
+          "name": "UI_SAP_VKEY_F4",
+          "value": 4
+        },
+        {
+          "name": "UI_SAP_VKEY_F5",
+          "value": 5
+        },
+        {
+          "name": "UI_SAP_VKEY_F6",
+          "value": 6
+        },
+        {
+          "name": "UI_SAP_VKEY_F7",
+          "value": 7
+        },
+        {
+          "name": "UI_SAP_VKEY_F8",
+          "value": 8
+        },
+        {
+          "name": "UI_SAP_VKEY_F9",
+          "value": 9
+        },
+        {
+          "name": "UI_SAP_VKEY_F10",
+          "value": 10
+        },
+        {
+          "name": "UI_SAP_VKEY_EXPAND_ROW",
+          "value": 35
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UiSapScriptingStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "UI_SAP_SCRIPTING_INTERNAL_ERROR",
+          "value": 0
+        },
+        {
+          "name": "UI_SAP_SCRIPTING_NOT_INSTALLED",
+          "value": 1
+        },
+        {
+          "name": "UI_SAP_SCRIPTING_DISABLED_BY_ADMINISTRATOR",
+          "value": 2
+        },
+        {
+          "name": "UI_SAP_SCRIPTING_DISABLED_BY_USER",
+          "value": 3
+        },
+        {
+          "name": "UI_SAP_SCRIPTING_WARN_ON_ATTACH",
+          "value": 4
+        },
+        {
+          "name": "UI_SAP_SCRIPTING_WARN_ON_CONNECTION",
+          "value": 5
+        },
+        {
+          "name": "UI_SAP_SCRIPTING_OK",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UiWebFramework",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "UI_WEB_FRAMEWORK_ENUM_MIN",
+          "value": 0
+        },
+        {
+          "name": "UI_WEB_FRAMEWORK_NONE",
+          "value": 0
+        },
+        {
+          "name": "UI_WEB_FRAMEWORK_DEFAULT",
+          "value": 1
+        },
+        {
+          "name": "UI_WEB_FRAMEWORK_SAP_FIORI",
+          "value": 2
+        },
+        {
+          "name": "UI_WEB_FRAMEWORK_SALESFORCE",
+          "value": 3
+        },
+        {
+          "name": "UI_WEB_FRAMEWORK_SAP_WEBGUI",
+          "value": 4
+        },
+        {
+          "name": "UI_WEB_FRAMEWORK_SAP_ARIBA",
+          "value": 5
+        },
+        {
+          "name": "UI_WEB_FRAMEWORK_ENUM_MAX",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.DisabledStateFlags",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Disabled",
+          "value": 1
+        },
+        {
+          "name": "Readonly",
+          "value": 2
+        },
+        {
+          "name": "DisabledOrReadonly",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UiLicence",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "UI_LICENCE_NONE",
+          "value": 0
+        },
+        {
+          "name": "UI_LICENCE_PERPETUAL",
+          "value": 1
+        },
+        {
+          "name": "UI_LICENCE_SUBSCRIPTION",
+          "value": 2
+        },
+        {
+          "name": "UI_LICENCE_EXPIRE_DATE",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.NativeInputOptions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "ParseHotkeys",
+          "value": 1
+        },
+        {
+          "name": "UseDebugger",
+          "value": 2
+        },
+        {
+          "name": "Append",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UiOCRCorrectionMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "UI_OCM_NONE",
+          "value": 0
+        },
+        {
+          "name": "UI_OCM_STANDARD",
+          "value": 1
+        },
+        {
+          "name": "UI_OCM_ADVANCED",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UiOCREngineMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "UI_OEM_TESSERACT_ONLY",
+          "value": 0
+        },
+        {
+          "name": "UI_OEM_CUBE_ONLY",
+          "value": 1
+        },
+        {
+          "name": "UI_OEM_TESSERACT_CUBE_COMBINED",
+          "value": 2
+        },
+        {
+          "name": "UI_OEM_DEFAULT",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UiOpenSessionFlags",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "UI_OSF_CONNECTED",
+          "value": 1
+        },
+        {
+          "name": "UI_OSF_PREFER_CONSOLE",
+          "value": 2
+        },
+        {
+          "name": "UI_OSF_SKIP_RD_RIGHTS",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UiSelectionMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "UI_LIVE",
+          "value": 0
+        },
+        {
+          "name": "UI_FROZEN",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.UiSelectorSerializationFlags",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "UI_SELECTOR_SERIALIZATION_XML",
+          "value": 1
+        },
+        {
+          "name": "UI_SELECTOR_SERIALIZATION_MULTILINE",
+          "value": 4096
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.__MIDL___MIDL_itf_UiPath_0001_0129_0001",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "UiSiebelEmptyFlags",
+          "value": 0
+        },
+        {
+          "name": "UiSendFinalEnterKey",
+          "value": 1
+        },
+        {
+          "name": "UiSendFinalTabKey",
+          "value": 2
+        }
+      ]
+    }
+  ],
+  "namespaceMappings": []
+}

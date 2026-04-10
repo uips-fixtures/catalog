@@ -1,0 +1,1523 @@
+{
+  "schema": {
+    "id": "activity-catalog",
+    "version": "v0.3"
+  },
+  "source": {
+    "kind": "nuget-package",
+    "id": "System.Management.Automation",
+    "version": "6.1.7601.17515",
+    "feedUrl": null,
+    "authors": "Microsoft",
+    "projectUrl": null,
+    "description": "Versions 6.1.7601.* are unofficial packages for .Net 4.0 and are not supported by Microsoft.\nThey will be replaced with an official copy for netstandard1.6 (CoreCLR) at a later date.",
+    "license": null,
+    "tags": null,
+    "packageTypes": []
+  },
+  "generatedAt": "2026-04-10T09:21:17Z",
+  "activities": [],
+  "enums": [
+    {
+      "fullName": "System.Management.Automation.ReturnContainers",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ReturnMatchingContainers",
+          "value": 0
+        },
+        {
+          "name": "ReturnAllContainers",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "System.Management.Automation.ShouldProcessReason",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "WhatIf",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "System.Management.Automation.ActionPreference",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "SilentlyContinue",
+          "value": 0
+        },
+        {
+          "name": "Stop",
+          "value": 1
+        },
+        {
+          "name": "Continue",
+          "value": 2
+        },
+        {
+          "name": "Inquire",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "System.Management.Automation.ConfirmImpact",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Low",
+          "value": 1
+        },
+        {
+          "name": "Medium",
+          "value": 2
+        },
+        {
+          "name": "High",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "System.Management.Automation.ErrorCategory",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NotSpecified",
+          "value": 0
+        },
+        {
+          "name": "OpenError",
+          "value": 1
+        },
+        {
+          "name": "CloseError",
+          "value": 2
+        },
+        {
+          "name": "DeviceError",
+          "value": 3
+        },
+        {
+          "name": "DeadlockDetected",
+          "value": 4
+        },
+        {
+          "name": "InvalidArgument",
+          "value": 5
+        },
+        {
+          "name": "InvalidData",
+          "value": 6
+        },
+        {
+          "name": "InvalidOperation",
+          "value": 7
+        },
+        {
+          "name": "InvalidResult",
+          "value": 8
+        },
+        {
+          "name": "InvalidType",
+          "value": 9
+        },
+        {
+          "name": "MetadataError",
+          "value": 10
+        },
+        {
+          "name": "NotImplemented",
+          "value": 11
+        },
+        {
+          "name": "NotInstalled",
+          "value": 12
+        },
+        {
+          "name": "ObjectNotFound",
+          "value": 13
+        },
+        {
+          "name": "OperationStopped",
+          "value": 14
+        },
+        {
+          "name": "OperationTimeout",
+          "value": 15
+        },
+        {
+          "name": "SyntaxError",
+          "value": 16
+        },
+        {
+          "name": "ParserError",
+          "value": 17
+        },
+        {
+          "name": "PermissionDenied",
+          "value": 18
+        },
+        {
+          "name": "ResourceBusy",
+          "value": 19
+        },
+        {
+          "name": "ResourceExists",
+          "value": 20
+        },
+        {
+          "name": "ResourceUnavailable",
+          "value": 21
+        },
+        {
+          "name": "ReadError",
+          "value": 22
+        },
+        {
+          "name": "WriteError",
+          "value": 23
+        },
+        {
+          "name": "FromStdErr",
+          "value": 24
+        },
+        {
+          "name": "SecurityError",
+          "value": 25
+        }
+      ]
+    },
+    {
+      "fullName": "System.Management.Automation.CopyContainers",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "CopyTargetContainer",
+          "value": 0
+        },
+        {
+          "name": "CopyChildrenOfTargetContainer",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "System.Management.Automation.ProgressRecordType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Processing",
+          "value": 0
+        },
+        {
+          "name": "Completed",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "System.Management.Automation.SessionStateEntryVisibility",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Public",
+          "value": 0
+        },
+        {
+          "name": "Private",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "System.Management.Automation.PSLanguageMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "FullLanguage",
+          "value": 0
+        },
+        {
+          "name": "RestrictedLanguage",
+          "value": 1
+        },
+        {
+          "name": "NoLanguage",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "System.Management.Automation.CommandTypes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Alias",
+          "value": 1
+        },
+        {
+          "name": "Function",
+          "value": 2
+        },
+        {
+          "name": "Filter",
+          "value": 4
+        },
+        {
+          "name": "Cmdlet",
+          "value": 8
+        },
+        {
+          "name": "ExternalScript",
+          "value": 16
+        },
+        {
+          "name": "Application",
+          "value": 32
+        },
+        {
+          "name": "Script",
+          "value": 64
+        },
+        {
+          "name": "All",
+          "value": 127
+        }
+      ]
+    },
+    {
+      "fullName": "System.Management.Automation.DebuggerResumeAction",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Continue",
+          "value": 0
+        },
+        {
+          "name": "StepInto",
+          "value": 1
+        },
+        {
+          "name": "StepOut",
+          "value": 2
+        },
+        {
+          "name": "StepOver",
+          "value": 3
+        },
+        {
+          "name": "Stop",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "System.Management.Automation.BreakpointUpdateType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Set",
+          "value": 0
+        },
+        {
+          "name": "Removed",
+          "value": 1
+        },
+        {
+          "name": "Enabled",
+          "value": 2
+        },
+        {
+          "name": "Disabled",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "System.Management.Automation.VariableAccessMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Read",
+          "value": 0
+        },
+        {
+          "name": "Write",
+          "value": 1
+        },
+        {
+          "name": "ReadWrite",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "System.Management.Automation.PSMemberTypes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AliasProperty",
+          "value": 1
+        },
+        {
+          "name": "CodeProperty",
+          "value": 2
+        },
+        {
+          "name": "Property",
+          "value": 4
+        },
+        {
+          "name": "NoteProperty",
+          "value": 8
+        },
+        {
+          "name": "ScriptProperty",
+          "value": 16
+        },
+        {
+          "name": "PropertySet",
+          "value": 32
+        },
+        {
+          "name": "Method",
+          "value": 64
+        },
+        {
+          "name": "CodeMethod",
+          "value": 128
+        },
+        {
+          "name": "ScriptMethod",
+          "value": 256
+        },
+        {
+          "name": "ParameterizedProperty",
+          "value": 512
+        },
+        {
+          "name": "MemberSet",
+          "value": 1024
+        },
+        {
+          "name": "Event",
+          "value": 2048
+        },
+        {
+          "name": "Properties",
+          "value": 31
+        },
+        {
+          "name": "Methods",
+          "value": 448
+        },
+        {
+          "name": "All",
+          "value": 4095
+        }
+      ]
+    },
+    {
+      "fullName": "System.Management.Automation.PSMemberViewTypes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Extended",
+          "value": 1
+        },
+        {
+          "name": "Adapted",
+          "value": 2
+        },
+        {
+          "name": "Base",
+          "value": 4
+        },
+        {
+          "name": "All",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "System.Management.Automation.Runspaces.PipelineResultTypes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Output",
+          "value": 1
+        },
+        {
+          "name": "Error",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "System.Management.Automation.Runspaces.RunspaceState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "BeforeOpen",
+          "value": 0
+        },
+        {
+          "name": "Opening",
+          "value": 1
+        },
+        {
+          "name": "Opened",
+          "value": 2
+        },
+        {
+          "name": "Closed",
+          "value": 3
+        },
+        {
+          "name": "Closing",
+          "value": 4
+        },
+        {
+          "name": "Broken",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "System.Management.Automation.Runspaces.PSThreadOptions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "UseNewThread",
+          "value": 1
+        },
+        {
+          "name": "ReuseThread",
+          "value": 2
+        },
+        {
+          "name": "UseCurrentThread",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "System.Management.Automation.Runspaces.RunspaceAvailability",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Available",
+          "value": 1
+        },
+        {
+          "name": "AvailableForNestedCommand",
+          "value": 2
+        },
+        {
+          "name": "Busy",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "System.Management.Automation.Host.ReadKeyOptions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AllowCtrlC",
+          "value": 1
+        },
+        {
+          "name": "NoEcho",
+          "value": 2
+        },
+        {
+          "name": "IncludeKeyDown",
+          "value": 4
+        },
+        {
+          "name": "IncludeKeyUp",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "System.Management.Automation.Host.ControlKeyStates",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "RightAltPressed",
+          "value": 1
+        },
+        {
+          "name": "LeftAltPressed",
+          "value": 2
+        },
+        {
+          "name": "RightCtrlPressed",
+          "value": 4
+        },
+        {
+          "name": "LeftCtrlPressed",
+          "value": 8
+        },
+        {
+          "name": "ShiftPressed",
+          "value": 16
+        },
+        {
+          "name": "NumLockOn",
+          "value": 32
+        },
+        {
+          "name": "ScrollLockOn",
+          "value": 64
+        },
+        {
+          "name": "CapsLockOn",
+          "value": 128
+        },
+        {
+          "name": "EnhancedKey",
+          "value": 256
+        }
+      ]
+    },
+    {
+      "fullName": "System.Management.Automation.Host.BufferCellType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Complete",
+          "value": 0
+        },
+        {
+          "name": "Leading",
+          "value": 1
+        },
+        {
+          "name": "Trailing",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "System.Management.Automation.Runspaces.PipelineState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NotStarted",
+          "value": 0
+        },
+        {
+          "name": "Running",
+          "value": 1
+        },
+        {
+          "name": "Stopping",
+          "value": 2
+        },
+        {
+          "name": "Stopped",
+          "value": 3
+        },
+        {
+          "name": "Completed",
+          "value": 4
+        },
+        {
+          "name": "Failed",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "System.Management.Automation.PSInvocationState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NotStarted",
+          "value": 0
+        },
+        {
+          "name": "Running",
+          "value": 1
+        },
+        {
+          "name": "Stopping",
+          "value": 2
+        },
+        {
+          "name": "Stopped",
+          "value": 3
+        },
+        {
+          "name": "Completed",
+          "value": 4
+        },
+        {
+          "name": "Failed",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "System.Management.Automation.RemoteStreamOptions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AddInvocationInfoToErrorRecord",
+          "value": 1
+        },
+        {
+          "name": "AddInvocationInfoToWarningRecord",
+          "value": 2
+        },
+        {
+          "name": "AddInvocationInfoToDebugRecord",
+          "value": 4
+        },
+        {
+          "name": "AddInvocationInfoToVerboseRecord",
+          "value": 8
+        },
+        {
+          "name": "AddInvocationInfo",
+          "value": 15
+        }
+      ]
+    },
+    {
+      "fullName": "System.Management.Automation.Runspaces.RunspacePoolState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "BeforeOpen",
+          "value": 0
+        },
+        {
+          "name": "Opening",
+          "value": 1
+        },
+        {
+          "name": "Opened",
+          "value": 2
+        },
+        {
+          "name": "Closed",
+          "value": 3
+        },
+        {
+          "name": "Closing",
+          "value": 4
+        },
+        {
+          "name": "Broken",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "System.Management.Automation.JobState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NotStarted",
+          "value": 0
+        },
+        {
+          "name": "Running",
+          "value": 1
+        },
+        {
+          "name": "Completed",
+          "value": 2
+        },
+        {
+          "name": "Failed",
+          "value": 3
+        },
+        {
+          "name": "Stopped",
+          "value": 4
+        },
+        {
+          "name": "Blocked",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "System.Management.Automation.Runspaces.AuthenticationMechanism",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "Basic",
+          "value": 1
+        },
+        {
+          "name": "Negotiate",
+          "value": 2
+        },
+        {
+          "name": "NegotiateWithImplicitCredential",
+          "value": 3
+        },
+        {
+          "name": "Credssp",
+          "value": 4
+        },
+        {
+          "name": "Digest",
+          "value": 5
+        },
+        {
+          "name": "Kerberos",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "System.Management.Automation.Remoting.ProxyAccessType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "IEConfig",
+          "value": 1
+        },
+        {
+          "name": "WinHttpConfig",
+          "value": 2
+        },
+        {
+          "name": "AutoDetect",
+          "value": 4
+        },
+        {
+          "name": "NoProxyServer",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "System.Management.Automation.SessionCapabilities",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "RemoteServer",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "System.Management.Automation.WildcardOptions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Compiled",
+          "value": 1
+        },
+        {
+          "name": "IgnoreCase",
+          "value": 2
+        },
+        {
+          "name": "CultureInvariant",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "System.Management.Automation.Provider.ProviderCapabilities",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Include",
+          "value": 1
+        },
+        {
+          "name": "Exclude",
+          "value": 2
+        },
+        {
+          "name": "Filter",
+          "value": 4
+        },
+        {
+          "name": "ExpandWildcards",
+          "value": 8
+        },
+        {
+          "name": "ShouldProcess",
+          "value": 16
+        },
+        {
+          "name": "Credentials",
+          "value": 32
+        },
+        {
+          "name": "Transactions",
+          "value": 64
+        }
+      ]
+    },
+    {
+      "fullName": "System.Management.Automation.SplitOptions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "SimpleMatch",
+          "value": 1
+        },
+        {
+          "name": "RegexMatch",
+          "value": 2
+        },
+        {
+          "name": "CultureInvariant",
+          "value": 4
+        },
+        {
+          "name": "IgnorePatternWhitespace",
+          "value": 8
+        },
+        {
+          "name": "Multiline",
+          "value": 16
+        },
+        {
+          "name": "Singleline",
+          "value": 32
+        },
+        {
+          "name": "IgnoreCase",
+          "value": 64
+        },
+        {
+          "name": "ExplicitCapture",
+          "value": 128
+        }
+      ]
+    },
+    {
+      "fullName": "System.Management.Automation.ModuleType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Script",
+          "value": 0
+        },
+        {
+          "name": "Binary",
+          "value": 1
+        },
+        {
+          "name": "Manifest",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "System.Management.Automation.ModuleAccessMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ReadWrite",
+          "value": 0
+        },
+        {
+          "name": "ReadOnly",
+          "value": 1
+        },
+        {
+          "name": "Constant",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "System.Management.Automation.PSTokenType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "Command",
+          "value": 1
+        },
+        {
+          "name": "CommandParameter",
+          "value": 2
+        },
+        {
+          "name": "CommandArgument",
+          "value": 3
+        },
+        {
+          "name": "Number",
+          "value": 4
+        },
+        {
+          "name": "String",
+          "value": 5
+        },
+        {
+          "name": "Variable",
+          "value": 6
+        },
+        {
+          "name": "Member",
+          "value": 7
+        },
+        {
+          "name": "LoopLabel",
+          "value": 8
+        },
+        {
+          "name": "Attribute",
+          "value": 9
+        },
+        {
+          "name": "Type",
+          "value": 10
+        },
+        {
+          "name": "Operator",
+          "value": 11
+        },
+        {
+          "name": "GroupStart",
+          "value": 12
+        },
+        {
+          "name": "GroupEnd",
+          "value": 13
+        },
+        {
+          "name": "Keyword",
+          "value": 14
+        },
+        {
+          "name": "Comment",
+          "value": 15
+        },
+        {
+          "name": "StatementSeparator",
+          "value": 16
+        },
+        {
+          "name": "NewLine",
+          "value": 17
+        },
+        {
+          "name": "LineContinuation",
+          "value": 18
+        },
+        {
+          "name": "Position",
+          "value": 19
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.PowerShell.Commands.FileSystemCmdletProviderEncoding",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "String",
+          "value": 1
+        },
+        {
+          "name": "Unicode",
+          "value": 2
+        },
+        {
+          "name": "Byte",
+          "value": 3
+        },
+        {
+          "name": "BigEndianUnicode",
+          "value": 4
+        },
+        {
+          "name": "UTF8",
+          "value": 5
+        },
+        {
+          "name": "UTF7",
+          "value": 6
+        },
+        {
+          "name": "Ascii",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "System.Management.Automation.PSCredentialTypes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Generic",
+          "value": 1
+        },
+        {
+          "name": "Domain",
+          "value": 2
+        },
+        {
+          "name": "Default",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "System.Management.Automation.PSCredentialUIOptions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 1
+        },
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "ValidateUserNameSyntax",
+          "value": 1
+        },
+        {
+          "name": "AlwaysPrompt",
+          "value": 2
+        },
+        {
+          "name": "ReadOnlyUserName",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "System.Management.Automation.CommandOrigin",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Runspace",
+          "value": 0
+        },
+        {
+          "name": "Internal",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "System.Management.Automation.SignatureStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Valid",
+          "value": 0
+        },
+        {
+          "name": "UnknownError",
+          "value": 1
+        },
+        {
+          "name": "NotSigned",
+          "value": 2
+        },
+        {
+          "name": "HashMismatch",
+          "value": 3
+        },
+        {
+          "name": "NotTrusted",
+          "value": 4
+        },
+        {
+          "name": "NotSupportedFileFormat",
+          "value": 5
+        },
+        {
+          "name": "Incompatible",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "System.Management.Automation.SigningOption",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AddOnlyCertificate",
+          "value": 0
+        },
+        {
+          "name": "AddFullCertificateChain",
+          "value": 1
+        },
+        {
+          "name": "AddFullCertificateChainExceptRoot",
+          "value": 2
+        },
+        {
+          "name": "Default",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.PowerShell.ExecutionPolicy",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unrestricted",
+          "value": 0
+        },
+        {
+          "name": "RemoteSigned",
+          "value": 1
+        },
+        {
+          "name": "AllSigned",
+          "value": 2
+        },
+        {
+          "name": "Restricted",
+          "value": 3
+        },
+        {
+          "name": "Bypass",
+          "value": 4
+        },
+        {
+          "name": "Undefined",
+          "value": 5
+        },
+        {
+          "name": "Default",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.PowerShell.ExecutionPolicyScope",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Process",
+          "value": 0
+        },
+        {
+          "name": "CurrentUser",
+          "value": 1
+        },
+        {
+          "name": "LocalMachine",
+          "value": 2
+        },
+        {
+          "name": "UserPolicy",
+          "value": 3
+        },
+        {
+          "name": "MachinePolicy",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.PowerShell.Commands.OpenMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Add",
+          "value": 0
+        },
+        {
+          "name": "New",
+          "value": 1
+        },
+        {
+          "name": "Overwrite",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "System.Management.Automation.ScopedItemOptions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "ReadOnly",
+          "value": 1
+        },
+        {
+          "name": "Constant",
+          "value": 2
+        },
+        {
+          "name": "Private",
+          "value": 4
+        },
+        {
+          "name": "AllScope",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "System.Management.Automation.SessionStateCategory",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Variable",
+          "value": 0
+        },
+        {
+          "name": "Alias",
+          "value": 1
+        },
+        {
+          "name": "Function",
+          "value": 2
+        },
+        {
+          "name": "Filter",
+          "value": 3
+        },
+        {
+          "name": "Drive",
+          "value": 4
+        },
+        {
+          "name": "CmdletProvider",
+          "value": 5
+        },
+        {
+          "name": "Scope",
+          "value": 6
+        },
+        {
+          "name": "Command",
+          "value": 7
+        },
+        {
+          "name": "Resource",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "System.Management.Automation.PSTraceSourceOptions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Constructor",
+          "value": 1
+        },
+        {
+          "name": "Dispose",
+          "value": 2
+        },
+        {
+          "name": "Finalizer",
+          "value": 4
+        },
+        {
+          "name": "Method",
+          "value": 8
+        },
+        {
+          "name": "Property",
+          "value": 16
+        },
+        {
+          "name": "Delegates",
+          "value": 32
+        },
+        {
+          "name": "Events",
+          "value": 64
+        },
+        {
+          "name": "Exception",
+          "value": 128
+        },
+        {
+          "name": "Lock",
+          "value": 256
+        },
+        {
+          "name": "Error",
+          "value": 512
+        },
+        {
+          "name": "Warning",
+          "value": 1024
+        },
+        {
+          "name": "Verbose",
+          "value": 2048
+        },
+        {
+          "name": "WriteLine",
+          "value": 4096
+        },
+        {
+          "name": "Scope",
+          "value": 8192
+        },
+        {
+          "name": "Assert",
+          "value": 16384
+        },
+        {
+          "name": "ExecutionFlow",
+          "value": 8303
+        },
+        {
+          "name": "Data",
+          "value": 6167
+        },
+        {
+          "name": "Errors",
+          "value": 640
+        },
+        {
+          "name": "All",
+          "value": 32767
+        }
+      ]
+    },
+    {
+      "fullName": "System.Management.Automation.PSTransactionStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "RolledBack",
+          "value": 0
+        },
+        {
+          "name": "Committed",
+          "value": 1
+        },
+        {
+          "name": "Active",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "System.Management.Automation.RollbackSeverity",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Error",
+          "value": 0
+        },
+        {
+          "name": "TerminatingError",
+          "value": 1
+        },
+        {
+          "name": "Never",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "System.Management.Automation.Alignment",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "Left",
+          "value": 1
+        },
+        {
+          "name": "Center",
+          "value": 2
+        },
+        {
+          "name": "Right",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "System.Management.Automation.DisplayEntryValueType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Property",
+          "value": 0
+        },
+        {
+          "name": "ScriptBlock",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "namespaceMappings": []
+}

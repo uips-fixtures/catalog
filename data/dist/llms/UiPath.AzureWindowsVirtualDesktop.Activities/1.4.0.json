@@ -1,0 +1,5202 @@
+{
+  "schema": {
+    "id": "activity-catalog",
+    "version": "v0.3"
+  },
+  "source": {
+    "kind": "nuget-package",
+    "id": "UiPath.AzureWindowsVirtualDesktop.Activities",
+    "version": "1.4.0",
+    "feedUrl": null,
+    "authors": "UiPath",
+    "projectUrl": "https://docs.uipath.com/activities/docs/about-the-azure-windows-virtual-desktop-activities-pack",
+    "description": "Microsoft Azure Virtual Desktop Activities Pack",
+    "license": "https://www.uipath.com/hubfs/legalspot/UiPath_MSSA.pdf",
+    "tags": "UiPathActivities Azure WVD WindowsVirtualDesktop VDI VirtualDesktop Cloud",
+    "packageTypes": []
+  },
+  "generatedAt": "2026-04-10T09:21:20Z",
+  "activities": [
+    {
+      "id": "UiPath.AzureWVD.Activities.AzureWVDAssignUsersGroupsToApplicationGroup@UiPath.AzureWindowsVirtualDesktop.Activities/1.4.0",
+      "fullName": "UiPath.AzureWVD.Activities.AzureWVDAssignUsersGroupsToApplicationGroup",
+      "displayName": "Assign Users and Groups to Application Group",
+      "description": "Assigns users and groups to an application group.",
+      "category": "Desktop and App Virtualization.Azure Virtual Desktop.Application Groups",
+      "visibility": "browsable",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "isObsolete": false,
+      "obsoleteMessage": null,
+      "xmlNamespace": null,
+      "xmlPrefix": null,
+      "members": [
+        {
+          "name": "ApplicationGroup",
+          "displayName": "ApplicationGroup",
+          "dataType": "System.Activities.InArgument<UiPath.AzureWVD.Models.WVDApplicationGroup>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "UsersAndGroupsIds",
+          "displayName": "UsersAndGroupsIds",
+          "dataType": "System.Activities.InArgument<System.String[]>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "Connector",
+          "displayName": "Connector",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ScopeTag",
+          "displayName": "ScopeTag",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "BindingsKey",
+          "displayName": "BindingsKey",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "BindingsVersion",
+          "displayName": "BindingsVersion",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ConnectionId",
+          "displayName": "ConnectionId",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ConnectionClient",
+          "displayName": "ConnectionClient",
+          "dataType": "UiPath.ConnectionClient.IConnectionClient",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        }
+      ]
+    },
+    {
+      "id": "UiPath.AzureWVD.Activities.AzureWVDForEachApplicationGroup@UiPath.AzureWindowsVirtualDesktop.Activities/1.4.0",
+      "fullName": "UiPath.AzureWVD.Activities.AzureWVDForEachApplicationGroup",
+      "displayName": "For Each Application Group",
+      "description": "Performs an activity or a series of activities on each application group, in the current subscription, that matches the filter criteria.",
+      "category": "Desktop and App Virtualization.Azure Virtual Desktop.Application Groups",
+      "visibility": "browsable",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "isObsolete": false,
+      "obsoleteMessage": null,
+      "xmlNamespace": null,
+      "xmlPrefix": null,
+      "members": [
+        {
+          "name": "ResourceGroupName",
+          "displayName": "ResourceGroupName",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ApplicationGroupType",
+          "displayName": "ApplicationGroupType",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ScopeTag",
+          "displayName": "ScopeTag",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "Connector",
+          "displayName": "Connector",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "Index",
+          "displayName": "Index",
+          "dataType": "System.Activities.OutArgument<System.Int32>",
+          "memberKind": "argument",
+          "argumentDirection": "out",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "BindingsKey",
+          "displayName": "BindingsKey",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "BindingsVersion",
+          "displayName": "BindingsVersion",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ConnectionId",
+          "displayName": "ConnectionId",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ConnectionClient",
+          "displayName": "ConnectionClient",
+          "dataType": "UiPath.ConnectionClient.IConnectionClient",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        }
+      ]
+    },
+    {
+      "id": "UiPath.AzureWVD.Activities.AzureWVDGetApplicationGroup@UiPath.AzureWindowsVirtualDesktop.Activities/1.4.0",
+      "fullName": "UiPath.AzureWVD.Activities.AzureWVDGetApplicationGroup",
+      "displayName": "Get Application Group",
+      "description": "Gets details about an application group.",
+      "category": "Desktop and App Virtualization.Azure Virtual Desktop.Application Groups",
+      "visibility": "browsable",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "isObsolete": false,
+      "obsoleteMessage": null,
+      "xmlNamespace": null,
+      "xmlPrefix": null,
+      "members": [
+        {
+          "name": "ApplicationGroupName",
+          "displayName": "ApplicationGroupName",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ResourceGroupName",
+          "displayName": "ResourceGroupName",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ApplicationGroup",
+          "displayName": "ApplicationGroup",
+          "dataType": "System.Activities.OutArgument<UiPath.AzureWVD.Models.WVDApplicationGroup>",
+          "memberKind": "argument",
+          "argumentDirection": "out",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "Connector",
+          "displayName": "Connector",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ScopeTag",
+          "displayName": "ScopeTag",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "BindingsKey",
+          "displayName": "BindingsKey",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "BindingsVersion",
+          "displayName": "BindingsVersion",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ConnectionId",
+          "displayName": "ConnectionId",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ConnectionClient",
+          "displayName": "ConnectionClient",
+          "dataType": "UiPath.ConnectionClient.IConnectionClient",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        }
+      ]
+    },
+    {
+      "id": "UiPath.AzureWVD.Activities.AzureWVDRemoveUsersGroupsFromApplicationGroup@UiPath.AzureWindowsVirtualDesktop.Activities/1.4.0",
+      "fullName": "UiPath.AzureWVD.Activities.AzureWVDRemoveUsersGroupsFromApplicationGroup",
+      "displayName": "Remove Users and Groups from Application Group",
+      "description": "Removes users and groups from an application group.",
+      "category": "Desktop and App Virtualization.Azure Virtual Desktop.Application Groups",
+      "visibility": "browsable",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "isObsolete": false,
+      "obsoleteMessage": null,
+      "xmlNamespace": null,
+      "xmlPrefix": null,
+      "members": [
+        {
+          "name": "ApplicationGroup",
+          "displayName": "ApplicationGroup",
+          "dataType": "System.Activities.InArgument<UiPath.AzureWVD.Models.WVDApplicationGroup>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "UsersAndGroupsIds",
+          "displayName": "UsersAndGroupsIds",
+          "dataType": "System.Activities.InArgument<System.String[]>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "Connector",
+          "displayName": "Connector",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ScopeTag",
+          "displayName": "ScopeTag",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "BindingsKey",
+          "displayName": "BindingsKey",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "BindingsVersion",
+          "displayName": "BindingsVersion",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ConnectionId",
+          "displayName": "ConnectionId",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ConnectionClient",
+          "displayName": "ConnectionClient",
+          "dataType": "UiPath.ConnectionClient.IConnectionClient",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        }
+      ]
+    },
+    {
+      "id": "UiPath.AzureWVD.Activities.AzureWVDScope@UiPath.AzureWindowsVirtualDesktop.Activities/1.4.0",
+      "fullName": "UiPath.AzureWVD.Activities.AzureWVDScope",
+      "displayName": "Azure Virtual Desktop Scope",
+      "description": "Connects to Azure Virtual Desktop and provides a scope for other Azure Virtual Desktop activities.",
+      "category": "Desktop and App Virtualization.Azure Virtual Desktop",
+      "visibility": "browsable",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "isObsolete": false,
+      "obsoleteMessage": null,
+      "xmlNamespace": null,
+      "xmlPrefix": null,
+      "members": [
+        {
+          "name": "ClientID",
+          "displayName": "ClientID",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ClientSecret",
+          "displayName": "ClientSecret",
+          "dataType": "System.Activities.InArgument<System.Security.SecureString>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "SubscriptionID",
+          "displayName": "SubscriptionID",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "TenantID",
+          "displayName": "TenantID",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "Environment",
+          "displayName": "Environment",
+          "dataType": "System.Activities.InArgument<UiPath.Core.AzureWVDEnvironment>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ScopeTag",
+          "displayName": "ScopeTag",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        }
+      ]
+    },
+    {
+      "id": "UiPath.AzureWVD.Activities.AzureWVDAddVMToHostPool@UiPath.AzureWindowsVirtualDesktop.Activities/1.4.0",
+      "fullName": "UiPath.AzureWVD.Activities.AzureWVDAddVMToHostPool",
+      "displayName": "Add Virtual Machine to Host Pool",
+      "description": "Adds an existing Azure virtual machine to the specified host pool.",
+      "category": "Desktop and App Virtualization.Azure Virtual Desktop.Host Pools",
+      "visibility": "browsable",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "isObsolete": false,
+      "obsoleteMessage": null,
+      "xmlNamespace": null,
+      "xmlPrefix": null,
+      "members": [
+        {
+          "name": "HostPool",
+          "displayName": "HostPool",
+          "dataType": "System.Activities.InArgument<UiPath.AzureWVD.Models.WVDHostPool>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "Name",
+          "displayName": "Name",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ResourceGroupName",
+          "displayName": "ResourceGroupName",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "WaitForCompletion",
+          "displayName": "WaitForCompletion",
+          "dataType": "System.Boolean",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "Timeout",
+          "displayName": "Timeout",
+          "dataType": "System.Activities.InArgument<System.Int32>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "DomainToJoin",
+          "displayName": "DomainToJoin",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "DomainOrganizationalUnit",
+          "displayName": "DomainOrganizationalUnit",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "DomainUsername",
+          "displayName": "DomainUsername",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "DomainUserPassword",
+          "displayName": "DomainUserPassword",
+          "dataType": "System.Activities.InArgument<System.Security.SecureString>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "SessionHost",
+          "displayName": "SessionHost",
+          "dataType": "System.Activities.OutArgument<UiPath.AzureWVD.Models.WVDSessionHost>",
+          "memberKind": "argument",
+          "argumentDirection": "out",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "Connector",
+          "displayName": "Connector",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ScopeTag",
+          "displayName": "ScopeTag",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "BindingsKey",
+          "displayName": "BindingsKey",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "BindingsVersion",
+          "displayName": "BindingsVersion",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ConnectionId",
+          "displayName": "ConnectionId",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ConnectionClient",
+          "displayName": "ConnectionClient",
+          "dataType": "UiPath.ConnectionClient.IConnectionClient",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        }
+      ]
+    },
+    {
+      "id": "UiPath.AzureWVD.Activities.AzureWVDCreateHostPool@UiPath.AzureWindowsVirtualDesktop.Activities/1.4.0",
+      "fullName": "UiPath.AzureWVD.Activities.AzureWVDCreateHostPool",
+      "displayName": "Create Host Pool",
+      "description": "Creates a new host pool. A default desktop application group is created by the activity.",
+      "category": "Desktop and App Virtualization.Azure Virtual Desktop.Host Pools",
+      "visibility": "browsable",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "isObsolete": false,
+      "obsoleteMessage": null,
+      "xmlNamespace": null,
+      "xmlPrefix": null,
+      "members": [
+        {
+          "name": "Description",
+          "displayName": "Description",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "FriendlyName",
+          "displayName": "FriendlyName",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "Name",
+          "displayName": "Name",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ResourceGroupName",
+          "displayName": "ResourceGroupName",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "Region",
+          "displayName": "Region",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "Tags",
+          "displayName": "Tags",
+          "dataType": "System.Activities.InArgument<System.Data.DataTable>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ValidationEnvironment",
+          "displayName": "ValidationEnvironment",
+          "dataType": "System.Boolean",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "Workspace",
+          "displayName": "Workspace",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "Type",
+          "displayName": "Type",
+          "dataType": "UiPath.Core.HostPoolType",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "PersonalDesktopAssignmentType",
+          "displayName": "PersonalDesktopAssignmentType",
+          "dataType": "UiPath.Core.PersonalDesktopAssignmentType",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "PooledDesktopMaxSessionLimit",
+          "displayName": "PooledDesktopMaxSessionLimit",
+          "dataType": "System.Activities.InArgument<System.Nullable<System.Int32>>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "PooledDesktopLoadBalancing",
+          "displayName": "PooledDesktopLoadBalancing",
+          "dataType": "UiPath.Core.LoadBalancerType",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "HostPool",
+          "displayName": "HostPool",
+          "dataType": "System.Activities.OutArgument<UiPath.AzureWVD.Models.WVDHostPool>",
+          "memberKind": "argument",
+          "argumentDirection": "out",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "Connector",
+          "displayName": "Connector",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ScopeTag",
+          "displayName": "ScopeTag",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "BindingsKey",
+          "displayName": "BindingsKey",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "BindingsVersion",
+          "displayName": "BindingsVersion",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ConnectionId",
+          "displayName": "ConnectionId",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ConnectionClient",
+          "displayName": "ConnectionClient",
+          "dataType": "UiPath.ConnectionClient.IConnectionClient",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        }
+      ]
+    },
+    {
+      "id": "UiPath.AzureWVD.Activities.AzureWVDDeleteHostPool@UiPath.AzureWindowsVirtualDesktop.Activities/1.4.0",
+      "fullName": "UiPath.AzureWVD.Activities.AzureWVDDeleteHostPool",
+      "displayName": "Delete Host Pool",
+      "description": "Deletes a host pool.",
+      "category": "Desktop and App Virtualization.Azure Virtual Desktop.Host Pools",
+      "visibility": "browsable",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "isObsolete": false,
+      "obsoleteMessage": null,
+      "xmlNamespace": null,
+      "xmlPrefix": null,
+      "members": [
+        {
+          "name": "HostPool",
+          "displayName": "HostPool",
+          "dataType": "System.Activities.InArgument<UiPath.AzureWVD.Models.WVDHostPool>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "Connector",
+          "displayName": "Connector",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ScopeTag",
+          "displayName": "ScopeTag",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "BindingsKey",
+          "displayName": "BindingsKey",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "BindingsVersion",
+          "displayName": "BindingsVersion",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ConnectionId",
+          "displayName": "ConnectionId",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ConnectionClient",
+          "displayName": "ConnectionClient",
+          "dataType": "UiPath.ConnectionClient.IConnectionClient",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        }
+      ]
+    },
+    {
+      "id": "UiPath.AzureWVD.Activities.AzureWVDForEachHostPool@UiPath.AzureWindowsVirtualDesktop.Activities/1.4.0",
+      "fullName": "UiPath.AzureWVD.Activities.AzureWVDForEachHostPool",
+      "displayName": "For Each Host Pool",
+      "description": "Performs an activity or a series of activities on each host pool in the current subscription.",
+      "category": "Desktop and App Virtualization.Azure Virtual Desktop.Host Pools",
+      "visibility": "browsable",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "isObsolete": false,
+      "obsoleteMessage": null,
+      "xmlNamespace": null,
+      "xmlPrefix": null,
+      "members": [
+        {
+          "name": "ResourceGroupName",
+          "displayName": "ResourceGroupName",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ScopeTag",
+          "displayName": "ScopeTag",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "Connector",
+          "displayName": "Connector",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "Index",
+          "displayName": "Index",
+          "dataType": "System.Activities.OutArgument<System.Int32>",
+          "memberKind": "argument",
+          "argumentDirection": "out",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "BindingsKey",
+          "displayName": "BindingsKey",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "BindingsVersion",
+          "displayName": "BindingsVersion",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ConnectionId",
+          "displayName": "ConnectionId",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ConnectionClient",
+          "displayName": "ConnectionClient",
+          "dataType": "UiPath.ConnectionClient.IConnectionClient",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        }
+      ]
+    },
+    {
+      "id": "UiPath.AzureWVD.Activities.AzureWVDGetHostPool@UiPath.AzureWindowsVirtualDesktop.Activities/1.4.0",
+      "fullName": "UiPath.AzureWVD.Activities.AzureWVDGetHostPool",
+      "displayName": "Get Host Pool",
+      "description": "Gets details about a host pool.",
+      "category": "Desktop and App Virtualization.Azure Virtual Desktop.Host Pools",
+      "visibility": "browsable",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "isObsolete": false,
+      "obsoleteMessage": null,
+      "xmlNamespace": null,
+      "xmlPrefix": null,
+      "members": [
+        {
+          "name": "HostPoolName",
+          "displayName": "HostPoolName",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ResourceGroupName",
+          "displayName": "ResourceGroupName",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "HostPool",
+          "displayName": "HostPool",
+          "dataType": "System.Activities.OutArgument<UiPath.AzureWVD.Models.WVDHostPool>",
+          "memberKind": "argument",
+          "argumentDirection": "out",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "Connector",
+          "displayName": "Connector",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ScopeTag",
+          "displayName": "ScopeTag",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "BindingsKey",
+          "displayName": "BindingsKey",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "BindingsVersion",
+          "displayName": "BindingsVersion",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ConnectionId",
+          "displayName": "ConnectionId",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ConnectionClient",
+          "displayName": "ConnectionClient",
+          "dataType": "UiPath.ConnectionClient.IConnectionClient",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        }
+      ]
+    },
+    {
+      "id": "UiPath.AzureWVD.Activities.AzureWVDUpdateHostPool@UiPath.AzureWindowsVirtualDesktop.Activities/1.4.0",
+      "fullName": "UiPath.AzureWVD.Activities.AzureWVDUpdateHostPool",
+      "displayName": "Update Host Pool",
+      "description": "Updates a host pool.",
+      "category": "Desktop and App Virtualization.Azure Virtual Desktop.Host Pools",
+      "visibility": "browsable",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "isObsolete": false,
+      "obsoleteMessage": null,
+      "xmlNamespace": null,
+      "xmlPrefix": null,
+      "members": [
+        {
+          "name": "HostPool",
+          "displayName": "HostPool",
+          "dataType": "System.Activities.InArgument<UiPath.AzureWVD.Models.WVDHostPool>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "Description",
+          "displayName": "Description",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "FriendlyName",
+          "displayName": "FriendlyName",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "Tags",
+          "displayName": "Tags",
+          "dataType": "System.Activities.InArgument<System.Data.DataTable>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ValidationEnvironment",
+          "displayName": "ValidationEnvironment",
+          "dataType": "System.Activities.InArgument<System.Boolean>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "PooledMaxSessionLimit",
+          "displayName": "PooledMaxSessionLimit",
+          "dataType": "System.Activities.InArgument<System.Nullable<System.Int32>>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "PooledLoadBalancing",
+          "displayName": "PooledLoadBalancing",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "PersonalDesktopAssignmentType",
+          "displayName": "PersonalDesktopAssignmentType",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "Connector",
+          "displayName": "Connector",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ScopeTag",
+          "displayName": "ScopeTag",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "BindingsKey",
+          "displayName": "BindingsKey",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "BindingsVersion",
+          "displayName": "BindingsVersion",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ConnectionId",
+          "displayName": "ConnectionId",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ConnectionClient",
+          "displayName": "ConnectionClient",
+          "dataType": "UiPath.ConnectionClient.IConnectionClient",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        }
+      ]
+    },
+    {
+      "id": "UiPath.AzureWVD.Activities.AzureWVDDeleteSessionHost@UiPath.AzureWindowsVirtualDesktop.Activities/1.4.0",
+      "fullName": "UiPath.AzureWVD.Activities.AzureWVDDeleteSessionHost",
+      "displayName": "Delete Session Host",
+      "description": "Deletes a session host.",
+      "category": "Desktop and App Virtualization.Azure Virtual Desktop.Session Hosts",
+      "visibility": "browsable",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "isObsolete": false,
+      "obsoleteMessage": null,
+      "xmlNamespace": null,
+      "xmlPrefix": null,
+      "members": [
+        {
+          "name": "SessionHost",
+          "displayName": "SessionHost",
+          "dataType": "System.Activities.InArgument<UiPath.AzureWVD.Models.WVDSessionHost>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "Connector",
+          "displayName": "Connector",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ScopeTag",
+          "displayName": "ScopeTag",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "BindingsKey",
+          "displayName": "BindingsKey",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "BindingsVersion",
+          "displayName": "BindingsVersion",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ConnectionId",
+          "displayName": "ConnectionId",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ConnectionClient",
+          "displayName": "ConnectionClient",
+          "dataType": "UiPath.ConnectionClient.IConnectionClient",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        }
+      ]
+    },
+    {
+      "id": "UiPath.AzureWVD.Activities.AzureWVDForEachSessionHost@UiPath.AzureWindowsVirtualDesktop.Activities/1.4.0",
+      "fullName": "UiPath.AzureWVD.Activities.AzureWVDForEachSessionHost",
+      "displayName": "For Each Session Host",
+      "description": "Performs an activity or a series of activities on each session host within the specified host pool.",
+      "category": "Desktop and App Virtualization.Azure Virtual Desktop.Session Hosts",
+      "visibility": "browsable",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "isObsolete": false,
+      "obsoleteMessage": null,
+      "xmlNamespace": null,
+      "xmlPrefix": null,
+      "members": [
+        {
+          "name": "HostPool",
+          "displayName": "HostPool",
+          "dataType": "System.Activities.InArgument<UiPath.AzureWVD.Models.WVDHostPool>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ScopeTag",
+          "displayName": "ScopeTag",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "Connector",
+          "displayName": "Connector",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "Index",
+          "displayName": "Index",
+          "dataType": "System.Activities.OutArgument<System.Int32>",
+          "memberKind": "argument",
+          "argumentDirection": "out",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "BindingsKey",
+          "displayName": "BindingsKey",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "BindingsVersion",
+          "displayName": "BindingsVersion",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ConnectionId",
+          "displayName": "ConnectionId",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ConnectionClient",
+          "displayName": "ConnectionClient",
+          "dataType": "UiPath.ConnectionClient.IConnectionClient",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        }
+      ]
+    },
+    {
+      "id": "UiPath.AzureWVD.Activities.AzureWVDGetSessionHost@UiPath.AzureWindowsVirtualDesktop.Activities/1.4.0",
+      "fullName": "UiPath.AzureWVD.Activities.AzureWVDGetSessionHost",
+      "displayName": "Get Session Host",
+      "description": "Gets details about a session host within the specified host pool.",
+      "category": "Desktop and App Virtualization.Azure Virtual Desktop.Session Hosts",
+      "visibility": "browsable",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "isObsolete": false,
+      "obsoleteMessage": null,
+      "xmlNamespace": null,
+      "xmlPrefix": null,
+      "members": [
+        {
+          "name": "HostPool",
+          "displayName": "HostPool",
+          "dataType": "System.Activities.InArgument<UiPath.AzureWVD.Models.WVDHostPool>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "SessionHostName",
+          "displayName": "SessionHostName",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "SessionHost",
+          "displayName": "SessionHost",
+          "dataType": "System.Activities.OutArgument<UiPath.AzureWVD.Models.WVDSessionHost>",
+          "memberKind": "argument",
+          "argumentDirection": "out",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "Connector",
+          "displayName": "Connector",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ScopeTag",
+          "displayName": "ScopeTag",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "BindingsKey",
+          "displayName": "BindingsKey",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "BindingsVersion",
+          "displayName": "BindingsVersion",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ConnectionId",
+          "displayName": "ConnectionId",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ConnectionClient",
+          "displayName": "ConnectionClient",
+          "dataType": "UiPath.ConnectionClient.IConnectionClient",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        }
+      ]
+    },
+    {
+      "id": "UiPath.AzureWVD.Activities.AzureWVDUpdateSessionHost@UiPath.AzureWindowsVirtualDesktop.Activities/1.4.0",
+      "fullName": "UiPath.AzureWVD.Activities.AzureWVDUpdateSessionHost",
+      "displayName": "Update Session Host",
+      "description": "Updates a session host.",
+      "category": "Desktop and App Virtualization.Azure Virtual Desktop.Session Hosts",
+      "visibility": "browsable",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "isObsolete": false,
+      "obsoleteMessage": null,
+      "xmlNamespace": null,
+      "xmlPrefix": null,
+      "members": [
+        {
+          "name": "SessionHost",
+          "displayName": "SessionHost",
+          "dataType": "System.Activities.InArgument<UiPath.AzureWVD.Models.WVDSessionHost>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "AllowNewSession",
+          "displayName": "AllowNewSession",
+          "dataType": "System.Activities.InArgument<System.Boolean>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "AssignedUser",
+          "displayName": "AssignedUser",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "Connector",
+          "displayName": "Connector",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ScopeTag",
+          "displayName": "ScopeTag",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "BindingsKey",
+          "displayName": "BindingsKey",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "BindingsVersion",
+          "displayName": "BindingsVersion",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ConnectionId",
+          "displayName": "ConnectionId",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ConnectionClient",
+          "displayName": "ConnectionClient",
+          "dataType": "UiPath.ConnectionClient.IConnectionClient",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        }
+      ]
+    },
+    {
+      "id": "UiPath.AzureWVD.Activities.AzureWVDDeleteUserSession@UiPath.AzureWindowsVirtualDesktop.Activities/1.4.0",
+      "fullName": "UiPath.AzureWVD.Activities.AzureWVDDeleteUserSession",
+      "displayName": "Delete User Session",
+      "description": "Deletes (logs off) a user session.",
+      "category": "Desktop and App Virtualization.Azure Virtual Desktop.User Sessions",
+      "visibility": "browsable",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "isObsolete": false,
+      "obsoleteMessage": null,
+      "xmlNamespace": null,
+      "xmlPrefix": null,
+      "members": [
+        {
+          "name": "UserSession",
+          "displayName": "UserSession",
+          "dataType": "System.Activities.InArgument<UiPath.AzureWVD.Models.WVDUserSession>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "Force",
+          "displayName": "Force",
+          "dataType": "System.Activities.InArgument<System.Boolean>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "Connector",
+          "displayName": "Connector",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ScopeTag",
+          "displayName": "ScopeTag",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "BindingsKey",
+          "displayName": "BindingsKey",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "BindingsVersion",
+          "displayName": "BindingsVersion",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ConnectionId",
+          "displayName": "ConnectionId",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ConnectionClient",
+          "displayName": "ConnectionClient",
+          "dataType": "UiPath.ConnectionClient.IConnectionClient",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        }
+      ]
+    },
+    {
+      "id": "UiPath.AzureWVD.Activities.AzureWVDDisconnectUserSession@UiPath.AzureWindowsVirtualDesktop.Activities/1.4.0",
+      "fullName": "UiPath.AzureWVD.Activities.AzureWVDDisconnectUserSession",
+      "displayName": "Disconnect User Session",
+      "description": "Disconnects a user session.",
+      "category": "Desktop and App Virtualization.Azure Virtual Desktop.User Sessions",
+      "visibility": "browsable",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "isObsolete": false,
+      "obsoleteMessage": null,
+      "xmlNamespace": null,
+      "xmlPrefix": null,
+      "members": [
+        {
+          "name": "UserSession",
+          "displayName": "UserSession",
+          "dataType": "System.Activities.InArgument<UiPath.AzureWVD.Models.WVDUserSession>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "Connector",
+          "displayName": "Connector",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ScopeTag",
+          "displayName": "ScopeTag",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "BindingsKey",
+          "displayName": "BindingsKey",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "BindingsVersion",
+          "displayName": "BindingsVersion",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ConnectionId",
+          "displayName": "ConnectionId",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ConnectionClient",
+          "displayName": "ConnectionClient",
+          "dataType": "UiPath.ConnectionClient.IConnectionClient",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        }
+      ]
+    },
+    {
+      "id": "UiPath.AzureWVD.Activities.AzureWVDForEachUserSession@UiPath.AzureWindowsVirtualDesktop.Activities/1.4.0",
+      "fullName": "UiPath.AzureWVD.Activities.AzureWVDForEachUserSession",
+      "displayName": "For Each User Session",
+      "description": "Performs an activity or a series of activities on each user session within a specified session host.",
+      "category": "Desktop and App Virtualization.Azure Virtual Desktop.User Sessions",
+      "visibility": "browsable",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "isObsolete": false,
+      "obsoleteMessage": null,
+      "xmlNamespace": null,
+      "xmlPrefix": null,
+      "members": [
+        {
+          "name": "SessionHost",
+          "displayName": "SessionHost",
+          "dataType": "System.Activities.InArgument<UiPath.AzureWVD.Models.WVDSessionHost>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ScopeTag",
+          "displayName": "ScopeTag",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "Connector",
+          "displayName": "Connector",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "Index",
+          "displayName": "Index",
+          "dataType": "System.Activities.OutArgument<System.Int32>",
+          "memberKind": "argument",
+          "argumentDirection": "out",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "BindingsKey",
+          "displayName": "BindingsKey",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "BindingsVersion",
+          "displayName": "BindingsVersion",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ConnectionId",
+          "displayName": "ConnectionId",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ConnectionClient",
+          "displayName": "ConnectionClient",
+          "dataType": "UiPath.ConnectionClient.IConnectionClient",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        }
+      ]
+    },
+    {
+      "id": "UiPath.AzureWVD.Activities.AzureWVDSendMessageToUserSession@UiPath.AzureWindowsVirtualDesktop.Activities/1.4.0",
+      "fullName": "UiPath.AzureWVD.Activities.AzureWVDSendMessageToUserSession",
+      "displayName": "Send Message to User Session",
+      "description": "Sends a message to a user session.",
+      "category": "Desktop and App Virtualization.Azure Virtual Desktop.User Sessions",
+      "visibility": "browsable",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "isObsolete": false,
+      "obsoleteMessage": null,
+      "xmlNamespace": null,
+      "xmlPrefix": null,
+      "members": [
+        {
+          "name": "UserSession",
+          "displayName": "UserSession",
+          "dataType": "System.Activities.InArgument<UiPath.AzureWVD.Models.WVDUserSession>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "MessageTitle",
+          "displayName": "MessageTitle",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "MessageBody",
+          "displayName": "MessageBody",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "Connector",
+          "displayName": "Connector",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ScopeTag",
+          "displayName": "ScopeTag",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "BindingsKey",
+          "displayName": "BindingsKey",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "BindingsVersion",
+          "displayName": "BindingsVersion",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ConnectionId",
+          "displayName": "ConnectionId",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ConnectionClient",
+          "displayName": "ConnectionClient",
+          "dataType": "UiPath.ConnectionClient.IConnectionClient",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        }
+      ]
+    },
+    {
+      "id": "UiPath.AzureWVD.Activities.AzureWVDCreateWorkspace@UiPath.AzureWindowsVirtualDesktop.Activities/1.4.0",
+      "fullName": "UiPath.AzureWVD.Activities.AzureWVDCreateWorkspace",
+      "displayName": "Create Workspace",
+      "description": "Creates a new workspace.",
+      "category": "Desktop and App Virtualization.Azure Virtual Desktop.Workspaces",
+      "visibility": "browsable",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "isObsolete": false,
+      "obsoleteMessage": null,
+      "xmlNamespace": null,
+      "xmlPrefix": null,
+      "members": [
+        {
+          "name": "Description",
+          "displayName": "Description",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "FriendlyName",
+          "displayName": "FriendlyName",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "Name",
+          "displayName": "Name",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ResourceGroupName",
+          "displayName": "ResourceGroupName",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "Region",
+          "displayName": "Region",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "Tags",
+          "displayName": "Tags",
+          "dataType": "System.Activities.InArgument<System.Data.DataTable>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ApplicationGroupsToRegister",
+          "displayName": "ApplicationGroupsToRegister",
+          "dataType": "System.Activities.InArgument<System.String[]>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "Workspace",
+          "displayName": "Workspace",
+          "dataType": "System.Activities.OutArgument<UiPath.AzureWVD.Models.WVDWorkspace>",
+          "memberKind": "argument",
+          "argumentDirection": "out",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "Connector",
+          "displayName": "Connector",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ScopeTag",
+          "displayName": "ScopeTag",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "BindingsKey",
+          "displayName": "BindingsKey",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "BindingsVersion",
+          "displayName": "BindingsVersion",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ConnectionId",
+          "displayName": "ConnectionId",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ConnectionClient",
+          "displayName": "ConnectionClient",
+          "dataType": "UiPath.ConnectionClient.IConnectionClient",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        }
+      ]
+    },
+    {
+      "id": "UiPath.AzureWVD.Activities.AzureWVDDeleteWorkspace@UiPath.AzureWindowsVirtualDesktop.Activities/1.4.0",
+      "fullName": "UiPath.AzureWVD.Activities.AzureWVDDeleteWorkspace",
+      "displayName": "Delete Workspace",
+      "description": "Deletes a workspace.",
+      "category": "Desktop and App Virtualization.Azure Virtual Desktop.Workspaces",
+      "visibility": "browsable",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "isObsolete": false,
+      "obsoleteMessage": null,
+      "xmlNamespace": null,
+      "xmlPrefix": null,
+      "members": [
+        {
+          "name": "Workspace",
+          "displayName": "Workspace",
+          "dataType": "System.Activities.InArgument<UiPath.AzureWVD.Models.WVDWorkspace>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "Connector",
+          "displayName": "Connector",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ScopeTag",
+          "displayName": "ScopeTag",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "BindingsKey",
+          "displayName": "BindingsKey",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "BindingsVersion",
+          "displayName": "BindingsVersion",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ConnectionId",
+          "displayName": "ConnectionId",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ConnectionClient",
+          "displayName": "ConnectionClient",
+          "dataType": "UiPath.ConnectionClient.IConnectionClient",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        }
+      ]
+    },
+    {
+      "id": "UiPath.AzureWVD.Activities.AzureWVDForEachWorkspace@UiPath.AzureWindowsVirtualDesktop.Activities/1.4.0",
+      "fullName": "UiPath.AzureWVD.Activities.AzureWVDForEachWorkspace",
+      "displayName": "For Each Workspace",
+      "description": "Performs an activity or a series of activities on each workspace, in the current subscription, that matches the filter criteria.",
+      "category": "Desktop and App Virtualization.Azure Virtual Desktop.Workspaces",
+      "visibility": "browsable",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "isObsolete": false,
+      "obsoleteMessage": null,
+      "xmlNamespace": null,
+      "xmlPrefix": null,
+      "members": [
+        {
+          "name": "ResourceGroupName",
+          "displayName": "ResourceGroupName",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ScopeTag",
+          "displayName": "ScopeTag",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "Connector",
+          "displayName": "Connector",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "Index",
+          "displayName": "Index",
+          "dataType": "System.Activities.OutArgument<System.Int32>",
+          "memberKind": "argument",
+          "argumentDirection": "out",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "BindingsKey",
+          "displayName": "BindingsKey",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "BindingsVersion",
+          "displayName": "BindingsVersion",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ConnectionId",
+          "displayName": "ConnectionId",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ConnectionClient",
+          "displayName": "ConnectionClient",
+          "dataType": "UiPath.ConnectionClient.IConnectionClient",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        }
+      ]
+    },
+    {
+      "id": "UiPath.AzureWVD.Activities.AzureWVDGetWorkspace@UiPath.AzureWindowsVirtualDesktop.Activities/1.4.0",
+      "fullName": "UiPath.AzureWVD.Activities.AzureWVDGetWorkspace",
+      "displayName": "Get Workspace",
+      "description": "Gets details about a workspace.",
+      "category": "Desktop and App Virtualization.Azure Virtual Desktop.Workspaces",
+      "visibility": "browsable",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "isObsolete": false,
+      "obsoleteMessage": null,
+      "xmlNamespace": null,
+      "xmlPrefix": null,
+      "members": [
+        {
+          "name": "WorkspaceName",
+          "displayName": "WorkspaceName",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ResourceGroupName",
+          "displayName": "ResourceGroupName",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "Workspace",
+          "displayName": "Workspace",
+          "dataType": "System.Activities.OutArgument<UiPath.AzureWVD.Models.WVDWorkspace>",
+          "memberKind": "argument",
+          "argumentDirection": "out",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "Connector",
+          "displayName": "Connector",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ScopeTag",
+          "displayName": "ScopeTag",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "BindingsKey",
+          "displayName": "BindingsKey",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "BindingsVersion",
+          "displayName": "BindingsVersion",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ConnectionId",
+          "displayName": "ConnectionId",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ConnectionClient",
+          "displayName": "ConnectionClient",
+          "dataType": "UiPath.ConnectionClient.IConnectionClient",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        }
+      ]
+    },
+    {
+      "id": "UiPath.AzureWVD.Activities.AzureWVDUpdateWorkspace@UiPath.AzureWindowsVirtualDesktop.Activities/1.4.0",
+      "fullName": "UiPath.AzureWVD.Activities.AzureWVDUpdateWorkspace",
+      "displayName": "Update Workspace",
+      "description": "Updates a workspace.",
+      "category": "Desktop and App Virtualization.Azure Virtual Desktop.Workspaces",
+      "visibility": "browsable",
+      "hasGenericParameters": false,
+      "genericParameterNames": [],
+      "isObsolete": false,
+      "obsoleteMessage": null,
+      "xmlNamespace": null,
+      "xmlPrefix": null,
+      "members": [
+        {
+          "name": "Workspace",
+          "displayName": "Workspace",
+          "dataType": "System.Activities.InArgument<UiPath.AzureWVD.Models.WVDWorkspace>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": true,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "Description",
+          "displayName": "Description",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "FriendlyName",
+          "displayName": "FriendlyName",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ApplicationGroupsToAdd",
+          "displayName": "ApplicationGroupsToAdd",
+          "dataType": "System.Activities.InArgument<System.String[]>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ApplicationGroupsToRemove",
+          "displayName": "ApplicationGroupsToRemove",
+          "dataType": "System.Activities.InArgument<System.String[]>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "Tags",
+          "displayName": "Tags",
+          "dataType": "System.Activities.InArgument<System.Data.DataTable>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "Connector",
+          "displayName": "Connector",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ScopeTag",
+          "displayName": "ScopeTag",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "BindingsKey",
+          "displayName": "BindingsKey",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "BindingsVersion",
+          "displayName": "BindingsVersion",
+          "dataType": "System.String",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ConnectionId",
+          "displayName": "ConnectionId",
+          "dataType": "System.Activities.InArgument<System.String>",
+          "memberKind": "argument",
+          "argumentDirection": "in",
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        },
+        {
+          "name": "ConnectionClient",
+          "displayName": "ConnectionClient",
+          "dataType": "UiPath.ConnectionClient.IConnectionClient",
+          "memberKind": "property",
+          "argumentDirection": null,
+          "isRequiredArgument": false,
+          "description": null,
+          "category": null,
+          "defaultValue": null,
+          "typeConverter": null,
+          "isObsolete": false,
+          "obsoleteMessage": null,
+          "delegateArgumentName": null,
+          "enumValues": [],
+          "typeMembers": []
+        }
+      ]
+    }
+  ],
+  "enums": [
+    {
+      "fullName": "UiPath.Shared.Activities.Design.LangInvariant.Language",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "VisualBasic",
+          "value": 0
+        },
+        {
+          "name": "CSharp",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Shared.Activities.TokenType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ACCCESS_TOKEN",
+          "value": 0
+        },
+        {
+          "name": "CE_ACCESS_TOKEN",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.ApplicationGroupType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "RemoteApp",
+          "value": 0
+        },
+        {
+          "name": "Desktop",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.ApplicationType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "RemoteApp",
+          "value": 0
+        },
+        {
+          "name": "Desktop",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.AzureWVDEnvironment",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Global",
+          "value": 0
+        },
+        {
+          "name": "China",
+          "value": 2
+        },
+        {
+          "name": "Germany",
+          "value": 1
+        },
+        {
+          "name": "USGovernment",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.HostPoolType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Personal",
+          "value": 0
+        },
+        {
+          "name": "Pooled",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.LoadBalancerType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "BreadthFirst",
+          "value": 0
+        },
+        {
+          "name": "DepthFirst",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.PersonalDesktopAssignmentType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Automatic",
+          "value": 0
+        },
+        {
+          "name": "Direct",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.PreferredAppGroupType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Desktop",
+          "value": 1
+        },
+        {
+          "name": "RailApplications",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.SessionHostStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Available",
+          "value": 0
+        },
+        {
+          "name": "Unavailable",
+          "value": 1
+        },
+        {
+          "name": "Shutdown",
+          "value": 2
+        },
+        {
+          "name": "Disconnected",
+          "value": 3
+        },
+        {
+          "name": "Upgrading",
+          "value": 4
+        },
+        {
+          "name": "UpgradeFailed",
+          "value": 5
+        },
+        {
+          "name": "NoHeartbeat",
+          "value": 6
+        },
+        {
+          "name": "NotJoinedToDomain",
+          "value": 7
+        },
+        {
+          "name": "DomainTrustRelationshipLost",
+          "value": 8
+        },
+        {
+          "name": "SxSStackListenerNotReady",
+          "value": 9
+        },
+        {
+          "name": "FSLogixNotHealthy",
+          "value": 10
+        },
+        {
+          "name": "NeedsAssistance",
+          "value": 11
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.SessionHostUpdateState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Failed",
+          "value": 0
+        },
+        {
+          "name": "Initial",
+          "value": 1
+        },
+        {
+          "name": "Pending",
+          "value": 2
+        },
+        {
+          "name": "Started",
+          "value": 3
+        },
+        {
+          "name": "Succeeded",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Core.SessionState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Active",
+          "value": 0
+        },
+        {
+          "name": "Disconnected",
+          "value": 1
+        },
+        {
+          "name": "LogOff",
+          "value": 2
+        },
+        {
+          "name": "Pending",
+          "value": 3
+        },
+        {
+          "name": "Unknown",
+          "value": 4
+        },
+        {
+          "name": "UserProfileDiskMounted",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureWVD.Clients.ApplicationGroupPropertiesApplicationGroupType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "RemoteApp",
+          "value": 0
+        },
+        {
+          "name": "Desktop",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureWVD.Clients.HostPoolPropertiesHostPoolType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Personal",
+          "value": 0
+        },
+        {
+          "name": "Pooled",
+          "value": 1
+        },
+        {
+          "name": "BYODesktop",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureWVD.Clients.HostPoolPropertiesPersonalDesktopAssignmentType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Automatic",
+          "value": 0
+        },
+        {
+          "name": "Direct",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureWVD.Clients.HostPoolPropertiesLoadBalancerType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "BreadthFirst",
+          "value": 0
+        },
+        {
+          "name": "DepthFirst",
+          "value": 1
+        },
+        {
+          "name": "Persistent",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureWVD.Clients.HostPoolPropertiesSsoSecretType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "SharedKey",
+          "value": 0
+        },
+        {
+          "name": "Certificate",
+          "value": 1
+        },
+        {
+          "name": "SharedKeyInKeyVault",
+          "value": 2
+        },
+        {
+          "name": "CertificateInKeyVault",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureWVD.Clients.HostPoolPropertiesPreferredAppGroupType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Desktop",
+          "value": 1
+        },
+        {
+          "name": "RailApplications",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureWVD.Clients.HostPoolPatchPropertiesPersonalDesktopAssignmentType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Automatic",
+          "value": 0
+        },
+        {
+          "name": "Direct",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureWVD.Clients.HostPoolPatchPropertiesLoadBalancerType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "BreadthFirst",
+          "value": 0
+        },
+        {
+          "name": "DepthFirst",
+          "value": 1
+        },
+        {
+          "name": "Persistent",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureWVD.Clients.HostPoolPatchPropertiesSsoSecretType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "SharedKey",
+          "value": 0
+        },
+        {
+          "name": "Certificate",
+          "value": 1
+        },
+        {
+          "name": "SharedKeyInKeyVault",
+          "value": 2
+        },
+        {
+          "name": "CertificateInKeyVault",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureWVD.Clients.HostPoolPatchPropertiesPreferredAppGroupType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Desktop",
+          "value": 1
+        },
+        {
+          "name": "RailApplications",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureWVD.Clients.RegistrationInfoRegistrationTokenOperation",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Delete",
+          "value": 0
+        },
+        {
+          "name": "None",
+          "value": 1
+        },
+        {
+          "name": "Update",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureWVD.Clients.RegistrationInfoPatchRegistrationTokenOperation",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Delete",
+          "value": 0
+        },
+        {
+          "name": "None",
+          "value": 1
+        },
+        {
+          "name": "Update",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureWVD.Clients.ApplicationPropertiesApplicationType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "InBuilt",
+          "value": 0
+        },
+        {
+          "name": "MsixApplication",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureWVD.Clients.ApplicationPropertiesCommandLineSetting",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DoNotAllow",
+          "value": 0
+        },
+        {
+          "name": "Allow",
+          "value": 1
+        },
+        {
+          "name": "Require",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureWVD.Clients.ApplicationPatchPropertiesCommandLineSetting",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DoNotAllow",
+          "value": 0
+        },
+        {
+          "name": "Allow",
+          "value": 1
+        },
+        {
+          "name": "Require",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureWVD.Clients.ApplicationPatchPropertiesApplicationType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "InBuilt",
+          "value": 0
+        },
+        {
+          "name": "MsixApplication",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureWVD.Clients.SessionHostPropertiesStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Available",
+          "value": 0
+        },
+        {
+          "name": "Unavailable",
+          "value": 1
+        },
+        {
+          "name": "Shutdown",
+          "value": 2
+        },
+        {
+          "name": "Disconnected",
+          "value": 3
+        },
+        {
+          "name": "Upgrading",
+          "value": 4
+        },
+        {
+          "name": "UpgradeFailed",
+          "value": 5
+        },
+        {
+          "name": "NoHeartbeat",
+          "value": 6
+        },
+        {
+          "name": "NotJoinedToDomain",
+          "value": 7
+        },
+        {
+          "name": "DomainTrustRelationshipLost",
+          "value": 8
+        },
+        {
+          "name": "SxSStackListenerNotReady",
+          "value": 9
+        },
+        {
+          "name": "FSLogixNotHealthy",
+          "value": 10
+        },
+        {
+          "name": "NeedsAssistance",
+          "value": 11
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureWVD.Clients.SessionHostPropertiesUpdateState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Initial",
+          "value": 0
+        },
+        {
+          "name": "Pending",
+          "value": 1
+        },
+        {
+          "name": "Started",
+          "value": 2
+        },
+        {
+          "name": "Succeeded",
+          "value": 3
+        },
+        {
+          "name": "Failed",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureWVD.Clients.SessionHostHealthCheckReportHealthCheckName",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DomainJoinedCheck",
+          "value": 0
+        },
+        {
+          "name": "DomainTrustCheck",
+          "value": 1
+        },
+        {
+          "name": "FSLogixHealthCheck",
+          "value": 2
+        },
+        {
+          "name": "SxSStackListenerCheck",
+          "value": 3
+        },
+        {
+          "name": "UrlsAccessibleCheck",
+          "value": 4
+        },
+        {
+          "name": "MonitoringAgentCheck",
+          "value": 5
+        },
+        {
+          "name": "DomainReachable",
+          "value": 6
+        },
+        {
+          "name": "WebRTCRedirectorCheck",
+          "value": 7
+        },
+        {
+          "name": "SupportedEncryptionCheck",
+          "value": 8
+        },
+        {
+          "name": "MetaDataServiceCheck",
+          "value": 9
+        },
+        {
+          "name": "AppAttachHealthCheck",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureWVD.Clients.SessionHostHealthCheckReportHealthCheckResult",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "HealthCheckSucceeded",
+          "value": 1
+        },
+        {
+          "name": "HealthCheckFailed",
+          "value": 2
+        },
+        {
+          "name": "SessionHostShutdown",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureWVD.Clients.UserSessionPropertiesApplicationType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "RemoteApp",
+          "value": 0
+        },
+        {
+          "name": "Desktop",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureWVD.Clients.UserSessionPropertiesSessionState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "Active",
+          "value": 1
+        },
+        {
+          "name": "Disconnected",
+          "value": 2
+        },
+        {
+          "name": "Pending",
+          "value": 3
+        },
+        {
+          "name": "LogOff",
+          "value": 4
+        },
+        {
+          "name": "UserProfileDiskMounted",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureWVD.Clients.ScalingPlanPropertiesHostPoolType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Personal",
+          "value": 0
+        },
+        {
+          "name": "Pooled",
+          "value": 1
+        },
+        {
+          "name": "BYODesktop",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureWVD.Clients.DaysOfWeek",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Sunday",
+          "value": 0
+        },
+        {
+          "name": "Monday",
+          "value": 1
+        },
+        {
+          "name": "Tuesday",
+          "value": 2
+        },
+        {
+          "name": "Wednesday",
+          "value": 3
+        },
+        {
+          "name": "Thursday",
+          "value": 4
+        },
+        {
+          "name": "Friday",
+          "value": 5
+        },
+        {
+          "name": "Saturday",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureWVD.Clients.ScalingScheduleRampUpLoadBalancingAlgorithm",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "BreadthFirst",
+          "value": 0
+        },
+        {
+          "name": "DepthFirst",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureWVD.Clients.ScalingSchedulePeakLoadBalancingAlgorithm",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "BreadthFirst",
+          "value": 0
+        },
+        {
+          "name": "DepthFirst",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureWVD.Clients.ScalingScheduleRampDownLoadBalancingAlgorithm",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "BreadthFirst",
+          "value": 0
+        },
+        {
+          "name": "DepthFirst",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureWVD.Clients.ScalingScheduleRampDownStopHostsWhen",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ZeroSessions",
+          "value": 0
+        },
+        {
+          "name": "ZeroActiveSessions",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureWVD.Clients.ScalingScheduleOffPeakLoadBalancingAlgorithm",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "BreadthFirst",
+          "value": 0
+        },
+        {
+          "name": "DepthFirst",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureWVD.Clients.ScalingPlanPatchPropertiesHostPoolType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Personal",
+          "value": 0
+        },
+        {
+          "name": "Pooled",
+          "value": 1
+        },
+        {
+          "name": "BYODesktop",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureWVD.Clients.MigrationRequestPropertiesOperation",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Start",
+          "value": 0
+        },
+        {
+          "name": "Revoke",
+          "value": 1
+        },
+        {
+          "name": "Complete",
+          "value": 2
+        },
+        {
+          "name": "Hide",
+          "value": 3
+        },
+        {
+          "name": "Unhide",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureWVD.Clients.IdentityType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "SystemAssigned",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.AzureWVD.Clients.SkuTier",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Free",
+          "value": 0
+        },
+        {
+          "name": "Basic",
+          "value": 1
+        },
+        {
+          "name": "Standard",
+          "value": 2
+        },
+        {
+          "name": "Premium",
+          "value": 3
+        }
+      ]
+    }
+  ],
+  "namespaceMappings": []
+}

@@ -1,0 +1,409 @@
+{
+  "schema": {
+    "id": "activity-catalog",
+    "version": "v0.3"
+  },
+  "source": {
+    "kind": "nuget-package",
+    "id": "SSH.NET",
+    "version": "2020.0.1",
+    "feedUrl": null,
+    "authors": "Renci",
+    "projectUrl": "https://github.com/sshnet/SSH.NET/",
+    "description": "SSH.NET is a Secure Shell (SSH) library for .NET, optimized for parallelism and with broad framework support.",
+    "license": "https://github.com/sshnet/SSH.NET/blob/master/LICENSE",
+    "tags": "ssh scp sftp",
+    "packageTypes": []
+  },
+  "generatedAt": "2026-04-10T09:21:16Z",
+  "activities": [],
+  "enums": [
+    {
+      "fullName": "Renci.SshNet.AuthenticationResult",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Success",
+          "value": 0
+        },
+        {
+          "name": "PartialSuccess",
+          "value": 1
+        },
+        {
+          "name": "Failure",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Renci.SshNet.ProxyTypes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Socks4",
+          "value": 1
+        },
+        {
+          "name": "Socks5",
+          "value": 2
+        },
+        {
+          "name": "Http",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Renci.SshNet.Messages.ServiceName",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "UserAuthentication",
+          "value": 0
+        },
+        {
+          "name": "Connection",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Renci.SshNet.Messages.Transport.DisconnectReason",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "HostNotAllowedToConnect",
+          "value": 1
+        },
+        {
+          "name": "ProtocolError",
+          "value": 2
+        },
+        {
+          "name": "KeyExchangeFailed",
+          "value": 3
+        },
+        {
+          "name": "Reserved",
+          "value": 4
+        },
+        {
+          "name": "MacError",
+          "value": 5
+        },
+        {
+          "name": "CompressionError",
+          "value": 6
+        },
+        {
+          "name": "ServiceNotAvailable",
+          "value": 7
+        },
+        {
+          "name": "ProtocolVersionNotSupported",
+          "value": 8
+        },
+        {
+          "name": "HostKeyNotVerifiable",
+          "value": 9
+        },
+        {
+          "name": "ConnectionLost",
+          "value": 10
+        },
+        {
+          "name": "ByApplication",
+          "value": 11
+        },
+        {
+          "name": "TooManyConnections",
+          "value": 12
+        },
+        {
+          "name": "AuthenticationCanceledByUser",
+          "value": 13
+        },
+        {
+          "name": "NoMoreAuthenticationMethodsAvailable",
+          "value": 14
+        },
+        {
+          "name": "IllegalUserName",
+          "value": 15
+        }
+      ]
+    },
+    {
+      "fullName": "Renci.SshNet.Messages.Connection.GlobalRequestName",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "TcpIpForward",
+          "value": 0
+        },
+        {
+          "name": "CancelTcpIpForward",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Renci.SshNet.Compression.CompressionMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Compress",
+          "value": 0
+        },
+        {
+          "name": "Decompress",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Renci.SshNet.Common.TerminalModes",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "TTY_OP_END",
+          "value": 0
+        },
+        {
+          "name": "VINTR",
+          "value": 1
+        },
+        {
+          "name": "VQUIT",
+          "value": 2
+        },
+        {
+          "name": "VERASE",
+          "value": 3
+        },
+        {
+          "name": "VKILL",
+          "value": 4
+        },
+        {
+          "name": "VEOF",
+          "value": 5
+        },
+        {
+          "name": "VEOL",
+          "value": 6
+        },
+        {
+          "name": "VEOL2",
+          "value": 7
+        },
+        {
+          "name": "VSTART",
+          "value": 8
+        },
+        {
+          "name": "VSTOP",
+          "value": 9
+        },
+        {
+          "name": "VSUSP",
+          "value": 10
+        },
+        {
+          "name": "VDSUSP",
+          "value": 11
+        },
+        {
+          "name": "VREPRINT",
+          "value": 12
+        },
+        {
+          "name": "VWERASE",
+          "value": 13
+        },
+        {
+          "name": "VLNEXT",
+          "value": 14
+        },
+        {
+          "name": "VFLUSH",
+          "value": 15
+        },
+        {
+          "name": "VSWTCH",
+          "value": 16
+        },
+        {
+          "name": "VSTATUS",
+          "value": 17
+        },
+        {
+          "name": "VDISCARD",
+          "value": 18
+        },
+        {
+          "name": "IGNPAR",
+          "value": 30
+        },
+        {
+          "name": "PARMRK",
+          "value": 31
+        },
+        {
+          "name": "INPCK",
+          "value": 32
+        },
+        {
+          "name": "ISTRIP",
+          "value": 33
+        },
+        {
+          "name": "INLCR",
+          "value": 34
+        },
+        {
+          "name": "IGNCR",
+          "value": 35
+        },
+        {
+          "name": "ICRNL",
+          "value": 36
+        },
+        {
+          "name": "IUCLC",
+          "value": 37
+        },
+        {
+          "name": "IXON",
+          "value": 38
+        },
+        {
+          "name": "IXANY",
+          "value": 39
+        },
+        {
+          "name": "IXOFF",
+          "value": 40
+        },
+        {
+          "name": "IMAXBEL",
+          "value": 41
+        },
+        {
+          "name": "IUTF8",
+          "value": 42
+        },
+        {
+          "name": "ISIG",
+          "value": 50
+        },
+        {
+          "name": "ICANON",
+          "value": 51
+        },
+        {
+          "name": "XCASE",
+          "value": 52
+        },
+        {
+          "name": "ECHO",
+          "value": 53
+        },
+        {
+          "name": "ECHOE",
+          "value": 54
+        },
+        {
+          "name": "ECHOK",
+          "value": 55
+        },
+        {
+          "name": "ECHONL",
+          "value": 56
+        },
+        {
+          "name": "NOFLSH",
+          "value": 57
+        },
+        {
+          "name": "TOSTOP",
+          "value": 58
+        },
+        {
+          "name": "IEXTEN",
+          "value": 59
+        },
+        {
+          "name": "ECHOCTL",
+          "value": 60
+        },
+        {
+          "name": "ECHOKE",
+          "value": 61
+        },
+        {
+          "name": "PENDIN",
+          "value": 62
+        },
+        {
+          "name": "OPOST",
+          "value": 70
+        },
+        {
+          "name": "OLCUC",
+          "value": 71
+        },
+        {
+          "name": "ONLCR",
+          "value": 72
+        },
+        {
+          "name": "OCRNL",
+          "value": 73
+        },
+        {
+          "name": "ONOCR",
+          "value": 74
+        },
+        {
+          "name": "ONLRET",
+          "value": 75
+        },
+        {
+          "name": "CS7",
+          "value": 90
+        },
+        {
+          "name": "CS8",
+          "value": 91
+        },
+        {
+          "name": "PARENB",
+          "value": 92
+        },
+        {
+          "name": "PARODD",
+          "value": 93
+        },
+        {
+          "name": "TTY_OP_ISPEED",
+          "value": 128
+        },
+        {
+          "name": "TTY_OP_OSPEED",
+          "value": 129
+        }
+      ]
+    }
+  ],
+  "namespaceMappings": []
+}

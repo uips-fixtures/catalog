@@ -1,0 +1,1253 @@
+{
+  "schema": {
+    "id": "activity-catalog",
+    "version": "v0.3"
+  },
+  "source": {
+    "kind": "nuget-package",
+    "id": "System.DirectoryServices",
+    "version": "4.7.0",
+    "feedUrl": null,
+    "authors": "Microsoft",
+    "projectUrl": "https://github.com/dotnet/corefx",
+    "description": "Provides easy access to Active Directory Domain Services.\n\nCommonly Used Types:\nSystem.DirectoryServices.DirectoryEntry\nSystem.DirectoryServices.DirectorySearcher\nSystem.DirectoryServices.ActiveDirectory.ActiveDirectorySite\nSystem.DirectoryServices.ActiveDirectory.ApplicationPartition\nSystem.DirectoryServices.ActiveDirectory.DirectoryContext\nSystem.DirectoryServices.ActiveDirectory.DirectoryServer\nSystem.DirectoryServices.ActiveDirectory.Domain\nSystem.DirectoryServices.ActiveDirectory.DomainController\n \nWhen using NuGet 3.x this package requires at least version 3.4.",
+    "license": "MIT",
+    "tags": null,
+    "packageTypes": []
+  },
+  "generatedAt": "2026-04-10T09:21:16Z",
+  "activities": [],
+  "enums": [
+    {
+      "fullName": "System.DirectoryServices.ActiveDirectoryRights",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "CreateChild",
+          "value": 1
+        },
+        {
+          "name": "DeleteChild",
+          "value": 2
+        },
+        {
+          "name": "ListChildren",
+          "value": 4
+        },
+        {
+          "name": "Self",
+          "value": 8
+        },
+        {
+          "name": "ReadProperty",
+          "value": 16
+        },
+        {
+          "name": "WriteProperty",
+          "value": 32
+        },
+        {
+          "name": "DeleteTree",
+          "value": 64
+        },
+        {
+          "name": "ListObject",
+          "value": 128
+        },
+        {
+          "name": "ExtendedRight",
+          "value": 256
+        },
+        {
+          "name": "Delete",
+          "value": 65536
+        },
+        {
+          "name": "ReadControl",
+          "value": 131072
+        },
+        {
+          "name": "GenericExecute",
+          "value": 131076
+        },
+        {
+          "name": "GenericWrite",
+          "value": 131112
+        },
+        {
+          "name": "GenericRead",
+          "value": 131220
+        },
+        {
+          "name": "WriteDacl",
+          "value": 262144
+        },
+        {
+          "name": "WriteOwner",
+          "value": 524288
+        },
+        {
+          "name": "GenericAll",
+          "value": 983551
+        },
+        {
+          "name": "Synchronize",
+          "value": 1048576
+        },
+        {
+          "name": "AccessSystemSecurity",
+          "value": 16777216
+        }
+      ]
+    },
+    {
+      "fullName": "System.DirectoryServices.ActiveDirectorySecurityInheritance",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "All",
+          "value": 1
+        },
+        {
+          "name": "Descendents",
+          "value": 2
+        },
+        {
+          "name": "SelfAndChildren",
+          "value": 3
+        },
+        {
+          "name": "Children",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "System.DirectoryServices.AuthenticationTypes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Secure",
+          "value": 1
+        },
+        {
+          "name": "Encryption",
+          "value": 2
+        },
+        {
+          "name": "SecureSocketsLayer",
+          "value": 2
+        },
+        {
+          "name": "ReadonlyServer",
+          "value": 4
+        },
+        {
+          "name": "Anonymous",
+          "value": 16
+        },
+        {
+          "name": "FastBind",
+          "value": 32
+        },
+        {
+          "name": "Signing",
+          "value": 64
+        },
+        {
+          "name": "Sealing",
+          "value": 128
+        },
+        {
+          "name": "Delegation",
+          "value": 256
+        },
+        {
+          "name": "ServerBind",
+          "value": 512
+        }
+      ]
+    },
+    {
+      "fullName": "System.DirectoryServices.DereferenceAlias",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Never",
+          "value": 0
+        },
+        {
+          "name": "InSearching",
+          "value": 1
+        },
+        {
+          "name": "FindingBaseObject",
+          "value": 2
+        },
+        {
+          "name": "Always",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "System.DirectoryServices.DirectoryServicesPermissionAccess",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Browse",
+          "value": 2
+        },
+        {
+          "name": "Write",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "System.DirectoryServices.DirectorySynchronizationOptions",
+      "underlyingType": "System.Int64",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "ObjectSecurity",
+          "value": 1
+        },
+        {
+          "name": "ParentsFirst",
+          "value": 2048
+        },
+        {
+          "name": "PublicDataOnly",
+          "value": 8192
+        },
+        {
+          "name": "IncrementalValues",
+          "value": 2147483648
+        }
+      ]
+    },
+    {
+      "fullName": "System.DirectoryServices.ExtendedDN",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": -1
+        },
+        {
+          "name": "HexString",
+          "value": 0
+        },
+        {
+          "name": "Standard",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "System.DirectoryServices.PasswordEncodingMethod",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "PasswordEncodingSsl",
+          "value": 0
+        },
+        {
+          "name": "PasswordEncodingClear",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "System.DirectoryServices.PropertyAccess",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Read",
+          "value": 0
+        },
+        {
+          "name": "Write",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "System.DirectoryServices.ReferralChasingOption",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Subordinate",
+          "value": 32
+        },
+        {
+          "name": "External",
+          "value": 64
+        },
+        {
+          "name": "All",
+          "value": 96
+        }
+      ]
+    },
+    {
+      "fullName": "System.DirectoryServices.SearchScope",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Base",
+          "value": 0
+        },
+        {
+          "name": "OneLevel",
+          "value": 1
+        },
+        {
+          "name": "Subtree",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "System.DirectoryServices.SecurityMasks",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Owner",
+          "value": 1
+        },
+        {
+          "name": "Group",
+          "value": 2
+        },
+        {
+          "name": "Dacl",
+          "value": 4
+        },
+        {
+          "name": "Sacl",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "System.DirectoryServices.SortDirection",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Ascending",
+          "value": 0
+        },
+        {
+          "name": "Descending",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "System.DirectoryServices.ActiveDirectory.ActiveDirectoryRole",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "SchemaRole",
+          "value": 0
+        },
+        {
+          "name": "NamingRole",
+          "value": 1
+        },
+        {
+          "name": "PdcRole",
+          "value": 2
+        },
+        {
+          "name": "RidRole",
+          "value": 3
+        },
+        {
+          "name": "InfrastructureRole",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteOptions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "AutoTopologyDisabled",
+          "value": 1
+        },
+        {
+          "name": "TopologyCleanupDisabled",
+          "value": 2
+        },
+        {
+          "name": "AutoMinimumHopDisabled",
+          "value": 4
+        },
+        {
+          "name": "StaleServerDetectDisabled",
+          "value": 8
+        },
+        {
+          "name": "AutoInterSiteTopologyDisabled",
+          "value": 16
+        },
+        {
+          "name": "GroupMembershipCachingEnabled",
+          "value": 32
+        },
+        {
+          "name": "ForceKccWindows2003Behavior",
+          "value": 64
+        },
+        {
+          "name": "UseWindows2000IstgElection",
+          "value": 128
+        },
+        {
+          "name": "RandomBridgeHeaderServerSelectionDisabled",
+          "value": 256
+        },
+        {
+          "name": "UseHashingForReplicationSchedule",
+          "value": 512
+        },
+        {
+          "name": "RedundantServerTopologyEnabled",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "fullName": "System.DirectoryServices.ActiveDirectory.ActiveDirectorySyntax",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "CaseExactString",
+          "value": 0
+        },
+        {
+          "name": "CaseIgnoreString",
+          "value": 1
+        },
+        {
+          "name": "NumericString",
+          "value": 2
+        },
+        {
+          "name": "DirectoryString",
+          "value": 3
+        },
+        {
+          "name": "OctetString",
+          "value": 4
+        },
+        {
+          "name": "SecurityDescriptor",
+          "value": 5
+        },
+        {
+          "name": "Int",
+          "value": 6
+        },
+        {
+          "name": "Int64",
+          "value": 7
+        },
+        {
+          "name": "Bool",
+          "value": 8
+        },
+        {
+          "name": "Oid",
+          "value": 9
+        },
+        {
+          "name": "GeneralizedTime",
+          "value": 10
+        },
+        {
+          "name": "UtcTime",
+          "value": 11
+        },
+        {
+          "name": "DN",
+          "value": 12
+        },
+        {
+          "name": "DNWithBinary",
+          "value": 13
+        },
+        {
+          "name": "DNWithString",
+          "value": 14
+        },
+        {
+          "name": "Enumeration",
+          "value": 15
+        },
+        {
+          "name": "IA5String",
+          "value": 16
+        },
+        {
+          "name": "PrintableString",
+          "value": 17
+        },
+        {
+          "name": "Sid",
+          "value": 18
+        },
+        {
+          "name": "AccessPointDN",
+          "value": 19
+        },
+        {
+          "name": "ORName",
+          "value": 20
+        },
+        {
+          "name": "PresentationAddress",
+          "value": 21
+        },
+        {
+          "name": "ReplicaLink",
+          "value": 22
+        }
+      ]
+    },
+    {
+      "fullName": "System.DirectoryServices.ActiveDirectory.ActiveDirectoryTransportType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Rpc",
+          "value": 0
+        },
+        {
+          "name": "Smtp",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "System.DirectoryServices.ActiveDirectory.AdamRole",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "SchemaRole",
+          "value": 0
+        },
+        {
+          "name": "NamingRole",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "System.DirectoryServices.ActiveDirectory.DirectoryContextType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Domain",
+          "value": 0
+        },
+        {
+          "name": "Forest",
+          "value": 1
+        },
+        {
+          "name": "DirectoryServer",
+          "value": 2
+        },
+        {
+          "name": "ConfigurationSet",
+          "value": 3
+        },
+        {
+          "name": "ApplicationPartition",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "System.DirectoryServices.ActiveDirectory.DomainCollisionOptions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "SidDisabledByAdmin",
+          "value": 1
+        },
+        {
+          "name": "SidDisabledByConflict",
+          "value": 2
+        },
+        {
+          "name": "NetBiosNameDisabledByAdmin",
+          "value": 4
+        },
+        {
+          "name": "NetBiosNameDisabledByConflict",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "System.DirectoryServices.ActiveDirectory.DomainMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": -1
+        },
+        {
+          "name": "Windows2000MixedDomain",
+          "value": 0
+        },
+        {
+          "name": "Windows2000NativeDomain",
+          "value": 1
+        },
+        {
+          "name": "Windows2003InterimDomain",
+          "value": 2
+        },
+        {
+          "name": "Windows2003Domain",
+          "value": 3
+        },
+        {
+          "name": "Windows2008Domain",
+          "value": 4
+        },
+        {
+          "name": "Windows2008R2Domain",
+          "value": 5
+        },
+        {
+          "name": "Windows8Domain",
+          "value": 6
+        },
+        {
+          "name": "Windows2012R2Domain",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "System.DirectoryServices.ActiveDirectory.ForestMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": -1
+        },
+        {
+          "name": "Windows2000Forest",
+          "value": 0
+        },
+        {
+          "name": "Windows2003InterimForest",
+          "value": 1
+        },
+        {
+          "name": "Windows2003Forest",
+          "value": 2
+        },
+        {
+          "name": "Windows2008Forest",
+          "value": 3
+        },
+        {
+          "name": "Windows2008R2Forest",
+          "value": 4
+        },
+        {
+          "name": "Windows8Forest",
+          "value": 5
+        },
+        {
+          "name": "Windows2012R2Forest",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "System.DirectoryServices.ActiveDirectory.ForestTrustCollisionType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "TopLevelName",
+          "value": 0
+        },
+        {
+          "name": "Domain",
+          "value": 1
+        },
+        {
+          "name": "Other",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "System.DirectoryServices.ActiveDirectory.ForestTrustDomainStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Enabled",
+          "value": 0
+        },
+        {
+          "name": "SidAdminDisabled",
+          "value": 1
+        },
+        {
+          "name": "SidConflictDisabled",
+          "value": 2
+        },
+        {
+          "name": "NetBiosNameAdminDisabled",
+          "value": 4
+        },
+        {
+          "name": "NetBiosNameConflictDisabled",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "System.DirectoryServices.ActiveDirectory.HourOfDay",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Zero",
+          "value": 0
+        },
+        {
+          "name": "One",
+          "value": 1
+        },
+        {
+          "name": "Two",
+          "value": 2
+        },
+        {
+          "name": "Three",
+          "value": 3
+        },
+        {
+          "name": "Four",
+          "value": 4
+        },
+        {
+          "name": "Five",
+          "value": 5
+        },
+        {
+          "name": "Six",
+          "value": 6
+        },
+        {
+          "name": "Seven",
+          "value": 7
+        },
+        {
+          "name": "Eight",
+          "value": 8
+        },
+        {
+          "name": "Nine",
+          "value": 9
+        },
+        {
+          "name": "Ten",
+          "value": 10
+        },
+        {
+          "name": "Eleven",
+          "value": 11
+        },
+        {
+          "name": "Twelve",
+          "value": 12
+        },
+        {
+          "name": "Thirteen",
+          "value": 13
+        },
+        {
+          "name": "Fourteen",
+          "value": 14
+        },
+        {
+          "name": "Fifteen",
+          "value": 15
+        },
+        {
+          "name": "Sixteen",
+          "value": 16
+        },
+        {
+          "name": "Seventeen",
+          "value": 17
+        },
+        {
+          "name": "Eighteen",
+          "value": 18
+        },
+        {
+          "name": "Nineteen",
+          "value": 19
+        },
+        {
+          "name": "Twenty",
+          "value": 20
+        },
+        {
+          "name": "TwentyOne",
+          "value": 21
+        },
+        {
+          "name": "TwentyTwo",
+          "value": 22
+        },
+        {
+          "name": "TwentyThree",
+          "value": 23
+        }
+      ]
+    },
+    {
+      "fullName": "System.DirectoryServices.ActiveDirectory.LocatorOptions",
+      "underlyingType": "System.Int64",
+      "members": [
+        {
+          "name": "ForceRediscovery",
+          "value": 1
+        },
+        {
+          "name": "KdcRequired",
+          "value": 1024
+        },
+        {
+          "name": "TimeServerRequired",
+          "value": 2048
+        },
+        {
+          "name": "WriteableRequired",
+          "value": 4096
+        },
+        {
+          "name": "AvoidSelf",
+          "value": 16384
+        }
+      ]
+    },
+    {
+      "fullName": "System.DirectoryServices.ActiveDirectory.MinuteOfHour",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Zero",
+          "value": 0
+        },
+        {
+          "name": "Fifteen",
+          "value": 15
+        },
+        {
+          "name": "Thirty",
+          "value": 30
+        },
+        {
+          "name": "FortyFive",
+          "value": 45
+        }
+      ]
+    },
+    {
+      "fullName": "System.DirectoryServices.ActiveDirectory.NotificationStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NoNotification",
+          "value": 0
+        },
+        {
+          "name": "IntraSiteOnly",
+          "value": 1
+        },
+        {
+          "name": "NotificationAlways",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "System.DirectoryServices.ActiveDirectory.PropertyTypes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Indexed",
+          "value": 2
+        },
+        {
+          "name": "InGlobalCatalog",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "System.DirectoryServices.ActiveDirectory.ReplicationNeighbor.ReplicationNeighborOptions",
+      "underlyingType": "System.Int64",
+      "members": [
+        {
+          "name": "Writeable",
+          "value": 16
+        },
+        {
+          "name": "SyncOnStartup",
+          "value": 32
+        },
+        {
+          "name": "ScheduledSync",
+          "value": 64
+        },
+        {
+          "name": "UseInterSiteTransport",
+          "value": 128
+        },
+        {
+          "name": "TwoWaySync",
+          "value": 512
+        },
+        {
+          "name": "ReturnObjectParent",
+          "value": 2048
+        },
+        {
+          "name": "FullSyncInProgress",
+          "value": 65536
+        },
+        {
+          "name": "FullSyncNextPacket",
+          "value": 131072
+        },
+        {
+          "name": "NeverSynced",
+          "value": 2097152
+        },
+        {
+          "name": "Preempted",
+          "value": 16777216
+        },
+        {
+          "name": "IgnoreChangeNotifications",
+          "value": 67108864
+        },
+        {
+          "name": "DisableScheduledSync",
+          "value": 134217728
+        },
+        {
+          "name": "CompressChanges",
+          "value": 268435456
+        },
+        {
+          "name": "NoChangeNotifications",
+          "value": 536870912
+        },
+        {
+          "name": "PartialAttributeSet",
+          "value": 1073741824
+        }
+      ]
+    },
+    {
+      "fullName": "System.DirectoryServices.ActiveDirectory.ReplicationOperationType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Sync",
+          "value": 0
+        },
+        {
+          "name": "Add",
+          "value": 1
+        },
+        {
+          "name": "Delete",
+          "value": 2
+        },
+        {
+          "name": "Modify",
+          "value": 3
+        },
+        {
+          "name": "UpdateReference",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "System.DirectoryServices.ActiveDirectory.ReplicationSecurityLevel",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NegotiatePassThrough",
+          "value": 0
+        },
+        {
+          "name": "Negotiate",
+          "value": 1
+        },
+        {
+          "name": "MutualAuthentication",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "System.DirectoryServices.ActiveDirectory.ReplicationSpan",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "IntraSite",
+          "value": 0
+        },
+        {
+          "name": "InterSite",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "System.DirectoryServices.ActiveDirectory.SchemaClassType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Type88",
+          "value": 0
+        },
+        {
+          "name": "Structural",
+          "value": 1
+        },
+        {
+          "name": "Abstract",
+          "value": 2
+        },
+        {
+          "name": "Auxiliary",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "System.DirectoryServices.ActiveDirectory.SyncFromAllServersErrorCategory",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ErrorContactingServer",
+          "value": 0
+        },
+        {
+          "name": "ErrorReplicating",
+          "value": 1
+        },
+        {
+          "name": "ServerUnreachable",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "System.DirectoryServices.ActiveDirectory.SyncFromAllServersEvent",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Error",
+          "value": 0
+        },
+        {
+          "name": "SyncStarted",
+          "value": 1
+        },
+        {
+          "name": "SyncCompleted",
+          "value": 2
+        },
+        {
+          "name": "Finished",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "System.DirectoryServices.ActiveDirectory.SyncFromAllServersOptions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "AbortIfServerUnavailable",
+          "value": 1
+        },
+        {
+          "name": "SyncAdjacentServerOnly",
+          "value": 2
+        },
+        {
+          "name": "CheckServerAlivenessOnly",
+          "value": 8
+        },
+        {
+          "name": "SkipInitialCheck",
+          "value": 16
+        },
+        {
+          "name": "PushChangeOutward",
+          "value": 32
+        },
+        {
+          "name": "CrossSite",
+          "value": 64
+        }
+      ]
+    },
+    {
+      "fullName": "System.DirectoryServices.ActiveDirectory.TopLevelNameCollisionOptions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "NewlyCreated",
+          "value": 1
+        },
+        {
+          "name": "DisabledByAdmin",
+          "value": 2
+        },
+        {
+          "name": "DisabledByConflict",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "System.DirectoryServices.ActiveDirectory.TopLevelNameStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Enabled",
+          "value": 0
+        },
+        {
+          "name": "NewlyCreated",
+          "value": 1
+        },
+        {
+          "name": "AdminDisabled",
+          "value": 2
+        },
+        {
+          "name": "ConflictDisabled",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "System.DirectoryServices.ActiveDirectory.TrustDirection",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Inbound",
+          "value": 1
+        },
+        {
+          "name": "Outbound",
+          "value": 2
+        },
+        {
+          "name": "Bidirectional",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "System.DirectoryServices.ActiveDirectory.TrustType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "TreeRoot",
+          "value": 0
+        },
+        {
+          "name": "ParentChild",
+          "value": 1
+        },
+        {
+          "name": "CrossLink",
+          "value": 2
+        },
+        {
+          "name": "External",
+          "value": 3
+        },
+        {
+          "name": "Forest",
+          "value": 4
+        },
+        {
+          "name": "Kerberos",
+          "value": 5
+        },
+        {
+          "name": "Unknown",
+          "value": 6
+        }
+      ]
+    }
+  ],
+  "namespaceMappings": []
+}

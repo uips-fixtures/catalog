@@ -1,0 +1,887 @@
+{
+  "schema": {
+    "id": "activity-catalog",
+    "version": "v0.3"
+  },
+  "source": {
+    "kind": "nuget-package",
+    "id": "Oracle.ManagedDataAccess",
+    "version": "19.22.0",
+    "feedUrl": null,
+    "authors": "Oracle",
+    "projectUrl": null,
+    "description": "ODP.NET, Managed Driver is a 100% native code .NET Framework driver for Oracle Database. No additional Oracle Client software is required to be installed to connect to Oracle Database.",
+    "license": "LICENSE.txt",
+    "tags": "ODP.NET Oracle DB database",
+    "packageTypes": []
+  },
+  "generatedAt": "2026-04-10T09:21:16Z",
+  "activities": [],
+  "enums": [
+    {
+      "fullName": "Oracle.ManagedDataAccess.Client.OracleXmlCommandType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Query",
+          "value": 1
+        },
+        {
+          "name": "Insert",
+          "value": 2
+        },
+        {
+          "name": "Update",
+          "value": 3
+        },
+        {
+          "name": "Delete",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Oracle.ManagedDataAccess.Client.OracleDbType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "BFile",
+          "value": 101
+        },
+        {
+          "name": "Blob",
+          "value": 102
+        },
+        {
+          "name": "Byte",
+          "value": 103
+        },
+        {
+          "name": "Char",
+          "value": 104
+        },
+        {
+          "name": "Clob",
+          "value": 105
+        },
+        {
+          "name": "Date",
+          "value": 106
+        },
+        {
+          "name": "Decimal",
+          "value": 107
+        },
+        {
+          "name": "Double",
+          "value": 108
+        },
+        {
+          "name": "Long",
+          "value": 109
+        },
+        {
+          "name": "LongRaw",
+          "value": 110
+        },
+        {
+          "name": "Int16",
+          "value": 111
+        },
+        {
+          "name": "Int32",
+          "value": 112
+        },
+        {
+          "name": "Int64",
+          "value": 113
+        },
+        {
+          "name": "IntervalDS",
+          "value": 114
+        },
+        {
+          "name": "IntervalYM",
+          "value": 115
+        },
+        {
+          "name": "NClob",
+          "value": 116
+        },
+        {
+          "name": "NChar",
+          "value": 117
+        },
+        {
+          "name": "NVarchar2",
+          "value": 119
+        },
+        {
+          "name": "Raw",
+          "value": 120
+        },
+        {
+          "name": "RefCursor",
+          "value": 121
+        },
+        {
+          "name": "Single",
+          "value": 122
+        },
+        {
+          "name": "TimeStamp",
+          "value": 123
+        },
+        {
+          "name": "TimeStampLTZ",
+          "value": 124
+        },
+        {
+          "name": "TimeStampTZ",
+          "value": 125
+        },
+        {
+          "name": "Varchar2",
+          "value": 126
+        },
+        {
+          "name": "XmlType",
+          "value": 127
+        },
+        {
+          "name": "BinaryDouble",
+          "value": 132
+        },
+        {
+          "name": "BinaryFloat",
+          "value": 133
+        },
+        {
+          "name": "Boolean",
+          "value": 134
+        }
+      ]
+    },
+    {
+      "fullName": "Oracle.ManagedDataAccess.Client.OracleParameterStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Success",
+          "value": 0
+        },
+        {
+          "name": "NullFetched",
+          "value": 1
+        },
+        {
+          "name": "NullInsert",
+          "value": 2
+        },
+        {
+          "name": "Truncation",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Oracle.ManagedDataAccess.Client.OracleCollectionType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "PLSQLAssociativeArray",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Oracle.ManagedDataAccess.Client.OracleDBAPrivilege",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "SYSDBA",
+          "value": 2
+        },
+        {
+          "name": "SYSOPER",
+          "value": 4
+        },
+        {
+          "name": "SYSASM",
+          "value": 32768
+        }
+      ]
+    },
+    {
+      "fullName": "Oracle.ManagedDataAccess.Client.OracleAllowedLogonVersionClient",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Version8",
+          "value": 0
+        },
+        {
+          "name": "Version9",
+          "value": 1
+        },
+        {
+          "name": "Version10",
+          "value": 2
+        },
+        {
+          "name": "Version11",
+          "value": 3
+        },
+        {
+          "name": "Version12",
+          "value": 4
+        },
+        {
+          "name": "Version12a",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Oracle.ManagedDataAccess.Client.OracleNotificationType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Change",
+          "value": 1
+        },
+        {
+          "name": "Subscribe",
+          "value": 16
+        },
+        {
+          "name": "Query",
+          "value": 32
+        }
+      ]
+    },
+    {
+      "fullName": "Oracle.ManagedDataAccess.Client.OracleNotificationSource",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Data",
+          "value": 1
+        },
+        {
+          "name": "Database",
+          "value": 16
+        },
+        {
+          "name": "Object",
+          "value": 32
+        },
+        {
+          "name": "Subscription",
+          "value": 64
+        }
+      ]
+    },
+    {
+      "fullName": "Oracle.ManagedDataAccess.Client.OracleNotificationInfo",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Insert",
+          "value": 1
+        },
+        {
+          "name": "Delete",
+          "value": 16
+        },
+        {
+          "name": "Update",
+          "value": 32
+        },
+        {
+          "name": "Startup",
+          "value": 64
+        },
+        {
+          "name": "Shutdown",
+          "value": 128
+        },
+        {
+          "name": "Shutdown_any",
+          "value": 256
+        },
+        {
+          "name": "Alter",
+          "value": 512
+        },
+        {
+          "name": "Drop",
+          "value": 1024
+        },
+        {
+          "name": "End",
+          "value": 2048
+        },
+        {
+          "name": "Error",
+          "value": 4096
+        }
+      ]
+    },
+    {
+      "fullName": "Oracle.ManagedDataAccess.Client.OracleRowidInfo",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 1
+        },
+        {
+          "name": "Include",
+          "value": 16
+        },
+        {
+          "name": "Exclude",
+          "value": 32
+        }
+      ]
+    },
+    {
+      "fullName": "Oracle.ManagedDataAccess.Client.OracleHAEventSource",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Instance",
+          "value": 0
+        },
+        {
+          "name": "Database",
+          "value": 1
+        },
+        {
+          "name": "Node",
+          "value": 2
+        },
+        {
+          "name": "Service",
+          "value": 3
+        },
+        {
+          "name": "ServiceMember",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Oracle.ManagedDataAccess.Client.OracleHAEventStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Down",
+          "value": 0
+        },
+        {
+          "name": "Up",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Oracle.ManagedDataAccess.Client.OnsConfigMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unspecified",
+          "value": 0
+        },
+        {
+          "name": "local",
+          "value": 1
+        },
+        {
+          "name": "remote",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Oracle.ManagedDataAccess.Client.OracleBulkCopyOptions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "UseInternalTransaction",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Oracle.ManagedDataAccess.Client.OracleTokenAuth",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Disabled",
+          "value": 0
+        },
+        {
+          "name": "OciToken",
+          "value": 1
+        },
+        {
+          "name": "OAuth",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Oracle.ManagedDataAccess.Client.OraclePasswordAuth",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "PasswordVerifier",
+          "value": 0
+        },
+        {
+          "name": "OciToken",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Oracle.ManagedDataAccess.Client.OracleConnection.OracleDRCPPurity",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "New",
+          "value": 1
+        },
+        {
+          "name": "Pooled",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "OracleInternal.SqlAndPlsqlParser.ParserExceptionType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Parser",
+          "value": 0
+        },
+        {
+          "name": "StringTokenizer",
+          "value": 1
+        },
+        {
+          "name": "Grammar",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "OracleInternal.SqlAndPlsqlParser.ParserExceptionError",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Type",
+          "value": 0
+        },
+        {
+          "name": "NullTokenOrPattern",
+          "value": 1
+        },
+        {
+          "name": "RuleTupleNullSymbols",
+          "value": 2
+        },
+        {
+          "name": "FollowUpTokens",
+          "value": 3
+        },
+        {
+          "name": "NoParseFollowUp",
+          "value": 4
+        },
+        {
+          "name": "DifferentGrammarsTuples",
+          "value": 5
+        },
+        {
+          "name": "MismatchedTuplesComparison",
+          "value": 6
+        },
+        {
+          "name": "ParseTreeBuildError",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "OracleInternal.SqlAndPlsqlParser.LocalParsing.OracleLpBindParameterType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NamedOrPositional",
+          "value": 0
+        },
+        {
+          "name": "Positional",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "OracleInternal.SqlAndPlsqlParser.LocalParsing.OracleLpStatementType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "Create",
+          "value": 1
+        },
+        {
+          "name": "Insert",
+          "value": 2
+        },
+        {
+          "name": "Update",
+          "value": 3
+        },
+        {
+          "name": "Delete",
+          "value": 4
+        },
+        {
+          "name": "Merge",
+          "value": 5
+        },
+        {
+          "name": "Select",
+          "value": 6
+        },
+        {
+          "name": "BlockStatement",
+          "value": 7
+        },
+        {
+          "name": "Call",
+          "value": 8
+        },
+        {
+          "name": "ExplainPlan",
+          "value": 9
+        },
+        {
+          "name": "Execute",
+          "value": 10
+        },
+        {
+          "name": "Fetch",
+          "value": 11
+        },
+        {
+          "name": "Close",
+          "value": 12
+        },
+        {
+          "name": "Open",
+          "value": 13
+        },
+        {
+          "name": "OpenCursor",
+          "value": 14
+        }
+      ]
+    },
+    {
+      "fullName": "OracleInternal.SqlAndPlsqlParser.LocalParsing.OracleLpColumnType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "Column",
+          "value": 1
+        },
+        {
+          "name": "PseudoColumn",
+          "value": 2
+        },
+        {
+          "name": "Constant",
+          "value": 3
+        },
+        {
+          "name": "Sequence",
+          "value": 4
+        },
+        {
+          "name": "Null",
+          "value": 5
+        },
+        {
+          "name": "Expression",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "OracleInternal.SqlAndPlsqlParser.LocalParsing.OracleLpCaseSensitivity",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "Sensitive",
+          "value": 1
+        },
+        {
+          "name": "Insensitive",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "OracleInternal.SqlAndPlsqlParser.LocalParsing.OracleLpPseudoColumnType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "CONNECT_BY_ISCYCLE",
+          "value": 1
+        },
+        {
+          "name": "CONNECT_BY_ISLEAF",
+          "value": 2
+        },
+        {
+          "name": "CONNECT_BY_ROOT",
+          "value": 3
+        },
+        {
+          "name": "LEVEL",
+          "value": 4
+        },
+        {
+          "name": "ROWNUM",
+          "value": 5
+        },
+        {
+          "name": "ROWID",
+          "value": 6
+        },
+        {
+          "name": "COLUMN_VALUE",
+          "value": 7
+        },
+        {
+          "name": "OBJECT_ID",
+          "value": 8
+        },
+        {
+          "name": "OBJECT_VALUE",
+          "value": 9
+        },
+        {
+          "name": "ORA_ROWSCN",
+          "value": 10
+        },
+        {
+          "name": "XMLDATA",
+          "value": 11
+        }
+      ]
+    },
+    {
+      "fullName": "OracleInternal.SqlAndPlsqlParser.LocalParsing.OracleLpExceptionType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Generic",
+          "value": 0
+        },
+        {
+          "name": "RuleMultiProcessor",
+          "value": 1
+        },
+        {
+          "name": "MissingReference",
+          "value": 2
+        },
+        {
+          "name": "AmbiguousDefinition",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "OracleInternal.SqlAndPlsqlParser.LocalParsing.OracleLpExceptionError",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "InvalidRuleHeadSymbol",
+          "value": 0
+        },
+        {
+          "name": "InvalidRuleRHSSymbols",
+          "value": 1
+        },
+        {
+          "name": "MissingParserSymbol",
+          "value": 2
+        },
+        {
+          "name": "MissingRule",
+          "value": 3
+        },
+        {
+          "name": "MissingTable_View_Query",
+          "value": 4
+        },
+        {
+          "name": "MissingColumnFromReference",
+          "value": 5
+        },
+        {
+          "name": "MissingColumnFromAllReferences",
+          "value": 6
+        },
+        {
+          "name": "AmbiguousColumn",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "OracleInternal.SqlAndPlsqlParser.LocalParsing.OracleLpStatementClauseType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "ReturningClause",
+          "value": 1
+        },
+        {
+          "name": "WhereClause",
+          "value": 2
+        },
+        {
+          "name": "SelectList",
+          "value": 3
+        },
+        {
+          "name": "SelectIntoList",
+          "value": 4
+        },
+        {
+          "name": "OrderByClause",
+          "value": 5
+        },
+        {
+          "name": "Declare",
+          "value": 6
+        },
+        {
+          "name": "SequenceOfStatements",
+          "value": 7
+        },
+        {
+          "name": "ExceptionHandlers",
+          "value": 8
+        },
+        {
+          "name": "Subquery",
+          "value": 9
+        },
+        {
+          "name": "ValuesClause",
+          "value": 10
+        },
+        {
+          "name": "UpdateSetClause",
+          "value": 11
+        },
+        {
+          "name": "CallIntoStatement",
+          "value": 12
+        },
+        {
+          "name": "HierarchicalQueryClause",
+          "value": 13
+        },
+        {
+          "name": "FromClause",
+          "value": 14
+        },
+        {
+          "name": "HavingClause",
+          "value": 15
+        },
+        {
+          "name": "CreateTable",
+          "value": 16
+        },
+        {
+          "name": "CreatePlsql",
+          "value": 17
+        }
+      ]
+    },
+    {
+      "fullName": "OracleInternal.OciServicesSdk.OracleOciSdkResourceStringIds",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "PemReaderDerAsnWrongItemsNo",
+          "value": 0
+        },
+        {
+          "name": "PemReaderDerAsnUnexpectedTag",
+          "value": 1
+        },
+        {
+          "name": "PemReaderDerAsnUnknownType",
+          "value": 2
+        },
+        {
+          "name": "PemReaderCantReadSection",
+          "value": 3
+        },
+        {
+          "name": "PemReaderUnknownFormat",
+          "value": 4
+        }
+      ]
+    }
+  ],
+  "namespaceMappings": []
+}

@@ -1,0 +1,1585 @@
+{
+  "schema": {
+    "id": "activity-catalog",
+    "version": "v0.3"
+  },
+  "source": {
+    "kind": "nuget-package",
+    "id": "DynamicLanguageRuntime",
+    "version": "1.1.2",
+    "feedUrl": null,
+    "authors": "DLR Contributors,Microsoft",
+    "projectUrl": "http://dlr.codeplex.com",
+    "description": "The Dynamic Language Runtime enables language developers to more easily create dynamic languages for the .NET platform.",
+    "license": "http://dlr.codeplex.com/license",
+    "tags": "dynamic dlr",
+    "packageTypes": []
+  },
+  "generatedAt": "2026-04-10T09:21:13Z",
+  "activities": [],
+  "enums": [
+    {
+      "fullName": "Microsoft.Scripting.PerfTrack.Categories",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Temporary",
+          "value": 0
+        },
+        {
+          "name": "ReflectedTypes",
+          "value": 1
+        },
+        {
+          "name": "Exceptions",
+          "value": 2
+        },
+        {
+          "name": "Properties",
+          "value": 3
+        },
+        {
+          "name": "Fields",
+          "value": 4
+        },
+        {
+          "name": "Methods",
+          "value": 5
+        },
+        {
+          "name": "Compiler",
+          "value": 6
+        },
+        {
+          "name": "DelegateCreate",
+          "value": 7
+        },
+        {
+          "name": "DictInvoke",
+          "value": 8
+        },
+        {
+          "name": "OperatorInvoke",
+          "value": 9
+        },
+        {
+          "name": "OverAllocate",
+          "value": 10
+        },
+        {
+          "name": "Rules",
+          "value": 11
+        },
+        {
+          "name": "RuleEvaluation",
+          "value": 12
+        },
+        {
+          "name": "Binding",
+          "value": 13
+        },
+        {
+          "name": "BindingSlow",
+          "value": 14
+        },
+        {
+          "name": "BindingFast",
+          "value": 15
+        },
+        {
+          "name": "BindingTarget",
+          "value": 16
+        },
+        {
+          "name": "Count",
+          "value": 17
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Scripting.Interpreter.LabelScopeKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Statement",
+          "value": 0
+        },
+        {
+          "name": "Block",
+          "value": 1
+        },
+        {
+          "name": "Switch",
+          "value": 2
+        },
+        {
+          "name": "Lambda",
+          "value": 3
+        },
+        {
+          "name": "Try",
+          "value": 4
+        },
+        {
+          "name": "Catch",
+          "value": 5
+        },
+        {
+          "name": "Finally",
+          "value": 6
+        },
+        {
+          "name": "Filter",
+          "value": 7
+        },
+        {
+          "name": "Expression",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Scripting.Hosting.Shell.ConsoleHostOptions.Action",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "RunConsole",
+          "value": 1
+        },
+        {
+          "name": "RunFile",
+          "value": 2
+        },
+        {
+          "name": "DisplayHelp",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Scripting.Hosting.Shell.Style",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Prompt",
+          "value": 0
+        },
+        {
+          "name": "Out",
+          "value": 1
+        },
+        {
+          "name": "Error",
+          "value": 2
+        },
+        {
+          "name": "Warning",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Scripting.ComInterop.ComType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Class",
+          "value": 0
+        },
+        {
+          "name": "Enum",
+          "value": 1
+        },
+        {
+          "name": "Interface",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Scripting.Runtime.CallTypes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "ImplicitInstance",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Scripting.Runtime.BinderType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Normal",
+          "value": 0
+        },
+        {
+          "name": "BinaryOperator",
+          "value": 1
+        },
+        {
+          "name": "ComparisonOperator",
+          "value": 2
+        },
+        {
+          "name": "Constructor",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Scripting.Runtime.ModuleChangeType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Set",
+          "value": 0
+        },
+        {
+          "name": "Delete",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Scripting.Debugging.TraceEventKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "FrameEnter",
+          "value": 0
+        },
+        {
+          "name": "FrameExit",
+          "value": 1
+        },
+        {
+          "name": "ThreadExit",
+          "value": 2
+        },
+        {
+          "name": "TracePoint",
+          "value": 3
+        },
+        {
+          "name": "Exception",
+          "value": 4
+        },
+        {
+          "name": "ExceptionUnwind",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Scripting.Ast.ExpressionAccess",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Read",
+          "value": 1
+        },
+        {
+          "name": "Write",
+          "value": 2
+        },
+        {
+          "name": "ReadWrite",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Scripting.Actions.ConversionResultKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ImplicitCast",
+          "value": 0
+        },
+        {
+          "name": "ExplicitCast",
+          "value": 1
+        },
+        {
+          "name": "ImplicitTry",
+          "value": 2
+        },
+        {
+          "name": "ExplicitTry",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Scripting.Actions.MemberRequestKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Get",
+          "value": 1
+        },
+        {
+          "name": "Set",
+          "value": 2
+        },
+        {
+          "name": "Delete",
+          "value": 3
+        },
+        {
+          "name": "Invoke",
+          "value": 4
+        },
+        {
+          "name": "InvokeMember",
+          "value": 5
+        },
+        {
+          "name": "Convert",
+          "value": 6
+        },
+        {
+          "name": "Operation",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Scripting.Actions.ArgumentType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Simple",
+          "value": 0
+        },
+        {
+          "name": "Named",
+          "value": 1
+        },
+        {
+          "name": "List",
+          "value": 2
+        },
+        {
+          "name": "Dictionary",
+          "value": 3
+        },
+        {
+          "name": "Instance",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Scripting.Actions.ErrorInfoKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Exception",
+          "value": 0
+        },
+        {
+          "name": "Error",
+          "value": 1
+        },
+        {
+          "name": "Success",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Scripting.Actions.TrackerTypes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Constructor",
+          "value": 1
+        },
+        {
+          "name": "Event",
+          "value": 2
+        },
+        {
+          "name": "Field",
+          "value": 4
+        },
+        {
+          "name": "Method",
+          "value": 8
+        },
+        {
+          "name": "Property",
+          "value": 16
+        },
+        {
+          "name": "Type",
+          "value": 32
+        },
+        {
+          "name": "Namespace",
+          "value": 64
+        },
+        {
+          "name": "MethodGroup",
+          "value": 128
+        },
+        {
+          "name": "TypeGroup",
+          "value": 256
+        },
+        {
+          "name": "Custom",
+          "value": 512
+        },
+        {
+          "name": "Bound",
+          "value": 1024
+        },
+        {
+          "name": "All",
+          "value": 1535
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Scripting.Actions.Calls.BindingResult",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Success",
+          "value": 0
+        },
+        {
+          "name": "AmbiguousMatch",
+          "value": 1
+        },
+        {
+          "name": "IncorrectArgumentCount",
+          "value": 2
+        },
+        {
+          "name": "CallFailure",
+          "value": 3
+        },
+        {
+          "name": "InvalidArguments",
+          "value": 4
+        },
+        {
+          "name": "NoCallableMethod",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Scripting.Actions.Calls.CallFailureReason",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "ConversionFailure",
+          "value": 1
+        },
+        {
+          "name": "UnassignableKeyword",
+          "value": 2
+        },
+        {
+          "name": "DuplicateKeyword",
+          "value": 3
+        },
+        {
+          "name": "TypeInference",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Scripting.Actions.Calls.NarrowingLevel",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "One",
+          "value": 1
+        },
+        {
+          "name": "Two",
+          "value": 2
+        },
+        {
+          "name": "Three",
+          "value": 3
+        },
+        {
+          "name": "All",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Scripting.Actions.Calls.ParameterBindingFlags",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "ProhibitNull",
+          "value": 1
+        },
+        {
+          "name": "ProhibitNullItems",
+          "value": 2
+        },
+        {
+          "name": "IsParamArray",
+          "value": 4
+        },
+        {
+          "name": "IsParamDictionary",
+          "value": 8
+        },
+        {
+          "name": "IsHidden",
+          "value": 16
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Scripting.Actions.Calls.Candidate",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Equivalent",
+          "value": 0
+        },
+        {
+          "name": "One",
+          "value": 1
+        },
+        {
+          "name": "Two",
+          "value": -1
+        },
+        {
+          "name": "Ambiguous",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Scripting.TokenTriggers",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "MemberSelect",
+          "value": 1
+        },
+        {
+          "name": "MatchBraces",
+          "value": 2
+        },
+        {
+          "name": "ParameterStart",
+          "value": 16
+        },
+        {
+          "name": "ParameterNext",
+          "value": 32
+        },
+        {
+          "name": "ParameterEnd",
+          "value": 64
+        },
+        {
+          "name": "Parameter",
+          "value": 128
+        },
+        {
+          "name": "MethodTip",
+          "value": 240
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Scripting.ScriptCodeParseResult",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Complete",
+          "value": 0
+        },
+        {
+          "name": "Empty",
+          "value": 1
+        },
+        {
+          "name": "Invalid",
+          "value": 2
+        },
+        {
+          "name": "IncompleteToken",
+          "value": 3
+        },
+        {
+          "name": "IncompleteStatement",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Scripting.Severity",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Ignore",
+          "value": 0
+        },
+        {
+          "name": "Warning",
+          "value": 1
+        },
+        {
+          "name": "Error",
+          "value": 2
+        },
+        {
+          "name": "FatalError",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Scripting.SourceCodeKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unspecified",
+          "value": 0
+        },
+        {
+          "name": "Expression",
+          "value": 1
+        },
+        {
+          "name": "Statements",
+          "value": 2
+        },
+        {
+          "name": "SingleStatement",
+          "value": 3
+        },
+        {
+          "name": "File",
+          "value": 4
+        },
+        {
+          "name": "InteractiveCode",
+          "value": 5
+        },
+        {
+          "name": "AutoDetect",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Scripting.TokenCategory",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "EndOfStream",
+          "value": 1
+        },
+        {
+          "name": "WhiteSpace",
+          "value": 2
+        },
+        {
+          "name": "Comment",
+          "value": 3
+        },
+        {
+          "name": "LineComment",
+          "value": 4
+        },
+        {
+          "name": "DocComment",
+          "value": 5
+        },
+        {
+          "name": "NumericLiteral",
+          "value": 6
+        },
+        {
+          "name": "CharacterLiteral",
+          "value": 7
+        },
+        {
+          "name": "StringLiteral",
+          "value": 8
+        },
+        {
+          "name": "RegularExpressionLiteral",
+          "value": 9
+        },
+        {
+          "name": "Keyword",
+          "value": 10
+        },
+        {
+          "name": "Directive",
+          "value": 11
+        },
+        {
+          "name": "Operator",
+          "value": 12
+        },
+        {
+          "name": "Delimiter",
+          "value": 13
+        },
+        {
+          "name": "Identifier",
+          "value": 14
+        },
+        {
+          "name": "Grouping",
+          "value": 15
+        },
+        {
+          "name": "Error",
+          "value": 16
+        },
+        {
+          "name": "LanguageDefined",
+          "value": 256
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Scripting.TokenKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "Error",
+          "value": 1
+        },
+        {
+          "name": "Whitespace",
+          "value": 2
+        },
+        {
+          "name": "EndOfLine",
+          "value": 3
+        },
+        {
+          "name": "LineJoin",
+          "value": 4
+        },
+        {
+          "name": "Indentation",
+          "value": 5
+        },
+        {
+          "name": "SingleLineComment",
+          "value": 6
+        },
+        {
+          "name": "MultiLineComment",
+          "value": 7
+        },
+        {
+          "name": "NestableCommentStart",
+          "value": 8
+        },
+        {
+          "name": "NestableCommentEnd",
+          "value": 9
+        },
+        {
+          "name": "SingleLineDocComment",
+          "value": 10
+        },
+        {
+          "name": "MultiLineDocComment",
+          "value": 11
+        },
+        {
+          "name": "Directive",
+          "value": 12
+        },
+        {
+          "name": "Keyword",
+          "value": 13
+        },
+        {
+          "name": "Identifier",
+          "value": 14
+        },
+        {
+          "name": "VerbatimIdentifier",
+          "value": 15
+        },
+        {
+          "name": "Variable",
+          "value": 16
+        },
+        {
+          "name": "IntegerLiteral",
+          "value": 17
+        },
+        {
+          "name": "FloatLiteral",
+          "value": 18
+        },
+        {
+          "name": "CharacterLiteral",
+          "value": 19
+        },
+        {
+          "name": "String",
+          "value": 20
+        },
+        {
+          "name": "UnicodeString",
+          "value": 21
+        },
+        {
+          "name": "FormattedString",
+          "value": 22
+        },
+        {
+          "name": "FormattedUnicodeString",
+          "value": 23
+        },
+        {
+          "name": "LeftParenthesis",
+          "value": 24
+        },
+        {
+          "name": "RightParenthesis",
+          "value": 25
+        },
+        {
+          "name": "LeftBracket",
+          "value": 26
+        },
+        {
+          "name": "RightBracket",
+          "value": 27
+        },
+        {
+          "name": "LeftBrace",
+          "value": 28
+        },
+        {
+          "name": "RightBrace",
+          "value": 29
+        },
+        {
+          "name": "Comma",
+          "value": 30
+        },
+        {
+          "name": "Dot",
+          "value": 31
+        },
+        {
+          "name": "Semicolon",
+          "value": 32
+        },
+        {
+          "name": "Colon",
+          "value": 33
+        },
+        {
+          "name": "DoubleColon",
+          "value": 34
+        },
+        {
+          "name": "TripleColon",
+          "value": 35
+        },
+        {
+          "name": "Plus",
+          "value": 36
+        },
+        {
+          "name": "PlusPlus",
+          "value": 37
+        },
+        {
+          "name": "PlusEqual",
+          "value": 38
+        },
+        {
+          "name": "Minus",
+          "value": 39
+        },
+        {
+          "name": "MinusMinus",
+          "value": 40
+        },
+        {
+          "name": "MinusEqual",
+          "value": 41
+        },
+        {
+          "name": "Mul",
+          "value": 42
+        },
+        {
+          "name": "MulEqual",
+          "value": 43
+        },
+        {
+          "name": "Div",
+          "value": 44
+        },
+        {
+          "name": "DivEqual",
+          "value": 45
+        },
+        {
+          "name": "FloorDivide",
+          "value": 46
+        },
+        {
+          "name": "FloorDivideEqual",
+          "value": 47
+        },
+        {
+          "name": "Mod",
+          "value": 48
+        },
+        {
+          "name": "ModEqual",
+          "value": 49
+        },
+        {
+          "name": "Power",
+          "value": 50
+        },
+        {
+          "name": "PowerEqual",
+          "value": 51
+        },
+        {
+          "name": "LeftShift",
+          "value": 52
+        },
+        {
+          "name": "LeftShiftEqual",
+          "value": 53
+        },
+        {
+          "name": "RightShift",
+          "value": 54
+        },
+        {
+          "name": "RightShiftEqual",
+          "value": 55
+        },
+        {
+          "name": "BitwiseAnd",
+          "value": 56
+        },
+        {
+          "name": "BitwiseAndEqual",
+          "value": 57
+        },
+        {
+          "name": "BitwiseOr",
+          "value": 58
+        },
+        {
+          "name": "BitwiseOrEqual",
+          "value": 59
+        },
+        {
+          "name": "Xor",
+          "value": 60
+        },
+        {
+          "name": "XorEqual",
+          "value": 61
+        },
+        {
+          "name": "BooleanAnd",
+          "value": 62
+        },
+        {
+          "name": "BooleanAndEqual",
+          "value": 63
+        },
+        {
+          "name": "BooleanOr",
+          "value": 64
+        },
+        {
+          "name": "BooleanOrEqual",
+          "value": 65
+        },
+        {
+          "name": "Twiddle",
+          "value": 66
+        },
+        {
+          "name": "TwiddleEqual",
+          "value": 67
+        },
+        {
+          "name": "LessThan",
+          "value": 68
+        },
+        {
+          "name": "GreaterThan",
+          "value": 69
+        },
+        {
+          "name": "LessThanOrEqual",
+          "value": 70
+        },
+        {
+          "name": "GreaterThanOrEqual",
+          "value": 71
+        },
+        {
+          "name": "Assign",
+          "value": 72
+        },
+        {
+          "name": "AssignAlias",
+          "value": 73
+        },
+        {
+          "name": "AssignColon",
+          "value": 74
+        },
+        {
+          "name": "Equal",
+          "value": 75
+        },
+        {
+          "name": "StrictEqual",
+          "value": 76
+        },
+        {
+          "name": "Not",
+          "value": 77
+        },
+        {
+          "name": "NotEqual",
+          "value": 78
+        },
+        {
+          "name": "StrictNotEqual",
+          "value": 79
+        },
+        {
+          "name": "Unequal",
+          "value": 80
+        },
+        {
+          "name": "CompareEqual",
+          "value": 81
+        },
+        {
+          "name": "Match",
+          "value": 82
+        },
+        {
+          "name": "NotMatch",
+          "value": 83
+        },
+        {
+          "name": "Arrow",
+          "value": 84
+        },
+        {
+          "name": "DoubleArrow",
+          "value": 85
+        },
+        {
+          "name": "BackQuote",
+          "value": 86
+        },
+        {
+          "name": "DoubleDot",
+          "value": 87
+        },
+        {
+          "name": "TripleDot",
+          "value": 88
+        },
+        {
+          "name": "At",
+          "value": 89
+        },
+        {
+          "name": "DoubleAt",
+          "value": 90
+        },
+        {
+          "name": "Question",
+          "value": 91
+        },
+        {
+          "name": "DoubleQuestion",
+          "value": 92
+        },
+        {
+          "name": "Backslash",
+          "value": 93
+        },
+        {
+          "name": "DoubleBackslash",
+          "value": 94
+        },
+        {
+          "name": "Dollar",
+          "value": 95
+        },
+        {
+          "name": "DoubleDollar",
+          "value": 96
+        },
+        {
+          "name": "LanguageDefined",
+          "value": 97
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Scripting.Utils.ConsoleStreamType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Input",
+          "value": 0
+        },
+        {
+          "name": "Output",
+          "value": 1
+        },
+        {
+          "name": "ErrorOutput",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Scripting.Hosting.MemberKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Class",
+          "value": 1
+        },
+        {
+          "name": "Delegate",
+          "value": 2
+        },
+        {
+          "name": "Enum",
+          "value": 3
+        },
+        {
+          "name": "Event",
+          "value": 4
+        },
+        {
+          "name": "Field",
+          "value": 5
+        },
+        {
+          "name": "Function",
+          "value": 6
+        },
+        {
+          "name": "Module",
+          "value": 7
+        },
+        {
+          "name": "Property",
+          "value": 8
+        },
+        {
+          "name": "Constant",
+          "value": 9
+        },
+        {
+          "name": "EnumMember",
+          "value": 10
+        },
+        {
+          "name": "Instance",
+          "value": 11
+        },
+        {
+          "name": "Method",
+          "value": 12
+        },
+        {
+          "name": "Namespace",
+          "value": 13
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Scripting.Hosting.ParameterFlags",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "ParamsArray",
+          "value": 1
+        },
+        {
+          "name": "ParamsDict",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Scripting.Metadata.MetadataRecordType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ModuleDef",
+          "value": 0
+        },
+        {
+          "name": "TypeRef",
+          "value": 1
+        },
+        {
+          "name": "TypeDef",
+          "value": 2
+        },
+        {
+          "name": "FieldDef",
+          "value": 4
+        },
+        {
+          "name": "MethodDef",
+          "value": 6
+        },
+        {
+          "name": "ParamDef",
+          "value": 8
+        },
+        {
+          "name": "InterfaceImpl",
+          "value": 9
+        },
+        {
+          "name": "MemberRef",
+          "value": 10
+        },
+        {
+          "name": "CustomAttributeDef",
+          "value": 12
+        },
+        {
+          "name": "Permission",
+          "value": 14
+        },
+        {
+          "name": "SignatureDef",
+          "value": 17
+        },
+        {
+          "name": "EventDef",
+          "value": 20
+        },
+        {
+          "name": "PropertyDef",
+          "value": 23
+        },
+        {
+          "name": "ModuleRef",
+          "value": 26
+        },
+        {
+          "name": "TypeSpec",
+          "value": 27
+        },
+        {
+          "name": "AssemblyDef",
+          "value": 32
+        },
+        {
+          "name": "AssemblyRef",
+          "value": 35
+        },
+        {
+          "name": "FileDef",
+          "value": 38
+        },
+        {
+          "name": "TypeExport",
+          "value": 39
+        },
+        {
+          "name": "ManifestResourceDef",
+          "value": 40
+        },
+        {
+          "name": "TypeNesting",
+          "value": 41
+        },
+        {
+          "name": "GenericParamDef",
+          "value": 42
+        },
+        {
+          "name": "MethodSpec",
+          "value": 43
+        },
+        {
+          "name": "GenericParamConstraint",
+          "value": 44
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Scripting.Metadata.AssemblyFileAttributes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ContainsMetadata",
+          "value": 0
+        },
+        {
+          "name": "ContainsNoMetadata",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Scripting.Metadata.ManifestResourceAttributes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "PublicVisibility",
+          "value": 1
+        },
+        {
+          "name": "PrivateVisibility",
+          "value": 2
+        },
+        {
+          "name": "VisibilityMask",
+          "value": 7
+        },
+        {
+          "name": "InExternalFile",
+          "value": 16
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Scripting.Metadata.ElementType",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "End",
+          "value": 0
+        },
+        {
+          "name": "Void",
+          "value": 1
+        },
+        {
+          "name": "Boolean",
+          "value": 2
+        },
+        {
+          "name": "Char",
+          "value": 3
+        },
+        {
+          "name": "Int8",
+          "value": 4
+        },
+        {
+          "name": "UInt8",
+          "value": 5
+        },
+        {
+          "name": "Int16",
+          "value": 6
+        },
+        {
+          "name": "UInt16",
+          "value": 7
+        },
+        {
+          "name": "Int32",
+          "value": 8
+        },
+        {
+          "name": "UInt32",
+          "value": 9
+        },
+        {
+          "name": "Int64",
+          "value": 10
+        },
+        {
+          "name": "UInt64",
+          "value": 11
+        },
+        {
+          "name": "Single",
+          "value": 12
+        },
+        {
+          "name": "Double",
+          "value": 13
+        },
+        {
+          "name": "String",
+          "value": 14
+        },
+        {
+          "name": "Pointer",
+          "value": 15
+        },
+        {
+          "name": "ByReference",
+          "value": 16
+        },
+        {
+          "name": "ValueType",
+          "value": 17
+        },
+        {
+          "name": "Class",
+          "value": 18
+        },
+        {
+          "name": "GenericTypeParameter",
+          "value": 19
+        },
+        {
+          "name": "Array",
+          "value": 20
+        },
+        {
+          "name": "GenericTypeInstance",
+          "value": 21
+        },
+        {
+          "name": "TypedReference",
+          "value": 22
+        },
+        {
+          "name": "IntPtr",
+          "value": 24
+        },
+        {
+          "name": "UIntPtr",
+          "value": 25
+        },
+        {
+          "name": "FunctionPointer",
+          "value": 27
+        },
+        {
+          "name": "Object",
+          "value": 28
+        },
+        {
+          "name": "Vector",
+          "value": 29
+        },
+        {
+          "name": "GenericMethodParameter",
+          "value": 30
+        },
+        {
+          "name": "RequiredModifier",
+          "value": 31
+        },
+        {
+          "name": "OptionalModifier",
+          "value": 32
+        },
+        {
+          "name": "Internal",
+          "value": 33
+        },
+        {
+          "name": "Max",
+          "value": 34
+        },
+        {
+          "name": "Modifier",
+          "value": 64
+        },
+        {
+          "name": "Sentinel",
+          "value": 65
+        },
+        {
+          "name": "Pinned",
+          "value": 69
+        }
+      ]
+    }
+  ],
+  "namespaceMappings": []
+}

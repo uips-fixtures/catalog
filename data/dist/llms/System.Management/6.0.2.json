@@ -1,0 +1,699 @@
+{
+  "schema": {
+    "id": "activity-catalog",
+    "version": "v0.3"
+  },
+  "source": {
+    "kind": "nuget-package",
+    "id": "System.Management",
+    "version": "6.0.2",
+    "feedUrl": null,
+    "authors": "Microsoft",
+    "projectUrl": "https://dot.net/",
+    "description": "Provides access to a rich set of management information and management events about the system, devices, and applications instrumented to the Windows Management Instrumentation (WMI) infrastructure.\n\nCommonly Used Types:\nSystem.Management.ManagementClass\nSystem.Management.ManagementObject\nSystem.Management.SelectQuery",
+    "license": "MIT",
+    "tags": null,
+    "packageTypes": []
+  },
+  "generatedAt": "2026-04-10T09:21:17Z",
+  "activities": [],
+  "enums": [
+    {
+      "fullName": "System.Management.AuthenticationLevel",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unchanged",
+          "value": -1
+        },
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "None",
+          "value": 1
+        },
+        {
+          "name": "Connect",
+          "value": 2
+        },
+        {
+          "name": "Call",
+          "value": 3
+        },
+        {
+          "name": "Packet",
+          "value": 4
+        },
+        {
+          "name": "PacketIntegrity",
+          "value": 5
+        },
+        {
+          "name": "PacketPrivacy",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "System.Management.CimType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "SInt16",
+          "value": 2
+        },
+        {
+          "name": "SInt32",
+          "value": 3
+        },
+        {
+          "name": "Real32",
+          "value": 4
+        },
+        {
+          "name": "Real64",
+          "value": 5
+        },
+        {
+          "name": "String",
+          "value": 8
+        },
+        {
+          "name": "Boolean",
+          "value": 11
+        },
+        {
+          "name": "Object",
+          "value": 13
+        },
+        {
+          "name": "SInt8",
+          "value": 16
+        },
+        {
+          "name": "UInt8",
+          "value": 17
+        },
+        {
+          "name": "UInt16",
+          "value": 18
+        },
+        {
+          "name": "UInt32",
+          "value": 19
+        },
+        {
+          "name": "SInt64",
+          "value": 20
+        },
+        {
+          "name": "UInt64",
+          "value": 21
+        },
+        {
+          "name": "DateTime",
+          "value": 101
+        },
+        {
+          "name": "Reference",
+          "value": 102
+        },
+        {
+          "name": "Char16",
+          "value": 103
+        }
+      ]
+    },
+    {
+      "fullName": "System.Management.CodeLanguage",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "CSharp",
+          "value": 0
+        },
+        {
+          "name": "JScript",
+          "value": 1
+        },
+        {
+          "name": "VB",
+          "value": 2
+        },
+        {
+          "name": "VJSharp",
+          "value": 3
+        },
+        {
+          "name": "Mcpp",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "System.Management.ComparisonSettings",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "IncludeAll",
+          "value": 0
+        },
+        {
+          "name": "IgnoreQualifiers",
+          "value": 1
+        },
+        {
+          "name": "IgnoreObjectSource",
+          "value": 2
+        },
+        {
+          "name": "IgnoreDefaultValues",
+          "value": 4
+        },
+        {
+          "name": "IgnoreClass",
+          "value": 8
+        },
+        {
+          "name": "IgnoreCase",
+          "value": 16
+        },
+        {
+          "name": "IgnoreFlavor",
+          "value": 32
+        }
+      ]
+    },
+    {
+      "fullName": "System.Management.ImpersonationLevel",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "Anonymous",
+          "value": 1
+        },
+        {
+          "name": "Identify",
+          "value": 2
+        },
+        {
+          "name": "Impersonate",
+          "value": 3
+        },
+        {
+          "name": "Delegate",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "System.Management.ManagementStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Failed",
+          "value": -2147217407
+        },
+        {
+          "name": "NotFound",
+          "value": -2147217406
+        },
+        {
+          "name": "AccessDenied",
+          "value": -2147217405
+        },
+        {
+          "name": "ProviderFailure",
+          "value": -2147217404
+        },
+        {
+          "name": "TypeMismatch",
+          "value": -2147217403
+        },
+        {
+          "name": "OutOfMemory",
+          "value": -2147217402
+        },
+        {
+          "name": "InvalidContext",
+          "value": -2147217401
+        },
+        {
+          "name": "InvalidParameter",
+          "value": -2147217400
+        },
+        {
+          "name": "NotAvailable",
+          "value": -2147217399
+        },
+        {
+          "name": "CriticalError",
+          "value": -2147217398
+        },
+        {
+          "name": "InvalidStream",
+          "value": -2147217397
+        },
+        {
+          "name": "NotSupported",
+          "value": -2147217396
+        },
+        {
+          "name": "InvalidSuperclass",
+          "value": -2147217395
+        },
+        {
+          "name": "InvalidNamespace",
+          "value": -2147217394
+        },
+        {
+          "name": "InvalidObject",
+          "value": -2147217393
+        },
+        {
+          "name": "InvalidClass",
+          "value": -2147217392
+        },
+        {
+          "name": "ProviderNotFound",
+          "value": -2147217391
+        },
+        {
+          "name": "InvalidProviderRegistration",
+          "value": -2147217390
+        },
+        {
+          "name": "ProviderLoadFailure",
+          "value": -2147217389
+        },
+        {
+          "name": "InitializationFailure",
+          "value": -2147217388
+        },
+        {
+          "name": "TransportFailure",
+          "value": -2147217387
+        },
+        {
+          "name": "InvalidOperation",
+          "value": -2147217386
+        },
+        {
+          "name": "InvalidQuery",
+          "value": -2147217385
+        },
+        {
+          "name": "InvalidQueryType",
+          "value": -2147217384
+        },
+        {
+          "name": "AlreadyExists",
+          "value": -2147217383
+        },
+        {
+          "name": "OverrideNotAllowed",
+          "value": -2147217382
+        },
+        {
+          "name": "PropagatedQualifier",
+          "value": -2147217381
+        },
+        {
+          "name": "PropagatedProperty",
+          "value": -2147217380
+        },
+        {
+          "name": "Unexpected",
+          "value": -2147217379
+        },
+        {
+          "name": "IllegalOperation",
+          "value": -2147217378
+        },
+        {
+          "name": "CannotBeKey",
+          "value": -2147217377
+        },
+        {
+          "name": "IncompleteClass",
+          "value": -2147217376
+        },
+        {
+          "name": "InvalidSyntax",
+          "value": -2147217375
+        },
+        {
+          "name": "NondecoratedObject",
+          "value": -2147217374
+        },
+        {
+          "name": "ReadOnly",
+          "value": -2147217373
+        },
+        {
+          "name": "ProviderNotCapable",
+          "value": -2147217372
+        },
+        {
+          "name": "ClassHasChildren",
+          "value": -2147217371
+        },
+        {
+          "name": "ClassHasInstances",
+          "value": -2147217370
+        },
+        {
+          "name": "QueryNotImplemented",
+          "value": -2147217369
+        },
+        {
+          "name": "IllegalNull",
+          "value": -2147217368
+        },
+        {
+          "name": "InvalidQualifierType",
+          "value": -2147217367
+        },
+        {
+          "name": "InvalidPropertyType",
+          "value": -2147217366
+        },
+        {
+          "name": "ValueOutOfRange",
+          "value": -2147217365
+        },
+        {
+          "name": "CannotBeSingleton",
+          "value": -2147217364
+        },
+        {
+          "name": "InvalidCimType",
+          "value": -2147217363
+        },
+        {
+          "name": "InvalidMethod",
+          "value": -2147217362
+        },
+        {
+          "name": "InvalidMethodParameters",
+          "value": -2147217361
+        },
+        {
+          "name": "SystemProperty",
+          "value": -2147217360
+        },
+        {
+          "name": "InvalidProperty",
+          "value": -2147217359
+        },
+        {
+          "name": "CallCanceled",
+          "value": -2147217358
+        },
+        {
+          "name": "ShuttingDown",
+          "value": -2147217357
+        },
+        {
+          "name": "PropagatedMethod",
+          "value": -2147217356
+        },
+        {
+          "name": "UnsupportedParameter",
+          "value": -2147217355
+        },
+        {
+          "name": "MissingParameterID",
+          "value": -2147217354
+        },
+        {
+          "name": "InvalidParameterID",
+          "value": -2147217353
+        },
+        {
+          "name": "NonconsecutiveParameterIDs",
+          "value": -2147217352
+        },
+        {
+          "name": "ParameterIDOnRetval",
+          "value": -2147217351
+        },
+        {
+          "name": "InvalidObjectPath",
+          "value": -2147217350
+        },
+        {
+          "name": "OutOfDiskSpace",
+          "value": -2147217349
+        },
+        {
+          "name": "BufferTooSmall",
+          "value": -2147217348
+        },
+        {
+          "name": "UnsupportedPutExtension",
+          "value": -2147217347
+        },
+        {
+          "name": "UnknownObjectType",
+          "value": -2147217346
+        },
+        {
+          "name": "UnknownPacketType",
+          "value": -2147217345
+        },
+        {
+          "name": "MarshalVersionMismatch",
+          "value": -2147217344
+        },
+        {
+          "name": "MarshalInvalidSignature",
+          "value": -2147217343
+        },
+        {
+          "name": "InvalidQualifier",
+          "value": -2147217342
+        },
+        {
+          "name": "InvalidDuplicateParameter",
+          "value": -2147217341
+        },
+        {
+          "name": "TooMuchData",
+          "value": -2147217340
+        },
+        {
+          "name": "ServerTooBusy",
+          "value": -2147217339
+        },
+        {
+          "name": "InvalidFlavor",
+          "value": -2147217338
+        },
+        {
+          "name": "CircularReference",
+          "value": -2147217337
+        },
+        {
+          "name": "UnsupportedClassUpdate",
+          "value": -2147217336
+        },
+        {
+          "name": "CannotChangeKeyInheritance",
+          "value": -2147217335
+        },
+        {
+          "name": "CannotChangeIndexInheritance",
+          "value": -2147217328
+        },
+        {
+          "name": "TooManyProperties",
+          "value": -2147217327
+        },
+        {
+          "name": "UpdateTypeMismatch",
+          "value": -2147217326
+        },
+        {
+          "name": "UpdateOverrideNotAllowed",
+          "value": -2147217325
+        },
+        {
+          "name": "UpdatePropagatedMethod",
+          "value": -2147217324
+        },
+        {
+          "name": "MethodNotImplemented",
+          "value": -2147217323
+        },
+        {
+          "name": "MethodDisabled",
+          "value": -2147217322
+        },
+        {
+          "name": "RefresherBusy",
+          "value": -2147217321
+        },
+        {
+          "name": "UnparsableQuery",
+          "value": -2147217320
+        },
+        {
+          "name": "NotEventClass",
+          "value": -2147217319
+        },
+        {
+          "name": "MissingGroupWithin",
+          "value": -2147217318
+        },
+        {
+          "name": "MissingAggregationList",
+          "value": -2147217317
+        },
+        {
+          "name": "PropertyNotAnObject",
+          "value": -2147217316
+        },
+        {
+          "name": "AggregatingByObject",
+          "value": -2147217315
+        },
+        {
+          "name": "UninterpretableProviderQuery",
+          "value": -2147217313
+        },
+        {
+          "name": "BackupRestoreWinmgmtRunning",
+          "value": -2147217312
+        },
+        {
+          "name": "QueueOverflow",
+          "value": -2147217311
+        },
+        {
+          "name": "PrivilegeNotHeld",
+          "value": -2147217310
+        },
+        {
+          "name": "InvalidOperator",
+          "value": -2147217309
+        },
+        {
+          "name": "LocalCredentials",
+          "value": -2147217308
+        },
+        {
+          "name": "CannotBeAbstract",
+          "value": -2147217307
+        },
+        {
+          "name": "AmendedObject",
+          "value": -2147217306
+        },
+        {
+          "name": "ClientTooSlow",
+          "value": -2147217305
+        },
+        {
+          "name": "RegistrationTooBroad",
+          "value": -2147213311
+        },
+        {
+          "name": "RegistrationTooPrecise",
+          "value": -2147213310
+        },
+        {
+          "name": "NoError",
+          "value": 0
+        },
+        {
+          "name": "False",
+          "value": 1
+        },
+        {
+          "name": "ResetToDefault",
+          "value": 262146
+        },
+        {
+          "name": "Different",
+          "value": 262147
+        },
+        {
+          "name": "Timedout",
+          "value": 262148
+        },
+        {
+          "name": "NoMoreData",
+          "value": 262149
+        },
+        {
+          "name": "OperationCanceled",
+          "value": 262150
+        },
+        {
+          "name": "Pending",
+          "value": 262151
+        },
+        {
+          "name": "DuplicateObjects",
+          "value": 262152
+        },
+        {
+          "name": "PartialResults",
+          "value": 262160
+        }
+      ]
+    },
+    {
+      "fullName": "System.Management.PutType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "UpdateOnly",
+          "value": 1
+        },
+        {
+          "name": "CreateOnly",
+          "value": 2
+        },
+        {
+          "name": "UpdateOrCreate",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "System.Management.TextFormat",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Mof",
+          "value": 0
+        },
+        {
+          "name": "CimDtd20",
+          "value": 1
+        },
+        {
+          "name": "WmiDtd20",
+          "value": 2
+        }
+      ]
+    }
+  ],
+  "namespaceMappings": []
+}

@@ -1,0 +1,637 @@
+{
+  "schema": {
+    "id": "activity-catalog",
+    "version": "v0.3"
+  },
+  "source": {
+    "kind": "nuget-package",
+    "id": "Microsoft.Activities",
+    "version": "1.0.1",
+    "feedUrl": null,
+    "authors": "Microsoft",
+    "projectUrl": "http://msdn.microsoft.com/en-us/library/jj193474(v=azure.10).aspx",
+    "description": "Workflow Manager 1.0 provides activities that fall under two categories: activities for working with expressions and data types, and activities for messaging, communications, and building the logic of your workflow applications.",
+    "license": null,
+    "tags": null,
+    "packageTypes": []
+  },
+  "generatedAt": "2026-04-10T09:21:13Z",
+  "activities": [],
+  "enums": [
+    {
+      "fullName": "Microsoft.Activities.Expressions.DateField",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Year",
+          "value": 0
+        },
+        {
+          "name": "Month",
+          "value": 1
+        },
+        {
+          "name": "Day",
+          "value": 2
+        },
+        {
+          "name": "Hour",
+          "value": 3
+        },
+        {
+          "name": "Minute",
+          "value": 4
+        },
+        {
+          "name": "Second",
+          "value": 5
+        },
+        {
+          "name": "Kind",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Activities.WorkflowInstanceStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NotSpecified",
+          "value": 0
+        },
+        {
+          "name": "NotStarted",
+          "value": 1
+        },
+        {
+          "name": "Started",
+          "value": 2
+        },
+        {
+          "name": "Suspended",
+          "value": 3
+        },
+        {
+          "name": "Canceling",
+          "value": 4
+        },
+        {
+          "name": "Canceled",
+          "value": 5
+        },
+        {
+          "name": "Terminated",
+          "value": 6
+        },
+        {
+          "name": "Completed",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Workflow.Client.ApplyScopeSnapshotStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NotStarted",
+          "value": 0
+        },
+        {
+          "name": "Started",
+          "value": 1
+        },
+        {
+          "name": "Completed",
+          "value": 2
+        },
+        {
+          "name": "Failed",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Workflow.Client.CaptureScopeSnapshotStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Started",
+          "value": 0
+        },
+        {
+          "name": "Completed",
+          "value": 1
+        },
+        {
+          "name": "Failed",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Workflow.Client.PublishWorkflowNotificationResult",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Success",
+          "value": 0
+        },
+        {
+          "name": "QuotaExceeded",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Workflow.Client.ScopeStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "Resuming",
+          "value": 1
+        },
+        {
+          "name": "Active",
+          "value": 2
+        },
+        {
+          "name": "Suspending",
+          "value": 3
+        },
+        {
+          "name": "Suspended",
+          "value": 4
+        },
+        {
+          "name": "Unregistering",
+          "value": 5
+        },
+        {
+          "name": "Unregistered",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Workflow.Client.Security.ScopePermissions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "ReadScope",
+          "value": 1
+        },
+        {
+          "name": "WriteScope",
+          "value": 2
+        },
+        {
+          "name": "ManageScope",
+          "value": 4
+        },
+        {
+          "name": "PublishNotification",
+          "value": 8
+        },
+        {
+          "name": "All",
+          "value": 15
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Workflow.Client.Security.WorkflowManagementPermissions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "ReadScope",
+          "value": 1
+        },
+        {
+          "name": "WriteScope",
+          "value": 2
+        },
+        {
+          "name": "ManageScope",
+          "value": 4
+        },
+        {
+          "name": "PublishNotification",
+          "value": 8
+        },
+        {
+          "name": "All",
+          "value": 15
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Workflow.Common.Fx.Tag.CacheAttrition",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "ElementOnTimer",
+          "value": 1
+        },
+        {
+          "name": "ElementOnGC",
+          "value": 2
+        },
+        {
+          "name": "ElementOnCallback",
+          "value": 3
+        },
+        {
+          "name": "FullPurgeOnTimer",
+          "value": 4
+        },
+        {
+          "name": "FullPurgeOnEachAccess",
+          "value": 5
+        },
+        {
+          "name": "PartialPurgeOnTimer",
+          "value": 6
+        },
+        {
+          "name": "PartialPurgeOnEachAccess",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Workflow.Common.Fx.Tag.Location",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "InProcess",
+          "value": 0
+        },
+        {
+          "name": "OutOfProcess",
+          "value": 1
+        },
+        {
+          "name": "LocalSystem",
+          "value": 2
+        },
+        {
+          "name": "LocalOrRemoteSystem",
+          "value": 3
+        },
+        {
+          "name": "RemoteSystem",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Workflow.Common.Fx.Tag.SynchronizationKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "LockStatement",
+          "value": 0
+        },
+        {
+          "name": "MonitorWait",
+          "value": 1
+        },
+        {
+          "name": "MonitorExplicit",
+          "value": 2
+        },
+        {
+          "name": "InterlockedNoSpin",
+          "value": 3
+        },
+        {
+          "name": "InterlockedWithSpin",
+          "value": 4
+        },
+        {
+          "name": "FromFieldType",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Workflow.Common.Fx.Tag.BlocksUsing",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "MonitorEnter",
+          "value": 0
+        },
+        {
+          "name": "MonitorWait",
+          "value": 1
+        },
+        {
+          "name": "ManualResetEvent",
+          "value": 2
+        },
+        {
+          "name": "AutoResetEvent",
+          "value": 3
+        },
+        {
+          "name": "AsyncResult",
+          "value": 4
+        },
+        {
+          "name": "IAsyncResult",
+          "value": 5
+        },
+        {
+          "name": "PInvoke",
+          "value": 6
+        },
+        {
+          "name": "InputQueue",
+          "value": 7
+        },
+        {
+          "name": "ThreadNeutralSemaphore",
+          "value": 8
+        },
+        {
+          "name": "PrivatePrimitive",
+          "value": 9
+        },
+        {
+          "name": "OtherInternalPrimitive",
+          "value": 10
+        },
+        {
+          "name": "OtherFrameworkPrimitive",
+          "value": 11
+        },
+        {
+          "name": "OtherInterop",
+          "value": 12
+        },
+        {
+          "name": "Other",
+          "value": 13
+        },
+        {
+          "name": "NonBlocking",
+          "value": 14
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Workflow.Tracing.EventProviderClone.WriteEventErrorCode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NoError",
+          "value": 0
+        },
+        {
+          "name": "NoFreeBuffers",
+          "value": 1
+        },
+        {
+          "name": "EventTooBig",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Workflow.Tracing.ControllerCommand",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Update",
+          "value": 0
+        },
+        {
+          "name": "SendManifest",
+          "value": -1
+        },
+        {
+          "name": "Enable",
+          "value": -2
+        },
+        {
+          "name": "Disable",
+          "value": -3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Workflow.Tracing.EventCommand",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Update",
+          "value": 0
+        },
+        {
+          "name": "SendManifest",
+          "value": -1
+        },
+        {
+          "name": "Enable",
+          "value": -2
+        },
+        {
+          "name": "Disable",
+          "value": -3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Workflow.Tracing.ManifestEnvelope.ManifestFormats",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "SimpleXmlFormat",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Workflow.Tracing.EventLevel",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "LogAlways",
+          "value": 0
+        },
+        {
+          "name": "Critical",
+          "value": 1
+        },
+        {
+          "name": "Error",
+          "value": 2
+        },
+        {
+          "name": "Warning",
+          "value": 3
+        },
+        {
+          "name": "Informational",
+          "value": 4
+        },
+        {
+          "name": "Verbose",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Workflow.Tracing.EventTask",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Workflow.Tracing.EventOpcode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Info",
+          "value": 0
+        },
+        {
+          "name": "Start",
+          "value": 1
+        },
+        {
+          "name": "Stop",
+          "value": 2
+        },
+        {
+          "name": "DataCollectionStart",
+          "value": 3
+        },
+        {
+          "name": "DataCollectionStop",
+          "value": 4
+        },
+        {
+          "name": "Extension",
+          "value": 5
+        },
+        {
+          "name": "Reply",
+          "value": 6
+        },
+        {
+          "name": "Resume",
+          "value": 7
+        },
+        {
+          "name": "Suspend",
+          "value": 8
+        },
+        {
+          "name": "Send",
+          "value": 9
+        },
+        {
+          "name": "Receive",
+          "value": 240
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Workflow.Tracing.EventChannel",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "Application",
+          "value": 1
+        },
+        {
+          "name": "Security",
+          "value": 2
+        },
+        {
+          "name": "Setup",
+          "value": 3
+        },
+        {
+          "name": "System",
+          "value": 4
+        },
+        {
+          "name": "Reserved",
+          "value": 15
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Workflow.Tracing.EventKeywords",
+      "underlyingType": "System.Int64",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "WdiContext",
+          "value": 562949953421312
+        },
+        {
+          "name": "WdiDiagnostic",
+          "value": 1125899906842624
+        },
+        {
+          "name": "Sqm",
+          "value": 2251799813685248
+        },
+        {
+          "name": "AuditFailure",
+          "value": 4503599627370496
+        },
+        {
+          "name": "AuditSuccess",
+          "value": 9007199254740992
+        },
+        {
+          "name": "CorrelationHint",
+          "value": 18014398509481984
+        },
+        {
+          "name": "EventLogClassic",
+          "value": 36028797018963968
+        },
+        {
+          "name": "All",
+          "value": -1
+        }
+      ]
+    }
+  ],
+  "namespaceMappings": []
+}

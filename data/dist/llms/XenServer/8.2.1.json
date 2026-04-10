@@ -1,0 +1,2063 @@
+{
+  "schema": {
+    "id": "activity-catalog",
+    "version": "v0.3"
+  },
+  "source": {
+    "kind": "nuget-package",
+    "id": "XenServer",
+    "version": "8.2.1",
+    "feedUrl": null,
+    "authors": "XenServer",
+    "projectUrl": null,
+    "description": "Citrix XenServer C#.NET SDK\n    This package has been built using the soruce code from https://www.citrix.com/downloads/citrix-hypervisor/product-software/hypervisor-82-express-edition.html.\n    Disclaimer: THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS\n\"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT\nLIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR\nA PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT\nHOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\nSPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT\nLIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,\nDATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY\nTHEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE\nOF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.",
+    "license": null,
+    "tags": null,
+    "packageTypes": []
+  },
+  "generatedAt": "2026-04-10T09:21:25Z",
+  "activities": [],
+  "enums": [
+    {
+      "fullName": "XenAPI.after_apply_guidance",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "restartHVM",
+          "value": 0
+        },
+        {
+          "name": "restartPV",
+          "value": 1
+        },
+        {
+          "name": "restartHost",
+          "value": 2
+        },
+        {
+          "name": "restartXAPI",
+          "value": 3
+        },
+        {
+          "name": "unknown",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "XenAPI.allocation_algorithm",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "breadth_first",
+          "value": 0
+        },
+        {
+          "name": "depth_first",
+          "value": 1
+        },
+        {
+          "name": "unknown",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "XenAPI.API_Version",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "API_1_1",
+          "value": 1
+        },
+        {
+          "name": "API_1_2",
+          "value": 2
+        },
+        {
+          "name": "API_1_3",
+          "value": 3
+        },
+        {
+          "name": "API_1_4",
+          "value": 4
+        },
+        {
+          "name": "API_1_5",
+          "value": 5
+        },
+        {
+          "name": "API_1_6",
+          "value": 6
+        },
+        {
+          "name": "API_1_7",
+          "value": 7
+        },
+        {
+          "name": "API_1_8",
+          "value": 8
+        },
+        {
+          "name": "API_1_9",
+          "value": 9
+        },
+        {
+          "name": "API_1_10",
+          "value": 10
+        },
+        {
+          "name": "API_2_0",
+          "value": 11
+        },
+        {
+          "name": "API_2_1",
+          "value": 12
+        },
+        {
+          "name": "API_2_2",
+          "value": 13
+        },
+        {
+          "name": "API_2_3",
+          "value": 14
+        },
+        {
+          "name": "API_2_4",
+          "value": 15
+        },
+        {
+          "name": "API_2_5",
+          "value": 16
+        },
+        {
+          "name": "API_2_6",
+          "value": 17
+        },
+        {
+          "name": "API_2_7",
+          "value": 18
+        },
+        {
+          "name": "API_2_8",
+          "value": 19
+        },
+        {
+          "name": "API_2_9",
+          "value": 20
+        },
+        {
+          "name": "API_2_10",
+          "value": 21
+        },
+        {
+          "name": "API_2_11",
+          "value": 22
+        },
+        {
+          "name": "API_2_12",
+          "value": 23
+        },
+        {
+          "name": "API_2_13",
+          "value": 24
+        },
+        {
+          "name": "API_2_14",
+          "value": 25
+        },
+        {
+          "name": "API_2_15",
+          "value": 26
+        },
+        {
+          "name": "LATEST",
+          "value": 26
+        },
+        {
+          "name": "UNKNOWN",
+          "value": 99
+        }
+      ]
+    },
+    {
+      "fullName": "XenAPI.bond_mode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "balance_slb",
+          "value": 0
+        },
+        {
+          "name": "active_backup",
+          "value": 1
+        },
+        {
+          "name": "lacp",
+          "value": 2
+        },
+        {
+          "name": "unknown",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "XenAPI.cls",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "VM",
+          "value": 0
+        },
+        {
+          "name": "Host",
+          "value": 1
+        },
+        {
+          "name": "SR",
+          "value": 2
+        },
+        {
+          "name": "Pool",
+          "value": 3
+        },
+        {
+          "name": "VMPP",
+          "value": 4
+        },
+        {
+          "name": "VMSS",
+          "value": 5
+        },
+        {
+          "name": "PVS_proxy",
+          "value": 6
+        },
+        {
+          "name": "VDI",
+          "value": 7
+        },
+        {
+          "name": "unknown",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "XenAPI.cluster_host_operation",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "enable",
+          "value": 0
+        },
+        {
+          "name": "disable",
+          "value": 1
+        },
+        {
+          "name": "destroy",
+          "value": 2
+        },
+        {
+          "name": "unknown",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "XenAPI.cluster_operation",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "add",
+          "value": 0
+        },
+        {
+          "name": "remove",
+          "value": 1
+        },
+        {
+          "name": "enable",
+          "value": 2
+        },
+        {
+          "name": "disable",
+          "value": 3
+        },
+        {
+          "name": "destroy",
+          "value": 4
+        },
+        {
+          "name": "unknown",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "XenAPI.console_protocol",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "vt100",
+          "value": 0
+        },
+        {
+          "name": "rfb",
+          "value": 1
+        },
+        {
+          "name": "rdp",
+          "value": 2
+        },
+        {
+          "name": "unknown",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "XenAPI.domain_type",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "hvm",
+          "value": 0
+        },
+        {
+          "name": "pv",
+          "value": 1
+        },
+        {
+          "name": "pv_in_pvh",
+          "value": 2
+        },
+        {
+          "name": "unspecified",
+          "value": 3
+        },
+        {
+          "name": "unknown",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "XenAPI.host_allowed_operations",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "provision",
+          "value": 0
+        },
+        {
+          "name": "evacuate",
+          "value": 1
+        },
+        {
+          "name": "shutdown",
+          "value": 2
+        },
+        {
+          "name": "reboot",
+          "value": 3
+        },
+        {
+          "name": "power_on",
+          "value": 4
+        },
+        {
+          "name": "vm_start",
+          "value": 5
+        },
+        {
+          "name": "vm_resume",
+          "value": 6
+        },
+        {
+          "name": "vm_migrate",
+          "value": 7
+        },
+        {
+          "name": "unknown",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "XenAPI.host_display",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "enabled",
+          "value": 0
+        },
+        {
+          "name": "disable_on_reboot",
+          "value": 1
+        },
+        {
+          "name": "disabled",
+          "value": 2
+        },
+        {
+          "name": "enable_on_reboot",
+          "value": 3
+        },
+        {
+          "name": "unknown",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "XenAPI.HTTP.ProxyAuthenticationMethod",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Basic",
+          "value": 0
+        },
+        {
+          "name": "Digest",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "XenAPI.ipv6_configuration_mode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "DHCP",
+          "value": 1
+        },
+        {
+          "name": "Static",
+          "value": 2
+        },
+        {
+          "name": "Autoconf",
+          "value": 3
+        },
+        {
+          "name": "unknown",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "XenAPI.ip_configuration_mode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "DHCP",
+          "value": 1
+        },
+        {
+          "name": "Static",
+          "value": 2
+        },
+        {
+          "name": "unknown",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "XenAPI.JsonRpcVersion",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "v1",
+          "value": 0
+        },
+        {
+          "name": "v2",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "XenAPI.livepatch_status",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ok_livepatch_complete",
+          "value": 0
+        },
+        {
+          "name": "ok_livepatch_incomplete",
+          "value": 1
+        },
+        {
+          "name": "ok",
+          "value": 2
+        },
+        {
+          "name": "unknown",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "XenAPI.Message.MessageType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "HOST_SERVER_CERTIFICATE_EXPIRED",
+          "value": 0
+        },
+        {
+          "name": "HOST_SERVER_CERTIFICATE_EXPIRING_07",
+          "value": 1
+        },
+        {
+          "name": "HOST_SERVER_CERTIFICATE_EXPIRING_14",
+          "value": 2
+        },
+        {
+          "name": "HOST_SERVER_CERTIFICATE_EXPIRING_30",
+          "value": 3
+        },
+        {
+          "name": "CLUSTER_HOST_FENCING",
+          "value": 4
+        },
+        {
+          "name": "CLUSTER_HOST_ENABLE_FAILED",
+          "value": 5
+        },
+        {
+          "name": "POOL_CPU_FEATURES_UP",
+          "value": 6
+        },
+        {
+          "name": "POOL_CPU_FEATURES_DOWN",
+          "value": 7
+        },
+        {
+          "name": "HOST_CPU_FEATURES_UP",
+          "value": 8
+        },
+        {
+          "name": "HOST_CPU_FEATURES_DOWN",
+          "value": 9
+        },
+        {
+          "name": "BOND_STATUS_CHANGED",
+          "value": 10
+        },
+        {
+          "name": "VDI_CBT_RESIZE_FAILED",
+          "value": 11
+        },
+        {
+          "name": "VDI_CBT_SNAPSHOT_FAILED",
+          "value": 12
+        },
+        {
+          "name": "VDI_CBT_METADATA_INCONSISTENT",
+          "value": 13
+        },
+        {
+          "name": "VMSS_SNAPSHOT_MISSED_EVENT",
+          "value": 14
+        },
+        {
+          "name": "VMSS_XAPI_LOGON_FAILURE",
+          "value": 15
+        },
+        {
+          "name": "VMSS_LICENSE_ERROR",
+          "value": 16
+        },
+        {
+          "name": "VMSS_SNAPSHOT_FAILED",
+          "value": 17
+        },
+        {
+          "name": "VMSS_SNAPSHOT_SUCCEEDED",
+          "value": 18
+        },
+        {
+          "name": "VMSS_SNAPSHOT_LOCK_FAILED",
+          "value": 19
+        },
+        {
+          "name": "VMPP_SNAPSHOT_ARCHIVE_ALREADY_EXISTS",
+          "value": 20
+        },
+        {
+          "name": "VMPP_ARCHIVE_MISSED_EVENT",
+          "value": 21
+        },
+        {
+          "name": "VMPP_SNAPSHOT_MISSED_EVENT",
+          "value": 22
+        },
+        {
+          "name": "VMPP_XAPI_LOGON_FAILURE",
+          "value": 23
+        },
+        {
+          "name": "VMPP_LICENSE_ERROR",
+          "value": 24
+        },
+        {
+          "name": "VMPP_ARCHIVE_TARGET_UNMOUNT_FAILED",
+          "value": 25
+        },
+        {
+          "name": "VMPP_ARCHIVE_TARGET_MOUNT_FAILED",
+          "value": 26
+        },
+        {
+          "name": "VMPP_ARCHIVE_SUCCEEDED",
+          "value": 27
+        },
+        {
+          "name": "VMPP_ARCHIVE_FAILED_0",
+          "value": 28
+        },
+        {
+          "name": "VMPP_ARCHIVE_LOCK_FAILED",
+          "value": 29
+        },
+        {
+          "name": "VMPP_SNAPSHOT_FAILED",
+          "value": 30
+        },
+        {
+          "name": "VMPP_SNAPSHOT_SUCCEEDED",
+          "value": 31
+        },
+        {
+          "name": "VMPP_SNAPSHOT_LOCK_FAILED",
+          "value": 32
+        },
+        {
+          "name": "PVS_PROXY_SR_OUT_OF_SPACE",
+          "value": 33
+        },
+        {
+          "name": "PVS_PROXY_NO_SERVER_AVAILABLE",
+          "value": 34
+        },
+        {
+          "name": "PVS_PROXY_SETUP_FAILED",
+          "value": 35
+        },
+        {
+          "name": "PVS_PROXY_NO_CACHE_SR_AVAILABLE",
+          "value": 36
+        },
+        {
+          "name": "LICENSE_SERVER_VERSION_OBSOLETE",
+          "value": 37
+        },
+        {
+          "name": "LICENSE_SERVER_UNREACHABLE",
+          "value": 38
+        },
+        {
+          "name": "LICENSE_NOT_AVAILABLE",
+          "value": 39
+        },
+        {
+          "name": "GRACE_LICENSE",
+          "value": 40
+        },
+        {
+          "name": "LICENSE_SERVER_UNAVAILABLE",
+          "value": 41
+        },
+        {
+          "name": "LICENSE_SERVER_CONNECTED",
+          "value": 42
+        },
+        {
+          "name": "LICENSE_EXPIRED",
+          "value": 43
+        },
+        {
+          "name": "LICENSE_EXPIRES_SOON",
+          "value": 44
+        },
+        {
+          "name": "LICENSE_DOES_NOT_SUPPORT_POOLING",
+          "value": 45
+        },
+        {
+          "name": "MULTIPATH_PERIODIC_ALERT",
+          "value": 46
+        },
+        {
+          "name": "EXTAUTH_IN_POOL_IS_NON_HOMOGENEOUS",
+          "value": 47
+        },
+        {
+          "name": "EXTAUTH_INIT_IN_HOST_FAILED",
+          "value": 48
+        },
+        {
+          "name": "WLB_OPTIMIZATION_ALERT",
+          "value": 49
+        },
+        {
+          "name": "WLB_CONSULTATION_FAILED",
+          "value": 50
+        },
+        {
+          "name": "ALARM",
+          "value": 51
+        },
+        {
+          "name": "PBD_PLUG_FAILED_ON_SERVER_START",
+          "value": 52
+        },
+        {
+          "name": "POOL_MASTER_TRANSITION",
+          "value": 53
+        },
+        {
+          "name": "HOST_CLOCK_WENT_BACKWARDS",
+          "value": 54
+        },
+        {
+          "name": "HOST_CLOCK_SKEW_DETECTED",
+          "value": 55
+        },
+        {
+          "name": "HOST_SYNC_DATA_FAILED",
+          "value": 56
+        },
+        {
+          "name": "VM_SECURE_BOOT_FAILED",
+          "value": 57
+        },
+        {
+          "name": "VM_CLONED",
+          "value": 58
+        },
+        {
+          "name": "VM_CRASHED",
+          "value": 59
+        },
+        {
+          "name": "VM_RESUMED",
+          "value": 60
+        },
+        {
+          "name": "VM_SUSPENDED",
+          "value": 61
+        },
+        {
+          "name": "VM_REBOOTED",
+          "value": 62
+        },
+        {
+          "name": "VM_SHUTDOWN",
+          "value": 63
+        },
+        {
+          "name": "VM_STARTED",
+          "value": 64
+        },
+        {
+          "name": "VCPU_QOS_FAILED",
+          "value": 65
+        },
+        {
+          "name": "VBD_QOS_FAILED",
+          "value": 66
+        },
+        {
+          "name": "VIF_QOS_FAILED",
+          "value": 67
+        },
+        {
+          "name": "IP_CONFIGURED_PIF_CAN_UNPLUG",
+          "value": 68
+        },
+        {
+          "name": "METADATA_LUN_BROKEN",
+          "value": 69
+        },
+        {
+          "name": "METADATA_LUN_HEALTHY",
+          "value": 70
+        },
+        {
+          "name": "HA_HOST_WAS_FENCED",
+          "value": 71
+        },
+        {
+          "name": "HA_HOST_FAILED",
+          "value": 72
+        },
+        {
+          "name": "HA_PROTECTED_VM_RESTART_FAILED",
+          "value": 73
+        },
+        {
+          "name": "HA_POOL_DROP_IN_PLAN_EXISTS_FOR",
+          "value": 74
+        },
+        {
+          "name": "HA_POOL_OVERCOMMITTED",
+          "value": 75
+        },
+        {
+          "name": "HA_NETWORK_BONDING_ERROR",
+          "value": 76
+        },
+        {
+          "name": "HA_XAPI_HEALTHCHECK_APPROACHING_TIMEOUT",
+          "value": 77
+        },
+        {
+          "name": "HA_STATEFILE_APPROACHING_TIMEOUT",
+          "value": 78
+        },
+        {
+          "name": "HA_HEARTBEAT_APPROACHING_TIMEOUT",
+          "value": 79
+        },
+        {
+          "name": "HA_STATEFILE_LOST",
+          "value": 80
+        },
+        {
+          "name": "unknown",
+          "value": 81
+        }
+      ]
+    },
+    {
+      "fullName": "XenAPI.network_default_locking_mode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "unlocked",
+          "value": 0
+        },
+        {
+          "name": "disabled",
+          "value": 1
+        },
+        {
+          "name": "unknown",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "XenAPI.network_operations",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "attaching",
+          "value": 0
+        },
+        {
+          "name": "unknown",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "XenAPI.network_purpose",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "nbd",
+          "value": 0
+        },
+        {
+          "name": "insecure_nbd",
+          "value": 1
+        },
+        {
+          "name": "unknown",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "XenAPI.on_boot",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "reset",
+          "value": 0
+        },
+        {
+          "name": "persist",
+          "value": 1
+        },
+        {
+          "name": "unknown",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "XenAPI.on_crash_behaviour",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "destroy",
+          "value": 0
+        },
+        {
+          "name": "coredump_and_destroy",
+          "value": 1
+        },
+        {
+          "name": "restart",
+          "value": 2
+        },
+        {
+          "name": "coredump_and_restart",
+          "value": 3
+        },
+        {
+          "name": "preserve",
+          "value": 4
+        },
+        {
+          "name": "rename_restart",
+          "value": 5
+        },
+        {
+          "name": "unknown",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "XenAPI.on_normal_exit",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "destroy",
+          "value": 0
+        },
+        {
+          "name": "restart",
+          "value": 1
+        },
+        {
+          "name": "unknown",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "XenAPI.pgpu_dom0_access",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "enabled",
+          "value": 0
+        },
+        {
+          "name": "disable_on_reboot",
+          "value": 1
+        },
+        {
+          "name": "disabled",
+          "value": 2
+        },
+        {
+          "name": "enable_on_reboot",
+          "value": 3
+        },
+        {
+          "name": "unknown",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "XenAPI.pif_igmp_status",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "enabled",
+          "value": 0
+        },
+        {
+          "name": "disabled",
+          "value": 1
+        },
+        {
+          "name": "unknown",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "XenAPI.pool_allowed_operations",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ha_enable",
+          "value": 0
+        },
+        {
+          "name": "ha_disable",
+          "value": 1
+        },
+        {
+          "name": "cluster_create",
+          "value": 2
+        },
+        {
+          "name": "designate_new_master",
+          "value": 3
+        },
+        {
+          "name": "unknown",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "XenAPI.primary_address_type",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "IPv4",
+          "value": 0
+        },
+        {
+          "name": "IPv6",
+          "value": 1
+        },
+        {
+          "name": "unknown",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "XenAPI.pvs_proxy_status",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "stopped",
+          "value": 0
+        },
+        {
+          "name": "initialised",
+          "value": 1
+        },
+        {
+          "name": "caching",
+          "value": 2
+        },
+        {
+          "name": "incompatible_write_cache_mode",
+          "value": 3
+        },
+        {
+          "name": "incompatible_protocol_version",
+          "value": 4
+        },
+        {
+          "name": "unknown",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "XenAPI.sdn_controller_protocol",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ssl",
+          "value": 0
+        },
+        {
+          "name": "pssl",
+          "value": 1
+        },
+        {
+          "name": "unknown",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "XenAPI.sriov_configuration_mode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "sysfs",
+          "value": 0
+        },
+        {
+          "name": "modprobe",
+          "value": 1
+        },
+        {
+          "name": "unknown",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "XenAPI.sr_health",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "healthy",
+          "value": 0
+        },
+        {
+          "name": "recovering",
+          "value": 1
+        },
+        {
+          "name": "unknown",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "XenAPI.storage_operations",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "scan",
+          "value": 0
+        },
+        {
+          "name": "destroy",
+          "value": 1
+        },
+        {
+          "name": "forget",
+          "value": 2
+        },
+        {
+          "name": "plug",
+          "value": 3
+        },
+        {
+          "name": "unplug",
+          "value": 4
+        },
+        {
+          "name": "update",
+          "value": 5
+        },
+        {
+          "name": "vdi_create",
+          "value": 6
+        },
+        {
+          "name": "vdi_introduce",
+          "value": 7
+        },
+        {
+          "name": "vdi_destroy",
+          "value": 8
+        },
+        {
+          "name": "vdi_resize",
+          "value": 9
+        },
+        {
+          "name": "vdi_clone",
+          "value": 10
+        },
+        {
+          "name": "vdi_snapshot",
+          "value": 11
+        },
+        {
+          "name": "vdi_mirror",
+          "value": 12
+        },
+        {
+          "name": "vdi_enable_cbt",
+          "value": 13
+        },
+        {
+          "name": "vdi_disable_cbt",
+          "value": 14
+        },
+        {
+          "name": "vdi_data_destroy",
+          "value": 15
+        },
+        {
+          "name": "vdi_list_changed_blocks",
+          "value": 16
+        },
+        {
+          "name": "vdi_set_on_boot",
+          "value": 17
+        },
+        {
+          "name": "pbd_create",
+          "value": 18
+        },
+        {
+          "name": "pbd_destroy",
+          "value": 19
+        },
+        {
+          "name": "unknown",
+          "value": 20
+        }
+      ]
+    },
+    {
+      "fullName": "XenAPI.task_allowed_operations",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "cancel",
+          "value": 0
+        },
+        {
+          "name": "destroy",
+          "value": 1
+        },
+        {
+          "name": "unknown",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "XenAPI.task_status_type",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "pending",
+          "value": 0
+        },
+        {
+          "name": "success",
+          "value": 1
+        },
+        {
+          "name": "failure",
+          "value": 2
+        },
+        {
+          "name": "cancelling",
+          "value": 3
+        },
+        {
+          "name": "cancelled",
+          "value": 4
+        },
+        {
+          "name": "unknown",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "XenAPI.tristate_type",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "yes",
+          "value": 0
+        },
+        {
+          "name": "no",
+          "value": 1
+        },
+        {
+          "name": "unspecified",
+          "value": 2
+        },
+        {
+          "name": "unknown",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "XenAPI.update_after_apply_guidance",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "restartHVM",
+          "value": 0
+        },
+        {
+          "name": "restartPV",
+          "value": 1
+        },
+        {
+          "name": "restartHost",
+          "value": 2
+        },
+        {
+          "name": "restartXAPI",
+          "value": 3
+        },
+        {
+          "name": "unknown",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "XenAPI.vbd_mode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "RO",
+          "value": 0
+        },
+        {
+          "name": "RW",
+          "value": 1
+        },
+        {
+          "name": "unknown",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "XenAPI.vbd_operations",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "attach",
+          "value": 0
+        },
+        {
+          "name": "eject",
+          "value": 1
+        },
+        {
+          "name": "insert",
+          "value": 2
+        },
+        {
+          "name": "plug",
+          "value": 3
+        },
+        {
+          "name": "unplug",
+          "value": 4
+        },
+        {
+          "name": "unplug_force",
+          "value": 5
+        },
+        {
+          "name": "pause",
+          "value": 6
+        },
+        {
+          "name": "unpause",
+          "value": 7
+        },
+        {
+          "name": "unknown",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "XenAPI.vbd_type",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "CD",
+          "value": 0
+        },
+        {
+          "name": "Disk",
+          "value": 1
+        },
+        {
+          "name": "Floppy",
+          "value": 2
+        },
+        {
+          "name": "unknown",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "XenAPI.vdi_operations",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "clone",
+          "value": 0
+        },
+        {
+          "name": "copy",
+          "value": 1
+        },
+        {
+          "name": "resize",
+          "value": 2
+        },
+        {
+          "name": "resize_online",
+          "value": 3
+        },
+        {
+          "name": "snapshot",
+          "value": 4
+        },
+        {
+          "name": "mirror",
+          "value": 5
+        },
+        {
+          "name": "destroy",
+          "value": 6
+        },
+        {
+          "name": "forget",
+          "value": 7
+        },
+        {
+          "name": "update",
+          "value": 8
+        },
+        {
+          "name": "force_unlock",
+          "value": 9
+        },
+        {
+          "name": "generate_config",
+          "value": 10
+        },
+        {
+          "name": "enable_cbt",
+          "value": 11
+        },
+        {
+          "name": "disable_cbt",
+          "value": 12
+        },
+        {
+          "name": "data_destroy",
+          "value": 13
+        },
+        {
+          "name": "list_changed_blocks",
+          "value": 14
+        },
+        {
+          "name": "set_on_boot",
+          "value": 15
+        },
+        {
+          "name": "blocked",
+          "value": 16
+        },
+        {
+          "name": "unknown",
+          "value": 17
+        }
+      ]
+    },
+    {
+      "fullName": "XenAPI.vdi_type",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "system",
+          "value": 0
+        },
+        {
+          "name": "user",
+          "value": 1
+        },
+        {
+          "name": "ephemeral",
+          "value": 2
+        },
+        {
+          "name": "suspend",
+          "value": 3
+        },
+        {
+          "name": "crashdump",
+          "value": 4
+        },
+        {
+          "name": "ha_statefile",
+          "value": 5
+        },
+        {
+          "name": "metadata",
+          "value": 6
+        },
+        {
+          "name": "redo_log",
+          "value": 7
+        },
+        {
+          "name": "rrd",
+          "value": 8
+        },
+        {
+          "name": "pvs_cache",
+          "value": 9
+        },
+        {
+          "name": "cbt_metadata",
+          "value": 10
+        },
+        {
+          "name": "unknown",
+          "value": 11
+        }
+      ]
+    },
+    {
+      "fullName": "XenAPI.vgpu_type_implementation",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "passthrough",
+          "value": 0
+        },
+        {
+          "name": "nvidia",
+          "value": 1
+        },
+        {
+          "name": "nvidia_sriov",
+          "value": 2
+        },
+        {
+          "name": "gvt_g",
+          "value": 3
+        },
+        {
+          "name": "mxgpu",
+          "value": 4
+        },
+        {
+          "name": "unknown",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "XenAPI.vif_ipv4_configuration_mode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Static",
+          "value": 1
+        },
+        {
+          "name": "unknown",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "XenAPI.vif_ipv6_configuration_mode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Static",
+          "value": 1
+        },
+        {
+          "name": "unknown",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "XenAPI.vif_locking_mode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "network_default",
+          "value": 0
+        },
+        {
+          "name": "locked",
+          "value": 1
+        },
+        {
+          "name": "unlocked",
+          "value": 2
+        },
+        {
+          "name": "disabled",
+          "value": 3
+        },
+        {
+          "name": "unknown",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "XenAPI.vif_operations",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "attach",
+          "value": 0
+        },
+        {
+          "name": "plug",
+          "value": 1
+        },
+        {
+          "name": "unplug",
+          "value": 2
+        },
+        {
+          "name": "unknown",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "XenAPI.vmpp_archive_frequency",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "never",
+          "value": 0
+        },
+        {
+          "name": "always_after_backup",
+          "value": 1
+        },
+        {
+          "name": "daily",
+          "value": 2
+        },
+        {
+          "name": "weekly",
+          "value": 3
+        },
+        {
+          "name": "unknown",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "XenAPI.vmpp_archive_target_type",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "none",
+          "value": 0
+        },
+        {
+          "name": "cifs",
+          "value": 1
+        },
+        {
+          "name": "nfs",
+          "value": 2
+        },
+        {
+          "name": "unknown",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "XenAPI.vmpp_backup_frequency",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "hourly",
+          "value": 0
+        },
+        {
+          "name": "daily",
+          "value": 1
+        },
+        {
+          "name": "weekly",
+          "value": 2
+        },
+        {
+          "name": "unknown",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "XenAPI.vmpp_backup_type",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "snapshot",
+          "value": 0
+        },
+        {
+          "name": "checkpoint",
+          "value": 1
+        },
+        {
+          "name": "unknown",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "XenAPI.vmss_frequency",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "hourly",
+          "value": 0
+        },
+        {
+          "name": "daily",
+          "value": 1
+        },
+        {
+          "name": "weekly",
+          "value": 2
+        },
+        {
+          "name": "unknown",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "XenAPI.vmss_type",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "snapshot",
+          "value": 0
+        },
+        {
+          "name": "checkpoint",
+          "value": 1
+        },
+        {
+          "name": "snapshot_with_quiesce",
+          "value": 2
+        },
+        {
+          "name": "unknown",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "XenAPI.vm_appliance_operation",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "start",
+          "value": 0
+        },
+        {
+          "name": "clean_shutdown",
+          "value": 1
+        },
+        {
+          "name": "hard_shutdown",
+          "value": 2
+        },
+        {
+          "name": "shutdown",
+          "value": 3
+        },
+        {
+          "name": "unknown",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "XenAPI.vm_operations",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "snapshot",
+          "value": 0
+        },
+        {
+          "name": "clone",
+          "value": 1
+        },
+        {
+          "name": "copy",
+          "value": 2
+        },
+        {
+          "name": "create_template",
+          "value": 3
+        },
+        {
+          "name": "revert",
+          "value": 4
+        },
+        {
+          "name": "checkpoint",
+          "value": 5
+        },
+        {
+          "name": "snapshot_with_quiesce",
+          "value": 6
+        },
+        {
+          "name": "provision",
+          "value": 7
+        },
+        {
+          "name": "start",
+          "value": 8
+        },
+        {
+          "name": "start_on",
+          "value": 9
+        },
+        {
+          "name": "pause",
+          "value": 10
+        },
+        {
+          "name": "unpause",
+          "value": 11
+        },
+        {
+          "name": "clean_shutdown",
+          "value": 12
+        },
+        {
+          "name": "clean_reboot",
+          "value": 13
+        },
+        {
+          "name": "hard_shutdown",
+          "value": 14
+        },
+        {
+          "name": "power_state_reset",
+          "value": 15
+        },
+        {
+          "name": "hard_reboot",
+          "value": 16
+        },
+        {
+          "name": "suspend",
+          "value": 17
+        },
+        {
+          "name": "csvm",
+          "value": 18
+        },
+        {
+          "name": "resume",
+          "value": 19
+        },
+        {
+          "name": "resume_on",
+          "value": 20
+        },
+        {
+          "name": "pool_migrate",
+          "value": 21
+        },
+        {
+          "name": "migrate_send",
+          "value": 22
+        },
+        {
+          "name": "get_boot_record",
+          "value": 23
+        },
+        {
+          "name": "send_sysrq",
+          "value": 24
+        },
+        {
+          "name": "send_trigger",
+          "value": 25
+        },
+        {
+          "name": "query_services",
+          "value": 26
+        },
+        {
+          "name": "shutdown",
+          "value": 27
+        },
+        {
+          "name": "call_plugin",
+          "value": 28
+        },
+        {
+          "name": "changing_memory_live",
+          "value": 29
+        },
+        {
+          "name": "awaiting_memory_live",
+          "value": 30
+        },
+        {
+          "name": "changing_dynamic_range",
+          "value": 31
+        },
+        {
+          "name": "changing_static_range",
+          "value": 32
+        },
+        {
+          "name": "changing_memory_limits",
+          "value": 33
+        },
+        {
+          "name": "changing_shadow_memory",
+          "value": 34
+        },
+        {
+          "name": "changing_shadow_memory_live",
+          "value": 35
+        },
+        {
+          "name": "changing_VCPUs",
+          "value": 36
+        },
+        {
+          "name": "changing_VCPUs_live",
+          "value": 37
+        },
+        {
+          "name": "changing_NVRAM",
+          "value": 38
+        },
+        {
+          "name": "assert_operation_valid",
+          "value": 39
+        },
+        {
+          "name": "data_source_op",
+          "value": 40
+        },
+        {
+          "name": "update_allowed_operations",
+          "value": 41
+        },
+        {
+          "name": "make_into_template",
+          "value": 42
+        },
+        {
+          "name": "import",
+          "value": 43
+        },
+        {
+          "name": "export",
+          "value": 44
+        },
+        {
+          "name": "metadata_export",
+          "value": 45
+        },
+        {
+          "name": "reverting",
+          "value": 46
+        },
+        {
+          "name": "destroy",
+          "value": 47
+        },
+        {
+          "name": "unknown",
+          "value": 48
+        }
+      ]
+    },
+    {
+      "fullName": "XenAPI.vm_power_state",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Halted",
+          "value": 0
+        },
+        {
+          "name": "Paused",
+          "value": 1
+        },
+        {
+          "name": "Running",
+          "value": 2
+        },
+        {
+          "name": "Suspended",
+          "value": 3
+        },
+        {
+          "name": "unknown",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "XenAPI.vusb_operations",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "attach",
+          "value": 0
+        },
+        {
+          "name": "plug",
+          "value": 1
+        },
+        {
+          "name": "unplug",
+          "value": 2
+        },
+        {
+          "name": "unknown",
+          "value": 3
+        }
+      ]
+    }
+  ],
+  "namespaceMappings": []
+}

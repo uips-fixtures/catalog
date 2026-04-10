@@ -1,0 +1,3615 @@
+{
+  "schema": {
+    "id": "activity-catalog",
+    "version": "v0.3"
+  },
+  "source": {
+    "kind": "nuget-package",
+    "id": "UiPath.DocumentUnderstanding.OCR.LocalServer",
+    "version": "1.5.1",
+    "feedUrl": null,
+    "authors": "UiPath",
+    "projectUrl": null,
+    "description": "The UiPath Document Understanding Server pack contains no activities in itself, but is necessary if you want to use a local Document Understanding server.",
+    "license": "https://www.uipath.com/hubfs/legalspot/UiPath_MSSA.pdf",
+    "tags": "UiPathActivities",
+    "packageTypes": []
+  },
+  "generatedAt": "2026-04-10T09:21:22Z",
+  "activities": [],
+  "enums": [
+    {
+      "fullName": "Microsoft.Win32.PowerModes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Resume",
+          "value": 1
+        },
+        {
+          "name": "StatusChange",
+          "value": 2
+        },
+        {
+          "name": "Suspend",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Win32.SessionEndReasons",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Logoff",
+          "value": 1
+        },
+        {
+          "name": "SystemShutdown",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Win32.SessionSwitchReason",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ConsoleConnect",
+          "value": 1
+        },
+        {
+          "name": "ConsoleDisconnect",
+          "value": 2
+        },
+        {
+          "name": "RemoteConnect",
+          "value": 3
+        },
+        {
+          "name": "RemoteDisconnect",
+          "value": 4
+        },
+        {
+          "name": "SessionLogon",
+          "value": 5
+        },
+        {
+          "name": "SessionLogoff",
+          "value": 6
+        },
+        {
+          "name": "SessionLock",
+          "value": 7
+        },
+        {
+          "name": "SessionUnlock",
+          "value": 8
+        },
+        {
+          "name": "SessionRemoteControl",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Win32.UserPreferenceCategory",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Accessibility",
+          "value": 1
+        },
+        {
+          "name": "Color",
+          "value": 2
+        },
+        {
+          "name": "Desktop",
+          "value": 3
+        },
+        {
+          "name": "General",
+          "value": 4
+        },
+        {
+          "name": "Icon",
+          "value": 5
+        },
+        {
+          "name": "Keyboard",
+          "value": 6
+        },
+        {
+          "name": "Menu",
+          "value": 7
+        },
+        {
+          "name": "Mouse",
+          "value": 8
+        },
+        {
+          "name": "Policy",
+          "value": 9
+        },
+        {
+          "name": "Power",
+          "value": 10
+        },
+        {
+          "name": "Screensaver",
+          "value": 11
+        },
+        {
+          "name": "Window",
+          "value": 12
+        },
+        {
+          "name": "Locale",
+          "value": 13
+        },
+        {
+          "name": "VisualStyle",
+          "value": 14
+        }
+      ]
+    },
+    {
+      "fullName": "System.Drawing.ContentAlignment",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "TopLeft",
+          "value": 1
+        },
+        {
+          "name": "TopCenter",
+          "value": 2
+        },
+        {
+          "name": "TopRight",
+          "value": 4
+        },
+        {
+          "name": "MiddleLeft",
+          "value": 16
+        },
+        {
+          "name": "MiddleCenter",
+          "value": 32
+        },
+        {
+          "name": "MiddleRight",
+          "value": 64
+        },
+        {
+          "name": "BottomLeft",
+          "value": 256
+        },
+        {
+          "name": "BottomCenter",
+          "value": 512
+        },
+        {
+          "name": "BottomRight",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "fullName": "System.Drawing.CopyPixelOperation",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NoMirrorBitmap",
+          "value": -2147483648
+        },
+        {
+          "name": "Blackness",
+          "value": 66
+        },
+        {
+          "name": "NotSourceErase",
+          "value": 1114278
+        },
+        {
+          "name": "NotSourceCopy",
+          "value": 3342344
+        },
+        {
+          "name": "SourceErase",
+          "value": 4457256
+        },
+        {
+          "name": "DestinationInvert",
+          "value": 5570569
+        },
+        {
+          "name": "PatInvert",
+          "value": 5898313
+        },
+        {
+          "name": "SourceInvert",
+          "value": 6684742
+        },
+        {
+          "name": "SourceAnd",
+          "value": 8913094
+        },
+        {
+          "name": "MergePaint",
+          "value": 12255782
+        },
+        {
+          "name": "MergeCopy",
+          "value": 12583114
+        },
+        {
+          "name": "SourceCopy",
+          "value": 13369376
+        },
+        {
+          "name": "SourcePaint",
+          "value": 15597702
+        },
+        {
+          "name": "PatCopy",
+          "value": 15728673
+        },
+        {
+          "name": "PatPaint",
+          "value": 16452105
+        },
+        {
+          "name": "Whiteness",
+          "value": 16711778
+        },
+        {
+          "name": "CaptureBlt",
+          "value": 1073741824
+        }
+      ]
+    },
+    {
+      "fullName": "System.Drawing.FontStyle",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Regular",
+          "value": 0
+        },
+        {
+          "name": "Bold",
+          "value": 1
+        },
+        {
+          "name": "Italic",
+          "value": 2
+        },
+        {
+          "name": "Underline",
+          "value": 4
+        },
+        {
+          "name": "Strikeout",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "System.Drawing.GraphicsUnit",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "World",
+          "value": 0
+        },
+        {
+          "name": "Display",
+          "value": 1
+        },
+        {
+          "name": "Pixel",
+          "value": 2
+        },
+        {
+          "name": "Point",
+          "value": 3
+        },
+        {
+          "name": "Inch",
+          "value": 4
+        },
+        {
+          "name": "Document",
+          "value": 5
+        },
+        {
+          "name": "Millimeter",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "System.Drawing.RotateFlipType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Rotate180FlipXY",
+          "value": 0
+        },
+        {
+          "name": "RotateNoneFlipNone",
+          "value": 0
+        },
+        {
+          "name": "Rotate270FlipXY",
+          "value": 1
+        },
+        {
+          "name": "Rotate90FlipNone",
+          "value": 1
+        },
+        {
+          "name": "Rotate180FlipNone",
+          "value": 2
+        },
+        {
+          "name": "RotateNoneFlipXY",
+          "value": 2
+        },
+        {
+          "name": "Rotate270FlipNone",
+          "value": 3
+        },
+        {
+          "name": "Rotate90FlipXY",
+          "value": 3
+        },
+        {
+          "name": "Rotate180FlipY",
+          "value": 4
+        },
+        {
+          "name": "RotateNoneFlipX",
+          "value": 4
+        },
+        {
+          "name": "Rotate270FlipY",
+          "value": 5
+        },
+        {
+          "name": "Rotate90FlipX",
+          "value": 5
+        },
+        {
+          "name": "Rotate180FlipX",
+          "value": 6
+        },
+        {
+          "name": "RotateNoneFlipY",
+          "value": 6
+        },
+        {
+          "name": "Rotate270FlipX",
+          "value": 7
+        },
+        {
+          "name": "Rotate90FlipY",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "System.Drawing.StringAlignment",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Near",
+          "value": 0
+        },
+        {
+          "name": "Center",
+          "value": 1
+        },
+        {
+          "name": "Far",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "System.Drawing.StringDigitSubstitute",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "User",
+          "value": 0
+        },
+        {
+          "name": "None",
+          "value": 1
+        },
+        {
+          "name": "National",
+          "value": 2
+        },
+        {
+          "name": "Traditional",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "System.Drawing.StringFormatFlags",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DirectionRightToLeft",
+          "value": 1
+        },
+        {
+          "name": "DirectionVertical",
+          "value": 2
+        },
+        {
+          "name": "FitBlackBox",
+          "value": 4
+        },
+        {
+          "name": "DisplayFormatControl",
+          "value": 32
+        },
+        {
+          "name": "NoFontFallback",
+          "value": 1024
+        },
+        {
+          "name": "MeasureTrailingSpaces",
+          "value": 2048
+        },
+        {
+          "name": "NoWrap",
+          "value": 4096
+        },
+        {
+          "name": "LineLimit",
+          "value": 8192
+        },
+        {
+          "name": "NoClip",
+          "value": 16384
+        }
+      ]
+    },
+    {
+      "fullName": "System.Drawing.StringTrimming",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Character",
+          "value": 1
+        },
+        {
+          "name": "Word",
+          "value": 2
+        },
+        {
+          "name": "EllipsisCharacter",
+          "value": 3
+        },
+        {
+          "name": "EllipsisWord",
+          "value": 4
+        },
+        {
+          "name": "EllipsisPath",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "System.Drawing.StringUnit",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "World",
+          "value": 0
+        },
+        {
+          "name": "Display",
+          "value": 1
+        },
+        {
+          "name": "Pixel",
+          "value": 2
+        },
+        {
+          "name": "Point",
+          "value": 3
+        },
+        {
+          "name": "Inch",
+          "value": 4
+        },
+        {
+          "name": "Document",
+          "value": 5
+        },
+        {
+          "name": "Millimeter",
+          "value": 6
+        },
+        {
+          "name": "Em",
+          "value": 32
+        }
+      ]
+    },
+    {
+      "fullName": "System.Drawing.Text.GenericFontFamilies",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Serif",
+          "value": 0
+        },
+        {
+          "name": "SansSerif",
+          "value": 1
+        },
+        {
+          "name": "Monospace",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "System.Drawing.Text.HotkeyPrefix",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Show",
+          "value": 1
+        },
+        {
+          "name": "Hide",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "System.Drawing.Text.TextRenderingHint",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "SystemDefault",
+          "value": 0
+        },
+        {
+          "name": "SingleBitPerPixelGridFit",
+          "value": 1
+        },
+        {
+          "name": "SingleBitPerPixel",
+          "value": 2
+        },
+        {
+          "name": "AntiAliasGridFit",
+          "value": 3
+        },
+        {
+          "name": "AntiAlias",
+          "value": 4
+        },
+        {
+          "name": "ClearTypeGridFit",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "System.Drawing.Printing.Duplex",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": -1
+        },
+        {
+          "name": "Simplex",
+          "value": 1
+        },
+        {
+          "name": "Vertical",
+          "value": 2
+        },
+        {
+          "name": "Horizontal",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "System.Drawing.Printing.PaperKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Custom",
+          "value": 0
+        },
+        {
+          "name": "Letter",
+          "value": 1
+        },
+        {
+          "name": "LetterSmall",
+          "value": 2
+        },
+        {
+          "name": "Tabloid",
+          "value": 3
+        },
+        {
+          "name": "Ledger",
+          "value": 4
+        },
+        {
+          "name": "Legal",
+          "value": 5
+        },
+        {
+          "name": "Statement",
+          "value": 6
+        },
+        {
+          "name": "Executive",
+          "value": 7
+        },
+        {
+          "name": "A3",
+          "value": 8
+        },
+        {
+          "name": "A4",
+          "value": 9
+        },
+        {
+          "name": "A4Small",
+          "value": 10
+        },
+        {
+          "name": "A5",
+          "value": 11
+        },
+        {
+          "name": "B4",
+          "value": 12
+        },
+        {
+          "name": "B5",
+          "value": 13
+        },
+        {
+          "name": "Folio",
+          "value": 14
+        },
+        {
+          "name": "Quarto",
+          "value": 15
+        },
+        {
+          "name": "Standard10x14",
+          "value": 16
+        },
+        {
+          "name": "Standard11x17",
+          "value": 17
+        },
+        {
+          "name": "Note",
+          "value": 18
+        },
+        {
+          "name": "Number9Envelope",
+          "value": 19
+        },
+        {
+          "name": "Number10Envelope",
+          "value": 20
+        },
+        {
+          "name": "Number11Envelope",
+          "value": 21
+        },
+        {
+          "name": "Number12Envelope",
+          "value": 22
+        },
+        {
+          "name": "Number14Envelope",
+          "value": 23
+        },
+        {
+          "name": "CSheet",
+          "value": 24
+        },
+        {
+          "name": "DSheet",
+          "value": 25
+        },
+        {
+          "name": "ESheet",
+          "value": 26
+        },
+        {
+          "name": "DLEnvelope",
+          "value": 27
+        },
+        {
+          "name": "C5Envelope",
+          "value": 28
+        },
+        {
+          "name": "C3Envelope",
+          "value": 29
+        },
+        {
+          "name": "C4Envelope",
+          "value": 30
+        },
+        {
+          "name": "C6Envelope",
+          "value": 31
+        },
+        {
+          "name": "C65Envelope",
+          "value": 32
+        },
+        {
+          "name": "B4Envelope",
+          "value": 33
+        },
+        {
+          "name": "B5Envelope",
+          "value": 34
+        },
+        {
+          "name": "B6Envelope",
+          "value": 35
+        },
+        {
+          "name": "ItalyEnvelope",
+          "value": 36
+        },
+        {
+          "name": "MonarchEnvelope",
+          "value": 37
+        },
+        {
+          "name": "PersonalEnvelope",
+          "value": 38
+        },
+        {
+          "name": "USStandardFanfold",
+          "value": 39
+        },
+        {
+          "name": "GermanStandardFanfold",
+          "value": 40
+        },
+        {
+          "name": "GermanLegalFanfold",
+          "value": 41
+        },
+        {
+          "name": "IsoB4",
+          "value": 42
+        },
+        {
+          "name": "JapanesePostcard",
+          "value": 43
+        },
+        {
+          "name": "Standard9x11",
+          "value": 44
+        },
+        {
+          "name": "Standard10x11",
+          "value": 45
+        },
+        {
+          "name": "Standard15x11",
+          "value": 46
+        },
+        {
+          "name": "InviteEnvelope",
+          "value": 47
+        },
+        {
+          "name": "LetterExtra",
+          "value": 50
+        },
+        {
+          "name": "LegalExtra",
+          "value": 51
+        },
+        {
+          "name": "TabloidExtra",
+          "value": 52
+        },
+        {
+          "name": "A4Extra",
+          "value": 53
+        },
+        {
+          "name": "LetterTransverse",
+          "value": 54
+        },
+        {
+          "name": "A4Transverse",
+          "value": 55
+        },
+        {
+          "name": "LetterExtraTransverse",
+          "value": 56
+        },
+        {
+          "name": "APlus",
+          "value": 57
+        },
+        {
+          "name": "BPlus",
+          "value": 58
+        },
+        {
+          "name": "LetterPlus",
+          "value": 59
+        },
+        {
+          "name": "A4Plus",
+          "value": 60
+        },
+        {
+          "name": "A5Transverse",
+          "value": 61
+        },
+        {
+          "name": "B5Transverse",
+          "value": 62
+        },
+        {
+          "name": "A3Extra",
+          "value": 63
+        },
+        {
+          "name": "A5Extra",
+          "value": 64
+        },
+        {
+          "name": "B5Extra",
+          "value": 65
+        },
+        {
+          "name": "A2",
+          "value": 66
+        },
+        {
+          "name": "A3Transverse",
+          "value": 67
+        },
+        {
+          "name": "A3ExtraTransverse",
+          "value": 68
+        },
+        {
+          "name": "JapaneseDoublePostcard",
+          "value": 69
+        },
+        {
+          "name": "A6",
+          "value": 70
+        },
+        {
+          "name": "JapaneseEnvelopeKakuNumber2",
+          "value": 71
+        },
+        {
+          "name": "JapaneseEnvelopeKakuNumber3",
+          "value": 72
+        },
+        {
+          "name": "JapaneseEnvelopeChouNumber3",
+          "value": 73
+        },
+        {
+          "name": "JapaneseEnvelopeChouNumber4",
+          "value": 74
+        },
+        {
+          "name": "LetterRotated",
+          "value": 75
+        },
+        {
+          "name": "A3Rotated",
+          "value": 76
+        },
+        {
+          "name": "A4Rotated",
+          "value": 77
+        },
+        {
+          "name": "A5Rotated",
+          "value": 78
+        },
+        {
+          "name": "B4JisRotated",
+          "value": 79
+        },
+        {
+          "name": "B5JisRotated",
+          "value": 80
+        },
+        {
+          "name": "JapanesePostcardRotated",
+          "value": 81
+        },
+        {
+          "name": "JapaneseDoublePostcardRotated",
+          "value": 82
+        },
+        {
+          "name": "A6Rotated",
+          "value": 83
+        },
+        {
+          "name": "JapaneseEnvelopeKakuNumber2Rotated",
+          "value": 84
+        },
+        {
+          "name": "JapaneseEnvelopeKakuNumber3Rotated",
+          "value": 85
+        },
+        {
+          "name": "JapaneseEnvelopeChouNumber3Rotated",
+          "value": 86
+        },
+        {
+          "name": "JapaneseEnvelopeChouNumber4Rotated",
+          "value": 87
+        },
+        {
+          "name": "B6Jis",
+          "value": 88
+        },
+        {
+          "name": "B6JisRotated",
+          "value": 89
+        },
+        {
+          "name": "Standard12x11",
+          "value": 90
+        },
+        {
+          "name": "JapaneseEnvelopeYouNumber4",
+          "value": 91
+        },
+        {
+          "name": "JapaneseEnvelopeYouNumber4Rotated",
+          "value": 92
+        },
+        {
+          "name": "Prc16K",
+          "value": 93
+        },
+        {
+          "name": "Prc32K",
+          "value": 94
+        },
+        {
+          "name": "Prc32KBig",
+          "value": 95
+        },
+        {
+          "name": "PrcEnvelopeNumber1",
+          "value": 96
+        },
+        {
+          "name": "PrcEnvelopeNumber2",
+          "value": 97
+        },
+        {
+          "name": "PrcEnvelopeNumber3",
+          "value": 98
+        },
+        {
+          "name": "PrcEnvelopeNumber4",
+          "value": 99
+        },
+        {
+          "name": "PrcEnvelopeNumber5",
+          "value": 100
+        },
+        {
+          "name": "PrcEnvelopeNumber6",
+          "value": 101
+        },
+        {
+          "name": "PrcEnvelopeNumber7",
+          "value": 102
+        },
+        {
+          "name": "PrcEnvelopeNumber8",
+          "value": 103
+        },
+        {
+          "name": "PrcEnvelopeNumber9",
+          "value": 104
+        },
+        {
+          "name": "PrcEnvelopeNumber10",
+          "value": 105
+        },
+        {
+          "name": "Prc16KRotated",
+          "value": 106
+        },
+        {
+          "name": "Prc32KRotated",
+          "value": 107
+        },
+        {
+          "name": "Prc32KBigRotated",
+          "value": 108
+        },
+        {
+          "name": "PrcEnvelopeNumber1Rotated",
+          "value": 109
+        },
+        {
+          "name": "PrcEnvelopeNumber2Rotated",
+          "value": 110
+        },
+        {
+          "name": "PrcEnvelopeNumber3Rotated",
+          "value": 111
+        },
+        {
+          "name": "PrcEnvelopeNumber4Rotated",
+          "value": 112
+        },
+        {
+          "name": "PrcEnvelopeNumber5Rotated",
+          "value": 113
+        },
+        {
+          "name": "PrcEnvelopeNumber6Rotated",
+          "value": 114
+        },
+        {
+          "name": "PrcEnvelopeNumber7Rotated",
+          "value": 115
+        },
+        {
+          "name": "PrcEnvelopeNumber8Rotated",
+          "value": 116
+        },
+        {
+          "name": "PrcEnvelopeNumber9Rotated",
+          "value": 117
+        },
+        {
+          "name": "PrcEnvelopeNumber10Rotated",
+          "value": 118
+        }
+      ]
+    },
+    {
+      "fullName": "System.Drawing.Printing.PaperSourceKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Upper",
+          "value": 1
+        },
+        {
+          "name": "Lower",
+          "value": 2
+        },
+        {
+          "name": "Middle",
+          "value": 3
+        },
+        {
+          "name": "Manual",
+          "value": 4
+        },
+        {
+          "name": "Envelope",
+          "value": 5
+        },
+        {
+          "name": "ManualFeed",
+          "value": 6
+        },
+        {
+          "name": "AutomaticFeed",
+          "value": 7
+        },
+        {
+          "name": "TractorFeed",
+          "value": 8
+        },
+        {
+          "name": "SmallFormat",
+          "value": 9
+        },
+        {
+          "name": "LargeFormat",
+          "value": 10
+        },
+        {
+          "name": "LargeCapacity",
+          "value": 11
+        },
+        {
+          "name": "Cassette",
+          "value": 14
+        },
+        {
+          "name": "FormSource",
+          "value": 15
+        },
+        {
+          "name": "Custom",
+          "value": 257
+        }
+      ]
+    },
+    {
+      "fullName": "System.Drawing.Printing.PrintAction",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "PrintToFile",
+          "value": 0
+        },
+        {
+          "name": "PrintToPreview",
+          "value": 1
+        },
+        {
+          "name": "PrintToPrinter",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "System.Drawing.Printing.PrinterResolutionKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "High",
+          "value": -4
+        },
+        {
+          "name": "Medium",
+          "value": -3
+        },
+        {
+          "name": "Low",
+          "value": -2
+        },
+        {
+          "name": "Draft",
+          "value": -1
+        },
+        {
+          "name": "Custom",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "fullName": "System.Drawing.Printing.PrinterUnit",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Display",
+          "value": 0
+        },
+        {
+          "name": "ThousandthsOfAnInch",
+          "value": 1
+        },
+        {
+          "name": "HundredthsOfAMillimeter",
+          "value": 2
+        },
+        {
+          "name": "TenthsOfAMillimeter",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "System.Drawing.Printing.PrintRange",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AllPages",
+          "value": 0
+        },
+        {
+          "name": "Selection",
+          "value": 1
+        },
+        {
+          "name": "SomePages",
+          "value": 2
+        },
+        {
+          "name": "CurrentPage",
+          "value": 4194304
+        }
+      ]
+    },
+    {
+      "fullName": "System.Drawing.Imaging.ColorAdjustType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "Bitmap",
+          "value": 1
+        },
+        {
+          "name": "Brush",
+          "value": 2
+        },
+        {
+          "name": "Pen",
+          "value": 3
+        },
+        {
+          "name": "Text",
+          "value": 4
+        },
+        {
+          "name": "Count",
+          "value": 5
+        },
+        {
+          "name": "Any",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "System.Drawing.Imaging.ColorChannelFlag",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ColorChannelC",
+          "value": 0
+        },
+        {
+          "name": "ColorChannelM",
+          "value": 1
+        },
+        {
+          "name": "ColorChannelY",
+          "value": 2
+        },
+        {
+          "name": "ColorChannelK",
+          "value": 3
+        },
+        {
+          "name": "ColorChannelLast",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "System.Drawing.Imaging.ColorMapType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "Brush",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "System.Drawing.Imaging.ColorMatrixFlag",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "SkipGrays",
+          "value": 1
+        },
+        {
+          "name": "AltGrays",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "System.Drawing.Imaging.ColorMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Argb32Mode",
+          "value": 0
+        },
+        {
+          "name": "Argb64Mode",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "System.Drawing.Imaging.EmfPlusRecordType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "EmfHeader",
+          "value": 1
+        },
+        {
+          "name": "EmfMin",
+          "value": 1
+        },
+        {
+          "name": "EmfPolyBezier",
+          "value": 2
+        },
+        {
+          "name": "EmfPolygon",
+          "value": 3
+        },
+        {
+          "name": "EmfPolyline",
+          "value": 4
+        },
+        {
+          "name": "EmfPolyBezierTo",
+          "value": 5
+        },
+        {
+          "name": "EmfPolyLineTo",
+          "value": 6
+        },
+        {
+          "name": "EmfPolyPolyline",
+          "value": 7
+        },
+        {
+          "name": "EmfPolyPolygon",
+          "value": 8
+        },
+        {
+          "name": "EmfSetWindowExtEx",
+          "value": 9
+        },
+        {
+          "name": "EmfSetWindowOrgEx",
+          "value": 10
+        },
+        {
+          "name": "EmfSetViewportExtEx",
+          "value": 11
+        },
+        {
+          "name": "EmfSetViewportOrgEx",
+          "value": 12
+        },
+        {
+          "name": "EmfSetBrushOrgEx",
+          "value": 13
+        },
+        {
+          "name": "EmfEof",
+          "value": 14
+        },
+        {
+          "name": "EmfSetPixelV",
+          "value": 15
+        },
+        {
+          "name": "EmfSetMapperFlags",
+          "value": 16
+        },
+        {
+          "name": "EmfSetMapMode",
+          "value": 17
+        },
+        {
+          "name": "EmfSetBkMode",
+          "value": 18
+        },
+        {
+          "name": "EmfSetPolyFillMode",
+          "value": 19
+        },
+        {
+          "name": "EmfSetROP2",
+          "value": 20
+        },
+        {
+          "name": "EmfSetStretchBltMode",
+          "value": 21
+        },
+        {
+          "name": "EmfSetTextAlign",
+          "value": 22
+        },
+        {
+          "name": "EmfSetColorAdjustment",
+          "value": 23
+        },
+        {
+          "name": "EmfSetTextColor",
+          "value": 24
+        },
+        {
+          "name": "EmfSetBkColor",
+          "value": 25
+        },
+        {
+          "name": "EmfOffsetClipRgn",
+          "value": 26
+        },
+        {
+          "name": "EmfMoveToEx",
+          "value": 27
+        },
+        {
+          "name": "EmfSetMetaRgn",
+          "value": 28
+        },
+        {
+          "name": "EmfExcludeClipRect",
+          "value": 29
+        },
+        {
+          "name": "EmfIntersectClipRect",
+          "value": 30
+        },
+        {
+          "name": "EmfScaleViewportExtEx",
+          "value": 31
+        },
+        {
+          "name": "EmfScaleWindowExtEx",
+          "value": 32
+        },
+        {
+          "name": "EmfSaveDC",
+          "value": 33
+        },
+        {
+          "name": "EmfRestoreDC",
+          "value": 34
+        },
+        {
+          "name": "EmfSetWorldTransform",
+          "value": 35
+        },
+        {
+          "name": "EmfModifyWorldTransform",
+          "value": 36
+        },
+        {
+          "name": "EmfSelectObject",
+          "value": 37
+        },
+        {
+          "name": "EmfCreatePen",
+          "value": 38
+        },
+        {
+          "name": "EmfCreateBrushIndirect",
+          "value": 39
+        },
+        {
+          "name": "EmfDeleteObject",
+          "value": 40
+        },
+        {
+          "name": "EmfAngleArc",
+          "value": 41
+        },
+        {
+          "name": "EmfEllipse",
+          "value": 42
+        },
+        {
+          "name": "EmfRectangle",
+          "value": 43
+        },
+        {
+          "name": "EmfRoundRect",
+          "value": 44
+        },
+        {
+          "name": "EmfRoundArc",
+          "value": 45
+        },
+        {
+          "name": "EmfChord",
+          "value": 46
+        },
+        {
+          "name": "EmfPie",
+          "value": 47
+        },
+        {
+          "name": "EmfSelectPalette",
+          "value": 48
+        },
+        {
+          "name": "EmfCreatePalette",
+          "value": 49
+        },
+        {
+          "name": "EmfSetPaletteEntries",
+          "value": 50
+        },
+        {
+          "name": "EmfResizePalette",
+          "value": 51
+        },
+        {
+          "name": "EmfRealizePalette",
+          "value": 52
+        },
+        {
+          "name": "EmfExtFloodFill",
+          "value": 53
+        },
+        {
+          "name": "EmfLineTo",
+          "value": 54
+        },
+        {
+          "name": "EmfArcTo",
+          "value": 55
+        },
+        {
+          "name": "EmfPolyDraw",
+          "value": 56
+        },
+        {
+          "name": "EmfSetArcDirection",
+          "value": 57
+        },
+        {
+          "name": "EmfSetMiterLimit",
+          "value": 58
+        },
+        {
+          "name": "EmfBeginPath",
+          "value": 59
+        },
+        {
+          "name": "EmfEndPath",
+          "value": 60
+        },
+        {
+          "name": "EmfCloseFigure",
+          "value": 61
+        },
+        {
+          "name": "EmfFillPath",
+          "value": 62
+        },
+        {
+          "name": "EmfStrokeAndFillPath",
+          "value": 63
+        },
+        {
+          "name": "EmfStrokePath",
+          "value": 64
+        },
+        {
+          "name": "EmfFlattenPath",
+          "value": 65
+        },
+        {
+          "name": "EmfWidenPath",
+          "value": 66
+        },
+        {
+          "name": "EmfSelectClipPath",
+          "value": 67
+        },
+        {
+          "name": "EmfAbortPath",
+          "value": 68
+        },
+        {
+          "name": "EmfReserved069",
+          "value": 69
+        },
+        {
+          "name": "EmfGdiComment",
+          "value": 70
+        },
+        {
+          "name": "EmfFillRgn",
+          "value": 71
+        },
+        {
+          "name": "EmfFrameRgn",
+          "value": 72
+        },
+        {
+          "name": "EmfInvertRgn",
+          "value": 73
+        },
+        {
+          "name": "EmfPaintRgn",
+          "value": 74
+        },
+        {
+          "name": "EmfExtSelectClipRgn",
+          "value": 75
+        },
+        {
+          "name": "EmfBitBlt",
+          "value": 76
+        },
+        {
+          "name": "EmfStretchBlt",
+          "value": 77
+        },
+        {
+          "name": "EmfMaskBlt",
+          "value": 78
+        },
+        {
+          "name": "EmfPlgBlt",
+          "value": 79
+        },
+        {
+          "name": "EmfSetDIBitsToDevice",
+          "value": 80
+        },
+        {
+          "name": "EmfStretchDIBits",
+          "value": 81
+        },
+        {
+          "name": "EmfExtCreateFontIndirect",
+          "value": 82
+        },
+        {
+          "name": "EmfExtTextOutA",
+          "value": 83
+        },
+        {
+          "name": "EmfExtTextOutW",
+          "value": 84
+        },
+        {
+          "name": "EmfPolyBezier16",
+          "value": 85
+        },
+        {
+          "name": "EmfPolygon16",
+          "value": 86
+        },
+        {
+          "name": "EmfPolyline16",
+          "value": 87
+        },
+        {
+          "name": "EmfPolyBezierTo16",
+          "value": 88
+        },
+        {
+          "name": "EmfPolylineTo16",
+          "value": 89
+        },
+        {
+          "name": "EmfPolyPolyline16",
+          "value": 90
+        },
+        {
+          "name": "EmfPolyPolygon16",
+          "value": 91
+        },
+        {
+          "name": "EmfPolyDraw16",
+          "value": 92
+        },
+        {
+          "name": "EmfCreateMonoBrush",
+          "value": 93
+        },
+        {
+          "name": "EmfCreateDibPatternBrushPt",
+          "value": 94
+        },
+        {
+          "name": "EmfExtCreatePen",
+          "value": 95
+        },
+        {
+          "name": "EmfPolyTextOutA",
+          "value": 96
+        },
+        {
+          "name": "EmfPolyTextOutW",
+          "value": 97
+        },
+        {
+          "name": "EmfSetIcmMode",
+          "value": 98
+        },
+        {
+          "name": "EmfCreateColorSpace",
+          "value": 99
+        },
+        {
+          "name": "EmfSetColorSpace",
+          "value": 100
+        },
+        {
+          "name": "EmfDeleteColorSpace",
+          "value": 101
+        },
+        {
+          "name": "EmfGlsRecord",
+          "value": 102
+        },
+        {
+          "name": "EmfGlsBoundedRecord",
+          "value": 103
+        },
+        {
+          "name": "EmfPixelFormat",
+          "value": 104
+        },
+        {
+          "name": "EmfDrawEscape",
+          "value": 105
+        },
+        {
+          "name": "EmfExtEscape",
+          "value": 106
+        },
+        {
+          "name": "EmfStartDoc",
+          "value": 107
+        },
+        {
+          "name": "EmfSmallTextOut",
+          "value": 108
+        },
+        {
+          "name": "EmfForceUfiMapping",
+          "value": 109
+        },
+        {
+          "name": "EmfNamedEscpae",
+          "value": 110
+        },
+        {
+          "name": "EmfColorCorrectPalette",
+          "value": 111
+        },
+        {
+          "name": "EmfSetIcmProfileA",
+          "value": 112
+        },
+        {
+          "name": "EmfSetIcmProfileW",
+          "value": 113
+        },
+        {
+          "name": "EmfAlphaBlend",
+          "value": 114
+        },
+        {
+          "name": "EmfSetLayout",
+          "value": 115
+        },
+        {
+          "name": "EmfTransparentBlt",
+          "value": 116
+        },
+        {
+          "name": "EmfReserved117",
+          "value": 117
+        },
+        {
+          "name": "EmfGradientFill",
+          "value": 118
+        },
+        {
+          "name": "EmfSetLinkedUfis",
+          "value": 119
+        },
+        {
+          "name": "EmfSetTextJustification",
+          "value": 120
+        },
+        {
+          "name": "EmfColorMatchToTargetW",
+          "value": 121
+        },
+        {
+          "name": "EmfCreateColorSpaceW",
+          "value": 122
+        },
+        {
+          "name": "EmfMax",
+          "value": 122
+        },
+        {
+          "name": "EmfPlusRecordBase",
+          "value": 16384
+        },
+        {
+          "name": "Invalid",
+          "value": 16384
+        },
+        {
+          "name": "Header",
+          "value": 16385
+        },
+        {
+          "name": "Min",
+          "value": 16385
+        },
+        {
+          "name": "EndOfFile",
+          "value": 16386
+        },
+        {
+          "name": "Comment",
+          "value": 16387
+        },
+        {
+          "name": "GetDC",
+          "value": 16388
+        },
+        {
+          "name": "MultiFormatStart",
+          "value": 16389
+        },
+        {
+          "name": "MultiFormatSection",
+          "value": 16390
+        },
+        {
+          "name": "MultiFormatEnd",
+          "value": 16391
+        },
+        {
+          "name": "Object",
+          "value": 16392
+        },
+        {
+          "name": "Clear",
+          "value": 16393
+        },
+        {
+          "name": "FillRects",
+          "value": 16394
+        },
+        {
+          "name": "DrawRects",
+          "value": 16395
+        },
+        {
+          "name": "FillPolygon",
+          "value": 16396
+        },
+        {
+          "name": "DrawLines",
+          "value": 16397
+        },
+        {
+          "name": "FillEllipse",
+          "value": 16398
+        },
+        {
+          "name": "DrawEllipse",
+          "value": 16399
+        },
+        {
+          "name": "FillPie",
+          "value": 16400
+        },
+        {
+          "name": "DrawPie",
+          "value": 16401
+        },
+        {
+          "name": "DrawArc",
+          "value": 16402
+        },
+        {
+          "name": "FillRegion",
+          "value": 16403
+        },
+        {
+          "name": "FillPath",
+          "value": 16404
+        },
+        {
+          "name": "DrawPath",
+          "value": 16405
+        },
+        {
+          "name": "FillClosedCurve",
+          "value": 16406
+        },
+        {
+          "name": "DrawClosedCurve",
+          "value": 16407
+        },
+        {
+          "name": "DrawCurve",
+          "value": 16408
+        },
+        {
+          "name": "DrawBeziers",
+          "value": 16409
+        },
+        {
+          "name": "DrawImage",
+          "value": 16410
+        },
+        {
+          "name": "DrawImagePoints",
+          "value": 16411
+        },
+        {
+          "name": "DrawString",
+          "value": 16412
+        },
+        {
+          "name": "SetRenderingOrigin",
+          "value": 16413
+        },
+        {
+          "name": "SetAntiAliasMode",
+          "value": 16414
+        },
+        {
+          "name": "SetTextRenderingHint",
+          "value": 16415
+        },
+        {
+          "name": "SetTextContrast",
+          "value": 16416
+        },
+        {
+          "name": "SetInterpolationMode",
+          "value": 16417
+        },
+        {
+          "name": "SetPixelOffsetMode",
+          "value": 16418
+        },
+        {
+          "name": "SetCompositingMode",
+          "value": 16419
+        },
+        {
+          "name": "SetCompositingQuality",
+          "value": 16420
+        },
+        {
+          "name": "Save",
+          "value": 16421
+        },
+        {
+          "name": "Restore",
+          "value": 16422
+        },
+        {
+          "name": "BeginContainer",
+          "value": 16423
+        },
+        {
+          "name": "BeginContainerNoParams",
+          "value": 16424
+        },
+        {
+          "name": "EndContainer",
+          "value": 16425
+        },
+        {
+          "name": "SetWorldTransform",
+          "value": 16426
+        },
+        {
+          "name": "ResetWorldTransform",
+          "value": 16427
+        },
+        {
+          "name": "MultiplyWorldTransform",
+          "value": 16428
+        },
+        {
+          "name": "TranslateWorldTransform",
+          "value": 16429
+        },
+        {
+          "name": "ScaleWorldTransform",
+          "value": 16430
+        },
+        {
+          "name": "RotateWorldTransform",
+          "value": 16431
+        },
+        {
+          "name": "SetPageTransform",
+          "value": 16432
+        },
+        {
+          "name": "ResetClip",
+          "value": 16433
+        },
+        {
+          "name": "SetClipRect",
+          "value": 16434
+        },
+        {
+          "name": "SetClipPath",
+          "value": 16435
+        },
+        {
+          "name": "SetClipRegion",
+          "value": 16436
+        },
+        {
+          "name": "OffsetClip",
+          "value": 16437
+        },
+        {
+          "name": "DrawDriverString",
+          "value": 16438
+        },
+        {
+          "name": "Max",
+          "value": 16438
+        },
+        {
+          "name": "Total",
+          "value": 16439
+        },
+        {
+          "name": "WmfRecordBase",
+          "value": 65536
+        },
+        {
+          "name": "WmfSaveDC",
+          "value": 65566
+        },
+        {
+          "name": "WmfRealizePalette",
+          "value": 65589
+        },
+        {
+          "name": "WmfSetPalEntries",
+          "value": 65591
+        },
+        {
+          "name": "WmfCreatePalette",
+          "value": 65783
+        },
+        {
+          "name": "WmfSetBkMode",
+          "value": 65794
+        },
+        {
+          "name": "WmfSetMapMode",
+          "value": 65795
+        },
+        {
+          "name": "WmfSetROP2",
+          "value": 65796
+        },
+        {
+          "name": "WmfSetRelAbs",
+          "value": 65797
+        },
+        {
+          "name": "WmfSetPolyFillMode",
+          "value": 65798
+        },
+        {
+          "name": "WmfSetStretchBltMode",
+          "value": 65799
+        },
+        {
+          "name": "WmfSetTextCharExtra",
+          "value": 65800
+        },
+        {
+          "name": "WmfRestoreDC",
+          "value": 65831
+        },
+        {
+          "name": "WmfInvertRegion",
+          "value": 65834
+        },
+        {
+          "name": "WmfPaintRegion",
+          "value": 65835
+        },
+        {
+          "name": "WmfSelectClipRegion",
+          "value": 65836
+        },
+        {
+          "name": "WmfSelectObject",
+          "value": 65837
+        },
+        {
+          "name": "WmfSetTextAlign",
+          "value": 65838
+        },
+        {
+          "name": "WmfResizePalette",
+          "value": 65849
+        },
+        {
+          "name": "WmfDibCreatePatternBrush",
+          "value": 65858
+        },
+        {
+          "name": "WmfSetLayout",
+          "value": 65865
+        },
+        {
+          "name": "WmfDeleteObject",
+          "value": 66032
+        },
+        {
+          "name": "WmfCreatePatternBrush",
+          "value": 66041
+        },
+        {
+          "name": "WmfSetBkColor",
+          "value": 66049
+        },
+        {
+          "name": "WmfSetTextColor",
+          "value": 66057
+        },
+        {
+          "name": "WmfSetTextJustification",
+          "value": 66058
+        },
+        {
+          "name": "WmfSetWindowOrg",
+          "value": 66059
+        },
+        {
+          "name": "WmfSetWindowExt",
+          "value": 66060
+        },
+        {
+          "name": "WmfSetViewportOrg",
+          "value": 66061
+        },
+        {
+          "name": "WmfSetViewportExt",
+          "value": 66062
+        },
+        {
+          "name": "WmfOffsetWindowOrg",
+          "value": 66063
+        },
+        {
+          "name": "WmfOffsetViewportOrg",
+          "value": 66065
+        },
+        {
+          "name": "WmfLineTo",
+          "value": 66067
+        },
+        {
+          "name": "WmfMoveTo",
+          "value": 66068
+        },
+        {
+          "name": "WmfOffsetCilpRgn",
+          "value": 66080
+        },
+        {
+          "name": "WmfFillRegion",
+          "value": 66088
+        },
+        {
+          "name": "WmfSetMapperFlags",
+          "value": 66097
+        },
+        {
+          "name": "WmfSelectPalette",
+          "value": 66100
+        },
+        {
+          "name": "WmfCreatePenIndirect",
+          "value": 66298
+        },
+        {
+          "name": "WmfCreateFontIndirect",
+          "value": 66299
+        },
+        {
+          "name": "WmfCreateBrushIndirect",
+          "value": 66300
+        },
+        {
+          "name": "WmfPolygon",
+          "value": 66340
+        },
+        {
+          "name": "WmfPolyline",
+          "value": 66341
+        },
+        {
+          "name": "WmfScaleWindowExt",
+          "value": 66576
+        },
+        {
+          "name": "WmfScaleViewportExt",
+          "value": 66578
+        },
+        {
+          "name": "WmfExcludeClipRect",
+          "value": 66581
+        },
+        {
+          "name": "WmfIntersectClipRect",
+          "value": 66582
+        },
+        {
+          "name": "WmfEllipse",
+          "value": 66584
+        },
+        {
+          "name": "WmfFloodFill",
+          "value": 66585
+        },
+        {
+          "name": "WmfRectangle",
+          "value": 66587
+        },
+        {
+          "name": "WmfSetPixel",
+          "value": 66591
+        },
+        {
+          "name": "WmfFrameRegion",
+          "value": 66601
+        },
+        {
+          "name": "WmfAnimatePalette",
+          "value": 66614
+        },
+        {
+          "name": "WmfTextOut",
+          "value": 66849
+        },
+        {
+          "name": "WmfPolyPolygon",
+          "value": 66872
+        },
+        {
+          "name": "WmfExtFloodFill",
+          "value": 66888
+        },
+        {
+          "name": "WmfRoundRect",
+          "value": 67100
+        },
+        {
+          "name": "WmfPatBlt",
+          "value": 67101
+        },
+        {
+          "name": "WmfEscape",
+          "value": 67110
+        },
+        {
+          "name": "WmfCreateRegion",
+          "value": 67327
+        },
+        {
+          "name": "WmfArc",
+          "value": 67607
+        },
+        {
+          "name": "WmfPie",
+          "value": 67610
+        },
+        {
+          "name": "WmfChord",
+          "value": 67632
+        },
+        {
+          "name": "WmfBitBlt",
+          "value": 67874
+        },
+        {
+          "name": "WmfDibBitBlt",
+          "value": 67904
+        },
+        {
+          "name": "WmfExtTextOut",
+          "value": 68146
+        },
+        {
+          "name": "WmfStretchBlt",
+          "value": 68387
+        },
+        {
+          "name": "WmfDibStretchBlt",
+          "value": 68417
+        },
+        {
+          "name": "WmfSetDibToDev",
+          "value": 68915
+        },
+        {
+          "name": "WmfStretchDib",
+          "value": 69443
+        }
+      ]
+    },
+    {
+      "fullName": "System.Drawing.Imaging.EmfType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "EmfOnly",
+          "value": 3
+        },
+        {
+          "name": "EmfPlusOnly",
+          "value": 4
+        },
+        {
+          "name": "EmfPlusDual",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "System.Drawing.Imaging.EncoderParameterValueType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ValueTypeByte",
+          "value": 1
+        },
+        {
+          "name": "ValueTypeAscii",
+          "value": 2
+        },
+        {
+          "name": "ValueTypeShort",
+          "value": 3
+        },
+        {
+          "name": "ValueTypeLong",
+          "value": 4
+        },
+        {
+          "name": "ValueTypeRational",
+          "value": 5
+        },
+        {
+          "name": "ValueTypeLongRange",
+          "value": 6
+        },
+        {
+          "name": "ValueTypeUndefined",
+          "value": 7
+        },
+        {
+          "name": "ValueTypeRationalRange",
+          "value": 8
+        },
+        {
+          "name": "ValueTypePointer",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "fullName": "System.Drawing.Imaging.EncoderValue",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ColorTypeCMYK",
+          "value": 0
+        },
+        {
+          "name": "ColorTypeYCCK",
+          "value": 1
+        },
+        {
+          "name": "CompressionLZW",
+          "value": 2
+        },
+        {
+          "name": "CompressionCCITT3",
+          "value": 3
+        },
+        {
+          "name": "CompressionCCITT4",
+          "value": 4
+        },
+        {
+          "name": "CompressionRle",
+          "value": 5
+        },
+        {
+          "name": "CompressionNone",
+          "value": 6
+        },
+        {
+          "name": "ScanMethodInterlaced",
+          "value": 7
+        },
+        {
+          "name": "ScanMethodNonInterlaced",
+          "value": 8
+        },
+        {
+          "name": "VersionGif87",
+          "value": 9
+        },
+        {
+          "name": "VersionGif89",
+          "value": 10
+        },
+        {
+          "name": "RenderProgressive",
+          "value": 11
+        },
+        {
+          "name": "RenderNonProgressive",
+          "value": 12
+        },
+        {
+          "name": "TransformRotate90",
+          "value": 13
+        },
+        {
+          "name": "TransformRotate180",
+          "value": 14
+        },
+        {
+          "name": "TransformRotate270",
+          "value": 15
+        },
+        {
+          "name": "TransformFlipHorizontal",
+          "value": 16
+        },
+        {
+          "name": "TransformFlipVertical",
+          "value": 17
+        },
+        {
+          "name": "MultiFrame",
+          "value": 18
+        },
+        {
+          "name": "LastFrame",
+          "value": 19
+        },
+        {
+          "name": "Flush",
+          "value": 20
+        },
+        {
+          "name": "FrameDimensionTime",
+          "value": 21
+        },
+        {
+          "name": "FrameDimensionResolution",
+          "value": 22
+        },
+        {
+          "name": "FrameDimensionPage",
+          "value": 23
+        }
+      ]
+    },
+    {
+      "fullName": "System.Drawing.Imaging.ImageCodecFlags",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Encoder",
+          "value": 1
+        },
+        {
+          "name": "Decoder",
+          "value": 2
+        },
+        {
+          "name": "SupportBitmap",
+          "value": 4
+        },
+        {
+          "name": "SupportVector",
+          "value": 8
+        },
+        {
+          "name": "SeekableEncode",
+          "value": 16
+        },
+        {
+          "name": "BlockingDecode",
+          "value": 32
+        },
+        {
+          "name": "Builtin",
+          "value": 65536
+        },
+        {
+          "name": "System",
+          "value": 131072
+        },
+        {
+          "name": "User",
+          "value": 262144
+        }
+      ]
+    },
+    {
+      "fullName": "System.Drawing.Imaging.ImageFlags",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Scalable",
+          "value": 1
+        },
+        {
+          "name": "HasAlpha",
+          "value": 2
+        },
+        {
+          "name": "HasTranslucent",
+          "value": 4
+        },
+        {
+          "name": "PartiallyScalable",
+          "value": 8
+        },
+        {
+          "name": "ColorSpaceRgb",
+          "value": 16
+        },
+        {
+          "name": "ColorSpaceCmyk",
+          "value": 32
+        },
+        {
+          "name": "ColorSpaceGray",
+          "value": 64
+        },
+        {
+          "name": "ColorSpaceYcbcr",
+          "value": 128
+        },
+        {
+          "name": "ColorSpaceYcck",
+          "value": 256
+        },
+        {
+          "name": "HasRealDpi",
+          "value": 4096
+        },
+        {
+          "name": "HasRealPixelSize",
+          "value": 8192
+        },
+        {
+          "name": "ReadOnly",
+          "value": 65536
+        },
+        {
+          "name": "Caching",
+          "value": 131072
+        }
+      ]
+    },
+    {
+      "fullName": "System.Drawing.Imaging.ImageLockMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ReadOnly",
+          "value": 1
+        },
+        {
+          "name": "WriteOnly",
+          "value": 2
+        },
+        {
+          "name": "ReadWrite",
+          "value": 3
+        },
+        {
+          "name": "UserInputBuffer",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "System.Drawing.Imaging.MetafileFrameUnit",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Pixel",
+          "value": 2
+        },
+        {
+          "name": "Point",
+          "value": 3
+        },
+        {
+          "name": "Inch",
+          "value": 4
+        },
+        {
+          "name": "Document",
+          "value": 5
+        },
+        {
+          "name": "Millimeter",
+          "value": 6
+        },
+        {
+          "name": "GdiCompatible",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "System.Drawing.Imaging.MetafileType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Invalid",
+          "value": 0
+        },
+        {
+          "name": "Wmf",
+          "value": 1
+        },
+        {
+          "name": "WmfPlaceable",
+          "value": 2
+        },
+        {
+          "name": "Emf",
+          "value": 3
+        },
+        {
+          "name": "EmfPlusOnly",
+          "value": 4
+        },
+        {
+          "name": "EmfPlusDual",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "System.Drawing.Imaging.PaletteFlags",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "HasAlpha",
+          "value": 1
+        },
+        {
+          "name": "GrayScale",
+          "value": 2
+        },
+        {
+          "name": "Halftone",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "System.Drawing.Imaging.PixelFormat",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DontCare",
+          "value": 0
+        },
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "Max",
+          "value": 15
+        },
+        {
+          "name": "Indexed",
+          "value": 65536
+        },
+        {
+          "name": "Gdi",
+          "value": 131072
+        },
+        {
+          "name": "Format16bppRgb555",
+          "value": 135173
+        },
+        {
+          "name": "Format16bppRgb565",
+          "value": 135174
+        },
+        {
+          "name": "Format24bppRgb",
+          "value": 137224
+        },
+        {
+          "name": "Format32bppRgb",
+          "value": 139273
+        },
+        {
+          "name": "Format1bppIndexed",
+          "value": 196865
+        },
+        {
+          "name": "Format4bppIndexed",
+          "value": 197634
+        },
+        {
+          "name": "Format8bppIndexed",
+          "value": 198659
+        },
+        {
+          "name": "Alpha",
+          "value": 262144
+        },
+        {
+          "name": "Format16bppArgb1555",
+          "value": 397319
+        },
+        {
+          "name": "PAlpha",
+          "value": 524288
+        },
+        {
+          "name": "Format32bppPArgb",
+          "value": 925707
+        },
+        {
+          "name": "Extended",
+          "value": 1048576
+        },
+        {
+          "name": "Format16bppGrayScale",
+          "value": 1052676
+        },
+        {
+          "name": "Format48bppRgb",
+          "value": 1060876
+        },
+        {
+          "name": "Format64bppPArgb",
+          "value": 1851406
+        },
+        {
+          "name": "Canonical",
+          "value": 2097152
+        },
+        {
+          "name": "Format32bppArgb",
+          "value": 2498570
+        },
+        {
+          "name": "Format64bppArgb",
+          "value": 3424269
+        }
+      ]
+    },
+    {
+      "fullName": "System.Drawing.Drawing2D.CombineMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Replace",
+          "value": 0
+        },
+        {
+          "name": "Intersect",
+          "value": 1
+        },
+        {
+          "name": "Union",
+          "value": 2
+        },
+        {
+          "name": "Xor",
+          "value": 3
+        },
+        {
+          "name": "Exclude",
+          "value": 4
+        },
+        {
+          "name": "Complement",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "System.Drawing.Drawing2D.CompositingMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "SourceOver",
+          "value": 0
+        },
+        {
+          "name": "SourceCopy",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "System.Drawing.Drawing2D.CompositingQuality",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Invalid",
+          "value": -1
+        },
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "HighSpeed",
+          "value": 1
+        },
+        {
+          "name": "HighQuality",
+          "value": 2
+        },
+        {
+          "name": "GammaCorrected",
+          "value": 3
+        },
+        {
+          "name": "AssumeLinear",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "System.Drawing.Drawing2D.CoordinateSpace",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "World",
+          "value": 0
+        },
+        {
+          "name": "Page",
+          "value": 1
+        },
+        {
+          "name": "Device",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "System.Drawing.Drawing2D.DashCap",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Flat",
+          "value": 0
+        },
+        {
+          "name": "Round",
+          "value": 2
+        },
+        {
+          "name": "Triangle",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "System.Drawing.Drawing2D.DashStyle",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Solid",
+          "value": 0
+        },
+        {
+          "name": "Dash",
+          "value": 1
+        },
+        {
+          "name": "Dot",
+          "value": 2
+        },
+        {
+          "name": "DashDot",
+          "value": 3
+        },
+        {
+          "name": "DashDotDot",
+          "value": 4
+        },
+        {
+          "name": "Custom",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "System.Drawing.Drawing2D.FillMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Alternate",
+          "value": 0
+        },
+        {
+          "name": "Winding",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "System.Drawing.Drawing2D.FlushIntention",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Flush",
+          "value": 0
+        },
+        {
+          "name": "Sync",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "System.Drawing.Drawing2D.HatchStyle",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Horizontal",
+          "value": 0
+        },
+        {
+          "name": "Min",
+          "value": 0
+        },
+        {
+          "name": "Vertical",
+          "value": 1
+        },
+        {
+          "name": "ForwardDiagonal",
+          "value": 2
+        },
+        {
+          "name": "BackwardDiagonal",
+          "value": 3
+        },
+        {
+          "name": "Cross",
+          "value": 4
+        },
+        {
+          "name": "LargeGrid",
+          "value": 4
+        },
+        {
+          "name": "Max",
+          "value": 4
+        },
+        {
+          "name": "DiagonalCross",
+          "value": 5
+        },
+        {
+          "name": "Percent05",
+          "value": 6
+        },
+        {
+          "name": "Percent10",
+          "value": 7
+        },
+        {
+          "name": "Percent20",
+          "value": 8
+        },
+        {
+          "name": "Percent25",
+          "value": 9
+        },
+        {
+          "name": "Percent30",
+          "value": 10
+        },
+        {
+          "name": "Percent40",
+          "value": 11
+        },
+        {
+          "name": "Percent50",
+          "value": 12
+        },
+        {
+          "name": "Percent60",
+          "value": 13
+        },
+        {
+          "name": "Percent70",
+          "value": 14
+        },
+        {
+          "name": "Percent75",
+          "value": 15
+        },
+        {
+          "name": "Percent80",
+          "value": 16
+        },
+        {
+          "name": "Percent90",
+          "value": 17
+        },
+        {
+          "name": "LightDownwardDiagonal",
+          "value": 18
+        },
+        {
+          "name": "LightUpwardDiagonal",
+          "value": 19
+        },
+        {
+          "name": "DarkDownwardDiagonal",
+          "value": 20
+        },
+        {
+          "name": "DarkUpwardDiagonal",
+          "value": 21
+        },
+        {
+          "name": "WideDownwardDiagonal",
+          "value": 22
+        },
+        {
+          "name": "WideUpwardDiagonal",
+          "value": 23
+        },
+        {
+          "name": "LightVertical",
+          "value": 24
+        },
+        {
+          "name": "LightHorizontal",
+          "value": 25
+        },
+        {
+          "name": "NarrowVertical",
+          "value": 26
+        },
+        {
+          "name": "NarrowHorizontal",
+          "value": 27
+        },
+        {
+          "name": "DarkVertical",
+          "value": 28
+        },
+        {
+          "name": "DarkHorizontal",
+          "value": 29
+        },
+        {
+          "name": "DashedDownwardDiagonal",
+          "value": 30
+        },
+        {
+          "name": "DashedUpwardDiagonal",
+          "value": 31
+        },
+        {
+          "name": "DashedHorizontal",
+          "value": 32
+        },
+        {
+          "name": "DashedVertical",
+          "value": 33
+        },
+        {
+          "name": "SmallConfetti",
+          "value": 34
+        },
+        {
+          "name": "LargeConfetti",
+          "value": 35
+        },
+        {
+          "name": "ZigZag",
+          "value": 36
+        },
+        {
+          "name": "Wave",
+          "value": 37
+        },
+        {
+          "name": "DiagonalBrick",
+          "value": 38
+        },
+        {
+          "name": "HorizontalBrick",
+          "value": 39
+        },
+        {
+          "name": "Weave",
+          "value": 40
+        },
+        {
+          "name": "Plaid",
+          "value": 41
+        },
+        {
+          "name": "Divot",
+          "value": 42
+        },
+        {
+          "name": "DottedGrid",
+          "value": 43
+        },
+        {
+          "name": "DottedDiamond",
+          "value": 44
+        },
+        {
+          "name": "Shingle",
+          "value": 45
+        },
+        {
+          "name": "Trellis",
+          "value": 46
+        },
+        {
+          "name": "Sphere",
+          "value": 47
+        },
+        {
+          "name": "SmallGrid",
+          "value": 48
+        },
+        {
+          "name": "SmallCheckerBoard",
+          "value": 49
+        },
+        {
+          "name": "LargeCheckerBoard",
+          "value": 50
+        },
+        {
+          "name": "OutlinedDiamond",
+          "value": 51
+        },
+        {
+          "name": "SolidDiamond",
+          "value": 52
+        }
+      ]
+    },
+    {
+      "fullName": "System.Drawing.Drawing2D.InterpolationMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Invalid",
+          "value": -1
+        },
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "Low",
+          "value": 1
+        },
+        {
+          "name": "High",
+          "value": 2
+        },
+        {
+          "name": "Bilinear",
+          "value": 3
+        },
+        {
+          "name": "Bicubic",
+          "value": 4
+        },
+        {
+          "name": "NearestNeighbor",
+          "value": 5
+        },
+        {
+          "name": "HighQualityBilinear",
+          "value": 6
+        },
+        {
+          "name": "HighQualityBicubic",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "System.Drawing.Drawing2D.LinearGradientMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Horizontal",
+          "value": 0
+        },
+        {
+          "name": "Vertical",
+          "value": 1
+        },
+        {
+          "name": "ForwardDiagonal",
+          "value": 2
+        },
+        {
+          "name": "BackwardDiagonal",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "System.Drawing.Drawing2D.LineCap",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Flat",
+          "value": 0
+        },
+        {
+          "name": "Square",
+          "value": 1
+        },
+        {
+          "name": "Round",
+          "value": 2
+        },
+        {
+          "name": "Triangle",
+          "value": 3
+        },
+        {
+          "name": "NoAnchor",
+          "value": 16
+        },
+        {
+          "name": "SquareAnchor",
+          "value": 17
+        },
+        {
+          "name": "RoundAnchor",
+          "value": 18
+        },
+        {
+          "name": "DiamondAnchor",
+          "value": 19
+        },
+        {
+          "name": "ArrowAnchor",
+          "value": 20
+        },
+        {
+          "name": "AnchorMask",
+          "value": 240
+        },
+        {
+          "name": "Custom",
+          "value": 255
+        }
+      ]
+    },
+    {
+      "fullName": "System.Drawing.Drawing2D.LineJoin",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Miter",
+          "value": 0
+        },
+        {
+          "name": "Bevel",
+          "value": 1
+        },
+        {
+          "name": "Round",
+          "value": 2
+        },
+        {
+          "name": "MiterClipped",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "System.Drawing.Drawing2D.MatrixOrder",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Prepend",
+          "value": 0
+        },
+        {
+          "name": "Append",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "System.Drawing.Drawing2D.PathPointType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Start",
+          "value": 0
+        },
+        {
+          "name": "Line",
+          "value": 1
+        },
+        {
+          "name": "Bezier",
+          "value": 3
+        },
+        {
+          "name": "Bezier3",
+          "value": 3
+        },
+        {
+          "name": "PathTypeMask",
+          "value": 7
+        },
+        {
+          "name": "DashMode",
+          "value": 16
+        },
+        {
+          "name": "PathMarker",
+          "value": 32
+        },
+        {
+          "name": "CloseSubpath",
+          "value": 128
+        }
+      ]
+    },
+    {
+      "fullName": "System.Drawing.Drawing2D.PenAlignment",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Center",
+          "value": 0
+        },
+        {
+          "name": "Inset",
+          "value": 1
+        },
+        {
+          "name": "Outset",
+          "value": 2
+        },
+        {
+          "name": "Left",
+          "value": 3
+        },
+        {
+          "name": "Right",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "System.Drawing.Drawing2D.PenType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "SolidColor",
+          "value": 0
+        },
+        {
+          "name": "HatchFill",
+          "value": 1
+        },
+        {
+          "name": "TextureFill",
+          "value": 2
+        },
+        {
+          "name": "PathGradient",
+          "value": 3
+        },
+        {
+          "name": "LinearGradient",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "System.Drawing.Drawing2D.PixelOffsetMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Invalid",
+          "value": -1
+        },
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "HighSpeed",
+          "value": 1
+        },
+        {
+          "name": "HighQuality",
+          "value": 2
+        },
+        {
+          "name": "None",
+          "value": 3
+        },
+        {
+          "name": "Half",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "System.Drawing.Drawing2D.QualityMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Invalid",
+          "value": -1
+        },
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "Low",
+          "value": 1
+        },
+        {
+          "name": "High",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "System.Drawing.Drawing2D.SmoothingMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Invalid",
+          "value": -1
+        },
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "HighSpeed",
+          "value": 1
+        },
+        {
+          "name": "HighQuality",
+          "value": 2
+        },
+        {
+          "name": "None",
+          "value": 3
+        },
+        {
+          "name": "AntiAlias",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "System.Drawing.Drawing2D.WarpMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Perspective",
+          "value": 0
+        },
+        {
+          "name": "Bilinear",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "System.Drawing.Drawing2D.WrapMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Tile",
+          "value": 0
+        },
+        {
+          "name": "TileFlipX",
+          "value": 1
+        },
+        {
+          "name": "TileFlipY",
+          "value": 2
+        },
+        {
+          "name": "TileFlipXY",
+          "value": 3
+        },
+        {
+          "name": "Clamp",
+          "value": 4
+        }
+      ]
+    }
+  ],
+  "namespaceMappings": []
+}

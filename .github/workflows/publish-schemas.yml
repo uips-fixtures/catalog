@@ -35,10 +35,10 @@ jobs:
           PAGES = Path("pages/src")
 
           # Wipe stale directories so removed files don't linger
-          for d in ["refdoc", "llms", "catalog", "schemas"]:
+          for d in ["refdoc", "llms", "schemas"]:
               shutil.rmtree(PAGES / d, ignore_errors=True)
 
-          # 1. Schemas → src/schemas/v0.2/
+          # 1. Schemas
           for src in sorted(glob.glob("catalog/schemas/**/*.schema.json", recursive=True)):
               rel  = os.path.relpath(src, "catalog/schemas")
               dest = PAGES / "schemas" / rel
@@ -46,85 +46,45 @@ jobs:
               shutil.copy2(src, dest)
               print(f"  schema: {src} -> {dest}")
 
-          html = txt = json_c = llms_c = 0
+          html = json_c = llms_c = 0
 
           for src in sorted(glob.glob(str(DIST / "**" / "*"), recursive=True)):
               src_path = Path(src)
               if not src_path.is_file():
                   continue
-              # rel parts relative to DIST: (set, ...) or (set, pkg, ver.ext)
               parts = src_path.relative_to(DIST).parts
 
-              if src_path.suffix == ".html" and len(parts) == 3:
-                  # {set}/{pkg}/{ver}.html → refdoc/{pkg}/{ver}.html
-                  dest = PAGES / "refdoc" / parts[1] / parts[2]
+              # data/dist/index.html → pages/src/index.html
+              if src_path.name == "index.html" and len(parts) == 1:
+                  dest = PAGES / "index.html"
                   dest.parent.mkdir(parents=True, exist_ok=True)
                   shutil.copy2(src, dest)
                   html += 1
 
-              elif src_path.suffix == ".txt" and len(parts) == 3:
-                  # {set}/{pkg}/{ver}.txt → llms/{pkg}/{ver}.txt
-                  dest = PAGES / "llms" / parts[1] / parts[2]
+              # data/dist/refdoc/index.html → pages/src/refdoc/index.html
+              # data/dist/refdoc/{pkg}/index.html → pages/src/refdoc/{pkg}/index.html
+              elif parts[0] == "refdoc" and src_path.suffix == ".html":
+                  dest = PAGES / Path(*parts)
                   dest.parent.mkdir(parents=True, exist_ok=True)
                   shutil.copy2(src, dest)
-                  txt += 1
+                  html += 1
 
-              elif src_path.name == "llms.txt" and len(parts) == 2:
-                  # {set}/llms.txt → llms/{set}.txt
-                  dest = PAGES / "llms" / f"{parts[0]}.txt"
+              # data/dist/llms/{pkg}/llms.txt  → pages/src/llms/{pkg}/llms.txt
+              # data/dist/llms/llms.txt        → pages/src/llms/llms.txt
+              elif parts[0] == "llms" and src_path.suffix == ".txt":
+                  dest = PAGES / Path(*parts)
                   dest.parent.mkdir(parents=True, exist_ok=True)
                   shutil.copy2(src, dest)
                   llms_c += 1
 
-              elif src_path.suffix == ".json" and src_path.name != "index.json" and len(parts) == 3:
-                  # {set}/{pkg}/{ver}.json → catalog/{schema_ver}/{pkg}/{pkg}-{ver}.json (deduplicated)
-                  doc = json.loads(src_path.read_text(encoding="utf-8"))
-                  schema_ver = doc.get("schema", {}).get("version", "unknown")
-                  filename = f"{parts[1]}-{src_path.stem}.json"
-                  dest = PAGES / "catalog" / schema_ver / parts[1] / filename
+              # data/dist/llms/{pkg}/{ver}.json → pages/src/llms/{pkg}/{ver}.json
+              elif parts[0] == "llms" and src_path.suffix == ".json":
+                  dest = PAGES / Path(*parts)
                   dest.parent.mkdir(parents=True, exist_ok=True)
                   shutil.copy2(src, dest)
                   json_c += 1
 
-              elif src_path.name == "index.json" and len(parts) == 2:
-                  # {set}/index.json → catalog/{schema_ver}/{set}/index.json
-                  doc = json.loads(src_path.read_text(encoding="utf-8"))
-                  schema_ver = doc[0].get("metadata", {}).get("schema", {}).get("version", "unknown")
-                  dest = PAGES / "catalog" / schema_ver / parts[0] / "index.json"
-                  dest.parent.mkdir(parents=True, exist_ok=True)
-                  shutil.copy2(src, dest)
-                  json_c += 1
-
-          print(f"refdoc: {html} html, llms: {txt} txt + {llms_c} set aggregations, catalog: {json_c} json")
-
-          # Generate catalog/index.html
-          catalog_dir = PAGES / "catalog"
-          rows = []
-          for schema_ver_dir in sorted(catalog_dir.iterdir()):
-              if not schema_ver_dir.is_dir(): continue
-              schema_ver = schema_ver_dir.name
-              for pkg_dir in sorted(schema_ver_dir.iterdir()):
-                  if not pkg_dir.is_dir(): continue
-                  pkg_id = pkg_dir.name
-                  for f in sorted(pkg_dir.glob("*.json")):
-                      url = "/" + f.relative_to(PAGES).as_posix()
-                      rows.append(
-                          "<tr><td>" + schema_ver + "</td><td>" + pkg_id + "</td>"
-                          + '<td><a href="' + url + '">' + f.name + "</a></td></tr>"
-                      )
-          lines = [
-              "<!DOCTYPE html>",
-              '<html lang="en"><head><meta charset="UTF-8"/>',
-              "<title>Activity Catalog - uips-fixtures</title>",
-              "<style>body{font-family:system-ui,sans-serif;padding:2rem}",
-              "table{border-collapse:collapse;width:100%}",
-              "th,td{text-align:left;padding:.3rem .6rem;border-bottom:1px solid #ddd}",
-              "th{background:#eee}</style></head>",
-              "<body><h1>Activity Catalog</h1>",
-              "<table><tr><th>Schema</th><th>Package</th><th>File</th></tr>",
-          ] + rows + ["</table></body></html>"]
-          (catalog_dir / "index.html").write_text("\n".join(lines), encoding="utf-8", newline="\n")
-          print("  catalog/index.html: " + str(len(rows)) + " entries")
+          print(f"html: {html}, llms txt: {llms_c}, catalog json: {json_c}")
           PYEOF
 
       - name: Commit and push

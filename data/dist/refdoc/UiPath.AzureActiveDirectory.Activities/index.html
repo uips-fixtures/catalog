@@ -1,0 +1,2923 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UiPath.AzureActiveDirectory.Activities 1.6.3 — Activity Reference</title>
+  <style>
+    :root {
+      --base3:  #fdf6e3; --base2: #eee8d5; --base1: #93a1a1;
+      --base00: #657b83; --base01: #586e75;
+      --orange: #cb4b16; --blue: #268bd2; --cyan: #2aa198;
+      --green:  #859900;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: var(--base3); color: var(--base00);
+      line-height: 1.55; padding: 0 0 4rem;
+    }
+    .topbar {
+      background: var(--orange); color: #fff;
+      padding: 0 2rem; height: 50px;
+      display: flex; align-items: center; gap: 1rem;
+      font-weight: 700; font-size: 1rem;
+    }
+    .topbar a { color: #fff; text-decoration: none; }
+    .topbar-sub { font-weight: 400; font-size: 0.82rem; opacity: 0.82; }
+    .content { max-width: 960px; margin: 0 auto; padding: 2rem 1.5rem 0; }
+    .gen-meta {
+      font-size: 0.78rem; color: var(--base1);
+      border-bottom: 1px solid var(--base2);
+      padding-bottom: 0.75rem; margin-bottom: 2rem;
+    }
+    .pkg-section { margin-bottom: 3rem; }
+    .pkg-heading {
+      font-size: 1.05rem; font-weight: 700;
+      color: var(--base01); border-bottom: 2px solid var(--orange);
+      padding-bottom: 0.3rem; margin-bottom: 1.25rem;
+    }
+    .activity {
+      background: #fff; border: 1px solid var(--base2);
+      border-radius: 4px; padding: 1rem 1.25rem; margin-bottom: 1rem;
+    }
+    .activity-name { font-size: 1rem; font-weight: 700; color: var(--base01); margin-bottom: 0.15rem; }
+    .activity-full { font-family: ui-monospace, monospace; font-size: 0.78rem; color: var(--base1); margin-bottom: 0.5rem; }
+    .activity-desc { font-size: 0.875rem; margin-bottom: 0.75rem; }
+    .badge {
+      display: inline-block; font-size: 0.72rem; padding: 0.1em 0.5em;
+      border-radius: 3px; margin-right: 0.35rem; margin-bottom: 0.5rem;
+      background: var(--base2); color: var(--base01);
+    }
+    .badge-cat { background: #d4edda; color: #155724; }
+    .members-heading {
+      font-size: 0.72rem; text-transform: uppercase;
+      letter-spacing: 0.07em; color: var(--base1);
+      margin: 0.75rem 0 0.35rem;
+    }
+    table { border-collapse: collapse; width: 100%; font-size: 0.82rem; }
+    th, td { text-align: left; padding: 0.3rem 0.6rem; border-bottom: 1px solid var(--base2); }
+    th { background: var(--base2); color: var(--base01); font-size: 0.75rem; font-weight: 600; }
+    tr:last-child td { border-bottom: none; }
+    .dir-in    { color: var(--green);  font-weight: 600; }
+    .dir-out   { color: var(--blue);   font-weight: 600; }
+    .dir-inout { color: var(--cyan);   font-weight: 600; }
+    .req       { color: var(--orange); font-weight: 700; }
+    code { background: var(--base2); padding: 0.1em 0.35em; border-radius: 3px;
+           font-size: 0.85em; font-family: ui-monospace, monospace; }
+    .no-members { font-size: 0.8rem; color: var(--base1); font-style: italic; }
+    .pkg-list { list-style: none; columns: 2; }
+    .pkg-list li { padding: 0.2rem 0; }
+    .pkg-list a { color: var(--blue); text-decoration: none; }
+    .pkg-list a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a href="../../index.html">uips-fixtures</a>
+    <span class="topbar-sub">UiPath.AzureActiveDirectory.Activities 1.6.3</span>
+  </header>
+  <div class="content">
+    <p class="gen-meta">
+      45 activities &middot;
+      uips-fixtures catalog v0.3 &middot; generated 2026-04-10T09:21:43Z
+    </p>
+    <div class="activity" id="UiPath-AzureActiveDirectory-Activities-AzureADCreateAssignedGroup">
+      <div class="activity-name">Create Assigned Group</div>
+      <div class="activity-full">UiPath.AzureActiveDirectory.Activities.AzureADCreateAssignedGroup</div>
+<span class="badge badge-cat">Identity Services.Azure Active Directory.Groups</span><p class="activity-desc">Creates a new assigned group in Azure Active Directory.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>Type</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;UiPath.AzureActiveDirectory.Contracts.Groups.GroupType&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Name</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Description</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>MailNickname</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>MailEnabled</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Boolean&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>SecurityEnabled</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Boolean&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Visibility</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Group</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;UiPath.AzureActiveDirectory.Contracts.Groups.GroupInfo&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-AzureActiveDirectory-Activities-AzureADDeleteGroup">
+      <div class="activity-name">Delete Group</div>
+      <div class="activity-full">UiPath.AzureActiveDirectory.Activities.AzureADDeleteGroup</div>
+<span class="badge badge-cat">Identity Services.Azure Active Directory.Groups</span><p class="activity-desc">Deletes a group from Azure Active Directory.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>GroupId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-AzureActiveDirectory-Activities-AzureADForEachGroup">
+      <div class="activity-name">For Each Group</div>
+      <div class="activity-full">UiPath.AzureActiveDirectory.Activities.AzureADForEachGroup</div>
+<span class="badge badge-cat">Identity Services.Azure Active Directory.Groups</span><p class="activity-desc">Gets detailed information about the groups matching a filter criteria.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>Top</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Int32&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ODataFilter</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>CurrentIndex</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;Int32&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-AzureActiveDirectory-Activities-AzureADGetGroupById">
+      <div class="activity-name">Get Group by Id</div>
+      <div class="activity-full">UiPath.AzureActiveDirectory.Activities.AzureADGetGroupById</div>
+<span class="badge badge-cat">Identity Services.Azure Active Directory.Groups</span><p class="activity-desc">Gets detailed information about a group.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>GroupId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Group</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;UiPath.AzureActiveDirectory.Contracts.Groups.GroupInfo&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-AzureActiveDirectory-Activities-AzureADGetGroupByName">
+      <div class="activity-name">Get Group by Name</div>
+      <div class="activity-full">UiPath.AzureActiveDirectory.Activities.AzureADGetGroupByName</div>
+<span class="badge badge-cat">Identity Services.Azure Active Directory.Groups</span><p class="activity-desc">Gets detailed information about the first group having the specified displayed name.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>Name</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Group</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;UiPath.AzureActiveDirectory.Contracts.Groups.GroupInfo&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-AzureActiveDirectory-Activities-AzureADGroupExists">
+      <div class="activity-name">Group Exists</div>
+      <div class="activity-full">UiPath.AzureActiveDirectory.Activities.AzureADGroupExists</div>
+<span class="badge badge-cat">Identity Services.Azure Active Directory.Groups</span><p class="activity-desc">Checks if a group exists in Azure Active Directory.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>Name</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Exists</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;Boolean&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-AzureActiveDirectory-Activities-AzureADUpdateGroup">
+      <div class="activity-name">Update Group</div>
+      <div class="activity-full">UiPath.AzureActiveDirectory.Activities.AzureADUpdateGroup</div>
+<span class="badge badge-cat">Identity Services.Azure Active Directory.Groups</span><p class="activity-desc">Updates the properties of an existing group.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>Group</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;UiPath.AzureActiveDirectory.Contracts.Groups.GroupInfo&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-AzureActiveDirectory-Activities-AzureADAddGroupToLifecyclePolicy">
+      <div class="activity-name">Add Group to Lifecycle Policy</div>
+      <div class="activity-full">UiPath.AzureActiveDirectory.Activities.AzureADAddGroupToLifecyclePolicy</div>
+<span class="badge badge-cat">Identity Services.Azure Active Directory.Groups.Lifecycle Policies</span><p class="activity-desc">Adds a group to a lifecycle policy.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>GroupId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>LifecyclePolicyId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-AzureActiveDirectory-Activities-AzureADCreateLifecyclePolicy">
+      <div class="activity-name">Create Lifecycle Policy</div>
+      <div class="activity-full">UiPath.AzureActiveDirectory.Activities.AzureADCreateLifecyclePolicy</div>
+<span class="badge badge-cat">Identity Services.Azure Active Directory.Groups.Lifecycle Policies</span><p class="activity-desc">Creates a lifecycle policy for an Office 365 group.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>GroupLifetimeInDays</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Int32&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>AlternateNotificationEmails</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ManagedGroupTypes</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;UiPath.AzureActiveDirectory.Contracts.Groups.LifecyclePolicies.ManagedGroupTypes&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>LifecyclePolicy</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;UiPath.AzureActiveDirectory.Contracts.Groups.LifecyclePolicies.LifecyclePolicyInfo&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-AzureActiveDirectory-Activities-AzureADDeleteLifecyclePolicy">
+      <div class="activity-name">Delete Lifecycle Policy</div>
+      <div class="activity-full">UiPath.AzureActiveDirectory.Activities.AzureADDeleteLifecyclePolicy</div>
+<span class="badge badge-cat">Identity Services.Azure Active Directory.Groups.Lifecycle Policies</span><p class="activity-desc">Deletes a lifecycle policy.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>LifecyclePolicyId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-AzureActiveDirectory-Activities-AzureADForEachLifecyclePolicy">
+      <div class="activity-name">For Each Lifecycle Policy</div>
+      <div class="activity-full">UiPath.AzureActiveDirectory.Activities.AzureADForEachLifecyclePolicy</div>
+<span class="badge badge-cat">Identity Services.Azure Active Directory.Groups.Lifecycle Policies</span><p class="activity-desc">Performs an activity or a series of activities on each lifecycle policy.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>CurrentIndex</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;Int32&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-AzureActiveDirectory-Activities-AzureADIsGroupInLifecyclePolicy">
+      <div class="activity-name">Is Group in Lifecycle Policy</div>
+      <div class="activity-full">UiPath.AzureActiveDirectory.Activities.AzureADIsGroupInLifecyclePolicy</div>
+<span class="badge badge-cat">Identity Services.Azure Active Directory.Groups.Lifecycle Policies</span><p class="activity-desc">Checks whether a group is member of a lifecycle policy.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>GroupId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>LifecyclePolicyId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>IsMember</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;Boolean&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-AzureActiveDirectory-Activities-AzureADRemoveGroupFromLifecyclePolicy">
+      <div class="activity-name">Remove Group from Lifecycle Policy</div>
+      <div class="activity-full">UiPath.AzureActiveDirectory.Activities.AzureADRemoveGroupFromLifecyclePolicy</div>
+<span class="badge badge-cat">Identity Services.Azure Active Directory.Groups.Lifecycle Policies</span><p class="activity-desc">Removes a group from a lifecycle policy.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>GroupId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>LifecyclePolicyId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-AzureActiveDirectory-Activities-AzureADUpdateLifecyclePolicy">
+      <div class="activity-name">Update Lifecycle Policy</div>
+      <div class="activity-full">UiPath.AzureActiveDirectory.Activities.AzureADUpdateLifecyclePolicy</div>
+<span class="badge badge-cat">Identity Services.Azure Active Directory.Groups.Lifecycle Policies</span><p class="activity-desc">Updates an existing lifecycle policy.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>LifecyclePolicy</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;UiPath.AzureActiveDirectory.Contracts.Groups.LifecyclePolicies.LifecyclePolicyInfo&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-AzureActiveDirectory-Activities-AzureADAddMemberToGroup">
+      <div class="activity-name">Add Member to Group</div>
+      <div class="activity-full">UiPath.AzureActiveDirectory.Activities.AzureADAddMemberToGroup</div>
+<span class="badge badge-cat">Identity Services.Azure Active Directory.Groups.Membership</span><p class="activity-desc">Adds a member to a group.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>GroupId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>MemberId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-AzureActiveDirectory-Activities-AzureADForEachGroupInGroup">
+      <div class="activity-name">For Each Group in Group</div>
+      <div class="activity-full">UiPath.AzureActiveDirectory.Activities.AzureADForEachGroupInGroup</div>
+<span class="badge badge-cat">Identity Services.Azure Active Directory.Groups.Membership</span><p class="activity-desc">Performs an activity or a series of activities on each group which is a direct member of a group.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>GroupId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>CurrentIndex</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;Int32&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-AzureActiveDirectory-Activities-AzureADForEachParentGroup">
+      <div class="activity-name">For Each Parent Group</div>
+      <div class="activity-full">UiPath.AzureActiveDirectory.Activities.AzureADForEachParentGroup</div>
+<span class="badge badge-cat">Identity Services.Azure Active Directory.Groups.Membership</span><p class="activity-desc">Performs an activity or a series of activities on each parent group of the specified group.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>GroupId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Transitive</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Boolean&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>CurrentIndex</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;Int32&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-AzureActiveDirectory-Activities-AzureADForEachUserInGroup">
+      <div class="activity-name">For Each User in Group</div>
+      <div class="activity-full">UiPath.AzureActiveDirectory.Activities.AzureADForEachUserInGroup</div>
+<span class="badge badge-cat">Identity Services.Azure Active Directory.Groups.Membership</span><p class="activity-desc">Performs an activity or a series of activities on each user which is a direct member of a group.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>GroupId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>CurrentIndex</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;Int32&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-AzureActiveDirectory-Activities-AzureADIsMemberOfGroup">
+      <div class="activity-name">Is Member of Group</div>
+      <div class="activity-full">UiPath.AzureActiveDirectory.Activities.AzureADIsMemberOfGroup</div>
+<span class="badge badge-cat">Identity Services.Azure Active Directory.Groups.Membership</span><p class="activity-desc">Checks whether a given object belongs to a group.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>ObjectId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>GroupId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>RecurseIntoChildGroups</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Boolean&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>IsMember</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;Boolean&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-AzureActiveDirectory-Activities-AzureADRemoveMemberFromGroup">
+      <div class="activity-name">Remove Member from Group</div>
+      <div class="activity-full">UiPath.AzureActiveDirectory.Activities.AzureADRemoveMemberFromGroup</div>
+<span class="badge badge-cat">Identity Services.Azure Active Directory.Groups.Membership</span><p class="activity-desc">Removes a member from a group.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>GroupId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>MemberId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-AzureActiveDirectory-Activities-AzureADAddOwnerToGroup">
+      <div class="activity-name">Add Owner to Group</div>
+      <div class="activity-full">UiPath.AzureActiveDirectory.Activities.AzureADAddOwnerToGroup</div>
+<span class="badge badge-cat">Identity Services.Azure Active Directory.Groups.Ownership</span><p class="activity-desc">Adds an owner to a group.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>GroupId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>OwnerId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-AzureActiveDirectory-Activities-AzureADForEachUserInGroupOwners">
+      <div class="activity-name">For Each User in Group Owners</div>
+      <div class="activity-full">UiPath.AzureActiveDirectory.Activities.AzureADForEachUserInGroupOwners</div>
+<span class="badge badge-cat">Identity Services.Azure Active Directory.Groups.Ownership</span><p class="activity-desc">Performs an activity or a series of activities on each user which is an owner of the group.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>GroupId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>CurrentIndex</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;Int32&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-AzureActiveDirectory-Activities-AzureADIsOwnerOfGroup">
+      <div class="activity-name">Is Owner of Group</div>
+      <div class="activity-full">UiPath.AzureActiveDirectory.Activities.AzureADIsOwnerOfGroup</div>
+<span class="badge badge-cat">Identity Services.Azure Active Directory.Groups.Ownership</span><p class="activity-desc">Checks whether a given object is an owner of a group.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>OwnerId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>GroupId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>IsOwner</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;Boolean&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-AzureActiveDirectory-Activities-AzureADRemoveOwnerFromGroup">
+      <div class="activity-name">Remove Owner from Group</div>
+      <div class="activity-full">UiPath.AzureActiveDirectory.Activities.AzureADRemoveOwnerFromGroup</div>
+<span class="badge badge-cat">Identity Services.Azure Active Directory.Groups.Ownership</span><p class="activity-desc">Removes an owner from a group.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>GroupId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>OwnerId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-AzureActiveDirectory-Activities-AzureADAddMemberToRole">
+      <div class="activity-name">Add Member to Role</div>
+      <div class="activity-full">UiPath.AzureActiveDirectory.Activities.AzureADAddMemberToRole</div>
+<span class="badge badge-cat">Identity Services.Azure Active Directory.Directory Roles</span><p class="activity-desc">Adds a user or a service principal to a directory role.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>MemberId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>RoleId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-AzureActiveDirectory-Activities-AzureADForEachRole">
+      <div class="activity-name">For Each Role</div>
+      <div class="activity-full">UiPath.AzureActiveDirectory.Activities.AzureADForEachRole</div>
+<span class="badge badge-cat">Identity Services.Azure Active Directory.Directory Roles</span><p class="activity-desc">Performs an activity or a series of activities on each directory role that is activated in the tenant.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>Top</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Int32&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ODataFilter</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>CurrentIndex</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;Int32&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-AzureActiveDirectory-Activities-AzureADForEachUserInRole">
+      <div class="activity-name">For Each User in Role</div>
+      <div class="activity-full">UiPath.AzureActiveDirectory.Activities.AzureADForEachUserInRole</div>
+<span class="badge badge-cat">Identity Services.Azure Active Directory.Directory Roles</span><p class="activity-desc">Performs an activity or a series of activities on each user that is a member of a directory role.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>RoleId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>CurrentIndex</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;Int32&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-AzureActiveDirectory-Activities-AzureADIsMemberInRole">
+      <div class="activity-name">Is Member in Role</div>
+      <div class="activity-full">UiPath.AzureActiveDirectory.Activities.AzureADIsMemberInRole</div>
+<span class="badge badge-cat">Identity Services.Azure Active Directory.Directory Roles</span><p class="activity-desc">Checks whether a given user or service principal is in a directory role.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>MemberId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>RoleId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>IsObjectInRole</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;Boolean&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-AzureActiveDirectory-Activities-AzureADRemoveMemberFromRole">
+      <div class="activity-name">Remove Member from Role</div>
+      <div class="activity-full">UiPath.AzureActiveDirectory.Activities.AzureADRemoveMemberFromRole</div>
+<span class="badge badge-cat">Identity Services.Azure Active Directory.Directory Roles</span><p class="activity-desc">Removes a user or a service principal from a directory role.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>MemberId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>RoleId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-AzureActiveDirectory-Activities-AzureADApplicationScope">
+      <div class="activity-name">Azure AD Application Scope</div>
+      <div class="activity-full">UiPath.AzureActiveDirectory.Activities.AzureADApplicationScope</div>
+<span class="badge badge-cat">Identity Services.Azure Active Directory</span><p class="activity-desc">Provides an application permission scope for other Azure Active Directory activities. Activities executed using an application scope are executed on behalf of an application.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>ClientSecret</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Security.SecureString&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>TenantId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ClientId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-AzureActiveDirectory-Activities-AzureADDelegatedScope">
+      <div class="activity-name">Azure AD Delegated Scope</div>
+      <div class="activity-full">UiPath.AzureActiveDirectory.Activities.AzureADDelegatedScope</div>
+<span class="badge badge-cat">Identity Services.Azure Active Directory</span><p class="activity-desc">Provides a delegated permission scope for other Azure Active Directory activities. Activities executed using a delegated scope are always executed on behalf of an authenticated user.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>Username</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Password</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Security.SecureString&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>TenantId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ClientId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-AzureActiveDirectory-Activities-AzureADCreateUser">
+      <div class="activity-name">Create User</div>
+      <div class="activity-full">UiPath.AzureActiveDirectory.Activities.AzureADCreateUser</div>
+<span class="badge badge-cat">Identity Services.Azure Active Directory.Users</span><p class="activity-desc">Creates a new user account in Azure Active Directory.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>Enabled</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Boolean&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td><code>True</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>MailNickname</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>UserPrincipalName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Name</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>FirstName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>LastName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>InitialPassword</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ForcePasswordChangeNextLogin</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Boolean&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ForcePasswordChangeNextLoginMfa</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Boolean&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>JobTitle</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Department</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>User</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;UiPath.AzureActiveDirectory.Contracts.Users.UserInfo&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-AzureActiveDirectory-Activities-AzureADDeleteUser">
+      <div class="activity-name">Delete User</div>
+      <div class="activity-full">UiPath.AzureActiveDirectory.Activities.AzureADDeleteUser</div>
+<span class="badge badge-cat">Identity Services.Azure Active Directory.Users</span><p class="activity-desc">Deletes a user from Azure Active Directory.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>UserIdOrUpn</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-AzureActiveDirectory-Activities-AzureADForEachUser">
+      <div class="activity-name">For Each User</div>
+      <div class="activity-full">UiPath.AzureActiveDirectory.Activities.AzureADForEachUser</div>
+<span class="badge badge-cat">Identity Services.Azure Active Directory.Users</span><p class="activity-desc">Performs an activity or a series of activities on each user matching a filter criteria.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>Top</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Int32&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ODataFilter</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>CurrentIndex</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;Int32&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-AzureActiveDirectory-Activities-AzureADForEachUserGroup">
+      <div class="activity-name">For Each User Group</div>
+      <div class="activity-full">UiPath.AzureActiveDirectory.Activities.AzureADForEachUserGroup</div>
+<span class="badge badge-cat">Identity Services.Azure Active Directory.Users</span><p class="activity-desc">Performs an activity or a series of activities on each group the user is a direct member of.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>UserIdOrUpn</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>CurrentIndex</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;Int32&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-AzureActiveDirectory-Activities-AzureADForEachUserRole">
+      <div class="activity-name">For Each User Role</div>
+      <div class="activity-full">UiPath.AzureActiveDirectory.Activities.AzureADForEachUserRole</div>
+<span class="badge badge-cat">Identity Services.Azure Active Directory.Users</span><p class="activity-desc">Performs an activity or a series of activities on each directory role the user is a member of.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>UserIdOrUpn</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>CurrentIndex</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;Int32&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-AzureActiveDirectory-Activities-AzureADGetUser">
+      <div class="activity-name">Get User</div>
+      <div class="activity-full">UiPath.AzureActiveDirectory.Activities.AzureADGetUser</div>
+<span class="badge badge-cat">Identity Services.Azure Active Directory.Users</span><p class="activity-desc">Gets detailed information about a user.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>UserIdOrUpn</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>User</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;UiPath.AzureActiveDirectory.Contracts.Users.UserInfo&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-AzureActiveDirectory-Activities-AzureADResetPassword">
+      <div class="activity-name">Reset Password</div>
+      <div class="activity-full">UiPath.AzureActiveDirectory.Activities.AzureADResetPassword</div>
+<span class="badge badge-cat">Identity Services.Azure Active Directory.Users</span><p class="activity-desc">Resets the password of a user account.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>UserIdOrUpn</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Password</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ForcePasswordChangeNextLogin</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Boolean&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ForcePasswordChangeNextLoginMfa</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Boolean&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-AzureActiveDirectory-Activities-AzureADUpdateUser">
+      <div class="activity-name">Update User</div>
+      <div class="activity-full">UiPath.AzureActiveDirectory.Activities.AzureADUpdateUser</div>
+<span class="badge badge-cat">Identity Services.Azure Active Directory.Users</span><p class="activity-desc">Updates the properties of an existing user.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>User</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;UiPath.AzureActiveDirectory.Contracts.Users.UserInfo&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-AzureActiveDirectory-Activities-AzureADUserExists">
+      <div class="activity-name">User Exists</div>
+      <div class="activity-full">UiPath.AzureActiveDirectory.Activities.AzureADUserExists</div>
+<span class="badge badge-cat">Identity Services.Azure Active Directory.Users</span><p class="activity-desc">Checks if a user exists in Azure Active Directory.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>UserIdOrUpn</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Exists</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;Boolean&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-AzureActiveDirectory-Activities-AzureADAssignLicenseToUser">
+      <div class="activity-name">Assign License</div>
+      <div class="activity-full">UiPath.AzureActiveDirectory.Activities.AzureADAssignLicenseToUser</div>
+<span class="badge badge-cat">Identity Services.Azure Active Directory.Users.Licenses</span><p class="activity-desc">Assigns a license for a user.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>UserIdOrUpn</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>LicenseID</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>DisabledServicePlans</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String[]&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-AzureActiveDirectory-Activities-AzureADRemoveLicenseFromUser">
+      <div class="activity-name">Remove License</div>
+      <div class="activity-full">UiPath.AzureActiveDirectory.Activities.AzureADRemoveLicenseFromUser</div>
+<span class="badge badge-cat">Identity Services.Azure Active Directory.Users.Licenses</span><p class="activity-desc">Removes a license for a user.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>UserIdOrUpn</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>LicenseID</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-AzureActiveDirectory-Activities-AzureADForEachDirectReport">
+      <div class="activity-name">For Each Direct Report</div>
+      <div class="activity-full">UiPath.AzureActiveDirectory.Activities.AzureADForEachDirectReport</div>
+<span class="badge badge-cat">Identity Services.Azure Active Directory.Users.Manager</span><p class="activity-desc">Performs an activity or a series of activities on each direct report of a user.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>UserIdOrUpn</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>CurrentIndex</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;Int32&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-AzureActiveDirectory-Activities-AzureADGetManager">
+      <div class="activity-name">Get Manager</div>
+      <div class="activity-full">UiPath.AzureActiveDirectory.Activities.AzureADGetManager</div>
+<span class="badge badge-cat">Identity Services.Azure Active Directory.Users.Manager</span><p class="activity-desc">Gets the user&#39;s manager.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>UserIdOrUpn</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Manager</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;UiPath.AzureActiveDirectory.Contracts.DirectoryObjectInfo&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-AzureActiveDirectory-Activities-AzureADSetManager">
+      <div class="activity-name">Set Manager</div>
+      <div class="activity-full">UiPath.AzureActiveDirectory.Activities.AzureADSetManager</div>
+<span class="badge badge-cat">Identity Services.Azure Active Directory.Users.Manager</span><p class="activity-desc">Sets the user&#39;s manager.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>UserIdOrUpn</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ManagerIdOrUpn</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsVersion</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionClient</td>
+          <td>property</td>
+          <td><code>UiPath.ConnectionClient.IConnectionClient</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</body>
+</html>

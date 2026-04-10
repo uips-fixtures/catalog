@@ -1,0 +1,367 @@
+{
+  "schema": {
+    "id": "activity-catalog",
+    "version": "v0.3"
+  },
+  "source": {
+    "kind": "nuget-package",
+    "id": "Microsoft.Diagnostics.Tracing.EventSource.Redist",
+    "version": "1.1.28",
+    "feedUrl": null,
+    "authors": "Microsoft",
+    "projectUrl": "http://go.microsoft.com/fwlink/?LinkID=317375",
+    "description": "This package includes the class Microsoft.Diagnostics.Tracing.EventSource which enables firing ETW events from managed code. This is the \"runtime\" or \"redist\" EventSource package and should be referenced directly only by other NuGet packages that need the EventSource functionality. Application developers that need this functionality should instead reference the Microsoft.Diagnostics.Tracing.EventSource NuGet package which provides an enhanced developer experience.\n\n      This package enables defining a strongly typed specification of an ETW provider that can be called by managed code. The EventSource class is also included in the .NET Framework. This package provides a newer version that has more features. It is meant to be used as a stop gap until those features it contains are ported to System.Diagnostics.Tracing.EventSource.\n\n      For more details, have a look at http://msdn.microsoft.com/en-us/library/system.diagnostics.tracing.eventsource.aspx.\n\n      New features:\n      - ETW channel support\n      - Support for static registration\n\n      Supported Platforms:\n      - .NET Framework 3.5\n      - .NET Framework 4.0\n      - .NET Framework 4.5\n      - Windows Store apps\n      - Windows Phone App 8.1",
+    "license": "http://go.microsoft.com/fwlink/?LinkId=329770",
+    "tags": "EventSource Microsoft ETW EventLog Channel",
+    "packageTypes": []
+  },
+  "generatedAt": "2026-04-10T09:21:14Z",
+  "activities": [],
+  "enums": [
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.EventProvider.WriteEventErrorCode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NoError",
+          "value": 0
+        },
+        {
+          "name": "NoFreeBuffers",
+          "value": 1
+        },
+        {
+          "name": "EventTooBig",
+          "value": 2
+        },
+        {
+          "name": "NullInput",
+          "value": 3
+        },
+        {
+          "name": "TooManyArgs",
+          "value": 4
+        },
+        {
+          "name": "Other",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.EventActivityOptions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Disable",
+          "value": 2
+        },
+        {
+          "name": "Recursive",
+          "value": 4
+        },
+        {
+          "name": "Detachable",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.EventSourceSettings",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "ThrowOnEventWriteErrors",
+          "value": 1
+        },
+        {
+          "name": "EtwManifestEventFormat",
+          "value": 4
+        },
+        {
+          "name": "EtwSelfDescribingEventFormat",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.EventCommand",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Update",
+          "value": 0
+        },
+        {
+          "name": "SendManifest",
+          "value": -1
+        },
+        {
+          "name": "Enable",
+          "value": -2
+        },
+        {
+          "name": "Disable",
+          "value": -3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.EventManifestOptions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Strict",
+          "value": 1
+        },
+        {
+          "name": "AllCultures",
+          "value": 2
+        },
+        {
+          "name": "OnlyIfNeededForRegistration",
+          "value": 4
+        },
+        {
+          "name": "AllowEventSourceOverride",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.ManifestEnvelope.ManifestFormats",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "SimpleXmlFormat",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.EventTags",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.EventFieldTags",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.EventFieldFormat",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "String",
+          "value": 2
+        },
+        {
+          "name": "Boolean",
+          "value": 3
+        },
+        {
+          "name": "Hexadecimal",
+          "value": 4
+        },
+        {
+          "name": "Xml",
+          "value": 11
+        },
+        {
+          "name": "Json",
+          "value": 12
+        },
+        {
+          "name": "HResult",
+          "value": 15
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.EventLevel",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "LogAlways",
+          "value": 0
+        },
+        {
+          "name": "Critical",
+          "value": 1
+        },
+        {
+          "name": "Error",
+          "value": 2
+        },
+        {
+          "name": "Warning",
+          "value": 3
+        },
+        {
+          "name": "Informational",
+          "value": 4
+        },
+        {
+          "name": "Verbose",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.EventTask",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.EventOpcode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Info",
+          "value": 0
+        },
+        {
+          "name": "Start",
+          "value": 1
+        },
+        {
+          "name": "Stop",
+          "value": 2
+        },
+        {
+          "name": "DataCollectionStart",
+          "value": 3
+        },
+        {
+          "name": "DataCollectionStop",
+          "value": 4
+        },
+        {
+          "name": "Extension",
+          "value": 5
+        },
+        {
+          "name": "Reply",
+          "value": 6
+        },
+        {
+          "name": "Resume",
+          "value": 7
+        },
+        {
+          "name": "Suspend",
+          "value": 8
+        },
+        {
+          "name": "Send",
+          "value": 9
+        },
+        {
+          "name": "Receive",
+          "value": 240
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.EventChannel",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Admin",
+          "value": 16
+        },
+        {
+          "name": "Operational",
+          "value": 17
+        },
+        {
+          "name": "Analytic",
+          "value": 18
+        },
+        {
+          "name": "Debug",
+          "value": 19
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Diagnostics.Tracing.EventKeywords",
+      "underlyingType": "System.Int64",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "All",
+          "value": -1
+        },
+        {
+          "name": "WdiContext",
+          "value": 562949953421312
+        },
+        {
+          "name": "WdiDiagnostic",
+          "value": 1125899906842624
+        },
+        {
+          "name": "Sqm",
+          "value": 2251799813685248
+        },
+        {
+          "name": "AuditFailure",
+          "value": 4503599627370496
+        },
+        {
+          "name": "AuditSuccess",
+          "value": 9007199254740992
+        },
+        {
+          "name": "CorrelationHint",
+          "value": 18014398509481984
+        },
+        {
+          "name": "EventLogClassic",
+          "value": 36028797018963968
+        }
+      ]
+    }
+  ],
+  "namespaceMappings": []
+}

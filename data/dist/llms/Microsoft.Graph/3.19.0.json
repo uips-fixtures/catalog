@@ -1,0 +1,7599 @@
+{
+  "schema": {
+    "id": "activity-catalog",
+    "version": "v0.3"
+  },
+  "source": {
+    "kind": "nuget-package",
+    "id": "Microsoft.Graph",
+    "version": "3.19.0",
+    "feedUrl": null,
+    "authors": "Microsoft",
+    "projectUrl": "https://developer.microsoft.com/graph",
+    "description": "Microsoft Graph Client Library allows you to call Office 365, Azure AD and other Microsoft services through a single unified developer experience.",
+    "license": "LICENSE.txt",
+    "tags": "Microsoft Office365 Graph GraphServiceClient Outlook OneDrive AzureAD GraphAPI Productivity SharePoint Intune SDK",
+    "packageTypes": []
+  },
+  "generatedAt": "2026-04-10T09:21:14Z",
+  "activities": [],
+  "enums": [
+    {
+      "fullName": "Microsoft.Graph.ClientType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Business",
+          "value": 0
+        },
+        {
+          "name": "Consumer",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.GraphErrorCode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AccessDenied",
+          "value": 0
+        },
+        {
+          "name": "ActivityLimitReached",
+          "value": 1
+        },
+        {
+          "name": "AccessRestricted",
+          "value": 2
+        },
+        {
+          "name": "AuthenticationCancelled",
+          "value": 3
+        },
+        {
+          "name": "AuthenticationFailure",
+          "value": 4
+        },
+        {
+          "name": "CannotSnapshotTree",
+          "value": 5
+        },
+        {
+          "name": "ChildItemCountExceeded",
+          "value": 6
+        },
+        {
+          "name": "EntityTagDoesNotMatch",
+          "value": 7
+        },
+        {
+          "name": "FragmentLengthMismatch",
+          "value": 8
+        },
+        {
+          "name": "FragmentOutOfOrder",
+          "value": 9
+        },
+        {
+          "name": "FragmentOverlap",
+          "value": 10
+        },
+        {
+          "name": "GeneralException",
+          "value": 11
+        },
+        {
+          "name": "InvalidAcceptType",
+          "value": 12
+        },
+        {
+          "name": "InvalidParameterFormat",
+          "value": 13
+        },
+        {
+          "name": "InvalidPath",
+          "value": 14
+        },
+        {
+          "name": "InvalidQueryOption",
+          "value": 15
+        },
+        {
+          "name": "InvalidRange",
+          "value": 16
+        },
+        {
+          "name": "InvalidRequest",
+          "value": 17
+        },
+        {
+          "name": "InvalidStartIndex",
+          "value": 18
+        },
+        {
+          "name": "ItemNotFound",
+          "value": 19
+        },
+        {
+          "name": "LockMismatch",
+          "value": 20
+        },
+        {
+          "name": "LockNotFoundOrAlreadyExpired",
+          "value": 21
+        },
+        {
+          "name": "LockOwnerMismatch",
+          "value": 22
+        },
+        {
+          "name": "MalformedEntityTag",
+          "value": 23
+        },
+        {
+          "name": "MalwareDetected",
+          "value": 24
+        },
+        {
+          "name": "MaxDocumentCountExceeded",
+          "value": 25
+        },
+        {
+          "name": "MaxFileSizeExceeded",
+          "value": 26
+        },
+        {
+          "name": "MaxFolderCountExceeded",
+          "value": 27
+        },
+        {
+          "name": "MaxFragmentLengthExceeded",
+          "value": 28
+        },
+        {
+          "name": "MaxItemCountExceeded",
+          "value": 29
+        },
+        {
+          "name": "MaxQueryLengthExceeded",
+          "value": 30
+        },
+        {
+          "name": "MaxStreamSizeExceeded",
+          "value": 31
+        },
+        {
+          "name": "NameAlreadyExists",
+          "value": 32
+        },
+        {
+          "name": "NotAllowed",
+          "value": 33
+        },
+        {
+          "name": "NotSupported",
+          "value": 34
+        },
+        {
+          "name": "ParameterIsTooLong",
+          "value": 35
+        },
+        {
+          "name": "ParameterIsTooSmall",
+          "value": 36
+        },
+        {
+          "name": "PathIsTooLong",
+          "value": 37
+        },
+        {
+          "name": "PathTooDeep",
+          "value": 38
+        },
+        {
+          "name": "PropertyNotUpdateable",
+          "value": 39
+        },
+        {
+          "name": "ResourceModified",
+          "value": 40
+        },
+        {
+          "name": "ResyncApplyDifferences",
+          "value": 41
+        },
+        {
+          "name": "ResyncRequired",
+          "value": 42
+        },
+        {
+          "name": "ResyncUploadDifferences",
+          "value": 43
+        },
+        {
+          "name": "ServiceNotAvailable",
+          "value": 44
+        },
+        {
+          "name": "ServiceReadOnly",
+          "value": 45
+        },
+        {
+          "name": "ThrottledRequest",
+          "value": 46
+        },
+        {
+          "name": "Timeout",
+          "value": 47
+        },
+        {
+          "name": "TooManyRedirects",
+          "value": 48
+        },
+        {
+          "name": "TooManyResultsRequested",
+          "value": 49
+        },
+        {
+          "name": "TooManyTermsInQuery",
+          "value": 50
+        },
+        {
+          "name": "TotalAffectedItemCountExceeded",
+          "value": 51
+        },
+        {
+          "name": "TruncationNotAllowed",
+          "value": 52
+        },
+        {
+          "name": "QuotaLimitReached",
+          "value": 53
+        },
+        {
+          "name": "Unauthenticated",
+          "value": 54
+        },
+        {
+          "name": "UploadSessionFailed",
+          "value": 55
+        },
+        {
+          "name": "UploadSessionIncomplete",
+          "value": 56
+        },
+        {
+          "name": "UploadSessionNotFound",
+          "value": 57
+        },
+        {
+          "name": "VirusSuspicious",
+          "value": 58
+        },
+        {
+          "name": "ZeroOrFewerResultsRequested",
+          "value": 59
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.ActionState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Pending",
+          "value": 1
+        },
+        {
+          "name": "Canceled",
+          "value": 2
+        },
+        {
+          "name": "Active",
+          "value": 3
+        },
+        {
+          "name": "Done",
+          "value": 4
+        },
+        {
+          "name": "Failed",
+          "value": 5
+        },
+        {
+          "name": "NotSupported",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.ActivityDomain",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "Work",
+          "value": 1
+        },
+        {
+          "name": "Personal",
+          "value": 2
+        },
+        {
+          "name": "Unrestricted",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.AlertFeedback",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "TruePositive",
+          "value": 1
+        },
+        {
+          "name": "FalsePositive",
+          "value": 2
+        },
+        {
+          "name": "BenignPositive",
+          "value": 3
+        },
+        {
+          "name": "UnknownFutureValue",
+          "value": 127
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.AlertSeverity",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "Informational",
+          "value": 1
+        },
+        {
+          "name": "Low",
+          "value": 2
+        },
+        {
+          "name": "Medium",
+          "value": 3
+        },
+        {
+          "name": "High",
+          "value": 4
+        },
+        {
+          "name": "UnknownFutureValue",
+          "value": 127
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.AlertStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "NewAlert",
+          "value": 1
+        },
+        {
+          "name": "InProgress",
+          "value": 2
+        },
+        {
+          "name": "Resolved",
+          "value": 3
+        },
+        {
+          "name": "Dismissed",
+          "value": 4
+        },
+        {
+          "name": "UnknownFutureValue",
+          "value": 127
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.AndroidRequiredPasswordType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DeviceDefault",
+          "value": 0
+        },
+        {
+          "name": "Alphabetic",
+          "value": 1
+        },
+        {
+          "name": "Alphanumeric",
+          "value": 2
+        },
+        {
+          "name": "AlphanumericWithSymbols",
+          "value": 3
+        },
+        {
+          "name": "LowSecurityBiometric",
+          "value": 4
+        },
+        {
+          "name": "Numeric",
+          "value": 5
+        },
+        {
+          "name": "NumericComplex",
+          "value": 6
+        },
+        {
+          "name": "Any",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.AndroidWorkProfileCrossProfileDataSharingType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DeviceDefault",
+          "value": 0
+        },
+        {
+          "name": "PreventAny",
+          "value": 1
+        },
+        {
+          "name": "AllowPersonalToWork",
+          "value": 2
+        },
+        {
+          "name": "NoRestrictions",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.AndroidWorkProfileDefaultAppPermissionPolicyType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DeviceDefault",
+          "value": 0
+        },
+        {
+          "name": "Prompt",
+          "value": 1
+        },
+        {
+          "name": "AutoGrant",
+          "value": 2
+        },
+        {
+          "name": "AutoDeny",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.AndroidWorkProfileRequiredPasswordType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DeviceDefault",
+          "value": 0
+        },
+        {
+          "name": "LowSecurityBiometric",
+          "value": 1
+        },
+        {
+          "name": "Required",
+          "value": 2
+        },
+        {
+          "name": "AtLeastNumeric",
+          "value": 3
+        },
+        {
+          "name": "NumericComplex",
+          "value": 4
+        },
+        {
+          "name": "AtLeastAlphabetic",
+          "value": 5
+        },
+        {
+          "name": "AtLeastAlphanumeric",
+          "value": 6
+        },
+        {
+          "name": "AlphanumericWithSymbols",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.ApplicationGuardBlockClipboardSharingType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NotConfigured",
+          "value": 0
+        },
+        {
+          "name": "BlockBoth",
+          "value": 1
+        },
+        {
+          "name": "BlockHostToContainer",
+          "value": 2
+        },
+        {
+          "name": "BlockContainerToHost",
+          "value": 3
+        },
+        {
+          "name": "BlockNone",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.ApplicationGuardBlockFileTransferType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NotConfigured",
+          "value": 0
+        },
+        {
+          "name": "BlockImageAndTextFile",
+          "value": 1
+        },
+        {
+          "name": "BlockImageFile",
+          "value": 2
+        },
+        {
+          "name": "BlockNone",
+          "value": 3
+        },
+        {
+          "name": "BlockTextFile",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.ApplicationType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Universal",
+          "value": 1
+        },
+        {
+          "name": "Desktop",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.AppliedConditionalAccessPolicyResult",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Success",
+          "value": 0
+        },
+        {
+          "name": "Failure",
+          "value": 1
+        },
+        {
+          "name": "NotApplied",
+          "value": 2
+        },
+        {
+          "name": "NotEnabled",
+          "value": 3
+        },
+        {
+          "name": "Unknown",
+          "value": 4
+        },
+        {
+          "name": "UnknownFutureValue",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.AppListType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "AppsInListCompliant",
+          "value": 1
+        },
+        {
+          "name": "AppsNotInListCompliant",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.AppLockerApplicationControlType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NotConfigured",
+          "value": 0
+        },
+        {
+          "name": "EnforceComponentsAndStoreApps",
+          "value": 1
+        },
+        {
+          "name": "AuditComponentsAndStoreApps",
+          "value": 2
+        },
+        {
+          "name": "EnforceComponentsStoreAppsAndSmartlocker",
+          "value": 3
+        },
+        {
+          "name": "AuditComponentsStoreAppsAndSmartlocker",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.AttachmentType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "File",
+          "value": 0
+        },
+        {
+          "name": "Item",
+          "value": 1
+        },
+        {
+          "name": "Reference",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.AttendeeType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Required",
+          "value": 0
+        },
+        {
+          "name": "Optional",
+          "value": 1
+        },
+        {
+          "name": "Resource",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.AutomaticRepliesStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Disabled",
+          "value": 0
+        },
+        {
+          "name": "AlwaysEnabled",
+          "value": 1
+        },
+        {
+          "name": "Scheduled",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.AutomaticUpdateMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "UserDefined",
+          "value": 0
+        },
+        {
+          "name": "NotifyDownload",
+          "value": 1
+        },
+        {
+          "name": "AutoInstallAtMaintenanceTime",
+          "value": 2
+        },
+        {
+          "name": "AutoInstallAndRebootAtMaintenanceTime",
+          "value": 3
+        },
+        {
+          "name": "AutoInstallAndRebootAtScheduledTime",
+          "value": 4
+        },
+        {
+          "name": "AutoInstallAndRebootWithoutEndUserControl",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.BitLockerEncryptionMethod",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AesCbc128",
+          "value": 3
+        },
+        {
+          "name": "AesCbc256",
+          "value": 4
+        },
+        {
+          "name": "XtsAes128",
+          "value": 6
+        },
+        {
+          "name": "XtsAes256",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.BodyType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Text",
+          "value": 0
+        },
+        {
+          "name": "Html",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.BookingType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "Standard",
+          "value": 1
+        },
+        {
+          "name": "Reserved",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.CalendarColor",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "LightBlue",
+          "value": 0
+        },
+        {
+          "name": "LightGreen",
+          "value": 1
+        },
+        {
+          "name": "Auto",
+          "value": -1
+        },
+        {
+          "name": "LightOrange",
+          "value": 2
+        },
+        {
+          "name": "LightGray",
+          "value": 3
+        },
+        {
+          "name": "LightYellow",
+          "value": 4
+        },
+        {
+          "name": "LightTeal",
+          "value": 5
+        },
+        {
+          "name": "LightPink",
+          "value": 6
+        },
+        {
+          "name": "LightBrown",
+          "value": 7
+        },
+        {
+          "name": "LightRed",
+          "value": 8
+        },
+        {
+          "name": "MaxColor",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.CalendarRoleType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "FreeBusyRead",
+          "value": 1
+        },
+        {
+          "name": "LimitedRead",
+          "value": 2
+        },
+        {
+          "name": "Read",
+          "value": 3
+        },
+        {
+          "name": "Write",
+          "value": 4
+        },
+        {
+          "name": "DelegateWithoutPrivateEventAccess",
+          "value": 5
+        },
+        {
+          "name": "DelegateWithPrivateEventAccess",
+          "value": 6
+        },
+        {
+          "name": "Custom",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.CalendarSharingAction",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Accept",
+          "value": 0
+        },
+        {
+          "name": "AcceptAndViewCalendar",
+          "value": 1
+        },
+        {
+          "name": "ViewCalendar",
+          "value": 2
+        },
+        {
+          "name": "AddThisCalendar",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.CalendarSharingActionImportance",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Primary",
+          "value": 0
+        },
+        {
+          "name": "Secondary",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.CalendarSharingActionType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Accept",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.CallDirection",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Incoming",
+          "value": 0
+        },
+        {
+          "name": "Outgoing",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.CallState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Incoming",
+          "value": 0
+        },
+        {
+          "name": "Establishing",
+          "value": 1
+        },
+        {
+          "name": "Established",
+          "value": 3
+        },
+        {
+          "name": "Hold",
+          "value": 4
+        },
+        {
+          "name": "Transferring",
+          "value": 5
+        },
+        {
+          "name": "TransferAccepted",
+          "value": 6
+        },
+        {
+          "name": "Redirecting",
+          "value": 7
+        },
+        {
+          "name": "Terminating",
+          "value": 8
+        },
+        {
+          "name": "Terminated",
+          "value": 9
+        },
+        {
+          "name": "UnknownFutureValue",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.CallTranscriptionState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NotStarted",
+          "value": 0
+        },
+        {
+          "name": "Active",
+          "value": 1
+        },
+        {
+          "name": "Inactive",
+          "value": 2
+        },
+        {
+          "name": "UnknownFutureValue",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.CategoryColor",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Preset0",
+          "value": 0
+        },
+        {
+          "name": "Preset1",
+          "value": 1
+        },
+        {
+          "name": "None",
+          "value": -1
+        },
+        {
+          "name": "Preset2",
+          "value": 2
+        },
+        {
+          "name": "Preset3",
+          "value": 3
+        },
+        {
+          "name": "Preset4",
+          "value": 4
+        },
+        {
+          "name": "Preset5",
+          "value": 5
+        },
+        {
+          "name": "Preset6",
+          "value": 6
+        },
+        {
+          "name": "Preset7",
+          "value": 7
+        },
+        {
+          "name": "Preset8",
+          "value": 8
+        },
+        {
+          "name": "Preset9",
+          "value": 9
+        },
+        {
+          "name": "Preset10",
+          "value": 10
+        },
+        {
+          "name": "Preset11",
+          "value": 11
+        },
+        {
+          "name": "Preset12",
+          "value": 12
+        },
+        {
+          "name": "Preset13",
+          "value": 13
+        },
+        {
+          "name": "Preset14",
+          "value": 14
+        },
+        {
+          "name": "Preset15",
+          "value": 15
+        },
+        {
+          "name": "Preset16",
+          "value": 16
+        },
+        {
+          "name": "Preset17",
+          "value": 17
+        },
+        {
+          "name": "Preset18",
+          "value": 18
+        },
+        {
+          "name": "Preset19",
+          "value": 19
+        },
+        {
+          "name": "Preset20",
+          "value": 20
+        },
+        {
+          "name": "Preset21",
+          "value": 21
+        },
+        {
+          "name": "Preset22",
+          "value": 22
+        },
+        {
+          "name": "Preset23",
+          "value": 23
+        },
+        {
+          "name": "Preset24",
+          "value": 24
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.ChangeType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Created",
+          "value": 0
+        },
+        {
+          "name": "Updated",
+          "value": 1
+        },
+        {
+          "name": "Deleted",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.ChannelMembershipType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Standard",
+          "value": 0
+        },
+        {
+          "name": "Private",
+          "value": 1
+        },
+        {
+          "name": "UnknownFutureValue",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.ChatMessageImportance",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Normal",
+          "value": 0
+        },
+        {
+          "name": "High",
+          "value": 1
+        },
+        {
+          "name": "Urgent",
+          "value": 2
+        },
+        {
+          "name": "UnknownFutureValue",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.ChatMessagePolicyViolationDlpActionTypes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "NotifySender",
+          "value": 1
+        },
+        {
+          "name": "BlockAccess",
+          "value": 2
+        },
+        {
+          "name": "BlockAccessExternal",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.ChatMessagePolicyViolationUserActionTypes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Override",
+          "value": 1
+        },
+        {
+          "name": "ReportFalsePositive",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.ChatMessagePolicyViolationVerdictDetailsTypes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "AllowFalsePositiveOverride",
+          "value": 1
+        },
+        {
+          "name": "AllowOverrideWithoutJustification",
+          "value": 2
+        },
+        {
+          "name": "AllowOverrideWithJustification",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.ChatMessageType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Message",
+          "value": 0
+        },
+        {
+          "name": "ChatEvent",
+          "value": 1
+        },
+        {
+          "name": "Typing",
+          "value": 2
+        },
+        {
+          "name": "UnknownFutureValue",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.ClonableTeamParts",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Apps",
+          "value": 1
+        },
+        {
+          "name": "Tabs",
+          "value": 2
+        },
+        {
+          "name": "Settings",
+          "value": 4
+        },
+        {
+          "name": "Channels",
+          "value": 8
+        },
+        {
+          "name": "Members",
+          "value": 16
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.CloudAppSecuritySessionControlType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "McasConfigured",
+          "value": 0
+        },
+        {
+          "name": "MonitorOnly",
+          "value": 1
+        },
+        {
+          "name": "BlockDownloads",
+          "value": 2
+        },
+        {
+          "name": "UnknownFutureValue",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.ComplianceState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "Compliant",
+          "value": 1
+        },
+        {
+          "name": "Noncompliant",
+          "value": 2
+        },
+        {
+          "name": "Conflict",
+          "value": 3
+        },
+        {
+          "name": "Error",
+          "value": 4
+        },
+        {
+          "name": "InGracePeriod",
+          "value": 254
+        },
+        {
+          "name": "ConfigManager",
+          "value": 255
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.ComplianceStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "NotApplicable",
+          "value": 1
+        },
+        {
+          "name": "Compliant",
+          "value": 2
+        },
+        {
+          "name": "Remediated",
+          "value": 3
+        },
+        {
+          "name": "NonCompliant",
+          "value": 4
+        },
+        {
+          "name": "Error",
+          "value": 5
+        },
+        {
+          "name": "Conflict",
+          "value": 6
+        },
+        {
+          "name": "NotAssigned",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.ConditionalAccessClientApp",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "All",
+          "value": 0
+        },
+        {
+          "name": "Browser",
+          "value": 1
+        },
+        {
+          "name": "MobileAppsAndDesktopClients",
+          "value": 2
+        },
+        {
+          "name": "ExchangeActiveSync",
+          "value": 3
+        },
+        {
+          "name": "EasSupported",
+          "value": 4
+        },
+        {
+          "name": "Other",
+          "value": 5
+        },
+        {
+          "name": "UnknownFutureValue",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.ConditionalAccessDevicePlatform",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Android",
+          "value": 0
+        },
+        {
+          "name": "IOS",
+          "value": 1
+        },
+        {
+          "name": "Windows",
+          "value": 2
+        },
+        {
+          "name": "WindowsPhone",
+          "value": 3
+        },
+        {
+          "name": "MacOS",
+          "value": 4
+        },
+        {
+          "name": "All",
+          "value": 5
+        },
+        {
+          "name": "UnknownFutureValue",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.ConditionalAccessGrantControl",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Block",
+          "value": 0
+        },
+        {
+          "name": "Mfa",
+          "value": 1
+        },
+        {
+          "name": "CompliantDevice",
+          "value": 2
+        },
+        {
+          "name": "DomainJoinedDevice",
+          "value": 3
+        },
+        {
+          "name": "ApprovedApplication",
+          "value": 4
+        },
+        {
+          "name": "CompliantApplication",
+          "value": 5
+        },
+        {
+          "name": "UnknownFutureValue",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.ConditionalAccessPolicyState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Enabled",
+          "value": 0
+        },
+        {
+          "name": "Disabled",
+          "value": 1
+        },
+        {
+          "name": "EnabledForReportingButNotEnforced",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.ConditionalAccessStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Success",
+          "value": 0
+        },
+        {
+          "name": "Failure",
+          "value": 1
+        },
+        {
+          "name": "NotApplied",
+          "value": 2
+        },
+        {
+          "name": "UnknownFutureValue",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.ConnectionDirection",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "Inbound",
+          "value": 1
+        },
+        {
+          "name": "Outbound",
+          "value": 2
+        },
+        {
+          "name": "UnknownFutureValue",
+          "value": 127
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.ConnectionStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "Attempted",
+          "value": 1
+        },
+        {
+          "name": "Succeeded",
+          "value": 2
+        },
+        {
+          "name": "Blocked",
+          "value": 3
+        },
+        {
+          "name": "Failed",
+          "value": 4
+        },
+        {
+          "name": "UnknownFutureValue",
+          "value": 127
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.DataPolicyOperationStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NotStarted",
+          "value": 0
+        },
+        {
+          "name": "Running",
+          "value": 1
+        },
+        {
+          "name": "Complete",
+          "value": 2
+        },
+        {
+          "name": "Failed",
+          "value": 3
+        },
+        {
+          "name": "UnknownFutureValue",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.DayOfWeek",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Sunday",
+          "value": 0
+        },
+        {
+          "name": "Monday",
+          "value": 1
+        },
+        {
+          "name": "Tuesday",
+          "value": 2
+        },
+        {
+          "name": "Wednesday",
+          "value": 3
+        },
+        {
+          "name": "Thursday",
+          "value": 4
+        },
+        {
+          "name": "Friday",
+          "value": 5
+        },
+        {
+          "name": "Saturday",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.DefenderCloudBlockLevelType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NotConfigured",
+          "value": 0
+        },
+        {
+          "name": "High",
+          "value": 1
+        },
+        {
+          "name": "HighPlus",
+          "value": 2
+        },
+        {
+          "name": "ZeroTolerance",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.DefenderMonitorFileActivity",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "UserDefined",
+          "value": 0
+        },
+        {
+          "name": "Disable",
+          "value": 1
+        },
+        {
+          "name": "MonitorAllFiles",
+          "value": 2
+        },
+        {
+          "name": "MonitorIncomingFilesOnly",
+          "value": 3
+        },
+        {
+          "name": "MonitorOutgoingFilesOnly",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.DefenderPromptForSampleSubmission",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "UserDefined",
+          "value": 0
+        },
+        {
+          "name": "AlwaysPrompt",
+          "value": 1
+        },
+        {
+          "name": "PromptBeforeSendingPersonalData",
+          "value": 2
+        },
+        {
+          "name": "NeverSendData",
+          "value": 3
+        },
+        {
+          "name": "SendAllDataWithoutPrompting",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.DefenderScanType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "UserDefined",
+          "value": 0
+        },
+        {
+          "name": "Disabled",
+          "value": 1
+        },
+        {
+          "name": "Quick",
+          "value": 2
+        },
+        {
+          "name": "Full",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.DefenderThreatAction",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DeviceDefault",
+          "value": 0
+        },
+        {
+          "name": "Clean",
+          "value": 1
+        },
+        {
+          "name": "Quarantine",
+          "value": 2
+        },
+        {
+          "name": "Remove",
+          "value": 3
+        },
+        {
+          "name": "Allow",
+          "value": 4
+        },
+        {
+          "name": "UserDefined",
+          "value": 5
+        },
+        {
+          "name": "Block",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.DelegateMeetingMessageDeliveryOptions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "SendToDelegateAndInformationToPrincipal",
+          "value": 0
+        },
+        {
+          "name": "SendToDelegateAndPrincipal",
+          "value": 1
+        },
+        {
+          "name": "SendToDelegateOnly",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.DeviceComplianceActionType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NoAction",
+          "value": 0
+        },
+        {
+          "name": "Notification",
+          "value": 1
+        },
+        {
+          "name": "Block",
+          "value": 2
+        },
+        {
+          "name": "Retire",
+          "value": 3
+        },
+        {
+          "name": "Wipe",
+          "value": 4
+        },
+        {
+          "name": "RemoveResourceAccessProfiles",
+          "value": 5
+        },
+        {
+          "name": "PushNotification",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.DeviceEnrollmentFailureReason",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "Authentication",
+          "value": 1
+        },
+        {
+          "name": "Authorization",
+          "value": 2
+        },
+        {
+          "name": "AccountValidation",
+          "value": 3
+        },
+        {
+          "name": "UserValidation",
+          "value": 4
+        },
+        {
+          "name": "DeviceNotSupported",
+          "value": 5
+        },
+        {
+          "name": "InMaintenance",
+          "value": 6
+        },
+        {
+          "name": "BadRequest",
+          "value": 7
+        },
+        {
+          "name": "FeatureNotSupported",
+          "value": 8
+        },
+        {
+          "name": "EnrollmentRestrictionsEnforced",
+          "value": 9
+        },
+        {
+          "name": "ClientDisconnected",
+          "value": 10
+        },
+        {
+          "name": "UserAbandonment",
+          "value": 11
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.DeviceEnrollmentType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "UserEnrollment",
+          "value": 1
+        },
+        {
+          "name": "DeviceEnrollmentManager",
+          "value": 2
+        },
+        {
+          "name": "AppleBulkWithUser",
+          "value": 3
+        },
+        {
+          "name": "AppleBulkWithoutUser",
+          "value": 4
+        },
+        {
+          "name": "WindowsAzureADJoin",
+          "value": 5
+        },
+        {
+          "name": "WindowsBulkUserless",
+          "value": 6
+        },
+        {
+          "name": "WindowsAutoEnrollment",
+          "value": 7
+        },
+        {
+          "name": "WindowsBulkAzureDomainJoin",
+          "value": 8
+        },
+        {
+          "name": "WindowsCoManagement",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.DeviceManagementExchangeAccessState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Unknown",
+          "value": 1
+        },
+        {
+          "name": "Allowed",
+          "value": 2
+        },
+        {
+          "name": "Blocked",
+          "value": 3
+        },
+        {
+          "name": "Quarantined",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.DeviceManagementExchangeAccessStateReason",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Unknown",
+          "value": 1
+        },
+        {
+          "name": "ExchangeGlobalRule",
+          "value": 2
+        },
+        {
+          "name": "ExchangeIndividualRule",
+          "value": 3
+        },
+        {
+          "name": "ExchangeDeviceRule",
+          "value": 4
+        },
+        {
+          "name": "ExchangeUpgrade",
+          "value": 5
+        },
+        {
+          "name": "ExchangeMailboxPolicy",
+          "value": 6
+        },
+        {
+          "name": "Other",
+          "value": 7
+        },
+        {
+          "name": "Compliant",
+          "value": 8
+        },
+        {
+          "name": "NotCompliant",
+          "value": 9
+        },
+        {
+          "name": "NotEnrolled",
+          "value": 10
+        },
+        {
+          "name": "UnknownLocation",
+          "value": 12
+        },
+        {
+          "name": "MfaRequired",
+          "value": 13
+        },
+        {
+          "name": "AzureADBlockDueToAccessPolicy",
+          "value": 14
+        },
+        {
+          "name": "CompromisedPassword",
+          "value": 15
+        },
+        {
+          "name": "DeviceNotKnownWithManagedApp",
+          "value": 16
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.DeviceManagementExchangeConnectorStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "ConnectionPending",
+          "value": 1
+        },
+        {
+          "name": "Connected",
+          "value": 2
+        },
+        {
+          "name": "Disconnected",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.DeviceManagementExchangeConnectorSyncType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "FullSync",
+          "value": 0
+        },
+        {
+          "name": "DeltaSync",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.DeviceManagementExchangeConnectorType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "OnPremises",
+          "value": 0
+        },
+        {
+          "name": "Hosted",
+          "value": 1
+        },
+        {
+          "name": "ServiceToService",
+          "value": 2
+        },
+        {
+          "name": "Dedicated",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.DeviceManagementPartnerAppType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "SingleTenantApp",
+          "value": 1
+        },
+        {
+          "name": "MultiTenantApp",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.DeviceManagementPartnerTenantState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "Unavailable",
+          "value": 1
+        },
+        {
+          "name": "Enabled",
+          "value": 2
+        },
+        {
+          "name": "Terminated",
+          "value": 3
+        },
+        {
+          "name": "Rejected",
+          "value": 4
+        },
+        {
+          "name": "Unresponsive",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.DeviceManagementSubscriptionState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Pending",
+          "value": 0
+        },
+        {
+          "name": "Active",
+          "value": 1
+        },
+        {
+          "name": "Warning",
+          "value": 2
+        },
+        {
+          "name": "Disabled",
+          "value": 3
+        },
+        {
+          "name": "Deleted",
+          "value": 4
+        },
+        {
+          "name": "Blocked",
+          "value": 5
+        },
+        {
+          "name": "LockedOut",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.DeviceRegistrationState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NotRegistered",
+          "value": 0
+        },
+        {
+          "name": "Registered",
+          "value": 2
+        },
+        {
+          "name": "Revoked",
+          "value": 3
+        },
+        {
+          "name": "KeyConflict",
+          "value": 4
+        },
+        {
+          "name": "ApprovalPending",
+          "value": 5
+        },
+        {
+          "name": "CertificateReset",
+          "value": 6
+        },
+        {
+          "name": "NotRegisteredPendingEnrollment",
+          "value": 7
+        },
+        {
+          "name": "Unknown",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.DeviceThreatProtectionLevel",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unavailable",
+          "value": 0
+        },
+        {
+          "name": "Secured",
+          "value": 1
+        },
+        {
+          "name": "Low",
+          "value": 2
+        },
+        {
+          "name": "Medium",
+          "value": 3
+        },
+        {
+          "name": "High",
+          "value": 4
+        },
+        {
+          "name": "NotSet",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.DiagnosticDataSubmissionMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "UserDefined",
+          "value": 0
+        },
+        {
+          "name": "None",
+          "value": 1
+        },
+        {
+          "name": "Basic",
+          "value": 2
+        },
+        {
+          "name": "Enhanced",
+          "value": 3
+        },
+        {
+          "name": "Full",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.EdgeCookiePolicy",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "UserDefined",
+          "value": 0
+        },
+        {
+          "name": "Allow",
+          "value": 1
+        },
+        {
+          "name": "BlockThirdParty",
+          "value": 2
+        },
+        {
+          "name": "BlockAll",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.EdgeSearchEngineType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "Bing",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.EditionUpgradeLicenseType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ProductKey",
+          "value": 0
+        },
+        {
+          "name": "LicenseFile",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.EducationExternalSource",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Sis",
+          "value": 0
+        },
+        {
+          "name": "Manual",
+          "value": 1
+        },
+        {
+          "name": "UnknownFutureValue",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.EducationGender",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Female",
+          "value": 0
+        },
+        {
+          "name": "Male",
+          "value": 1
+        },
+        {
+          "name": "Other",
+          "value": 2
+        },
+        {
+          "name": "UnknownFutureValue",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.EducationUserRole",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Student",
+          "value": 0
+        },
+        {
+          "name": "Teacher",
+          "value": 1
+        },
+        {
+          "name": "None",
+          "value": 2
+        },
+        {
+          "name": "UnknownFutureValue",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.EmailRole",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "Sender",
+          "value": 1
+        },
+        {
+          "name": "Recipient",
+          "value": 2
+        },
+        {
+          "name": "UnknownFutureValue",
+          "value": 127
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.Enablement",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NotConfigured",
+          "value": 0
+        },
+        {
+          "name": "Enabled",
+          "value": 1
+        },
+        {
+          "name": "Disabled",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.EndpointType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "Voicemail",
+          "value": 1
+        },
+        {
+          "name": "SkypeForBusiness",
+          "value": 2
+        },
+        {
+          "name": "SkypeForBusinessVoipPhone",
+          "value": 3
+        },
+        {
+          "name": "UnknownFutureValue",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.EventType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "SingleInstance",
+          "value": 0
+        },
+        {
+          "name": "Occurrence",
+          "value": 1
+        },
+        {
+          "name": "Exception",
+          "value": 2
+        },
+        {
+          "name": "SeriesMaster",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.ExchangeIdFormat",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "EntryId",
+          "value": 0
+        },
+        {
+          "name": "EwsId",
+          "value": 1
+        },
+        {
+          "name": "ImmutableEntryId",
+          "value": 2
+        },
+        {
+          "name": "RestId",
+          "value": 3
+        },
+        {
+          "name": "RestImmutableEntryId",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.ExternalAudienceScope",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "ContactsOnly",
+          "value": 1
+        },
+        {
+          "name": "All",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.FileHashType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "Sha1",
+          "value": 1
+        },
+        {
+          "name": "Sha256",
+          "value": 2
+        },
+        {
+          "name": "Md5",
+          "value": 3
+        },
+        {
+          "name": "AuthenticodeHash256",
+          "value": 4
+        },
+        {
+          "name": "LsHash",
+          "value": 5
+        },
+        {
+          "name": "Ctph",
+          "value": 6
+        },
+        {
+          "name": "UnknownFutureValue",
+          "value": 127
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.FirewallCertificateRevocationListCheckMethodType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DeviceDefault",
+          "value": 0
+        },
+        {
+          "name": "None",
+          "value": 1
+        },
+        {
+          "name": "Attempt",
+          "value": 2
+        },
+        {
+          "name": "Require",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.FirewallPacketQueueingMethodType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DeviceDefault",
+          "value": 0
+        },
+        {
+          "name": "Disabled",
+          "value": 1
+        },
+        {
+          "name": "QueueInbound",
+          "value": 2
+        },
+        {
+          "name": "QueueOutbound",
+          "value": 3
+        },
+        {
+          "name": "QueueBoth",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.FirewallPreSharedKeyEncodingMethodType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DeviceDefault",
+          "value": 0
+        },
+        {
+          "name": "None",
+          "value": 1
+        },
+        {
+          "name": "UtF8",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.FollowupFlagStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NotFlagged",
+          "value": 0
+        },
+        {
+          "name": "Complete",
+          "value": 1
+        },
+        {
+          "name": "Flagged",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.FreeBusyStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Free",
+          "value": 0
+        },
+        {
+          "name": "Tentative",
+          "value": 1
+        },
+        {
+          "name": "Unknown",
+          "value": -1
+        },
+        {
+          "name": "Busy",
+          "value": 2
+        },
+        {
+          "name": "Oof",
+          "value": 3
+        },
+        {
+          "name": "WorkingElsewhere",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.GiphyRatingType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Strict",
+          "value": 0
+        },
+        {
+          "name": "Moderate",
+          "value": 1
+        },
+        {
+          "name": "UnknownFutureValue",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.GroupType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "UnifiedGroups",
+          "value": 0
+        },
+        {
+          "name": "AzureAD",
+          "value": 1
+        },
+        {
+          "name": "UnknownFutureValue",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.Importance",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Low",
+          "value": 0
+        },
+        {
+          "name": "Normal",
+          "value": 1
+        },
+        {
+          "name": "High",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.InferenceClassificationType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Focused",
+          "value": 0
+        },
+        {
+          "name": "Other",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.InstallIntent",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Available",
+          "value": 0
+        },
+        {
+          "name": "Required",
+          "value": 1
+        },
+        {
+          "name": "Uninstall",
+          "value": 2
+        },
+        {
+          "name": "AvailableWithoutEnrollment",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.InstallState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NotApplicable",
+          "value": 0
+        },
+        {
+          "name": "Installed",
+          "value": 1
+        },
+        {
+          "name": "Failed",
+          "value": 2
+        },
+        {
+          "name": "NotInstalled",
+          "value": 3
+        },
+        {
+          "name": "UninstallFailed",
+          "value": 4
+        },
+        {
+          "name": "Unknown",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.InternetSiteSecurityLevel",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "UserDefined",
+          "value": 0
+        },
+        {
+          "name": "Medium",
+          "value": 1
+        },
+        {
+          "name": "MediumHigh",
+          "value": 2
+        },
+        {
+          "name": "High",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.IosNotificationAlertType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DeviceDefault",
+          "value": 0
+        },
+        {
+          "name": "Banner",
+          "value": 1
+        },
+        {
+          "name": "Modal",
+          "value": 2
+        },
+        {
+          "name": "None",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.IosUpdatesInstallStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Success",
+          "value": 0
+        },
+        {
+          "name": "Available",
+          "value": 1
+        },
+        {
+          "name": "Idle",
+          "value": 2
+        },
+        {
+          "name": "Unknown",
+          "value": 3
+        },
+        {
+          "name": "DeviceOsHigherThanDesiredOsVersion",
+          "value": -2016330696
+        },
+        {
+          "name": "SharedDeviceUserLoggedInError",
+          "value": -2016330699
+        },
+        {
+          "name": "NotSupportedOperation",
+          "value": -2016330701
+        },
+        {
+          "name": "InstallFailed",
+          "value": -2016330702
+        },
+        {
+          "name": "InstallPhoneCallInProgress",
+          "value": -2016330703
+        },
+        {
+          "name": "InstallInsufficientPower",
+          "value": -2016330704
+        },
+        {
+          "name": "InstallInsufficientSpace",
+          "value": -2016330705
+        },
+        {
+          "name": "Installing",
+          "value": -2016330706
+        },
+        {
+          "name": "DownloadInsufficientNetwork",
+          "value": -2016330707
+        },
+        {
+          "name": "DownloadInsufficientPower",
+          "value": -2016330708
+        },
+        {
+          "name": "DownloadInsufficientSpace",
+          "value": -2016330709
+        },
+        {
+          "name": "DownloadRequiresComputer",
+          "value": -2016330710
+        },
+        {
+          "name": "DownloadFailed",
+          "value": -2016330711
+        },
+        {
+          "name": "Downloading",
+          "value": -2016330712
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.LifecycleEventType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Missed",
+          "value": 0
+        },
+        {
+          "name": "SubscriptionRemoved",
+          "value": 1
+        },
+        {
+          "name": "ReauthorizationRequired",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.LocationType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "ConferenceRoom",
+          "value": 1
+        },
+        {
+          "name": "HomeAddress",
+          "value": 2
+        },
+        {
+          "name": "BusinessAddress",
+          "value": 3
+        },
+        {
+          "name": "GeoCoordinates",
+          "value": 4
+        },
+        {
+          "name": "StreetAddress",
+          "value": 5
+        },
+        {
+          "name": "Hotel",
+          "value": 6
+        },
+        {
+          "name": "Restaurant",
+          "value": 7
+        },
+        {
+          "name": "LocalBusiness",
+          "value": 8
+        },
+        {
+          "name": "PostalAddress",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.LocationUniqueIdType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "LocationStore",
+          "value": 1
+        },
+        {
+          "name": "Directory",
+          "value": 2
+        },
+        {
+          "name": "Private",
+          "value": 3
+        },
+        {
+          "name": "Bing",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.LogonType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "Interactive",
+          "value": 1
+        },
+        {
+          "name": "RemoteInteractive",
+          "value": 2
+        },
+        {
+          "name": "Network",
+          "value": 3
+        },
+        {
+          "name": "Batch",
+          "value": 4
+        },
+        {
+          "name": "Service",
+          "value": 5
+        },
+        {
+          "name": "UnknownFutureValue",
+          "value": 127
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.MailDestinationRoutingReason",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "MailFlowRule",
+          "value": 1
+        },
+        {
+          "name": "SafeSender",
+          "value": 2
+        },
+        {
+          "name": "BlockedSender",
+          "value": 3
+        },
+        {
+          "name": "AdvancedSpamFiltering",
+          "value": 4
+        },
+        {
+          "name": "DomainAllowList",
+          "value": 5
+        },
+        {
+          "name": "DomainBlockList",
+          "value": 6
+        },
+        {
+          "name": "NotInAddressBook",
+          "value": 7
+        },
+        {
+          "name": "FirstTimeSender",
+          "value": 8
+        },
+        {
+          "name": "AutoPurgeToInbox",
+          "value": 9
+        },
+        {
+          "name": "AutoPurgeToJunk",
+          "value": 10
+        },
+        {
+          "name": "AutoPurgeToDeleted",
+          "value": 11
+        },
+        {
+          "name": "Outbound",
+          "value": 12
+        },
+        {
+          "name": "NotJunk",
+          "value": 13
+        },
+        {
+          "name": "Junk",
+          "value": 14
+        },
+        {
+          "name": "UnknownFutureValue",
+          "value": 15
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.MailTipsType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AutomaticReplies",
+          "value": 1
+        },
+        {
+          "name": "MailboxFullStatus",
+          "value": 2
+        },
+        {
+          "name": "CustomMailTip",
+          "value": 4
+        },
+        {
+          "name": "ExternalMemberCount",
+          "value": 8
+        },
+        {
+          "name": "TotalMemberCount",
+          "value": 16
+        },
+        {
+          "name": "MaxMessageSize",
+          "value": 32
+        },
+        {
+          "name": "DeliveryRestriction",
+          "value": 64
+        },
+        {
+          "name": "ModerationStatus",
+          "value": 128
+        },
+        {
+          "name": "RecipientScope",
+          "value": 256
+        },
+        {
+          "name": "RecipientSuggestions",
+          "value": 512
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.ManagedAppAvailability",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Global",
+          "value": 0
+        },
+        {
+          "name": "LineOfBusiness",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.ManagedAppClipboardSharingLevel",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AllApps",
+          "value": 0
+        },
+        {
+          "name": "ManagedAppsWithPasteIn",
+          "value": 1
+        },
+        {
+          "name": "ManagedApps",
+          "value": 2
+        },
+        {
+          "name": "Blocked",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.ManagedAppDataEncryptionType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "UseDeviceSettings",
+          "value": 0
+        },
+        {
+          "name": "AfterDeviceRestart",
+          "value": 1
+        },
+        {
+          "name": "WhenDeviceLockedExceptOpenFiles",
+          "value": 2
+        },
+        {
+          "name": "WhenDeviceLocked",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.ManagedAppDataStorageLocation",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "OneDriveForBusiness",
+          "value": 1
+        },
+        {
+          "name": "SharePoint",
+          "value": 2
+        },
+        {
+          "name": "LocalStorage",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.ManagedAppDataTransferLevel",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AllApps",
+          "value": 0
+        },
+        {
+          "name": "ManagedApps",
+          "value": 1
+        },
+        {
+          "name": "None",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.ManagedAppFlaggedReason",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "RootedDevice",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.ManagedAppPinCharacterSet",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Numeric",
+          "value": 0
+        },
+        {
+          "name": "AlphanumericAndSymbol",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.ManagedBrowserType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NotConfigured",
+          "value": 0
+        },
+        {
+          "name": "MicrosoftEdge",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.ManagedDeviceOwnerType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "Company",
+          "value": 1
+        },
+        {
+          "name": "Personal",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.ManagedDevicePartnerReportedHealthState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "Activated",
+          "value": 1
+        },
+        {
+          "name": "Deactivated",
+          "value": 2
+        },
+        {
+          "name": "Secured",
+          "value": 3
+        },
+        {
+          "name": "LowSeverity",
+          "value": 4
+        },
+        {
+          "name": "MediumSeverity",
+          "value": 5
+        },
+        {
+          "name": "HighSeverity",
+          "value": 6
+        },
+        {
+          "name": "Unresponsive",
+          "value": 7
+        },
+        {
+          "name": "Compromised",
+          "value": 8
+        },
+        {
+          "name": "Misconfigured",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.ManagementAgentType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Eas",
+          "value": 1
+        },
+        {
+          "name": "Mdm",
+          "value": 2
+        },
+        {
+          "name": "EasMdm",
+          "value": 3
+        },
+        {
+          "name": "IntuneClient",
+          "value": 4
+        },
+        {
+          "name": "EasIntuneClient",
+          "value": 5
+        },
+        {
+          "name": "ConfigurationManagerClient",
+          "value": 8
+        },
+        {
+          "name": "ConfigurationManagerClientMdm",
+          "value": 10
+        },
+        {
+          "name": "ConfigurationManagerClientMdmEas",
+          "value": 11
+        },
+        {
+          "name": "Unknown",
+          "value": 16
+        },
+        {
+          "name": "Jamf",
+          "value": 32
+        },
+        {
+          "name": "GoogleCloudDevicePolicyController",
+          "value": 64
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.MdmAppConfigKeyType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "StringType",
+          "value": 0
+        },
+        {
+          "name": "IntegerType",
+          "value": 1
+        },
+        {
+          "name": "RealType",
+          "value": 2
+        },
+        {
+          "name": "BooleanType",
+          "value": 3
+        },
+        {
+          "name": "TokenType",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.MdmAuthority",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "Intune",
+          "value": 1
+        },
+        {
+          "name": "Sccm",
+          "value": 2
+        },
+        {
+          "name": "Office365",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.MediaDirection",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Inactive",
+          "value": 0
+        },
+        {
+          "name": "SendOnly",
+          "value": 1
+        },
+        {
+          "name": "ReceiveOnly",
+          "value": 2
+        },
+        {
+          "name": "SendReceive",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.MediaState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Active",
+          "value": 0
+        },
+        {
+          "name": "Inactive",
+          "value": 1
+        },
+        {
+          "name": "UnknownFutureValue",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.MeetingMessageType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "MeetingRequest",
+          "value": 1
+        },
+        {
+          "name": "MeetingCancelled",
+          "value": 2
+        },
+        {
+          "name": "MeetingAccepted",
+          "value": 3
+        },
+        {
+          "name": "MeetingTenativelyAccepted",
+          "value": 4
+        },
+        {
+          "name": "MeetingDeclined",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.MeetingRequestType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "NewMeetingRequest",
+          "value": 1
+        },
+        {
+          "name": "FullUpdate",
+          "value": 65536
+        },
+        {
+          "name": "InformationalUpdate",
+          "value": 131072
+        },
+        {
+          "name": "SilentUpdate",
+          "value": 262144
+        },
+        {
+          "name": "Outdated",
+          "value": 524288
+        },
+        {
+          "name": "PrincipalWantsCopy",
+          "value": 1048576
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.MessageActionFlag",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Any",
+          "value": 0
+        },
+        {
+          "name": "Call",
+          "value": 1
+        },
+        {
+          "name": "DoNotForward",
+          "value": 2
+        },
+        {
+          "name": "FollowUp",
+          "value": 3
+        },
+        {
+          "name": "Fyi",
+          "value": 4
+        },
+        {
+          "name": "Forward",
+          "value": 5
+        },
+        {
+          "name": "NoResponseNecessary",
+          "value": 6
+        },
+        {
+          "name": "Read",
+          "value": 7
+        },
+        {
+          "name": "Reply",
+          "value": 8
+        },
+        {
+          "name": "ReplyToAll",
+          "value": 9
+        },
+        {
+          "name": "Review",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.MicrosoftStoreForBusinessLicenseType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Offline",
+          "value": 0
+        },
+        {
+          "name": "Online",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.MiracastChannel",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "UserDefined",
+          "value": 0
+        },
+        {
+          "name": "One",
+          "value": 1
+        },
+        {
+          "name": "Two",
+          "value": 2
+        },
+        {
+          "name": "Three",
+          "value": 3
+        },
+        {
+          "name": "Four",
+          "value": 4
+        },
+        {
+          "name": "Five",
+          "value": 5
+        },
+        {
+          "name": "Six",
+          "value": 6
+        },
+        {
+          "name": "Seven",
+          "value": 7
+        },
+        {
+          "name": "Eight",
+          "value": 8
+        },
+        {
+          "name": "Nine",
+          "value": 9
+        },
+        {
+          "name": "Ten",
+          "value": 10
+        },
+        {
+          "name": "Eleven",
+          "value": 11
+        },
+        {
+          "name": "ThirtySix",
+          "value": 36
+        },
+        {
+          "name": "Forty",
+          "value": 40
+        },
+        {
+          "name": "FortyFour",
+          "value": 44
+        },
+        {
+          "name": "FortyEight",
+          "value": 48
+        },
+        {
+          "name": "OneHundredFortyNine",
+          "value": 149
+        },
+        {
+          "name": "OneHundredFiftyThree",
+          "value": 153
+        },
+        {
+          "name": "OneHundredFiftySeven",
+          "value": 157
+        },
+        {
+          "name": "OneHundredSixtyOne",
+          "value": 161
+        },
+        {
+          "name": "OneHundredSixtyFive",
+          "value": 165
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.MobileAppContentFileUploadState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Success",
+          "value": 0
+        },
+        {
+          "name": "TransientError",
+          "value": 1
+        },
+        {
+          "name": "Error",
+          "value": 2
+        },
+        {
+          "name": "Unknown",
+          "value": 3
+        },
+        {
+          "name": "AzureStorageUriRequestSuccess",
+          "value": 100
+        },
+        {
+          "name": "AzureStorageUriRequestPending",
+          "value": 101
+        },
+        {
+          "name": "AzureStorageUriRequestFailed",
+          "value": 102
+        },
+        {
+          "name": "AzureStorageUriRequestTimedOut",
+          "value": 103
+        },
+        {
+          "name": "AzureStorageUriRenewalSuccess",
+          "value": 200
+        },
+        {
+          "name": "AzureStorageUriRenewalPending",
+          "value": 201
+        },
+        {
+          "name": "AzureStorageUriRenewalFailed",
+          "value": 202
+        },
+        {
+          "name": "AzureStorageUriRenewalTimedOut",
+          "value": 203
+        },
+        {
+          "name": "CommitFileSuccess",
+          "value": 300
+        },
+        {
+          "name": "CommitFilePending",
+          "value": 301
+        },
+        {
+          "name": "CommitFileFailed",
+          "value": 302
+        },
+        {
+          "name": "CommitFileTimedOut",
+          "value": 303
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.MobileAppPublishingState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NotPublished",
+          "value": 0
+        },
+        {
+          "name": "Processing",
+          "value": 1
+        },
+        {
+          "name": "Published",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.MobileThreatPartnerTenantState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unavailable",
+          "value": 0
+        },
+        {
+          "name": "Available",
+          "value": 1
+        },
+        {
+          "name": "Enabled",
+          "value": 2
+        },
+        {
+          "name": "Unresponsive",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.Modality",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Audio",
+          "value": 1
+        },
+        {
+          "name": "Video",
+          "value": 2
+        },
+        {
+          "name": "VideoBasedScreenSharing",
+          "value": 3
+        },
+        {
+          "name": "Data",
+          "value": 4
+        },
+        {
+          "name": "UnknownFutureValue",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.NotificationTemplateBrandingOptions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "IncludeCompanyLogo",
+          "value": 1
+        },
+        {
+          "name": "IncludeCompanyName",
+          "value": 2
+        },
+        {
+          "name": "IncludeContactInformation",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.OnenotePatchActionType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Replace",
+          "value": 0
+        },
+        {
+          "name": "Append",
+          "value": 1
+        },
+        {
+          "name": "Delete",
+          "value": 2
+        },
+        {
+          "name": "Insert",
+          "value": 3
+        },
+        {
+          "name": "Prepend",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.OnenotePatchInsertPosition",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "After",
+          "value": 0
+        },
+        {
+          "name": "Before",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.OnenoteSourceService",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "OneDrive",
+          "value": 1
+        },
+        {
+          "name": "OneDriveForBusiness",
+          "value": 2
+        },
+        {
+          "name": "OnPremOneDriveForBusiness",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.OnenoteUserRole",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Owner",
+          "value": 0
+        },
+        {
+          "name": "Contributor",
+          "value": 1
+        },
+        {
+          "name": "None",
+          "value": -1
+        },
+        {
+          "name": "Reader",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.OnlineMeetingProviderType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "SkypeForBusiness",
+          "value": 1
+        },
+        {
+          "name": "SkypeForConsumer",
+          "value": 2
+        },
+        {
+          "name": "TeamsForBusiness",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.OperationResult",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Success",
+          "value": 0
+        },
+        {
+          "name": "Failure",
+          "value": 1
+        },
+        {
+          "name": "Timeout",
+          "value": 2
+        },
+        {
+          "name": "UnknownFutureValue",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.OperationStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NotStarted",
+          "value": 0
+        },
+        {
+          "name": "Running",
+          "value": 1
+        },
+        {
+          "name": "Completed",
+          "value": 2
+        },
+        {
+          "name": "Failed",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.PermissionClassificationType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Low",
+          "value": 1
+        },
+        {
+          "name": "Medium",
+          "value": 2
+        },
+        {
+          "name": "High",
+          "value": 3
+        },
+        {
+          "name": "UnknownFutureValue",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.PermissionType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Application",
+          "value": 3
+        },
+        {
+          "name": "Delegated",
+          "value": 2
+        },
+        {
+          "name": "DelegatedUserConsentable",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.PersistentBrowserSessionMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Always",
+          "value": 0
+        },
+        {
+          "name": "Never",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.PhoneType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Home",
+          "value": 0
+        },
+        {
+          "name": "Business",
+          "value": 1
+        },
+        {
+          "name": "Mobile",
+          "value": 2
+        },
+        {
+          "name": "Other",
+          "value": 3
+        },
+        {
+          "name": "Assistant",
+          "value": 4
+        },
+        {
+          "name": "HomeFax",
+          "value": 5
+        },
+        {
+          "name": "BusinessFax",
+          "value": 6
+        },
+        {
+          "name": "OtherFax",
+          "value": 7
+        },
+        {
+          "name": "Pager",
+          "value": 8
+        },
+        {
+          "name": "Radio",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.PhysicalAddressType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "Home",
+          "value": 1
+        },
+        {
+          "name": "Business",
+          "value": 2
+        },
+        {
+          "name": "Other",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.PlannerPreviewType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Automatic",
+          "value": 0
+        },
+        {
+          "name": "NoPreview",
+          "value": 1
+        },
+        {
+          "name": "Checklist",
+          "value": 2
+        },
+        {
+          "name": "Description",
+          "value": 3
+        },
+        {
+          "name": "Reference",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.PolicyPlatformType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Android",
+          "value": 0
+        },
+        {
+          "name": "IOS",
+          "value": 2
+        },
+        {
+          "name": "MacOS",
+          "value": 3
+        },
+        {
+          "name": "WindowsPhone81",
+          "value": 4
+        },
+        {
+          "name": "Windows81AndLater",
+          "value": 5
+        },
+        {
+          "name": "Windows10AndLater",
+          "value": 6
+        },
+        {
+          "name": "AndroidWorkProfile",
+          "value": 7
+        },
+        {
+          "name": "All",
+          "value": 100
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.PrereleaseFeatures",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "UserDefined",
+          "value": 0
+        },
+        {
+          "name": "SettingsOnly",
+          "value": 1
+        },
+        {
+          "name": "SettingsAndExperimentations",
+          "value": 2
+        },
+        {
+          "name": "NotAllowed",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.ProcessIntegrityLevel",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "Untrusted",
+          "value": 1
+        },
+        {
+          "name": "Low",
+          "value": 2
+        },
+        {
+          "name": "Medium",
+          "value": 3
+        },
+        {
+          "name": "High",
+          "value": 4
+        },
+        {
+          "name": "System",
+          "value": 5
+        },
+        {
+          "name": "UnknownFutureValue",
+          "value": 127
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.RatingAppsType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AllAllowed",
+          "value": 0
+        },
+        {
+          "name": "AllBlocked",
+          "value": 1
+        },
+        {
+          "name": "AgesAbove4",
+          "value": 2
+        },
+        {
+          "name": "AgesAbove9",
+          "value": 3
+        },
+        {
+          "name": "AgesAbove12",
+          "value": 4
+        },
+        {
+          "name": "AgesAbove17",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.RatingAustraliaMoviesType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AllAllowed",
+          "value": 0
+        },
+        {
+          "name": "AllBlocked",
+          "value": 1
+        },
+        {
+          "name": "General",
+          "value": 2
+        },
+        {
+          "name": "ParentalGuidance",
+          "value": 3
+        },
+        {
+          "name": "Mature",
+          "value": 4
+        },
+        {
+          "name": "AgesAbove15",
+          "value": 5
+        },
+        {
+          "name": "AgesAbove18",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.RatingAustraliaTelevisionType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AllAllowed",
+          "value": 0
+        },
+        {
+          "name": "AllBlocked",
+          "value": 1
+        },
+        {
+          "name": "Preschoolers",
+          "value": 2
+        },
+        {
+          "name": "Children",
+          "value": 3
+        },
+        {
+          "name": "General",
+          "value": 4
+        },
+        {
+          "name": "ParentalGuidance",
+          "value": 5
+        },
+        {
+          "name": "Mature",
+          "value": 6
+        },
+        {
+          "name": "AgesAbove15",
+          "value": 7
+        },
+        {
+          "name": "AgesAbove15AdultViolence",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.RatingCanadaMoviesType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AllAllowed",
+          "value": 0
+        },
+        {
+          "name": "AllBlocked",
+          "value": 1
+        },
+        {
+          "name": "General",
+          "value": 2
+        },
+        {
+          "name": "ParentalGuidance",
+          "value": 3
+        },
+        {
+          "name": "AgesAbove14",
+          "value": 4
+        },
+        {
+          "name": "AgesAbove18",
+          "value": 5
+        },
+        {
+          "name": "Restricted",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.RatingCanadaTelevisionType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AllAllowed",
+          "value": 0
+        },
+        {
+          "name": "AllBlocked",
+          "value": 1
+        },
+        {
+          "name": "Children",
+          "value": 2
+        },
+        {
+          "name": "ChildrenAbove8",
+          "value": 3
+        },
+        {
+          "name": "General",
+          "value": 4
+        },
+        {
+          "name": "ParentalGuidance",
+          "value": 5
+        },
+        {
+          "name": "AgesAbove14",
+          "value": 6
+        },
+        {
+          "name": "AgesAbove18",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.RatingFranceMoviesType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AllAllowed",
+          "value": 0
+        },
+        {
+          "name": "AllBlocked",
+          "value": 1
+        },
+        {
+          "name": "AgesAbove10",
+          "value": 2
+        },
+        {
+          "name": "AgesAbove12",
+          "value": 3
+        },
+        {
+          "name": "AgesAbove16",
+          "value": 4
+        },
+        {
+          "name": "AgesAbove18",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.RatingFranceTelevisionType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AllAllowed",
+          "value": 0
+        },
+        {
+          "name": "AllBlocked",
+          "value": 1
+        },
+        {
+          "name": "AgesAbove10",
+          "value": 2
+        },
+        {
+          "name": "AgesAbove12",
+          "value": 3
+        },
+        {
+          "name": "AgesAbove16",
+          "value": 4
+        },
+        {
+          "name": "AgesAbove18",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.RatingGermanyMoviesType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AllAllowed",
+          "value": 0
+        },
+        {
+          "name": "AllBlocked",
+          "value": 1
+        },
+        {
+          "name": "General",
+          "value": 2
+        },
+        {
+          "name": "AgesAbove6",
+          "value": 3
+        },
+        {
+          "name": "AgesAbove12",
+          "value": 4
+        },
+        {
+          "name": "AgesAbove16",
+          "value": 5
+        },
+        {
+          "name": "Adults",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.RatingGermanyTelevisionType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AllAllowed",
+          "value": 0
+        },
+        {
+          "name": "AllBlocked",
+          "value": 1
+        },
+        {
+          "name": "General",
+          "value": 2
+        },
+        {
+          "name": "AgesAbove6",
+          "value": 3
+        },
+        {
+          "name": "AgesAbove12",
+          "value": 4
+        },
+        {
+          "name": "AgesAbove16",
+          "value": 5
+        },
+        {
+          "name": "Adults",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.RatingIrelandMoviesType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AllAllowed",
+          "value": 0
+        },
+        {
+          "name": "AllBlocked",
+          "value": 1
+        },
+        {
+          "name": "General",
+          "value": 2
+        },
+        {
+          "name": "ParentalGuidance",
+          "value": 3
+        },
+        {
+          "name": "AgesAbove12",
+          "value": 4
+        },
+        {
+          "name": "AgesAbove15",
+          "value": 5
+        },
+        {
+          "name": "AgesAbove16",
+          "value": 6
+        },
+        {
+          "name": "Adults",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.RatingIrelandTelevisionType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AllAllowed",
+          "value": 0
+        },
+        {
+          "name": "AllBlocked",
+          "value": 1
+        },
+        {
+          "name": "General",
+          "value": 2
+        },
+        {
+          "name": "Children",
+          "value": 3
+        },
+        {
+          "name": "YoungAdults",
+          "value": 4
+        },
+        {
+          "name": "ParentalSupervision",
+          "value": 5
+        },
+        {
+          "name": "Mature",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.RatingJapanMoviesType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AllAllowed",
+          "value": 0
+        },
+        {
+          "name": "AllBlocked",
+          "value": 1
+        },
+        {
+          "name": "General",
+          "value": 2
+        },
+        {
+          "name": "ParentalGuidance",
+          "value": 3
+        },
+        {
+          "name": "AgesAbove15",
+          "value": 4
+        },
+        {
+          "name": "AgesAbove18",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.RatingJapanTelevisionType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AllAllowed",
+          "value": 0
+        },
+        {
+          "name": "AllBlocked",
+          "value": 1
+        },
+        {
+          "name": "ExplicitAllowed",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.RatingNewZealandMoviesType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AllAllowed",
+          "value": 0
+        },
+        {
+          "name": "AllBlocked",
+          "value": 1
+        },
+        {
+          "name": "General",
+          "value": 2
+        },
+        {
+          "name": "ParentalGuidance",
+          "value": 3
+        },
+        {
+          "name": "Mature",
+          "value": 4
+        },
+        {
+          "name": "AgesAbove13",
+          "value": 5
+        },
+        {
+          "name": "AgesAbove15",
+          "value": 6
+        },
+        {
+          "name": "AgesAbove16",
+          "value": 7
+        },
+        {
+          "name": "AgesAbove18",
+          "value": 8
+        },
+        {
+          "name": "Restricted",
+          "value": 9
+        },
+        {
+          "name": "AgesAbove16Restricted",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.RatingNewZealandTelevisionType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AllAllowed",
+          "value": 0
+        },
+        {
+          "name": "AllBlocked",
+          "value": 1
+        },
+        {
+          "name": "General",
+          "value": 2
+        },
+        {
+          "name": "ParentalGuidance",
+          "value": 3
+        },
+        {
+          "name": "Adults",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.RatingUnitedKingdomMoviesType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AllAllowed",
+          "value": 0
+        },
+        {
+          "name": "AllBlocked",
+          "value": 1
+        },
+        {
+          "name": "General",
+          "value": 2
+        },
+        {
+          "name": "UniversalChildren",
+          "value": 3
+        },
+        {
+          "name": "ParentalGuidance",
+          "value": 4
+        },
+        {
+          "name": "AgesAbove12Video",
+          "value": 5
+        },
+        {
+          "name": "AgesAbove12Cinema",
+          "value": 6
+        },
+        {
+          "name": "AgesAbove15",
+          "value": 7
+        },
+        {
+          "name": "Adults",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.RatingUnitedKingdomTelevisionType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AllAllowed",
+          "value": 0
+        },
+        {
+          "name": "AllBlocked",
+          "value": 1
+        },
+        {
+          "name": "Caution",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.RatingUnitedStatesMoviesType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AllAllowed",
+          "value": 0
+        },
+        {
+          "name": "AllBlocked",
+          "value": 1
+        },
+        {
+          "name": "General",
+          "value": 2
+        },
+        {
+          "name": "ParentalGuidance",
+          "value": 3
+        },
+        {
+          "name": "ParentalGuidance13",
+          "value": 4
+        },
+        {
+          "name": "Restricted",
+          "value": 5
+        },
+        {
+          "name": "Adults",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.RatingUnitedStatesTelevisionType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AllAllowed",
+          "value": 0
+        },
+        {
+          "name": "AllBlocked",
+          "value": 1
+        },
+        {
+          "name": "ChildrenAll",
+          "value": 2
+        },
+        {
+          "name": "ChildrenAbove7",
+          "value": 3
+        },
+        {
+          "name": "General",
+          "value": 4
+        },
+        {
+          "name": "ParentalGuidance",
+          "value": 5
+        },
+        {
+          "name": "ChildrenAbove14",
+          "value": 6
+        },
+        {
+          "name": "Adults",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.RecipientScopeType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Internal",
+          "value": 1
+        },
+        {
+          "name": "External",
+          "value": 2
+        },
+        {
+          "name": "ExternalPartner",
+          "value": 4
+        },
+        {
+          "name": "ExternalNonPartner",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.RecordingStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "NotRecording",
+          "value": 1
+        },
+        {
+          "name": "Recording",
+          "value": 2
+        },
+        {
+          "name": "Failed",
+          "value": 3
+        },
+        {
+          "name": "UnknownFutureValue",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.RecurrencePatternType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Daily",
+          "value": 0
+        },
+        {
+          "name": "Weekly",
+          "value": 1
+        },
+        {
+          "name": "AbsoluteMonthly",
+          "value": 2
+        },
+        {
+          "name": "RelativeMonthly",
+          "value": 3
+        },
+        {
+          "name": "AbsoluteYearly",
+          "value": 4
+        },
+        {
+          "name": "RelativeYearly",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.RecurrenceRangeType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "EndDate",
+          "value": 0
+        },
+        {
+          "name": "NoEnd",
+          "value": 1
+        },
+        {
+          "name": "Numbered",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.RegistryHive",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "CurrentConfig",
+          "value": 1
+        },
+        {
+          "name": "CurrentUser",
+          "value": 2
+        },
+        {
+          "name": "LocalMachineSam",
+          "value": 3
+        },
+        {
+          "name": "LocalMachineSecurity",
+          "value": 4
+        },
+        {
+          "name": "LocalMachineSoftware",
+          "value": 5
+        },
+        {
+          "name": "LocalMachineSystem",
+          "value": 6
+        },
+        {
+          "name": "UsersDefault",
+          "value": 7
+        },
+        {
+          "name": "UnknownFutureValue",
+          "value": 127
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.RegistryOperation",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "Create",
+          "value": 1
+        },
+        {
+          "name": "Modify",
+          "value": 2
+        },
+        {
+          "name": "Delete",
+          "value": 3
+        },
+        {
+          "name": "UnknownFutureValue",
+          "value": 127
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.RegistryValueType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "Binary",
+          "value": 1
+        },
+        {
+          "name": "Dword",
+          "value": 2
+        },
+        {
+          "name": "DwordLittleEndian",
+          "value": 3
+        },
+        {
+          "name": "DwordBigEndian",
+          "value": 4
+        },
+        {
+          "name": "ExpandSz",
+          "value": 5
+        },
+        {
+          "name": "Link",
+          "value": 6
+        },
+        {
+          "name": "MultiSz",
+          "value": 7
+        },
+        {
+          "name": "None",
+          "value": 8
+        },
+        {
+          "name": "Qword",
+          "value": 9
+        },
+        {
+          "name": "QwordlittleEndian",
+          "value": 10
+        },
+        {
+          "name": "Sz",
+          "value": 11
+        },
+        {
+          "name": "UnknownFutureValue",
+          "value": 127
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.RejectReason",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Busy",
+          "value": 1
+        },
+        {
+          "name": "Forbidden",
+          "value": 2
+        },
+        {
+          "name": "UnknownFutureValue",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.RemoteAssistanceOnboardingStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NotOnboarded",
+          "value": 0
+        },
+        {
+          "name": "Onboarding",
+          "value": 1
+        },
+        {
+          "name": "Onboarded",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.RequiredPasswordType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DeviceDefault",
+          "value": 0
+        },
+        {
+          "name": "Alphanumeric",
+          "value": 1
+        },
+        {
+          "name": "Numeric",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.ResponseType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Organizer",
+          "value": 1
+        },
+        {
+          "name": "TentativelyAccepted",
+          "value": 2
+        },
+        {
+          "name": "Accepted",
+          "value": 3
+        },
+        {
+          "name": "Declined",
+          "value": 4
+        },
+        {
+          "name": "NotResponded",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.RiskDetail",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "AdminGeneratedTemporaryPassword",
+          "value": 1
+        },
+        {
+          "name": "UserPerformedSecuredPasswordChange",
+          "value": 2
+        },
+        {
+          "name": "UserPerformedSecuredPasswordReset",
+          "value": 3
+        },
+        {
+          "name": "AdminConfirmedSigninSafe",
+          "value": 4
+        },
+        {
+          "name": "AiConfirmedSigninSafe",
+          "value": 5
+        },
+        {
+          "name": "UserPassedMFADrivenByRiskBasedPolicy",
+          "value": 6
+        },
+        {
+          "name": "AdminDismissedAllRiskForUser",
+          "value": 7
+        },
+        {
+          "name": "AdminConfirmedSigninCompromised",
+          "value": 8
+        },
+        {
+          "name": "Hidden",
+          "value": 9
+        },
+        {
+          "name": "AdminConfirmedUserCompromised",
+          "value": 10
+        },
+        {
+          "name": "UnknownFutureValue",
+          "value": 11
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.RiskEventType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "UnlikelyTravel",
+          "value": 0
+        },
+        {
+          "name": "AnonymizedIPAddress",
+          "value": 1
+        },
+        {
+          "name": "MaliciousIPAddress",
+          "value": 2
+        },
+        {
+          "name": "UnfamiliarFeatures",
+          "value": 3
+        },
+        {
+          "name": "MalwareInfectedIPAddress",
+          "value": 4
+        },
+        {
+          "name": "SuspiciousIPAddress",
+          "value": 5
+        },
+        {
+          "name": "LeakedCredentials",
+          "value": 6
+        },
+        {
+          "name": "InvestigationsThreatIntelligence",
+          "value": 7
+        },
+        {
+          "name": "Generic",
+          "value": 8
+        },
+        {
+          "name": "AdminConfirmedUserCompromised",
+          "value": 9
+        },
+        {
+          "name": "McasImpossibleTravel",
+          "value": 10
+        },
+        {
+          "name": "McasSuspiciousInboxManipulationRules",
+          "value": 11
+        },
+        {
+          "name": "InvestigationsThreatIntelligenceSigninLinked",
+          "value": 12
+        },
+        {
+          "name": "MaliciousIPAddressValidCredentialsBlockedIP",
+          "value": 13
+        },
+        {
+          "name": "UnknownFutureValue",
+          "value": 14
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.RiskLevel",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Low",
+          "value": 0
+        },
+        {
+          "name": "Medium",
+          "value": 1
+        },
+        {
+          "name": "High",
+          "value": 2
+        },
+        {
+          "name": "Hidden",
+          "value": 3
+        },
+        {
+          "name": "None",
+          "value": 4
+        },
+        {
+          "name": "UnknownFutureValue",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.RiskState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "ConfirmedSafe",
+          "value": 1
+        },
+        {
+          "name": "Remediated",
+          "value": 2
+        },
+        {
+          "name": "Dismissed",
+          "value": 3
+        },
+        {
+          "name": "AtRisk",
+          "value": 4
+        },
+        {
+          "name": "ConfirmedCompromised",
+          "value": 5
+        },
+        {
+          "name": "UnknownFutureValue",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.RoutingType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Forwarded",
+          "value": 0
+        },
+        {
+          "name": "Lookup",
+          "value": 1
+        },
+        {
+          "name": "SelfFork",
+          "value": 2
+        },
+        {
+          "name": "UnknownFutureValue",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.RunAsAccountType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "System",
+          "value": 0
+        },
+        {
+          "name": "User",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.SafeSearchFilterType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "UserDefined",
+          "value": 0
+        },
+        {
+          "name": "Strict",
+          "value": 1
+        },
+        {
+          "name": "Moderate",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.ScheduleChangeRequestActor",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Sender",
+          "value": 0
+        },
+        {
+          "name": "Recipient",
+          "value": 1
+        },
+        {
+          "name": "Manager",
+          "value": 2
+        },
+        {
+          "name": "System",
+          "value": 3
+        },
+        {
+          "name": "UnknownFutureValue",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.ScheduleChangeState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Pending",
+          "value": 0
+        },
+        {
+          "name": "Approved",
+          "value": 1
+        },
+        {
+          "name": "Declined",
+          "value": 2
+        },
+        {
+          "name": "UnknownFutureValue",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.ScheduleEntityTheme",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "White",
+          "value": 0
+        },
+        {
+          "name": "Blue",
+          "value": 1
+        },
+        {
+          "name": "Green",
+          "value": 2
+        },
+        {
+          "name": "Purple",
+          "value": 3
+        },
+        {
+          "name": "Pink",
+          "value": 4
+        },
+        {
+          "name": "Yellow",
+          "value": 5
+        },
+        {
+          "name": "Gray",
+          "value": 6
+        },
+        {
+          "name": "DarkBlue",
+          "value": 7
+        },
+        {
+          "name": "DarkGreen",
+          "value": 8
+        },
+        {
+          "name": "DarkPurple",
+          "value": 9
+        },
+        {
+          "name": "DarkPink",
+          "value": 10
+        },
+        {
+          "name": "DarkYellow",
+          "value": 11
+        },
+        {
+          "name": "UnknownFutureValue",
+          "value": 12
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.ScreenSharingRole",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Viewer",
+          "value": 0
+        },
+        {
+          "name": "Sharer",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.SecurityNetworkProtocol",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Ip",
+          "value": 0
+        },
+        {
+          "name": "Icmp",
+          "value": 1
+        },
+        {
+          "name": "Unknown",
+          "value": -1
+        },
+        {
+          "name": "Igmp",
+          "value": 2
+        },
+        {
+          "name": "Ggp",
+          "value": 3
+        },
+        {
+          "name": "Ipv4",
+          "value": 4
+        },
+        {
+          "name": "Tcp",
+          "value": 6
+        },
+        {
+          "name": "Pup",
+          "value": 12
+        },
+        {
+          "name": "Udp",
+          "value": 17
+        },
+        {
+          "name": "Idp",
+          "value": 22
+        },
+        {
+          "name": "Ipv6",
+          "value": 41
+        },
+        {
+          "name": "Ipv6RoutingHeader",
+          "value": 43
+        },
+        {
+          "name": "Ipv6FragmentHeader",
+          "value": 44
+        },
+        {
+          "name": "IpSecEncapsulatingSecurityPayload",
+          "value": 50
+        },
+        {
+          "name": "IpSecAuthenticationHeader",
+          "value": 51
+        },
+        {
+          "name": "IcmpV6",
+          "value": 58
+        },
+        {
+          "name": "Ipv6NoNextHeader",
+          "value": 59
+        },
+        {
+          "name": "Ipv6DestinationOptions",
+          "value": 60
+        },
+        {
+          "name": "Nd",
+          "value": 77
+        },
+        {
+          "name": "Raw",
+          "value": 255
+        },
+        {
+          "name": "Ipx",
+          "value": 1000
+        },
+        {
+          "name": "Spx",
+          "value": 1256
+        },
+        {
+          "name": "SpxII",
+          "value": 1257
+        },
+        {
+          "name": "UnknownFutureValue",
+          "value": 32767
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.SecurityResourceType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "Attacked",
+          "value": 1
+        },
+        {
+          "name": "Related",
+          "value": 2
+        },
+        {
+          "name": "UnknownFutureValue",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.SelectionLikelihoodInfo",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NotSpecified",
+          "value": 0
+        },
+        {
+          "name": "High",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.Sensitivity",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Normal",
+          "value": 0
+        },
+        {
+          "name": "Personal",
+          "value": 1
+        },
+        {
+          "name": "Private",
+          "value": 2
+        },
+        {
+          "name": "Confidential",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.SharedPCAccountDeletionPolicyType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Immediate",
+          "value": 0
+        },
+        {
+          "name": "DiskSpaceThreshold",
+          "value": 1
+        },
+        {
+          "name": "DiskSpaceThresholdOrInactiveThreshold",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.SharedPCAllowedAccountType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Guest",
+          "value": 1
+        },
+        {
+          "name": "Domain",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.SigninFrequencyType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Days",
+          "value": 0
+        },
+        {
+          "name": "Hours",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.SiteSecurityLevel",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "UserDefined",
+          "value": 0
+        },
+        {
+          "name": "Low",
+          "value": 1
+        },
+        {
+          "name": "MediumLow",
+          "value": 2
+        },
+        {
+          "name": "Medium",
+          "value": 3
+        },
+        {
+          "name": "MediumHigh",
+          "value": 4
+        },
+        {
+          "name": "High",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.StateManagementSetting",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NotConfigured",
+          "value": 0
+        },
+        {
+          "name": "Blocked",
+          "value": 1
+        },
+        {
+          "name": "Allowed",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.Status",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Active",
+          "value": 0
+        },
+        {
+          "name": "Updated",
+          "value": 1
+        },
+        {
+          "name": "Deleted",
+          "value": 2
+        },
+        {
+          "name": "Ignored",
+          "value": 3
+        },
+        {
+          "name": "UnknownFutureValue",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.TaskStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NotStarted",
+          "value": 0
+        },
+        {
+          "name": "InProgress",
+          "value": 1
+        },
+        {
+          "name": "Completed",
+          "value": 2
+        },
+        {
+          "name": "WaitingOnOthers",
+          "value": 3
+        },
+        {
+          "name": "Deferred",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.TeamsAppDistributionMethod",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Store",
+          "value": 0
+        },
+        {
+          "name": "Organization",
+          "value": 1
+        },
+        {
+          "name": "Sideloaded",
+          "value": 2
+        },
+        {
+          "name": "UnknownFutureValue",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.TeamsAsyncOperationStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Invalid",
+          "value": 0
+        },
+        {
+          "name": "NotStarted",
+          "value": 1
+        },
+        {
+          "name": "InProgress",
+          "value": 2
+        },
+        {
+          "name": "Succeeded",
+          "value": 3
+        },
+        {
+          "name": "Failed",
+          "value": 4
+        },
+        {
+          "name": "UnknownFutureValue",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.TeamsAsyncOperationType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Invalid",
+          "value": 0
+        },
+        {
+          "name": "CloneTeam",
+          "value": 1
+        },
+        {
+          "name": "ArchiveTeam",
+          "value": 2
+        },
+        {
+          "name": "UnarchiveTeam",
+          "value": 3
+        },
+        {
+          "name": "CreateTeam",
+          "value": 4
+        },
+        {
+          "name": "UnknownFutureValue",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.TeamSpecialization",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "EducationStandard",
+          "value": 1
+        },
+        {
+          "name": "EducationClass",
+          "value": 2
+        },
+        {
+          "name": "EducationProfessionalLearningCommunity",
+          "value": 3
+        },
+        {
+          "name": "EducationStaff",
+          "value": 4
+        },
+        {
+          "name": "HealthcareStandard",
+          "value": 5
+        },
+        {
+          "name": "HealthcareCareCoordination",
+          "value": 6
+        },
+        {
+          "name": "UnknownFutureValue",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.TeamVisibilityType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Private",
+          "value": 0
+        },
+        {
+          "name": "Public",
+          "value": 1
+        },
+        {
+          "name": "HiddenMembership",
+          "value": 2
+        },
+        {
+          "name": "UnknownFutureValue",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.ThreatAssessmentContentType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Mail",
+          "value": 1
+        },
+        {
+          "name": "Url",
+          "value": 2
+        },
+        {
+          "name": "File",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.ThreatAssessmentRequestSource",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "User",
+          "value": 1
+        },
+        {
+          "name": "Administrator",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.ThreatAssessmentResultType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "CheckPolicy",
+          "value": 1
+        },
+        {
+          "name": "Rescan",
+          "value": 2
+        },
+        {
+          "name": "UnknownFutureValue",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.ThreatAssessmentStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Pending",
+          "value": 1
+        },
+        {
+          "name": "Completed",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.ThreatCategory",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "Spam",
+          "value": 1
+        },
+        {
+          "name": "Phishing",
+          "value": 2
+        },
+        {
+          "name": "Malware",
+          "value": 3
+        },
+        {
+          "name": "UnknownFutureValue",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.ThreatExpectedAssessment",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Block",
+          "value": 1
+        },
+        {
+          "name": "Unblock",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.TimeOffReasonIconType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Car",
+          "value": 1
+        },
+        {
+          "name": "Calendar",
+          "value": 2
+        },
+        {
+          "name": "Running",
+          "value": 3
+        },
+        {
+          "name": "Plane",
+          "value": 4
+        },
+        {
+          "name": "FirstAid",
+          "value": 5
+        },
+        {
+          "name": "Doctor",
+          "value": 6
+        },
+        {
+          "name": "NotWorking",
+          "value": 7
+        },
+        {
+          "name": "Clock",
+          "value": 8
+        },
+        {
+          "name": "JuryDuty",
+          "value": 9
+        },
+        {
+          "name": "Globe",
+          "value": 10
+        },
+        {
+          "name": "Cup",
+          "value": 11
+        },
+        {
+          "name": "Phone",
+          "value": 12
+        },
+        {
+          "name": "Weather",
+          "value": 13
+        },
+        {
+          "name": "Umbrella",
+          "value": 14
+        },
+        {
+          "name": "PiggyBank",
+          "value": 15
+        },
+        {
+          "name": "Dog",
+          "value": 16
+        },
+        {
+          "name": "Cake",
+          "value": 17
+        },
+        {
+          "name": "TrafficCone",
+          "value": 18
+        },
+        {
+          "name": "Pin",
+          "value": 19
+        },
+        {
+          "name": "Sunny",
+          "value": 20
+        },
+        {
+          "name": "UnknownFutureValue",
+          "value": 21
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.TimeZoneStandard",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Windows",
+          "value": 0
+        },
+        {
+          "name": "Iana",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.Tone",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Tone0",
+          "value": 0
+        },
+        {
+          "name": "Tone1",
+          "value": 1
+        },
+        {
+          "name": "Tone2",
+          "value": 2
+        },
+        {
+          "name": "Tone3",
+          "value": 3
+        },
+        {
+          "name": "Tone4",
+          "value": 4
+        },
+        {
+          "name": "Tone5",
+          "value": 5
+        },
+        {
+          "name": "Tone6",
+          "value": 6
+        },
+        {
+          "name": "Tone7",
+          "value": 7
+        },
+        {
+          "name": "Tone8",
+          "value": 8
+        },
+        {
+          "name": "Tone9",
+          "value": 9
+        },
+        {
+          "name": "Star",
+          "value": 10
+        },
+        {
+          "name": "Pound",
+          "value": 11
+        },
+        {
+          "name": "A",
+          "value": 12
+        },
+        {
+          "name": "B",
+          "value": 13
+        },
+        {
+          "name": "C",
+          "value": 14
+        },
+        {
+          "name": "D",
+          "value": 15
+        },
+        {
+          "name": "Flash",
+          "value": 16
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.UserAccountSecurityType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "Standard",
+          "value": 1
+        },
+        {
+          "name": "Power",
+          "value": 2
+        },
+        {
+          "name": "Administrator",
+          "value": 3
+        },
+        {
+          "name": "UnknownFutureValue",
+          "value": 127
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.VisibilitySetting",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NotConfigured",
+          "value": 0
+        },
+        {
+          "name": "Hide",
+          "value": 1
+        },
+        {
+          "name": "Show",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.VppTokenAccountType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Business",
+          "value": 0
+        },
+        {
+          "name": "Education",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.VppTokenState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "Valid",
+          "value": 1
+        },
+        {
+          "name": "Expired",
+          "value": 2
+        },
+        {
+          "name": "Invalid",
+          "value": 3
+        },
+        {
+          "name": "AssignedToExternalMDM",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.VppTokenSyncStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "InProgress",
+          "value": 1
+        },
+        {
+          "name": "Completed",
+          "value": 2
+        },
+        {
+          "name": "Failed",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.WebBrowserCookieSettings",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "BrowserDefault",
+          "value": 0
+        },
+        {
+          "name": "BlockAlways",
+          "value": 1
+        },
+        {
+          "name": "AllowCurrentWebSite",
+          "value": 2
+        },
+        {
+          "name": "AllowFromWebsitesVisited",
+          "value": 3
+        },
+        {
+          "name": "AllowAlways",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.WebsiteType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Other",
+          "value": 0
+        },
+        {
+          "name": "Home",
+          "value": 1
+        },
+        {
+          "name": "Work",
+          "value": 2
+        },
+        {
+          "name": "Blog",
+          "value": 3
+        },
+        {
+          "name": "Profile",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.WeekIndex",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "First",
+          "value": 0
+        },
+        {
+          "name": "Second",
+          "value": 1
+        },
+        {
+          "name": "Third",
+          "value": 2
+        },
+        {
+          "name": "Fourth",
+          "value": 3
+        },
+        {
+          "name": "Last",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.WeeklySchedule",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "UserDefined",
+          "value": 0
+        },
+        {
+          "name": "Everyday",
+          "value": 1
+        },
+        {
+          "name": "Sunday",
+          "value": 2
+        },
+        {
+          "name": "Monday",
+          "value": 3
+        },
+        {
+          "name": "Tuesday",
+          "value": 4
+        },
+        {
+          "name": "Wednesday",
+          "value": 5
+        },
+        {
+          "name": "Thursday",
+          "value": 6
+        },
+        {
+          "name": "Friday",
+          "value": 7
+        },
+        {
+          "name": "Saturday",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.WelcomeScreenMeetingInformation",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "UserDefined",
+          "value": 0
+        },
+        {
+          "name": "ShowOrganizerAndTimeOnly",
+          "value": 1
+        },
+        {
+          "name": "ShowOrganizerAndTimeAndSubject",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.WellknownListName",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "DefaultList",
+          "value": 1
+        },
+        {
+          "name": "FlaggedEmails",
+          "value": 2
+        },
+        {
+          "name": "UnknownFutureValue",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.Win32LobAppFileSystemOperationType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NotConfigured",
+          "value": 0
+        },
+        {
+          "name": "Exists",
+          "value": 1
+        },
+        {
+          "name": "ModifiedDate",
+          "value": 2
+        },
+        {
+          "name": "CreatedDate",
+          "value": 3
+        },
+        {
+          "name": "Version",
+          "value": 4
+        },
+        {
+          "name": "SizeInMB",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.Win32LobAppMsiPackageType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "PerMachine",
+          "value": 0
+        },
+        {
+          "name": "PerUser",
+          "value": 1
+        },
+        {
+          "name": "DualPurpose",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.Win32LobAppNotification",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ShowAll",
+          "value": 0
+        },
+        {
+          "name": "ShowReboot",
+          "value": 1
+        },
+        {
+          "name": "HideAll",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.Win32LobAppPowerShellScriptRuleOperationType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NotConfigured",
+          "value": 0
+        },
+        {
+          "name": "String",
+          "value": 1
+        },
+        {
+          "name": "DateTime",
+          "value": 2
+        },
+        {
+          "name": "Integer",
+          "value": 3
+        },
+        {
+          "name": "Float",
+          "value": 4
+        },
+        {
+          "name": "Version",
+          "value": 5
+        },
+        {
+          "name": "Boolean",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.Win32LobAppRegistryRuleOperationType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NotConfigured",
+          "value": 0
+        },
+        {
+          "name": "Exists",
+          "value": 1
+        },
+        {
+          "name": "DoesNotExist",
+          "value": 2
+        },
+        {
+          "name": "String",
+          "value": 3
+        },
+        {
+          "name": "Integer",
+          "value": 4
+        },
+        {
+          "name": "Version",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.Win32LobAppRestartBehavior",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "BasedOnReturnCode",
+          "value": 0
+        },
+        {
+          "name": "Allow",
+          "value": 1
+        },
+        {
+          "name": "Suppress",
+          "value": 2
+        },
+        {
+          "name": "Force",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.Win32LobAppReturnCodeType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Failed",
+          "value": 0
+        },
+        {
+          "name": "Success",
+          "value": 1
+        },
+        {
+          "name": "SoftReboot",
+          "value": 2
+        },
+        {
+          "name": "HardReboot",
+          "value": 3
+        },
+        {
+          "name": "Retry",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.Win32LobAppRuleOperator",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NotConfigured",
+          "value": 0
+        },
+        {
+          "name": "Equal",
+          "value": 1
+        },
+        {
+          "name": "NotEqual",
+          "value": 2
+        },
+        {
+          "name": "GreaterThan",
+          "value": 4
+        },
+        {
+          "name": "GreaterThanOrEqual",
+          "value": 5
+        },
+        {
+          "name": "LessThan",
+          "value": 8
+        },
+        {
+          "name": "LessThanOrEqual",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.Win32LobAppRuleType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Detection",
+          "value": 0
+        },
+        {
+          "name": "Requirement",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.Windows10EditionType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Windows10Enterprise",
+          "value": 0
+        },
+        {
+          "name": "Windows10EnterpriseN",
+          "value": 1
+        },
+        {
+          "name": "Windows10Education",
+          "value": 2
+        },
+        {
+          "name": "Windows10EducationN",
+          "value": 3
+        },
+        {
+          "name": "Windows10MobileEnterprise",
+          "value": 4
+        },
+        {
+          "name": "Windows10HolographicEnterprise",
+          "value": 5
+        },
+        {
+          "name": "Windows10Professional",
+          "value": 6
+        },
+        {
+          "name": "Windows10ProfessionalN",
+          "value": 7
+        },
+        {
+          "name": "Windows10ProfessionalEducation",
+          "value": 8
+        },
+        {
+          "name": "Windows10ProfessionalEducationN",
+          "value": 9
+        },
+        {
+          "name": "Windows10ProfessionalWorkstation",
+          "value": 10
+        },
+        {
+          "name": "Windows10ProfessionalWorkstationN",
+          "value": 11
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.WindowsArchitecture",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "X86",
+          "value": 1
+        },
+        {
+          "name": "X64",
+          "value": 2
+        },
+        {
+          "name": "Arm",
+          "value": 4
+        },
+        {
+          "name": "Neutral",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.WindowsDeliveryOptimizationMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "UserDefined",
+          "value": 0
+        },
+        {
+          "name": "HttpOnly",
+          "value": 1
+        },
+        {
+          "name": "HttpWithPeeringNat",
+          "value": 2
+        },
+        {
+          "name": "HttpWithPeeringPrivateGroup",
+          "value": 3
+        },
+        {
+          "name": "HttpWithInternetPeering",
+          "value": 4
+        },
+        {
+          "name": "SimpleDownload",
+          "value": 99
+        },
+        {
+          "name": "BypassMode",
+          "value": 100
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.WindowsDeviceType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Desktop",
+          "value": 1
+        },
+        {
+          "name": "Mobile",
+          "value": 2
+        },
+        {
+          "name": "Holographic",
+          "value": 4
+        },
+        {
+          "name": "Team",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.WindowsHelloForBusinessPinUsage",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Allowed",
+          "value": 0
+        },
+        {
+          "name": "Required",
+          "value": 1
+        },
+        {
+          "name": "Disallowed",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.WindowsInformationProtectionEnforcementLevel",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NoProtection",
+          "value": 0
+        },
+        {
+          "name": "EncryptAndAuditOnly",
+          "value": 1
+        },
+        {
+          "name": "EncryptAuditAndPrompt",
+          "value": 2
+        },
+        {
+          "name": "EncryptAuditAndBlock",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.WindowsInformationProtectionPinCharacterRequirements",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NotAllow",
+          "value": 0
+        },
+        {
+          "name": "RequireAtLeastOne",
+          "value": 1
+        },
+        {
+          "name": "Allow",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.WindowsSpotlightEnablementSettings",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NotConfigured",
+          "value": 0
+        },
+        {
+          "name": "Disabled",
+          "value": 1
+        },
+        {
+          "name": "Enabled",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.WindowsStartMenuAppListVisibilityType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "UserDefined",
+          "value": 0
+        },
+        {
+          "name": "Collapse",
+          "value": 1
+        },
+        {
+          "name": "Remove",
+          "value": 2
+        },
+        {
+          "name": "DisableSettingsApp",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.WindowsStartMenuModeType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "UserDefined",
+          "value": 0
+        },
+        {
+          "name": "FullScreen",
+          "value": 1
+        },
+        {
+          "name": "NonFullScreen",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.WindowsUpdateType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "UserDefined",
+          "value": 0
+        },
+        {
+          "name": "All",
+          "value": 1
+        },
+        {
+          "name": "BusinessReadyOnly",
+          "value": 2
+        },
+        {
+          "name": "WindowsInsiderBuildFast",
+          "value": 3
+        },
+        {
+          "name": "WindowsInsiderBuildSlow",
+          "value": 4
+        },
+        {
+          "name": "WindowsInsiderBuildRelease",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.WindowsUserAccountControlSettings",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "UserDefined",
+          "value": 0
+        },
+        {
+          "name": "AlwaysNotify",
+          "value": 1
+        },
+        {
+          "name": "NotifyOnAppChanges",
+          "value": 2
+        },
+        {
+          "name": "NotifyOnAppChangesWithoutDimming",
+          "value": 3
+        },
+        {
+          "name": "NeverNotify",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.WorkbookOperationStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NotStarted",
+          "value": 0
+        },
+        {
+          "name": "Running",
+          "value": 1
+        },
+        {
+          "name": "Succeeded",
+          "value": 2
+        },
+        {
+          "name": "Failed",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.WorkforceIntegrationEncryptionProtocol",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "SharedSecret",
+          "value": 0
+        },
+        {
+          "name": "UnknownFutureValue",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.WorkforceIntegrationSupportedEntities",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Shift",
+          "value": 1
+        },
+        {
+          "name": "SwapRequest",
+          "value": 2
+        },
+        {
+          "name": "UserShiftPreferences",
+          "value": 8
+        },
+        {
+          "name": "OpenShift",
+          "value": 16
+        },
+        {
+          "name": "OpenShiftRequest",
+          "value": 32
+        },
+        {
+          "name": "OfferShiftRequest",
+          "value": 64
+        },
+        {
+          "name": "UnknownFutureValue",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.PagingState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NotStarted",
+          "value": 0
+        },
+        {
+          "name": "Paused",
+          "value": 1
+        },
+        {
+          "name": "IntrapageIteration",
+          "value": 2
+        },
+        {
+          "name": "InterpageIteration",
+          "value": 3
+        },
+        {
+          "name": "Delta",
+          "value": 4
+        },
+        {
+          "name": "Complete",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.CallRecords.CallType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "GroupCall",
+          "value": 1
+        },
+        {
+          "name": "PeerToPeer",
+          "value": 2
+        },
+        {
+          "name": "UnknownFutureValue",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.CallRecords.ClientPlatform",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "Windows",
+          "value": 1
+        },
+        {
+          "name": "MacOS",
+          "value": 2
+        },
+        {
+          "name": "IOS",
+          "value": 3
+        },
+        {
+          "name": "Android",
+          "value": 4
+        },
+        {
+          "name": "Web",
+          "value": 5
+        },
+        {
+          "name": "IpPhone",
+          "value": 6
+        },
+        {
+          "name": "RoomSystem",
+          "value": 7
+        },
+        {
+          "name": "SurfaceHub",
+          "value": 8
+        },
+        {
+          "name": "HoloLens",
+          "value": 9
+        },
+        {
+          "name": "UnknownFutureValue",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.CallRecords.FailureStage",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "CallSetup",
+          "value": 1
+        },
+        {
+          "name": "Midcall",
+          "value": 2
+        },
+        {
+          "name": "UnknownFutureValue",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.CallRecords.MediaStreamDirection",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "CallerToCallee",
+          "value": 0
+        },
+        {
+          "name": "CalleeToCaller",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.CallRecords.Modality",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Audio",
+          "value": 0
+        },
+        {
+          "name": "Video",
+          "value": 1
+        },
+        {
+          "name": "VideoBasedScreenSharing",
+          "value": 2
+        },
+        {
+          "name": "Data",
+          "value": 3
+        },
+        {
+          "name": "ScreenSharing",
+          "value": 4
+        },
+        {
+          "name": "UnknownFutureValue",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.CallRecords.NetworkConnectionType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "Wired",
+          "value": 1
+        },
+        {
+          "name": "Wifi",
+          "value": 2
+        },
+        {
+          "name": "Mobile",
+          "value": 3
+        },
+        {
+          "name": "Tunnel",
+          "value": 4
+        },
+        {
+          "name": "UnknownFutureValue",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.CallRecords.ProductFamily",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "Teams",
+          "value": 1
+        },
+        {
+          "name": "SkypeForBusiness",
+          "value": 2
+        },
+        {
+          "name": "Lync",
+          "value": 3
+        },
+        {
+          "name": "UnknownFutureValue",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.CallRecords.ServiceRole",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "CustomBot",
+          "value": 1
+        },
+        {
+          "name": "SkypeForBusinessMicrosoftTeamsGateway",
+          "value": 2
+        },
+        {
+          "name": "SkypeForBusinessAudioVideoMcu",
+          "value": 3
+        },
+        {
+          "name": "SkypeForBusinessApplicationSharingMcu",
+          "value": 4
+        },
+        {
+          "name": "SkypeForBusinessCallQueues",
+          "value": 5
+        },
+        {
+          "name": "SkypeForBusinessAutoAttendant",
+          "value": 6
+        },
+        {
+          "name": "MediationServer",
+          "value": 7
+        },
+        {
+          "name": "MediationServerCloudConnectorEdition",
+          "value": 8
+        },
+        {
+          "name": "ExchangeUnifiedMessagingService",
+          "value": 9
+        },
+        {
+          "name": "MediaController",
+          "value": 10
+        },
+        {
+          "name": "ConferencingAnnouncementService",
+          "value": 11
+        },
+        {
+          "name": "ConferencingAttendant",
+          "value": 12
+        },
+        {
+          "name": "AudioTeleconferencerController",
+          "value": 13
+        },
+        {
+          "name": "SkypeForBusinessUnifiedCommunicationApplicationPlatform",
+          "value": 14
+        },
+        {
+          "name": "ResponseGroupServiceAnnouncementService",
+          "value": 15
+        },
+        {
+          "name": "Gateway",
+          "value": 16
+        },
+        {
+          "name": "SkypeTranslator",
+          "value": 17
+        },
+        {
+          "name": "SkypeForBusinessAttendant",
+          "value": 18
+        },
+        {
+          "name": "ResponseGroupService",
+          "value": 19
+        },
+        {
+          "name": "Voicemail",
+          "value": 20
+        },
+        {
+          "name": "UnknownFutureValue",
+          "value": 21
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.CallRecords.UserFeedbackRating",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NotRated",
+          "value": 0
+        },
+        {
+          "name": "Bad",
+          "value": 1
+        },
+        {
+          "name": "Poor",
+          "value": 2
+        },
+        {
+          "name": "Fair",
+          "value": 3
+        },
+        {
+          "name": "Good",
+          "value": 4
+        },
+        {
+          "name": "Excellent",
+          "value": 5
+        },
+        {
+          "name": "UnknownFutureValue",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.CallRecords.WifiBand",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "Frequency24GHz",
+          "value": 1
+        },
+        {
+          "name": "Frequency50GHz",
+          "value": 2
+        },
+        {
+          "name": "Frequency60GHz",
+          "value": 3
+        },
+        {
+          "name": "UnknownFutureValue",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Graph.CallRecords.WifiRadioType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "Wifi80211a",
+          "value": 1
+        },
+        {
+          "name": "Wifi80211b",
+          "value": 2
+        },
+        {
+          "name": "Wifi80211g",
+          "value": 3
+        },
+        {
+          "name": "Wifi80211n",
+          "value": 4
+        },
+        {
+          "name": "Wifi80211ac",
+          "value": 5
+        },
+        {
+          "name": "Wifi80211ax",
+          "value": 6
+        },
+        {
+          "name": "UnknownFutureValue",
+          "value": 7
+        }
+      ]
+    }
+  ],
+  "namespaceMappings": []
+}

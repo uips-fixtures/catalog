@@ -1,0 +1,2867 @@
+{
+  "schema": {
+    "id": "activity-catalog",
+    "version": "v0.3"
+  },
+  "source": {
+    "kind": "nuget-package",
+    "id": "System.Reflection.Metadata",
+    "version": "5.0.0",
+    "feedUrl": null,
+    "authors": "Microsoft",
+    "projectUrl": "https://github.com/dotnet/runtime",
+    "description": "This packages provides a low-level .NET (ECMA-335) metadata reader and writer. It's geared for performance and is the ideal choice for building higher-level libraries that intend to provide their own object model, such as compilers.\n\nCommonly Used Types:\nSystem.Reflection.Metadata.MetadataReader\nSystem.Reflection.PortableExecutable.PEReader\nSystem.Reflection.Metadata.Ecma335.MetadataBuilder\nSystem.Reflection.PortableExecutable.PEBuilder\nSystem.Reflection.PortableExecutable.ManagedPEBuilder\n \nWhen using NuGet 3.x this package requires at least version 3.4.",
+    "license": "MIT",
+    "tags": null,
+    "packageTypes": []
+  },
+  "generatedAt": "2026-04-10T09:21:17Z",
+  "activities": [],
+  "enums": [
+    {
+      "fullName": "System.Reflection.MethodSemanticsAttributes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Setter",
+          "value": 1
+        },
+        {
+          "name": "Getter",
+          "value": 2
+        },
+        {
+          "name": "Other",
+          "value": 4
+        },
+        {
+          "name": "Adder",
+          "value": 8
+        },
+        {
+          "name": "Remover",
+          "value": 16
+        },
+        {
+          "name": "Raiser",
+          "value": 32
+        }
+      ]
+    },
+    {
+      "fullName": "System.Reflection.DeclarativeSecurityAction",
+      "underlyingType": "System.Int16",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Demand",
+          "value": 2
+        },
+        {
+          "name": "Assert",
+          "value": 3
+        },
+        {
+          "name": "Deny",
+          "value": 4
+        },
+        {
+          "name": "PermitOnly",
+          "value": 5
+        },
+        {
+          "name": "LinkDemand",
+          "value": 6
+        },
+        {
+          "name": "InheritanceDemand",
+          "value": 7
+        },
+        {
+          "name": "RequestMinimum",
+          "value": 8
+        },
+        {
+          "name": "RequestOptional",
+          "value": 9
+        },
+        {
+          "name": "RequestRefuse",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "fullName": "System.Reflection.MethodImportAttributes",
+      "underlyingType": "System.Int16",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "ExactSpelling",
+          "value": 1
+        },
+        {
+          "name": "BestFitMappingDisable",
+          "value": 32
+        },
+        {
+          "name": "BestFitMappingEnable",
+          "value": 16
+        },
+        {
+          "name": "BestFitMappingMask",
+          "value": 48
+        },
+        {
+          "name": "CharSetAnsi",
+          "value": 2
+        },
+        {
+          "name": "CharSetUnicode",
+          "value": 4
+        },
+        {
+          "name": "CharSetAuto",
+          "value": 6
+        },
+        {
+          "name": "CharSetMask",
+          "value": 6
+        },
+        {
+          "name": "ThrowOnUnmappableCharEnable",
+          "value": 4096
+        },
+        {
+          "name": "ThrowOnUnmappableCharDisable",
+          "value": 8192
+        },
+        {
+          "name": "ThrowOnUnmappableCharMask",
+          "value": 12288
+        },
+        {
+          "name": "SetLastError",
+          "value": 64
+        },
+        {
+          "name": "CallingConventionWinApi",
+          "value": 256
+        },
+        {
+          "name": "CallingConventionCDecl",
+          "value": 512
+        },
+        {
+          "name": "CallingConventionStdCall",
+          "value": 768
+        },
+        {
+          "name": "CallingConventionThisCall",
+          "value": 1024
+        },
+        {
+          "name": "CallingConventionFastCall",
+          "value": 1280
+        },
+        {
+          "name": "CallingConventionMask",
+          "value": 1792
+        }
+      ]
+    },
+    {
+      "fullName": "System.Reflection.ManifestResourceAttributes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Public",
+          "value": 1
+        },
+        {
+          "name": "Private",
+          "value": 2
+        },
+        {
+          "name": "VisibilityMask",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "System.Reflection.AssemblyHashAlgorithm",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "MD5",
+          "value": 32771
+        },
+        {
+          "name": "Sha1",
+          "value": 32772
+        },
+        {
+          "name": "Sha256",
+          "value": 32780
+        },
+        {
+          "name": "Sha384",
+          "value": 32781
+        },
+        {
+          "name": "Sha512",
+          "value": 32782
+        }
+      ]
+    },
+    {
+      "fullName": "System.Reflection.AssemblyFlags",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "PublicKey",
+          "value": 1
+        },
+        {
+          "name": "Retargetable",
+          "value": 256
+        },
+        {
+          "name": "WindowsRuntime",
+          "value": 512
+        },
+        {
+          "name": "ContentTypeMask",
+          "value": 3584
+        },
+        {
+          "name": "DisableJitCompileOptimizer",
+          "value": 16384
+        },
+        {
+          "name": "EnableJitCompileTracking",
+          "value": 32768
+        }
+      ]
+    },
+    {
+      "fullName": "System.Reflection.PortableExecutable.CorFlags",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ILOnly",
+          "value": 1
+        },
+        {
+          "name": "Requires32Bit",
+          "value": 2
+        },
+        {
+          "name": "ILLibrary",
+          "value": 4
+        },
+        {
+          "name": "StrongNameSigned",
+          "value": 8
+        },
+        {
+          "name": "NativeEntryPoint",
+          "value": 16
+        },
+        {
+          "name": "TrackDebugData",
+          "value": 65536
+        },
+        {
+          "name": "Prefers32Bit",
+          "value": 131072
+        }
+      ]
+    },
+    {
+      "fullName": "System.Reflection.PortableExecutable.DebugDirectoryEntryType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "Coff",
+          "value": 1
+        },
+        {
+          "name": "CodeView",
+          "value": 2
+        },
+        {
+          "name": "Reproducible",
+          "value": 16
+        },
+        {
+          "name": "EmbeddedPortablePdb",
+          "value": 17
+        },
+        {
+          "name": "PdbChecksum",
+          "value": 19
+        }
+      ]
+    },
+    {
+      "fullName": "System.Reflection.PortableExecutable.Machine",
+      "underlyingType": "System.UInt16",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "I386",
+          "value": 332
+        },
+        {
+          "name": "WceMipsV2",
+          "value": 361
+        },
+        {
+          "name": "Alpha",
+          "value": 388
+        },
+        {
+          "name": "SH3",
+          "value": 418
+        },
+        {
+          "name": "SH3Dsp",
+          "value": 419
+        },
+        {
+          "name": "SH3E",
+          "value": 420
+        },
+        {
+          "name": "SH4",
+          "value": 422
+        },
+        {
+          "name": "SH5",
+          "value": 424
+        },
+        {
+          "name": "Arm",
+          "value": 448
+        },
+        {
+          "name": "Thumb",
+          "value": 450
+        },
+        {
+          "name": "ArmThumb2",
+          "value": 452
+        },
+        {
+          "name": "AM33",
+          "value": 467
+        },
+        {
+          "name": "PowerPC",
+          "value": 496
+        },
+        {
+          "name": "PowerPCFP",
+          "value": 497
+        },
+        {
+          "name": "IA64",
+          "value": 512
+        },
+        {
+          "name": "MIPS16",
+          "value": 614
+        },
+        {
+          "name": "Alpha64",
+          "value": 644
+        },
+        {
+          "name": "MipsFpu",
+          "value": 870
+        },
+        {
+          "name": "MipsFpu16",
+          "value": 1126
+        },
+        {
+          "name": "Tricore",
+          "value": 1312
+        },
+        {
+          "name": "Ebc",
+          "value": 3772
+        },
+        {
+          "name": "Amd64",
+          "value": 34404
+        },
+        {
+          "name": "M32R",
+          "value": 36929
+        },
+        {
+          "name": "Arm64",
+          "value": 43620
+        }
+      ]
+    },
+    {
+      "fullName": "System.Reflection.PortableExecutable.Characteristics",
+      "underlyingType": "System.UInt16",
+      "members": [
+        {
+          "name": "RelocsStripped",
+          "value": 1
+        },
+        {
+          "name": "ExecutableImage",
+          "value": 2
+        },
+        {
+          "name": "LineNumsStripped",
+          "value": 4
+        },
+        {
+          "name": "LocalSymsStripped",
+          "value": 8
+        },
+        {
+          "name": "AggressiveWSTrim",
+          "value": 16
+        },
+        {
+          "name": "LargeAddressAware",
+          "value": 32
+        },
+        {
+          "name": "BytesReversedLo",
+          "value": 128
+        },
+        {
+          "name": "Bit32Machine",
+          "value": 256
+        },
+        {
+          "name": "DebugStripped",
+          "value": 512
+        },
+        {
+          "name": "RemovableRunFromSwap",
+          "value": 1024
+        },
+        {
+          "name": "NetRunFromSwap",
+          "value": 2048
+        },
+        {
+          "name": "System",
+          "value": 4096
+        },
+        {
+          "name": "Dll",
+          "value": 8192
+        },
+        {
+          "name": "UpSystemOnly",
+          "value": 16384
+        },
+        {
+          "name": "BytesReversedHi",
+          "value": 32768
+        }
+      ]
+    },
+    {
+      "fullName": "System.Reflection.PortableExecutable.PEMagic",
+      "underlyingType": "System.UInt16",
+      "members": [
+        {
+          "name": "PE32",
+          "value": 267
+        },
+        {
+          "name": "PE32Plus",
+          "value": 523
+        }
+      ]
+    },
+    {
+      "fullName": "System.Reflection.PortableExecutable.Subsystem",
+      "underlyingType": "System.UInt16",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "Native",
+          "value": 1
+        },
+        {
+          "name": "WindowsGui",
+          "value": 2
+        },
+        {
+          "name": "WindowsCui",
+          "value": 3
+        },
+        {
+          "name": "OS2Cui",
+          "value": 5
+        },
+        {
+          "name": "PosixCui",
+          "value": 7
+        },
+        {
+          "name": "NativeWindows",
+          "value": 8
+        },
+        {
+          "name": "WindowsCEGui",
+          "value": 9
+        },
+        {
+          "name": "EfiApplication",
+          "value": 10
+        },
+        {
+          "name": "EfiBootServiceDriver",
+          "value": 11
+        },
+        {
+          "name": "EfiRuntimeDriver",
+          "value": 12
+        },
+        {
+          "name": "EfiRom",
+          "value": 13
+        },
+        {
+          "name": "Xbox",
+          "value": 14
+        },
+        {
+          "name": "WindowsBootApplication",
+          "value": 16
+        }
+      ]
+    },
+    {
+      "fullName": "System.Reflection.PortableExecutable.DllCharacteristics",
+      "underlyingType": "System.UInt16",
+      "members": [
+        {
+          "name": "ProcessInit",
+          "value": 1
+        },
+        {
+          "name": "ProcessTerm",
+          "value": 2
+        },
+        {
+          "name": "ThreadInit",
+          "value": 4
+        },
+        {
+          "name": "ThreadTerm",
+          "value": 8
+        },
+        {
+          "name": "HighEntropyVirtualAddressSpace",
+          "value": 32
+        },
+        {
+          "name": "DynamicBase",
+          "value": 64
+        },
+        {
+          "name": "NxCompatible",
+          "value": 256
+        },
+        {
+          "name": "NoIsolation",
+          "value": 512
+        },
+        {
+          "name": "NoSeh",
+          "value": 1024
+        },
+        {
+          "name": "NoBind",
+          "value": 2048
+        },
+        {
+          "name": "AppContainer",
+          "value": 4096
+        },
+        {
+          "name": "WdmDriver",
+          "value": 8192
+        },
+        {
+          "name": "TerminalServerAware",
+          "value": 32768
+        }
+      ]
+    },
+    {
+      "fullName": "System.Reflection.PortableExecutable.SectionCharacteristics",
+      "underlyingType": "System.UInt32",
+      "members": [
+        {
+          "name": "TypeReg",
+          "value": 0
+        },
+        {
+          "name": "TypeDSect",
+          "value": 1
+        },
+        {
+          "name": "TypeNoLoad",
+          "value": 2
+        },
+        {
+          "name": "TypeGroup",
+          "value": 4
+        },
+        {
+          "name": "TypeNoPad",
+          "value": 8
+        },
+        {
+          "name": "TypeCopy",
+          "value": 16
+        },
+        {
+          "name": "ContainsCode",
+          "value": 32
+        },
+        {
+          "name": "ContainsInitializedData",
+          "value": 64
+        },
+        {
+          "name": "ContainsUninitializedData",
+          "value": 128
+        },
+        {
+          "name": "LinkerOther",
+          "value": 256
+        },
+        {
+          "name": "LinkerInfo",
+          "value": 512
+        },
+        {
+          "name": "TypeOver",
+          "value": 1024
+        },
+        {
+          "name": "LinkerRemove",
+          "value": 2048
+        },
+        {
+          "name": "LinkerComdat",
+          "value": 4096
+        },
+        {
+          "name": "MemProtected",
+          "value": 16384
+        },
+        {
+          "name": "NoDeferSpecExc",
+          "value": 16384
+        },
+        {
+          "name": "GPRel",
+          "value": 32768
+        },
+        {
+          "name": "MemFardata",
+          "value": 32768
+        },
+        {
+          "name": "MemSysheap",
+          "value": 65536
+        },
+        {
+          "name": "MemPurgeable",
+          "value": 131072
+        },
+        {
+          "name": "Mem16Bit",
+          "value": 131072
+        },
+        {
+          "name": "MemLocked",
+          "value": 262144
+        },
+        {
+          "name": "MemPreload",
+          "value": 524288
+        },
+        {
+          "name": "Align1Bytes",
+          "value": 1048576
+        },
+        {
+          "name": "Align2Bytes",
+          "value": 2097152
+        },
+        {
+          "name": "Align4Bytes",
+          "value": 3145728
+        },
+        {
+          "name": "Align8Bytes",
+          "value": 4194304
+        },
+        {
+          "name": "Align16Bytes",
+          "value": 5242880
+        },
+        {
+          "name": "Align32Bytes",
+          "value": 6291456
+        },
+        {
+          "name": "Align64Bytes",
+          "value": 7340032
+        },
+        {
+          "name": "Align128Bytes",
+          "value": 8388608
+        },
+        {
+          "name": "Align256Bytes",
+          "value": 9437184
+        },
+        {
+          "name": "Align512Bytes",
+          "value": 10485760
+        },
+        {
+          "name": "Align1024Bytes",
+          "value": 11534336
+        },
+        {
+          "name": "Align2048Bytes",
+          "value": 12582912
+        },
+        {
+          "name": "Align4096Bytes",
+          "value": 13631488
+        },
+        {
+          "name": "Align8192Bytes",
+          "value": 14680064
+        },
+        {
+          "name": "AlignMask",
+          "value": 15728640
+        },
+        {
+          "name": "LinkerNRelocOvfl",
+          "value": 16777216
+        },
+        {
+          "name": "MemDiscardable",
+          "value": 33554432
+        },
+        {
+          "name": "MemNotCached",
+          "value": 67108864
+        },
+        {
+          "name": "MemNotPaged",
+          "value": 134217728
+        },
+        {
+          "name": "MemShared",
+          "value": 268435456
+        },
+        {
+          "name": "MemExecute",
+          "value": 536870912
+        },
+        {
+          "name": "MemRead",
+          "value": 1073741824
+        },
+        {
+          "name": "MemWrite",
+          "value": 2147483648
+        }
+      ]
+    },
+    {
+      "fullName": "System.Reflection.PortableExecutable.PEStreamOptions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "LeaveOpen",
+          "value": 1
+        },
+        {
+          "name": "PrefetchMetadata",
+          "value": 2
+        },
+        {
+          "name": "PrefetchEntireImage",
+          "value": 4
+        },
+        {
+          "name": "IsLoadedImage",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "System.Reflection.Metadata.ILOpCode",
+      "underlyingType": "System.UInt16",
+      "members": [
+        {
+          "name": "Nop",
+          "value": 0
+        },
+        {
+          "name": "Break",
+          "value": 1
+        },
+        {
+          "name": "Ldarg_0",
+          "value": 2
+        },
+        {
+          "name": "Ldarg_1",
+          "value": 3
+        },
+        {
+          "name": "Ldarg_2",
+          "value": 4
+        },
+        {
+          "name": "Ldarg_3",
+          "value": 5
+        },
+        {
+          "name": "Ldloc_0",
+          "value": 6
+        },
+        {
+          "name": "Ldloc_1",
+          "value": 7
+        },
+        {
+          "name": "Ldloc_2",
+          "value": 8
+        },
+        {
+          "name": "Ldloc_3",
+          "value": 9
+        },
+        {
+          "name": "Stloc_0",
+          "value": 10
+        },
+        {
+          "name": "Stloc_1",
+          "value": 11
+        },
+        {
+          "name": "Stloc_2",
+          "value": 12
+        },
+        {
+          "name": "Stloc_3",
+          "value": 13
+        },
+        {
+          "name": "Ldarg_s",
+          "value": 14
+        },
+        {
+          "name": "Ldarga_s",
+          "value": 15
+        },
+        {
+          "name": "Starg_s",
+          "value": 16
+        },
+        {
+          "name": "Ldloc_s",
+          "value": 17
+        },
+        {
+          "name": "Ldloca_s",
+          "value": 18
+        },
+        {
+          "name": "Stloc_s",
+          "value": 19
+        },
+        {
+          "name": "Ldnull",
+          "value": 20
+        },
+        {
+          "name": "Ldc_i4_m1",
+          "value": 21
+        },
+        {
+          "name": "Ldc_i4_0",
+          "value": 22
+        },
+        {
+          "name": "Ldc_i4_1",
+          "value": 23
+        },
+        {
+          "name": "Ldc_i4_2",
+          "value": 24
+        },
+        {
+          "name": "Ldc_i4_3",
+          "value": 25
+        },
+        {
+          "name": "Ldc_i4_4",
+          "value": 26
+        },
+        {
+          "name": "Ldc_i4_5",
+          "value": 27
+        },
+        {
+          "name": "Ldc_i4_6",
+          "value": 28
+        },
+        {
+          "name": "Ldc_i4_7",
+          "value": 29
+        },
+        {
+          "name": "Ldc_i4_8",
+          "value": 30
+        },
+        {
+          "name": "Ldc_i4_s",
+          "value": 31
+        },
+        {
+          "name": "Ldc_i4",
+          "value": 32
+        },
+        {
+          "name": "Ldc_i8",
+          "value": 33
+        },
+        {
+          "name": "Ldc_r4",
+          "value": 34
+        },
+        {
+          "name": "Ldc_r8",
+          "value": 35
+        },
+        {
+          "name": "Dup",
+          "value": 37
+        },
+        {
+          "name": "Pop",
+          "value": 38
+        },
+        {
+          "name": "Jmp",
+          "value": 39
+        },
+        {
+          "name": "Call",
+          "value": 40
+        },
+        {
+          "name": "Calli",
+          "value": 41
+        },
+        {
+          "name": "Ret",
+          "value": 42
+        },
+        {
+          "name": "Br_s",
+          "value": 43
+        },
+        {
+          "name": "Brfalse_s",
+          "value": 44
+        },
+        {
+          "name": "Brtrue_s",
+          "value": 45
+        },
+        {
+          "name": "Beq_s",
+          "value": 46
+        },
+        {
+          "name": "Bge_s",
+          "value": 47
+        },
+        {
+          "name": "Bgt_s",
+          "value": 48
+        },
+        {
+          "name": "Ble_s",
+          "value": 49
+        },
+        {
+          "name": "Blt_s",
+          "value": 50
+        },
+        {
+          "name": "Bne_un_s",
+          "value": 51
+        },
+        {
+          "name": "Bge_un_s",
+          "value": 52
+        },
+        {
+          "name": "Bgt_un_s",
+          "value": 53
+        },
+        {
+          "name": "Ble_un_s",
+          "value": 54
+        },
+        {
+          "name": "Blt_un_s",
+          "value": 55
+        },
+        {
+          "name": "Br",
+          "value": 56
+        },
+        {
+          "name": "Brfalse",
+          "value": 57
+        },
+        {
+          "name": "Brtrue",
+          "value": 58
+        },
+        {
+          "name": "Beq",
+          "value": 59
+        },
+        {
+          "name": "Bge",
+          "value": 60
+        },
+        {
+          "name": "Bgt",
+          "value": 61
+        },
+        {
+          "name": "Ble",
+          "value": 62
+        },
+        {
+          "name": "Blt",
+          "value": 63
+        },
+        {
+          "name": "Bne_un",
+          "value": 64
+        },
+        {
+          "name": "Bge_un",
+          "value": 65
+        },
+        {
+          "name": "Bgt_un",
+          "value": 66
+        },
+        {
+          "name": "Ble_un",
+          "value": 67
+        },
+        {
+          "name": "Blt_un",
+          "value": 68
+        },
+        {
+          "name": "Switch",
+          "value": 69
+        },
+        {
+          "name": "Ldind_i1",
+          "value": 70
+        },
+        {
+          "name": "Ldind_u1",
+          "value": 71
+        },
+        {
+          "name": "Ldind_i2",
+          "value": 72
+        },
+        {
+          "name": "Ldind_u2",
+          "value": 73
+        },
+        {
+          "name": "Ldind_i4",
+          "value": 74
+        },
+        {
+          "name": "Ldind_u4",
+          "value": 75
+        },
+        {
+          "name": "Ldind_i8",
+          "value": 76
+        },
+        {
+          "name": "Ldind_i",
+          "value": 77
+        },
+        {
+          "name": "Ldind_r4",
+          "value": 78
+        },
+        {
+          "name": "Ldind_r8",
+          "value": 79
+        },
+        {
+          "name": "Ldind_ref",
+          "value": 80
+        },
+        {
+          "name": "Stind_ref",
+          "value": 81
+        },
+        {
+          "name": "Stind_i1",
+          "value": 82
+        },
+        {
+          "name": "Stind_i2",
+          "value": 83
+        },
+        {
+          "name": "Stind_i4",
+          "value": 84
+        },
+        {
+          "name": "Stind_i8",
+          "value": 85
+        },
+        {
+          "name": "Stind_r4",
+          "value": 86
+        },
+        {
+          "name": "Stind_r8",
+          "value": 87
+        },
+        {
+          "name": "Add",
+          "value": 88
+        },
+        {
+          "name": "Sub",
+          "value": 89
+        },
+        {
+          "name": "Mul",
+          "value": 90
+        },
+        {
+          "name": "Div",
+          "value": 91
+        },
+        {
+          "name": "Div_un",
+          "value": 92
+        },
+        {
+          "name": "Rem",
+          "value": 93
+        },
+        {
+          "name": "Rem_un",
+          "value": 94
+        },
+        {
+          "name": "And",
+          "value": 95
+        },
+        {
+          "name": "Or",
+          "value": 96
+        },
+        {
+          "name": "Xor",
+          "value": 97
+        },
+        {
+          "name": "Shl",
+          "value": 98
+        },
+        {
+          "name": "Shr",
+          "value": 99
+        },
+        {
+          "name": "Shr_un",
+          "value": 100
+        },
+        {
+          "name": "Neg",
+          "value": 101
+        },
+        {
+          "name": "Not",
+          "value": 102
+        },
+        {
+          "name": "Conv_i1",
+          "value": 103
+        },
+        {
+          "name": "Conv_i2",
+          "value": 104
+        },
+        {
+          "name": "Conv_i4",
+          "value": 105
+        },
+        {
+          "name": "Conv_i8",
+          "value": 106
+        },
+        {
+          "name": "Conv_r4",
+          "value": 107
+        },
+        {
+          "name": "Conv_r8",
+          "value": 108
+        },
+        {
+          "name": "Conv_u4",
+          "value": 109
+        },
+        {
+          "name": "Conv_u8",
+          "value": 110
+        },
+        {
+          "name": "Callvirt",
+          "value": 111
+        },
+        {
+          "name": "Cpobj",
+          "value": 112
+        },
+        {
+          "name": "Ldobj",
+          "value": 113
+        },
+        {
+          "name": "Ldstr",
+          "value": 114
+        },
+        {
+          "name": "Newobj",
+          "value": 115
+        },
+        {
+          "name": "Castclass",
+          "value": 116
+        },
+        {
+          "name": "Isinst",
+          "value": 117
+        },
+        {
+          "name": "Conv_r_un",
+          "value": 118
+        },
+        {
+          "name": "Unbox",
+          "value": 121
+        },
+        {
+          "name": "Throw",
+          "value": 122
+        },
+        {
+          "name": "Ldfld",
+          "value": 123
+        },
+        {
+          "name": "Ldflda",
+          "value": 124
+        },
+        {
+          "name": "Stfld",
+          "value": 125
+        },
+        {
+          "name": "Ldsfld",
+          "value": 126
+        },
+        {
+          "name": "Ldsflda",
+          "value": 127
+        },
+        {
+          "name": "Stsfld",
+          "value": 128
+        },
+        {
+          "name": "Stobj",
+          "value": 129
+        },
+        {
+          "name": "Conv_ovf_i1_un",
+          "value": 130
+        },
+        {
+          "name": "Conv_ovf_i2_un",
+          "value": 131
+        },
+        {
+          "name": "Conv_ovf_i4_un",
+          "value": 132
+        },
+        {
+          "name": "Conv_ovf_i8_un",
+          "value": 133
+        },
+        {
+          "name": "Conv_ovf_u1_un",
+          "value": 134
+        },
+        {
+          "name": "Conv_ovf_u2_un",
+          "value": 135
+        },
+        {
+          "name": "Conv_ovf_u4_un",
+          "value": 136
+        },
+        {
+          "name": "Conv_ovf_u8_un",
+          "value": 137
+        },
+        {
+          "name": "Conv_ovf_i_un",
+          "value": 138
+        },
+        {
+          "name": "Conv_ovf_u_un",
+          "value": 139
+        },
+        {
+          "name": "Box",
+          "value": 140
+        },
+        {
+          "name": "Newarr",
+          "value": 141
+        },
+        {
+          "name": "Ldlen",
+          "value": 142
+        },
+        {
+          "name": "Ldelema",
+          "value": 143
+        },
+        {
+          "name": "Ldelem_i1",
+          "value": 144
+        },
+        {
+          "name": "Ldelem_u1",
+          "value": 145
+        },
+        {
+          "name": "Ldelem_i2",
+          "value": 146
+        },
+        {
+          "name": "Ldelem_u2",
+          "value": 147
+        },
+        {
+          "name": "Ldelem_i4",
+          "value": 148
+        },
+        {
+          "name": "Ldelem_u4",
+          "value": 149
+        },
+        {
+          "name": "Ldelem_i8",
+          "value": 150
+        },
+        {
+          "name": "Ldelem_i",
+          "value": 151
+        },
+        {
+          "name": "Ldelem_r4",
+          "value": 152
+        },
+        {
+          "name": "Ldelem_r8",
+          "value": 153
+        },
+        {
+          "name": "Ldelem_ref",
+          "value": 154
+        },
+        {
+          "name": "Stelem_i",
+          "value": 155
+        },
+        {
+          "name": "Stelem_i1",
+          "value": 156
+        },
+        {
+          "name": "Stelem_i2",
+          "value": 157
+        },
+        {
+          "name": "Stelem_i4",
+          "value": 158
+        },
+        {
+          "name": "Stelem_i8",
+          "value": 159
+        },
+        {
+          "name": "Stelem_r4",
+          "value": 160
+        },
+        {
+          "name": "Stelem_r8",
+          "value": 161
+        },
+        {
+          "name": "Stelem_ref",
+          "value": 162
+        },
+        {
+          "name": "Ldelem",
+          "value": 163
+        },
+        {
+          "name": "Stelem",
+          "value": 164
+        },
+        {
+          "name": "Unbox_any",
+          "value": 165
+        },
+        {
+          "name": "Conv_ovf_i1",
+          "value": 179
+        },
+        {
+          "name": "Conv_ovf_u1",
+          "value": 180
+        },
+        {
+          "name": "Conv_ovf_i2",
+          "value": 181
+        },
+        {
+          "name": "Conv_ovf_u2",
+          "value": 182
+        },
+        {
+          "name": "Conv_ovf_i4",
+          "value": 183
+        },
+        {
+          "name": "Conv_ovf_u4",
+          "value": 184
+        },
+        {
+          "name": "Conv_ovf_i8",
+          "value": 185
+        },
+        {
+          "name": "Conv_ovf_u8",
+          "value": 186
+        },
+        {
+          "name": "Refanyval",
+          "value": 194
+        },
+        {
+          "name": "Ckfinite",
+          "value": 195
+        },
+        {
+          "name": "Mkrefany",
+          "value": 198
+        },
+        {
+          "name": "Ldtoken",
+          "value": 208
+        },
+        {
+          "name": "Conv_u2",
+          "value": 209
+        },
+        {
+          "name": "Conv_u1",
+          "value": 210
+        },
+        {
+          "name": "Conv_i",
+          "value": 211
+        },
+        {
+          "name": "Conv_ovf_i",
+          "value": 212
+        },
+        {
+          "name": "Conv_ovf_u",
+          "value": 213
+        },
+        {
+          "name": "Add_ovf",
+          "value": 214
+        },
+        {
+          "name": "Add_ovf_un",
+          "value": 215
+        },
+        {
+          "name": "Mul_ovf",
+          "value": 216
+        },
+        {
+          "name": "Mul_ovf_un",
+          "value": 217
+        },
+        {
+          "name": "Sub_ovf",
+          "value": 218
+        },
+        {
+          "name": "Sub_ovf_un",
+          "value": 219
+        },
+        {
+          "name": "Endfinally",
+          "value": 220
+        },
+        {
+          "name": "Leave",
+          "value": 221
+        },
+        {
+          "name": "Leave_s",
+          "value": 222
+        },
+        {
+          "name": "Stind_i",
+          "value": 223
+        },
+        {
+          "name": "Conv_u",
+          "value": 224
+        },
+        {
+          "name": "Arglist",
+          "value": 65024
+        },
+        {
+          "name": "Ceq",
+          "value": 65025
+        },
+        {
+          "name": "Cgt",
+          "value": 65026
+        },
+        {
+          "name": "Cgt_un",
+          "value": 65027
+        },
+        {
+          "name": "Clt",
+          "value": 65028
+        },
+        {
+          "name": "Clt_un",
+          "value": 65029
+        },
+        {
+          "name": "Ldftn",
+          "value": 65030
+        },
+        {
+          "name": "Ldvirtftn",
+          "value": 65031
+        },
+        {
+          "name": "Ldarg",
+          "value": 65033
+        },
+        {
+          "name": "Ldarga",
+          "value": 65034
+        },
+        {
+          "name": "Starg",
+          "value": 65035
+        },
+        {
+          "name": "Ldloc",
+          "value": 65036
+        },
+        {
+          "name": "Ldloca",
+          "value": 65037
+        },
+        {
+          "name": "Stloc",
+          "value": 65038
+        },
+        {
+          "name": "Localloc",
+          "value": 65039
+        },
+        {
+          "name": "Endfilter",
+          "value": 65041
+        },
+        {
+          "name": "Unaligned",
+          "value": 65042
+        },
+        {
+          "name": "Volatile",
+          "value": 65043
+        },
+        {
+          "name": "Tail",
+          "value": 65044
+        },
+        {
+          "name": "Initobj",
+          "value": 65045
+        },
+        {
+          "name": "Constrained",
+          "value": 65046
+        },
+        {
+          "name": "Cpblk",
+          "value": 65047
+        },
+        {
+          "name": "Initblk",
+          "value": 65048
+        },
+        {
+          "name": "Rethrow",
+          "value": 65050
+        },
+        {
+          "name": "Sizeof",
+          "value": 65052
+        },
+        {
+          "name": "Refanytype",
+          "value": 65053
+        },
+        {
+          "name": "Readonly",
+          "value": 65054
+        }
+      ]
+    },
+    {
+      "fullName": "System.Reflection.Metadata.MetadataStreamOptions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "LeaveOpen",
+          "value": 1
+        },
+        {
+          "name": "PrefetchMetadata",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "System.Reflection.Metadata.PrimitiveSerializationTypeCode",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Boolean",
+          "value": 2
+        },
+        {
+          "name": "Byte",
+          "value": 5
+        },
+        {
+          "name": "SByte",
+          "value": 4
+        },
+        {
+          "name": "Char",
+          "value": 3
+        },
+        {
+          "name": "Int16",
+          "value": 6
+        },
+        {
+          "name": "UInt16",
+          "value": 7
+        },
+        {
+          "name": "Int32",
+          "value": 8
+        },
+        {
+          "name": "UInt32",
+          "value": 9
+        },
+        {
+          "name": "Int64",
+          "value": 10
+        },
+        {
+          "name": "UInt64",
+          "value": 11
+        },
+        {
+          "name": "Single",
+          "value": 12
+        },
+        {
+          "name": "Double",
+          "value": 13
+        },
+        {
+          "name": "String",
+          "value": 14
+        }
+      ]
+    },
+    {
+      "fullName": "System.Reflection.Metadata.ConstantTypeCode",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Invalid",
+          "value": 0
+        },
+        {
+          "name": "Boolean",
+          "value": 2
+        },
+        {
+          "name": "Char",
+          "value": 3
+        },
+        {
+          "name": "SByte",
+          "value": 4
+        },
+        {
+          "name": "Byte",
+          "value": 5
+        },
+        {
+          "name": "Int16",
+          "value": 6
+        },
+        {
+          "name": "UInt16",
+          "value": 7
+        },
+        {
+          "name": "Int32",
+          "value": 8
+        },
+        {
+          "name": "UInt32",
+          "value": 9
+        },
+        {
+          "name": "Int64",
+          "value": 10
+        },
+        {
+          "name": "UInt64",
+          "value": 11
+        },
+        {
+          "name": "Single",
+          "value": 12
+        },
+        {
+          "name": "Double",
+          "value": 13
+        },
+        {
+          "name": "String",
+          "value": 14
+        },
+        {
+          "name": "NullReference",
+          "value": 18
+        }
+      ]
+    },
+    {
+      "fullName": "System.Reflection.Metadata.CustomAttributeNamedArgumentKind",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Field",
+          "value": 83
+        },
+        {
+          "name": "Property",
+          "value": 84
+        }
+      ]
+    },
+    {
+      "fullName": "System.Reflection.Metadata.SignatureTypeKind",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "Class",
+          "value": 18
+        },
+        {
+          "name": "ValueType",
+          "value": 17
+        }
+      ]
+    },
+    {
+      "fullName": "System.Reflection.Metadata.PrimitiveTypeCode",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Boolean",
+          "value": 2
+        },
+        {
+          "name": "Byte",
+          "value": 5
+        },
+        {
+          "name": "SByte",
+          "value": 4
+        },
+        {
+          "name": "Char",
+          "value": 3
+        },
+        {
+          "name": "Int16",
+          "value": 6
+        },
+        {
+          "name": "UInt16",
+          "value": 7
+        },
+        {
+          "name": "Int32",
+          "value": 8
+        },
+        {
+          "name": "UInt32",
+          "value": 9
+        },
+        {
+          "name": "Int64",
+          "value": 10
+        },
+        {
+          "name": "UInt64",
+          "value": 11
+        },
+        {
+          "name": "Single",
+          "value": 12
+        },
+        {
+          "name": "Double",
+          "value": 13
+        },
+        {
+          "name": "IntPtr",
+          "value": 24
+        },
+        {
+          "name": "UIntPtr",
+          "value": 25
+        },
+        {
+          "name": "Object",
+          "value": 28
+        },
+        {
+          "name": "String",
+          "value": 14
+        },
+        {
+          "name": "TypedReference",
+          "value": 22
+        },
+        {
+          "name": "Void",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "System.Reflection.Metadata.ExceptionRegionKind",
+      "underlyingType": "System.UInt16",
+      "members": [
+        {
+          "name": "Catch",
+          "value": 0
+        },
+        {
+          "name": "Filter",
+          "value": 1
+        },
+        {
+          "name": "Finally",
+          "value": 2
+        },
+        {
+          "name": "Fault",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "System.Reflection.Metadata.HandleKind",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "ModuleDefinition",
+          "value": 0
+        },
+        {
+          "name": "TypeReference",
+          "value": 1
+        },
+        {
+          "name": "TypeDefinition",
+          "value": 2
+        },
+        {
+          "name": "FieldDefinition",
+          "value": 4
+        },
+        {
+          "name": "MethodDefinition",
+          "value": 6
+        },
+        {
+          "name": "Parameter",
+          "value": 8
+        },
+        {
+          "name": "InterfaceImplementation",
+          "value": 9
+        },
+        {
+          "name": "MemberReference",
+          "value": 10
+        },
+        {
+          "name": "Constant",
+          "value": 11
+        },
+        {
+          "name": "CustomAttribute",
+          "value": 12
+        },
+        {
+          "name": "DeclarativeSecurityAttribute",
+          "value": 14
+        },
+        {
+          "name": "StandaloneSignature",
+          "value": 17
+        },
+        {
+          "name": "EventDefinition",
+          "value": 20
+        },
+        {
+          "name": "PropertyDefinition",
+          "value": 23
+        },
+        {
+          "name": "MethodImplementation",
+          "value": 25
+        },
+        {
+          "name": "ModuleReference",
+          "value": 26
+        },
+        {
+          "name": "TypeSpecification",
+          "value": 27
+        },
+        {
+          "name": "AssemblyDefinition",
+          "value": 32
+        },
+        {
+          "name": "AssemblyFile",
+          "value": 38
+        },
+        {
+          "name": "AssemblyReference",
+          "value": 35
+        },
+        {
+          "name": "ExportedType",
+          "value": 39
+        },
+        {
+          "name": "GenericParameter",
+          "value": 42
+        },
+        {
+          "name": "MethodSpecification",
+          "value": 43
+        },
+        {
+          "name": "GenericParameterConstraint",
+          "value": 44
+        },
+        {
+          "name": "ManifestResource",
+          "value": 40
+        },
+        {
+          "name": "Document",
+          "value": 48
+        },
+        {
+          "name": "MethodDebugInformation",
+          "value": 49
+        },
+        {
+          "name": "LocalScope",
+          "value": 50
+        },
+        {
+          "name": "LocalVariable",
+          "value": 51
+        },
+        {
+          "name": "LocalConstant",
+          "value": 52
+        },
+        {
+          "name": "ImportScope",
+          "value": 53
+        },
+        {
+          "name": "CustomDebugInformation",
+          "value": 55
+        },
+        {
+          "name": "NamespaceDefinition",
+          "value": 124
+        },
+        {
+          "name": "UserString",
+          "value": 112
+        },
+        {
+          "name": "String",
+          "value": 120
+        },
+        {
+          "name": "Blob",
+          "value": 113
+        },
+        {
+          "name": "Guid",
+          "value": 114
+        }
+      ]
+    },
+    {
+      "fullName": "System.Reflection.Metadata.StandaloneSignatureKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Method",
+          "value": 0
+        },
+        {
+          "name": "LocalVariables",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "System.Reflection.Metadata.MemberReferenceKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Method",
+          "value": 0
+        },
+        {
+          "name": "Field",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "System.Reflection.Metadata.MetadataKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Ecma335",
+          "value": 0
+        },
+        {
+          "name": "WindowsMetadata",
+          "value": 1
+        },
+        {
+          "name": "ManagedWindowsMetadata",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "System.Reflection.Metadata.MetadataReaderOptions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Default",
+          "value": 1
+        },
+        {
+          "name": "ApplyWindowsRuntimeProjections",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "System.Reflection.Metadata.ImportDefinitionKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ImportNamespace",
+          "value": 1
+        },
+        {
+          "name": "ImportAssemblyNamespace",
+          "value": 2
+        },
+        {
+          "name": "ImportType",
+          "value": 3
+        },
+        {
+          "name": "ImportXmlNamespace",
+          "value": 4
+        },
+        {
+          "name": "ImportAssemblyReferenceAlias",
+          "value": 5
+        },
+        {
+          "name": "AliasAssemblyReference",
+          "value": 6
+        },
+        {
+          "name": "AliasNamespace",
+          "value": 7
+        },
+        {
+          "name": "AliasAssemblyNamespace",
+          "value": 8
+        },
+        {
+          "name": "AliasType",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "fullName": "System.Reflection.Metadata.LocalVariableAttributes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "DebuggerHidden",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "System.Reflection.Metadata.SerializationTypeCode",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Invalid",
+          "value": 0
+        },
+        {
+          "name": "Boolean",
+          "value": 2
+        },
+        {
+          "name": "Char",
+          "value": 3
+        },
+        {
+          "name": "SByte",
+          "value": 4
+        },
+        {
+          "name": "Byte",
+          "value": 5
+        },
+        {
+          "name": "Int16",
+          "value": 6
+        },
+        {
+          "name": "UInt16",
+          "value": 7
+        },
+        {
+          "name": "Int32",
+          "value": 8
+        },
+        {
+          "name": "UInt32",
+          "value": 9
+        },
+        {
+          "name": "Int64",
+          "value": 10
+        },
+        {
+          "name": "UInt64",
+          "value": 11
+        },
+        {
+          "name": "Single",
+          "value": 12
+        },
+        {
+          "name": "Double",
+          "value": 13
+        },
+        {
+          "name": "String",
+          "value": 14
+        },
+        {
+          "name": "SZArray",
+          "value": 29
+        },
+        {
+          "name": "Type",
+          "value": 80
+        },
+        {
+          "name": "TaggedObject",
+          "value": 81
+        },
+        {
+          "name": "Enum",
+          "value": 85
+        }
+      ]
+    },
+    {
+      "fullName": "System.Reflection.Metadata.SignatureAttributes",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Generic",
+          "value": 16
+        },
+        {
+          "name": "Instance",
+          "value": 32
+        },
+        {
+          "name": "ExplicitThis",
+          "value": 64
+        }
+      ]
+    },
+    {
+      "fullName": "System.Reflection.Metadata.SignatureCallingConvention",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "CDecl",
+          "value": 1
+        },
+        {
+          "name": "StdCall",
+          "value": 2
+        },
+        {
+          "name": "ThisCall",
+          "value": 3
+        },
+        {
+          "name": "FastCall",
+          "value": 4
+        },
+        {
+          "name": "VarArgs",
+          "value": 5
+        },
+        {
+          "name": "Unmanaged",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "fullName": "System.Reflection.Metadata.SignatureKind",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Method",
+          "value": 0
+        },
+        {
+          "name": "Field",
+          "value": 6
+        },
+        {
+          "name": "LocalVariables",
+          "value": 7
+        },
+        {
+          "name": "Property",
+          "value": 8
+        },
+        {
+          "name": "MethodSpecification",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "fullName": "System.Reflection.Metadata.SignatureTypeCode",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Invalid",
+          "value": 0
+        },
+        {
+          "name": "Void",
+          "value": 1
+        },
+        {
+          "name": "Boolean",
+          "value": 2
+        },
+        {
+          "name": "Char",
+          "value": 3
+        },
+        {
+          "name": "SByte",
+          "value": 4
+        },
+        {
+          "name": "Byte",
+          "value": 5
+        },
+        {
+          "name": "Int16",
+          "value": 6
+        },
+        {
+          "name": "UInt16",
+          "value": 7
+        },
+        {
+          "name": "Int32",
+          "value": 8
+        },
+        {
+          "name": "UInt32",
+          "value": 9
+        },
+        {
+          "name": "Int64",
+          "value": 10
+        },
+        {
+          "name": "UInt64",
+          "value": 11
+        },
+        {
+          "name": "Single",
+          "value": 12
+        },
+        {
+          "name": "Double",
+          "value": 13
+        },
+        {
+          "name": "String",
+          "value": 14
+        },
+        {
+          "name": "Pointer",
+          "value": 15
+        },
+        {
+          "name": "ByReference",
+          "value": 16
+        },
+        {
+          "name": "GenericTypeParameter",
+          "value": 19
+        },
+        {
+          "name": "Array",
+          "value": 20
+        },
+        {
+          "name": "GenericTypeInstance",
+          "value": 21
+        },
+        {
+          "name": "TypedReference",
+          "value": 22
+        },
+        {
+          "name": "IntPtr",
+          "value": 24
+        },
+        {
+          "name": "UIntPtr",
+          "value": 25
+        },
+        {
+          "name": "FunctionPointer",
+          "value": 27
+        },
+        {
+          "name": "Object",
+          "value": 28
+        },
+        {
+          "name": "SZArray",
+          "value": 29
+        },
+        {
+          "name": "GenericMethodParameter",
+          "value": 30
+        },
+        {
+          "name": "RequiredModifier",
+          "value": 31
+        },
+        {
+          "name": "OptionalModifier",
+          "value": 32
+        },
+        {
+          "name": "TypeHandle",
+          "value": 64
+        },
+        {
+          "name": "Sentinel",
+          "value": 65
+        },
+        {
+          "name": "Pinned",
+          "value": 69
+        }
+      ]
+    },
+    {
+      "fullName": "System.Reflection.Metadata.Ecma335.FunctionPointerAttributes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "HasThis",
+          "value": 32
+        },
+        {
+          "name": "HasExplicitThis",
+          "value": 96
+        }
+      ]
+    },
+    {
+      "fullName": "System.Reflection.Metadata.Ecma335.MethodBodyAttributes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "InitLocals",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "System.Reflection.Metadata.Ecma335.EditAndContinueOperation",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "AddMethod",
+          "value": 1
+        },
+        {
+          "name": "AddField",
+          "value": 2
+        },
+        {
+          "name": "AddParameter",
+          "value": 3
+        },
+        {
+          "name": "AddProperty",
+          "value": 4
+        },
+        {
+          "name": "AddEvent",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "System.Reflection.Metadata.Ecma335.HeapIndex",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "UserString",
+          "value": 0
+        },
+        {
+          "name": "String",
+          "value": 1
+        },
+        {
+          "name": "Blob",
+          "value": 2
+        },
+        {
+          "name": "Guid",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "System.Reflection.Metadata.Ecma335.TableIndex",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "Module",
+          "value": 0
+        },
+        {
+          "name": "TypeRef",
+          "value": 1
+        },
+        {
+          "name": "TypeDef",
+          "value": 2
+        },
+        {
+          "name": "FieldPtr",
+          "value": 3
+        },
+        {
+          "name": "Field",
+          "value": 4
+        },
+        {
+          "name": "MethodPtr",
+          "value": 5
+        },
+        {
+          "name": "MethodDef",
+          "value": 6
+        },
+        {
+          "name": "ParamPtr",
+          "value": 7
+        },
+        {
+          "name": "Param",
+          "value": 8
+        },
+        {
+          "name": "InterfaceImpl",
+          "value": 9
+        },
+        {
+          "name": "MemberRef",
+          "value": 10
+        },
+        {
+          "name": "Constant",
+          "value": 11
+        },
+        {
+          "name": "CustomAttribute",
+          "value": 12
+        },
+        {
+          "name": "FieldMarshal",
+          "value": 13
+        },
+        {
+          "name": "DeclSecurity",
+          "value": 14
+        },
+        {
+          "name": "ClassLayout",
+          "value": 15
+        },
+        {
+          "name": "FieldLayout",
+          "value": 16
+        },
+        {
+          "name": "StandAloneSig",
+          "value": 17
+        },
+        {
+          "name": "EventMap",
+          "value": 18
+        },
+        {
+          "name": "EventPtr",
+          "value": 19
+        },
+        {
+          "name": "Event",
+          "value": 20
+        },
+        {
+          "name": "PropertyMap",
+          "value": 21
+        },
+        {
+          "name": "PropertyPtr",
+          "value": 22
+        },
+        {
+          "name": "Property",
+          "value": 23
+        },
+        {
+          "name": "MethodSemantics",
+          "value": 24
+        },
+        {
+          "name": "MethodImpl",
+          "value": 25
+        },
+        {
+          "name": "ModuleRef",
+          "value": 26
+        },
+        {
+          "name": "TypeSpec",
+          "value": 27
+        },
+        {
+          "name": "ImplMap",
+          "value": 28
+        },
+        {
+          "name": "FieldRva",
+          "value": 29
+        },
+        {
+          "name": "EncLog",
+          "value": 30
+        },
+        {
+          "name": "EncMap",
+          "value": 31
+        },
+        {
+          "name": "Assembly",
+          "value": 32
+        },
+        {
+          "name": "AssemblyProcessor",
+          "value": 33
+        },
+        {
+          "name": "AssemblyOS",
+          "value": 34
+        },
+        {
+          "name": "AssemblyRef",
+          "value": 35
+        },
+        {
+          "name": "AssemblyRefProcessor",
+          "value": 36
+        },
+        {
+          "name": "AssemblyRefOS",
+          "value": 37
+        },
+        {
+          "name": "File",
+          "value": 38
+        },
+        {
+          "name": "ExportedType",
+          "value": 39
+        },
+        {
+          "name": "ManifestResource",
+          "value": 40
+        },
+        {
+          "name": "NestedClass",
+          "value": 41
+        },
+        {
+          "name": "GenericParam",
+          "value": 42
+        },
+        {
+          "name": "MethodSpec",
+          "value": 43
+        },
+        {
+          "name": "GenericParamConstraint",
+          "value": 44
+        },
+        {
+          "name": "Document",
+          "value": 48
+        },
+        {
+          "name": "MethodDebugInformation",
+          "value": 49
+        },
+        {
+          "name": "LocalScope",
+          "value": 50
+        },
+        {
+          "name": "LocalVariable",
+          "value": 51
+        },
+        {
+          "name": "LocalConstant",
+          "value": 52
+        },
+        {
+          "name": "ImportScope",
+          "value": 53
+        },
+        {
+          "name": "StateMachineMethod",
+          "value": 54
+        },
+        {
+          "name": "CustomDebugInformation",
+          "value": 55
+        }
+      ]
+    }
+  ],
+  "namespaceMappings": []
+}

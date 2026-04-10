@@ -1,0 +1,2835 @@
+{
+  "schema": {
+    "id": "activity-catalog",
+    "version": "v0.3"
+  },
+  "source": {
+    "kind": "nuget-package",
+    "id": "Microsoft.Web.WebView2",
+    "version": "1.0.2592.51",
+    "feedUrl": null,
+    "authors": "Microsoft",
+    "projectUrl": "https://aka.ms/webview",
+    "description": "The WebView2 control enables you to embed web technologies (HTML, CSS, and JavaScript) in your native applications powered by Microsoft Edge (Chromium).\nThis package is necessary for Win32 C/C++, WPF, and WinForms applications. To learn more about package versions checkout https://aka.ms/wv2-packageversion. To learn best practices checkout: https://aka.ms/wv2-bestpractices.",
+    "license": "LICENSE.txt",
+    "tags": "Microsoft Web WebView Native native package Edge C++ Win32 WPF WinForms dotnet framework core Webview2",
+    "packageTypes": []
+  },
+  "generatedAt": "2026-04-10T09:21:15Z",
+  "activities": [],
+  "enums": [
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.Dispatchcontainerscriptbehavior",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "One",
+          "value": 0
+        },
+        {
+          "name": "Ector",
+          "value": 1
+        },
+        {
+          "name": "Ap",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.CoreWebView2WebResourceRequestSourceKinds",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Document",
+          "value": 1
+        },
+        {
+          "name": "SharedWorker",
+          "value": 2
+        },
+        {
+          "name": "ServiceWorker",
+          "value": 4
+        },
+        {
+          "name": "All",
+          "value": -1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.CoreWebView2WebResourceContext",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "All",
+          "value": 0
+        },
+        {
+          "name": "Document",
+          "value": 1
+        },
+        {
+          "name": "Stylesheet",
+          "value": 2
+        },
+        {
+          "name": "Image",
+          "value": 3
+        },
+        {
+          "name": "Media",
+          "value": 4
+        },
+        {
+          "name": "Font",
+          "value": 5
+        },
+        {
+          "name": "Script",
+          "value": 6
+        },
+        {
+          "name": "XmlHttpRequest",
+          "value": 7
+        },
+        {
+          "name": "Fetch",
+          "value": 8
+        },
+        {
+          "name": "TextTrack",
+          "value": 9
+        },
+        {
+          "name": "EventSource",
+          "value": 10
+        },
+        {
+          "name": "Websocket",
+          "value": 11
+        },
+        {
+          "name": "Manifest",
+          "value": 12
+        },
+        {
+          "name": "SignedExchange",
+          "value": 13
+        },
+        {
+          "name": "Ping",
+          "value": 14
+        },
+        {
+          "name": "CspViolationReport",
+          "value": 15
+        },
+        {
+          "name": "Other",
+          "value": 16
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.CoreWebView2WebErrorStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "CertificateCommonNameIsIncorrect",
+          "value": 1
+        },
+        {
+          "name": "CertificateExpired",
+          "value": 2
+        },
+        {
+          "name": "ClientCertificateContainsErrors",
+          "value": 3
+        },
+        {
+          "name": "CertificateRevoked",
+          "value": 4
+        },
+        {
+          "name": "CertificateIsInvalid",
+          "value": 5
+        },
+        {
+          "name": "ServerUnreachable",
+          "value": 6
+        },
+        {
+          "name": "Timeout",
+          "value": 7
+        },
+        {
+          "name": "ErrorHttpInvalidServerResponse",
+          "value": 8
+        },
+        {
+          "name": "ConnectionAborted",
+          "value": 9
+        },
+        {
+          "name": "ConnectionReset",
+          "value": 10
+        },
+        {
+          "name": "Disconnected",
+          "value": 11
+        },
+        {
+          "name": "CannotConnect",
+          "value": 12
+        },
+        {
+          "name": "HostNameNotResolved",
+          "value": 13
+        },
+        {
+          "name": "OperationCanceled",
+          "value": 14
+        },
+        {
+          "name": "RedirectFailed",
+          "value": 15
+        },
+        {
+          "name": "UnexpectedError",
+          "value": 16
+        },
+        {
+          "name": "ValidAuthenticationCredentialsRequired",
+          "value": 17
+        },
+        {
+          "name": "ValidProxyAuthenticationRequired",
+          "value": 18
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.CoreWebView2TrackingPreventionLevel",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Basic",
+          "value": 1
+        },
+        {
+          "name": "Balanced",
+          "value": 2
+        },
+        {
+          "name": "Strict",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.CoreWebView2SharedBufferAccess",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ReadOnly",
+          "value": 0
+        },
+        {
+          "name": "ReadWrite",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.CoreWebView2ServerCertificateErrorAction",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AlwaysAllow",
+          "value": 0
+        },
+        {
+          "name": "Cancel",
+          "value": 1
+        },
+        {
+          "name": "Default",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.CoreWebView2ScrollbarStyle",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "FluentOverlay",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.CoreWebView2ScriptDialogKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Alert",
+          "value": 0
+        },
+        {
+          "name": "Confirm",
+          "value": 1
+        },
+        {
+          "name": "Prompt",
+          "value": 2
+        },
+        {
+          "name": "Beforeunload",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.CoreWebView2ReleaseChannels",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Stable",
+          "value": 1
+        },
+        {
+          "name": "Beta",
+          "value": 2
+        },
+        {
+          "name": "Dev",
+          "value": 4
+        },
+        {
+          "name": "Canary",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.CoreWebView2ProcessKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Browser",
+          "value": 0
+        },
+        {
+          "name": "Renderer",
+          "value": 1
+        },
+        {
+          "name": "Utility",
+          "value": 2
+        },
+        {
+          "name": "SandboxHelper",
+          "value": 3
+        },
+        {
+          "name": "Gpu",
+          "value": 4
+        },
+        {
+          "name": "PpapiPlugin",
+          "value": 5
+        },
+        {
+          "name": "PpapiBroker",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.CoreWebView2ProcessFailedReason",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unexpected",
+          "value": 0
+        },
+        {
+          "name": "Unresponsive",
+          "value": 1
+        },
+        {
+          "name": "Terminated",
+          "value": 2
+        },
+        {
+          "name": "Crashed",
+          "value": 3
+        },
+        {
+          "name": "LaunchFailed",
+          "value": 4
+        },
+        {
+          "name": "OutOfMemory",
+          "value": 5
+        },
+        {
+          "name": "ProfileDeleted",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.CoreWebView2ProcessFailedKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "BrowserProcessExited",
+          "value": 0
+        },
+        {
+          "name": "RenderProcessExited",
+          "value": 1
+        },
+        {
+          "name": "RenderProcessUnresponsive",
+          "value": 2
+        },
+        {
+          "name": "FrameRenderProcessExited",
+          "value": 3
+        },
+        {
+          "name": "UtilityProcessExited",
+          "value": 4
+        },
+        {
+          "name": "SandboxHelperProcessExited",
+          "value": 5
+        },
+        {
+          "name": "GpuProcessExited",
+          "value": 6
+        },
+        {
+          "name": "PpapiPluginProcessExited",
+          "value": 7
+        },
+        {
+          "name": "PpapiBrokerProcessExited",
+          "value": 8
+        },
+        {
+          "name": "UnknownProcessExited",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.CoreWebView2PrintStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Succeeded",
+          "value": 0
+        },
+        {
+          "name": "PrinterUnavailable",
+          "value": 1
+        },
+        {
+          "name": "OtherError",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.CoreWebView2PrintOrientation",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Portrait",
+          "value": 0
+        },
+        {
+          "name": "Landscape",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.CoreWebView2PrintMediaSize",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "Custom",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.CoreWebView2PrintDuplex",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "OneSided",
+          "value": 1
+        },
+        {
+          "name": "TwoSidedLongEdge",
+          "value": 2
+        },
+        {
+          "name": "TwoSidedShortEdge",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.CoreWebView2PrintDialogKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Browser",
+          "value": 0
+        },
+        {
+          "name": "System",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.CoreWebView2PrintColorMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "Color",
+          "value": 1
+        },
+        {
+          "name": "Grayscale",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.CoreWebView2PrintCollation",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "Collated",
+          "value": 1
+        },
+        {
+          "name": "Uncollated",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.CoreWebView2PreferredColorScheme",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Auto",
+          "value": 0
+        },
+        {
+          "name": "Light",
+          "value": 1
+        },
+        {
+          "name": "Dark",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.CoreWebView2PointerEventKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Activate",
+          "value": 587
+        },
+        {
+          "name": "Down",
+          "value": 582
+        },
+        {
+          "name": "Enter",
+          "value": 585
+        },
+        {
+          "name": "Leave",
+          "value": 586
+        },
+        {
+          "name": "Up",
+          "value": 583
+        },
+        {
+          "name": "Update",
+          "value": 581
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.CoreWebView2PermissionState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "Allow",
+          "value": 1
+        },
+        {
+          "name": "Deny",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.CoreWebView2PermissionKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "UnknownPermission",
+          "value": 0
+        },
+        {
+          "name": "Microphone",
+          "value": 1
+        },
+        {
+          "name": "Camera",
+          "value": 2
+        },
+        {
+          "name": "Geolocation",
+          "value": 3
+        },
+        {
+          "name": "Notifications",
+          "value": 4
+        },
+        {
+          "name": "OtherSensors",
+          "value": 5
+        },
+        {
+          "name": "ClipboardRead",
+          "value": 6
+        },
+        {
+          "name": "MultipleAutomaticDownloads",
+          "value": 7
+        },
+        {
+          "name": "FileReadWrite",
+          "value": 8
+        },
+        {
+          "name": "Autoplay",
+          "value": 9
+        },
+        {
+          "name": "LocalFonts",
+          "value": 10
+        },
+        {
+          "name": "MidiSystemExclusiveMessages",
+          "value": 11
+        },
+        {
+          "name": "WindowManagement",
+          "value": 12
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.CoreWebView2PdfToolbarItems",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Save",
+          "value": 1
+        },
+        {
+          "name": "Print",
+          "value": 2
+        },
+        {
+          "name": "SaveAs",
+          "value": 4
+        },
+        {
+          "name": "ZoomIn",
+          "value": 8
+        },
+        {
+          "name": "ZoomOut",
+          "value": 16
+        },
+        {
+          "name": "Rotate",
+          "value": 32
+        },
+        {
+          "name": "FitPage",
+          "value": 64
+        },
+        {
+          "name": "PageLayout",
+          "value": 128
+        },
+        {
+          "name": "Bookmarks",
+          "value": 256
+        },
+        {
+          "name": "PageSelector",
+          "value": 512
+        },
+        {
+          "name": "Search",
+          "value": 1024
+        },
+        {
+          "name": "FullScreen",
+          "value": 2048
+        },
+        {
+          "name": "MoreSettings",
+          "value": 4096
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.CoreWebView2NonClientRegionKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Nowhere",
+          "value": 0
+        },
+        {
+          "name": "Client",
+          "value": 1
+        },
+        {
+          "name": "Caption",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.CoreWebView2NavigationKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Reload",
+          "value": 0
+        },
+        {
+          "name": "BackOrForward",
+          "value": 1
+        },
+        {
+          "name": "NewDocument",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.CoreWebView2MoveFocusReason",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Programmatic",
+          "value": 0
+        },
+        {
+          "name": "Next",
+          "value": 1
+        },
+        {
+          "name": "Previous",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.CoreWebView2MouseEventVirtualKeys",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "LeftButton",
+          "value": 1
+        },
+        {
+          "name": "RightButton",
+          "value": 2
+        },
+        {
+          "name": "Shift",
+          "value": 4
+        },
+        {
+          "name": "Control",
+          "value": 8
+        },
+        {
+          "name": "MiddleButton",
+          "value": 16
+        },
+        {
+          "name": "XButton1",
+          "value": 32
+        },
+        {
+          "name": "XButton2",
+          "value": 64
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.CoreWebView2MouseEventKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "HorizontalWheel",
+          "value": 526
+        },
+        {
+          "name": "LeftButtonDoubleClick",
+          "value": 515
+        },
+        {
+          "name": "LeftButtonDown",
+          "value": 513
+        },
+        {
+          "name": "LeftButtonUp",
+          "value": 514
+        },
+        {
+          "name": "Leave",
+          "value": 675
+        },
+        {
+          "name": "MiddleButtonDoubleClick",
+          "value": 521
+        },
+        {
+          "name": "MiddleButtonDown",
+          "value": 519
+        },
+        {
+          "name": "MiddleButtonUp",
+          "value": 520
+        },
+        {
+          "name": "Move",
+          "value": 512
+        },
+        {
+          "name": "RightButtonDoubleClick",
+          "value": 518
+        },
+        {
+          "name": "RightButtonDown",
+          "value": 516
+        },
+        {
+          "name": "RightButtonUp",
+          "value": 517
+        },
+        {
+          "name": "Wheel",
+          "value": 522
+        },
+        {
+          "name": "XButtonDoubleClick",
+          "value": 525
+        },
+        {
+          "name": "XButtonDown",
+          "value": 523
+        },
+        {
+          "name": "XButtonUp",
+          "value": 524
+        },
+        {
+          "name": "NonClientRightButtonDown",
+          "value": 164
+        },
+        {
+          "name": "NonClientRightButtonUp",
+          "value": 165
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.CoreWebView2MemoryUsageTargetLevel",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Normal",
+          "value": 0
+        },
+        {
+          "name": "Low",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.CoreWebView2KeyEventKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "KeyDown",
+          "value": 0
+        },
+        {
+          "name": "KeyUp",
+          "value": 1
+        },
+        {
+          "name": "SystemKeyDown",
+          "value": 2
+        },
+        {
+          "name": "SystemKeyUp",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.CoreWebView2HostResourceAccessKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Deny",
+          "value": 0
+        },
+        {
+          "name": "Allow",
+          "value": 1
+        },
+        {
+          "name": "DenyCors",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.CoreWebView2FrameKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "MainFrame",
+          "value": 1
+        },
+        {
+          "name": "Iframe",
+          "value": 2
+        },
+        {
+          "name": "Embed",
+          "value": 3
+        },
+        {
+          "name": "Object",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.CoreWebView2FaviconImageFormat",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Png",
+          "value": 0
+        },
+        {
+          "name": "Jpeg",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.CoreWebView2DownloadState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "InProgress",
+          "value": 0
+        },
+        {
+          "name": "Interrupted",
+          "value": 1
+        },
+        {
+          "name": "Completed",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.CoreWebView2DownloadInterruptReason",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "FileFailed",
+          "value": 1
+        },
+        {
+          "name": "FileAccessDenied",
+          "value": 2
+        },
+        {
+          "name": "FileNoSpace",
+          "value": 3
+        },
+        {
+          "name": "FileNameTooLong",
+          "value": 4
+        },
+        {
+          "name": "FileTooLarge",
+          "value": 5
+        },
+        {
+          "name": "FileMalicious",
+          "value": 6
+        },
+        {
+          "name": "FileTransientError",
+          "value": 7
+        },
+        {
+          "name": "FileBlockedByPolicy",
+          "value": 8
+        },
+        {
+          "name": "FileSecurityCheckFailed",
+          "value": 9
+        },
+        {
+          "name": "FileTooShort",
+          "value": 10
+        },
+        {
+          "name": "FileHashMismatch",
+          "value": 11
+        },
+        {
+          "name": "NetworkFailed",
+          "value": 12
+        },
+        {
+          "name": "NetworkTimeout",
+          "value": 13
+        },
+        {
+          "name": "NetworkDisconnected",
+          "value": 14
+        },
+        {
+          "name": "NetworkServerDown",
+          "value": 15
+        },
+        {
+          "name": "NetworkInvalidRequest",
+          "value": 16
+        },
+        {
+          "name": "ServerFailed",
+          "value": 17
+        },
+        {
+          "name": "ServerNoRange",
+          "value": 18
+        },
+        {
+          "name": "ServerBadContent",
+          "value": 19
+        },
+        {
+          "name": "ServerUnauthorized",
+          "value": 20
+        },
+        {
+          "name": "ServerCertificateProblem",
+          "value": 21
+        },
+        {
+          "name": "ServerForbidden",
+          "value": 22
+        },
+        {
+          "name": "ServerUnexpectedResponse",
+          "value": 23
+        },
+        {
+          "name": "ServerContentLengthMismatch",
+          "value": 24
+        },
+        {
+          "name": "ServerCrossOriginRedirect",
+          "value": 25
+        },
+        {
+          "name": "UserCanceled",
+          "value": 26
+        },
+        {
+          "name": "UserShutdown",
+          "value": 27
+        },
+        {
+          "name": "UserPaused",
+          "value": 28
+        },
+        {
+          "name": "DownloadProcessCrashed",
+          "value": 29
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.CoreWebView2DefaultDownloadDialogCornerAlignment",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "TopLeft",
+          "value": 0
+        },
+        {
+          "name": "TopRight",
+          "value": 1
+        },
+        {
+          "name": "BottomLeft",
+          "value": 2
+        },
+        {
+          "name": "BottomRight",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.CoreWebView2CookieSameSiteKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Lax",
+          "value": 1
+        },
+        {
+          "name": "Strict",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.CoreWebView2ContextMenuTargetKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Page",
+          "value": 0
+        },
+        {
+          "name": "Image",
+          "value": 1
+        },
+        {
+          "name": "SelectedText",
+          "value": 2
+        },
+        {
+          "name": "Audio",
+          "value": 3
+        },
+        {
+          "name": "Video",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.CoreWebView2ContextMenuItemKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Command",
+          "value": 0
+        },
+        {
+          "name": "CheckBox",
+          "value": 1
+        },
+        {
+          "name": "Radio",
+          "value": 2
+        },
+        {
+          "name": "Separator",
+          "value": 3
+        },
+        {
+          "name": "Submenu",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.CoreWebView2ClientCertificateKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "SmartCard",
+          "value": 0
+        },
+        {
+          "name": "Pin",
+          "value": 1
+        },
+        {
+          "name": "Other",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.CoreWebView2ChannelSearchKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "MostStable",
+          "value": 0
+        },
+        {
+          "name": "LeastStable",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.CoreWebView2CapturePreviewImageFormat",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Png",
+          "value": 0
+        },
+        {
+          "name": "Jpeg",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.CoreWebView2BrowsingDataKinds",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "FileSystems",
+          "value": 1
+        },
+        {
+          "name": "IndexedDb",
+          "value": 2
+        },
+        {
+          "name": "LocalStorage",
+          "value": 4
+        },
+        {
+          "name": "WebSql",
+          "value": 8
+        },
+        {
+          "name": "CacheStorage",
+          "value": 16
+        },
+        {
+          "name": "AllDomStorage",
+          "value": 32
+        },
+        {
+          "name": "Cookies",
+          "value": 64
+        },
+        {
+          "name": "AllSite",
+          "value": 128
+        },
+        {
+          "name": "DiskCache",
+          "value": 256
+        },
+        {
+          "name": "DownloadHistory",
+          "value": 512
+        },
+        {
+          "name": "GeneralAutofill",
+          "value": 1024
+        },
+        {
+          "name": "PasswordAutosave",
+          "value": 2048
+        },
+        {
+          "name": "BrowsingHistory",
+          "value": 4096
+        },
+        {
+          "name": "Settings",
+          "value": 8192
+        },
+        {
+          "name": "AllProfile",
+          "value": 16384
+        },
+        {
+          "name": "ServiceWorkers",
+          "value": 32768
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.CoreWebView2BrowserProcessExitKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Normal",
+          "value": 0
+        },
+        {
+          "name": "Failed",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.CoreWebView2BoundsMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "UseRawPixels",
+          "value": 0
+        },
+        {
+          "name": "UseRasterizationScale",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.Raw.COREWEBVIEW2_BOUNDS_MODE",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "COREWEBVIEW2_BOUNDS_MODE_USE_RAW_PIXELS",
+          "value": 0
+        },
+        {
+          "name": "COREWEBVIEW2_BOUNDS_MODE_USE_RASTERIZATION_SCALE",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.Raw.COREWEBVIEW2_BROWSER_PROCESS_EXIT_KIND",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "COREWEBVIEW2_BROWSER_PROCESS_EXIT_KIND_NORMAL",
+          "value": 0
+        },
+        {
+          "name": "COREWEBVIEW2_BROWSER_PROCESS_EXIT_KIND_FAILED",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.Raw.COREWEBVIEW2_BROWSING_DATA_KINDS",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "COREWEBVIEW2_BROWSING_DATA_KINDS_FILE_SYSTEMS",
+          "value": 1
+        },
+        {
+          "name": "COREWEBVIEW2_BROWSING_DATA_KINDS_INDEXED_DB",
+          "value": 2
+        },
+        {
+          "name": "COREWEBVIEW2_BROWSING_DATA_KINDS_LOCAL_STORAGE",
+          "value": 4
+        },
+        {
+          "name": "COREWEBVIEW2_BROWSING_DATA_KINDS_WEB_SQL",
+          "value": 8
+        },
+        {
+          "name": "COREWEBVIEW2_BROWSING_DATA_KINDS_CACHE_STORAGE",
+          "value": 16
+        },
+        {
+          "name": "COREWEBVIEW2_BROWSING_DATA_KINDS_ALL_DOM_STORAGE",
+          "value": 32
+        },
+        {
+          "name": "COREWEBVIEW2_BROWSING_DATA_KINDS_COOKIES",
+          "value": 64
+        },
+        {
+          "name": "COREWEBVIEW2_BROWSING_DATA_KINDS_ALL_SITE",
+          "value": 128
+        },
+        {
+          "name": "COREWEBVIEW2_BROWSING_DATA_KINDS_DISK_CACHE",
+          "value": 256
+        },
+        {
+          "name": "COREWEBVIEW2_BROWSING_DATA_KINDS_DOWNLOAD_HISTORY",
+          "value": 512
+        },
+        {
+          "name": "COREWEBVIEW2_BROWSING_DATA_KINDS_GENERAL_AUTOFILL",
+          "value": 1024
+        },
+        {
+          "name": "COREWEBVIEW2_BROWSING_DATA_KINDS_PASSWORD_AUTOSAVE",
+          "value": 2048
+        },
+        {
+          "name": "COREWEBVIEW2_BROWSING_DATA_KINDS_BROWSING_HISTORY",
+          "value": 4096
+        },
+        {
+          "name": "COREWEBVIEW2_BROWSING_DATA_KINDS_SETTINGS",
+          "value": 8192
+        },
+        {
+          "name": "COREWEBVIEW2_BROWSING_DATA_KINDS_ALL_PROFILE",
+          "value": 16384
+        },
+        {
+          "name": "COREWEBVIEW2_BROWSING_DATA_KINDS_SERVICE_WORKERS",
+          "value": 32768
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.Raw.COREWEBVIEW2_CAPTURE_PREVIEW_IMAGE_FORMAT",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "COREWEBVIEW2_CAPTURE_PREVIEW_IMAGE_FORMAT_PNG",
+          "value": 0
+        },
+        {
+          "name": "COREWEBVIEW2_CAPTURE_PREVIEW_IMAGE_FORMAT_JPEG",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.Raw.COREWEBVIEW2_CHANNEL_SEARCH_KIND",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "COREWEBVIEW2_CHANNEL_SEARCH_KIND_MOST_STABLE",
+          "value": 0
+        },
+        {
+          "name": "COREWEBVIEW2_CHANNEL_SEARCH_KIND_LEAST_STABLE",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.Raw.COREWEBVIEW2_CLIENT_CERTIFICATE_KIND",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "COREWEBVIEW2_CLIENT_CERTIFICATE_KIND_SMART_CARD",
+          "value": 0
+        },
+        {
+          "name": "COREWEBVIEW2_CLIENT_CERTIFICATE_KIND_PIN",
+          "value": 1
+        },
+        {
+          "name": "COREWEBVIEW2_CLIENT_CERTIFICATE_KIND_OTHER",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.Raw.COREWEBVIEW2_CONTEXT_MENU_ITEM_KIND",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "COREWEBVIEW2_CONTEXT_MENU_ITEM_KIND_COMMAND",
+          "value": 0
+        },
+        {
+          "name": "COREWEBVIEW2_CONTEXT_MENU_ITEM_KIND_CHECK_BOX",
+          "value": 1
+        },
+        {
+          "name": "COREWEBVIEW2_CONTEXT_MENU_ITEM_KIND_RADIO",
+          "value": 2
+        },
+        {
+          "name": "COREWEBVIEW2_CONTEXT_MENU_ITEM_KIND_SEPARATOR",
+          "value": 3
+        },
+        {
+          "name": "COREWEBVIEW2_CONTEXT_MENU_ITEM_KIND_SUBMENU",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.Raw.COREWEBVIEW2_CONTEXT_MENU_TARGET_KIND",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "COREWEBVIEW2_CONTEXT_MENU_TARGET_KIND_PAGE",
+          "value": 0
+        },
+        {
+          "name": "COREWEBVIEW2_CONTEXT_MENU_TARGET_KIND_IMAGE",
+          "value": 1
+        },
+        {
+          "name": "COREWEBVIEW2_CONTEXT_MENU_TARGET_KIND_SELECTED_TEXT",
+          "value": 2
+        },
+        {
+          "name": "COREWEBVIEW2_CONTEXT_MENU_TARGET_KIND_AUDIO",
+          "value": 3
+        },
+        {
+          "name": "COREWEBVIEW2_CONTEXT_MENU_TARGET_KIND_VIDEO",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.Raw.COREWEBVIEW2_COOKIE_SAME_SITE_KIND",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "COREWEBVIEW2_COOKIE_SAME_SITE_KIND_NONE",
+          "value": 0
+        },
+        {
+          "name": "COREWEBVIEW2_COOKIE_SAME_SITE_KIND_LAX",
+          "value": 1
+        },
+        {
+          "name": "COREWEBVIEW2_COOKIE_SAME_SITE_KIND_STRICT",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.Raw.COREWEBVIEW2_DEFAULT_DOWNLOAD_DIALOG_CORNER_ALIGNMENT",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "COREWEBVIEW2_DEFAULT_DOWNLOAD_DIALOG_CORNER_ALIGNMENT_TOP_LEFT",
+          "value": 0
+        },
+        {
+          "name": "COREWEBVIEW2_DEFAULT_DOWNLOAD_DIALOG_CORNER_ALIGNMENT_TOP_RIGHT",
+          "value": 1
+        },
+        {
+          "name": "COREWEBVIEW2_DEFAULT_DOWNLOAD_DIALOG_CORNER_ALIGNMENT_BOTTOM_LEFT",
+          "value": 2
+        },
+        {
+          "name": "COREWEBVIEW2_DEFAULT_DOWNLOAD_DIALOG_CORNER_ALIGNMENT_BOTTOM_RIGHT",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.Raw.COREWEBVIEW2_DOWNLOAD_INTERRUPT_REASON",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "COREWEBVIEW2_DOWNLOAD_INTERRUPT_REASON_NONE",
+          "value": 0
+        },
+        {
+          "name": "COREWEBVIEW2_DOWNLOAD_INTERRUPT_REASON_FILE_FAILED",
+          "value": 1
+        },
+        {
+          "name": "COREWEBVIEW2_DOWNLOAD_INTERRUPT_REASON_FILE_ACCESS_DENIED",
+          "value": 2
+        },
+        {
+          "name": "COREWEBVIEW2_DOWNLOAD_INTERRUPT_REASON_FILE_NO_SPACE",
+          "value": 3
+        },
+        {
+          "name": "COREWEBVIEW2_DOWNLOAD_INTERRUPT_REASON_FILE_NAME_TOO_LONG",
+          "value": 4
+        },
+        {
+          "name": "COREWEBVIEW2_DOWNLOAD_INTERRUPT_REASON_FILE_TOO_LARGE",
+          "value": 5
+        },
+        {
+          "name": "COREWEBVIEW2_DOWNLOAD_INTERRUPT_REASON_FILE_MALICIOUS",
+          "value": 6
+        },
+        {
+          "name": "COREWEBVIEW2_DOWNLOAD_INTERRUPT_REASON_FILE_TRANSIENT_ERROR",
+          "value": 7
+        },
+        {
+          "name": "COREWEBVIEW2_DOWNLOAD_INTERRUPT_REASON_FILE_BLOCKED_BY_POLICY",
+          "value": 8
+        },
+        {
+          "name": "COREWEBVIEW2_DOWNLOAD_INTERRUPT_REASON_FILE_SECURITY_CHECK_FAILED",
+          "value": 9
+        },
+        {
+          "name": "COREWEBVIEW2_DOWNLOAD_INTERRUPT_REASON_FILE_TOO_SHORT",
+          "value": 10
+        },
+        {
+          "name": "COREWEBVIEW2_DOWNLOAD_INTERRUPT_REASON_FILE_HASH_MISMATCH",
+          "value": 11
+        },
+        {
+          "name": "COREWEBVIEW2_DOWNLOAD_INTERRUPT_REASON_NETWORK_FAILED",
+          "value": 12
+        },
+        {
+          "name": "COREWEBVIEW2_DOWNLOAD_INTERRUPT_REASON_NETWORK_TIMEOUT",
+          "value": 13
+        },
+        {
+          "name": "COREWEBVIEW2_DOWNLOAD_INTERRUPT_REASON_NETWORK_DISCONNECTED",
+          "value": 14
+        },
+        {
+          "name": "COREWEBVIEW2_DOWNLOAD_INTERRUPT_REASON_NETWORK_SERVER_DOWN",
+          "value": 15
+        },
+        {
+          "name": "COREWEBVIEW2_DOWNLOAD_INTERRUPT_REASON_NETWORK_INVALID_REQUEST",
+          "value": 16
+        },
+        {
+          "name": "COREWEBVIEW2_DOWNLOAD_INTERRUPT_REASON_SERVER_FAILED",
+          "value": 17
+        },
+        {
+          "name": "COREWEBVIEW2_DOWNLOAD_INTERRUPT_REASON_SERVER_NO_RANGE",
+          "value": 18
+        },
+        {
+          "name": "COREWEBVIEW2_DOWNLOAD_INTERRUPT_REASON_SERVER_BAD_CONTENT",
+          "value": 19
+        },
+        {
+          "name": "COREWEBVIEW2_DOWNLOAD_INTERRUPT_REASON_SERVER_UNAUTHORIZED",
+          "value": 20
+        },
+        {
+          "name": "COREWEBVIEW2_DOWNLOAD_INTERRUPT_REASON_SERVER_CERTIFICATE_PROBLEM",
+          "value": 21
+        },
+        {
+          "name": "COREWEBVIEW2_DOWNLOAD_INTERRUPT_REASON_SERVER_FORBIDDEN",
+          "value": 22
+        },
+        {
+          "name": "COREWEBVIEW2_DOWNLOAD_INTERRUPT_REASON_SERVER_UNEXPECTED_RESPONSE",
+          "value": 23
+        },
+        {
+          "name": "COREWEBVIEW2_DOWNLOAD_INTERRUPT_REASON_SERVER_CONTENT_LENGTH_MISMATCH",
+          "value": 24
+        },
+        {
+          "name": "COREWEBVIEW2_DOWNLOAD_INTERRUPT_REASON_SERVER_CROSS_ORIGIN_REDIRECT",
+          "value": 25
+        },
+        {
+          "name": "COREWEBVIEW2_DOWNLOAD_INTERRUPT_REASON_USER_CANCELED",
+          "value": 26
+        },
+        {
+          "name": "COREWEBVIEW2_DOWNLOAD_INTERRUPT_REASON_USER_SHUTDOWN",
+          "value": 27
+        },
+        {
+          "name": "COREWEBVIEW2_DOWNLOAD_INTERRUPT_REASON_USER_PAUSED",
+          "value": 28
+        },
+        {
+          "name": "COREWEBVIEW2_DOWNLOAD_INTERRUPT_REASON_DOWNLOAD_PROCESS_CRASHED",
+          "value": 29
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.Raw.COREWEBVIEW2_DOWNLOAD_STATE",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "COREWEBVIEW2_DOWNLOAD_STATE_IN_PROGRESS",
+          "value": 0
+        },
+        {
+          "name": "COREWEBVIEW2_DOWNLOAD_STATE_INTERRUPTED",
+          "value": 1
+        },
+        {
+          "name": "COREWEBVIEW2_DOWNLOAD_STATE_COMPLETED",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.Raw.COREWEBVIEW2_FAVICON_IMAGE_FORMAT",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "COREWEBVIEW2_FAVICON_IMAGE_FORMAT_PNG",
+          "value": 0
+        },
+        {
+          "name": "COREWEBVIEW2_FAVICON_IMAGE_FORMAT_JPEG",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.Raw.COREWEBVIEW2_FRAME_KIND",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "COREWEBVIEW2_FRAME_KIND_UNKNOWN",
+          "value": 0
+        },
+        {
+          "name": "COREWEBVIEW2_FRAME_KIND_MAIN_FRAME",
+          "value": 1
+        },
+        {
+          "name": "COREWEBVIEW2_FRAME_KIND_IFRAME",
+          "value": 2
+        },
+        {
+          "name": "COREWEBVIEW2_FRAME_KIND_EMBED",
+          "value": 3
+        },
+        {
+          "name": "COREWEBVIEW2_FRAME_KIND_OBJECT",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.Raw.COREWEBVIEW2_HOST_RESOURCE_ACCESS_KIND",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "COREWEBVIEW2_HOST_RESOURCE_ACCESS_KIND_DENY",
+          "value": 0
+        },
+        {
+          "name": "COREWEBVIEW2_HOST_RESOURCE_ACCESS_KIND_ALLOW",
+          "value": 1
+        },
+        {
+          "name": "COREWEBVIEW2_HOST_RESOURCE_ACCESS_KIND_DENY_CORS",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.Raw.COREWEBVIEW2_KEY_EVENT_KIND",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "COREWEBVIEW2_KEY_EVENT_KIND_KEY_DOWN",
+          "value": 0
+        },
+        {
+          "name": "COREWEBVIEW2_KEY_EVENT_KIND_KEY_UP",
+          "value": 1
+        },
+        {
+          "name": "COREWEBVIEW2_KEY_EVENT_KIND_SYSTEM_KEY_DOWN",
+          "value": 2
+        },
+        {
+          "name": "COREWEBVIEW2_KEY_EVENT_KIND_SYSTEM_KEY_UP",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.Raw.COREWEBVIEW2_MEMORY_USAGE_TARGET_LEVEL",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "COREWEBVIEW2_MEMORY_USAGE_TARGET_LEVEL_NORMAL",
+          "value": 0
+        },
+        {
+          "name": "COREWEBVIEW2_MEMORY_USAGE_TARGET_LEVEL_LOW",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.Raw.COREWEBVIEW2_MOUSE_EVENT_KIND",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "COREWEBVIEW2_MOUSE_EVENT_KIND_HORIZONTAL_WHEEL",
+          "value": 526
+        },
+        {
+          "name": "COREWEBVIEW2_MOUSE_EVENT_KIND_LEFT_BUTTON_DOUBLE_CLICK",
+          "value": 515
+        },
+        {
+          "name": "COREWEBVIEW2_MOUSE_EVENT_KIND_LEFT_BUTTON_DOWN",
+          "value": 513
+        },
+        {
+          "name": "COREWEBVIEW2_MOUSE_EVENT_KIND_LEFT_BUTTON_UP",
+          "value": 514
+        },
+        {
+          "name": "COREWEBVIEW2_MOUSE_EVENT_KIND_LEAVE",
+          "value": 675
+        },
+        {
+          "name": "COREWEBVIEW2_MOUSE_EVENT_KIND_MIDDLE_BUTTON_DOUBLE_CLICK",
+          "value": 521
+        },
+        {
+          "name": "COREWEBVIEW2_MOUSE_EVENT_KIND_MIDDLE_BUTTON_DOWN",
+          "value": 519
+        },
+        {
+          "name": "COREWEBVIEW2_MOUSE_EVENT_KIND_MIDDLE_BUTTON_UP",
+          "value": 520
+        },
+        {
+          "name": "COREWEBVIEW2_MOUSE_EVENT_KIND_MOVE",
+          "value": 512
+        },
+        {
+          "name": "COREWEBVIEW2_MOUSE_EVENT_KIND_RIGHT_BUTTON_DOUBLE_CLICK",
+          "value": 518
+        },
+        {
+          "name": "COREWEBVIEW2_MOUSE_EVENT_KIND_RIGHT_BUTTON_DOWN",
+          "value": 516
+        },
+        {
+          "name": "COREWEBVIEW2_MOUSE_EVENT_KIND_RIGHT_BUTTON_UP",
+          "value": 517
+        },
+        {
+          "name": "COREWEBVIEW2_MOUSE_EVENT_KIND_WHEEL",
+          "value": 522
+        },
+        {
+          "name": "COREWEBVIEW2_MOUSE_EVENT_KIND_X_BUTTON_DOUBLE_CLICK",
+          "value": 525
+        },
+        {
+          "name": "COREWEBVIEW2_MOUSE_EVENT_KIND_X_BUTTON_DOWN",
+          "value": 523
+        },
+        {
+          "name": "COREWEBVIEW2_MOUSE_EVENT_KIND_X_BUTTON_UP",
+          "value": 524
+        },
+        {
+          "name": "COREWEBVIEW2_MOUSE_EVENT_KIND_NON_CLIENT_RIGHT_BUTTON_DOWN",
+          "value": 164
+        },
+        {
+          "name": "COREWEBVIEW2_MOUSE_EVENT_KIND_NON_CLIENT_RIGHT_BUTTON_UP",
+          "value": 165
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.Raw.COREWEBVIEW2_MOUSE_EVENT_VIRTUAL_KEYS",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "COREWEBVIEW2_MOUSE_EVENT_VIRTUAL_KEYS_NONE",
+          "value": 0
+        },
+        {
+          "name": "COREWEBVIEW2_MOUSE_EVENT_VIRTUAL_KEYS_LEFT_BUTTON",
+          "value": 1
+        },
+        {
+          "name": "COREWEBVIEW2_MOUSE_EVENT_VIRTUAL_KEYS_RIGHT_BUTTON",
+          "value": 2
+        },
+        {
+          "name": "COREWEBVIEW2_MOUSE_EVENT_VIRTUAL_KEYS_SHIFT",
+          "value": 4
+        },
+        {
+          "name": "COREWEBVIEW2_MOUSE_EVENT_VIRTUAL_KEYS_CONTROL",
+          "value": 8
+        },
+        {
+          "name": "COREWEBVIEW2_MOUSE_EVENT_VIRTUAL_KEYS_MIDDLE_BUTTON",
+          "value": 16
+        },
+        {
+          "name": "COREWEBVIEW2_MOUSE_EVENT_VIRTUAL_KEYS_X_BUTTON1",
+          "value": 32
+        },
+        {
+          "name": "COREWEBVIEW2_MOUSE_EVENT_VIRTUAL_KEYS_X_BUTTON2",
+          "value": 64
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.Raw.COREWEBVIEW2_MOVE_FOCUS_REASON",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "COREWEBVIEW2_MOVE_FOCUS_REASON_PROGRAMMATIC",
+          "value": 0
+        },
+        {
+          "name": "COREWEBVIEW2_MOVE_FOCUS_REASON_NEXT",
+          "value": 1
+        },
+        {
+          "name": "COREWEBVIEW2_MOVE_FOCUS_REASON_PREVIOUS",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.Raw.COREWEBVIEW2_NAVIGATION_KIND",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "COREWEBVIEW2_NAVIGATION_KIND_RELOAD",
+          "value": 0
+        },
+        {
+          "name": "COREWEBVIEW2_NAVIGATION_KIND_BACK_OR_FORWARD",
+          "value": 1
+        },
+        {
+          "name": "COREWEBVIEW2_NAVIGATION_KIND_NEW_DOCUMENT",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.Raw.COREWEBVIEW2_NON_CLIENT_REGION_KIND",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "COREWEBVIEW2_NON_CLIENT_REGION_KIND_NOWHERE",
+          "value": 0
+        },
+        {
+          "name": "COREWEBVIEW2_NON_CLIENT_REGION_KIND_CLIENT",
+          "value": 1
+        },
+        {
+          "name": "COREWEBVIEW2_NON_CLIENT_REGION_KIND_CAPTION",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.Raw.COREWEBVIEW2_PDF_TOOLBAR_ITEMS",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "COREWEBVIEW2_PDF_TOOLBAR_ITEMS_NONE",
+          "value": 0
+        },
+        {
+          "name": "COREWEBVIEW2_PDF_TOOLBAR_ITEMS_SAVE",
+          "value": 1
+        },
+        {
+          "name": "COREWEBVIEW2_PDF_TOOLBAR_ITEMS_PRINT",
+          "value": 2
+        },
+        {
+          "name": "COREWEBVIEW2_PDF_TOOLBAR_ITEMS_SAVE_AS",
+          "value": 4
+        },
+        {
+          "name": "COREWEBVIEW2_PDF_TOOLBAR_ITEMS_ZOOM_IN",
+          "value": 8
+        },
+        {
+          "name": "COREWEBVIEW2_PDF_TOOLBAR_ITEMS_ZOOM_OUT",
+          "value": 16
+        },
+        {
+          "name": "COREWEBVIEW2_PDF_TOOLBAR_ITEMS_ROTATE",
+          "value": 32
+        },
+        {
+          "name": "COREWEBVIEW2_PDF_TOOLBAR_ITEMS_FIT_PAGE",
+          "value": 64
+        },
+        {
+          "name": "COREWEBVIEW2_PDF_TOOLBAR_ITEMS_PAGE_LAYOUT",
+          "value": 128
+        },
+        {
+          "name": "COREWEBVIEW2_PDF_TOOLBAR_ITEMS_BOOKMARKS",
+          "value": 256
+        },
+        {
+          "name": "COREWEBVIEW2_PDF_TOOLBAR_ITEMS_PAGE_SELECTOR",
+          "value": 512
+        },
+        {
+          "name": "COREWEBVIEW2_PDF_TOOLBAR_ITEMS_SEARCH",
+          "value": 1024
+        },
+        {
+          "name": "COREWEBVIEW2_PDF_TOOLBAR_ITEMS_FULL_SCREEN",
+          "value": 2048
+        },
+        {
+          "name": "COREWEBVIEW2_PDF_TOOLBAR_ITEMS_MORE_SETTINGS",
+          "value": 4096
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.Raw.COREWEBVIEW2_PERMISSION_KIND",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "COREWEBVIEW2_PERMISSION_KIND_UNKNOWN_PERMISSION",
+          "value": 0
+        },
+        {
+          "name": "COREWEBVIEW2_PERMISSION_KIND_MICROPHONE",
+          "value": 1
+        },
+        {
+          "name": "COREWEBVIEW2_PERMISSION_KIND_CAMERA",
+          "value": 2
+        },
+        {
+          "name": "COREWEBVIEW2_PERMISSION_KIND_GEOLOCATION",
+          "value": 3
+        },
+        {
+          "name": "COREWEBVIEW2_PERMISSION_KIND_NOTIFICATIONS",
+          "value": 4
+        },
+        {
+          "name": "COREWEBVIEW2_PERMISSION_KIND_OTHER_SENSORS",
+          "value": 5
+        },
+        {
+          "name": "COREWEBVIEW2_PERMISSION_KIND_CLIPBOARD_READ",
+          "value": 6
+        },
+        {
+          "name": "COREWEBVIEW2_PERMISSION_KIND_MULTIPLE_AUTOMATIC_DOWNLOADS",
+          "value": 7
+        },
+        {
+          "name": "COREWEBVIEW2_PERMISSION_KIND_FILE_READ_WRITE",
+          "value": 8
+        },
+        {
+          "name": "COREWEBVIEW2_PERMISSION_KIND_AUTOPLAY",
+          "value": 9
+        },
+        {
+          "name": "COREWEBVIEW2_PERMISSION_KIND_LOCAL_FONTS",
+          "value": 10
+        },
+        {
+          "name": "COREWEBVIEW2_PERMISSION_KIND_MIDI_SYSTEM_EXCLUSIVE_MESSAGES",
+          "value": 11
+        },
+        {
+          "name": "COREWEBVIEW2_PERMISSION_KIND_WINDOW_MANAGEMENT",
+          "value": 12
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.Raw.COREWEBVIEW2_PERMISSION_STATE",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "COREWEBVIEW2_PERMISSION_STATE_DEFAULT",
+          "value": 0
+        },
+        {
+          "name": "COREWEBVIEW2_PERMISSION_STATE_ALLOW",
+          "value": 1
+        },
+        {
+          "name": "COREWEBVIEW2_PERMISSION_STATE_DENY",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.Raw.COREWEBVIEW2_POINTER_EVENT_KIND",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "COREWEBVIEW2_POINTER_EVENT_KIND_ACTIVATE",
+          "value": 587
+        },
+        {
+          "name": "COREWEBVIEW2_POINTER_EVENT_KIND_DOWN",
+          "value": 582
+        },
+        {
+          "name": "COREWEBVIEW2_POINTER_EVENT_KIND_ENTER",
+          "value": 585
+        },
+        {
+          "name": "COREWEBVIEW2_POINTER_EVENT_KIND_LEAVE",
+          "value": 586
+        },
+        {
+          "name": "COREWEBVIEW2_POINTER_EVENT_KIND_UP",
+          "value": 583
+        },
+        {
+          "name": "COREWEBVIEW2_POINTER_EVENT_KIND_UPDATE",
+          "value": 581
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.Raw.COREWEBVIEW2_PREFERRED_COLOR_SCHEME",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "COREWEBVIEW2_PREFERRED_COLOR_SCHEME_AUTO",
+          "value": 0
+        },
+        {
+          "name": "COREWEBVIEW2_PREFERRED_COLOR_SCHEME_LIGHT",
+          "value": 1
+        },
+        {
+          "name": "COREWEBVIEW2_PREFERRED_COLOR_SCHEME_DARK",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.Raw.COREWEBVIEW2_PRINT_COLLATION",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "COREWEBVIEW2_PRINT_COLLATION_DEFAULT",
+          "value": 0
+        },
+        {
+          "name": "COREWEBVIEW2_PRINT_COLLATION_COLLATED",
+          "value": 1
+        },
+        {
+          "name": "COREWEBVIEW2_PRINT_COLLATION_UNCOLLATED",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.Raw.COREWEBVIEW2_PRINT_COLOR_MODE",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "COREWEBVIEW2_PRINT_COLOR_MODE_DEFAULT",
+          "value": 0
+        },
+        {
+          "name": "COREWEBVIEW2_PRINT_COLOR_MODE_COLOR",
+          "value": 1
+        },
+        {
+          "name": "COREWEBVIEW2_PRINT_COLOR_MODE_GRAYSCALE",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.Raw.COREWEBVIEW2_PRINT_DIALOG_KIND",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "COREWEBVIEW2_PRINT_DIALOG_KIND_BROWSER",
+          "value": 0
+        },
+        {
+          "name": "COREWEBVIEW2_PRINT_DIALOG_KIND_SYSTEM",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.Raw.COREWEBVIEW2_PRINT_DUPLEX",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "COREWEBVIEW2_PRINT_DUPLEX_DEFAULT",
+          "value": 0
+        },
+        {
+          "name": "COREWEBVIEW2_PRINT_DUPLEX_ONE_SIDED",
+          "value": 1
+        },
+        {
+          "name": "COREWEBVIEW2_PRINT_DUPLEX_TWO_SIDED_LONG_EDGE",
+          "value": 2
+        },
+        {
+          "name": "COREWEBVIEW2_PRINT_DUPLEX_TWO_SIDED_SHORT_EDGE",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.Raw.COREWEBVIEW2_PRINT_MEDIA_SIZE",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "COREWEBVIEW2_PRINT_MEDIA_SIZE_DEFAULT",
+          "value": 0
+        },
+        {
+          "name": "COREWEBVIEW2_PRINT_MEDIA_SIZE_CUSTOM",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.Raw.COREWEBVIEW2_PRINT_ORIENTATION",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "COREWEBVIEW2_PRINT_ORIENTATION_PORTRAIT",
+          "value": 0
+        },
+        {
+          "name": "COREWEBVIEW2_PRINT_ORIENTATION_LANDSCAPE",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.Raw.COREWEBVIEW2_PRINT_STATUS",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "COREWEBVIEW2_PRINT_STATUS_SUCCEEDED",
+          "value": 0
+        },
+        {
+          "name": "COREWEBVIEW2_PRINT_STATUS_PRINTER_UNAVAILABLE",
+          "value": 1
+        },
+        {
+          "name": "COREWEBVIEW2_PRINT_STATUS_OTHER_ERROR",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.Raw.COREWEBVIEW2_PROCESS_FAILED_KIND",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "COREWEBVIEW2_PROCESS_FAILED_KIND_BROWSER_PROCESS_EXITED",
+          "value": 0
+        },
+        {
+          "name": "COREWEBVIEW2_PROCESS_FAILED_KIND_RENDER_PROCESS_EXITED",
+          "value": 1
+        },
+        {
+          "name": "COREWEBVIEW2_PROCESS_FAILED_KIND_RENDER_PROCESS_UNRESPONSIVE",
+          "value": 2
+        },
+        {
+          "name": "COREWEBVIEW2_PROCESS_FAILED_KIND_FRAME_RENDER_PROCESS_EXITED",
+          "value": 3
+        },
+        {
+          "name": "COREWEBVIEW2_PROCESS_FAILED_KIND_UTILITY_PROCESS_EXITED",
+          "value": 4
+        },
+        {
+          "name": "COREWEBVIEW2_PROCESS_FAILED_KIND_SANDBOX_HELPER_PROCESS_EXITED",
+          "value": 5
+        },
+        {
+          "name": "COREWEBVIEW2_PROCESS_FAILED_KIND_GPU_PROCESS_EXITED",
+          "value": 6
+        },
+        {
+          "name": "COREWEBVIEW2_PROCESS_FAILED_KIND_PPAPI_PLUGIN_PROCESS_EXITED",
+          "value": 7
+        },
+        {
+          "name": "COREWEBVIEW2_PROCESS_FAILED_KIND_PPAPI_BROKER_PROCESS_EXITED",
+          "value": 8
+        },
+        {
+          "name": "COREWEBVIEW2_PROCESS_FAILED_KIND_UNKNOWN_PROCESS_EXITED",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.Raw.COREWEBVIEW2_PROCESS_FAILED_REASON",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "COREWEBVIEW2_PROCESS_FAILED_REASON_UNEXPECTED",
+          "value": 0
+        },
+        {
+          "name": "COREWEBVIEW2_PROCESS_FAILED_REASON_UNRESPONSIVE",
+          "value": 1
+        },
+        {
+          "name": "COREWEBVIEW2_PROCESS_FAILED_REASON_TERMINATED",
+          "value": 2
+        },
+        {
+          "name": "COREWEBVIEW2_PROCESS_FAILED_REASON_CRASHED",
+          "value": 3
+        },
+        {
+          "name": "COREWEBVIEW2_PROCESS_FAILED_REASON_LAUNCH_FAILED",
+          "value": 4
+        },
+        {
+          "name": "COREWEBVIEW2_PROCESS_FAILED_REASON_OUT_OF_MEMORY",
+          "value": 5
+        },
+        {
+          "name": "COREWEBVIEW2_PROCESS_FAILED_REASON_PROFILE_DELETED",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.Raw.COREWEBVIEW2_PROCESS_KIND",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "COREWEBVIEW2_PROCESS_KIND_BROWSER",
+          "value": 0
+        },
+        {
+          "name": "COREWEBVIEW2_PROCESS_KIND_RENDERER",
+          "value": 1
+        },
+        {
+          "name": "COREWEBVIEW2_PROCESS_KIND_UTILITY",
+          "value": 2
+        },
+        {
+          "name": "COREWEBVIEW2_PROCESS_KIND_SANDBOX_HELPER",
+          "value": 3
+        },
+        {
+          "name": "COREWEBVIEW2_PROCESS_KIND_GPU",
+          "value": 4
+        },
+        {
+          "name": "COREWEBVIEW2_PROCESS_KIND_PPAPI_PLUGIN",
+          "value": 5
+        },
+        {
+          "name": "COREWEBVIEW2_PROCESS_KIND_PPAPI_BROKER",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.Raw.COREWEBVIEW2_RELEASE_CHANNELS",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "COREWEBVIEW2_RELEASE_CHANNELS_NONE",
+          "value": 0
+        },
+        {
+          "name": "COREWEBVIEW2_RELEASE_CHANNELS_STABLE",
+          "value": 1
+        },
+        {
+          "name": "COREWEBVIEW2_RELEASE_CHANNELS_BETA",
+          "value": 2
+        },
+        {
+          "name": "COREWEBVIEW2_RELEASE_CHANNELS_DEV",
+          "value": 4
+        },
+        {
+          "name": "COREWEBVIEW2_RELEASE_CHANNELS_CANARY",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.Raw.COREWEBVIEW2_SCRIPT_DIALOG_KIND",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "COREWEBVIEW2_SCRIPT_DIALOG_KIND_ALERT",
+          "value": 0
+        },
+        {
+          "name": "COREWEBVIEW2_SCRIPT_DIALOG_KIND_CONFIRM",
+          "value": 1
+        },
+        {
+          "name": "COREWEBVIEW2_SCRIPT_DIALOG_KIND_PROMPT",
+          "value": 2
+        },
+        {
+          "name": "COREWEBVIEW2_SCRIPT_DIALOG_KIND_BEFOREUNLOAD",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.Raw.COREWEBVIEW2_SCROLLBAR_STYLE",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "COREWEBVIEW2_SCROLLBAR_STYLE_DEFAULT",
+          "value": 0
+        },
+        {
+          "name": "COREWEBVIEW2_SCROLLBAR_STYLE_FLUENT_OVERLAY",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.Raw.COREWEBVIEW2_SERVER_CERTIFICATE_ERROR_ACTION",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "COREWEBVIEW2_SERVER_CERTIFICATE_ERROR_ACTION_ALWAYS_ALLOW",
+          "value": 0
+        },
+        {
+          "name": "COREWEBVIEW2_SERVER_CERTIFICATE_ERROR_ACTION_CANCEL",
+          "value": 1
+        },
+        {
+          "name": "COREWEBVIEW2_SERVER_CERTIFICATE_ERROR_ACTION_DEFAULT",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.Raw.COREWEBVIEW2_SHARED_BUFFER_ACCESS",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "COREWEBVIEW2_SHARED_BUFFER_ACCESS_READ_ONLY",
+          "value": 0
+        },
+        {
+          "name": "COREWEBVIEW2_SHARED_BUFFER_ACCESS_READ_WRITE",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.Raw.COREWEBVIEW2_TRACKING_PREVENTION_LEVEL",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "COREWEBVIEW2_TRACKING_PREVENTION_LEVEL_NONE",
+          "value": 0
+        },
+        {
+          "name": "COREWEBVIEW2_TRACKING_PREVENTION_LEVEL_BASIC",
+          "value": 1
+        },
+        {
+          "name": "COREWEBVIEW2_TRACKING_PREVENTION_LEVEL_BALANCED",
+          "value": 2
+        },
+        {
+          "name": "COREWEBVIEW2_TRACKING_PREVENTION_LEVEL_STRICT",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.Raw.COREWEBVIEW2_WEB_ERROR_STATUS",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "COREWEBVIEW2_WEB_ERROR_STATUS_UNKNOWN",
+          "value": 0
+        },
+        {
+          "name": "COREWEBVIEW2_WEB_ERROR_STATUS_CERTIFICATE_COMMON_NAME_IS_INCORRECT",
+          "value": 1
+        },
+        {
+          "name": "COREWEBVIEW2_WEB_ERROR_STATUS_CERTIFICATE_EXPIRED",
+          "value": 2
+        },
+        {
+          "name": "COREWEBVIEW2_WEB_ERROR_STATUS_CLIENT_CERTIFICATE_CONTAINS_ERRORS",
+          "value": 3
+        },
+        {
+          "name": "COREWEBVIEW2_WEB_ERROR_STATUS_CERTIFICATE_REVOKED",
+          "value": 4
+        },
+        {
+          "name": "COREWEBVIEW2_WEB_ERROR_STATUS_CERTIFICATE_IS_INVALID",
+          "value": 5
+        },
+        {
+          "name": "COREWEBVIEW2_WEB_ERROR_STATUS_SERVER_UNREACHABLE",
+          "value": 6
+        },
+        {
+          "name": "COREWEBVIEW2_WEB_ERROR_STATUS_TIMEOUT",
+          "value": 7
+        },
+        {
+          "name": "COREWEBVIEW2_WEB_ERROR_STATUS_ERROR_HTTP_INVALID_SERVER_RESPONSE",
+          "value": 8
+        },
+        {
+          "name": "COREWEBVIEW2_WEB_ERROR_STATUS_CONNECTION_ABORTED",
+          "value": 9
+        },
+        {
+          "name": "COREWEBVIEW2_WEB_ERROR_STATUS_CONNECTION_RESET",
+          "value": 10
+        },
+        {
+          "name": "COREWEBVIEW2_WEB_ERROR_STATUS_DISCONNECTED",
+          "value": 11
+        },
+        {
+          "name": "COREWEBVIEW2_WEB_ERROR_STATUS_CANNOT_CONNECT",
+          "value": 12
+        },
+        {
+          "name": "COREWEBVIEW2_WEB_ERROR_STATUS_HOST_NAME_NOT_RESOLVED",
+          "value": 13
+        },
+        {
+          "name": "COREWEBVIEW2_WEB_ERROR_STATUS_OPERATION_CANCELED",
+          "value": 14
+        },
+        {
+          "name": "COREWEBVIEW2_WEB_ERROR_STATUS_REDIRECT_FAILED",
+          "value": 15
+        },
+        {
+          "name": "COREWEBVIEW2_WEB_ERROR_STATUS_UNEXPECTED_ERROR",
+          "value": 16
+        },
+        {
+          "name": "COREWEBVIEW2_WEB_ERROR_STATUS_VALID_AUTHENTICATION_CREDENTIALS_REQUIRED",
+          "value": 17
+        },
+        {
+          "name": "COREWEBVIEW2_WEB_ERROR_STATUS_VALID_PROXY_AUTHENTICATION_REQUIRED",
+          "value": 18
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.Raw.COREWEBVIEW2_WEB_RESOURCE_CONTEXT",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "COREWEBVIEW2_WEB_RESOURCE_CONTEXT_ALL",
+          "value": 0
+        },
+        {
+          "name": "COREWEBVIEW2_WEB_RESOURCE_CONTEXT_DOCUMENT",
+          "value": 1
+        },
+        {
+          "name": "COREWEBVIEW2_WEB_RESOURCE_CONTEXT_STYLESHEET",
+          "value": 2
+        },
+        {
+          "name": "COREWEBVIEW2_WEB_RESOURCE_CONTEXT_IMAGE",
+          "value": 3
+        },
+        {
+          "name": "COREWEBVIEW2_WEB_RESOURCE_CONTEXT_MEDIA",
+          "value": 4
+        },
+        {
+          "name": "COREWEBVIEW2_WEB_RESOURCE_CONTEXT_FONT",
+          "value": 5
+        },
+        {
+          "name": "COREWEBVIEW2_WEB_RESOURCE_CONTEXT_SCRIPT",
+          "value": 6
+        },
+        {
+          "name": "COREWEBVIEW2_WEB_RESOURCE_CONTEXT_XML_HTTP_REQUEST",
+          "value": 7
+        },
+        {
+          "name": "COREWEBVIEW2_WEB_RESOURCE_CONTEXT_FETCH",
+          "value": 8
+        },
+        {
+          "name": "COREWEBVIEW2_WEB_RESOURCE_CONTEXT_TEXT_TRACK",
+          "value": 9
+        },
+        {
+          "name": "COREWEBVIEW2_WEB_RESOURCE_CONTEXT_EVENT_SOURCE",
+          "value": 10
+        },
+        {
+          "name": "COREWEBVIEW2_WEB_RESOURCE_CONTEXT_WEBSOCKET",
+          "value": 11
+        },
+        {
+          "name": "COREWEBVIEW2_WEB_RESOURCE_CONTEXT_MANIFEST",
+          "value": 12
+        },
+        {
+          "name": "COREWEBVIEW2_WEB_RESOURCE_CONTEXT_SIGNED_EXCHANGE",
+          "value": 13
+        },
+        {
+          "name": "COREWEBVIEW2_WEB_RESOURCE_CONTEXT_PING",
+          "value": 14
+        },
+        {
+          "name": "COREWEBVIEW2_WEB_RESOURCE_CONTEXT_CSP_VIOLATION_REPORT",
+          "value": 15
+        },
+        {
+          "name": "COREWEBVIEW2_WEB_RESOURCE_CONTEXT_OTHER",
+          "value": 16
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Core.Raw.COREWEBVIEW2_WEB_RESOURCE_REQUEST_SOURCE_KINDS",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "COREWEBVIEW2_WEB_RESOURCE_REQUEST_SOURCE_KINDS_NONE",
+          "value": 0
+        },
+        {
+          "name": "COREWEBVIEW2_WEB_RESOURCE_REQUEST_SOURCE_KINDS_DOCUMENT",
+          "value": 1
+        },
+        {
+          "name": "COREWEBVIEW2_WEB_RESOURCE_REQUEST_SOURCE_KINDS_SHARED_WORKER",
+          "value": 2
+        },
+        {
+          "name": "COREWEBVIEW2_WEB_RESOURCE_REQUEST_SOURCE_KINDS_SERVICE_WORKER",
+          "value": 4
+        },
+        {
+          "name": "COREWEBVIEW2_WEB_RESOURCE_REQUEST_SOURCE_KINDS_ALL",
+          "value": -1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.WinForms.WebView2.NativeMethods.WS_EX",
+      "underlyingType": "System.UInt32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "TRANSPARENT",
+          "value": 32
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.WinForms.WebView2.NativeMethods.WM",
+      "underlyingType": "System.UInt32",
+      "members": [
+        {
+          "name": "PAINT",
+          "value": 15
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Wpf.WebView2.NativeMethods.WS",
+      "underlyingType": "System.UInt32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "CLIPCHILDREN",
+          "value": 33554432
+        },
+        {
+          "name": "VISIBLE",
+          "value": 268435456
+        },
+        {
+          "name": "CHILD",
+          "value": 1073741824
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Wpf.WebView2.NativeMethods.WS_EX",
+      "underlyingType": "System.UInt32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "TRANSPARENT",
+          "value": 32
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Web.WebView2.Wpf.WebView2.NativeMethods.WM",
+      "underlyingType": "System.UInt32",
+      "members": [
+        {
+          "name": "SETFOCUS",
+          "value": 7
+        },
+        {
+          "name": "PAINT",
+          "value": 15
+        }
+      ]
+    }
+  ],
+  "namespaceMappings": []
+}

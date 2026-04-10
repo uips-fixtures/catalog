@@ -1,0 +1,1393 @@
+{
+  "schema": {
+    "id": "activity-catalog",
+    "version": "v0.3"
+  },
+  "source": {
+    "kind": "nuget-package",
+    "id": "MailKit",
+    "version": "4.15.1",
+    "feedUrl": null,
+    "authors": "Jeffrey Stedfast",
+    "projectUrl": "http://www.mimekit.net/",
+    "description": "MailKit is an Open Source cross-platform .NET mail-client library that is based on MimeKit and optimized for mobile devices.\n\nFeatures include:\n* HTTP, Socks4, Socks4a and Socks5 proxy support.\n* SASL Authentication via ANONYMOUS, CRAM-MD5, DIGEST-MD5, LOGIN, NTLM, OAUTHBEARER, PLAIN, SCRAM-SHA-1, SCRAM-SHA-256, SCRAM-SHA-512 and XOAUTH2.\n* A fully-cancellable SmtpClient with support for STARTTLS, 8BITMIME, BINARYMIME, ENHANCEDSTATUSCODES, SIZE, DSN, PIPELINING and SMTPUTF8.\n* A fully-cancellable Pop3Client with support for STLS, UIDL, APOP, PIPELINING, UTF8, and LANG.\n* A fully-cancellable ImapClient with support for ACL, QUOTA, LITERAL+, IDLE, NAMESPACE, ID, CHILDREN, LOGINDISABLED, STARTTLS, MULTIAPPEND, UNSELECT, UIDPLUS, CONDSTORE, ESEARCH, SASL-IR, COMPRESS, WITHIN, ENABLE, QRESYNC, SORT, THREAD, ANNOTATE, LIST-EXTENDED, ESORT, METADATA / METADATA-SERVER, NOTIFY, FILTERS, LIST-STATUS, SORT=DISPLAY, SPECIAL-USE / CREATE-SPECIAL-USE, SEARCH=FUZZY, MOVE, UTF8=ACCEPT / UTF8=ONLY, LITERAL-, APPENDLIMIT, STATUS=SIZE, OBJECTID, REPLACE, SAVEDATE, XLIST, and X-GM-EXT1.\n* Client-side sorting and threading of messages (the Ordinal Subject and the Jamie Zawinski threading algorithms are supported).\n* Asynchronous versions of all methods that hit the network.\n* S/MIME, OpenPGP, DKIM and ARC support via MimeKit.\n* Microsoft TNEF support via MimeKit.",
+    "license": "MIT",
+    "tags": "smtp pop3 imap mime security arc dkim smime s/mime openpgp pgp mbox mail email parser tnef",
+    "packageTypes": []
+  },
+  "generatedAt": "2026-04-10T09:21:13Z",
+  "activities": [],
+  "enums": [
+    {
+      "fullName": "MailKit.AnnotationAccess",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "ReadOnly",
+          "value": 1
+        },
+        {
+          "name": "ReadWrite",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "MailKit.AnnotationScope",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Private",
+          "value": 1
+        },
+        {
+          "name": "Shared",
+          "value": 2
+        },
+        {
+          "name": "Both",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "MailKit.DeliveryStatusNotification",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Never",
+          "value": 0
+        },
+        {
+          "name": "Success",
+          "value": 1
+        },
+        {
+          "name": "Failure",
+          "value": 2
+        },
+        {
+          "name": "Delay",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "MailKit.FolderAccess",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "ReadOnly",
+          "value": 1
+        },
+        {
+          "name": "ReadWrite",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "MailKit.FolderAttributes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "NoInferiors",
+          "value": 1
+        },
+        {
+          "name": "NoSelect",
+          "value": 2
+        },
+        {
+          "name": "Marked",
+          "value": 4
+        },
+        {
+          "name": "Unmarked",
+          "value": 8
+        },
+        {
+          "name": "NonExistent",
+          "value": 16
+        },
+        {
+          "name": "Subscribed",
+          "value": 32
+        },
+        {
+          "name": "Remote",
+          "value": 64
+        },
+        {
+          "name": "HasChildren",
+          "value": 128
+        },
+        {
+          "name": "HasNoChildren",
+          "value": 256
+        },
+        {
+          "name": "All",
+          "value": 512
+        },
+        {
+          "name": "Archive",
+          "value": 1024
+        },
+        {
+          "name": "Drafts",
+          "value": 2048
+        },
+        {
+          "name": "Flagged",
+          "value": 4096
+        },
+        {
+          "name": "Important",
+          "value": 8192
+        },
+        {
+          "name": "Inbox",
+          "value": 16384
+        },
+        {
+          "name": "Junk",
+          "value": 32768
+        },
+        {
+          "name": "Sent",
+          "value": 65536
+        },
+        {
+          "name": "Trash",
+          "value": 131072
+        }
+      ]
+    },
+    {
+      "fullName": "MailKit.FolderFeature",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AccessRights",
+          "value": 0
+        },
+        {
+          "name": "Annotations",
+          "value": 1
+        },
+        {
+          "name": "Metadata",
+          "value": 2
+        },
+        {
+          "name": "ModSequences",
+          "value": 3
+        },
+        {
+          "name": "QuickResync",
+          "value": 4
+        },
+        {
+          "name": "Quotas",
+          "value": 5
+        },
+        {
+          "name": "Sorting",
+          "value": 6
+        },
+        {
+          "name": "Threading",
+          "value": 7
+        },
+        {
+          "name": "UTF8",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "MailKit.MessageFlags",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Seen",
+          "value": 1
+        },
+        {
+          "name": "Answered",
+          "value": 2
+        },
+        {
+          "name": "Flagged",
+          "value": 4
+        },
+        {
+          "name": "Deleted",
+          "value": 8
+        },
+        {
+          "name": "Draft",
+          "value": 16
+        },
+        {
+          "name": "Recent",
+          "value": 32
+        },
+        {
+          "name": "UserDefined",
+          "value": 64
+        }
+      ]
+    },
+    {
+      "fullName": "MailKit.MessageSummaryItems",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Annotations",
+          "value": 1
+        },
+        {
+          "name": "Body",
+          "value": 2
+        },
+        {
+          "name": "BodyStructure",
+          "value": 4
+        },
+        {
+          "name": "Envelope",
+          "value": 8
+        },
+        {
+          "name": "Flags",
+          "value": 16
+        },
+        {
+          "name": "InternalDate",
+          "value": 32
+        },
+        {
+          "name": "Size",
+          "value": 64
+        },
+        {
+          "name": "ModSeq",
+          "value": 128
+        },
+        {
+          "name": "References",
+          "value": 256
+        },
+        {
+          "name": "UniqueId",
+          "value": 512
+        },
+        {
+          "name": "EmailId",
+          "value": 1024
+        },
+        {
+          "name": "ThreadId",
+          "value": 2048
+        },
+        {
+          "name": "GMailMessageId",
+          "value": 4096
+        },
+        {
+          "name": "GMailThreadId",
+          "value": 8192
+        },
+        {
+          "name": "GMailLabels",
+          "value": 16384
+        },
+        {
+          "name": "Headers",
+          "value": 32768
+        },
+        {
+          "name": "PreviewText",
+          "value": 65536
+        },
+        {
+          "name": "SaveDate",
+          "value": 131072
+        },
+        {
+          "name": "All",
+          "value": 120
+        },
+        {
+          "name": "Fast",
+          "value": 112
+        },
+        {
+          "name": "Full",
+          "value": 122
+        }
+      ]
+    },
+    {
+      "fullName": "MailKit.SpecialFolder",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "All",
+          "value": 0
+        },
+        {
+          "name": "Archive",
+          "value": 1
+        },
+        {
+          "name": "Drafts",
+          "value": 2
+        },
+        {
+          "name": "Flagged",
+          "value": 3
+        },
+        {
+          "name": "Important",
+          "value": 4
+        },
+        {
+          "name": "Junk",
+          "value": 5
+        },
+        {
+          "name": "Sent",
+          "value": 6
+        },
+        {
+          "name": "Trash",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "MailKit.StatusItems",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Count",
+          "value": 1
+        },
+        {
+          "name": "Recent",
+          "value": 2
+        },
+        {
+          "name": "UidNext",
+          "value": 4
+        },
+        {
+          "name": "UidValidity",
+          "value": 8
+        },
+        {
+          "name": "Unread",
+          "value": 16
+        },
+        {
+          "name": "HighestModSeq",
+          "value": 32
+        },
+        {
+          "name": "AppendLimit",
+          "value": 64
+        },
+        {
+          "name": "Size",
+          "value": 128
+        },
+        {
+          "name": "MailboxId",
+          "value": 256
+        }
+      ]
+    },
+    {
+      "fullName": "MailKit.StoreAction",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Add",
+          "value": 0
+        },
+        {
+          "name": "Remove",
+          "value": 1
+        },
+        {
+          "name": "Set",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "MailKit.ThreadingAlgorithm",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "OrderedSubject",
+          "value": 0
+        },
+        {
+          "name": "References",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "MailKit.Security.SaslErrorCode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ChallengeTooLong",
+          "value": 0
+        },
+        {
+          "name": "IncompleteChallenge",
+          "value": 1
+        },
+        {
+          "name": "InvalidChallenge",
+          "value": 2
+        },
+        {
+          "name": "MissingChallenge",
+          "value": 3
+        },
+        {
+          "name": "IncorrectHash",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "MailKit.Security.SecureSocketOptions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Auto",
+          "value": 1
+        },
+        {
+          "name": "SslOnConnect",
+          "value": 2
+        },
+        {
+          "name": "StartTls",
+          "value": 3
+        },
+        {
+          "name": "StartTlsWhenAvailable",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "MailKit.Search.OrderByType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Annotation",
+          "value": 0
+        },
+        {
+          "name": "Arrival",
+          "value": 1
+        },
+        {
+          "name": "Cc",
+          "value": 2
+        },
+        {
+          "name": "Date",
+          "value": 3
+        },
+        {
+          "name": "DisplayFrom",
+          "value": 4
+        },
+        {
+          "name": "DisplayTo",
+          "value": 5
+        },
+        {
+          "name": "From",
+          "value": 6
+        },
+        {
+          "name": "ModSeq",
+          "value": 7
+        },
+        {
+          "name": "Size",
+          "value": 8
+        },
+        {
+          "name": "Subject",
+          "value": 9
+        },
+        {
+          "name": "To",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "fullName": "MailKit.Search.SearchOptions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "All",
+          "value": 1
+        },
+        {
+          "name": "Count",
+          "value": 2
+        },
+        {
+          "name": "Min",
+          "value": 4
+        },
+        {
+          "name": "Max",
+          "value": 8
+        },
+        {
+          "name": "Relevancy",
+          "value": 16
+        }
+      ]
+    },
+    {
+      "fullName": "MailKit.Search.SearchTerm",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "All",
+          "value": 0
+        },
+        {
+          "name": "And",
+          "value": 1
+        },
+        {
+          "name": "Annotation",
+          "value": 2
+        },
+        {
+          "name": "Answered",
+          "value": 3
+        },
+        {
+          "name": "BccContains",
+          "value": 4
+        },
+        {
+          "name": "BodyContains",
+          "value": 5
+        },
+        {
+          "name": "CcContains",
+          "value": 6
+        },
+        {
+          "name": "Deleted",
+          "value": 7
+        },
+        {
+          "name": "DeliveredAfter",
+          "value": 8
+        },
+        {
+          "name": "DeliveredBefore",
+          "value": 9
+        },
+        {
+          "name": "DeliveredOn",
+          "value": 10
+        },
+        {
+          "name": "Draft",
+          "value": 11
+        },
+        {
+          "name": "Filter",
+          "value": 12
+        },
+        {
+          "name": "Flagged",
+          "value": 13
+        },
+        {
+          "name": "FromContains",
+          "value": 14
+        },
+        {
+          "name": "Fuzzy",
+          "value": 15
+        },
+        {
+          "name": "HeaderContains",
+          "value": 16
+        },
+        {
+          "name": "Keyword",
+          "value": 17
+        },
+        {
+          "name": "LargerThan",
+          "value": 18
+        },
+        {
+          "name": "MessageContains",
+          "value": 19
+        },
+        {
+          "name": "ModSeq",
+          "value": 20
+        },
+        {
+          "name": "New",
+          "value": 21
+        },
+        {
+          "name": "Not",
+          "value": 22
+        },
+        {
+          "name": "NotAnswered",
+          "value": 23
+        },
+        {
+          "name": "NotDeleted",
+          "value": 24
+        },
+        {
+          "name": "NotDraft",
+          "value": 25
+        },
+        {
+          "name": "NotFlagged",
+          "value": 26
+        },
+        {
+          "name": "NotKeyword",
+          "value": 27
+        },
+        {
+          "name": "NotRecent",
+          "value": 28
+        },
+        {
+          "name": "NotSeen",
+          "value": 29
+        },
+        {
+          "name": "Older",
+          "value": 30
+        },
+        {
+          "name": "Or",
+          "value": 31
+        },
+        {
+          "name": "Recent",
+          "value": 32
+        },
+        {
+          "name": "SaveDateSupported",
+          "value": 33
+        },
+        {
+          "name": "SavedBefore",
+          "value": 34
+        },
+        {
+          "name": "SavedOn",
+          "value": 35
+        },
+        {
+          "name": "SavedSince",
+          "value": 36
+        },
+        {
+          "name": "Seen",
+          "value": 37
+        },
+        {
+          "name": "SentBefore",
+          "value": 38
+        },
+        {
+          "name": "SentOn",
+          "value": 39
+        },
+        {
+          "name": "SentSince",
+          "value": 40
+        },
+        {
+          "name": "SmallerThan",
+          "value": 41
+        },
+        {
+          "name": "SubjectContains",
+          "value": 42
+        },
+        {
+          "name": "ToContains",
+          "value": 43
+        },
+        {
+          "name": "Uid",
+          "value": 44
+        },
+        {
+          "name": "Younger",
+          "value": 45
+        },
+        {
+          "name": "GMailMessageId",
+          "value": 46
+        },
+        {
+          "name": "GMailThreadId",
+          "value": 47
+        },
+        {
+          "name": "GMailLabels",
+          "value": 48
+        },
+        {
+          "name": "GMailRaw",
+          "value": 49
+        }
+      ]
+    },
+    {
+      "fullName": "MailKit.Search.SortOrder",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Ascending",
+          "value": 1
+        },
+        {
+          "name": "Descending",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "MailKit.Net.Smtp.SmtpCapabilities",
+      "underlyingType": "System.UInt32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Size",
+          "value": 1
+        },
+        {
+          "name": "Dsn",
+          "value": 2
+        },
+        {
+          "name": "EnhancedStatusCodes",
+          "value": 4
+        },
+        {
+          "name": "Authentication",
+          "value": 8
+        },
+        {
+          "name": "EightBitMime",
+          "value": 16
+        },
+        {
+          "name": "Pipelining",
+          "value": 32
+        },
+        {
+          "name": "BinaryMime",
+          "value": 64
+        },
+        {
+          "name": "Chunking",
+          "value": 128
+        },
+        {
+          "name": "StartTLS",
+          "value": 256
+        },
+        {
+          "name": "UTF8",
+          "value": 512
+        },
+        {
+          "name": "RequireTLS",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "fullName": "MailKit.Net.Smtp.SmtpErrorCode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "MessageNotAccepted",
+          "value": 0
+        },
+        {
+          "name": "SenderNotAccepted",
+          "value": 1
+        },
+        {
+          "name": "RecipientNotAccepted",
+          "value": 2
+        },
+        {
+          "name": "UnexpectedStatusCode",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "MailKit.Net.Smtp.SmtpStatusCode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "SystemStatus",
+          "value": 211
+        },
+        {
+          "name": "HelpMessage",
+          "value": 214
+        },
+        {
+          "name": "ServiceReady",
+          "value": 220
+        },
+        {
+          "name": "ServiceClosingTransmissionChannel",
+          "value": 221
+        },
+        {
+          "name": "AuthenticationSuccessful",
+          "value": 235
+        },
+        {
+          "name": "Ok",
+          "value": 250
+        },
+        {
+          "name": "UserNotLocalWillForward",
+          "value": 251
+        },
+        {
+          "name": "CannotVerifyUserWillAttemptDelivery",
+          "value": 252
+        },
+        {
+          "name": "AuthenticationChallenge",
+          "value": 334
+        },
+        {
+          "name": "StartMailInput",
+          "value": 354
+        },
+        {
+          "name": "ServiceNotAvailable",
+          "value": 421
+        },
+        {
+          "name": "PasswordTransitionNeeded",
+          "value": 432
+        },
+        {
+          "name": "MailboxBusy",
+          "value": 450
+        },
+        {
+          "name": "ErrorInProcessing",
+          "value": 451
+        },
+        {
+          "name": "InsufficientStorage",
+          "value": 452
+        },
+        {
+          "name": "TemporaryAuthenticationFailure",
+          "value": 454
+        },
+        {
+          "name": "CommandUnrecognized",
+          "value": 500
+        },
+        {
+          "name": "SyntaxError",
+          "value": 501
+        },
+        {
+          "name": "CommandNotImplemented",
+          "value": 502
+        },
+        {
+          "name": "BadCommandSequence",
+          "value": 503
+        },
+        {
+          "name": "CommandParameterNotImplemented",
+          "value": 504
+        },
+        {
+          "name": "AuthenticationRequired",
+          "value": 530
+        },
+        {
+          "name": "AuthenticationMechanismTooWeak",
+          "value": 534
+        },
+        {
+          "name": "AuthenticationInvalidCredentials",
+          "value": 535
+        },
+        {
+          "name": "EncryptionRequiredForAuthenticationMechanism",
+          "value": 538
+        },
+        {
+          "name": "MailboxUnavailable",
+          "value": 550
+        },
+        {
+          "name": "UserNotLocalTryAlternatePath",
+          "value": 551
+        },
+        {
+          "name": "ExceededStorageAllocation",
+          "value": 552
+        },
+        {
+          "name": "MailboxNameNotAllowed",
+          "value": 553
+        },
+        {
+          "name": "TransactionFailed",
+          "value": 554
+        },
+        {
+          "name": "MailFromOrRcptToParametersNotRecognizedOrNotImplemented",
+          "value": 555
+        }
+      ]
+    },
+    {
+      "fullName": "MailKit.Net.Smtp.DeliveryStatusNotificationType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unspecified",
+          "value": 0
+        },
+        {
+          "name": "Full",
+          "value": 1
+        },
+        {
+          "name": "HeadersOnly",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "MailKit.Net.Pop3.Pop3Capabilities",
+      "underlyingType": "System.UInt32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Apop",
+          "value": 1
+        },
+        {
+          "name": "Expire",
+          "value": 2
+        },
+        {
+          "name": "LoginDelay",
+          "value": 4
+        },
+        {
+          "name": "Pipelining",
+          "value": 8
+        },
+        {
+          "name": "ResponseCodes",
+          "value": 16
+        },
+        {
+          "name": "Sasl",
+          "value": 32
+        },
+        {
+          "name": "StartTLS",
+          "value": 64
+        },
+        {
+          "name": "Top",
+          "value": 128
+        },
+        {
+          "name": "UIDL",
+          "value": 256
+        },
+        {
+          "name": "User",
+          "value": 512
+        },
+        {
+          "name": "UTF8",
+          "value": 1024
+        },
+        {
+          "name": "UTF8User",
+          "value": 2048
+        },
+        {
+          "name": "Lang",
+          "value": 4096
+        }
+      ]
+    },
+    {
+      "fullName": "MailKit.Net.Imap.ImapCapabilities",
+      "underlyingType": "System.UInt64",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "IMAP4",
+          "value": 1
+        },
+        {
+          "name": "IMAP4rev1",
+          "value": 2
+        },
+        {
+          "name": "IMAP4rev2",
+          "value": 4
+        },
+        {
+          "name": "Status",
+          "value": 8
+        },
+        {
+          "name": "Acl",
+          "value": 16
+        },
+        {
+          "name": "Quota",
+          "value": 32
+        },
+        {
+          "name": "LiteralPlus",
+          "value": 64
+        },
+        {
+          "name": "Idle",
+          "value": 128
+        },
+        {
+          "name": "MailboxReferrals",
+          "value": 256
+        },
+        {
+          "name": "LoginReferrals",
+          "value": 512
+        },
+        {
+          "name": "Namespace",
+          "value": 1024
+        },
+        {
+          "name": "Id",
+          "value": 2048
+        },
+        {
+          "name": "Children",
+          "value": 4096
+        },
+        {
+          "name": "LoginDisabled",
+          "value": 8192
+        },
+        {
+          "name": "StartTLS",
+          "value": 16384
+        },
+        {
+          "name": "MultiAppend",
+          "value": 32768
+        },
+        {
+          "name": "Binary",
+          "value": 65536
+        },
+        {
+          "name": "Unselect",
+          "value": 131072
+        },
+        {
+          "name": "UidPlus",
+          "value": 262144
+        },
+        {
+          "name": "Catenate",
+          "value": 524288
+        },
+        {
+          "name": "CondStore",
+          "value": 1048576
+        },
+        {
+          "name": "ESearch",
+          "value": 2097152
+        },
+        {
+          "name": "SaslIR",
+          "value": 4194304
+        },
+        {
+          "name": "Compress",
+          "value": 8388608
+        },
+        {
+          "name": "Within",
+          "value": 16777216
+        },
+        {
+          "name": "Enable",
+          "value": 33554432
+        },
+        {
+          "name": "QuickResync",
+          "value": 67108864
+        },
+        {
+          "name": "SearchResults",
+          "value": 134217728
+        },
+        {
+          "name": "Sort",
+          "value": 268435456
+        },
+        {
+          "name": "Thread",
+          "value": 536870912
+        },
+        {
+          "name": "Annotate",
+          "value": 1073741824
+        },
+        {
+          "name": "ListExtended",
+          "value": 2147483648
+        },
+        {
+          "name": "Convert",
+          "value": 4294967296
+        },
+        {
+          "name": "Language",
+          "value": 8589934592
+        },
+        {
+          "name": "I18NLevel",
+          "value": 17179869184
+        },
+        {
+          "name": "ESort",
+          "value": 34359738368
+        },
+        {
+          "name": "Context",
+          "value": 68719476736
+        },
+        {
+          "name": "Metadata",
+          "value": 137438953472
+        },
+        {
+          "name": "MetadataServer",
+          "value": 274877906944
+        },
+        {
+          "name": "Notify",
+          "value": 549755813888
+        },
+        {
+          "name": "Filters",
+          "value": 1099511627776
+        },
+        {
+          "name": "ListStatus",
+          "value": 2199023255552
+        },
+        {
+          "name": "SortDisplay",
+          "value": 4398046511104
+        },
+        {
+          "name": "CreateSpecialUse",
+          "value": 8796093022208
+        },
+        {
+          "name": "SpecialUse",
+          "value": 17592186044416
+        },
+        {
+          "name": "FuzzySearch",
+          "value": 35184372088832
+        },
+        {
+          "name": "MultiSearch",
+          "value": 70368744177664
+        },
+        {
+          "name": "Move",
+          "value": 140737488355328
+        },
+        {
+          "name": "UTF8Accept",
+          "value": 281474976710656
+        },
+        {
+          "name": "UTF8Only",
+          "value": 562949953421312
+        },
+        {
+          "name": "LiteralMinus",
+          "value": 1125899906842624
+        },
+        {
+          "name": "AppendLimit",
+          "value": 2251799813685248
+        },
+        {
+          "name": "Unauthenticate",
+          "value": 4503599627370496
+        },
+        {
+          "name": "StatusSize",
+          "value": 9007199254740992
+        },
+        {
+          "name": "ListMyRights",
+          "value": 18014398509481984
+        },
+        {
+          "name": "ObjectID",
+          "value": 36028797018963968
+        },
+        {
+          "name": "Replace",
+          "value": 72057594037927936
+        },
+        {
+          "name": "SaveDate",
+          "value": 144115188075855872
+        },
+        {
+          "name": "Preview",
+          "value": 288230376151711744
+        },
+        {
+          "name": "XList",
+          "value": 1152921504606846976
+        },
+        {
+          "name": "GMailExt1",
+          "value": 2305843009213693952
+        }
+      ]
+    },
+    {
+      "fullName": "MailKit.Net.Imap.ImapCommandResponse",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Ok",
+          "value": 1
+        },
+        {
+          "name": "No",
+          "value": 2
+        },
+        {
+          "name": "Bad",
+          "value": 3
+        }
+      ]
+    }
+  ],
+  "namespaceMappings": []
+}

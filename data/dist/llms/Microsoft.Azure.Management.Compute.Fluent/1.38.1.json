@@ -1,0 +1,567 @@
+{
+  "schema": {
+    "id": "activity-catalog",
+    "version": "v0.3"
+  },
+  "source": {
+    "kind": "nuget-package",
+    "id": "Microsoft.Azure.Management.Compute.Fluent",
+    "version": "1.38.1",
+    "feedUrl": null,
+    "authors": "Microsoft",
+    "projectUrl": "https://github.com/Azure/azure-libraries-for-net",
+    "description": "Provides virtual machine, virtual machine extensions and availability set management (Fluent) capabilities for Microsoft Azure.\n    This package is in low maintenance mode and being phased out. To use the latest Azure SDK for resource management, please see https://aka.ms/azsdk/dotnet/mgmt",
+    "license": "https://raw.githubusercontent.com/Microsoft/dotnet/master/LICENSE",
+    "tags": "Microsoft Azure Compute management virtual machine compute Fluent",
+    "packageTypes": []
+  },
+  "generatedAt": "2026-04-10T09:21:13Z",
+  "activities": [],
+  "enums": [
+    {
+      "fullName": "Microsoft.Azure.Management.Compute.Fluent.ComputeRoles",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "PaaS",
+          "value": 1
+        },
+        {
+          "name": "IaaS",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.Compute.Fluent.ContainerServiceMasterProfileCount",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "MIN",
+          "value": 1
+        },
+        {
+          "name": "MID",
+          "value": 3
+        },
+        {
+          "name": "MAX",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.Compute.Fluent.KnownLinuxVirtualMachineImage",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "UbuntuServer14_04_Lts",
+          "value": 0
+        },
+        {
+          "name": "UbuntuServer16_04_Lts",
+          "value": 1
+        },
+        {
+          "name": "Debian8",
+          "value": 2
+        },
+        {
+          "name": "CentOS7_2",
+          "value": 3
+        },
+        {
+          "name": "OpenSuseLeap42_1",
+          "value": 4
+        },
+        {
+          "name": "Sles12Sp1",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.Compute.Fluent.KnownWindowsVirtualMachineImage",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "WindowsServer2008R2_SP1",
+          "value": 0
+        },
+        {
+          "name": "WindowsServer2012Datacenter",
+          "value": 1
+        },
+        {
+          "name": "WindowsServer2012R2Datacenter",
+          "value": 2
+        },
+        {
+          "name": "WindowsServer2016TechnicalPreviewWithContainers",
+          "value": 3
+        },
+        {
+          "name": "WindowsServerTechnicalPreview",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.Compute.Fluent.Models.CreationSourceType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "FromOSDiskImage",
+          "value": 0
+        },
+        {
+          "name": "FromDataDiskImage",
+          "value": 1
+        },
+        {
+          "name": "ImportedFromVHD",
+          "value": 2
+        },
+        {
+          "name": "CopiedFromSnapshot",
+          "value": 3
+        },
+        {
+          "name": "CopiedFromDisk",
+          "value": 4
+        },
+        {
+          "name": "Empty",
+          "value": 5
+        },
+        {
+          "name": "Unknown",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.Compute.Fluent.Models.DiskVolumeType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "OS",
+          "value": 0
+        },
+        {
+          "name": "Data",
+          "value": 1
+        },
+        {
+          "name": "All",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.Compute.Fluent.Models.CachingTypes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "ReadOnly",
+          "value": 1
+        },
+        {
+          "name": "ReadWrite",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.Compute.Fluent.Models.ComponentNames",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "MicrosoftWindowsShellSetup",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.Compute.Fluent.Models.ContainerServiceOrchestratorTypes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Swarm",
+          "value": 0
+        },
+        {
+          "name": "DCOS",
+          "value": 1
+        },
+        {
+          "name": "Custom",
+          "value": 2
+        },
+        {
+          "name": "Kubernetes",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.Compute.Fluent.Models.DedicatedHostLicenseTypes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "WindowsServerHybrid",
+          "value": 1
+        },
+        {
+          "name": "WindowsServerPerpetual",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.Compute.Fluent.Models.HostCaching",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "ReadOnly",
+          "value": 1
+        },
+        {
+          "name": "ReadWrite",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.Compute.Fluent.Models.InstanceViewTypes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "InstanceView",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.Compute.Fluent.Models.IntervalInMins",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ThreeMins",
+          "value": 0
+        },
+        {
+          "name": "FiveMins",
+          "value": 1
+        },
+        {
+          "name": "ThirtyMins",
+          "value": 2
+        },
+        {
+          "name": "SixtyMins",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.Compute.Fluent.Models.MaintenanceOperationResultCodeTypes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "RetryLater",
+          "value": 1
+        },
+        {
+          "name": "MaintenanceAborted",
+          "value": 2
+        },
+        {
+          "name": "MaintenanceCompleted",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.Compute.Fluent.Models.OperatingSystemStateTypes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Generalized",
+          "value": 0
+        },
+        {
+          "name": "Specialized",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.Compute.Fluent.Models.OperatingSystemTypes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Windows",
+          "value": 0
+        },
+        {
+          "name": "Linux",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.Compute.Fluent.Models.PassNames",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "OobeSystem",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.Compute.Fluent.Models.ProtocolTypes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Http",
+          "value": 0
+        },
+        {
+          "name": "Https",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.Compute.Fluent.Models.ResourceIdentityType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "SystemAssigned",
+          "value": 0
+        },
+        {
+          "name": "UserAssigned",
+          "value": 1
+        },
+        {
+          "name": "SystemAssignedUserAssigned",
+          "value": 2
+        },
+        {
+          "name": "None",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.Compute.Fluent.Models.ResourceSkuCapacityScaleType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Automatic",
+          "value": 0
+        },
+        {
+          "name": "Manual",
+          "value": 1
+        },
+        {
+          "name": "None",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.Compute.Fluent.Models.ResourceSkuRestrictionsReasonCode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "QuotaId",
+          "value": 0
+        },
+        {
+          "name": "NotAvailableForSubscription",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.Compute.Fluent.Models.ResourceSkuRestrictionsType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Location",
+          "value": 0
+        },
+        {
+          "name": "Zone",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.Compute.Fluent.Models.RollingUpgradeActionType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Start",
+          "value": 0
+        },
+        {
+          "name": "Cancel",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.Compute.Fluent.Models.RollingUpgradeStatusCode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "RollingForward",
+          "value": 0
+        },
+        {
+          "name": "Cancelled",
+          "value": 1
+        },
+        {
+          "name": "Completed",
+          "value": 2
+        },
+        {
+          "name": "Faulted",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.Compute.Fluent.Models.SettingNames",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AutoLogon",
+          "value": 0
+        },
+        {
+          "name": "FirstLogonCommands",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.Compute.Fluent.Models.StatusLevelTypes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Info",
+          "value": 0
+        },
+        {
+          "name": "Warning",
+          "value": 1
+        },
+        {
+          "name": "Error",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.Compute.Fluent.Models.UpgradeMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Automatic",
+          "value": 0
+        },
+        {
+          "name": "Manual",
+          "value": 1
+        },
+        {
+          "name": "Rolling",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.Compute.Fluent.Models.UpgradeOperationInvoker",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "User",
+          "value": 1
+        },
+        {
+          "name": "Platform",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.Compute.Fluent.Models.UpgradeState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "RollingForward",
+          "value": 0
+        },
+        {
+          "name": "Cancelled",
+          "value": 1
+        },
+        {
+          "name": "Completed",
+          "value": 2
+        },
+        {
+          "name": "Faulted",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Azure.Management.Compute.Fluent.Models.VirtualMachineScaleSetSkuScaleType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Automatic",
+          "value": 0
+        },
+        {
+          "name": "None",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "namespaceMappings": []
+}

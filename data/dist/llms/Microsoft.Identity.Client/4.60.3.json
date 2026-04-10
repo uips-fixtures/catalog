@@ -1,0 +1,721 @@
+{
+  "schema": {
+    "id": "activity-catalog",
+    "version": "v0.3"
+  },
+  "source": {
+    "kind": "nuget-package",
+    "id": "Microsoft.Identity.Client",
+    "version": "4.60.3",
+    "feedUrl": null,
+    "authors": "Microsoft",
+    "projectUrl": "https://go.microsoft.com/fwlink/?linkid=844761",
+    "description": "This package contains the binaries of the Microsoft Authentication Library for .NET (MSAL.NET).\n      MSAL.NET makes it easy to obtain tokens from the Microsoft identity platform for developers (formally Azure AD v2.0) signing-in users with work & school accounts, Microsoft personal accounts, and social identities via Azure AD B2C. These tokens provide access to Microsoft Cloud API and any other API secured by the Microsoft identity platform. This version supports adding authentication functionality to your .NET based clients - .NET, .NET Framework, .NET MAUI, Xamarin iOS, Xamarin Android and UWP",
+    "license": "MIT",
+    "tags": "Microsoft Authentication Library MSA MSAL B2C Azure Active Directory AAD Identity Authentication .NET Windows Store Xamarin iOS Android MAUI",
+    "packageTypes": []
+  },
+  "generatedAt": "2026-04-10T09:21:14Z",
+  "activities": [],
+  "enums": [
+    {
+      "fullName": "Microsoft.Identity.Client.BrokerOptions.OperatingSystems",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Windows",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Identity.Client.AadAuthorityAudience",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "AzureAdMyOrg",
+          "value": 1
+        },
+        {
+          "name": "AzureAdAndPersonalMicrosoftAccount",
+          "value": 2
+        },
+        {
+          "name": "AzureAdMultipleOrgs",
+          "value": 3
+        },
+        {
+          "name": "PersonalMicrosoftAccount",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Identity.Client.AzureCloudInstance",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "AzurePublic",
+          "value": 1
+        },
+        {
+          "name": "AzureChina",
+          "value": 2
+        },
+        {
+          "name": "AzureGermany",
+          "value": 3
+        },
+        {
+          "name": "AzureUsGovernment",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Identity.Client.TelemetryAudienceType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "PreProduction",
+          "value": 0
+        },
+        {
+          "name": "Production",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Identity.Client.CacheRefreshReason",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NotApplicable",
+          "value": 0
+        },
+        {
+          "name": "ForceRefreshOrClaims",
+          "value": 1
+        },
+        {
+          "name": "NoCachedAccessToken",
+          "value": 2
+        },
+        {
+          "name": "Expired",
+          "value": 3
+        },
+        {
+          "name": "ProactivelyRefreshed",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Identity.Client.LogLevel",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Always",
+          "value": -1
+        },
+        {
+          "name": "Error",
+          "value": 0
+        },
+        {
+          "name": "Warning",
+          "value": 1
+        },
+        {
+          "name": "Info",
+          "value": 2
+        },
+        {
+          "name": "Verbose",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Identity.Client.TokenSource",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "IdentityProvider",
+          "value": 0
+        },
+        {
+          "name": "Cache",
+          "value": 1
+        },
+        {
+          "name": "Broker",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Identity.Client.UiRequiredExceptionClassification",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "MessageOnly",
+          "value": 1
+        },
+        {
+          "name": "BasicAction",
+          "value": 2
+        },
+        {
+          "name": "AdditionalAction",
+          "value": 3
+        },
+        {
+          "name": "ConsentRequired",
+          "value": 4
+        },
+        {
+          "name": "UserPasswordExpired",
+          "value": 5
+        },
+        {
+          "name": "PromptNeverFailed",
+          "value": 6
+        },
+        {
+          "name": "AcquireTokenSilentFailed",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Identity.Client.Platforms.Features.DesktopOs.WindowsNativeMethods.NetJoinStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NetSetupUnknownStatus",
+          "value": 0
+        },
+        {
+          "name": "NetSetupUnjoined",
+          "value": 1
+        },
+        {
+          "name": "NetSetupWorkgroupName",
+          "value": 2
+        },
+        {
+          "name": "NetSetupDomainName",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Identity.Client.Platforms.Features.DesktopOs.Kerberos.NativeMethods.S4uFlags",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "KERB_S4U_LOGON_FLAG_CHECK_LOGONHOURS",
+          "value": 2
+        },
+        {
+          "name": "KERB_S4U_LOGON_FLAG_IDENTIFY",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Identity.Client.Platforms.Features.DesktopOs.Kerberos.NativeMethods.KERB_LOGON_SUBMIT_TYPE",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "KerbInteractiveLogon",
+          "value": 2
+        },
+        {
+          "name": "KerbSmartCardLogon",
+          "value": 6
+        },
+        {
+          "name": "KerbWorkstationUnlockLogon",
+          "value": 7
+        },
+        {
+          "name": "KerbSmartCardUnlockLogon",
+          "value": 8
+        },
+        {
+          "name": "KerbProxyLogon",
+          "value": 9
+        },
+        {
+          "name": "KerbTicketLogon",
+          "value": 10
+        },
+        {
+          "name": "KerbTicketUnlockLogon",
+          "value": 11
+        },
+        {
+          "name": "KerbS4ULogon",
+          "value": 12
+        },
+        {
+          "name": "KerbCertificateLogon",
+          "value": 13
+        },
+        {
+          "name": "KerbCertificateS4ULogon",
+          "value": 14
+        },
+        {
+          "name": "KerbCertificateUnlockLogon",
+          "value": 15
+        },
+        {
+          "name": "KerbNoElevationLogon",
+          "value": 83
+        },
+        {
+          "name": "KerbLuidLogon",
+          "value": 84
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Identity.Client.Platforms.Features.DesktopOs.Kerberos.NativeMethods.SECURITY_LOGON_TYPE",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "UndefinedLogonType",
+          "value": 0
+        },
+        {
+          "name": "Interactive",
+          "value": 2
+        },
+        {
+          "name": "Network",
+          "value": 3
+        },
+        {
+          "name": "Batch",
+          "value": 4
+        },
+        {
+          "name": "Service",
+          "value": 5
+        },
+        {
+          "name": "Proxy",
+          "value": 6
+        },
+        {
+          "name": "Unlock",
+          "value": 7
+        },
+        {
+          "name": "NetworkCleartext",
+          "value": 8
+        },
+        {
+          "name": "NewCredentials",
+          "value": 9
+        },
+        {
+          "name": "RemoteInteractive",
+          "value": 10
+        },
+        {
+          "name": "CachedInteractive",
+          "value": 11
+        },
+        {
+          "name": "CachedRemoteInteractive",
+          "value": 12
+        },
+        {
+          "name": "CachedUnlock",
+          "value": 13
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Identity.Client.Platforms.Features.DesktopOs.Kerberos.NativeMethods.KERB_PROTOCOL_MESSAGE_TYPE",
+      "underlyingType": "System.UInt32",
+      "members": [
+        {
+          "name": "KerbDebugRequestMessage",
+          "value": 0
+        },
+        {
+          "name": "KerbQueryTicketCacheMessage",
+          "value": 1
+        },
+        {
+          "name": "KerbChangeMachinePasswordMessage",
+          "value": 2
+        },
+        {
+          "name": "KerbVerifyPacMessage",
+          "value": 3
+        },
+        {
+          "name": "KerbRetrieveTicketMessage",
+          "value": 4
+        },
+        {
+          "name": "KerbUpdateAddressesMessage",
+          "value": 5
+        },
+        {
+          "name": "KerbPurgeTicketCacheMessage",
+          "value": 6
+        },
+        {
+          "name": "KerbChangePasswordMessage",
+          "value": 7
+        },
+        {
+          "name": "KerbRetrieveEncodedTicketMessage",
+          "value": 8
+        },
+        {
+          "name": "KerbDecryptDataMessage",
+          "value": 9
+        },
+        {
+          "name": "KerbAddBindingCacheEntryMessage",
+          "value": 10
+        },
+        {
+          "name": "KerbSetPasswordMessage",
+          "value": 11
+        },
+        {
+          "name": "KerbSetPasswordExMessage",
+          "value": 12
+        },
+        {
+          "name": "KerbVerifyCredentialsMessage",
+          "value": 13
+        },
+        {
+          "name": "KerbQueryTicketCacheExMessage",
+          "value": 14
+        },
+        {
+          "name": "KerbPurgeTicketCacheExMessage",
+          "value": 15
+        },
+        {
+          "name": "KerbRefreshSmartcardCredentialsMessage",
+          "value": 16
+        },
+        {
+          "name": "KerbAddExtraCredentialsMessage",
+          "value": 17
+        },
+        {
+          "name": "KerbQuerySupplementalCredentialsMessage",
+          "value": 18
+        },
+        {
+          "name": "KerbTransferCredentialsMessage",
+          "value": 19
+        },
+        {
+          "name": "KerbQueryTicketCacheEx2Message",
+          "value": 20
+        },
+        {
+          "name": "KerbSubmitTicketMessage",
+          "value": 21
+        },
+        {
+          "name": "KerbAddExtraCredentialsExMessage",
+          "value": 22
+        },
+        {
+          "name": "KerbQueryKdcProxyCacheMessage",
+          "value": 23
+        },
+        {
+          "name": "KerbPurgeKdcProxyCacheMessage",
+          "value": 24
+        },
+        {
+          "name": "KerbQueryTicketCacheEx3Message",
+          "value": 25
+        },
+        {
+          "name": "KerbCleanupMachinePkinitCredsMessage",
+          "value": 26
+        },
+        {
+          "name": "KerbAddBindingCacheEntryExMessage",
+          "value": 27
+        },
+        {
+          "name": "KerbQueryBindingCacheMessage",
+          "value": 28
+        },
+        {
+          "name": "KerbPurgeBindingCacheMessage",
+          "value": 29
+        },
+        {
+          "name": "KerbPinKdcMessage",
+          "value": 30
+        },
+        {
+          "name": "KerbUnpinAllKdcsMessage",
+          "value": 31
+        },
+        {
+          "name": "KerbQueryDomainExtendedPoliciesMessage",
+          "value": 32
+        },
+        {
+          "name": "KerbQueryS4U2ProxyCacheMessage",
+          "value": 33
+        },
+        {
+          "name": "KerbRetrieveKeyTabMessage",
+          "value": 34
+        },
+        {
+          "name": "KerbRefreshPolicyMessage",
+          "value": 35
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Identity.Client.TelemetryCore.Internal.Events.ApiEvent.ApiIds",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "AcquireTokenByAuthorizationCode",
+          "value": 1000
+        },
+        {
+          "name": "AcquireTokenByRefreshToken",
+          "value": 1001
+        },
+        {
+          "name": "AcquireTokenByIntegratedWindowsAuth",
+          "value": 1002
+        },
+        {
+          "name": "AcquireTokenByUsernamePassword",
+          "value": 1003
+        },
+        {
+          "name": "AcquireTokenForClient",
+          "value": 1004
+        },
+        {
+          "name": "AcquireTokenInteractive",
+          "value": 1005
+        },
+        {
+          "name": "AcquireTokenOnBehalfOf",
+          "value": 1006
+        },
+        {
+          "name": "AcquireTokenSilent",
+          "value": 1007
+        },
+        {
+          "name": "AcquireTokenByDeviceCode",
+          "value": 1008
+        },
+        {
+          "name": "GetAuthorizationRequestUrl",
+          "value": 1009
+        },
+        {
+          "name": "GetAccounts",
+          "value": 1010
+        },
+        {
+          "name": "GetAccountById",
+          "value": 1011
+        },
+        {
+          "name": "GetAccountsByUserFlow",
+          "value": 1012
+        },
+        {
+          "name": "RemoveAccount",
+          "value": 1013
+        },
+        {
+          "name": "RemoveOboTokens",
+          "value": 1014
+        },
+        {
+          "name": "AcquireTokenForSystemAssignedManagedIdentity",
+          "value": 1015
+        },
+        {
+          "name": "AcquireTokenForUserAssignedManagedIdentity",
+          "value": 1016
+        },
+        {
+          "name": "InitiateLongRunningObo",
+          "value": 1017
+        },
+        {
+          "name": "AcquireTokenInLongRunningObo",
+          "value": 1018
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Identity.Client.ManagedIdentity.ManagedIdentitySource",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Imds",
+          "value": 1
+        },
+        {
+          "name": "AppService",
+          "value": 2
+        },
+        {
+          "name": "AzureArc",
+          "value": 3
+        },
+        {
+          "name": "CloudShell",
+          "value": 4
+        },
+        {
+          "name": "ServiceFabric",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Identity.Client.Kerberos.KerberosKeyTypes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "DecCbcCrc",
+          "value": 1
+        },
+        {
+          "name": "DesCbcMd5",
+          "value": 3
+        },
+        {
+          "name": "Aes128CtsHmacSha196",
+          "value": 17
+        },
+        {
+          "name": "Aes256CtsHmacSha196",
+          "value": 18
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Identity.Client.Kerberos.KerberosTicketContainer",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "IdToken",
+          "value": 0
+        },
+        {
+          "name": "AccessToken",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Identity.Client.Region.RegionOutcome",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "UserProvidedValid",
+          "value": 1
+        },
+        {
+          "name": "UserProvidedAutodetectionFailed",
+          "value": 2
+        },
+        {
+          "name": "UserProvidedInvalid",
+          "value": 3
+        },
+        {
+          "name": "AutodetectSuccess",
+          "value": 4
+        },
+        {
+          "name": "FallbackToGlobal",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.Identity.Client.Cache.CacheLevel",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Unknown",
+          "value": 1
+        },
+        {
+          "name": "L1Cache",
+          "value": 2
+        },
+        {
+          "name": "L2Cache",
+          "value": 3
+        }
+      ]
+    }
+  ],
+  "namespaceMappings": []
+}

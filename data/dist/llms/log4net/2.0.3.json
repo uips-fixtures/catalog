@@ -1,0 +1,581 @@
+{
+  "schema": {
+    "id": "activity-catalog",
+    "version": "v0.3"
+  },
+  "source": {
+    "kind": "nuget-package",
+    "id": "log4net",
+    "version": "2.0.3",
+    "feedUrl": null,
+    "authors": "Apache Software Foundation",
+    "projectUrl": "http://logging.apache.org/log4net/",
+    "description": "log4net is a tool to help the programmer output log statements to a variety of output targets. In case of problems with an application, it is helpful to enable logging so that the problem can be located. With log4net it is possible to enable logging at runtime without modifying the application binary. The log4net package is designed so that log statements can remain in shipped code without incurring a high performance cost. It follows that the speed of logging (or rather not logging) is crucial. \n\nAt the same time, log output can be so voluminous that it quickly becomes overwhelming. One of the distinctive features of log4net is the notion of hierarchical loggers. Using these loggers it is possible to selectively control which log statements are output at arbitrary granularity. \n\nlog4net is designed with two distinct goals in mind: speed and flexibility",
+    "license": "http://logging.apache.org/log4net/license.html",
+    "tags": "logging log tracing logfiles",
+    "packageTypes": []
+  },
+  "generatedAt": "2026-04-10T09:21:25Z",
+  "activities": [],
+  "enums": [
+    {
+      "fullName": "log4net.Appender.AnsiColorTerminalAppender.AnsiAttributes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Bright",
+          "value": 1
+        },
+        {
+          "name": "Dim",
+          "value": 2
+        },
+        {
+          "name": "Underscore",
+          "value": 4
+        },
+        {
+          "name": "Blink",
+          "value": 8
+        },
+        {
+          "name": "Reverse",
+          "value": 16
+        },
+        {
+          "name": "Hidden",
+          "value": 32
+        },
+        {
+          "name": "Strikethrough",
+          "value": 64
+        },
+        {
+          "name": "Light",
+          "value": 128
+        }
+      ]
+    },
+    {
+      "fullName": "log4net.Appender.AnsiColorTerminalAppender.AnsiColor",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Black",
+          "value": 0
+        },
+        {
+          "name": "Red",
+          "value": 1
+        },
+        {
+          "name": "Green",
+          "value": 2
+        },
+        {
+          "name": "Yellow",
+          "value": 3
+        },
+        {
+          "name": "Blue",
+          "value": 4
+        },
+        {
+          "name": "Magenta",
+          "value": 5
+        },
+        {
+          "name": "Cyan",
+          "value": 6
+        },
+        {
+          "name": "White",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "log4net.Appender.ColoredConsoleAppender.Colors",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Blue",
+          "value": 1
+        },
+        {
+          "name": "Green",
+          "value": 2
+        },
+        {
+          "name": "Red",
+          "value": 4
+        },
+        {
+          "name": "White",
+          "value": 7
+        },
+        {
+          "name": "Yellow",
+          "value": 6
+        },
+        {
+          "name": "Purple",
+          "value": 5
+        },
+        {
+          "name": "Cyan",
+          "value": 3
+        },
+        {
+          "name": "HighIntensity",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "log4net.Appender.LocalSyslogAppender.SyslogSeverity",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Emergency",
+          "value": 0
+        },
+        {
+          "name": "Alert",
+          "value": 1
+        },
+        {
+          "name": "Critical",
+          "value": 2
+        },
+        {
+          "name": "Error",
+          "value": 3
+        },
+        {
+          "name": "Warning",
+          "value": 4
+        },
+        {
+          "name": "Notice",
+          "value": 5
+        },
+        {
+          "name": "Informational",
+          "value": 6
+        },
+        {
+          "name": "Debug",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "log4net.Appender.LocalSyslogAppender.SyslogFacility",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Kernel",
+          "value": 0
+        },
+        {
+          "name": "User",
+          "value": 1
+        },
+        {
+          "name": "Mail",
+          "value": 2
+        },
+        {
+          "name": "Daemons",
+          "value": 3
+        },
+        {
+          "name": "Authorization",
+          "value": 4
+        },
+        {
+          "name": "Syslog",
+          "value": 5
+        },
+        {
+          "name": "Printer",
+          "value": 6
+        },
+        {
+          "name": "News",
+          "value": 7
+        },
+        {
+          "name": "Uucp",
+          "value": 8
+        },
+        {
+          "name": "Clock",
+          "value": 9
+        },
+        {
+          "name": "Authorization2",
+          "value": 10
+        },
+        {
+          "name": "Ftp",
+          "value": 11
+        },
+        {
+          "name": "Ntp",
+          "value": 12
+        },
+        {
+          "name": "Audit",
+          "value": 13
+        },
+        {
+          "name": "Alert",
+          "value": 14
+        },
+        {
+          "name": "Clock2",
+          "value": 15
+        },
+        {
+          "name": "Local0",
+          "value": 16
+        },
+        {
+          "name": "Local1",
+          "value": 17
+        },
+        {
+          "name": "Local2",
+          "value": 18
+        },
+        {
+          "name": "Local3",
+          "value": 19
+        },
+        {
+          "name": "Local4",
+          "value": 20
+        },
+        {
+          "name": "Local5",
+          "value": 21
+        },
+        {
+          "name": "Local6",
+          "value": 22
+        },
+        {
+          "name": "Local7",
+          "value": 23
+        }
+      ]
+    },
+    {
+      "fullName": "log4net.Appender.RemoteSyslogAppender.SyslogSeverity",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Emergency",
+          "value": 0
+        },
+        {
+          "name": "Alert",
+          "value": 1
+        },
+        {
+          "name": "Critical",
+          "value": 2
+        },
+        {
+          "name": "Error",
+          "value": 3
+        },
+        {
+          "name": "Warning",
+          "value": 4
+        },
+        {
+          "name": "Notice",
+          "value": 5
+        },
+        {
+          "name": "Informational",
+          "value": 6
+        },
+        {
+          "name": "Debug",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "log4net.Appender.RemoteSyslogAppender.SyslogFacility",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Kernel",
+          "value": 0
+        },
+        {
+          "name": "User",
+          "value": 1
+        },
+        {
+          "name": "Mail",
+          "value": 2
+        },
+        {
+          "name": "Daemons",
+          "value": 3
+        },
+        {
+          "name": "Authorization",
+          "value": 4
+        },
+        {
+          "name": "Syslog",
+          "value": 5
+        },
+        {
+          "name": "Printer",
+          "value": 6
+        },
+        {
+          "name": "News",
+          "value": 7
+        },
+        {
+          "name": "Uucp",
+          "value": 8
+        },
+        {
+          "name": "Clock",
+          "value": 9
+        },
+        {
+          "name": "Authorization2",
+          "value": 10
+        },
+        {
+          "name": "Ftp",
+          "value": 11
+        },
+        {
+          "name": "Ntp",
+          "value": 12
+        },
+        {
+          "name": "Audit",
+          "value": 13
+        },
+        {
+          "name": "Alert",
+          "value": 14
+        },
+        {
+          "name": "Clock2",
+          "value": 15
+        },
+        {
+          "name": "Local0",
+          "value": 16
+        },
+        {
+          "name": "Local1",
+          "value": 17
+        },
+        {
+          "name": "Local2",
+          "value": 18
+        },
+        {
+          "name": "Local3",
+          "value": 19
+        },
+        {
+          "name": "Local4",
+          "value": 20
+        },
+        {
+          "name": "Local5",
+          "value": 21
+        },
+        {
+          "name": "Local6",
+          "value": 22
+        },
+        {
+          "name": "Local7",
+          "value": 23
+        }
+      ]
+    },
+    {
+      "fullName": "log4net.Appender.RollingFileAppender.RollingMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Once",
+          "value": 0
+        },
+        {
+          "name": "Size",
+          "value": 1
+        },
+        {
+          "name": "Date",
+          "value": 2
+        },
+        {
+          "name": "Composite",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "log4net.Appender.SmtpAppender.SmtpAuthentication",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Basic",
+          "value": 1
+        },
+        {
+          "name": "Ntlm",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "log4net.Core.ErrorCode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "GenericFailure",
+          "value": 0
+        },
+        {
+          "name": "WriteFailure",
+          "value": 1
+        },
+        {
+          "name": "FlushFailure",
+          "value": 2
+        },
+        {
+          "name": "CloseFailure",
+          "value": 3
+        },
+        {
+          "name": "FileOpenFailure",
+          "value": 4
+        },
+        {
+          "name": "MissingLayout",
+          "value": 5
+        },
+        {
+          "name": "AddressParseFailure",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "log4net.Core.FixFlags",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Mdc",
+          "value": 1
+        },
+        {
+          "name": "Ndc",
+          "value": 2
+        },
+        {
+          "name": "Message",
+          "value": 4
+        },
+        {
+          "name": "ThreadName",
+          "value": 8
+        },
+        {
+          "name": "LocationInfo",
+          "value": 16
+        },
+        {
+          "name": "UserName",
+          "value": 32
+        },
+        {
+          "name": "Domain",
+          "value": 64
+        },
+        {
+          "name": "Identity",
+          "value": 128
+        },
+        {
+          "name": "Exception",
+          "value": 256
+        },
+        {
+          "name": "Properties",
+          "value": 512
+        },
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "All",
+          "value": 268435455
+        },
+        {
+          "name": "Partial",
+          "value": 844
+        }
+      ]
+    },
+    {
+      "fullName": "log4net.Filter.FilterDecision",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Deny",
+          "value": -1
+        },
+        {
+          "name": "Neutral",
+          "value": 0
+        },
+        {
+          "name": "Accept",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "log4net.Util.WindowsSecurityContext.ImpersonationMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "User",
+          "value": 0
+        },
+        {
+          "name": "Process",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "namespaceMappings": []
+}

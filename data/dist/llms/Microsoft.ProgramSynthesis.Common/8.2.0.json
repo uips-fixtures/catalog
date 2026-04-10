@@ -1,0 +1,1041 @@
+{
+  "schema": {
+    "id": "activity-catalog",
+    "version": "v0.3"
+  },
+  "source": {
+    "kind": "nuget-package",
+    "id": "Microsoft.ProgramSynthesis.Common",
+    "version": "8.2.0",
+    "feedUrl": null,
+    "authors": "Microsoft",
+    "projectUrl": "https://microsoft.github.io/prose/",
+    "description": "Common functionality on which the rest of the Microsoft PROgram Synthesis using Examples SDK (PROSE) is built.",
+    "license": "LICENSE.txt",
+    "tags": "Program Synthesis SDK",
+    "packageTypes": []
+  },
+  "generatedAt": "2026-04-10T09:21:15Z",
+  "activities": [],
+  "enums": [
+    {
+      "fullName": "Microsoft.ProgramSynthesis.Wrangling.ExtractionKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Region",
+          "value": 0
+        },
+        {
+          "name": "Sequence",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.ProgramSynthesis.Wrangling.ReferenceKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Invalid",
+          "value": 0
+        },
+        {
+          "name": "Parent",
+          "value": 1
+        },
+        {
+          "name": "PrecedingSibling",
+          "value": 2
+        },
+        {
+          "name": "SucceedingSibling",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.ProgramSynthesis.Wrangling.Session.LearnResultKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "Success",
+          "value": 1
+        },
+        {
+          "name": "NoPrograms",
+          "value": 2
+        },
+        {
+          "name": "HasConficts",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.ProgramSynthesis.Wrangling.Schema.TreeToTableSemantics",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "InnerJoin",
+          "value": 0
+        },
+        {
+          "name": "OuterJoin",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.ProgramSynthesis.Wrangling.Json.JsonErrors",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Truncated",
+          "value": 1
+        },
+        {
+          "name": "TrailingCommas",
+          "value": 2
+        },
+        {
+          "name": "MismatchedBrackets",
+          "value": 4
+        },
+        {
+          "name": "ExtraCharacters",
+          "value": 8
+        },
+        {
+          "name": "HasComment",
+          "value": 16
+        },
+        {
+          "name": "EmptyQuote",
+          "value": 32
+        },
+        {
+          "name": "All",
+          "value": -1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.ProgramSynthesis.Wrangling.Json.JpathStep.JPathStepKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Access",
+          "value": 0
+        },
+        {
+          "name": "Current",
+          "value": 1
+        },
+        {
+          "name": "Index",
+          "value": 2
+        },
+        {
+          "name": "Parent",
+          "value": 3
+        },
+        {
+          "name": "PropertyKey",
+          "value": 4
+        },
+        {
+          "name": "PropertyValue",
+          "value": 5
+        },
+        {
+          "name": "SingleProperty",
+          "value": 6
+        },
+        {
+          "name": "Star",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.ProgramSynthesis.Wrangling.EntityExtraction.Entities.OverlapStrategy",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Subsumption",
+          "value": 1
+        },
+        {
+          "name": "StopAtFirstSuccess",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.ProgramSynthesis.Translation.OptimizeFor",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Nothing",
+          "value": 0
+        },
+        {
+          "name": "Readability",
+          "value": 1
+        },
+        {
+          "name": "Performance",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.ProgramSynthesis.Translation.Target",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Python",
+          "value": 0
+        },
+        {
+          "name": "R",
+          "value": 1
+        },
+        {
+          "name": "Java",
+          "value": 2
+        },
+        {
+          "name": "PowerQueryM",
+          "value": 3
+        },
+        {
+          "name": "PowerApps",
+          "value": 4
+        },
+        {
+          "name": "Excel",
+          "value": 5
+        },
+        {
+          "name": "Sql",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.ProgramSynthesis.Translation.Python.PythonTarget",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Auto",
+          "value": 0
+        },
+        {
+          "name": "Library",
+          "value": 1
+        },
+        {
+          "name": "Pandas",
+          "value": 2
+        },
+        {
+          "name": "PySpark",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.ProgramSynthesis.Rules.Concepts.ParameterUsage",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "FillIn",
+          "value": 0
+        },
+        {
+          "name": "PassOn",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.ProgramSynthesis.Utils.CodeTypeReferenceOptions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "GlobalReference",
+          "value": 1
+        },
+        {
+          "name": "GenericTypeParameter",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.ProgramSynthesis.Utils.ItemLocation",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Here",
+          "value": 0
+        },
+        {
+          "name": "GoFurther",
+          "value": 1
+        },
+        {
+          "name": "GoEarlier",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.ProgramSynthesis.Utils.ObjectFormatting",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Literal",
+          "value": 0
+        },
+        {
+          "name": "ToString",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.ProgramSynthesis.Utils.CollectionAction",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "PreAdd",
+          "value": 0
+        },
+        {
+          "name": "Add",
+          "value": 1
+        },
+        {
+          "name": "Remove",
+          "value": 2
+        },
+        {
+          "name": "Replace",
+          "value": 3
+        },
+        {
+          "name": "Move",
+          "value": 4
+        },
+        {
+          "name": "Reset",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.ProgramSynthesis.Utils.Logging.Logger.LogLevel",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "All",
+          "value": 0
+        },
+        {
+          "name": "Trace",
+          "value": 0
+        },
+        {
+          "name": "Debug",
+          "value": 1
+        },
+        {
+          "name": "Info",
+          "value": 2
+        },
+        {
+          "name": "Warn",
+          "value": 3
+        },
+        {
+          "name": "Error",
+          "value": 4
+        },
+        {
+          "name": "Fatal",
+          "value": 5
+        },
+        {
+          "name": "None",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.ProgramSynthesis.Utils.JetBrains.Annotations.ImplicitUseKindFlags",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 7
+        },
+        {
+          "name": "Access",
+          "value": 1
+        },
+        {
+          "name": "Assign",
+          "value": 2
+        },
+        {
+          "name": "InstantiatedWithFixedConstructorSignature",
+          "value": 4
+        },
+        {
+          "name": "InstantiatedNoFixedConstructorSignature",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.ProgramSynthesis.Utils.JetBrains.Annotations.ImplicitUseTargetFlags",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": 1
+        },
+        {
+          "name": "Itself",
+          "value": 1
+        },
+        {
+          "name": "Members",
+          "value": 2
+        },
+        {
+          "name": "WithMembers",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.ProgramSynthesis.Utils.JetBrains.Annotations.CollectionAccessType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Read",
+          "value": 1
+        },
+        {
+          "name": "ModifyExistingContent",
+          "value": 2
+        },
+        {
+          "name": "UpdatedContent",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.ProgramSynthesis.Utils.JetBrains.Annotations.AssertionConditionType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "IS_TRUE",
+          "value": 0
+        },
+        {
+          "name": "IS_FALSE",
+          "value": 1
+        },
+        {
+          "name": "IS_NULL",
+          "value": 2
+        },
+        {
+          "name": "IS_NOT_NULL",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.ProgramSynthesis.Utils.Geometry.Axis",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Horizontal",
+          "value": 0
+        },
+        {
+          "name": "Vertical",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.ProgramSynthesis.Utils.Geometry.Direction",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Up",
+          "value": 0
+        },
+        {
+          "name": "Right",
+          "value": 1
+        },
+        {
+          "name": "Down",
+          "value": 2
+        },
+        {
+          "name": "Left",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.ProgramSynthesis.Utils.Geometry.Derivative",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Decreasing",
+          "value": -1
+        },
+        {
+          "name": "Increasing",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.ProgramSynthesis.Utils.Geometry.Ordinal",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "TopLeft",
+          "value": 0
+        },
+        {
+          "name": "TopRight",
+          "value": 1
+        },
+        {
+          "name": "BottomRight",
+          "value": 2
+        },
+        {
+          "name": "BottomLeft",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.ProgramSynthesis.Learning.ProgramSamplingStrategy",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "UniformRandom",
+          "value": 0
+        },
+        {
+          "name": "UniformAcrossUnions",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.ProgramSynthesis.Learning.Strategies.StrategyAttribute",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "SupportsIncrementalLearning",
+          "value": 0
+        },
+        {
+          "name": "SupportsOrderedTasks",
+          "value": 1
+        },
+        {
+          "name": "WithInfiniteResults",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.ProgramSynthesis.Learning.Logging.LogInfo",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Branch",
+          "value": 1
+        },
+        {
+          "name": "WitnessingPlan",
+          "value": 2
+        },
+        {
+          "name": "Witness",
+          "value": 4
+        },
+        {
+          "name": "Cluster",
+          "value": 8
+        },
+        {
+          "name": "ProgramSets",
+          "value": 16
+        },
+        {
+          "name": "BestProgram",
+          "value": 32
+        },
+        {
+          "name": "TopK",
+          "value": 64
+        },
+        {
+          "name": "MLTraining",
+          "value": 41
+        },
+        {
+          "name": "AllAbbreviated",
+          "value": -17
+        },
+        {
+          "name": "All",
+          "value": -1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.ProgramSynthesis.FormatParsing.RepetitionMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Lazy",
+          "value": 0
+        },
+        {
+          "name": "Greedy",
+          "value": 1
+        },
+        {
+          "name": "Exhaustive",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.ProgramSynthesis.FormatParsing.UnionMatchingMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "First",
+          "value": 0
+        },
+        {
+          "name": "LongestMatch",
+          "value": 1
+        },
+        {
+          "name": "FirstLongestMatch",
+          "value": 2
+        },
+        {
+          "name": "Exhaustive",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.ProgramSynthesis.Features.InputKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Spec",
+          "value": 1
+        },
+        {
+          "name": "Additional",
+          "value": 2
+        },
+        {
+          "name": "All",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.ProgramSynthesis.Features.CalculationMethod",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "FromChildrenFeatureValues",
+          "value": 0
+        },
+        {
+          "name": "FromChildrenNodes",
+          "value": 1
+        },
+        {
+          "name": "FromLiteral",
+          "value": 2
+        },
+        {
+          "name": "FromProgramNode",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.ProgramSynthesis.Features.FeatureTrainingLogInfo",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Node",
+          "value": 1
+        },
+        {
+          "name": "Set",
+          "value": 2
+        },
+        {
+          "name": "Correctness",
+          "value": 4
+        },
+        {
+          "name": "TopPrograms",
+          "value": 8
+        },
+        {
+          "name": "Learning",
+          "value": 16
+        },
+        {
+          "name": "Debug",
+          "value": 32
+        },
+        {
+          "name": "All",
+          "value": -33
+        },
+        {
+          "name": "AllWithDebug",
+          "value": -1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.ProgramSynthesis.DslLibrary.Numbers.RoundingMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Nearest",
+          "value": 0
+        },
+        {
+          "name": "Down",
+          "value": 1
+        },
+        {
+          "name": "Up",
+          "value": 2
+        },
+        {
+          "name": "UpOrNext",
+          "value": 3
+        },
+        {
+          "name": "TowardZero",
+          "value": 4
+        },
+        {
+          "name": "AwayFromZero",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.ProgramSynthesis.DslLibrary.Dates.DateFormatCache.ParseMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Partial",
+          "value": 0
+        },
+        {
+          "name": "FullLength",
+          "value": 1
+        },
+        {
+          "name": "FullLengthAllowingEdgeConstants",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.ProgramSynthesis.DslLibrary.Dates.DateTimeFormat.Target",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "PosixFormatting",
+          "value": 0
+        },
+        {
+          "name": "PosixParsing",
+          "value": 1
+        },
+        {
+          "name": "MomentJS",
+          "value": 2
+        },
+        {
+          "name": "DayJSFormatting",
+          "value": 3
+        },
+        {
+          "name": "PowerAppsFormatting",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.ProgramSynthesis.DslLibrary.Dates.DateTimePart",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Year",
+          "value": 0
+        },
+        {
+          "name": "Month",
+          "value": 1
+        },
+        {
+          "name": "Day",
+          "value": 2
+        },
+        {
+          "name": "Hour",
+          "value": 3
+        },
+        {
+          "name": "Minute",
+          "value": 4
+        },
+        {
+          "name": "Second",
+          "value": 5
+        },
+        {
+          "name": "Millisecond",
+          "value": 6
+        },
+        {
+          "name": "HourInPeriod",
+          "value": 7
+        },
+        {
+          "name": "Period",
+          "value": 8
+        },
+        {
+          "name": "DayOfWeek",
+          "value": 9
+        },
+        {
+          "name": "Quarter",
+          "value": 10
+        },
+        {
+          "name": "DayOfYear",
+          "value": 11
+        },
+        {
+          "name": "DayOfWeekInMonth",
+          "value": 12
+        },
+        {
+          "name": "WeekYear",
+          "value": 13
+        },
+        {
+          "name": "WeekOfYear",
+          "value": 14
+        },
+        {
+          "name": "TimeZoneOffset",
+          "value": 15
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.ProgramSynthesis.DslLibrary.Dates.Period",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AM",
+          "value": 0
+        },
+        {
+          "name": "PM",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.ProgramSynthesis.DslLibrary.Dates.DateTimePartKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Date",
+          "value": 1
+        },
+        {
+          "name": "Time",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.ProgramSynthesis.DslLibrary.Dates.DtFeatures.DateTimeSeparatorKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Time",
+          "value": 0
+        },
+        {
+          "name": "Date",
+          "value": 1
+        },
+        {
+          "name": "BetweenTimeDate",
+          "value": 2
+        },
+        {
+          "name": "BetweenTimePeriod",
+          "value": 3
+        },
+        {
+          "name": "BetweenSecondMillisecond",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.ProgramSynthesis.DslLibrary.Dates.HeuristicsMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AllowMostFormats",
+          "value": 0
+        },
+        {
+          "name": "FromAutocomplete",
+          "value": 1
+        },
+        {
+          "name": "FromAutocompleteAllowingDatetimeConstants",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.ProgramSynthesis.Diagnostics.GrammarValidation",
+      "underlyingType": "System.UInt32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Core",
+          "value": 1
+        },
+        {
+          "name": "Syntax",
+          "value": 2
+        },
+        {
+          "name": "Semantics",
+          "value": 4
+        },
+        {
+          "name": "DeductiveLearning",
+          "value": 8
+        },
+        {
+          "name": "BottomUpLearning",
+          "value": 16
+        },
+        {
+          "name": "Features",
+          "value": 32
+        },
+        {
+          "name": "Learning",
+          "value": 24
+        },
+        {
+          "name": "All",
+          "value": 4294967295
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.ProgramSynthesis.Diagnostics.Severity",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Warning",
+          "value": 0
+        },
+        {
+          "name": "Error",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Microsoft.ProgramSynthesis.AST.ASTSerializationFormat",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "XML",
+          "value": 0
+        },
+        {
+          "name": "HumanReadable",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "namespaceMappings": []
+}

@@ -1,0 +1,885 @@
+{
+  "schema": {
+    "id": "activity-catalog",
+    "version": "v0.3"
+  },
+  "source": {
+    "kind": "nuget-package",
+    "id": "Irony.NetCore",
+    "version": "1.0.11",
+    "feedUrl": null,
+    "authors": "daxnet",
+    "projectUrl": "https://github.com/daxnet/irony",
+    "description": "Irony.NetCore is a .NET Core compatible version of the Irony framework initially developed and maintained by Roman Ivantsov. Irony is a development kit for implementing languages on .NET platform. In Irony the target language grammar is coded directly in c# using operator overloading to express grammar constructs. Irony's scanner and parser modules use the grammar encoded as c# class to control the parsing process.",
+    "license": "https://github.com/daxnet/irony/blob/master/LICENSE",
+    "tags": "irony parser",
+    "packageTypes": []
+  },
+  "generatedAt": "2026-04-10T09:21:13Z",
+  "activities": [],
+  "enums": [
+    {
+      "fullName": "Irony.ErrorLevel",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Info",
+          "value": 0
+        },
+        {
+          "name": "Warning",
+          "value": 1
+        },
+        {
+          "name": "Error",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Irony.Parsing.ProductionFlags",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "HasTerminals",
+          "value": 2
+        },
+        {
+          "name": "IsError",
+          "value": 4
+        },
+        {
+          "name": "IsEmpty",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "Irony.Parsing.TermFlags",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "IsOperator",
+          "value": 1
+        },
+        {
+          "name": "IsOpenBrace",
+          "value": 2
+        },
+        {
+          "name": "IsCloseBrace",
+          "value": 4
+        },
+        {
+          "name": "IsBrace",
+          "value": 6
+        },
+        {
+          "name": "IsLiteral",
+          "value": 8
+        },
+        {
+          "name": "IsConstant",
+          "value": 16
+        },
+        {
+          "name": "IsPunctuation",
+          "value": 32
+        },
+        {
+          "name": "IsDelimiter",
+          "value": 64
+        },
+        {
+          "name": "IsReservedWord",
+          "value": 128
+        },
+        {
+          "name": "IsMemberSelect",
+          "value": 256
+        },
+        {
+          "name": "InheritPrecedence",
+          "value": 512
+        },
+        {
+          "name": "IsNonScanner",
+          "value": 4096
+        },
+        {
+          "name": "IsNonGrammar",
+          "value": 8192
+        },
+        {
+          "name": "IsTransient",
+          "value": 16384
+        },
+        {
+          "name": "IsNotReported",
+          "value": 32768
+        },
+        {
+          "name": "IsNullable",
+          "value": 65536
+        },
+        {
+          "name": "IsVisible",
+          "value": 131072
+        },
+        {
+          "name": "IsKeyword",
+          "value": 262144
+        },
+        {
+          "name": "IsMultiline",
+          "value": 1048576
+        },
+        {
+          "name": "IsList",
+          "value": 2097152
+        },
+        {
+          "name": "IsListContainer",
+          "value": 4194304
+        },
+        {
+          "name": "NoAstNode",
+          "value": 8388608
+        },
+        {
+          "name": "AstDelayChildren",
+          "value": 16777216
+        }
+      ]
+    },
+    {
+      "fullName": "Irony.Parsing.LanguageFlags",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "NewLineBeforeEOF",
+          "value": 1
+        },
+        {
+          "name": "EmitLineStartToken",
+          "value": 2
+        },
+        {
+          "name": "DisableScannerParserLink",
+          "value": 4
+        },
+        {
+          "name": "CreateAst",
+          "value": 8
+        },
+        {
+          "name": "SupportsCommandLine",
+          "value": 512
+        },
+        {
+          "name": "TailRecursive",
+          "value": 1024
+        },
+        {
+          "name": "SupportsBigInt",
+          "value": 4096
+        },
+        {
+          "name": "SupportsComplex",
+          "value": 8192
+        },
+        {
+          "name": "SupportsRational",
+          "value": 16384
+        },
+        {
+          "name": "Default",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "fullName": "Irony.Parsing.Associativity",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Left",
+          "value": 0
+        },
+        {
+          "name": "Right",
+          "value": 1
+        },
+        {
+          "name": "Neutral",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Irony.Parsing.TermListOptions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "AllowEmpty",
+          "value": 1
+        },
+        {
+          "name": "AllowTrailingDelimiter",
+          "value": 2
+        },
+        {
+          "name": "AddPreferShiftHint",
+          "value": 4
+        },
+        {
+          "name": "PlusList",
+          "value": 4
+        },
+        {
+          "name": "StarList",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Irony.Parsing.GrammarErrorLevel",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NoError",
+          "value": 0
+        },
+        {
+          "name": "Info",
+          "value": 1
+        },
+        {
+          "name": "Warning",
+          "value": 2
+        },
+        {
+          "name": "Conflict",
+          "value": 3
+        },
+        {
+          "name": "Error",
+          "value": 4
+        },
+        {
+          "name": "InternalError",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Irony.Parsing.TermReportGroupType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Normal",
+          "value": 0
+        },
+        {
+          "name": "DoNotReport",
+          "value": 1
+        },
+        {
+          "name": "Operator",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Irony.Parsing.ParseTreeStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Parsing",
+          "value": 0
+        },
+        {
+          "name": "Partial",
+          "value": 1
+        },
+        {
+          "name": "Parsed",
+          "value": 2
+        },
+        {
+          "name": "Error",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Irony.Parsing.ParseOptions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Reserved",
+          "value": 1
+        },
+        {
+          "name": "AnalyzeCode",
+          "value": 16
+        }
+      ]
+    },
+    {
+      "fullName": "Irony.Parsing.ParseMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "File",
+          "value": 0
+        },
+        {
+          "name": "VsLineScan",
+          "value": 1
+        },
+        {
+          "name": "CommandLine",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Irony.Parsing.ParserStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Init",
+          "value": 0
+        },
+        {
+          "name": "Parsing",
+          "value": 1
+        },
+        {
+          "name": "Previewing",
+          "value": 2
+        },
+        {
+          "name": "Recovering",
+          "value": 3
+        },
+        {
+          "name": "Accepted",
+          "value": 4
+        },
+        {
+          "name": "AcceptedPartial",
+          "value": 5
+        },
+        {
+          "name": "Error",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "Irony.Parsing.PreferredActionType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Shift",
+          "value": 0
+        },
+        {
+          "name": "Reduce",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Irony.Parsing.TokenFlags",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "IsIncomplete",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Irony.Parsing.TokenCategory",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Content",
+          "value": 0
+        },
+        {
+          "name": "Outline",
+          "value": 1
+        },
+        {
+          "name": "Comment",
+          "value": 2
+        },
+        {
+          "name": "Directive",
+          "value": 3
+        },
+        {
+          "name": "Error",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Irony.Parsing.TokenColor",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Text",
+          "value": 0
+        },
+        {
+          "name": "Keyword",
+          "value": 1
+        },
+        {
+          "name": "Comment",
+          "value": 2
+        },
+        {
+          "name": "Identifier",
+          "value": 3
+        },
+        {
+          "name": "String",
+          "value": 4
+        },
+        {
+          "name": "Number",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Irony.Parsing.TokenTriggers",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "MemberSelect",
+          "value": 1
+        },
+        {
+          "name": "MatchBraces",
+          "value": 2
+        },
+        {
+          "name": "ParameterStart",
+          "value": 16
+        },
+        {
+          "name": "ParameterNext",
+          "value": 32
+        },
+        {
+          "name": "ParameterEnd",
+          "value": 64
+        },
+        {
+          "name": "Parameter",
+          "value": 128
+        },
+        {
+          "name": "MethodTip",
+          "value": 240
+        }
+      ]
+    },
+    {
+      "fullName": "Irony.Parsing.TokenType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "Text",
+          "value": 1
+        },
+        {
+          "name": "Keyword",
+          "value": 2
+        },
+        {
+          "name": "Identifier",
+          "value": 3
+        },
+        {
+          "name": "String",
+          "value": 4
+        },
+        {
+          "name": "Literal",
+          "value": 5
+        },
+        {
+          "name": "Operator",
+          "value": 6
+        },
+        {
+          "name": "Delimiter",
+          "value": 7
+        },
+        {
+          "name": "WhiteSpace",
+          "value": 8
+        },
+        {
+          "name": "LineComment",
+          "value": 9
+        },
+        {
+          "name": "Comment",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "fullName": "Irony.Parsing.FreeTextOptions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "ConsumeTerminator",
+          "value": 1
+        },
+        {
+          "name": "IncludeTerminator",
+          "value": 2
+        },
+        {
+          "name": "AllowEof",
+          "value": 4
+        },
+        {
+          "name": "AllowEmpty",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "Irony.Parsing.IdOptions",
+      "underlyingType": "System.Int16",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "AllowsEscapes",
+          "value": 1
+        },
+        {
+          "name": "CanStartWithEscape",
+          "value": 3
+        },
+        {
+          "name": "IsNotKeyword",
+          "value": 16
+        },
+        {
+          "name": "NameIncludesPrefix",
+          "value": 32
+        }
+      ]
+    },
+    {
+      "fullName": "Irony.Parsing.CaseRestriction",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "FirstUpper",
+          "value": 1
+        },
+        {
+          "name": "FirstLower",
+          "value": 2
+        },
+        {
+          "name": "AllUpper",
+          "value": 3
+        },
+        {
+          "name": "AllLower",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Irony.Parsing.NumberOptions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Default",
+          "value": 0
+        },
+        {
+          "name": "AllowStartEndDot",
+          "value": 1
+        },
+        {
+          "name": "IntOnly",
+          "value": 2
+        },
+        {
+          "name": "NoDotAfterInt",
+          "value": 4
+        },
+        {
+          "name": "AllowSign",
+          "value": 8
+        },
+        {
+          "name": "DisableQuickParse",
+          "value": 16
+        },
+        {
+          "name": "AllowLetterAfter",
+          "value": 32
+        },
+        {
+          "name": "AllowUnderscore",
+          "value": 64
+        },
+        {
+          "name": "Binary",
+          "value": 256
+        },
+        {
+          "name": "Octal",
+          "value": 512
+        },
+        {
+          "name": "Hex",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "fullName": "Irony.Parsing.NumberLiteral.NumberFlagsInternal",
+      "underlyingType": "System.Int16",
+      "members": [
+        {
+          "name": "HasDot",
+          "value": 4096
+        },
+        {
+          "name": "HasExp",
+          "value": 8192
+        }
+      ]
+    },
+    {
+      "fullName": "Irony.Parsing.RegexTermOptions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "AllowLetterAfter",
+          "value": 1
+        },
+        {
+          "name": "CreateRegExObject",
+          "value": 2
+        },
+        {
+          "name": "UniqueSwitches",
+          "value": 4
+        },
+        {
+          "name": "Default",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "Irony.Parsing.StringOptions",
+      "underlyingType": "System.Int16",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "IsChar",
+          "value": 1
+        },
+        {
+          "name": "AllowsDoubledQuote",
+          "value": 2
+        },
+        {
+          "name": "AllowsLineBreak",
+          "value": 4
+        },
+        {
+          "name": "IsTemplate",
+          "value": 8
+        },
+        {
+          "name": "NoEscapes",
+          "value": 16
+        },
+        {
+          "name": "AllowsUEscapes",
+          "value": 32
+        },
+        {
+          "name": "AllowsXEscapes",
+          "value": 64
+        },
+        {
+          "name": "AllowsOctalEscapes",
+          "value": 128
+        },
+        {
+          "name": "AllowsAllEscapes",
+          "value": 224
+        }
+      ]
+    },
+    {
+      "fullName": "Irony.Parsing.StringLiteral.StringFlagsInternal",
+      "underlyingType": "System.Int16",
+      "members": [
+        {
+          "name": "HasEscapes",
+          "value": 256
+        }
+      ]
+    },
+    {
+      "fullName": "Irony.Parsing.WikiBlockType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "EscapedText",
+          "value": 0
+        },
+        {
+          "name": "CodeBlock",
+          "value": 1
+        },
+        {
+          "name": "Anchor",
+          "value": 2
+        },
+        {
+          "name": "LinkToAnchor",
+          "value": 3
+        },
+        {
+          "name": "Url",
+          "value": 4
+        },
+        {
+          "name": "FileLink",
+          "value": 5
+        },
+        {
+          "name": "Image",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "Irony.Parsing.WikiTermType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Text",
+          "value": 0
+        },
+        {
+          "name": "Element",
+          "value": 1
+        },
+        {
+          "name": "Format",
+          "value": 2
+        },
+        {
+          "name": "Heading",
+          "value": 3
+        },
+        {
+          "name": "List",
+          "value": 4
+        },
+        {
+          "name": "Block",
+          "value": 5
+        },
+        {
+          "name": "Table",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "Irony.Parsing.OutlineOptions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "ProduceIndents",
+          "value": 1
+        },
+        {
+          "name": "CheckBraces",
+          "value": 2
+        },
+        {
+          "name": "CheckOperator",
+          "value": 4
+        }
+      ]
+    }
+  ],
+  "namespaceMappings": []
+}

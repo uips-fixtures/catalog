@@ -1,0 +1,2307 @@
+{
+  "schema": {
+    "id": "activity-catalog",
+    "version": "v0.3"
+  },
+  "source": {
+    "kind": "nuget-package",
+    "id": "smartsheet-csharp-sdk",
+    "version": "2.101.0",
+    "feedUrl": null,
+    "authors": "Smartsheet",
+    "projectUrl": "https://github.com/smartsheet-platform/smartsheet-csharp-sdk",
+    "description": "Library that uses C# to connect to Smartsheet services.",
+    "license": "https://raw.github.com/smartsheet-platform/smartsheet-csharp-sdk/master/LICENSE.txt",
+    "tags": "Smartsheet Collaboration Project Management Excel spreadsheet",
+    "packageTypes": []
+  },
+  "generatedAt": "2026-04-10T09:21:25Z",
+  "activities": [],
+  "enums": [
+    {
+      "fullName": "Smartsheet.Api.OAuth.AccessScope",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "READ_SHEETS",
+          "value": 0
+        },
+        {
+          "name": "WRITE_SHEETS",
+          "value": 1
+        },
+        {
+          "name": "SHARE_SHEETS",
+          "value": 2
+        },
+        {
+          "name": "DELETE_SHEETS",
+          "value": 3
+        },
+        {
+          "name": "CREATE_SHEETS",
+          "value": 4
+        },
+        {
+          "name": "CREATE_SIGHTS",
+          "value": 5
+        },
+        {
+          "name": "READ_SIGHTS",
+          "value": 6
+        },
+        {
+          "name": "DELETE_SIGHTS",
+          "value": 7
+        },
+        {
+          "name": "SHARE_SIGHTS",
+          "value": 8
+        },
+        {
+          "name": "READ_USERS",
+          "value": 9
+        },
+        {
+          "name": "READ_CONTACTS",
+          "value": 10
+        },
+        {
+          "name": "ADMIN_USERS",
+          "value": 11
+        },
+        {
+          "name": "ADMIN_SHEETS",
+          "value": 12
+        },
+        {
+          "name": "ADMIN_WORKSPACES",
+          "value": 13
+        }
+      ]
+    },
+    {
+      "fullName": "Smartsheet.Api.Models.AccessLevel",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "VIEWER",
+          "value": 0
+        },
+        {
+          "name": "EDITOR",
+          "value": 1
+        },
+        {
+          "name": "EDITOR_SHARE",
+          "value": 2
+        },
+        {
+          "name": "ADMIN",
+          "value": 3
+        },
+        {
+          "name": "OWNER",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Smartsheet.Api.Models.AccessScope",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "READ_SHEETS",
+          "value": 0
+        },
+        {
+          "name": "WRITE_SHEETS",
+          "value": 1
+        },
+        {
+          "name": "SHARE_SHEETS",
+          "value": 2
+        },
+        {
+          "name": "DELETE_SHEETS",
+          "value": 3
+        },
+        {
+          "name": "CREATE_SHEETS",
+          "value": 4
+        },
+        {
+          "name": "ADMIN_USERS",
+          "value": 5
+        },
+        {
+          "name": "ADMIN_SHEETS",
+          "value": 6
+        },
+        {
+          "name": "ADMIN_WORKSPACES",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "Smartsheet.Api.Models.AttachmentParentType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "SHEET",
+          "value": 0
+        },
+        {
+          "name": "ROW",
+          "value": 1
+        },
+        {
+          "name": "COMMENT",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Smartsheet.Api.Models.AttachmentSubType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DOCUMENT",
+          "value": 0
+        },
+        {
+          "name": "SPREADSHEET",
+          "value": 1
+        },
+        {
+          "name": "PRESENTATION",
+          "value": 2
+        },
+        {
+          "name": "PDF",
+          "value": 3
+        },
+        {
+          "name": "DRAWING",
+          "value": 4
+        },
+        {
+          "name": "FOLDER",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Smartsheet.Api.Models.AttachmentType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "FILE",
+          "value": 0
+        },
+        {
+          "name": "GOOGLE_DRIVE",
+          "value": 1
+        },
+        {
+          "name": "LINK",
+          "value": 2
+        },
+        {
+          "name": "BOX_COM",
+          "value": 3
+        },
+        {
+          "name": "DROPBOX",
+          "value": 4
+        },
+        {
+          "name": "EVERNOTE",
+          "value": 5
+        },
+        {
+          "name": "EGNYTE",
+          "value": 6
+        },
+        {
+          "name": "ONEDRIVE",
+          "value": 7
+        },
+        {
+          "name": "SMARTSHEET",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "Smartsheet.Api.Models.AutomationActionFrequency",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "IMMEDIATELY",
+          "value": 0
+        },
+        {
+          "name": "HOURLY",
+          "value": 1
+        },
+        {
+          "name": "DAILY",
+          "value": 2
+        },
+        {
+          "name": "WEEKLY",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Smartsheet.Api.Models.AutomationActionType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NOTIFICATION_ACTION",
+          "value": 0
+        },
+        {
+          "name": "UPDATE_REQUEST_ACTION",
+          "value": 1
+        },
+        {
+          "name": "APPROVAL_REQUEST_ACTION",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Smartsheet.Api.Models.AutomationRuleDisabledReason",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AUTOMATION_NOT_ENABLED_FOR_ORG",
+          "value": 0
+        },
+        {
+          "name": "COLUMN_MISSING",
+          "value": 1
+        },
+        {
+          "name": "COLUMN_TYPE_INCOMPATIBLE",
+          "value": 2
+        },
+        {
+          "name": "NO_POTENTIAL_RECIPIENTS",
+          "value": 3
+        },
+        {
+          "name": "NO_VALID_SELECTED_COLUMNS",
+          "value": 4
+        },
+        {
+          "name": "APPROVAL_COLUMN_MISSING",
+          "value": 5
+        },
+        {
+          "name": "APPROVAL_COLUMN_WRONG_TYPE",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "Smartsheet.Api.Models.ColumnTag",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "CALENDAR_START_DATE",
+          "value": 0
+        },
+        {
+          "name": "CALENDAR_END_DATE",
+          "value": 1
+        },
+        {
+          "name": "CARD_DONE",
+          "value": 2
+        },
+        {
+          "name": "GANTT_START_DATE",
+          "value": 3
+        },
+        {
+          "name": "GANTT_END_DATE",
+          "value": 4
+        },
+        {
+          "name": "GANTT_PERCENT_COMPLETE",
+          "value": 5
+        },
+        {
+          "name": "GANTT_DISPLAY_LABEL",
+          "value": 6
+        },
+        {
+          "name": "GANTT_PREDECESSOR",
+          "value": 7
+        },
+        {
+          "name": "GANTT_DURATION",
+          "value": 8
+        },
+        {
+          "name": "GANTT_ASSIGNED_RESOURCE",
+          "value": 9
+        },
+        {
+          "name": "GANTT_ALLOCATION",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "fullName": "Smartsheet.Api.Models.ColumnType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "TEXT_NUMBER",
+          "value": 0
+        },
+        {
+          "name": "DATE",
+          "value": 1
+        },
+        {
+          "name": "DATETIME",
+          "value": 2
+        },
+        {
+          "name": "CONTACT_LIST",
+          "value": 3
+        },
+        {
+          "name": "CHECKBOX",
+          "value": 4
+        },
+        {
+          "name": "PICKLIST",
+          "value": 5
+        },
+        {
+          "name": "DURATION",
+          "value": 6
+        },
+        {
+          "name": "PREDECESSOR",
+          "value": 7
+        },
+        {
+          "name": "ABSTRACT_DATETIME",
+          "value": 8
+        },
+        {
+          "name": "MULTI_CONTACT_LIST",
+          "value": 9
+        },
+        {
+          "name": "MULTI_PICKLIST",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "fullName": "Smartsheet.Api.Models.CriteriaOperator",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "EQUAL",
+          "value": 0
+        },
+        {
+          "name": "NOT_EQUAL",
+          "value": 1
+        },
+        {
+          "name": "GREATER_THAN",
+          "value": 2
+        },
+        {
+          "name": "GREATER_THAN_OR_EQUAL",
+          "value": 3
+        },
+        {
+          "name": "LESS_THAN",
+          "value": 4
+        },
+        {
+          "name": "LESS_THAN_OR_EQUAL",
+          "value": 5
+        },
+        {
+          "name": "CONTAINS",
+          "value": 6
+        },
+        {
+          "name": "DOES_NOT_CONTAIN",
+          "value": 7
+        },
+        {
+          "name": "BETWEEN",
+          "value": 8
+        },
+        {
+          "name": "NOT_BETWEEN",
+          "value": 9
+        },
+        {
+          "name": "TODAY",
+          "value": 10
+        },
+        {
+          "name": "NOT_TODAY",
+          "value": 11
+        },
+        {
+          "name": "PAST",
+          "value": 12
+        },
+        {
+          "name": "NOT_PAST",
+          "value": 13
+        },
+        {
+          "name": "FUTURE",
+          "value": 14
+        },
+        {
+          "name": "NOT_FUTURE",
+          "value": 15
+        },
+        {
+          "name": "LAST_N_DAYS",
+          "value": 16
+        },
+        {
+          "name": "NOT_LAST_N_DAYS",
+          "value": 17
+        },
+        {
+          "name": "NEXT_N_DAYS",
+          "value": 18
+        },
+        {
+          "name": "NOT_NEXT_N_DAYS",
+          "value": 19
+        },
+        {
+          "name": "IS_BLANK",
+          "value": 20
+        },
+        {
+          "name": "IS_NOT_BLANK",
+          "value": 21
+        },
+        {
+          "name": "IS_NUMBER",
+          "value": 22
+        },
+        {
+          "name": "IS_NOT_NUMBER",
+          "value": 23
+        },
+        {
+          "name": "IS_DATE",
+          "value": 24
+        },
+        {
+          "name": "IS_NOT_DATE",
+          "value": 25
+        },
+        {
+          "name": "IS_CHECKED",
+          "value": 26
+        },
+        {
+          "name": "IS_NOT_CHECKED",
+          "value": 27
+        },
+        {
+          "name": "IS_ONE_OF",
+          "value": 28
+        },
+        {
+          "name": "IS_NOT_ONE_OF",
+          "value": 29
+        },
+        {
+          "name": "IS_CURRENT_USER",
+          "value": 30
+        },
+        {
+          "name": "IS_NOT_CURRENT_USER",
+          "value": 31
+        },
+        {
+          "name": "ON_CRITICAL_PATH",
+          "value": 32
+        },
+        {
+          "name": "NOT_ON_CRITICAL_PATH",
+          "value": 33
+        },
+        {
+          "name": "HAS_ATTACHMENTS",
+          "value": 34
+        },
+        {
+          "name": "NO_ATTACHMENTS",
+          "value": 35
+        },
+        {
+          "name": "HAS_COMMENTS",
+          "value": 36
+        },
+        {
+          "name": "NO_COMMENTS",
+          "value": 37
+        },
+        {
+          "name": "HAS_ANY_OF",
+          "value": 38
+        },
+        {
+          "name": "HAS_NONE_OF",
+          "value": 39
+        },
+        {
+          "name": "HAS_ALL_OF",
+          "value": 40
+        },
+        {
+          "name": "NOT_ALL_OF",
+          "value": 41
+        }
+      ]
+    },
+    {
+      "fullName": "Smartsheet.Api.Models.CriteriaTarget",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ROW",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "fullName": "Smartsheet.Api.Models.CrossSheetReferenceStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "BLOCKED",
+          "value": 0
+        },
+        {
+          "name": "BROKEN",
+          "value": 1
+        },
+        {
+          "name": "CIRCULAR",
+          "value": 2
+        },
+        {
+          "name": "DISABLED",
+          "value": 3
+        },
+        {
+          "name": "INACCESSIBLE",
+          "value": 4
+        },
+        {
+          "name": "INVALID",
+          "value": 5
+        },
+        {
+          "name": "NOT_SHARED",
+          "value": 6
+        },
+        {
+          "name": "OK",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "Smartsheet.Api.Models.DayDescriptor",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DAY",
+          "value": 0
+        },
+        {
+          "name": "WEEKDAY",
+          "value": 1
+        },
+        {
+          "name": "WEEKEND",
+          "value": 2
+        },
+        {
+          "name": "SUNDAY",
+          "value": 3
+        },
+        {
+          "name": "MONDAY",
+          "value": 4
+        },
+        {
+          "name": "TUESDAY",
+          "value": 5
+        },
+        {
+          "name": "WEDNESDAY",
+          "value": 6
+        },
+        {
+          "name": "THURSDAY",
+          "value": 7
+        },
+        {
+          "name": "FRIDAY",
+          "value": 8
+        },
+        {
+          "name": "SATURDAY",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "fullName": "Smartsheet.Api.Models.DayOrdinal",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "FIRST",
+          "value": 0
+        },
+        {
+          "name": "SECOND",
+          "value": 1
+        },
+        {
+          "name": "THIRD",
+          "value": 2
+        },
+        {
+          "name": "FOURTH",
+          "value": 3
+        },
+        {
+          "name": "LAST",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Smartsheet.Api.Models.DestinationType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "HOME",
+          "value": 0
+        },
+        {
+          "name": "WORKSPACE",
+          "value": 1
+        },
+        {
+          "name": "FOLDER",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Smartsheet.Api.Models.DiscussionParentType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "SHEET",
+          "value": 0
+        },
+        {
+          "name": "ROW",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Smartsheet.Api.Models.EventAction",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "CREATE",
+          "value": 0
+        },
+        {
+          "name": "UPDATE",
+          "value": 1
+        },
+        {
+          "name": "LOAD",
+          "value": 2
+        },
+        {
+          "name": "DELETE",
+          "value": 3
+        },
+        {
+          "name": "PURGE",
+          "value": 4
+        },
+        {
+          "name": "RESTORE",
+          "value": 5
+        },
+        {
+          "name": "RENAME",
+          "value": 6
+        },
+        {
+          "name": "ACTIVATE",
+          "value": 7
+        },
+        {
+          "name": "DEACTIVATE",
+          "value": 8
+        },
+        {
+          "name": "EXPORT",
+          "value": 9
+        },
+        {
+          "name": "MOVE",
+          "value": 10
+        },
+        {
+          "name": "MOVE_ROW",
+          "value": 11
+        },
+        {
+          "name": "COPY_ROW",
+          "value": 12
+        },
+        {
+          "name": "SAVE_AS_NEW",
+          "value": 13
+        },
+        {
+          "name": "SAVE_AS_TEMPLATE",
+          "value": 14
+        },
+        {
+          "name": "ADD_PUBLISH",
+          "value": 15
+        },
+        {
+          "name": "REMOVE_PUBLISH",
+          "value": 16
+        },
+        {
+          "name": "ADD_SHARE",
+          "value": 17
+        },
+        {
+          "name": "REMOVE_SHARE",
+          "value": 18
+        },
+        {
+          "name": "ADD_SHARE_MEMBER",
+          "value": 19
+        },
+        {
+          "name": "REMOVE_SHARE_MEMBER",
+          "value": 20
+        },
+        {
+          "name": "ADD_WORKSPACE_SHARE",
+          "value": 21
+        },
+        {
+          "name": "REMOVE_WORKSPACE_SHARE",
+          "value": 22
+        },
+        {
+          "name": "ADD_MEMBER",
+          "value": 23
+        },
+        {
+          "name": "REMOVE_MEMBER",
+          "value": 24
+        },
+        {
+          "name": "TRANSFER_OWNERSHIP",
+          "value": 25
+        },
+        {
+          "name": "CREATE_CELL_LINK",
+          "value": 26
+        },
+        {
+          "name": "REMOVE_SHARES",
+          "value": 27
+        },
+        {
+          "name": "TRANSFER_OWNED_GROUPS",
+          "value": 28
+        },
+        {
+          "name": "TRANSFER_OWNED_ITEMS",
+          "value": 29
+        },
+        {
+          "name": "DOWNLOAD_SHEET_ACCESS_REPORT",
+          "value": 30
+        },
+        {
+          "name": "DOWNLOAD_USER_LIST",
+          "value": 31
+        },
+        {
+          "name": "DOWNLOAD_LOGIN_HISTORY",
+          "value": 32
+        },
+        {
+          "name": "DOWNLOAD_PUBLISHED_ITEMS_REPORT",
+          "value": 33
+        },
+        {
+          "name": "UPDATE_MAIN_CONTACT",
+          "value": 34
+        },
+        {
+          "name": "IMPORT_USERS",
+          "value": 35
+        },
+        {
+          "name": "BULK_UPDATE",
+          "value": 36
+        },
+        {
+          "name": "LIST_SHEETS",
+          "value": 37
+        },
+        {
+          "name": "REQUEST_BACKUP",
+          "value": 38
+        },
+        {
+          "name": "CREATE_RECURRING_BACKUP",
+          "value": 39
+        },
+        {
+          "name": "UPDATE_RECURRING_BACKUP",
+          "value": 40
+        },
+        {
+          "name": "DELETE_RECURRING_BACKUP",
+          "value": 41
+        },
+        {
+          "name": "REMOVE_FROM_GROUPS",
+          "value": 42
+        },
+        {
+          "name": "SEND_AS_ATTACHMENT",
+          "value": 43
+        },
+        {
+          "name": "SEND_ROW",
+          "value": 44
+        },
+        {
+          "name": "SEND",
+          "value": 45
+        },
+        {
+          "name": "SEND_COMMENT",
+          "value": 46
+        },
+        {
+          "name": "SEND_INVITE",
+          "value": 47
+        },
+        {
+          "name": "DECLINE_INVITE",
+          "value": 48
+        },
+        {
+          "name": "ACCEPT_INVITE",
+          "value": 49
+        },
+        {
+          "name": "SEND_PASSWORD_RESET",
+          "value": 50
+        },
+        {
+          "name": "REMOVE_FROM_ACCOUNT",
+          "value": 51
+        },
+        {
+          "name": "ADD_TO_ACCOUNT",
+          "value": 52
+        },
+        {
+          "name": "AUTHORIZE",
+          "value": 53
+        },
+        {
+          "name": "REVOKE",
+          "value": 54
+        }
+      ]
+    },
+    {
+      "fullName": "Smartsheet.Api.Models.EventObjectType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ACCESS_TOKEN",
+          "value": 0
+        },
+        {
+          "name": "ACCOUNT",
+          "value": 1
+        },
+        {
+          "name": "ATTACHMENT",
+          "value": 2
+        },
+        {
+          "name": "DASHBOARD",
+          "value": 3
+        },
+        {
+          "name": "DISCUSSION",
+          "value": 4
+        },
+        {
+          "name": "FOLDER",
+          "value": 5
+        },
+        {
+          "name": "FORM",
+          "value": 6
+        },
+        {
+          "name": "GROUP",
+          "value": 7
+        },
+        {
+          "name": "SHEET",
+          "value": 8
+        },
+        {
+          "name": "REPORT",
+          "value": 9
+        },
+        {
+          "name": "UPDATE_REQUEST",
+          "value": 10
+        },
+        {
+          "name": "USER",
+          "value": 11
+        },
+        {
+          "name": "WORKSPACE",
+          "value": 12
+        }
+      ]
+    },
+    {
+      "fullName": "Smartsheet.Api.Models.EventSource",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "WEB_APP",
+          "value": 0
+        },
+        {
+          "name": "MOBILE_IOS",
+          "value": 1
+        },
+        {
+          "name": "MOBILE_ANDROID",
+          "value": 2
+        },
+        {
+          "name": "API_INTEGRATED_APP",
+          "value": 3
+        },
+        {
+          "name": "API_UNDEFINED_APP",
+          "value": 4
+        },
+        {
+          "name": "UNKNOWN",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Smartsheet.Api.Models.FilterType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "LIST",
+          "value": 0
+        },
+        {
+          "name": "CUSTOM",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Smartsheet.Api.Models.GlobalTemplate",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "BLANK_SHEET",
+          "value": 0
+        },
+        {
+          "name": "TASK_LIST",
+          "value": 1
+        },
+        {
+          "name": "PROJECT_SHEET",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Smartsheet.Api.Models.CellInclusion",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "COLUMN_TYPE",
+          "value": 0
+        },
+        {
+          "name": "FORMAT",
+          "value": 1
+        },
+        {
+          "name": "OBJECT_VALUE",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Smartsheet.Api.Models.ColumnInclusion",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "FILTERS",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "fullName": "Smartsheet.Api.Models.CopyRowInclusion",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ATTACHMENTS",
+          "value": 0
+        },
+        {
+          "name": "DISCUSSIONS",
+          "value": 1
+        },
+        {
+          "name": "CHILDREN",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Smartsheet.Api.Models.DiscussionInclusion",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "COMMENTS",
+          "value": 0
+        },
+        {
+          "name": "ATTACHMENTS",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Smartsheet.Api.Models.FolderCopyInclusion",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ATTACHMENTS",
+          "value": 0
+        },
+        {
+          "name": "CELL_LINKS",
+          "value": 1
+        },
+        {
+          "name": "DATA",
+          "value": 2
+        },
+        {
+          "name": "DISCUSSIONS",
+          "value": 3
+        },
+        {
+          "name": "FILTERS",
+          "value": 4
+        },
+        {
+          "name": "FORMS",
+          "value": 5
+        },
+        {
+          "name": "RULE_RECIPIENTS",
+          "value": 6
+        },
+        {
+          "name": "RULES",
+          "value": 7
+        },
+        {
+          "name": "SHARES",
+          "value": 8
+        },
+        {
+          "name": "ALL",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "fullName": "Smartsheet.Api.Models.FolderInclusion",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "OWNER_INFO",
+          "value": 0
+        },
+        {
+          "name": "SHEET_VERSION",
+          "value": 1
+        },
+        {
+          "name": "SOURCE",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Smartsheet.Api.Models.FolderRemapExclusion",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "CELL_LINKS",
+          "value": 0
+        },
+        {
+          "name": "REPORTS",
+          "value": 1
+        },
+        {
+          "name": "SHEET_HYPERLINKS",
+          "value": 2
+        },
+        {
+          "name": "SIGHTS",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Smartsheet.Api.Models.HomeExclusion",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "PERMALINKS",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "fullName": "Smartsheet.Api.Models.HomeInclusion",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "OWNER_INFO",
+          "value": 0
+        },
+        {
+          "name": "SHEET_VERSION",
+          "value": 1
+        },
+        {
+          "name": "SOURCE",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Smartsheet.Api.Models.ListUserInclusion",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "LAST_LOGIN",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "fullName": "Smartsheet.Api.Models.MoveRowInclusion",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ATTACHMENTS",
+          "value": 0
+        },
+        {
+          "name": "DISCUSSIONS",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Smartsheet.Api.Models.ReportInclusion",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ATTACHMENTS",
+          "value": 0
+        },
+        {
+          "name": "DISCUSSIONS",
+          "value": 1
+        },
+        {
+          "name": "FORMAT",
+          "value": 2
+        },
+        {
+          "name": "OBJECT_VALUE",
+          "value": 3
+        },
+        {
+          "name": "SCOPE",
+          "value": 4
+        },
+        {
+          "name": "SOURCE",
+          "value": 5
+        },
+        {
+          "name": "SOURCE_SHEETS",
+          "value": 6
+        },
+        {
+          "name": "SHEET_VERSION",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "Smartsheet.Api.Models.RowExclusion",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NONEXISTENT_CELLS",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "fullName": "Smartsheet.Api.Models.RowInclusion",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DISCUSSIONS",
+          "value": 0
+        },
+        {
+          "name": "ATTACHMENTS",
+          "value": 1
+        },
+        {
+          "name": "FORMAT",
+          "value": 2
+        },
+        {
+          "name": "FILTERS",
+          "value": 3
+        },
+        {
+          "name": "COLUMN_TYPE",
+          "value": 4
+        },
+        {
+          "name": "COLUMNS",
+          "value": 5
+        },
+        {
+          "name": "ROW_PERMALINK",
+          "value": 6
+        },
+        {
+          "name": "ROW_WRITER_INFO",
+          "value": 7
+        },
+        {
+          "name": "OBJECT_VALUE",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "Smartsheet.Api.Models.SearchInclusion",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "FAVORITE_FLAG",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "fullName": "Smartsheet.Api.Models.SheetCopyExclusion",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "SHEET_HYPERLINKS",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "fullName": "Smartsheet.Api.Models.SheetCopyInclusion",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ATTACHMENTS",
+          "value": 0
+        },
+        {
+          "name": "CELL_LINKS",
+          "value": 1
+        },
+        {
+          "name": "DATA",
+          "value": 2
+        },
+        {
+          "name": "DISCUSSIONS",
+          "value": 3
+        },
+        {
+          "name": "FILTERS",
+          "value": 4
+        },
+        {
+          "name": "FORMS",
+          "value": 5
+        },
+        {
+          "name": "RULE_RECIPIENTS",
+          "value": 6
+        },
+        {
+          "name": "RULES",
+          "value": 7
+        },
+        {
+          "name": "SHARES",
+          "value": 8
+        },
+        {
+          "name": "ALL",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "fullName": "Smartsheet.Api.Models.SheetInclusion",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "OWNER_INFO",
+          "value": 0
+        },
+        {
+          "name": "SHEET_VERSION",
+          "value": 1
+        },
+        {
+          "name": "SOURCE",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Smartsheet.Api.Models.SheetLevelExclusion",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NONEXISTENT_CELLS",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "fullName": "Smartsheet.Api.Models.SheetLevelInclusion",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ATTACHMENTS",
+          "value": 0
+        },
+        {
+          "name": "COLUMN_TYPE",
+          "value": 1
+        },
+        {
+          "name": "CONTACT_REFERENCES",
+          "value": 2
+        },
+        {
+          "name": "CROSS_SHEET_REFERENCES",
+          "value": 3
+        },
+        {
+          "name": "DISCUSSIONS",
+          "value": 4
+        },
+        {
+          "name": "FILTERS",
+          "value": 5
+        },
+        {
+          "name": "FILTER_DEFINITIONS",
+          "value": 6
+        },
+        {
+          "name": "FORMAT",
+          "value": 7
+        },
+        {
+          "name": "OBJECT_VALUE",
+          "value": 8
+        },
+        {
+          "name": "OWNER_INFO",
+          "value": 9
+        },
+        {
+          "name": "ROW_PERMALINK",
+          "value": 10
+        },
+        {
+          "name": "ROW_WRITER_INFO",
+          "value": 11
+        },
+        {
+          "name": "SOURCE",
+          "value": 12
+        },
+        {
+          "name": "SUMMARY",
+          "value": 13
+        },
+        {
+          "name": "WRITER_INFO",
+          "value": 14
+        }
+      ]
+    },
+    {
+      "fullName": "Smartsheet.Api.Models.SightInclusion",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "SOURCE",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "fullName": "Smartsheet.Api.Models.SummaryFieldExclusion",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DISPLAY_VALUE",
+          "value": 0
+        },
+        {
+          "name": "IMAGE",
+          "value": 1
+        },
+        {
+          "name": "IMAGE_ALT_TEXT",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Smartsheet.Api.Models.SummaryFieldInclusion",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "FORMAT",
+          "value": 0
+        },
+        {
+          "name": "WRITER_INFO",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Smartsheet.Api.Models.TemplateInclusion",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DATA",
+          "value": 0
+        },
+        {
+          "name": "ATTACHMENTS",
+          "value": 1
+        },
+        {
+          "name": "DISCUSSIONS",
+          "value": 2
+        },
+        {
+          "name": "CELL_LINKS",
+          "value": 3
+        },
+        {
+          "name": "FORMS",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Smartsheet.Api.Models.UserInclusion",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "GROUPS",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "fullName": "Smartsheet.Api.Models.WorkspaceCopyInclusion",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ATTACHMENTS",
+          "value": 0
+        },
+        {
+          "name": "CELL_LINKS",
+          "value": 1
+        },
+        {
+          "name": "DATA",
+          "value": 2
+        },
+        {
+          "name": "DISCUSSIONS",
+          "value": 3
+        },
+        {
+          "name": "FILTERS",
+          "value": 4
+        },
+        {
+          "name": "FORMS",
+          "value": 5
+        },
+        {
+          "name": "RULE_RECIPIENTS",
+          "value": 6
+        },
+        {
+          "name": "RULES",
+          "value": 7
+        },
+        {
+          "name": "SHARES",
+          "value": 8
+        },
+        {
+          "name": "ALL",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "fullName": "Smartsheet.Api.Models.WorkspaceInclusion",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "OWNER_INFO",
+          "value": 0
+        },
+        {
+          "name": "SHEET_VERSION",
+          "value": 1
+        },
+        {
+          "name": "SOURCE",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Smartsheet.Api.Models.WorkspaceRemapExclusion",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "CELL_LINKS",
+          "value": 0
+        },
+        {
+          "name": "REPORTS",
+          "value": 1
+        },
+        {
+          "name": "SHEET_HYPERLINKS",
+          "value": 2
+        },
+        {
+          "name": "SIGHTS",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "Smartsheet.Api.Models.ObjectType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "WORKSPACE",
+          "value": 0
+        },
+        {
+          "name": "FOLDER",
+          "value": 1
+        },
+        {
+          "name": "SHEET",
+          "value": 2
+        },
+        {
+          "name": "REPORT",
+          "value": 3
+        },
+        {
+          "name": "TEMPLATE",
+          "value": 4
+        },
+        {
+          "name": "SIGHT",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "Smartsheet.Api.Models.ObjectValueType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DATE",
+          "value": 0
+        },
+        {
+          "name": "DATETIME",
+          "value": 1
+        },
+        {
+          "name": "ABSTRACT_DATETIME",
+          "value": 2
+        },
+        {
+          "name": "CONTACT",
+          "value": 3
+        },
+        {
+          "name": "DURATION",
+          "value": 4
+        },
+        {
+          "name": "PREDECESSOR_LIST",
+          "value": 5
+        },
+        {
+          "name": "MULTI_CONTACT",
+          "value": 6
+        },
+        {
+          "name": "MULTI_PICKLIST",
+          "value": 7
+        },
+        {
+          "name": "NUMBER",
+          "value": 8
+        },
+        {
+          "name": "BOOLEAN",
+          "value": 9
+        },
+        {
+          "name": "STRING",
+          "value": 10
+        },
+        {
+          "name": "NULL",
+          "value": 11
+        }
+      ]
+    },
+    {
+      "fullName": "Smartsheet.Api.Models.PaperSize",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "LETTER",
+          "value": 0
+        },
+        {
+          "name": "LEGAL",
+          "value": 1
+        },
+        {
+          "name": "WIDE",
+          "value": 2
+        },
+        {
+          "name": "ARCHD",
+          "value": 3
+        },
+        {
+          "name": "A4",
+          "value": 4
+        },
+        {
+          "name": "A3",
+          "value": 5
+        },
+        {
+          "name": "A2",
+          "value": 6
+        },
+        {
+          "name": "A1",
+          "value": 7
+        },
+        {
+          "name": "A0",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "fullName": "Smartsheet.Api.Models.ScheduleType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ONCE",
+          "value": 0
+        },
+        {
+          "name": "DAILY",
+          "value": 1
+        },
+        {
+          "name": "WEEKLY",
+          "value": 2
+        },
+        {
+          "name": "MONTHLY",
+          "value": 3
+        },
+        {
+          "name": "YEARLY",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Smartsheet.Api.Models.SearchLocation",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "PERSONAL_WORKSPACE",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "fullName": "Smartsheet.Api.Models.SearchObjectType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ATTACHMENT",
+          "value": 0
+        },
+        {
+          "name": "DISCUSSION",
+          "value": 1
+        },
+        {
+          "name": "FOLDER",
+          "value": 2
+        },
+        {
+          "name": "REPORT",
+          "value": 3
+        },
+        {
+          "name": "ROW",
+          "value": 4
+        },
+        {
+          "name": "SHEET",
+          "value": 5
+        },
+        {
+          "name": "SIGHT",
+          "value": 6
+        },
+        {
+          "name": "SUMMARY_FIELD",
+          "value": 7
+        },
+        {
+          "name": "TEMPLATE",
+          "value": 8
+        },
+        {
+          "name": "WORKSPACE",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "fullName": "Smartsheet.Api.Models.SearchScope",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ATTACHMENTS",
+          "value": 0
+        },
+        {
+          "name": "CELL_DATA",
+          "value": 1
+        },
+        {
+          "name": "COMMENTS",
+          "value": 2
+        },
+        {
+          "name": "FOLDER_NAMES",
+          "value": 3
+        },
+        {
+          "name": "REPORT_NAMES",
+          "value": 4
+        },
+        {
+          "name": "SHEET_NAMES",
+          "value": 5
+        },
+        {
+          "name": "SIGHT_NAMES",
+          "value": 6
+        },
+        {
+          "name": "SUMMARY_FIELDS",
+          "value": 7
+        },
+        {
+          "name": "TEMPLATE_NAMES",
+          "value": 8
+        },
+        {
+          "name": "WORKSPACE_NAMES",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "fullName": "Smartsheet.Api.Models.ShareType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "USER",
+          "value": 0
+        },
+        {
+          "name": "GROUP",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Smartsheet.Api.Models.SheetEmailFormat",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "PDF",
+          "value": 0
+        },
+        {
+          "name": "PDF_GANTT",
+          "value": 1
+        },
+        {
+          "name": "EXCEL",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Smartsheet.Api.Models.SheetFilterOperator",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AND",
+          "value": 0
+        },
+        {
+          "name": "OR",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Smartsheet.Api.Models.SheetFilterType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ADHOC",
+          "value": 0
+        },
+        {
+          "name": "PERSONAL",
+          "value": 1
+        },
+        {
+          "name": "SHARED",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Smartsheet.Api.Models.SortDirection",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ASCENDING",
+          "value": 0
+        },
+        {
+          "name": "DESCENDING",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "Smartsheet.Api.Models.Symbol",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "FLAG",
+          "value": 0
+        },
+        {
+          "name": "STAR",
+          "value": 1
+        },
+        {
+          "name": "HARVEY_BALLS",
+          "value": 2
+        },
+        {
+          "name": "PRIORITY",
+          "value": 3
+        },
+        {
+          "name": "RYG",
+          "value": 4
+        },
+        {
+          "name": "PRIORITY_HML",
+          "value": 5
+        },
+        {
+          "name": "DECISION_SYMBOLS",
+          "value": 6
+        },
+        {
+          "name": "DECISION_SHAPES",
+          "value": 7
+        },
+        {
+          "name": "VCR",
+          "value": 8
+        },
+        {
+          "name": "RYGB",
+          "value": 9
+        },
+        {
+          "name": "RYGG",
+          "value": 10
+        },
+        {
+          "name": "WEATHER",
+          "value": 11
+        },
+        {
+          "name": "PROGRESS",
+          "value": 12
+        },
+        {
+          "name": "ARROWS_3_WAY",
+          "value": 13
+        },
+        {
+          "name": "ARROWS_4_WAY",
+          "value": 14
+        },
+        {
+          "name": "ARROWS_5_WAY",
+          "value": 15
+        },
+        {
+          "name": "DIRECTIONS_3_WAY",
+          "value": 16
+        },
+        {
+          "name": "DIRECTIONS_4_WAY",
+          "value": 17
+        },
+        {
+          "name": "SKI",
+          "value": 18
+        },
+        {
+          "name": "SIGNAL",
+          "value": 19
+        },
+        {
+          "name": "STAR_RATING",
+          "value": 20
+        },
+        {
+          "name": "HEARTS",
+          "value": 21
+        },
+        {
+          "name": "MONEY",
+          "value": 22
+        },
+        {
+          "name": "EFFORT",
+          "value": 23
+        },
+        {
+          "name": "PAIN",
+          "value": 24
+        }
+      ]
+    },
+    {
+      "fullName": "Smartsheet.Api.Models.SystemColumnType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AUTO_NUMBER",
+          "value": 0
+        },
+        {
+          "name": "MODIFIED_DATE",
+          "value": 1
+        },
+        {
+          "name": "MODIFIED_BY",
+          "value": 2
+        },
+        {
+          "name": "CREATED_DATE",
+          "value": 3
+        },
+        {
+          "name": "CREATED_BY",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "Smartsheet.Api.Models.UpdateRequestStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "PENDING",
+          "value": 0
+        },
+        {
+          "name": "CANCELED",
+          "value": 1
+        },
+        {
+          "name": "COMPLETE",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Smartsheet.Api.Models.UserStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ACTIVE",
+          "value": 0
+        },
+        {
+          "name": "PENDING",
+          "value": 1
+        },
+        {
+          "name": "DECLINED",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "Smartsheet.Api.Models.WebhookStatus",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ENABLED",
+          "value": 0
+        },
+        {
+          "name": "NEW_NOT_VERIFIED",
+          "value": 1
+        },
+        {
+          "name": "DISABLED_BY_OWNER",
+          "value": 2
+        },
+        {
+          "name": "DISABLED_VERIFICATION_FAILED",
+          "value": 3
+        },
+        {
+          "name": "DISABLED_CALLBACK_FAILED",
+          "value": 4
+        },
+        {
+          "name": "DISABLED_APP_REVOKED",
+          "value": 5
+        },
+        {
+          "name": "DISABLED_SCOPE_INACCESSIBLE",
+          "value": 6
+        },
+        {
+          "name": "DISABLED_ADMINISTRATIVE",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "Smartsheet.Api.Models.WidgetType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "CHART",
+          "value": 0
+        },
+        {
+          "name": "IMAGE",
+          "value": 1
+        },
+        {
+          "name": "METRIC",
+          "value": 2
+        },
+        {
+          "name": "GRIDGANTT",
+          "value": 3
+        },
+        {
+          "name": "RICHTEXT",
+          "value": 4
+        },
+        {
+          "name": "SHORTCUT",
+          "value": 5
+        },
+        {
+          "name": "TITLE",
+          "value": 6
+        },
+        {
+          "name": "WEBCONTENT",
+          "value": 7
+        },
+        {
+          "name": "SHORTCUTLIST",
+          "value": 8
+        },
+        {
+          "name": "SHORTCUTICON",
+          "value": 9
+        },
+        {
+          "name": "SHEETSUMMARY",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "fullName": "Smartsheet.Api.Internal.Http.HttpMethod",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "GET",
+          "value": 0
+        },
+        {
+          "name": "POST",
+          "value": 1
+        },
+        {
+          "name": "PUT",
+          "value": 2
+        },
+        {
+          "name": "DELETE",
+          "value": 3
+        }
+      ]
+    }
+  ],
+  "namespaceMappings": []
+}

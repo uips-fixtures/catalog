@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UiPath.SolutionAccelerators.Reusables.Generic 1.2.3 — Activity Reference</title>
+  <style>
+    :root {
+      --base3:  #fdf6e3; --base2: #eee8d5; --base1: #93a1a1;
+      --base00: #657b83; --base01: #586e75;
+      --orange: #cb4b16; --blue: #268bd2; --cyan: #2aa198;
+      --green:  #859900;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: var(--base3); color: var(--base00);
+      line-height: 1.55; padding: 0 0 4rem;
+    }
+    .topbar {
+      background: var(--orange); color: #fff;
+      padding: 0 2rem; height: 50px;
+      display: flex; align-items: center; gap: 1rem;
+      font-weight: 700; font-size: 1rem;
+    }
+    .topbar a { color: #fff; text-decoration: none; }
+    .topbar-sub { font-weight: 400; font-size: 0.82rem; opacity: 0.82; }
+    .content { max-width: 960px; margin: 0 auto; padding: 2rem 1.5rem 0; }
+    .gen-meta {
+      font-size: 0.78rem; color: var(--base1);
+      border-bottom: 1px solid var(--base2);
+      padding-bottom: 0.75rem; margin-bottom: 2rem;
+    }
+    .pkg-section { margin-bottom: 3rem; }
+    .pkg-heading {
+      font-size: 1.05rem; font-weight: 700;
+      color: var(--base01); border-bottom: 2px solid var(--orange);
+      padding-bottom: 0.3rem; margin-bottom: 1.25rem;
+    }
+    .activity {
+      background: #fff; border: 1px solid var(--base2);
+      border-radius: 4px; padding: 1rem 1.25rem; margin-bottom: 1rem;
+    }
+    .activity-name { font-size: 1rem; font-weight: 700; color: var(--base01); margin-bottom: 0.15rem; }
+    .activity-full { font-family: ui-monospace, monospace; font-size: 0.78rem; color: var(--base1); margin-bottom: 0.5rem; }
+    .activity-desc { font-size: 0.875rem; margin-bottom: 0.75rem; }
+    .badge {
+      display: inline-block; font-size: 0.72rem; padding: 0.1em 0.5em;
+      border-radius: 3px; margin-right: 0.35rem; margin-bottom: 0.5rem;
+      background: var(--base2); color: var(--base01);
+    }
+    .badge-cat { background: #d4edda; color: #155724; }
+    .members-heading {
+      font-size: 0.72rem; text-transform: uppercase;
+      letter-spacing: 0.07em; color: var(--base1);
+      margin: 0.75rem 0 0.35rem;
+    }
+    table { border-collapse: collapse; width: 100%; font-size: 0.82rem; }
+    th, td { text-align: left; padding: 0.3rem 0.6rem; border-bottom: 1px solid var(--base2); }
+    th { background: var(--base2); color: var(--base01); font-size: 0.75rem; font-weight: 600; }
+    tr:last-child td { border-bottom: none; }
+    .dir-in    { color: var(--green);  font-weight: 600; }
+    .dir-out   { color: var(--blue);   font-weight: 600; }
+    .dir-inout { color: var(--cyan);   font-weight: 600; }
+    .req       { color: var(--orange); font-weight: 700; }
+    code { background: var(--base2); padding: 0.1em 0.35em; border-radius: 3px;
+           font-size: 0.85em; font-family: ui-monospace, monospace; }
+    .no-members { font-size: 0.8rem; color: var(--base1); font-style: italic; }
+    .pkg-list { list-style: none; columns: 2; }
+    .pkg-list li { padding: 0.2rem 0; }
+    .pkg-list a { color: var(--blue); text-decoration: none; }
+    .pkg-list a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a href="../../index.html">uips-fixtures</a>
+    <span class="topbar-sub">UiPath.SolutionAccelerators.Reusables.Generic 1.2.3</span>
+  </header>
+  <div class="content">
+    <p class="gen-meta">
+      12 activities &middot;
+      uips-fixtures catalog v0.3 &middot; generated 2026-04-10T09:21:43Z
+    </p>
+    <div class="activity" id="UiPath_SolutionAccelerators_Reusables_Generic-QueueItem_Operations-AddQueueItemWithRetryMechanism">
+      <div class="activity-name">Add Queue Item With Retry Mechanism</div>
+      <div class="activity-full">UiPath_SolutionAccelerators_Reusables_Generic.QueueItem_Operations.AddQueueItemWithRetryMechanism</div>
+<span class="badge badge-cat">UiPath.SolutionAccelerators.Reusables.Generic.QueueItem_Operations</span><p class="activity-desc">UPTF00000128eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8VG9vbHRpcD5rX19CYWNraW5nRmllbGQiOiJTaW1wbGUgUmV1c2FibGUgQ29tcG9uZW50IHRoYXQgQ29tYmluZXMgYW4gQWRkIFF1ZXVlIEl0ZW0gYWN0aXZpdHkgd2l0aCBhIFJldHJ5IE1lY2hhbmlzbSIsIjxWZXJzaW9uPmtfX0JhY2tpbmdGaWVsZCI6MX0=</p>      <p class="members-heading">Arguments — Input</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>MaxAttempts</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Int32&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td>Used to control the number of attempts of retrying in case of a system exception.</td>
+        </tr>
+        <tr>
+          <td>RetryInterval</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;TimeSpan&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td>Used to control the amount of time between retries in the Retry Scope activity.</td>
+        </tr>
+        <tr>
+          <td>QueueItemProperties</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Dictionary&lt;String, Object&gt;&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td>Stores the transaction item to be updated in the Orchestrator Queue.</td>
+        </tr>
+        <tr>
+          <td>QueueItemReference</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td>The reference to use when adding the queue item</td>
+        </tr>
+        <tr>
+          <td>QueueName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td>The queue name to which the data will pe added to</td>
+        </tr>
+        <tr>
+          <td>OrchestratorFolder</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td>Orchestrator Folder</td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath_SolutionAccelerators_Reusables_Generic-DU_Operations-TaxonomyConvertFieldToSetWithValues">
+      <div class="activity-name">Taxonomy Convert Field To Set With Values</div>
+      <div class="activity-full">UiPath_SolutionAccelerators_Reusables_Generic.DU_Operations.TaxonomyConvertFieldToSetWithValues</div>
+<span class="badge badge-cat">UiPath.SolutionAccelerators.Reusables.Generic.DU_Operations</span><p class="activity-desc">UPTF00000224eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8VG9vbHRpcD5rX19CYWNraW5nRmllbGQiOiJUaGlzIFdvcmtmbG93IHdpbGwgbW9kaWZ5IHRoZSBpblwvb3V0IGFyZ3VtZW50IFNlcmlhbGl6ZWQgVGF4b25vbXkgYnkgY29udmVydGluZyBhbiBleGlzdGluZyBmaWVsZCBpbnRvIGEgZmllbGQgb2YgdHlwZSBTZXQgd2l0aCB0aGUgdmFsdWVzIGZyb20gdGhlIGxpc3QgaW5wdXQgYXJndW1lbnQuXG5cblwvXC8gQ3JlYXRlZCAmIFRlc3RlZCBmb3IgSW50ZWxsaWdlbnRPQ1IgNi4wLjEuIEl0IHNob3VsZCB3b3JrIGZvciBvdGhlciB2ZXJzaW9ucyBidXQgaXMgbm90IGd1YXJhbnRlZWQuXG4iLCI8VmVyc2lvbj5rX19CYWNraW5nRmllbGQiOjF9</p>      <p class="members-heading">Arguments — Input</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>SetValuesList</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;List&lt;String&gt;&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td>Choice values to use when converting the field to a set</td>
+        </tr>
+        <tr>
+          <td>FieldName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td>Name of the Field to update the values for</td>
+        </tr>
+      </table>
+      <p class="members-heading">Arguments — Output</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>Successful</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;Boolean&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td>Defines operation successfull</td>
+        </tr>
+      </table>
+      <p class="members-heading">Arguments — Input/Output</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>SerializedTaxonomy</td>
+          <td><span class="dir-inout">InOut</span></td>
+          <td><code>InOutArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td>The Taxonomy to update, serialized as a String</td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath_SolutionAccelerators_Reusables_Generic-Queue_Operations-GetMaxRetries">
+      <div class="activity-name">Get Max Retries</div>
+      <div class="activity-full">UiPath_SolutionAccelerators_Reusables_Generic.Queue_Operations.GetMaxRetries</div>
+<span class="badge badge-cat">UiPath.SolutionAccelerators.Reusables.Generic.Queue_Operations</span><p class="activity-desc">UPTF00000158eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8VG9vbHRpcD5rX19CYWNraW5nRmllbGQiOiJEZXRlcm1pbmUgYWZ0ZXIgaG93IG1hbnkgcmV0cmllcyByZXN1bHRpbmcgaW4gQXBwbGljYXRpb24gRXhjZXB0aW9ucyBxdWV1ZSBpdGVtcyBpbiBhIGdpdmVuIHF1ZXVlIHdpbGwgYmUgbWFya2VkIGFzIEZhaWxlZC4gIiwiPFZlcnNpb24+a19fQmFja2luZ0ZpZWxkIjoxfQ==</p>      <p class="members-heading">Arguments — Input</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>OrchestratorQueueFolder</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td>Folder where the Queue will be located</td>
+        </tr>
+        <tr>
+          <td>OrchestratorQueueName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td>The queue name for which we want to retrieve the maximum number of retries</td>
+        </tr>
+      </table>
+      <p class="members-heading">Arguments — Output</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>MaximumNumberOfRetries</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;Int32&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td>Maximum number of retries set on queue</td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath_SolutionAccelerators_Reusables_Generic-Regex_Operations-RegularExpressionCheck">
+      <div class="activity-name">Regular Expression Check</div>
+      <div class="activity-full">UiPath_SolutionAccelerators_Reusables_Generic.Regex_Operations.RegularExpressionCheck</div>
+<span class="badge badge-cat">UiPath.SolutionAccelerators.Reusables.Generic.Regex_Operations</span><p class="activity-desc">UPTF0000012CeyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8VG9vbHRpcD5rX19CYWNraW5nRmllbGQiOiJUaGlzIHdvcmtmbG93IHVzZXMgYSByZWdleCBwYXR0ZXJuIGFuZCBjaGVja3MgdG8gc2VlIGlmIGEgc3RyaW5nIGlucHV0IHBhc3NlcyB0aGUgcmVnZXggY2hlY2siLCI8VmVyc2lvbj5rX19CYWNraW5nRmllbGQiOjF9</p>      <p class="members-heading">Arguments — Input</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>RegexPattern</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td>The regular expression pattern</td>
+        </tr>
+        <tr>
+          <td>InputString</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td>The input string to against the regex will run to</td>
+        </tr>
+      </table>
+      <p class="members-heading">Arguments — Output</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>MatchFound</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;Boolean&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td>Regex match found</td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath_SolutionAccelerators_Reusables_Generic-Functions-MergeDictionaries">
+      <div class="activity-name">Merge Dictionaries</div>
+      <div class="activity-full">UiPath_SolutionAccelerators_Reusables_Generic.Functions.MergeDictionaries</div>
+<span class="badge badge-cat">UiPath.SolutionAccelerators.Reusables.Generic.Functions</span><p class="activity-desc">UPTF000000F4eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8VG9vbHRpcD5rX19CYWNraW5nRmllbGQiOiJNZXJnZSB0d28gZGljdGlvbmFyaWVzIGFuZCByZXR1cm4gdGhlIGZpbmFsIG9iamVjdCIsIjxWZXJzaW9uPmtfX0JhY2tpbmdGaWVsZCI6MX0=</p>      <p class="members-heading">Arguments — Input</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>TargetDictionary</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Dictionary&lt;String, Object&gt;&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td>The dictionary where the properties will be added</td>
+        </tr>
+        <tr>
+          <td>DictionaryToAdd</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Dictionary&lt;String, Object&gt;&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td>The dictionary that will be merged into the Target dictionary</td>
+        </tr>
+      </table>
+      <p class="members-heading">Arguments — Output</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>FinalDictionary</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;Dictionary&lt;String, Object&gt;&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td>Output Dictionary with the merged data</td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath_SolutionAccelerators_Reusables_Generic-Email_Operations-MoveEmail">
+      <div class="activity-name">Move Email</div>
+      <div class="activity-full">UiPath_SolutionAccelerators_Reusables_Generic.Email_Operations.MoveEmail</div>
+<span class="badge badge-cat">UiPath.SolutionAccelerators.Reusables.Generic.Email_Operations</span><p class="activity-desc">UPTF000000F4eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8VG9vbHRpcD5rX19CYWNraW5nRmllbGQiOiJNb3ZlcyBlLW1haWwgYmV0d2VlbiAyIGZvbGRlcnMgdXNpbmcgT2ZmaWNlMzY1IGFwaSIsIjxWZXJzaW9uPmtfX0JhY2tpbmdGaWVsZCI6MX0=</p>      <p class="members-heading">Arguments — Input</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>EmailMessage</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;UiPath.MicrosoftOffice365.Models.Office365Message&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td>Email to Move to a Different Office365 Folder</td>
+        </tr>
+        <tr>
+          <td>DestinationFolder</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td>Office365 Destination Folder</td>
+        </tr>
+        <tr>
+          <td>ApplicationSecret</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Security.SecureString&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td>The secret string that the application uses to prove it&#39;s identity</td>
+        </tr>
+        <tr>
+          <td>Tenant</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td>The unique directory (tenant) ID assigned by the Azure Active Directory when you registered your app during Setup.</td>
+        </tr>
+        <tr>
+          <td>ApplicationId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td>The ID of your Azure Active Directory Application</td>
+        </tr>
+        <tr>
+          <td>MaxAttempts</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Int32&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td>Used to control the number of attempts of retrying in case of a system exception.</td>
+        </tr>
+        <tr>
+          <td>RetryInterval</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;TimeSpan&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td>Used to control the amount of time between retries in the Retry Scope activity.</td>
+        </tr>
+        <tr>
+          <td>EmailAddressSource</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td>The Email Address the email about to be moved belongs to</td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath_SolutionAccelerators_Reusables_Generic-Email_Operations-SendEmail">
+      <div class="activity-name">Send Email</div>
+      <div class="activity-full">UiPath_SolutionAccelerators_Reusables_Generic.Email_Operations.SendEmail</div>
+<span class="badge badge-cat">UiPath.SolutionAccelerators.Reusables.Generic.Email_Operations</span><p class="activity-desc">UPTF000001D0eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8VG9vbHRpcD5rX19CYWNraW5nRmllbGQiOiJUaGlzIHdvcmtmbG93IHNlbmRzIGFuIGVtYWlsLlxyXG5cclxuQnkgZGVmYXVsdCB0aGUgT2ZmaWNlMzY1IGFjdGl2aXR5IHBhY2thZ2UgYW5kIEFwcGxpY2F0aW9uIElEIGFuZCBTZWNyZXQgYXV0aCBtZXRob2QgYXJlIHVzZWQuXHJcblxyXG5Nb2RpZnkgYWNjb3JkaW5nIHRvIHlvdXIgY2hvc2VuIEFjdGl2aXR5IFNldCBhbmQgQXV0ZW50aWNhdGlvbiBDb25maWd1cmF0aW9ucyIsIjxWZXJzaW9uPmtfX0JhY2tpbmdGaWVsZCI6MX0=</p>      <p class="members-heading">Arguments — Input</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>From</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td>The email address from which the email is sent.</td>
+        </tr>
+        <tr>
+          <td>Body</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td>The email body. If IsBodyHtml is checked, then the body must be provided as HTML</td>
+        </tr>
+        <tr>
+          <td>Subject</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td>The email subject</td>
+        </tr>
+        <tr>
+          <td>Account</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td>The email address with which to interact. This may include any shared mailbox to which the current usser has access rights. If left blank, the current user&#39;s account is assumed.</td>
+        </tr>
+        <tr>
+          <td>IsBodyHTML</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Boolean&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td>If checked, the message body is read as an HTML string</td>
+        </tr>
+        <tr>
+          <td>EmailTo</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String[]&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td>The email addresses to which the email is sent</td>
+        </tr>
+        <tr>
+          <td>EmailCC</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String[]&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td>The email adresses CC&#39;d on the email</td>
+        </tr>
+        <tr>
+          <td>EmailBcc</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String[]&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td>The email addresses BCC&#39;d on the email</td>
+        </tr>
+        <tr>
+          <td>ApplicationId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td>The ID of your Azure Active Directory Application</td>
+        </tr>
+        <tr>
+          <td>ApplicationSecret</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Security.SecureString&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td>The secret string that the application uses to prove it&#39;s identity</td>
+        </tr>
+        <tr>
+          <td>Tenant</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td>The unique directory (tenant) ID assigned by the Azure Active Directory when you registered your app during Setup.</td>
+        </tr>
+        <tr>
+          <td>MaxAttempts</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Int32&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td>Used to control the number of attempts of retrying in case of a system exception.</td>
+        </tr>
+        <tr>
+          <td>RetryInterval</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;TimeSpan&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td>Used to control the amount of time between retries in the Retry Scope activity.</td>
+        </tr>
+        <tr>
+          <td>AttachmentsCollection</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;IEnumerable&lt;String&gt;&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td>A list of files attached to the message</td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath_SolutionAccelerators_Reusables_Generic-File_Operations-DeleteAllFilesInFolder">
+      <div class="activity-name">Delete All Files In Folder</div>
+      <div class="activity-full">UiPath_SolutionAccelerators_Reusables_Generic.File_Operations.DeleteAllFilesInFolder</div>
+<span class="badge badge-cat">UiPath.SolutionAccelerators.Reusables.Generic.File_Operations</span><p class="activity-desc">UPTF000000F0eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8VG9vbHRpcD5rX19CYWNraW5nRmllbGQiOiJUaGlzIHdvcmtmbG93IGRlbGV0ZXMgYWxsIHRoZSBmaWxlcyBpbiBhIGZvbGRlciIsIjxWZXJzaW9uPmtfX0JhY2tpbmdGaWVsZCI6MX0=</p>      <p class="members-heading">Arguments — Input</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>LocalFolderPath</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td>Absolute Path of the folder we want to clear</td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath_SolutionAccelerators_Reusables_Generic-File_Operations-DownloadFileFromStorageBucket">
+      <div class="activity-name">Download File From Storage Bucket</div>
+      <div class="activity-full">UiPath_SolutionAccelerators_Reusables_Generic.File_Operations.DownloadFileFromStorageBucket</div>
+<span class="badge badge-cat">UiPath.SolutionAccelerators.Reusables.Generic.File_Operations</span><p class="activity-desc">UPTF000000B4eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8VG9vbHRpcD5rX19CYWNraW5nRmllbGQiOm51bGwsIjxWZXJzaW9uPmtfX0JhY2tpbmdGaWVsZCI6MX0=</p>      <p class="members-heading">Arguments — Input</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>StorageBucketPath</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td>Path Within The Storage Bucket where the file is located</td>
+        </tr>
+        <tr>
+          <td>LocalFilePath</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td>Absolute Path where the File should be Downloaded</td>
+        </tr>
+        <tr>
+          <td>StorageBucketName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td>Name of the Storage Bucket</td>
+        </tr>
+        <tr>
+          <td>RetryInterval</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;TimeSpan&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td>Used to control the amount of time between retries in the Retry Scope activity.</td>
+        </tr>
+        <tr>
+          <td>MaxAttempts</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Int32&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td>Used to control the number of attempts of retrying in case of a system exception.</td>
+        </tr>
+        <tr>
+          <td>OrchestratorFolder</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td>Orchestrator Folder</td>
+        </tr>
+      </table>
+      <p class="members-heading">Arguments — Output</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>ResultingFile</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;UiPath.Platform.ResourceHandling.ILocalResource&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td>Resulting File Parameter returned by the Download Storage File Activity</td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath_SolutionAccelerators_Reusables_Generic-File_Operations-CreateExcelFileFromTemplate">
+      <div class="activity-name">Create Excel File From Template</div>
+      <div class="activity-full">UiPath_SolutionAccelerators_Reusables_Generic.File_Operations.CreateExcelFileFromTemplate</div>
+<span class="badge badge-cat">UiPath.SolutionAccelerators.Reusables.Generic.File_Operations</span><p class="activity-desc">UPTF00000160eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8VG9vbHRpcD5rX19CYWNraW5nRmllbGQiOiJUaGlzIHdvcmtmbG93IHJlY2lldmVzIGEgZGF0YXRhYmxlIGFuZCB0ZW1wbGF0ZSBmaWxlIGFzIGlucHV0IGFuZCBnZW5lcmF0ZXMgYSBuZXcgZmlsZSBjb250YWluaW5nIHRoZSBpbmZvcm1hdGlvbiBmcm9tIHRoZSBkYXRhdGFibGUiLCI8VmVyc2lvbj5rX19CYWNraW5nRmllbGQiOjF9</p>      <p class="members-heading">Arguments — Input</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>DataTable</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Data.DataTable&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td>Contents of the file to be created. Table Headers will not be included!</td>
+        </tr>
+        <tr>
+          <td>MaxAttempts</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Int32&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td>Used to control the number of attempts of retrying in case of a system exception.</td>
+        </tr>
+        <tr>
+          <td>RetryInterval</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;TimeSpan&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td>Used to control the amount of time between retries in the Retry Scope activity.</td>
+        </tr>
+        <tr>
+          <td>TemplateFilePath</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td>Template to use when creating the File</td>
+        </tr>
+        <tr>
+          <td>SheetName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td>SheetName to use when creating the file</td>
+        </tr>
+        <tr>
+          <td>DestinationFilePath</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td>FilePath (folder + file name) where the newly created file should be stored</td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath_SolutionAccelerators_Reusables_Generic-File_Operations-UploadFileToStorageBucket">
+      <div class="activity-name">Upload File To Storage Bucket</div>
+      <div class="activity-full">UiPath_SolutionAccelerators_Reusables_Generic.File_Operations.UploadFileToStorageBucket</div>
+<span class="badge badge-cat">UiPath.SolutionAccelerators.Reusables.Generic.File_Operations</span><p class="activity-desc">UPTF000000D8eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8VG9vbHRpcD5rX19CYWNraW5nRmllbGQiOiJVcGxvYWQgZmlsZSB0byBzdG9yYWdlIGJ1Y2tldCIsIjxWZXJzaW9uPmtfX0JhY2tpbmdGaWVsZCI6MX0=</p>      <p class="members-heading">Arguments — Input</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>StorageBucketPath</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td>Path Within The Storage Bucket where the file should be uploaded</td>
+        </tr>
+        <tr>
+          <td>LocalFilePath</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td>Absolute Path where the File to Upload is located</td>
+        </tr>
+        <tr>
+          <td>StorageBucketName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td>Name of the Storage Bucket</td>
+        </tr>
+        <tr>
+          <td>RetryInterval</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;TimeSpan&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td>Used to control the amount of time between retries in the Retry Scope activity.</td>
+        </tr>
+        <tr>
+          <td>MaxAttempts</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Int32&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td>Used to control the number of attempts of retrying in case of a system exception.</td>
+        </tr>
+        <tr>
+          <td>OrchestratorFolder</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td>Orchestrator Folder</td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath_SolutionAccelerators_Reusables_Generic-File_Operations-ClearFolderContent">
+      <div class="activity-name">Clear Folder Content</div>
+      <div class="activity-full">UiPath_SolutionAccelerators_Reusables_Generic.File_Operations.ClearFolderContent</div>
+<span class="badge badge-cat">UiPath.SolutionAccelerators.Reusables.Generic.File_Operations</span><p class="activity-desc">UPTF00000108eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8VG9vbHRpcD5rX19CYWNraW5nRmllbGQiOiJSZXVzYWJsZSBjb21wb25lbnQgdGhhdCBjbGVhcnMgYWxsIHRoZSBjb250ZW50cyBvZiBhIGxvY2FsIGZvbGRlci4iLCI8VmVyc2lvbj5rX19CYWNraW5nRmllbGQiOjF9</p>      <p class="members-heading">Arguments — Input</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>LocalFolderPath</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td>Absolute Path of the folder we want to clear</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</body>
+</html>

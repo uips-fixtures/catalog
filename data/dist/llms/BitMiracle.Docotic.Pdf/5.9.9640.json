@@ -1,0 +1,1687 @@
+{
+  "schema": {
+    "id": "activity-catalog",
+    "version": "v0.3"
+  },
+  "source": {
+    "kind": "nuget-package",
+    "id": "BitMiracle.Docotic.Pdf",
+    "version": "5.9.9640",
+    "feedUrl": null,
+    "authors": "Bit Miracle",
+    "projectUrl": "https://bitmiracle.com/pdf-library/",
+    "description": "Docotic.Pdf library can create, edit, draw and print PDF files.\n\nThe library is a fully managed assembly for .NET Standard, .NET 4.0 and later frameworks. The assembly has no external dependencies.\n\nThere are different types of licenses: for applications, for servers, cloud and unlimited. All licenses are royalty-free. \n\nFree time-limited licenses are available upon request.",
+    "license": "license.txt",
+    "tags": "pdf C# csharp .net .netstandard pdf-library pdf-to-text pdf-to-image print-pdf compress-pdf pdf-viewer pdf/a pdf-forms bitmiracle bit-miracle",
+    "packageTypes": []
+  },
+  "generatedAt": "2026-04-10T09:21:12Z",
+  "activities": [],
+  "enums": [
+    {
+      "fullName": ".",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "",
+          "value": 0
+        },
+        {
+          "name": "",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "BitMiracle.Docotic.Pdf.PdfaConformance",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Pdfa1B",
+          "value": 1
+        },
+        {
+          "name": "Pdfa1A",
+          "value": 2
+        },
+        {
+          "name": "Pdfa2A",
+          "value": 3
+        },
+        {
+          "name": "Pdfa3A",
+          "value": 4
+        },
+        {
+          "name": "Pdfa4A",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "BitMiracle.Docotic.Pdf.PdfBlendMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Normal",
+          "value": 0
+        },
+        {
+          "name": "Multiply",
+          "value": 1
+        },
+        {
+          "name": "Screen",
+          "value": 2
+        },
+        {
+          "name": "Overlay",
+          "value": 3
+        },
+        {
+          "name": "Darken",
+          "value": 4
+        },
+        {
+          "name": "Lighten",
+          "value": 5
+        },
+        {
+          "name": "ColorDodge",
+          "value": 6
+        },
+        {
+          "name": "ColorBurn",
+          "value": 7
+        },
+        {
+          "name": "HardLight",
+          "value": 8
+        },
+        {
+          "name": "SoftLight",
+          "value": 9
+        },
+        {
+          "name": "Difference",
+          "value": 10
+        },
+        {
+          "name": "Exclusion",
+          "value": 11
+        },
+        {
+          "name": "Hue",
+          "value": 12
+        },
+        {
+          "name": "Saturation",
+          "value": 13
+        },
+        {
+          "name": "Color",
+          "value": 14
+        },
+        {
+          "name": "Luminosity",
+          "value": 15
+        }
+      ]
+    },
+    {
+      "fullName": "BitMiracle.Docotic.Pdf.PdfBuiltInFont",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "TimesRoman",
+          "value": 0
+        },
+        {
+          "name": "Helvetica",
+          "value": 1
+        },
+        {
+          "name": "Courier",
+          "value": 2
+        },
+        {
+          "name": "Symbol",
+          "value": 3
+        },
+        {
+          "name": "TimesBold",
+          "value": 4
+        },
+        {
+          "name": "HelveticaBold",
+          "value": 5
+        },
+        {
+          "name": "CourierBold",
+          "value": 6
+        },
+        {
+          "name": "ZapfDingbats",
+          "value": 7
+        },
+        {
+          "name": "TimesItalic",
+          "value": 8
+        },
+        {
+          "name": "HelveticaOblique",
+          "value": 9
+        },
+        {
+          "name": "CourierOblique",
+          "value": 10
+        },
+        {
+          "name": "TimesBoldItalic",
+          "value": 11
+        },
+        {
+          "name": "HelveticaBoldOblique",
+          "value": 12
+        },
+        {
+          "name": "CourierBoldOblique",
+          "value": 13
+        }
+      ]
+    },
+    {
+      "fullName": "BitMiracle.Docotic.Pdf.PdfButtonLayout",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "TextOnly",
+          "value": 0
+        },
+        {
+          "name": "ImageOnly",
+          "value": 1
+        },
+        {
+          "name": "ImageAboveText",
+          "value": 2
+        },
+        {
+          "name": "TextAboveImage",
+          "value": 3
+        },
+        {
+          "name": "ImageBeforeText",
+          "value": 4
+        },
+        {
+          "name": "TextBeforeImage",
+          "value": 5
+        },
+        {
+          "name": "Overlay",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "BitMiracle.Docotic.Pdf.PdfCompression",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Flate",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "BitMiracle.Docotic.Pdf.PdfDrawFormat",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Png",
+          "value": 0
+        },
+        {
+          "name": "Jpeg",
+          "value": 1
+        },
+        {
+          "name": "Tiff",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "BitMiracle.Docotic.Pdf.PdfDrawMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Stroke",
+          "value": 0
+        },
+        {
+          "name": "Fill",
+          "value": 1
+        },
+        {
+          "name": "FillAndStroke",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "BitMiracle.Docotic.Pdf.PdfDrawScaling",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Zoom",
+          "value": 0
+        },
+        {
+          "name": "FitWidth",
+          "value": 1
+        },
+        {
+          "name": "FitHeight",
+          "value": 2
+        },
+        {
+          "name": "FitSize",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "BitMiracle.Docotic.Pdf.PdfEncryptionAlgorithm",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Standard40Bit",
+          "value": 1
+        },
+        {
+          "name": "Standard128Bit",
+          "value": 2
+        },
+        {
+          "name": "Aes128Bit",
+          "value": 3
+        },
+        {
+          "name": "Aes256Bit",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "BitMiracle.Docotic.Pdf.PdfExtractedImageFormat",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Png",
+          "value": 0
+        },
+        {
+          "name": "Jpeg",
+          "value": 1
+        },
+        {
+          "name": "Tiff",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "BitMiracle.Docotic.Pdf.PdfFileAnnotationIcon",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Pushpin",
+          "value": 0
+        },
+        {
+          "name": "Paperclip",
+          "value": 1
+        },
+        {
+          "name": "Graph",
+          "value": 2
+        },
+        {
+          "name": "Tag",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "BitMiracle.Docotic.Pdf.PdfFillMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Alternate",
+          "value": 0
+        },
+        {
+          "name": "Winding",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "BitMiracle.Docotic.Pdf.PdfFontFormat",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Type1",
+          "value": 0
+        },
+        {
+          "name": "MultipleMaster",
+          "value": 1
+        },
+        {
+          "name": "TrueType",
+          "value": 2
+        },
+        {
+          "name": "Type3",
+          "value": 3
+        },
+        {
+          "name": "CidType0",
+          "value": 4
+        },
+        {
+          "name": "CidType2",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "BitMiracle.Docotic.Pdf.PdfImageCompression",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Flate",
+          "value": 1
+        },
+        {
+          "name": "Group3Fax",
+          "value": 2
+        },
+        {
+          "name": "Group4Fax",
+          "value": 3
+        },
+        {
+          "name": "Jpeg",
+          "value": 4
+        },
+        {
+          "name": "JBig2",
+          "value": 5
+        },
+        {
+          "name": "Jpeg2000",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "fullName": "BitMiracle.Docotic.Pdf.PdfImageScaleMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AlwaysScale",
+          "value": 0
+        },
+        {
+          "name": "ScaleWhenImageBigger",
+          "value": 1
+        },
+        {
+          "name": "ScaleWhenImageSmaller",
+          "value": 2
+        },
+        {
+          "name": "NeverScale",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "BitMiracle.Docotic.Pdf.PdfLayerIntent",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "View",
+          "value": 0
+        },
+        {
+          "name": "Design",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "BitMiracle.Docotic.Pdf.PdfLineCap",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ButtEnd",
+          "value": 0
+        },
+        {
+          "name": "Round",
+          "value": 1
+        },
+        {
+          "name": "ProjectingSquare",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "BitMiracle.Docotic.Pdf.PdfLineJoin",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Miter",
+          "value": 0
+        },
+        {
+          "name": "Round",
+          "value": 1
+        },
+        {
+          "name": "Bevel",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "BitMiracle.Docotic.Pdf.PdfMetadataSyncMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DoNotSync",
+          "value": 0
+        },
+        {
+          "name": "PreferMetadata",
+          "value": 1
+        },
+        {
+          "name": "PreferInfo",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "BitMiracle.Docotic.Pdf.PdfPageLayout",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Default",
+          "value": -1
+        },
+        {
+          "name": "SinglePage",
+          "value": 0
+        },
+        {
+          "name": "OneColumn",
+          "value": 1
+        },
+        {
+          "name": "TwoColumnLeft",
+          "value": 2
+        },
+        {
+          "name": "TwoColumnRight",
+          "value": 3
+        },
+        {
+          "name": "TwoPageLeft",
+          "value": 4
+        },
+        {
+          "name": "TwoPageRight",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "BitMiracle.Docotic.Pdf.PdfPageMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "UseNone",
+          "value": 0
+        },
+        {
+          "name": "UseOutlines",
+          "value": 1
+        },
+        {
+          "name": "UseThumbs",
+          "value": 2
+        },
+        {
+          "name": "FullScreen",
+          "value": 3
+        },
+        {
+          "name": "UseOC",
+          "value": 4
+        },
+        {
+          "name": "UseAttachments",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "BitMiracle.Docotic.Pdf.PdfPageNumberingStyle",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "DecimalArabic",
+          "value": 0
+        },
+        {
+          "name": "UppercaseRoman",
+          "value": 1
+        },
+        {
+          "name": "LowercaseRoman",
+          "value": 2
+        },
+        {
+          "name": "UppercaseLetters",
+          "value": 3
+        },
+        {
+          "name": "LowercaseLetters",
+          "value": 4
+        },
+        {
+          "name": "Unspecified",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "BitMiracle.Docotic.Pdf.PdfPageObjectType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Text",
+          "value": 0
+        },
+        {
+          "name": "Image",
+          "value": 1
+        },
+        {
+          "name": "Path",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "BitMiracle.Docotic.Pdf.PdfPaperOrientation",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Portrait",
+          "value": 0
+        },
+        {
+          "name": "Landscape",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "BitMiracle.Docotic.Pdf.PdfPaperSize",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Custom",
+          "value": 0
+        },
+        {
+          "name": "Letter",
+          "value": 1
+        },
+        {
+          "name": "LetterSmall",
+          "value": 2
+        },
+        {
+          "name": "Tabloid",
+          "value": 3
+        },
+        {
+          "name": "Ledger",
+          "value": 4
+        },
+        {
+          "name": "Legal",
+          "value": 5
+        },
+        {
+          "name": "Statement",
+          "value": 6
+        },
+        {
+          "name": "Executive",
+          "value": 7
+        },
+        {
+          "name": "A3",
+          "value": 8
+        },
+        {
+          "name": "A4",
+          "value": 9
+        },
+        {
+          "name": "A4Small",
+          "value": 10
+        },
+        {
+          "name": "A5",
+          "value": 11
+        },
+        {
+          "name": "B4",
+          "value": 12
+        },
+        {
+          "name": "B5",
+          "value": 13
+        },
+        {
+          "name": "Folio",
+          "value": 14
+        },
+        {
+          "name": "Quarto",
+          "value": 15
+        },
+        {
+          "name": "Standard10x14",
+          "value": 16
+        },
+        {
+          "name": "Standard11x17",
+          "value": 17
+        },
+        {
+          "name": "Note",
+          "value": 18
+        },
+        {
+          "name": "Number9Envelope",
+          "value": 19
+        },
+        {
+          "name": "Number10Envelope",
+          "value": 20
+        },
+        {
+          "name": "Number11Envelope",
+          "value": 21
+        },
+        {
+          "name": "Number12Envelope",
+          "value": 22
+        },
+        {
+          "name": "Number14Envelope",
+          "value": 23
+        },
+        {
+          "name": "CSheet",
+          "value": 24
+        },
+        {
+          "name": "DSheet",
+          "value": 25
+        },
+        {
+          "name": "ESheet",
+          "value": 26
+        },
+        {
+          "name": "DLEnvelope",
+          "value": 27
+        },
+        {
+          "name": "C5Envelope",
+          "value": 28
+        },
+        {
+          "name": "C3Envelope",
+          "value": 29
+        },
+        {
+          "name": "C4Envelope",
+          "value": 30
+        },
+        {
+          "name": "C6Envelope",
+          "value": 31
+        },
+        {
+          "name": "C65Envelope",
+          "value": 32
+        },
+        {
+          "name": "B4Envelope",
+          "value": 33
+        },
+        {
+          "name": "B5Envelope",
+          "value": 34
+        },
+        {
+          "name": "B6Envelope",
+          "value": 35
+        },
+        {
+          "name": "ItalyEnvelope",
+          "value": 36
+        },
+        {
+          "name": "MonarchEnvelope",
+          "value": 37
+        },
+        {
+          "name": "PersonalEnvelope",
+          "value": 38
+        },
+        {
+          "name": "USStandardFanfold",
+          "value": 39
+        },
+        {
+          "name": "GermanStandardFanfold",
+          "value": 40
+        },
+        {
+          "name": "GermanLegalFanfold",
+          "value": 41
+        },
+        {
+          "name": "IsoB4",
+          "value": 42
+        },
+        {
+          "name": "JapanesePostcard",
+          "value": 43
+        },
+        {
+          "name": "Standard9x11",
+          "value": 44
+        },
+        {
+          "name": "Standard10x11",
+          "value": 45
+        },
+        {
+          "name": "Standard15x11",
+          "value": 46
+        },
+        {
+          "name": "InviteEnvelope",
+          "value": 47
+        },
+        {
+          "name": "A4Extra",
+          "value": 48
+        },
+        {
+          "name": "LetterTransverse",
+          "value": 49
+        },
+        {
+          "name": "A4Transverse",
+          "value": 50
+        },
+        {
+          "name": "LetterExtraTransverse",
+          "value": 51
+        },
+        {
+          "name": "APlus",
+          "value": 52
+        },
+        {
+          "name": "BPlus",
+          "value": 53
+        },
+        {
+          "name": "LetterPlus",
+          "value": 54
+        },
+        {
+          "name": "A4Plus",
+          "value": 55
+        },
+        {
+          "name": "A5Transverse",
+          "value": 56
+        },
+        {
+          "name": "B5Transverse",
+          "value": 57
+        },
+        {
+          "name": "A3Extra",
+          "value": 58
+        },
+        {
+          "name": "A5Extra",
+          "value": 59
+        },
+        {
+          "name": "B5Extra",
+          "value": 60
+        },
+        {
+          "name": "A2",
+          "value": 61
+        },
+        {
+          "name": "A3Transverse",
+          "value": 62
+        },
+        {
+          "name": "A3ExtraTransverse",
+          "value": 63
+        },
+        {
+          "name": "JapaneseDoublePostcard",
+          "value": 64
+        },
+        {
+          "name": "A6",
+          "value": 65
+        },
+        {
+          "name": "LetterRotated",
+          "value": 66
+        },
+        {
+          "name": "A3Rotated",
+          "value": 67
+        },
+        {
+          "name": "A4Rotated",
+          "value": 68
+        },
+        {
+          "name": "A5Rotated",
+          "value": 69
+        },
+        {
+          "name": "B4JisRotated",
+          "value": 70
+        },
+        {
+          "name": "B5JisRotated",
+          "value": 71
+        },
+        {
+          "name": "JapanesePostcardRotated",
+          "value": 72
+        },
+        {
+          "name": "JapaneseDoublePostcardRotated",
+          "value": 73
+        },
+        {
+          "name": "A6Rotated",
+          "value": 74
+        },
+        {
+          "name": "B6Jis",
+          "value": 75
+        },
+        {
+          "name": "B6JisRotated",
+          "value": 76
+        },
+        {
+          "name": "Standard12x11",
+          "value": 77
+        },
+        {
+          "name": "Prc16K",
+          "value": 78
+        },
+        {
+          "name": "Prc32K",
+          "value": 79
+        },
+        {
+          "name": "Prc32KBig",
+          "value": 80
+        },
+        {
+          "name": "PrcEnvelopeNumber1",
+          "value": 81
+        },
+        {
+          "name": "PrcEnvelopeNumber2",
+          "value": 82
+        },
+        {
+          "name": "PrcEnvelopeNumber3",
+          "value": 83
+        },
+        {
+          "name": "PrcEnvelopeNumber4",
+          "value": 84
+        },
+        {
+          "name": "PrcEnvelopeNumber5",
+          "value": 85
+        },
+        {
+          "name": "PrcEnvelopeNumber6",
+          "value": 86
+        },
+        {
+          "name": "PrcEnvelopeNumber7",
+          "value": 87
+        },
+        {
+          "name": "PrcEnvelopeNumber8",
+          "value": 88
+        },
+        {
+          "name": "PrcEnvelopeNumber9",
+          "value": 89
+        },
+        {
+          "name": "PrcEnvelopeNumber10",
+          "value": 90
+        },
+        {
+          "name": "Prc16KRotated",
+          "value": 91
+        },
+        {
+          "name": "Prc32KRotated",
+          "value": 92
+        },
+        {
+          "name": "Prc32KBigRotated",
+          "value": 93
+        },
+        {
+          "name": "PrcEnvelopeNumber1Rotated",
+          "value": 94
+        },
+        {
+          "name": "PrcEnvelopeNumber2Rotated",
+          "value": 95
+        },
+        {
+          "name": "PrcEnvelopeNumber3Rotated",
+          "value": 96
+        },
+        {
+          "name": "PrcEnvelopeNumber4Rotated",
+          "value": 97
+        },
+        {
+          "name": "PrcEnvelopeNumber5Rotated",
+          "value": 98
+        },
+        {
+          "name": "PrcEnvelopeNumber6Rotated",
+          "value": 99
+        },
+        {
+          "name": "PrcEnvelopeNumber7Rotated",
+          "value": 100
+        },
+        {
+          "name": "PrcEnvelopeNumber8Rotated",
+          "value": 101
+        },
+        {
+          "name": "PrcEnvelopeNumber9Rotated",
+          "value": 102
+        },
+        {
+          "name": "PrcEnvelopeNumber10Rotated",
+          "value": 103
+        }
+      ]
+    },
+    {
+      "fullName": "BitMiracle.Docotic.Pdf.PdfPathSegmentType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Rectangle",
+          "value": 0
+        },
+        {
+          "name": "Point",
+          "value": 1
+        },
+        {
+          "name": "Line",
+          "value": 2
+        },
+        {
+          "name": "Bezier",
+          "value": 3
+        },
+        {
+          "name": "CloseSubpath",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "BitMiracle.Docotic.Pdf.PdfPatternPaintType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Colored",
+          "value": 0
+        },
+        {
+          "name": "Uncolored",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "BitMiracle.Docotic.Pdf.PdfPatternTiling",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ConstantSpacing",
+          "value": 0
+        },
+        {
+          "name": "NoDistortion",
+          "value": 1
+        },
+        {
+          "name": "ConstantSpacingAndFasterTiling",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "BitMiracle.Docotic.Pdf.PdfPermissionFlags",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "PrintDocument",
+          "value": 4
+        },
+        {
+          "name": "ModifyContents",
+          "value": 8
+        },
+        {
+          "name": "CopyContents",
+          "value": 16
+        },
+        {
+          "name": "ModifyAnnotations",
+          "value": 32
+        },
+        {
+          "name": "FillFormFields",
+          "value": 256
+        },
+        {
+          "name": "ExtractContents",
+          "value": 512
+        },
+        {
+          "name": "AssembleDocument",
+          "value": 1024
+        },
+        {
+          "name": "PrintFaithfulCopy",
+          "value": 2048
+        },
+        {
+          "name": "Everything",
+          "value": 3900
+        }
+      ]
+    },
+    {
+      "fullName": "BitMiracle.Docotic.Pdf.PdfRenditionOperation",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unspecified",
+          "value": -1
+        },
+        {
+          "name": "PlayNew",
+          "value": 0
+        },
+        {
+          "name": "Stop",
+          "value": 1
+        },
+        {
+          "name": "Pause",
+          "value": 2
+        },
+        {
+          "name": "Resume",
+          "value": 3
+        },
+        {
+          "name": "Play",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "BitMiracle.Docotic.Pdf.PdfRotation",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Rotate90",
+          "value": 1
+        },
+        {
+          "name": "Rotate180",
+          "value": 2
+        },
+        {
+          "name": "Rotate270",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "BitMiracle.Docotic.Pdf.PdfSubmitFormat",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Html",
+          "value": 0
+        },
+        {
+          "name": "Fdf",
+          "value": 1
+        },
+        {
+          "name": "Xfdf",
+          "value": 2
+        },
+        {
+          "name": "Pdf",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "BitMiracle.Docotic.Pdf.PdfSubmitMethod",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Get",
+          "value": 0
+        },
+        {
+          "name": "Post",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "BitMiracle.Docotic.Pdf.PdfTextAlign",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Left",
+          "value": 0
+        },
+        {
+          "name": "Center",
+          "value": 1
+        },
+        {
+          "name": "Right",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "BitMiracle.Docotic.Pdf.PdfTextAnnotationIcon",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Comment",
+          "value": 1
+        },
+        {
+          "name": "Key",
+          "value": 2
+        },
+        {
+          "name": "Note",
+          "value": 3
+        },
+        {
+          "name": "Help",
+          "value": 4
+        },
+        {
+          "name": "NewParagraph",
+          "value": 5
+        },
+        {
+          "name": "Paragraph",
+          "value": 6
+        },
+        {
+          "name": "Insert",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "BitMiracle.Docotic.Pdf.PdfTextRenderingMode",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Fill",
+          "value": 0
+        },
+        {
+          "name": "Stroke",
+          "value": 1
+        },
+        {
+          "name": "FillAndStroke",
+          "value": 2
+        },
+        {
+          "name": "NeitherFillNorStroke",
+          "value": 3
+        },
+        {
+          "name": "FillAndAddToPath",
+          "value": 4
+        },
+        {
+          "name": "StrokeAndAddToPath",
+          "value": 5
+        },
+        {
+          "name": "FillStrokeAndAddToPath",
+          "value": 6
+        },
+        {
+          "name": "AddToPath",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "BitMiracle.Docotic.Pdf.PdfVersion",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Pdf10",
+          "value": 0
+        },
+        {
+          "name": "Pdf11",
+          "value": 1
+        },
+        {
+          "name": "Pdf12",
+          "value": 2
+        },
+        {
+          "name": "Pdf13",
+          "value": 3
+        },
+        {
+          "name": "Pdf14",
+          "value": 4
+        },
+        {
+          "name": "Pdf15",
+          "value": 5
+        },
+        {
+          "name": "Pdf16",
+          "value": 6
+        },
+        {
+          "name": "Pdf17",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "BitMiracle.Docotic.Pdf.PdfVerticalAlign",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Top",
+          "value": 0
+        },
+        {
+          "name": "Center",
+          "value": 1
+        },
+        {
+          "name": "Bottom",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "BitMiracle.Docotic.Pdf.PdfWidgetFlags",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Invisible",
+          "value": 1
+        },
+        {
+          "name": "Hidden",
+          "value": 2
+        },
+        {
+          "name": "Print",
+          "value": 4
+        },
+        {
+          "name": "NoZoom",
+          "value": 8
+        },
+        {
+          "name": "NoRotate",
+          "value": 16
+        },
+        {
+          "name": "NoView",
+          "value": 32
+        },
+        {
+          "name": "ReadOnly",
+          "value": 64
+        },
+        {
+          "name": "Locked",
+          "value": 128
+        },
+        {
+          "name": "ToggleNoView",
+          "value": 256
+        },
+        {
+          "name": "LockedContents",
+          "value": 512
+        }
+      ]
+    },
+    {
+      "fullName": "BitMiracle.Docotic.Pdf.PdfWidgetType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "TextAnnotation",
+          "value": 0
+        },
+        {
+          "name": "ActionArea",
+          "value": 1
+        },
+        {
+          "name": "Button",
+          "value": 2
+        },
+        {
+          "name": "CheckBox",
+          "value": 3
+        },
+        {
+          "name": "ComboBox",
+          "value": 4
+        },
+        {
+          "name": "RadioButton",
+          "value": 5
+        },
+        {
+          "name": "TextBox",
+          "value": 6
+        },
+        {
+          "name": "Signature",
+          "value": 7
+        },
+        {
+          "name": "FreeTextAnnotation",
+          "value": 8
+        },
+        {
+          "name": "Line",
+          "value": 9
+        },
+        {
+          "name": "Rectangle",
+          "value": 10
+        },
+        {
+          "name": "Ellipse",
+          "value": 11
+        },
+        {
+          "name": "Polygon",
+          "value": 12
+        },
+        {
+          "name": "Polyline",
+          "value": 13
+        },
+        {
+          "name": "HighlightAnnotation",
+          "value": 14
+        },
+        {
+          "name": "UnderlineAnnotation",
+          "value": 15
+        },
+        {
+          "name": "JaggedUnderlineAnnotation",
+          "value": 16
+        },
+        {
+          "name": "StrikeoutAnnotation",
+          "value": 17
+        },
+        {
+          "name": "Stamp",
+          "value": 18
+        },
+        {
+          "name": "Caret",
+          "value": 19
+        },
+        {
+          "name": "Ink",
+          "value": 20
+        },
+        {
+          "name": "Popup",
+          "value": 21
+        },
+        {
+          "name": "FileAttachment",
+          "value": 22
+        },
+        {
+          "name": "Sound",
+          "value": 23
+        },
+        {
+          "name": "Movie",
+          "value": 24
+        },
+        {
+          "name": "Screen",
+          "value": 25
+        },
+        {
+          "name": "PrinterMark",
+          "value": 26
+        },
+        {
+          "name": "TrapNetworkAnnotation",
+          "value": 27
+        },
+        {
+          "name": "Watermark",
+          "value": 28
+        },
+        {
+          "name": "Artwork3D",
+          "value": 29
+        },
+        {
+          "name": "ListBox",
+          "value": 30
+        },
+        {
+          "name": "RichMedia",
+          "value": 31
+        }
+      ]
+    },
+    {
+      "fullName": "BitMiracle.Docotic.Pdf.PdfZoom",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "PercentBased",
+          "value": 0
+        },
+        {
+          "name": "FitPage",
+          "value": 1
+        },
+        {
+          "name": "FitWidth",
+          "value": 2
+        },
+        {
+          "name": "FitHeight",
+          "value": 3
+        },
+        {
+          "name": "FitRect",
+          "value": 4
+        },
+        {
+          "name": "FitBBox",
+          "value": 5
+        },
+        {
+          "name": "FitBBoxWidth",
+          "value": 6
+        },
+        {
+          "name": "FitBBoxHeight",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "BitMiracle.Docotic.Pdf.XmpArrayType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unordered",
+          "value": 0
+        },
+        {
+          "name": "Ordered",
+          "value": 1
+        },
+        {
+          "name": "Alternative",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": ".Type",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Page",
+          "value": 0
+        },
+        {
+          "name": "Thumbnail",
+          "value": 1
+        },
+        {
+          "name": "TrailerKey",
+          "value": 2
+        },
+        {
+          "name": "RootKey",
+          "value": 3
+        },
+        {
+          "name": "Root",
+          "value": 4
+        }
+      ]
+    }
+  ],
+  "namespaceMappings": []
+}

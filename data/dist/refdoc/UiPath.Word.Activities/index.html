@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UiPath.Word.Activities 2.4.1 — Activity Reference</title>
+  <style>
+    :root {
+      --base3:  #fdf6e3; --base2: #eee8d5; --base1: #93a1a1;
+      --base00: #657b83; --base01: #586e75;
+      --orange: #cb4b16; --blue: #268bd2; --cyan: #2aa198;
+      --green:  #859900;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: var(--base3); color: var(--base00);
+      line-height: 1.55; padding: 0 0 4rem;
+    }
+    .topbar {
+      background: var(--orange); color: #fff;
+      padding: 0 2rem; height: 50px;
+      display: flex; align-items: center; gap: 1rem;
+      font-weight: 700; font-size: 1rem;
+    }
+    .topbar a { color: #fff; text-decoration: none; }
+    .topbar-sub { font-weight: 400; font-size: 0.82rem; opacity: 0.82; }
+    .content { max-width: 960px; margin: 0 auto; padding: 2rem 1.5rem 0; }
+    .gen-meta {
+      font-size: 0.78rem; color: var(--base1);
+      border-bottom: 1px solid var(--base2);
+      padding-bottom: 0.75rem; margin-bottom: 2rem;
+    }
+    .pkg-section { margin-bottom: 3rem; }
+    .pkg-heading {
+      font-size: 1.05rem; font-weight: 700;
+      color: var(--base01); border-bottom: 2px solid var(--orange);
+      padding-bottom: 0.3rem; margin-bottom: 1.25rem;
+    }
+    .activity {
+      background: #fff; border: 1px solid var(--base2);
+      border-radius: 4px; padding: 1rem 1.25rem; margin-bottom: 1rem;
+    }
+    .activity-name { font-size: 1rem; font-weight: 700; color: var(--base01); margin-bottom: 0.15rem; }
+    .activity-full { font-family: ui-monospace, monospace; font-size: 0.78rem; color: var(--base1); margin-bottom: 0.5rem; }
+    .activity-desc { font-size: 0.875rem; margin-bottom: 0.75rem; }
+    .badge {
+      display: inline-block; font-size: 0.72rem; padding: 0.1em 0.5em;
+      border-radius: 3px; margin-right: 0.35rem; margin-bottom: 0.5rem;
+      background: var(--base2); color: var(--base01);
+    }
+    .badge-cat { background: #d4edda; color: #155724; }
+    .members-heading {
+      font-size: 0.72rem; text-transform: uppercase;
+      letter-spacing: 0.07em; color: var(--base1);
+      margin: 0.75rem 0 0.35rem;
+    }
+    table { border-collapse: collapse; width: 100%; font-size: 0.82rem; }
+    th, td { text-align: left; padding: 0.3rem 0.6rem; border-bottom: 1px solid var(--base2); }
+    th { background: var(--base2); color: var(--base01); font-size: 0.75rem; font-weight: 600; }
+    tr:last-child td { border-bottom: none; }
+    .dir-in    { color: var(--green);  font-weight: 600; }
+    .dir-out   { color: var(--blue);   font-weight: 600; }
+    .dir-inout { color: var(--cyan);   font-weight: 600; }
+    .req       { color: var(--orange); font-weight: 700; }
+    code { background: var(--base2); padding: 0.1em 0.35em; border-radius: 3px;
+           font-size: 0.85em; font-family: ui-monospace, monospace; }
+    .no-members { font-size: 0.8rem; color: var(--base1); font-style: italic; }
+    .pkg-list { list-style: none; columns: 2; }
+    .pkg-list li { padding: 0.2rem 0; }
+    .pkg-list a { color: var(--blue); text-decoration: none; }
+    .pkg-list a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a href="../../index.html">uips-fixtures</a>
+    <span class="topbar-sub">UiPath.Word.Activities 2.4.1</span>
+  </header>
+  <div class="content">
+    <p class="gen-meta">
+      24 activities &middot;
+      uips-fixtures catalog v0.3 &middot; generated 2026-04-10T09:21:43Z
+    </p>
+    <div class="activity" id="UiPath-Word-Activities-DocumentAddImage">
+      <div class="activity-name">Add Picture</div>
+      <div class="activity-full">UiPath.Word.Activities.DocumentAddImage</div>
+<span class="badge badge-cat">Word</span>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>ImagePath</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Text</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Bookmark</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>OccurrenceIndex</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Nullable&lt;Int32&gt;&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>FilePath</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>PathResource</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;UiPath.Platform.ResourceHandling.IResource&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Occurrence</td>
+          <td>property</td>
+          <td><code>UiPath.Word.Occurrence</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Position</td>
+          <td>property</td>
+          <td><code>UiPath.Word.Position</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>InsertRelativeTo</td>
+          <td>property</td>
+          <td><code>UiPath.Word.InsertRelativeType</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-Word-Activities-DocumentAppendText">
+      <div class="activity-name">Append Text</div>
+      <div class="activity-full">UiPath.Word.Activities.DocumentAppendText</div>
+<span class="badge badge-cat">Word</span><p class="activity-desc">Write text at the end of a document.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>Text</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>FilePath</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>PathResource</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;UiPath.Platform.ResourceHandling.IResource&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>NewLine</td>
+          <td>property</td>
+          <td><code>Boolean</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-Word-Activities-DocumentCreateNew">
+      <div class="activity-name">Create New Document</div>
+      <div class="activity-full">UiPath.Word.Activities.DocumentCreateNew</div>
+<span class="badge badge-cat">Word</span><p class="activity-desc">Creates a new document in the specified location</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>ConflictResolution</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;UiPath.Word.Activities.ConflictBehavior&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Document</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;UiPath.Platform.ResourceHandling.IResource&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>FilePath</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>PathResource</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;UiPath.Platform.ResourceHandling.IResource&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-Word-Activities-DocumentInsertDataTable">
+      <div class="activity-name">Insert DataTable in Document</div>
+      <div class="activity-full">UiPath.Word.Activities.DocumentInsertDataTable</div>
+<span class="badge badge-cat">Word</span>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>DataTable</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Data.DataTable&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Text</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Bookmark</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>OccurrenceIndex</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Nullable&lt;Int32&gt;&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>FilePath</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>PathResource</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;UiPath.Platform.ResourceHandling.IResource&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Occurrence</td>
+          <td>property</td>
+          <td><code>UiPath.Word.Occurrence</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Position</td>
+          <td>property</td>
+          <td><code>UiPath.Word.Position</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>InsertRelativeTo</td>
+          <td>property</td>
+          <td><code>UiPath.Word.InsertRelativeType</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-Word-Activities-DocumentInsertHyperlink">
+      <div class="activity-name">Add Hyperlink to Document</div>
+      <div class="activity-full">UiPath.Word.Activities.DocumentInsertHyperlink</div>
+<span class="badge badge-cat">Word</span><p class="activity-desc">Add a hyperlink to a Word document.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>TextToDisplay</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Address</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>TextToSearchFor</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>FilePath</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>PathResource</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;UiPath.Platform.ResourceHandling.IResource&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>InsertRelativeTo</td>
+          <td>property</td>
+          <td><code>UiPath.Word.InsertHyperlinkRelativeToType</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Position</td>
+          <td>property</td>
+          <td><code>UiPath.Word.Position</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-Word-Activities-DocumentReadText">
+      <div class="activity-name">Read Text</div>
+      <div class="activity-full">UiPath.Word.Activities.DocumentReadText</div>
+<span class="badge badge-cat">Word</span><p class="activity-desc">Read all text from a document.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>Text</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>FilePath</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>PathResource</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;UiPath.Platform.ResourceHandling.IResource&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-Word-Activities-DocumentReplacePicture">
+      <div class="activity-name">Replace Picture</div>
+      <div class="activity-full">UiPath.Word.Activities.DocumentReplacePicture</div>
+<span class="badge badge-cat">Word</span><p class="activity-desc">Replace picture(s) in a Word template, based on Alt Text.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>PicturePath</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>PictureAltText</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>FilePath</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>PathResource</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;UiPath.Platform.ResourceHandling.IResource&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-Word-Activities-DocumentReplaceText">
+      <div class="activity-name">Replace Text</div>
+      <div class="activity-full">UiPath.Word.Activities.DocumentReplaceText</div>
+<span class="badge badge-cat">Word</span>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>Search</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Replace</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Found</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;Boolean&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>FilePath</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>PathResource</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;UiPath.Platform.ResourceHandling.IResource&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-Word-Activities-DocumentSetBookmarkContent">
+      <div class="activity-name">Set Bookmark Content</div>
+      <div class="activity-full">UiPath.Word.Activities.DocumentSetBookmarkContent</div>
+<span class="badge badge-cat">Word</span><p class="activity-desc">Set the text in a document bookmark.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>BookmarkName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BookmarkText</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>FilePath</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>PathResource</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;UiPath.Platform.ResourceHandling.IResource&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-Word-Activities-WordAddImage">
+      <div class="activity-name">Add Picture</div>
+      <div class="activity-full">UiPath.Word.Activities.WordAddImage</div>
+<span class="badge badge-cat">Word.Windows</span><p class="activity-desc">Adds a picture at the end of a specified Word document.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>ImagePath</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Text</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Bookmark</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>OccurrenceIndex</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Nullable&lt;Int32&gt;&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Occurrence</td>
+          <td>property</td>
+          <td><code>UiPath.Word.Occurrence</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Position</td>
+          <td>property</td>
+          <td><code>UiPath.Word.Position</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-Word-Activities-WordAddSensitivityLabel">
+      <div class="activity-name">Add or Update Word Sensitivity Label</div>
+      <div class="activity-full">UiPath.Word.Activities.WordAddSensitivityLabel</div>
+<span class="badge badge-cat">Word.Windows</span><p class="activity-desc">Adds or update sensitivity label on a Word document</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>SensitivityLabel</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Object&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Justification</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-Word-Activities-WordAppendText">
+      <div class="activity-name">Append Text</div>
+      <div class="activity-full">UiPath.Word.Activities.WordAppendText</div>
+<span class="badge badge-cat">Word.Windows</span><p class="activity-desc">Write text in a document at current caret position</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>Text</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>NewLine</td>
+          <td>property</td>
+          <td><code>Boolean</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-Word-Activities-WordApplicationScope">
+      <div class="activity-name">Word Application Scope</div>
+      <div class="activity-full">UiPath.Word.Activities.WordApplicationScope</div>
+<span class="badge badge-cat">Word.Windows</span><p class="activity-desc">Open a Word document and provide a scope for other Word activities. When this activity ends, the document and the Word application are closed. If the specified file does not exist, a new document file is created.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>FilePath</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>SensitivityLabel</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Object&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>CreateNewFile</td>
+          <td>property</td>
+          <td><code>Boolean</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>AutoSave</td>
+          <td>property</td>
+          <td><code>Boolean</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ReadOnly</td>
+          <td>property</td>
+          <td><code>Boolean</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>SensitivityOperation</td>
+          <td>property</td>
+          <td><code>UiPath.Word.WordLabelOperation</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-Word-Activities-WordExportToPdf">
+      <div class="activity-name">Save Document as PDF</div>
+      <div class="activity-full">UiPath.Word.Activities.WordExportToPdf</div>
+<span class="badge badge-cat">Word.Windows</span><p class="activity-desc">Exports a Word document to PDF.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>FilePath</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>ReplaceExisting</td>
+          <td>property</td>
+          <td><code>Boolean</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-Word-Activities-WordGetSensitivityLabel">
+      <div class="activity-name">Get Word Sensitivity Label</div>
+      <div class="activity-full">UiPath.Word.Activities.WordGetSensitivityLabel</div>
+<span class="badge badge-cat">Word.Windows</span><p class="activity-desc">Retrieves the sensitivity label from a Word document</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>SensitivityLabel</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;UiPath.Word.IWordLabelObject&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-Word-Activities-WordInsertDataTable">
+      <div class="activity-name">Insert DataTable in Document</div>
+      <div class="activity-full">UiPath.Word.Activities.WordInsertDataTable</div>
+<span class="badge badge-cat">Word.Windows</span><p class="activity-desc">The activity inserts a datatable relative to a text or a bookmark.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>DataTable</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Data.DataTable&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Text</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Bookmark</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>OccurrenceIndex</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Nullable&lt;Int32&gt;&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Position</td>
+          <td>property</td>
+          <td><code>UiPath.Word.Position</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Occurrence</td>
+          <td>property</td>
+          <td><code>UiPath.Word.Occurrence</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-Word-Activities-WordInsertHyperlink">
+      <div class="activity-name">Add Hyperlink to Document</div>
+      <div class="activity-full">UiPath.Word.Activities.WordInsertHyperlink</div>
+<span class="badge badge-cat">Word.Windows</span><p class="activity-desc">Add a hyperlink to a Word document.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>TextToDisplay</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Address</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>TextToSearchFor</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Found</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;Boolean&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>InsertRelativeTo</td>
+          <td>property</td>
+          <td><code>UiPath.Word.InsertHyperlinkRelativeToType</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Position</td>
+          <td>property</td>
+          <td><code>UiPath.Word.Position</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-Word-Activities-WordPasteFromClipboard">
+      <div class="activity-name">Paste Chart/Picture into Document</div>
+      <div class="activity-full">UiPath.Word.Activities.WordPasteFromClipboard</div>
+<span class="badge badge-cat">Word.Windows</span><p class="activity-desc">Pastes a chart from the clipboard into a Word document at the specified position. Commonly used with &#34;Copy Excel Chart to Clipboard&#34;.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>Text</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Found</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;Boolean&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>PasteRelativeTo</td>
+          <td>property</td>
+          <td><code>UiPath.Word.PasteRelativeToType</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Position</td>
+          <td>property</td>
+          <td><code>UiPath.Word.Position</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>PasteOption</td>
+          <td>property</td>
+          <td><code>UiPath.Word.PasteOptionType</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-Word-Activities-WordReadText">
+      <div class="activity-name">Read Text</div>
+      <div class="activity-full">UiPath.Word.Activities.WordReadText</div>
+<span class="badge badge-cat">Word.Windows</span><p class="activity-desc">Read all text from a document.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>Text</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-Word-Activities-WordReplacePicture">
+      <div class="activity-name">Replace Picture</div>
+      <div class="activity-full">UiPath.Word.Activities.WordReplacePicture</div>
+<span class="badge badge-cat">Word.Windows</span><p class="activity-desc">Replace picture(s) in a Word template, based on Alt Text.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>PicturePath</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>PictureAltText</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-Word-Activities-WordReplaceText">
+      <div class="activity-name">Replace Text</div>
+      <div class="activity-full">UiPath.Word.Activities.WordReplaceText</div>
+<span class="badge badge-cat">Word.Windows</span><p class="activity-desc">Replace all occurrences of a text within a document with another text</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>Search</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Replace</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Found</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;Boolean&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>ReplaceAll</td>
+          <td>property</td>
+          <td><code>Boolean</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-Word-Activities-WordSaveAs">
+      <div class="activity-name">Save Document As</div>
+      <div class="activity-full">UiPath.Word.Activities.WordSaveAs</div>
+<span class="badge badge-cat">Word.Windows</span><p class="activity-desc">Save a Word document as a different file.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>FilePath</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>SaveAsFileType</td>
+          <td>property</td>
+          <td><code>UiPath.Word.WordSaveAsType</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ReplaceExisting</td>
+          <td>property</td>
+          <td><code>Boolean</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-Word-Activities-WordSetBookmarkContent">
+      <div class="activity-name">Set Bookmark Content</div>
+      <div class="activity-full">UiPath.Word.Activities.WordSetBookmarkContent</div>
+<span class="badge badge-cat">Word.Windows</span><p class="activity-desc">Set the text in a document bookmark.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>BookmarkName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BookmarkText</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-Word-Activities-WordSetContentProperty">
+      <div class="activity-name">Set content property</div>
+      <div class="activity-full">UiPath.Word.Activities.WordSetContentProperty</div>
+<span class="badge badge-cat">Word.Windows</span><p class="activity-desc">Sets the value of a content control property in the Word document by matching Text, Title, or Tag.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>MatchBy</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;UiPath.Word.MatchPropertyBy&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td><code>Mono.Cecil.CustomAttributeArgument</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>MatchTo</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Value</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Found</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;Boolean&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>ReplaceAll</td>
+          <td>property</td>
+          <td><code>Boolean</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</body>
+</html>

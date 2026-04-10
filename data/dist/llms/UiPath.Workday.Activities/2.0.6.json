@@ -1,0 +1,2931 @@
+{
+  "schema": {
+    "id": "activity-catalog",
+    "version": "v0.3"
+  },
+  "source": {
+    "kind": "nuget-package",
+    "id": "UiPath.Workday.Activities",
+    "version": "2.0.6",
+    "feedUrl": null,
+    "authors": "UiPath",
+    "projectUrl": "https://docs.uipath.com/activities/docs/workday-about",
+    "description": "Automation activities for Workday using Workday Web Services. These activities allow you to execute operations on Workday. \n\nPLEASE NOTE THAT THIS VERSION OF 2.0.0 PACKAGE CAN ONLY BE USED IN MODERN STUDIO PROJECTS WITH VERSIONS EQUAL OR HIGHER TO 22.4. IT WILL BREAK EXISTING WORKFLOWS. \n\nPlease reach out to support if you need assistance with migration existing flows to Studio windows projects.",
+    "license": "https://www.uipath.com/hubfs/legalspot/UiPath_MSSA.pdf",
+    "tags": "UiPathActivities",
+    "packageTypes": []
+  },
+  "generatedAt": "2026-04-10T09:21:25Z",
+  "activities": [],
+  "enums": [
+    {
+      "fullName": "UiPath.BAF.Activities.Design.View.Enums.FlatviewFilter",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ShowValued",
+          "value": 0
+        },
+        {
+          "name": "Contains",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Activities.Design.View.Enums.HierarchicalViewState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NotSet",
+          "value": 0
+        },
+        {
+          "name": "TreeView",
+          "value": 1
+        },
+        {
+          "name": "FlatView",
+          "value": 2
+        },
+        {
+          "name": "FlatViewAllChildren",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Activities.Design.View.Enums.WindowScreenState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "MandatoryParametersState",
+          "value": 0
+        },
+        {
+          "name": "OptionalParametersState",
+          "value": 1
+        },
+        {
+          "name": "MultiInputState",
+          "value": 2
+        },
+        {
+          "name": "PreviewResultsState",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Activities.Design.LangInvariant.Language",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "VisualBasic",
+          "value": 0
+        },
+        {
+          "name": "CSharp",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Activities.Design.Common.Model.CommandResultState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Valid",
+          "value": 0
+        },
+        {
+          "name": "Invalid",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Activities.Design.Common.Model.MessageBoxSelection",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Cancel",
+          "value": 0
+        },
+        {
+          "name": "Yes",
+          "value": 1
+        },
+        {
+          "name": "No",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Models.OperationParameterKind",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "Body",
+          "value": 1
+        },
+        {
+          "name": "Query",
+          "value": 2
+        },
+        {
+          "name": "Path",
+          "value": 3
+        },
+        {
+          "name": "Header",
+          "value": 4
+        },
+        {
+          "name": "FormData",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Models.CrudOperation.CrudOperations",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Create",
+          "value": 1
+        },
+        {
+          "name": "Get",
+          "value": 2
+        },
+        {
+          "name": "Update",
+          "value": 4
+        },
+        {
+          "name": "Delete",
+          "value": 8
+        },
+        {
+          "name": "Function",
+          "value": 16
+        },
+        {
+          "name": "Action",
+          "value": 32
+        },
+        {
+          "name": "Search",
+          "value": 64
+        },
+        {
+          "name": "Upsert",
+          "value": 128
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Models.Connection.Authentication.Enums.AccessTokenKeyLocation",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Header",
+          "value": 0
+        },
+        {
+          "name": "Query",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Models.Annotations.OperationState",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Preview",
+          "value": 1
+        },
+        {
+          "name": "Warning",
+          "value": 2
+        },
+        {
+          "name": "Info",
+          "value": 3
+        },
+        {
+          "name": "Hide",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Utilities.EventCodes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ArgumentNullException",
+          "value": 101
+        },
+        {
+          "name": "ArgumentConverterError",
+          "value": 102
+        },
+        {
+          "name": "BackgroundWorkCompletedUnsuccessfully",
+          "value": 103
+        },
+        {
+          "name": "AutocompleteBoxError",
+          "value": 104
+        },
+        {
+          "name": "ConnectionFailed",
+          "value": 105
+        },
+        {
+          "name": "DisconnectionFailed",
+          "value": 106
+        },
+        {
+          "name": "ScopeExecutionFailed",
+          "value": 107
+        },
+        {
+          "name": "GetEntityFieldsFailed",
+          "value": 108
+        },
+        {
+          "name": "RestRequestError",
+          "value": 109
+        },
+        {
+          "name": "FetchSampleDataFailed",
+          "value": 110
+        },
+        {
+          "name": "TestWithSampleDataFailed",
+          "value": 111
+        },
+        {
+          "name": "OutsideScopeError",
+          "value": 112
+        },
+        {
+          "name": "ConnectionClosedSuccessfully",
+          "value": 201
+        },
+        {
+          "name": "AutocompleteBoxResultSet",
+          "value": 202
+        },
+        {
+          "name": "ConnectionSuccessful",
+          "value": 201
+        },
+        {
+          "name": "RestRequestResponseReceived",
+          "value": 203
+        },
+        {
+          "name": "EncryptionFailure",
+          "value": 204
+        },
+        {
+          "name": "DecryptionFailure",
+          "value": 205
+        },
+        {
+          "name": "RestRequestFailed",
+          "value": 206
+        },
+        {
+          "name": "RestRequestArgumentException",
+          "value": 207
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Utilities.FormDataType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ComboBox",
+          "value": 0
+        },
+        {
+          "name": "FilePicker",
+          "value": 1
+        },
+        {
+          "name": "FolderPicker",
+          "value": 2
+        },
+        {
+          "name": "ExpressionTextBox",
+          "value": 3
+        },
+        {
+          "name": "MultiSelect",
+          "value": 4
+        },
+        {
+          "name": "TextBoxWithButton",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Utilities.OAuthBase.SignatureTypes",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "HMACSHA1",
+          "value": 0
+        },
+        {
+          "name": "PLAINTEXT",
+          "value": 1
+        },
+        {
+          "name": "RSASHA1",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Telemetry.TelemetryGroup",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "PreAPIOperation",
+          "value": 0
+        },
+        {
+          "name": "PostAPIOperation",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Enums.ProjectType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Swagger",
+          "value": 0
+        },
+        {
+          "name": "SDK",
+          "value": 1
+        },
+        {
+          "name": "OData",
+          "value": 2
+        },
+        {
+          "name": "HttpClient",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Enums.WindowType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "FindObject",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Enums.ApiKeyLocation",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "Query",
+          "value": 1
+        },
+        {
+          "name": "Header",
+          "value": 2
+        },
+        {
+          "name": "Cookie",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.BAF.Enums.AuthType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Undefined",
+          "value": 0
+        },
+        {
+          "name": "BasicAuth",
+          "value": 10
+        },
+        {
+          "name": "BearerAuth",
+          "value": 20
+        },
+        {
+          "name": "ApiKey",
+          "value": 30
+        },
+        {
+          "name": "ApiToken",
+          "value": 31
+        },
+        {
+          "name": "OAuth1",
+          "value": 35
+        },
+        {
+          "name": "OAuth2AuthorizationCode",
+          "value": 37
+        },
+        {
+          "name": "OAuth2ClientCredentials",
+          "value": 40
+        },
+        {
+          "name": "OAuth2Implicit",
+          "value": 45
+        },
+        {
+          "name": "OAuth2Password",
+          "value": 50
+        },
+        {
+          "name": "OpenIdConnect",
+          "value": 55
+        },
+        {
+          "name": "ExistingConnection",
+          "value": 60
+        },
+        {
+          "name": "OAuthJWT",
+          "value": 65
+        },
+        {
+          "name": "JWT",
+          "value": 66
+        },
+        {
+          "name": "OAuthPassthrough",
+          "value": 67
+        },
+        {
+          "name": "AWS",
+          "value": 68
+        },
+        {
+          "name": "None",
+          "value": 69
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Workforce_Planning.ItemChoiceType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Fiscal_Summary_Schedule_Reference",
+          "value": 0
+        },
+        {
+          "name": "Plan_by_Duration",
+          "value": 1
+        },
+        {
+          "name": "Plan_by_Period",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Workforce_Planning.ItemChoiceType1",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Auto_Complete",
+          "value": 0
+        },
+        {
+          "name": "Skip",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Talent.ItemsChoiceType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Filter_Boolean",
+          "value": 0
+        },
+        {
+          "name": "Filter_Date",
+          "value": 1
+        },
+        {
+          "name": "Filter_DateTimeZone",
+          "value": 2
+        },
+        {
+          "name": "Filter_Number",
+          "value": 3
+        },
+        {
+          "name": "Filter_Text",
+          "value": 4
+        },
+        {
+          "name": "Filter_Time",
+          "value": 5
+        },
+        {
+          "name": "Target_External_Field_Reference",
+          "value": 6
+        },
+        {
+          "name": "Target_Instance_Reference",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Student_Recruiting.ItemChoiceType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "User_Name",
+          "value": 0
+        },
+        {
+          "name": "Web_Address",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Staffing.ItemChoiceType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Individual_Target_Amount",
+          "value": 0
+        },
+        {
+          "name": "Individual_Target_Percent",
+          "value": 1
+        },
+        {
+          "name": "Individual_Target_Shares",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Staffing.ItemChoiceType1",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Auto_Complete",
+          "value": 0
+        },
+        {
+          "name": "Skip",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Staffing.ItemChoiceType2",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Amount",
+          "value": 0
+        },
+        {
+          "name": "Percent",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Staffing.ItemChoiceType3",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Primary_Compensation_Basis",
+          "value": 0
+        },
+        {
+          "name": "Primary_Compensation_Basis_Amount_Change",
+          "value": 1
+        },
+        {
+          "name": "Primary_Compensation_Basis_Percent_Change",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Staffing.ItemChoiceType4",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Amount",
+          "value": 0
+        },
+        {
+          "name": "Amount_Change",
+          "value": 1
+        },
+        {
+          "name": "Percent_Change",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Staffing.ItemChoiceType5",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Amount",
+          "value": 0
+        },
+        {
+          "name": "Percent",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Staffing.ItemChoiceType6",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Individual_Target_Amount",
+          "value": 0
+        },
+        {
+          "name": "Individual_Target_Percent",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Staffing.ItemChoiceType7",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Individual_Target_Amount",
+          "value": 0
+        },
+        {
+          "name": "Individual_Target_Percent",
+          "value": 1
+        },
+        {
+          "name": "Individual_Target_Shares",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Staffing.ItemChoiceType8",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Primary_Compensation_Basis",
+          "value": 0
+        },
+        {
+          "name": "Primary_Compensation_Basis_Amount_Change",
+          "value": 1
+        },
+        {
+          "name": "Primary_Compensation_Basis_Percent_Change",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Staffing.ItemChoiceType9",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Grant_Amount",
+          "value": 0
+        },
+        {
+          "name": "Grant_Percent",
+          "value": 1
+        },
+        {
+          "name": "Shares_Granted",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Staffing.ItemsChoiceType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Filter_Boolean",
+          "value": 0
+        },
+        {
+          "name": "Filter_Date",
+          "value": 1
+        },
+        {
+          "name": "Filter_DateTimeZone",
+          "value": 2
+        },
+        {
+          "name": "Filter_Number",
+          "value": 3
+        },
+        {
+          "name": "Filter_Text",
+          "value": 4
+        },
+        {
+          "name": "Filter_Time",
+          "value": 5
+        },
+        {
+          "name": "Target_External_Field_Reference",
+          "value": 6
+        },
+        {
+          "name": "Target_Instance_Reference",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Staffing.ItemChoiceType10",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Delete",
+          "value": 0
+        },
+        {
+          "name": "Update",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Revenue_Management.ItemChoiceType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Auto_Complete",
+          "value": 0
+        },
+        {
+          "name": "Skip",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Revenue_Management.ItemChoiceType1",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Rate_Adjustment_Amount",
+          "value": 0
+        },
+        {
+          "name": "Rate_Adjustment_Percent",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Revenue_Management.ItemChoiceType2",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Amount",
+          "value": 0
+        },
+        {
+          "name": "Percent",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Revenue_Management.ItemChoiceType3",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Minimum_Amount",
+          "value": 0
+        },
+        {
+          "name": "Minimum_Count",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Revenue_Management.Item1ChoiceType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Day_of_Month",
+          "value": 0
+        },
+        {
+          "name": "Day_of_the_Week_Reference",
+          "value": 1
+        },
+        {
+          "name": "Use_From_Date",
+          "value": 2
+        },
+        {
+          "name": "Use_To_Date",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Revenue_Management.ItemChoiceType4",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Control_by_Award_Entry_Period",
+          "value": 0
+        },
+        {
+          "name": "Control_by_Duration",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Resource_Management.ItemChoiceType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Auto_Complete",
+          "value": 0
+        },
+        {
+          "name": "Skip",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Resource_Management.Item1ChoiceType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Text_for_Default_Supplier_Payment_Memo",
+          "value": 0
+        },
+        {
+          "name": "Use_Invoice_Memo_as_Default_Supplier_Payment_Memo",
+          "value": 1
+        },
+        {
+          "name": "Use_Supplier_Connection_Memo",
+          "value": 2
+        },
+        {
+          "name": "Use_Supplier_Reference_as_Default_Supplier_Payment_Memo",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Resource_Management.ItemsChoiceType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Filter_Boolean",
+          "value": 0
+        },
+        {
+          "name": "Filter_Date",
+          "value": 1
+        },
+        {
+          "name": "Filter_DateTimeZone",
+          "value": 2
+        },
+        {
+          "name": "Filter_Number",
+          "value": 3
+        },
+        {
+          "name": "Filter_Text",
+          "value": 4
+        },
+        {
+          "name": "Filter_Time",
+          "value": 5
+        },
+        {
+          "name": "Target_External_Field_Reference",
+          "value": 6
+        },
+        {
+          "name": "Target_Instance_Reference",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Resource_Management.Item1ChoiceType1",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Fixed_Contract",
+          "value": 0
+        },
+        {
+          "name": "Variable_Contract",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Resource_Management.ItemChoiceType1",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Fully_Sourced",
+          "value": 0
+        },
+        {
+          "name": "Has_Unsourced_Lines",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Resource_Management.ItemChoiceType2",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Request_Criteria",
+          "value": 0
+        },
+        {
+          "name": "Request_References",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Resource_Management.ItemChoiceType3",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Allow_All_Suppliers",
+          "value": 0
+        },
+        {
+          "name": "From_Supplier_List_Only",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Resource_Management.ItemChoiceType4",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Prepaid_Spend_Amortization_Schedule_ID",
+          "value": 0
+        },
+        {
+          "name": "Supplier_Invoice_ID",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Resource_Management.ItemChoiceType5",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Billable",
+          "value": 0
+        },
+        {
+          "name": "Both_Billable_and_NonBillable",
+          "value": 1
+        },
+        {
+          "name": "NonBillable",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Resource_Management.Item1ChoiceType2",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Both_Capital_and_NonCapital",
+          "value": 0
+        },
+        {
+          "name": "Capital",
+          "value": 1
+        },
+        {
+          "name": "NonCapital",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Resource_Management.ItemChoiceType6",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Resulting_Buyer_Reference",
+          "value": 0
+        },
+        {
+          "name": "Use_Requisition_Sourcing_Buyer",
+          "value": 1
+        },
+        {
+          "name": "Use_Submitted_by_Worker_on_Requisition_as_Buyer",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Resource_Management.ItemChoiceType7",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Request_Criteria",
+          "value": 0
+        },
+        {
+          "name": "Request_References",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Resource_Management.ItemChoiceType8",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Amount_Based_Line",
+          "value": 0
+        },
+        {
+          "name": "Quantity_Based_Line",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Resource_Management.ItemChoiceType9",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "ShipTo_Address_Customer_Account_Number",
+          "value": 0
+        },
+        {
+          "name": "ShipTo_Address_Global_Location_Number",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Resource_Management.ItemChoiceType10",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Deliver_To_Location_Customer_Account_Number",
+          "value": 0
+        },
+        {
+          "name": "Deliver_To_Location_Global_Location_Number",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Resource_Management.ItemChoiceType11",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Request_Criteria",
+          "value": 0
+        },
+        {
+          "name": "Request_References",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Resource_Management.ItemsChoiceType1",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Not_Shared",
+          "value": 0
+        },
+        {
+          "name": "Public",
+          "value": 1
+        },
+        {
+          "name": "Security_Group_for_Template_Reference",
+          "value": 2
+        },
+        {
+          "name": "User_Reference",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Resource_Management.ItemChoiceType12",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Not_Shared",
+          "value": 0
+        },
+        {
+          "name": "Share_with_Users_and_Groups",
+          "value": 1
+        },
+        {
+          "name": "Shared",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Recruiting.ItemChoiceType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Auto_Complete",
+          "value": 0
+        },
+        {
+          "name": "Skip",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Recruiting.ItemChoiceType1",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Primary_Compensation_Basis",
+          "value": 0
+        },
+        {
+          "name": "Primary_Compensation_Basis_Amount_Change",
+          "value": 1
+        },
+        {
+          "name": "Primary_Compensation_Basis_Percent_Change",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Recruiting.ItemChoiceType2",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Amount",
+          "value": 0
+        },
+        {
+          "name": "Amount_Change",
+          "value": 1
+        },
+        {
+          "name": "Percent_Change",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Recruiting.ItemChoiceType3",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Amount",
+          "value": 0
+        },
+        {
+          "name": "Percent",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Recruiting.ItemChoiceType4",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Individual_Target_Amount",
+          "value": 0
+        },
+        {
+          "name": "Individual_Target_Percent",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Recruiting.ItemChoiceType5",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Individual_Target_Amount",
+          "value": 0
+        },
+        {
+          "name": "Individual_Target_Percent",
+          "value": 1
+        },
+        {
+          "name": "Individual_Target_Shares",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Recruiting.ItemChoiceType6",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Primary_Compensation_Basis",
+          "value": 0
+        },
+        {
+          "name": "Primary_Compensation_Basis_Amount_Change",
+          "value": 1
+        },
+        {
+          "name": "Primary_Compensation_Basis_Percent_Change",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Recruiting.ItemChoiceType7",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Social_Network_Account_URL",
+          "value": 0
+        },
+        {
+          "name": "Social_Network_Account_User_Name",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Recruiting.ItemChoiceType8",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Disposition_Step_Reference",
+          "value": 0
+        },
+        {
+          "name": "Next_Step_Reference",
+          "value": 1
+        },
+        {
+          "name": "Start_Parallel_Stage_Reference",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Recruiting.ItemChoiceType9",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Job_Application_Event_Reference",
+          "value": 0
+        },
+        {
+          "name": "Job_Application_Reference",
+          "value": 1
+        },
+        {
+          "name": "Staffing_Event_Reference",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Recruiting.ItemChoiceType10",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Amount",
+          "value": 0
+        },
+        {
+          "name": "Percent",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Recruiting.ItemChoiceType11",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Grant_Amount",
+          "value": 0
+        },
+        {
+          "name": "Grant_Percent",
+          "value": 1
+        },
+        {
+          "name": "Shares_Granted",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Performance_Management.ItemChoiceType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Auto_Complete",
+          "value": 0
+        },
+        {
+          "name": "Skip",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Payroll_Interface.ItemChoiceType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Distribution_Amount",
+          "value": 0
+        },
+        {
+          "name": "Distribution_Balance",
+          "value": 1
+        },
+        {
+          "name": "Distribution_Percentage",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Payroll_GBR.ItemChoiceType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Opt_In",
+          "value": 0
+        },
+        {
+          "name": "Opt_Out_during_Postponement",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Payroll_FRA.ItemChoiceType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Employee_Social_Security_Number",
+          "value": 0
+        },
+        {
+          "name": "Employee_Temporary_Number",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Payroll_CAN.ItemChoiceType1",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Amount_as_Percent",
+          "value": 0
+        },
+        {
+          "name": "Order_Form_Amount",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Payroll_CAN.ItemChoiceType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Amended_Order",
+          "value": 0
+        },
+        {
+          "name": "Original_Order",
+          "value": 1
+        },
+        {
+          "name": "Termination_Order",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Payroll_CAN.ItemChoiceType2",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Identification_Number",
+          "value": 0
+        },
+        {
+          "name": "Payroll_Account_Number",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Payroll.ItemChoiceType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Pay_Period_Amount",
+          "value": 0
+        },
+        {
+          "name": "Pay_Period_Amount_as_Percent",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Payroll.Item1ChoiceType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Withholding_Order_Amount",
+          "value": 0
+        },
+        {
+          "name": "Withholding_Order_Amount_as_Percent",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Payroll.ItemChoiceType1",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Chapter_13",
+          "value": 0
+        },
+        {
+          "name": "Chapter_7",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Payroll.ItemChoiceType3",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Amount_as_Percent",
+          "value": 0
+        },
+        {
+          "name": "Pay_Period_Amount_Override",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Payroll.ItemChoiceType2",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Amended_Order",
+          "value": 0
+        },
+        {
+          "name": "Original_Order",
+          "value": 1
+        },
+        {
+          "name": "Termination_Order",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Moments.ItemsChoiceType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Filter_Boolean",
+          "value": 0
+        },
+        {
+          "name": "Filter_Date",
+          "value": 1
+        },
+        {
+          "name": "Filter_DateTimeZone",
+          "value": 2
+        },
+        {
+          "name": "Filter_Number",
+          "value": 3
+        },
+        {
+          "name": "Filter_Text",
+          "value": 4
+        },
+        {
+          "name": "Filter_Time",
+          "value": 5
+        },
+        {
+          "name": "Target_External_Field_Reference",
+          "value": 6
+        },
+        {
+          "name": "Target_Instance_Reference",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Learning.ItemsChoiceType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Filter_Boolean",
+          "value": 0
+        },
+        {
+          "name": "Filter_Date",
+          "value": 1
+        },
+        {
+          "name": "Filter_DateTimeZone",
+          "value": 2
+        },
+        {
+          "name": "Filter_Number",
+          "value": 3
+        },
+        {
+          "name": "Filter_Text",
+          "value": 4
+        },
+        {
+          "name": "Filter_Time",
+          "value": 5
+        },
+        {
+          "name": "Target_External_Field_Reference",
+          "value": 6
+        },
+        {
+          "name": "Target_Instance_Reference",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Learning.Item1ChoiceType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "All_Previous_Completions",
+          "value": 0
+        },
+        {
+          "name": "AsOf_Date",
+          "value": 1
+        },
+        {
+          "name": "Within_Date_Range",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Interview_Feedback__Do_Not_Use_.ItemChoiceType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Disposition_Step_Reference",
+          "value": 0
+        },
+        {
+          "name": "Next_Step_Reference",
+          "value": 1
+        },
+        {
+          "name": "Start_Parallel_Stage_Reference",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Integrations.ItemsChoiceType1",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Boolean",
+          "value": 0
+        },
+        {
+          "name": "Business_Object_Instance_Reference",
+          "value": 1
+        },
+        {
+          "name": "Currency",
+          "value": 2
+        },
+        {
+          "name": "Date",
+          "value": 3
+        },
+        {
+          "name": "DateTime",
+          "value": 4
+        },
+        {
+          "name": "External_Field_Reference",
+          "value": 5
+        },
+        {
+          "name": "Integration_Parameter_Reference",
+          "value": 6
+        },
+        {
+          "name": "Numeric",
+          "value": 7
+        },
+        {
+          "name": "Report_Prompt_Reference",
+          "value": 8
+        },
+        {
+          "name": "Text",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Integrations.ItemsChoiceType3",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Business_Process_Type_Excluded_From_Subscription_Reference",
+          "value": 0
+        },
+        {
+          "name": "Specific_Transaction_Type_for_Suscription_Reference",
+          "value": 1
+        },
+        {
+          "name": "Subscribe_to_all_Business_Processes",
+          "value": 2
+        },
+        {
+          "name": "Subscribe_to_all_Transaction_Types",
+          "value": 3
+        },
+        {
+          "name": "Transaction_Log_Type_Excluded_from_Subscription_Reference",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Integrations.ItemsChoiceType2",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Boolean",
+          "value": 0
+        },
+        {
+          "name": "Business_Object_Instance_Reference",
+          "value": 1
+        },
+        {
+          "name": "Currency",
+          "value": 2
+        },
+        {
+          "name": "Date",
+          "value": 3
+        },
+        {
+          "name": "DateTime",
+          "value": 4
+        },
+        {
+          "name": "Date_from_DateTimeZone",
+          "value": 5
+        },
+        {
+          "name": "External_Field_Reference",
+          "value": 6
+        },
+        {
+          "name": "Integration_Attribute_Reference",
+          "value": 7
+        },
+        {
+          "name": "Launch_Parameter_Reference",
+          "value": 8
+        },
+        {
+          "name": "Numeric",
+          "value": 9
+        },
+        {
+          "name": "Text",
+          "value": 10
+        },
+        {
+          "name": "Time",
+          "value": 11
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Integrations.ItemsChoiceType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "All_Business_Processes",
+          "value": 0
+        },
+        {
+          "name": "All_Transaction_Types",
+          "value": 1
+        },
+        {
+          "name": "Excluded_Business_Process_Type_Reference",
+          "value": 2
+        },
+        {
+          "name": "Excluded_Transaction_Log_Type_Reference",
+          "value": 3
+        },
+        {
+          "name": "Included_Transaction_Log_Type_Reference",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Integrations.ItemsChoiceType4",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Boolean",
+          "value": 0
+        },
+        {
+          "name": "Business_Object_Instance_Reference",
+          "value": 1
+        },
+        {
+          "name": "Currency",
+          "value": 2
+        },
+        {
+          "name": "Date",
+          "value": 3
+        },
+        {
+          "name": "DateTime",
+          "value": 4
+        },
+        {
+          "name": "External_Field_Content",
+          "value": 5
+        },
+        {
+          "name": "Numeric",
+          "value": 6
+        },
+        {
+          "name": "Text",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Integrations.ItemsChoiceType5",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Excluded_Business_Process_Type_Reference",
+          "value": 0
+        },
+        {
+          "name": "Excluded_Transaction_Log_Type_Reference",
+          "value": 1
+        },
+        {
+          "name": "Included_Transaction_Log_Type_Reference",
+          "value": 2
+        },
+        {
+          "name": "Subscribe_to_all_Business_Processes",
+          "value": 3
+        },
+        {
+          "name": "Subscribe_to_all_Transaction_Types",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Integrations.ItemChoiceType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Data_Source",
+          "value": 0
+        },
+        {
+          "name": "File_Utility",
+          "value": 1
+        },
+        {
+          "name": "Transformation",
+          "value": 2
+        },
+        {
+          "name": "Transport_Protocol",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Human_Resources.ItemChoiceType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Contingent_Worker_ID",
+          "value": 0
+        },
+        {
+          "name": "Employee_ID",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Human_Resources.ItemChoiceType1",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Exclude_Active_Locations",
+          "value": 0
+        },
+        {
+          "name": "Exclude_Inactive_Locations",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Human_Resources.ItemChoiceType2",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Auto_Complete",
+          "value": 0
+        },
+        {
+          "name": "Skip",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Financial_Management.ItemChoiceType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Auto_Complete",
+          "value": 0
+        },
+        {
+          "name": "Skip",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Financial_Management.ItemChoiceType1",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "NonTaxable",
+          "value": 0
+        },
+        {
+          "name": "Taxable",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Financial_Management.ItemChoiceType2",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Enter_by_Duration",
+          "value": 0
+        },
+        {
+          "name": "Fiscal_Summary_Schedule_Reference",
+          "value": 1
+        },
+        {
+          "name": "Plan_Entry_by_Period",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Financial_Management.ItemsChoiceType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Dimensions_To_Exclude_Reference",
+          "value": 0
+        },
+        {
+          "name": "Dimensions_To_Include_Reference",
+          "value": 1
+        },
+        {
+          "name": "Include_All_Members",
+          "value": 2
+        },
+        {
+          "name": "Include_Based_on_Award",
+          "value": 3
+        },
+        {
+          "name": "Include_Based_on_Grant",
+          "value": 4
+        },
+        {
+          "name": "Include_Based_on_Project",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Financial_Management.ItemsChoiceType1",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Filter_Boolean",
+          "value": 0
+        },
+        {
+          "name": "Filter_Date",
+          "value": 1
+        },
+        {
+          "name": "Filter_DateTimeZone",
+          "value": 2
+        },
+        {
+          "name": "Filter_Number",
+          "value": 3
+        },
+        {
+          "name": "Filter_Text",
+          "value": 4
+        },
+        {
+          "name": "Filter_Time",
+          "value": 5
+        },
+        {
+          "name": "Target_External_Field_Reference",
+          "value": 6
+        },
+        {
+          "name": "Target_Instance_Reference",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Financial_Management.ItemChoiceType3",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Keep_Debit_Credit_and_Reverse_Sign",
+          "value": 0
+        },
+        {
+          "name": "Reverse_Debit_Credit",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Financial_Management.ItemChoiceType4",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Translated_Credit_Amount",
+          "value": 0
+        },
+        {
+          "name": "Translated_Debit_Amount",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Financial_Management.ItemChoiceType5",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Allowable_Costs",
+          "value": 0
+        },
+        {
+          "name": "Unallowable_Costs",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Financial_Management.ItemChoiceType6",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Keep_Debit_Credit_and_Reverse_Sign",
+          "value": 0
+        },
+        {
+          "name": "Reverse_Debit_Credit",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Compensation_Review.ItemChoiceType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Allowance_Target_Amount_Proposed",
+          "value": 0
+        },
+        {
+          "name": "Allowance_Target_Percent_Proposed",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Compensation_Review.ItemChoiceType1",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Pool_Amount",
+          "value": 0
+        },
+        {
+          "name": "Unit_Pool_Allocated",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Compensation_Review.Item1ChoiceType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Remove_Pool_Amount_for_Holdback",
+          "value": 0
+        },
+        {
+          "name": "Remove_Pool_Units_for_Holdback",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Compensation_Review.Item2ChoiceType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Add_Pool_Amount_for_Reserve",
+          "value": 0
+        },
+        {
+          "name": "Add_Pool_Units_for_Reserve",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Compensation_Review.ItemChoiceType2",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Pool_Amount",
+          "value": 0
+        },
+        {
+          "name": "Unit_Pool_Allocated",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Compensation_Review.ItemChoiceType3",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Amount_Pool_Holdback",
+          "value": 0
+        },
+        {
+          "name": "Unit_Pool_Holdback",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Compensation_Review.ItemChoiceType4",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Merit_Amount",
+          "value": 0
+        },
+        {
+          "name": "Merit_Increase_Percent",
+          "value": 1
+        },
+        {
+          "name": "Merit_Increase_Weighted_Percent",
+          "value": 2
+        },
+        {
+          "name": "Merit_New_Pay_Amount",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Compensation_Review.ItemChoiceType5",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Promotion_Amount",
+          "value": 0
+        },
+        {
+          "name": "Promotion_New_Pay_Amount",
+          "value": 1
+        },
+        {
+          "name": "Promotion_Percent",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Compensation_Review.ItemChoiceType6",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Additional_Adjustment_Amount",
+          "value": 0
+        },
+        {
+          "name": "Additional_Adjustment_New_Pay_Amount",
+          "value": 1
+        },
+        {
+          "name": "Additional_Adjustment_Percent",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Compensation_Review.ItemChoiceType7",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Bonus_Amount",
+          "value": 0
+        },
+        {
+          "name": "Bonus_Factor_Percent",
+          "value": 1
+        },
+        {
+          "name": "Bonus_Percent",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Compensation_Review.Item1ChoiceType1",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Bonus_Target_Amount_Proposed",
+          "value": 0
+        },
+        {
+          "name": "Bonus_Target_Percent_Proposed",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Compensation_Review.ItemChoiceType8",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Lump_Sum_Amount",
+          "value": 0
+        },
+        {
+          "name": "Lump_Sum_Percent",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Compensation_Review.ItemChoiceType9",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Stock_Amount",
+          "value": 0
+        },
+        {
+          "name": "Stock_Factor_Percent",
+          "value": 1
+        },
+        {
+          "name": "Stock_Percent",
+          "value": 2
+        },
+        {
+          "name": "Stock_Units",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Compensation_Review.Item1ChoiceType2",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Stock_Target_Amount_Proposed",
+          "value": 0
+        },
+        {
+          "name": "Stock_Target_Percent_Proposed",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Compensation_Review.ItemChoiceType10",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Allowance_Target_Amount_Proposed",
+          "value": 0
+        },
+        {
+          "name": "Allowance_Target_Percent_Proposed",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Compensation.ItemChoiceType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Amount",
+          "value": 0
+        },
+        {
+          "name": "Percent",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Compensation.ItemChoiceType1",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Amount_Change",
+          "value": 0
+        },
+        {
+          "name": "New_Amount",
+          "value": 1
+        },
+        {
+          "name": "Percent_Change",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Compensation.ItemChoiceType2",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Amount",
+          "value": 0
+        },
+        {
+          "name": "Percent",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Compensation.ItemChoiceType3",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Primary_Compensation_Basis",
+          "value": 0
+        },
+        {
+          "name": "Primary_Compensation_Basis_Amount_Change",
+          "value": 1
+        },
+        {
+          "name": "Primary_Compensation_Basis_Percent_Change",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Compensation.ItemChoiceType4",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Amount",
+          "value": 0
+        },
+        {
+          "name": "Amount_Change",
+          "value": 1
+        },
+        {
+          "name": "Percent_Change",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Compensation.ItemChoiceType5",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Amount",
+          "value": 0
+        },
+        {
+          "name": "Percent",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Compensation.ItemChoiceType6",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Individual_Target_Amount",
+          "value": 0
+        },
+        {
+          "name": "Individual_Target_Percent",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Compensation.ItemChoiceType7",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Individual_Target_Amount",
+          "value": 0
+        },
+        {
+          "name": "Individual_Target_Percent",
+          "value": 1
+        },
+        {
+          "name": "Individual_Target_Shares",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Compensation.ItemChoiceType8",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Compensation_Matrix_Amount_Based",
+          "value": 0
+        },
+        {
+          "name": "Compensation_Matrix_Nonweighted_Percent_Based",
+          "value": 1
+        },
+        {
+          "name": "Compensation_Matrix_Weighted_Percent_Based",
+          "value": 2
+        },
+        {
+          "name": "Name",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Compensation.ItemChoiceType9",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Grant_Amount",
+          "value": 0
+        },
+        {
+          "name": "Grant_Percent",
+          "value": 1
+        },
+        {
+          "name": "Shares_Granted",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Compensation.ItemsChoiceType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Filter_Boolean",
+          "value": 0
+        },
+        {
+          "name": "Filter_Date",
+          "value": 1
+        },
+        {
+          "name": "Filter_DateTimeZone",
+          "value": 2
+        },
+        {
+          "name": "Filter_Number",
+          "value": 3
+        },
+        {
+          "name": "Filter_Text",
+          "value": 4
+        },
+        {
+          "name": "Filter_Time",
+          "value": 5
+        },
+        {
+          "name": "Target_External_Field_Reference",
+          "value": 6
+        },
+        {
+          "name": "Target_Instance_Reference",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Compensation.ItemChoiceType10",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Accelerator_Amount",
+          "value": 0
+        },
+        {
+          "name": "Accelerator_Percent",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Compensation.ItemChoiceType11",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Assigned_Amount",
+          "value": 0
+        },
+        {
+          "name": "Assigned_Quantity",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Compensation.ItemChoiceType12",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Primary_Compensation_Basis",
+          "value": 0
+        },
+        {
+          "name": "Primary_Compensation_Basis_Amount_Change",
+          "value": 1
+        },
+        {
+          "name": "Primary_Compensation_Basis_Percent_Change",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Compensation.ItemChoiceType13",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Compensation_Basis_Range",
+          "value": 0
+        },
+        {
+          "name": "Service_Length_Basis_Range",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Compensation.Item1ChoiceType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Duration_Matrix_Entry_Type",
+          "value": 0
+        },
+        {
+          "name": "Length_of_Service_Matrix_Entry_Type",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Compensation.ItemChoiceType14",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Primary_Compensation_Basis",
+          "value": 0
+        },
+        {
+          "name": "Primary_Compensation_Basis_Amount_Change",
+          "value": 1
+        },
+        {
+          "name": "Primary_Compensation_Basis_Percent_Change",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Cash_Management.ItemChoiceType1",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Auto_Complete",
+          "value": 0
+        },
+        {
+          "name": "Skip",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Cash_Management.ItemChoiceType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Deposit",
+          "value": 0
+        },
+        {
+          "name": "Withdrawal",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Cash_Management.ItemChoiceType2",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Distribution_Amount",
+          "value": 0
+        },
+        {
+          "name": "Distribution_Balance",
+          "value": 1
+        },
+        {
+          "name": "Distribution_Percentage",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Cash_Management.ItemChoiceType3",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Deposit",
+          "value": 0
+        },
+        {
+          "name": "Withdrawal",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Benefits_Administration.ItemChoiceType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Election_Amount",
+          "value": 0
+        },
+        {
+          "name": "Election_Percentage",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Benefits_Administration.ItemChoiceType1",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Contingent_Percentage",
+          "value": 0
+        },
+        {
+          "name": "Primary_Percentage",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Benefits_Administration.ItemChoiceType4",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Additional_Benefits_Flat_Contribution_Amount",
+          "value": 0
+        },
+        {
+          "name": "Additional_Benefits_Percentage_Contribution_Value",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Benefits_Administration.ItemChoiceType2",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Contingent_Percentage",
+          "value": 0
+        },
+        {
+          "name": "Primary_Percentage",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Benefits_Administration.ItemChoiceType3",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Election_Amount",
+          "value": 0
+        },
+        {
+          "name": "Election_Percentage",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Benefits_Administration.ItemChoiceType5",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Employee_Contribution_Amount",
+          "value": 0
+        },
+        {
+          "name": "Employee_Contribution_Percentage",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Benefits_Administration.ItemChoiceType6",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Election_Amount",
+          "value": 0
+        },
+        {
+          "name": "Election_Percentage",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Benefits_Administration.ItemChoiceType7",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Approve_for_selected",
+          "value": 0
+        },
+        {
+          "name": "Deny_for_selected",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Academic_Foundation.ItemChoiceType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "User_Name",
+          "value": 0
+        },
+        {
+          "name": "Web_Address",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Absence_Management.ItemChoiceType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Auto_Complete",
+          "value": 0
+        },
+        {
+          "name": "Skip",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Absence_Management.ItemChoiceType1",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Amount",
+          "value": 0
+        },
+        {
+          "name": "Percent",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Absence_Management.ItemChoiceType2",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Individual_Target_Amount",
+          "value": 0
+        },
+        {
+          "name": "Individual_Target_Percent",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "UiPath.Workday.Absence_Management.ItemChoiceType3",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Individual_Target_Amount",
+          "value": 0
+        },
+        {
+          "name": "Individual_Target_Percent",
+          "value": 1
+        },
+        {
+          "name": "Individual_Target_Shares",
+          "value": 2
+        }
+      ]
+    }
+  ],
+  "namespaceMappings": []
+}

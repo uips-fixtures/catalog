@@ -1,0 +1,497 @@
+{
+  "schema": {
+    "id": "activity-catalog",
+    "version": "v0.3"
+  },
+  "source": {
+    "kind": "nuget-package",
+    "id": "System.Security.AccessControl",
+    "version": "4.7.0",
+    "feedUrl": null,
+    "authors": "Microsoft",
+    "projectUrl": "https://github.com/dotnet/corefx",
+    "description": "Provides base classes that enable managing access and audit control lists on securable objects.\n\nCommonly Used Types:\nSystem.Security.AccessControl.AccessRule\nSystem.Security.AccessControl.AuditRule\nSystem.Security.AccessControl.ObjectAccessRule\nSystem.Security.AccessControl.ObjectAuditRule\nSystem.Security.AccessControl.ObjectSecurity\n \nWhen using NuGet 3.x this package requires at least version 3.4.",
+    "license": "MIT",
+    "tags": null,
+    "packageTypes": []
+  },
+  "generatedAt": "2026-04-10T09:21:17Z",
+  "activities": [],
+  "enums": [
+    {
+      "fullName": "System.Security.AccessControl.AccessControlActions",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "View",
+          "value": 1
+        },
+        {
+          "name": "Change",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "System.Security.AccessControl.AccessControlModification",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Add",
+          "value": 0
+        },
+        {
+          "name": "Set",
+          "value": 1
+        },
+        {
+          "name": "Reset",
+          "value": 2
+        },
+        {
+          "name": "Remove",
+          "value": 3
+        },
+        {
+          "name": "RemoveAll",
+          "value": 4
+        },
+        {
+          "name": "RemoveSpecific",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "fullName": "System.Security.AccessControl.AccessControlSections",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Audit",
+          "value": 1
+        },
+        {
+          "name": "Access",
+          "value": 2
+        },
+        {
+          "name": "Owner",
+          "value": 4
+        },
+        {
+          "name": "Group",
+          "value": 8
+        },
+        {
+          "name": "All",
+          "value": 15
+        }
+      ]
+    },
+    {
+      "fullName": "System.Security.AccessControl.AccessControlType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Allow",
+          "value": 0
+        },
+        {
+          "name": "Deny",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "System.Security.AccessControl.AceFlags",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "ObjectInherit",
+          "value": 1
+        },
+        {
+          "name": "ContainerInherit",
+          "value": 2
+        },
+        {
+          "name": "NoPropagateInherit",
+          "value": 4
+        },
+        {
+          "name": "InheritOnly",
+          "value": 8
+        },
+        {
+          "name": "InheritanceFlags",
+          "value": 15
+        },
+        {
+          "name": "Inherited",
+          "value": 16
+        },
+        {
+          "name": "SuccessfulAccess",
+          "value": 64
+        },
+        {
+          "name": "FailedAccess",
+          "value": 128
+        },
+        {
+          "name": "AuditFlags",
+          "value": 192
+        }
+      ]
+    },
+    {
+      "fullName": "System.Security.AccessControl.AceQualifier",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "AccessAllowed",
+          "value": 0
+        },
+        {
+          "name": "AccessDenied",
+          "value": 1
+        },
+        {
+          "name": "SystemAudit",
+          "value": 2
+        },
+        {
+          "name": "SystemAlarm",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "fullName": "System.Security.AccessControl.AceType",
+      "underlyingType": "System.Byte",
+      "members": [
+        {
+          "name": "AccessAllowed",
+          "value": 0
+        },
+        {
+          "name": "AccessDenied",
+          "value": 1
+        },
+        {
+          "name": "SystemAudit",
+          "value": 2
+        },
+        {
+          "name": "SystemAlarm",
+          "value": 3
+        },
+        {
+          "name": "AccessAllowedCompound",
+          "value": 4
+        },
+        {
+          "name": "AccessAllowedObject",
+          "value": 5
+        },
+        {
+          "name": "AccessDeniedObject",
+          "value": 6
+        },
+        {
+          "name": "SystemAuditObject",
+          "value": 7
+        },
+        {
+          "name": "SystemAlarmObject",
+          "value": 8
+        },
+        {
+          "name": "AccessAllowedCallback",
+          "value": 9
+        },
+        {
+          "name": "AccessDeniedCallback",
+          "value": 10
+        },
+        {
+          "name": "AccessAllowedCallbackObject",
+          "value": 11
+        },
+        {
+          "name": "AccessDeniedCallbackObject",
+          "value": 12
+        },
+        {
+          "name": "SystemAuditCallback",
+          "value": 13
+        },
+        {
+          "name": "SystemAlarmCallback",
+          "value": 14
+        },
+        {
+          "name": "SystemAuditCallbackObject",
+          "value": 15
+        },
+        {
+          "name": "MaxDefinedAceType",
+          "value": 16
+        },
+        {
+          "name": "SystemAlarmCallbackObject",
+          "value": 16
+        }
+      ]
+    },
+    {
+      "fullName": "System.Security.AccessControl.AuditFlags",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Success",
+          "value": 1
+        },
+        {
+          "name": "Failure",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "System.Security.AccessControl.CompoundAceType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Impersonation",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "fullName": "System.Security.AccessControl.ControlFlags",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "OwnerDefaulted",
+          "value": 1
+        },
+        {
+          "name": "GroupDefaulted",
+          "value": 2
+        },
+        {
+          "name": "DiscretionaryAclPresent",
+          "value": 4
+        },
+        {
+          "name": "DiscretionaryAclDefaulted",
+          "value": 8
+        },
+        {
+          "name": "SystemAclPresent",
+          "value": 16
+        },
+        {
+          "name": "SystemAclDefaulted",
+          "value": 32
+        },
+        {
+          "name": "DiscretionaryAclUntrusted",
+          "value": 64
+        },
+        {
+          "name": "ServerSecurity",
+          "value": 128
+        },
+        {
+          "name": "DiscretionaryAclAutoInheritRequired",
+          "value": 256
+        },
+        {
+          "name": "SystemAclAutoInheritRequired",
+          "value": 512
+        },
+        {
+          "name": "DiscretionaryAclAutoInherited",
+          "value": 1024
+        },
+        {
+          "name": "SystemAclAutoInherited",
+          "value": 2048
+        },
+        {
+          "name": "DiscretionaryAclProtected",
+          "value": 4096
+        },
+        {
+          "name": "SystemAclProtected",
+          "value": 8192
+        },
+        {
+          "name": "RMControlValid",
+          "value": 16384
+        },
+        {
+          "name": "SelfRelative",
+          "value": 32768
+        }
+      ]
+    },
+    {
+      "fullName": "System.Security.AccessControl.InheritanceFlags",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "ContainerInherit",
+          "value": 1
+        },
+        {
+          "name": "ObjectInherit",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "System.Security.AccessControl.ObjectAceFlags",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "ObjectAceTypePresent",
+          "value": 1
+        },
+        {
+          "name": "InheritedObjectAceTypePresent",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "System.Security.AccessControl.PropagationFlags",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "NoPropagateInherit",
+          "value": 1
+        },
+        {
+          "name": "InheritOnly",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "fullName": "System.Security.AccessControl.ResourceType",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Unknown",
+          "value": 0
+        },
+        {
+          "name": "FileObject",
+          "value": 1
+        },
+        {
+          "name": "Service",
+          "value": 2
+        },
+        {
+          "name": "Printer",
+          "value": 3
+        },
+        {
+          "name": "RegistryKey",
+          "value": 4
+        },
+        {
+          "name": "LMShare",
+          "value": 5
+        },
+        {
+          "name": "KernelObject",
+          "value": 6
+        },
+        {
+          "name": "WindowObject",
+          "value": 7
+        },
+        {
+          "name": "DSObject",
+          "value": 8
+        },
+        {
+          "name": "DSObjectAll",
+          "value": 9
+        },
+        {
+          "name": "ProviderDefined",
+          "value": 10
+        },
+        {
+          "name": "WmiGuidObject",
+          "value": 11
+        },
+        {
+          "name": "RegistryWow6432Key",
+          "value": 12
+        }
+      ]
+    },
+    {
+      "fullName": "System.Security.AccessControl.SecurityInfos",
+      "underlyingType": "System.Int32",
+      "members": [
+        {
+          "name": "Owner",
+          "value": 1
+        },
+        {
+          "name": "Group",
+          "value": 2
+        },
+        {
+          "name": "DiscretionaryAcl",
+          "value": 4
+        },
+        {
+          "name": "SystemAcl",
+          "value": 8
+        }
+      ]
+    }
+  ],
+  "namespaceMappings": []
+}

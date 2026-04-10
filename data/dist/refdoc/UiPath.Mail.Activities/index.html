@@ -1,0 +1,3025 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UiPath.Mail.Activities 2.7.12 — Activity Reference</title>
+  <style>
+    :root {
+      --base3:  #fdf6e3; --base2: #eee8d5; --base1: #93a1a1;
+      --base00: #657b83; --base01: #586e75;
+      --orange: #cb4b16; --blue: #268bd2; --cyan: #2aa198;
+      --green:  #859900;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: var(--base3); color: var(--base00);
+      line-height: 1.55; padding: 0 0 4rem;
+    }
+    .topbar {
+      background: var(--orange); color: #fff;
+      padding: 0 2rem; height: 50px;
+      display: flex; align-items: center; gap: 1rem;
+      font-weight: 700; font-size: 1rem;
+    }
+    .topbar a { color: #fff; text-decoration: none; }
+    .topbar-sub { font-weight: 400; font-size: 0.82rem; opacity: 0.82; }
+    .content { max-width: 960px; margin: 0 auto; padding: 2rem 1.5rem 0; }
+    .gen-meta {
+      font-size: 0.78rem; color: var(--base1);
+      border-bottom: 1px solid var(--base2);
+      padding-bottom: 0.75rem; margin-bottom: 2rem;
+    }
+    .pkg-section { margin-bottom: 3rem; }
+    .pkg-heading {
+      font-size: 1.05rem; font-weight: 700;
+      color: var(--base01); border-bottom: 2px solid var(--orange);
+      padding-bottom: 0.3rem; margin-bottom: 1.25rem;
+    }
+    .activity {
+      background: #fff; border: 1px solid var(--base2);
+      border-radius: 4px; padding: 1rem 1.25rem; margin-bottom: 1rem;
+    }
+    .activity-name { font-size: 1rem; font-weight: 700; color: var(--base01); margin-bottom: 0.15rem; }
+    .activity-full { font-family: ui-monospace, monospace; font-size: 0.78rem; color: var(--base1); margin-bottom: 0.5rem; }
+    .activity-desc { font-size: 0.875rem; margin-bottom: 0.75rem; }
+    .badge {
+      display: inline-block; font-size: 0.72rem; padding: 0.1em 0.5em;
+      border-radius: 3px; margin-right: 0.35rem; margin-bottom: 0.5rem;
+      background: var(--base2); color: var(--base01);
+    }
+    .badge-cat { background: #d4edda; color: #155724; }
+    .members-heading {
+      font-size: 0.72rem; text-transform: uppercase;
+      letter-spacing: 0.07em; color: var(--base1);
+      margin: 0.75rem 0 0.35rem;
+    }
+    table { border-collapse: collapse; width: 100%; font-size: 0.82rem; }
+    th, td { text-align: left; padding: 0.3rem 0.6rem; border-bottom: 1px solid var(--base2); }
+    th { background: var(--base2); color: var(--base01); font-size: 0.75rem; font-weight: 600; }
+    tr:last-child td { border-bottom: none; }
+    .dir-in    { color: var(--green);  font-weight: 600; }
+    .dir-out   { color: var(--blue);   font-weight: 600; }
+    .dir-inout { color: var(--cyan);   font-weight: 600; }
+    .req       { color: var(--orange); font-weight: 700; }
+    code { background: var(--base2); padding: 0.1em 0.35em; border-radius: 3px;
+           font-size: 0.85em; font-family: ui-monospace, monospace; }
+    .no-members { font-size: 0.8rem; color: var(--base1); font-style: italic; }
+    .pkg-list { list-style: none; columns: 2; }
+    .pkg-list li { padding: 0.2rem 0; }
+    .pkg-list a { color: var(--blue); text-decoration: none; }
+    .pkg-list a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a href="../../index.html">uips-fixtures</a>
+    <span class="topbar-sub">UiPath.Mail.Activities 2.7.12</span>
+  </header>
+  <div class="content">
+    <p class="gen-meta">
+      31 activities &middot;
+      uips-fixtures catalog v0.3 &middot; generated 2026-04-10T09:21:43Z
+    </p>
+    <div class="activity" id="UiPath-Mail-SMTP-Activities-SendMail">
+      <div class="activity-name">Send SMTP Email</div>
+      <div class="activity-full">UiPath.Mail.SMTP.Activities.SendMail</div>
+<span class="badge badge-cat">Mail.SMTP</span><p class="activity-desc">Sends an email message by using the SMTP protocol. </p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>UseOAuth</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Boolean&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Email</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Password</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>SecurePassword</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Security.SecureString&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Server</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Port</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Int32&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Name</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>From</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Action</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;UiPath.Mail.MailAction&gt;</code></td>
+          <td></td>
+          <td><code>Mono.Cecil.CustomAttributeArgument</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ResourceAttachments</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;IEnumerable&lt;UiPath.Platform.ResourceHandling.IResource&gt;&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ReplyTo</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>IgnoreCRL</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Boolean&gt;</code></td>
+          <td></td>
+          <td><code>False</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ContinueOnError</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Boolean&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Result</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>To</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Cc</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Bcc</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Subject</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Body</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>TimeoutMS</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Int32&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>AttachmentsCollection</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;IEnumerable&lt;String&gt;&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>MailMessage</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Net.Mail.MailMessage&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>ResourceAttachmentList</td>
+          <td>property</td>
+          <td><code>IEnumerable&lt;InArgument&lt;UiPath.Platform.ResourceHandling.IResource&gt;&gt;</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>SecureConnection</td>
+          <td>property</td>
+          <td><code>UiPath.Mail.SecureSocketEncryption</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>IsBodyHtml</td>
+          <td>property</td>
+          <td><code>Boolean</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Files</td>
+          <td>property</td>
+          <td><code>List&lt;InArgument&lt;String&gt;&gt;</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-Mail-POP3-Activities-GetPOP3MailMessages">
+      <div class="activity-name">Get POP3 Email List</div>
+      <div class="activity-full">UiPath.Mail.POP3.Activities.GetPOP3MailMessages</div>
+<span class="badge badge-cat">Mail.POP3</span><p class="activity-desc">Retrieves a POP3 email message from a specified server.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>UseOAuth</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Boolean&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Email</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Password</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>SecurePassword</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Security.SecureString&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Server</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Port</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Int32&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>DeleteMessages</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Boolean&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>IgnoreCRL</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Boolean&gt;</code></td>
+          <td></td>
+          <td><code>False</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>TimeoutMS</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Int32&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Top</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Int32&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Messages</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;List&lt;Net.Mail.MailMessage&gt;&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>SecureConnection</td>
+          <td>property</td>
+          <td><code>UiPath.Mail.SecureSocketEncryption</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-Mail-Outlook-Activities-DeleteOutlookMailMessage">
+      <div class="activity-name">Delete Outlook Desktop Mail Message</div>
+      <div class="activity-full">UiPath.Mail.Outlook.Activities.DeleteOutlookMailMessage</div>
+<span class="badge badge-cat">Mail.Outlook Windows</span><p class="activity-desc">Deletes an email message.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>MailMessage</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Net.Mail.MailMessage&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>PermanentlyDelete</td>
+          <td>property</td>
+          <td><code>Boolean</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-Mail-Outlook-Activities-GetOutlookMailMessages">
+      <div class="activity-name">Get Outlook Desktop Mail Messages</div>
+      <div class="activity-full">UiPath.Mail.Outlook.Activities.GetOutlookMailMessages</div>
+<span class="badge badge-cat">Mail.Outlook Windows</span><p class="activity-desc">Retrieves an email message from Outlook.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>MailFolder</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Account</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Filter</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>FilterByMessageIds</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String[]&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>TimeoutMS</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Int32&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Top</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Int32&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Messages</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;List&lt;Net.Mail.MailMessage&gt;&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>OrderByDate</td>
+          <td>property</td>
+          <td><code>UiPath.Mail.EOrderByDate</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>OnlyUnreadMessages</td>
+          <td>property</td>
+          <td><code>Boolean</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>MarkAsRead</td>
+          <td>property</td>
+          <td><code>Boolean</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-Mail-Outlook-Activities-MarkOutlookMailAsRead">
+      <div class="activity-name">Mark Outlook Desktop Mail As Read/Unread</div>
+      <div class="activity-full">UiPath.Mail.Outlook.Activities.MarkOutlookMailAsRead</div>
+<span class="badge badge-cat">Mail.Outlook Windows</span><p class="activity-desc">Marks the specified mail message as read or unread.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>MailMessage</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Net.Mail.MailMessage&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>MarkAs</td>
+          <td>property</td>
+          <td><code>UiPath.Mail.Activities.Business.MarkMailAs</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-Mail-Outlook-Activities-MoveOutlookMessage">
+      <div class="activity-name">Move Outlook Desktop Mail Message</div>
+      <div class="activity-full">UiPath.Mail.Outlook.Activities.MoveOutlookMessage</div>
+<span class="badge badge-cat">Mail.Outlook Windows</span><p class="activity-desc">Moves an Outlook email message to a specified folder. </p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>MailMessage</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Net.Mail.MailMessage&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Account</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>MailFolder</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-Mail-Outlook-Activities-ReplyToOutlookMailMessage">
+      <div class="activity-name">Reply To Outlook Desktop Mail Message</div>
+      <div class="activity-full">UiPath.Mail.Outlook.Activities.ReplyToOutlookMailMessage</div>
+<span class="badge badge-cat">Mail.Outlook Windows</span><p class="activity-desc">Reply to an email message identified by its UniversalID</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>TimeoutMS</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Int32&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>MailMessage</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Net.Mail.MailMessage&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Body</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>AttachmentsCollection</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;IEnumerable&lt;String&gt;&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ReplyFrom</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>AddTo</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>AddCc</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>AddBcc</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>NewSubject</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>ReplyAll</td>
+          <td>property</td>
+          <td><code>Boolean</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Files</td>
+          <td>property</td>
+          <td><code>List&lt;InArgument&lt;String&gt;&gt;</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Importance</td>
+          <td>property</td>
+          <td><code>UiPath.Mail.MailImportance</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-Mail-Outlook-Activities-SaveOutlookMailMessage">
+      <div class="activity-name">Save Outlook Desktop Mail Message</div>
+      <div class="activity-full">UiPath.Mail.Outlook.Activities.SaveOutlookMailMessage</div>
+<span class="badge badge-cat">Mail.Outlook Windows</span><p class="activity-desc">Saves an Outlook mail message.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>MailMessage</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Net.Mail.MailMessage&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Folder</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>FileName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>ReplaceExisting</td>
+          <td>property</td>
+          <td><code>Boolean</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>SaveAsType</td>
+          <td>property</td>
+          <td><code>UiPath.Mail.Outlook.Enums.ESaveMessageAsType</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-Mail-Outlook-Activities-SendOutlookMail">
+      <div class="activity-name">Send Outlook Desktop Mail Message</div>
+      <div class="activity-full">UiPath.Mail.Outlook.Activities.SendOutlookMail</div>
+<span class="badge badge-cat">Mail.Outlook Windows</span><p class="activity-desc">Sends an email message from Outlook. </p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>Account</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>SentOnBehalfOfName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ReplyTo</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ContinueOnError</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Boolean&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>To</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Cc</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Bcc</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Subject</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Body</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>TimeoutMS</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Int32&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>AttachmentsCollection</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;IEnumerable&lt;String&gt;&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>MailMessage</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Net.Mail.MailMessage&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>IsDraft</td>
+          <td>property</td>
+          <td><code>Boolean</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Importance</td>
+          <td>property</td>
+          <td><code>UiPath.Mail.MailImportance</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Sensitivity</td>
+          <td>property</td>
+          <td><code>UiPath.Mail.MailSensitivity</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>IsBodyHtml</td>
+          <td>property</td>
+          <td><code>Boolean</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Files</td>
+          <td>property</td>
+          <td><code>List&lt;InArgument&lt;String&gt;&gt;</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-Mail-Outlook-Activities-SetOutlookMailCategories">
+      <div class="activity-name">Set Outlook Desktop Mail Categories</div>
+      <div class="activity-full">UiPath.Mail.Outlook.Activities.SetOutlookMailCategories</div>
+<span class="badge badge-cat">Mail.Outlook Windows</span><p class="activity-desc">Associates categories with a mail message.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>MailMessage</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Net.Mail.MailMessage&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Categories</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String[]&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-Mail-LotusNotes-Activities-DeleteLotusNotesMailMessage">
+      <div class="activity-name">Delete IBM Notes Mail Message</div>
+      <div class="activity-full">UiPath.Mail.LotusNotes.Activities.DeleteLotusNotesMailMessage</div>
+<span class="badge badge-cat">Mail.IBM Notes</span><p class="activity-desc">Deletes an IBM Notes email message.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>MailMessage</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Net.Mail.MailMessage&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>FromFolder</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Password</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>SecurePassword</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Security.SecureString&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-Mail-LotusNotes-Activities-GetLotusNotesMailMessages">
+      <div class="activity-name">Get IBM Notes Mail Messages</div>
+      <div class="activity-full">UiPath.Mail.LotusNotes.Activities.GetLotusNotesMailMessages</div>
+<span class="badge badge-cat">Mail.IBM Notes</span><p class="activity-desc">Retrieves emails from the IBM Notes client on which the workflow is deployed</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>Password</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>SecurePassword</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Security.SecureString&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>MailFolder</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>TimeoutMS</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Int32&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Top</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Int32&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Messages</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;List&lt;Net.Mail.MailMessage&gt;&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>GetAttachments</td>
+          <td>property</td>
+          <td><code>Boolean</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-Mail-LotusNotes-Activities-MoveLotusNotesMailMessage">
+      <div class="activity-name">Move IBM Notes Mail Message</div>
+      <div class="activity-full">UiPath.Mail.LotusNotes.Activities.MoveLotusNotesMailMessage</div>
+<span class="badge badge-cat">Mail.IBM Notes</span><p class="activity-desc">Moves an IBM Notes email message to a specified folder.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>MailMessage</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Net.Mail.MailMessage&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>MailFolder</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>FromFolder</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Password</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>SecurePassword</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Security.SecureString&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-Mail-LotusNotes-Activities-SendLotusNotesMailMessage">
+      <div class="activity-name">Send IBM Notes Mail Message</div>
+      <div class="activity-full">UiPath.Mail.LotusNotes.Activities.SendLotusNotesMailMessage</div>
+<span class="badge badge-cat">Mail.IBM Notes</span><p class="activity-desc">Sends an email message by using the IBM Notes client.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>Password</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>SecurePassword</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Security.SecureString&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ContinueOnError</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Boolean&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>To</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Cc</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Bcc</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Subject</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Body</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>TimeoutMS</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Int32&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>AttachmentsCollection</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;IEnumerable&lt;String&gt;&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>MailMessage</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Net.Mail.MailMessage&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>IsBodyHtml</td>
+          <td>property</td>
+          <td><code>Boolean</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Files</td>
+          <td>property</td>
+          <td><code>List&lt;InArgument&lt;String&gt;&gt;</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-Mail-IMAP-Activities-DeleteImapMailMessage">
+      <div class="activity-name">Delete IMAP Email</div>
+      <div class="activity-full">UiPath.Mail.IMAP.Activities.DeleteImapMailMessage</div>
+<span class="badge badge-cat">Mail.IMAP</span><p class="activity-desc">Deletes the given mail message using IMAP.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>UseOAuth</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Boolean&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Email</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Password</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>SecurePassword</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Security.SecureString&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Server</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Port</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Int32&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ClientName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ClientVersion</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>IgnoreCRL</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Boolean&gt;</code></td>
+          <td></td>
+          <td><code>False</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>MailMessage</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Net.Mail.MailMessage&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>FromFolder</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>SecureConnection</td>
+          <td>property</td>
+          <td><code>UiPath.Mail.SecureSocketEncryption</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-Mail-IMAP-Activities-GetIMAPMailMessages">
+      <div class="activity-name">Get IMAP Email List</div>
+      <div class="activity-full">UiPath.Mail.IMAP.Activities.GetIMAPMailMessages</div>
+<span class="badge badge-cat">Mail.IMAP</span><p class="activity-desc">Retrieves an IMAP email message from a specified server.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>UseOAuth</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Boolean&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Email</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Password</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>SecurePassword</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Security.SecureString&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Server</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Port</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Int32&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>MailFolder</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>FilterExpression</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>FilterExpressionCharacterSet</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>DeleteMessages</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Boolean&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>OnlyUnreadMessages</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Boolean&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>MarkAsRead</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Boolean&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ClientName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ClientVersion</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>IgnoreCRL</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Boolean&gt;</code></td>
+          <td></td>
+          <td><code>False</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>TimeoutMS</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Int32&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Top</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Int32&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Messages</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;List&lt;Net.Mail.MailMessage&gt;&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>OrderByDate</td>
+          <td>property</td>
+          <td><code>UiPath.Mail.EOrderByDate</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>SecureConnection</td>
+          <td>property</td>
+          <td><code>UiPath.Mail.SecureSocketEncryption</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-Mail-IMAP-Activities-MoveIMAPMailMessageToFolder">
+      <div class="activity-name">Move IMAP Email</div>
+      <div class="activity-full">UiPath.Mail.IMAP.Activities.MoveIMAPMailMessageToFolder</div>
+<span class="badge badge-cat">Mail.IMAP</span><p class="activity-desc">Moves an IMAP email message to a specified folder. </p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>UseOAuth</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Boolean&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Email</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Password</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>SecurePassword</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Security.SecureString&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Server</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Port</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Int32&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>MailMessage</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Net.Mail.MailMessage&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>MailFolder</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>FromFolder</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ClientName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ClientVersion</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>IgnoreCRL</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Boolean&gt;</code></td>
+          <td></td>
+          <td><code>False</code></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>EnableSSL</td>
+          <td>property</td>
+          <td><code>Boolean</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>SecureConnection</td>
+          <td>property</td>
+          <td><code>UiPath.Mail.SecureSocketEncryption</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-Mail-Exchange-Activities-CreateDraft">
+      <div class="activity-name">Create Exchange Draft</div>
+      <div class="activity-full">UiPath.Mail.Exchange.Activities.CreateDraft</div>
+<span class="badge badge-cat">Mail.Exchange</span><p class="activity-desc">Creates an Exchange draft email message.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>Name</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>From</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>To</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Cc</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Bcc</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Subject</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Body</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>MailMessage</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Net.Mail.MailMessage&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>AttachmentsCollection</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;IEnumerable&lt;String&gt;&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ResourceAttachments</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;IEnumerable&lt;UiPath.Platform.ResourceHandling.IResource&gt;&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Server</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>EmailAutodiscover</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ApplicationId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>DirectoryId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>User</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Password</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>SecurePassword</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Security.SecureString&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Domain</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>TimeoutMS</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Int32&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>IsBodyHtml</td>
+          <td>property</td>
+          <td><code>Boolean</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Files</td>
+          <td>property</td>
+          <td><code>List&lt;InArgument&lt;String&gt;&gt;</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ResourceAttachmentList</td>
+          <td>property</td>
+          <td><code>IEnumerable&lt;InArgument&lt;UiPath.Platform.ResourceHandling.IResource&gt;&gt;</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ExchangeVersion</td>
+          <td>property</td>
+          <td><code>Microsoft.Exchange.WebServices.Data.ExchangeVersion</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>AuthenticationMode</td>
+          <td>property</td>
+          <td><code>UiPath.Mail.Exchange.AuthenticationType</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-Mail-Exchange-Activities-DeleteMail">
+      <div class="activity-name">Delete Exchange Mail Message</div>
+      <div class="activity-full">UiPath.Mail.Exchange.Activities.DeleteMail</div>
+<span class="badge badge-cat">Mail.Exchange</span><p class="activity-desc">Deletes an Exchange email message.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>MailMessage</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Net.Mail.MailMessage&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Server</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>EmailAutodiscover</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ApplicationId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>DirectoryId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>User</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Password</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>SecurePassword</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Security.SecureString&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Domain</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>TimeoutMS</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Int32&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>DeleteMode</td>
+          <td>property</td>
+          <td><code>Microsoft.Exchange.WebServices.Data.DeleteMode</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ExchangeVersion</td>
+          <td>property</td>
+          <td><code>Microsoft.Exchange.WebServices.Data.ExchangeVersion</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>AuthenticationMode</td>
+          <td>property</td>
+          <td><code>UiPath.Mail.Exchange.AuthenticationType</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-Mail-Exchange-Activities-ExchangeScope">
+      <div class="activity-name">Exchange Scope</div>
+      <div class="activity-full">UiPath.Mail.Exchange.Activities.ExchangeScope</div>
+<span class="badge badge-cat">Mail.Exchange</span><p class="activity-desc">Connects to Exchange and provides a scope for other Exchange activities. </p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>Server</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>EmailAutodiscover</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ApplicationId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>DirectoryId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ExistingExchangeService</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Microsoft.Exchange.WebServices.Data.ExchangeService&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>User</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Password</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>SecurePassword</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Security.SecureString&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Domain</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ExchangeService</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;Microsoft.Exchange.WebServices.Data.ExchangeService&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>TimeoutMS</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Int32&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ContinueOnError</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Boolean&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>ExchangeVersion</td>
+          <td>property</td>
+          <td><code>Microsoft.Exchange.WebServices.Data.ExchangeVersion</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>AuthenticationMode</td>
+          <td>property</td>
+          <td><code>UiPath.Mail.Exchange.AuthenticationType</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-Mail-Exchange-Activities-GetExchangeMailMessages">
+      <div class="activity-name">Get Exchange Mail Messages</div>
+      <div class="activity-full">UiPath.Mail.Exchange.Activities.GetExchangeMailMessages</div>
+<span class="badge badge-cat">Mail.Exchange</span><p class="activity-desc">Retrieves an email message from Exchange.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>CustomFolder</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>SharedMailbox</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>GetAttachements</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Boolean&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>IsBodyHtml</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Boolean&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Top</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Int32&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>OnlyUnreadMessages</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Boolean&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>MarkAsRead</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Boolean&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>FilterExpression</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>FilterByMessageIds</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String[]&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Messages</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;List&lt;Net.Mail.MailMessage&gt;&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Server</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>EmailAutodiscover</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ApplicationId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>DirectoryId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>User</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Password</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>SecurePassword</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Security.SecureString&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Domain</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>TimeoutMS</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Int32&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>OrderByDate</td>
+          <td>property</td>
+          <td><code>UiPath.Mail.EOrderByDate</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ExchangeVersion</td>
+          <td>property</td>
+          <td><code>Microsoft.Exchange.WebServices.Data.ExchangeVersion</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>AuthenticationMode</td>
+          <td>property</td>
+          <td><code>UiPath.Mail.Exchange.AuthenticationType</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-Mail-Exchange-Activities-MoveMessageToFolder">
+      <div class="activity-name">Move Message To Folder</div>
+      <div class="activity-full">UiPath.Mail.Exchange.Activities.MoveMessageToFolder</div>
+<span class="badge badge-cat">Mail.Exchange</span><p class="activity-desc">Moves an email message from Exchange to another folder.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>MailMessage</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Net.Mail.MailMessage&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>MailFolder</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>SharedMailbox</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Server</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>EmailAutodiscover</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ApplicationId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>DirectoryId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>User</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Password</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>SecurePassword</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Security.SecureString&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Domain</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>TimeoutMS</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Int32&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>ExchangeVersion</td>
+          <td>property</td>
+          <td><code>Microsoft.Exchange.WebServices.Data.ExchangeVersion</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>AuthenticationMode</td>
+          <td>property</td>
+          <td><code>UiPath.Mail.Exchange.AuthenticationType</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-Mail-Exchange-Activities-SaveExchangeAttachements">
+      <div class="activity-name">Save Exchange Attachments</div>
+      <div class="activity-full">UiPath.Mail.Exchange.Activities.SaveExchangeAttachements</div>
+<span class="badge badge-cat">Mail.Exchange</span><p class="activity-desc">Save Exchange Attachments</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>FolderPath</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>MailMessage</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Net.Mail.MailMessage&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Files</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;IEnumerable&lt;String&gt;&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ResourceAttachments</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;IEnumerable&lt;UiPath.Platform.ResourceHandling.ILocalResource&gt;&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Server</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>EmailAutodiscover</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ApplicationId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>DirectoryId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>User</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Password</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>SecurePassword</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Security.SecureString&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Domain</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>TimeoutMS</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Int32&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>ExchangeVersion</td>
+          <td>property</td>
+          <td><code>Microsoft.Exchange.WebServices.Data.ExchangeVersion</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>AuthenticationMode</td>
+          <td>property</td>
+          <td><code>UiPath.Mail.Exchange.AuthenticationType</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-Mail-Exchange-Activities-SendExchangeMail">
+      <div class="activity-name">Send Exchange Mail Message</div>
+      <div class="activity-full">UiPath.Mail.Exchange.Activities.SendExchangeMail</div>
+<span class="badge badge-cat">Mail.Exchange</span><p class="activity-desc">Sends an email message from Exchange. </p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>To</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Cc</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Bcc</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Subject</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Body</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>MailMessage</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Net.Mail.MailMessage&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Name</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>From</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>SaveCopy</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Boolean&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>AttachmentsCollection</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;IEnumerable&lt;String&gt;&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ResourceAttachments</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;IEnumerable&lt;UiPath.Platform.ResourceHandling.IResource&gt;&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>IsDraft</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Boolean&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Server</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>EmailAutodiscover</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ApplicationId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>DirectoryId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>User</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Password</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>SecurePassword</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Security.SecureString&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Domain</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>TimeoutMS</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Int32&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>IsBodyHtml</td>
+          <td>property</td>
+          <td><code>Boolean</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Files</td>
+          <td>property</td>
+          <td><code>List&lt;InArgument&lt;String&gt;&gt;</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ResourceAttachmentList</td>
+          <td>property</td>
+          <td><code>IEnumerable&lt;InArgument&lt;UiPath.Platform.ResourceHandling.IResource&gt;&gt;</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ExchangeVersion</td>
+          <td>property</td>
+          <td><code>Microsoft.Exchange.WebServices.Data.ExchangeVersion</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>AuthenticationMode</td>
+          <td>property</td>
+          <td><code>UiPath.Mail.Exchange.AuthenticationType</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-Mail-Activities-GetMailMessageFromFile">
+      <div class="activity-name">Get Mail Message from File</div>
+      <div class="activity-full">UiPath.Mail.Activities.GetMailMessageFromFile</div>
+<span class="badge badge-cat">Mail</span><p class="activity-desc">Generate a mail message from an eml file</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>EmailFile</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;UiPath.Platform.ResourceHandling.IResource&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>MailMessage</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;UiPath.Mail.UiPathMailMessage&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-Mail-Activities-SaveMail">
+      <div class="activity-name">Save Email Message</div>
+      <div class="activity-full">UiPath.Mail.Activities.SaveMail</div>
+<span class="badge badge-cat">Mail</span><p class="activity-desc">Saves the email message to the specified path. If the folder doesn&#39;t exist, it is created. If the file name is specified instead, the email is saved in the project folder. Files in the specified folder with the same name as the messages are overwritten.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>MailMessage</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Net.Mail.MailMessage&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>FilePath</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Email</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;UiPath.Platform.ResourceHandling.ILocalResource&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-Mail-Activities-SaveMailAttachments">
+      <div class="activity-name">Save Email Attachments</div>
+      <div class="activity-full">UiPath.Mail.Activities.SaveMailAttachments</div>
+<span class="badge badge-cat">Mail</span><p class="activity-desc">Saves the email message attachments to the specified folder. If the folder doesn&#39;t exist, it is created. If no folder is specified, the downloads are saved in the project folder. Files in the specified folder with the same name as the attachments are overwritten.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>FolderPath</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Message</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Net.Mail.MailMessage&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Attachments</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;IEnumerable&lt;String&gt;&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ResourceAttachments</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;IEnumerable&lt;UiPath.Platform.ResourceHandling.ILocalResource&gt;&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Filter</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>OverwriteExisting</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Boolean&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ExcludeInlineAttachments</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Boolean&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-Mail-Activities-Outlook-OutlookMailMessagesTrigger">
+      <div class="activity-name">Outlook Mail Message Trigger</div>
+      <div class="activity-full">UiPath.Mail.Activities.Outlook.OutlookMailMessagesTrigger</div>
+<span class="badge badge-cat">Mail.Outlook Windows</span><p class="activity-desc">Sets up a trigger to watch for incoming/outgoing mail messages that match a certain criteria.</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>MailFolder</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td><span class="req">&#10003;</span></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Account</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>From</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Cc</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>To</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>SubjectFilter</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BodyFilter</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>MarkAsRead</td>
+          <td>property</td>
+          <td><code>Boolean</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>WhenOutlookIsClosed</td>
+          <td>property</td>
+          <td><code>UiPath.Mail.Outlook.Enums.WhenOutlookIsClosedEnum</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Importance</td>
+          <td>property</td>
+          <td><code>UiPath.Mail.Activities.Triggers.Importance</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Enabled</td>
+          <td>property</td>
+          <td><code>Boolean</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-Mail-Activities-IMAP-NewIMAPEmailReceivedTrigger">
+      <div class="activity-name">IMAP Email Received</div>
+      <div class="activity-full">UiPath.Mail.Activities.IMAP.NewIMAPEmailReceivedTrigger</div>
+<span class="badge badge-cat">Mail.IMAP.Triggers</span><p class="activity-desc">Initiates an automation workflow when a new IMAP email arrives</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>MarkAsRead</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Boolean&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>IncludeAttachments</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;Boolean&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Result</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;Net.Mail.MailMessage&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>JobData</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;UiPath.Mail.Activities.Utils.JobInformation&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Operation</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ObjectName</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>MailFolderBindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>MailFolder</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>WithAttachmentsOnly</td>
+          <td>property</td>
+          <td><code>Boolean</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>BindingsKey</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-Mail-Activities-Business-NewGmailTrigger">
+      <div class="activity-name">New Email Received</div>
+      <div class="activity-full">UiPath.Mail.Activities.Business.NewGmailTrigger</div>
+<p class="activity-desc">Trigger for Gmail emails</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Result</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;Net.Mail.MailMessage&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Operation</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ObjectName</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionAccountName</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>FilterExpression</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="UiPath-Mail-Activities-Business-NewO365EmailTrigger">
+      <div class="activity-name">New Email Received</div>
+      <div class="activity-full">UiPath.Mail.Activities.Business.NewO365EmailTrigger</div>
+<p class="activity-desc">Trigger for O365 Emails</p>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>ConnectionId</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Result</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>OutArgument&lt;Net.Mail.MailMessage&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Operation</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ObjectName</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Connector</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConnectionAccountName</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>FilterExpression</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</body>
+</html>
