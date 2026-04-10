@@ -35,7 +35,8 @@ jobs:
           PAGES = Path("pages/src")
 
           # Wipe stale directories so removed files don't linger
-          for d in ["refdoc", "llms", "schemas"]:
+          # "catalog" held the old set-based JSON bundles — now replaced by llms/
+          for d in ["refdoc", "llms", "schemas", "catalog"]:
               shutil.rmtree(PAGES / d, ignore_errors=True)
 
           # 1. Schemas
