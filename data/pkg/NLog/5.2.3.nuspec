@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>NLog</id>
+    <version>5.2.3</version>
+    <title>NLog for .NET Framework and .NET Standard</title>
+    <authors>Jarek Kowalski,Kim Christensen,Julian Verdurmen</authors>
+    <license type="expression">BSD-3-Clause</license>
+    <licenseUrl>https://licenses.nuget.org/BSD-3-Clause</licenseUrl>
+    <icon>N.png</icon>
+    <projectUrl>https://nlog-project.org/</projectUrl>
+    <description>NLog is a logging platform for .NET with rich log routing and management capabilities.
+NLog supports traditional logging, structured logging and the combination of both.
+
+Supported platforms:
+
+- .NET 5, 6 and 7
+- .NET Core 1, 2 and 3
+- .NET Standard 1.3+ and 2.0+
+- .NET Framework 3.5 - 4.8
+- Xamarin Android + iOS (.NET Standard)
+- Mono 4
+
+For ASP.NET Core, check: https://www.nuget.org/packages/NLog.Web.AspNetCore</description>
+    <releaseNotes>ChangeLog:
+
+- AutoFlushTargetWrapper - Explicit flush should also await when FlushOnConditionOnly (#5308) (@snakefoot)
+- Target precalculate should only perform single IsInitialized check (#5301) (@snakefoot)
+- Target precalculate should only consider relevant layouts (#5300) (@snakefoot)
+- Target precalculate should handle duplicate layouts (#5296) (@snakefoot)
+- MessageLayoutRenderer - Skip Flatten when simple AggregateException (#5299) (@snakefoot)
+- ConfigurationItemFactory - Improve obsolete message for obsoleted factory-properties (#5298) (@snakefoot)
+- Report NLog version on initial configuration assignment (#5291) (@snakefoot)
+- PropertyHelper - SetPropertyFromString allow empty string for nullable-value (#5290) (@snakefoot)
+- Check RequiredParameter should also validate nullable types (#5289) (@snakefoot)
+- FileTarget - FilePathLayout with fixed-filename can translate to absolute path (#5287) (@snakefoot)
+- FileTarget - Cleanup FileSystemWatcher correctly when ArchiveFilePatternToWatch changes (#5279) (@lavige777)
+- Refactor ConditionBasedFilter when-filter to use ternary operator (#5281) (@jokoyoski)
+
+NLog v5.2 changes how to load extensions: https://nlog-project.org/2023/05/30/nlog-5-2-trim-warnings.html
+
+List of major changes in NLog 5.0: https://nlog-project.org/2022/05/16/nlog-5-0-finally-ready.html
+
+Full changelog: https://github.com/NLog/NLog/blob/master/CHANGELOG.md
+
+For all config options and platform support, check https://nlog-project.org/config/</releaseNotes>
+    <copyright>Copyright (c) 2004-2023 NLog Project - https://nlog-project.org/</copyright>
+    <tags>NLog logging log structured tracing logfiles database eventlog console email</tags>
+    <repository type="git" url="https://github.com/NLog/NLog.git" />
+    <dependencies>
+      <group targetFramework=".NETFramework3.5" />
+      <group targetFramework=".NETFramework4.5" />
+      <group targetFramework=".NETFramework4.6" />
+      <group targetFramework=".NETStandard1.3">
+        <dependency id="NETStandard.Library" version="1.6.0" exclude="Build,Analyzers" />
+        <dependency id="System.ComponentModel.Primitives" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.ComponentModel.TypeConverter" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.Data.Common" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.Diagnostics.StackTrace" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.Net.Http" version="4.3.4" exclude="Build,Analyzers" />
+        <dependency id="System.Net.NameResolution" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.Net.Requests" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.Reflection.TypeExtensions" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.Text.RegularExpressions" version="4.3.1" exclude="Build,Analyzers" />
+        <dependency id="System.Xml.XmlDocument" version="4.3.0" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETStandard1.5">
+        <dependency id="NETStandard.Library" version="1.6.0" exclude="Build,Analyzers" />
+        <dependency id="System.ComponentModel.Primitives" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.ComponentModel.TypeConverter" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.Data.Common" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.Diagnostics.Process" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.Diagnostics.StackTrace" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.Diagnostics.TraceSource" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.IO.FileSystem.Watcher" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.Net.Http" version="4.3.4" exclude="Build,Analyzers" />
+        <dependency id="System.Net.NameResolution" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.Net.Requests" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.Reflection.TypeExtensions" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.Runtime.Loader" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.Text.RegularExpressions" version="4.3.1" exclude="Build,Analyzers" />
+        <dependency id="System.Threading.Thread" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.Xml.XmlDocument" version="4.3.0" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETStandard2.0" />
+    </dependencies>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System.Configuration" targetFramework=".NETFramework3.5, .NETFramework4.5, .NETFramework4.6" />
+      <frameworkAssembly assemblyName="System.Core" targetFramework=".NETFramework3.5, .NETFramework4.5, .NETFramework4.6" />
+      <frameworkAssembly assemblyName="System" targetFramework=".NETFramework3.5, .NETFramework4.5, .NETFramework4.6" />
+      <frameworkAssembly assemblyName="System.Xml" targetFramework=".NETFramework3.5, .NETFramework4.5, .NETFramework4.6" />
+      <frameworkAssembly assemblyName="System.IO.Compression" targetFramework=".NETFramework4.5, .NETFramework4.6" />
+    </frameworkAssemblies>
+  </metadata>
+</package>

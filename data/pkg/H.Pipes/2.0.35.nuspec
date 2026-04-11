@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>H.Pipes</id>
+    <version>2.0.35</version>
+    <authors>havendv</authors>
+    <license type="expression">MIT</license>
+    <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
+    <icon>nuget_icon.png</icon>
+    <readme>README.md</readme>
+    <projectUrl>https://github.com/HavenDV/H.Pipes</projectUrl>
+    <description>Features:
+- Create named pipe servers that can handle multiple client connections simultaneously.
+- Send strongly-typed messages between clients and servers: any serializable .NET object can be sent over a pipe and will be automatically serialized/deserialized, including cyclical references and complex object graphs.
+- Async
+- Requires .NET Standard 2.0
+- Supports large messages - up to 300 MiB.
+- Server restart automatically
+- Automatically wait for the release of the pipe for the server, if it is already in use
+- Automatically waiting for a server pipe creating when client connecting
+- Automatic reconnect with a given interval and at each `client.WriteAsync`, if necessary
+- Supports variable formatters, default - BinaryFormatter which uses System.Runtime.Serialization.BinaryFormatter inside
+- Also available ready formatters in separate nuget packages: H.Formatters.Json
+- Supports `PipeAccessRule`'s(see `H.Pipes.AccessControl` nuget package) or more complex code to access using the `PipeServer.PipeStreamInitializeAction` property</description>
+    <releaseNotes>⭐ Last 10 features:
+- feat: Added BinaryFormatter.InternalFormatter as public property. 2022-03-18
+- feat(AccessControl): Enabled PipeApplication.StartAsync for non-windows system without AllowUsersReadWrite. 2022-03-12
+- feat(Inferno): Added net5/net6 targets. Added SupportedOSPlatform attributes. 2022-03-12
+- feat(Inferno): Added EnableEncryption optional exception action. 2022-03-12
+- feat(AccessControl): Added SupportedOSPlatform attribute to SetPipeSecurity. 2022-03-11
+- feat(AccessControl): Added explicit net5.0 and net6.0 target frameworks. 2022-03-11
+- feat: Excluded WaitForPipeDrain call for non-windows platforms. 2022-03-11
+- feat: Added SystemTextJsonFormatter.Options property. 2022-03-06
+- feat: Added connection close if EnableEncryption fails. 2021-12-21
+- feat: Added WaitExchangeAsync use example. 2021-12-20
+
+🐞 Last 10 bug fixes:
+- fix(AccessControl): Fixed NET461 library to use Net Framework NamedPipeServerStream ctor. 2022-03-11
+- fix: Fixed ValidatePublicKey. 2022-03-07
+- fix: Fixed PipeClient.Connection set access. 2021-12-21
+- fix: Fixed problem with multiple server encrypted connections. 2021-12-20
+- fix: Fixed EnableEncryption client/server settings. 2021-12-20
+- fix: Fixed Inferno KeyPair missing disposing. 2021-12-20
+- fix: Fixed some Inferno KeyPair code. 2021-12-20
+- fix: Converted Inferno KeyPair to internal class. 2021-12-20
+- fix: Fixed Inferno namespaces. 2021-12-20
+- fix: Fixed Inferno extensions memory leak. 2021-12-20</releaseNotes>
+    <tags>pipes, named, async, access, control, ipc, serialization, netstandard, netcore, net5, net6</tags>
+    <repository type="git" url="https://github.com/HavenDV/H.Pipes" commit="45e4c3bbdcccd6219dc9cc718ddb8ec90eec538a" />
+    <dependencies>
+      <group targetFramework=".NETFramework4.6.1">
+        <dependency id="H.Formatters.BinaryFormatter" version="2.0.35" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Bcl.AsyncInterfaces" version="6.0.0" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework="net5.0">
+        <dependency id="H.Formatters.BinaryFormatter" version="2.0.35" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework="net6.0">
+        <dependency id="H.Formatters.BinaryFormatter" version="2.0.35" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="H.Formatters.BinaryFormatter" version="2.0.35" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Bcl.AsyncInterfaces" version="6.0.0" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETStandard2.1">
+        <dependency id="H.Formatters.BinaryFormatter" version="2.0.35" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

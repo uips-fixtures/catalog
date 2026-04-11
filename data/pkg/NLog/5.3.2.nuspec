@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>NLog</id>
+    <version>5.3.2</version>
+    <title>NLog for .NET Framework and .NET Standard</title>
+    <authors>Jarek Kowalski,Kim Christensen,Julian Verdurmen</authors>
+    <license type="expression">BSD-3-Clause</license>
+    <licenseUrl>https://licenses.nuget.org/BSD-3-Clause</licenseUrl>
+    <icon>N.png</icon>
+    <projectUrl>https://nlog-project.org/</projectUrl>
+    <description>NLog is a logging platform for .NET with rich log routing and management capabilities.
+NLog supports traditional logging, structured logging and the combination of both.
+
+Supported platforms:
+
+- .NET 5, 6, 7 and 8
+- .NET Core 1, 2 and 3
+- .NET Standard 1.3+ and 2.0+
+- .NET Framework 3.5 - 4.8
+- Xamarin Android + iOS (.NET Standard)
+- Mono 4
+
+For ASP.NET Core, check: https://www.nuget.org/packages/NLog.Web.AspNetCore</description>
+    <releaseNotes>ChangeLog:
+
+NLog v5.3 marks a few exotic API-methods as obsolete, to pave the road for NLog v6.
+
+- Fix NullReferenceException when using LoggingRules with filters and no targets (#5515) (@snakefoot)
+- CallSite can hide single class type using AddCallSiteHiddenClassType (#5313) (@wadebaird)
+- Logging Rule with FinalMinLevel also supports dynamic filters (#5489) (@snakefoot)
+- LogManager GetCurrentClassLogger fallback to assembly-name when no namespace (#5463) (@snakefoot)
+- Logger LayoutRenderer able to output the Logger PrefixName (#5480) (@snakefoot)
+- NLogViewer Target - Allow override of the FormattedMessage (#5466) (@snakefoot)
+- CallSite fallback to Exception TargetSite when available (#5487) (@snakefoot)
+- NLogTraceListener - Align Filter-behavior for all Write-methods (#5242) (@snakefoot)
+- LogManager AddHiddenAssembly marked obsolete, instead use AddCallSiteHiddenAssembly (#5490) (@snakefoot)
+- InternalLogger - Marked LogToTrace as obsolete to reduce dependencies (#5443) (@snakefoot)
+- Replaced MutableUnsafeAttribute with ThreadAgnosticImmutableAttribute (#5297) (@snakefoot)
+- Marked ILoggerBase and ISuppress as obsolete and instead use ILogger (#5431) (@snakefoot)
+- LoggingRule - Marked ChildRules as obsolete (#5491) (@snakefoot)
+- FileTarget - Marked NetworkWrites as obsolete, and replaced by KeepFileOpen=false (#5416) (@snakefoot)
+- Marked EscapeDataNLogLegacy as obsolete (#5355) (@snakefoot)
+- WrapperTarget is the wrapper and not the wrapped (#5380) (@snakefoot)
+- LogFactory - Disconnect from Target write and Target flush (#5485) (@snakefoot)
+- NLog Schema nuget-package with updated license info (#5509) (@snakefoot)
+- Added sealed to internal classes (#5493) (@snakefoot)
+- Added more NLog Wiki Links to XML docs (#5497) (@snakefoot)
+- CsvLayout - Fixed links to NLog Wiki in XML docs (#5475) (@hangy)
+
+NLog v5.2 changes how to load extensions: https://nlog-project.org/2023/05/30/nlog-5-2-trim-warnings.html
+
+List of major changes in NLog 5.0: https://nlog-project.org/2022/05/16/nlog-5-0-finally-ready.html
+
+Full changelog: https://github.com/NLog/NLog/blob/master/CHANGELOG.md
+
+For all config options and platform support, check https://nlog-project.org/config/</releaseNotes>
+    <copyright>Copyright (c) 2004-2024 NLog Project - https://nlog-project.org/</copyright>
+    <tags>NLog logging log structured tracing logfiles database eventlog console email</tags>
+    <repository type="git" url="https://github.com/NLog/NLog.git" commit="8d52d4f3fcdbd84beae3442e1fdc8125598ed81f" />
+    <dependencies>
+      <group targetFramework=".NETFramework3.5" />
+      <group targetFramework=".NETFramework4.5" />
+      <group targetFramework=".NETFramework4.6" />
+      <group targetFramework=".NETStandard1.3">
+        <dependency id="NETStandard.Library" version="1.6.0" exclude="Build,Analyzers" />
+        <dependency id="System.ComponentModel.Primitives" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.ComponentModel.TypeConverter" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.Data.Common" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.Diagnostics.StackTrace" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.Net.Http" version="4.3.4" exclude="Build,Analyzers" />
+        <dependency id="System.Net.NameResolution" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.Net.Requests" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.Reflection.TypeExtensions" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.Text.RegularExpressions" version="4.3.1" exclude="Build,Analyzers" />
+        <dependency id="System.Xml.XmlDocument" version="4.3.0" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETStandard1.5">
+        <dependency id="NETStandard.Library" version="1.6.0" exclude="Build,Analyzers" />
+        <dependency id="System.ComponentModel.Primitives" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.ComponentModel.TypeConverter" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.Data.Common" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.Diagnostics.Process" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.Diagnostics.StackTrace" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.Diagnostics.TraceSource" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.IO.FileSystem.Watcher" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.Net.Http" version="4.3.4" exclude="Build,Analyzers" />
+        <dependency id="System.Net.NameResolution" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.Net.Requests" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.Reflection.TypeExtensions" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.Runtime.Loader" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.Text.RegularExpressions" version="4.3.1" exclude="Build,Analyzers" />
+        <dependency id="System.Threading.Thread" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.Xml.XmlDocument" version="4.3.0" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETStandard2.0" />
+    </dependencies>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System.Configuration" targetFramework=".NETFramework3.5, .NETFramework4.5, .NETFramework4.6" />
+      <frameworkAssembly assemblyName="System.Core" targetFramework=".NETFramework3.5, .NETFramework4.5, .NETFramework4.6" />
+      <frameworkAssembly assemblyName="System" targetFramework=".NETFramework3.5, .NETFramework4.5, .NETFramework4.6" />
+      <frameworkAssembly assemblyName="System.Xml" targetFramework=".NETFramework3.5, .NETFramework4.5, .NETFramework4.6" />
+      <frameworkAssembly assemblyName="System.IO.Compression" targetFramework=".NETFramework4.5, .NETFramework4.6" />
+    </frameworkAssemblies>
+  </metadata>
+</package>

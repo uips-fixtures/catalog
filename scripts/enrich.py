@@ -9,6 +9,7 @@ merge-index → enrich) to produce enriched-catalog.json in pf-cache.
 Usage:
     uv run scripts/enrich.py <pkg-id> <version>
     uv run scripts/enrich.py --all          # enrich every pkg/version in data/sources/packagefurnace/pkg/
+    uv run scripts/enrich.py --all --timeout 300  # kill any package that exceeds 5 min
 
 Environment:
     PF_EXE    Path to PackageFurnace binary (default: per-platform well-known location)
@@ -21,6 +22,7 @@ import os
 import re
 import subprocess
 import sys
+import time
 from pathlib import Path
 
 REPO_ROOT  = Path(__file__).resolve().parent.parent
@@ -45,7 +47,7 @@ PF_EXE   = Path(os.environ.get("PF_EXE",   str(default_pf_exe())))
 PF_CACHE = Path(os.environ.get("PF_CACHE", str(default_pf_cache())))
 
 
-def enrich(pkg_id: str, version: str, force: bool = False) -> bool:
+def enrich(pkg_id: str, version: str, force: bool = False, timeout: int | None = None) -> bool:
     """Run `pf pipeline run-all` for one (pkg_id, version). Returns True on success."""
     enriched = PF_CACHE / pkg_id.lower() / version / "enriched-catalog.json"
     if enriched.exists() and not force:
@@ -62,12 +64,30 @@ def enrich(pkg_id: str, version: str, force: bool = False) -> bool:
     if force:
         cmd.append("--force")
 
+    t0 = time.monotonic()
     print(f"  enrich {pkg_id}/{version} ...", flush=True)
-    result = subprocess.run(cmd, capture_output=False)
-    if result.returncode != 0:
-        print(f"  [error] {pkg_id}/{version}: exit {result.returncode}", file=sys.stderr)
+    proc = subprocess.Popen(cmd)
+    try:
+        proc.wait(timeout=timeout)
+    except subprocess.TimeoutExpired:
+        # Kill entire process tree (Windows: taskkill /F /T; others: SIGKILL pgid)
+        if sys.platform == "win32":
+            subprocess.run(
+                ["taskkill", "/F", "/T", "/PID", str(proc.pid)],
+                capture_output=True,
+            )
+        else:
+            import os, signal
+            os.killpg(os.getpgid(proc.pid), signal.SIGKILL)
+        proc.wait()
+        elapsed = int(time.monotonic() - t0)
+        print(f"  [timeout] {pkg_id}/{version}: killed after {elapsed}s (limit={timeout}s)", file=sys.stderr)
         return False
-    print(f"  [ok] {pkg_id}/{version} -> {enriched}")
+    elapsed = int(time.monotonic() - t0)
+    if proc.returncode != 0:
+        print(f"  [error] {pkg_id}/{version}: exit {proc.returncode} ({elapsed}s)", file=sys.stderr)
+        return False
+    print(f"  [ok] {pkg_id}/{version} -> {enriched} ({elapsed}s)")
     return True
 
 
@@ -96,6 +116,9 @@ def main() -> None:
                         help="Enrich every package/version in data/sources/packagefurnace/pkg/")
     parser.add_argument("--force", action="store_true",
                         help="Re-run even if enriched-catalog.json already exists")
+    parser.add_argument("--timeout", type=int, default=None, metavar="SECONDS",
+                        help="Kill PackageFurnace if it exceeds this many seconds per package "
+                             "(default: no limit). Recommended: 300 for batch runs.")
     args = parser.parse_args()
 
     if not PF_EXE.exists():
@@ -109,18 +132,23 @@ def main() -> None:
             print(f"[error] No source packages found in {SOURCE_DIR}", file=sys.stderr)
             sys.exit(1)
         print(f"Enriching {len(packages)} package/version(s) from {SOURCE_DIR}")
-        ok = fail = 0
-        for pkg_id, version in packages:
-            if enrich(pkg_id, version, force=args.force):
+        ok = fail = skip = 0
+        for i, (pkg_id, version) in enumerate(packages, 1):
+            enriched = PF_CACHE / pkg_id.lower() / version / "enriched-catalog.json"
+            if enriched.exists() and not args.force:
+                skip += 1
+                continue
+            print(f"[{i}/{len(packages)}]", end=" ", flush=True)
+            if enrich(pkg_id, version, force=args.force, timeout=args.timeout):
                 ok += 1
             else:
                 fail += 1
-        print(f"\nDone: {ok} ok, {fail} failed")
+        print(f"\nDone: {ok} ok, {fail} failed, {skip} skipped")
         if fail:
             sys.exit(1)
     elif args.id and args.version:
         print(f"Enriching {args.id}/{args.version}")
-        if not enrich(args.id, args.version, force=args.force):
+        if not enrich(args.id, args.version, force=args.force, timeout=args.timeout):
             sys.exit(1)
     else:
         parser.error("Provide <id> <version> or --all")

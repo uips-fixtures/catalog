@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>NLog</id>
+    <version>4.4.2</version>
+    <title>NLog</title>
+    <authors>Kim Christensen, Julian Verdurmen</authors>
+    <owners>Kim Christensen</owners>
+    <licenseUrl>http://raw.github.com/NLog/NLog/master/LICENSE.txt</licenseUrl>
+    <projectUrl>http://nlog-project.org/</projectUrl>
+    <iconUrl>http://nlog-project.org/N.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>NLog is a logging platform for .NET with rich log routing and management capabilities. It can help you produce and manage high-quality logs for your application regardless of its size or complexity.
+This package installs NLog.dll with includes core logging functionality.
+For your main project also need to install "NLog Configuration" package.</description>
+    <summary>NLog - Advanced .NET and Silverlight Logging</summary>
+    <releaseNotes>## Features
+
+- [#1799] FileTarget: performance improvement: 10-70% faster, less garbage collecting (3-4 times less) by reusing buffers  (@snakefoot, @AndreGleichner)
+- [#1919] Func overloads for InternalLogger (@304NotModified)
+- [#1915] allow wildcard (*) in `&lt;include&gt;` (@304NotModified)
+- [#1914] basedir: added option processDir=true (@304NotModified)
+- [#1906] Allow Injecting basedir (@304NotModified)
+
+## Improvements
+
+- [#1927] InternalLogger - Better support for multiple threads when using file (@snakefoot)
+- [#1871] Filetarget - Allocations optimization (#1871) (@nazim9214)
+- [#1931] FileTarget - Validate File CreationTimeUtc when non-Windows (@snakefoot)
+- [#1942] FileTarget - KeepFileOpen should watch for file deletion, but not every second (@snakefoot)
+- [#1876] FileTarget - Faster archive check by caching the static file-create-time (60-70% improvement) (#1876) (@snakefoot)
+- [#1878] FileTarget - KeepFileOpen should watch for file deletion (#1878) (@snakefoot)
+- [#1932] FileTarget - Faster rendering of filepath, when not ThreadAgnostic (@snakefoot)
+- [#1937] LogManager.Shutdown - Verify that active config exists (@snakefoot)
+- [#1926] RetryingWrapper - Allow closing target, even when busy retrying (@snakefoot)
+- [#1925] JsonLayout - Support Precalculate for async processing (@snakefoot)
+- [#1816] EventLogTarget - don't crash with invalid Category / EventId (@304NotModified)
+- [#1815] Better parsing for Layouts with int/bool type. (@304NotModified, @rymk)
+- [#1868] WebServiceTarget - FlushAsync - Avoid premature flush (#1868) (@snakefoot)
+- [#1899] LogManager.Shutdown - Use the official method for closing down (@snakefoot)
+
+
+## Fixes
+                                                                          
+- [#1886] FileTarget - Archive should not fail when ArchiveFileName matches FileName (@snakefoot)
+- [#1893] FileTarget - MONO doesn't like using the native Win32 API (@snakefoot)
+- [#1883] LogFactory.Dispose - Should always close down created targets (@snakefoot)</releaseNotes>
+    <language>en-US</language>
+    <tags>logging log tracing logfiles NLog database eventlog email wcf</tags>
+  </metadata>
+</package>

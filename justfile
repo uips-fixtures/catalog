@@ -48,11 +48,12 @@ extract-set set:
 # for a single package/version. Writes enriched-catalog.json to pf-cache.
 # Usage: just enrich UiPath.System.Activities 26.2.4
 enrich id version:
-    uv run scripts/enrich.py {{id}} {{version}}
+    uv run scripts/enrich.py {{id}} {{version}} --timeout 300
 
 # Run enrich for every package/version present in data/sources/packagefurnace/pkg/.
+# Add --timeout SECONDS to kill hung packages (recommended: 300).
 enrich-all:
-    uv run scripts/enrich.py --all
+    uv run scripts/enrich.py --all --timeout 300
 
 # ── Build ─────────────────────────────────────────────────────────────────────
 

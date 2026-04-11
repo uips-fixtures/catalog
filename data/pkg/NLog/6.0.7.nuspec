@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>NLog</id>
+    <version>6.0.7</version>
+    <title>NLog for .NET Framework and .NET Standard</title>
+    <authors>Jarek Kowalski,Kim Christensen,Julian Verdurmen</authors>
+    <license type="expression">BSD-3-Clause</license>
+    <licenseUrl>https://licenses.nuget.org/BSD-3-Clause</licenseUrl>
+    <icon>N.png</icon>
+    <projectUrl>https://nlog-project.org/</projectUrl>
+    <description>NLog is a logging platform for .NET with rich log routing and management capabilities.
+NLog supports traditional logging, structured logging and the combination of both.
+
+Supported platforms:
+
+- .NET 6, 7, 8, 9 and 10
+- .NET Standard 2.0 and 2.1
+- .NET Framework 3.5 - 4.8
+- Xamarin Android + iOS (.NET Standard)
+- Mono 4
+
+For integrating NLog with Microsoft.Extensions.Logging, check: https://www.nuget.org/packages/NLog.Extensions.Logging
+
+For using NLog with ASP.NET Core, check: https://www.nuget.org/packages/NLog.Web.AspNetCore</description>
+    <releaseNotes>Changelog:
+
+- [#6056] FileTarget - Archive Cleanup sort filenames using natural ordering. (@snakefoot)
+- [#6054] EventProperties - Format Dictionary Properties correctly. (@snakefoot)
+- [#6051] Failure to create config item should be reported as InternalLogger Error. (@snakefoot)
+- [#6052] PropertiesDictionary - Faster TryGetValue without IsEmpty. (@snakefoot)
+- [#6048] PropertiesDictionary - Increase initial capacity when insert. (@snakefoot)
+- [#6047] LogEventInfo - Minor optimization of HasImmutableProperties. (@snakefoot)
+- [#6057] WhenEmpty - Support AppDomainFixedOutput optimization. (@snakefoot)
+- [#6053] JsonAttribute - Reduce code complexity when Encode = false. (@snakefoot)
+- [#6044] Target also enforce PreventMultipleCalls when WriteFailedNotInitialized. (@snakefoot)
+- [#6042] NLog.RegEx - Fixed Wiki-link in nuget-package. (@snakefoot)
+
+NLog v6.0 release notes: https://nlog-project.org/2025/04/29/nlog-6-0-major-changes.html
+
+Full changelog: https://github.com/NLog/NLog/releases
+
+For all config options and platform support, check https://nlog-project.org/config/</releaseNotes>
+    <copyright>Copyright (c) 2004-2025 NLog Project - https://nlog-project.org/</copyright>
+    <tags>NLog logging log structured tracing logfiles database eventlog console</tags>
+    <repository type="git" url="https://github.com/NLog/NLog.git" commit="4dd16e8d54b0f5510479cbe00ba28b77501b7901" />
+    <dependencies>
+      <group targetFramework=".NETFramework3.5" />
+      <group targetFramework=".NETFramework4.5" />
+      <group targetFramework=".NETFramework4.6" />
+      <group targetFramework=".NETStandard2.0" />
+      <group targetFramework=".NETStandard2.1" />
+    </dependencies>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System.Configuration" targetFramework=".NETFramework3.5, .NETFramework4.5, .NETFramework4.6" />
+      <frameworkAssembly assemblyName="System.Core" targetFramework=".NETFramework3.5, .NETFramework4.5, .NETFramework4.6" />
+      <frameworkAssembly assemblyName="System" targetFramework=".NETFramework3.5, .NETFramework4.5, .NETFramework4.6" />
+      <frameworkAssembly assemblyName="System.Xml" targetFramework=".NETFramework3.5, .NETFramework4.5, .NETFramework4.6" />
+    </frameworkAssemblies>
+  </metadata>
+</package>

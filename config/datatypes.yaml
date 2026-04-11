@@ -1,0 +1,55 @@
+# Target datatypes for catalog documentation
+#
+# Separate from curated.yaml (package sets) — datatypes are a cross-cutting concern.
+# These types appear as argument/property types across multiple packages and versions.
+# Each entry drives:
+#   - a type-reference page in refdocs
+#   - a type-glossary entry in llmdocs
+#
+# IMPORTANT: A datatype entry is NOT version-independent.
+# The API surface of a type (its properties, methods, argument shapes) is bound to a
+# specific version of the package that defines it. Any documentation or tooling that
+# consumes these entries MUST correlate the type with the package version from which
+# it was extracted. The (type, package, version) triple is the minimum identity key.
+#
+# Fields:
+#   type          — fully namespace-qualified type name (C# style, no assembly suffix)
+#   package       — primary NuGet package that defines this type
+#   notes         — short description of role and discovery context
+
+datatypes:
+
+  - type: UiPath.Core.UiElement
+    package: UiPath.UIAutomation.Activities
+    notes: >
+      Primary handle to a live UI element. Carries its own Selector, clipping region,
+      and scaling state. Bridge to Browser via GetBrowser(). Most UIAutomation activities
+      accept InArgument<UiElement> and produce OutArgument<UiElement>.
+
+  - type: UiPath.Core.Browser
+    package: UiPath.UIAutomation.Activities
+    notes: >
+      Browser controller (Chrome, Edge, Firefox). Reachable from any browser-rooted
+      UiElement via GetBrowser(). Exposes Navigate, OpenAsync, WaitPage, GoBack/Forward.
+      Properties: BrowserName (BrowserType), Element (root UiElement), Timeout.
+
+  - type: UiPath.Core.Selector
+    package: UiPath.UIAutomation.Activities
+    notes: >
+      Structured selector descriptor. First-class type — UiElement.Selector is typed
+      Selector, not String. String-interchangeable: UiElement methods offer dual overloads
+      accepting either String or Selector. GetRelativeSelector returns String (serialization
+      direction). Document as distinct type despite string compatibility.
+
+  - type: UiPath.Core.QueueItem
+    package: UiPath.System.Activities
+    notes: >
+      Orchestrator queue item handle. Produced by GetQueueItem / WaitQueueItem;
+      consumed by SetTransactionStatus. Carries item content, reference, priority,
+      and deadline fields.
+
+  - type: UiPath.Core.Image
+    package: UiPath.UIAutomation.Activities
+    notes: >
+      Screenshot / image output. Produced by TakeScreenshot (OutImage argument).
+      Distinct from System.Drawing.Image.

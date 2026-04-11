@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>NPOI</id>
+    <version>2.5.5</version>
+    <title>NPOI</title>
+    <authors>NPOI Contributors</authors>
+    <owners>Nissl Lab</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="file">LICENSE</license>
+    <licenseUrl>https://aka.ms/deprecateLicenseUrl</licenseUrl>
+    <icon>logo\60_60.jpg</icon>
+    <projectUrl>https://github.com/nissl-lab/npoi</projectUrl>
+    <description>.NET port of Apache POI | Contact us on telegram: https://t.me/npoidevs</description>
+    <summary>NPOI can read and write xls (Excel 97-2003), xlsx(Excel 2007+) and docx(Word 2007+)</summary>
+    <releaseNotes>https://github.com/nissl-lab/npoi/issues/672
+
+#617 Unreadable content detected for xlsx if it contains additional TextBox
+#555 BinaryFormatter issue in net5.0
+#216 XSSFHyper Link with chinese charset issue
+#614 NPOI cannot open some XLS files from Stream
+#238 Add new method: XWPFDocument.ChangeOrientation
+#590 ST_CfvoType missing autoMin and autoMax
+#521 Performance of creating new cells
+#434 SXSSFWorkbook possible performance overhead
+#570 avoid NotImplementedException for ExternalLinks
+#504 Docx File corruption due to the image wrapping (fix again for w14 attributes)
+#317 XSSFFont CloneStyleFrom is linking two fonts instead of creating a copy
+#519 Get a copy of the CT_Border when about to mutate it
+#635 MathX - RoundUp - Bug with double conversion
+#131 Add Title to NPOI.SS.UserModel.IChart
+#248 make GetCTChart() and GetCTChartSpace public
+#599 Corrupted output when XLSX file with "power" symbol in text box is saved
+#287 Null Reference Exception in XSSFSheet.CopySheetImages if there are charts in the original sheet
+#454 Incorrect intersect validation checking for merged regions
+#678 calling XWPFHeaderFooterPolicy.CreateWatermark corrupts the word file
+
+POI Bug FIXES
+61064 Support behavior of function CEILING in newer versions of Microsoft Excel
+63268 Fix issue with CellUtil.setFont adding unnecessary styles
+61652 Attempting to getConditionalFormattingForCell causes NPE
+65467 Support IFNA function
+65475 SUMIF and SUMIFS functions do not properly handle #N/A values
+64605 #595 XWPFRun.FontSize support float
+62040 Quotient.evaluate function does not accept cell refences
+56392 IllegalArgumentException in IdentifierManager / XWPFDocument
+github-150 Add XWPFPicture getWidth and getDepth methods
+github-151 Add XWPFRun getStyle method
+github-153 Add XWPFParagraph createHyperlinkRun method</releaseNotes>
+    <copyright>Nissl LLC</copyright>
+    <tags>xlsx xls Excel Word docx office ole</tags>
+    <repository type="git" url="https://github.com/nissl-lab/npoi" branch="master" commit="ecd40fc079fdd996281768fcf2494912713bf330" />
+    <dependencies>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="System.Configuration.ConfigurationManager" version="4.5.0" />
+        <dependency id="System.Drawing.Common" version="4.5.0" />
+        <dependency id="Portable.BouncyCastle" version="1.8.9" />
+        <dependency id="SharpZipLib" version="1.3.2" />
+      </group>
+      <group targetFramework=".NETFramework4.5">
+        <dependency id="SharpZipLib" version="1.3.2" />
+        <dependency id="Portable.BouncyCastle" version="1.8.9" />
+      </group>
+      <group targetFramework=".NETStandard2.1">
+        <dependency id="System.Configuration.ConfigurationManager" version="4.5.0" />
+        <dependency id="System.Drawing.Common" version="4.5.0" />
+        <dependency id="SharpZipLib" version="1.3.2" />
+        <dependency id="Portable.BouncyCastle" version="1.8.9" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

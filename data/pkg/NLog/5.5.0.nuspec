@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>NLog</id>
+    <version>5.5.0</version>
+    <title>NLog for .NET Framework and .NET Standard</title>
+    <authors>Jarek Kowalski,Kim Christensen,Julian Verdurmen</authors>
+    <license type="expression">BSD-3-Clause</license>
+    <licenseUrl>https://licenses.nuget.org/BSD-3-Clause</licenseUrl>
+    <icon>N.png</icon>
+    <projectUrl>https://nlog-project.org/</projectUrl>
+    <description>NLog is a logging platform for .NET with rich log routing and management capabilities.
+NLog supports traditional logging, structured logging and the combination of both.
+
+Supported platforms:
+
+- .NET 5, 6, 7, 8 and 9
+- .NET Core 1, 2 and 3
+- .NET Standard 1.3+ and 2.0+
+- .NET Framework 3.5 - 4.8
+- Xamarin Android + iOS (.NET Standard)
+- Mono 4
+
+For ASP.NET Core, check: https://www.nuget.org/packages/NLog.Web.AspNetCore</description>
+    <releaseNotes>ChangeLog:
+- Restored LogFactory.Setup().SetupFromEnvironmentVariables() as not obsolete (#5710) @snakefoot
+- Avoid using MakeGenericType for Dictionary enumeration when AOT (#5717) @snakefoot
+- Stop using obsolete Assembly.CodeBase for NetStandard (#5730) @snakefoot
+- ExceptionLayoutRenderer - Handle Exception properties like StackTrace can throw with AOT (#5742) @snakefoot
+- ExceptionLayoutRenderer - Handle Data-collection-item ToString can throw with AOT (#5743) @snakefoot
+- ExceptionLayoutRenderer - Handle Exception-properties can throw with AOT (#5763) @snakefoot
+- ServiceRepository - Improve exception-handling when resolving service-types while disposing (#5756) @snakefoot
+- LayoutRenderer - Optimize performance by skipping cache result from render Inner Layout (#5759) @snakefoot
+- ConditionLayoutExpression  - Optimize performance by skipping cache result from render Inner Layout (#5795) @snakefoot
+- Mark IFactory RegisterType as obsolete, since it will be removed with NLog v6 (#5731) @snakefoot
+- Mark JsonLayout EscapeForwardSlash as obsolete, since disabled with NLog v6 (#5766) @snakefoot
+- Mark ExceptionLayoutRenderer Formats-List as obsolete, since immutable with NLog v6 (#5823) @snakefoot
+- Updated API-code examples to not depend on obsolete SimpleConfigurator (#5769) @snakefoot
+- ObjectReflectionCache - Handle PropertyValue can throw with AOT (#5776) @snakefoot
+- NetworkTarget - Introduced option NoDelay to disable delayed ACK (#5780) @snakefoot
+- Fix InternalLogger noise about reflection for FuncLayoutRenderer (#5788) @snakefoot
+- TargetWithContext - Reduce allocation for RenderLogEvent when SimpleLayout (#5792) @snakefoot
+- Refactoring to improve null value handling (#5810) @snakefoot
+- Refactoring to improve null value handling (#5812) @snakefoot
+- LoggingConfigurationParser - Prioritize LoggingRules from current config (#5817) @snakefoot
+- WhenEmptyLayoutRendererWrapper - Optimize IStringValueRenderer Logic (#5825) @snakefoot
+
+NLog v5.2 changes how to load extensions: https://nlog-project.org/2023/05/30/nlog-5-2-trim-warnings.html
+
+List of major changes in NLog 5.0: https://nlog-project.org/2022/05/16/nlog-5-0-finally-ready.html
+
+Full changelog: https://github.com/NLog/NLog/releases
+
+For all config options and platform support, check https://nlog-project.org/config/</releaseNotes>
+    <copyright>Copyright (c) 2004-2025 NLog Project - https://nlog-project.org/</copyright>
+    <tags>NLog logging log structured tracing logfiles database eventlog console email</tags>
+    <repository type="git" url="https://github.com/NLog/NLog.git" commit="1873145cbc26e0312d9481234d69ce7dc68aac4e" />
+    <dependencies>
+      <group targetFramework=".NETFramework3.5" />
+      <group targetFramework=".NETFramework4.5" />
+      <group targetFramework=".NETFramework4.6" />
+      <group targetFramework=".NETStandard1.3">
+        <dependency id="NETStandard.Library" version="1.6.0" exclude="Build,Analyzers" />
+        <dependency id="System.ComponentModel.Primitives" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.ComponentModel.TypeConverter" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.Data.Common" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.Diagnostics.StackTrace" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.Net.Http" version="4.3.4" exclude="Build,Analyzers" />
+        <dependency id="System.Net.NameResolution" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.Net.Requests" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.Reflection.TypeExtensions" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.Text.RegularExpressions" version="4.3.1" exclude="Build,Analyzers" />
+        <dependency id="System.Xml.XmlDocument" version="4.3.0" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETStandard1.5">
+        <dependency id="NETStandard.Library" version="1.6.0" exclude="Build,Analyzers" />
+        <dependency id="System.ComponentModel.Primitives" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.ComponentModel.TypeConverter" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.Data.Common" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.Diagnostics.Process" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.Diagnostics.StackTrace" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.Diagnostics.TraceSource" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.IO.FileSystem.Watcher" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.Net.Http" version="4.3.4" exclude="Build,Analyzers" />
+        <dependency id="System.Net.NameResolution" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.Net.Requests" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.Reflection.TypeExtensions" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.Runtime.Loader" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.Text.RegularExpressions" version="4.3.1" exclude="Build,Analyzers" />
+        <dependency id="System.Threading.Thread" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.Xml.XmlDocument" version="4.3.0" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETStandard2.0" />
+    </dependencies>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System.Configuration" targetFramework=".NETFramework3.5, .NETFramework4.5, .NETFramework4.6" />
+      <frameworkAssembly assemblyName="System.Core" targetFramework=".NETFramework3.5, .NETFramework4.5, .NETFramework4.6" />
+      <frameworkAssembly assemblyName="System" targetFramework=".NETFramework3.5, .NETFramework4.5, .NETFramework4.6" />
+      <frameworkAssembly assemblyName="System.Xml" targetFramework=".NETFramework3.5, .NETFramework4.5, .NETFramework4.6" />
+      <frameworkAssembly assemblyName="System.IO.Compression" targetFramework=".NETFramework4.5, .NETFramework4.6" />
+    </frameworkAssemblies>
+  </metadata>
+</package>

@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
+  <metadata>
+    <id>NLog</id>
+    <version>4.3.0-rc2</version>
+    <title>NLog</title>
+    <authors>Kim Christensen, Julian Verdurmen</authors>
+    <owners>Kim Christensen</owners>
+    <licenseUrl>http://raw.github.com/NLog/NLog/master/LICENSE.txt</licenseUrl>
+    <projectUrl>http://nlog-project.org/</projectUrl>
+    <iconUrl>http://nlog-project.org/N.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>NLog is a logging platform for .NET with rich log routing and management capabilities. It can help you produce and manage high-quality logs for your application regardless of its size or complexity.
+This package installs NLog.dll with includes core logging functionality.
+For your main project also need to install "NLog Configuration" package.</description>
+    <summary>NLog - Advanced .NET and Silverlight Logging</summary>
+    <releaseNotes>RC2:
+- fix ${callsite} when code got inlined (was broken in 4.3)
+- Check for TimeToSleepBetweenBatches in AsyncWrapper
+
+NLog 4.3:
+
+See http://nlog-project.org/2016/03/23/nlog-4-3-0-RC-is-now-available.html
+
+# Features
+- Support Windows Phone 8, Xamarin Android and Xamarin iOS (beta)
+- Consistent handling of exceptions (BEHAVIOUR CHANGE)
+- Control of exception throwing for configuration errors
+- API improvements
+- Relative paths for fileTarget
+- InternalLogger: write to System.Diagnostics.Trace 
+- Mail Target: Allow virtual paths for SMTP pickup 
+- EventTarget: option to set the max length of the message and action (discard, split, truncate)
+- MethodCallTarget: allow optional parameters in called methods.
+- ConsoleTarget: Regex cache is instead of compiled regex, for better memory usage. This is configurable. 
+- Database target: don't require "ProviderName" attribute when using `&lt;connectionStrings&gt;`
+- RegistryLayout: Support for layouts, RegistryView (32, 64 bit) and all root key names (HKCU/HKLM etc)
+- Allow to free CallContext in `MappedDiagnosticsLogicalContext`
+- LogFactory: Add generic-type versions of `GetLogger()` and `GetCurrentClassLogger()`
+- Added `Logger.Swallow(Task task)`
+- Unused targets will be logged to the internal logger
+- Config classes are now thread-safe.
+- InternalLogger: improved logging of exceptions (analogous to normal Logger)
+- More logging to the internal logger (e.g. Async wrapper and buffer wrapper)
+- Added timestamp options for the internal logger:
+- Read nlog.config from Android asse
+
+# Bug fixes
+Among others:
+
+- `${callsite}` works now for async methods!
+- A **lot of** Filetarget bug fixes regarding with archiving, locking and concurrent writing. 
+ Most noticeable:
+   - Use last-write-time for archive file name. This is far more stable. 
+    In the past there were some issues with unexpected archive filenames.
+   - Fix: archiving won't work when a there is a date in the filename
+   - Fix: archiving not working properly with AsyncWrapper
+   - Fix: Footer for archiving
+   - Fix: Crashes with relative path without `${basedir}` 
+   - Fix: Archive files are never created when there are lot of write in log file 
+- NetworkTarget: fix possible deadlock
+- Fix autoreload nlog.config with parent configs. 
+- WebServiceTarget: Fix HTTP GET protocol
+- Bugfix: Internallogger creates folder, even when turned off
+- Fix possible Nullref in `${variable}`
+- `${processtime}`: incorrect milliseconds formatting
+- `${processtime}`: fix incorrect negative time (rounding issue)</releaseNotes>
+    <language>en-US</language>
+    <tags>logging log tracing logfiles NLog database eventlog email wcf</tags>
+  </metadata>
+</package>

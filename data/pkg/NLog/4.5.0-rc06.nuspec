@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>NLog</id>
+    <version>4.5.0-rc06</version>
+    <title>NLog for .NET Framework and .NET Standard</title>
+    <authors>Jarek Kowalski,Kim Christensen,Julian Verdurmen</authors>
+    <owners>Jarek Kowalski,Kim Christensen,Julian Verdurmen</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>https://github.com/NLog/NLog/blob/master/LICENSE.txt</licenseUrl>
+    <projectUrl>http://nlog-project.org/</projectUrl>
+    <iconUrl>http://nlog-project.org/N.png</iconUrl>
+    <description>NLog is a logging platform for .NET with rich log routing and management capabilities.</description>
+    <releaseNotes>NLog 4.5 adds structured logging and .NET Standard support/UPW without breaking changes! Also a lot features has been added!
+
+# RC 6 summary:
+
+- [#2576](https://github.com/NLog/NLog/pull/2576) Fix possible infinite loop in message template parser + better handling incorrect templates (@304NotModified, @snakefoot)
+- [#2581](https://github.com/NLog/NLog/pull/2581) MessageTemplateParameter(s) ctors to internal (@304NotModified)
+- See also https://github.com/NLog/NLog/milestone/63?closed=1
+
+# RC 5 summary:
+
+- [#2570](https://github.com/nlog/nlog/pull/2570) Update nuspec NLog.Config and NLog.Schema (@304NotModified)
+- [#2542](https://github.com/nlog/nlog/pull/2542) Added TooManyStructuredParametersShouldKeepBeInParamList testcase (@304NotModified)
+- [#2467](https://github.com/nlog/nlog/pull/2467) TargetWithContext - Easier to capture snapshot of MDLC and NDLC context (#2467) (@snakefoot)
+- [#2555](https://github.com/nlog/nlog/pull/2555) JsonLayout - Added MaxRecursionLimit and set default to 0 (@snakefoot)
+- [#2568](https://github.com/nlog/nlog/pull/2568) WebServiceTarget - Rollback added Group-Layout (@snakefoot)
+- [#2544](https://github.com/nlog/nlog/pull/2544) MessageTemplate renderer with support for mixed mode templates (@snakefoot)
+- [#2538](https://github.com/nlog/nlog/pull/2538) Renamed ValueSerializer to ValueFormatter (@snakefoot)
+- [#2554](https://github.com/nlog/nlog/pull/2554) LogBuilder - Check level before allocation of Properties-dictionary (@snakefoot)
+- [#2550](https://github.com/nlog/nlog/pull/2550) DefaultJsonSerializer - Reflection should skip index-item-properties (@snakefoot)
+- [#2549](https://github.com/nlog/nlog/pull/2549) LoggingConfiguration - FindTargetByName should also find target + fix for logging on a target even after removed (@snakefoot)
+- [#2548](https://github.com/nlog/nlog/pull/2548) IAppDomain.FriendlyName should also work on NetStandard15 (@snakefoot)
+- [#2563](https://github.com/nlog/nlog/pull/2563) WebService-Target fails internally with PlatformNotSupportedException on NetCore (@snakefoot)
+- [#2560](https://github.com/nlog/nlog/pull/2560) Network/NLogViewer/Chainsaw Target - Enabled OptimizeBufferReuse by default, but not for sub classes (@snakefoot)
+- [#2551](https://github.com/nlog/nlog/pull/2551) Blackhole LoggingRule without targets (@snakefoot)
+- [#2534](https://github.com/nlog/nlog/pull/2534) Docs for DefaultJsonSerializer/(i)ValueSerializer (#2534) (@304NotModified)
+- [#2519](https://github.com/nlog/nlog/pull/2519) RegisterItemsFromAssembly - Include assemblies from nuget packages (Strict) (@304NotModified, @snakefoot)
+- [#2524](https://github.com/nlog/nlog/pull/2524) FileTarget - Dynamic archive mode with more strict file-mask for cleanup (@snakefoot)
+- [#2518](https://github.com/nlog/nlog/pull/2518) DatabaseTarget - Added DbProvider System.Data.SqlClient for NetStandard (@snakefoot)
+- [#2514](https://github.com/nlog/nlog/pull/2514) Added missing docgen for different options (Less noise in appveyor) (@snakefoot)
+- See also https://github.com/NLog/NLog/milestone/62?closed=1
+
+# RC 4 summary: 
+
+
+
+- [#2490](https://github.com/nlog/nlog/pull/2490) LogEventInfo.MessageTemplateParameters as class instead of interface (#2490) (@snakefoot)
+- [#2510](https://github.com/nlog/nlog/pull/2510) Database target entity framework connection string (@snakefoot)
+- [#2513](https://github.com/nlog/nlog/pull/2513) Update docs for [AppDomainFixedOutput], remove [AppDomainFixedOutput] on ${currentDir} (@NLog)
+- [#2512](https://github.com/nlog/nlog/pull/2512) LogManager.LoadConfiguration - Support relative paths by default (@snakefoot)
+- [#2507](https://github.com/nlog/nlog/pull/2507) Reduce string allocations for logevents with single target destination (@snakefoot)
+- [#2491](https://github.com/nlog/nlog/pull/2491) Added ${currentDir} (#2491) (@UgurAldanmaz)
+- [#2500](https://github.com/nlog/nlog/pull/2500) ${gdc}, ${mdc} &amp; {mdlc} - Support Format parameter (@snakefoot)
+- [#2497](https://github.com/nlog/nlog/pull/2497) RegisterItemsFromAssembly - Include assemblies from nuget packages (Fix) (@snakefoot)
+- [#2472](https://github.com/nlog/nlog/pull/2472) LogManager.LoadConfiguration - Prepare for custom config file readers (@snakefoot)
+- [#2486](https://github.com/nlog/nlog/pull/2486) JsonConverter- Sanitize Exception.Data dictionary keys option (on by default) (@snakefoot)
+- [#2495](https://github.com/nlog/nlog/pull/2495) MultiFileWatcher - Detach from FileSystemWatcher before disposing (@snakefoot)
+- [#2493](https://github.com/nlog/nlog/pull/2493) RegisterItemsFromAssembly - Include assemblies from nuget packages (@snakefoot)
+- [#2487](https://github.com/nlog/nlog/pull/2487) Adds version types to AssemblyVersion layout renderer  (#2487) (@alexangas)
+- [#2464](https://github.com/nlog/nlog/pull/2464) Add methods to enabling/disabling LogLevels (@MikeFH)
+- [#2477](https://github.com/nlog/nlog/pull/2477) fix typo (@heldersepu)
+- [#2485](https://github.com/nlog/nlog/pull/2485) FileTarget - Dispose Archive-Mutex after completing file-archive (@snakefoot)
+- [#2475](https://github.com/nlog/nlog/pull/2475) Fix XmlLoggingConfiguration reloading (@MikeFH)
+- [#2471](https://github.com/nlog/nlog/pull/2471) TreatWarningsAsErrors = true (@snakefoot)
+- [#2462](https://github.com/nlog/nlog/pull/2462) AsyncLogEventInfo - Removed private setter (@snakefoot)
+- See also https://github.com/NLog/NLog/milestone/60?closed=1
+
+# RC 3 summary
+
+- File target: support for writing BOM (WriteBom option)
+- Futher memory allocation improvements
+- See https://github.com/NLog/NLog/milestone/59?closed=1
+
+# RC 2 summary
+
+- Support for UWP
+- Added "regex-matches" condition method for filtering
+- .NET Core: Improve auto loading of NLog extension dlls
+- And more, see all details: https://github.com/NLog/NLog/milestone/58?closed=1
+
+# List of important changes in NLog 4.5
+
+## Features:
+
+- Support for .Net Standard 1.5 #2341
+- Support for .Net Standard 2.0 #2263 + #2402
+- Support for UPW #2441
+- Introduced Structured logging #2208 + #2262 + #2244
+- Default file archive logic is now easier to use #1993
+- Introduced InstallationContext.ThrowExceptions #2214
+- WebServiceTarget can now batch multiple logevents into single request #2223
+- WebServiceTarget - Allow configuration of proxy address #2375
+- Json conversion also supports object properties #2179
+- event-properties layout-renderer can now render objects as json #2241
+- exception layout-renderer can now render exceptions as json #2357
+- ${guid}, added GeneratedFromLogEvent #2226
+- TraceTarget RawWrite to always perform Trace.WriteLine independent of LogLevel #1968
+- Adding OverflowAction options to BufferingTargetWrapper #2276
+- WhenRepeatedFilter #2123 + #2297
+- ${callsite} added CleanNamesOfAsyncContinuations option #2292
+- ${ndlctiming} allows timing of ndlc-scopes #2377
+- NLogViewerTarget - Enable override of the Logger-name #2390
+- ${sequenceid} added #2411
+- Added "regex-matches" for filtering #2437
+- File target: support for writing BOM (WriteBom option) #2456
+
+## BugFixes:
+
+- Improve archive stability during concurrent file access #1889
+- FallbackGroup could lose log events #2265
+- Exception separator should only be inserted for available items #2250
+- ${exception} - only include separator when items are available #2257
+- LogFactory - Fixes broken EventArgs for ConfigurationChanged #1897
+- Do not report wrapped targets as unused targets #2290
+- Added IIncludeContext, implemented missing properties #2117
+- Improve logging of callsite linenumber for async-methods #2386
+- NLogTraceListener - DisableFlush is enabled by default when AutoFlush=true #2407
+- NLogViewer - Better defaults for connection limits #2404
+- LoggingConfiguration.LoggingRules is not thread safe #2393, #2418
+
+## Performance:
+
+- More targets has OptimizeBufferReuse enabled by default #1913 + #1923 + #1912 + #1911 + #1910 + #1909 + #1908 + #1907
+- StringBuilderPool - Improved Layout Render Performance by reusing StringBuilders #2208
+- JsonLayout - Improved Layout Performance, by optimizing use of StringBuilder #2208
+- FileTarget - Faster byte-encoding of log messsages, by using crude Encoding.GetMaxByteCount() instead of exact Encoding.GetByteCount() #2208
+- Target - Precalculate Layout should ignore sub-layouts for complex layout (Ex Json) #2378</releaseNotes>
+    <copyright>Copyright (c) 2004-2018 NLog Project - http://nlog-project.org/</copyright>
+    <tags>NLog logging log tracing logfiles database eventlog email wcf</tags>
+    <repository type="git" url="git://github.com/NLog/NLog" />
+    <dependencies>
+      <group targetFramework=".NETFramework3.5" />
+      <group targetFramework=".NETFramework4.0-Client" />
+      <group targetFramework=".NETFramework4.5" />
+      <group targetFramework=".NETStandard1.5">
+        <dependency id="NETStandard.Library" version="1.6.0" exclude="Build,Analyzers" />
+        <dependency id="System.ComponentModel.Primitives" version="4.1.0" exclude="Build,Analyzers" />
+        <dependency id="System.ComponentModel.TypeConverter" version="4.1.0" exclude="Build,Analyzers" />
+        <dependency id="System.Data.Common" version="4.1.0" exclude="Build,Analyzers" />
+        <dependency id="System.Diagnostics.Process" version="4.1.0" exclude="Build,Analyzers" />
+        <dependency id="System.Diagnostics.StackTrace" version="4.0.1" exclude="Build,Analyzers" />
+        <dependency id="System.Diagnostics.TraceSource" version="4.0.0" exclude="Build,Analyzers" />
+        <dependency id="System.IO.FileSystem.Watcher" version="4.0.0" exclude="Build,Analyzers" />
+        <dependency id="System.Net.NameResolution" version="4.0.0" exclude="Build,Analyzers" />
+        <dependency id="System.Net.Requests" version="4.0.11" exclude="Build,Analyzers" />
+        <dependency id="System.Reflection.TypeExtensions" version="4.1.0" exclude="Build,Analyzers" />
+        <dependency id="System.Runtime.Loader" version="4.0.0" exclude="Build,Analyzers" />
+        <dependency id="System.Threading.Thread" version="4.0.0" exclude="Build,Analyzers" />
+        <dependency id="System.Xml.XmlDocument" version="4.0.1" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework="MonoAndroid4.4" />
+      <group targetFramework="Silverlight4.0" />
+      <group targetFramework="Silverlight5.0" />
+      <group targetFramework="UAP10.0">
+        <dependency id="Microsoft.Extensions.PlatformAbstractions" version="1.0.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.NETCore.UniversalWindowsPlatform" version="5.2.2" exclude="Build,Analyzers" />
+        <dependency id="System.Collections.NonGeneric" version="4.0.1" exclude="Build,Analyzers" />
+        <dependency id="System.ComponentModel.Primitives" version="4.1.0" exclude="Build,Analyzers" />
+        <dependency id="System.Runtime.InteropServices.RuntimeInformation" version="4.0.0" exclude="Build,Analyzers" />
+        <dependency id="System.Xml.XmlDocument" version="4.0.1" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework="WindowsPhone8.0" />
+      <group targetFramework="Xamarin.iOS1.0" />
+      <group targetFramework=".NETStandard2.0" />
+    </dependencies>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="Java.Interop" targetFramework="MonoAndroid4.4" />
+      <frameworkAssembly assemblyName="Mono.Android" targetFramework="MonoAndroid4.4" />
+      <frameworkAssembly assemblyName="mscorlib" targetFramework="MonoAndroid4.4, Silverlight4.0, Silverlight5.0, WindowsPhone8.0, Xamarin.iOS1.0" />
+      <frameworkAssembly assemblyName="System.Core" targetFramework="MonoAndroid4.4, .NETFramework3.5, .NETFramework4.0-Client, .NETFramework4.5, Silverlight4.0, Silverlight5.0, WindowsPhone8.0, Xamarin.iOS1.0" />
+      <frameworkAssembly assemblyName="System" targetFramework="MonoAndroid4.4, .NETFramework3.5, .NETFramework4.0-Client, .NETFramework4.5, Silverlight4.0, Silverlight5.0, WindowsPhone8.0, Xamarin.iOS1.0" />
+      <frameworkAssembly assemblyName="System.Runtime" targetFramework="MonoAndroid4.4" />
+      <frameworkAssembly assemblyName="System.Xml" targetFramework="MonoAndroid4.4, .NETFramework3.5, .NETFramework4.0-Client, .NETFramework4.5, Silverlight4.0, Silverlight5.0, WindowsPhone8.0, Xamarin.iOS1.0" />
+      <frameworkAssembly assemblyName="System.Xml.Linq" targetFramework="MonoAndroid4.4" />
+      <frameworkAssembly assemblyName="System.Configuration" targetFramework=".NETFramework3.5, .NETFramework4.0-Client, .NETFramework4.5" />
+      <frameworkAssembly assemblyName="System.Data" targetFramework=".NETFramework3.5, .NETFramework4.0-Client, .NETFramework4.5" />
+      <frameworkAssembly assemblyName="System.Runtime.Serialization" targetFramework=".NETFramework3.5, .NETFramework4.0-Client, .NETFramework4.5, Silverlight4.0, Silverlight5.0" />
+      <frameworkAssembly assemblyName="System.ServiceModel" targetFramework=".NETFramework3.5, .NETFramework4.0-Client, .NETFramework4.5, Silverlight4.0, Silverlight5.0" />
+      <frameworkAssembly assemblyName="System.Transactions" targetFramework=".NETFramework3.5, .NETFramework4.0-Client, .NETFramework4.5" />
+      <frameworkAssembly assemblyName="Microsoft.CSharp" targetFramework=".NETFramework4.0-Client, .NETFramework4.5" />
+      <frameworkAssembly assemblyName="System.IO.Compression" targetFramework=".NETFramework4.5" />
+      <frameworkAssembly assemblyName="System.Net" targetFramework="Silverlight4.0, Silverlight5.0, WindowsPhone8.0" />
+      <frameworkAssembly assemblyName="System.Windows.Browser" targetFramework="Silverlight4.0, Silverlight5.0" />
+      <frameworkAssembly assemblyName="System.Windows" targetFramework="Silverlight4.0, Silverlight5.0, WindowsPhone8.0" />
+      <frameworkAssembly assemblyName="Xamarin.iOS" targetFramework="Xamarin.iOS1.0" />
+    </frameworkAssemblies>
+  </metadata>
+</package>

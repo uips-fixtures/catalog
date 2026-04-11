@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>NLog</id>
+    <version>4.7.0-rc1</version>
+    <title>NLog for .NET Framework and .NET Standard</title>
+    <authors>Jarek Kowalski,Kim Christensen,Julian Verdurmen</authors>
+    <owners>Jarek Kowalski,Kim Christensen,Julian Verdurmen</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>https://github.com/NLog/NLog/blob/master/LICENSE.txt</licenseUrl>
+    <projectUrl>https://nlog-project.org/</projectUrl>
+    <iconUrl>https://nlog-project.org/N.png</iconUrl>
+    <description>NLog is a logging platform for .NET with rich log routing and management capabilities.
+NLog supports traditional logging, structured logging and the combination of both.
+
+Supported platforms:
+
+- .NET Framework 3.5, 4, 4.5, 4.6, 4.7 &amp; 4.8
+- .NET Standard 1.3+ and 2.0+;
+- .NET Framework 4 client profile
+- Xamarin Android, Xamarin iOs
+- UWP
+- Windows Phone 8
+- Silverlight 4 and 5
+- Mono 4
+
+For ASP.NET Core, check: https://www.nuget.org/packages/NLog.Web.AspNetCore</description>
+    <releaseNotes>## Bugfixes
+- LogFactory - Fix deadlock issue with AutoReload (@snakefoot)
+- JsonLayout - Fixed ThreadAgnostic to correctly capture context when using nested JsonLayout (@snakefoot)
+- ExceptionLayoutRenderer - Fixed so Format option HResult also works for NetCore (@snakefoot)
+- Log4JXml Layout - Render NDLC + NDC scopes in correct order (@adanek + @304NotModified)
+
+## Features
+- LogManager.Setup() allows fluent configuration of LogFactory options (@snakefoot + @304NotModified)
+- LogManager.Setup().SetupSerialization(s =&gt; s.RegisterObjectTransformation(...)) for overriding default property reflection (@snakefoot + @304NotModified + @Giorgi + @mmurrell)
+- LogManager.Setup().SetupSerialization(s =&gt; s.RegisterConditionMethod(...)) can use lambda methods and not just static methods (@snakefoot)
+- ${level:format=FullName} will expand Info + Warn to their full name (@snakefoot)
+- FileTarget - Supports MaxArchiveDays for cleanup of old files based on their age (@snakefoot)
+- Layout.FromMethod to create Layout directly from a lambda method (@snakefoot)
+- Layout.FromString to create Layout directly from string along with optional parser validation (@snakefoot)
+- ${dir-separator} for rendering platform specific directory path separator (@304NotModified)
+- FileTarget - Supports ArchiveOldFileOnStartupAboveSize for cleanup of existing file when above size (@Sam13)
+
+## Improvements
+- XmlLoggingConfiguration - Marked legacy constructors with ignoreErrors parameter as obsolete (@snakefoot)
+- LoggingConfiguration - Perform checking of unused targets during initialization for better validation (@snakefoot)
+- EventLogTarget - Improve diagnostics logging when using dynamic EventLog source (@snakefoot)
+- ${longdate} now also supports raw value for use as DatabaseTarget parameter with DbType (@snakefoot)
+- SourceLink for GitHub for easy debugging into the NLog source code (@304NotModified)
+- JsonLayout - EscapeForwardSlash now automatically applies to sub-attributes (@snakefoot)
+- TraceTarget - Introduced EnableTraceFail=false to avoid Environment.FailFast (@snakefoot)
+- ExceptionLayoutRenderer - Improved error message when Format-token parsing fails (@snakefoot)
+- AutoFlushWrapper - Set AutoFlush=false for AsyncTaskTarget by default (@snakefoot)
+- LocalIpAddressLayoutRenderer - Higher priority to network-addresses that has valid gateway adddress (@snakefoot)
+- LogFactory - LogFactory - Flush reports to InternalLogger what targets produces timeouts (@snakefoot)  
+
+## Performance
+- ObjectGraphScanner - Avoid holding list.SyncRoot lock while scanning (@snakefoot)
+- FileTarget - ConcurrentWrites=true on NetCore now much faster when archive enabled (@snakefoot)
+- JsonConverter - Write DateTime directly without string allocation (@snakefoot)
+- XmlLayout - Removed unnecessary double conversion to string (@snakefoot)
+- WebServiceTarget - Reduced memory allocations by removing unnecessary delegate capture (@snakefoot)
+- NetworkTarget  - Reduced memory allocation for encoding into bytes without string allocation (@snakefoot)
+- AsyncTaskTarget - Skip default AsyncWrapper since already having internal queue (@snakefoot)
+- Mark Condition Expressions as ThreadSafe to improve concurrency in Layouts (@snakefoot)
+- DatabaseTarget - Added IsolationLevel option that activates transactions for better batching performance (@snakefoot)
+- SimpleLayout - Assignment of string-reference with null-value will translate into FixedText (@304NotModified)
+- AsyncWrapper - Less aggressive with scheduling timer events for background writing (@snakefoot)
+
+Full changelog: https://github.com/NLog/NLog/blob/master/CHANGELOG.md
+
+For all config options and platform support, check https://nlog-project.org/config/</releaseNotes>
+    <copyright>Copyright (c) 2004-2020 NLog Project - https://nlog-project.org/</copyright>
+    <tags>NLog logging log structured tracing logfiles database eventlog email wcf console</tags>
+    <repository type="git" url="https://github.com/NLog/NLog.git" />
+    <dependencies>
+      <group targetFramework=".NETFramework3.5" />
+      <group targetFramework=".NETFramework4.0-Client" />
+      <group targetFramework=".NETFramework4.5" />
+      <group targetFramework=".NETStandard1.3">
+        <dependency id="Microsoft.Extensions.PlatformAbstractions" version="1.0.0" exclude="Build,Analyzers" />
+        <dependency id="NETStandard.Library" version="1.6.0" exclude="Build,Analyzers" />
+        <dependency id="System.ComponentModel.Primitives" version="4.1.0" exclude="Build,Analyzers" />
+        <dependency id="System.ComponentModel.TypeConverter" version="4.1.0" exclude="Build,Analyzers" />
+        <dependency id="System.Data.Common" version="4.1.0" exclude="Build,Analyzers" />
+        <dependency id="System.Diagnostics.StackTrace" version="4.0.1" exclude="Build,Analyzers" />
+        <dependency id="System.Net.NameResolution" version="4.0.0" exclude="Build,Analyzers" />
+        <dependency id="System.Net.Requests" version="4.0.11" exclude="Build,Analyzers" />
+        <dependency id="System.Reflection.TypeExtensions" version="4.1.0" exclude="Build,Analyzers" />
+        <dependency id="System.Xml.XmlDocument" version="4.0.1" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETStandard1.5">
+        <dependency id="NETStandard.Library" version="1.6.0" exclude="Build,Analyzers" />
+        <dependency id="System.ComponentModel.Primitives" version="4.1.0" exclude="Build,Analyzers" />
+        <dependency id="System.ComponentModel.TypeConverter" version="4.1.0" exclude="Build,Analyzers" />
+        <dependency id="System.Data.Common" version="4.1.0" exclude="Build,Analyzers" />
+        <dependency id="System.Diagnostics.Process" version="4.1.0" exclude="Build,Analyzers" />
+        <dependency id="System.Diagnostics.StackTrace" version="4.0.1" exclude="Build,Analyzers" />
+        <dependency id="System.Diagnostics.TraceSource" version="4.0.0" exclude="Build,Analyzers" />
+        <dependency id="System.IO.FileSystem.Watcher" version="4.0.0" exclude="Build,Analyzers" />
+        <dependency id="System.Net.NameResolution" version="4.0.0" exclude="Build,Analyzers" />
+        <dependency id="System.Net.Requests" version="4.0.11" exclude="Build,Analyzers" />
+        <dependency id="System.Reflection.TypeExtensions" version="4.1.0" exclude="Build,Analyzers" />
+        <dependency id="System.Runtime.Loader" version="4.0.0" exclude="Build,Analyzers" />
+        <dependency id="System.Threading.Thread" version="4.0.0" exclude="Build,Analyzers" />
+        <dependency id="System.Xml.XmlDocument" version="4.0.1" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework="MonoAndroid4.4" />
+      <group targetFramework="Silverlight4.0" />
+      <group targetFramework="Silverlight5.0" />
+      <group targetFramework="WindowsPhone8.0" />
+      <group targetFramework="Xamarin.iOS1.0" />
+      <group targetFramework=".NETStandard2.0" />
+    </dependencies>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="Java.Interop" targetFramework="MonoAndroid4.4" />
+      <frameworkAssembly assemblyName="Mono.Android" targetFramework="MonoAndroid4.4" />
+      <frameworkAssembly assemblyName="mscorlib" targetFramework="MonoAndroid4.4, Silverlight4.0, Silverlight5.0, WindowsPhone8.0, Xamarin.iOS1.0" />
+      <frameworkAssembly assemblyName="System.Core" targetFramework="MonoAndroid4.4, .NETFramework3.5, .NETFramework4.0-Client, .NETFramework4.5, Silverlight4.0, Silverlight5.0, WindowsPhone8.0, Xamarin.iOS1.0" />
+      <frameworkAssembly assemblyName="System" targetFramework="MonoAndroid4.4, .NETFramework3.5, .NETFramework4.0-Client, .NETFramework4.5, Silverlight4.0, Silverlight5.0, WindowsPhone8.0, Xamarin.iOS1.0" />
+      <frameworkAssembly assemblyName="System.Xml" targetFramework="MonoAndroid4.4, .NETFramework3.5, .NETFramework4.0-Client, .NETFramework4.5, Silverlight4.0, Silverlight5.0, WindowsPhone8.0, Xamarin.iOS1.0" />
+      <frameworkAssembly assemblyName="System.Xml.Linq" targetFramework="MonoAndroid4.4" />
+      <frameworkAssembly assemblyName="System.Configuration" targetFramework=".NETFramework3.5, .NETFramework4.0-Client, .NETFramework4.5" />
+      <frameworkAssembly assemblyName="System.Data" targetFramework=".NETFramework3.5, .NETFramework4.0-Client, .NETFramework4.5" />
+      <frameworkAssembly assemblyName="System.Runtime.Serialization" targetFramework=".NETFramework3.5, .NETFramework4.0-Client, .NETFramework4.5, Silverlight4.0, Silverlight5.0" />
+      <frameworkAssembly assemblyName="System.ServiceModel" targetFramework=".NETFramework3.5, .NETFramework4.0-Client, .NETFramework4.5, Silverlight4.0, Silverlight5.0" />
+      <frameworkAssembly assemblyName="System.Transactions" targetFramework=".NETFramework3.5, .NETFramework4.0-Client, .NETFramework4.5" />
+      <frameworkAssembly assemblyName="Microsoft.CSharp" targetFramework=".NETFramework4.0-Client, .NETFramework4.5" />
+      <frameworkAssembly assemblyName="System.IO.Compression" targetFramework=".NETFramework4.5" />
+      <frameworkAssembly assemblyName="System.Net" targetFramework="Silverlight4.0, Silverlight5.0, WindowsPhone8.0" />
+      <frameworkAssembly assemblyName="System.Windows.Browser" targetFramework="Silverlight4.0, Silverlight5.0" />
+      <frameworkAssembly assemblyName="System.Windows" targetFramework="Silverlight4.0, Silverlight5.0, WindowsPhone8.0" />
+      <frameworkAssembly assemblyName="Xamarin.iOS" targetFramework="Xamarin.iOS1.0" />
+    </frameworkAssemblies>
+  </metadata>
+</package>
