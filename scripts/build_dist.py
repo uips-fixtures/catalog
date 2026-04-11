@@ -38,9 +38,10 @@ REPO_ROOT      = Path(__file__).resolve().parent.parent
 SHAPE_B_DIR    = REPO_ROOT / "data" / "sources" / "packagefurnace" / "pkg"
 FILESYSTEM_DIR = REPO_ROOT / "data" / "sources" / "filesystem" / "pkg"
 PKG_DATA_DIR   = REPO_ROOT / "data" / "pkg"
-OUT_LLMS_DIR         = REPO_ROOT / "data" / "dist" / "llms"
-CONFIG_PATH          = REPO_ROOT / "config" / "curated.yaml"
+OUT_LLMS_DIR          = REPO_ROOT / "data" / "dist" / "llms"
+CONFIG_PATH           = REPO_ROOT / "config" / "curated.yaml"
 VISIBILITY_RULES_PATH = REPO_ROOT / "config" / "visibility_rules.yaml"
+WF4_OVERLAY_PATH      = REPO_ROOT / "data" / "sources" / "dotnet-wf4" / "activities.json"
 
 # Optional pf-cache root — when set, enriched-catalog.json is preferred over plain engine-result.
 # Set via PF_CACHE env var (same as used by seed scripts).
@@ -143,13 +144,13 @@ def normalize_datatype(dt: str) -> str:
 # ── memberKind inference ───────────────────────────────────────────────────────
 
 _CHILD_RE = re.compile(
-    r"System\.Activities\."
+    r"(System\.Activities\.|CoreWf\.)"
     r"(Activity|ActivityAction|ActivityFunc|NativeActivity|AsyncCodeActivity|CodeActivity)"
-    r"[\[<,]?"
+    r"[\[<,>]?"
 )
 _VAR_RE = re.compile(
-    r"(System\.Collections\.ObjectModel\.Collection<System\.Activities\.Variable"
-    r"|System\.Activities\.Variable[<,\[])"
+    r"(System\.Collections\.ObjectModel\.Collection<(System\.Activities|CoreWf)\.Variable"
+    r"|(System\.Activities|CoreWf)\.Variable[<,\[])"
 )
 
 def infer_member_kind(data_type: str | None, arg_dir: str | None) -> str:
@@ -412,6 +413,103 @@ def build_package(pkg_id: str, version: str) -> dict | None:
     return catalog
 
 
+# ── CoreWF / dotnet-wf4 builder ───────────────────────────────────────────────
+
+_WF4_DIR_MAP = {"In": "in", "Out": "out", "InOut": "in-out"}
+
+
+def _build_corewf_member(arg: dict) -> dict:
+    raw_dir = arg.get("argumentDirection")
+    arg_dir = _WF4_DIR_MAP.get(raw_dir, raw_dir)
+    dt      = arg.get("dataType")
+    kind    = infer_member_kind(dt, arg_dir)
+    return {
+        "name":                  arg["name"],
+        "displayName":           arg.get("displayName") or arg["name"],
+        "dataType":              dt,
+        "memberKind":            kind,
+        "argumentDirection":     arg_dir if kind == "argument" else None,
+        "isRequiredArgument":    bool(arg.get("isRequired", False)) if kind == "argument" else False,
+        "description":           None,
+        "category":              None,
+        "defaultValue":          None,
+        "typeConverter":         None,
+        "isObsolete":            False,
+        "obsoleteMessage":       None,
+        "delegateArgumentName":  None,
+        "enumValues":            [],
+        "typeMembers":           [],
+    }
+
+
+def build_corewf() -> None:
+    """Build data/dist/llms/CoreWF/1.2.1.json from the dotnet-wf4 overlay."""
+    if not WF4_OVERLAY_PATH.exists():
+        return
+
+    overlay      = json.loads(WF4_OVERLAY_PATH.read_text(encoding="utf-8"))
+    meta         = overlay.get("meta", {})
+    pkg_id       = meta.get("packageId", "CoreWF")
+    version      = meta.get("packageVersion", "1.2.1")
+    xml_ns       = meta.get("xmlNamespace", "")
+    generated_at = datetime.datetime.now(datetime.UTC).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+    source_obj = {
+        "kind":         "dotnet-wf4",
+        "id":           pkg_id,
+        "version":      version,
+        "feedUrl":      "https://api.nuget.org/v3-flatcontainer",
+        "authors":      "UiPath / CoreWF contributors",
+        "projectUrl":   "https://github.com/UiPath/corewf",
+        "description":  "Windows Workflow Foundation (WF4) built-in activities — runtime primitives present in every UiPath workflow.",
+        "license":      "MIT",
+        "tags":         None,
+        "packageTypes": [],
+    }
+
+    activities = []
+    for item in overlay.get("activities", []):
+        members = [_build_corewf_member(a) for a in item.get("arguments", [])]
+        activities.append({
+            "id":                    f"{item['activityId']}@{pkg_id}/{version}",
+            "fullName":              item["activityId"],
+            "displayName":           item.get("displayName"),
+            "description":           None,
+            "category":              "Workflow Foundation",
+            "visibility":            "browsable",
+            "hasGenericParameters":  False,
+            "genericParameterNames": [],
+            "isObsolete":            False,
+            "obsoleteMessage":       None,
+            "xmlNamespace":          item.get("xmlNamespace", xml_ns),
+            "xmlPrefix":             item.get("xmlPrefix", ""),
+            "members":               members,
+        })
+
+    catalog = {
+        "schema":            {"id": "activity-catalog", "version": "v0.3"},
+        "source":            source_obj,
+        "generatedAt":       generated_at,
+        "activities":        activities,
+        "enums":             [],
+        "namespaceMappings": [
+            {
+                "xmlNamespace":   xml_ns,
+                "prefix":         "",
+                "clrNamespaces":  ["CoreWf.Statements"],
+                "sourceAssembly": "CoreWF",
+            }
+        ],
+    }
+
+    out_path = OUT_LLMS_DIR / pkg_id / f"{version}.json"
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    write_json(out_path, catalog)
+    print(f"  {pkg_id}/{version}: {len(activities)} activities (dotnet-wf4 overlay) -> {out_path}")
+
+    write_llms_txt(pkg_id, [version])
+
+
 # ── CLI ────────────────────────────────────────────────────────────────────────
 
 def main() -> None:
@@ -444,6 +542,8 @@ def main() -> None:
 
     for pkg_id, versions in sorted(built_versions.items()):
         write_llms_txt(pkg_id, versions)
+
+    build_corewf()
 
     total = sum(len(v) for v in built_versions.values())
     print(f"\nDone: {total} package/version catalogs, {len(built_versions)} llms.txt files "

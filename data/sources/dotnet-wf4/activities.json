@@ -1,0 +1,1064 @@
+{
+  "schema": {
+    "version": "v0.3",
+    "domain": "dotnet-wf4"
+  },
+  "meta": {
+    "packageId": "CoreWF",
+    "packageVersion": "1.2.1",
+    "xmlNamespace": "http://schemas.microsoft.com/netfx/2009/xaml/activities",
+    "xmlPrefixNote": "Default namespace in UiPath XAML \u2014 no prefix needed",
+    "source": "hand-authored overlay; property shapes from data/sources/nuget/pkg/CoreWF/1.2.1.json"
+  },
+  "activities": [
+    {
+      "activityId": "CoreWf.Statements.Assign",
+      "displayName": "Assign",
+      "xmlPrefix": "",
+      "xmlNamespace": "http://schemas.microsoft.com/netfx/2009/xaml/activities",
+      "arguments": [
+        {
+          "name": "To",
+          "displayName": "To",
+          "dataType": "CoreWf.OutArgument",
+          "argumentDirection": "Out",
+          "isRequired": false
+        },
+        {
+          "name": "Value",
+          "displayName": "Value",
+          "dataType": "CoreWf.InArgument",
+          "argumentDirection": "In",
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "activityId": "CoreWf.Statements.CancellationScope",
+      "displayName": "CancellationScope",
+      "xmlPrefix": "",
+      "xmlNamespace": "http://schemas.microsoft.com/netfx/2009/xaml/activities",
+      "arguments": [
+        {
+          "name": "Variables",
+          "displayName": "Variables",
+          "dataType": "System.Collections.ObjectModel.Collection<CoreWf.Variable>",
+          "argumentDirection": null,
+          "isRequired": false
+        },
+        {
+          "name": "Body",
+          "displayName": "Body",
+          "dataType": "CoreWf.Activity",
+          "argumentDirection": null,
+          "isRequired": false
+        },
+        {
+          "name": "CancellationHandler",
+          "displayName": "CancellationHandler",
+          "dataType": "CoreWf.Activity",
+          "argumentDirection": null,
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "activityId": "CoreWf.Statements.Catch",
+      "displayName": "Catch",
+      "xmlPrefix": "",
+      "xmlNamespace": "http://schemas.microsoft.com/netfx/2009/xaml/activities",
+      "arguments": [
+        {
+          "name": "ExceptionType",
+          "displayName": "ExceptionType",
+          "dataType": "System.Type",
+          "argumentDirection": null,
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "activityId": "CoreWf.Statements.CompensableActivity",
+      "displayName": "CompensableActivity",
+      "xmlPrefix": "",
+      "xmlNamespace": "http://schemas.microsoft.com/netfx/2009/xaml/activities",
+      "arguments": [
+        {
+          "name": "Variables",
+          "displayName": "Variables",
+          "dataType": "System.Collections.ObjectModel.Collection<CoreWf.Variable>",
+          "argumentDirection": null,
+          "isRequired": false
+        },
+        {
+          "name": "Body",
+          "displayName": "Body",
+          "dataType": "CoreWf.Activity",
+          "argumentDirection": null,
+          "isRequired": false
+        },
+        {
+          "name": "CancellationHandler",
+          "displayName": "CancellationHandler",
+          "dataType": "CoreWf.Activity",
+          "argumentDirection": null,
+          "isRequired": false
+        },
+        {
+          "name": "CompensationHandler",
+          "displayName": "CompensationHandler",
+          "dataType": "CoreWf.Activity",
+          "argumentDirection": null,
+          "isRequired": false
+        },
+        {
+          "name": "ConfirmationHandler",
+          "displayName": "ConfirmationHandler",
+          "dataType": "CoreWf.Activity",
+          "argumentDirection": null,
+          "isRequired": false
+        },
+        {
+          "name": "Result",
+          "displayName": "Result",
+          "dataType": "CoreWf.OutArgument<TResult>",
+          "argumentDirection": null,
+          "isRequired": false
+        },
+        {
+          "name": "ResultType",
+          "displayName": "ResultType",
+          "dataType": "System.Type",
+          "argumentDirection": null,
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "activityId": "CoreWf.Statements.Compensate",
+      "displayName": "Compensate",
+      "xmlPrefix": "",
+      "xmlNamespace": "http://schemas.microsoft.com/netfx/2009/xaml/activities",
+      "arguments": [
+        {
+          "name": "Target",
+          "displayName": "Target",
+          "dataType": "CoreWf.InArgument<CoreWf.Statements.CompensationToken>",
+          "argumentDirection": null,
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "activityId": "CoreWf.Statements.Confirm",
+      "displayName": "Confirm",
+      "xmlPrefix": "",
+      "xmlNamespace": "http://schemas.microsoft.com/netfx/2009/xaml/activities",
+      "arguments": [
+        {
+          "name": "Target",
+          "displayName": "Target",
+          "dataType": "CoreWf.InArgument<CoreWf.Statements.CompensationToken>",
+          "argumentDirection": null,
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "activityId": "CoreWf.Statements.CreateBookmarkScope",
+      "displayName": "CreateBookmarkScope",
+      "xmlPrefix": "",
+      "xmlNamespace": "http://schemas.microsoft.com/netfx/2009/xaml/activities",
+      "arguments": [
+        {
+          "name": "Result",
+          "displayName": "Result",
+          "dataType": "CoreWf.OutArgument<TResult>",
+          "argumentDirection": null,
+          "isRequired": false
+        },
+        {
+          "name": "ResultType",
+          "displayName": "ResultType",
+          "dataType": "System.Type",
+          "argumentDirection": null,
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "activityId": "CoreWf.Statements.Delay",
+      "displayName": "Delay",
+      "xmlPrefix": "",
+      "xmlNamespace": "http://schemas.microsoft.com/netfx/2009/xaml/activities",
+      "arguments": [
+        {
+          "name": "Duration",
+          "displayName": "Duration",
+          "dataType": "CoreWf.InArgument<System.TimeSpan>",
+          "argumentDirection": "In",
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "activityId": "CoreWf.Statements.DeleteBookmarkScope",
+      "displayName": "DeleteBookmarkScope",
+      "xmlPrefix": "",
+      "xmlNamespace": "http://schemas.microsoft.com/netfx/2009/xaml/activities",
+      "arguments": [
+        {
+          "name": "Scope",
+          "displayName": "Scope",
+          "dataType": "CoreWf.InArgument<CoreWf.BookmarkScope>",
+          "argumentDirection": null,
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "activityId": "CoreWf.Statements.DoWhile",
+      "displayName": "DoWhile",
+      "xmlPrefix": "",
+      "xmlNamespace": "http://schemas.microsoft.com/netfx/2009/xaml/activities",
+      "arguments": [
+        {
+          "name": "Variables",
+          "displayName": "Variables",
+          "dataType": "System.Collections.ObjectModel.Collection<CoreWf.Variable>",
+          "argumentDirection": null,
+          "isRequired": false
+        },
+        {
+          "name": "Condition",
+          "displayName": "Condition",
+          "dataType": "CoreWf.Activity<System.Boolean>",
+          "argumentDirection": "In",
+          "isRequired": false
+        },
+        {
+          "name": "Body",
+          "displayName": "Body",
+          "dataType": "CoreWf.Activity",
+          "argumentDirection": null,
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "activityId": "CoreWf.Statements.Flowchart",
+      "displayName": "Flowchart",
+      "xmlPrefix": "",
+      "xmlNamespace": "http://schemas.microsoft.com/netfx/2009/xaml/activities",
+      "arguments": [
+        {
+          "name": "ValidateUnconnectedNodes",
+          "displayName": "ValidateUnconnectedNodes",
+          "dataType": "System.Boolean",
+          "argumentDirection": null,
+          "isRequired": false
+        },
+        {
+          "name": "Variables",
+          "displayName": "Variables",
+          "dataType": "System.Collections.ObjectModel.Collection<CoreWf.Variable>",
+          "argumentDirection": null,
+          "isRequired": false
+        },
+        {
+          "name": "StartNode",
+          "displayName": "StartNode",
+          "dataType": "CoreWf.Statements.FlowNode",
+          "argumentDirection": null,
+          "isRequired": false
+        },
+        {
+          "name": "Nodes",
+          "displayName": "Nodes",
+          "dataType": "System.Collections.ObjectModel.Collection<CoreWf.Statements.FlowNode>",
+          "argumentDirection": null,
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "activityId": "CoreWf.Statements.FlowDecision",
+      "displayName": "FlowDecision",
+      "xmlPrefix": "",
+      "xmlNamespace": "http://schemas.microsoft.com/netfx/2009/xaml/activities",
+      "arguments": [
+        {
+          "name": "Condition",
+          "displayName": "Condition",
+          "dataType": "CoreWf.Activity<System.Boolean>",
+          "argumentDirection": "In",
+          "isRequired": false
+        },
+        {
+          "name": "True",
+          "displayName": "True",
+          "dataType": "CoreWf.Statements.FlowNode",
+          "argumentDirection": null,
+          "isRequired": false
+        },
+        {
+          "name": "False",
+          "displayName": "False",
+          "dataType": "CoreWf.Statements.FlowNode",
+          "argumentDirection": null,
+          "isRequired": false
+        },
+        {
+          "name": "DisplayName",
+          "displayName": "DisplayName",
+          "dataType": "System.String",
+          "argumentDirection": null,
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "activityId": "CoreWf.Statements.FlowStep",
+      "displayName": "FlowStep",
+      "xmlPrefix": "",
+      "xmlNamespace": "http://schemas.microsoft.com/netfx/2009/xaml/activities",
+      "arguments": [
+        {
+          "name": "Action",
+          "displayName": "Action",
+          "dataType": "CoreWf.Activity",
+          "argumentDirection": null,
+          "isRequired": false
+        },
+        {
+          "name": "Next",
+          "displayName": "Next",
+          "dataType": "CoreWf.Statements.FlowNode",
+          "argumentDirection": null,
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "activityId": "CoreWf.Statements.If",
+      "displayName": "If",
+      "xmlPrefix": "",
+      "xmlNamespace": "http://schemas.microsoft.com/netfx/2009/xaml/activities",
+      "arguments": [
+        {
+          "name": "Condition",
+          "displayName": "Condition",
+          "dataType": "CoreWf.InArgument<System.Boolean>",
+          "argumentDirection": "In",
+          "isRequired": false
+        },
+        {
+          "name": "Then",
+          "displayName": "Then",
+          "dataType": "CoreWf.Activity",
+          "argumentDirection": null,
+          "isRequired": false
+        },
+        {
+          "name": "Else",
+          "displayName": "Else",
+          "dataType": "CoreWf.Activity",
+          "argumentDirection": null,
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "activityId": "CoreWf.Statements.InvokeAction",
+      "displayName": "InvokeAction",
+      "xmlPrefix": "",
+      "xmlNamespace": "http://schemas.microsoft.com/netfx/2009/xaml/activities",
+      "arguments": [
+        {
+          "name": "Action",
+          "displayName": "Action",
+          "dataType": "CoreWf.ActivityAction",
+          "argumentDirection": null,
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "activityId": "CoreWf.Statements.InvokeDelegate",
+      "displayName": "InvokeDelegate",
+      "xmlPrefix": "",
+      "xmlNamespace": "http://schemas.microsoft.com/netfx/2009/xaml/activities",
+      "arguments": [
+        {
+          "name": "Delegate",
+          "displayName": "Delegate",
+          "dataType": "CoreWf.ActivityDelegate",
+          "argumentDirection": null,
+          "isRequired": false
+        },
+        {
+          "name": "DelegateArguments",
+          "displayName": "DelegateArguments",
+          "dataType": "System.Collections.Generic.IDictionary<System.String, CoreWf.Argument>",
+          "argumentDirection": null,
+          "isRequired": false
+        },
+        {
+          "name": "Default",
+          "displayName": "Default",
+          "dataType": "CoreWf.Activity",
+          "argumentDirection": null,
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "activityId": "CoreWf.Statements.InvokeMethod",
+      "displayName": "InvokeMethod",
+      "xmlPrefix": "",
+      "xmlNamespace": "http://schemas.microsoft.com/netfx/2009/xaml/activities",
+      "arguments": [
+        {
+          "name": "GenericTypeArguments",
+          "displayName": "GenericTypeArguments",
+          "dataType": "System.Collections.ObjectModel.Collection<System.Type>",
+          "argumentDirection": null,
+          "isRequired": false
+        },
+        {
+          "name": "MethodName",
+          "displayName": "MethodName",
+          "dataType": "System.String",
+          "argumentDirection": "In",
+          "isRequired": false
+        },
+        {
+          "name": "Parameters",
+          "displayName": "Parameters",
+          "dataType": "System.Collections.ObjectModel.Collection<CoreWf.Argument>",
+          "argumentDirection": "In",
+          "isRequired": false
+        },
+        {
+          "name": "Result",
+          "displayName": "Result",
+          "dataType": "CoreWf.OutArgument",
+          "argumentDirection": "Out",
+          "isRequired": false
+        },
+        {
+          "name": "TargetObject",
+          "displayName": "TargetObject",
+          "dataType": "CoreWf.InArgument",
+          "argumentDirection": "In",
+          "isRequired": false
+        },
+        {
+          "name": "TargetType",
+          "displayName": "TargetType",
+          "dataType": "System.Type",
+          "argumentDirection": "In",
+          "isRequired": false
+        },
+        {
+          "name": "RunAsynchronously",
+          "displayName": "RunAsynchronously",
+          "dataType": "System.Boolean",
+          "argumentDirection": null,
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "activityId": "CoreWf.Statements.NoPersistScope",
+      "displayName": "NoPersistScope",
+      "xmlPrefix": "",
+      "xmlNamespace": "http://schemas.microsoft.com/netfx/2009/xaml/activities",
+      "arguments": [
+        {
+          "name": "Body",
+          "displayName": "Body",
+          "dataType": "CoreWf.Activity",
+          "argumentDirection": null,
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "activityId": "CoreWf.Statements.Parallel",
+      "displayName": "Parallel",
+      "xmlPrefix": "",
+      "xmlNamespace": "http://schemas.microsoft.com/netfx/2009/xaml/activities",
+      "arguments": [
+        {
+          "name": "Variables",
+          "displayName": "Variables",
+          "dataType": "System.Collections.ObjectModel.Collection<CoreWf.Variable>",
+          "argumentDirection": null,
+          "isRequired": false
+        },
+        {
+          "name": "CompletionCondition",
+          "displayName": "CompletionCondition",
+          "dataType": "CoreWf.Activity<System.Boolean>",
+          "argumentDirection": "In",
+          "isRequired": false
+        },
+        {
+          "name": "Branches",
+          "displayName": "Branches",
+          "dataType": "System.Collections.ObjectModel.Collection<CoreWf.Activity>",
+          "argumentDirection": null,
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "activityId": "CoreWf.Statements.Persist",
+      "displayName": "Persist",
+      "xmlPrefix": "",
+      "xmlNamespace": "http://schemas.microsoft.com/netfx/2009/xaml/activities",
+      "arguments": []
+    },
+    {
+      "activityId": "CoreWf.Statements.Pick",
+      "displayName": "Pick",
+      "xmlPrefix": "",
+      "xmlNamespace": "http://schemas.microsoft.com/netfx/2009/xaml/activities",
+      "arguments": [
+        {
+          "name": "Branches",
+          "displayName": "Branches",
+          "dataType": "System.Collections.ObjectModel.Collection<CoreWf.Statements.PickBranch>",
+          "argumentDirection": null,
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "activityId": "CoreWf.Statements.PickBranch",
+      "displayName": "PickBranch",
+      "xmlPrefix": "",
+      "xmlNamespace": "http://schemas.microsoft.com/netfx/2009/xaml/activities",
+      "arguments": [
+        {
+          "name": "Variables",
+          "displayName": "Variables",
+          "dataType": "System.Collections.ObjectModel.Collection<CoreWf.Variable>",
+          "argumentDirection": null,
+          "isRequired": false
+        },
+        {
+          "name": "Trigger",
+          "displayName": "Trigger",
+          "dataType": "CoreWf.Activity",
+          "argumentDirection": null,
+          "isRequired": false
+        },
+        {
+          "name": "Action",
+          "displayName": "Action",
+          "dataType": "CoreWf.Activity",
+          "argumentDirection": null,
+          "isRequired": false
+        },
+        {
+          "name": "DisplayName",
+          "displayName": "DisplayName",
+          "dataType": "System.String",
+          "argumentDirection": null,
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "activityId": "CoreWf.Statements.Rethrow",
+      "displayName": "Rethrow",
+      "xmlPrefix": "",
+      "xmlNamespace": "http://schemas.microsoft.com/netfx/2009/xaml/activities",
+      "arguments": []
+    },
+    {
+      "activityId": "CoreWf.Statements.Sequence",
+      "displayName": "Sequence",
+      "xmlPrefix": "",
+      "xmlNamespace": "http://schemas.microsoft.com/netfx/2009/xaml/activities",
+      "arguments": [
+        {
+          "name": "Variables",
+          "displayName": "Variables",
+          "dataType": "System.Collections.ObjectModel.Collection<CoreWf.Variable>",
+          "argumentDirection": null,
+          "isRequired": false
+        },
+        {
+          "name": "Activities",
+          "displayName": "Activities",
+          "dataType": "System.Collections.ObjectModel.Collection<CoreWf.Activity>",
+          "argumentDirection": null,
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "activityId": "CoreWf.Statements.State",
+      "displayName": "State",
+      "xmlPrefix": "",
+      "xmlNamespace": "http://schemas.microsoft.com/netfx/2009/xaml/activities",
+      "arguments": [
+        {
+          "name": "DisplayName",
+          "displayName": "DisplayName",
+          "dataType": "System.String",
+          "argumentDirection": null,
+          "isRequired": false
+        },
+        {
+          "name": "Entry",
+          "displayName": "Entry",
+          "dataType": "CoreWf.Activity",
+          "argumentDirection": null,
+          "isRequired": false
+        },
+        {
+          "name": "Exit",
+          "displayName": "Exit",
+          "dataType": "CoreWf.Activity",
+          "argumentDirection": null,
+          "isRequired": false
+        },
+        {
+          "name": "Transitions",
+          "displayName": "Transitions",
+          "dataType": "System.Collections.ObjectModel.Collection<CoreWf.Statements.Transition>",
+          "argumentDirection": null,
+          "isRequired": false
+        },
+        {
+          "name": "Variables",
+          "displayName": "Variables",
+          "dataType": "System.Collections.ObjectModel.Collection<CoreWf.Variable>",
+          "argumentDirection": null,
+          "isRequired": false
+        },
+        {
+          "name": "IsFinal",
+          "displayName": "IsFinal",
+          "dataType": "System.Boolean",
+          "argumentDirection": "In",
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "activityId": "CoreWf.Statements.StateMachine",
+      "displayName": "StateMachine",
+      "xmlPrefix": "",
+      "xmlNamespace": "http://schemas.microsoft.com/netfx/2009/xaml/activities",
+      "arguments": [
+        {
+          "name": "InitialState",
+          "displayName": "InitialState",
+          "dataType": "CoreWf.Statements.State",
+          "argumentDirection": null,
+          "isRequired": false
+        },
+        {
+          "name": "States",
+          "displayName": "States",
+          "dataType": "System.Collections.ObjectModel.Collection<CoreWf.Statements.State>",
+          "argumentDirection": null,
+          "isRequired": false
+        },
+        {
+          "name": "Variables",
+          "displayName": "Variables",
+          "dataType": "System.Collections.ObjectModel.Collection<CoreWf.Variable>",
+          "argumentDirection": null,
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "activityId": "CoreWf.Statements.TerminateWorkflow",
+      "displayName": "TerminateWorkflow",
+      "xmlPrefix": "",
+      "xmlNamespace": "http://schemas.microsoft.com/netfx/2009/xaml/activities",
+      "arguments": [
+        {
+          "name": "Reason",
+          "displayName": "Reason",
+          "dataType": "CoreWf.InArgument<System.String>",
+          "argumentDirection": "In",
+          "isRequired": false
+        },
+        {
+          "name": "Exception",
+          "displayName": "Exception",
+          "dataType": "CoreWf.InArgument<System.Exception>",
+          "argumentDirection": "In",
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "activityId": "CoreWf.Statements.Throw",
+      "displayName": "Throw",
+      "xmlPrefix": "",
+      "xmlNamespace": "http://schemas.microsoft.com/netfx/2009/xaml/activities",
+      "arguments": [
+        {
+          "name": "Exception",
+          "displayName": "Exception",
+          "dataType": "CoreWf.InArgument<System.Exception>",
+          "argumentDirection": "In",
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "activityId": "CoreWf.Statements.TransactionScope",
+      "displayName": "TransactionScope",
+      "xmlPrefix": "",
+      "xmlNamespace": "http://schemas.microsoft.com/netfx/2009/xaml/activities",
+      "arguments": [
+        {
+          "name": "Body",
+          "displayName": "Body",
+          "dataType": "CoreWf.Activity",
+          "argumentDirection": null,
+          "isRequired": false
+        },
+        {
+          "name": "AbortInstanceOnTransactionFailure",
+          "displayName": "AbortInstanceOnTransactionFailure",
+          "dataType": "System.Boolean",
+          "argumentDirection": null,
+          "isRequired": false
+        },
+        {
+          "name": "IsolationLevel",
+          "displayName": "IsolationLevel",
+          "dataType": "CoreWf.Transactions.IsolationLevel",
+          "argumentDirection": null,
+          "isRequired": false
+        },
+        {
+          "name": "Timeout",
+          "displayName": "Timeout",
+          "dataType": "CoreWf.InArgument<System.TimeSpan>",
+          "argumentDirection": null,
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "activityId": "CoreWf.Statements.Transition",
+      "displayName": "Transition",
+      "xmlPrefix": "",
+      "xmlNamespace": "http://schemas.microsoft.com/netfx/2009/xaml/activities",
+      "arguments": [
+        {
+          "name": "Action",
+          "displayName": "Action",
+          "dataType": "CoreWf.Activity",
+          "argumentDirection": null,
+          "isRequired": false
+        },
+        {
+          "name": "Condition",
+          "displayName": "Condition",
+          "dataType": "CoreWf.Activity<System.Boolean>",
+          "argumentDirection": "In",
+          "isRequired": false
+        },
+        {
+          "name": "DisplayName",
+          "displayName": "DisplayName",
+          "dataType": "System.String",
+          "argumentDirection": null,
+          "isRequired": false
+        },
+        {
+          "name": "To",
+          "displayName": "To",
+          "dataType": "CoreWf.Statements.State",
+          "argumentDirection": null,
+          "isRequired": false
+        },
+        {
+          "name": "Trigger",
+          "displayName": "Trigger",
+          "dataType": "CoreWf.Activity",
+          "argumentDirection": null,
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "activityId": "CoreWf.Statements.TryCatch",
+      "displayName": "TryCatch",
+      "xmlPrefix": "",
+      "xmlNamespace": "http://schemas.microsoft.com/netfx/2009/xaml/activities",
+      "arguments": [
+        {
+          "name": "Variables",
+          "displayName": "Variables",
+          "dataType": "System.Collections.ObjectModel.Collection<CoreWf.Variable>",
+          "argumentDirection": null,
+          "isRequired": false
+        },
+        {
+          "name": "Try",
+          "displayName": "Try",
+          "dataType": "CoreWf.Activity",
+          "argumentDirection": null,
+          "isRequired": false
+        },
+        {
+          "name": "Catches",
+          "displayName": "Catches",
+          "dataType": "System.Collections.ObjectModel.Collection<CoreWf.Statements.Catch>",
+          "argumentDirection": null,
+          "isRequired": false
+        },
+        {
+          "name": "Finally",
+          "displayName": "Finally",
+          "dataType": "CoreWf.Activity",
+          "argumentDirection": null,
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "activityId": "CoreWf.Statements.While",
+      "displayName": "While",
+      "xmlPrefix": "",
+      "xmlNamespace": "http://schemas.microsoft.com/netfx/2009/xaml/activities",
+      "arguments": [
+        {
+          "name": "Variables",
+          "displayName": "Variables",
+          "dataType": "System.Collections.ObjectModel.Collection<CoreWf.Variable>",
+          "argumentDirection": null,
+          "isRequired": false
+        },
+        {
+          "name": "Condition",
+          "displayName": "Condition",
+          "dataType": "CoreWf.Activity<System.Boolean>",
+          "argumentDirection": "In",
+          "isRequired": false
+        },
+        {
+          "name": "Body",
+          "displayName": "Body",
+          "dataType": "CoreWf.Activity",
+          "argumentDirection": null,
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "activityId": "CoreWf.Statements.WorkflowTerminatedException",
+      "displayName": "WorkflowTerminatedException",
+      "xmlPrefix": "",
+      "xmlNamespace": "http://schemas.microsoft.com/netfx/2009/xaml/activities",
+      "arguments": [
+        {
+          "name": "TargetSite",
+          "displayName": "TargetSite",
+          "dataType": "System.Reflection.MethodBase",
+          "argumentDirection": null,
+          "isRequired": false
+        },
+        {
+          "name": "Message",
+          "displayName": "Message",
+          "dataType": "System.String",
+          "argumentDirection": null,
+          "isRequired": false
+        },
+        {
+          "name": "Data",
+          "displayName": "Data",
+          "dataType": "System.Collections.IDictionary",
+          "argumentDirection": null,
+          "isRequired": false
+        },
+        {
+          "name": "InnerException",
+          "displayName": "InnerException",
+          "dataType": "System.Exception",
+          "argumentDirection": null,
+          "isRequired": false
+        },
+        {
+          "name": "HelpLink",
+          "displayName": "HelpLink",
+          "dataType": "System.String",
+          "argumentDirection": null,
+          "isRequired": false
+        },
+        {
+          "name": "Source",
+          "displayName": "Source",
+          "dataType": "System.String",
+          "argumentDirection": null,
+          "isRequired": false
+        },
+        {
+          "name": "HResult",
+          "displayName": "HResult",
+          "dataType": "System.Int32",
+          "argumentDirection": null,
+          "isRequired": false
+        },
+        {
+          "name": "StackTrace",
+          "displayName": "StackTrace",
+          "dataType": "System.String",
+          "argumentDirection": null,
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "activityId": "CoreWf.Statements.WriteLine",
+      "displayName": "WriteLine",
+      "xmlPrefix": "",
+      "xmlNamespace": "http://schemas.microsoft.com/netfx/2009/xaml/activities",
+      "arguments": [
+        {
+          "name": "TextWriter",
+          "displayName": "TextWriter",
+          "dataType": "CoreWf.InArgument<System.IO.TextWriter>",
+          "argumentDirection": "In",
+          "isRequired": false
+        },
+        {
+          "name": "Text",
+          "displayName": "Text",
+          "dataType": "CoreWf.InArgument<System.String>",
+          "argumentDirection": "In",
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "activityId": "CoreWf.Statements.Tracking.StateMachineStateQuery",
+      "displayName": "StateMachineStateQuery",
+      "xmlPrefix": "",
+      "xmlNamespace": "http://schemas.microsoft.com/netfx/2009/xaml/activities",
+      "arguments": [
+        {
+          "name": "Name",
+          "displayName": "Name",
+          "dataType": "System.String",
+          "argumentDirection": null,
+          "isRequired": false
+        },
+        {
+          "name": "ActivityName",
+          "displayName": "ActivityName",
+          "dataType": "System.String",
+          "argumentDirection": null,
+          "isRequired": false
+        },
+        {
+          "name": "QueryAnnotations",
+          "displayName": "QueryAnnotations",
+          "dataType": "System.Collections.Generic.IDictionary<System.String, System.String>",
+          "argumentDirection": null,
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "activityId": "CoreWf.Statements.Tracking.StateMachineStateRecord",
+      "displayName": "StateMachineStateRecord",
+      "xmlPrefix": "",
+      "xmlNamespace": "http://schemas.microsoft.com/netfx/2009/xaml/activities",
+      "arguments": [
+        {
+          "name": "StateMachineName",
+          "displayName": "StateMachineName",
+          "dataType": "System.String",
+          "argumentDirection": null,
+          "isRequired": false
+        },
+        {
+          "name": "StateName",
+          "displayName": "StateName",
+          "dataType": "System.String",
+          "argumentDirection": null,
+          "isRequired": false
+        },
+        {
+          "name": "Name",
+          "displayName": "Name",
+          "dataType": "System.String",
+          "argumentDirection": null,
+          "isRequired": false
+        },
+        {
+          "name": "Activity",
+          "displayName": "Activity",
+          "dataType": "CoreWf.Tracking.ActivityInfo",
+          "argumentDirection": null,
+          "isRequired": false
+        },
+        {
+          "name": "Data",
+          "displayName": "Data",
+          "dataType": "System.Collections.Generic.IDictionary<System.String, System.Object>",
+          "argumentDirection": null,
+          "isRequired": false
+        },
+        {
+          "name": "InstanceId",
+          "displayName": "InstanceId",
+          "dataType": "System.Guid",
+          "argumentDirection": null,
+          "isRequired": false
+        },
+        {
+          "name": "RecordNumber",
+          "displayName": "RecordNumber",
+          "dataType": "System.Int64",
+          "argumentDirection": null,
+          "isRequired": false
+        },
+        {
+          "name": "EventTime",
+          "displayName": "EventTime",
+          "dataType": "System.DateTime",
+          "argumentDirection": null,
+          "isRequired": false
+        },
+        {
+          "name": "Level",
+          "displayName": "Level",
+          "dataType": "System.Diagnostics.Tracing.EventLevel",
+          "argumentDirection": null,
+          "isRequired": false
+        },
+        {
+          "name": "Annotations",
+          "displayName": "Annotations",
+          "dataType": "System.Collections.Generic.IDictionary<System.String, System.String>",
+          "argumentDirection": null,
+          "isRequired": false
+        },
+        {
+          "name": "HasAnnotations",
+          "displayName": "HasAnnotations",
+          "dataType": "System.Boolean",
+          "argumentDirection": null,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

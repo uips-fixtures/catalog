@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CoreWF 1.2.1 — Activity Reference</title>
+  <style>
+    :root {
+      --base3:  #fdf6e3; --base2: #eee8d5; --base1: #93a1a1;
+      --base00: #657b83; --base01: #586e75;
+      --orange: #cb4b16; --blue: #268bd2; --cyan: #2aa198;
+      --green:  #859900;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: var(--base3); color: var(--base00);
+      line-height: 1.55; padding: 0 0 4rem;
+    }
+    .topbar {
+      background: var(--orange); color: #fff;
+      padding: 0 2rem; height: 50px;
+      display: flex; align-items: center; gap: 1rem;
+      font-weight: 700; font-size: 1rem;
+    }
+    .topbar a { color: #fff; text-decoration: none; }
+    .topbar-sub { font-weight: 400; font-size: 0.82rem; opacity: 0.82; }
+    .content { max-width: 960px; margin: 0 auto; padding: 2rem 1.5rem 0; }
+    .gen-meta {
+      font-size: 0.78rem; color: var(--base1);
+      border-bottom: 1px solid var(--base2);
+      padding-bottom: 0.75rem; margin-bottom: 2rem;
+    }
+    .pkg-section { margin-bottom: 3rem; }
+    .pkg-heading {
+      font-size: 1.05rem; font-weight: 700;
+      color: var(--base01); border-bottom: 2px solid var(--orange);
+      padding-bottom: 0.3rem; margin-bottom: 1.25rem;
+    }
+    .activity {
+      background: #fff; border: 1px solid var(--base2);
+      border-radius: 4px; padding: 1rem 1.25rem; margin-bottom: 1rem;
+    }
+    .activity-name { font-size: 1rem; font-weight: 700; color: var(--base01); margin-bottom: 0.15rem; }
+    .activity-full { font-family: ui-monospace, monospace; font-size: 0.78rem; color: var(--base1); margin-bottom: 0.5rem; }
+    .activity-desc { font-size: 0.875rem; margin-bottom: 0.75rem; }
+    .badge {
+      display: inline-block; font-size: 0.72rem; padding: 0.1em 0.5em;
+      border-radius: 3px; margin-right: 0.35rem; margin-bottom: 0.5rem;
+      background: var(--base2); color: var(--base01);
+    }
+    .badge-cat { background: #d4edda; color: #155724; }
+    .members-heading {
+      font-size: 0.72rem; text-transform: uppercase;
+      letter-spacing: 0.07em; color: var(--base1);
+      margin: 0.75rem 0 0.35rem;
+    }
+    table { border-collapse: collapse; width: 100%; font-size: 0.82rem; }
+    th, td { text-align: left; padding: 0.3rem 0.6rem; border-bottom: 1px solid var(--base2); }
+    th { background: var(--base2); color: var(--base01); font-size: 0.75rem; font-weight: 600; }
+    tr:last-child td { border-bottom: none; }
+    .dir-in    { color: var(--green);  font-weight: 600; }
+    .dir-out   { color: var(--blue);   font-weight: 600; }
+    .dir-inout { color: var(--cyan);   font-weight: 600; }
+    .req       { color: var(--orange); font-weight: 700; }
+    code { background: var(--base2); padding: 0.1em 0.35em; border-radius: 3px;
+           font-size: 0.85em; font-family: ui-monospace, monospace; }
+    .no-members { font-size: 0.8rem; color: var(--base1); font-style: italic; }
+    .pkg-list { list-style: none; columns: 2; }
+    .pkg-list li { padding: 0.2rem 0; }
+    .pkg-list a { color: var(--blue); text-decoration: none; }
+    .pkg-list a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a href="../../index.html">uips-fixtures</a>
+    <span class="topbar-sub">CoreWF 1.2.1</span>
+  </header>
+  <div class="content">
+    <p class="gen-meta">
+      36 activities &middot;
+      uips-fixtures catalog v0.3 &middot; generated 2026-04-11T08:33:04Z
+    </p>
+    <div class="activity" id="CoreWf-Statements-Assign">
+      <div class="activity-name">Assign</div>
+      <div class="activity-full">CoreWf.Statements.Assign</div>
+<span class="badge badge-cat">Workflow Foundation</span>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>To</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>CoreWf.OutArgument</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Value</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>CoreWf.InArgument</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="CoreWf-Statements-CancellationScope">
+      <div class="activity-name">CancellationScope</div>
+      <div class="activity-full">CoreWf.Statements.CancellationScope</div>
+<span class="badge badge-cat">Workflow Foundation</span>      <p class="members-heading">Child Activities / Variable Scope</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Variables</td>
+          <td>variable-scope</td>
+          <td><code>Collection&lt;CoreWf.Variable&gt;</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Body</td>
+          <td>child</td>
+          <td><code>CoreWf.Activity</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>CancellationHandler</td>
+          <td>child</td>
+          <td><code>CoreWf.Activity</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="CoreWf-Statements-Catch">
+      <div class="activity-name">Catch</div>
+      <div class="activity-full">CoreWf.Statements.Catch</div>
+<span class="badge badge-cat">Workflow Foundation</span>      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>ExceptionType</td>
+          <td>property</td>
+          <td><code>Type</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="CoreWf-Statements-CompensableActivity">
+      <div class="activity-name">CompensableActivity</div>
+      <div class="activity-full">CoreWf.Statements.CompensableActivity</div>
+<span class="badge badge-cat">Workflow Foundation</span>      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Result</td>
+          <td>property</td>
+          <td><code>CoreWf.OutArgument&lt;TResult&gt;</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ResultType</td>
+          <td>property</td>
+          <td><code>Type</code></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Child Activities / Variable Scope</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Variables</td>
+          <td>variable-scope</td>
+          <td><code>Collection&lt;CoreWf.Variable&gt;</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Body</td>
+          <td>child</td>
+          <td><code>CoreWf.Activity</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>CancellationHandler</td>
+          <td>child</td>
+          <td><code>CoreWf.Activity</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>CompensationHandler</td>
+          <td>child</td>
+          <td><code>CoreWf.Activity</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ConfirmationHandler</td>
+          <td>child</td>
+          <td><code>CoreWf.Activity</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="CoreWf-Statements-Compensate">
+      <div class="activity-name">Compensate</div>
+      <div class="activity-full">CoreWf.Statements.Compensate</div>
+<span class="badge badge-cat">Workflow Foundation</span>      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Target</td>
+          <td>property</td>
+          <td><code>CoreWf.InArgument&lt;CoreWf.Statements.CompensationToken&gt;</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="CoreWf-Statements-Confirm">
+      <div class="activity-name">Confirm</div>
+      <div class="activity-full">CoreWf.Statements.Confirm</div>
+<span class="badge badge-cat">Workflow Foundation</span>      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Target</td>
+          <td>property</td>
+          <td><code>CoreWf.InArgument&lt;CoreWf.Statements.CompensationToken&gt;</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="CoreWf-Statements-CreateBookmarkScope">
+      <div class="activity-name">CreateBookmarkScope</div>
+      <div class="activity-full">CoreWf.Statements.CreateBookmarkScope</div>
+<span class="badge badge-cat">Workflow Foundation</span>      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Result</td>
+          <td>property</td>
+          <td><code>CoreWf.OutArgument&lt;TResult&gt;</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ResultType</td>
+          <td>property</td>
+          <td><code>Type</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="CoreWf-Statements-Delay">
+      <div class="activity-name">Delay</div>
+      <div class="activity-full">CoreWf.Statements.Delay</div>
+<span class="badge badge-cat">Workflow Foundation</span>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>Duration</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>CoreWf.InArgument&lt;TimeSpan&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="CoreWf-Statements-DeleteBookmarkScope">
+      <div class="activity-name">DeleteBookmarkScope</div>
+      <div class="activity-full">CoreWf.Statements.DeleteBookmarkScope</div>
+<span class="badge badge-cat">Workflow Foundation</span>      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Scope</td>
+          <td>property</td>
+          <td><code>CoreWf.InArgument&lt;CoreWf.BookmarkScope&gt;</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="CoreWf-Statements-DoWhile">
+      <div class="activity-name">DoWhile</div>
+      <div class="activity-full">CoreWf.Statements.DoWhile</div>
+<span class="badge badge-cat">Workflow Foundation</span>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>Condition</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>CoreWf.Activity&lt;Boolean&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Child Activities / Variable Scope</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Variables</td>
+          <td>variable-scope</td>
+          <td><code>Collection&lt;CoreWf.Variable&gt;</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Body</td>
+          <td>child</td>
+          <td><code>CoreWf.Activity</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="CoreWf-Statements-Flowchart">
+      <div class="activity-name">Flowchart</div>
+      <div class="activity-full">CoreWf.Statements.Flowchart</div>
+<span class="badge badge-cat">Workflow Foundation</span>      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>ValidateUnconnectedNodes</td>
+          <td>property</td>
+          <td><code>Boolean</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>StartNode</td>
+          <td>property</td>
+          <td><code>CoreWf.Statements.FlowNode</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Nodes</td>
+          <td>property</td>
+          <td><code>Collection&lt;CoreWf.Statements.FlowNode&gt;</code></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Child Activities / Variable Scope</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Variables</td>
+          <td>variable-scope</td>
+          <td><code>Collection&lt;CoreWf.Variable&gt;</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="CoreWf-Statements-FlowDecision">
+      <div class="activity-name">FlowDecision</div>
+      <div class="activity-full">CoreWf.Statements.FlowDecision</div>
+<span class="badge badge-cat">Workflow Foundation</span>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>Condition</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>CoreWf.Activity&lt;Boolean&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>True</td>
+          <td>property</td>
+          <td><code>CoreWf.Statements.FlowNode</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>False</td>
+          <td>property</td>
+          <td><code>CoreWf.Statements.FlowNode</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>DisplayName</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="CoreWf-Statements-FlowStep">
+      <div class="activity-name">FlowStep</div>
+      <div class="activity-full">CoreWf.Statements.FlowStep</div>
+<span class="badge badge-cat">Workflow Foundation</span>      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Next</td>
+          <td>property</td>
+          <td><code>CoreWf.Statements.FlowNode</code></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Child Activities / Variable Scope</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Action</td>
+          <td>child</td>
+          <td><code>CoreWf.Activity</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="CoreWf-Statements-If">
+      <div class="activity-name">If</div>
+      <div class="activity-full">CoreWf.Statements.If</div>
+<span class="badge badge-cat">Workflow Foundation</span>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>Condition</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>CoreWf.InArgument&lt;Boolean&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Child Activities / Variable Scope</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Then</td>
+          <td>child</td>
+          <td><code>CoreWf.Activity</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Else</td>
+          <td>child</td>
+          <td><code>CoreWf.Activity</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="CoreWf-Statements-InvokeAction">
+      <div class="activity-name">InvokeAction</div>
+      <div class="activity-full">CoreWf.Statements.InvokeAction</div>
+<span class="badge badge-cat">Workflow Foundation</span>      <p class="members-heading">Child Activities / Variable Scope</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Action</td>
+          <td>child</td>
+          <td><code>CoreWf.ActivityAction</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="CoreWf-Statements-InvokeDelegate">
+      <div class="activity-name">InvokeDelegate</div>
+      <div class="activity-full">CoreWf.Statements.InvokeDelegate</div>
+<span class="badge badge-cat">Workflow Foundation</span>      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>DelegateArguments</td>
+          <td>property</td>
+          <td><code>IDictionary&lt;String, CoreWf.Argument&gt;</code></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Child Activities / Variable Scope</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Delegate</td>
+          <td>child</td>
+          <td><code>CoreWf.ActivityDelegate</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Default</td>
+          <td>child</td>
+          <td><code>CoreWf.Activity</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="CoreWf-Statements-InvokeMethod">
+      <div class="activity-name">InvokeMethod</div>
+      <div class="activity-full">CoreWf.Statements.InvokeMethod</div>
+<span class="badge badge-cat">Workflow Foundation</span>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>MethodName</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>String</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Parameters</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>Collection&lt;CoreWf.Argument&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Result</td>
+          <td><span class="dir-out">Out</span></td>
+          <td><code>CoreWf.OutArgument</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>TargetObject</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>CoreWf.InArgument</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>TargetType</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>Type</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>GenericTypeArguments</td>
+          <td>property</td>
+          <td><code>Collection&lt;Type&gt;</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>RunAsynchronously</td>
+          <td>property</td>
+          <td><code>Boolean</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="CoreWf-Statements-NoPersistScope">
+      <div class="activity-name">NoPersistScope</div>
+      <div class="activity-full">CoreWf.Statements.NoPersistScope</div>
+<span class="badge badge-cat">Workflow Foundation</span>      <p class="members-heading">Child Activities / Variable Scope</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Body</td>
+          <td>child</td>
+          <td><code>CoreWf.Activity</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="CoreWf-Statements-Parallel">
+      <div class="activity-name">Parallel</div>
+      <div class="activity-full">CoreWf.Statements.Parallel</div>
+<span class="badge badge-cat">Workflow Foundation</span>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>CompletionCondition</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>CoreWf.Activity&lt;Boolean&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Child Activities / Variable Scope</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Variables</td>
+          <td>variable-scope</td>
+          <td><code>Collection&lt;CoreWf.Variable&gt;</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Branches</td>
+          <td>child</td>
+          <td><code>Collection&lt;CoreWf.Activity&gt;</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="CoreWf-Statements-Persist">
+      <div class="activity-name">Persist</div>
+      <div class="activity-full">CoreWf.Statements.Persist</div>
+<span class="badge badge-cat">Workflow Foundation</span>      <p class="no-members">No members extracted.</p>
+    </div>
+    <div class="activity" id="CoreWf-Statements-Pick">
+      <div class="activity-name">Pick</div>
+      <div class="activity-full">CoreWf.Statements.Pick</div>
+<span class="badge badge-cat">Workflow Foundation</span>      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Branches</td>
+          <td>property</td>
+          <td><code>Collection&lt;CoreWf.Statements.PickBranch&gt;</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="CoreWf-Statements-PickBranch">
+      <div class="activity-name">PickBranch</div>
+      <div class="activity-full">CoreWf.Statements.PickBranch</div>
+<span class="badge badge-cat">Workflow Foundation</span>      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>DisplayName</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Child Activities / Variable Scope</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Variables</td>
+          <td>variable-scope</td>
+          <td><code>Collection&lt;CoreWf.Variable&gt;</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Trigger</td>
+          <td>child</td>
+          <td><code>CoreWf.Activity</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Action</td>
+          <td>child</td>
+          <td><code>CoreWf.Activity</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="CoreWf-Statements-Rethrow">
+      <div class="activity-name">Rethrow</div>
+      <div class="activity-full">CoreWf.Statements.Rethrow</div>
+<span class="badge badge-cat">Workflow Foundation</span>      <p class="no-members">No members extracted.</p>
+    </div>
+    <div class="activity" id="CoreWf-Statements-Sequence">
+      <div class="activity-name">Sequence</div>
+      <div class="activity-full">CoreWf.Statements.Sequence</div>
+<span class="badge badge-cat">Workflow Foundation</span>      <p class="members-heading">Child Activities / Variable Scope</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Variables</td>
+          <td>variable-scope</td>
+          <td><code>Collection&lt;CoreWf.Variable&gt;</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Activities</td>
+          <td>child</td>
+          <td><code>Collection&lt;CoreWf.Activity&gt;</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="CoreWf-Statements-State">
+      <div class="activity-name">State</div>
+      <div class="activity-full">CoreWf.Statements.State</div>
+<span class="badge badge-cat">Workflow Foundation</span>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>IsFinal</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>Boolean</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>DisplayName</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Transitions</td>
+          <td>property</td>
+          <td><code>Collection&lt;CoreWf.Statements.Transition&gt;</code></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Child Activities / Variable Scope</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Entry</td>
+          <td>child</td>
+          <td><code>CoreWf.Activity</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Exit</td>
+          <td>child</td>
+          <td><code>CoreWf.Activity</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Variables</td>
+          <td>variable-scope</td>
+          <td><code>Collection&lt;CoreWf.Variable&gt;</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="CoreWf-Statements-StateMachine">
+      <div class="activity-name">StateMachine</div>
+      <div class="activity-full">CoreWf.Statements.StateMachine</div>
+<span class="badge badge-cat">Workflow Foundation</span>      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>InitialState</td>
+          <td>property</td>
+          <td><code>CoreWf.Statements.State</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>States</td>
+          <td>property</td>
+          <td><code>Collection&lt;CoreWf.Statements.State&gt;</code></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Child Activities / Variable Scope</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Variables</td>
+          <td>variable-scope</td>
+          <td><code>Collection&lt;CoreWf.Variable&gt;</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="CoreWf-Statements-TerminateWorkflow">
+      <div class="activity-name">TerminateWorkflow</div>
+      <div class="activity-full">CoreWf.Statements.TerminateWorkflow</div>
+<span class="badge badge-cat">Workflow Foundation</span>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>Reason</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>CoreWf.InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Exception</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>CoreWf.InArgument&lt;Exception&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="CoreWf-Statements-Throw">
+      <div class="activity-name">Throw</div>
+      <div class="activity-full">CoreWf.Statements.Throw</div>
+<span class="badge badge-cat">Workflow Foundation</span>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>Exception</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>CoreWf.InArgument&lt;Exception&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="CoreWf-Statements-TransactionScope">
+      <div class="activity-name">TransactionScope</div>
+      <div class="activity-full">CoreWf.Statements.TransactionScope</div>
+<span class="badge badge-cat">Workflow Foundation</span>      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>AbortInstanceOnTransactionFailure</td>
+          <td>property</td>
+          <td><code>Boolean</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>IsolationLevel</td>
+          <td>property</td>
+          <td><code>CoreWf.Transactions.IsolationLevel</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Timeout</td>
+          <td>property</td>
+          <td><code>CoreWf.InArgument&lt;TimeSpan&gt;</code></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Child Activities / Variable Scope</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Body</td>
+          <td>child</td>
+          <td><code>CoreWf.Activity</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="CoreWf-Statements-Transition">
+      <div class="activity-name">Transition</div>
+      <div class="activity-full">CoreWf.Statements.Transition</div>
+<span class="badge badge-cat">Workflow Foundation</span>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>Condition</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>CoreWf.Activity&lt;Boolean&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>DisplayName</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>To</td>
+          <td>property</td>
+          <td><code>CoreWf.Statements.State</code></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Child Activities / Variable Scope</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Action</td>
+          <td>child</td>
+          <td><code>CoreWf.Activity</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Trigger</td>
+          <td>child</td>
+          <td><code>CoreWf.Activity</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="CoreWf-Statements-TryCatch">
+      <div class="activity-name">TryCatch</div>
+      <div class="activity-full">CoreWf.Statements.TryCatch</div>
+<span class="badge badge-cat">Workflow Foundation</span>      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Catches</td>
+          <td>property</td>
+          <td><code>Collection&lt;CoreWf.Statements.Catch&gt;</code></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Child Activities / Variable Scope</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Variables</td>
+          <td>variable-scope</td>
+          <td><code>Collection&lt;CoreWf.Variable&gt;</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Try</td>
+          <td>child</td>
+          <td><code>CoreWf.Activity</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Finally</td>
+          <td>child</td>
+          <td><code>CoreWf.Activity</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="CoreWf-Statements-While">
+      <div class="activity-name">While</div>
+      <div class="activity-full">CoreWf.Statements.While</div>
+<span class="badge badge-cat">Workflow Foundation</span>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>Condition</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>CoreWf.Activity&lt;Boolean&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p class="members-heading">Child Activities / Variable Scope</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Variables</td>
+          <td>variable-scope</td>
+          <td><code>Collection&lt;CoreWf.Variable&gt;</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Body</td>
+          <td>child</td>
+          <td><code>CoreWf.Activity</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="CoreWf-Statements-WorkflowTerminatedException">
+      <div class="activity-name">WorkflowTerminatedException</div>
+      <div class="activity-full">CoreWf.Statements.WorkflowTerminatedException</div>
+<span class="badge badge-cat">Workflow Foundation</span>      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>TargetSite</td>
+          <td>property</td>
+          <td><code>Reflection.MethodBase</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Message</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Data</td>
+          <td>property</td>
+          <td><code>Collections.IDictionary</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>InnerException</td>
+          <td>property</td>
+          <td><code>Exception</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>HelpLink</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Source</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>HResult</td>
+          <td>property</td>
+          <td><code>Int32</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>StackTrace</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="CoreWf-Statements-WriteLine">
+      <div class="activity-name">WriteLine</div>
+      <div class="activity-full">CoreWf.Statements.WriteLine</div>
+<span class="badge badge-cat">Workflow Foundation</span>      <p class="members-heading">Arguments</p>
+      <table>
+        <tr><th>Name</th><th>Dir</th><th>Type</th><th>Req</th><th>Default</th><th>Description</th></tr>
+        <tr>
+          <td>TextWriter</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>CoreWf.InArgument&lt;IO.TextWriter&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Text</td>
+          <td><span class="dir-in">In</span></td>
+          <td><code>CoreWf.InArgument&lt;String&gt;</code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="CoreWf-Statements-Tracking-StateMachineStateQuery">
+      <div class="activity-name">StateMachineStateQuery</div>
+      <div class="activity-full">CoreWf.Statements.Tracking.StateMachineStateQuery</div>
+<span class="badge badge-cat">Workflow Foundation</span>      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>Name</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ActivityName</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>QueryAnnotations</td>
+          <td>property</td>
+          <td><code>IDictionary&lt;String, String&gt;</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="activity" id="CoreWf-Statements-Tracking-StateMachineStateRecord">
+      <div class="activity-name">StateMachineStateRecord</div>
+      <div class="activity-full">CoreWf.Statements.Tracking.StateMachineStateRecord</div>
+<span class="badge badge-cat">Workflow Foundation</span>      <p class="members-heading">Properties</p>
+      <table>
+        <tr><th>Name</th><th>Kind</th><th>Type</th><th>Description</th></tr>
+        <tr>
+          <td>StateMachineName</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>StateName</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Name</td>
+          <td>property</td>
+          <td><code>String</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Activity</td>
+          <td>property</td>
+          <td><code>CoreWf.Tracking.ActivityInfo</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Data</td>
+          <td>property</td>
+          <td><code>IDictionary&lt;String, Object&gt;</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>InstanceId</td>
+          <td>property</td>
+          <td><code>Guid</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>RecordNumber</td>
+          <td>property</td>
+          <td><code>Int64</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>EventTime</td>
+          <td>property</td>
+          <td><code>DateTime</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Level</td>
+          <td>property</td>
+          <td><code>Diagnostics.Tracing.EventLevel</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Annotations</td>
+          <td>property</td>
+          <td><code>IDictionary&lt;String, String&gt;</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>HasAnnotations</td>
+          <td>property</td>
+          <td><code>Boolean</code></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</body>
+</html>
